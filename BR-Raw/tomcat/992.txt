@@ -1,2 +1,9 @@
 Error building feature; Cannot find plug-in versions
-I have a situation where I am utilizing a third-party plugin (specifically, a WSAD plugin) which I'll call plugin "A". I wrote a plugin called "B" which uses one of the extensions from "A". Plugin "A" requires ["org.eclipse.ui" version="2.1.0" match="equivalent"]. However, I have eclipse 2.1.1 installed in which "org.eclipse.ui" is at version "2.1.1" and version "2.1.0" does not exist. Plugin "A" works correctly in my eclipse environment and even my plugin "B" works using its extension when running the Runtime Environment. The problem is when I try to build the feature. It spits up a message saying "Cannot find plug-in: org.eclipse.ui_2.1.0". Shouldn't this be able to find "org.eclipse.ui_2.1.1" since match="equivalent" was defined?
+I have a situation where I am utilizing a third-party plugin (specifically, a WSAD plugin) which I'll call plugin "A".
+I wrote a plugin called "B" which uses one of the extensions from "A".
+Plugin "A" requires ["org.eclipse.ui" version="2.1.0" match="equivalent"].
+However, I have eclipse 2.1.1 installed in which "org.eclipse.ui" is at version "2.1.1" and version "2.1.0" does not exist.
+Plugin "A" works correctly in my eclipse environment and even my plugin "B" works using its extension when running the Runtime Environment.
+The problem is when I try to build the feature.
+It spits up a message saying "Cannot find plug-in: org.eclipse.ui_2.1.0".
+Shouldn't this be able to find "org.eclipse.ui_2.1.1" since match="equivalent" was defined?

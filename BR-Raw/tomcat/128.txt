@@ -1,2 +1,12 @@
 extract method: convert continue to return when extracting loop body [refactoring]
-I20040310 I often want to extract a loop body to its own method. If I have "continue" statements in the loop body, the refactoring will not be allowed. Would converting them to "return" statements be semantically preserving (if the entire loop body is extracted, anyway)? Exp: <pre> for (int i= 0; i < 10; i++) { if (condition1) continue; if (condition2) continue; doStuff(); } </pre> Extracting the loop body would produce: <pre> for (int i= 0; i < 10; i++) { loopBody(); } // ... private void loopBody() { if (condition1) return; if (condition2) return; doStuff(); } </pre>
+I20040310 I often want to extract a loop body to its own method.
+If I have "continue" statements in the loop body, the refactoring will not be allowed.
+Would converting them to "return" statements be semantically preserving (if the entire loop body is extracted, anyway)?
+Exp: 
+<pre> for (int i= 0; i 
+< 10; i++) { if (condition1) continue; if (condition2) continue; doStuff(); } 
+</pre> Extracting the loop body would produce: 
+<pre> for (int i= 0; i 
+< 10; i++) { loopBody(); } // ...
+private void loopBody() { if (condition1) return; if (condition2) return; doStuff(); } 
+</pre>

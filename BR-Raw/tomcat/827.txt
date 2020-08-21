@@ -1,2 +1,3 @@
 [OLE] OleAutomation for non-embedded objects
-I would like to be able to use OleAutomation and the event handling functions of Active-X on non-embedded COM Objects too. Unfortunately the general COM services and the services specific to embedded components are mixed in OleClientSite and OleControlSite, so this feature might need some refactoring.
+I would like to be able to use OleAutomation and the event handling functions of Active-X on non-embedded COM Objects too.
+Unfortunately the general COM services and the services specific to embedded components are mixed in OleClientSite and OleControlSite, so this feature might need some refactoring.

@@ -1,2 +1,8 @@
 Description label in plugin.xml editor is not rendered correctly
-*Overview The right side of the description is not rendered. The whole description is rendered if I resize the editor part larger. *Steps 1. Start workbench. 2. Create a Plug-in project. 3. Open the plugin.xml file with Plug-in Manifest Editor 4. Open Runtime page (5. Resize editor part smaller.) --> Description label is not rendered correctly in Library Type section.You can see the same problem in other sections. *OS RedHat Linux 8 *Driver eclipse-SDK-2.1.3-linux-gtk
+*Overview The right side of the description is not rendered.
+The whole description is rendered if I resize the editor part larger.
+*Steps 1.Start workbench.
+2.Create a Plug-in project.
+3.Open the plugin.xml file with Plug-in Manifest Editor 4.Open Runtime page (5.Resize editor part smaller.) 
+--> Description label is not rendered correctly in Library Type section.You can see the same problem in other sections.
+*OS RedHat Linux 8 *Driver eclipse-SDK-2.1.3-linux-gtk

@@ -1,2 +1,16 @@
 Generated Makefiles, directories should be marked as "derived" at creation
-From CDT 2.0.0.200403040925. 0. Install the ClearCase plugin. CVS may have similar effects. 1. Create or put a Managed Make project under version control. You will be prompted to add the Project files. 2. Add a class. You will be prompted to add the CPP/H files. 3. Build it. You will be prompted to add the Release or Debug directories with all of the generated Makefile fragments and subdirectories within. EXPECTED: All of the Release or Debug directories should typically not be added to ClearCase or CVS. Excerpted from the Eclipse Help pages: Any resource marked as derived will be automatically ignored for version management by Team CVS. Some builders, such as the Java builder, mark all of its build output (e.g. .class files) as derived. This solution also works for ClearCase. It is also a cleaner solution I think to the problem of randomly-named configurations/ directories. (The other two inferior suggestions are .cvsignore and Prefs > Team > Ignored Resources)
+From CDT 2.0.0.200403040925.0.Install the ClearCase plugin.
+CVS may have similar effects.
+1.Create or put a Managed Make project under version control.
+You will be prompted to add the Project files.
+2.Add a class.
+You will be prompted to add the CPP/H files.
+3.Build it.
+You will be prompted to add the Release or Debug directories with all of the generated Makefile fragments and subdirectories within.
+EXPECTED: All of the Release or Debug directories should typically not be added to ClearCase or CVS.
+Excerpted from the Eclipse Help pages: Any resource marked as derived will be automatically ignored for version management by Team CVS.
+Some builders, such as the Java builder, mark all of its build output (e.g.
+.class files) as derived.
+This solution also works for ClearCase.
+It is also a cleaner solution I think to the problem of randomly-named configurations/ directories.
+(The other two inferior suggestions are .cvsignore and Prefs > Team > Ignored Resources)

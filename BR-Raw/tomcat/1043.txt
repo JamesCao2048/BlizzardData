@@ -1,2 +1,12 @@
 Wrong build file generated when $os$ variables are specified
-The build file generated for a plugin or a fragment which uses $os$, $ws$, etc. in its library name is bogus. Indeed the variables are not expanded and so instead results in the creation of folders called $os. The solution consists in replacing carefully the appearance of those values into the build.xml. Here is an example of a bogus target: <target name="$os$/win32.jar" depends="init" unless="$os$/win32.jar" description="Create jar: $os$/win32.jar."> <property name="destdir" value="${temp.folder}/$os$/win32.jar.bin"/> <delete dir="${temp.folder}/$os$/win32.jar.bin"/> <mkdir dir="${temp.folder}/$os$/win32.jar.bin"/> ... </target>
+The build file generated for a plugin or a fragment which uses $os$, $ws$, etc.
+in its library name is bogus.
+Indeed the variables are not expanded and so instead results in the creation of folders called $os.
+The solution consists in replacing carefully the appearance of those values into the build.xml.
+Here is an example of a bogus target: 
+<target name="$os$/win32.jar" depends="init" unless="$os$/win32.jar" description="Create jar: $os$/win32.jar."> 
+<property name="destdir" value="${temp.folder}/$os$/win32.jar.bin"/> 
+<delete dir="${temp.folder}/$os$/win32.jar.bin"/> 
+<mkdir dir="${temp.folder}/$os$/win32.jar.bin"/> ...
+
+</target>

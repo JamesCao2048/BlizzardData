@@ -1,2 +1,6 @@
 [RCP] New and Import wizards lose selection
-I2031119 1. In the Package Explorer: select a Java project or folder inside a Java project 2. Import... 3. Select any import (e.g. from ZIP) ==> the container (Into folder:) is not set This works using the Navigator or a non-Java project. Other scenario: Select a project and add a simple folder ==> you have to select the project again. Maybe it is not a major bug but it is very annoying and it look like a (RCP?) regression.
+I2031119 1.In the Package Explorer: select a Java project or folder inside a Java project 2.Import...
+3.Select any import (e.g.
+from ZIP) ==> the container (Into folder:) is not set This works using the Navigator or a non-Java project.
+Other scenario: Select a project and add a simple folder ==> you have to select the project again.
+Maybe it is not a major bug but it is very annoying and it look like a (RCP?) regression.

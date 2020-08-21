@@ -1,2 +1,4 @@
 parser/indexer ignores stand-alone header files
-If I create a stand-alone header file inside my project (e.g. a class declaration with all inline methods, so it does not require a .cpp for the body) the header is not indexed, and consequently the type information is missing from the "Open Type" dialog. It might be debatable whether non-#include'd external headers should be picked up, but I think header files inside a project should always be indexed, regardless of whether they are #include'd or not.
+If I create a stand-alone header file inside my project (e.g.
+a class declaration with all inline methods, so it does not require a .cpp for the body) the header is not indexed, and consequently the type information is missing from the "Open Type" dialog.
+It might be debatable whether non-#include'd external headers should be picked up, but I think header files inside a project should always be indexed, regardless of whether they are #include'd or not.

@@ -1,2 +1,4 @@
 C/C++ editor - should generate C comments for C files
-In the C/C++ editor, if I open a C file, select a section of the file, right click, and select comment, it will insert C++ style comments (//) instead of C style comments (/**/. This is not usually a problem, but when trying to compile with the -ansi flag to gcc (2.95.2 or 3.22) it will not recognize // as a comment
+In the C/C++ editor, if I open a C file, select a section of the file, right click, and select comment, it will insert C++ style comments (//) instead of C style comments (/**/.
+This is not usually a problem, but when trying to compile with the 
+-ansi flag to gcc (2.95.2 or 3.22) it will not recognize // as a comment

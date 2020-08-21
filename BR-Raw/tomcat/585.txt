@@ -1,2 +1,4 @@
 setRawClasspath(...) should fire a F_CLASSPATH_CHANGED delta
-Build 20041013 As described in bug 38513 , calling IJavaProject.setRawClasspath(...) currently fires no delta when the resolved classpath is the same. It should always fire a F_CLASSPATH_CHANGED delta if the raw classpath has changed. This new flag would be attached to an IJavaProject delta.
+Build 20041013 As described in bug 38513 , calling IJavaProject.setRawClasspath(...) currently fires no delta when the resolved classpath is the same.
+It should always fire a F_CLASSPATH_CHANGED delta if the raw classpath has changed.
+This new flag would be attached to an IJavaProject delta.

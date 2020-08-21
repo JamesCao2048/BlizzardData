@@ -1,2 +1,5 @@
 [painting][preferences] annotation preference not correctly inherited
-I20040129 After adding an occurrence annotation with search annotation as super type and only setting the keys and default values that differ I ended up with incorrect annotation painting. The key problems are - default preference initialization does honor values from fragments - painters only search for "true" in the super chain and don't stop/test for false
+I20040129 After adding an occurrence annotation with search annotation as super type and only setting the keys and default values that differ I ended up with incorrect annotation painting.
+The key problems are 
+- default preference initialization does honor values from fragments 
+- painters only search for "true" in the super chain and don't stop/test for false

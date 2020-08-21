@@ -1,2 +1,5 @@
 [Sharing Wizard] Must improve handling of failed communications
-Currently, if failures occur while populating a page, the next page is shown even though it's contents are not available. We need to override WizardDialog to prevent the next page from being shown. Also, MVM saw some weirdness involving infinite prompts with invalid repo specs. This should be tested thouroughly.
+Currently, if failures occur while populating a page, the next page is shown even though it's contents are not available.
+We need to override WizardDialog to prevent the next page from being shown.
+Also, MVM saw some weirdness involving infinite prompts with invalid repo specs.
+This should be tested thouroughly.

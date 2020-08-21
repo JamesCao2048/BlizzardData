@@ -1,2 +1,7 @@
 Variable value should be displayed as hover tip when debugging
-To reproduce: 1. Start a C program in the debugger. 2. Verify that you have a local variable with an assigned value in the variable view. 3. Put the mouse pointer over that variable in the displayed source code. Expected result: The value of the variable should have been displayed in a hover tip. Current result. Nothing happens.
+To reproduce: 1.Start a C program in the debugger.
+2.Verify that you have a local variable with an assigned value in the variable view.
+3.Put the mouse pointer over that variable in the displayed source code.
+Expected result: The value of the variable should have been displayed in a hover tip.
+Current result.
+Nothing happens.

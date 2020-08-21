@@ -1,2 +1,6 @@
 The Software Update has a problem when it is configurated with HTTP proxy.
-The "Help/Software Update/Find and Install" menu has a problem when it is configurated with HTTP proxy. The "window/preferences" menu hasn't the option "Proxy Authentication". When I want to update the following message appear: Network connection problems encountered during search. Unable to access " http://update.eclipse.org/updates ". Unable to access Site stream: " http://update.eclipse.org/updates " [Server returned HTTP response code: 407 for URL: http://update.eclipse.org/updates ] Unable to access Site stream: " http://update.eclipse.org/updates/site.xml " [Server returned HTTP response code: 407 for URL: http://update.eclipse.org/updates/site.xml ]
+The "Help/Software Update/Find and Install" menu has a problem when it is configurated with HTTP proxy.
+The "window/preferences" menu hasn't the option "Proxy Authentication".
+When I want to update the following message appear: Network connection problems encountered during search.
+Unable to access " http://update.eclipse.org/updates ".
+Unable to access Site stream: " http://update.eclipse.org/updates " [Server returned HTTP response code: 407 for URL: http://update.eclipse.org/updates ] Unable to access Site stream: " http://update.eclipse.org/updates/site.xml " [Server returned HTTP response code: 407 for URL: http://update.eclipse.org/updates/site.xml ]

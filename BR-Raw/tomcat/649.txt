@@ -1,2 +1,4 @@
 JUnit view slows down the execution of unit tests. [JUnit]
-It seems that for a huge number of tests (I'm using a lot of test suites generated from external test data) Eclipse's JUnit view slows down the execution of the whole suite. I believe that because of showing an execution status for these test in the test hierarchy, as well as status in the status line. I believe that view can be implemented in a better way, to do not slow down the execution of unit tests.
+It seems that for a huge number of tests (I'm using a lot of test suites generated from external test data) Eclipse's JUnit view slows down the execution of the whole suite.
+I believe that because of showing an execution status for these test in the test hierarchy, as well as status in the status line.
+I believe that view can be implemented in a better way, to do not slow down the execution of unit tests.

@@ -1,2 +1,11 @@
 Process will not show as terminated after reattach
-Driver: 20031211_1537 This can be reproduced using the "DetachAttachTest1" test case below. Upon reattach, the program is run to completion but the agent is not turning to "Terminated". Instructions: 1. Launch (locally/remotely) InOut. Ensure "Boundary class included" box is NOT checked. 2. Open the Method Statistics view after the entry prompt is displayed in the Profiling Console. Refresh until no additional data is shown. 3. Detach the agent 4. Press enter in the Profiling Console. Refresh the views and verify that no additional data is displayed. 5. Attach and start monitoring the agent 6. Press enter in the Profiling Console to terminate the program. 7. Open the Execution Flow view and verify that there is no call to InOut.methodA().
+Driver: 20031211_1537 This can be reproduced using the "DetachAttachTest1" test case below.
+Upon reattach, the program is run to completion but the agent is not turning to "Terminated".
+Instructions: 1.Launch (locally/remotely) InOut.
+Ensure "Boundary class included" box is NOT checked.
+2.Open the Method Statistics view after the entry prompt is displayed in the Profiling Console.
+Refresh until no additional data is shown.
+3.Detach the agent 4.Press enter in the Profiling Console.
+Refresh the views and verify that no additional data is displayed.
+5.Attach and start monitoring the agent 6.Press enter in the Profiling Console to terminate the program.
+7.Open the Execution Flow view and verify that there is no call to InOut.methodA().

@@ -1,2 +1,3 @@
 Evaluation that hits breakpoint confuses debugging
-Jdk1.4.1_b11 Source will be attached Set breakpoints on lines 21 and 39 Debug to a breakpoint at line 21 From the editor, display, "this.hitBreakpoint()" you hit the breakpoint at line 39, but the thread still claims to be evaluating, no indication of the breakpoint Hit Run to Return You are back at line 21, but the thread still claims to be stepping, and the stepping actions are not enabled. Click resume and things are back to normal.
+Jdk1.4.1_b11 Source will be attached Set breakpoints on lines 21 and 39 Debug to a breakpoint at line 21 From the editor, display, "this.hitBreakpoint()" you hit the breakpoint at line 39, but the thread still claims to be evaluating, no indication of the breakpoint Hit Run to Return You are back at line 21, but the thread still claims to be stepping, and the stepping actions are not enabled.
+Click resume and things are back to normal.

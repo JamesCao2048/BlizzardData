@@ -1,2 +1,3 @@
 Property sheet does not repaint
-Build I20031210 1) Select something in the Navigator to make the vertical scroll bar appear in the property sheet 2) Scroll the property sheet vertically using 'v' button Observe: the horizontal grid lines are not cleaned up, so they start to appear inside the rows. Looks like some refreshes are not happening.
+Build I20031210 1) Select something in the Navigator to make the vertical scroll bar appear in the property sheet 2) Scroll the property sheet vertically using 'v' button Observe: the horizontal grid lines are not cleaned up, so they start to appear inside the rows.
+Looks like some refreshes are not happening.

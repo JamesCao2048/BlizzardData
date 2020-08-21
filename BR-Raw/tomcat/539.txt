@@ -1,2 +1,5 @@
 Plugin project directory no longer on classpath
-In eclipse 3.0 build 200401210900, the project root directory is not on the plugin's classpath when I run a runtime-workspace. I don't know if this is an intentional side effect of the osgi stuff, but it causes me some problems - e.g. I have to copy my log4j.properties file to the "bin" directory for it to be found.
+In eclipse 3.0 build 200401210900, the project root directory is not on the plugin's classpath when I run a runtime-workspace.
+I don't know if this is an intentional side effect of the osgi stuff, but it causes me some problems 
+- e.g.
+I have to copy my log4j.properties file to the "bin" directory for it to be found.

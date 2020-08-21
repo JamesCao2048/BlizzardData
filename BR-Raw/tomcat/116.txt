@@ -1,2 +1,12 @@
 FileDialog not handling multi select well
-Platform: SuSE Linux 8.1 (GTK 2.0.6 and motif) Description: When bringing up a FileDialog and doing the following steps, I get an empty selection at the end. 1. Project properties -> Java build path 2. Select Libraries -> Add External Jars... 3. Select and three files with SHIFT. 4. Deselect middle file with CTRL. 5. Note that selection is now empty. Hit OK. Nothing is added to build path. If you add the same jars using CTRL everything is fine. I have tried this on motif and have had no trouble.
+Platform: SuSE Linux 8.1 (GTK 2.0.6 and motif) Description: When bringing up a FileDialog and doing the following steps, I get an empty selection at the end.
+1.Project properties 
+-> Java build path 2.Select Libraries 
+-> Add External Jars...
+3.Select and three files with SHIFT.
+4.Deselect middle file with CTRL.
+5.Note that selection is now empty.
+Hit OK.
+Nothing is added to build path.
+If you add the same jars using CTRL everything is fine.
+I have tried this on motif and have had no trouble.

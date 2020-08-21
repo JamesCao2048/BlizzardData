@@ -1,2 +1,12 @@
 I18N: Outline view doesn't display method name correctly
-With CDT build 2.0.0.37 an NL method in a standard project is displayed incorrectly in the outline view. Change locale to German. Create a standard C++ project called NL. Create the makefile as follows: all: NL.exe main.o: main.cpp g++ -c main.cpp -o main.o NL.exe: main.o g++ -O3 -o NL.exe main.o clean: rm NL.exe main.o main.cpp looks like: #include <iostream> using namespace std; int main(int argc, char **argv) { cout << "Hello CDT!" << endl; } int Lißä(){} The method Lißä shows up in the outline view as "Li(): int".
+With CDT build 2.0.0.37 an NL method in a standard project is displayed incorrectly in the outline view.
+Change locale to German.
+Create a standard C++ project called NL.
+Create the makefile as follows: all: NL.exe main.o: main.cpp g++ 
+-c main.cpp 
+-o main.o NL.exe: main.o g++ 
+-O3 
+-o NL.exe main.o clean: rm NL.exe main.o main.cpp looks like: #include 
+<iostream> using namespace std; int main(int argc, char **argv) { cout 
+<< "Hello CDT!" 
+<< endl; } int Lißä(){} The method Lißä shows up in the outline view as "Li(): int".

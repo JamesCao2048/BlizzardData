@@ -1,2 +1,13 @@
 Workspace plugins ignored when relative path of workspace given
-I am doing self-hosting where my dev-ide is I20040226, and my target-ide is I20040226 (seperate directories). When I launch my development workspace with the -data <ws location> option, the plugins which I have in my workspace are being ignored if I specify the relative location of <ws location>. It works fine when I specify the absolute path for <ws location>. When the development workspace is launched with the relative path, and I launch the target from it, I get the following message in my console : Ignoring bundle at: reference:file:/VE_3.0_M7/org.eclipse.myplugin Ignoring bundle at: reference:file:/VE_3.0_M7/org.eclipse.myplugin.A .. etc. and sure enough the plugins dont show up in the launched target. This works fine when I specify the absolute path to the <ws location>.
+I am doing self-hosting where my dev-ide is I20040226, and my target-ide is I20040226 (seperate directories).
+When I launch my development workspace with the 
+-data 
+<ws location> option, the plugins which I have in my workspace are being ignored if I specify the relative location of 
+<ws location>.
+It works fine when I specify the absolute path for 
+<ws location>.
+When the development workspace is launched with the relative path, and I launch the target from it, I get the following message in my console : Ignoring bundle at: reference:file:/VE_3.0_M7/org.eclipse.myplugin Ignoring bundle at: reference:file:/VE_3.0_M7/org.eclipse.myplugin.A ..
+etc.
+and sure enough the plugins dont show up in the launched target.
+This works fine when I specify the absolute path to the 
+<ws location>.

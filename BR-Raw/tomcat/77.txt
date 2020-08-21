@@ -1,2 +1,5 @@
 [runtime] prefs: change in directory structure
-The .preferences directory should be .settings. Store on a per-file basis, not per directory/file. Summary.... From: /.preferences/org.eclipse.core.resources/prefs.ini To: /.settings/org.eclipse.core.resources.prefs
+The .preferences directory should be .settings.
+Store on a per-file basis, not per directory/file.
+Summary....
+From: /.preferences/org.eclipse.core.resources/prefs.ini To: /.settings/org.eclipse.core.resources.prefs

@@ -1,2 +1,5 @@
 [JUnit] The "Runs", "Errors" and "Failures" fields accept keyboard focus
-Click on the "Runs" value displayed in the JUnit view. A blinking caret will appear. Because these fields never contain more than a single, at most two numbers, it does not seem that you need to support keyboard focus for copy/paste's sake. I tested on Linux GTK 2.2.4, but I guess that the same problem will be reproducible under Windows, too.
+Click on the "Runs" value displayed in the JUnit view.
+A blinking caret will appear.
+Because these fields never contain more than a single, at most two numbers, it does not seem that you need to support keyboard focus for copy/paste's sake.
+I tested on Linux GTK 2.2.4, but I guess that the same problem will be reproducible under Windows, too.

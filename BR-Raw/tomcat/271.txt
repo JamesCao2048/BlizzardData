@@ -1,2 +1,12 @@
 Additional fixes for porting SWT to 64-bit
-Creating separate bug as requested in bug 37775 . I have made additional changes to SWT-N20040228 to address some problems occuring when using SWT on the amd64 platform. With the patches attached I am now able to get the first window of Eclipse-N20040228 up and running. There are all kinds of fixes, including changes in the glue .c files - although I understand these are automatically generated? There are changes made to parameters, return values, size constants and pointer arithmetics using the same standard as the other changes ( int -> long /*int*/ ). btw, I was thinking that being able to get conversion warnings from both C and Java compilers when an implicit conversion from int to long is taking place would be of great help, wouldn't it? Wouldn't that pinpoint possible problem areas? Anyways, I plan to continue with getting Eclipse going on 64-bit. If I come up with new patches, should I attach them here as well or open a new bug?
+Creating separate bug as requested in bug 37775 .
+I have made additional changes to SWT-N20040228 to address some problems occuring when using SWT on the amd64 platform.
+With the patches attached I am now able to get the first window of Eclipse-N20040228 up and running.
+There are all kinds of fixes, including changes in the glue .c files 
+- although I understand these are automatically generated?
+There are changes made to parameters, return values, size constants and pointer arithmetics using the same standard as the other changes ( int 
+-> long /*int*/ ).
+btw, I was thinking that being able to get conversion warnings from both C and Java compilers when an implicit conversion from int to long is taking place would be of great help, wouldn't it?
+Wouldn't that pinpoint possible problem areas?
+Anyways, I plan to continue with getting Eclipse going on 64-bit.
+If I come up with new patches, should I attach them here as well or open a new bug?

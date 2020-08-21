@@ -1,2 +1,12 @@
 A missing optional plugin causes low-level Assert exception
-I saw this on the I20040226 build. If an optional plugin (that is, marked as optional=true in 'requires' element, is in fact not present, a low-level Assert exception occurs during descriptor. getPluginPrerequisites(). I stumbled across this testing something completely un-related, but since in the base stack you probably don't have optional plugins which are not present, thought you might appreciate the report. [BTW, its actually in Hyades plugins that has an optional plugin which really is not (normally) intended to be present). I'm not sure what the right solution is .. either ignore it (and return what is there) or return a special descriptor that is marked as "missing optional plugin". I'll attach test case and instructions, but here's the instructions (not sure you'll even need the test code is so easy to reproduce). Description: TestPlugin has the test code (see testPluginPrereqs()) TestPlugin 'requires' RequiringPlugin RequiringPlugin *optionally* 'requires OptionalPlugin Instructions for reproducing 1. Select TesterPlugin 2. Run as ... Junit Plugin Test All is ok (test passes). Now, remove (delete or close) OptionalPlugin re-run steps 1 and 2, and you'll see Assert.isNotNull exception throw deep in internal.plugins code.
+I saw this on the I20040226 build.
+If an optional plugin (that is, marked as optional=true in 'requires' element, is in fact not present, a low-level Assert exception occurs during descriptor.
+getPluginPrerequisites().
+I stumbled across this testing something completely un-related, but since in the base stack you probably don't have optional plugins which are not present, thought you might appreciate the report.
+[BTW, its actually in Hyades plugins that has an optional plugin which really is not (normally) intended to be present).
+I'm not sure what the right solution is ..
+either ignore it (and return what is there) or return a special descriptor that is marked as "missing optional plugin".
+I'll attach test case and instructions, but here's the instructions (not sure you'll even need the test code is so easy to reproduce).
+Description: TestPlugin has the test code (see testPluginPrereqs()) TestPlugin 'requires' RequiringPlugin RequiringPlugin *optionally* 'requires OptionalPlugin Instructions for reproducing 1.Select TesterPlugin 2.Run as ...
+Junit Plugin Test All is ok (test passes).
+Now, remove (delete or close) OptionalPlugin re-run steps 1 and 2, and you'll see Assert.isNotNull exception throw deep in internal.plugins code.

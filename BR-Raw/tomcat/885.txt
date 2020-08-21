@@ -1,2 +1,12 @@
 [CVS Core] parse 'waiting' and 'obtained' messages from server
-build N20031031 - working in the RCP stream, I selected all the UI projects after releasing the results of the merge to the RCP stream - chose Tag with Version: RCP_MERGED_WITH_v20031028 - it completed, but the Progress view showed an error: Problems tagging the resources: 10 project(s) successfully tagged and 1 project (s) with errors. At first I was puzzled as to how to determine which project had errors, and what they were, but I eventually tried Show Error in the context menu, and then clicking Details on the dialog. It shows: Problems tagging the resources. 10 project(s) successfully tagged and 1 project (s) with errors. The following warnings were reported while performing the "cvs tag" command. org.eclipse.ui.win32: cvs server: [12:37:41] waiting for rkulp's lock in /home/eclipse/CVSROOT/Emptydir org.eclipse.ui.win32: cvs server: [12:38:11] obtained lock in /home/eclipse/CVSROOT/Emptydir These are just warnings though. Is it possible there was some other error? The tag shows up on org.eclipse.ui.win32 in the repos view.
+build N20031031 
+- working in the RCP stream, I selected all the UI projects after releasing the results of the merge to the RCP stream 
+- chose Tag with Version: RCP_MERGED_WITH_v20031028 
+- it completed, but the Progress view showed an error: Problems tagging the resources: 10 project(s) successfully tagged and 1 project (s) with errors.
+At first I was puzzled as to how to determine which project had errors, and what they were, but I eventually tried Show Error in the context menu, and then clicking Details on the dialog.
+It shows: Problems tagging the resources.
+10 project(s) successfully tagged and 1 project (s) with errors.
+The following warnings were reported while performing the "cvs tag" command.
+org.eclipse.ui.win32: cvs server: [12:37:41] waiting for rkulp's lock in /home/eclipse/CVSROOT/Emptydir org.eclipse.ui.win32: cvs server: [12:38:11] obtained lock in /home/eclipse/CVSROOT/Emptydir These are just warnings though.
+Is it possible there was some other error?
+The tag shows up on org.eclipse.ui.win32 in the repos view.

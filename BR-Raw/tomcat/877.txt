@@ -1,2 +1,3 @@
 Historic isDeleted() method still lingering in some content providers
-The removed boolean isDeleted(Object) method of the IContentProvider interface still has some lingering (and no longer used) implementations. They should be removed.
+The removed boolean isDeleted(Object) method of the IContentProvider interface still has some lingering (and no longer used) implementations.
+They should be removed.

@@ -1,2 +1,5 @@
 Support for multiple JDK levels of BeanInfos
-The current level of BeanInfo in the VE is JDK 1.3 and the VE allows other JDK levels in the remote VM (e.g. JDK 1.4) but the property values, events, and layout managers in the IDE are reflective of the JDK 1.3 BeanInfo level only. An example of this is the 'rollover' property on a javax.swing.JToolBar. It's not available in JDK 1.3 but is new for JDK 1.4. We need the capability for the user to specific a different JDK BeanInfo level in order to make use of additional functionality in JDK enhancements.
+The current level of BeanInfo in the VE is JDK 1.3 and the VE allows other JDK levels in the remote VM (e.g.
+JDK 1.4) but the property values, events, and layout managers in the IDE are reflective of the JDK 1.3 BeanInfo level only.
+An example of this is the 'rollover' property on a javax.swing.JToolBar.
+It's not available in JDK 1.3 but is new for JDK 1.4.We need the capability for the user to specific a different JDK BeanInfo level in order to make use of additional functionality in JDK enhancements.

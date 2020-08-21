@@ -1,2 +1,6 @@
 [misc] Javadoc view: Should always update to latest element
-M2 testing If the cursor is placed at an element that does not contain documentation, the view does not update and the documentation of the previous element is kept. I think this is very confusing: If you don't follow the updating of the view, you don't realize that the doc does not correspond to the current element. You start reading and find out that this makes no sense. See also bug 40301 , that the current element should be rendered prominently on the first line. An Idea might to be a 'lock' button on the view tool bar: If it is pressed, the view does then not follow the selection.
+M2 testing If the cursor is placed at an element that does not contain documentation, the view does not update and the documentation of the previous element is kept.
+I think this is very confusing: If you don't follow the updating of the view, you don't realize that the doc does not correspond to the current element.
+You start reading and find out that this makes no sense.
+See also bug 40301 , that the current element should be rendered prominently on the first line.
+An Idea might to be a 'lock' button on the view tool bar: If it is pressed, the view does then not follow the selection.

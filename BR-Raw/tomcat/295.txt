@@ -1,2 +1,3 @@
 BasicLauncherTab not checking for null
-In BasicLauncherTab:initializeApplicationSection(ILaunchConfiguration), there is the following line: index = fApplicationCombo.indexOf(LauncherUtils.getDefaultApplicationName()); Problem is that the argument can be null if there is no "install.ini" file in the target platform directory. This in turns causes the combo box to throw illegal argument exception and the run configuration dialog cannot be displayed.
+In BasicLauncherTab:initializeApplicationSection(ILaunchConfiguration), there is the following line: index = fApplicationCombo.indexOf(LauncherUtils.getDefaultApplicationName()); Problem is that the argument can be null if there is no "install.ini" file in the target platform directory.
+This in turns causes the combo box to throw illegal argument exception and the run configuration dialog cannot be displayed.

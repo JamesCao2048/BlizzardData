@@ -1,2 +1,5 @@
 Bundle name is not returned as translated string
-Bundle.getHeaders().get(BUNDLE_NAME) returns the bundle name as it appears in the plugin.xml. If the name was %pluginName (i.e. the pluginName is a key in plugin.properties), the result is %pluginName, but I was expecting to see the actual value out of plugin.properties. My workaround is to call Platform.getResourceString(bundle, bundle.getHeaders ().get(BUNDLE_NAME)) to get the translated string.
+Bundle.getHeaders().get(BUNDLE_NAME) returns the bundle name as it appears in the plugin.xml.
+If the name was %pluginName (i.e.
+the pluginName is a key in plugin.properties), the result is %pluginName, but I was expecting to see the actual value out of plugin.properties.
+My workaround is to call Platform.getResourceString(bundle, bundle.getHeaders ().get(BUNDLE_NAME)) to get the translated string.

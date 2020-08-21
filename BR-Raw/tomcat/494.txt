@@ -1,2 +1,6 @@
 Need access to internal class StandardCElementLabelProvider
-I need to have access to CDT UI classes that are in internal packages. import org.eclipse.cdt.internal.ui.StandardCElementLabelProvider; - I am using the getText method to be able to get the same label for ICElements as seen in the CView. (equiv. to JDT's org.eclipse.jdt.ui.JavaElementLabelProvider) We are on CDT 1.2 right now, but will be going to 2.0 soon.
+I need to have access to CDT UI classes that are in internal packages.
+import org.eclipse.cdt.internal.ui.StandardCElementLabelProvider; 
+- I am using the getText method to be able to get the same label for ICElements as seen in the CView.
+(equiv.
+to JDT's org.eclipse.jdt.ui.JavaElementLabelProvider) We are on CDT 1.2 right now, but will be going to 2.0 soon.

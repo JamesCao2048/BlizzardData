@@ -1,2 +1,7 @@
 [SSH2] Passphrase validation warning in wizard
-The following behavior would be appreciated: Empty passphrase/Empty confirm: Typing in passphrase -> no error message. Typing in confirm -> error message "don't match" (unless they match .) Empty passphrase/Non-empty confirm Typing in passphrase text -> error message "don't match" (unless they match .) @@@@ There could be a warning that not having a passphrase (i.e. both text fields are empty) is insecure.
+The following behavior would be appreciated: Empty passphrase/Empty confirm: Typing in passphrase 
+-> no error message.
+Typing in confirm 
+-> error message "don't match" (unless they match .) Empty passphrase/Non-empty confirm Typing in passphrase text 
+-> error message "don't match" (unless they match .) @@@@ There could be a warning that not having a passphrase (i.e.
+both text fields are empty) is insecure.

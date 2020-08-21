@@ -1,2 +1,10 @@
 notes on making PDE work on OSGi/Equinox
-This PR is a place where any problems found while making PDE work on Equinox are stored. 1) At least in M2, PDE UI declares that it requires org.eclipse.pde (the feature plugin), but not org.eclipse.pde.core. Since we use the requires list to manually define the Dependant-Bundles manifest entry, PDE was not being properly activated when PDE UI was. 2) PDE Core requires org.eclipse.core.runtime.Platform.parsePlugins, which is not currently available. Adding to core.internal.plugins.InternalPlatform. 3) PDE Core requires the model classes and registry resolution. Re-adding. 4) Some classes usually available from org.eclipse.ui now must be imported from other UI plugins (such as views or workbench). 5) Added helper methods to PDECore to provide access to platform configurations (using the IPlatformConfigurationFactory service).
+This PR is a place where any problems found while making PDE work on Equinox are stored.
+1) At least in M2, PDE UI declares that it requires org.eclipse.pde (the feature plugin), but not org.eclipse.pde.core.
+Since we use the requires list to manually define the Dependant-Bundles manifest entry, PDE was not being properly activated when PDE UI was.
+2) PDE Core requires org.eclipse.core.runtime.Platform.parsePlugins, which is not currently available.
+Adding to core.internal.plugins.InternalPlatform.
+3) PDE Core requires the model classes and registry resolution.
+Re-adding.
+4) Some classes usually available from org.eclipse.ui now must be imported from other UI plugins (such as views or workbench).
+5) Added helper methods to PDECore to provide access to platform configurations (using the IPlatformConfigurationFactory service).

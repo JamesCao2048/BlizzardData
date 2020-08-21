@@ -1,2 +1,6 @@
 Export preferences does not export code generation templates
-When customising the type of code generation templates (e.g. new Java files, new Type etc.) the 'Export Preferences' button does not export any of them. Even selecting 'Code Generation' and cicking on export does not seem to add them in. This may be a duplicate of 27926 or it may be that there are some other text-based preferences that are also not exported. Tested against Eclipse 3.0M7 on Mac OS X.3 and also visible under Windows (2.1/3.0).
+When customising the type of code generation templates (e.g.
+new Java files, new Type etc.) the 'Export Preferences' button does not export any of them.
+Even selecting 'Code Generation' and cicking on export does not seem to add them in.
+This may be a duplicate of 27926 or it may be that there are some other text-based preferences that are also not exported.
+Tested against Eclipse 3.0M7 on Mac OS X.3 and also visible under Windows (2.1/3.0).

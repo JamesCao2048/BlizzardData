@@ -1,2 +1,9 @@
 Need to maintain settings order
-Testcase: Marathon Beans - MBTJTextField Weight: 5 There are two problems, currently we can't maintain settings order. The order stored in the java file is not maintained. The second problem is that certain properties cannot be set before other properties. Because of this we must be able to modify the order of the properties, plus we need a registry of what the proper order is for a particular class. For example, JTextField, can't set selectionStart until after Text has been set. The problem is in this example is that the order of properties returned is independent of the order set, and due to hashing, the selectionStart may be applied before text has been set, even though in the code it is the other way around. Waiting on EMF to support this concept.
+Testcase: Marathon Beans 
+- MBTJTextField Weight: 5 There are two problems, currently we can't maintain settings order.
+The order stored in the java file is not maintained.
+The second problem is that certain properties cannot be set before other properties.
+Because of this we must be able to modify the order of the properties, plus we need a registry of what the proper order is for a particular class.
+For example, JTextField, can't set selectionStart until after Text has been set.
+The problem is in this example is that the order of properties returned is independent of the order set, and due to hashing, the selectionStart may be applied before text has been set, even though in the code it is the other way around.
+Waiting on EMF to support this concept.

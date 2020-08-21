@@ -1,2 +1,4 @@
 Remote Debugging not working on 3.0M5
-Installed 3.0M5 Trying to attach debugger to a remote server. Getting "Connection refused" error even though the socket is actually connected (according to netstat on that remote server). Reinstalled 2.1.2 and verified that it's working fine.
+Installed 3.0M5 Trying to attach debugger to a remote server.
+Getting "Connection refused" error even though the socket is actually connected (according to netstat on that remote server).
+Reinstalled 2.1.2 and verified that it's working fine.

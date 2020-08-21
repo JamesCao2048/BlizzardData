@@ -1,2 +1,6 @@
 Hierarchy view should show package names of types
-build I20030917 - open hierarchy view on org.eclipse.ui.internal.registry.RegistryReader - it has several subclasses called PluginRegistryReader - there's no way to determine which package and source folder these come from without opening them I would expect this info to appear in the status line, or a tooltip. It's possible that info in the status line is getting wiped out by the background progress monitor.
+build I20030917 
+- open hierarchy view on org.eclipse.ui.internal.registry.RegistryReader 
+- it has several subclasses called PluginRegistryReader 
+- there's no way to determine which package and source folder these come from without opening them I would expect this info to appear in the status line, or a tooltip.
+It's possible that info in the status line is getting wiped out by the background progress monitor.

@@ -1,2 +1,5 @@
 [Sync View] Shows modal progress in wizards
-M8 contribution It looks really weird to have the wizards perform work, sometimes, long running, and not have the progress bar used in the wizard. Since the wizard ops are by definition modal we should run operations that way. We may have to add some magic to provide a runnable context to object contributions so that they can run in the wizard. Although tricky it would provide for a better user experience.
+M8 contribution It looks really weird to have the wizards perform work, sometimes, long running, and not have the progress bar used in the wizard.
+Since the wizard ops are by definition modal we should run operations that way.
+We may have to add some magic to provide a runnable context to object contributions so that they can run in the wizard.
+Although tricky it would provide for a better user experience.

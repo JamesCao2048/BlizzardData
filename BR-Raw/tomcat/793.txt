@@ -1,2 +1,8 @@
 iterator in clone() may provide a copy of arrayList in different order
-in org.eclipse.hyades.logging.events: some of the clone() methods uses Iterator to retrieve all the elements. This was OK before since it iterates through a hashMap, which order does not matter. However in CBE 101, it uses ArrayList instead of hashMap. By using a iterator, we have clone a copy of the ArrayList which has elements in different order than the original. This is what stated in the sun javadoc: public Iterator iterator()Returns an iterator over the elements in this collection. There are no guarantees concerning the order in which the elements are returned (unless this collection is an instance of some class that provides a guarantee). Classes affected by this bug: CommonBaseEventImpl.java ExtendedDataElementImpl.java
+in org.eclipse.hyades.logging.events: some of the clone() methods uses Iterator to retrieve all the elements.
+This was OK before since it iterates through a hashMap, which order does not matter.
+However in CBE 101, it uses ArrayList instead of hashMap.
+By using a iterator, we have clone a copy of the ArrayList which has elements in different order than the original.
+This is what stated in the sun javadoc: public Iterator iterator()Returns an iterator over the elements in this collection.
+There are no guarantees concerning the order in which the elements are returned (unless this collection is an instance of some class that provides a guarantee).
+Classes affected by this bug: CommonBaseEventImpl.java ExtendedDataElementImpl.java

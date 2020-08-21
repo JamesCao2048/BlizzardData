@@ -1,2 +1,11 @@
 Format command moves //$NON-NLS comments to next line.
-When using the Source -> Format command, it moves the //$NON-NLS comments to the next line invalidating them. To reproduce this bug, go to Windows -> Preferences -> Java -> Code Formatter -> Edit -> Arguments -> and set line wrapping to "Wrap always except first element if necessary". Then format some source like the following: SomeObject someObject = new SomeObject("Parameter1", //$NON-NLS-1$ "Parameter2", //$NON-NLS-1$ null); This will end up like: SomeObject someObject = new SomeObject("Parameter1", //$NON-NLS-1$ "Parameter2", //$NON-NLS-1$ null); Which defeats the whole purpose of using the non-internationalizable comments.
+When using the Source 
+-> Format command, it moves the //$NON-NLS comments to the next line invalidating them.
+To reproduce this bug, go to Windows 
+-> Preferences 
+-> Java 
+-> Code Formatter 
+-> Edit 
+-> Arguments 
+-> and set line wrapping to "Wrap always except first element if necessary".
+Then format some source like the following: SomeObject someObject = new SomeObject("Parameter1", //$NON-NLS-1$ "Parameter2", //$NON-NLS-1$ null); This will end up like: SomeObject someObject = new SomeObject("Parameter1", //$NON-NLS-1$ "Parameter2", //$NON-NLS-1$ null); Which defeats the whole purpose of using the non-internationalizable comments.

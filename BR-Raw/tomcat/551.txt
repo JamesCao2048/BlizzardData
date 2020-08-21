@@ -1,2 +1,8 @@
 Requesting change to AbstractGraphicalEditPart#reorderChild(...)
-We've introduced the following changes to our editpart hierarchy /** support multiple content panes per editpart. */ IFigure getContentPaneFor( Object key ) { return contentPaneMap.contains(key) ? (IFigure)contentPaneMap.get(key) : getContentPane() } addChildVisual( EditPart child, int index ) { getContentPaneFor(child).add(...); } removeChildVisual( EditPart child, int index ) { getContentPaneFor(child).remove(...); } However, we are running into problems with AbstractGraphicalEditPart#reorderChild(...) since it sets constaints by directly calling getContentPane().setConstraint(...). We get an IllergalArgumentException getContentPane() is returning the wrong content pane. I'd like the following change : AbstractGraphicalEditPart#reorderChild(...) { ... getContentPane().setConstraint(childFigure, constraint) } to AbstractGraphicalEditPart#reorderChild(...) { ... setLayoutConstraint(child, childFigure, constraint) } Thanks,
+We've introduced the following changes to our editpart hierarchy /** support multiple content panes per editpart.
+*/ IFigure getContentPaneFor( Object key ) { return contentPaneMap.contains(key) ?
+(IFigure)contentPaneMap.get(key) : getContentPane() } addChildVisual( EditPart child, int index ) { getContentPaneFor(child).add(...); } removeChildVisual( EditPart child, int index ) { getContentPaneFor(child).remove(...); } However, we are running into problems with AbstractGraphicalEditPart#reorderChild(...) since it sets constaints by directly calling getContentPane().setConstraint(...).
+We get an IllergalArgumentException getContentPane() is returning the wrong content pane.
+I'd like the following change : AbstractGraphicalEditPart#reorderChild(...) { ...
+getContentPane().setConstraint(childFigure, constraint) } to AbstractGraphicalEditPart#reorderChild(...) { ...
+setLayoutConstraint(child, childFigure, constraint) } Thanks,

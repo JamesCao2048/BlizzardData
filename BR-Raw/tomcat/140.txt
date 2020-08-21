@@ -1,2 +1,12 @@
 no program-name available when attaching to an agent
-Holger Machens: --------------- I'm implementing an own profiling agent for special purposes. If the agent is listed in the "Attach Java Process" wizard the process is always called unknown. We need a way to tell the RAC the right name of the process the agent is running on. Paul Slauenwhite: ----------------- The 'unknown' label in the Attach Java Process" wizard is used if the process does not have a name property set on the org.eclipse.hyades.internal.execution.local.control.Process implementation. The 'unknown' process name is always used when attaching to a Java process (e.g. local or remote). If the user is launching a Java process (e.g. local or remote), the entered process (e.g. class name) is used as the process name.
+Holger Machens: 
+--------------- I'm implementing an own profiling agent for special purposes.
+If the agent is listed in the "Attach Java Process" wizard the process is always called unknown.
+We need a way to tell the RAC the right name of the process the agent is running on.
+Paul Slauenwhite: 
+----------------- The 'unknown' label in the Attach Java Process" wizard is used if the process does not have a name property set on the org.eclipse.hyades.internal.execution.local.control.Process implementation.
+The 'unknown' process name is always used when attaching to a Java process (e.g.
+local or remote).
+If the user is launching a Java process (e.g.
+local or remote), the entered process (e.g.
+class name) is used as the process name.

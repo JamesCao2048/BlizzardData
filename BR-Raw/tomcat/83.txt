@@ -1,2 +1,6 @@
 [code formatting] split in expressions by operator precedence
-- set maximal line width to 80 - insert this main method: public static void main(String[] args) { int aaaaaaaaaaaaaaaaa = 0; int bbbbbbbbbbbbbbb = 0; int cccccccccccccccc = 0; int ddddddddddddd = 0; ddddddddddddd = aaaaaaaaaaaaaaaaa * bbbbbbbbbbbbbbb + cccccccccccccccc * ddddddddddddd; ddddddddddddd = (aaaaaaaaaaaaaaaaa * bbbbbbbbbbbbbbb) + (cccccccccccccccc * ddddddddddddd); } - format the code (Ctrl-Shift-F) The code formatter takes care about operator precedence defined by parantheses. It does not seem to care about the operator precedence defined by the language. This should be optimized.
+- set maximal line width to 80 
+- insert this main method: public static void main(String[] args) { int aaaaaaaaaaaaaaaaa = 0; int bbbbbbbbbbbbbbb = 0; int cccccccccccccccc = 0; int ddddddddddddd = 0; ddddddddddddd = aaaaaaaaaaaaaaaaa * bbbbbbbbbbbbbbb + cccccccccccccccc * ddddddddddddd; ddddddddddddd = (aaaaaaaaaaaaaaaaa * bbbbbbbbbbbbbbb) + (cccccccccccccccc * ddddddddddddd); } 
+- format the code (Ctrl-Shift-F) The code formatter takes care about operator precedence defined by parantheses.
+It does not seem to care about the operator precedence defined by the language.
+This should be optimized.

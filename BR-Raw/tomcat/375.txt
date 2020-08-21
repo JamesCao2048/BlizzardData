@@ -1,2 +1,7 @@
 [FloatingWindows] Floating Progress Window
-Several issues: 1. The floating window should disappear if another view or editor gets focus 2. The flowating window should disappear if the Progress Monitor view is opened IMHO the floating progress window is a big UI break. Some people prefer the "old style" progress report by text in the status line. The flowating view is unessary and adds unwanted UI clutter. If a user wants to see enhanced or detailed progress indication he can double click on the progress bar icon and the Progress view is opened. That is ok. You might consider changing this from a floating window into a tool tip like yellow bubble that informs the user about new progress but this should only stay visible for a few secondes (like the yellow bubbles used by Windows tray notifications).
+Several issues: 1.The floating window should disappear if another view or editor gets focus 2.The flowating window should disappear if the Progress Monitor view is opened IMHO the floating progress window is a big UI break.
+Some people prefer the "old style" progress report by text in the status line.
+The flowating view is unessary and adds unwanted UI clutter.
+If a user wants to see enhanced or detailed progress indication he can double click on the progress bar icon and the Progress view is opened.
+That is ok.
+You might consider changing this from a floating window into a tool tip like yellow bubble that informs the user about new progress but this should only stay visible for a few secondes (like the yellow bubbles used by Windows tray notifications).

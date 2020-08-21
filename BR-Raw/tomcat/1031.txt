@@ -1,2 +1,5 @@
 Open Declaration opens class declaration for local variables
-When the cursor is positioned on a local variable representing an object, and "Open Declaration" is selected, e.g. from the pop-up menu, Eclipse opens the file where the variable's class is declared. Instead, Eclipse should just jump to the position of the local variable's declaration. When the local variable has a primitive type, nothing whatsoever happens.
+When the cursor is positioned on a local variable representing an object, and "Open Declaration" is selected, e.g.
+from the pop-up menu, Eclipse opens the file where the variable's class is declared.
+Instead, Eclipse should just jump to the position of the local variable's declaration.
+When the local variable has a primitive type, nothing whatsoever happens.

@@ -1,2 +1,7 @@
 SWT shell cannot gain focus
-SWT shell displays but cannot gain focus. This occurs with numerous applications using the SWT toolkit, including the examples from org.eclipse.swt.examples. (for example, the Hello example). After trying to select the SWT shell using the mouse to gain focus, I get a "bus error" with no other details provided. I'm running Max OS-X 10.3.2, but have also seen the problem on 10.3.1 and 10.3.0, in all cases using libswt-carbon-2135.jnilib. Running Java 1.4.1_01.
+SWT shell displays but cannot gain focus.
+This occurs with numerous applications using the SWT toolkit, including the examples from org.eclipse.swt.examples.
+(for example, the Hello example).
+After trying to select the SWT shell using the mouse to gain focus, I get a "bus error" with no other details provided.
+I'm running Max OS-X 10.3.2, but have also seen the problem on 10.3.1 and 10.3.0, in all cases using libswt-carbon-2135.jnilib.
+Running Java 1.4.1_01.

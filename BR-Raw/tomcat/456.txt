@@ -1,2 +1,7 @@
 org.eclipse.swt.widgets.Table.getTopIndex() returns wrong value
-The above mentioned function returns wrong a value (0) for an empty table, should return -1. Example on an empty table (i.e no elements): -------------------------------------------- int index = table.getTopIndex() // !!! returns 0 TableItem item = table.getItem(index); // crashes because there is no such item I came across this bug working with a tableviewer under Win2000: TableViewer viewer = new TableViewer(table); viewer.setInput(element); where element has no children i.e. returns an empty array. Imho this is not really relevant because the reason is probably in the getTopIndex() implementation of Table.getTopIndex(): // Table.java: public int getTopIndex () { checkWidget (); return OS.SendMessage (handle, OS.LVM_GETTOPINDEX, 0, 0); // !!!!!!!!!!! } Hope this helps - thanks, Peter
+The above mentioned function returns wrong a value (0) for an empty table, should return 
+-1.Example on an empty table (i.e no elements): 
+-------------------------------------------- int index = table.getTopIndex() // !!! returns 0 TableItem item = table.getItem(index); // crashes because there is no such item I came across this bug working with a tableviewer under Win2000: TableViewer viewer = new TableViewer(table); viewer.setInput(element); where element has no children i.e.
+returns an empty array.
+Imho this is not really relevant because the reason is probably in the getTopIndex() implementation of Table.getTopIndex(): // Table.java: public int getTopIndex () { checkWidget (); return OS.SendMessage (handle, OS.LVM_GETTOPINDEX, 0, 0); // !!!!!!!!!!! } Hope this helps 
+- thanks, Peter

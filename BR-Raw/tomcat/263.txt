@@ -1,2 +1,5 @@
 EclipseStarter should not alway refreshPackages
-EclipseStarter.loadBasicBundles() attempts to install the base bundles and then always does a refreshPackages() on the base bundles even when no actual installs have occurred. This is causing most all bundles installed on the platform to be refreshed each startup even when nothing has changed. This is pretty expensive. Should try change it so it only does a refreshPackages if something has changed.
+EclipseStarter.loadBasicBundles() attempts to install the base bundles and then always does a refreshPackages() on the base bundles even when no actual installs have occurred.
+This is causing most all bundles installed on the platform to be refreshed each startup even when nothing has changed.
+This is pretty expensive.
+Should try change it so it only does a refreshPackages if something has changed.

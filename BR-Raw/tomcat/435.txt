@@ -1,2 +1,4 @@
 Ant in Eclipse breaks after upgrading to Java 1.4.2
-I just updated my Mac OS 10.3.2 JVM from 1.4.1 to 1.4.2 using Software Update. Ant tasks, which were working fine before the update, now report via the Progress view: ERROR: Launch : Specified VM install not found: type MacOS X VM, name 1.4.1 Eclipse otherwise still seems to be running fine, and in the Java preferences it's aware of the new VM, but I can't figure out where the Ant VM is supposed to be specified. Sometimes the attempted Ant launch just hangs.
+I just updated my Mac OS 10.3.2 JVM from 1.4.1 to 1.4.2 using Software Update.
+Ant tasks, which were working fine before the update, now report via the Progress view: ERROR: Launch : Specified VM install not found: type MacOS X VM, name 1.4.1 Eclipse otherwise still seems to be running fine, and in the Java preferences it's aware of the new VM, but I can't figure out where the Ant VM is supposed to be specified.
+Sometimes the attempted Ant launch just hangs.

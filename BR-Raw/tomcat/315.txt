@@ -1,2 +1,6 @@
 Browser.setText fires an navigation event
-if you call Browser.setText() an URL navigation event is fired with an about:blank url. Is there any chance this can be changed? It is too anoying. We have a case where we want to intercept about:blank URLs, but can differentaiate between an about:blank navigation event generated due to a setText call, or one generated due to a real link that refers to about:blank. Mazen.
+if you call Browser.setText() an URL navigation event is fired with an about:blank url.
+Is there any chance this can be changed?
+It is too anoying.
+We have a case where we want to intercept about:blank URLs, but can differentaiate between an about:blank navigation event generated due to a setText call, or one generated due to a real link that refers to about:blank.
+Mazen.

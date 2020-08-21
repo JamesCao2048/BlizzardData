@@ -1,2 +1,4 @@
 Preference to switch perspective on suspend is too eager
-The preference to switch perspectives "when a breakpoint is hit" actually prompts to do so every time the program suspends. It should only respond to suspension for breakpoints. Not step ends, evaluation completions, etc.
+The preference to switch perspectives "when a breakpoint is hit" actually prompts to do so every time the program suspends.
+It should only respond to suspension for breakpoints.
+Not step ends, evaluation completions, etc.

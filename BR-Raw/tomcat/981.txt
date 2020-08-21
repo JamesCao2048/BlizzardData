@@ -1,2 +1,5 @@
 No autobuild when referenced (input) jar file changes
-I have two AspectJ projects. One that uses "Output Jar" and one that uses "Input Jars (aspects)" to reference the jar file of the first project. When making changes to the first project (which will also change the jar file), recompilation of the second project is not triggered. expected behaviour: the second project wil be recompiled if any of the input jars changes.
+I have two AspectJ projects.
+One that uses "Output Jar" and one that uses "Input Jars (aspects)" to reference the jar file of the first project.
+When making changes to the first project (which will also change the jar file), recompilation of the second project is not triggered.
+expected behaviour: the second project wil be recompiled if any of the input jars changes.

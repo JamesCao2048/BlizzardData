@@ -1,2 +1,7 @@
 Create patch omits parts of the source file
-When creating the patch for bug 50655 , parts of my change were omitted from the patch. The same problem occurred with various patches in bug 44443 . In all cases, the contents of a newly inserted switch(...) statement were omitted from the patch. Attached is the patch that was generated for bug 50655 . The "new" directory contains the changed code, the "old" directory contains the versions in CVS, and the *.txt file is the patch that was generated. Notice that the patch is missing the contents of the switch statement on the first page.
+When creating the patch for bug 50655 , parts of my change were omitted from the patch.
+The same problem occurred with various patches in bug 44443 .
+In all cases, the contents of a newly inserted switch(...) statement were omitted from the patch.
+Attached is the patch that was generated for bug 50655 .
+The "new" directory contains the changed code, the "old" directory contains the versions in CVS, and the *.txt file is the patch that was generated.
+Notice that the patch is missing the contents of the switch statement on the first page.

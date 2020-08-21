@@ -1,2 +1,4 @@
 Configurator should filter out faetures not applicable to current environment
-The update configurator creates the first platform.xml by picking up the most recent version of all the features present on the local site. However, features with OS/WS/etc settings not applicable to the current environment should be filtered out. Note that this not happen now because each eclipse drop is for a particular environment, but it is a possible scenario.
+The update configurator creates the first platform.xml by picking up the most recent version of all the features present on the local site.
+However, features with OS/WS/etc settings not applicable to the current environment should be filtered out.
+Note that this not happen now because each eclipse drop is for a particular environment, but it is a possible scenario.

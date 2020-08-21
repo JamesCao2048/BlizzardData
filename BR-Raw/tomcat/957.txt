@@ -1,2 +1,4 @@
 [Jobs] Should run progress views and status lines with one update job
-Build 20030925 If the Progress view is visible and theres's a lot of background activity (e.g. a long autobuild, or a CVS checkout), the whole Workbench freezes while the Progress view is updating. Closing the Progress view makes the UI more responsive.
+Build 20030925 If the Progress view is visible and theres's a lot of background activity (e.g.
+a long autobuild, or a CVS checkout), the whole Workbench freezes while the Progress view is updating.
+Closing the Progress view makes the UI more responsive.

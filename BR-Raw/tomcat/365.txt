@@ -1,2 +1,9 @@
 [RCP] definition of IProduct and IBundleGroup properties needed
-This is a reminder/placeholder for work that has been ongoing/pending but I can't find a matching report. Runtime has added IProduct to model the default primary feature and IBundleGroup to model features. The UI gets various bits of information from the original entities and needs to adapt to the new structures. After consulting with Nick, both IProduct and IBundleGroup were left open ended and UI ignorant. Rather they provide a general getProperty() method. The valid key value pairs are to be defined by the consumers/users of the objects. So the UI should define the form of the information it needs for the product branding (e.g., windowImage, ...) and the about dialog. I don't know where this should be specified but the update team for example will need to know how to map the about.ini information onto IProducts and similarly, how to populate IBundleGroups.
+This is a reminder/placeholder for work that has been ongoing/pending but I can't find a matching report.
+Runtime has added IProduct to model the default primary feature and IBundleGroup to model features.
+The UI gets various bits of information from the original entities and needs to adapt to the new structures.
+After consulting with Nick, both IProduct and IBundleGroup were left open ended and UI ignorant.
+Rather they provide a general getProperty() method.
+The valid key value pairs are to be defined by the consumers/users of the objects.
+So the UI should define the form of the information it needs for the product branding (e.g., windowImage, ...) and the about dialog.
+I don't know where this should be specified but the update team for example will need to know how to map the about.ini information onto IProducts and similarly, how to populate IBundleGroups.

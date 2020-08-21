@@ -1,2 +1,5 @@
 Subclassing does not remove the original graphical edit part
-Subclass JFrame, e.g. MyFrame extends JFrame. Now change so it subclasses Object, fix up errors in initialize() method The GUI updates OK with the content pane orphaned, however the JFrame edit part remains, including when a pause/reload occurs. Close and re-open the .java file and it's all OK, but while the editor remains open the original graphic edit part never goes away on resubclassing
+Subclass JFrame, e.g.
+MyFrame extends JFrame.
+Now change so it subclasses Object, fix up errors in initialize() method The GUI updates OK with the content pane orphaned, however the JFrame edit part remains, including when a pause/reload occurs.
+Close and re-open the .java file and it's all OK, but while the editor remains open the original graphic edit part never goes away on resubclassing

@@ -1,2 +1,9 @@
 Wrong Number of Arguments produced by starter program
-When starting Eclipse under Redhat 9 with Sun J2SDK 1.4.2_03 the starte program ./eclipse seems to produce a call to the java-environment wirh too many arguments (perhaps not taking into account the difference between windows and unix - latter gives the name of the procedure called, too). The messages in the java-webstart-window exception window is: TooManyArgumentsException[ Zu viele Argumente angegeben: {-cp, /tmp/javawH8XtI1, org.eclipse.core.launcher.Main, -os, linux, -ws, gtk, -arch, x86, -showsplash, "/usr/eclipse/eclipse -showsplash 600" }] at com.sun.javaws.Main.main(Main.java:161)
+When starting Eclipse under Redhat 9 with Sun J2SDK 1.4.2_03 the starte program ./eclipse seems to produce a call to the java-environment wirh too many arguments (perhaps not taking into account the difference between windows and unix 
+- latter gives the name of the procedure called, too).
+The messages in the java-webstart-window exception window is: TooManyArgumentsException[ Zu viele Argumente angegeben: {-cp, /tmp/javawH8XtI1, org.eclipse.core.launcher.Main, 
+-os, linux, 
+-ws, gtk, 
+-arch, x86, 
+-showsplash, "/usr/eclipse/eclipse 
+-showsplash 600" }] at com.sun.javaws.Main.main(Main.java:161)

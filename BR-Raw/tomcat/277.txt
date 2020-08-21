@@ -1,2 +1,4 @@
 [Coolbar] "Widget is Disposed" Error when using GTK UI
-Using CDT 2.0 on RHEL 3.0 with GTK on IA32 with Eclipse 3.0 M6. Get errors with the UI when performing normal operations with the Mouse. Pairs of error messages appear in the error log when clicking with the mouse: "Unhandled event loop exception" "Widget is disposed" This error occurs frequently and requires Eclipse to be shut down and restarted, since it makes the UI unusable - once these errors start, much of the UI becomes unavailable for mouse clicking (each click only generates the two error messages, in sequence).
+Using CDT 2.0 on RHEL 3.0 with GTK on IA32 with Eclipse 3.0 M6.Get errors with the UI when performing normal operations with the Mouse.
+Pairs of error messages appear in the error log when clicking with the mouse: "Unhandled event loop exception" "Widget is disposed" This error occurs frequently and requires Eclipse to be shut down and restarted, since it makes the UI unusable 
+- once these errors start, much of the UI becomes unavailable for mouse clicking (each click only generates the two error messages, in sequence).

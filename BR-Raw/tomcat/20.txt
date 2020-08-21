@@ -1,2 +1,11 @@
 [WorkingSets] deleted Working Sets not removed from Build working set menu
-20040323 1. Project -> Build Working Set -> Select Working Set... 2. Create a new working set named "Test" with anything in it. 3. Project -> Build Working Set -> Select Working Set... 4. Select "Test" and "remove" now, "Test" is gone, but it is still available in the Build Working Set submenu. NOTE: When I do this again, with "Test2", it works correctly. This only fails the first time.
+20040323 1.Project 
+-> Build Working Set 
+-> Select Working Set...
+2.Create a new working set named "Test" with anything in it.
+3.Project 
+-> Build Working Set 
+-> Select Working Set...
+4.Select "Test" and "remove" now, "Test" is gone, but it is still available in the Build Working Set submenu.
+NOTE: When I do this again, with "Test2", it works correctly.
+This only fails the first time.

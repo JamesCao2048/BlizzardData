@@ -1,2 +1,8 @@
 Classpath issue
-hi, I was using Eclipse (Version: 3.0.0, Build id: 200403100800) till yesterday. When I downloaded (Version: 3.0.0, Build id: 200403170800). I am running a Windows XP machine with the JDK 1.5.0 beta. My project though uses the JDK 1.4.2_03 version to compile and the launch configs also uses the same 1.4.x JDK. In the project classpath, I have the following jars in the classpath: jce1_2_2.jar, sunjce_provider.jar (in that order) followed by the org.eclipse.jdt.launching.JRE_CONTAINER line. With the older (200403100800) eclipse version, i am able to run fine, but with the later one, the launch is not able to get to the javax.crypto.Cipher class (from the jce1_2_2 jar) and so our authentication mechanism fails. Could this be resolved easily?
+hi, I was using Eclipse (Version: 3.0.0, Build id: 200403100800) till yesterday.
+When I downloaded (Version: 3.0.0, Build id: 200403170800).
+I am running a Windows XP machine with the JDK 1.5.0 beta.
+My project though uses the JDK 1.4.2_03 version to compile and the launch configs also uses the same 1.4.x JDK.
+In the project classpath, I have the following jars in the classpath: jce1_2_2.jar, sunjce_provider.jar (in that order) followed by the org.eclipse.jdt.launching.JRE_CONTAINER line.
+With the older (200403100800) eclipse version, i am able to run fine, but with the later one, the launch is not able to get to the javax.crypto.Cipher class (from the jce1_2_2 jar) and so our authentication mechanism fails.
+Could this be resolved easily?

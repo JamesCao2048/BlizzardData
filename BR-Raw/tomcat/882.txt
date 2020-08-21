@@ -1,2 +1,3 @@
 [DCR ] Create field with comment
-I'd like a way to call createField() and insert a comment. For example: IType classA= cu.createType("public class A {n}n", null, true, null); classA.createField("private String fooString= ""foo"", null, true, null); I want to be able to create a comment to mark my string as non-externalized like: public classA() { private String fooString="foo"; \NON-NLS$1 }
+I'd like a way to call createField() and insert a comment.
+For example: IType classA= cu.createType("public class A {n}n", null, true, null); classA.createField("private String fooString= ""foo"", null, true, null); I want to be able to create a comment to mark my string as non-externalized like: public classA() { private String fooString="foo"; \NON-NLS$1 }

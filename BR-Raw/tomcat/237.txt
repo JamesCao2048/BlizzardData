@@ -1,2 +1,4 @@
 Get rid of callback server thread
-Get rid of the callback server thread and merge its function into the REMMasterServerThread. This way we can get rid of one thread per registry for callbacks. The individual callback threads still exist.
+Get rid of the callback server thread and merge its function into the REMMasterServerThread.
+This way we can get rid of one thread per registry for callbacks.
+The individual callback threads still exist.

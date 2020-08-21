@@ -1,2 +1,6 @@
 Provide build.xml target to export binary plugin.
-It's been noted that most Eclipse teams still maintain exportplugin.xml build files for building their plugins locally instead of using PDE's generated build.xml file. The only real problem that the build.xml file has is that it dumps the output into the input directory. The nice thing about the exportplugin.xml files is that they build the plugins and output the binary plug-in in a plugin-export directory that is at the same level as the workspace, not inside it. I would gladly change to using PDEs build.xml files if there was a way to get the same behavior. Either by default or by passing in a property to specify where the binary plug-in should be output.
+It's been noted that most Eclipse teams still maintain exportplugin.xml build files for building their plugins locally instead of using PDE's generated build.xml file.
+The only real problem that the build.xml file has is that it dumps the output into the input directory.
+The nice thing about the exportplugin.xml files is that they build the plugins and output the binary plug-in in a plugin-export directory that is at the same level as the workspace, not inside it.
+I would gladly change to using PDEs build.xml files if there was a way to get the same behavior.
+Either by default or by passing in a property to specify where the binary plug-in should be output.

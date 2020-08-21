@@ -1,2 +1,9 @@
 [find/replace] Labels for Regex ContentAssist in Find/Replace should include example
-Labels for Regex ContentAssist in Find/Replace should include the regular expression (before or after the describing string). My use case is e.g. this: I remember there was a pattern for word-characters (s, w, W, S, or something like that). I press Ctrl+Space and resize the list to see half of the proposals at once. Now, the label "alphanumeric" doesn't match my mental pattern, and I have to look at every single label. The info hover takes a second to appear, and I get tired of waiting for it, because I know that I would have spotted w right away if it was part of the proposal label (e.g. "Alphanumeric - w").
+Labels for Regex ContentAssist in Find/Replace should include the regular expression (before or after the describing string).
+My use case is e.g.
+this: I remember there was a pattern for word-characters (s, w, W, S, or something like that).
+I press Ctrl+Space and resize the list to see half of the proposals at once.
+Now, the label "alphanumeric" doesn't match my mental pattern, and I have to look at every single label.
+The info hover takes a second to appear, and I get tired of waiting for it, because I know that I would have spotted w right away if it was part of the proposal label (e.g.
+"Alphanumeric 
+- w").

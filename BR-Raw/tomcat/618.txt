@@ -1,2 +1,5 @@
 [new search] flicker when stepping through changes
-1) enable new search 2) do a text search for "e" 3) step through the matches ->notice that the editor tab flickers (i.e., the editor is temporarily activated). When the editor is already open it should not be activated when selecting a match. The flicker doesn't occur in the old search
+1) enable new search 2) do a text search for "e" 3) step through the matches 
+->notice that the editor tab flickers (i.e., the editor is temporarily activated).
+When the editor is already open it should not be activated when selecting a match.
+The flicker doesn't occur in the old search

@@ -1,2 +1,14 @@
 Autoformat inserts unwanted tabs when formatting javadoc
-Hi, This has been occuring for a while in the 3.0 stream. Using 'ctrl-shift-f' style autoformat will insert tabs ahead of javadoc comments even if the preference dialog is set to use spaces instead of tabs. To demonstrate: Set up your prefs: Uncheck Java -> Code Formatter -> Style -> Insert tabs for indentation & Check Java -> Editor -> Typing -> Insert spaces for tabs It doesn't matter if you're using the old style formatter or have checked the new autoformatter in the Work In Progress sheet. Then select all in a java file with poorly formatted javadoc. Tabs will be inserted. -tim
+Hi, This has been occuring for a while in the 3.0 stream.
+Using 'ctrl-shift-f' style autoformat will insert tabs ahead of javadoc comments even if the preference dialog is set to use spaces instead of tabs.
+To demonstrate: Set up your prefs: Uncheck Java 
+-> Code Formatter 
+-> Style 
+-> Insert tabs for indentation & Check Java 
+-> Editor 
+-> Typing 
+-> Insert spaces for tabs It doesn't matter if you're using the old style formatter or have checked the new autoformatter in the Work In Progress sheet.
+Then select all in a java file with poorly formatted javadoc.
+Tabs will be inserted.
+
+-tim

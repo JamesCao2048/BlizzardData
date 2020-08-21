@@ -1,2 +1,6 @@
 add a swap reflect
-sometime or offen, I write set(get) to transfer data between screen and database. eg. screen to database: db.setBankCode(scr.getBankCode); db.setBankName(scr.getBankName); when back to screen scr.setBankCode(db.getBankCode); scr.setBankName(db.getBankName); in the upper case, I can simply using replace function. but changing "src.bankCode = db.bankCode;" to "db.bankCode = src.bankCode;" is somewhat labour cost. espcially when field is over 30. I think a swap reflect can make it easy.
+sometime or offen, I write set(get) to transfer data between screen and database.
+eg.
+screen to database: db.setBankCode(scr.getBankCode); db.setBankName(scr.getBankName); when back to screen scr.setBankCode(db.getBankCode); scr.setBankName(db.getBankName); in the upper case, I can simply using replace function.
+but changing "src.bankCode = db.bankCode;" to "db.bankCode = src.bankCode;" is somewhat labour cost.
+espcially when field is over 30.I think a swap reflect can make it easy.

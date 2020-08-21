@@ -1,2 +1,7 @@
 [KeyBindings] KeySupport.java should support localized key sequences
-Translator had a question about the need of certain strings to be externalized. Key values are in English in the Keys Preferences page. Steps to recreate: 1. Select Window -> Preferences 2. Select Workbench -> Keys 3. Select any item in the Commands box 4. Press the pull down button next to the Key secuence field Question from translator: We observed that the keys are displayed in English, however there is a file named: eclipsepluginsorg.eclipse.ui.workbenchworkbench_jarorgeclipseuiinternalc ommandskeysupport.properties that seems to contain the translation for the keys. Should these keys be translated or should they be displayed in English?
+Translator had a question about the need of certain strings to be externalized.
+Key values are in English in the Keys Preferences page.
+Steps to recreate: 1.Select Window 
+-> Preferences 2.Select Workbench 
+-> Keys 3.Select any item in the Commands box 4.Press the pull down button next to the Key secuence field Question from translator: We observed that the keys are displayed in English, however there is a file named: eclipsepluginsorg.eclipse.ui.workbenchworkbench_jarorgeclipseuiinternalc ommandskeysupport.properties that seems to contain the translation for the keys.
+Should these keys be translated or should they be displayed in English?

@@ -1,2 +1,10 @@
 Compile errors fixed by 'refresh' do not reset problem list or package explorer error states
-When you have a project that also references external jars, there appears to be a problem with error tagging. Consider the following example: I have a project that has some code that references external jars. In the first instance, there were missing methods in classes in the external jars, so the compile failed. The open editor displayed the errors, as did the Package Explorer and the Problems view. I replaced the external jar with one that fixed the errors, and did a Project 'refresh' from the package explorer. The rebuild occurred and, in the open editor, all indications of the error state disappeared. However, the Problems view still displays all of the original compilation problems (now resolved), and the Package Explorer still has a red 'x' next to the class and package that had the problems. Doing a "rebuild all" correctly resets the state of the Package Explorer and Problems view. It would seem that the build done by the 'refresh' does not clear the error states in the views before performing the compilation.
+When you have a project that also references external jars, there appears to be a problem with error tagging.
+Consider the following example: I have a project that has some code that references external jars.
+In the first instance, there were missing methods in classes in the external jars, so the compile failed.
+The open editor displayed the errors, as did the Package Explorer and the Problems view.
+I replaced the external jar with one that fixed the errors, and did a Project 'refresh' from the package explorer.
+The rebuild occurred and, in the open editor, all indications of the error state disappeared.
+However, the Problems view still displays all of the original compilation problems (now resolved), and the Package Explorer still has a red 'x' next to the class and package that had the problems.
+Doing a "rebuild all" correctly resets the state of the Package Explorer and Problems view.
+It would seem that the build done by the 'refresh' does not clear the error states in the views before performing the compilation.

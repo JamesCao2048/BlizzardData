@@ -1,2 +1,5 @@
 Accessibility:Cannot move scroll bars with keyboard
-Testing HATS (WSSD plugin).. WSSD V5.1: Cant move the editors scrollbars with the keyboard. We had to implement default scrolling increments, when clicking on the scroll buttons, that should not default to 1px. We had to implement behavior to make the composite scroll to show controls therein as they were tabbed to We think that this keyboard support for scrolling should be built into the framework.
+Testing HATS (WSSD plugin)..
+WSSD V5.1: Cant move the editors scrollbars with the keyboard.
+We had to implement default scrolling increments, when clicking on the scroll buttons, that should not default to 1px.
+We had to implement behavior to make the composite scroll to show controls therein as they were tabbed to We think that this keyboard support for scrolling should be built into the framework.

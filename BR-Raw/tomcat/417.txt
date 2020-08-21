@@ -1,2 +1,7 @@
 progress dialog would stay forever
-i200402101200 Got two Progress Summary modal dialogs at the same time one, waiting for a background operation, did not show any jobs to be cancelled. The other, in foreground, was waiting for "Refresh Workspace" (I have it enabled) although "Building workspace" appeared in the job list. Please see screenshot and VM dump (to attach) for details. When I realized it was not coming back (no CPU activity) by itself, I tried cancelling the selected job. That removed it from the list of jobs, but the progress dialog remained open. Only cancelling the blocked job made the two dialogs go away.
+i200402101200 Got two Progress Summary modal dialogs at the same time one, waiting for a background operation, did not show any jobs to be cancelled.
+The other, in foreground, was waiting for "Refresh Workspace" (I have it enabled) although "Building workspace" appeared in the job list.
+Please see screenshot and VM dump (to attach) for details.
+When I realized it was not coming back (no CPU activity) by itself, I tried cancelling the selected job.
+That removed it from the list of jobs, but the progress dialog remained open.
+Only cancelling the blocked job made the two dialogs go away.

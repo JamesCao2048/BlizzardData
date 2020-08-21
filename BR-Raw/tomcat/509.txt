@@ -1,2 +1,5 @@
 enable/disable builder bug - cannot cancel
-* Open the "Builders" properties on a project. * Select the "java" builder and press disable * press "Cancel" * open the builder tab - the builder shows as dislabed, although cancel was pressed. It seems that the builder still runs too (until I actually press OK), which is doubly strange.
+* Open the "Builders" properties on a project.
+* Select the "java" builder and press disable * press "Cancel" * open the builder tab 
+- the builder shows as dislabed, although cancel was pressed.
+It seems that the builder still runs too (until I actually press OK), which is doubly strange.

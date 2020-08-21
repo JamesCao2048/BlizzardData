@@ -1,2 +1,4 @@
 Create Class QuickFix doesn't create import [quick fix]
-I2003-03-07 Using the "Create class" QuickFix, I created a class in a _different_ package. An import statement wasn't generated, resulting in an compile error. Expected behavior: Eclipse should import the newly created class in case it is created in a different package.
+I2003-03-07 Using the "Create class" QuickFix, I created a class in a _different_ package.
+An import statement wasn't generated, resulting in an compile error.
+Expected behavior: Eclipse should import the newly created class in case it is created in a different package.

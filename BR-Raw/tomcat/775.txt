@@ -1,2 +1,5 @@
 Formatter: Line Wrapping/Conditionals
-Settings: Wrap always, except first element only if necessary; Indent on column @@@@ int Example( boolean Argument) { return argument ? 100000 : 200000; } @@@@ Is it possible to indent conditionals w/ those settings such that the : is aligned w/ the ? @@@@ int Example( boolean Argument) { return argument ? 100000 : 200000; } @@@@
+Settings: Wrap always, except first element only if necessary; Indent on column @@@@ int Example( boolean Argument) { return argument ?
+100000 : 200000; } @@@@ Is it possible to indent conditionals w/ those settings such that the : is aligned w/ the ?
+@@@@ int Example( boolean Argument) { return argument ?
+100000 : 200000; } @@@@

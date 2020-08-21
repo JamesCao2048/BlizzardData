@@ -1,2 +1,4 @@
 what are the (I)Platform.openStream*() API for
-The title says it all. There are two openStream() methods on (I)Platform but it is unclear what they are there for. Why can't a caller use find() or getEntry() (whichever is the appropriate API) and the openStream on the resultant URL?
+The title says it all.
+There are two openStream() methods on (I)Platform but it is unclear what they are there for.
+Why can't a caller use find() or getEntry() (whichever is the appropriate API) and the openStream on the resultant URL?

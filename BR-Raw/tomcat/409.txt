@@ -1,2 +1,5 @@
 Unused import warning but type used in Javadoc
-20040210 - Set warnings for javadoc tags to 'ignore' - The following code makes the imports as never used - Turn on warnings for javadoc tags: The import warnings go away import org.eclipse.jdt.core.IClassFile; import org.eclipse.jdt.core.ICompilationUnit; /** * Implemented by {@link IClassFile} and {@link ICompilationUnit} */ public interface IOpenable { }
+20040210 
+- Set warnings for javadoc tags to 'ignore' 
+- The following code makes the imports as never used 
+- Turn on warnings for javadoc tags: The import warnings go away import org.eclipse.jdt.core.IClassFile; import org.eclipse.jdt.core.ICompilationUnit; /** * Implemented by {@link IClassFile} and {@link ICompilationUnit} */ public interface IOpenable { }

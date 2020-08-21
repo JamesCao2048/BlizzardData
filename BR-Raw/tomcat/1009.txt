@@ -1,2 +1,7 @@
 Cannot abort a build
-If I run any kind of build tool in the CDT (build/make or external build tool like configure), it cannot be aborted. It must complete. This is especially painful if one forgets to select the "stop on error" option of the build preferences for a project. Steps to Reproduce: 1. create external build tool to run configure (for example) 2. run this tool. 3. before it finishes, click "cancel"... The button is disabled, but nothing really happens until the tool finishes executing.
+If I run any kind of build tool in the CDT (build/make or external build tool like configure), it cannot be aborted.
+It must complete.
+This is especially painful if one forgets to select the "stop on error" option of the build preferences for a project.
+Steps to Reproduce: 1.create external build tool to run configure (for example) 2.run this tool.
+3.before it finishes, click "cancel"...
+The button is disabled, but nothing really happens until the tool finishes executing.
