@@ -10,18 +10,4 @@ elow) Here is the NPE after paste !SESSION Nov 22, 2003 21:59:52.510
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US Command-line arguments: 
 -consolelog 
 -data c:eclipsews0321plugins 
--install file:C:/eclipse/20031120/eclipse/ !ENTRY org.eclipse.core.resources 2 1 Nov 22, 2003 21:59:52.510 !MESSAGE Skipping builder org.eclipse.relen
-g.tools.mapFileValidator for project org.eclipse.releng.
-Either the builder is missing from the install, or it belongs to a project nature that is missing or disabled.
-!ENTRY org.eclipse.ui 4 4 Nov 22, 2003 22:08:54.429 !MESSAGE Unhandled event loop exception !ENTRY org.eclipse.ui 4 0 Nov 22, 2003 22:08:54.439 !MESSA
-GE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.jface.text.DefaultPositionUpdater.update (DefaultPositionUpda
-ter.java:217) at org.eclipse.jface.text.AbstractDocument.updatePositions (AbstractDocument.java:1019) at org.eclipse.jface.text.AbstractDocument.updat
-eDocumentStructures (AbstractDocument.java:610) at org.eclipse.jface.text.AbstractDocument.fireDocumentChanged (AbstractDocument.java:695) at org.ecli
-pse.jface.text.AbstractDocument.replace (AbstractDocument.java:989) at org.eclipse.jdt.internal.ui.javaeditor.PartiallySynchronizedDocument.replace (P
-artiallySynchronizedDocument.java:61) at org.eclipse.jface.text.DocumentAdapter.replaceTextRange (DocumentAdapter.java:194) at org.eclipse.swt.custom.
-StyledText.modifyContent (StyledText.java:5995) at org.eclipse.swt.custom.StyledText.sendKeyEvent(StyledText.java:6931) at org.eclipse.swt.custom.Styl
-edText.doContent(StyledText.java:2554) at org.eclipse.swt.custom.StyledText.handleKey(StyledText.java:5300) at org.eclipse.swt.custom.StyledText.handl
-eKeyDown (StyledText.java:5323) at org.eclipse.swt.custom.StyledText$8.handleEvent (StyledText.java:5070) at org.eclipse.swt.widgets.EventTable.sendEv
-ent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:871) at o
-rg.eclipse.swt.widgets.Widget.sendEvent(Widget.java:856) at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716) at org.eclipse.swt.widgets
-.Control.sendKeyEvent(Control.java:1712) at org.eclipse.swt.widgets.Control.WM_CH
+-install file:C:/eclipse/20031120/eclipse/ !ENTRY org.eclipse

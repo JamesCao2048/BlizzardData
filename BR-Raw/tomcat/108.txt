@@ -6,18 +6,4 @@ This time I have steps :-) 1.started fresh workspace 2.create Java project 3.cre
 e.<init>(Throwable.java) at java.lang.NullPointerException.<init>(NullPointerException.java:60) at org.eclipse.jdt.core.dom.TypeBinding.getKey(TypeBin
 ding.java) at org.eclipse.jdt.core.dom.MethodBinding.getKey(MethodBinding.java) at org.eclipse.jdt.core.dom.DefaultBindingResolver.resolveMethod(Defau
 ltBindingResolver.java:470) at org.eclipse.jdt.core.dom.MethodDeclaration.resolveBinding(MethodDeclaration.java:869) at org.eclipse.jdt.core.dom.ASTCo
-nverter.convert(ASTConverter.java) at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:1005) at org.eclipse.jdt.core.dom.
-ASTConverter.convert(ASTConverter.java:1132) at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java) at org.eclipse.jdt.core.dom.ASTConver
-ter.convertToVariableDeclarationFragment(ASTConverter.java:2710) at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTCon
-verter.java:2737) at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:384) at org.eclipse.jdt.core.dom.ASTC
-onverter.convert(ASTConverter.java:1859) at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1764) at org.eclipse.jdt.core.dom.ASTConve
-rter.convert(ASTConverter.java:2008) at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1788) at org.eclipse.jdt.core.dom.ASTConverter
-.convert(ASTConverter.java) at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:330) at org.eclipse.jdt.core.dom.ASTConve
-rter.convert(ASTConverter.java:268) at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:146) at org.eclipse.jdt.core.dom.AST.convertCom
-pilationUnit(AST.java:233) at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:147) at org.eclipse.jdt.internal.core.
-Openable.generateInfos(Openable.java:169) at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:543) at org.eclipse.jdt.interna
-l.core.CompilationUnit.makeConsistent(CompilationUnit.java:931) at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(Reconc
-ileWorkingCopyOperation.java:56) at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:700) at org.eclipse.jdt.internal.core
-.JavaModelOperation.runOperation(JavaModelOperation.java:739) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1043) at
- org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:84) at org.eclipse.jdt.internal.ui.text.java.Jav
-aReconcilingStrategy.rec
+nverter.convert(ASTConverter.java) at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:1005) at org.eclipse.j

@@ -11,18 +11,4 @@ each time this is done.
 A trace showing the allocation of this image is included below: java.lang.Error at org.eclipse.swt.graphics.Device.new_Object(Device.java:648) at org.
 eclipse.swt.graphics.Image.<init>(Image.java:556) at org.eclipse.jface.resource.ImageDescriptor.createImage (ImageDescriptor.java:137) at org.eclipse.
 jface.resource.ImageDescriptor.createImage (ImageDescriptor.java:94) at org.eclipse.jface.resource.ImageDescriptor.createImage (ImageDescriptor.java:8
-3) at org.eclipse.jdt.internal.debug.ui.jres.JREContainerWizardPage.getImage (JREContainerWizardPage.java:151) at org.eclipse.jface.wizard.WizardDialo
-g.updateTitleBar (WizardDialog.java:1161) at org.eclipse.jface.wizard.WizardDialog.update(WizardDialog.java:1029) at org.eclipse.jface.wizard.WizardDi
-alog.updateForPage (WizardDialog.java:963) at org.eclipse.jface.wizard.WizardDialog.access$1(WizardDialog.java:940) at org.eclipse.jface.wizard.Wizard
-Dialog$3.run(WizardDialog.java:929) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.jface.wizard.WizardDialog.
-showPage(WizardDialog.java:927) at org.eclipse.jface.wizard.WizardDialog.nextPressed (WizardDialog.java:684) at org.eclipse.jface.wizard.WizardDialog.
-buttonPressed (WizardDialog.java:316) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:430) at org.eclipse.swt.widgets.TypedListener.h
-andleEvent (TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Wid
-get.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2318) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:
-1999) at org.eclipse.jface.window.Window.runEventLoop(Window.java:586) at org.eclipse.jface.window.Window.open(Window.java:566) at org.eclipse.jdt.int
-ernal.ui.wizards.buildpaths.LibrariesWorkbookPage.openContain erDialog(LibrariesWorkbookPage.java:685) at org.eclipse.jdt.internal.ui.wizards.buildpat
-hs.LibrariesWorkbookPage.openContain erSelectionDialog(LibrariesWorkbookPage.java:674) at org.eclipse.jdt.internal.ui.wizards.buildpaths.LibrariesWork
-bookPage.libaryPageC ustomButtonPressed(LibrariesWorkbookPage.java:234) at org.eclipse.jdt.internal.ui.wizards.buildpaths.LibrariesWorkbookPage.access
-$0 (LibrariesWorkbookPage.java:221) at org.eclipse.jdt.internal.ui.wizards.buildpaths.LibrariesWorkbookPage$LibrariesAd apter.customButtonPressed(Libr
-ariesWorkbookPage.java:181) at org.eclipse.jdt.internal.ui.wizards.dialogfields.TreeListDialogField.buttonPress ed(TreeListDialogField.java:171) at or
-g.eclipse.jdt.internal.ui.wizards
+3) at org.eclipse.jdt.internal.debug.ui.jres.JREContainerWizardPage.getImage (JREContainerWizardPage.java:151) at org.eclipse.jface.wizard.WizardDi

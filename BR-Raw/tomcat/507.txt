@@ -8,5 +8,4 @@ Updating classpath for draw2d plug-in with context menu "PDE Tools
 -> Update Classpath..." doesn't fix the problem.
 You need hack the binary project (fragment) "org.eclipse.swt.win32" to export its jar and add this to the classpath manually to resolve the compile er
 rors.
-After rersolving this new compile errors complain about missing "org.eclipse.core.runtime.Platform" and "org.eclipse.core.runtime.IPluginDescriptor" c
-lasses.
+After rersolving this new compile errors complain about missing "org

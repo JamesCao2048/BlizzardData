@@ -7,10 +7,4 @@ w.eclipse.org/legal/cpl-v10.html */ /* * Composite example snippet: create and d
 ets see * http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt 
 - home/dev.html#snippets */ public class Main { static int pageNum = 0; static Composite pageComposite; public static void main(String args[]) { Displ
 ay display = new Display(); final Shell shell = new Shell(display); shell.setLayout(new GridLayout()); Button button = new Button(shell, SWT.PUSH); bu
-tton.setText("Push"); pageComposite = new Composite(shell, SWT.NONE); pageComposite.setLayout(new GridLayout()); pageComposite.setLayoutData(new GridD
-ata()); button.addListener(SWT.Selection, new Listener() { public void handleEvent(Event event) { if ((pageComposite != null) && (! pageComposite.isDi
-sposed())) { pageComposite.dispose(); } pageComposite = new Composite(shell, SWT.NONE); pageComposite.setLayout(new GridLayout()); pageComposite.setLa
-youtData(new GridData()); if (pageNum++ % 2 == 0) { Table table = new Table(pageComposite, SWT.BORDER); table.setLayoutData(new GridData()); for (int 
-i = 0; i 
-< 5; i++) { new TableItem(table, SWT.NONE).setText ("table item " + i); } } else { new Button(pageComposite, SWT.RADIO).setText ("radio"); } shell.lay
-out(true); } }); shell.open(); while (!shell.isDisposed()) { if (!display.readAndDispatch()) display.sleep(); } display.dispose(); } }
+tton.setText("Push"); pageComposite = new Composite(shell, SWT.NONE); pageComposite.setLayout(new G

@@ -14,10 +14,4 @@ This will launch the “Show View” Dialog.
 -> SWT Controls”.
 This will display “SWT Controls” View.
 6.From SWT Controls View, select “Label” tab.
-7.In the “Styles” group, make sure SWT.SEPARATOR, SWT.VERTICAL and SWT.SHADOW_IN options are checked and the rest are unchecked.
-8.In the “Other” group, make sure both “Enabled” and “Visible” options are checked.
-9.In the “Size” group, make sure “100 X 100” is selected.
-10.From the “Styles” group, select SWT.SHADOW_NONE option.
-This will uncheck the SWT.SHADOW_IN option.
-Expected Behavior: The appearance of the Labels should change Actual Behavior: The appearance of the Labels remains unchanged Important: When I ran th
-e same tests on Eclipse 2.1.2, the outcome was the same as it was on Eclipse 3.0M7.
+7.In the “Styles” group, make sure SWT.SEPARATOR, SWT.VERTICAL and SWT.SHADOW_IN opti

@@ -8,7 +8,4 @@ The particular use case that I have is developing applications for the Hiptop pl
 The Hiptop folks have defined a file of type .rsrc (resource), which is a fairly simple text file.
 I would like the ability to launch the Danger Resource Compiler external tool that I have defined whenever I save the file in the default text editor.
 Currently I must do it manually, which is a little clunky and error-prone.
-I could (and perhaps I will) make a plugin that is specifically meant to edit that type of file, but in the meantime, it would be nice to have the afo
-rementioned tool-launching ability.
-It may be that this functionality already exists somewhere; but I cannot find it if it does.
-:)
+I could (and perhaps I will) make a plugin that is specifically meant to edit that type of file, but in the 

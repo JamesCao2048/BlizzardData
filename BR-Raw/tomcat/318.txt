@@ -11,17 +11,4 @@ BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CA Command-line argume
 when invoking code from plug-in: "org.eclipse.core.runtime".
 !STACK 0 java.lang.IllegalArgumentException: Group not found: group.editor at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionMana
 ger.java:113) at org.eclipse.jface.action.ContributionManager.prependToGroup(ContributionManager.java:337) at org.eclipse.ui.internal.EditorActionBars
-.getToolBarManager(EditorActionBars.java:254) at org.eclipse.ui.part.EditorActionBarContributor.init(EditorActionBarContributor.java:154) at org.eclip
-se.ui.part.EditorActionBarContributor.init(EditorActionBarContributor.java:133) at org.eclipse.ui.internal.EditorManager.createEditorActionBars(Editor
-Manager.java:228) at org.eclipse.ui.internal.EditorManager.createSite(EditorManager.java:579) at org.eclipse.ui.internal.EditorManager.openInternalEdi
-tor(EditorManager.java:633) at org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor(EditorManager.java:438) at org.eclipse.ui.internal.Edito
-rManager.openEditor(EditorManager.java:426) at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2118) at org.eclipse.ui.interna
-l.WorkbenchPage.access$6(WorkbenchPage.java:2061) at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2048) at org.eclipse.swt.custom.Bu
-syIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2043) at org.eclipse.ui.ide.IDE.op
-enEditor(IDE.java:265) at org.eclipse.ui.actions.OpenFileAction.openFile(OpenFileAction.java:96) at org.eclipse.ui.actions.OpenSystemEditorAction.run(
-OpenSystemEditorAction.java:94) at org.eclipse.ui.views.navigator.OpenActionGroup.runDefaultAction(OpenActionGroup.java:111) at org.eclipse.ui.views.n
-avigator.MainActionGroup.runDefaultAction(MainActionGroup.java:300) at org.eclipse.ui.views.navigator.ResourceNavigator.handleOpen(ResourceNavigator.j
-ava:624) at org.eclipse.ui.views.navigator.ResourceNavigator$6.open(ResourceNavigator.java:388) at org.eclipse.jface.viewers.StructuredViewer$2.run(St
-ructuredViewer.java:406) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:819) at org.eclipse.core.runtime.Platform.run
-(Platform.java:493) at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:404) at org.eclipse.jface.viewers.StructuredViewer.ha
-ndleOpen(StructuredViewer.java:614) at org.eclipse.jface.viewers.St
+.getToolBarManager(EditorActio

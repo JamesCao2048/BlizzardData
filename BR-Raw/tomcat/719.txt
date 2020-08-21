@@ -6,8 +6,4 @@ edTypeMunger.matches (ResolvedTypeMunger.java:53) at org.aspectj.weaver.Concrete
 ternal.compiler.lookup.AjLookupEnvironment.weaveInterTypeDec larations(AjLookupEnvironment.java:291) at org.aspectj.ajdt.internal.compiler.lookup.AjLo
 okupEnvironment.weaveInterTypeDec larations(AjLookupEnvironment.java:236) at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.doPendingWe
 aves (AjLookupEnvironment.java:137) at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindi ngs(AjLookupEnvironment.java:10
-6) at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile (Compiler.java:310) at org.eclipse.jdt.internal.compiler.Compiler.compile (Compiler.ja
-va:324) at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation (AjBuildManager.java:373) at org.aspectj.ajdt.internal.core.builde
-r.AjBuildManager.doBuild (AjBuildManager.java:138) at org.aspectj.ajdt.internal.core.builder.AjBuildManager.incrementalBuild (AjBuildManager.java:77) 
-at org.aspectj.ajde.internal.CompilerAdapter.compile (CompilerAdapter.java:103) at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run (A
-spectJBuildManager.java:165) TestNamingException.java LinuxWorldAfter/test/src/org/sample/banking/model
+6) at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile (Compiler.java:310) at org.eclipse.jdt.internal.compiler.Compiler

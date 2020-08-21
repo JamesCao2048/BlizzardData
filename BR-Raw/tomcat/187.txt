@@ -6,7 +6,4 @@ A lot of our code contains comments like the following: /** * @ejb:bean * name="
 ="Bean" * acknowledge-mode="Auto-acknowledge" * destination-type="javax.jms.Queue" * subscription-durability="Durable" * * @weblogic:message-driven * 
 connection-factory-jndi-name="notification2/JMSConnectionFactory" * destination-jndi-name="notification2/WorkerQueue" */ With comment formating enable
 d Eclipse turns this into the following format which is much harder to read: /** * @ejb:bean name="WorkerMDB" description="Notification worker bean" *
- transaction-type="Bean" acknowledge-mode="Auto-acknowledge" * destination-type="javax.jms.Queue" subscription-durability="Durable" * * @weblogic:mess
-age-driven * connection-factory-jndi-name="notification2/JMSConnectionFactory" * destination-jndi-name="notification2/WorkerQueue" */ I've tried creat
-ing a customized code formating profile but could find a combination of settings that would suite my needs.
-Would it be possible to add another setting to not touch Javadoc tags at all?
+ transaction-type="Bean" acknowledge-mode="Auto-acknowledge" * destination-type=

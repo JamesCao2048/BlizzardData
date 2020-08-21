@@ -12,24 +12,4 @@ However, maybe this is still relevant.
  at org.eclipse.core.internal.jobs.LockManager.addLockThread (LockManager.java:108) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.
 java:229) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) Doing a full stack dump indicates that not much is going on.
 This doesn't look like a deadlook, just that all the other jobs are waiting on the worker pool lock which never got released.
-Full thread dump Java HotSpot(TM) Client VM (1.4.2_01-b06 mixed mode): "Worker-161" prio=5 tid=0x22450d00 nid=0x828 in Object.wait() [320ff000..320ffd
-94] at java.lang.Object.wait(Native Method) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:185) 
-- locked 
-<0x10fa3f00> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.java:211) at org.eclipse.
-core.internal.jobs.Worker.run(Worker.java:55) "Worker-156" prio=5 tid=0x222ac880 nid=0x748 in Object.wait() [300ef000..300efd94] at java.lang.Object.w
-ait(Native Method) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:185) 
-- locked 
-<0x10fa3f00> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.java:211) at org.eclipse.
-core.internal.jobs.Worker.run(Worker.java:55) "Worker-154" prio=5 tid=0x22919008 nid=0x83c waiting on condition [2fe6f000..2fe6fd94] at java.lang.Thre
-ad.sleep(Native Method) at org.eclipse.ui.internal.progress.AnimationManager.animateLoop (AnimationManager.java:318) at org.eclipse.ui.internal.progre
-ss.AnimationManager$3.run (AnimationManager.java:467) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62) "ServerConnection" prio=7 tid=0x226
-f4300 nid=0x794 runnable [2ba8f000..2ba8fd94] at java.net.PlainSocketImpl.socketAccept(Native Method) at java.net.PlainSocketImpl.accept(PlainSocketIm
-pl.java:353) 
-- locked 
-<0x14fd69e0> (a java.net.PlainSocketImpl) at java.net.ServerSocket.implAccept(ServerSocket.java:448) at java.net.ServerSocket.accept(ServerSocket.java
-:419) at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$ServerConnection.run (RemoteTestRunnerClient.java:102) "ServerConnection" prio=7 tid
-=0x223f2948 nid=0x754 runnable [27a2f000..27a2fd94] at java.net.PlainSocketImpl.socketAccept(Native Method) at java.net.PlainSocketImpl.accept(PlainSo
-cketImpl.java:353) 
-- locked 
-<0x148a2320> (a java.net.PlainSocketImpl) at java.net.ServerSocket.implAccept(ServerSocket.java:448) at java.net.ServerSocket.accept(ServerSocket.java
-:419) at org.ecli
+Full thread dump Java HotSpot(TM) Client VM (1.4.2_01-b06 mixed mode): "Worker-161" prio=5 tid=0x22450d00 nid=0x

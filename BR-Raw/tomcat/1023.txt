@@ -8,21 +8,4 @@ Currently a BundleEvent is generated for each and every individual change to a b
 This is fine if you only ever have a few bundles.
 Eclipse products can have 1000s of plugins/bundles so you can imagine the flurry of events when installing a new function set (for example).
 Further, to maintain the extension registry structure (an Eclipse thing) we catch these BundleEvents, update the extensions registry and broadcast mor
-e events to registry listeners.
-These bundles in turn do potentially costly (high overhead) updates to their internal sturctures (e.g., in the UI they create and destroy views, menu 
-entries, ...).
-When a whole product is (un)installed some 500 bundles may be at play.
-Having the UI update its internal structures 500 times would be slow and cause visible flicker etc.
-Instead, we are hoping for a commit() like action at the framework level that will commit a number of changes to the bundle structure.
-In turn, the framework would generate one composite BundleEvent (or some such).
-In the current prototype there are two different though similar approaches described, the PlatformAdmin service and the Resolver service.
-Both allow for the formation of alternative states of the runtime (i.e., set of installed bundles, resolution state, ...) and the committing of an alt
-ernative state to become the current/real state.
-The main differences revolve around API style and the number of possible alternative states.
-The PlatformAdmin service allows for one "future" state while the Resolver services allows for any number of alternatives (some of which may never be 
-committed).
-Under the covers there is some amount of packageadmin-like work to be done on commit.
-It is unclear if commit() should be eager or lazy in terms of resolution.
-[personal opinion: the Resolver (and perhaps PlatformAdmin) allow for detailed setup/investigation of an alternative state before committing.
-As such, there does not appear to be any value in delaying the re-resolution past the commit point].
-Note: the Resolver is a very preliminary specification of the idea and there is no implementation.
+e events to re

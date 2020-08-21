@@ -8,7 +8,4 @@ menus.
 When the active editor is the one embedding the OLE doc, the document specific menus should be shown.
 Additional Information : /** * @see org.eclipse.ui.IWorkbenchPart#createPartControl(Composite) */ public void createPartControl(Composite parent) { Gr
 idLayout layout = new GridLayout(); layout.numColumns = 1; layout.marginHeight = 0; layout.marginWidth = 0; layout.verticalSpacing = 0; parent.setLayo
-ut(layout); OleFrame oleContainer = new OleFrame(parent, SWT.NONE); GridData frameGridData = new GridData(GridData.FILL_BOTH); frameGridData.horizonta
-lAlignment = GridData.FILL; frameGridData.verticalAlignment = GridData.FILL; oleContainer.setLayoutData(frameGridData); oleContainer.setSize(500, 500)
-; OleClientSite excelSite = new OleClientSite(oleContainer, SWT.BORDER, outputFile); excelSite.doVerb(OLE.OLEIVERB_PRIMARY); parent.setSize(parent.get
-Size()); }
+ut(layout); OleFrame oleContainer = ne

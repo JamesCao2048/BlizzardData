@@ -5,10 +5,4 @@ ce.text.source.AnnotationPainter.catchupWithModel (AnnotationPainter.java:283) a
 tationPainter.java:531) at org.eclipse.jface.text.source.AnnotationPainter.access$1 (AnnotationPainter.java:528) at org.eclipse.jface.text.source.Anno
 tationPainter$1.run (AnnotationPainter.java:597) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchron
 izer.runAsyncMessages (Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:1822) at org.eclipse.swt.widgets.Displa
-y.readAndDispatch(Display.java:1628) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1518) at org.eclipse.ui.internal.Workbench.runUI
-(Workbench.java:1494) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench (Workbench.java:258) at org.eclipse.ui.PlatformUI.createAndRunWorkben
-ch(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run (IDEApplication.java:47) at org.eclipse.core.internal.runtime.PlatformActiva
-tor$1.run (PlatformActivator.java:226) at org.eclipse.core.runtime.adaptor.EclipseStarter.run (EclipseStarter.java:85) at sun.reflect.NativeMethodAcce
-ssorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAcces
-sorImpl.invoke (DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(M
-ain.java:279) at org.eclipse.core.launcher.Main.run(Main.java:742) at org.eclipse.core.launcher.Main.main(Main.java:581)
+y.readAndDispatch(Display.java:1628) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1518) at org.eclipse.ui.internal.Workbench.ru

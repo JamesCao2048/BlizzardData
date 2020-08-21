@@ -8,5 +8,4 @@ L fragment: (with 5 any elements)
 espace="##other" processContents="skip" />" [1]= "<any1 abc="def" />" [2]= "<any2>This is an any element</any2>" [3]= "<GetLastTrade><symbol>DEF</symb
 ol></GetLastTrade>" [4]= "<any3><xyz> a="b c" 
 </xyz></any3>" =====> [5]= "" [6]= null [7]= null [8]= null [9]= null dataClass= Class (java.lang.String) (id=31) featureID= 11 modCount= 6 owner= Com
-monBaseEventImpl (id=61) =====> size= 6 Note: a new any element is created if the new lines and spaces appear in any place, before the any tags, after
- or even between them.
+monBaseEventImpl (id=61) =====> size= 6 Note: a new any element is created if the new lines and spaces appear in any place, before the an

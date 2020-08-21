@@ -5,18 +5,4 @@ earchLabelProvider.java:56) at org.eclipse.search.internal.ui.SearchResultLabelP
 e.viewers.TableViewer.doUpdateItem(TableViewer.java:201) at org.eclipse.search.internal.ui.SearchResultViewer.doUpdateItem(SearchResultViewer.java:197
 ) at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:119) at org.eclipse.core.internal.runtime.InternalPla
 tform.run(InternalPlatform.java:1034) at org.eclipse.core.runtime.Platform.run(Platform.java:432) at org.eclipse.jface.viewers.StructuredViewer.update
-Item(StructuredViewer.java:1263) at org.eclipse.jface.viewers.TableViewer.add(TableViewer.java:115) at org.eclipse.jface.viewers.TableViewer.add(Table
-Viewer.java:133) at org.eclipse.jface.viewers.TableViewer.insert(TableViewer.java:420) at org.eclipse.search.internal.ui.SearchResultViewer.handleAddM
-atch(SearchResultViewer.java:616) at org.eclipse.search.internal.ui.SearchManager.handleAddMatch(SearchManager.java:408) at org.eclipse.search.interna
-l.ui.SearchManager.handleSearchMarkerChanged(SearchManager.java:384) at org.eclipse.search.internal.ui.SearchManager.handleSearchMarkersChanged(Search
-Manager.java:373) at org.eclipse.search.internal.ui.SearchManager.access$2(SearchManager.java:356) at org.eclipse.search.internal.ui.SearchManager$7.r
-un(SearchManager.java:499) at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:101) at org.eclipse.ui.internal.UISynchronizer$
-1.run(UISynchronizer.java:33) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessag
-es(Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2150) at org.eclipse.swt.widgets.Display.readAndDispatch(Di
-splay.java:1867) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:136) at org.eclipse.jface.operation.ModalConte
-xt.run(ModalContext.java:261) at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.run(ExtendedDialogWindow.java:183) at org.eclipse.jdt.intern
-al.ui.search.JavaSearchPage.performAction(JavaSearchPage.java:199) at org.eclipse.search.internal.ui.SearchDialog.performAction(SearchDialog.java:351)
- at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.buttonPressed(ExtendedDialogWindow.java:140) at org.eclipse.jface.dialogs.Dialog$1.widget
-Selected(Dialog.java:423) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(
-EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:217
-3) at org.eclipse
+Item(StructuredViewer.java:1263) at org.eclipse.jface.viewers.TableViewer.add(TableViewer.java:115) at org.eclipse.jface.viewers.Ta

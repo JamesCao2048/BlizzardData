@@ -6,7 +6,4 @@ rkspace.keyring.
 e.createNewFile(File.java:827) at org.eclipse.core.internal.runtime.AuthorizationDatabase.save (AuthorizationDatabase.java:297) at org.eclipse.core.in
 ternal.runtime.DataArea.flushAuthorizationInfo (DataArea.java:205) at org.eclipse.core.internal.runtime.InternalPlatform.flushAuthorizationInfo (Inter
 nalPlatform.java:1128) at org.eclipse.core.runtime.Platform.flushAuthorizationInfo (Platform.java:283) at org.eclipse.team.internal.ccvs.core.connecti
-on.CVSRepositoryLocation.flushCache (CVSRepositoryLocation.java:150) at org.eclipse.team.internal.ccvs.core.connection.CVSRepositoryLocation.dispose (
-CVSRepositoryLocation.java:142) at org.eclipse.team.internal.ccvs.core.util.KnownRepositories.disposeRepository (KnownRepositories.java:182) at org.ec
-lipse.team.internal.ccvs.core.CVSProviderPlugin.disposeRepository (CVSProviderPlugin.java:527) at org.eclipse.team.internal.ccvs.ui.repo.RemoveRootAct
-ion$2.run (RemoveRootAction.java:123) at org.eclipse.jface.operation.ModalContext$ModalContextThread.run (ModalContext.java:101)
+on.CVSRepositoryLocation.flushCache (CVSRepositoryLocation.java:150) at org.e

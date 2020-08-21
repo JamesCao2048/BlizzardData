@@ -6,6 +6,4 @@ eption.<init>(NullPointerException.java:63) at org.eclipse.debug.internal.ui.con
  at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:858) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatf
 orm.java) at org.eclipse.core.runtime.Platform.run(Platform.java) at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:890) a
 t org.eclipse.debug.core.DebugPlugin.fireDebugEventSet(DebugPlugin.java:306) at org.eclipse.debug.internal.core.RuntimeProcess.fireEvent(RuntimeProces
-s.java:238) at org.eclipse.debug.internal.core.RuntimeProcess.fireTerminateEvent(RuntimeProcess.java:246) at org.eclipse.debug.internal.core.RuntimePr
-ocess.terminated(RuntimeProcess.java:215) at org.eclipse.debug.internal.core.ProcessMonitorJob.run(ProcessMonitorJob.java) at org.eclipse.core.interna
-l.jobs.Worker.run(Worker.java:58) Unfortunately I don't have any steps to reproduce.
+s.java:238) at org.eclipse.debug.internal.core.RuntimeProcess.fireTerminat

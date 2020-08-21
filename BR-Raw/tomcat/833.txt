@@ -6,17 +6,4 @@ llPointerException.<init>(NullPointerException.java:60) at org.eclipse.team.inte
 tProvider.java:181) at org.eclipse.team.internal.ui.synchronize.views.SyncSetTreeContentProvider.getChildren(SyncSetTreeContentProvider.java:41) at or
 g.eclipse.team.internal.ui.synchronize.views.CompressedFolderContentProvider.getChildren(CompressedFolderContentProvider.java:106) at org.eclipse.team
 .internal.ui.synchronize.views.SyncSetTreeContentProvider.getElements(SyncSetTreeContentProvider.java:30) at org.eclipse.team.internal.ccvs.ui.subscri
-ber.CVSSynchronizeViewPage.syncSetChanged(CVSSynchronizeViewPage.java:77) at org.eclipse.team.internal.ui.synchronize.sets.SyncSet$1.run(SyncSet.java:
-83) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1127) at org.eclipse.core.runtime.Platform.run(Platform.java:464) 
-at org.eclipse.team.internal.ui.synchronize.sets.SyncSet.fireChanges(SyncSet.java:78) at org.eclipse.team.internal.ui.synchronize.sets.SyncSet.endInpu
-t(SyncSet.java:324) at org.eclipse.team.internal.ui.synchronize.sets.SyncSetInputFromSyncSet.syncSetChanged(SyncSetInputFromSyncSet.java:66) at org.ec
-lipse.team.internal.ui.synchronize.sets.SyncSet$1.run(SyncSet.java:83) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java
-:1127) at org.eclipse.core.runtime.Platform.run(Platform.java:464) at org.eclipse.team.internal.ui.synchronize.sets.SyncSet.fireChanges(SyncSet.java:7
-8) at org.eclipse.team.internal.ui.synchronize.sets.SyncSet.endInput(SyncSet.java:324) at org.eclipse.team.internal.ui.synchronize.sets.SyncSetInputFr
-omSyncSet.syncSetChanged(SyncSetInputFromSyncSet.java:66) at org.eclipse.team.internal.ui.synchronize.sets.SyncSet$1.run(SyncSet.java:83) at org.eclip
-se.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1127) at org.eclipse.core.runtime.Platform.run(Platform.java:464) at org.eclipse.t
-eam.internal.ui.synchronize.sets.SyncSet.fireChanges(SyncSet.java:78) at org.eclipse.team.internal.ui.synchronize.sets.SyncSet.endInput(SyncSet.java:3
-24) at org.eclipse.team.internal.ui.synchronize.sets.SubscriberEventHandler.dispatchEvents(SubscriberEventHandler.java:237) at org.eclipse.team.intern
-al.ui.synchronize.sets.SubscriberEventHandler.dispatchEvents(SubscriberEventHandler.java:304) at org.eclipse.team.core.subscribers.BackgroundEventHand
-ler.processEvents(BackgroundEventHandler.java:253) at org.eclipse.team.core.subscribers.BackgroundEventHandler$1.run(BackgroundEventHandler.java:122) 
-at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
+ber.CVSSynchronizeViewPage.syncSetChanged(CVSSynchronizeViewPa

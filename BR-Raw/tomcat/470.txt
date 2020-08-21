@@ -6,5 +6,4 @@ I'm sure you can come up with a better way of getting us to report bugs without 
 on.popValue (Instruction.java:115) at org.eclipse.jdt.internal.debug.eval.ast.instructions.PushFieldVariable.execute (PushFieldVariable.java:49) at or
 g.eclipse.jdt.internal.debug.eval.ast.engine.Interpreter.execute (Interpreter.java:50) at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluation
 Engine$1 $EvaluationRunnable.run(ASTEvaluationEngine.java:303) at org.eclipse.jdt.internal.debug.core.model.JDIThread.runEvaluation (JDIThread.java:65
-1) at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine$EvalRunnable .run(ASTEvaluationEngine.java:340) at org.eclipse.jdt.internal.d
-ebug.core.model.JDIThread$ThreadJob.run (JDIThread.java:2497) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
+1) at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine$EvalRunnable .run(ASTEvaluationEngine.java:340) at org.eclipse.jdt.interna

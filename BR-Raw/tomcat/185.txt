@@ -7,17 +7,4 @@ g.eclipse.search2.internal.ui.text.AnnotationManager.removeAnnotati ons(Annotati
 Manager.partActivated ( AnnotationManager.java:112) at org.eclipse.search2.internal.ui.text.AnnotationManager.setWindow (Anno tationManager.java:152) 
 at org.eclipse.search2.internal.ui.text.AnnotationManager.switchedTo (Ann otationManager.java:72) at org.eclipse.search2.internal.ui.text.AnnotationMa
 nager$1.windowActiva ted(AnnotationManager.java:48) at org.eclipse.ui.internal.Workbench$6.run(Workbench.java:373) at org.eclipse.core.internal.runtim
-e.InternalPlatform.run (InternalPlatfo rm.java:646) at org.eclipse.core.runtime.Platform.run(Platform.java:497) at org.eclipse.ui.internal.Workbench.f
-ireWindowActivated (Workbench.java: 371) at org.eclipse.ui.internal.WorkbenchWindow$9.shellActivated (WorkbenchWin dow.java:1790) at org.eclipse.swt.w
-idgets.TypedListener.handleEvent (TypedListener.java: 163) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widg
-ets.Widget.sendEvent(Widget.java:833) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.
-java:838) at org.eclipse.swt.widgets.Decorations.WM_ACTIVATE (Decorations.java:1463 ) at org.eclipse.swt.widgets.Shell.WM_ACTIVATE(Shell.java:1310) at
- org.eclipse.swt.widgets.Control.windowProc(Control.java:2943) at org.eclipse.swt.widgets.Decorations.windowProc (Decorations.java:1439) at org.eclips
-e.swt.widgets.Display.windowProc(Display.java:2902) at org.eclipse.swt.internal.win32.OS.SetFocus(Native Method) at org.eclipse.swt.widgets.Control.fo
-rceFocus(Control.java:601) at org.eclipse.swt.widgets.Control.setSavedFocus(Control.java:2256) at org.eclipse.swt.widgets.Decorations.restoreFocus (De
-corations.java:728 ) at org.eclipse.swt.widgets.Decorations.WM_ACTIVATE (Decorations.java:1467 ) at org.eclipse.swt.widgets.Shell.WM_ACTIVATE(Shell.ja
-va:1310) at org.eclipse.swt.widgets.Control.windowProc(Control.java:2943) at org.eclipse.swt.widgets.Decorations.windowProc (Decorations.java:1439) at
- org.eclipse.swt.widgets.Display.windowProc(Display.java:2902) at org.eclipse.swt.internal.win32.OS.SetFocus(Native Method) at org.eclipse.swt.widgets
-.Control.forceFocus(Control.java:601) at org.eclipse.swt.widgets.Control.setSavedFocus(Control.java:2256) at org.eclipse.swt.widgets.Decorations.resto
-reFocus (Decorations.java:728 ) at org.eclipse.swt.widgets.Decorations.WM_ACTIVATE (Decorations.java:1467 ) at org.eclipse.swt.widgets.Shell.WM_ACTIVA
-TE(Shell.java:1310) at org.eclipse.swt.wi
+e.In

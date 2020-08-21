@@ -8,10 +8,4 @@ e.core 4 4 Jan 27, 2004 16:36:51.318 !MESSAGE Exception caught while creating pl
 p.get(Unknown Source) at org.eclipse.pde.internal.core.TargetPlatform.getLocation(TargetPlatform.
 java:232) at org.eclipse.pde.internal.core.TargetPlatform.
 createConfigIniFile(TargetPlatform.java:206) at org.eclipse.pde.internal.core.TargetPlatform.
-createPlatformConfigurationArea(TargetPlatform.java:171) at org.eclipse.pde.internal.ui.launcher.JUnitLaunchConfiguration.
-computeProgramArguments(JUnitLaunchConfiguration.java:179) at org.eclipse.pde.internal.ui.launcher.JUnitLaunchConfiguration.
-createVMRunner(JUnitLaunchConfiguration.java:105) at org.eclipse.pde.internal.ui.launcher.JUnitLaunchConfiguration.
-launch(JUnitLaunchConfiguration.java:63) at org.eclipse.debug.internal.core.LaunchConfiguration.
-launch(LaunchConfiguration.java:156) at org.eclipse.debug.internal.ui.DebugUIPlugin.
-buildAndLaunch(DebugUIPlugin.java:774) at org.eclipse.debug.ui.DebugUITools.buildAndLaunch(DebugUITools.java:625) at org.eclipse.debug.ui.DebugUITools
-$3.run(DebugUITools.java:581) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
+createPlatformConfigurationArea(TargetPlatform.java:171) at org.eclipse.pde

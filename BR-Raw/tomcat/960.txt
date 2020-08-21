@@ -6,17 +6,4 @@ pe.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTy
 mpiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compil
 ed Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.C
 lassScope.findSupertype (ClassScope.java:789) at org.eclipse.jdt.internal.compiler.lookup.ClassScope.connectSuperInterfaces (ClassScope.java:627) at o
-rg.eclipse.jdt.internal.compiler.lookup.ClassScope.connectTypeHierarchy (ClassScope.java:676) at org.eclipse.jdt.internal.compiler.lookup.CompilationU
-nitScope.connectTypeHierar chy(CompilationUnitScope.java:252) at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.completeTypeBindings (Look
-upEnvironment.java:221) at org.eclipse.jdt.internal.codeassist.impl.Engine.accept(Engine.java:77) at org.eclipse.jdt.internal.compiler.lookup.LookupEn
-vironment.askForType (LookupEnvironment.java:106) at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.getTypeOrPackage (PackageBinding.java:173
-) at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.findOnDemandImpor t(CompilationUnitScope.java:363) at org.eclipse.jdt.internal.comp
-iler.lookup.CompilationUnitScope.findSingleTypeImp ort(CompilationUnitScope.java:422) at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope
-.faultInImports (CompilationUnitScope.java:307) at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.faultInTypes (CompilationUnitScope.ja
-va:349) at org.eclipse.jdt.internal.codeassist.CompletionEngine.complete (CompletionEngine.java:929) at org.eclipse.jdt.internal.core.Openable.codeCom
-plete(Openable.java:125) at org.eclipse.jdt.internal.core.CompilationUnit.codeComplete (CompilationUnit.java:94) at org.eclipse.jdt.internal.ui.text.j
-ava.JavaCompletionProcessor.internalComputeCo mpletionProposals(JavaCompletionProcessor.java:341) at org.eclipse.jdt.internal.ui.text.java.JavaComplet
-ionProcessor.computeCompletion Proposals(JavaCompletionProcessor.java:315) at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionP
-roposal s(ContentAssistant.java:1291) at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals (CompletionProposalPopup.java:1
-99) at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$7 (CompletionProposalPopup.java:198) at org.eclipse.jface.text.contentassis
-t.CompletionProposalPopup$3.run (CompletionProposalPopup.java:161) at org.ecl
+rg.eclipse.jdt.internal.compiler.lookup.

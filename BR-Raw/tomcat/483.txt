@@ -8,17 +8,4 @@ at org.eclipse.core.internal.resources.Marker.checkInfo(Marker.java:53) at org.e
 eclipse.core.internal.resources.Marker.isSubtypeOf (Marker.java:194) at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.hasCorrect
 i ons(JavaCorrectionProcessor.java:107) at org.eclipse.jdt.internal.ui.javaeditor.JavaMarkerAnnotation.mustShowQuickFixIco n(JavaMarkerAnnotation.java
 :132) at org.eclipse.jdt.internal.ui.javaeditor.JavaMarkerAnnotation.getImage (JavaMarkerAnnotation.java:232) at org.eclipse.ui.texteditor.MarkerAnnot
-ation.paint (MarkerAnnotation.java:196) at org.eclipse.jface.text.source.AnnotationRulerColumn.doPaint (AnnotationRulerColumn.java:350) at org.eclipse
-.jface.text.source.AnnotationRulerColumn.doubleBufferPaint (AnnotationRulerColumn.java:241) at org.eclipse.jface.text.source.AnnotationRulerColumn.acc
-ess$3 (AnnotationRulerColumn.java:216) at org.eclipse.jface.text.source.AnnotationRulerColumn$1.paintControl (AnnotationRulerColumn.java:155) at org.e
-clipse.swt.widgets.TypedListener.handleEvent (TypedListener.java:80) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77) at org.eclips
-e.swt.widgets.Widget.sendEvent(Widget.java:836) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:861) at org.eclipse.swt.widgets.Widget.sendEve
-nt(Widget.java:845) at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:726) at org.eclipse.swt.widgets.Control.windowProc(Control.java:2804)
- at org.eclipse.swt.widgets.Display.windowProc(Display.java:2198) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method) at org.eclipse.
-swt.internal.win32.OS.DispatchMessage(OS.java:1292) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1408) at org.eclipse.jface.operati
-on.ModalContext$ModalContextThread.block (ModalContext.java:130) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:255) at org.eclipse
-.jface.dialogs.ProgressMonitorDialog.run (ProgressMonitorDialog.java:351) at org.eclipse.jdt.ui.actions.FindAction.run(FindAction.java:289) at org.ecl
-ipse.jdt.ui.actions.FindReferencesAction.run (FindReferencesAction.java:79) at org.eclipse.jdt.ui.actions.WorkingSetFindAction.run (WorkingSetFindActi
-on.java:66) at org.eclipse.jdt.ui.actions.FindAction.run(FindAction.java:239) at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun (Selec
-tionDispatchAction.java:193) at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run (SelectionDispatchAction.java:169) at org.eclipse.jface.action.
-Action.runWithEvent(Action.java:804) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (A
+ation.paint (MarkerAnnotation.java:196) at org.eclipse.jface.text.source.An

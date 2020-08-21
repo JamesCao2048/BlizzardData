@@ -6,17 +6,4 @@ der wasn't !ENTRY org.eclipse.ui.workbench.texteditor 4 0 oct 30, 2003 12:11:10.
 tionUnitDocumentProvider2.java:774) at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect (TextFileDocumentProvider.java:332) at org.eclipse
 .ui.texteditor.AbstractTextEditor.doSetInput (AbstractTextEditor.java:2500) at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput (StatusTextEditor
 .java:162) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput (JavaEditor.java:2099) at org.eclipse.jdt.internal.ui.javaeditor.Compilatio
-nUnitEditor.doSetInput (CompilationUnitEditor.java:1003) at org.eclipse.ui.texteditor.AbstractTextEditor$14.run (AbstractTextEditor.java:1983) at org.
-eclipse.jface.operation.ModalContext.runInCurrentThread (ModalContext.java:302) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252)
- at org.eclipse.jface.window.ApplicationWindow$1.run (ApplicationWindow.java:444) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java
-:84) at org.eclipse.jface.window.ApplicationWindow.run (ApplicationWindow.java:441) at org.eclipse.ui.internal.WorkbenchWindow.run (WorkbenchWindow.ja
-va:1603) at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit (AbstractTextEditor.java:1998) at org.eclipse.ui.texteditor.AbstractTextEditor.i
-nit (AbstractTextEditor.java:2016) at org.eclipse.ui.internal.EditorManager.createSite (EditorManager.java:604) at org.eclipse.ui.internal.EditorManag
-er.openInternalEditor (EditorManager.java:666) at org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor (EditorManager.java:459) at org.eclip
-se.ui.internal.EditorManager.openEditorFromInput (EditorManager.java:333) at org.eclipse.ui.internal.EditorManager.openEditor (EditorManager.java:424)
- at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor (WorkbenchPage.java:2081) at org.eclipse.ui.internal.WorkbenchPage.access$6 (WorkbenchPage.ja
-va:2029) at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2016) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:
-84) at org.eclipse.ui.internal.WorkbenchPage.openEditor (WorkbenchPage.java:2011) at org.eclipse.ui.internal.WorkbenchPage.openEditor (WorkbenchPage.j
-ava:1896) at org.eclipse.jdt.internal.ui.wizards.NewElementWizard$1.run (NewElementWizard.java:61) at org.eclipse.swt.widgets.RunnableLock.run(Runnabl
-eLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages (Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Di
-splay.java:2150) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1
+nUnitEditor.doSetInput (CompilationUnitEditor

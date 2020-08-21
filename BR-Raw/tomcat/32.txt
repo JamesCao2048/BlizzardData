@@ -6,17 +6,4 @@ org.osgi.framework.BundleException: The BundleActivator is invalid at org.eclips
 startWorker(Bundl eHost.java:404) at org.eclipse.osgi.framework.internal.core.Bundle.start(Bundle.java:304 ) at org.eclipse.core.runtime.adaptor.Eclip
 seClassLoader.findLocalClass(Ec lipseClassLoader.java:89) at org.eclipse.osgi.framework.internal.core.BundleLoader.findLocalClass( BundleLoader.java:3
 15) at org.eclipse.osgi.framework.internal.core.BundleLoader.requireClass(Bu ndleLoader.java:280) at org.eclipse.osgi.framework.internal.core.BundleLo
-ader.findRequiredCla ss(BundleLoader.java:855) at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(Bundl eLoader.java:343) at org.eclip
-se.osgi.framework.adaptor.core.AbstractClassLoader.loadClass (AbstractClassLoader.java:116) at java.lang.ClassLoader.loadClass(ClassLoader.java:255) a
-t java.lang.ClassLoader.loadClassInternal(ClassLoader.java:315) at org.eclipse.team.internal.ui.synchronize.SubscriberParticipantPage.cr eateControl(S
-ubscriberParticipantPage.java:94) at org.eclipse.team.internal.ui.synchronize.SynchronizeView.doCreatePage (SynchronizeView.java:147) at org.eclipse.u
-i.part.PageBookView.createPage(PageBookView.java:306) at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:563) at org.eclipse.team.int
-ernal.ui.synchronize.SynchronizeView.display(Sync hronizeView.java:264) at org.eclipse.team.internal.ui.synchronize.SynchronizeView.updateForExi sting
-Participants(SynchronizeView.java:333) at org.eclipse.team.internal.ui.synchronize.SynchronizeView.createPartCo ntrol(SynchronizeView.java:306) at org
-.eclipse.ui.internal.PartPane$1.run(PartPane.java:94) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatfo rm.java:610) at org.ecl
-ipse.core.runtime.Platform.run(Platform.java:521) at org.eclipse.ui.internal.PartPane.createChildControl(PartPane.java:90) at org.eclipse.ui.internal.
-ViewPane.createChildControl(ViewPane.java:175 ) at org.eclipse.ui.internal.PartPane.createControl(PartPane.java:154) at org.eclipse.ui.internal.ViewPa
-ne.createControl(ViewPane.java:134) at org.eclipse.ui.internal.PartTabFolder.showPart(PartTabFolder.java:886 ) at org.eclipse.ui.internal.PartTabFolde
-r.createControl(PartTabFolder.jav a:317) at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashConta iner.java:256) at org.eclipse.ui.int
-ernal.PerspectivePresentation.activate(PerspectiveP resentation.java:148) at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:630) at o
-rg.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.ja va:2674) at org.eclipse.ui.internal.WorkbenchPage.busySetPerspective(WorkbenchPa
+ader.findRequiredCla ss(BundleLoader.java:855) at org.eclipse.osgi.framework.internal.core.BundleLoader.findClas

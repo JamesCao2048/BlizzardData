@@ -9,4 +9,4 @@ In the case of CVS, all the sync info for sibling resources is in the same file,
 When then need to tell the UI via an event that we now have decorators, and then they ask us for them.
 It would be better if we could just give the UI the decorators we know about all at once.
 Note: to be a good citizen we should be computing the decorators in a thread different than the UI context.
-The combination of #2 and #3 could result in the decorators appearing in parent child ordering, with all siblings appearing at once.
+The combination of #2 and #3 could result in the d

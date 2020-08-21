@@ -11,8 +11,4 @@ I say "appear" because my pre- osgi debugging steps are not available so I could
 First failure: check to see if the fragment is installed (not shown in current configuration details 
 - e.g., cannot see swt fragment).
 bug 46494 makes me believe that this should work.
-bug 43658 discusses how swt works, however, I see manifest files in the swt plug-in and fragment so there may be additional steps I need to do (but di
-d not see any requirement for additional steps in the porting guide).
-Please advise.
-We need to be able to do something like this (target: M6).
-Given that swt works, I hypothesize that I am either missing some required step or just pilot error.
+b

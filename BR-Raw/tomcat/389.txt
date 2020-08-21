@@ -7,17 +7,4 @@ java.lang.reflect.InvocationTargetException at org.eclipse.jface.operation.Modal
 til.ExtendedDialogWindow.run (ExtendedDialogWindow.java:180) at org.eclipse.jdt.internal.ui.refactoring.nls.search.NLSSearchPage.performAction (NLSSea
 rchPage.java:199) at org.eclipse.search.internal.ui.SearchDialog.performAction (SearchDialog.java:363) at org.eclipse.search.internal.ui.util.Extended
 DialogWindow.buttonPressed (ExtendedDialogWindow.java:147) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402) at org.eclipse.swt.wi
-dgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.
-Widget.sendEvent(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.widgets.Display.readAndDi
-spatch(Display.java:2029) at org.eclipse.jface.window.Window.runEventLoop(Window.java:647) at org.eclipse.jface.window.Window.open(Window.java:627) at
- org.eclipse.search.internal.ui.OpenSearchDialogAction.run (OpenSearchDialogAction.java:60) at org.eclipse.search.internal.ui.OpenSearchDialogAction.r
-un (OpenSearchDialogAction.java:46) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:273) at org.eclipse.ui.internal.WWinPluginA
-ction.runWithEvent (WWinPluginAction.java:207) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContributionItem.java:5
-36) at org.eclipse.jface.action.ActionContributionItem.access$2 (ActionContributionItem.java:488) at org.eclipse.jface.action.ActionContributionItem$6
-.handleEvent (ActionContributionItem.java:460) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.s
-endEvent(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.widgets.Display.readAndDispatch(D
-isplay.java:2029) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:152
-6) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:265) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:1
-39) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47) at org.eclipse.core.internal.runtime.PlatformActivator$1.run (PlatformAc
-tivator.java:257) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:104) at sun.reflect.NativeMethodAccessorImpl.invoke0(Nati
-ve Method) at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:39) a
+dgets.TypedListener.handleEvent(TypedListener.java:89) at

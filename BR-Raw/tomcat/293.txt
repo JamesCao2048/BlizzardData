@@ -6,7 +6,4 @@ region = new Composite(parent, SWT.NONE); FormLayout regionLayout = new FormLayo
 ; item.createControl(region); Control itemControl = item.getControl(); FormData itemData = new FormData(); itemData.right = new FormAttachment(100); i
 temData.top = new FormAttachment(0); itemData.width = AnimationManager.getInstance ().getPreferredWidth() + 5; itemControl.setLayoutData(itemData); vi
 ewer = new ProgressViewer(region, SWT.NONE, 1); viewer.setUseHashlookup(true); Control viewerControl = viewer.getControl(); setInfoColors(viewerContro
-l); FormData viewerData = new FormData(); viewerData.left = new FormAttachment(0); viewerData.right = new FormAttachment(itemControl, 0); viewerData.t
-op = new FormAttachment(0); Point preferredSize = viewer.getSizeHints(); viewerData.width = preferredSize.x; viewerData.height = preferredSize.y; view
-erControl.setLayoutData(viewerData); return region; I will attach a patch for the WorkbenchWindow with my changes.
-This is blocking any further work on progress.
+l); FormData viewerData = new FormData(); viewerData.left = new FormAttachment(0); viewerData.right = new FormAttachment(itemControl, 0); viewerDa

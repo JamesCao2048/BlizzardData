@@ -13,29 +13,4 @@ Thread dump: Full thread dump Java HotSpot(TM) Client VM (1.4.2_01-b06 mixed mod
 .core.internal.jobs.Worker.run(Worker.java:55) "Worker-15" prio=5 tid=0x0325f738 nid=0xf4c in Object.wait() [3bdf000..3bdfd94] at java.lang.Object.wai
 t(Native Method) 
 - waiting on 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184) 
-- locked 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.java:21 0) at org.eclipse
-.core.internal.jobs.Worker.run(Worker.java:55) "Worker-12" prio=5 tid=0x032b9e00 nid=0xc24 in Object.wait() [3acf000..3acfd94] at java.lang.Object.wai
-t(Native Method) 
-- waiting on 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184) 
-- locked 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.java:21 0) at org.eclipse
-.core.internal.jobs.Worker.run(Worker.java:55) "Java indexing" daemon prio=4 tid=0x02c97d98 nid=0xe74 in Object.wait() [3d9f000 ..3d9fd94] at java.lan
-g.Object.wait(Native Method) 
-- waiting on 
-<0x108c4ab8> (a org.eclipse.jdt.internal.core.search.indexi ng.IndexManager) at java.lang.Object.wait(Object.java:429) at org.eclipse.jdt.internal.cor
-e.search.processing.JobManager.run (JobMan ager.java:327) 
-- locked 
-<0x108c4ab8> (a org.eclipse.jdt.internal.core.search.indexing.I ndexManager) at java.lang.Thread.run(Thread.java:534) "Start Level Event Dispatcher" d
-aemon prio=5 tid=0x00a4a600 nid=0x614 in Object.
-wait() [2f2f000..2f2fd94] at java.lang.Object.wait(Native Method) 
-- waiting on 
-<0x1057aa20> (a org.eclipse.osgi.framework.eventmgr.EventTh read) at java.lang.Object.wait(Object.java:429) at org.eclipse.osgi.framework.eventmgr.Eve
-ntThread.getNextEvent (EventThr ead.java:169) 
-- locked 
-<0x1057aa20> (a org.eclipse.osgi.framework.eventmgr.EventThread ) at org.eclipse.osgi.framework.eventmgr.EventThread.run (EventThread.java: 120) "Fram
-ework Event Dispatcher" daemon prio=5 tid=0x00a3ca80 nid=0xe90 in Object.wa it() [2eef000..2eefd94] at java.lang.Object.wait(Native Method) 
-- waiting on 
-<0x10567118> (a org.eclipse.osgi.framework.eventmgr.EventTh read) at java.lang.Object.wait(Object.java:429) at org.
+<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.W

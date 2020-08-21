@@ -8,17 +8,4 @@ eadlockDetector), which is held by "Worker-5" Java stack information for the thr
 lipse.core.internal.jobs.LockManager$LockState.suspend(LockMana ger.java:32) at org.eclipse.core.internal.jobs.LockManager.addLockWaitThread(LockMana 
 ger.java:107) 
 - locked 
-<03E05D48> (a org.eclipse.core.internal.jobs.DeadlockDetector) at org.eclipse.core.internal.jobs.OrderedLock.doAcquire(OrderedLock.java :151) at org.e
-clipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:9 8) at org.eclipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:7 4) at org
-.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.j ava:109) at org.eclipse.core.internal.resources.Workspace.prepareOperation(Worksp a
-ce.java:1516) at org.eclipse.core.internal.resources.Project.open(Project.java:684) at org.eclipse.team.internal.ccvs.ui.operations.CheckoutProjectOpe
-ration .createAndOpenProject(CheckoutProjectOperation.java:94) at org.eclipse.team.internal.ccvs.ui.operations.CheckoutProjectOperation .scrubProjects
-(CheckoutProjectOperation.java:320) at org.eclipse.team.internal.ccvs.ui.operations.CheckoutProjectOperation .performCheckout(CheckoutProjectOperation
-.java:194) at org.eclipse.team.internal.ccvs.ui.operations.CheckoutProjectOperation $1.run(CheckoutProjectOperation.java:155) at org.eclipse.team.inte
-rnal.ccvs.core.resources.EclipseSynchronizer.run (EclipseSynchronizer.java:1381) at org.eclipse.team.internal.ccvs.ui.operations.CheckoutProjectOperat
-ion .checkout(CheckoutProjectOperation.java:153) at org.eclipse.team.internal.ccvs.ui.operations.CheckoutMultipleProjects Operation.checkout(CheckoutM
-ultipleProjectsOperation.java:52) at org.eclipse.team.internal.ccvs.ui.operations.CheckoutOperation.checko ut(CheckoutOperation.java:46) at org.eclips
-e.team.internal.ccvs.ui.operations.CheckoutOperation.execut e(CheckoutOperation.java:31) at org.eclipse.team.internal.ccvs.ui.operations.CVSOperation.
-run(CVSOper ation.java:128) at org.eclipse.team.internal.ccvs.ui.operations.CVSNonblockingRunnableCo ntext.run(CVSNonblockingRunnableContext.java:47) 
-at org.eclipse.team.internal.ccvs.ui.operations.CVSNonblockingRunnableCo ntext$2.runInWorkspace(CVSNonblockingRunnableContext.java:67) at org.eclipse.
-core.internal.resources.InternalWorkspaceJob.run(Internal WorkspaceJob.java:37) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62) "Wor
+<03E05D48> (a org.eclipse.core.internal.jobs.DeadlockDetector) at org.eclipse.core.internal.jobs.OrderedLock

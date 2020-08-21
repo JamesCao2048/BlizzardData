@@ -8,17 +8,4 @@
 64) at org.eclipse.jface.text.TextViewer.updateTextListeners(TextViewer.java:2146) at org.eclipse.jface.text.TextViewer.fireRedrawChanged(TextViewer.j
 ava:4055) at org.eclipse.jface.text.TextViewer.enabledRedrawing(TextViewer.java:4109) at org.eclipse.jface.text.TextViewer.setRedraw(TextViewer.java:4
 161) at org.eclipse.jface.text.DefaultUndoManager$CompoundTextCommand.undo(DefaultUndoManager.java:235) at org.eclipse.jface.text.DefaultUndoManager.i
-nternalUndo(DefaultUndoManager.java:529) at org.eclipse.jface.text.DefaultUndoManager.undo(DefaultUndoManager.java:807) at org.eclipse.jface.text.Text
-Viewer.doOperation(TextViewer.java:3198) at org.eclipse.jface.text.source.SourceViewer.doOperation(SourceViewer.java:505) at org.eclipse.jdt.internal.
-ui.preferences.EditTemplateDialog.handleVerifyKeyPressed(EditTemplateDialog.java:524) at org.eclipse.jdt.internal.ui.preferences.EditTemplateDialog.ac
-cess$1(EditTemplateDialog.java:509) at org.eclipse.jdt.internal.ui.preferences.EditTemplateDialog$5.verifyKey(EditTemplateDialog.java:477) at org.ecli
-pse.jface.text.TextViewer$VerifyKeyListenersManager.verifyKey(TextViewer.java:372) at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledText
-Listener.java:55) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:848) at 
-org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:872) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857) at org.eclipse.swt.widgets.Widg
-et.notifyListeners(Widget.java:665) at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:5201) at org.eclipse.swt.custom.StyledText$8.ha
-ndleEvent(StyledText.java:4950) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget
-.java:848) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:872) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857) at org.eclipse.sw
-t.widgets.Control.sendKeyEvent(Control.java:1637) at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1633) at org.eclipse.swt.widgets.Contro
-l.WM_CHAR(Control.java:2945) at org.eclipse.swt.widgets.Control.windowProc(Control.java:2824) at org.eclipse.swt.widgets.Display.windowProc(Display.ja
-va:2566) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method) at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1334) at or
-g.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1745) at org.eclipse.jface.window.Window.runEventLoop(Window.java:583) at
+nternalUndo(DefaultUndoManager.java:529) at org.eclipse.jface.text.DefaultUndoManager.undo(Defa

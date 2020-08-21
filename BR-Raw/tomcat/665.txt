@@ -6,17 +6,4 @@ at java.lang.Throwable.<init>(Throwable.java) at org.eclipse.core.runtime.CoreEx
 aRuntime.abort(JavaRuntime.java:1092) at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1078) at org.eclipse.jdt.launching.JavaRuntime.c
 omputeVMInstall(JavaRuntime.java:1060) at org.eclipse.jdt.internal.debug.ui.launcher.RuntimeClasspathEntryLabelProvider.getText(RuntimeClasspathEntryL
 abelProvider.java:141) at org.eclipse.jface.viewers.TableViewer.doUpdateItem(TableViewer.java:202) at org.eclipse.jface.viewers.StructuredViewer$Updat
-eItemSafeRunnable.run(StructuredViewer.java:119) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java) at org.eclipse.core.
-runtime.Platform.run(Platform.java) at org.eclipse.jface.viewers.StructuredViewer.updateItem(StructuredViewer.java:1285) at org.eclipse.jface.viewers.
-TableViewer.internalRefresh(TableViewer.java:455) at org.eclipse.jface.viewers.TableViewer.internalRefresh(TableViewer.java:432) at org.eclipse.jface.
-viewers.StructuredViewer$7.run(StructuredViewer.java:870) at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:810)
- at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:868) at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredView
-er.java:830) at org.eclipse.jface.viewers.ContentViewer.labelProviderChanged(ContentViewer.java:193) at org.eclipse.jface.viewers.ContentViewer.handle
-LabelProviderChanged(ContentViewer.java:161) at org.eclipse.jface.viewers.StructuredViewer.handleLabelProviderChanged(StructuredViewer.java:650) at or
-g.eclipse.jface.viewers.ContentViewer$1.labelProviderChanged(ContentViewer.java:74) at org.eclipse.jface.viewers.LabelProvider$1.run(LabelProvider.jav
-a:65) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java) at org.eclipse.core.runtime.Platform.run(Platform.java) at org.
-eclipse.jface.viewers.LabelProvider.fireLabelProviderChanged(LabelProvider.java:63) at org.eclipse.jdt.internal.debug.ui.launcher.RuntimeClasspathEntr
-yLabelProvider.setLaunchConfiguration(RuntimeClasspathEntryLabelProvider.java:185) at org.eclipse.jdt.internal.debug.ui.launcher.RuntimeClasspathViewe
-r.setLaunchConfiguration(RuntimeClasspathViewer.java:165) at org.eclipse.jdt.internal.debug.ui.launcher.SourceLookupBlock.initializeFrom(SourceLookupB
-lock.java:273) at org.eclipse.jdt.debug.ui.launchConfigurations.JavaSourceLookupTab.initializeFrom(JavaSourceLookupTab.java:82) at org.eclipse.debug.u
-i.AbstractLaunchConfigurationTabGroup.initializeFrom(AbstractLaunchConfigurationTabGrou
+eItemSafeRunnable.run(StructuredViewer.java:119) a

@@ -5,17 +5,4 @@ ipse.swt.widgets.Widget.error(Widget.java:377) at org.eclipse.swt.widgets.Widget
 25) at org.eclipse.ui.internal.activities.ws.WorkbenchActivitySupport$1.activityManager Changed(WorkbenchActivitySupport.java:56) at org.eclipse.ui.in
 ternal.activities.AbstractActivityManager.fireActivityManagerCh anged(AbstractActivityManager.java:46) at org.eclipse.ui.internal.activities.MutableAc
 tivityManager.setEnabledActivityIds (MutableActivityManager.java:513) at org.eclipse.ui.internal.activities.ws.WorkbenchActivitySupport.setEnabledActi
-vit yIds(WorkbenchActivitySupport.java:78) at org.eclipse.ui.internal.ide.IDEWorkbenchActivityHelper$3.resourceChanged (IDEWorkbenchActivityHelper.jav
-a:163) at org.eclipse.core.internal.events.NotificationManager$2.run (NotificationManager.java:255) at org.eclipse.core.internal.runtime.InternalPlatf
-orm.run (InternalPlatform.java:638) at org.eclipse.core.runtime.Platform.run(Platform.java:497) at org.eclipse.core.internal.events.NotificationManage
-r.notify (NotificationManager.java:248) at org.eclipse.core.internal.events.NotificationManager.broadcastChanges (NotificationManager.java:142) at org
-.eclipse.core.internal.resources.Workspace.broadcastChanges (Workspace.java:154) at org.eclipse.core.internal.resources.Workspace.endOperation (Worksp
-ace.java:856) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1576) at org.eclipse.core.internal.resources.Workspace.run(Workspace
-.java:1586) at com.ibm.wtp.common.operation.WTPOperation.run(WTPOperation.java:172) at com.ibm.wtp.j2ee.headless.tests.j2ee.operations.OperationTestCa
-se.runAndVerify (OperationTestCase.java:61) at com.ibm.wtp.j2ee.headless.tests.j2ee.operations.OperationTestCase.runAndVerify (OperationTestCase.java:
-47) at com.ibm.wtp.j2ee.headless.tests.ejb.operations.CreateEJBTest.setup11Project (CreateEJBTest.java:46) at com.ibm.wtp.j2ee.headless.tests.ejb.oper
-ations.CreateBMPBeanTest.create11EntityM odel(CreateBMPBeanTest.java:37) at com.ibm.wtp.j2ee.headless.tests.ejb.operations.CreateBMPBeanTest.testSimpl
-e11Ent ity(CreateBMPBeanTest.java:63) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke (N
-ativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method
-.invoke(Method.java:324) at junit.framework.TestCase.runTest(TestCase.java:154) at junit.framework.TestCase.runBare(TestCase.java:127) at junit.framew
-ork.TestResult$1.protect(TestResult.java:106) at junit.framework.TestResult.runProtected(TestResult.java:124) at junit.framework.Te
+vit yIds(WorkbenchActivitySupport.java:78) at org.eclipse.ui.internal.ide.IDEWorkbenchActivity

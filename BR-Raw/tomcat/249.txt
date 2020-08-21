@@ -9,12 +9,4 @@ The same editor is registered for all three files
 Imagine that you opened plugin.xml.
 Since there are source editors in MultiPageEditorPart, some have editor input for files opened by the editor itself (not by the user).
 Now imagine that while the editor is still open, you select 'build.properties' and open it as well.
-Today: a new instance of the multi-page editor is opened Desired behaviour: editor manager should detect that an instance of MultiPageEditorPart is op
-ened and that one of its nested editors has the matching input.
-The editor should simply be brought to front (ideally, a suitable page should also be shown but we can think about it later).
-The UI team has all that is needed to achieve this behaviour 
-- MultiPageEditorPart belongs to the UI team and it can do something like this: if (editorPart instanceof MultiPageEditorPart) { MultiPageEditorPart m
-ultiEditor = (MultiPageEditorPart)editorPart; for (int i=0; i<multiEditor.getEditorCount(); i++) { IEditorPart nestedEditor = multiEditor.getEditor(i)
-; if (nestedEditor!=null) { IEditorInput nestedInput=nestedEditor.getEditorInput(); // if the nested input matches the desired file to open, // just a
-ctivate the multi editor intead of creating a new instance.
-} } } I am marking this as major because it will be a serious usability issue for the incoming multi-source PDE editors.
+Today: a new instance of the multi-page editor is opened Desired behaviour: editor manager should det

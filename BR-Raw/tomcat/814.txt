@@ -9,17 +9,4 @@ All locks owned by thread Worker-7 will be suspended.
 java.lang.IllegalStateException at org.eclipse.core.internal.jobs.DeadlockDetector.reportDeadlock (DeadlockDetector.java:388) at org.eclipse.core.inte
 rnal.jobs.LockManager.addLockWaitThread (LockManager.java:100) at org.eclipse.core.internal.jobs.OrderedLock.doAcquire(OrderedLock.java:151) at org.ec
 lipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:98) at org.eclipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:74) at org.ec
-lipse.team.internal.ccvs.core.resources.EclipseSynchronizer.beginOperatio n(EclipseSynchronizer.java:539) at org.eclipse.team.internal.ccvs.core.resou
-rces.EclipseSynchronizer.getSyncBytes (EclipseSynchronizer.java:282) at org.eclipse.team.internal.ccvs.core.resources.EclipseResource.getSyncBytes (Ec
-lipseResource.java:194) at org.eclipse.team.internal.ccvs.core.resources.EclipseResource.isManaged (EclipseResource.java:153) at org.eclipse.team.inte
-rnal.ccvs.core.resources.EclipseResource.isIgnored (EclipseResource.java:107) at org.eclipse.team.internal.ccvs.core.resources.FileModificationManager
-.resourceC hanged(FileModificationManager.java:180) at org.eclipse.team.internal.ccvs.core.resources.FileModificationManager$1.visit (FileModification
-Manager.java:85) at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:71) at org.eclipse.core.internal.events.ResourceDelta.acc
-ept(ResourceDelta.java:79) at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:79) at org.eclipse.core.internal.events.Resourc
-eDelta.accept(ResourceDelta.java:79) at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:52) at org.eclipse.team.internal.ccvs
-.core.resources.FileModificationManager.resourceC hanged(FileModificationManager.java:65) at org.eclipse.core.internal.events.NotificationManager$2.ru
-n (NotificationManager.java:251) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:1127) at org.eclipse.core.runtime.Pl
-atform.run(Platform.java:464) at org.eclipse.core.internal.events.NotificationManager.notify (NotificationManager.java:244) at org.eclipse.core.intern
-al.events.NotificationManager.broadcastChanges (NotificationManager.java:138) at org.eclipse.core.internal.resources.Workspace.broadcastChanges (Works
-pace.java:146) at org.eclipse.core.internal.resources.Workspace.endOperation (Workspace.java:847) at org.eclipse.core.internal.resources.Workspace.run
-(Workspace.java:1563) at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run (NotificationManager.java:37) at org.eclipse
+lipse.team.internal.ccvs.core.resources.EclipseSynchronizer.beginOperatio n(EclipseSynchronizer.jav

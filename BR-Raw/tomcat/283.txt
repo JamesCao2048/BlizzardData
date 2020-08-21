@@ -6,21 +6,4 @@ It happens right after I select a stack frame in the Debug view (the LaunchView 
 12:58:29.418 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.runtime".
 !STACK 0 org.eclipse.swt.SWTException: Widget is disposed at org.eclipse.swt.SWT.error(SWT.java:2625) at org.eclipse.swt.SWT.error(SWT.java:2555) at o
 rg.eclipse.swt.widgets.Widget.error(Widget.java:373) at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:309) at org.eclipse.swt.widgets.ToolBar
-.getItems(ToolBar.java:244) at org.eclipse.ui.internal.FastViewBar.update(FastViewBar.java:487) at org.eclipse.ui.internal.WorkbenchWindow$3.perspecti
-veChanged(WorkbenchWindow.
-java:643) at org.eclipse.ui.internal.PerspectiveListenerListOld$2.run(PerspectiveListenerListOld.
-java:64) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:788) at org.eclipse.core.runtime.Platform.run(Platform.java:4
-97) at org.eclipse.ui.internal.PerspectiveListenerListOld.
-firePerspectiveChanged(PerspectiveListenerListOld.java:62) at org.eclipse.ui.internal.WorkbenchWindow.firePerspectiveChanged(WorkbenchWindow.
-java:738) at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2153) at org.eclipse.ui.internal.WorkbenchPage.access$6(Workbench
-Page.java:2063) at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2050) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicato
-r.java:84) at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2045) at org.eclipse.debug.internal.ui.views.launch.LaunchView$4.run
-(LaunchView.java:992) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.debug.internal.ui.views.launch.LaunchVie
-w.openEditor(LaunchView.java: 1001) at org.eclipse.debug.internal.ui.views.launch.LaunchView.openEditor(LaunchView.java: 971) at org.eclipse.debug.int
-ernal.ui.views.launch.LaunchView.
-openEditorForStackFrame(LaunchView.java:788) at org.eclipse.debug.internal.ui.views.launch.LaunchView.
-showEditorForCurrentSelection(LaunchView.java:689) at org.eclipse.debug.internal.ui.views.launch.LaunchView.selectionChanged(LaunchView.
-java:499) at org.eclipse.jface.viewers.Viewer$2.run(Viewer.java:159) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:7
-88) at org.eclipse.core.runtime.Platform.run(Platform.java:497) at org.eclipse.jface.viewers.Viewer.fireSelectionChanged(Viewer.java:157) at org.eclip
-se.jface.viewers.StructuredViewer.updateSelection(StructuredViewer.java: 1310) at org.eclipse.jface.viewers.StructuredViewer.handleSelect(StructuredVi
-ewer.java:666) at org.eclipse.jf
+.getItems(ToolBar.java:244) at org.eclipse.ui.internal.FastViewBar.update(FastViewBar.java:487) at org.eclipse.ui.internal.WorkbenchWindow$3.p

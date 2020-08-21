@@ -22,10 +22,4 @@ p://coalition/xml/schema " xmlns:cool=" http://coalition/xml/schema " xmlns:xs="
 <xs:element name="SomethingList"> 
 <xs:complexType> 
 <xs:sequence> 
-<xs:element maxOccurs="unbounded" name="Something" type="cool:SomethingT"/> 
-</xs:sequence> 
-</xs:complexType> 
-</xs:element> 
-</xs:schema> When I create an Ecore model from that schema, the names for the elements are being munged in an unpleasant fashion.
-SomethingList becomes SomethingListType, and its sub-element "Something" becomes "something".
-When I generate code from these munged names, and try to serialize the objects to XML, the resulting XML doesn't match the schema.
+<xs:element maxOccurs="unbounded" name="Something" type=

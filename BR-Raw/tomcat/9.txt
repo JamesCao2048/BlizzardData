@@ -7,21 +7,4 @@ Thread" prio=10 tid=0x009E7958 nid=0xf04 runnable preview: D:/dev/workspace/org.
 pot(TM) Client VM (1.4.1_02-b06 mixed mode): "Worker-52" prio=5 tid=0x17D47850 nid=0xbb8 in Object.wait() [1860f000..1860fd8c ] at java.lang.Object.wa
 it(Native Method) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184) 
 - locked 
-<0413D3B0> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.java:21 0) at org.eclipse.c
-ore.internal.jobs.Worker.run(Worker.java:55) "org.eclipse.jdt.debug: JDI Event Dispatcher" prio=5 tid=0x18005248 nid=0xdd8 in Object.wait() [185cf000.
-.185cfd8c] at java.lang.Object.wait(Native Method) at java.lang.Object.wait(Object.java:426) at org.eclipse.jdi.internal.connect.PacketReceiveManager.
-waitForPacketAv ailable(PacketReceiveManager.java:168) at org.eclipse.jdi.internal.connect.PacketReceiveManager.getCommand (Pack etReceiveManager.java
-:93) 
-- locked 
-<07A17AB0> (a org.eclipse.jdi.internal.connect.PacketReceiveMan ager) at org.eclipse.jdi.internal.MirrorImpl.getCommandVM (MirrorImpl.java:276) at org
-.eclipse.jdi.internal.event.EventQueueImpl.remove (EventQueueImpl.j ava:63) at org.eclipse.jdi.internal.event.EventQueueImpl.remove (EventQueueImpl.j 
-ava:48) at org.eclipse.jdt.internal.debug.core.EventDispatcher.run (EventDispatch er.java:213) at java.lang.Thread.run(Thread.java:536) "Packet Send M
-anager" prio=5 tid=0x17D1C718 nid=0xb5c in Object.wait() [1868f000 ..1868fd8c] at java.lang.Object.wait(Native Method) at java.lang.Object.wait(Object
-.java:426) at org.eclipse.jdi.internal.connect.PacketSendManager.sendAvailablePacke ts(PacketSendManager.java:94) 
-- locked 
-<07A17BF8> (a org.eclipse.jdi.internal.connect.PacketSendManage r) at org.eclipse.jdi.internal.connect.PacketSendManager.run (PacketSendMana ger.java:
-54) at java.lang.Thread.run(Thread.java:536) "Packet Receive Manager" prio=5 tid=0x17D77FA0 nid=0x2c4 runnable [1864f000..186 4fd8c] at java.net.Socke
-tInputStream.socketRead0(Native Method) at java.net.SocketInputStream.read(SocketInputStream.java:129) at java.net.SocketInputStream.read(SocketInputS
-tream.java:182) at java.io.DataInputStream.readInt(DataInputStream.java:392) at org.eclipse.jdi.internal.jdwp.JdwpPacket.read(JdwpPacket.java:124) at 
-org.eclipse.jdi.internal.connect.PacketReceiveManager.readAvailablePa cket(PacketReceiveManager.java:224) at org.eclipse.jdi.internal.connect.PacketRe
-ceiveManage
+<0413D3B0> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (Wor

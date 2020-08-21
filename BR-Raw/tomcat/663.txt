@@ -9,8 +9,4 @@ At this point I should mention that I want to indent the following line with jus
 Example: { someMethodName( arg1, arg2, arg3); // ok! } What 3.0M5 forces is: { someMethodName( arg1, arg2, arg3); // WRONG! } So to get back to prefer
 red state in 3.0M5, I have to hit backspace 4 times after hitting ENTER (as I use space-for-tab substitution).
 There is yet another related situation in which 3.0M5 "helps" to reduce my typing speed and temper.
-Suppose that I place the caret at the block indentation level (below "s" in the example), or even an the very beginning of the line following the one 
-with (.
-When I hit TAB now, and it results in a huge caret jump to the location where "arg1" begins in the flawed version.
-I thought that it may be some new crazy preference in 3.0, but I did not find any way to disable it.
-Fiddling with both "smart cursor positioning" preferences under "Java/Editor/Typing" does not help.
+Suppose that I place the caret at the block indentation l

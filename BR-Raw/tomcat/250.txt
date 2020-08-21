@@ -10,6 +10,4 @@ I'm not sure what the right solution is ..
 either ignore it (and return what is there) or return a special descriptor that is marked as "missing optional plugin".
 I'll attach test case and instructions, but here's the instructions (not sure you'll even need the test code is so easy to reproduce).
 Description: TestPlugin has the test code (see testPluginPrereqs()) TestPlugin 'requires' RequiringPlugin RequiringPlugin *optionally* 'requires Optio
-nalPlugin Instructions for reproducing 1.Select TesterPlugin 2.Run as ...
-Junit Plugin Test All is ok (test passes).
-Now, remove (delete or close) OptionalPlugin re-run steps 1 and 2, and you'll see Assert.isNotNull exception throw deep in internal.plugins code.
+nalPlugin In

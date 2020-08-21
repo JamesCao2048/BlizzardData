@@ -12,17 +12,4 @@ You may have to do this with deselecting and selecting the components and the JP
 each time closing and reopening the alignment dialog.
 At some point, the NPE is thrown when you open the dialog and the dialog comes up blank.
 From the stack trace and code it looks like there is no primary selection and as a result there is no anchor object in the distribute request.
-Here's the stack trace from the .log file: java.lang.NullPointerException at at org.eclipse.ve.internal.cde.core.XYLayoutEditPolicy.getCommand (XYLayo
-utEditPolicy.java:211) at org.eclipse.gef.editparts.AbstractEditPart.getCommand (AbstractEditPart.java(Compiled Code)) at org.eclipse.ve.internal.cde.
-core.PrimaryDragRoleEditPolicy.getAlignmentCommand (PrimaryDragRoleEditPolicy.java:67) at org.eclipse.ve.internal.cde.core.PrimaryDragRoleEditPolicy.g
-etCommand (PrimaryDragRoleEditPolicy.java:57) at org.eclipse.gef.editparts.AbstractEditPart.getCommand (AbstractEditPart.java(Compiled Code)) at org.e
-clipse.ve.internal.cde.core.AlignmentAction.createAlignmentCommand (AlignmentAction.java:110) at org.eclipse.ve.internal.cde.core.AlignmentAction.calc
-ulateEnabled (AlignmentAction.java:128) at org.eclipse.gef.ui.actions.WorkbenchPartAction.refresh (WorkbenchPartAction.java:107) at org.eclipse.gef.ui
-.actions.SelectionAction.handleSelectionChanged (SelectionAction.java:84) at org.eclipse.gef.ui.actions.SelectionAction.setSelection (SelectionAction.
-java:95) at org.eclipse.gef.ui.actions.SelectionAction.update (SelectionAction.java:114) at org.eclipse.ve.internal.cde.core.AlignmentXYTabPage.handle
-SelectionChanged (AlignmentXYTabPage.java:112) at org.eclipse.ve.internal.cde.core.AlignmentTabPage.update (AlignmentTabPage.java:100) at org.eclipse.
-ve.internal.cde.core.AlignmentWindow.createTabPage (AlignmentWindow.java:167) at org.eclipse.ve.internal.cde.core.AlignmentWindow.addTabPage (Alignmen
-tWindow.java:205) at org.eclipse.ve.internal.cde.core.AlignmentWindow.setEditorPart (AlignmentWindow.java:260) at org.eclipse.ve.internal.cde.core.Ali
-gnmentWindowAction.run (AlignmentWindowAction.java:272) at org.eclipse.jface.action.Action.runWithEvent(Action.java:842) at org.eclipse.ui.actions.Ret
-argetAction.runWithEvent (RetargetAction.java:187) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContributionItem.ja
-va:456) at org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent (ActionContribu
+Here's the stack trace from the .log file: java.lang.Nu

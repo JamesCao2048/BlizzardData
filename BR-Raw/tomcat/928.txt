@@ -9,17 +9,4 @@ The same NPE is thrown when searching for method declaration "m() int" in the se
 e.jface.operation.ModalContext.run(ModalContext.java:283) at org.eclipse.jdt.internal.ui.refactoring.RefactoringWizardDialog2.run(RefactoringWizardDia
 log2.java:271) at org.eclipse.jdt.internal.ui.refactoring.RefactoringWizard.internalCheckCondition(RefactoringWizard.java:430) at org.eclipse.jdt.inte
 rnal.ui.refactoring.RefactoringWizard.checkInput(RefactoringWizard.java:415) at org.eclipse.jdt.internal.ui.refactoring.UserInputWizardPage.performFin
-ish(UserInputWizardPage.java:111) at org.eclipse.jdt.internal.ui.refactoring.RefactoringWizard.performFinish(RefactoringWizard.java:472) at org.eclips
-e.jdt.internal.ui.refactoring.RefactoringWizardDialog2.okPressed(RefactoringWizardDialog2.java:395) at org.eclipse.jface.dialogs.Dialog.buttonPressed(
-Dialog.java:256) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:423) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListe
-ner.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.e
-clipse.swt.widgets.Display.runDeferredEvents(Display.java:2187) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1877) at org.eclipse.j
-face.window.Window.runEventLoop(Window.java:583) at org.eclipse.jface.window.Window.open(Window.java:563) at org.eclipse.jdt.internal.ui.refactoring.a
-ctions.RefactoringStarter.activate(RefactoringStarter.java:56) at org.eclipse.jdt.internal.ui.refactoring.UserInterfaceStarter.activate(UserInterfaceS
-tarter.java:97) at org.eclipse.jdt.internal.ui.refactoring.reorg.RenameUserInterfaceStarter.activate(RenameUserInterfaceStarter.java:111) at org.eclip
-se.jdt.internal.ui.refactoring.reorg.RenameMethodUserInterfaceStarter.activate(RenameMethodUserInterfaceStarter.java:62) at org.eclipse.jdt.internal.u
-i.refactoring.UserInterfaceStarter.run(UserInterfaceStarter.java:52) at org.eclipse.jdt.internal.ui.refactoring.reorg.RenameRefactoringAction.run(Rena
-meRefactoringAction.java:73) at org.eclipse.jdt.ui.refactoring.RenameSupport.openDialog(RenameSupport.java:93) at org.eclipse.jdt.internal.ui.refactor
-ing.actions.RenameJavaElementAction.run(RenameJavaElementAction.java:145) at org.eclipse.jdt.internal.ui.refactoring.actions.RenameJavaElementAction.r
-un(RenameJavaElementAction.java:108) at org.eclipse.jdt.ui.actions.RenameAction.run(RenameAction.java:127) at org.eclipse.jdt.ui.actions.SelectionDisp
-atchAction.dispatchRun(SelectionDispatchAction.java:196) at org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(Selectio
+ish(UserInputWizardPage.java:111) at org.eclipse.jdt.internal.ui.refactoring.Refactori

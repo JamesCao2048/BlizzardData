@@ -11,5 +11,4 @@ If you select "X" at the bottom, it will put windows X and Y on top and beep at 
 Clicking "Z" at the bottom does not redraw Z back on top and the screen remains with X and Z displayed.
 Because the user must click okay in the message box (and is prevented from doing so, this effectively locks out the application forcing a manual termi
 nation to exit the program.
-Based on my testing this seems to be because the SWT thread is locked in a wait until the MessageBox (Z) is exited, so any redraw or other SWT request
-s are postponed indefinitely.
+Based on my t

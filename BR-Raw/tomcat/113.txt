@@ -10,19 +10,4 @@ Steps to reproduce.
 2.Enter Directory and start eclipse.
 3.Go to Help-->Software Updates-->Update Manager-->select an update/package/etc.
 4.Click install 5.Go through wizard and related license agreements 6.Accept default install location, click finish....works 7.Repeat 1-5 replacing /* 
-with $HOME, no install location available, cannot add install location, click finish.....error II.
-Relevent Errors and output: 1."Install Location" is empty and cannot add new Install Location in the update wizard when installed in other than $HOME 
--)Click finish: java.lang.NullPointerException 
--) Sometimes the "Finish" button is greyed out...so your simply stuck III.
-Configuration Details and Error Logs *** Date: 3/13/04 12:31 PM *** System properties: file.encoding=ANSI_X3.4-1968 file.encoding.pkg=sun.io file.sepa
-rator=/ java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment java.awt.printerjob=sun.print.PSPrinterJob java.class.path=/opt/eclipse/startup.jar java.c
-lass.version=48.0 java.endorsed.dirs=/opt/blackdown-jdk-1.4.1/jre/lib/endorsed java.ext.dirs=/opt/blackdown-jdk-1.4.1/jre/lib/ext java.home=/opt/black
-down-jdk-1.4.1/jre java.io.tmpdir=/tmp java.library.path=/opt/blackdown-jdk-1.4.1/jre/lib/i386/client:/opt/blackdown-jdk-1.4.1/jre/lib/i386:/opt/black
-down-jdk-1.4.1/jre/../lib/i386:/usr/lib:/lib java.runtime.name=Java(TM) 2 Runtime Environment, Standard Edition java.runtime.version=Blackdown-1.4.1-0
-1 java.specification.name=Java Platform API Specification java.specification.vendor=Sun Microsystems Inc.
-java.specification.version=1.4 java.util.prefs.PreferencesFactory=java.util.prefs.FileSystemPreferencesFactory java.vendor=Blackdown Java-Linux Team j
-ava.vendor.url= http://www.blackdown.org/ java.vendor.url.bug= http://www.blackdown.org/cgi-bin/jdk java.version=1.4.1 java.vm.info=mixed mode java.vm
-.name=Java HotSpot(TM) Client VM java.vm.specification.name=Java Virtual Machine Specification java.vm.specification.vendor=Sun Microsystems Inc.
-java.vm.specification.version=1.0 java.vm.vendor=Blackdown Java-Linux Team java.vm.version=Blackdown-1.4.1-01 line.separator= os.arch=i386 os.name=Lin
-ux os.version=2.6.4-rc1-mm2 path.separator=: sun.arch.data.model=32 sun.boot.class.path=/opt/blackdown-jdk-1.4.1/jre/lib/rt.jar:/opt/blackdown-jdk-1.4
-.1/jre/lib/i18n.jar:/opt/blackdown-jdk-1.4.1/jre/lib/sunrsasign.jar:/opt/blackdown
+with $HOME, no install location available, cannot add install loca

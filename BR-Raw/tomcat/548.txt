@@ -6,17 +6,4 @@ ava:261) at org.eclipse.osgi.framework.internal.core.Bundle.loadBundleActivator 
 ntext.start (BundleContext.java:1105) at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker (BundleHost.java:458) at org.eclipse.osgi.fra
 mework.internal.core.Bundle.start(Bundle.java:328) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensio n(Configuration
 Element.java:133) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensio n(ConfigurationElement.java:125) at org.eclipse.
-core.internal.registry.ConfigurationElement.createExecutableExtensio n(ConfigurationElement.java:114) at org.eclipse.ui.internal.WorkbenchPlugin$1.run
-(WorkbenchPlugin.java:160) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.internal.WorkbenchPlugin.createE
-xtension (WorkbenchPlugin.java:157) at org.eclipse.ui.internal.registry.ViewDescriptor.createView (ViewDescriptor.java:65) at org.eclipse.ui.internal.
-ViewFactory$1.run(ViewFactory.java:186) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:813) at org.eclipse.core.runt
-ime.Platform.run(Platform.java:457) at org.eclipse.ui.internal.ViewFactory.busyRestoreView(ViewFactory.java:161) at org.eclipse.ui.internal.ViewFactor
-y$2.run(ViewFactory.java:371) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.internal.ViewFactory.restoreV
-iew(ViewFactory.java:369) at org.eclipse.ui.internal.Perspective.showView(Perspective.java:1457) at org.eclipse.ui.internal.WorkbenchPage.busyShowView
-(WorkbenchPage.java:714) at org.eclipse.ui.internal.WorkbenchPage.access$9(WorkbenchPage.java:694) at org.eclipse.ui.internal.WorkbenchPage$13.run(Wor
-kbenchPage.java:2796) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.internal.WorkbenchPage.showView(Workb
-enchPage.java:2793) at org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:2779) at org.eclipse.ui.internal.ShowViewMenu.showOther(ShowV
-iewMenu.java:200) at org.eclipse.ui.internal.ShowViewMenu.access$2(ShowViewMenu.java:186) at org.eclipse.ui.internal.ShowViewMenu$2.run(ShowViewMenu.j
-ava:67) at org.eclipse.jface.action.Action.runWithEvent(Action.java:842) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (Act
-ionContributionItem.java:509) at org.eclipse.jface.action.ActionContributionItem.access$2 (ActionContributionItem.java:461) at org.eclipse.jface.actio
-n.ActionContributionItem$5.handleEvent (ActionContributionItem.java:408) at org.eclipse.swt
+core.internal.registry.ConfigurationElement.createExec

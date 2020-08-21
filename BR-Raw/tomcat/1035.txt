@@ -6,8 +6,4 @@ Editor$MouseClickListener.repairRepr esentation(JavaEditor.java:478) at org.ecli
 e (JavaEditor.java:301) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$MouseClickListener.deactivate (JavaEditor.java:294) at org.eclipse.jdt.in
 ternal.ui.javaeditor.JavaEditor$1.run(JavaEditor.java:813) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widget
 s.Synchronizer.runAsyncMessages(Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2165) at org.eclipse.swt.widge
-ts.Display.readAndDispatch(Display.java:1882) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1680) at org.eclipse.ui.internal.Workbe
-nch.run(Workbench.java:1663) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoade
-r.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Sourc
-e) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.core.launcher.
-Main.basicRun(Main.java:291) at org.eclipse.core.launcher.Main.run(Main.java:747) at org.eclipse.core.launcher.Main.main(Main.java:583)
+ts.Display.readAndDi

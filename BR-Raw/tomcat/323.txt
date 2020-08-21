@@ -6,10 +6,4 @@ t org.eclipse.swt.dnd.DND.error(DND.java:230) at org.eclipse.swt.dnd.DND.error(D
 va:129) at org.eclipse.swt.dnd.Clipboard.getAvailableTypes(Clipboard.java:444) at org.eclipse.ui.views.navigator.PasteAction.updateSelection(PasteActi
 on.java:220) at org.eclipse.ui.actions.BaseSelectionListenerAction.selectionChanged(BaseSelectionListenerAction.java:102) at org.eclipse.ui.views.navi
 gator.RefactorActionGroup.updateActionBars(RefactorActionGroup.java:139) at org.eclipse.ui.views.navigator.MainActionGroup.handleResourceChanged(MainA
-ctionGroup.java:109) at org.eclipse.ui.views.navigator.MainActionGroup$1.resourceChanged(MainActionGroup.java:76) at org.eclipse.core.internal.events.
-NotificationManager$2.run(NotificationManager.java:255) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:819) at org.ec
-lipse.core.runtime.Platform.run(Platform.java:483) at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:248) at org
-.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:142) at org.eclipse.core.internal.resources.Workspace.broa
-dcastChanges(Workspace.java:154) at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:856) at org.eclipse.core.internal.resour
-ces.Workspace.run(Workspace.java:1576) at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:105) at org.eclipse.jface.
-operation.ModalContext$ModalContextThread.run(ModalContext.java:101)
+ctionGroup.java:109) at org.e

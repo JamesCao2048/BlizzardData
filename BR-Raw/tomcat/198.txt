@@ -8,17 +8,4 @@ andled event loop exception !ENTRY org.eclipse.core.runtime 4 2 Mrz 10, 2004 12:
 !STACK 0 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException) at org.eclipse.swt.SWT.error(SWT.java:2625) at org.
 eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:162) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:25) at org.ecl
 ipse.swt.widgets.Display.syncExec(Display.java:2691) at org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.postSyncRunnable(TestRunnerViewPart.java:
-701) at org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.postEndTest(TestRunnerViewPart.java:720) at org.eclipse.jdt.internal.junit.ui.TestRunnerV
-iewPart.testEnded(TestRunnerViewPart.java:516) at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$4.run(RemoteTestRunnerClient.java:450) at o
-rg.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:646) at org.eclipse.core.runtime.Platform.run(Platform.java:497) at org.ec
-lipse.jdt.internal.junit.ui.RemoteTestRunnerClient.notifyTestEnded(RemoteTestRunnerClient.java:447) at org.eclipse.jdt.internal.junit.ui.RemoteTestRun
-nerClient.access$7(RemoteTestRunnerClient.java:444) at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$DefaultProcessingState.readMessage(Rem
-oteTestRunnerClient.java:85) at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient.receiveMessage(RemoteTestRunnerClient.java:315) at org.eclips
-e.jdt.internal.junit.ui.RemoteTestRunnerClient.access$30(RemoteTestRunnerClient.java:314) at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$
-ServerConnection.run(RemoteTestRunnerClient.java:241) !ENTRY org.eclipse.jdt.junit 4 4 Mrz 10, 2004 12:23:28.317 !MESSAGE Error !STACK 0 org.eclipse.s
-wt.SWTException: Failed to execute runnable (java.lang.NullPointerException) at org.eclipse.swt.SWT.error(SWT.java:2625) at org.eclipse.swt.widgets.Sy
-nchronizer.syncExec(Synchronizer.java:162) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:25) at org.eclipse.swt.widgets.Displ
-ay.syncExec(Display.java:2691) at org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.postSyncRunnable(TestRunnerViewPart.java:701) at org.eclipse.jd
-t.internal.junit.ui.TestRunnerViewPart.postEndTest(TestRunnerViewPart.java:720) at org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.testEnded(Test
-RunnerViewPart.java:516) at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$4.run(RemoteTestRunnerClient.java:450) at org.eclipse.core.intern
-al.runtime.InternalPlatform.run(InternalPlatform.java
+701) at org.ecli

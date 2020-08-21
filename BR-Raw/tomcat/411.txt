@@ -13,20 +13,4 @@ reference, close preference, note new resources.
 Java: 52 colors, 2 cursors, 6 fonts, 1 GC, 87 images [+1 font] Appearance: 52 colors, 2 cursors, 7 fonts, 1 GC, 87 images [+1 font => "Note" should be
  in the Banner font which has been already loaded through the Workbench pref page] Members Sort Order: 52 colors, 2 cursors, 8 fonts, 1 GC, 96 images 
 [+1 font; +9 images (the member/visibility icons) 
--> no leak] Classpath Variables: 52 colors, 2 cursors, 8 fonts, 1 GC, 101 images [+5 images 
--> no leak] New Variable Entry Dialog (reached through Classpath Variables/New...): 52 colors, 2 cursors, 9 fonts, 1 GC, 101 images [+1 font] Code For
-matter: 61 colors, 2 cursors, 12 fonts, 1 GC, 101 images [+9 colors (colors used for the embedded editor-> no leak), +3 fonts (one is probably the Jav
-a Editor font, the other two are leaks)] Show Profile Dialog (reached through Code Formatter/Show...) 61 colors, 2 cursors, 16 fonts, 1 GC, 102 images
- [+4 fonts, +1 image (the warning icon 
--> no leak] Code Generation: 62 colors, 2 cursors, 17 fonts, 1 GC, 103 images [+1 color (will be used by Insert Variable dropdown), +1 font (appearant
-ly the one used by the Insert Variable Dropdown 
--- shouldn't this be shared/disposed?), +1 image (local type icon 
--> no leak] Detail formatters: 62 colors, 2 cursors, 18 fonts, 1 GC, 103 images [+1 font (the Java Text Editor font should have already been loaded by
- the Code Formatter preference page)] Step Filtering: 62 colors, 2 cursors, 18 fonts, 1 GC, 105 images [+2 images 
--> no leak] Add Step Filter dialog (reached through Step Filtering): 62 colors, 2 cursors, 19 fonts, 1 GC, 105 images [+1 font] Add Packages dialog (r
-eached through Step Filtering): 62 colors, 2 cursors, 23 fonts, 1 GC, 108 images [+3 images 
--> no leaks; +4 fonts (1 is from the progress dialog)] Work in Progress: 62 colors, 2 cursors, 24 fonts, 1 GC, 108 images [+1 font] Compiler: no leaks
- Debug: no leaks Installed JREs: no leaks Javadoc: no leaks Editor: no leaks Spelling: no leaks JUnit: no leaks New Project: no leaks Organize Imports
-: no leaks Refactoring: no leaks Task Tags: no leaks Type Filters: no leaks @@@@ All in all 17 fonts on the following: Java, Appearance, Members Sort 
-Order, New Variable Entry Dialog (reached through Classpath Variables/New...), Code Formatter, Show Profile Dialog (reached through Code Formatter/Sho
-w...), Detail formatters, Add Step Filter dialog (reached through Step Filtering), Add Packages dialog (re
+-> no leak] Classpath Variables: 52 colors, 2 cursors, 8 fonts, 1 GC, 101

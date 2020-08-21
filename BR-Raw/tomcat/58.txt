@@ -12,17 +12,4 @@ ws.SleakView.
 This view added to 'Other' category.
 !ENTRY org.eclipse.ui 4 4 Mar 20, 2004 11:55:18.337 !MESSAGE Unhandled event loop exception !ENTRY org.eclipse.ui 4 0 Mar 20, 2004 11:55:18.337 !MESSA
 GE java.lang.ClassCastException !STACK 0 java.lang.ClassCastException at org.eclipse.ui.part.MarkerTransfer.lazyInit(MarkerTransfer.java:144) at org.e
-clipse.ui.part.MarkerTransfer.javaToNative(MarkerTransfer.java:113) at org.eclipse.swt.dnd.DragSource.GetData(DragSource.java:373) at org.eclipse.swt.
-dnd.DragSource.access$7(DragSource.java:334) at org.eclipse.swt.dnd.DragSource$4.method3(DragSource.java:233) at org.eclipse.swt.internal.ole.win32.CO
-MObject.callback3(COMObject.java:88) at org.eclipse.swt.internal.ole.win32.COM.VtblCall(Native Method) at org.eclipse.swt.internal.ole.win32.IDataObje
-ct.GetData(IDataObject.java:25) at org.eclipse.swt.dnd.ByteArrayTransfer.nativeToJava(ByteArrayTransfer.java:202) at org.eclipse.ui.part.MarkerTransfe
-r.nativeToJava(MarkerTransfer.java:152) at org.eclipse.swt.dnd.DropTarget.Drop(DropTarget.java:416) at org.eclipse.swt.dnd.DropTarget.access$7(DropTar
-get.java:363) at org.eclipse.swt.dnd.DropTarget$3.method6(DropTarget.java:232) at org.eclipse.swt.internal.ole.win32.COMObject.callback6(COMObject.jav
-a:115) at org.eclipse.swt.internal.ole.win32.COM.DoDragDrop(Native Method) at org.eclipse.swt.dnd.DragSource.drag(DragSource.java:277) at org.eclipse.
-swt.dnd.DragSource.access$0(DragSource.java:263) at org.eclipse.swt.dnd.DragSource$1.handleEvent(DragSource.java:157) at org.eclipse.swt.widgets.Event
-Table.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:810) at org.eclipse.swt.widgets.Display.runDeferredEvents(
-Display.java:2424) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2102) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.j
-ava:1448) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1419) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:25
-7) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:90) a
-t org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:260) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Eclipse
-Starter.java:173) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106) at 
+clipse.ui.part.MarkerTransfer.javaToNative(MarkerTransfer.java:1

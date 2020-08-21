@@ -5,17 +5,4 @@ g.eclipse.ui.intro.internal.parts.ContextHelpPart.access$0(ContextHelpPart.java:
 er.partActivated(ContextHelpPart.java:53) at org.eclipse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45) at org.eclipse.core.internal.r
 untime.InternalPlatform.run(InternalPlatform.java:610) at org.eclipse.core.runtime.Platform.run(Platform.java:521) at org.eclipse.ui.internal.PartList
 enerList2.firePartActivated(PartListenerList2.java:43) at org.eclipse.ui.internal.WWinPartService$1.partActivated(WWinPartService.java:30) at org.ecli
-pse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:610
-) at org.eclipse.core.runtime.Platform.run(Platform.java:521) at org.eclipse.ui.internal.PartListenerList2.firePartActivated(PartListenerList2.java:43
-) at org.eclipse.ui.internal.WorkbenchPage.firePartActivated(WorkbenchPage.java:1296) at org.eclipse.ui.internal.WorkbenchPage.setActivePart(Workbench
-Page.java:2594) at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:455) at org.eclipse.ui.internal.WorkbenchPage.setPerspective(Work
-benchPage.java:2721) at org.eclipse.ui.internal.WorkbenchPage.busySetPerspective(WorkbenchPage.java:694) at org.eclipse.ui.internal.WorkbenchPage.acce
-ss$8(WorkbenchPage.java:679) at org.eclipse.ui.internal.WorkbenchPage$12.run(WorkbenchPage.java:2804) at org.eclipse.swt.custom.BusyIndicator.showWhil
-e(BusyIndicator.java:84) at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:2802) at org.eclipse.ui.wizards.newresource.BasicN
-ewProjectResourceWizard.replaceCurrentPerspective(BasicNewProjectResourceWizard.java:333) at org.eclipse.ui.wizards.newresource.BasicNewProjectResourc
-eWizard.updatePerspective(BasicNewProjectResourceWizard.java:452) at org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.finishPage(JavaProjectWizar
-d.java:58) at org.eclipse.jdt.internal.ui.wizards.NewElementWizard$2.run(NewElementWizard.java:100) at org.eclipse.jdt.internal.core.BatchOperation.ex
-ecuteOperation(BatchOperation.java:34) at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:700) at org.eclipse.core.intern
-al.resources.Workspace.run(Workspace.java:1559) at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:3196) at org.eclipse.jdt.core.JavaCore.run(JavaCore
-.java:3153) at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:50) at org.eclipse.jface.operation.Modal
-Context.runInCurrentThread(ModalContext.java:302) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252) at org.ecl
+pse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45) at org.eclipse.core.interna

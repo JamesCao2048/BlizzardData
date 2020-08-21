@@ -5,17 +5,4 @@ ion at org.eclipse.jface.action.ToolBarContributionItem.fill(ToolBarContribution
 arManager.java:866) at org.eclipse.ui.internal.EditorActionBars.setVisible(EditorActionBars.java:400) at org.eclipse.ui.internal.EditorActionBars.setA
 ctive(EditorActionBars.java:301) at org.eclipse.ui.internal.EditorActionBars.activate(EditorActionBars.java:91) at org.eclipse.ui.internal.WorkbenchPa
 ge$ActionSwitcher.activateContributions(WorkbenchPage.java:291) at org.eclipse.ui.internal.WorkbenchPage$ActionSwitcher.updateActivePart(WorkbenchPage
-.java:197) at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:2555) at org.eclipse.ui.internal.WorkbenchPage.requestActivation(
-WorkbenchPage.java:2252) at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:361) at org.eclipse.ui.internal.EditorPane.requestActivat
-ion(EditorPane.java:134) at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:341) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable
-.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857) at org.eclipse.swt
-.widgets.Widget.sendEvent(Widget.java:838) at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:913) at org.eclipse.swt.widgets.Shell.WM_MOUSE
-ACTIVATE(Shell.java:1426) at org.eclipse.swt.widgets.Control.windowProc(Control.java:2979) at org.eclipse.swt.widgets.Decorations.windowProc(Decoratio
-ns.java:1436) at org.eclipse.swt.widgets.Display.windowProc(Display.java:2873) at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method) at o
-rg.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:1366) at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:77) at org.eclipse.s
-wt.widgets.Control.windowProc(Control.java:3020) at org.eclipse.swt.widgets.Display.windowProc(Display.java:2873) at org.eclipse.swt.internal.win32.OS
-.DefWindowProcW(Native Method) at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:1366) at org.eclipse.swt.widgets.Scrollable.callWindowProc(S
-crollable.java:77) at org.eclipse.swt.widgets.Control.windowProc(Control.java:3020) at org.eclipse.swt.widgets.Display.windowProc(Display.java:2873) a
-t org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method) at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:1366) at org.eclipse.swt.
-widgets.Scrollable.callWindowProc(Scrollable.java:77) at org.eclipse.swt.widgets.Control.windowProc(Control.java:3020) at org.eclipse.swt.widgets.Disp
-lay.windowProc(Display.java:2873) at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method) at org.eclipse.swt.internal.wi
+.java:197) at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:2555) at 

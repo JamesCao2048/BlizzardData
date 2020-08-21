@@ -9,26 +9,4 @@ Full thread dump Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode): "ModalContex
 <0x1019bd10> (a org.eclipse.ui.internal.Semaphore) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:42) at org.eclipse.swt.widge
 ts.Display.syncExec(Display.java:2504) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction.promptForOverwrite(CVSSubscriberAction.java
  at org.eclipse.team.internal.ccvs.ui.subscriber.OverrideAndUpdateAction.run(OverrideAndUpdateAction.java:42) at org.eclipse.team.internal.ccvs.ui.sub
-scriber.CVSSubscriberAction$2.run(CVSSubscriberAction.java:157) at org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.run(EclipseSynchr
-onizer.java:1381) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction$1.run(CVSSubscriberAction.java:152) at org.eclipse.team.internal
-.ccvs.ui.operations.CVSBlockingRunnableContext$3.run(CVSBlockingRunnableContext.jav at org.eclipse.core.internal.resources.Workspace.run(Workspace.jav
-a:1557) at org.eclipse.team.internal.ccvs.ui.operations.CVSBlockingRunnableContext$2.run(CVSBlockingRunnableContext.jav at org.eclipse.jface.operation
-.ModalContext$ModalContextThread.run(ModalContext.java:101) "Worker-10" prio=5 tid=0x03446060 nid=0xca0 in Object.wait() [380f000..380fd94] at java.la
-ng.Object.wait(Native Method) 
-- waiting on 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:155) 
-- locked 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.c
-ore.internal.jobs.Worker.run(Worker.java:55) "Worker-9" prio=5 tid=0x03a23990 nid=0xec8 in Object.wait() [45cf000..45cfd94] at java.lang.Object.wait(N
-ative Method) 
-- waiting on 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:155) 
-- locked 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.c
-ore.internal.jobs.Worker.run(Worker.java:55) "Worker-8" prio=5 tid=0x039fd518 nid=0xea4 in Object.wait() [458f000..458fd94] at java.lang.Object.wait(N
-ative Method) 
-- waiting on 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:155) 
-- locked 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.c
-ore.internal.jobs
+scriber.CVSSubscriberAction$2.run(CVSSubscriberAction.ja

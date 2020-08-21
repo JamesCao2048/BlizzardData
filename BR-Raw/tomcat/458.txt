@@ -9,17 +9,3 @@ Right-click stdio.h from the Outline view and select Open.
 (ITranslationUnit, boolean, boolean) line: 125 CModelBuilder.parse(boolean) line: 150 CFileElementWorkingCopy(TranslationUnit).parse() line: 472 CFile
 ElementWorkingCopy(TranslationUnit).generateInfos(OpenableInfo, IProgressMonitor, Map, IResource) line: 303 CFileElementWorkingCopy(TranslationUnit).b
 uildStructure(OpenableInfo, IProgressMonitor) line: 222 CFileElementWorkingCopy(Openable).openWhenClosed(IProgressMonitor) line: 279 CFileElementWorki
-ngCopy(CElement).openHierarchy() line: 317 CFileElementWorkingCopy(CElement).getElementInfo() line: 200 CFileElementWorkingCopy(Parent).getChildren() 
-line: 47 CElementContentProvider(BaseCElementContentProvider).getChildren(Object) line: 129 CElementContentProvider(BaseCElementContentProvider).getEl
-ements(Object) line: 100 ProblemTreeViewer(StructuredViewer).getRawChildren(Object) line: 516 ProblemTreeViewer(AbstractTreeViewer).getRawChildren(Obj
-ect) line: 725 ProblemTreeViewer(StructuredViewer).getFilteredChildren(Object) line: 463 ProblemTreeViewer(StructuredViewer).getSortedChildren(Object)
- line: 567 AbstractTreeViewer$1.run() line: 361 BusyIndicator.showWhile(Display, Runnable) line: 84 ProblemTreeViewer(AbstractTreeViewer).createChildr
-en(Widget) line: 349 AbstractTreeViewer$5.run() line: 808 ProblemTreeViewer(StructuredViewer).preservingSelection(Runnable) line: 810 ProblemTreeViewe
-r(AbstractTreeViewer).inputChanged(Object, Object) line: 798 ProblemTreeViewer(ContentViewer).setInput(Object) line: 238 ProblemTreeViewer(StructuredV
-iewer).setInput(Object) line: 1004 CContentOutlinePage.createControl(Composite) line: 210 ContentOutline.doCreatePage(IWorkbenchPart) line: 125 Conten
-tOutline(PageBookView).createPage(IWorkbenchPart) line: 306 ContentOutline(PageBookView).partActivated(IWorkbenchPart) line: 561 PartListenerList$1.ru
-n() line: 49 InternalPlatform.run(ISafeRunnable) line: 813 Platform.run(ISafeRunnable) line: 457 PartListenerList.firePartActivated(IWorkbenchPart) li
-ne: 47 WorkbenchPage.firePartActivated(IWorkbenchPart) line: 1251 WorkbenchPage.setActivePart(IWorkbenchPart) line: 2513 WorkbenchPage.activate(IWorkb
-enchPart) line: 448 WorkbenchPage.busyOpenEditor(IEditorInput, String, boolean) line: 2061 WorkbenchPage.access$6(WorkbenchPage, IEditorInput, String,
- boolean) line: 1990 WorkbenchPage$9.run() line: 1977 BusyIndicator.showWhile(Display, Runnable) line: 84 WorkbenchPage.openEditor(IEditorInput, Strin
-g, boolean) line: 1972 EditorUtility.

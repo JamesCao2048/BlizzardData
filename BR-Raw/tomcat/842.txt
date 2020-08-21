@@ -16,10 +16,4 @@ Dir.
 Click OK.
 
 - You'll get a message about not being able to nest MyProject/MyDir/src inside MyProject/MyDir.
-Make this message go away by changing the Default output folder at the bottom of the dialog box from MyProject/bin to MyProject.
-(This is probably where this bug should get fixed; it shouldn't let you do this.) 
-- Click OK.
-You'll get a message box asking if it's OK to remove the old generated sources from the old output folder; click Yes.
-BOOM! If you're using Eclipse 3.0 or 2.1.1, this will immediately wipe out your source directory.
-(If you're using 2.1, you get a reprieve; your source directory won't get wiped until try to run Hello.java when you get an error about the main class
- not being found.)
+Make this message go away by changing the Default output folder at the bottom of the dialog box from MyProject/bi

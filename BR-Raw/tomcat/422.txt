@@ -8,17 +8,4 @@ ore.internal.compatibility.PluginActivator.start() at org.eclipse.osgi.framework
 at org.eclipse.osgi.framework.internal.core.BundleContext.start (BundleContext.java:991) at org.eclipse.osgi.framework.internal.core.BundleHost.startW
 orker (BundleHost.java:403) at org.eclipse.osgi.framework.internal.core.Bundle.start (Bundle.java:312) at org.eclipse.core.internal.registry.Configura
 tionElement.createExecutableExtensi on(ConfigurationElement.java:133) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExten
-si on(ConfigurationElement.java:125) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensi on(ConfigurationElement.java:1
-14) at org.eclipse.ui.internal.WorkbenchPlugin$1.run (WorkbenchPlugin.java:171) at org.eclipse.swt.custom.BusyIndicator.showWhile (BusyIndicator.java:
-51) at org.eclipse.ui.internal.WorkbenchPlugin.createExtension (WorkbenchPlugin.java:168) at org.eclipse.ui.internal.decorators.LightweightDecoratorDe
-finition$1.run (LightweightDecoratorDefinition.java:83) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:819) at org.e
-clipse.core.runtime.Platform.run(Platform.java:483) at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.internalGetDe corator(Lightwe
-ightDecoratorDefinition.java:79) at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate (LightweightDecoratorDefinition.java:15
-3) at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunna ble.run(LightweightDecoratorManager.java:59) at org.eclipse.core
-.internal.runtime.InternalPlatform.run (InternalPlatform.java:819) at org.eclipse.core.runtime.Platform.run(Platform.java:483) at org.eclipse.ui.inter
-nal.decorators.LightweightDecoratorManager.decorate (LightweightDecoratorManager.java:245) at org.eclipse.ui.internal.decorators.LightweightDecoratorM
-anager.getDecorations (LightweightDecoratorManager.java:228) at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run (DecorationScheduler.java
-:266) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62) And also this error: org.osgi.framework.BundleException: Exception in org.eclipse.c
-ore.internal.compatibility.PluginActivator.start() at org.eclipse.osgi.framework.internal.core.BundleContext.startActivator (BundleContext.java:1071) 
-at org.eclipse.osgi.framework.internal.core.BundleContext.start (BundleContext.java:991) at org.eclipse.osgi.framework.internal.core.BundleHost.startW
-orker (BundleHost.java:403) at org.eclipse.osgi.framework.internal.core.Bundle.start(Bundle.java:312) at org.eclipse.core.internal.registry.Co
+si on(ConfigurationElement.java:125) at org.eclipse.core.internal.registry.ConfigurationElement.createExe

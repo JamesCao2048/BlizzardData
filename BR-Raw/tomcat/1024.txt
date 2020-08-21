@@ -6,14 +6,4 @@ STEPS 1) Self host Eclipse 2) Edit a file 3) Exit self hosted workbench and choo
 Index: 1, Size: 0 at java.util.ArrayList.RangeCheck(ArrayList.java(Inlined Compiled Code)) at java.util.ArrayList.get(ArrayList.java(Compiled Code)) a
 t org.eclipse.jface.text.source.VisualAnnotationModel.modelChanged (VisualAnnotationModel.java:131) at org.eclipse.jface.text.source.AnnotationModel.f
 ireModelChanged (AnnotationModel.java:220) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$Compilat ionUnitAnnotationModel.f
-ireModelChanged (CompilationUnitDocumentProvider.java:551) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$Compilat ionUnitA
-nnotationModel.endReporting(CompilationUnitDocumentProvider.java:486) at org.eclipse.jdt.internal.core.JavaModelManager$PerWorkingCopyInfo.endReportin
-g (JavaModelManager.java:519) at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure (CompilationUnit.java:140) at org.eclipse.jdt.internal.c
-ore.Openable.generateInfos (Openable.java:198) at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed (JavaElement.java:448) at org.eclipse.jdt.i
-nternal.core.CompilationUnit.makeConsistent (CompilationUnit.java:899) at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation
- (ReconcileWorkingCopyOperation.java:48) at org.eclipse.jdt.internal.core.JavaModelOperation.execute (JavaModelOperation.java:365) at org.eclipse.jdt.
-internal.core.JavaModelOperation.run (JavaModelOperation.java:704) at org.eclipse.jdt.internal.core.JavaElement.runOperation (JavaElement.java:484) at
- org.eclipse.jdt.internal.core.CompilationUnit.reconcile (CompilationUnit.java:1011) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile (Compi
-lationUnit.java:988) at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile (JavaReconcilingStrategy.java:72) at org.eclipse.jdt.i
-nternal.ui.text.java.JavaReconcilingStrategy.reconcile (JavaReconcilingStrategy.java:99) at org.eclipse.jface.text.reconciler.MonoReconciler.process (
-MonoReconciler.java:76) at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run (AbstractReconciler.java:189)
+ireModelChanged (CompilationUnitDocumentProvider.java:551) at org.eclipse.jdt.internal.ui.javaeditor

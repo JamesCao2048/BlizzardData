@@ -11,23 +11,4 @@ My workspace (K:ProjectsEclipseplugins) is outside of my Eclipse directory (K:Do
 I launch Eclipse with a shortcut that specifies the following command line: K:Downloadseclipse2.1.2 eclipseeclipse.exe 
 -data k:ProjectsEclipseplugins.
 My runtime workspace is in the normal location relative to the main workspace (K:ProjectsEclipseruntime-workspace).
-I am using the Eclipse for Palm OS plugin (< http://www.redfelineninja.dsl.pipex.com/software.html >) to debug Palm applications.
-Because I'm developing extensions, most of my debugging is in a runtime IDE.
-The problem I describe occurs both in the runtime IDE as well as the host IDE.
-PROBLEM: The problem is that source files are not always found in the debugger.
-Assume that I've developed a Palm application, have launched under the control of the Palm OS Emulator and the m68k-palmos-gdb debugger that comes wit
-h prc-tools, and that my Palm application has crashed and that I'm looking at a stack crawl in the debugger.
-Clicking on a stack frame that corresponds to a function in my application results in a page saying that the source file cannot be found.
-SOURCE: I think I've traced the problem to a couple of methods in CSourceLocator.
-findFileByAbsolutePath() is given the path of a file to look for.
-As part of its operation, it creates a File on that path, calls File.getCanonicalPath, and then passes the result to CSourceLocator.findFile ().
-findFile iterates over all project members, looking for an IFile that has the same path.
-The problem is that findFileByAbsolutePath is given a path where the drive letter is lower-case.
-findFile also generates project item paths where the drive letter is lower-case.
-However, the call to getCanonicalPath converts the lower-case drive letter to an upper-case drive letter, cause the strict string match between the ta
-rget path and the project item paths to fail.
-Eventually, it occurred to me that the paths being generated had a lower-case drive letter because I'd specified a lower-case drive letter in the comm
-and line in the shortcut I use to launch Eclipse.
-Changing that, and changing the path to the runtime-workspace in my launch configuration (which appears to have been generated from the path I'd speci
-fied in the shortcut) fixed the problem.
-As an interesting workaround, I also noticed that the source files could be found if my project was not in the workspace 
+I am using the Eclipse for Palm OS 

@@ -12,9 +12,4 @@ Perhaps it should remember per input file, its persistance state.
 
 <Note by gmendel (Mendel, Gili (Dr.)), 2002/07/18 11:33:52, seq: 2 rel: 0 action: assign> Old Owner: gmendel New Owner: winchest 
 <Note by winchest (Winchester, J), 2002/07/23 12:05:23, seq: 3 rel: 0 action: verify> When you open/close the palette is now updates the flag that is 
-shown on the preferences page that comes from the VCEPlugin.
-This then affects the next opened editors.
-I didn't want to make the open/close state on a per file basis 
-- it seemed to be more like resizing a viewer to me so it is just global for the editor configuration of either split pane or notebook 
-<Note by rkalim (Kalim, Rolf), 2002/08/12 12:29:16, seq: 4 rel: 0 action: note> Nice feature, Works in 20020812_0100-WB20-V50W 
-<Note by sri (Gunturi, Srimanth), 2002/08/20 11:58:24, seq: 5 rel: 0 action: verifynote> Persists state across sessions.
+shown on the preferences page that comes from the 

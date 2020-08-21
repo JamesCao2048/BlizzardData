@@ -9,8 +9,4 @@ Notice that the build fails with the following error in XyzPlugin.java: The type
 It is indirectly referenced from required .class files.
 XyzPlugin.java XyzPlugin does not reference Bundle type directly anywhere.
 However, it does extend AbstractUIPlugin, which in turn extends Plugin (provided by org.eclipse.runtime.compatibility) and this class has 'Bundle getB
-undle()' method, as well as Bundle private field.
-As suggested, I went into the workspace from the OS shell and tried to compile XYZPlugin using javac.exe.
-I managed to get it to compile without having to put org.eclipse.osgi.framework.core plug-in on the classpath (this is where Bundle type is declared).
-It seems to me that JDT compiler is too eager when resolving Plugin class.
-It should not need to resolve Bundle reference since it was never used explicitly in XyzPlugin class itself.
+undle()' method, as well as Bundle private field

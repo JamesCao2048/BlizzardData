@@ -8,18 +8,4 @@ After closing the editor, everything seemed to work properly.
 Found the following entries in my log (dozens of occurrences): !ENTRY org.eclipse.ui 4 4 Mar 03, 2004 11:32:12.843 !MESSAGE Unhandled event loop excep
 tion !ENTRY org.eclipse.ui 4 0 Mar 03, 2004 11:32:12.859 !MESSAGE Argument not valid !STACK 0 java.lang.IllegalArgumentException: Argument not valid a
 t org.eclipse.swt.SWT.error(SWT.java:2611) at org.eclipse.swt.SWT.error(SWT.java:2555) at org.eclipse.swt.graphics.GC.setBackground(GC.java:2183) at o
-rg.eclipse.swt.custom.StyledText.performPaint(StyledText.java:6090) at org.eclipse.swt.custom.StyledText.handlePaint(StyledText.java:5400) at org.ecli
-pse.swt.custom.StyledText$7.handleEvent(StyledText.java:5075) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.w
-idgets.Widget.sendEvent(Widget.java:833) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857) at org.eclipse.swt.widgets.Widget.sendEvent(Widg
-et.java:842) at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:781) at org.eclipse.swt.widgets.Control.windowProc(Control.java:2990) at org
-.eclipse.swt.widgets.Display.windowProc(Display.java:2880) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method) at org.eclipse.swt.int
-ernal.win32.OS.DispatchMessage(OS.java:1376) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2031) at org.eclipse.jface.window.Window.
-runEventLoop(Window.java:638) at org.eclipse.jface.window.Window.open(Window.java:618) at org.eclipse.jface.dialogs.ErrorDialog.open(ErrorDialog.java:
-307) at org.eclipse.jface.dialogs.ErrorDialog.openError(ErrorDialog.java:370) at org.eclipse.jface.dialogs.ErrorDialog.openError(ErrorDialog.java:333)
- at org.eclipse.ui.internal.keys.WorkbenchKeyboard.logException(WorkbenchKeyboard.java:677) at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processK
-eyEvent(WorkbenchKeyboard.java:933) at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:568) at org.ecl
-ipse.ui.internal.keys.WorkbenchKeyboard.access$2(WorkbenchKeyboard.java:500) at org.eclipse.ui.internal.keys.WorkbenchKeyboard$1.handleEvent(Workbench
-Keyboard.java:256) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Display.filterEvent(Display.java:699
-) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:832) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857) at org.eclipse.swt.widgets
-.Widget.sendEvent(Widget.java:842) at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716) at org.eclipse.swt.widgets.Control.sendKeyEvent(
-Cont
+rg.eclipse.swt.custom.StyledText.performPaint(StyledText.java:6090) at org.eclipse.swt.custom.StyledText.handlePaint(S

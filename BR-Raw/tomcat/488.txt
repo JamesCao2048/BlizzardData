@@ -18,17 +18,4 @@ ch tab
 -arch x86 
 -data D:Eclipseworkspace 
 -install file:D:/Eclipse/sdk/eclipse/ !ENTRY org.eclipse.ui 4 4 Jun 05, 2002 21:55:25.304 !MESSAGE Unhandled exception caught in event loop.
-!ENTRY org.eclipse.ui 4 0 Jun 05, 2002 21:55:25.394 !MESSAGE Failed to execute runnable (java.lang.NullPointerException) !STACK 0 org.eclipse.swt.SWTE
-xception: Failed to execute runnable (java.lang.NullPointerException) at org.eclipse.swt.SWT.error(SWT.java:1887) at org.eclipse.swt.widgets.Synchroni
-zer.runAsyncMessages (Synchronizer.java(Compiled Code)) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block (ModalContext.java(Compil
-ed Code)) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block (ModalContext.java(Compiled Code)) at org.eclipse.jface.operation.Modal
-Context$ModalContextThread.block (ModalContext.java(Compiled Code)) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:258) at org.ecli
-pse.search.internal.ui.util.ExtendedDialogWindow.run (ExtendedDialogWindow.java:179) at org.eclipse.search.internal.ui.text.TextSearchPage.performActi
-on (TextSearchPage.java:151) at org.eclipse.search.internal.ui.SearchDialog.performAction (SearchDialog.java:310) at org.eclipse.search.internal.ui.ut
-il.ExtendedDialogWindow.buttonPressed (ExtendedDialogWindow.java:136) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:398) at org.ecl
-ipse.swt.widgets.TypedListener.handleEvent(TypedListener.java (Compiled Code)) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java (Comp
-iled Code)) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java (Compiled Code)) at org.eclipse.jface.window.Window.runEventLoop(Window.ja
-va(Compiled Code)) at org.eclipse.jface.window.Window.open(Window.java:538) at org.eclipse.search.internal.ui.OpenSearchDialogAction.run (OpenSearchDi
-alogAction.java:54) at org.eclipse.search.internal.ui.OpenSearchDialogAction.run (OpenSearchDialogAction.java:40) at org.eclipse.ui.internal.PluginAct
-ion.runWithEvent (PluginAction.java:210) at org.eclipse.ui.internal.WWinPluginAction.runWithEvent (WWinPluginAction.java:172) at org.eclipse.jface.act
-ion.ActionContributionItem.handleWidgetSel
+!ENTR

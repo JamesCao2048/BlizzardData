@@ -8,16 +8,4 @@ atus.OK_STATUS; else return Status.CANCEL_STATUS; } }; IProgressService ps = Pla
 stInUI(uiJob, "Help Me" + getName()); if (choice.getCode() == 0) return true; else return false; } The job I have processes some work and then does mo
 re (a runnable passed to the job for fun).
 I'm trying to make that 2nd bit of work optional based on the user prompt.
-This works only if I step through the logic, deep down into feedbackManager.requestInUI(job, message) where it sets up another UIJob and then uses a j
-oin() to wait on the response.
-Not sure if it is because of the async job execution (Something I had not noticed before on my API tour), or what.
-Another observation is that it seemed like the inUI request was not removed from the prompt dialog.
-The general purpose Errors Running Jobs dialog gets opened, but it is not helping identify what exception is thrown (I'm wondering if this dialog actu
-ally shows enough information, even when you open details it is redundantly showing the same thing twice 
-- and little specific info that I can find a way to influence so far).
-I have to go to the error log to see that it is a NullPointerException; this is due to the fact my choice var above is null after the requestInUI call
-.
-An aside; I got the impression from EclipseCON that this user request would be a hint to see what was needed vs a dialog that opened on top of their c
-urrent work.
-Is this prompt technique still under development or finalized?
-I've been running my code on both M7 and I20040310.
+This works only if I step through the 

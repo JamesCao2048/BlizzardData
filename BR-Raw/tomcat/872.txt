@@ -5,19 +5,4 @@ wUp = new ExceptionThrower(); throwUp.throwException(); } catch(Exception e) { S
 n(String[] args) { ExceptionCatcher catcher = new ExceptionCatcher(); catcher.catchException(); } } package com.aop; import org.aspectj.lang.JoinPoint
 ; public aspect ExceptionHandler { pointcut classList() : within(com.regular..*); before(Throwable e) : classList() && handler(*) && args(e) { System.
 out.println("Starting before block"); log(thisJoinPointStaticPart, e); System.out.println("End of before block"); } private void log(JoinPoint.StaticP
-art jp, Throwable e) { System.out.println("Class Name: " + jp.getSignature ().getDeclaringType()); System.out.println("Error Message" + e.getMessage()
- ); } } Runing JAD: jad ExceptionCatcher.class Parsing ExceptionCatcher.class...
-Generating ExceptionCatcher.jad Couldn't fully decompile method catchException Couldn't resolve all exception handlers in method catchException Now th
-e JAD Output: // Decompiled by Jad v1.5.7.Copyright 1997-99 Pavel Kouznetsov.
-// Jad home page: http://www.geocities.com/SiliconValley/Bridge/8617/jad.html // Decompiler options: packimports(3) // Source File Name: ExceptionCatc
-her.java package com.regular; import com.aop.ExceptionHandler; import com.capitalone.risk.aop.ITestInterface; import com.capitalone.risk.aop.ITestInte
-rfaceAspect; import java.io.PrintStream; import org.aspectj.runtime.reflect.Factory; // Referenced classes of package com.regular: // ExceptionThrower
- public class ExceptionCatcher implements com.aop.IntroductionPointCut.IPhilipsTarget { public ExceptionCatcher() { } public void catchException() { i
-f(this instanceof ITestInterface) ITestInterfaceAspect.aspectOf ().ajc$before$com_capitalone_risk_aop_ITestInterfaceAspect$113((ITestInterface) this);
- ExceptionThrower throwUp = new ExceptionThrower(); throwUp.throwException(); break MISSING_BLOCK_LABEL_77; Exception exception; exception; ExceptionH
-andler.aspectOf().ajc$before$com_aop_ExceptionHandler$1f8 (exception, ajc$tjp_0); Exception e = exception; System.out.println("Inside my catch block")
-; break MISSING_BLOCK_LABEL_77; Throwable throwable; throwable; if(this instanceof ITestInterface) ITestInterfaceAspect.aspectOf ().ajc$after$com_capi
-talone_risk_aop_ITestInterfaceAspect$172((ITestInterface) this); throw throwable; if(this instanceof ITestInterface) ITestInterfaceAspect.aspectOf ().
-ajc$after$com_capitalone_risk_aop_ITestInterfaceAspect$172((ITestInterface) this); return; } public static void main(String args[]) { ExceptionCatcher
- catcher = new ExceptionCatcher(); catcher.catchException(); } public static final org.aspectj.lang.JoinPoint.StaticPart ajc$tjp_0; static { Factory f
-actory = new
+art jp, Throwable e) { System.out.println("Class Name: " + jp.getSignature ().getDeclaringType()); System.out.println("Error Message" 

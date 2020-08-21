@@ -9,18 +9,4 @@ error view.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=it_IT !ENTRY org.eclipse.jdt.ui 4 10001 mar 19, 2004 09:19:42.906 !MESSAGE Internal Error !STAC
 K 0 java.lang.reflect.InvocationTargetException at org.eclipse.jface.operation.ModalContext.runInCurrentThread (ModalContext.java:315) at org.eclipse.
 jface.operation.ModalContext.run(ModalContext.java:252) at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:758) at org.eclipse.jdt.interna
-l.ui.wizards.NewElementWizard.performFinish (NewElementWizard.java:100) at org.eclipse.jface.wizard.WizardDialog.finishPressed (WizardDialog.java:608)
- at org.eclipse.jface.wizard.WizardDialog.buttonPressed (WizardDialog.java:321) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402) 
-at org.eclipse.swt.widgets.TypedListener.handleEvent (TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at or
-g.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.wid
-gets.Display.readAndDispatch(Display.java:2029) at org.eclipse.jface.window.Window.runEventLoop(Window.java:647) at org.eclipse.jface.window.Window.op
-en(Window.java:627) at org.eclipse.jdt.internal.ui.wizards.AbstractOpenWizardAction.run (AbstractOpenWizardAction.java:158) at org.eclipse.jface.actio
-n.Action.runWithEvent(Action.java:881) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContributionItem.java:536) at o
-rg.eclipse.jface.action.ActionContributionItem.access$2 (ActionContributionItem.java:488) at org.eclipse.jface.action.ActionContributionItem$5.handleE
-vent (ActionContributionItem.java:420) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent
-(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.j
-ava:2029) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1526) at or
-g.eclipse.ui.internal.Workbench.createAndRunWorkbench (Workbench.java:265) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at 
-org.eclipse.ui.internal.ide.IDEApplication.run (IDEApplication.java:47) at org.eclipse.core.internal.runtime.PlatformActivator$1.run (PlatformActivato
-r.java:257) at org.eclipse.core.runtime.adaptor.EclipseStarter.run (EclipseStarter.java:104) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Me
-thod) at sun.reflect
+l.ui.wizards.NewElementWizard.performFinish (NewElementWizard.java:100) at org.eclipse.jface.wizard.WizardDialog.finishPressed (Wizard

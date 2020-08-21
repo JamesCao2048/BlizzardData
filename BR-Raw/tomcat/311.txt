@@ -10,21 +10,4 @@ ke it visible.
 If you now choose "run as..." a runtime workbench is started and everything works fine.
 Now export the project as a deployable plugin.
 Then, extract the zip file to the eclipse folder so that the plugin is in the appropriate place.
-Stop and restart Eclipse, adjust perspective so that the view is selectable and choose show view "Sample view".
-In the sample view click on the first item in the menu "action1", an exception is thrown and the log file says: !SESSION Jan 09, 2004 14:25:18.483 
---------------------------------------------- java.version=1.4.2_02 java.vendor=Sun Microsystems Inc.
-BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US Command-line arguments: 
--os win32 
--ws win32 
--arch x86 !ENTRY org.eclipse.core.runtime 4 2 Jan 09, 2004 14:25:18.483 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.
-runtime".
-!STACK 0 java.lang.NoClassDefFoundError: org/eclipse/swt/awt/SWT_AWT at swtawtbug.views.SampleView.createPartControl(SampleView.java:103) at org.eclip
-se.ui.internal.PartPane$4.run(PartPane.java:161) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:813) at org.eclipse.
-core.runtime.Platform.run(Platform.java:457) at org.eclipse.ui.internal.PartPane.createChildControl (PartPane.java:157) at org.eclipse.ui.internal.Vie
-wPane.createChildControl (ViewPane.java:211) at org.eclipse.ui.internal.PartPane.createControl(PartPane.java:206) at org.eclipse.ui.internal.ViewPane.
-createControl(ViewPane.java:190) at org.eclipse.ui.internal.PartTabFolder.createPartTab(PartTabFolder.java:253) at org.eclipse.ui.internal.PartTabFold
-er.add(PartTabFolder.java:89) at org.eclipse.ui.internal.PartTabFolder.add(PartTabFolder.java:112) at org.eclipse.ui.internal.PerspectivePresentation.
-stackView (PerspectivePresentation.java:1573) at org.eclipse.ui.internal.PerspectivePresentation.stack (PerspectivePresentation.java:1546) at org.ecli
-pse.ui.internal.PerspectivePresentation.addPart (PerspectivePresentation.java:164) at org.eclipse.ui.internal.Perspective.showView(Perspective.java:14
-75) at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:714) at org.eclipse.ui.internal.WorkbenchPage.access$9 (WorkbenchPage.jav
-a:694) at org.eclipse.ui.internal.WorkbenchPage$13.run(WorkbenchPage.j
+Stop and restart Eclipse, adjust perspective so that the vie

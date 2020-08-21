@@ -8,5 +8,4 @@ So the Coolbar gets it background changed to a specific color and the ToolBar re
 Testing with different GTK themes one can see weird combinations of colors in the CoolBar and its children (hint: the only visual CoolBar part is the 
 CoolItem's gripper).
 I don't know what is the right answer for this problem.
-But, some possible (untested) solutions are: 1) Stop changing the CoolBar's background 2) Also setting the ToolBars' background to match the CoolBar's
- background Anyhow, I didn't look at UI code to prove what I'm saying is correct so I might be complete out for lunch.
+But, some possible (untested) solutions are: 1) Stop changing the CoolBar's background 2) Also setting the ToolB

@@ -6,17 +6,4 @@ ter pressing it), and when I try to close the windows it gives the msg : "wizard
 you must cancel the operation before you can close the wizard" I got another lock, that I can't exactly appoint what task I was doing when it occured.
 But it gave me the following stacktrace !ENTRY org.eclipse.ui 4 0 Nov 19, 2003 13:53:48.509 !MESSAGE Widget is disposed !STACK 0 org.eclipse.swt.SWTEx
 ception: Widget is disposed at org.eclipse.swt.SWT.error(SWT.java:2330) at org.eclipse.swt.SWT.error(SWT.java:2260) at org.eclipse.swt.widgets.Widget.
-error(Widget.java:370) at org.eclipse.swt.widgets.Control.getDisplay(Control.java:1365) at org.eclipse.swt.widgets.Widget.isValidThread(Widget.java:72
-9) at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:308) at org.eclipse.swt.widgets.Label.setText(Label.java:487) at org.eclipse.jface.wizard
-.ProgressMonitorPart.updateLabel(ProgressMonitorPart.java:213) at org.eclipse.jface.wizard.ProgressMonitorPart.beginTask(ProgressMonitorPart.java:83) 
-at org.eclipse.jface.operation.AccumulatingProgressMonitor$1.run(AccumulatingProgressMonitor.java:99) at org.eclipse.swt.widgets.RunnableLock.run(Runn
-ableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:98) at org.eclipse.swt.widgets.Display.runAsyncMessages(D
-isplay.java:1824) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1642) at org.eclipse.jface.operation.ModalContext$ModalContextThread
-.block(ModalContext.java:136) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:261) at org.eclipse.debug.internal.ui.launchConfigurat
-ions.LaunchConfigurationsDialog.run(LaunchConfigurationsDialog.java:1290) at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDi
-alog.launchWithProgress(LaunchConfigurationsDialog.java:1239) at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.doLaunc
-h(LaunchConfigurationsDialog.java:1202) at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.handleLaunchPressed(LaunchCon
-figurationsDialog.java:1170) at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.buttonPressed(LaunchConfigurationsDialog
-.java:313) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:423) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.ja
-va:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:923) at org.eclipse
-.swt.widgets.Display.runDeferredEvents(Display.java:1847) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1639) 
+error(Widget.java:370) at org.eclipse.swt.widgets.Control.getDisplay(Control.java:1365) at 

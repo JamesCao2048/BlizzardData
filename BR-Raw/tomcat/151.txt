@@ -5,18 +5,4 @@ FException at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:400
 org.eclipse.osgi.internal.resolver.StateReader.readState(StateReader.java:52) at org.eclipse.osgi.internal.resolver.StateReader.loadState(StateReader.
 java:146) at org.eclipse.osgi.internal.resolver.StateObjectFactoryImpl.readSystemState(StateObjectFactoryImpl.java:136) at org.eclipse.osgi.internal.r
 esolver.StateManager.readState(StateManager.java:58) at org.eclipse.osgi.internal.resolver.StateManager.<init>(StateManager.java:33) at org.eclipse.co
-re.runtime.adaptor.EclipseAdaptor.createStateManager(EclipseAdaptor.java:104) at org.eclipse.osgi.framework.internal.defaultadaptor.DefaultAdaptor.ini
-tialize(DefaultAdaptor.java:120) at org.eclipse.osgi.framework.internal.core.Framework.initialize(Framework.java:118) at org.eclipse.osgi.framework.in
-ternal.core.Framework.<init>(Framework.java:97) at org.eclipse.osgi.framework.internal.core.OSGi.createFramework(OSGi.java:90) at org.eclipse.osgi.fra
-mework.internal.core.OSGi.<init>(OSGi.java:31) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:86) at sun.reflect.NativeMet
-hodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMetho
-dAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basic
-Run(Main.java:279) at org.eclipse.core.launcher.Main.run(Main.java:742) at org.eclipse.core.launcher.Main.main(Main.java:581) I reinstalled the entire
- program, removed my workspace (trying to give it a fresh start), but the error persists The .metadata.log shows: !SESSION 
----------------------------------------------------------------------- !ENTRY org.eclipse.core.launcher 4 0 Mar 12, 2004 17:11:50.25 !MESSAGE Exceptio
-n launching the Eclipse Platform: !STACK java.lang.NullPointerException at org.eclipse.core.runtime.adaptor.EclipseBundleData.generateManifest(Eclipse
-BundleData.java:231) at org.eclipse.core.runtime.adaptor.EclipseBundleData.loadManifest(EclipseBundleData.java:207) at org.eclipse.core.runtime.adapto
-r.CachedManifest.getManifest(CachedManifest.java:31) at org.eclipse.core.runtime.adaptor.CachedManifest.get(CachedManifest.java:66) at org.eclipse.osg
-i.internal.resolver.StateBuilder.createBundleDescription(StateBuilder.java:34) at org.eclipse.osgi.internal.resolver.StateObjectFactoryImpl.createBund
-leDescription(StateObjectFactoryImpl.java:21) at org.eclipse.core.runtime.adaptor.EclipseAdaptor.createStateManager(EclipseAdaptor.java:117) at org.ec
-lipse.o
+re.runtime.adaptor.EclipseAdaptor.createStateManager(EclipseAdaptor.java:104) at org.eclipse.o

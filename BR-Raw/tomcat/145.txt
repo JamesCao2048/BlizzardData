@@ -15,4 +15,4 @@ As Pascal mentioned, dynamically importing from A does not affect B's ability to
 Uninstalling A (and refreshing) should cause B to stop and restart.
 It can restart even with A gone because it did not explicilty rely on A, it just dynamically imported stuff that happened to come from A.
 If I have characterized this correctly, could you enter a bug report against Equinox/OSGi with details?
-Simple test case would also be cool.
+Simple test case would also be 

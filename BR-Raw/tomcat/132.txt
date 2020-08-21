@@ -7,17 +7,4 @@ l.Perspective.showView(Perspective.java:1401) at org.eclipse.ui.internal.Workben
 .WorkbenchPage.access$9(WorkbenchPage.java:698) at org.eclipse.ui.internal.WorkbenchPage$13.run(WorkbenchPage.java:2883) at org.eclipse.swt.custom.Bus
 yIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:2880) at org.eclipse.debug.internal.u
 i.views.launch.LaunchViewContextListener.contextActi vated(LaunchViewContextListener.java:235) at org.eclipse.debug.internal.ui.views.launch.LaunchVie
-wContextListener.contextChan ged(LaunchViewContextListener.java:173) at org.eclipse.ui.internal.contexts.Context.fireContextChanged(Context.java:117) 
-at org.eclipse.ui.internal.contexts.MutableContextManager.notifyContexts (MutableContextManager.java:140) at org.eclipse.ui.internal.contexts.MutableC
-ontextManager.setEnabledContextIds (MutableContextManager.java:274) at org.eclipse.debug.internal.ui.views.launch.LaunchView.showViewsForCurrentSelect
-i on(LaunchView.java:560) at org.eclipse.debug.internal.ui.views.launch.LaunchView.selectionChanged (LaunchView.java:500) at org.eclipse.jface.viewers
-.Viewer$2.run(Viewer.java:159) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:646) at org.eclipse.core.runtime.Platf
-orm.run(Platform.java:497) at org.eclipse.jface.viewers.Viewer.fireSelectionChanged(Viewer.java:157) at org.eclipse.jface.viewers.StructuredViewer.upd
-ateSelection (StructuredViewer.java:1310) at org.eclipse.jface.viewers.StructuredViewer.setSelection (StructuredViewer.java:1033) at org.eclipse.debug
-.internal.ui.views.launch.LaunchView.autoExpand (LaunchView.java:1107) at org.eclipse.debug.internal.ui.views.launch.LaunchView.initializeSelection (L
-aunchView.java:372) at org.eclipse.debug.internal.ui.views.launch.LaunchView.becomesVisible (LaunchView.java:1372) at org.eclipse.debug.ui.AbstractDeb
-ugView$DebugViewPartListener.partVisible (AbstractDebugView.java:161) at org.eclipse.ui.internal.PartListenerList2$7.run(PartListenerList2.java:175) a
-t org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:646) at org.eclipse.core.runtime.Platform.run(Platform.java:497) at or
-g.eclipse.ui.internal.PartListenerList2.firePartVisible (PartListenerList2.java:173) at org.eclipse.ui.internal.WorkbenchPage$1.propertyChange (Workbe
-nchPage.java:137) at org.eclipse.ui.internal.LayoutPart.setVisible(LayoutPart.java:233) at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:3
-81) at org.eclipse.ui.internal.PartTabFolder.setSelection(PartTabFolder.java:1208) a
+wContextListener.contextChan ged(LaunchViewCont

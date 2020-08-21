@@ -11,24 +11,4 @@ mixed mode): "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid
  org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconci le(JavaReconcilingStrategy.java:72) 
 - waiting to lock 
 <0x12adb960> (a org.eclipse.jdt.internal.core.Compilat ionUnit) at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconci le(JavaReconc
-ilingStrategy.java:99) at org.eclipse.jface.text.reconciler.MonoReconciler.process (MonoReconcil er.java:76) at org.eclipse.jface.text.reconciler.Abst
-ractReconciler$BackgroundThread .run(AbstractReconciler.java:189) "TimeoutOutputStream" daemon prio=5 tid=0x03083bd8 nid=0xd84 in Object.wait() [4 a0f
-000..4a0fd94] at java.lang.Object.wait(Native Method) 
-- waiting on 
-<0x121d6e60> (a org.eclipse.team.internal.core.streams.Time outOutputStream) at java.lang.Object.wait(Object.java:429) at org.eclipse.team.internal.co
-re.streams.TimeoutOutputStream.writeUntil Done(TimeoutOutputStream.java:240) 
-- locked 
-<0x121d6e60> (a org.eclipse.team.internal.core.streams.TimeoutO utputStream) at org.eclipse.team.internal.core.streams.TimeoutOutputStream.runThread (
- TimeoutOutputStream.java:195) at org.eclipse.team.internal.core.streams.TimeoutOutputStream.access$0 (T imeoutOutputStream.java:193) at org.eclipse.t
-eam.internal.core.streams.TimeoutOutputStream$1.run (Time outOutputStream.java:66) at java.lang.Thread.run(Thread.java:534) "Worker-6" prio=5 tid=0x03
-157eb8 nid=0x1d4 waiting on condition [4a4f000..4a4fd9 4] at java.lang.Thread.sleep(Native Method) at org.eclipse.ui.internal.progress.AnimationManage
-r.animateLoop (Animati onManager.java:322) at org.eclipse.ui.internal.progress.AnimationManager$3.run (AnimationMana ger.java:471) at org.eclipse.core
-.internal.jobs.Worker.run(Worker.java:62) "Worker-5" prio=5 tid=0x0317c818 nid=0x9d8 in Object.wait() [3b2f000..3b2fd94] at java.lang.Object.wait(Nati
-ve Method) 
-- waiting on 
-<0x10f78088> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:108) 
-- locked 
-<0x10f78088> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.java:13 4) at org.eclipse
-.core.internal.jobs.Worker.run(Worker.java:55) "Worker-2" prio=5 tid=0x03017a50 nid=0xc7c in Object.wait() [41cf000..41cfd94] at java.lang.Object.wait
-(Native Method) 
-- wait
+ilingStra

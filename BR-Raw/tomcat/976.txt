@@ -9,6 +9,4 @@ So if you are using jboss-ide, open the jboss debug and configure the classpath.
 Disable 'use default class path'.
 Add sunjce_provider.jar and jce.jar to the 'User classes'.
 Remove sunjce_provider.jar from the 'Bootstrap Classes', retain jce.jar in 'BootStrap Classes'.
-" As I don't use JBoss but a simple Java application, i had the same problem and the same workaround worked for me: In "Bootstrap classes" of the appl
-ication un configuration, I removed the default "JRE_LIB" entry and added (in replacement) rt.jar, jsse.jar, jce.jar to the "Bootstrap classes".
-with this change, the NoSuchAlgorithmException vanished and it worked.
+" As I don't use JBoss but a simple Java application, i had the sam

@@ -6,18 +6,4 @@ java.lang.NullPointerException at org.eclipse.jdt.internal.compiler.ast.Argument
 actMethodDeclaration.bindArguments (AbstractMethodDeclaration.java:86) at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve (Abs
 tractMethodDeclaration.java:357) at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve (TypeDeclaration.java:926) at org.eclipse.jdt.intern
 al.compiler.ast.TypeDeclaration.resolve (TypeDeclaration.java:975) at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve (Compil
-ationUnitDeclaration.java:271) at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve (HierarchyResolver.java:668) at org.eclipse.jdt.in
-ternal.core.hierarchy.HierarchyResolver.resolve (HierarchyResolver.java:495) at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertyp
-es (HierarchyBuilder.java:120) at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build (IndexBasedHierarchyBuilder.java:133) at or
-g.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute (TypeHierarchy.java:319) at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh 
-(TypeHierarchy.java:1234) at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation (CreateTypeHierarchyOperation.java:90) at org
-.eclipse.jdt.internal.core.JavaModelOperation.execute (JavaModelOperation.java:364) at org.eclipse.jdt.internal.core.JavaModelOperation.run (JavaModel
-Operation.java:703) at org.eclipse.jdt.internal.core.JavaElement.runOperation(JavaElement.java:524) at org.eclipse.jdt.internal.core.SourceType.newSup
-ertypeHierarchy (SourceType.java:550) at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy (SourceType.java:502) at org.eclipse.jdt.inter
-nal.corext.util.SuperTypeHierarchyCache.getTypeHierarchy (SuperTypeHierarchyCache.java:73) at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOv
-errideIndicators (OverrideIndicatorLabelDecorator.java:151) at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags (OverrideIndic
-atorLabelDecorator.java:121) at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorateImage (OverrideIndicatorLabelDecorator.java:93) at org.ecli
-pse.jdt.internal.ui.viewsupport.JavaUILabelProvider.decorateImage (JavaUILabelProvider.java:119) at org.eclipse.jdt.internal.ui.viewsupport.JavaUILabe
-lProvider.getImage (JavaUILabelProvider.java:134) at org.eclipse.jface.viewers.DecoratingLabelProvider.getImage (DecoratingLabelProvider.java:73) at o
-rg.eclipse.jdt.internal.ui.viewsupport.DecoratingJavaLabelProvider.getImage (DecoratingJavaLabelProvider.java:103) at org.eclipse.jface.viewers.TreeVi
-ewer.doUpdateItem(TreeV
+ationUnitDeclaration.java:271) at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve (HierarchyResolver.java:668) at org.e

@@ -10,6 +10,4 @@ le plugin.
 4.Launch "SWT ExamplesSWT controls" view 5.Click "Button" tab on the SWT controls view 6.Change "Size" to "100x100" 7.Change "Alignment" to Left.
 8.Change "Orientation" to SWT.RIGHT_TO_LEFT and SWT.LEFT_TO_RIGHT.
 9.You can see the visual alignment is also flipped.
-The alignment should not be changed, whatever the orientation setting is.
-In addition, I see the same problem in the following cases: "SWT ExampleSWT controls" view: Button, Label, "SWT ExamplesSWT Custom controls" view: CLa
-bel Test OS: Windows2000 SP3 Test Java platform: Sun Java2 SDK 1.4.1_06
+The alignment should not be changed, whatever the orientatio

@@ -8,17 +8,4 @@ a:1220) at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:6187)
 org.eclipse.jface.util.Assert$AssertionFailedException: Assertion failed: Invariant violated (lines: 186 size: 185) at org.eclipse.jface.util.Assert.i
 sTrue(Assert.java:168) at org.eclipse.ui.internal.texteditor.quickdiff.DocumentLineDiffer.invariant (DocumentLineDiffer.java:984) at org.eclipse.ui.in
 ternal.texteditor.quickdiff.DocumentLineDiffer.connect (DocumentLineDiffer.java:1007) at org.eclipse.jface.text.source.AnnotationModel.connect (Annota
-tionModel.java:155) at org.eclipse.jface.text.source.VisualAnnotationModel.connect (VisualAnnotationModel.java:77) at org.eclipse.jface.text.source.So
-urceViewer.setDocument (SourceViewer.java:390) at org.eclipse.jface.text.source.SourceViewer.setDocument (SourceViewer.java:368) at org.eclipse.ui.tex
-teditor.AbstractTextEditor.initializeSourceViewer (AbstractTextEditor.java:2403) at org.eclipse.ui.texteditor.AbstractTextEditor.createPartControl (Ab
-stractTextEditor.java:2196) at org.eclipse.ui.texteditor.StatusTextEditor.createPartControl (StatusTextEditor.java:53) at org.eclipse.ui.texteditor.Ex
-tendedTextEditor.createPartControl (ExtendedTextEditor.java:259) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.createPartControl (JavaEditor.ja
-va:2331) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.createPartControl (CompilationUnitEditor.java:1053) at org.eclipse.ui.interna
-l.PartPane$4.run(PartPane.java:141) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:1016) at org.eclipse.core.runtime
-.Platform.run(Platform.java:420) at org.eclipse.ui.internal.PartPane.createChildControl (PartPane.java:137) at org.eclipse.ui.internal.PartPane.create
-Control(PartPane.java:186) at org.eclipse.ui.internal.EditorWorkbook.createPage (EditorWorkbook.java:404) at org.eclipse.ui.internal.EditorWorkbook.ad
-d(EditorWorkbook.java:123) at org.eclipse.ui.internal.EditorArea.addEditor(EditorArea.java:55) at org.eclipse.ui.internal.EditorPresentation.openEdito
-r (EditorPresentation.java:351) at org.eclipse.ui.internal.EditorManager$2.run(EditorManager.java:585) at org.eclipse.swt.custom.BusyIndicator.showWhi
-le (BusyIndicator.java:84) at org.eclipse.ui.internal.EditorManager.createEditorTab (EditorManager.java:574) at org.eclipse.ui.internal.EditorManager.
-openInternalEditor (EditorManager.java:668) at org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor (EditorManager.java:459) at org.eclipse.
-ui.internal.EditorManager.openEditorFromInput (EditorManager.java:333
+tionModel.java:155) at org.eclip

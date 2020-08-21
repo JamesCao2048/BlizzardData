@@ -8,4 +8,4 @@ The rebuild occurred and, in the open editor, all indications of the error state
 However, the Problems view still displays all of the original compilation problems (now resolved), and the Package Explorer still has a red 'x' next t
 o the class and package that had the problems.
 Doing a "rebuild all" correctly resets the state of the Package Explorer and Problems view.
-It would seem that the build done by the 'refresh' does not clear the error states in the views before performing the compilation.
+It would seem that the build done by the 'refresh' does not clear the error states in the views b

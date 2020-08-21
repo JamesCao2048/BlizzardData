@@ -11,23 +11,4 @@ lt-Up for example NavigateForward(int &line, int &column); // Ctrl-Alt-Right for
 mple Special features: 
 - if navigating within a "block" of +/- 7 lines no additional history entry is inserted 
 - if navigating back and then changing the cursor position, the "future" isn't deleted 
-- NavigateLeave deletes the current entry out of the history list (=leave this position), (it also pushes it onto a small stack 
--> NavigatePop to get it back) ************* Code: 2 FILES (my implementation for Kdevelop/Qt/KDE) // CURSHIST.H #ifndef CURSHIST_H #define CURSHIST_H
- // This code is written by and (C) Andreas Brändle 
-< abraendle@gmx.de > 10.01.04 // published under GPL /* You need: * 4 application-global keys: Left, Right, Up, Down (Light-version 2 keys: Right, Lef
-t 
--also possible) * one application-global object of this class * the editor-views must know about this object and inform it when the cursor position ha
-s changed, because 
-- a character was entered 
-- cursor keys pressed especially NOT when 
-- Page/UpDown pressed 
-- Mouse clicked also when a file/view is closed * catch the events for the 4 keys globally and change to the appropriate view+cursorposition thats all
-...
-*/ // TODO: IMPORTANT! change the "QEditorWiget*"-pointers to what is needed to identify the view! class QEditorWidget; //DEL THIS LINE!! /**INTERNAL*
-*/ struct CursHistEntry { QEditorWidget* FileId; int LineCol; // (Line 0..2^24-1) *256 + Column 0..255 to save memory }; const int GCPH_BLOCK=7; // nu
-m of lines within which a cursor movement is not to be stored twice const int GCPH_HISTSZ=260; // size of history list const int GCPH_HSTACK=16; // si
-ze of history stack /***BEGIN****/ /* Purpose: Implements a global cursor position history */ class CGlobalCursorPosHistory { public: CGlobalCursorPos
-History(); ~CGlobalCursorPosHistory(); // store/update positions void CursorChanged(QEditorWidget* FileId, int line, int column); // inform this class
-! void FileClosed(QEditorWidget* FileId); // clean up history list // get new position QEditorWidget* NavigateBack(int &line, int &column); // Ctrl-Al
-t- Left for example QEditorWidget* NavigateLeave(int &line, int &column); // Ctrl-Alt- Up for example QEditorWidget* NavigateForward(int &line, int &c
-olumn); // Ctrl-Alt-Right for example QEditorWidg
+- NavigateLe

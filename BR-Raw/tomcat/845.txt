@@ -7,17 +7,4 @@ ceImpl.java:194) at org.eclipse.jdi.internal.ThreadReferenceImpl.frame(ThreadRef
 hread.getUnderlyingFrame(JDIThread.java:553) at org.eclipse.jdt.internal.debug.core.model.JDIStackFrame.getUnderlyingStackFrame(JDIStackFrame.java:950
 ) at org.eclipse.jdt.internal.debug.core.model.JDIStackFrame.getUnderlyingMethod(JDIStackFrame.java:223) at org.eclipse.jdt.internal.debug.core.model.
 JDIStackFrame.isOutOfSynch(JDIStackFrame.java:874) at org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.computeJDIAdornmentFlags(JDIModelPresenta
-tion.java:814) at org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.getDebugElementImage(JDIModelPresentation.java:780) at org.eclipse.jdt.intern
-al.debug.ui.JDIModelPresentation.getImage(JDIModelPresentation.java:633) at org.eclipse.debug.internal.ui.LazyModelPresentation.getImage(LazyModelPres
-entation.java:114) at org.eclipse.debug.internal.ui.DelegatingModelPresentation.getImage(DelegatingModelPresentation.java:166) at org.eclipse.debug.in
-ternal.ui.views.launch.LaunchView$3.getImage(LaunchView.java:230) at org.eclipse.jface.viewers.DecoratingLabelProvider.getImage(DecoratingLabelProvide
-r.java:73) at org.eclipse.jface.viewers.TreeViewer.doUpdateItem(TreeViewer.java:99) at org.eclipse.jface.viewers.AbstractTreeViewer$UpdateItemSafeRunn
-able.run(AbstractTreeViewer.java:87) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1127) at org.eclipse.core.runtime
-.Platform.run(Platform.java:464) at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:469) at org.eclipse.jface.viewer
-s.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:119) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.ja
-va:1127) at org.eclipse.core.runtime.Platform.run(Platform.java:464) at org.eclipse.jface.viewers.StructuredViewer.updateItem(StructuredViewer.java:12
-85) at org.eclipse.jface.viewers.StructuredViewer.update(StructuredViewer.java:1266) at org.eclipse.jface.viewers.StructuredViewer.update(StructuredVi
-ewer.java:1200) at org.eclipse.jface.viewers.StructuredViewer.handleLabelProviderChanged(StructuredViewer.java:647) at org.eclipse.jface.viewers.Conte
-ntViewer$1.labelProviderChanged(ContentViewer.java:74) at org.eclipse.jface.viewers.LabelProvider$1.run(LabelProvider.java:65) at org.eclipse.core.int
-ernal.runtime.InternalPlatform.run(InternalPlatform.java:1127) at org.eclipse.core.runtime.Platform.run(Platform.java:464) at org.eclipse.jface.viewer
-s.LabelProvider.fireLabelProviderChanged(LabelProvider.java:63) at
+tion.java:814) at org.eclipse

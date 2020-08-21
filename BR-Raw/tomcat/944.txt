@@ -9,32 +9,4 @@ ect.wait(Native Method)
 ore.internal.jobs.Worker.run(Worker.java:55) "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x0318f1d8 nid=0x724 in Object.wait()
  [3e9f000..3e9f d94] at java.lang.Object.wait(Native Method) 
 - waiting on 
-<0x12cae8d8> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(Abstr
-actReconciler.java:161) 
-- locked 
-<0x12cae8d8> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x02e36a70 nid
-=0x58c in Object.wait() [3b9f000..3b9f d94] at java.lang.Object.wait(Native Method) 
-- waiting on 
-<0x11f8fb78> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(Abstr
-actReconciler.java:161) 
-- locked 
-<0x11f8fb78> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) "Java indexing" daemon prio=4 tid=0x02db3360 nid=0x894 in Object.wait() [3adf000..
-3adfd94] at java.lang.Object.wait(Native Method) 
-- waiting on 
-<0x11d9ae58> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager) at java.lang.Object.wait(Object.java:429) at org.eclipse.jdt.internal.core
-.search.processing.JobManager.run(JobManager.java:358) 
-- locked 
-<0x11d9ae58> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager) at java.lang.Thread.run(Thread.java:534) "Signal Dispatcher" daemon prio=1
-0 tid=0x0003d408 nid=0xea4 waiting on condition [0..0] "Finalizer" daemon prio=9 tid=0x009c01c0 nid=0x458 in Object.wait() [2c1f000..2c1fd94] at java.
-lang.Object.wait(Native Method) 
-- waiting on 
-<0x113c0138> (a java.lang.ref.ReferenceQueue$Lock) at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:111) 
-- locked 
-<0x113c0138> (a java.lang.ref.ReferenceQueue$Lock) at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127) at java.lang.ref.Finalizer$Finalize
-rThread.run(Finalizer.java:159) "Reference Handler" daemon prio=10 tid=0x009bed90 nid=0x454 in Object.wait() [2bdf000..2bdfd94] at java.lang.Object.wa
-it(Native Method) 
-- waiting on 
-<0x113c01a0> (a java.lang.ref.Reference$Lock) at java.lang.Object.wait(Object.java:429) at java.lang.ref.Reference$ReferenceHandler.run(Reference.java
-:115) 
-- locked 
-<0x113c01a0> (a java.lang.ref.Reference$Lock) "main" prio=7 tid=0x000350e0 nid=0x624 in Object.wait() [7e00
+<0x12cae8d8> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThrea

@@ -7,17 +7,4 @@ Eclipse was unresponsive until the remote app terminated.
 at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:149) at org.eclipse.jdi.internal.connect.PacketReceiveMana
 ger.getReply(PacketReceiveManager.java:158) at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:173) at org.eclipse.jdi.internal.MirrorIm
 pl.requestVM(MirrorImpl.java:191) at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:522) at org.eclipse.jdi.in
-ternal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:549) at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDID
-ebugTarget.java:1337) at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getTypesToBytes(JavaHotCodeReplaceManager.java:544) at org.
-eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.redefineTypesJDK(JavaHotCodeReplaceManager.java:478) at org.eclipse.jdt.internal.debug.c
-ore.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:385) at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceMa
-nager.access$0(JavaHotCodeReplaceManager.java:358) at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManage
-r.java:287) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1567) at org.eclipse.core.internal.resources.Workspace.run(Workspace.j
-ava:1586) at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$3.run(JavaHotCodeReplaceManager.java:1105) at java.lang.Thread.run(Thre
-ad.java:536) !ENTRY org.eclipse.debug.ui 4 120 Mar 03, 2004 15:56:31.870 !MESSAGE Error logged from Debug UI: !STACK 1 org.eclipse.debug.core.DebugExc
-eption[5010]: org.eclipse.jdi.TimeoutException at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:149) at org
-.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:158) at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl
-.java:173) at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191) at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:206)
- at org.eclipse.jdi.internal.ThreadReferenceImpl.frameCount(ThreadReferenceImpl.java:147) at org.eclipse.jdt.internal.debug.core.model.JDIThread.getUn
-derlyingFrameCount(JDIThread.java:628) at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:415) at org.eclipse.jd
-t.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:514) at org.eclipse.jdt.internal.debug.core
+ternal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:549) at org.ec
