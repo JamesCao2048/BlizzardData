@@ -1,3 +1,4 @@
 Errors from the ant task do not provide links
-When invoking ant tasks, and getting an error, the console provides a hyperlink from the first line (the one that contains the message "BUILD FAILED" message), but the following two lines, which are more relevant to the error, are not provided with the hyperlinking capability to click right to the line that caused the error.
+When invoking ant tasks, and getting an error, the console provides a hyperlink from the first line (the one that contains the message "BUILD FAILED" message), but the following two lines, which are more relevant to the error, are not provided with the hyperlinking capability to click right to the l
+ine that caused the error.
 [javac] ^ [javac] 2 errors BUILD FAILED: C:BASECommonbuild.xml:188: Following error occured while executing this line C:BASECommonJDCbuild.xml:134: Following error occured while executing this line C:BASECommonJDCshared.xml:113: Compile failed; see the compiler error output for details.

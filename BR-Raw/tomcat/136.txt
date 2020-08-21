@@ -1,6 +1,7 @@
 Plugin and Fragment build properties options, missing add button
 (Eclipse Release 3.0, Milestone 7) Test environment: AIX 5.3, CDE, using the JVM that came bundled with Eclipse, Mozilla (most recent version I could find for AIX).
 This was discovered during verification of Release 3.0 Milestone 7 on AIX.
-The following was taken from the testing matrix given to verify Eclipse: *** description: Tailor plug-in and fragment build properties to control what files included in the package *** test case: 7.8.0.1.12 *** steps: Open the build.properties file of the respective 'Plugin' Projects to open the 'Build Properties' manifest editor.
+The following was taken from the testing matrix given to verify Eclipse: *** description: Tailor plug-in and fragment build properties to control what files included in the package *** test case: 7.8.0.1.12 *** steps: Open the build.properties file of the respective 'Plugin' Projects to open the 'Bu
+ild Properties' manifest editor.
 *** desired outcome: Build script variables and replacement values manifest editor is shown *** result: Fail *** details: Doing the specified actions goes to the 'Build Configuration' page.
 *** test case: 7.8.0.1.13 *** steps: Click "Add" button for both the Build script variable and Replacement values *** desired outcome: Variables and replacement values are created *** results: Fail *** details: There is no 'Add' Button

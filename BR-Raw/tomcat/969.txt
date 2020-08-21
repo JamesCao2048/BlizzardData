@@ -1,6 +1,7 @@
 Multiple aspects difficult to manage
 As soon as the Aspect Visualizer gets enough aspects so that most of them are colored gray it gets very difficult to see which aspect is which.
-Here are two features that I would like to see: * If you right-click on a file in the graphical (not textual) view you should have an option to "Show only aspects present in this file." For example, when I wanted to see which aspects were affecting my file Foo.java I had to hide/show every aspect on the list to see if there was a change.
+Here are two features that I would like to see: * If you right-click on a file in the graphical (not textual) view you should have an option to "Show only aspects present in this file." For example, when I wanted to see which aspects were affecting my file Foo.java I had to hide/show every aspect on
+ the list to see if there was a change.
 * There should be a feature to "recolor" the currently shown aspects.
 For example, if five of the aspects are gray, but they are the only ones shown it would be better to see a smart recoloring instead of having to do so manually myself.
 These limiting factors affect the scalability of the Aspect Visualizer tool: it's less useful the more aspects you have.

@@ -2,4 +2,5 @@ Accessibility-Duplicate Mnemonics on C/C++Editor page
 An accessibility requirement is that when a mnenomic is activated, the target control gets a visual focus.
 If a label has an underlined letter x, hitting Alt+x will bring that label's control to focus.
 Where there are duplicated mnemonics visible, then the second one never gets focus.
-Here are the duplicates mnemonics in the C/C++ Editor Preferences page: Overall: 'Annotations' and 'Apply' (a) General Tab 'Insert space for tabs' and 'Content Assist' tab (s) 'highlight matching brackets' and 'show print margin' (m) 'highlight current line' and 'Colors' tab (c) Colors Tab 'Bold' (b) doesn't bring focus Content Assist Tab 'Search current file' and 'Content Assist' tab (s) 'Search current project' and 'Insert single proposals' (p)
+Here are the duplicates mnemonics in the C/C++ Editor Preferences page: Overall: 'Annotations' and 'Apply' (a) General Tab 'Insert space for tabs' and 'Content Assist' tab (s) 'highlight matching brackets' and 'show print margin' (m) 'highlight current line' and 'Colors' tab (c) Colors Tab 'Bold' (b
+) doesn't bring focus Content Assist Tab 'Search current file' and 'Content Assist' tab (s) 'Search current project' and 'Insert single proposals' (p)

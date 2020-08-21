@@ -1,6 +1,7 @@
 PDE classpath container not working with importing binary projects (SWT fragments)
 3.0 M6 I downloaded 3.0 M6 today (to do some quick coding for draw2d and gef) and created a fresh install including workspace.
-Steps to repeat: 1.new workspace "C:eclipse-develop-3.0plugins" (autobuild is still on) 2.import external features "org.eclipse.jdt" and "org.eclipse.platform" 3.import external plug-ins and fragments contained in these features as binary projects (66 of 80) 4.checkout "org.eclipse.draw2d" and "org.eclipse.gef" from CVS HEAD (they are using pde container) Although "org.eclipse.swt" is in dependency list of "org.eclipse.draw2d" the plug-in doesn't compile and shows errors that imports "org.eclipse.swt..." can not be found.
+Steps to repeat: 1.new workspace "C:eclipse-develop-3.0plugins" (autobuild is still on) 2.import external features "org.eclipse.jdt" and "org.eclipse.platform" 3.import external plug-ins and fragments contained in these features as binary projects (66 of 80) 4.checkout "org.eclipse.draw2d" and "org.
+eclipse.gef" from CVS HEAD (they are using pde container) Although "org.eclipse.swt" is in dependency list of "org.eclipse.draw2d" the plug-in doesn't compile and shows errors that imports "org.eclipse.swt..." can not be found.
 Updating classpath for draw2d plug-in with context menu "PDE Tools 
 -> Update Classpath..." doesn't fix the problem.
 You need hack the binary project (fragment) "org.eclipse.swt.win32" to export its jar and add this to the classpath manually to resolve the compile errors.

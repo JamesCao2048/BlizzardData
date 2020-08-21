@@ -4,7 +4,8 @@ Eclipse can run it properly, but there is problem to debug into it.
 This is a test case(file name:B_$$_uckets.java).
 When put in same package, error message is :""There is no source file attached to the class file B_$$_uckets.class" When put in difference packages, error message is :"The source of the type 'B__$$__uckets' could not be shown as the type was not found".
 Examples: /** * Counters of random values that fall within each interval.
-*/ public class B__$$__uckets { private static final int MAX_BAR_SIZE = 50; private AlignRight ar = new AlignRight(); /** number of intervals */ private int n; /** counters per interval */ private int counters[]; /** minimum random value */ private float rMin; /** maximum random value */ private float rMax; /** from min to max */ private float width; /** * Constructor.
+*/ public class B__$$__uckets { private static final int MAX_BAR_SIZE = 50; private AlignRight ar = new AlignRight(); /** number of intervals */ private int n; /** counters per interval */ private int counters[]; /** minimum random value */ private float rMin; /** maximum random value */ private flo
+at rMax; /** from min to max */ private float width; /** * Constructor.
 * @param n the number of intervals */ public B__$$__uckets(int n) { this.n = n; this.counters = new int[n]; clear(); } /** * Return the counter value for interval i.
 * @param i the value of i * @return the counter value */ public int get(int i) { return counters[i]; } /** * Set the minimum and maximum random values.
 * @param rMin the minimum value * @param rMax the maximum value */ public void setLimits(float rMin, float rMax) { this.rMin = rMin; this.rMax = rMax; this.width = (rMax 

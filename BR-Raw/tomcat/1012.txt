@@ -1,4 +1,5 @@
 after failed move IFile left in a bogus state
-20030813 after a move operation failed ("copy successful but failed deleting resource") i'm left with an IFile that returns 'false' to 'exists()' but its 'location.toFile().exists()' returns 'true' this state results in a ResourceException when i try to create another file with the same name because of that, CreateCompilationUnitOperation.executeOperation() assumes that the file does not exist and does not ask to 'force' when creating the file.
+20030813 after a move operation failed ("copy successful but failed deleting resource") i'm left with an IFile that returns 'false' to 'exists()' but its 'location.toFile().exists()' returns 'true' this state results in a ResourceException when i try to create another file with the same name because
+ of that, CreateCompilationUnitOperation.executeOperation() assumes that the file does not exist and does not ask to 'force' when creating the file.
 major 
 - our test suites suffer from this

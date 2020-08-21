@@ -1,4 +1,5 @@
 Importing existing binary projects leads to errors
 An old problem is back.
-When updating existing binary projects with plugins from 1119 integration build, I got these errors in the .log: !MESSAGE Problems detected while importing plug-ins !SUBENTRY 1 org.eclipse.core.resources 4 273 Nov 19, 2002 14:57:44.109 !MESSAGE Could not delete: /org.eclipse.help.ui.win32.!SUBENTRY 1 org.eclipse.core.resources 4 273 Nov 19, 2002 14:57:44.109 !MESSAGE Could not delete: /org.eclipse.ui.win32.!SUBENTRY 1 org.eclipse.core.resources 4 273 Nov 19, 2002 14:57:44.109 !MESSAGE Could not delete: /org.eclipse.update.ui.win32.That was a problem in the past.
+When updating existing binary projects with plugins from 1119 integration build, I got these errors in the .log: !MESSAGE Problems detected while importing plug-ins !SUBENTRY 1 org.eclipse.core.resources 4 273 Nov 19, 2002 14:57:44.109 !MESSAGE Could not delete: /org.eclipse.help.ui.win32.!SUBENTRY 
+1 org.eclipse.core.resources 4 273 Nov 19, 2002 14:57:44.109 !MESSAGE Could not delete: /org.eclipse.ui.win32.!SUBENTRY 1 org.eclipse.core.resources 4 273 Nov 19, 2002 14:57:44.109 !MESSAGE Could not delete: /org.eclipse.update.ui.win32.That was a problem in the past.
 It has been fixed a while ago and it looks like something has been broken.

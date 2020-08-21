@@ -2,7 +2,9 @@ requestInUI seems to have a race condition (fails most times)
 I'm trying to exercise the job API that lets me query the user via a UI job and the requestInUI call.
 I get no Status back from the call unless I step through the logic in the debugger.
 Only then do I get a non-null return from the method.
-This is my logic: private boolean askUserForHelp() { UIJob uiJob = new UIJob("Help Request") { public IStatus runInUIThread(IProgressMonitor monitor) { if (MessageDialog.openQuestion(PlatformUI.getWorkbench() .getActiveWorkbenchWindow().getShell(), "Choose", "Should we run the runnable?")) return Status.OK_STATUS; else return Status.CANCEL_STATUS; } }; IProgressService ps = PlatformUI.getWorkbench().getProgressService(); IStatus choice = ps.requestInUI(uiJob, "Help Me" + getName()); if (choice.getCode() == 0) return true; else return false; } The job I have processes some work and then does more (a runnable passed to the job for fun).
+This is my logic: private boolean askUserForHelp() { UIJob uiJob = new UIJob("Help Request") { public IStatus runInUIThread(IProgressMonitor monitor) { if (MessageDialog.openQuestion(PlatformUI.getWorkbench() .getActiveWorkbenchWindow().getShell(), "Choose", "Should we run the runnable?")) return St
+atus.OK_STATUS; else return Status.CANCEL_STATUS; } }; IProgressService ps = PlatformUI.getWorkbench().getProgressService(); IStatus choice = ps.requestInUI(uiJob, "Help Me" + getName()); if (choice.getCode() == 0) return true; else return false; } The job I have processes some work and then does mo
+re (a runnable passed to the job for fun).
 I'm trying to make that 2nd bit of work optional based on the user prompt.
 This works only if I step through the logic, deep down into feedbackManager.requestInUI(job, message) where it sets up another UIJob and then uses a join() to wait on the response.
 Not sure if it is because of the async job execution (Something I had not noticed before on my API tour), or what.

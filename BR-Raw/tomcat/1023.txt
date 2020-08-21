@@ -1,6 +1,7 @@
 [RFP44] 4.1.7 Transactions spanning multiple life cycle operations
 There are two main issues here; 1) OSGi currently only supports the install/uninstall/update of one bundle at a time.
-There is no inherent ability to do "what if" queries to better understand the resolution effects of various changes and there is also no way of guaranteeing the atomicity of modifying a group of bundles as a unit (e.g., what happens when you fail halfway through installing a product consistening of 50 bundles?).
+There is no inherent ability to do "what if" queries to better understand the resolution effects of various changes and there is also no way of guaranteeing the atomicity of modifying a group of bundles as a unit (e.g., what happens when you fail halfway through installing a product consistening of 
+50 bundles?).
 2) since all management operations are individual, there is no obvious way of batching BundleEvents.
 Currently a BundleEvent is generated for each and every individual change to a bundle (install, start, ...).
 This is fine if you only ever have a few bundles.

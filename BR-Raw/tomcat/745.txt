@@ -1,7 +1,9 @@
 [doc] repackage IPlatformRunnable
 Yes.
 This makes good sense and appears to work out well.
-=============== Before: package org.eclipse.core.boot; public interface IPlatformRunnable { public static final Integer EXIT_OK = new Integer(0); public static final Integer EXIT_RESTART = new Integer(23); public Object run(Object args) throws Exception; } =============== After: package org.eclipse.core.runtime; public interface IPlatformRunnable { public static final Integer EXIT_OK = new Integer(0); public static final Integer EXIT_RESTART = new Integer(23); public Object run(Object args) throws Exception; } package org.eclipse.core.boot; /** @deprecated Use org.eclipse.core.runtime.IPlatformRunnable instead.
+=============== Before: package org.eclipse.core.boot; public interface IPlatformRunnable { public static final Integer EXIT_OK = new Integer(0); public static final Integer EXIT_RESTART = new Integer(23); public Object run(Object args) throws Exception; } =============== After: package org.eclipse.
+core.runtime; public interface IPlatformRunnable { public static final Integer EXIT_OK = new Integer(0); public static final Integer EXIT_RESTART = new Integer(23); public Object run(Object args) throws Exception; } package org.eclipse.core.boot; /** @deprecated Use org.eclipse.core.runtime.IPlatfor
+mRunnable instead.
 */ public interface IPlatformRunnable extends org.eclipse.core.runtime.IPlatformRunnable { } ============== IPlatformRunnable is interface that plug-ins implement in conjunction with org.eclipse.core.runtime.applications extension point.
 e.g., MyApp implements org.eclipse.core.boot.IPlatformRunnable {...} Net effect of API changes in null.
 Preserves binary compatibility.

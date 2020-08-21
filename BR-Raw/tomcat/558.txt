@@ -3,7 +3,8 @@ If SWT.RIGHT_TO_LEFT style is set, some SWT contols also change the alignment di
 If the alignment is right, then set SWT.RIGHT_TO_LEFT style, we see the alignment becomes left, and vice versa.
 This never happen on J2SE Swing.
 Swing does not change the alignment, even if the component orientation is RTL or LTR.
-Steps to reproduce: 1.Download the following files on http://www.eclipse.org/downloads/index.php and install them: eclipse-SDK-3.0M6-win32.zip eclipse-examples-3.0M6-win32.zip 2.In the example, set RTL_SUPPORT_ENABLE = true in org.eclipse.swt.examples.controlexample.Tab.java in org.eclipse.swt.example plugin.
+Steps to reproduce: 1.Download the following files on http://www.eclipse.org/downloads/index.php and install them: eclipse-SDK-3.0M6-win32.zip eclipse-examples-3.0M6-win32.zip 2.In the example, set RTL_SUPPORT_ENABLE = true in org.eclipse.swt.examples.controlexample.Tab.java in org.eclipse.swt.examp
+le plugin.
 3.Rebuild org.eclipse.swt.example plugin.
 4.Launch "SWT ExamplesSWT controls" view 5.Click "Button" tab on the SWT controls view 6.Change "Size" to "100x100" 7.Change "Alignment" to Left.
 8.Change "Orientation" to SWT.RIGHT_TO_LEFT and SWT.LEFT_TO_RIGHT.
