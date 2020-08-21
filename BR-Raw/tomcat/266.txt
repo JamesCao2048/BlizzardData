@@ -1,0 +1,168 @@
+IllegalStateException: zip file closed for cached bundles running from jar
+20040226 integration build
+Bundles that are installed with reference:.....jar - running directly from 
+jars work for the first time, but in subsequent launches, when bundles are 
+cached by the runtime, "java.lang.IllegalStateException: zip file closed" is 
+thrown and logged, whenever resources of the bundle are accessed.
+
+For example openning and closing workbench twice produces the following:
+!SESSION ----------------------------------------------------------------------
+!ENTRY org.eclipse.core.launcher 4 0 Mar 01, 2004 20:19:39.505
+!MESSAGE Exception launching the Eclipse Platform:
+!STACK
+java.lang.IllegalStateException: zip file closed
+	at java.util.zip.ZipFile.ensureOpen(ZipFile.java:398)
+	at java.util.zip.ZipFile.getEntry(ZipFile.java:145)
+	at 
+org.eclipse.osgi.framework.internal.defaultadaptor.BundleFile$ZipBundleFile.get
+ZipEntry(BundleFile.java:152)
+	at 
+org.eclipse.osgi.framework.internal.defaultadaptor.BundleFile$ZipBundleFile.get
+Entry(BundleFile.java:243)
+	at 
+org.eclipse.osgi.framework.internal.defaultadaptor.DefaultBundleData.getEntry
+(DefaultBundleData.java:197)
+	at org.eclipse.core.runtime.adaptor.EclipseBundleData.loadManifest
+(EclipseBundleData.java:198)
+	at org.eclipse.core.runtime.adaptor.CachedManifest.getManifest
+(CachedManifest.java:31)
+	at org.eclipse.core.runtime.adaptor.CachedManifest.get
+(CachedManifest.java:67)
+	at 
+org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle
+(ManifestLocalization.java:104)
+	at 
+org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders
+(ManifestLocalization.java:48)
+	at org.eclipse.osgi.framework.internal.core.Bundle.getHeaders
+(Bundle.java:1078)
+	at org.eclipse.osgi.framework.internal.core.Bundle.getHeaders
+(Bundle.java:1032)
+	at org.eclipse.core.internal.plugins.PluginDescriptor.isLegacy
+(PluginDescriptor.java:508)
+	at org.eclipse.core.internal.plugins.PluginStopper.run
+(PluginStopper.java:50)
+	at 
+org.eclipse.core.internal.runtime.PlatformActivator.stopLegacyBundles
+(PlatformActivator.java:285)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:267)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:324)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+	at org.eclipse.core.launcher.Main.run(Main.java:742)
+	at org.eclipse.core.launcher.Main.main(Main.java:581)
+
+Launching Workbench twice and going to Help->About->Plug-in Details does 
+nothing and logs
+!SESSION Mar 01, 2004 20:21:56.342 --------------------------------------------
+-
+java.version=1.4.2_03
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments: -data d:workspaceUpdateruntime-workspace -update -
+dev bin
+!ENTRY org.eclipse.ui 4 4 Mar 01, 2004 20:21:56.342
+!MESSAGE Unhandled event loop exception
+!ENTRY org.eclipse.ui 4 0 Mar 01, 2004 20:21:56.342
+!MESSAGE zip file closed
+!STACK 0
+java.lang.IllegalStateException: zip file closed
+	at java.util.zip.ZipFile.ensureOpen(ZipFile.java:398)
+	at java.util.zip.ZipFile.getEntry(ZipFile.java:145)
+	at 
+org.eclipse.osgi.framework.internal.defaultadaptor.BundleFile$ZipBundleFile.get
+ZipEntry(BundleFile.java:152)
+	at 
+org.eclipse.osgi.framework.internal.defaultadaptor.BundleFile$ZipBundleFile.get
+Entry(BundleFile.java:243)
+	at 
+org.eclipse.osgi.framework.internal.defaultadaptor.DefaultBundleData.getEntry
+(DefaultBundleData.java:197)
+	at org.eclipse.core.runtime.adaptor.EclipseBundleData.loadManifest
+(EclipseBundleData.java:198)
+	at org.eclipse.core.runtime.adaptor.CachedManifest.getManifest
+(CachedManifest.java:31)
+	at org.eclipse.core.runtime.adaptor.CachedManifest.get
+(CachedManifest.java:67)
+	at 
+org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle
+(ManifestLocalization.java:104)
+	at 
+org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders
+(ManifestLocalization.java:48)
+	at org.eclipse.osgi.framework.internal.core.Bundle.getHeaders
+(Bundle.java:1078)
+	at org.eclipse.osgi.framework.internal.core.Bundle.getHeaders
+(Bundle.java:1032)
+	at org.eclipse.core.internal.plugins.PluginDescriptor.getProviderName
+(PluginDescriptor.java:174)
+	at org.eclipse.ui.internal.ide.dialogs.AboutPluginsDialog$3.compare
+(AboutPluginsDialog.java:433)
+	at java.util.Arrays.mergeSort(Arrays.java:1278)
+	at java.util.Arrays.mergeSort(Arrays.java:1290)
+	at java.util.Arrays.mergeSort(Arrays.java:1289)
+	at java.util.Arrays.mergeSort(Arrays.java:1289)
+	at java.util.Arrays.mergeSort(Arrays.java:1289)
+	at java.util.Arrays.sort(Arrays.java:1219)
+	at 
+org.eclipse.ui.internal.ide.dialogs.AboutPluginsDialog.sortByProvider
+(AboutPluginsDialog.java:427)
+	at org.eclipse.ui.internal.ide.dialogs.AboutPluginsDialog.<init>
+(AboutPluginsDialog.java:111)
+	at org.eclipse.ui.internal.ide.dialogs.AboutPluginsDialog.<init>
+(AboutPluginsDialog.java:92)
+	at org.eclipse.ui.internal.ide.dialogs.AboutDialog.buttonPressed
+(AboutDialog.java:93)
+	at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:89)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2352)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:643)
+	at org.eclipse.jface.window.Window.open(Window.java:623)
+	at org.eclipse.ui.internal.ide.actions.AboutAction.run
+(AboutAction.java:81)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+	at 
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:550)
+	at org.eclipse.jface.action.ActionContributionItem.access$2
+(ActionContributionItem.java:502)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent
+(ActionContributionItem.java:435)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2352)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1566)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1542)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:263)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+	at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:47)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:256)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:324)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+	at org.eclipse.core.launcher.Main.run(Main.java:742)
+	at org.eclipse.core.launcher.Main.main(Main.java:581)
+
+If the bundle contributes any actions to the workbench, the workbench will not 
+even start second time.

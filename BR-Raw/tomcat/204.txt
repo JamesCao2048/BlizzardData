@@ -1,0 +1,2 @@
+Debugger Tab of launch configuration contains duplicate dialog titles
+1. Select Run->Run... from the main menu. 2. Select a preconfigured C/C++ local confiuration. 3. Click the Debugger tab. 4. Click both Browse buttons. They both bring up GDB command file dialog. One title should be changed to "GDB debugger".

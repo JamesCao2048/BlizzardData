@@ -1,0 +1,24 @@
+pde.core does not compile
+Build: N-20031206
+
+Note; This build is unusable for many reasons, but that is not the issue here.
+
+1. Use I-20031203 as development platform, and N-20031206 as target platform.
+2. Launch on a new workspace.
+3. Check out pde.core from CVS.
+
+You will see that pde.core does not compile anymore, even though its manifest 
+does contain the dependency on org.eclipse.core.runtime.compatibility.
+
+Not sure if it's a problem with Equinox restructuring or the JDT compiler.
+cc Philippe.
+
+Here is the compilation error, which did not occur when compiling against 
+previous Equinox builds.
+
+The type org.eclipse.osgi.service.environment.Constants cannot be resolved. It 
+is indirectly referenced from required .class files.	
+TargetPlatform.java	
+org.eclipse.pde.core/src/org/eclipse/pde/internal/core	
+line 0	
+December 7, 2003 10:39:31 AM

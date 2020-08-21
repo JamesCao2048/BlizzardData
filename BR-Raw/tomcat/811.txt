@@ -1,0 +1,2 @@
+consider listening to start level events to start the application
+Currently, we have the application runner as a separate bundle with the highest start level so when it starts we know that all user bundles are startable before we run the application. Another approach would be to use the framework event for start level changes as an indication that it is time to start the application. The benefit of this approach is that we could get rid of another bundle/project.

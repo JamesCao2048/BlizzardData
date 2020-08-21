@@ -1,0 +1,94 @@
+Cvs misdetects that folder is under revision control.
+I had quite a few problems with eclipse when I
+
+-checked out a branch of a cvs module as "projectx"
+-noticed that i really wanted to checkout projectx/folderx
+-used a filemanager to remove all but folderx and moved the contents of folderx
+up a directory such that folderx was now projectx.
+-refreshed since now .classpath and .project files are on the correct level.
+
+eclipse froze multiple times during multiple steps of this process such that
+after each step that was successful I decided to close eclipse to save my
+progress.  refreshing, cleaning the output directory and building were the tasks
+that froze eclipse, with the cpu for the process sitting idle - javaw.exe - and
+the VM for that process idle as well.
+
+Noticed that the .project file projectname didn't match so I fixed that, saved,
+closed eclipse, opened eclipse refresh.  Finally eclipse was responsive but cvs
+somehow thought that subdirectories under the output directory were under
+revision control.  Delete all folders under class within eclipse and I think my
+project is working again.
+
+
+
+!ENTRY org.eclipse.core.resources 4 271 Jul 24, 2003 09:26:20.995
+!MESSAGE File not found: e:projectsprojectxclassescomCVSRoot.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: File not found:
+e:projectscambieclassescomCVSRoot.
+	at
+org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:398)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:214)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:204)
+	at
+org.eclipse.team.internal.ccvs.core.util.SyncFileWriter.readFirstLine(SyncFileWriter.java:398)
+	at
+org.eclipse.team.internal.ccvs.core.util.SyncFileWriter.readFolderSync(SyncFileWriter.java:171)
+	at
+org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.cacheFolderSync(EclipseSynchronizer.java:756)
+	at
+org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.getFolderSync(EclipseSynchronizer.java:152)
+	at
+org.eclipse.team.internal.ccvs.core.resources.EclipseFolder.isCVSFolder(EclipseFolder.java:226)
+	at
+org.eclipse.team.internal.ccvs.core.resources.EclipseFolder.isIgnored(EclipseFolder.java:268)
+	at
+org.eclipse.team.internal.ccvs.ui.actions.WorkspaceAction.isEnabledForCVSResource(WorkspaceAction.java:305)
+	at
+org.eclipse.team.internal.ccvs.ui.actions.SyncAction.isEnabledForCVSResource(SyncAction.java:80)
+	at
+org.eclipse.team.internal.ccvs.ui.actions.WorkspaceAction.isEnabled(WorkspaceAction.java:276)
+	at
+org.eclipse.team.internal.ui.actions.TeamAction.setActionEnablement(TeamAction.java:240)
+	at
+org.eclipse.team.internal.ccvs.ui.actions.WorkspaceAction.setActionEnablement(WorkspaceAction.java:159)
+	at
+org.eclipse.team.internal.ui.actions.TeamAction.selectionChanged(TeamAction.java:224)
+	at org.eclipse.ui.internal.PluginAction.refreshEnablement(PluginAction.java:217)
+	at org.eclipse.ui.internal.PluginAction.selectionChanged(PluginAction.java:284)
+	at
+org.eclipse.ui.internal.ObjectActionContributor.contributeObjectActions(ObjectActionContributor.java:98)
+	at
+org.eclipse.ui.internal.ObjectActionContributorManager.contributeObjectActions(ObjectActionContributorManager.java:133)
+	at
+org.eclipse.ui.internal.PopupMenuExtender.addObjectActions(PopupMenuExtender.java:65)
+	at
+org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:86)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:257)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:336)
+	at org.eclipse.jface.action.MenuManager.access$0(MenuManager.java:333)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:345)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:116)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:848)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:872)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:853)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:3225)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:2894)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1303)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:2713)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:218)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:2214)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1871)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1680)
+	at org.eclipse.ui.internal.Workbench.run(Workbench.java:1663)
+	at
+org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858)
+	at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
+	at org.eclipse.core.launcher.Main.run(Main.java:747)
+	at org.eclipse.core.launcher.Main.main(Main.java:583)
+!ENTRY org.eclipse.core.resources 4 271 Jul 24, 2003 09:26:20.995
+!MESSAGE File not found: e:projectsprojectxclassescomCVSRoot.

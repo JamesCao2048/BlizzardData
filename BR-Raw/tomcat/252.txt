@@ -1,0 +1,19 @@
+F: Provide extensible and more flexible filtering in navigators
+Valentina, please assign to me.
+
+Currently, the filtering in the Hyades navigators is hardcoded. A common 
+mechanism for all Hyades navigators should be provided. This will be done via 
+an extension point element <filterSet .../> under the 
+<navigatorExtensions .../> extension point. This extension specify a label, 
+icon, navigatorID, implementation, and will allow filters to be declared as 
+common, which means they appear directly in the navigator view's menu, and 
+whether the filter set is enabled by default.
+
+This functionality will be placed at the INavigator level, and will apply to 
+all Hyades navigators. Content providers will be wrapped in a 
+FilteredTreeContentProvider, which will consult all filterSet extensions and 
+take care of the filtering.
+
+The interface should also be updated to comply with the Hyades UI guidelines. 
+Filters should also be general, and can include a broad category of items 
+(hence the name filter set), rather than a single item type (e.g. Monitor).

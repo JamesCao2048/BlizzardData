@@ -1,0 +1,2 @@
+fragments not searched for classpath entries
+In DefaultClassLoader.getClasspath() we are looking for a file to match a given classpath entry. Currently we only look in the bundle itself, we never consider fragments of the bundle. This makes the following interesting usecase impossible Bundle A manifest.mf Bundle-Classpath: foo.jar Bundle B manifest.mf Bundle-Host: BundleA where bundle A does NOT contain foo.jar and bundle B DOES contain foo.jar

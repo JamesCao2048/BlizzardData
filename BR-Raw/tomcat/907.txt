@@ -1,0 +1,7 @@
+[Jobs] lockup on attempting to create a folder below a source folder
+environment: 3.0M4,linux-gtk,j2sdk1.4.2, installed in /usr/local, data dir in 
+~/.eclipse-3.0M4, project in ~/work/dev/... 
+I have managed to repeat this one!  Open eclipse in existing project.  Place mouse 
+over a source directory in package explorer.  Right click, select New/Folder.  Fill in 
+popup (I used 'java' but surely it can't matter...).  Tab to 'Finish'.  Press space bar.  
+Hang up.

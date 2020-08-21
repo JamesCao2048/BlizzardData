@@ -1,0 +1,2 @@
+Handling of whitespace in Tokenizer & conformace to the spec
+Tokenizer has been updated to consider n and r as whitespaces. Checks must be done to make sure we do not break the compliance.

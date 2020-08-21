@@ -1,0 +1,2 @@
+NullpointerException in TypeBinding.getInterfaces().
+get an NullPointerException in TypeBinding.getInterface() line 189. this method should handle NullPointerException and return NO_INTERFACES.

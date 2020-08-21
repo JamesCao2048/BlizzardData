@@ -1,0 +1,2 @@
+ZoomManager's "Page" settings cause erratic behavior
+Keep entering 1% in the zoom combo box and you will see that the diagram keeps shrinking a little by little. This is because the ZoomManager is interpreting that 1% as "Page," and shrinking the diagram accordingly. And since it's using the Figure's preferred size to calculate the zoom level, and because changing the zoom level changes its preferred size, when you enter 1% the next time, the new minimum zoom is slightly less than earlier.

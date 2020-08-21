@@ -1,0 +1,146 @@
+HP-UX: profiling standalone with gc=default and id_style=static causes JVMPI crash
+Profiling PerformanceExample class in standalone mode on HP-UX causes a JVM 
+crash in JVMPI.
+
+Here is the command:
+java -
+XrunpiAgent:server=standalone,profile=gcdefaultidstatic.pro,file=ProfGCdefaultID
+static2.xml PerformanceExample
+
+Here is the contents of the profile file gcdefaultidstatic.pro:
+
+**********************************
+* Global Options - DEFAULT VALUE
+**********************************
+CLASS_LOAD_DETAILS			= false
+CONTEXT_FLOW				= false
+EXCEPTION_TRACING 			= false
+FILTERS				= true
+GC					= default
+ID_STYLE				= static
+OPTIONS				= true
+TIMESTAMPS				= true
+UNREFERENCED_SYMBOLS			= false
+
+***********************************
+* Global Options - INTERFACE VALUE
+***********************************
+
+COLLATION_VALUES                        = false
+METHOD_COUNTS                           = false
+OBJ_ALLOC_IS_ARRAY                      = false
+OBJ_REF_MODE                            = filterOwner
+STACK_INFORMATION                       = none
+TICKET                                  = true
+TRACE_IDREFS                            = false
+
+
+Here is the output:
+
+Unexpected Signal : 11 occurred at PC=0xc1d31158
+Function name=request_event__5jvmpiSFlPv
+Library=/opt/java1.3/jre/bin/../lib/PA_RISC2.0/server/libjvm.sl
+
+Current Java thread:
+"main" prio=7 tid=0x0002bc80 nid=1 lwp_id=26982 runnable 
+[0x7f7f3000..0x7f7f1230]
+	at sun.security.util.ManifestEntryVerifier.<init>(Unknown Source)
+	at java.util.jar.JarFile.initializeVerifier(Unknown Source)
+	at java.util.jar.JarFile.getInputStream(Unknown Source)
+	- locked <0x79037c20> (a sun.net.www.protocol.jar.URLJarFile)
+	at sun.net.www.protocol.jar.JarURLConnection.getInputStream
+(JarURLConnection.java:115)
+	at java.net.URL.openStream(Unknown Source)
+	at java.lang.ClassLoader.getResourceAsStream(Unknown Source)
+	at java.util.ResourceBundle$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.util.ResourceBundle.loadBundle(Unknown Source)
+	at java.util.ResourceBundle.findBundle(Unknown Source)
+	at java.util.ResourceBundle.getBundleImpl(Unknown Source)
+	at java.util.ResourceBundle.getBundle(Unknown Source)
+	at java.awt.Toolkit$3.run(Toolkit.java:1102)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.Toolkit.<clinit>(Toolkit.java:1098)
+	at java.awt.Component.<clinit>(Component.java:401)
+
+Dynamic libraries:
+/opt/java1.3/jre/bin/../bin/PA_RISC2.0/native_threads/java
+	text:0x00001000-0x00007384 data:0x00008000-0x000086b8
+/opt/java1.3/jre/bin/../lib/PA_RISC2.0/server/libjvm.sl
+	text:0xc1800000-0xc207d000 data:0x7f70a000-0x7f7ca000
+/usr/lib/libpthread.1
+	text:0xc04e0000-0xc04f6000 data:0x7f6cf000-0x7f6d2000
+/usr/lib/libm.2
+	text:0xc0230000-0xc025c000 data:0x7f6d2000-0x7f6d3000
+/usr/lib/librt.2
+	text:0xc02bc000-0xc02c0000 data:0x7f6d3000-0x7f6d4000
+/usr/lib/libcl.2
+	text:0xc0340000-0xc042b000 data:0x7f6d5000-0x7f6e1000
+/usr/lib/libisamstub.1
+	text:0xc00d7000-0xc00d8000 data:0x7f6d4000-0x7f6d5000
+/usr/lib/libCsup.2
+	text:0xc02a0000-0xc02bb000 data:0x7f6e1000-0x7f6e4000
+/usr/lib/libc.2
+	text:0xc0100000-0xc022e000 data:0x7f7cf000-0x7f7e6000
+/usr/lib/libdld.2
+	text:0xc0004000-0xc0007000 data:0x7f7ca000-0x7f7cb000
+/opt/java1.3/jre/lib/PA_RISC2.0/native_threads/libhpi.sl
+	text:0xc0ee0000-0xc0ef2000 data:0x7f6cd000-0x7f6cf000
+/opt/java1.3/jre/bin/../lib/PA_RISC2.0/libverify.sl
+	text:0xc0af0000-0xc0b00000 data:0x7f6b9000-0x7f6ba000
+/opt/java1.3/jre/bin/../lib/PA_RISC2.0/libjava.sl
+	text:0xc1350000-0xc137c000 data:0x7f6b4000-0x7f6b9000
+/opt/java1.3/jre/bin/../lib/PA_RISC2.0/libzip.sl
+	text:0xc1060000-0xc1073000 data:0x7f6b2000-0x7f6b4000
+/usr/lib/libpiAgent.sl
+	text:0xc1480000-0xc14a9000 data:0x7f43f000-0x7f4a8000
+/usr/lib/libhcbnd.sl
+	text:0xc029d000-0xc02a0000 data:0x7f430000-0x7f431000
+/usr/lib/libhccldt.sl
+	text:0xc027f000-0xc0280000 data:0x7f433000-0x7f434000
+/usr/lib/libhcclsm.sl
+	text:0xc0668000-0xc0675000 data:0x7f431000-0x7f432000
+/usr/lib/libhcclco.sl
+	text:0xc04f8000-0xc04fd000 data:0x7f432000-0x7f433000
+/usr/lib/libhccls.sl
+	text:0xc022e000-0xc0230000 data:0x7f434000-0x7f435000
+/usr/lib/libstream.2
+	text:0xc0310000-0xc0338000 data:0x7f437000-0x7f43a000
+/usr/lib/libstd.2
+	text:0xc0430000-0xc0469000 data:0x7f43a000-0x7f43d000
+/usr/lib/libnss_files.1
+	text:0xc00d8000-0xc00df000 data:0x7f42f000-0x7f430000
+/opt/java1.3/jre/bin/../lib/PA_RISC2.0/libawt.sl
+	text:0xc030a000-0xc030c000 data:0x7f40a000-0x7f40b000
+/opt/java1.3/jre/lib/PA_RISC2.0/motif21/libmawt.sl
+	text:0xc3800000-0xc39cc000 data:0x7d166000-0x7d17e000
+/opt/java1.3/jre/bin/../lib/PA_RISC2.0/libmlib_image.sl
+	text:0xc3090000-0xc30cc000 data:0x7bba0000-0x7bba6000
+/usr/lib/libXm.4
+	text:0xc3b00000-0xc3d24000 data:0x7bbae000-0x7bbe8000
+/usr/lib/libXp.2
+	text:0xc0ed4000-0xc0edc000 data:0x7f400000-0x7f401000
+/usr/lib/libXt.3
+	text:0xc1780000-0xc17dd000 data:0x7d15b000-0x7d166000
+/usr/lib/libSM.2
+	text:0xc0ae4000-0xc0aed000 data:0x7d151000-0x7d153000
+/usr/lib/libICE.2
+	text:0xc14d0000-0xc14e5000 data:0x7d155000-0x7d159000
+/usr/lib/libXext.3
+	text:0xc14b0000-0xc14c7000 data:0x7f401000-0x7f403000
+/usr/lib/libXtst.2
+	text:0xc0ac4000-0xc0ac9000 data:0x7f403000-0x7f404000
+/usr/lib/libX11.3
+	text:0xc3a00000-0xc3afd000 data:0x7bbe8000-0x7bc00000
+
+Local Time = Thu Jan 15 18:05:47 2004
+Elapsed Time = 3
+#
+# HotSpot Virtual Machine Error : 11
+# Please report this error to HP customer support.
+#
+# Java VM: Java HotSpot(TM) Server VM (1.3.1 1.3.1.10-_30_jun_2003_11_52 PA2.0 
+mixed mode)
+#
+# An error report file has been saved as hs_err_pid15091.log.
+# Please refer to the file for further information.

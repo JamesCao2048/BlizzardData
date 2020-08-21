@@ -1,0 +1,2 @@
+Source>Sort Members breaks code order dependencies
+Version: 3.0.0 Build id: 200402122000 Sort members option organises static fields alphabetically even when there are dependencies between them, thereby introducing compile errors. e.g. resort this class' members: package test.ordering; public class TestOrdering { static final int BB = 1; static final int AA = BB + 1; }

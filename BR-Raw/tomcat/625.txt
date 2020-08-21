@@ -1,0 +1,29 @@
+StringIndexOutOfBoundsException on test failure [JUnit]
+While testing the move to Ant 1.6.0 I was adjusting the org.eclipse.ant.core 
+test suite (it had failures).
+
+I was reliably getting the following exception when test failures occurred:
+
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+at java.lang.String.substring(String.java:1444)
+at org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.testFailed
+(TestRunnerViewPart.java:524)
+at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$7.run
+(RemoteTestRunnerClient.java:477)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:813)
+at org.eclipse.core.runtime.Platform.run(Platform.java:457)
+at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient.notifyTestFailed
+(RemoteTestRunnerClient.java:474)
+at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient.access$16
+(RemoteTestRunnerClient.java:471)
+at 
+org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$TraceProcessingState.r
+eadMessage(RemoteTestRunnerClient.java:125)
+at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient.receiveMessage
+(RemoteTestRunnerClient.java:309)
+at org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient.access$30
+(RemoteTestRunnerClient.java:308)
+at 
+org.eclipse.jdt.internal.junit.ui.RemoteTestRunnerClient$ServerConnection.run
+(RemoteTestRunnerClient.java:235)

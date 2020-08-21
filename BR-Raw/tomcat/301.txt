@@ -1,0 +1,2 @@
+Resolver API should expose new names
+The resolver API still uses old names like getUniqueId. It should be aligned with the Bundle API and say in this case getSymbolicName. There may be other cases like that, I haven't check them all.

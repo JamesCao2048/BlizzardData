@@ -1,0 +1,13 @@
+debug view opens while prompting for perspective change
+Preference settings:
+
+* prompt for perspective switch when launching
+* prompt for perspective switch when suspending
+* activate debug view when breakpoint is hit
+
+when I launch & hit a breakpoint immediately, I get one prompt to change to 
+the debug perspective, but a debug view opens in my current perspective before 
+I switch since I have a preference on to "activate the debug view". It feels 
+like this should wait for prompting to complete, as the whole reason I want to 
+swtich perspectives is to avoid having the debug view open in non-debug 
+perspectives.

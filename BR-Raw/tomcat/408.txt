@@ -1,0 +1,2 @@
+Outline doens't respect member sort preferences
+build 2004-02-10 16:00 1) import junit 3.8.1 into a java project 2) Set eclipse to show members in the package explorer 3) open TestCase.java in the editor 4) Change Prferences / Java / Appearance / Memver Sort Order to show public members last 5) observe: the setting is observed in the package explorer, but not in the outline. I don't see why the outline is different.

@@ -1,0 +1,2 @@
+Synchrinization is not working properly - resynchs from the root
+I am working with Version: 3.0.0 Build id: 200307120010 I traverse 4 or 5 levels deep into a project which is stored in a CVS repos. At this level, when I right click on any file/folder, and select Team > Synchrinize with remote, in the status bar at the bottom, I see that: 1) There are multiple messages which say "Authenticating using extssh". Shouldnt this be done only once per synch run? 2) The synchnonization happens from the root - at least the messages indicate as such.

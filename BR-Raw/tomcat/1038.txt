@@ -1,0 +1,2 @@
+ajde apis are unnecessariy coupled to swing
+The AJDE APIs are coupled to javax.swing by org.aspectj.ajde.EditorManager. The EditorManager needs to be refactored, have swing specific parts moved to org.aspectj.ajde.ui.swing and org.aspectj.ajbrowser.

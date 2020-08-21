@@ -1,0 +1,2 @@
+Import plugins shows org.eclipse.ui.win32 before org.eclipse.ui
+Build 20020508 In the list of plugins in the import wizard, org.eclipse.ui.win32 is before org.eclipse.ui in the order. Should use Collator.getDefault() to sort the strings (only get this once -- it's expensive). Or, use ViewerSorter's collator.

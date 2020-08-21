@@ -1,0 +1,17 @@
+The refactoring for "Move Member type to New File" breaks on Inner class reference
+On following Test code :
+
+import java.util.Map;
+class Test {
+  interface InnerClass extends Map.Entry {
+  }
+}
+
+If you try to move the class : InnerClass to a New file, it generates following 
+output (InnerClass.java) :
+import java.util.Map.Entry;
+interface InnerClass extends Map.Entry {		
+}
+
+Which generates a compilation error because you cannot import an inner class. 
+You must import the enclosing class instead.

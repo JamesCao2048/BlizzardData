@@ -1,0 +1,2 @@
+Reminder: XML node -> schema association not optimal
+Extension elements from the old model used to cache matching schema and schema elements. In order to avoid class cast exception, we are now looking these objects up all the time. This may be a bottle neck when there are many extensions in a file and many schemas in the workspace. This is a reminder to revisit this and consider caching them as in the old model if we encounter performance problems.

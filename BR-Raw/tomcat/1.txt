@@ -1,0 +1,2 @@
+Infocenter opens on busy port
+I have apache running on port 80. Starting help infocenter on this port produces no error. Infocenter is running. Content cannot be displayed as this port is served by apache. A consequence is also that infocenter cannot be closed programatically. Issuing command to shutdown does nothing and reports a time out. Infocetner can only be killed brutally. The error about port being taken is produced but it is being logged in the catalina.*.log. and otherwise ignored. Infocenter should report it on the command line and exit.

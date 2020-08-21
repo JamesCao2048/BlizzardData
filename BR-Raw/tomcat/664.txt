@@ -1,0 +1,2 @@
+Cumulative time for main() is much less than expected on iSeries
+On the iSeries, the cumulative time for the main() method is too small. For our InOut test case, the cumulative time for main() is 0.062582 sec but the actual elapsed time is 8.788 sec. This is an iSeries JVMPI specific bug.

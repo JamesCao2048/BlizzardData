@@ -1,0 +1,5 @@
+CommonBaseEventLogRecord does not respect nested CBE values when retrieving the CBE.
+CommonBaseEventLogRecord does not respect nested CBE values when retrieving the 
+CBE.  Instead, if proeprties are set in the super class (e.g. LogRecord), the 
+mapped CBE properties are overwritten.  The CommonBaseEventLogRecord should 
+have two modes at runtime (e.g. CBE and LogRecord modes).

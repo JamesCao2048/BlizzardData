@@ -1,0 +1,9 @@
+Multiple ISaveParticipants to plugin
+Currently Eclipse allows only a single ISaveParticipant implementation to be 
+registered to a plugin. Not sure the reasoning behind this.   It would be nice 
+if they allow multiple ISaveParticipants to be registered to a single plugin.  
+For example we want to have an ISaveParticipant that stores the classification 
+of a resource to a file and also another ISaveParticipant that stores the maps 
+and generation list for a resource.  Since we cannot register both we are 
+forced to introduce a single SaveParticipant that we register our own 
+WRDSaveParticipant objects to.

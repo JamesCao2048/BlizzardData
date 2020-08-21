@@ -1,0 +1,2 @@
+Update Classpath only works with runtime JARs
+We have a particular plugin which only contains ANT specific code (i.e., tasks). So the JAR that we have in the plugin gets added to the ANT classpath but the JAR is not a runtime JAR for the plugin. When we use the Update Classpath option, the dialog opens and it says one is selected but our plugin does not appear in the list. If I click finish, the classpath is not updated. The only workaround is to put a bogus runtime JAR in the plugin.xml and then select the option. Then we have to remove this JAR once we are finished.

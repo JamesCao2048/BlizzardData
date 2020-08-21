@@ -1,0 +1,11 @@
+Toggle Breakpoint action and key binding missing
+build I20040317
+
+(in Java editor in Java perspective)
+- select a line of code
+- Ctrl+Shift+B
+- it has no effect
+- go to Run menu, Toggle Breakpoint is no longer there
+- go to Keys pref page, Run category
+- Toggle Line Breakpoint is there, and is bound to Ctrl+Shift+B,  but noticed
+that Toggle Method Breakpoint and Toggle Watchpoint are missing their labels.

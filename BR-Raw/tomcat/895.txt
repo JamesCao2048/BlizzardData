@@ -1,0 +1,9 @@
+Autobuild kicks in and stops
+Build: I-20031029
+Fresh workspace. No classpath containers, no nothing.
+Import org.eclipse.ui and all its pre-reqs as source.
+The projects are all imported successfully.  All the classpaths are set 
+correctly.  Then autobuild starts, and abruptly ends.  You will see 1-2 
+warnings and that is it.
+Invoke a full build manually, and you will see all warnings, etc. and 
+everything will be fine.

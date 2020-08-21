@@ -1,0 +1,2 @@
+Make the InternalAntRunner more lazy
+For all contributed tasks and types we currently force load the class whether it is used or not. On Ant 1.6 this is no longer required.

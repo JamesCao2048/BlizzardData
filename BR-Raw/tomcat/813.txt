@@ -1,0 +1,2 @@
+New JUnit Plugin test is not working when class doesn't extends junit.framework.TestCase
+Using 0820, I was not able to set a new launching configuration for the class AllAllTests in the jdt/ui refactoring tests. Even if the class name was ok, I got an error message saying that the class was an invalid test suite. Changing the superclass to junit.framework.TestCase fixed the error. According to Adam, this is a bug in the JUnit Plugin Test runner.

@@ -1,0 +1,12 @@
+OutOfMemoryError while checking out modules
+I'm loathe to report OutOfMemoryErrors as bug, as they can easily be fixed by
+increasing the heap size.  However, using 2.1.2RC1 for Linux/GTK, I got an
+OutOfMemoryError while checking out eclipse modules.  I was checking them out
+one by one from the CVS exploring perspective (over ext).
+
+After each check out, the workspace would automatically rebuild (which was quite
+time consuming).  After a while, one of the rebuilds failed with an
+OutOfMemoryError.
+
+Only 641 errors and even less warnings existed in the workspace.  It seems weird
+that an OutOfMemoryError would occur.

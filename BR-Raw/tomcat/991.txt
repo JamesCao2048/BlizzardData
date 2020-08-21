@@ -1,0 +1,13 @@
+DebugEvaluationTests don't run if target is 1.2
+When target is 1.2, the debug evaluation tests fail with a VerifyError.
+java.lang.VerifyError: (class: CodeSnippet_3, method: run signature: ()V)
+Incompatible type for getting or setting field
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:140)
+	at
+org.eclipse.jdt.core.tests.eval.target.CodeSnippetRunner.processClasses(CodeSnippetRunner.java:285)
+	at
+org.eclipse.jdt.core.tests.eval.target.CodeSnippetRunner$3.run(CodeSnippetRunner.java:385)
+
+This is due to the update of the declaring class. It doesn't check the
+delegateThis is any and wrongly update the declaring class for field.

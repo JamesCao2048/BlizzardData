@@ -1,0 +1,2 @@
+Replace With... should not attempt replace with non existing version
+Build 200312162000 1. Check out version v20031215 of org.eclipse.jdt.ui.tests and org.eclipse.jdt.ui.tests.refactoring 2. Select both project 3. Replace With...->Another Branch or Version... 4. Select version v200312161200 Observe: After the replacing has complete, org.eclipse.jdt.ui.tests.refactoring is empty. This is because there is no version v200312161200 for this project.

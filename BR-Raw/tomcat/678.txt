@@ -1,0 +1,12 @@
+Replace doesn't open next file anymore
+I20031218
+
+- create project
+- add to text files containing the content "eclipse"
+- search for eclipse in project
+- open replace dialog
+- replace eclipse with 3clipse
+- press replace
+
+observe: the first file is removed from the search matches, but next file 
+doesn't open. Nothing in log.

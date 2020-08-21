@@ -1,0 +1,79 @@
+starting text inside the control block of a multi-line if statement gets deleted when typing the opening brace
+I've noticed that when I try to add braces around the contents of statements 
+preceded by an if statement, some of the code gets erased.
+
+In terms of eclipse preferences, I am using 2 spaces for tabs, and I have 
+turned off the 'close braces' typing feature. For new lines, my preferences 
+are set to insert new lines before an opening brace, inside control statements 
+and inside an empty block. New line between elseif is disabled, and clearing 
+blank lines is enabled.
+
+The bug can be reproduced using the following example:
+
+public class Foo
+{
+  public void foo1()
+  {
+    if ( 123456789 == 123456789 )
+    |<- put a brace here.
+      System.out.println("foo1 true");
+  }
+  
+  public void foo2()
+  {
+    if ( 123456789 == 123456789 &&
+         123456789 == 123456789 && 123456789 == 123456789 &&
+         123456789 == 123456789 && 123456789 == 123456789 )
+    |<- put a brace here.
+      System.out.println("foo2 true");
+  }
+  
+  public void foo3()
+  {
+    if ( 123456789 == 123456789 &&
+                                   123456789 == 123456789 )
+    |<- put a brace here.
+      System.out.println("foo3 true");
+  }
+}
+
+Obviously, the '|<- put a brace here.' should be deleted prior to inserting 
+the braces... :-)
+
+Here is the output caused by eclipse when I type an opening brace '{' at the 
+positions indicated above:
+
+public class Foo
+{
+  public void foo1()
+  {
+    if ( 123456789 == 123456789 )
+    {
+      System.out.println("foo1 true");
+  }
+  
+  public void foo2()
+  {
+    if ( 123456789 == 123456789 &&
+         123456789 == 123456789 && 123456789 == 123456789 &&
+         123456789 == 123456789 && 123456789 == 123456789 )
+         {   System.out.println("foo2 true");
+  }
+  
+  public void foo3()
+  {
+    if ( 123456789 == 123456789 &&
+                                   123456789 == 123456789 )
+                                   {3 true");
+  }
+}
+
+As you can see, foo1 works fine, but foo2 causes the brace to be moved to the 
+right and lumped together with the first line.
+
+foo3 is the example where some of the text [System.out.println("foo] actually 
+gets deleted . It seems as though putting the extra spaces at the beginning of 
+the second line of the if statement makes things worse...
+
+Well, let me know if you need any more info to fix this, I didn't find this 
+bug documented anywhere else...

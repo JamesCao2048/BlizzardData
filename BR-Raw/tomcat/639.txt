@@ -1,0 +1,2 @@
+[CellEditors] Need StyledTextCellEditor
+GEF needs to support editing of word-wrapped strings using CellEditors. We tried using TextCellEditor with MULTI | WRAP style bits. It is problematic due to its limitations on win32. Our workaround is to use StyledText. Therefore, we need a StyledTextCellEditor. We can provide the test case and implementation if needed.

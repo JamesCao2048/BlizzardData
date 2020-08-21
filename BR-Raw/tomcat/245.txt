@@ -1,0 +1,2 @@
+generating getters and setters puts 1 line of whitespace at bottom instead of top
+when i generate my getters and setters, the first line of generated code is directly under the existing code, and the last line of generated code has a line of whitespace under it. this is the opposite of what i would expect. i'd expect 1 line of whitespace before the generated code and none below. my 'insert point' is 'last method'.

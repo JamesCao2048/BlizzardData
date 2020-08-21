@@ -1,0 +1,13 @@
+Version diff should check for cancel before opening compare editor
+build I20030718
+
+- in the new sync view, double-clicked on an outgoing change
+- hit the cancel button
+- the compare editor opened anyway
+
+In terms of timing, it was close, but I feel that I did complete the cancel 
+just before the editor opened.  
+
+Perhaps most of the work is going on during the openEditor call, in which case 
+there's no support currently to back out of it.  However, if the work is done 
+before the openEditor call, it should check isCanceled just before opening.

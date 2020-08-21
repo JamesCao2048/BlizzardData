@@ -1,0 +1,61 @@
+Migrate Exec plugins to Eclipse 3.0 in Head stream.
+Migrate Exec plugins to Eclipse 3.0 in Head stream.
+
+Manifest (plugin.xml) changes:
+
+* The header of the manifest files for plug-ins (and plug-in fragments) has 
+changed to include a new line which identifies the appropriate plug-in manifest 
+version.
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<?eclipse version="3.0"?>
+	<plugin ...>
+	聽聽聽 ...
+	</plugin> 
+
+	All our plugins should have this line.
+
+
+* For 3.0, all plug-ins that reference API classes in the 
+org.eclipse.core.runtime or org.eclipse.core.runtime.compatibility plug-ins 
+must explicitly include the following line in the plug-in manifest:
+
+	<import plugin="org.eclipse.core.runtime.compatibility"/>
+
+	See the migration guide for details.
+
+* The org.eclipse.ui plugin was restructured, and some functionality was moved 
+to the following plugins:
+
+	org.eclipse.ui.ide
+	org.eclipse.ui.views
+	org.eclipse.ui.editor
+	org.eclipse.ui.workbench.texteditor
+	org.eclipse.jface.text
+
+	You will need to import these dependencies in the plugin manifests, and 
+update your classpath.
+
+
+Source changes
+
+
+IWorkbenchPage (package org.eclipse.ui)
+
+* public IEditorPart openEditor(IFile input)
+
+	This method was removed because it is IDE-specific. Instead, use:
+	org.eclipse.ui.ide.IDE.openEditor(IWorkbenchPage, IFile, boolean)
+
+* public IEditorPart openEditor(IFile input, String editorID)
+
+	This method was removed for the same reason. Instead, use:
+	openEditor(new FileEditorInput(input), editorID)
+
+IEditorRegistry (package org.eclipse.ui)
+
+* public IEditorDescriptor getEditors(IFile input)
+
+	This method disappeared in 3.0, without any documentation explaining 
+why.
+	Use the String version instead: getEditors(input.getName())

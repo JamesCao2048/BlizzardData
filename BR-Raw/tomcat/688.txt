@@ -1,0 +1,17 @@
+[Key bindings] copy paste does not work among different launch configurations
+When user runs an application, he may need to input some text in the
+configuration window, such as specifying VM arguments.  
+
+I noticed that when I tried to copy the text in one of the java application
+configurations and paste it to the JUnit configuration. It does not work. This
+only happens in Linux GTK platform, on Windows XP it works.
+
+The steps to reproduce the problem is as follows:
+suppose user already has 2 projects in configuration window, one is a java
+application, the other one is JUnit test project.
+
+1. select the java application in Configuration window.
+2. select the Arguments tab, copy the text in the VM arguments field.
+3. select project under Junit
+4. select the Arguments tab, right click the mouse to paste the copied text.
+Notice the paste menu item is disabled.

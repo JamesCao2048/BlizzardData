@@ -1,0 +1,198 @@
+Plugin initialization fails when invoked from a non-GUI thread
+If the init of a UI plugin is triggered from a non-UI thread -for instance, 
+the build thread (created by Eclipse)- an exception is raised during the 
+execution of the startup method.
+
+org.eclipse.jface.util.Assert$AssertionFailedException: null argument;
+	at org.eclipse.jface.util.Assert.isNotNull(Assert.java:139)
+	at org.eclipse.jface.util.Assert.isNotNull(Assert.java:116)
+	at org.eclipse.jface.resource.ImageRegistry.<init>
+(ImageRegistry.java:64)
+	at org.eclipse.jface.resource.ImageRegistry.<init>
+(ImageRegistry.java:56)
+	at org.eclipse.ui.plugin.AbstractUIPlugin.createImageRegistry
+(AbstractUIPlugin.java:499)
+	at org.eclipse.ui.plugin.AbstractUIPlugin.getImageRegistry
+(AbstractUIPlugin.java:540)
+	at org.eclipse.hyades.test.ui.TestUIPlugin.startup
+(TestUIPlugin.java:118)
+	at org.eclipse.core.internal.plugins.PluginDescriptor$1.run
+(PluginDescriptor.java:736)
+	at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:1006)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.internalDoPluginActivation
+(PluginDescriptor.java:748)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.doPluginActivation
+(PluginDescriptor.java:188)
+	at org.eclipse.core.internal.plugins.PluginClassLoader.activatePlugin
+(PluginClassLoader.java:112)
+	at 
+org.eclipse.core.internal.plugins.PluginClassLoader.internalFindClassParentsSel
+f(PluginClassLoader.java:185)
+	at 
+org.eclipse.core.internal.boot.DelegatingURLClassLoader.findClassParentsSelf
+(DelegatingURLClassLoader.java:490)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:882)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.access$0
+(DelegatingURLClassLoader.java:876)
+	at 
+org.eclipse.core.internal.boot.DelegatingURLClassLoader$DelegateLoader.loadClas
+s(DelegatingURLClassLoader.java:90)
+	at 
+org.eclipse.core.internal.boot.DelegatingURLClassLoader.findClassPrerequisites
+(DelegatingURLClassLoader.java:554)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:890)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:862)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	at org.eclipse.hyades.test.common.TestCommonPlugin.startup
+(TestCommonPlugin.java:63)
+	at org.eclipse.core.internal.plugins.PluginDescriptor$1.run
+(PluginDescriptor.java:736)
+	at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:1006)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.internalDoPluginActivation
+(PluginDescriptor.java:748)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.doPluginActivation
+(PluginDescriptor.java:188)
+	at org.eclipse.core.internal.plugins.PluginClassLoader.activatePlugin
+(PluginClassLoader.java:112)
+	at 
+org.eclipse.core.internal.plugins.PluginClassLoader.internalFindClassParentsSel
+f(PluginClassLoader.java:185)
+	at 
+org.eclipse.core.internal.boot.DelegatingURLClassLoader.findClassParentsSelf
+(DelegatingURLClassLoader.java:490)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:882)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.access$0
+(DelegatingURLClassLoader.java:876)
+	at 
+org.eclipse.core.internal.boot.DelegatingURLClassLoader$DelegateLoader.loadClas
+s(DelegatingURLClassLoader.java:90)
+	at 
+org.eclipse.core.internal.boot.DelegatingURLClassLoader.findClassPrerequisites
+(DelegatingURLClassLoader.java:554)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:890)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:862)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	at com.ibm.rational.test.ct.core.models.internal.ModelPersister.<init>
+(ModelPersister.java:69)
+	at 
+com.ibm.rational.test.ct.core.models.internal.ModelPersister.getInstance
+(ModelPersister.java:46)
+	at 
+com.ibm.rational.test.ct.core.models.internal.ModelSynchronizer.<init>
+(ModelSynchronizer.java:37)
+	at com.ibm.rational.test.ct.core.models.ModelsPlugin.<init>
+(ModelsPlugin.java:48)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native 
+Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown 
+Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown 
+Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.internalDoPluginActivation
+(PluginDescriptor.java:722)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.doPluginActivation
+(PluginDescriptor.java:188)
+	at org.eclipse.core.internal.plugins.PluginClassLoader.activatePlugin
+(PluginClassLoader.java:112)
+	at 
+org.eclipse.core.internal.plugins.PluginClassLoader.internalFindClassParentsSel
+f(PluginClassLoader.java:185)
+	at 
+org.eclipse.core.internal.boot.DelegatingURLClassLoader.findClassParentsSelf
+(DelegatingURLClassLoader.java:490)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:882)
+	at org.eclipse.core.internal.boot.DelegatingURLClassLoader.loadClass
+(DelegatingURLClassLoader.java:862)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.createExecutableExtension
+(PluginDescriptor.java:130)
+	at 
+org.eclipse.core.internal.plugins.PluginDescriptor.createExecutableExtension
+(PluginDescriptor.java:167)
+	at 
+org.eclipse.core.internal.plugins.ConfigurationElement.createExecutableExtensio
+n(ConfigurationElement.java:103)
+	at org.eclipse.core.internal.events.BuildManager.instantiateBuilder
+(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.initializeBuilder
+(BuildManager.java:509)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder
+(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild
+(BuildManager.java:170)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild
+(BuildManager.java:191)
+	at org.eclipse.core.internal.events.BuildManager$1.run
+(BuildManager.java:151)
+	at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:1006)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:413)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild
+(BuildManager.java:165)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop
+(BuildManager.java:243)
+	at org.eclipse.core.internal.events.BuildManager.build
+(BuildManager.java:212)
+	at org.eclipse.core.internal.resources.Workspace.endOperation
+(Workspace.java:884)
+	at org.eclipse.core.internal.resources.Workspace.run
+(Workspace.java:1600)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run
+(WorkspaceModifyOperation.java:85)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run
+(ModalContext.java:101)
+
+
+This error has been seen in:
+hyades.ui
+hyades.test.ui
+hyades.test.common
+
+Suggested solution :
+
+Replace the HyadeUIPlugin.startup() method with :
+	public void startup()
+	throws CoreException
+	{
+		resourceBundleManager = new ResourceBundleManager(); 
+		resourceBundleManager.add(getDescriptor().getResourceBundle());
+
+		Platform.getAdapterManager().registerAdapters
+(HyadesAdapterFactory.INSTANCE, LogicalFolder.class);
+
+		super.startup();		
+
+		try
+		{
+			Display.getDefault().syncExec(new Runnable() {
+				public void run() {
+					ir = getImageRegistry();
+				}
+			});
+			HyadesUIImages.INSTANCE.initialize(new URL
+(getDescriptor().getInstallURL(), "icons/full/"), ir);
+		}
+		catch(Exception e)
+		{
+				logError(e);
+		}		
+	}

@@ -1,0 +1,4 @@
+Ole: Invoke should fill in the "out" parameters on return
+Currently, any VT_BYREF values returned when calling OleAutomation.invoke(...) 
+are cleared and discarded before the invoke method returns.  Values should be 
+copied into the provided Variant objects.

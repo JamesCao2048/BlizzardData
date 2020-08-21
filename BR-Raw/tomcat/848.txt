@@ -1,0 +1,11 @@
+Generalize Type: Cancel does not seem to work [refactoring]
+20031119
+
+1. create a selfhosting eclipse workspace that has all plugins as binary except 
+jdt.core from HEAD.
+2. open CompilationUnitSorter, and select the first parameter from 
+method 'sort'.3. Invoke 'Generalize Type'. Press cancel.
+4. The cancel button does not seem to have an effect, the operation finished 
+the calculation.
+The dialog should probably close as a reaction to cancel (The cancel button is 
+directly on the dialog)

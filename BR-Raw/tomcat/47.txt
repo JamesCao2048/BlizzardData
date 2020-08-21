@@ -1,0 +1,2 @@
+Delay on synch view Refresh button
+1. Launch Eclipse. 2. Open the Synch view and click the Refresh button. 3. Go do something else while the refresh runs (on Linux, switch to another desktop workspace for maximum effect). 4. When finished, come back to Eclipse. 5. Instead of finding a completed refresh, find a dialog asking for the refresh scope. I keep getting burned by this. The dialog to specify the refresh scope apparently opens after a delay. If pressing a button is going to open a dialog before proceeding, the dialog should open immediately.

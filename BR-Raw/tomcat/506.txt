@@ -1,0 +1,2 @@
+Hook for resource scheduling rule factory
+I20040121 I have released new API that allows clients to ask for the scheduling rule for various operations (copy, move, delete, validateEdit, setContents, etc). Many of these rule requirements actually vary based on the repository provider (for example CVS needs to lock the parent folder for most operations). Core needs to expose something in the TeamHook to allow repository providers to provide a rule factory.

@@ -1,0 +1,2 @@
+[KeyBindings] CapsLock == R ???
+M5 test candidate, observed on both motif and gtk - go to the Keys preference page - click in the Key Sequence - Name field - press CapsLock and R appears - others: ScrollLock = T, PrintScreen = W, Pause = U Is this expected? I ran a small swt snippet that prints Key events, and I don't see much resemblance between those of CapsLock and R. Interestingly, pressing Ctrl+CapsLock has the same affect in the java debugger as pressing Ctrl+R, so at least the preference page isn't lying <g>.

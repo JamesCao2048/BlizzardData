@@ -1,0 +1,4 @@
+@generated static initializers are not recognized as generated
+When I generate static initializers and annotate them in the generated code as
+usual as "@generated", it seems that the merging process does not recognize them
+later on as being generated. Next time I re-generate, they are not updated.

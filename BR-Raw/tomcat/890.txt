@@ -1,0 +1,8 @@
+launching SWT based applications broken
+I20031104
+- start Eclipse and populate workspace with Eclipse plugins
+- launch runtime workbench
+Observe: runtime Eclipse has no menu bar and no dock entry;
+as a consequence it cannot be made active
+
+The same applies to all SWT based application launched from within Eclipse

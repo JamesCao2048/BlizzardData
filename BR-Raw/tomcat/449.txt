@@ -1,0 +1,2 @@
+Wrong error message "LogParser should extend LogParser interface"
+In the org.eclipse.hyades.log.ui.internal.wizards.LogParserItem class you get the error message "LogParser should extend LogParser interface" if your Logger does not extend the org.eclipse.hyades.logging.parsers.Parser class. The error message is missleading. It would be much nicer according to my opinion if an implementation of an interface would be expected (like org.eclipse.hyades.logging.parsers.IParser) than an implementation of a class.

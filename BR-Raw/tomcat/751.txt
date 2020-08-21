@@ -1,0 +1,5 @@
+Fix new execution history fragment and model loaders to work properly with old fragment grammar.
+The new fragment format supports improved hierarchy and causedBy events, but 
+existing tools may use the old fragment grammar.  Update the new fragment 
+producer code and the new loader code to work properly with the old fragment 
+grammar.

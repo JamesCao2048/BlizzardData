@@ -1,0 +1,2 @@
+deleting elements in the outline asks for confirmation twice
+i20040304 Deleting Java outline elements is behaving in a weird way in this build. I have a Java source open. I select some methods in the Outline view, and press <Del>. A dialog opens saying "Are you sure you want to delete these <#elems> elements?". I say "Yes", but the dialog opens for the second time. And while the dialog is showing up, the elements are removed from the outline. Of course, confirm the second deletion fails because the elemnts are not there anymore.

@@ -1,0 +1,2 @@
+[ErrorHandling] [RCP] SafeRunnable in JFace opens an error dialog
+The class org.eclipse.jface.util.SafeRunnable opens an error dialog if the runnable it contains throws an exception. There are cases (e.g bug 46960 ) where an exception in this runnable can happen frequently. I got 137 error dialogs when I was reproducing this problem. Would logging the error be sufficient in this case? Otherwise, some mechanism to avoid poping up multiple dialogs at the same time should be employed.

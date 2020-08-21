@@ -1,0 +1,2 @@
+CTabFolder tooltips are not read out
+M6 gnopernicus is not reading out CTabFolder tooltips properly because they're faked. It simply says "Hide/Restore window". Tried: - adding accessible listeners to the tip shell and its contained label - removing ON_TOP from tip shell creation - giving focus to contained label when shown

@@ -1,0 +1,2 @@
+[DCR] warn on fake reachable code
+Build 20040212 The compiler silently optimizes out fake reachable code, and could issue a warning when this occurs. e.g. if (false) System.out.println(...);

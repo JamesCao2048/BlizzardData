@@ -1,0 +1,2 @@
+new workspace chooser dialog can get buried beneath splash
+Build I20040316 The new workspace chooser dialog is coming up while the splash screen is still up, and can get buried beneath the splash screen. If this happens, the user sits there and waits for Eclipse to start. Pressing the Eclipse icon in the windows task tray bring the splash screen to the top, confirming that Eclipse is still starting. Expectation: the splash screen should be taken down before the workspace chooser is opened.

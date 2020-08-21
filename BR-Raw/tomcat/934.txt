@@ -1,0 +1,19 @@
+Launch warning reappears
+Not sure if this debug or PDE
+
+1) Windows>Preferences>Plug-in development>TargetPlatform
+2) Select "another compatible..." and specify an appropriate directory
+3) Reload
+4) Select all
+5) Now go to the repositories view and load a project that you have slected in 
+the preferences
+6) Run
+7) You get a warning about a conflict between workspece and external plugins
+and that the workspace ones will be used.
+
+This dialog is correct 99% of the time, the problem is it keeps coming back 
+unless I take the time to fix the conflict. It should offer to do this for me 
+since this is what I am going to do 99% of the time.
+
+Alternatively, when loading a project into the workspace, I should have the 
+option of removing it as an external plugin.

@@ -1,0 +1,2 @@
+Code generation for Getter should support field JavaDoc Comment
+When I am setting up code generation to generate comments for my getters and setters, I would like it to copy the javadoc comment I have for those field to the javdoc comment for the getter and setter. I would propose add another variable $fieldjavadoc$ which I can insert into the template and it would mean that it locates the javadoc comment for the origina field definition and puts it into the correct place.

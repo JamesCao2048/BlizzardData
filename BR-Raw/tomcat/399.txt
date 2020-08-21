@@ -1,0 +1,2 @@
+Problem: JavaBean with properties that use arrays as parameters
+Hi. I've a JavaBean with properties that use arrays as parameters. Example of the property 'Details Index' methods: public void setDetailsIndex(String[] detailsIndex){ ...code... } public String[] getDetailsIndex(){ ...code... } When I open the bean with Visual Editor, the properties sheet show the property 'Detail Index' but I can't modify the value. Many thanks.

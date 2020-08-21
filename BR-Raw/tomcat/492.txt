@@ -1,0 +1,2 @@
+Need access to Internal CDT class CView
+I need to have access to CDT UI classes that are in internal packages. org.eclipse.cdt.internal.ui.cview.CView; - I want to selectReveal items in the CView. I would prefer there be an action (equiv. to JDT's org.eclipse.jdt.ui.actions.ShowInPackageViewAction) instead of having to get the CView and then calling selectReveal. We are currently on 1.2 but are planning to move to 2.0 soon. Thanks

@@ -1,0 +1,20 @@
+Opening a second instance of Eclipse will corrupt .metadata, causing many problems
+If you open a second instance of Eclipse, the next time you run Eclipse many
+thing will be broken. Removing .metadata will eliminate the problems (although
+you, of course, need to reimport your projects then).
+
+Some problems seen:
+- Attempting to Search gives the error "No Search Extensions plugged into
+workbench or all search pages disabled."
+- Attempting to go to the Update Manager results in "Unable to instantiate view:
+org.eclipse.update.ui.UpdatesView"
+- Attempting to go to a project's property pages gives "No property pages for
+<project name>"
+- On and on and on...
+
+To Reproduce:
+1. Open Eclipse
+2. Open a second instance of Eclipse
+3. Close the second instance of Eclipse
+4. Close the first instance of Eclipse
+5. Open Eclipse again and it will be erroneous

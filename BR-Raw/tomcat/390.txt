@@ -1,0 +1,2 @@
+[Keybindings] Keybindings displayed but not working
+We place a "Zoom In" action on our own menu on the menubar. It is a global action. The editor provides the action handler which registers its ID with the site's service. The keybinding appears in the menu, but does not work. The menuitem is working properly otherwise.

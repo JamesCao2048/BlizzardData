@@ -1,0 +1,2 @@
+TaskLinkManager needs to be cleaned up earlier
+Currently the TaskLinkManager cleans up for a process when the launch is removed. It should really clean up when the build finishes otherwise there can be a fair bit of "old" state left around taking up memory.

@@ -1,0 +1,2 @@
+formatter fails on empty statement between package and imports
+trying to format the following fails: ---------------- package p; ; class A { } ------------------------------------- Error Jan 05, 2004 22:31:28.390 formatter failed to format (no edit returned). Will use unformatted text instead. kind: 8, string: package p; ; class A { }

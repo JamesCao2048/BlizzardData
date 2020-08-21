@@ -1,0 +1,9 @@
+Eclipse 3.0 M3 - can't start Eclipse from the command line
+OS 10.2
+Eclipse 2.1 could be started from a shell using something like
+/<....>/Eclipse.app/Contents/MacOS/eclipse
+
+In Eclipse 3.0 M3, Eclipse started this way is not properly initialized and 
+can't be used (no event etc.).
+
+Is there any way to workaround this?

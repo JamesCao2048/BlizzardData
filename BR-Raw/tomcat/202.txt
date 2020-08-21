@@ -1,0 +1,59 @@
+NPE from a JDT action
+Build: I-20040304
+
+Not sure exactly when this NPE was thrown, but I think it coincided with me 
+showing the context menu of an item in the Java outline view.
+
+Error Mar 08, 2004 23:05:54.458 java.lang.NullPointerException
+java.lang.NullPointerException
+at org.eclipse.jdt.core.Signature.toString(Signature.java:1400)
+at 
+org.eclipse.jdt.internal.corext.refactoring.structure.ChangeTypeRefactoring.isA
+vailable(ChangeTypeRefactoring.java:239)
+at org.eclipse.jdt.ui.actions.ChangeTypeAction.canEnable
+(ChangeTypeAction.java:154)
+at org.eclipse.jdt.ui.actions.ChangeTypeAction.selectionChanged
+(ChangeTypeAction.java:144)
+at org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchSelectionChanged
+(SelectionDispatchAction.java:202)
+at org.eclipse.jdt.ui.actions.SelectionDispatchAction.update
+(SelectionDispatchAction.java:114)
+at org.eclipse.jdt.ui.actions.RefactorActionGroup.refactorMenuShown
+(RefactorActionGroup.java:468)
+at org.eclipse.jdt.ui.actions.RefactorActionGroup.access$0
+(RefactorActionGroup.java:453)
+at org.eclipse.jdt.ui.actions.RefactorActionGroup$1.menuAboutToShow
+(RefactorActionGroup.java:408)
+at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:286)
+at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:370)
+at org.eclipse.jface.action.MenuManager.access$0(MenuManager.java:367)
+at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:383)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:116)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:838)
+at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:3291)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2963)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1436)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2880)
+at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:221)
+at org.eclipse.swt.widgets.Display.runPopups(Display.java:2378)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2026)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1509)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1480)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:257)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:48)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:260)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:173)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:305)
+at org.eclipse.core.launcher.Main.run(Main.java:745)
+at org.eclipse.core.launcher.Main.main(Main.java:713)

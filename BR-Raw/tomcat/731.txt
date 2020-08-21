@@ -1,0 +1,18 @@
+[compiler] Enhance unreachable code detection
+I'm not sure if this use case is already included in the 3.0 enhancements but 
+it is not recognized in 2.1.2. Thus, I'm adding it to bugzilla.
+
+
+public void myMethod()
+{
+    boolean performOK = false;
+
+    [some opertations that never modify performOk (no write access to 
+performOk)]
+
+    if(performOK && .....)
+    {
+        // this code will be unreachable 
+        // jdt compile can recognize this but doesn't in 2.1.2
+    }
+}

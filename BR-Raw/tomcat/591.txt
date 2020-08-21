@@ -1,0 +1,21 @@
+Eclipse crash leads to unreadable workspace
+I've been helping SWT with  Bug 49936  and  Bug 49942 .  This bug is starting to
+cause frequent crashes of Eclipse.  This morning, starting Eclipse after a crash
+last night, I get three errors at start-up, and none of my projects appear. 
+Trying to import the projects leads to a "Workspace is closed" error dialog. 
+Trying to shutdown leads to a "Workspace is locked" error dialog, and Eclipse
+does not exit normally (i.e., it leaves behind the ".metadata/.lock" file).
+
+The start of the craziness appears to be:
+"org.eclipse.core.internal.dtree.ObjectNotFoundException: Tree element
+/org.eclipse.ui.workbench.texteditor/bin not found."
+
+So, two questions come out of this:
+1.) Is it really necessary to fail with such a workspace?
+2.) If a failure occurs with such a workspace, why is the ".lock" file left
+behind on shutdown?  (i.e., if the workspace can't be read, should the user be
+allowed to reconstruct a new one -- rather than needing to manually delete the
+old one on disk?)
+
+My workspace has been zipped up, and is available for inspection.  The problems
+occur on I20040114.

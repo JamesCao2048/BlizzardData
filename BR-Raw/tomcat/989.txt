@@ -1,0 +1,10 @@
+[launching] Managing invalid launch configs
+When the launch config index is initialized, we toss invalid configs from the 
+index (but leave them in the file system). Examples are:
+(1) Configs with missing launch config types (due to missing plug-in)
+(2) Shared Configs which are out of sync with the local file system (remain 
+tossed until refreshed)
+
+Exceptions are logged to note the problems. However, the user is never notified 
+of the problems. Should we, and how do we notify the user of these problems? 
+(the problems are noticed by the debug core (non-ui) plug-in).

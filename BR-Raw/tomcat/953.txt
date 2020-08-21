@@ -1,0 +1,2 @@
+Group widget doesn't pass focus when pressing mnemonic
+Javadoc for org.eclipse.swt.widgets.Group#setText(String) says: "When the user presses a key sequence that matches the mnemonic, focus is assgned to the first child of the group.". Unfortunately, that doesn't work. Group.checkStyle (int style) begins with { style |= SWT.NO_FOCUS; ..., which prevents boolean mnemonicHit (char key) { return setFocus (); } from setting focus to the first child of the group.

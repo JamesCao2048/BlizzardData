@@ -1,0 +1,27 @@
+Plug-in Project Wizard creation of the Project Name
+Setup: Create a plug-in project in the following manner
+=====
+1) Select File->New->Project... 
+2) Select "Plug-in Development" and "Plug-in Project"
+3) Specify a "Project name" (i.e. com.example.pluginEx1) + Next
+4) (Plug-in Id is auto-filled) Select Next
+5) Select "Hello World" as a Plug-in Code Generator + Next
+6) You should have Plug-in Name, Version, Provider NAME, and Class Name auto-
+filled.
+
+Problem:
+========
+You decide to return to step #3 to change the original "Project Name" 
+from 'com.example.pluginEx1' to 'com.example.pluginEx2'.  Using the '< Back' 
+button you would return to the dialog box and manually change it.
+
+I would then return to where I left-off (step #6) by selecting the 'Next >' 
+button to arrive at "Simple Plug-in Content".
+
+The autofill information for Plug-in Name, Version, Provider NAME, and Class 
+Name have NOT changed.  It still retains the original information before I 
+changed the Project Name.
+
+It should auto-fill with the latest information change from Step #3.
+
+thanks. tko

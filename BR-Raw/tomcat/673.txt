@@ -1,0 +1,27 @@
+command line processing needs improvements
+Previously there was some amount of command line consumption caused by code 
+from update.   Things like -noupdate, -feature, etc were consumed by the main() 
+or Platform.startup().  As a result, they were not passed on to applications 
+(like AntRunner).
+
+With the extraction of the update (and other) code from the startup sequence, 
+the consumption of these args has stopped.  As a result, the args are showing 
+up on the app command line.  Apps like AntRunner are somewhat confused.
+
+There are other args we are consuming that we probably should stop.  This iwll 
+make the problem worse.  Unfortunately, there are parts of the system which 
+need configuration but are neither part of the runtime or part of the 
+appliation (e.g., update).  How do we pass args to them?
+
+Certainly the system property approach is workable but it is less than optimal 
+for the user
+
+Another option is to allow arg consumers to signal the runtime that they have 
+consumed the argument.  This works as well but 
+a) requires extra api/structure 
+b) is prone to error on the part of the consumers 
+c) does not solve the problem of arg collisions (e.g., what if AntRunner had a -
+application switch?)
+d) has a race condition in that the args must be setup before the app is run
+
+Thoughts and comments welcome.

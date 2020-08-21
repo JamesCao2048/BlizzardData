@@ -1,0 +1,2 @@
+[java launching] java_type_name variable doesn't resolve selected binary type
+I created a jar file with a java class with a main method, added this jar to the build path of a project, selected the class from the package explorer. I tried to use a java launch configuration with '${java_type_name}' as type name. I failed with an error : "The selected resource doesn't resolve to a Java element".

@@ -1,0 +1,22 @@
+Failing debug test
+I have removed this test from M5, but we need to find out why it fails 
+intermittently.
+
+working dir should be the src directory. expected:</buildtest/I-I20031119-
+200311190010/eclipse-testing/test-eclipse/eclipse/jdt_folder/DebugTests/src> 
+but was:</buildtest/I-I20031119-200311190010/eclipse-testing/test-
+eclipse/eclipse/jdt_folder/DebugTests> 
+
+junit.framework.AssertionFailedError: working dir should be the src directory. 
+expected:</buildtest/I-I20031119-200311190010/eclipse-testing/test-
+eclipse/eclipse/jdt_folder/DebugTests/src> but was:</buildtest/I-I20031119-
+200311190010/eclipse-testing/test-eclipse/eclipse/jdt_folder/DebugTests>
+at 
+org.eclipse.jdt.debug.tests.core.WorkingDirectoryTests.testWorkspaceRelativeWork
+ingDirectory(WorkingDirectoryTests.java:84)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+at org.eclipse.jdt.debug.tests.AutomatedSuite$1.run(AutomatedSuite.java:154)
+at java.lang.Thread.run(Thread.java:534)

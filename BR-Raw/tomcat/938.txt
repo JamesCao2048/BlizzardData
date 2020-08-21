@@ -1,0 +1,14 @@
+CVS don't retry when the connection fails
+(this "bug" matches at least all versions of 2 and 3)
+
+This is how to regenerate the bug: 
+- work correctly with a Java project mapped to CVS (do "update", "commit" etc.)
+- do something to make the plugin not to find the CVS server (e.g. open a 
+remote VPN connection or take the network cable off)
+- make the CVS server available again (e.g. close the VPN connection or 
+reconnect the network cable)
+- do "cvs update" -> the software hangs and finally a dialog appears with "no 
+connection to server".
+
+It would be nice if one could do a reconnect with a button or something; now 
+the only work-around is to close the Eclipse and start it again.

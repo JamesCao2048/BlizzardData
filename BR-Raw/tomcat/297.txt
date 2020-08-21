@@ -1,0 +1,2 @@
+The CView to update with each reconcile
+For example, the CView via the CElementContentProvider is doing ITranslation.getChildren() But it seems we are still working on the IFile instead of the WorkingCopy / BufferFactory were the update to date content of the file is(if it is open inside the CEditor). Reassign to Hoda.

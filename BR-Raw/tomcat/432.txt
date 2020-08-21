@@ -1,0 +1,9 @@
+Ant Editor preference to disable loading of external dtd or schema
+From  bug 44125 :
+I think that the issues can be related to XML parser used by the editor and DTD
+or scheme definition linked from an XML file. My PC is behind a firewall, so
+parser always fails to load external DTD or schema (i.e from bea.com or sun.com
+or w3c.org) but it take a while to complete.
+
+Please disable loading of the external DTD's and Schemas or make this a
+configurable preference.

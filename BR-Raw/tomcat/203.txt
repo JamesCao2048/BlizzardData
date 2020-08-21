@@ -1,0 +1,2 @@
+Eclipse throws NullPointerException on JDK 1.4.0
+When executed on a 1.4.0 Hotspot JRE, 3.0M7 throws a cryptic NullPointerException (somewhere in KeyBindings). The platform never launches. Took a while to realize it was the wrong version of JRE we're using. This special case (JRE version) should be caught by the platform, or even earlier, by the eclipse.exe launcher?

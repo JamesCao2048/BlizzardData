@@ -1,0 +1,2 @@
+No context change in editors when right mouse button clicked
+When you click the right mouse button within an editor, the context menu for the current cursor position appears, no matter where the user clicked. In my opinion, a context change should be performed first when the user clicks. That is, the context menu should appear for the position the user right-clicked on. As far as I know, the current behaviour is not the usual one in an editor. For example, UltraEdit and MS Word change the context first. At least, it is not the behaviour I expect.

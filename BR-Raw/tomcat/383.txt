@@ -1,0 +1,114 @@
+UI blocked by quickdiff during CVS update
+I performed an Update of about 200 incoming files in the sync view. About half 
+way through this background operation, the workbench was locked by another 
+operation. It is strange that the user would be blocked by an operation they 
+did not explicitley perform. Here is the traceback of the blockage I got when 
+I canceled the job blocking the UI. In general, it is a bad idea to obtain 
+resource scheduling rules in the UI thread. I'm assigning this to the text 
+component since it appears to e related to text editors. If I am mistaken, 
+please forward appropriately.
+
+org.eclipse.core.runtime.OperationCanceledException
+	at org.eclipse.core.internal.jobs.ImplicitJobs$ThreadJob.joinRun
+(ImplicitJobs.java:109)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin
+(ImplicitJobs.java:261)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule
+(JobManager.java:149)
+	at 
+org.eclipse.ui.internal.editors.quickdiff.LastSaveReferenceProvider.readDocumen
+t(LastSaveReferenceProvider.java:161)
+	at 
+org.eclipse.ui.internal.editors.quickdiff.LastSaveReferenceProvider.elementCont
+entReplaced(LastSaveReferenceProvider.java:291)
+	at 
+org.eclipse.ui.editors.text.TextFileDocumentProvider$FileBufferListener.bufferC
+ontentReplaced(TextFileDocumentProvider.java:214)
+	at 
+org.eclipse.core.internal.filebuffers.TextFileBufferManager.fireBufferContentRe
+placed(TextFileBufferManager.java:242)
+	at 
+org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.handleFileContentC
+hanged(ResourceTextFileBuffer.java:280)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer$1.execute
+(ResourceFileBuffer.java:142)
+	at 
+org.eclipse.core.internal.filebuffers.ResourceFileBuffer$SafeFileChange.run
+(ResourceFileBuffer.java:76)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages
+(Synchronizer.java:102)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2325)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:586)
+	at org.eclipse.jface.window.Window.open(Window.java:566)
+	at org.eclipse.jface.dialogs.MessageDialog.openInformation
+(MessageDialog.java:303)
+	at org.eclipse.team.internal.ccvs.ui.subscriber.SafeUpdateAction$5.run
+(SafeUpdateAction.java:296)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork
+(UILockListener.java:101)
+	at org.eclipse.ui.internal.UISynchronizer$1.run(UISynchronizer.java:33)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages
+(Synchronizer.java:102)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2325)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033)
+	at 
+org.eclipse.ui.internal.dialogs.EventLoopProgressMonitor.runEventLoop
+(EventLoopProgressMonitor.java:114)
+	at org.eclipse.ui.internal.dialogs.EventLoopProgressMonitor.isCanceled
+(EventLoopProgressMonitor.java:93)
+	at org.eclipse.core.internal.jobs.ImplicitJobs$ThreadJob.isCanceled
+(ImplicitJobs.java:133)
+	at org.eclipse.core.internal.jobs.ImplicitJobs$ThreadJob.joinRun
+(ImplicitJobs.java:106)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin
+(ImplicitJobs.java:261)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule
+(JobManager.java:149)
+	at 
+org.eclipse.ui.internal.editors.quickdiff.LastSaveReferenceProvider.readDocumen
+t(LastSaveReferenceProvider.java:161)
+	at 
+org.eclipse.ui.internal.editors.quickdiff.LastSaveReferenceProvider.elementCont
+entReplaced(LastSaveReferenceProvider.java:291)
+	at 
+org.eclipse.ui.editors.text.TextFileDocumentProvider$FileBufferListener.bufferC
+ontentReplaced(TextFileDocumentProvider.java:214)
+	at 
+org.eclipse.core.internal.filebuffers.TextFileBufferManager.fireBufferContentRe
+placed(TextFileBufferManager.java:242)
+	at 
+org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.handleFileContentC
+hanged(ResourceTextFileBuffer.java:280)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer$1.execute
+(ResourceFileBuffer.java:142)
+	at 
+org.eclipse.core.internal.filebuffers.ResourceFileBuffer$SafeFileChange.run
+(ResourceFileBuffer.java:76)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages
+(Synchronizer.java:102)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2325)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1526)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:265)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+	at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:47)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:236)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:324)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+	at org.eclipse.core.launcher.Main.run(Main.java:742)
+	at org.eclipse.core.launcher.Main.main(Main.java:581)

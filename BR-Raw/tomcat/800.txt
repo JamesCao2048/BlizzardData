@@ -1,0 +1,2 @@
+Refreshing project tags causes repositories view to refresh
+build I20031120 - in CVS Repositories view, - select HEAD/org.eclipse.platform - Compare With... - Refresh from Repository - expand Versions - choose v20031106 - OK - in addition to opening the compare editor, the CVS Repositories view does a full refresh, losing your scroll position, selection, and expansion state - only occurs if you do a Refresh from Repository first - problem is reproduceable

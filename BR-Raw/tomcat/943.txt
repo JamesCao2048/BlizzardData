@@ -1,0 +1,19 @@
+deadlock expanding tree
+M4 candidate being tested
+
+Here are the steps, not sure how reproducable the problem is:
+- start brand new eclipse
+- Window -> Show View -> Other, select CVS - CVS repositories view, OK
+- it will be opened on top of Navigator view
+- right-click -> New > Repository Location...
+- create extssh connection to dev.eclipse.org
+- expand HEAD, select 4 projects: org.eclipse.swt, org.eclipse.swt.examples, 
+org.eclipse.swt.motif, org.eclipse.swt.tests
+- right-click -> Check Out
+- it starts retrieving the projects
+- click on Navigator view tab after a few seconds, it switches there fine
+- the org.eclipse.swt project is shown in the Navigator since it's currently 
+partially retrieved
+- click on its + to expand its tree, and the cigarette stops smoking 
+immediately and the desktop freezes
+- will attach the dump that kill -3 gave next

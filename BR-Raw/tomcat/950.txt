@@ -1,0 +1,2 @@
+Certain font heights in Motif don't display at all
+Steps: Repro on Linux RedHat8.0 Motif TWM Not repro on Windows OS. 1. Create Logic example 2. Add a label to your logic example and change text (Zoom level is 100% see attached GEFZoomTo100.jpg) 3. Now change the zoom level to 50% Actual (not as expected): notice hat the text is not displayed (see attached GEFZoomTo50_NoText.jpg) Workaround: Zoom back to 100%

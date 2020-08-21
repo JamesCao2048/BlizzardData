@@ -1,0 +1,2 @@
+[Sync View] property propagation doesn't work well with hierarchical folders
+With compressed folders adding/removing properties works well. But in the folder case it seems that removals don't traverse all the way up the tree. Need a test for this.

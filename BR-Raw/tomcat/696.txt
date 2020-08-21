@@ -1,0 +1,2 @@
+[RCP] New file in a java package does not default to package dir
+Creating a new file in a java package, such as 'package.html', does not defaultl positions the new file within the package directory. ie: selecting package 'org.my.package', r-click, choose new->file, opens 'New File' dialog whose parent folder is the root of the workspace, rather than the /myproject/src/org/my/package/ directory, which must be browsed to manually. Thanks, Andrew

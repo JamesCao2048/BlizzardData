@@ -1,0 +1,2 @@
+Loading a user library from file does not warn when overwriting an existing library [build path]
+Works in I2004032400010 + plug-in export for I200403240800 Add library 'mylib'. Save it. Change it. Load library from file. ==> should warn that 'mylib' gets changed.

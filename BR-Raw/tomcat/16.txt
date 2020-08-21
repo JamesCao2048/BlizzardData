@@ -1,0 +1,2 @@
+[EditorMgmt] WorkbenchPage#lastActiveEditor keeps reference on editor after closing all editors
+I200403240800 After opening/using ~6 editors and then closing all, I found WorkbenchPage#lastActiveEditor referencing an editor.

@@ -1,0 +1,24 @@
+Cursor Position indicator not updating after text paste
+The cursor position indicator (in the bottom right hand corner of the status 
+bar) does not correctly reflect the line number or line column that the cursor 
+is currently in, having just pasted an amount of text into the Java source 
+editor.
+
+For example; with the following string, 
+
+System.out.println("Hello World");
+
+placed into the clipboard (using CTRL-C), and then pasting it onto a line 
+(using CTRL-V), one would expect the cursor position indicator to update the 
+column number; making its value the same as the original position plus the 
+length of the pasted string (since the cursor is at the end of this string).
+
+Instead, the cursor position indicator remains unchanged (until the cursor 
+navigation keys are used to wake it up!)
+
+Eclipse Platform
+Version: 2.1.2
+Build id: 200311030802
+
+Windows 2000
+Sun J2SDK1.4.2_02

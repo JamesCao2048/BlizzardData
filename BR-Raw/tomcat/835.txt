@@ -1,0 +1,2 @@
+new ParserMode required for a better CModel
+A mode for the parser that follows includes but does not go into function bodies need to be implemented. This will help us build a better CModel that has cross reference information. Building such a CModel could be made available for potential clients other than the outline view. Building such a model could be made optional (through a user preference) for the outline view because of the expected degradation in performance.

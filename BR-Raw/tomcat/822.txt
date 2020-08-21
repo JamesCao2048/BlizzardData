@@ -1,0 +1,2 @@
+Switching to use JRE Library container
+We need to switch to use the JRE Library container instead of the JRE Library variable. org.eclipse.debug.core from HEAD is not compiling by default, because the XML parser is not include in rt.jar.

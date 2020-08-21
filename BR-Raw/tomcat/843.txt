@@ -1,0 +1,2 @@
+add to javadoc for List.remove(int start, int end)
+The method remove(int start, int end) in class List, removes any items that it can before throwing the exception ERROR_INVALID_RANGE. This should be added to the javadoc as this behavior is specifically tested in the junit test Test_org_eclipse_swt_widgets_List.test test_removeII()

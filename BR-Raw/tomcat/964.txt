@@ -1,0 +1,12 @@
+Large Strings (8036 bytes) don't display correctly in console window with XP ClearType turned on
+If microsoft ClearType is turned on in XP sp1, large strings in java don't 
+display correctly in the console or main editing windows.  By large, I mean 
+like 8096 bytes.  Works fine if ClearType fonts are turn off (which is the 
+default)and large strings sent to the console window will appear correctly.  
+Turn cleartype back off and behavior will be seen again.
+Here is the procedure to turn cleartype on and off in xp sp1.  It's very 
+simple and makes fonts look great and easier on the 
+eyes.  " http://www.microsoft.com/typography/cleartype/tuner/1.htm?fname =%
+20&fsize"
+Other than this minor annoyance, smaller more reasonable strings work 
+fine...just hugh strings fail.

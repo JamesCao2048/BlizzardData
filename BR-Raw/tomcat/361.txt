@@ -1,0 +1,2 @@
+Ctrl-M character problem
+If there have some Ctrl-M (^M) in the file and open it in Window version. the getStartPosition() in ASTNode will be incorrect.

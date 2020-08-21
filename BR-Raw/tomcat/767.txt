@@ -1,0 +1,136 @@
+Stack overflow while editing java code
+Version: 3.0.0
+Build id: 200311211210
+win2K
+java.vm.specification.version=1.0
+java.vm.vendor=Sun Microsystems Inc.
+java.vm.version=1.4.1_01-b01
+
+
+!ENTRY org.eclipse.ui 4 0 Dec 05, 2003 11:10:20.956
+!MESSAGE java.lang.StackOverflowError
+!STACK 0
+java.lang.StackOverflowError
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.getBinding
+(Scope.java:879)
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:38)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments
+(AbstractMethodDeclaration.java:86)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve
+(AbstractMethodDeclaration.java:353)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve
+(TypeDeclaration.java:839)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AnonymousLocalTypeDeclaration.resolve
+(AnonymousLocalTypeDeclaration.java:124)
+	at 
+org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression.resolveType
+(QualifiedAllocationExpression.java:294)
+	at org.eclipse.jdt.internal.compiler.ast.Expression.resolve
+(Expression.java:445)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatement
+s(AbstractMethodDeclaration.java:378)
+	at 
+org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements
+(MethodDeclaration.java:137)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve
+(AbstractMethodDeclaration.java:355)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve
+(TypeDeclaration.java:839)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AnonymousLocalTypeDeclaration.resolve
+(AnonymousLocalTypeDeclaration.java:124)
+	at 
+org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression.resolveType
+(QualifiedAllocationExpression.java:294)
+	at org.eclipse.jdt.internal.compiler.ast.Expression.resolve
+(Expression.java:445)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatement
+s(AbstractMethodDeclaration.java:378)
+	at 
+org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements
+(MethodDeclaration.java:137)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve
+(AbstractMethodDeclaration.java:355)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve
+(TypeDeclaration.java:839)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AnonymousLocalTypeDeclaration.resolve
+(AnonymousLocalTypeDeclaration.java:124)
+	at 
+org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression.resolveType
+(QualifiedAllocationExpression.java:294)
+	at org.eclipse.jdt.internal.compiler.ast.Expression.resolve
+(Expression.java:445)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatement
+s(AbstractMethodDeclaration.java:378)
+	at 
+org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements
+(MethodDeclaration.java:137)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve
+(AbstractMethodDeclaration.java:355)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve
+(TypeDeclaration.java:839)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AnonymousLocalTypeDeclaration.resolve
+(AnonymousLocalTypeDeclaration.java:124)
+	at 
+org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression.resolveType
+(QualifiedAllocationExpression.java:294)
+	at org.eclipse.jdt.internal.compiler.ast.Expression.resolve
+(Expression.java:445)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatement
+s(AbstractMethodDeclaration.java:378)
+	at 
+org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements
+(MethodDeclaration.java:137)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve
+(AbstractMethodDeclaration.java:355)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve
+(TypeDeclaration.java:839)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AnonymousLocalTypeDeclaration.resolve
+(AnonymousLocalTypeDeclaration.java:124)
+	at 
+org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression.resolveType
+(QualifiedAllocationExpression.java:294)
+	at org.eclipse.jdt.internal.compiler.ast.Expression.resolve
+(Expression.java:445)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatement
+s(AbstractMethodDeclaration.java:378)
+	at 
+org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements
+(MethodDeclaration.java:137)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve
+(AbstractMethodDeclaration.java:355)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve
+(TypeDeclaration.java:839)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AnonymousLocalTypeDeclaration.resolve
+(AnonymousLocalTypeDeclaration.java:124)
+	at 
+org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression.resolveType
+(QualifiedAllocationExpression.java:294)
+	at org.eclipse.jdt.internal.compiler.ast.Expression.resolve
+(Expression.java:445)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatement
+s(AbstractMethodDeclaration.java:378)
+	at 
+org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements
+(MethodDeclaration.java:137)
+	at 
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve
+(AbstractMethodDeclaration.java:355)

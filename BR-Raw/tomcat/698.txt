@@ -1,0 +1,2 @@
+Breakpoint can be set in an empty method
+When trying to add a breakpoint in an empty method, the breakpoint is set on the line of the '{'. public class Bug_ { public static void main(String[] args) { // add breakpoint here } }

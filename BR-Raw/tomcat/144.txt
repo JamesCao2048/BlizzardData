@@ -1,0 +1,59 @@
+[Dialogs] Show View dialog leaks 3 fonts
+build I20040310 + latest from HEAD
+
+- Window > Show View > Other > expand Basic
+
+This leaks 3 fonts each time.
+SLeak shows them as being allocated in applyDialogFont (see stack below).
+
+There are a bunch of other font resource leak bugs assigned to Kim.
+These point back to  bug 41245  which claims to have a fix.
+Can this be looked at for M8?
+
+java.lang.Error
+	at org.eclipse.swt.graphics.Device.new_Object(Device.java:648)
+	at org.eclipse.swt.graphics.Font.<init>(Font.java:104)
+	at org.eclipse.jface.resource.FontRegistry.defaultFont
+(FontRegistry.java:306)
+	at org.eclipse.jface.resource.JFaceResources.getDefaultFont
+(JFaceResources.java:189)
+	at org.eclipse.jface.dialogs.Dialog.dialogFontIsDefault(Dialog.java:841)
+	at org.eclipse.jface.dialogs.Dialog.applyDialogFont(Dialog.java:764)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:856)
+	at org.eclipse.jface.window.Window.open(Window.java:623)
+	at org.eclipse.ui.internal.ShowViewMenu.showOther(ShowViewMenu.java:194)
+	at org.eclipse.ui.internal.ShowViewMenu.access$2(ShowViewMenu.java:186)
+	at org.eclipse.ui.internal.ShowViewMenu$2.run(ShowViewMenu.java:67)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:550)
+	at org.eclipse.jface.action.ActionContributionItem.access$2
+(ActionContributionItem.java:502)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent
+(ActionContributionItem.java:435)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:810)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2428)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2101)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1452)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1423)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:258)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+	at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:79)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:260)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:173)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:324)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:305)
+	at org.eclipse.core.launcher.Main.run(Main.java:745)
+	at org.eclipse.core.launcher.Main.main(Main.java:713)

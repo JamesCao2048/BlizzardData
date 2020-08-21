@@ -1,0 +1,2 @@
+Editor tab has "User File Editor" instead of "plugin.xml"
+I20031029 - create a new environment - check out some projects from CVS - import external plugins - open a plugin.xml file with a double click from the Search window - PDE's multi-page editor opens fine (with pages for Overview, Dependencies, Extension Points, Source, etc.) - by default, the Source page had the focus - the editor's tab in the titlebar of the Editor window had "User File Editor" when I was expecting the filename "plugin.xml"

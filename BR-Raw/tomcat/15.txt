@@ -1,0 +1,2 @@
+[CoolBar] Off by one error in ToolBarContributionItem
+build I20040323-0800 If ToolBarContributionItem.setMinimumItemCount is used, and the toolbar has only one item, you get an ArrayIndexOutOfBoundsException. It should index the item at 0, not 1.

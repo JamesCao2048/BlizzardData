@@ -1,0 +1,2 @@
+Need to open-up the plugin converter
+As of today the plugin converter generates manifest one by one ignoring all other bundles. This has a limitation for bundles that do not have their own jars like SWT. The idea in opening the converter is to give capabilities to PDE (who has the global view of the system) to say what to generates for those cases.

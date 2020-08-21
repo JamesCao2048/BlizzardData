@@ -1,0 +1,14 @@
+New Code Formatter: PUT_EMPTY_STATEMENT_ON_NEW_LINE
+PUT_EMPTY_STATEMENT_ON_NEW_LINE doesn't seem to do what I expect:
+
+It should transform 
+
+;;;
+
+into 
+
+;
+;
+;
+
+but it doesn't work.

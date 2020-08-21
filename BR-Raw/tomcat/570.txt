@@ -1,0 +1,2 @@
+New code formatter: ?: uses "default indentation"
+Note: This only applies only to typing. Formatter is as expected when invoking the formatter on the block. I start typing this expression: foo = bar != null ?_ (_ = cursor) Now if I hit Enter, and continue typing blindly, I get: foo = bar != null ? bar : foo; instead of the expected: foo = bar != null ? bar : foo; In the new formatter prefs, "Line Wrapping "tab", I have set the indentation policy of "Conditionals" to "indent by one".

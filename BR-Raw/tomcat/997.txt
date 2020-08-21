@@ -1,0 +1,2 @@
+[DCR ] Support for non-Java source mapping
+I'd like to see extensions to the JDT API in order to provide support for non- Java source that is translated into Java source (notably JSPs). What I'm looking for is the JDT equivalent of com.sun.jdi.Location.lineNumber (String stratum) and sourceName(String stratum). Alternatively, the concept of mapped source could be generalized and put in the org.eclipse.debug classes.

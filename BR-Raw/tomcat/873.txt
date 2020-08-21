@@ -1,0 +1,2 @@
+Inefficient use of setClasspathContainer(...)
+Build 20031105 PluginManager.updateAffectedEntries(IPluginBase[]) loops over the model entries and for each entry, updateClasspathContainer(boolean) calls setClasspathContainer(IPath, IJavaProject[], IClasspathContainer[], ...) with one Java project and one classpath container. updateAffectedEntries should better call setClaspathContainer(...) with all projects and the corresponding containers once.

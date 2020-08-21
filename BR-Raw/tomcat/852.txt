@@ -1,0 +1,306 @@
+deadlock after missingResourceException
+I200311190010
+
+I was working with the new integration build when all of a sudden it deadlocked 
+on me. I looked in the console window and this is what I saw:
+---------------------------------------------------------------------------
+java.util.MissingResourceException: Can't find resource for bundle 
+java.util.PropertyResourceBundle, key OpenMarker.errorTitle
+java.lang.IllegalArgumentException: Invalid string literal : >>",<
+        at org.eclipse.jdt.core.dom.StringLiteral.setEscapedValue
+(StringLiteral.java:119)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1410)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:847)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1494)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:859)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1665)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:871)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1812)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1848)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2065)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1787)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:723)
+        at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations
+(ASTConverter.java:244)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:183)
+        at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:81)
+        at org.eclipse.jdt.core.dom.AST.parseCompilationUnit(AST.java:354)
+        at org.eclipse.jdt.core.dom.AST.parseCompilationUnit(AST.java:247)
+        at 
+org.eclipse.jdt.internal.ui.search.FindOccurrencesEngine$FindOccurencesCUEngine.
+createAST(FindOccurrencesEngine.java:105)
+        at 
+org.eclipse.jdt.internal.ui.search.FindOccurrencesEngine.resolveTarget
+(FindOccurrencesEngine.java:160)
+        at 
+org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$OccurrencesFinder.run
+(JavaEditor.java:2731)
+        at java.lang.Thread.run(Thread.java:534)
+--------------------------------------------------------------------------------
+
+Here is a thread dump of the deadlocked eclipse:
+
+-------------------------------------------------------------------------------
+"Worker-53" prio=5 tid=0x2db5eea0 nid=0xad8 waiting on condition [32aaf000..32aa
+fd88]
+        at java.lang.Thread.sleep(Native Method)
+        at org.eclipse.ui.internal.progress.AnimationManager.animateLoop(Animati
+onManager.java:318)
+        at org.eclipse.ui.internal.progress.AnimationManager$3.run(AnimationMana
+ger.java:467)
+        at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
+
+"org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x2c861008 n
+id=0x340 waiting for monitor entry [3299f000..3299fd88]
+        at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconci
+le(JavaReconcilingStrategy.java:72)
+        - waiting to lock <0x17053550> (a org.eclipse.jdt.internal.core.Compilat
+ionUnit)
+        at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconci
+le(JavaReconcilingStrategy.java:99)
+        at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconcil
+er.java:76)
+        at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread
+.run(AbstractReconciler.java:189)
+
+"Worker-52" prio=5 tid=0x2dd544c8 nid=0x420 in Object.wait() [3283f000..3283fd88
+]
+        at java.lang.Object.wait(Native Method)
+        - waiting on <0x11dd8758> (a org.eclipse.core.internal.jobs.WorkerPool)
+        at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:185)
+        - locked <0x11dd8758> (a org.eclipse.core.internal.jobs.WorkerPool)
+        at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:21
+1)
+        at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+"Worker-51" prio=5 tid=0x2d8e5b70 nid=0x7e8 in Object.wait() [327ef000..327efd88
+]
+        at java.lang.Object.wait(Native Method)
+        - waiting on <0x19dfc440> (a org.eclipse.core.internal.jobs.Semaphore)
+        at org.eclipse.core.internal.jobs.Semaphore.acquire(Semaphore.java:36)
+        - locked <0x19dfc440> (a org.eclipse.core.internal.jobs.Semaphore)
+        at org.eclipse.core.internal.jobs.OrderedLock.doAcquire(OrderedLock.java
+:153)
+        at org.eclipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:9
+8)
+        at org.eclipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:7
+4)
+        at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.j
+ava:109)
+        at org.eclipse.core.internal.resources.Workspace.prepareOperation(Worksp
+ace.java:1516)
+        at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1549
+)
+        at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run(No
+tificationManager.java:37)
+        at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
+
+"Worker-49" prio=5 tid=0x2d81de30 nid=0xbfc waiting for monitor entry [3261f000.
+.3261fd88]
+        at org.eclipse.jdt.internal.ui.javaeditor.filebuffers.CompilationUnitDoc
+umentProvider2$CompilationUnitAnnotationModel.update(CompilationUnitDocumentProv
+ider2.java:413)
+        - waiting to lock <0x17053550> (a org.eclipse.jdt.internal.core.Compilat
+ionUnit)
+        at org.eclipse.ui.texteditor.ResourceMarkerAnnotationModel$ResourceChang
+eListener.resourceChanged(ResourceMarkerAnnotationModel.java:53)
+        at org.eclipse.core.internal.events.NotificationManager$2.run(Notificati
+onManager.java:251)
+        at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatfo
+rm.java:1127)
+        at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+        at org.eclipse.core.internal.events.NotificationManager.notify(Notificat
+ionManager.java:244)
+        at org.eclipse.core.internal.events.NotificationManager.broadcastChanges
+(NotificationManager.java:138)
+        at org.eclipse.core.internal.resources.Workspace.broadcastChanges(Worksp
+ace.java:146)
+        at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.
+java:847)
+        at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.j
+ava:697)
+        at org.eclipse.jdt.internal.core.builder.JavaBuilder.removeProblemsFor(J
+avaBuilder.java:85)
+        at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.updateP
+roblemsFor(IncrementalImageBuilder.java:561)
+        at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.acceptResu
+lt(AbstractImageBuilder.java:83)
+        at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:340)
+
+        at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(Ab
+stractImageBuilder.java:205)
+        at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(Ab
+stractImageBuilder.java:155)
+        at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.build(I
+ncrementalImageBuilder.java:113)
+        at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBui
+lder.java:223)
+        at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.j
+ava:151)
+        at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java
+:482)
+        at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatfo
+rm.java:1127)
+        at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+        at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager
+.java:130)
+        at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager
+.java:201)
+        at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager
+.java:156)
+        at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java
+:182)
+        at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatfo
+rm.java:1127)
+        at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+        at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager
+.java:185)
+        at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildMan
+ager.java:219)
+        at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java
+:247)
+        at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.ja
+va:76)
+        at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:1
+12)
+        at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
+
+"org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x2c9cfc00 n
+id=0xafc runnable [3235f000..3235fd88]
+        at java.lang.Object.wait(Native Method)
+        at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread
+.run(AbstractReconciler.java:161)
+        - locked <0x1639d8e0> (a org.eclipse.jface.text.reconciler.DirtyRegionQu
+eue)
+
+"org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x2d77db50 n
+id=0x7b0 runnable [3225f000..3225fd88]
+        at java.lang.Object.wait(Native Method)
+        at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread
+.run(AbstractReconciler.java:161)
+        - locked <0x16275540> (a org.eclipse.jface.text.reconciler.DirtyRegionQu
+eue)
+
+"Java indexing" daemon prio=4 tid=0x2c54c5c0 nid=0x2f8 in Object.wait() [2d0ef00
+0..2d0efd88]
+        at java.lang.Object.wait(Native Method)
+        - waiting on <0x123e7b58> (a org.eclipse.jdt.internal.core.search.indexi
+ng.IndexManager)
+        at java.lang.Object.wait(Object.java:429)
+        at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobMan
+ager.java:325)
+        - locked <0x123e7b58> (a org.eclipse.jdt.internal.core.search.indexing.I
+ndexManager)
+        at java.lang.Thread.run(Thread.java:534)
+
+"Signal Dispatcher" daemon prio=10 tid=0x00921f58 nid=0xbe0 waiting on condition
+ [0..0]
+
+"Finalizer" daemon prio=9 tid=0x0091f128 nid=0xa04 in Object.wait() [2c2af000..2
+c2afd88]
+        at java.lang.Object.wait(Native Method)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:111)
+        - locked <0x11d9b3f8> (a java.lang.ref.ReferenceQueue$Lock)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127)
+        at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x0091dca0 nid=0x9a4 in Object.wait() [2c
+26f000..2c26fd88]
+        at java.lang.Object.wait(Native Method)
+        at java.lang.Object.wait(Object.java:429)
+        at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:115)
+        - locked <0x11d9b460> (a java.lang.ref.Reference$Lock)
+
+"main" prio=5 tid=0x00235ae0 nid=0x6dc in Object.wait() [6e000..6fc3c]
+        at java.lang.Object.wait(Native Method)
+        - waiting on <0x104f0488> (a org.eclipse.core.internal.jobs.Semaphore)
+        at org.eclipse.core.internal.jobs.Semaphore.acquire(Semaphore.java:36)
+        - locked <0x104f0488> (a org.eclipse.core.internal.jobs.Semaphore)
+        at org.eclipse.core.internal.jobs.JobManager.join(JobManager.java:372)
+        at org.eclipse.core.internal.jobs.InternalJob.join(InternalJob.java:175)
+
+        at org.eclipse.core.runtime.jobs.Job.join(Job.java:286)
+        at org.eclipse.core.internal.events.BuildManager.interrupt(BuildManager.
+java:309)
+        at org.eclipse.core.internal.resources.Workspace.prepareOperation(Worksp
+ace.java:1515)
+        at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1549
+)
+        at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOp
+eration.java:105)
+        - locked <0x10215068> (a org.eclipse.ui.actions.WorkspaceModifyDelegatin
+gOperation)
+        at org.eclipse.ui.editors.text.WorkspaceOperationRunner.run(WorkspaceOpe
+rationRunner.java:72)
+        at org.eclipse.ui.editors.text.WorkspaceOperationRunner.run(WorkspaceOpe
+rationRunner.java:62)
+        at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation
+(TextFileDocumentProvider.java:387)
+        at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(Tex
+tFileDocumentProvider.java:596)
+        at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractText
+Editor.java:3140)
+        at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performS
+ave(CompilationUnitEditor.java:821)
+        at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave(C
+ompilationUnitEditor.java:885)
+        - locked <0x17053550> (a org.eclipse.jdt.internal.core.CompilationUnit)
+        at org.eclipse.ui.internal.EditorManager$10.run(EditorManager.java:1081)
+
+        at org.eclipse.ui.internal.EditorManager$8.run(EditorManager.java:936)
+        at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalCont
+ext.java:302)
+        at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252)
+        at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.ja
+va:444)
+        at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84)
+
+        at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java
+:441)
+        at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1467
+)
+        at org.eclipse.ui.internal.EditorManager.runProgressMonitorOperation(Edi
+torManager.java:942)
+        at org.eclipse.ui.internal.EditorManager.savePart(EditorManager.java:108
+6)
+        at org.eclipse.ui.internal.WorkbenchPage.savePart(WorkbenchPage.java:226
+7)
+        at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:2
+279)
+        at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:72)
+        at org.eclipse.jface.action.Action.runWithEvent(Action.java:842)
+        at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:542)
+        at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContri
+butionItem.java:494)
+        at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionC
+ontributionItem.java:466)
+        at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+        at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847)
+        at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2187)
+        at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1877)
+        at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1405)
+        at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1381)
+        at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.jav
+a:237)
+        at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+        at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47
+)
+        at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoa
+der.java:858)
+        at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+sorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:324)
+        at org.eclipse.core.launcher.Main.basicRun(Main.java:299)
+        at org.eclipse.core.launcher.Main.run(Main.java:767)
+        at org.eclipse.core.launcher.Main.main(Main.java:601)
+
+"VM Thread" prio=5 tid=0x0095d258 nid=0xb7c runnable
+
+"VM Periodic Task Thread" prio=10 tid=0x0023ee50 nid=0x6b4 waiting on condition
+
+"Suspend Checker Thread" prio=10 tid=0x00921608 nid=0xbb8 runnable

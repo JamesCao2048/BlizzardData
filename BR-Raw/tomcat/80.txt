@@ -1,0 +1,16 @@
+CTabFolder does not give available space to tab early enough
+build I20040317 + latest from HEAD
+
+- new window with Java perspective open
+- show the JUnit view
+- only the JUnit tab is visible now; the Package Explorer and Hierarchy tabs are
+hidden, and the JUnit tab's text shows: "J..."
+- notice there's a fair bit of available space between the chevron and minimize
+button
+- size the view a little wider
+- the Hierarchy tab appears, but JUnit's is still truncated
+- keep resizing a little wider in small increments
+- it takes a while before JUnit is no longer truncated
+- by the time it does, there is lots of space between the chevron and minimize
+button
+- it could have stopped truncating long before

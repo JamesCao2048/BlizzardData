@@ -1,0 +1,2 @@
+JUnit Plugin test wizard fails to find tests that extend a subclass of TestCase
+Eclipse I20040212 on OS X (10.3.2) I created an abstract subclass of TestCase to help my testing and subclassed that with concrete tests. Unfortunately, the JUnit plugin-test configuration fails to find the concrete tests. If I specify that all tests in a project should be run, only direct subclasses of TestCase are run. Channing

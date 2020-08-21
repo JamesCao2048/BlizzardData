@@ -1,0 +1,2 @@
+Coolbars not colapsing rows after a resize.
+Open the workbench and switch to the java perspective make the workbench window really small, forcing there to be a four (4) row toolbar then resize the window large again Note that there still are 4 rows in the toolbar when they could have been collapsed back to one. This is painful because moving all the little toolitem groups back takes time Note2, this also happens on GTK as well as MOTIF

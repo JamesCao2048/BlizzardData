@@ -1,0 +1,6 @@
+[KeyBindings] Shift+Suppr shortcut does no longer work
+I've just installed latest integration build I200402170800 and when I press on 
+Shift+Suppr shortcut key, selected text is well removed but when I press on 
+Shift+Inser, then this is an old content of clipboard which is pasted.
+Ctrl+X is still working.
+It sounds that the clipboard is not refreshed with the removed selected text...

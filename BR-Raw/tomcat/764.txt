@@ -1,0 +1,8 @@
+Need to be able to provide an imported package.
+Currently the framework does not allow for a bundle to provide a package that
+is imported.  This means that a bundle will not be able to provide a package 
+that it also exports if the framework chooses a different package version to 
+make available to the framework from another bundle.
+
+The search order for provided packages should be enhanced to include looking in 
+a bundles imports for a package that it provides.

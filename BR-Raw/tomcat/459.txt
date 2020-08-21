@@ -1,0 +1,52 @@
+Update floods log with meaningless stack traces
+Faling to establish a network connection is *normal* and not an indication of 
+a problem. Definitely not worth a stack trace, and probably not worth 
+reporting at all unless the attempt to connect was initiated by user command.
+
+I develop on a laoptp, often disconnected from the net for hours at a time, so 
+I get a LOT of these.
+
+Successful updates, on the other hand, should be logged.
+
+!SUBENTRY 2 org.eclipse.update.core 4 42 Feb 03, 2004 14:29:39.337
+
+!MESSAGE Unable to access Site 
+stream: " http://update.eclipse.org/updates/site.xml " [update.eclipse.org]
+
+!STACK 0
+
+java.net.UnknownHostException: update.eclipse.org
+
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+
+	at java.net.Socket.connect(Unknown Source)
+
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown 
+Source)
+
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown 
+Source)
+
+	at 
+org.eclipse.update.internal.core.ConnectionThreadManager$StreamRunnable.run
+(ConnectionThreadManager.java:75)
+
+	at java.lang.Thread.run(Unknown Source)

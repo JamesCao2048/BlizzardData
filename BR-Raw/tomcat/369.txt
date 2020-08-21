@@ -1,0 +1,2 @@
+Add variable expansion for Main Class in launch configurations
+Java Application and Java Applet launch config delegates should implement variable expansion on their Main Class and Project fields. This would allow generic launch configuration "templates" that support the re-use of common arguments in launch configs. There may be the need for contributed variables from Java and Applet plugins that support these variables.

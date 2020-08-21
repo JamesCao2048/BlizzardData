@@ -1,0 +1,106 @@
+Method view miscounting calls with compressed data option
+Choosing "Show execution view statistics" causes the number of calls of some
+methods to be miscounted.  On the other hand, if one chooses "Show execution
+flow graphical details", the number of calls gets counted properly.
+
+I have checked the XML file produced by the RAC, and the files were identical
+except for the timestamps.  Thus, I concluded that this is a UI problem.  Here
+is a sample trace:
+
+<?xml version="1.0"?>
+<TRACE>
+<node nodeId="0dddd09d-f965-418e-858f-264bfffdcf96" hostname="avon"
+ipaddress="9.26.157.92,127.0.0.1" timezone="300" time="1068485222.531249900"/>
+<processCreate processId="ba891e52-c99d-4853-b2ba-dc4e0c3e9175" pid="1804"
+nodeIdRef="0dddd09d-f965-418e-858f-264bfffdcf96" time="1068485222.531249900"/>
+<agentCreate agentId="c51ca709-015c-44c0-846e-737e4c368490" version="1.000"
+processIdRef="ba891e52-c99d-4853-b2ba-dc4e0c3e9175" agentName="Java Profiling
+Agent" agentType="Profiler" agentParameters="server=controlled"
+time="1068485222.624999900"/>
+<traceStart traceId="833429da-bcac-4a89-b741-6f7b7ed77a6d"
+agentIdRef="c51ca709-015c-44c0-846e-737e4c368490" time="1068485222.887980200"/>
+<filter pattern="pkg.a" mode="INCLUDE" genericPattern="SUFFIX"
+methodPattern="CALLC" methodMode="INCLUDE" methodGenericPattern="NONE"/>
+<filter pattern="" mode="EXCLUDE" genericPattern="PREFIX" methodPattern=""
+methodMode="EXCLUDE" methodGenericPattern="PREFIX"/>
+<option key="CLASS_LOAD_DETAILS" value="false"/>
+<option key="COLLATION_VALUES" value="false"/>
+<option key="CONTEXT_FLOW" value="false"/>
+<option key="FILTERS" value="true"/>
+<option key="GC" value="deletes"/>
+<option key="ID_STYLE" value="static"/>
+<option key="OBJ_REF_MODE" value="filterOwner"/>
+<option key="METHOD_COUNTS" value="false"/>
+<option key="OBJ_ALLOC_IS_ARRAY" value="true"/>
+<option key="OPTIONS" value="true"/>
+<option key="STACK_INFORMATION" value="normal"/>
+<option key="ALLOCATION_INFORMATION" value="all"/>
+<option key="TRACE_MODE" value="full"/>
+<option key="TICKET" value="true"/>
+<option key="TIMESTAMPS" value="true"/>
+<option key="TRACE_IDREFS" value="false"/>
+<option key="UNREFERENCED_SYMBOLS" value="false"/>
+<option key="THREAD_CPU_TIME" value="false"/>
+<gcStart threadIdRef="5" time="1068485222.893422200"/>
+<gcFinish threadIdRef="5" time="1068485222.895971300" usedObjects="0"
+usedObjSpace="573704" totalObjSpace="4192768"/>
+<runtimeInitDone threadIdRef="5" time="1068485222.902074600"/>
+<classDef threadIdRef="5" name="java/lang/Class" sourceName="Class.java"
+classId="68" objIdRef="69" time="1068485222.896122600"/>
+<objAlloc threadIdRef="5" time="1068485222.902143700" objId="69" classIdRef="68"
+isArray="0" size="244"/>
+<objAlloc threadIdRef="5" time="1068485222.902143200" objId="79" classIdRef="68"
+isArray="0" size="244"/>
+<classDef threadIdRef="5" name="java/lang/Thread" sourceName="Thread.java"
+classId="335" objIdRef="79" time="1068485222.896599200"/>
+<objAlloc threadIdRef="5" time="1068485222.902142300" objId="337"
+classIdRef="335" isArray="0" size="60"/>
+<threadStart threadId="5" time="1068485222.902140300" threadName="main"
+groupName="main" parentName="system" objIdRef="337"/>
+<gcStart threadIdRef="5" time="1068485223.409333000"/>
+<gcFinish threadIdRef="5" time="1068485223.446476600" usedObjects="0"
+usedObjSpace="3932472" totalObjSpace="4192768"/>
+<objAlloc threadIdRef="3" time="1068485223.446540600" objId="181"
+classIdRef="68" isArray="0" size="244"/>
+<classDef threadIdRef="3" name="java/lang/ref/Reference$ReferenceHandler"
+sourceName="Reference.java" classId="282" objIdRef="181"
+time="1068485222.896504800"/>
+<objAlloc threadIdRef="3" time="1068485223.446540200" objId="283"
+classIdRef="282" isArray="0" size="60"/>
+<threadStart threadId="3" time="1068485223.446538800" threadName="Reference
+Handler" groupName="system" parentName="" objIdRef="283"/>
+<objAlloc threadIdRef="4" time="1068485223.446727000" objId="188"
+classIdRef="68" isArray="0" size="244"/>
+<classDef threadIdRef="4" name="java/lang/ref/Finalizer$FinalizerThread"
+sourceName="Finalizer.java" classId="278" objIdRef="188"
+time="1068485222.896456500"/>
+<objAlloc threadIdRef="4" time="1068485223.446726600" objId="279"
+classIdRef="278" isArray="0" size="60"/>
+<threadStart threadId="4" time="1068485223.446725600" threadName="Finalizer"
+groupName="system" parentName="" objIdRef="279"/>
+<gcStart threadIdRef="5" time="1068485223.533035900"/>
+<gcFinish threadIdRef="5" time="1068485223.563006400" usedObjects="0"
+usedObjSpace="5611944" totalObjSpace="5634560"/>
+<objAlloc threadIdRef="5" time="1068485223.620559200" objId="44503"
+classIdRef="68" isArray="0" size="244"/>
+<classDef threadIdRef="5" name="pkg/aa/Filter" sourceName="Filter.java"
+classId="44502" objIdRef="44503" time="1068485223.617114500"/>
+<methodDef name="CALLC" signature="()V" startLineNumber="17" endLineNumber="17"
+methodId="44500" classIdRef="44502"/>
+<methodEntry threadIdRef="5" time="1068485223.620557100" methodIdRef="44500"
+objIdRef="44538" classIdRef="44502" ticket="218792" stackDepth="2"/>
+<objAlloc threadIdRef="5" time="1068485223.620611500" objId="44538"
+classIdRef="44502" isArray="0" size="4"/>
+<methodExit threadIdRef="5" methodIdRef="44500" objIdRef="44538"
+classIdRef="44502" ticket="218792" time="1068485223.620618900"
+overhead="0.000061526"/>
+<threadEnd threadIdRef="5" time="1068485223.620694900"/>
+<objAlloc threadIdRef="6" time="1068485223.621988700" objId="44577"
+classIdRef="335" isArray="0" size="60"/>
+<threadStart threadId="6" time="1068485223.621987100" threadName="Thread-0"
+groupName="main" parentName="system" objIdRef="44577"/>
+<threadEnd threadIdRef="6" time="1068485223.622419600"/>
+<runtimeShutdown threadIdRef="1" time="1068485223.622441400"/>
+<traceEnd time="1068485223.622446700"/>
+<agentDestroy agentIdRef="c51ca709-015c-44c0-846e-737e4c368490"
+time="1068485223.622451900"/>

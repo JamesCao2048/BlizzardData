@@ -1,0 +1,2 @@
+formatter swallows text when attribute values include -->
+When I format a build file which has elements that have a > inside an attribute value, the formatter mangles the build file. I believe at least one of the ant committers likes to say: <target description="--> my description"/> so we will want to fix this.

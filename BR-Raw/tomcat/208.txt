@@ -1,0 +1,5 @@
+j9 launcher plugin uses deprecated -bp: flag
+The -bp: flag for specifying bootclasspath entries has been deprecated for 
+quite a long time.  The preferred flag is -Xbootclasspath.  The j9 launcher 
+plugin uses -bp, and this causes warning messages to appear each time an app is 
+launched.

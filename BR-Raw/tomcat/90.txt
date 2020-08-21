@@ -1,0 +1,169 @@
+EMF Help exception when launching Help content
+Workbench build 200403100800
+
+When you go "Help->Help Contents", you get 12 identical exceptions (bottom of 
+this bug).  One is coming from EMF and the 11 others are coming from Hyades ( 
+I will log bug for them too)
+
+I have narrow the exceptions to EMF and Hyades by process of elimination of 
+plugins.
+
+Here is the exception:
+!SESSION Mar 17, 2004 16:02:24.859 --------------------------------------------
+-
+java.fullversion=J2RE 1.4.2 IBM Windows 32 build cndev-20040128 (JIT enabled: 
+jitc)
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments: -shared D:Workbench3.0200403100800
+eclipseeclipse.exe -shared 888_60 -vm D:Workbench3.0200403100800
+eclipsejrebinjavaw.exe -vmargs -cp D:Workbench3.0200403100800
+eclipsestartup.jar org.eclipse.core.launcher.Main
+!ENTRY org.eclipse.help 4 0 Mar 17, 2004 16:02:24.859
+!MESSAGE Error occurred processing file mainToc.xml.
+!STACK 0
+java.lang.RuntimeException: toc label==null
+	at org.eclipse.help.internal.toc.Toc.<init>(Toc.java:48)
+	at org.eclipse.help.internal.toc.TocFileParser.startElement
+(TocFileParser.java:121)
+	at org.apache.xerces.parsers.AbstractSAXParser.startElement(Unknown 
+Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startElement(Unknown 
+Source)
+	at 
+org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown 
+Source)
+	at 
+org.apache.xerces.impl.XMLDocumentScannerImpl$ContentDispatcher.scanRootElement
+Hook(Unknown Source)
+	at 
+org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher
+.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument
+(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at org.eclipse.help.internal.toc.TocFileParser.parse
+(TocFileParser.java:88)
+	at org.eclipse.help.internal.toc.TocBuilder.buildTocFile
+(TocBuilder.java:70)
+	at org.eclipse.help.internal.toc.TocBuilder.getTocFile
+(TocBuilder.java:130)
+	at org.eclipse.help.internal.toc.TocBuilder.buildLink
+(TocBuilder.java:83)
+	at org.eclipse.help.internal.toc.Link.build(Link.java:34)
+	at org.eclipse.help.internal.toc.TocFileParser.startElement
+(TocFileParser.java:135)
+	at org.apache.xerces.parsers.AbstractSAXParser.startElement(Unknown 
+Source)
+	at org.apache.xerces.parsers.AbstractXMLDocumentParser.emptyElement
+(Unknown Source)
+	at 
+org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown 
+Source)
+	at 
+org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher
+.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument
+(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at org.eclipse.help.internal.toc.TocFileParser.parse
+(TocFileParser.java:88)
+	at org.eclipse.help.internal.toc.TocBuilder.buildTocFile
+(TocBuilder.java:70)
+	at org.eclipse.help.internal.toc.TocBuilder.getTocFile
+(TocBuilder.java:130)
+	at org.eclipse.help.internal.toc.TocBuilder.buildToc
+(TocBuilder.java:100)
+	at org.eclipse.help.internal.toc.Toc.build(Toc.java:75)
+	at org.eclipse.help.internal.toc.TocFileParser.startElement
+(TocFileParser.java:135)
+	at org.apache.xerces.parsers.AbstractSAXParser.startElement(Unknown 
+Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startElement(Unknown 
+Source)
+	at 
+org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown 
+Source)
+	at 
+org.apache.xerces.impl.XMLDocumentScannerImpl$ContentDispatcher.scanRootElement
+Hook(Unknown Source)
+	at 
+org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher
+.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument
+(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at org.eclipse.help.internal.toc.TocFileParser.parse
+(TocFileParser.java:88)
+	at org.eclipse.help.internal.toc.TocBuilder.buildTocFile
+(TocBuilder.java:70)
+	at org.eclipse.help.internal.toc.TocFile.build(TocFile.java:113)
+	at org.eclipse.help.internal.toc.TocBuilder.build(TocBuilder.java:53)
+	at org.eclipse.help.internal.toc.TocManager.build(TocManager.java:99)
+	at org.eclipse.help.internal.toc.TocManager.<init>(TocManager.java:40)
+	at org.eclipse.help.internal.HelpPlugin.getTocManager
+(HelpPlugin.java:155)
+	at org.eclipse.help.HelpSystem.getTocs(HelpSystem.java:57)
+	at org.eclipse.help.internal.base.HelpDisplay.displayHelp
+(HelpDisplay.java:39)
+	at org.eclipse.help.ui.internal.DefaultHelpUI.displayHelp
+(DefaultHelpUI.java:40)
+	at org.eclipse.ui.help.WorkbenchHelp.displayHelp
+(WorkbenchHelp.java:208)
+	at org.eclipse.help.ui.internal.HelpContentsAction$1.run
+(HelpContentsAction.java:47)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile
+(BusyIndicator.java:84)
+	at org.eclipse.help.ui.internal.HelpContentsAction.run
+(HelpContentsAction.java:44)
+	at org.eclipse.ui.internal.PluginAction.runWithEvent
+(PluginAction.java:273)
+	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent
+(WWinPluginAction.java:207)
+	at 
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:550)
+	at org.eclipse.jface.action.ActionContributionItem.access$2
+(ActionContributionItem.java:502)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent
+(ActionContributionItem.java:435)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java
+(Compiled Code))
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2367)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2047)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1422)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:258)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+	at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:48)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:260)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:173)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:59)
+	at java.lang.reflect.Method.invoke(Method.java:389)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:305)
+	at org.eclipse.core.launcher.Main.run(Main.java:745)
+	at org.eclipse.core.launcher.Main.main(Main.java:713)

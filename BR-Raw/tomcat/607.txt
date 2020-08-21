@@ -1,0 +1,8 @@
+GridBagLayout conversion should use "elastic" properties
+Currently VE does convert null layout into gridBagLayouts by using
+insets and padding to get exactly the same appereance. Quite often
+this is not what I'm trying to get, I'd prefer to have a way to
+use "elastic" properties of the constraint such as placement and weight
+instead, so that when the form resizes the control keep their relative
+position (even if this means not getting exactly the same positioning
+as in the null layout).

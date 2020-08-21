@@ -1,0 +1,8 @@
+[search] Search results with details (show matched line)
+The current search results do not show the actual line that matched the search. 
+
+Suggest that the search results be a tree with the filename as a node, and the 
+lines that match within that file as the children of that node. 
+
+Also suggest that search have an option specifying if the method name should be 
+displayed or not in the search results.

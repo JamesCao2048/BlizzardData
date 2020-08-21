@@ -1,0 +1,115 @@
+The CopyCommand does not preserve order for bi-directional references
+The problem is that when copying an EObject that has bi-directional references
+to other EObject instances the order of the referenced objects is not
+maintained in the copy.  The problem is described in more detail in an 
+eclipse.tools.emf posting dated 12/19/03.  The response by Frank Budinsky was:
+
+The copy command, which is a fairly old piece of code, should be handling
+bidirectional references the way EcoreUtil.copy() does it. Notice that the
+EcoreUtil.Copier.copyReference() method calls addUnique() or move() to make 
+sure everything is added at the right position. The 
+InitializeCopyCommand.copyReferences() method should be doing the same thing,
+instead of its current incorrect implementation of just calling
+copyList.add(target).
+
+Following Frank's suggestion a patch was created for the 
+InitializeCopyCommand.copyReferences().  The patch has been JUnit tested 
+through a number of usage scenarios and works as expected.  The modified code 
+is included below.
+
+  /**
+   * This method will iterate over the references of the owner object and sets 
+them.
+   * accordingly in the copy.
+   */
+  protected void copyReferences()
+  {
+      for (Iterator j = owner.eClass().getEAllReferences().iterator(); 
+j.hasNext(); )
+      {
+        EReference eReference = (EReference)j.next();
+        if (eReference.isChangeable() && !eReference.isContainment())
+        {
+          copyReference(eReference, owner, copy);
+        }
+      }
+  }
+  /**
+   * Called to handle the copying of a cross reference;
+   * this adds values or sets a single value as appropriate for the 
+multiplicity
+   * while omitting any bidirectional reference that isn't in the copy map.
+   * @param eReference the reference to copy.
+   * @param eObject the object from which to copy.
+   * @param copiedEObject the object to copy to.
+   */
+  protected void copyReference(EReference eReference, EObject eObject, EObject 
+copiedEObject)
+  {
+      
+    EReference reverseReference = eReference.getEOpposite();
+    boolean copiedTargetRequired = reverseReference != null || 
+eReference.isContainment();
+    
+    boolean isBidirectional = eReference.getEOpposite() != null;
+    if (eReference.isMany())
+    {
+      InternalEList value = (InternalEList)copiedEObject.eGet(eReference);
+      int index = 0;
+      for (Iterator k = ((List)eObject.eGet(eReference)).iterator(); k.hasNext
+(); )
+      {
+        Object referencedEObject = k.next();
+        Object copiedReferencedEObject = copyHelper.getCopyTarget((EObject) 
+referencedEObject, copiedTargetRequired);
+         if (copiedReferencedEObject == null)
+        {
+          if (!isBidirectional)
+          {
+            value.addUnique(index, referencedEObject);
+            ++index;
+          }
+        }
+        else 
+        {
+          if (isBidirectional)
+          {
+            int position = value.indexOf(copiedReferencedEObject);
+            if (position == -1)
+            {
+              value.addUnique(index, copiedReferencedEObject);
+            }
+            else if (index != position)
+            {
+              value.move(index, copiedReferencedEObject);
+            }
+          }
+          else
+          {
+            value.addUnique(index, copiedReferencedEObject);
+          }
+          ++index;
+        }
+      }
+    }
+    else
+    {
+      Object referencedEObject = eObject.eGet(eReference);
+      if (referencedEObject != null)
+      {
+        Object copiedReferencedEObject = copyHelper.getCopyTarget((EObject) 
+referencedEObject, copiedTargetRequired);
+        if (copiedReferencedEObject == null)
+        {
+          if (!isBidirectional)
+          {
+            copiedEObject.eSet(eReference, referencedEObject);
+          }
+        }
+        else
+        {
+          copiedEObject.eSet(eReference, copiedReferencedEObject);
+        }
+      }
+    }
+  }

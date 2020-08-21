@@ -1,0 +1,21 @@
+[misc] Go To Next Annotation: Message in StatusLine doesn't persist
+I20031216-2000
+
+I have 'Mark occurrences in file' switched on and all annotation types enabled
+for jumping around with Go To Next/Previous Annotation. In this example: place
+the caret on the first 'ans'. Then click 'Go To Next Annotation' repeatedly.
+Observe: for most of the annotations, the StatusLine displays the message only
+very shortly, and then blanks again.
+
+class A {
+	double ans= -1;
+	void m1() {
+		do {
+		ans= 3.1415;
+		} while ("e" != "mc^2");
+		ans= 12;
+		if (ans == ans);
+		;
+		//TODO it
+	}
+}

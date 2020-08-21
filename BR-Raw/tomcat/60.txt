@@ -1,0 +1,10 @@
+Runtime Workbench launcher should expose boostrap entries
+Up until now, the runtime workbench launcher never had the need to expose the 
+bootstrap entries to the user.  This is because the only entry necessary is 
+the location of the Main class, and PDE takes charge of looking for this class 
+in the workspace/target platform and locating the right one.
+
+When launching a runtime workbench with a profiler such as Yourkit, a JAR 
+needs to be added to the bootstrap classpath entries.  Therefore, we need to 
+expose a text field in the launcher so that the user can add these entries, 
+and we would just append them to the PDE-computed value.

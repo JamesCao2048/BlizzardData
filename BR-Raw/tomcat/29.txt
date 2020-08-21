@@ -1,0 +1,2 @@
+[Font/Colour] Inactive tab color not applied to buttons
+Build 20040323 Linux-GTK The buttons on view toolbars retain the "correct" (native) color, while the toolbar around them take on the color of the "inactive tab". This looks really ooglay. "Inactive tab" setting should *only* affect the tabs and not the toolbar (see Luc's bug 55322 ), but if the color's going to be applied to the toolbar it needs to be applied to the buttons too.

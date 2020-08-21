@@ -1,0 +1,25 @@
+Progress support summary
+Existing progress framework components:
+- New api for showing progress IProgressService::showBusyCursorWhile(). 
+- Progress view
+  i.   can't determine ordering of errors, no chronology
+  ii.  should only show user tasks (decorators, updating sync view shouldn't
+       be shown by default (related to next point).
+  iii. no way of linking progress among several related jobs
+  iv.  opening an error requires clicking details, it should automatically
+       expand.
+  v.
+- Blocked progress dialog appears for free if main thread is 
+  about to block and there is no progress monitor passed to core.
+  i. this has a problem in that if the progress monitor passed in to a runnable
+     is not null but instead a dummy progress object, this auto-support doesn't
+     work.
+- Background jobs running at shutdown
+  i. should maybe prompt user with more informative message an options to kill 
+     them or continue waiting.
+- Error occuring in background jobs
+- View part progress? What is this going to look like?
+
+
+ Bug 42995  [Progress] Need feedback to the end of a long operation
+ Bug 47108  [Jobs] Error in log when a message box would be more appriate

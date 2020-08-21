@@ -1,0 +1,2 @@
+GLA's org.eclipse.hyades.logging.adapter.impl.Component.stop() API is not fully implemented.
+GLA's org.eclipse.hyades.logging.adapter.impl.Component.stop() API is not fully implemented. One result of this defect is that the StaticParserSensor.stop() is not being called which intern calls the StaticParserSensor.clean() API and intern calls the postParse() API on the static parser to release system resources (e.g. close file handle).

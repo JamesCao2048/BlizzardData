@@ -1,0 +1,23 @@
+LoggingUtilSample() fail to collect the CBEs
+driver: 20031216_1217
+problem: running the test bucket LogandProfile2, the logger fail to collect any 
+CBEs
+
+Steps to recreate the scenario:
+Instructions:
+
+1. Enable logging using the following preference page:  window->preferences-
+ >Profile and Logging 
+2. Add the agent "LoggingUtilSample logger" using the following preference 
+page: window->preferences->Profiling and Logging->Logging Agents
+3. Launch (locally/remotely) to LoggingUtilSample.  ENSURE the jar files 
+mentioned in LogAndProfile1 are included in the classpath.
+4. Press enter when prompted.
+6. Open the Log view and ensure that the "LoggingUtilSample logger" agent has 
+recorded 41 CBEDefaultEvent objects.
+
+0 CBEdefaultEvent is being recorded.
+
+Note:
+This bug doesn not occur in AIX, so I suspect it is platform dependent.
+Also this bug does not occur when running in enabled or controlled mode.

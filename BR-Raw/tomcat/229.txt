@@ -1,0 +1,2 @@
+No smart semicolon when the selection is empty
+When the selection isn't empty then entering a semicolon should always replace the selection and not have the smart behaviour (i.e. jumping to the end).

@@ -1,0 +1,2 @@
+FindSupport.openStream implementation incorrect
+We believe it should use find() rather than getEntry()

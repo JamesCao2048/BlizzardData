@@ -1,0 +1,2 @@
+Why are there two implementation of URLDecoder?
+build 20020528 there are two URLDecoders in the WebDAV project. I suggest we remove the package org.eclipse.webdav.internal.utils and move the classes to org.eclipse.webdav.internal.kernel.utils

@@ -1,0 +1,3 @@
+RAServer won't start on RedHat 7.2 (S/390)
+The problem is due to a hard-coded shared library name being required by the 
+XML4C library.

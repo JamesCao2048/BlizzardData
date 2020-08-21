@@ -1,0 +1,11 @@
+[Viewers] Outline popup flickers with decorators on
+I20040322
+
+1) Open an editor on a class file for which there was no attached source (I used
+Throwable.class)
+2) Hit Ctrl+o to open content outline popup
+3) Type the letter "p" to narrow the set of listed methods.
+
+Expected: narrow down member list to only show those with prefix "p"
+Actual: All methods disappear from list (even those starting with "p", but all
+fields remain.

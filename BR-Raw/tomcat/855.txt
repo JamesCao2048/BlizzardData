@@ -1,0 +1,23 @@
+IllegalStateException: Job manager has been shut down.
+Found in .log using 20031119
+
+!ENTRY org.eclipse.core.runtime 4 2 Nov 19, 2003 14:19:43.783
+!MESSAGE Problems occurred when invoking code from plug-in:
+"org.eclipse.core.runtime".
+!STACK 0
+java.lang.IllegalStateException: Job manager has been shut down.
+	at org.eclipse.core.internal.jobs.JobManager.schedule(JobManager.java:512)
+	at org.eclipse.core.internal.jobs.InternalJob.schedule(InternalJob.java:211)
+	at org.eclipse.core.runtime.jobs.Job.schedule(Job.java:330)
+	at
+org.eclipse.ui.internal.progress.AnimationManager$4.done(AnimationManager.java:488)
+	at org.eclipse.core.internal.jobs.JobListeners$3.notify(JobListeners.java:37)
+	at org.eclipse.core.internal.jobs.JobListeners$7.run(JobListeners.java:106)
+	at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1127)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+	at org.eclipse.core.internal.jobs.JobListeners.doNotify(JobListeners.java:86)
+	at org.eclipse.core.internal.jobs.JobListeners.done(JobListeners.java:125)
+	at org.eclipse.core.internal.jobs.JobManager.endJob(JobManager.java:281)
+	at org.eclipse.core.internal.jobs.WorkerPool.endJob(WorkerPool.java:120)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:72)

@@ -1,0 +1,2 @@
+Quick Diff hovers don't use text editor font
+Quick Diff difference hovers use the java editor's text font for hovers to provide an easy "visual diff" by hovering/unhovering. This doesn't work in *text* editors (e.g. on a *.properties file), since the hover uses a default font and doesn't take over the text editor's.

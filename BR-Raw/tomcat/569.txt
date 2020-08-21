@@ -1,0 +1,2 @@
+[KeyBindings][MenuMgmt] Quick fix (Command+Q) quits Eclipse immediately on Mac
+The keyboard shortcut for Quick Fix is Command-E Command-Q, command q is the quit command so trying to invoke quick fix causes the app to quit. I tried to reassign the key but the UI for the keyboard shortcuts in preferences is messed up on the mac (filed under another bug #50126 ). Version - 3.0M6 There is nothing in my .log file.

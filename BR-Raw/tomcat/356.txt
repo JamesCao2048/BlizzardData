@@ -1,0 +1,52 @@
+ConcurrentModificationException in WorkspaceModelManager
+I got this in 3.0M7 after making a change to plugin.xml and saving.
+
+Error Feb 18, 2004 18:04:40.736 Problems occurred when invoking code from plug-
+in: "org.eclipse.core.runtime".
+java.util.ConcurrentModificationException
+	at java.util.AbstractList$Itr.checkForComodification
+(AbstractList.java:444)
+	at java.util.AbstractList$Itr.next(AbstractList.java:417)
+	at 
+org.eclipse.pde.internal.core.WorkspaceModelManager.fireModelProviderEvent
+(WorkspaceModelManager.java:212)
+	at 
+org.eclipse.pde.internal.core.WorkspaceModelManager.fireModelsChanged
+(WorkspaceModelManager.java:224)
+	at 
+org.eclipse.pde.internal.core.WorkspaceModelManager.reloadWorkspaceModel
+(WorkspaceModelManager.java:682)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.handleFileDelta
+(WorkspaceModelManager.java:407)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.visit
+(WorkspaceModelManager.java:828)
+	at org.eclipse.core.internal.events.ResourceDelta.accept
+(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept
+(ResourceDelta.java:76)
+	at org.eclipse.core.internal.events.ResourceDelta.accept
+(ResourceDelta.java:76)
+	at org.eclipse.core.internal.events.ResourceDelta.accept
+(ResourceDelta.java:49)
+	at 
+org.eclipse.pde.internal.core.WorkspaceModelManager.handleResourceDelta
+(WorkspaceModelManager.java:475)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged
+(WorkspaceModelManager.java:726)
+	at org.eclipse.core.internal.events.NotificationManager$2.run
+(NotificationManager.java:255)
+	at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:819)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:493)
+	at org.eclipse.core.internal.events.NotificationManager.notify
+(NotificationManager.java:248)
+	at 
+org.eclipse.core.internal.events.NotificationManager.broadcastChanges
+(NotificationManager.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.broadcastChanges
+(AutoBuildJob.java:62)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild
+(AutoBuildJob.java:88)
+	at org.eclipse.core.internal.events.AutoBuildJob.run
+(AutoBuildJob.java:116)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)

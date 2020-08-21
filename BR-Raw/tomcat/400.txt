@@ -1,0 +1,66 @@
+NPE in XML outline viewer due to null element from content provider
+I've been using the workspace for quite a while, and just noticed that the
+scroll bar doesn't line-up with the number of items in the tree.  Checking the
+logs, I see an AssertionFailedException.  The StructuredViewer is complaining of
+a null argument.
+
+This leaves the tree in an interesting state (I'll attach a screenshot).
+
+
+org.eclipse.jface.util.Assert$AssertionFailedException: null argument;
+        at org.eclipse.jface.util.Assert.isNotNull(Assert.java:139)
+        at org.eclipse.jface.util.Assert.isNotNull(Assert.java:116)
+        at
+org.eclipse.jface.viewers.StructuredViewer.assertElementsNotNull(StructuredViewer.java:219)
+        at
+org.eclipse.jface.viewers.StructuredViewer.getRawChildren(StructuredViewer.java:517)
+        at
+org.eclipse.jface.viewers.AbstractTreeViewer.getRawChildren(AbstractTreeViewer.java:725)
+        at
+org.eclipse.jface.viewers.StructuredViewer.getFilteredChildren(StructuredViewer.java:463)
+        at
+org.eclipse.jface.viewers.StructuredViewer.getSortedChildren(StructuredViewer.java:567)
+        at
+org.eclipse.jface.viewers.AbstractTreeViewer.updateChildren(AbstractTreeViewer.java:1463)
+        at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalRefreshStruct(AbstractTreeViewer.java:1058)
+        at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(AbstractTreeViewer.java:1036)
+        at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(AbstractTreeViewer.java:999)
+        at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(AbstractTreeViewer.java:987)
+        at
+org.eclipse.jface.viewers.StructuredViewer$7.run(StructuredViewer.java:870)
+        at
+org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:810)
+        at
+org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:868)
+        at
+org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:830)
+        at
+org.eclipse.pde.internal.ui.editor.manifest.XMLOutlinePage$2.run(XMLOutlinePage.java:74)
+        at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+        at
+org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:102)
+        at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:1848)
+        at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1652)
+        at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550)
+        at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1526)
+        at
+org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:265)
+        at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+        at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47)
+        at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:257)
+        at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:104)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:324)
+        at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+        at org.eclipse.core.launcher.Main.run(Main.java:742)
+        at org.eclipse.core.launcher.Main.main(Main.java:581)
