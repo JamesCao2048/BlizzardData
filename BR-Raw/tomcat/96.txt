@@ -1,4 +1,5 @@
 Table widget does not send events for check-box state change
-The 'org.eclipse.swt.widgets.Table' widget used to invoke the widgetSelected() method on registered selection listeners when the user changes state of a check-box.
+The 'org.eclipse.swt.widgets.Table' widget used to invoke the widgetSelected() method on registered selection listeners when the user changes state of
+ a check-box.
 The table's content is comprised of the 'org.eclipse.swt.widgets.TableItem' objects.
 Eclipse 3.0 M7 works properly but it is broken in M8 (0304 build).

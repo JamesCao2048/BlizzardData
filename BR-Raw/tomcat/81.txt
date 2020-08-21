@@ -2,8 +2,10 @@ Missing Running/Dead thread events creation and times of of currently created th
 Here are few remarks (and more ?) about Thread Events model loader.
 1/ I think "Running" thread event at thread start time: I have added this in XMLthreadStartLoader.java (see patch file below).
 2/ Same thing for "Dead" thread events when a thread ends: I have added this in XMLthreadEndLoader.java (see patch file below).
-3/I have also changed all "setTime( time )" for the fourth XMLmon*.java file to "setTime(createDeltaTime())", seems to have better result in thread view (I prefer to see 10/20 s times rather than 1.079E9 seconds ! ;-) ).
-Here a patch file for the 3 points above, it's created using Eclipse CVS "create patch" command at org.eclipse.hyades.models.trace level: Index: src/org/eclipse/hyades/loaders/trace/XMLmonContendedEnterLoader.java =================================================================== retrieving revisio
+3/I have also changed all "setTime( time )" for the fourth XMLmon*.java file to "setTime(createDeltaTime())", seems to have better result in thread vi
+ew (I prefer to see 10/20 s times rather than 1.079E9 seconds ! ;-) ).
+Here a patch file for the 3 points above, it's created using Eclipse CVS "create patch" command at org.eclipse.hyades.models.trace level: Index: src/o
+rg/eclipse/hyades/loaders/trace/XMLmonContendedEnterLoader.java =================================================================== retrieving revisio
 n 1.1 diff 
 -u 
 -r1.1 XMLmonContendedEnterLoader.java 
@@ -11,47 +13,61 @@ n 1.1 diff
 -0000 1.1 +++ src/org/eclipse/hyades/loaders/trace/XMLmonContendedEnterLoader.java 18 Mar 2004 13:31:37 
 -0000 @@ 
 -50,7 +50,7 @@ threadWaitingForLockEvent.setLockedObject(theObject); threadWaitingForLockEvent.setThread(theThread); 
-- threadWaitingForLockEvent.setTime(time); + threadWaitingForLockEvent.setTime(createDeltaTime());//time); if(threadOwner>0) { TRCThread thread = (TRCThread) LookupServiceExtensions.getInstance().locate (context, TRCThreadImpl.class, LoadersUtils.getLookUpKey(threadOwner)); Index: src/org/eclipse/hy
+- threadWaitingForLockEvent.setTime(time); + threadWaitingForLockEvent.setTime(createDeltaTime());//time); if(threadOwner>0) { TRCThread thread = (TRC
+Thread) LookupServiceExtensions.getInstance().locate (context, TRCThreadImpl.class, LoadersUtils.getLookUpKey(threadOwner)); Index: src/org/eclipse/hy
 ades/loaders/trace/XMLmonContendedEnteredLoader.java =================================================================== retrieving revision 1.1 diff 
 -u 
 -r1.1 XMLmonContendedEnteredLoader.java 
 --- src/org/eclipse/hyades/loaders/trace/XMLmonContendedEnteredLoader.java 16 Mar 2004 22:58:08 
 -0000 1.1 +++ src/org/eclipse/hyades/loaders/trace/XMLmonContendedEnteredLoader.java 18 Mar 2004 13:31:37 
 -0000 @@ 
--19,7 +19,7 @@ theProcess = getProcess(); theThread = getThreadByIdRef(theProcess); TRCThreadRunningEvent runningEvent = TraceFactory.eINSTANCE.createTRCThreadRunningEvent(); 
-- runningEvent.setTime(time); + runningEvent.setTime(createDeltaTime());//time); theThread.getThreadEvents().add(runningEvent); } Index: src/org/eclipse/hyades/loaders/trace/XMLmonWaitLoader.java =================================================================== retrieving revision 1.1 diff 
+-19,7 +19,7 @@ theProcess = getProcess(); theThread = getThreadByIdRef(theProcess); TRCThreadRunningEvent runningEvent = TraceFactory.eINSTANCE.create
+TRCThreadRunningEvent(); 
+- runningEvent.setTime(time); + runningEvent.setTime(createDeltaTime());//time); theThread.getThreadEvents().add(runningEvent); } Index: src/org/eclip
+se/hyades/loaders/trace/XMLmonWaitLoader.java =================================================================== retrieving revision 1.1 diff 
 -u 
 -r1.1 XMLmonWaitLoader.java 
 --- src/org/eclipse/hyades/loaders/trace/XMLmonWaitLoader.java 16 Mar 2004 22:58:08 
 -0000 1.1 +++ src/org/eclipse/hyades/loaders/trace/XMLmonWaitLoader.java 18 Mar 2004 13:31:37 
 -0000 @@ 
--47,7 +47,7 @@ { TRCThreadSleepingEvent sleepingEvent = TraceFactory.eINSTANCE.createTRCThreadSleepingEvent(); sleepingEvent.setSleepingTime(timeout); 
-- sleepingEvent.setTime(time); + sleepingEvent.setTime(createDeltaTime());//time); sleepingEvent.setThread(theThread); theThread.getThreadEvents().add(sleepingEvent); } @@ 
--57,11 +57,10 @@ TRCThreadWaitingForObjectEvent threadWaitingForObjectEvent = TraceFactory.eINSTANCE.createTRCThreadWaitingForObjectEvent(); threadWaitingForObjectEvent.setObjectWaitingFor(theObject); threadWaitingForObjectEvent.setThread(theThread); 
-- threadWaitingForObjectEvent.setTime(time); + threadWaitingForObjectEvent.setTime(createDeltaTime());//time); threadWaitingForObjectEvent.setTimeout(timeout); theThread.getThreadEvents().add(threadWaitingForObjectEvent); } 
-- } public void initialize(HierarchyContext context, String name) { loadToModel = context.isLoadToModel(); Index: src/org/eclipse/hyades/loaders/trace/XMLmonWaitedLoader.java =================================================================== retrieving revision 1.1 diff 
+-47,7 +47,7 @@ { TRCThreadSleepingEvent sleepingEvent = TraceFactory.eINSTANCE.createTRCThreadSleepingEvent(); sleepingEvent.setSleepingTime(timeout);
+ 
+- sleepingEvent.setTime(time); + sleepingEvent.setTime(createDeltaTime());//time); sleepingEvent.setThread(theThread); theThread.getThreadEvents().add
+(sleepingEvent); } @@ 
+-57,11 +57,10 @@ TRCThreadWaitingForObjectEvent threadWaitingForObjectEvent = TraceFactory.eINSTANCE.createTRCThreadWaitingForObjectEvent(); threadWai
+tingForObjectEvent.setObjectWaitingFor(theObject); threadWaitingForObjectEvent.setThread(theThread); 
+- threadWaitingForObjectEvent.setTime(time); + threadWaitingForObjectEvent.setTime(createDeltaTime());//time); threadWaitingForObjectEvent.setTimeout(
+timeout); theThread.getThreadEvents().add(threadWaitingForObjectEvent); } 
+- } public void initialize(HierarchyContext context, String name) { loadToModel = context.isLoadToModel(); Index: src/org/eclipse/hyades/loaders/trace
+/XMLmonWaitedLoader.java =================================================================== retrieving revision 1.1 diff 
 -u 
 -r1.1 XMLmonWaitedLoader.java 
 --- src/org/eclipse/hyades/loaders/trace/XMLmonWaitedLoader.java 16 Mar 2004 22:58:08 
 -0000 1.1 +++ src/org/eclipse/hyades/loaders/trace/XMLmonWaitedLoader.java 18 Mar 2004 13:31:37 
 -0000 @@ 
--19,7 +19,7 @@ theProcess = getProcess(); theThread = getThreadByIdRef(theProcess); TRCThreadRunningEvent runningEvent = TraceFactory.eINSTANCE.createTRCThreadRunningEvent(); 
-- runningEvent.setTime(time); + runningEvent.setTime(createDeltaTime());//time); theThread.getThreadEvents().add(runningEvent); } protected void processEF(int step) { Index: src/org/eclipse/hyades/loaders/trace/XMLthreadEndLoader.java =================================================================
+-19,7 +19,7 @@ theProcess = getProcess(); theThread = getThreadByIdRef(theProcess); TRCThreadRunningEvent runningEvent = TraceFactory.eINSTANCE.create
+TRCThreadRunningEvent(); 
+- runningEvent.setTime(time); + runningEvent.setTime(createDeltaTime());//time); theThread.getThreadEvents().add(runningEvent); } protected void proce
+ssEF(int step) { Index: src/org/eclipse/hyades/loaders/trace/XMLthreadEndLoader.java =================================================================
 == retrieving revision 1.4 diff 
 -u 
 -r1.4 XMLthreadEndLoader.java 
 --- src/org/eclipse/hyades/loaders/trace/XMLthreadEndLoader.java 16 Mar 2004 22:58:08 
 -0000 1.4 +++ src/org/eclipse/hyades/loaders/trace/XMLthreadEndLoader.java 18 Mar 2004 13:31:37 
 -0000 @@ 
--15,6 +15,8 @@ import org.eclipse.hyades.loaders.util.LookupServiceExtensions; import org.eclipse.hyades.models.trace.TRCProcess; import org.eclipse.hyades.models.trace.TRCThread; +import org.eclipse.hyades.models.trace.TRCThreadDeadEvent; +import org.eclipse.hyades.models.trace.TraceFactory; import
+-15,6 +15,8 @@ import org.eclipse.hyades.loaders.util.LookupServiceExtensions; import org.eclipse.hyades.models.trace.TRCProcess; import org.eclipse.h
+yades.models.trace.TRCThread; +import org.eclipse.hyades.models.trace.TRCThreadDeadEvent; +import org.eclipse.hyades.models.trace.TraceFactory; import
  org.eclipse.hyades.models.trace.impl.TRCThreadImpl; /** @author slavescu * @@ 
--29,6 +31,11 @@ if (thread != null) { thread.setStopTime(createDeltaTime()); + + TRCThreadDeadEvent event = TraceFactory.eINSTANCE.createTRCThreadDeadEvent(); + event.setTime( thread.getStopTime() ); + event.setThread( thread ); + thread.getThreadEvents().add( event ); } } Index: src/org/eclipse/hya
+-29,6 +31,11 @@ if (thread != null) { thread.setStopTime(createDeltaTime()); + + TRCThreadDeadEvent event = TraceFactory.eINSTANCE.createTRCThreadDead
+Event(); + event.setTime( thread.getStopTime() ); + event.setThread( thread ); + thread.getThreadEvents().add( event ); } } Index: src/org/eclipse/hya
 des/loaders/trace/XMLthreadStartLoader.java =================================================================== retrieving revision 1.4 diff 
 -u 
 -r1.4 XMLthreadStartLoader.java 
 --- src/org/eclipse/hyades/loaders/trace/XMLthreadStartLoader.java 16 Mar 2004 22:58:08 
 -0000 1.4 +++ src/org/eclipse/hyades/loaders/trace/XMLthreadStartLoader.java 18 Mar 2004 13:31:38 
 -0000 @@ 
--15,6 +15,7 @@ import org.eclipse.hyades.loaders.util.LookupServiceExtensions; import org.eclipse.hyades.models.trace.TRCProcess; import org.eclipse.hyades.models.trace.TRCThread; +import org.eclipse.hyades.models.trace.TRCThreadRunningEvent; import org.eclipse.hyades.models.trace.TraceFactory; impo
+-15,6 +15,7 @@ import org.eclipse.hyades.loaders.util.LookupServiceExtensions; import org.eclipse.hyades.models.trace.TRCProcess; import org.eclipse.h
+yades.models.trace.TRCThread; +import org.eclipse.hyades.models.trace.TRCThreadRunningEvent; import org.eclipse.hyades.models.trace.TraceFactory; impo
 rt org.eclipse.hyades.models.trace.impl.TRCThreadImpl; /** @author slavescu @@ 
--95,6 +96,10 @@ // break; // } // } + TRCThreadRunningEvent event = TraceFactory.eINSTANCE.createTRCThreadRunningEvent(); + event.setTime( thread.getStartTime() ); + event.setThread( thread ); + thread.getThreadEvents().add( event ); } }
+-95,6 +96,10 @@ // break; // } // } + TRCThreadRunningEvent event = TraceFactory.eINSTANCE.createTRCThreadRunningEvent(); + event.setTime( thread.getS
+tartTime() ); + event.setThread( thread ); + thread.getThreadEvents().add( event ); } }

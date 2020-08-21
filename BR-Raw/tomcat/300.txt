@@ -1,7 +1,10 @@
 Changing the style of a Label from SWT.SHADOW_IN to SWT.SHADOW_NONE does not make a difference in the appearance of the Label
-When I was going through the Eclipse 3.0 M7 examples (eclipse-examples- 3.0M7.zip) which I downloaded from http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse 
-- examples-3.0M7.zip, I realized that changing the style of a Label from SWT.SHADOW_IN to SWT.SHADOW_NONE did not make a difference in the appearance of the Label.
-Here are the steps to follow in order to regenerate this scenario: 1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.2.Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse 
+When I was going through the Eclipse 3.0 M7 examples (eclipse-examples- 3.0M7.zip) which I downloaded from http://fullmoon.torolab.ibm.com/downloads/d
+rops/S-3.0M7-200402122000/eclipse 
+- examples-3.0M7.zip, I realized that changing the style of a Label from SWT.SHADOW_IN to SWT.SHADOW_NONE did not make a difference in the appearance 
+of the Label.
+Here are the steps to follow in order to regenerate this scenario: 1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.2.Download Eclipse 3.0 M7 Examp
+les (eclipse-examples-3.0M7.zip) from http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse 
 - examples-3.0M7.zip and install them.
 3.Launch Eclipse 4.Select “Window 
 -> Show View 
@@ -16,4 +19,5 @@ This will display “SWT Controls” View.
 9.In the “Size” group, make sure “100 X 100” is selected.
 10.From the “Styles” group, select SWT.SHADOW_NONE option.
 This will uncheck the SWT.SHADOW_IN option.
-Expected Behavior: The appearance of the Labels should change Actual Behavior: The appearance of the Labels remains unchanged Important: When I ran the same tests on Eclipse 2.1.2, the outcome was the same as it was on Eclipse 3.0M7.
+Expected Behavior: The appearance of the Labels should change Actual Behavior: The appearance of the Labels remains unchanged Important: When I ran th
+e same tests on Eclipse 2.1.2, the outcome was the same as it was on Eclipse 3.0M7.

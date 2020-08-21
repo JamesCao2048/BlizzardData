@@ -1,2 +1,3 @@
 Javadoc - DOM/AST is not correct after a @see tag
-build 20040210 public class X { /** * @see Exception * {@link Exception} */ public void foo() { } } The DOM/AST for the javadoc is incorrect (too much TextElement).
+build 20040210 public class X { /** * @see Exception * {@link Exception} */ public void foo() { } } The DOM/AST for the javadoc is incorrect (too much
+ TextElement).

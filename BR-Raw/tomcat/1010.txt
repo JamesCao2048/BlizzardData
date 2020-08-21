@@ -1,7 +1,8 @@
 eclipse hangs during startup refresh of workspace
 I noticed recently that eclipse seems to hang during startup.
 My CPU meter seems to be running at hundred percent, but nothing is happening.
-I noticed that this seems to be happening only when I create certain class files in my project output path (using the jdk version as used by the eclipse workbench), outside of eclipse and then try to refresh my workspace 
+I noticed that this seems to be happening only when I create certain class files in my project output path (using the jdk version as used by the eclip
+se workbench), outside of eclipse and then try to refresh my workspace 
 - by either restarting eclipse, or right clicking on my project root directory and hitting refresh.
 The result is that I get the Progress Information dialog which is stuck, with nothing happening.
 This is really counter productive, it would be nice if there is a way to prevent this from happening.

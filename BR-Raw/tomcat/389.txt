@@ -1,23 +1,42 @@
 NPE attempting to search NLS
-I200402102000 With the RefactoringMessages.properties from org.eclipse.jdt.internal.debug.core.refactoring (renamed from RefractoringMessages.properties) selected in the PackageExplorer, I clicked on the Search toolbar button.
+I200402102000 With the RefactoringMessages.properties from org.eclipse.jdt.internal.debug.core.refactoring (renamed from RefractoringMessages.properti
+es) selected in the PackageExplorer, I clicked on the Search toolbar button.
 From the NLS keys page, I clicked search.
 Related to the fact that there is another RefactoringMessages class?
-java.lang.reflect.InvocationTargetException at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:283) at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.run (ExtendedDialogWindow.java:180) at org.eclipse.jdt.internal.ui.refactoring.nls.search.NLSSearchPage.performAction (NLSSea
-rchPage.java:199) at org.eclipse.search.internal.ui.SearchDialog.performAction (SearchDialog.java:363) at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.buttonPressed (ExtendedDialogWindow.java:147) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402) at org.eclipse.swt.wi
-dgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.widgets.Display.readAndDi
-spatch(Display.java:2029) at org.eclipse.jface.window.Window.runEventLoop(Window.java:647) at org.eclipse.jface.window.Window.open(Window.java:627) at org.eclipse.search.internal.ui.OpenSearchDialogAction.run (OpenSearchDialogAction.java:60) at org.eclipse.search.internal.ui.OpenSearchDialogAction.r
-un (OpenSearchDialogAction.java:46) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:273) at org.eclipse.ui.internal.WWinPluginAction.runWithEvent (WWinPluginAction.java:207) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContributionItem.java:5
-36) at org.eclipse.jface.action.ActionContributionItem.access$2 (ActionContributionItem.java:488) at org.eclipse.jface.action.ActionContributionItem$6.handleEvent (ActionContributionItem.java:460) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.s
-endEvent(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2029) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:152
-6) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:265) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47) at org.eclipse.core.internal.runtime.PlatformActivator$1.run (PlatformAc
-tivator.java:257) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:104) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke (Deleg
-atingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:279) at org.eclipse.core.launcher.Main.run(Main.java:742) at org.eclipse.core.launcher.Main.main(Main.java:581) Caused by: java.lang.NullPointerException at org.e
-clipse.jdt.internal.ui.refactoring.nls.search.NLSSearchResultCollector.fin dKey(NLSSearchResultCollector.java:199) at org.eclipse.jdt.internal.ui.refactoring.nls.search.NLSSearchResultCollector.acc ept(NLSSearchResultCollector.java:108) at org.eclipse.jdt.core.search.SearchEngine$ResultCollectorAdap
-ter.acceptSearchMat ch(SearchEngine.java:58) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.report (MatchLocator.java:967) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.report (MatchLocator.java:948) at org.eclipse.jdt.internal.core.search.matching.PatternLocator.match
-ReportReferen ce(PatternLocator.java:228) at org.eclipse.jdt.internal.core.search.matching.TypeReferenceLocator.matchReportR eference(TypeReferenceLocator.java:168) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.reportMatching (MatchLocator.java:1136) at org.eclipse.jdt.internal.core.
-search.matching.MatchLocator.reportMatching (MatchLocator.java:1337) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.reportMatching (MatchLocator.java:1348) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.reportMatching (MatchLocator.java:1201) at org.eclipse.jdt.internal
-.core.search.matching.MatchLocator.process (MatchLocator.java:887) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.locateMatches (MatchLocator.java:619) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.locateMatches (MatchLocator.java:653) at org.eclipse.jdt.internal.core.
-search.matching.MatchLocator.locateMatches (MatchLocator.java:744) at org.eclipse.jdt.internal.core.search.JavaSearchParticipant.locateMatches (JavaSearchParticipant.java:157) at org.eclipse.jdt.internal.core.search.pattern.InternalSearchPattern.findMatches (InternalSearchPattern.java:190) at org.ec
-lipse.jdt.core.search.SearchEngine.search(SearchEngine.java:716) at org.eclipse.jdt.core.search.SearchEngine.search(SearchEngine.java:684) at org.eclipse.jdt.core.search.SearchEngine.search(SearchEngine.java:665) at org.eclipse.jdt.internal.ui.refactoring.nls.search.NLSSearchOperation.execute (NLSSe
-archOperation.java:84) at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run (WorkspaceModifyOperation.java:91) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1567) at org.eclipse.ui.actions.WorkspaceModifyOperation.run (WorkspaceModifyOperation.java:105) at org.eclipse.jface
+java.lang.reflect.InvocationTargetException at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:283) at org.eclipse.search.internal.ui.u
+til.ExtendedDialogWindow.run (ExtendedDialogWindow.java:180) at org.eclipse.jdt.internal.ui.refactoring.nls.search.NLSSearchPage.performAction (NLSSea
+rchPage.java:199) at org.eclipse.search.internal.ui.SearchDialog.performAction (SearchDialog.java:363) at org.eclipse.search.internal.ui.util.Extended
+DialogWindow.buttonPressed (ExtendedDialogWindow.java:147) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402) at org.eclipse.swt.wi
+dgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.
+Widget.sendEvent(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.widgets.Display.readAndDi
+spatch(Display.java:2029) at org.eclipse.jface.window.Window.runEventLoop(Window.java:647) at org.eclipse.jface.window.Window.open(Window.java:627) at
+ org.eclipse.search.internal.ui.OpenSearchDialogAction.run (OpenSearchDialogAction.java:60) at org.eclipse.search.internal.ui.OpenSearchDialogAction.r
+un (OpenSearchDialogAction.java:46) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:273) at org.eclipse.ui.internal.WWinPluginA
+ction.runWithEvent (WWinPluginAction.java:207) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContributionItem.java:5
+36) at org.eclipse.jface.action.ActionContributionItem.access$2 (ActionContributionItem.java:488) at org.eclipse.jface.action.ActionContributionItem$6
+.handleEvent (ActionContributionItem.java:460) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.s
+endEvent(Widget.java:833) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348) at org.eclipse.swt.widgets.Display.readAndDispatch(D
+isplay.java:2029) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:152
+6) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:265) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:1
+39) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47) at org.eclipse.core.internal.runtime.PlatformActivator$1.run (PlatformAc
+tivator.java:257) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:104) at sun.reflect.NativeMethodAccessorImpl.invoke0(Nati
+ve Method) at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke (Deleg
+atingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:279) at org.
+eclipse.core.launcher.Main.run(Main.java:742) at org.eclipse.core.launcher.Main.main(Main.java:581) Caused by: java.lang.NullPointerException at org.e
+clipse.jdt.internal.ui.refactoring.nls.search.NLSSearchResultCollector.fin dKey(NLSSearchResultCollector.java:199) at org.eclipse.jdt.internal.ui.refa
+ctoring.nls.search.NLSSearchResultCollector.acc ept(NLSSearchResultCollector.java:108) at org.eclipse.jdt.core.search.SearchEngine$ResultCollectorAdap
+ter.acceptSearchMat ch(SearchEngine.java:58) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.report (MatchLocator.java:967) at org.eclip
+se.jdt.internal.core.search.matching.MatchLocator.report (MatchLocator.java:948) at org.eclipse.jdt.internal.core.search.matching.PatternLocator.match
+ReportReferen ce(PatternLocator.java:228) at org.eclipse.jdt.internal.core.search.matching.TypeReferenceLocator.matchReportR eference(TypeReferenceLoc
+ator.java:168) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.reportMatching (MatchLocator.java:1136) at org.eclipse.jdt.internal.core.
+search.matching.MatchLocator.reportMatching (MatchLocator.java:1337) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.reportMatching (Mat
+chLocator.java:1348) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.reportMatching (MatchLocator.java:1201) at org.eclipse.jdt.internal
+.core.search.matching.MatchLocator.process (MatchLocator.java:887) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.locateMatches (MatchL
+ocator.java:619) at org.eclipse.jdt.internal.core.search.matching.MatchLocator.locateMatches (MatchLocator.java:653) at org.eclipse.jdt.internal.core.
+search.matching.MatchLocator.locateMatches (MatchLocator.java:744) at org.eclipse.jdt.internal.core.search.JavaSearchParticipant.locateMatches (JavaSe
+archParticipant.java:157) at org.eclipse.jdt.internal.core.search.pattern.InternalSearchPattern.findMatches (InternalSearchPattern.java:190) at org.ec
+lipse.jdt.core.search.SearchEngine.search(SearchEngine.java:716) at org.eclipse.jdt.core.search.SearchEngine.search(SearchEngine.java:684) at org.ecli
+pse.jdt.core.search.SearchEngine.search(SearchEngine.java:665) at org.eclipse.jdt.internal.ui.refactoring.nls.search.NLSSearchOperation.execute (NLSSe
+archOperation.java:84) at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run (WorkspaceModifyOperation.java:91) at org.eclipse.core.internal.resour
+ces.Workspace.run(Workspace.java:1567) at org.eclipse.ui.actions.WorkspaceModifyOperation.run (WorkspaceModifyOperation.java:105) at org.eclipse.jface
 .operation.ModalContext$ModalContextThread.run (ModalContext.java:101)

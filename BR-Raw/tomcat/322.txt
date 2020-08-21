@@ -3,6 +3,7 @@ Two use cases:
 -if getter exists use it 
 -if getter does not exist yet create it @@@@ Would help with "lazy initialization" of the delegate.
 @@@@ What would be problematic?
-Code like: class A { private String fValue; public String getValue() { return "X"; //does not use fValue } } Now invoke generate delegate methods on "fValue".
+Code like: class A { private String fValue; public String getValue() { return "X"; //does not use fValue } } Now invoke generate delegate methods on "
+fValue".
 @@@@ Another possibility would be offering create delegate methods including get-methods, i.e.
 the tree would also show getXXX methods.

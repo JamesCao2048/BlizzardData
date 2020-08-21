@@ -1,3 +1,4 @@
 [formatter][api] ContentFormatter2 should pass indents based on partition
-Typical implementations of ContextBasedFormattingStrategy keep a list of partitions to format individually, however each call into the FormattingStrategy sends the same indent information (the region's initial indent) rather than indentation information for each partition, which is not particularly 
+Typical implementations of ContextBasedFormattingStrategy keep a list of partitions to format individually, however each call into the FormattingStrat
+egy sends the same indent information (the region's initial indent) rather than indentation information for each partition, which is not particularly 
 helpful when each partition may be indented differently.

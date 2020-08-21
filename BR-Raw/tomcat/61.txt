@@ -1,5 +1,6 @@
 Share project is broken
-Gentoo, KDE, I20040318 (& I20040317, I20040316) If you try to share a project that already exists on the server (ie/ you've disconnected, chosen to delete CVS information, and then decide to share it again), it just "doesn't work".
+Gentoo, KDE, I20040318 (& I20040317, I20040316) If you try to share a project that already exists on the server (ie/ you've disconnected, chosen to de
+lete CVS information, and then decide to share it again), it just "doesn't work".
 To reproduce: 1.Try to reshare your project.
 Work through all of the prompts (in my case it was off of HEAD) 2.At the final screen ("Module '<name>' already exists remotely.
 Would you like to synchronize your local project with the existing remote module?") select "Ok".

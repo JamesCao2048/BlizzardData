@@ -1,19 +1,35 @@
 Class cast exception during PDE search
 setup: build I2003-09-30 + jdt plugin import 2003-10-06 I searched for org.eclipse.* with the plugin search page.
-I got the following exception in the log: java.lang.ClassCastException at org.eclipse.pde.internal.ui.search.PluginSearchLabelProvider.getText(PluginSearchLabelProvider.java:56) at org.eclipse.search.internal.ui.SearchResultLabelProvider.getText(SearchResultLabelProvider.java:35) at org.eclipse.jfac
-e.viewers.TableViewer.doUpdateItem(TableViewer.java:201) at org.eclipse.search.internal.ui.SearchResultViewer.doUpdateItem(SearchResultViewer.java:197) at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:119) at org.eclipse.core.internal.runtime.InternalPla
-tform.run(InternalPlatform.java:1034) at org.eclipse.core.runtime.Platform.run(Platform.java:432) at org.eclipse.jface.viewers.StructuredViewer.updateItem(StructuredViewer.java:1263) at org.eclipse.jface.viewers.TableViewer.add(TableViewer.java:115) at org.eclipse.jface.viewers.TableViewer.add(Table
-Viewer.java:133) at org.eclipse.jface.viewers.TableViewer.insert(TableViewer.java:420) at org.eclipse.search.internal.ui.SearchResultViewer.handleAddMatch(SearchResultViewer.java:616) at org.eclipse.search.internal.ui.SearchManager.handleAddMatch(SearchManager.java:408) at org.eclipse.search.interna
-l.ui.SearchManager.handleSearchMarkerChanged(SearchManager.java:384) at org.eclipse.search.internal.ui.SearchManager.handleSearchMarkersChanged(SearchManager.java:373) at org.eclipse.search.internal.ui.SearchManager.access$2(SearchManager.java:356) at org.eclipse.search.internal.ui.SearchManager$7.r
-un(SearchManager.java:499) at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:101) at org.eclipse.ui.internal.UISynchronizer$1.run(UISynchronizer.java:33) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessag
-es(Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2150) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1867) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:136) at org.eclipse.jface.operation.ModalConte
-xt.run(ModalContext.java:261) at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.run(ExtendedDialogWindow.java:183) at org.eclipse.jdt.internal.ui.search.JavaSearchPage.performAction(JavaSearchPage.java:199) at org.eclipse.search.internal.ui.SearchDialog.performAction(SearchDialog.java:351)
- at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.buttonPressed(ExtendedDialogWindow.java:140) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:423) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(
-EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2173) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1863) at org.eclipse.jface.window.Window.runEventLoop(Window.java:583) at org.eclip
-se.jface.window.Window.open(Window.java:563) at org.eclipse.search.internal.ui.OpenSearchDialogAction.run(OpenSearchDialogAction.java:60) at org.eclipse.search.internal.ui.OpenSearchDialogAction.run(OpenSearchDialogAction.java:46) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.jav
-a:265) at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:207) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:543) at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:496) at org.ecl
-ipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:443) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2173) at org.ecli
-pse.swt.widgets.Display.readAndDispatch(Display.java:1863) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2106) at org.eclipse.ui.internal.Workbench.run(Workbench.java:2089) at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858) at org.eclipse.core.bo
-ot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.
-invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:298) at org.eclipse.core.launcher.Main.run(Main.java:764) at org.eclipse.core.launcher.Main.main(Main.java:598) I've tried to repeat the failure but haven't been successful.
+I got the following exception in the log: java.lang.ClassCastException at org.eclipse.pde.internal.ui.search.PluginSearchLabelProvider.getText(PluginS
+earchLabelProvider.java:56) at org.eclipse.search.internal.ui.SearchResultLabelProvider.getText(SearchResultLabelProvider.java:35) at org.eclipse.jfac
+e.viewers.TableViewer.doUpdateItem(TableViewer.java:201) at org.eclipse.search.internal.ui.SearchResultViewer.doUpdateItem(SearchResultViewer.java:197
+) at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:119) at org.eclipse.core.internal.runtime.InternalPla
+tform.run(InternalPlatform.java:1034) at org.eclipse.core.runtime.Platform.run(Platform.java:432) at org.eclipse.jface.viewers.StructuredViewer.update
+Item(StructuredViewer.java:1263) at org.eclipse.jface.viewers.TableViewer.add(TableViewer.java:115) at org.eclipse.jface.viewers.TableViewer.add(Table
+Viewer.java:133) at org.eclipse.jface.viewers.TableViewer.insert(TableViewer.java:420) at org.eclipse.search.internal.ui.SearchResultViewer.handleAddM
+atch(SearchResultViewer.java:616) at org.eclipse.search.internal.ui.SearchManager.handleAddMatch(SearchManager.java:408) at org.eclipse.search.interna
+l.ui.SearchManager.handleSearchMarkerChanged(SearchManager.java:384) at org.eclipse.search.internal.ui.SearchManager.handleSearchMarkersChanged(Search
+Manager.java:373) at org.eclipse.search.internal.ui.SearchManager.access$2(SearchManager.java:356) at org.eclipse.search.internal.ui.SearchManager$7.r
+un(SearchManager.java:499) at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:101) at org.eclipse.ui.internal.UISynchronizer$
+1.run(UISynchronizer.java:33) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessag
+es(Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2150) at org.eclipse.swt.widgets.Display.readAndDispatch(Di
+splay.java:1867) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:136) at org.eclipse.jface.operation.ModalConte
+xt.run(ModalContext.java:261) at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.run(ExtendedDialogWindow.java:183) at org.eclipse.jdt.intern
+al.ui.search.JavaSearchPage.performAction(JavaSearchPage.java:199) at org.eclipse.search.internal.ui.SearchDialog.performAction(SearchDialog.java:351)
+ at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.buttonPressed(ExtendedDialogWindow.java:140) at org.eclipse.jface.dialogs.Dialog$1.widget
+Selected(Dialog.java:423) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(
+EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:217
+3) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1863) at org.eclipse.jface.window.Window.runEventLoop(Window.java:583) at org.eclip
+se.jface.window.Window.open(Window.java:563) at org.eclipse.search.internal.ui.OpenSearchDialogAction.run(OpenSearchDialogAction.java:60) at org.eclip
+se.search.internal.ui.OpenSearchDialogAction.run(OpenSearchDialogAction.java:46) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.jav
+a:265) at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:207) at org.eclipse.jface.action.ActionContributionItem.handleWi
+dgetSelection(ActionContributionItem.java:543) at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:496) at org.ecl
+ipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:443) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.jav
+a:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2173) at org.ecli
+pse.swt.widgets.Display.readAndDispatch(Display.java:1863) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2106) at org.eclipse.ui.in
+ternal.Workbench.run(Workbench.java:2089) at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858) at org.eclipse.core.bo
+ot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(N
+ativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.
+invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:298) at org.eclipse.core.launcher.Main.run(Main.java:764) at org.eclipse.
+core.launcher.Main.main(Main.java:598) I've tried to repeat the failure but haven't been successful.
 Maybe this has something to do with bug 44385 ?

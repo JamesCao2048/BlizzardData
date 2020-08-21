@@ -1,6 +1,7 @@
 osgi.bundles bundles are being installed twice
 The bundles whch have version numbers appended to the directories are being installed twice.
 Once as a result of being on osgi.bundles and again because they are in the platform configuration.
-This is either because the name is wrong or because the locations are different (one has the version number and the other does not) and the lookup is identifying them as different.
+This is either because the name is wrong or because the locations are different (one has the version number and the other does not) and the lookup is 
+identifying them as different.
 This is likely since the location is the unique value in traditional OSGi.
 The name is just a string.

@@ -4,7 +4,8 @@ This is unacceptable for the following reasons:
 -no guidelines on the order of installing the components (ambiguous to the user) 
 -there 15 ways to install the CDT components for testing even though 12 of them does not make any sense.
 
--you cannot create a C/C++ project if you are installing only the CDT (managed and standard projects are only available by installing the build components) 
+-you cannot create a C/C++ project if you are installing only the CDT (managed and standard projects are only available by installing the build compon
+ents) 
 -there is a Component ID error when installing only the CDT and Managed Build components Suggestion: 
 -for users, one package to install is the best way.
 This has to be done soon so that we can have time to test the customer scenario before release.

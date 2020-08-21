@@ -4,9 +4,14 @@ build I20040318
 - open resource perspective 
 - turn on the Breakpoints action set 
 - close all views, closing the Navigator view last 
-- RetargetWatchpointAction.activePart keeps a reference to the Navigator The debug's RetargetAction class should also track part close and part deactivation events and clear the active part.
+- RetargetWatchpointAction.activePart keeps a reference to the Navigator The debug's RetargetAction class should also track part close and part deacti
+vation events and clear the active part.
 Reference trace from Yourkit (to the SLeak view, not the Navigator in my case): All GC Roots 
--> org.eclipse.ui.internal.ViewPane #350930: Direct Paths | +---org.eclipse.ui.internal.Workbench (#89426) [Java Frame] | +---windowManager org.eclipse.jface.window.WindowManager (#89977) | +---windows java.util.ArrayList (#90337) | +---elementData java.lang.Object[10] (#90496) | +---[0] org.eclipse
-.ui.internal.WorkbenchWindow (#129367) | +---actionPresentation org.eclipse.ui.internal.ActionPresentation (#132672) | +---invisibleBars java.util.HashMap (#132699) | +---table java.util.HashMap$Entry[8] (#350470) | +---[4] java.util.HashMap$Entry (#350620) | +---value org.eclipse.ui.internal.Action
-Presentation$SetRec (#350724) | +---set org.eclipse.ui.internal.PluginActionSet (#273569) | +---pluginActions java.util.ArrayList (#274228) | +---elementData java.lang.Object[4] (#271989) | +---[0] org.eclipse.ui.internal.WWinPluginAction (#275460) | +---delegate org.eclipse.debug.internal.ui.action
-s.RetargetWatchpointAction (#280105) | +---activePart org.eclipse.swt.sleak.views.SleakView (#350928) | +---partSite org.eclipse.ui.internal.ViewSite (#350929) | +---pane org.eclipse.ui.internal.ViewPane (#350930)
+-> org.eclipse.ui.internal.ViewPane #350930: Direct Paths | +---org.eclipse.ui.internal.Workbench (#89426) [Java Frame] | +---windowManager org.eclips
+e.jface.window.WindowManager (#89977) | +---windows java.util.ArrayList (#90337) | +---elementData java.lang.Object[10] (#90496) | +---[0] org.eclipse
+.ui.internal.WorkbenchWindow (#129367) | +---actionPresentation org.eclipse.ui.internal.ActionPresentation (#132672) | +---invisibleBars java.util.Has
+hMap (#132699) | +---table java.util.HashMap$Entry[8] (#350470) | +---[4] java.util.HashMap$Entry (#350620) | +---value org.eclipse.ui.internal.Action
+Presentation$SetRec (#350724) | +---set org.eclipse.ui.internal.PluginActionSet (#273569) | +---pluginActions java.util.ArrayList (#274228) | +---elem
+entData java.lang.Object[4] (#271989) | +---[0] org.eclipse.ui.internal.WWinPluginAction (#275460) | +---delegate org.eclipse.debug.internal.ui.action
+s.RetargetWatchpointAction (#280105) | +---activePart org.eclipse.swt.sleak.views.SleakView (#350928) | +---partSite org.eclipse.ui.internal.ViewSite 
+(#350929) | +---pane org.eclipse.ui.internal.ViewPane (#350930)

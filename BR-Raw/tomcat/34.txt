@@ -1,4 +1,5 @@
 unable to launch plug-in unit tests
-Build I200403230100 When I go to launch a plug-in JUnit test with an existing launch config, I get an error: "Errors running jobs ERROR: Launch : Resource /org.eclipse.core.resources does not exist." I tried creating a new launch config, but get the same error.
+Build I200403230100 When I go to launch a plug-in JUnit test with an existing launch config, I get an error: "Errors running jobs ERROR: Launch : Reso
+urce /org.eclipse.core.resources does not exist." I tried creating a new launch config, but get the same error.
 One of my projects contains a reference to org.eclipse.core.resources, but I have no such project in my workspace (and haven't for a while).
 This used to be working for me (with 20030318).

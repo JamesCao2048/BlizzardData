@@ -2,7 +2,8 @@
 Build I20040316 I've notice I've been accidentally splitting editor windows and views a lot lately (couple of times a day).
 This never used to happen to me.
 I use a pen (stylus) rather than an mouse.
-Us pen users are much more likely to issue "slurred" mouse presses rather stationary ones; i.e., the mouse up event location is usually different from where the corresponding mouse down event happened.
+Us pen users are much more likely to issue "slurred" mouse presses rather stationary ones; i.e., the mouse up event location is usually different from
+ where the corresponding mouse down event happened.
 What's happening to me is this: I click on the "Problems" tab to bring it to the fore.
 But my slur while hitting the tab is interpreted as dragging the Problems view and placing it above the view stack.
 A similar thing happens to me with editors when I go for the little chevrons: I end up splitting the editor pane.

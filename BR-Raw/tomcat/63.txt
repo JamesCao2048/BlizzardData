@@ -1,9 +1,12 @@
 Help document shown programmatically does not shows TOC
 Scenario: 1) Start Eclipse with some activites disabled (e.g.
-PDE) 2) Create an action that shows a topic from PDE doc book using 'showHelpResource' 3) Observe: the document is shown, but the toc is not, and pressing on the button to sync up the toc does nothing This happens in the new Welcome from the Overview page, where there is a link to show overview for 
+PDE) 2) Create an action that shows a topic from PDE doc book using 'showHelpResource' 3) Observe: the document is shown, but the toc is not, and pres
+sing on the button to sync up the toc does nothing This happens in the new Welcome from the Overview page, where there is a link to show overview for 
 PDE.
 Initially, PDE activity is disabled.
 Although Welcome could enable PDE activity before showing the topic, this is not desirable.
 Users could enable a bunch of activies by clicking on various overviews in Welcome before setting their foot in the workbench.
-We can do several things: 1) Acknowledge that the user wants to know more about the documents that belong to the currently disabled activity and temporarily suspend filtering for that particular activity 2) Not expand the TOC initially, but do it when the tool bar button is pressed 3) Show these top
-ics and the book itself in gray or some other (different) color to emphasise that they are currently disabled Either way, it would be nice if we handle this (at least partially) for M8.
+We can do several things: 1) Acknowledge that the user wants to know more about the documents that belong to the currently disabled activity and tempo
+rarily suspend filtering for that particular activity 2) Not expand the TOC initially, but do it when the tool bar button is pressed 3) Show these top
+ics and the book itself in gray or some other (different) color to emphasise that they are currently disabled Either way, it would be nice if we handl
+e this (at least partially) for M8.

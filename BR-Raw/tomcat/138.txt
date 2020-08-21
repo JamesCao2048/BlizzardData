@@ -1,4 +1,7 @@
 [Workbench] When eclipse fails because of concurrent sessions, a path to the .lock file should be displayed
-A dialog with the following message is displayed when Eclipse fails because the workspace is opened in another session: "Another session is already running in the associated workspace.
-If this is not the case, please delete the ".lock" file in the workspace ".metadata" directory and try starting the platform again." It would be easier for the user to correct the problem if the message referred to the complete path to the .lock file instead, e.g.: "An instance of Eclipse seems to b
-e already running in the selected workspace C:Eclipseworkspace If you believe this not to be the case, delete the file C:Eclipseworkspace.metadata.lock and try again."
+A dialog with the following message is displayed when Eclipse fails because the workspace is opened in another session: "Another session is already ru
+nning in the associated workspace.
+If this is not the case, please delete the ".lock" file in the workspace ".metadata" directory and try starting the platform again." It would be easie
+r for the user to correct the problem if the message referred to the complete path to the .lock file instead, e.g.: "An instance of Eclipse seems to b
+e already running in the selected workspace C:Eclipseworkspace If you believe this not to be the case, delete the file C:Eclipseworkspace.metadata.loc
+k and try again."

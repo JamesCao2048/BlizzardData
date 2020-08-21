@@ -1,14 +1,24 @@
 [ViewMgmt] HideViewTest failure
 I saw this test failure while preparing the build submission for I200403231600 (using I2004031208 and the latest from HEAD).
 This problem did not occur on the Windows XP box.
-test3(org.eclipse.ui.tests.zoom.HideViewTest) junit.framework.AssertionFailedError at junit.framework.Assert.fail(Assert.java:47) at junit.framework.Assert.assertTrue(Assert.java:20) at junit.framework.Assert.assertTrue(Assert.java:27) at org.eclipse.ui.tests.zoom.HideViewTest.test3(HideViewTest.jav
-a:48) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at junit.
-framework.TestCase.runTest(TestCase.java:154) at junit.framework.TestCase.runBare(TestCase.java:127) at junit.framework.TestResult$1.protect(TestResult.java:106) at junit.framework.TestResult.runProtected(TestResult.java:124) at junit.framework.TestResult.run(TestResult.java:109) at junit.framework.
-TestCase.run(TestCase.java:118) at junit.framework.TestSuite.runTest(TestSuite.java:208) at junit.framework.TestSuite.run(TestSuite.java:203) at junit.framework.TestSuite.runTest(TestSuite.java:208) at junit.framework.TestSuite.run(TestSuite.java:203) at junit.framework.TestSuite.runTest(TestSuite.j
-ava:208) at junit.framework.TestSuite.run(TestSuite.java:203) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:410) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:294) at org.eclipse.pde.internal.junit.runtime.RemotePluginT
-estRunner.main(RemotePluginTestRunner.java:30) at org.eclipse.pde.internal.junit.runtime.UITestApplication$1.run(UITestApplication.java:91) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:106) at org.eclipse
-.swt.widgets.Display.runAsyncMessages(Display.java:1930) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1729) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1541) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1515) at org.eclipse.ui.internal.Workbench.c
-reateAndRunWorkbench(Workbench.java:257) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:90) at org.eclipse.pde.internal.junit.runtime.UITestApplication.run(UITestApplication.java:34) at org.eclipse.core.in
-ternal.runtime.PlatformActivator$1.run(PlatformActivator.java:288) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:214) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:115) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.ref
-lect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:315) at org.eclipse.core.launcher.M
+test3(org.eclipse.ui.tests.zoom.HideViewTest) junit.framework.AssertionFailedError at junit.framework.Assert.fail(Assert.java:47) at junit.framework.A
+ssert.assertTrue(Assert.java:20) at junit.framework.Assert.assertTrue(Assert.java:27) at org.eclipse.ui.tests.zoom.HideViewTest.test3(HideViewTest.jav
+a:48) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) 
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at junit.
+framework.TestCase.runTest(TestCase.java:154) at junit.framework.TestCase.runBare(TestCase.java:127) at junit.framework.TestResult$1.protect(TestResul
+t.java:106) at junit.framework.TestResult.runProtected(TestResult.java:124) at junit.framework.TestResult.run(TestResult.java:109) at junit.framework.
+TestCase.run(TestCase.java:118) at junit.framework.TestSuite.runTest(TestSuite.java:208) at junit.framework.TestSuite.run(TestSuite.java:203) at junit
+.framework.TestSuite.runTest(TestSuite.java:208) at junit.framework.TestSuite.run(TestSuite.java:203) at junit.framework.TestSuite.runTest(TestSuite.j
+ava:208) at junit.framework.TestSuite.run(TestSuite.java:203) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java
+:410) at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:294) at org.eclipse.pde.internal.junit.runtime.RemotePluginT
+estRunner.main(RemotePluginTestRunner.java:30) at org.eclipse.pde.internal.junit.runtime.UITestApplication$1.run(UITestApplication.java:91) at org.ecl
+ipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:106) at org.eclipse
+.swt.widgets.Display.runAsyncMessages(Display.java:1930) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1729) at org.eclipse.ui.inter
+nal.Workbench.runEventLoop(Workbench.java:1541) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1515) at org.eclipse.ui.internal.Workbench.c
+reateAndRunWorkbench(Workbench.java:257) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApp
+lication.run(IDEApplication.java:90) at org.eclipse.pde.internal.junit.runtime.UITestApplication.run(UITestApplication.java:34) at org.eclipse.core.in
+ternal.runtime.PlatformActivator$1.run(PlatformActivator.java:288) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:214) at 
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:115) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.ref
+lect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl
+.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:315) at org.eclipse.core.launcher.M
 ain.run(Main.java:740) at org.eclipse.core.launcher.Main.main(Main.java:724)

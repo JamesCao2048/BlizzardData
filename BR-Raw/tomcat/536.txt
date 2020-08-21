@@ -9,5 +9,7 @@ MessageBox Z will of course stay on top within the application which is intended
 However, the taskbar at the bottom (under win2k) will list windows "X" and "Z".
 If you select "X" at the bottom, it will put windows X and Y on top and beep at any mouse or key click.
 Clicking "Z" at the bottom does not redraw Z back on top and the screen remains with X and Z displayed.
-Because the user must click okay in the message box (and is prevented from doing so, this effectively locks out the application forcing a manual termination to exit the program.
-Based on my testing this seems to be because the SWT thread is locked in a wait until the MessageBox (Z) is exited, so any redraw or other SWT requests are postponed indefinitely.
+Because the user must click okay in the message box (and is prevented from doing so, this effectively locks out the application forcing a manual termi
+nation to exit the program.
+Based on my testing this seems to be because the SWT thread is locked in a wait until the MessageBox (Z) is exited, so any redraw or other SWT request
+s are postponed indefinitely.

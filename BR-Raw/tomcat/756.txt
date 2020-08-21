@@ -1,5 +1,6 @@
 No empty line after opening brace [formatter]
-This applies to the new code formatter preference page in I20031203.It seems to me that the only way to disable empty lines after the opening brace of classes is to disable _all_ empty lines within classes.
+This applies to the new code formatter preference page in I20031203.It seems to me that the only way to disable empty lines after the opening brace of
+ classes is to disable _all_ empty lines within classes.
 This is especially ugly when wrapping before opening braces.
 Looking at the following example, I'd like to get rid of the marked empty lines.
 I propose an extra option for this.

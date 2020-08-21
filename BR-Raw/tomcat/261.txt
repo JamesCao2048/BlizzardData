@@ -1,9 +1,12 @@
 [Font/Colour] Coolbar background bug
 Eclipse 200403010010 The workbench is setting a background color in the CoolBar but not in its children (ToolBar controls).
 On Windows (with the manifest), Coolbar by default has a gradient background and Toolbar background is transparent.
-My guess is that workbench don't want the gradient background (or maybe just want a different color) on the CoolBar, so it sets a backgrond on the CoolBar, since the Toolbar is transparent it shows its parent's (CoolBar) background thru.
+My guess is that workbench don't want the gradient background (or maybe just want a different color) on the CoolBar, so it sets a backgrond on the Coo
+lBar, since the Toolbar is transparent it shows its parent's (CoolBar) background thru.
 On GTK, probably other platforms as well, the ToolBar is not tranparent.
 So the Coolbar gets it background changed to a specific color and the ToolBar remains with the default one.
-Testing with different GTK themes one can see weird combinations of colors in the CoolBar and its children (hint: the only visual CoolBar part is the CoolItem's gripper).
+Testing with different GTK themes one can see weird combinations of colors in the CoolBar and its children (hint: the only visual CoolBar part is the 
+CoolItem's gripper).
 I don't know what is the right answer for this problem.
-But, some possible (untested) solutions are: 1) Stop changing the CoolBar's background 2) Also setting the ToolBars' background to match the CoolBar's background Anyhow, I didn't look at UI code to prove what I'm saying is correct so I might be complete out for lunch.
+But, some possible (untested) solutions are: 1) Stop changing the CoolBar's background 2) Also setting the ToolBars' background to match the CoolBar's
+ background Anyhow, I didn't look at UI code to prove what I'm saying is correct so I might be complete out for lunch.

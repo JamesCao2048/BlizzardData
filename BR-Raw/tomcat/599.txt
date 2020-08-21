@@ -1,5 +1,7 @@
 Double-click and quick fix annotations
-Build: I20040106 I was annoyed by the fact that warning annotations hid my breakpoints, and by the fact that double-clicking in the vertical rule to add/remove a breakpoint also caused the quick-fix shell to pop up.
+Build: I20040106 I was annoyed by the fact that warning annotations hid my breakpoints, and by the fact that double-clicking in the vertical rule to a
+dd/remove a breakpoint also caused the quick-fix shell to pop up.
 So, I removed the warning annotation from the vertical ruler from the java editor preference page.
-However, even after removing the annotation from the ruler, double-clicking on a line that contains a warning still causes the quick fix shell to open.
+However, even after removing the annotation from the ruler, double-clicking on a line that contains a warning still causes the quick fix shell to open
+.
 It seems that the action associated with that annotation should not happen when the annotation is turned off.

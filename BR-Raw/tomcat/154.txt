@@ -1,2 +1,3 @@
 add this to API
-main overhead is call to Class.getName() core native method apparently creates a new String for each call deficiency in AspectJ’s API AspectJ 1.2 adds Signature.getDeclaringClassName()
+main overhead is call to Class.getName() core native method apparently creates a new String for each call deficiency in AspectJ’s API AspectJ 1.2 adds
+ Signature.getDeclaringClassName()

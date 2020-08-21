@@ -1,3 +1,4 @@
 New Code Formatter pref page: Connection between items not visible [code formatter]
-I200312162000 When editing comment formatting prefs on the new Code Formatter pref page there are the following two preferences: [ ] Indent Javadoc tags [ ] Indent description after @param If I uncheck the first one then the second one gets disabled.
+I200312162000 When editing comment formatting prefs on the new Code Formatter pref page there are the following two preferences: [ ] Indent Javadoc ta
+gs [ ] Indent description after @param If I uncheck the first one then the second one gets disabled.
 This connection should be reflected in the UI: [ ] Indent Javadoc tags [ ] Indent description after @param Note: same bug was on old pref page

@@ -1,3 +1,4 @@
 LD error parser always assumes error conditions
 The current ld error parser always assumes that information being reported is an error rather than a warning.
-This makes statements such as: ld: warning: libcpp.so.2, needed by C:/temp//libdisplay.so, may conflict with libcpp.so.3 Cause red errors instead of yellow warnings =;-)
+This makes statements such as: ld: warning: libcpp.so.2, needed by C:/temp//libdisplay.so, may conflict with libcpp.so.3 Cause red errors instead of y
+ellow warnings =;-)

@@ -3,7 +3,9 @@ I have difficulties understanding the policies for hiding files and directories 
 On Unix and MacOS X the .metadata (and now the .config folders) are hidden.
 I have no problem with that.
 But I don't understand why most (but not all) files within these hidden directories are itself hidden too.
-On Unix and Mac OS X it is really a pain for ordinary users to find these hidden files (especially the .log file and now the .keyring files) within their hidden folders.
+On Unix and Mac OS X it is really a pain for ordinary users to find these hidden files (especially the .log file and now the .keyring files) within th
+eir hidden folders.
 And if a user has decided to look into a hidden folder .metadata, why can't she see the log file without further hassles?
-The additional odd thing here is that on Windows all this '.' business seems to have no effect at all, so ordinary users have access to everything in .metadata and .config without any hurdles.
+The additional odd thing here is that on Windows all this '.' business seems to have no effect at all, so ordinary users have access to everything in 
+.metadata and .config without any hurdles.
 What am I missing here?

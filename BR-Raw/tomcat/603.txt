@@ -1,4 +1,6 @@
 Breakpoint hit not reported on remote debug session
-I try to debug a java application (Jboss in my case) with a remote debug connection on Eclipse 3.0M6 (connection type "Socket Attach", remote JVM as well as local JVM is sun 1.4.1_02) I set a breakpoint with "Suspend Thread" attribute on a certain place within my application.
-I know that the breakpoint is hit, because the remote application stops, but the breakpoint hit is not shown in Eclipse, all threads of the remote application are still shown as running.
+I try to debug a java application (Jboss in my case) with a remote debug connection on Eclipse 3.0M6 (connection type "Socket Attach", remote JVM as w
+ell as local JVM is sun 1.4.1_02) I set a breakpoint with "Suspend Thread" attribute on a certain place within my application.
+I know that the breakpoint is hit, because the remote application stops, but the breakpoint hit is not shown in Eclipse, all threads of the remote app
+lication are still shown as running.
 When I change the breakpoint to "Suspend VM" everything works as expected.

@@ -2,5 +2,6 @@ LogViewer omits entries with depth > 1
 i20040212 The following log will have the subentry titled "titleC" omitted.
 It seems to be a presentation problem, since the PDE's LogReader is able to parse and build a correct data model (LogEntries).
 !SESSION Feb 12, 2004 15:21:15.423 
---------------------------------------------- !ENTRY titleA 0 0 Feb 12, 2004 15:21:15.438 !MESSAGE message !SUBENTRY 1 titleB 0 0 Feb 12, 2004 15:21:15.438 !MESSAGE message !SUBENTRY 2 titleC 0 0 Feb 12, 2004 15:21:15.470 !MESSAGE message !SUBENTRY 1 titleD 0 0 Feb 12, 2004 15:21:15.470 !MESSAGE mes
+--------------------------------------------- !ENTRY titleA 0 0 Feb 12, 2004 15:21:15.438 !MESSAGE message !SUBENTRY 1 titleB 0 0 Feb 12, 2004 15:21:1
+5.438 !MESSAGE message !SUBENTRY 2 titleC 0 0 Feb 12, 2004 15:21:15.470 !MESSAGE message !SUBENTRY 1 titleD 0 0 Feb 12, 2004 15:21:15.470 !MESSAGE mes
 sage

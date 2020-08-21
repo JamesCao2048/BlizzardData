@@ -1,3 +1,5 @@
 Debugger should indicate which thread triggered breakpoint
-In a multi-threaded application the debugger currently correctly opens the stack frame for the thread which caused the exception correctly, but there is no other indication that that thread is the cause of the fault.
-There should be some sort of graphic indicator in the label decorator as well as a text annotation (other than just Suspended) which indicates that this thread is the reason you got to where you are at.
+In a multi-threaded application the debugger currently correctly opens the stack frame for the thread which caused the exception correctly, but there 
+is no other indication that that thread is the cause of the fault.
+There should be some sort of graphic indicator in the label decorator as well as a text annotation (other than just Suspended) which indicates that th
+is thread is the reason you got to where you are at.

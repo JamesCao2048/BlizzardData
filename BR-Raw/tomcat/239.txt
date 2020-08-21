@@ -1,7 +1,10 @@
 jardesc does not allow workspace-relative paths [jar creation]
 All path specifications in a jardesc require absolute paths.
-This causes problems such as this scenario: when we use cvs team integration, and we have different branches of the code line, we cannot use the same sandbox workspace folder name.
+This causes problems such as this scenario: when we use cvs team integration, and we have different branches of the code line, we cannot use the same 
+sandbox workspace folder name.
 So for the trunk it might be called 'myworkspace_trunk' but on the new version branch it might be called 'myworkspace_v2-1_branch'.
-Therefore a revision managed jardesc would have to be edited on each branch code line to use the folder name of the branch as part of the absolute path.
-A Workspace-relative path could remove the need to specify the absolute path to the output jar, and internally resolve the absolute path of the workspace such that if I say staging/myproject.jar, the logic would be relative to the specific workspace directory.
+Therefore a revision managed jardesc would have to be edited on each branch code line to use the folder name of the branch as part of the absolute pat
+h.
+A Workspace-relative path could remove the need to specify the absolute path to the output jar, and internally resolve the absolute path of the worksp
+ace such that if I say staging/myproject.jar, the logic would be relative to the specific workspace directory.
 It might be a nice addition to support Eclipse variables as well in the path, like ${WAS_HOME}/lib/myproject.jar

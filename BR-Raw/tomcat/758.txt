@@ -1,6 +1,7 @@
 Difficulty creating "swt-like" fragment
 eclipse-SDK-I20031202-win32 I created a fragment in M5 that replaces some functionality in an existing plugin.
-I did this by: 1.modifying the plugin's plugin.xml to include an additional runtime jar "replace.jar" (first in the list of jars) 2.creating a fragment that contained: a.
+I did this by: 1.modifying the plugin's plugin.xml to include an additional runtime jar "replace.jar" (first in the list of jars) 2.creating a fragmen
+t that contained: a.
 replace.jar (this is not window system specific so is just in the root directory of the fragment) b.
 a fragment.xml that imported the necessary plug-ins to make replace.jar run correctly.
 There is no runtime declaration for replace.jar In M5 (pre-osgi) the previous steps worked successfully.
@@ -10,7 +11,8 @@ I say "appear" because my pre- osgi debugging steps are not available so I could
 First failure: check to see if the fragment is installed (not shown in current configuration details 
 - e.g., cannot see swt fragment).
 bug 46494 makes me believe that this should work.
-bug 43658 discusses how swt works, however, I see manifest files in the swt plug-in and fragment so there may be additional steps I need to do (but did not see any requirement for additional steps in the porting guide).
+bug 43658 discusses how swt works, however, I see manifest files in the swt plug-in and fragment so there may be additional steps I need to do (but di
+d not see any requirement for additional steps in the porting guide).
 Please advise.
 We need to be able to do something like this (target: M6).
 Given that swt works, I hypothesize that I am either missing some required step or just pilot error.

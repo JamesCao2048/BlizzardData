@@ -1,5 +1,8 @@
 [browser] add api to read html from memory on Photon Browser
-1.Implement the following api: public boolean setText(String html); where html contains plain html as in: String html = "<HTML><HEAD><TITLE>HTML example</TITLE></HEAD><BODY><H1>HTML example</H1><P>This is a really cool page</P></BODY></HTML>"; browser.setText(html); // render this page 2.Investigate
- if the following api could be implemented on Photon: public boolean setText(String html, String urlSource); where html is an html document that may refer to links relative to the location url (for examples, images).
-public boolean setText(InputStream data, String mime, String url); where data is a binary stream containing a document to be interpreted by a reader for the given mime type (html, text, etc).
+1.Implement the following api: public boolean setText(String html); where html contains plain html as in: String html = "<HTML><HEAD><TITLE>HTML examp
+le</TITLE></HEAD><BODY><H1>HTML example</H1><P>This is a really cool page</P></BODY></HTML>"; browser.setText(html); // render this page 2.Investigate
+ if the following api could be implemented on Photon: public boolean setText(String html, String urlSource); where html is an html document that may r
+efer to links relative to the location url (for examples, images).
+public boolean setText(InputStream data, String mime, String url); where data is a binary stream containing a document to be interpreted by a reader f
+or the given mime type (html, text, etc).
 If this is relevant to the given mime type, relative links are relative to the given url argument.

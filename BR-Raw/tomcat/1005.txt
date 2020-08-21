@@ -1,5 +1,7 @@
 Runtime Arguments improperly passed
-When running a JAVA configuration, if you specify a "Program Argument" within quotations, the quotations can be dropped when the arguments are passed to the JRE.
-For instance- if you specify an argument "*", the main() loop of the target class should receive the a String with the a single asterix as its only character.
+When running a JAVA configuration, if you specify a "Program Argument" within quotations, the quotations can be dropped when the arguments are passed 
+to the JRE.
+For instance- if you specify an argument "*", the main() loop of the target class should receive the a String with the a single asterix as its only ch
+aracter.
 Instead, the asterix is interpretted as a UNIX *, and the args[] array will contain every single filename within the home directory.
 Conversly, this behavior probably should exist if you simply specified an asterix as a program argument (without the quotes).

@@ -1,5 +1,6 @@
 Log goes in config area then gets blown away by PDE
-build I20040324-0800 Scenario: I want to run my RCP app as a runtime-workbench, where my workspace and/or install contain other plugins that I don't want picked up for free.
+build I20040324-0800 Scenario: I want to run my RCP app as a runtime-workbench, where my workspace and/or install contain other plugins that I don't w
+ant picked up for free.
 Example: the RCP browser example 
 - load org.eclipse.ui.examples.rcp.browser 
 - create a runtime workbench launch config for it 
@@ -16,7 +17,8 @@ Example: the RCP browser example
 - run 
 - the process comes up then terminates with no help 
 - no workspace directory exists yet 
-- PDE has blown away the config area, so there's no log to consult This makes it really hard to debug this stuff, which is tricky enough to begin with.
+- PDE has blown away the config area, so there's no log to consult This makes it really hard to debug this stuff, which is tricky enough to begin with
+.
 And I have a clue where to look.
 Novice RCP developers will not.
 Is there anything that can be done, either in the runtime or PDE, to simplify this for M8?

@@ -1,5 +1,6 @@
 M5: Running Ant in separate VM gives no console output
-On Eclipse 3.0 M5 I have the following problem: Running an Ant build in a separate JRE (1.3.1_04) results in just one line appearing in the console: Buildfile: xxxxxxxbuild.xml In case of failure even the error dialog (if enabled in Ant preferences) doesn't show up, so there is no way to tell, that 
+On Eclipse 3.0 M5 I have the following problem: Running an Ant build in a separate JRE (1.3.1_04) results in just one line appearing in the console: B
+uildfile: xxxxxxxbuild.xml In case of failure even the error dialog (if enabled in Ant preferences) doesn't show up, so there is no way to tell, that 
 the Ant build has failed.
 The only way to tell that the build has finished is when the console window title changes to "Console 
 - 

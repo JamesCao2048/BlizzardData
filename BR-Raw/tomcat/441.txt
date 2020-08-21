@@ -4,5 +4,6 @@ This key binding is used by Eclipse for code assist.
 Affects keys preference page, and causes a flicker as the code assist is executed twice.
 If the key is bound to any other command, it can make the command completely unusable.
 Problem does not occur on Linux-GTK.
-This is required for M4.DOWN: stateMask=0x0, keyCode=0x40000, character=0x0 '0' DOWN: stateMask=0x40000 CTRL, keyCode=0x20, character=0x20 ' ' DOWN: stateMask=0x40000 CTRL, keyCode=0x20, character=0x20 ' ' UP : stateMask=0x40000 CTRL, keyCode=0x20, character=0x20 ' ' UP : stateMask=0x40000 CTRL, key
+This is required for M4.DOWN: stateMask=0x0, keyCode=0x40000, character=0x0 '0' DOWN: stateMask=0x40000 CTRL, keyCode=0x20, character=0x20 ' ' DOWN: s
+tateMask=0x40000 CTRL, keyCode=0x20, character=0x20 ' ' UP : stateMask=0x40000 CTRL, keyCode=0x20, character=0x20 ' ' UP : stateMask=0x40000 CTRL, key
 Code=0x40000, character=0x0 '0'

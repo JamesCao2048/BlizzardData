@@ -1,4 +1,5 @@
 [Dialogs] Add Folders Selection Dialog should not list closed projects.
-If you edit a debug configuration for a remote java application, and go to the source tab, and un-select use default source lookup path, and then choose advanced , add folders, you will be presented with a list of projects in your workspace including _closed_ project which in this dialog you can't o
+If you edit a debug configuration for a remote java application, and go to the source tab, and un-select use default source lookup path, and then choo
+se advanced , add folders, you will be presented with a list of projects in your workspace including _closed_ project which in this dialog you can't o
 pen.
 You should only be shown projects were are open and have folders you could possibly select.

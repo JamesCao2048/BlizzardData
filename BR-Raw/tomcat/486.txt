@@ -1,9 +1,13 @@
 Can't load ServiceTracker class
 Build: I-20040128 I would like to use the core PluginConverter service in the PDE plugin-to- bundle conversion wizard.
-In my code, I have ServiceTracker tracker = new ServiceTracker(PDEPlugin.getDefault ().getBundleContext(), PluginConverter.class.getName(), null); Everything compiles in the workspace.
+In my code, I have ServiceTracker tracker = new ServiceTracker(PDEPlugin.getDefault ().getBundleContext(), PluginConverter.class.getName(), null); Eve
+rything compiles in the workspace.
 But when I run a runtime workbench, and this line gets executed, the ServiceTracker class can't be loaded.
 Error Jan 29, 2004 00:59:21.646 Updating failed.
 See log for details.
-java.lang.NoClassDefFoundError: org/osgi/util/tracker/ServiceTracker at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction.createBundleManif est(PluginToBundleAction.java:167) at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction.convertPluginToBu ndle(PluginToBundleAction.java
-:157) at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction.doConvertPluginsT oBundles(PluginToBundleAction.java:139) at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction$2.run (PluginToBundleAction.java:100) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:
-1567) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1586) at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction$1.run (PluginToBundleAction.java:103) at org.eclipse.jface.operation.ModalContext$ModalContextThread.run (ModalContext.java:101)
+java.lang.NoClassDefFoundError: org/osgi/util/tracker/ServiceTracker at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction.createBundleMani
+f est(PluginToBundleAction.java:167) at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction.convertPluginToBu ndle(PluginToBundleAction.java
+:157) at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction.doConvertPluginsT oBundles(PluginToBundleAction.java:139) at org.eclipse.pde.in
+ternal.ui.osgi.wizards.PluginToBundleAction$2.run (PluginToBundleAction.java:100) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:
+1567) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1586) at org.eclipse.pde.internal.ui.osgi.wizards.PluginToBundleAction$1.run
+ (PluginToBundleAction.java:103) at org.eclipse.jface.operation.ModalContext$ModalContextThread.run (ModalContext.java:101)

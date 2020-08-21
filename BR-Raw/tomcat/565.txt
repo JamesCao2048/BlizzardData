@@ -1,6 +1,7 @@
 Error in the XSD facet item providers
 The problem is in the item providers for the XSD facets.
 Each XSD facet item provider has a getPropertyDescriptors(Object) method that creates the property descriptor for the "Value" property.
-The logic in the provider incorrectly set the EStructuralFeature reference to be the one found in the super class and not the feature value for the subclass.
+The logic in the provider incorrectly set the EStructuralFeature reference to be the one found in the super class and not the feature value for the su
+bclass.
 The error was specifically found in the XSDMaxLengthFacetItemProvider and XSDMinLengthFacetItemProvider classes.
 For example, XSDMaxLengthFacetItemProvider calls xsdPackage.getXSDMaxFacet_Value() instead of xsdPackage.getXSDMaxLengthFacet_Value().

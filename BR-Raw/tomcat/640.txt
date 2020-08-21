@@ -1,3 +1,4 @@
 Spelling mistake in the FORMATTER_INSERT_SPACE_BETWEEN_EMPTY_ARGUMENTS string constant
-It is: public static final String FORMATTER_INSERT_SPACE_BETWEEN_EMPTY_ARGUMENTS = JavaCore.PLUGIN_ID + ".formatter.inset_space_between_empty_arguments"; //$NON-NLS-1$ instead of: public static final String FORMATTER_INSERT_SPACE_BETWEEN_EMPTY_ARGUMENTS = JavaCore.PLUGIN_ID + ".formatter.insert_spac
+It is: public static final String FORMATTER_INSERT_SPACE_BETWEEN_EMPTY_ARGUMENTS = JavaCore.PLUGIN_ID + ".formatter.inset_space_between_empty_argument
+s"; //$NON-NLS-1$ instead of: public static final String FORMATTER_INSERT_SPACE_BETWEEN_EMPTY_ARGUMENTS = JavaCore.PLUGIN_ID + ".formatter.insert_spac
 e_between_empty_arguments"; //$NON-NLS-1$ missing 'r' in "insert".

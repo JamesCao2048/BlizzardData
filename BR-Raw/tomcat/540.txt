@@ -2,4 +2,5 @@ Generic Log Adapter does not handle wrapping of log files
 The GLA needs to handle log files which wrap.
 Thats is log files which shift their content up(left)as they append to the end of the file.
 I have a solution to handle the following four scenarios for log processing: 1.File has had content appended to the end.
-2.File has been replaced but otherwise content is appended to the end 3.File has been replaced with data shifted up/left (circular log) 4.File has been replaced with all new data.
+2.File has been replaced but otherwise content is appended to the end 3.File has been replaced with data shifted up/left (circular log) 4.File has bee
+n replaced with all new data.

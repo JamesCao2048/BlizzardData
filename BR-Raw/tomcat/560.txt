@@ -1,6 +1,9 @@
 [SSH2] Keyboard-interactive authentication support has not been supported.
-My original eclipse-cvsssh2 plug-in has supported the keyboard-interactive authentication, but that functionality has been dropped at http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.team.cvs.ssh2/src/org/eclip se/team/ccvs/ssh2/JSchSession.java.diff?r1=1.5&r2=1.6 Can I hear the reason about it?
+My original eclipse-cvsssh2 plug-in has supported the keyboard-interactive authentication, but that functionality has been dropped at http://dev.eclip
+se.org/viewcvs/index.cgi/org.eclipse.team.cvs.ssh2/src/org/eclip se/team/ccvs/ssh2/JSchSession.java.diff?r1=1.5&r2=1.6 Can I hear the reason about it?
 And, is there no plan to support it again?
-The keyboard-interactive authentication will be very useful for enterprise users, who require SecurID and S/Key, etc., authentication to get accesses to their sshd.
-I know how to support it, but some modifications will be required in org.eclipse.team.cvs.core and org.eclipse.team.cvs.ui and I'm not a committer for them.
+The keyboard-interactive authentication will be very useful for enterprise users, who require SecurID and S/Key, etc., authentication to get accesses 
+to their sshd.
+I know how to support it, but some modifications will be required in org.eclipse.team.cvs.core and org.eclipse.team.cvs.ui and I'm not a committer for
+ them.
 So, I must ask for help if I will.

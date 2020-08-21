@@ -1,9 +1,12 @@
 (Plat) Cumulative time as reported by the profiler is larger than time reported by the program
 Consider the following test scenario: 
 ---- Purpose: Tests console input and output and times collected.
-Instructions: 1.Start workbench 2.Launch (locally/remotely) InOut 3.Enter text strings with length at least four characters and containing at least one blank, when prompted in the Trace Console 4.Verify that the text strings that are printed following the lines "String read in :" are the same as the
+Instructions: 1.Start workbench 2.Launch (locally/remotely) InOut 3.Enter text strings with length at least four characters and containing at least on
+e blank, when prompted in the Trace Console 4.Verify that the text strings that are printed following the lines "String read in :" are the same as the
  strings that were entered.
-5.Open the Method Statistics view and verify that the Cumulative Time for the InOut.main() method is slightly greater than (less than 200 milliseconds) the elapsed time value printed in the Trace Console.
+5.Open the Method Statistics view and verify that the Cumulative Time for the InOut.main() method is slightly greater than (less than 200 milliseconds
+) the elapsed time value printed in the Trace Console.
 
---- The difference between the Cumulative time in the method statistics view and the cumulative time printed in the trace console is much larger than 200ms.
+--- The difference between the Cumulative time in the method statistics view and the cumulative time printed in the trace console is much larger than 
+200ms.
 In my run, the time in the console was 55.292 sec, and the cumulative time reported in the method stats view for the main() method is about 57.736sec.

@@ -1,11 +1,14 @@
 [External Tools] Add the ability to associate an external tool with an extension
 It would be nice to allow one to run an external tool whenever a file with a certain extension, or pattern, is modified.
-This is useful when it's not really worth writing an editor for some particular type of file, but it must still be compiled or processed in some manner.
-I would imagine the UI to be similar to that of the "File Associations" preferences page, except that multiple external tools could be specified, with order being significant.
+This is useful when it's not really worth writing an editor for some particular type of file, but it must still be compiled or processed in some manne
+r.
+I would imagine the UI to be similar to that of the "File Associations" preferences page, except that multiple external tools could be specified, with
+ order being significant.
 The particular use case that I have is developing applications for the Hiptop platform ( http://www.danger.com/ ).
 The Hiptop folks have defined a file of type .rsrc (resource), which is a fairly simple text file.
 I would like the ability to launch the Danger Resource Compiler external tool that I have defined whenever I save the file in the default text editor.
 Currently I must do it manually, which is a little clunky and error-prone.
-I could (and perhaps I will) make a plugin that is specifically meant to edit that type of file, but in the meantime, it would be nice to have the aforementioned tool-launching ability.
+I could (and perhaps I will) make a plugin that is specifically meant to edit that type of file, but in the meantime, it would be nice to have the afo
+rementioned tool-launching ability.
 It may be that this functionality already exists somewhere; but I cannot find it if it does.
 :)

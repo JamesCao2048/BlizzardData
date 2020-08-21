@@ -1,4 +1,6 @@
 GTK fires additional events than Windows when selecting a Combo item
-When running org.eclipse.swt.examples in package controlexample, I selected 4 kind of event listeners for Combo widget: Selection, defaultSelection, FocusIn, FocusOut.
+When running org.eclipse.swt.examples in package controlexample, I selected 4 kind of event listeners for Combo widget: Selection, defaultSelection, F
+ocusIn, FocusOut.
 Then I click the combo and select a different item.
-The event console shows 4 events in the following order: FocusIn, FocusOut, Selection, FocusIn Repeat the same steps on WondowsXP, 2 events are fired: FocusIn, Selection.
+The event console shows 4 events in the following order: FocusIn, FocusOut, Selection, FocusIn Repeat the same steps on WondowsXP, 2 events are fired:
+ FocusIn, Selection.

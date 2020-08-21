@@ -1,43 +1,77 @@
 [misc] NPE in default position updater
-Build 200311201600 This is not reproducable, but these are steps that I remember: 1) surround a method call with a try catch using quick fix 2) replace e2.printStacktrace() with the comment //fall through using copy paste try { test= (Test)setup.invoke(null, new Object[] {reloadedTest}); } catch (Il
-legalArgumentException e2) { e2.printStackTrace(); } catch (IllegalAccessException e2) { e2.printStackTrace(); } catch (InvocationTargetException e2) { e2.printStackTrace(); } 3) 
--> NPE attached below 4) Once I'm in this state every key stroke I enter triggers the same exception and save also failed with an NPE (also attached below) Here is the NPE after paste !SESSION Nov 22, 2003 21:59:52.510 
+Build 200311201600 This is not reproducable, but these are steps that I remember: 1) surround a method call with a try catch using quick fix 2) replac
+e e2.printStacktrace() with the comment //fall through using copy paste try { test= (Test)setup.invoke(null, new Object[] {reloadedTest}); } catch (Il
+legalArgumentException e2) { e2.printStackTrace(); } catch (IllegalAccessException e2) { e2.printStackTrace(); } catch (InvocationTargetException e2) 
+{ e2.printStackTrace(); } 3) 
+-> NPE attached below 4) Once I'm in this state every key stroke I enter triggers the same exception and save also failed with an NPE (also attached b
+elow) Here is the NPE after paste !SESSION Nov 22, 2003 21:59:52.510 
 -------------------------------------------- 
 - java.version=1.4.1-beta java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US Command-line arguments: 
 -consolelog 
 -data c:eclipsews0321plugins 
--install file:C:/eclipse/20031120/eclipse/ !ENTRY org.eclipse.core.resources 2 1 Nov 22, 2003 21:59:52.510 !MESSAGE Skipping builder org.eclipse.releng.tools.mapFileValidator for project org.eclipse.releng.
+-install file:C:/eclipse/20031120/eclipse/ !ENTRY org.eclipse.core.resources 2 1 Nov 22, 2003 21:59:52.510 !MESSAGE Skipping builder org.eclipse.relen
+g.tools.mapFileValidator for project org.eclipse.releng.
 Either the builder is missing from the install, or it belongs to a project nature that is missing or disabled.
-!ENTRY org.eclipse.ui 4 4 Nov 22, 2003 22:08:54.429 !MESSAGE Unhandled event loop exception !ENTRY org.eclipse.ui 4 0 Nov 22, 2003 22:08:54.439 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.jface.text.DefaultPositionUpdater.update (DefaultPositionUpda
-ter.java:217) at org.eclipse.jface.text.AbstractDocument.updatePositions (AbstractDocument.java:1019) at org.eclipse.jface.text.AbstractDocument.updateDocumentStructures (AbstractDocument.java:610) at org.eclipse.jface.text.AbstractDocument.fireDocumentChanged (AbstractDocument.java:695) at org.ecli
-pse.jface.text.AbstractDocument.replace (AbstractDocument.java:989) at org.eclipse.jdt.internal.ui.javaeditor.PartiallySynchronizedDocument.replace (PartiallySynchronizedDocument.java:61) at org.eclipse.jface.text.DocumentAdapter.replaceTextRange (DocumentAdapter.java:194) at org.eclipse.swt.custom.
-StyledText.modifyContent (StyledText.java:5995) at org.eclipse.swt.custom.StyledText.sendKeyEvent(StyledText.java:6931) at org.eclipse.swt.custom.StyledText.doContent(StyledText.java:2554) at org.eclipse.swt.custom.StyledText.handleKey(StyledText.java:5300) at org.eclipse.swt.custom.StyledText.handl
-eKeyDown (StyledText.java:5323) at org.eclipse.swt.custom.StyledText$8.handleEvent (StyledText.java:5070) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:871) at o
-rg.eclipse.swt.widgets.Widget.sendEvent(Widget.java:856) at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716) at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1712) at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:3029) at org.eclipse.swt.widgets.Control.windowProc(C
-ontrol.java:2932) at org.eclipse.swt.widgets.Display.windowProc(Display.java:2712) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method) at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1361) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1875) at org.ecli
-pse.ui.internal.Workbench.runEventLoop(Workbench.java:1405) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1381) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench (Workbench.java:237) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.intern
-al.ide.IDEApplication.run (IDEApplication.java:47) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImp
-l.invoke (NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:299) at org.eclipse.core.launcher.Main.run(Main.java:767) at 
-org.eclipse.core.launcher.Main.main(Main.java:601) ===== NPE after save !ENTRY org.eclipse.ui 2 0 Nov 22, 2003 22:09:47.426 !MESSAGE Save Failed !STACK 0 java.lang.NullPointerException at org.eclipse.jface.text.AbstractDocument.computeIndexInPositionList (AbstractDocument.java:432) at org.eclipse.jf
-ace.text.AbstractDocument.addPosition (AbstractDocument.java:316) at org.eclipse.jface.text.AbstractDocument.addPosition (AbstractDocument.java:324) at org.eclipse.jface.text.source.AnnotationModel.addPosition (AnnotationModel.java:184) at org.eclipse.jface.text.source.AnnotationModel.addAnnotation 
-(AnnotationModel.java:156) at org.eclipse.jdt.internal.ui.javaeditor.filebuffers.CompilationUnitDocumentProvi der2$CompilationUnitAnnotationModel.addAnnotation (CompilationUnitDocumentProvider2.java:605) at org.eclipse.jdt.internal.ui.javaeditor.filebuffers.CompilationUnitDocumentProvi der2$Compilat
-ionUnitAnnotationModel.endReporting (CompilationUnitDocumentProvider2.java:480) at org.eclipse.jdt.internal.core.JavaModelManager$PerWorkingCopyInfo.endReporting (JavaModelManager.java:516) at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure (CompilationUnit.java:143) at org.eclipse.jdt.
-internal.core.Openable.generateInfos (Openable.java:200) at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed (JavaElement.java:487) at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent (CompilationUnit.java:935) at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.execut
-eOperation (ReconcileWorkingCopyOperation.java:48) at org.eclipse.jdt.internal.core.JavaModelOperation.execute (JavaModelOperation.java:366) at org.eclipse.jdt.internal.core.JavaModelOperation.run (JavaModelOperation.java:705) at org.eclipse.jdt.internal.core.JavaElement.runOperation (JavaElement.ja
-va:523) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile (CompilationUnit.java:1052) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile (CompilationUnit.java:1024) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile (CompilationUnit.java:1017) at org.eclipse.jdt.internal.ui.
-javaeditor.filebuffers.CompilationUnitDocumentProvi der2.commitWorkingCopy(CompilationUnitDocumentProvider2.java:822) at org.eclipse.jdt.internal.ui.javaeditor.filebuffers.CompilationUnitDocumentProvi der2$2.execute(CompilationUnitDocumentProvider2.java:893) at org.eclipse.ui.editors.text.TextFileDo
+!ENTRY org.eclipse.ui 4 4 Nov 22, 2003 22:08:54.429 !MESSAGE Unhandled event loop exception !ENTRY org.eclipse.ui 4 0 Nov 22, 2003 22:08:54.439 !MESSA
+GE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.jface.text.DefaultPositionUpdater.update (DefaultPositionUpda
+ter.java:217) at org.eclipse.jface.text.AbstractDocument.updatePositions (AbstractDocument.java:1019) at org.eclipse.jface.text.AbstractDocument.updat
+eDocumentStructures (AbstractDocument.java:610) at org.eclipse.jface.text.AbstractDocument.fireDocumentChanged (AbstractDocument.java:695) at org.ecli
+pse.jface.text.AbstractDocument.replace (AbstractDocument.java:989) at org.eclipse.jdt.internal.ui.javaeditor.PartiallySynchronizedDocument.replace (P
+artiallySynchronizedDocument.java:61) at org.eclipse.jface.text.DocumentAdapter.replaceTextRange (DocumentAdapter.java:194) at org.eclipse.swt.custom.
+StyledText.modifyContent (StyledText.java:5995) at org.eclipse.swt.custom.StyledText.sendKeyEvent(StyledText.java:6931) at org.eclipse.swt.custom.Styl
+edText.doContent(StyledText.java:2554) at org.eclipse.swt.custom.StyledText.handleKey(StyledText.java:5300) at org.eclipse.swt.custom.StyledText.handl
+eKeyDown (StyledText.java:5323) at org.eclipse.swt.custom.StyledText$8.handleEvent (StyledText.java:5070) at org.eclipse.swt.widgets.EventTable.sendEv
+ent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:871) at o
+rg.eclipse.swt.widgets.Widget.sendEvent(Widget.java:856) at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716) at org.eclipse.swt.widgets
+.Control.sendKeyEvent(Control.java:1712) at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:3029) at org.eclipse.swt.widgets.Control.windowProc(C
+ontrol.java:2932) at org.eclipse.swt.widgets.Display.windowProc(Display.java:2712) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method
+) at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1361) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1875) at org.ecli
+pse.ui.internal.Workbench.runEventLoop(Workbench.java:1405) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1381) at org.eclipse.ui.internal
+.Workbench.createAndRunWorkbench (Workbench.java:237) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.intern
+al.ide.IDEApplication.run (IDEApplication.java:47) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclip
+se.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImp
+l.invoke (NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:25) at java.lang.ref
+lect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:299) at org.eclipse.core.launcher.Main.run(Main.java:767) at 
+org.eclipse.core.launcher.Main.main(Main.java:601) ===== NPE after save !ENTRY org.eclipse.ui 2 0 Nov 22, 2003 22:09:47.426 !MESSAGE Save Failed !STAC
+K 0 java.lang.NullPointerException at org.eclipse.jface.text.AbstractDocument.computeIndexInPositionList (AbstractDocument.java:432) at org.eclipse.jf
+ace.text.AbstractDocument.addPosition (AbstractDocument.java:316) at org.eclipse.jface.text.AbstractDocument.addPosition (AbstractDocument.java:324) a
+t org.eclipse.jface.text.source.AnnotationModel.addPosition (AnnotationModel.java:184) at org.eclipse.jface.text.source.AnnotationModel.addAnnotation 
+(AnnotationModel.java:156) at org.eclipse.jdt.internal.ui.javaeditor.filebuffers.CompilationUnitDocumentProvi der2$CompilationUnitAnnotationModel.addA
+nnotation (CompilationUnitDocumentProvider2.java:605) at org.eclipse.jdt.internal.ui.javaeditor.filebuffers.CompilationUnitDocumentProvi der2$Compilat
+ionUnitAnnotationModel.endReporting (CompilationUnitDocumentProvider2.java:480) at org.eclipse.jdt.internal.core.JavaModelManager$PerWorkingCopyInfo.e
+ndReporting (JavaModelManager.java:516) at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure (CompilationUnit.java:143) at org.eclipse.jdt.
+internal.core.Openable.generateInfos (Openable.java:200) at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed (JavaElement.java:487) at org.ecl
+ipse.jdt.internal.core.CompilationUnit.makeConsistent (CompilationUnit.java:935) at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.execut
+eOperation (ReconcileWorkingCopyOperation.java:48) at org.eclipse.jdt.internal.core.JavaModelOperation.execute (JavaModelOperation.java:366) at org.ec
+lipse.jdt.internal.core.JavaModelOperation.run (JavaModelOperation.java:705) at org.eclipse.jdt.internal.core.JavaElement.runOperation (JavaElement.ja
+va:523) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile (CompilationUnit.java:1052) at org.eclipse.jdt.internal.core.CompilationUnit.reconc
+ile (CompilationUnit.java:1024) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile (CompilationUnit.java:1017) at org.eclipse.jdt.internal.ui.
+javaeditor.filebuffers.CompilationUnitDocumentProvi der2.commitWorkingCopy(CompilationUnitDocumentProvider2.java:822) at org.eclipse.jdt.internal.ui.j
+avaeditor.filebuffers.CompilationUnitDocumentProvi der2$2.execute(CompilationUnitDocumentProvider2.java:893) at org.eclipse.ui.editors.text.TextFileDo
 cumentProvider$DocumentProviderOperation.
-run(TextFileDocumentProvider.java:93) at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute (WorkspaceModifyDelegatingOperation.java:67) at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run (WorkspaceModifyOperation.java:91) at org.eclipse.core.internal.resources.Workspace.run (Wo
-rkspace.java:1554) at org.eclipse.ui.actions.WorkspaceModifyOperation.run (WorkspaceModifyOperation.java:105) at org.eclipse.ui.editors.text.WorkspaceOperationRunner.run (WorkspaceOperationRunner.java:72) at org.eclipse.ui.editors.text.WorkspaceOperationRunner.run (WorkspaceOperationRunner.java:62) 
-at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation (TextFileDocumentProvider.java:387) at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument (TextFileDocumentProvider.java:596) at org.eclipse.ui.texteditor.AbstractTextEditor.performSave (AbstractTextEditor.java:3
-140) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performSave (CompilationUnitEditor.java:821) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave (CompilationUnitEditor.java:885) at org.eclipse.ui.internal.EditorManager$10.run (EditorManager.java:1081) at org.e
-clipse.ui.internal.EditorManager$8.run(EditorManager.java:936) at org.eclipse.jface.operation.ModalContext.runInCurrentThread (ModalContext.java:302) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252) at org.eclipse.jface.window.ApplicationWindow$1.run (ApplicationWindow.java:444
-) at org.eclipse.swt.custom.BusyIndicator.showWhile (BusyIndicator.java:84) at org.eclipse.jface.window.ApplicationWindow.run (ApplicationWindow.java:441) at org.eclipse.ui.internal.WorkbenchWindow.run (WorkbenchWindow.java:1467) at org.eclipse.ui.internal.EditorManager.runProgressMonitorOperation (
-EditorManager.java:942) at org.eclipse.ui.internal.EditorManager.savePart (EditorManager.java:1086) at org.eclipse.ui.internal.EditorManager.saveEditor (EditorManager.java:1094) at org.eclipse.ui.internal.WorkbenchPage.closeEditor (WorkbenchPage.java:836) at org.eclipse.ui.internal.WorkbenchPage.clo
-seEditor (WorkbenchPage.java:821) at org.eclipse.ui.internal.EditorPane.doHide(EditorPane.java:87) at org.eclipse.ui.internal.TabbedEditorWorkbook$1.itemClosed (TabbedEditorWorkbook.java:132) at org.eclipse.swt.custom.CTabFolder.closeNotify(CTabFolder.java:307) at org.eclipse.swt.custom.CTabFolder.a
-ccess$13(CTabFolder.java:297) at org.eclipse.swt.custom.CTabFolder$4.handleEvent(CTabFolder.java:438) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:218
-7) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1877) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1405) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1381) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench (Workbench.java:237) at org.eclip
-se.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run (IDEApplication.java:47) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.Na
-tiveMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.M
+run(TextFileDocumentProvider.java:93) at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute (WorkspaceModifyDelegatingOperation.java:67
+) at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run (WorkspaceModifyOperation.java:91) at org.eclipse.core.internal.resources.Workspace.run (Wo
+rkspace.java:1554) at org.eclipse.ui.actions.WorkspaceModifyOperation.run (WorkspaceModifyOperation.java:105) at org.eclipse.ui.editors.text.Workspace
+OperationRunner.run (WorkspaceOperationRunner.java:72) at org.eclipse.ui.editors.text.WorkspaceOperationRunner.run (WorkspaceOperationRunner.java:62) 
+at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation (TextFileDocumentProvider.java:387) at org.eclipse.ui.editors.text.TextFileDo
+cumentProvider.saveDocument (TextFileDocumentProvider.java:596) at org.eclipse.ui.texteditor.AbstractTextEditor.performSave (AbstractTextEditor.java:3
+140) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performSave (CompilationUnitEditor.java:821) at org.eclipse.jdt.internal.ui.javae
+ditor.CompilationUnitEditor.doSave (CompilationUnitEditor.java:885) at org.eclipse.ui.internal.EditorManager$10.run (EditorManager.java:1081) at org.e
+clipse.ui.internal.EditorManager$8.run(EditorManager.java:936) at org.eclipse.jface.operation.ModalContext.runInCurrentThread (ModalContext.java:302) 
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252) at org.eclipse.jface.window.ApplicationWindow$1.run (ApplicationWindow.java:444
+) at org.eclipse.swt.custom.BusyIndicator.showWhile (BusyIndicator.java:84) at org.eclipse.jface.window.ApplicationWindow.run (ApplicationWindow.java:
+441) at org.eclipse.ui.internal.WorkbenchWindow.run (WorkbenchWindow.java:1467) at org.eclipse.ui.internal.EditorManager.runProgressMonitorOperation (
+EditorManager.java:942) at org.eclipse.ui.internal.EditorManager.savePart (EditorManager.java:1086) at org.eclipse.ui.internal.EditorManager.saveEdito
+r (EditorManager.java:1094) at org.eclipse.ui.internal.WorkbenchPage.closeEditor (WorkbenchPage.java:836) at org.eclipse.ui.internal.WorkbenchPage.clo
+seEditor (WorkbenchPage.java:821) at org.eclipse.ui.internal.EditorPane.doHide(EditorPane.java:87) at org.eclipse.ui.internal.TabbedEditorWorkbook$1.i
+temClosed (TabbedEditorWorkbook.java:132) at org.eclipse.swt.custom.CTabFolder.closeNotify(CTabFolder.java:307) at org.eclipse.swt.custom.CTabFolder.a
+ccess$13(CTabFolder.java:297) at org.eclipse.swt.custom.CTabFolder$4.handleEvent(CTabFolder.java:438) at org.eclipse.swt.widgets.EventTable.sendEvent(
+EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:218
+7) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1877) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1405) at org
+.eclipse.ui.internal.Workbench.runUI(Workbench.java:1381) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench (Workbench.java:237) at org.eclip
+se.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run (IDEApplication.java:47) at org.eclipse.
+core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.Na
+tiveMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:39) at sun.reflect.Delegat
+ingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.M
 ain.basicRun(Main.java:299) at org.eclipse.core.launcher.Main.run(Main.java:767) at org.eclipse.core.launcher.Main.main(Main.java:601)

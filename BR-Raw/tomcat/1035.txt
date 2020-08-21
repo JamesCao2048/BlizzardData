@@ -1,8 +1,13 @@
 Out of bounds error
 Build: 3.0 M2 The error below was logged twice at two distinct instances.
-I'm not sure what exactly provoked it: java.lang.IllegalArgumentException: Index out of bounds at org.eclipse.swt.SWT.error(SWT.java:2351) at org.eclipse.swt.SWT.error(SWT.java:2295) at org.eclipse.swt.custom.StyledText.redrawRange(StyledText.java:6340) at org.eclipse.jdt.internal.ui.javaeditor.Java
-Editor$MouseClickListener.repairRepr esentation(JavaEditor.java:478) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$MouseClickListener.deactivate (JavaEditor.java:301) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$MouseClickListener.deactivate (JavaEditor.java:294) at org.eclipse.jdt.in
-ternal.ui.javaeditor.JavaEditor$1.run(JavaEditor.java:813) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2165) at org.eclipse.swt.widge
-ts.Display.readAndDispatch(Display.java:1882) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1680) at org.eclipse.ui.internal.Workbench.run(Workbench.java:1663) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoade
-r.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.core.launcher.
+I'm not sure what exactly provoked it: java.lang.IllegalArgumentException: Index out of bounds at org.eclipse.swt.SWT.error(SWT.java:2351) at org.ecli
+pse.swt.SWT.error(SWT.java:2295) at org.eclipse.swt.custom.StyledText.redrawRange(StyledText.java:6340) at org.eclipse.jdt.internal.ui.javaeditor.Java
+Editor$MouseClickListener.repairRepr esentation(JavaEditor.java:478) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$MouseClickListener.deactivat
+e (JavaEditor.java:301) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$MouseClickListener.deactivate (JavaEditor.java:294) at org.eclipse.jdt.in
+ternal.ui.javaeditor.JavaEditor$1.run(JavaEditor.java:813) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widget
+s.Synchronizer.runAsyncMessages(Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2165) at org.eclipse.swt.widge
+ts.Display.readAndDispatch(Display.java:1882) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1680) at org.eclipse.ui.internal.Workbe
+nch.run(Workbench.java:1663) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoade
+r.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Sourc
+e) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.core.launcher.
 Main.basicRun(Main.java:291) at org.eclipse.core.launcher.Main.run(Main.java:747) at org.eclipse.core.launcher.Main.main(Main.java:583)

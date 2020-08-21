@@ -1,5 +1,6 @@
 [Commands] Error in command schema context definition
-The explanation of the "context" definition within the org.eclipse.ui.commands extension point schema includes both a "parent" and "parentId" attribute.
+The explanation of the "context" definition within the org.eclipse.ui.commands extension point schema includes both a "parent" and "parentId" attribut
+e.
 Since the descriptions are identical, it looks like one of them is outdated?
 # parent 
 - The unique id of the parent context.

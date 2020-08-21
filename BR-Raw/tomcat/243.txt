@@ -1,4 +1,6 @@
 Search result tree may be a bit to precise
-I200403030818 I did a search>write access>workspace on the local variable 'type' in the method org.eclipse.jdt.internal.debug.ui.actions.ManageBreakpointActionDelegate#manageBreakpoint(), the result was (in the New Search view) : org.eclipse.jdt.internal.debug.ui.actions [...] + ManageBreakpointActi
-onDelegate + manageBreakpoint(IEditorInput) : void (1 match) + IType type org.eclipse.jdt.internal.debug.ui.actions.ManageBreakpointActionDelegate#manageBreakpoint(IEditorInput) (1 match) I don't really care that the second match is in a local variable declaration, that doesn't give me any interrest
+I200403030818 I did a search>write access>workspace on the local variable 'type' in the method org.eclipse.jdt.internal.debug.ui.actions.ManageBreakpo
+intActionDelegate#manageBreakpoint(), the result was (in the New Search view) : org.eclipse.jdt.internal.debug.ui.actions [...] + ManageBreakpointActi
+onDelegate + manageBreakpoint(IEditorInput) : void (1 match) + IType type org.eclipse.jdt.internal.debug.ui.actions.ManageBreakpointActionDelegate#man
+ageBreakpoint(IEditorInput) (1 match) I don't really care that the second match is in a local variable declaration, that doesn't give me any interrest
 ing information and break up the list of matches for the method.

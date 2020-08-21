@@ -1,3 +1,4 @@
 [Wizards] WizardNewFileCreationPage should support a default file extension
 In the WizardNewFileCreationPage, there should be a method to set what the default file extension should be.
-So when the page is asked to create the new file, it can check the entered file name if it ends with the default file extension provided, and if not, append it to the end of the file name.
+So when the page is asked to create the new file, it can check the entered file name if it ends with the default file extension provided, and if not, 
+append it to the end of the file name.

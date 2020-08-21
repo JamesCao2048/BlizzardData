@@ -1,59 +1,87 @@
 [Jobs] Deadlock in modal cvs dialog
 I20031111 I was using "Update and Overwrite" on a conflicting resource from the sync view.
 As you can see from the dump the modal CVS dialog locks itself up.
-Full thread dump Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode): "ModalContext" prio=7 tid=0x039dc658 nid=0xf44 in Object.wait() [441f000..441fd94] at java.lang.Object.wait(Native Method) 
+Full thread dump Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode): "ModalContext" prio=7 tid=0x039dc658 nid=0xf44 in Object.wait() [441f000..441fd94]
+ at java.lang.Object.wait(Native Method) 
 - waiting on 
 <0x1019bd10> (a org.eclipse.ui.internal.Semaphore) at org.eclipse.ui.internal.Semaphore.acquire(Semaphore.java:37) 
 - locked 
-<0x1019bd10> (a org.eclipse.ui.internal.Semaphore) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:42) at org.eclipse.swt.widgets.Display.syncExec(Display.java:2504) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction.promptForOverwrite(CVSSubscriberAction.java
- at org.eclipse.team.internal.ccvs.ui.subscriber.OverrideAndUpdateAction.run(OverrideAndUpdateAction.java:42) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction$2.run(CVSSubscriberAction.java:157) at org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.run(EclipseSynchr
-onizer.java:1381) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction$1.run(CVSSubscriberAction.java:152) at org.eclipse.team.internal.ccvs.ui.operations.CVSBlockingRunnableContext$3.run(CVSBlockingRunnableContext.jav at org.eclipse.core.internal.resources.Workspace.run(Workspace.jav
-a:1557) at org.eclipse.team.internal.ccvs.ui.operations.CVSBlockingRunnableContext$2.run(CVSBlockingRunnableContext.jav at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:101) "Worker-10" prio=5 tid=0x03446060 nid=0xca0 in Object.wait() [380f000..380fd94] at java.la
+<0x1019bd10> (a org.eclipse.ui.internal.Semaphore) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:42) at org.eclipse.swt.widge
+ts.Display.syncExec(Display.java:2504) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction.promptForOverwrite(CVSSubscriberAction.java
+ at org.eclipse.team.internal.ccvs.ui.subscriber.OverrideAndUpdateAction.run(OverrideAndUpdateAction.java:42) at org.eclipse.team.internal.ccvs.ui.sub
+scriber.CVSSubscriberAction$2.run(CVSSubscriberAction.java:157) at org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.run(EclipseSynchr
+onizer.java:1381) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction$1.run(CVSSubscriberAction.java:152) at org.eclipse.team.internal
+.ccvs.ui.operations.CVSBlockingRunnableContext$3.run(CVSBlockingRunnableContext.jav at org.eclipse.core.internal.resources.Workspace.run(Workspace.jav
+a:1557) at org.eclipse.team.internal.ccvs.ui.operations.CVSBlockingRunnableContext$2.run(CVSBlockingRunnableContext.jav at org.eclipse.jface.operation
+.ModalContext$ModalContextThread.run(ModalContext.java:101) "Worker-10" prio=5 tid=0x03446060 nid=0xca0 in Object.wait() [380f000..380fd94] at java.la
 ng.Object.wait(Native Method) 
 - waiting on 
 <0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:155) 
 - locked 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) "Worker-9" prio=5 tid=0x03a23990 nid=0xec8 in Object.wait() [45cf000..45cfd94] at java.lang.Object.wait(N
+<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.c
+ore.internal.jobs.Worker.run(Worker.java:55) "Worker-9" prio=5 tid=0x03a23990 nid=0xec8 in Object.wait() [45cf000..45cfd94] at java.lang.Object.wait(N
 ative Method) 
 - waiting on 
 <0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:155) 
 - locked 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) "Worker-8" prio=5 tid=0x039fd518 nid=0xea4 in Object.wait() [458f000..458fd94] at java.lang.Object.wait(N
+<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.c
+ore.internal.jobs.Worker.run(Worker.java:55) "Worker-8" prio=5 tid=0x039fd518 nid=0xea4 in Object.wait() [458f000..458fd94] at java.lang.Object.wait(N
 ative Method) 
 - waiting on 
 <0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:155) 
 - locked 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x038fb770 nid=0xf54 in Object.wait()
- [431f000..431 at java.lang.Object.wait(Native Method) at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:161) 
+<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.c
+ore.internal.jobs.Worker.run(Worker.java:55) "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x038fb770 nid=0xf54 in Object.wait()
+ [431f000..431 at java.lang.Object.wait(Native Method) at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler
+.java:161) 
 - locked 
-<0x1430dcb0> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) "Worker-5" prio=5 tid=0x0337f5e0 nid=0xbd4 in Object.wait() [450f000..450fd94] at java.lang.Object.wait(Native Method) 
+<0x1430dcb0> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) "Worker-5" prio=5 tid=0x0337f5e0 nid=0xbd4 in Object.wait() [450f000..450fd94] at 
+java.lang.Object.wait(Native Method) 
 - waiting on 
 <0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:155) 
 - locked 
-<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) "Java indexing" daemon prio=4 tid=0x02e62938 nid=0xb84 in Object.wait() [379f000..379fd94] at java.lang.O
+<0x11af4c18> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:181) at org.eclipse.c
+ore.internal.jobs.Worker.run(Worker.java:55) "Java indexing" daemon prio=4 tid=0x02e62938 nid=0xb84 in Object.wait() [379f000..379fd94] at java.lang.O
 bject.wait(Native Method) 
 - waiting on 
-<0x120dc728> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager) at java.lang.Object.wait(Object.java:429) at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:331) 
+<0x120dc728> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager) at java.lang.Object.wait(Object.java:429) at org.eclipse.jdt.internal.core
+.search.processing.JobManager.run(JobManager.java:331) 
 - locked 
-<0x120dc728> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager) at java.lang.Thread.run(Thread.java:534) "Signal Dispatcher" daemon prio=10 tid=0x00a13e88 nid=0x5c4 waiting on condition [0..0] "Finalizer" daemon prio=9 tid=0x00a0f0e8 nid=0x6a4 in Object.wait() [2c6f000..2c6fd94] at java.
+<0x120dc728> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager) at java.lang.Thread.run(Thread.java:534) "Signal Dispatcher" daemon prio=1
+0 tid=0x00a13e88 nid=0x5c4 waiting on condition [0..0] "Finalizer" daemon prio=9 tid=0x00a0f0e8 nid=0x6a4 in Object.wait() [2c6f000..2c6fd94] at java.
 lang.Object.wait(Native Method) at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:111) 
 - locked 
-<0x11af0138> (a java.lang.ref.ReferenceQueue$Lock) at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127) at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159) "Reference Handler" daemon prio=10 tid=0x009c1a20 nid=0x5ac in Object.wait() [2c2f000..2c2fd94] at java.lang.Object.wa
+<0x11af0138> (a java.lang.ref.ReferenceQueue$Lock) at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127) at java.lang.ref.Finalizer$Finalize
+rThread.run(Finalizer.java:159) "Reference Handler" daemon prio=10 tid=0x009c1a20 nid=0x5ac in Object.wait() [2c2f000..2c2fd94] at java.lang.Object.wa
 it(Native Method) 
 - waiting on 
-<0x11af01a0> (a java.lang.ref.Reference$Lock) at java.lang.Object.wait(Object.java:429) at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:115) 
+<0x11af01a0> (a java.lang.ref.Reference$Lock) at java.lang.Object.wait(Object.java:429) at java.lang.ref.Reference$ReferenceHandler.run(Reference.java
+:115) 
 - locked 
-<0x11af01a0> (a java.lang.ref.Reference$Lock) "main" prio=7 tid=0x000350d8 nid=0xe48 runnable [7e000..7fc3c] at org.eclipse.swt.internal.win32.OS.WaitMessage(Native Method) at org.eclipse.swt.widgets.Display.sleep(Display.java:2484) at org.eclipse.jface.window.Window.runEventLoop(Window.java:584) at
- org.eclipse.jface.window.Window.open(Window.java:563) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction$3.run(CVSSubscriberAction.java:275) at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:101) at org.eclipse.ui.internal.UISynchronizer$1.run(UISynchroniz
-er.java:33) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:102) 
+<0x11af01a0> (a java.lang.ref.Reference$Lock) "main" prio=7 tid=0x000350d8 nid=0xe48 runnable [7e000..7fc3c] at org.eclipse.swt.internal.win32.OS.Wait
+Message(Native Method) at org.eclipse.swt.widgets.Display.sleep(Display.java:2484) at org.eclipse.jface.window.Window.runEventLoop(Window.java:584) at
+ org.eclipse.jface.window.Window.open(Window.java:563) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction$3.run(CVSSubscriberAction.j
+ava:275) at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:101) at org.eclipse.ui.internal.UISynchronizer$1.run(UISynchroniz
+er.java:33) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.ja
+va:102) 
 - locked 
-<0x1019bd38> (a org.eclipse.swt.widgets.RunnableLock) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2164) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1881) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:136) at org.eclips
-e.jface.operation.ModalContext.run(ModalContext.java:261) at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:386) at org.eclipse.ui.internal.progress.ProgressManager$4.run(ProgressManager.java:794) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84
-) at org.eclipse.ui.internal.progress.ProgressManager.busyCursorWhile(ProgressManager.java:785) at org.eclipse.team.internal.ccvs.ui.operations.CVSBlockingRunnableContext$1.run(CVSBlockingRunnableContext.jav at org.eclipse.team.internal.ccvs.ui.operations.CVSBlockingRunnableContext.run(CVSBlockingRu
-nnableContext.java: at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction.run(CVSSubscriberAction.java:130) at org.eclipse.ui.actions.ActionDelegate.runWithEvent(ActionDelegate.java:71) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:260) at org.eclipse.jface.act
-ion.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:542) at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:494) at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:466) at org.eclipse.swt.widgets.
-EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2187) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1877) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbe
-nch.java:1402) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1378) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:240) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:
-47) at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at su
-n.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:299) at org.eclipse.core.launcher.Main.run(Main.java:767) at org.eclipse.core.launcher.Main.main(Main.java:601)
- "VM Thread" prio=5 tid=0x009bd970 nid=0x690 runnable "VM Periodic Task Thread" prio=10 tid=0x00a10498 nid=0x5bc waiting on condition "Suspend Checker Thread" prio=10 tid=0x00a02540 nid=0x720 runnable
+<0x1019bd38> (a org.eclipse.swt.widgets.RunnableLock) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2164) at org.eclipse.swt.widget
+s.Display.readAndDispatch(Display.java:1881) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:136) at org.eclips
+e.jface.operation.ModalContext.run(ModalContext.java:261) at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:386) at or
+g.eclipse.ui.internal.progress.ProgressManager$4.run(ProgressManager.java:794) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84
+) at org.eclipse.ui.internal.progress.ProgressManager.busyCursorWhile(ProgressManager.java:785) at org.eclipse.team.internal.ccvs.ui.operations.CVSBlo
+ckingRunnableContext$1.run(CVSBlockingRunnableContext.jav at org.eclipse.team.internal.ccvs.ui.operations.CVSBlockingRunnableContext.run(CVSBlockingRu
+nnableContext.java: at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction.run(CVSSubscriberAction.java:130) at org.eclipse.ui.actions.Ac
+tionDelegate.runWithEvent(ActionDelegate.java:71) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:260) at org.eclipse.jface.act
+ion.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:542) at org.eclipse.jface.action.ActionContributionItem.access$4(ActionCo
+ntributionItem.java:494) at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:466) at org.eclipse.swt.widgets.
+EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEv
+ents(Display.java:2187) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1877) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbe
+nch.java:1402) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1378) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.ja
+va:240) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:
+47) at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+ at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at su
+n.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse
+.core.launcher.Main.basicRun(Main.java:299) at org.eclipse.core.launcher.Main.run(Main.java:767) at org.eclipse.core.launcher.Main.main(Main.java:601)
+ "VM Thread" prio=5 tid=0x009bd970 nid=0x690 runnable "VM Periodic Task Thread" prio=10 tid=0x00a10498 nid=0x5bc waiting on condition "Suspend Checker
+ Thread" prio=10 tid=0x00a02540 nid=0x720 runnable

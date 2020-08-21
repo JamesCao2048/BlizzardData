@@ -1,9 +1,12 @@
 [Dialogs] wrong search window size
-Two bugs shortly one after the other: 1.Bug Seems like the (file) search window dynamically sizes (which is generally good, but only at unknown situations, don't have a screen-shot of that) depending on the size of the marked text in the editor.
+Two bugs shortly one after the other: 1.Bug Seems like the (file) search window dynamically sizes (which is generally good, but only at unknown situat
+ions, don't have a screen-shot of that) depending on the size of the marked text in the editor.
 When it does so, all elements seems to scale/resize correctly! If you have marked a long text passage the window even sizes bigger than the screen.
 Of course, that is not the best idea, e.g.
-I can not reasonably select a history entry with the mouse, because either the history button is out of the screen at the right or the shown entries are out the screen at the left.
+I can not reasonably select a history entry with the mouse, because either the history button is out of the screen at the right or the shown entries a
+re out the screen at the left.
 Seems as if someone has forgotten the restrict the automatically determined window size to a maximum.
 This does not mean that it should be impossible to make windows bigger than the screen MANUALLY.
-2.Bug The window elements are sized as if the window is very big, but the outer window itself is not sized very big and can not be resized manually, though the elements "are cut off" and can not be seen and used (see screen shot).
+2.Bug The window elements are sized as if the window is very big, but the outer window itself is not sized very big and can not be resized manually, t
+hough the elements "are cut off" and can not be seen and used (see screen shot).
 best regards Thorsten van Ellen

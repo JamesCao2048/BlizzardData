@@ -1,5 +1,8 @@
 StyledText control not wrapping correctly.
-Please note the following code example wherein the Text control correctly wraps the string "will not"; however, the StyledText control incorrectly breaks the string up when there is plenty of space for "not" on the second line.
-Display d = Display.getDefault(); shell = new Shell(d); String appName = getClass().getName(); appName = appName.substring(appName.lastIndexOf('.')+1); shell.setText(appName); shell.pack(); shell.open(); StyledText text = new StyledText(shell, SWT.MULTI | SWT.WRAP); text.setSize(25, 50); text.setFon
-t(new Font(null, "Tahoma", 8, 0)); text.setText("will not"); text.setVisible(true); Text normalText = new Text(shell, SWT.MULTI | SWT.WRAP); normalText.setLocation(26,0); normalText.setSize(25, 50); normalText.setFont(new Font(null, "Tahoma", 8, 0)); normalText.setText("will not"); normalText.setVis
+Please note the following code example wherein the Text control correctly wraps the string "will not"; however, the StyledText control incorrectly bre
+aks the string up when there is plenty of space for "not" on the second line.
+Display d = Display.getDefault(); shell = new Shell(d); String appName = getClass().getName(); appName = appName.substring(appName.lastIndexOf('.')+1)
+; shell.setText(appName); shell.pack(); shell.open(); StyledText text = new StyledText(shell, SWT.MULTI | SWT.WRAP); text.setSize(25, 50); text.setFon
+t(new Font(null, "Tahoma", 8, 0)); text.setText("will not"); text.setVisible(true); Text normalText = new Text(shell, SWT.MULTI | SWT.WRAP); normalTex
+t.setLocation(26,0); normalText.setSize(25, 50); normalText.setFont(new Font(null, "Tahoma", 8, 0)); normalText.setText("will not"); normalText.setVis
 ible(true); while (!shell.isDisposed()) while (!d.readAndDispatch()) d.sleep(); Thanks.

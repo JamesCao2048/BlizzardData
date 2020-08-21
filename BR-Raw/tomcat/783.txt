@@ -6,4 +6,5 @@ Zoom Out action is enabled although it doesn't do anything
 This is because canZoomOut() 
 -- which invokes getMinZoom() 
 -- takes the "Page" zoom setting into account.
-However, when getPreviousZoomLevel() is invoked, it just returns the previous setting from the array of zoom levels, and ignores the "Page" zoom setting.
+However, when getPreviousZoomLevel() is invoked, it just returns the previous setting from the array of zoom levels, and ignores the "Page" zoom setti
+ng.

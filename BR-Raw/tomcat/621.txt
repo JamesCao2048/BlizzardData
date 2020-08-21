@@ -5,9 +5,14 @@ Error log follows.
 Note: This is an intermittent problem but it occurs enough to be a concern (approx.
 1 shutdown in 50).
 An unexpected exception has been detected in native code outside the VM.
-Unexpected Signal : EXCEPTION_ACCESS_VIOLATION occurred at PC=0x77F83905 Function=RtlSizeHeap+0x5EF Library=C:WINDOWSSystem32ntdll.dll Current Java thread: at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method) at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:1298) at org.eclip
-se.swt.widgets.Scrollable.callWindowProc(Scrollable.java:77) at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:394) at org.eclipse.swt.widgets.Control.windowProc(Control.java:2845) at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1229) at org.eclipse.swt.widgets.Display.wi
-ndowProc(Display.java:2361) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method) at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1303) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1543) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1
-402) at org.eclipse.ui.internal.Workbench.run(Workbench.java:1385) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeM
-ethodAccessorImpl.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.core.launcher.Main.basicRun(Main.java:291) at org.eclipse.core.launcher.Main.run(Main.java:747) at org.eclipse.core.launcher.M
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION occurred at PC=0x77F83905 Function=RtlSizeHeap+0x5EF Library=C:WINDOWSSystem32ntdll.dll Current Java th
+read: at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method) at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:1298) at org.eclip
+se.swt.widgets.Scrollable.callWindowProc(Scrollable.java:77) at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:394) at org.eclipse.swt.widget
+s.Control.windowProc(Control.java:2845) at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1229) at org.eclipse.swt.widgets.Display.wi
+ndowProc(Display.java:2361) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method) at org.eclipse.swt.internal.win32.OS.DispatchMessage(
+OS.java:1303) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1543) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1
+402) at org.eclipse.ui.internal.Workbench.run(Workbench.java:1385) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:8
+58) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeM
+ethodAccessorImpl.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unknown
+ Source) at org.eclipse.core.launcher.Main.basicRun(Main.java:291) at org.eclipse.core.launcher.Main.run(Main.java:747) at org.eclipse.core.launcher.M
 ain.main(Main.java:583)

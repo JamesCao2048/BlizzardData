@@ -1,10 +1,16 @@
 HyadesResourceExtensions getInstance() will not run in standalone mode
 When HyadesResourceExtensions.getInstance() is executed in standalone mode, an error stating that the Plugin class is not found is returned.
 For standalone mode, the Plugin class should not be referenced.
-java.lang.NoClassDefFoundError: org/eclipse/core/runtime/Plugin at org.eclipse.hyades.models.hierarchy.impl.TRCAgentImpl.getDefaultEvents (TRCAgentImpl.java:456) at org.eclipse.hyades.loaders.cbe.XMLCommonBaseEventLoader.addYourselfInContext (XMLCommonBaseEventLoader.java:253) at org.eclipse.hyades.
-loaders.util.XMLLoader.endElement (XMLLoader.java:270) at org.eclipse.hyades.loaders.util.SAXFragmentHandler.endElement (SAXFragmentHandler.java:84) at org.apache.xerces.parsers.AbstractSAXParser.endElement (AbstractSAXParser.java:569) at org.apache.xerces.impl.XMLNamespaceBinder.endElement (XMLName
-spaceBinder.java:646) at org.apache.xerces.impl.dtd.XMLDTDValidator.handleEndElement (XMLDTDValidator.java:3003) at org.apache.xerces.impl.dtd.XMLDTDValidator.endElement (XMLDTDValidator.java:931) at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.handleEndElement (XMLDocumentFragmentScannerIm
-pl.java:1147) at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanEndElement (XMLDocumentFragmentScannerImpl.java:988) at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher .dispatch(XMLDocumentFragmentScannerImpl.java:1448) at org.apache.xerces.impl.XMLDocument
-FragmentScannerImpl.scanDocument (XMLDocumentFragmentScannerImpl.java:333) at org.apache.xerces.parsers.StandardParserConfiguration.parse (StandardParserConfiguration.java:525) at org.apache.xerces.parsers.StandardParserConfiguration.parse (StandardParserConfiguration.java:581) at org.apache.xerces.
-parsers.XMLParser.parse(XMLParser.java:147) at org.apache.xerces.parsers.AbstractSAXParser.parse (AbstractSAXParser.java:1158) at javax.xml.parsers.SAXParser.parse(SAXParser.java:394) at org.eclipse.hyades.loaders.util.SAXFragmentHandler.parse (SAXFragmentHandler.java:182) at org.eclipse.hyades.load
+java.lang.NoClassDefFoundError: org/eclipse/core/runtime/Plugin at org.eclipse.hyades.models.hierarchy.impl.TRCAgentImpl.getDefaultEvents (TRCAgentImp
+l.java:456) at org.eclipse.hyades.loaders.cbe.XMLCommonBaseEventLoader.addYourselfInContext (XMLCommonBaseEventLoader.java:253) at org.eclipse.hyades.
+loaders.util.XMLLoader.endElement (XMLLoader.java:270) at org.eclipse.hyades.loaders.util.SAXFragmentHandler.endElement (SAXFragmentHandler.java:84) a
+t org.apache.xerces.parsers.AbstractSAXParser.endElement (AbstractSAXParser.java:569) at org.apache.xerces.impl.XMLNamespaceBinder.endElement (XMLName
+spaceBinder.java:646) at org.apache.xerces.impl.dtd.XMLDTDValidator.handleEndElement (XMLDTDValidator.java:3003) at org.apache.xerces.impl.dtd.XMLDTDV
+alidator.endElement (XMLDTDValidator.java:931) at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.handleEndElement (XMLDocumentFragmentScannerIm
+pl.java:1147) at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanEndElement (XMLDocumentFragmentScannerImpl.java:988) at org.apache.xerces.i
+mpl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher .dispatch(XMLDocumentFragmentScannerImpl.java:1448) at org.apache.xerces.impl.XMLDocument
+FragmentScannerImpl.scanDocument (XMLDocumentFragmentScannerImpl.java:333) at org.apache.xerces.parsers.StandardParserConfiguration.parse (StandardPar
+serConfiguration.java:525) at org.apache.xerces.parsers.StandardParserConfiguration.parse (StandardParserConfiguration.java:581) at org.apache.xerces.
+parsers.XMLParser.parse(XMLParser.java:147) at org.apache.xerces.parsers.AbstractSAXParser.parse (AbstractSAXParser.java:1158) at javax.xml.parsers.SA
+XParser.parse(SAXParser.java:394) at org.eclipse.hyades.loaders.util.SAXFragmentHandler.parse (SAXFragmentHandler.java:182) at org.eclipse.hyades.load
 ers.util.SAXFragmentHandler$1.run (SAXFragmentHandler.java:56)

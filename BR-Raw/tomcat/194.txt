@@ -2,7 +2,8 @@ CCombo edited value is not preserved (when mouse selects another cell within tab
 The problem is present and reproducible.
 Following are details: We have a table with several rows.
 CellEditors are CCombo type (editable).
-When user starts changing the value of the cell and decide to move to another cell (by mouse click) the latest/edited value of the previous cell is not set.
+When user starts changing the value of the cell and decide to move to another cell (by mouse click) the latest/edited value of the previous cell is no
+t set.
 The same problem is not present if these cells are Combo type.
 This look like CCombo bug.
 ...

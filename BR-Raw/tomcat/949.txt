@@ -1,8 +1,10 @@
 Disabling of "definition" not making sense in Search dialog
-In the search dialog, in the "limit to" group box, the "definitions" check box is only enabled when the "Function" or the "Method" check boxes in the "Search For" are checked.
+In the search dialog, in the "limit to" group box, the "definitions" check box is only enabled when the "Function" or the "Method" check boxes in the 
+"Search For" are checked.
 But if the "Any Element" is checked, the "definitions" group box is disable.
 The UI is confusing for the user.
-Steps: 1) Go to the C/C++ Search dialog 2) Uncheck everything in the "Search For" group box The "definitions" check box is disabled in the "Limit To" group box.
+Steps: 1) Go to the C/C++ Search dialog 2) Uncheck everything in the "Search For" group box The "definitions" check box is disabled in the "Limit To" 
+group box.
 3) Put a check in the "Function" check box.
 The "definitions" check box is enabled 4) Put a check in the "Any Element" check box.
 The "definitions" check box is enabled since the disabled "Function" check box still has a check in it.

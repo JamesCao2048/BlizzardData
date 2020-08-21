@@ -1,18 +1,29 @@
 Table row doesn't stay colored as selected when editor is displayed on Linux
 BUG in Fedora Core 1 Linux with SWT 3.0M6 and below.
-If the background color is set then the row will not appear as selected if it is edited (different behaviour from other rows) The problem is that I need to set the background color because for example before I set the background color to Green and now I want to restore it.
+If the background color is set then the row will not appear as selected if it is edited (different behaviour from other rows) The problem is that I ne
+ed to set the background color because for example before I set the background color to Green and now I want to restore it.
 It should appear as selected when edited (that is the behaviour on windows) but it is not.
 Here is the snippet adapted from the standard code.
-package com.abmira.swt.snippets.control.table; import org.eclipse.swt.SWT; import org.eclipse.swt.custom.TableEditor; import org.eclipse.swt.graphics.Point; import org.eclipse.swt.graphics.Rectangle; import org.eclipse.swt.layout.FillLayout; import org.eclipse.swt.widgets.Display; import org.eclipse
-.swt.widgets.Event; import org.eclipse.swt.widgets.Listener; import org.eclipse.swt.widgets.Shell; import org.eclipse.swt.widgets.Table; import org.eclipse.swt.widgets.TableColumn; import org.eclipse.swt.widgets.TableItem; import org.eclipse.swt.widgets.Text; public class TableEditor2 { public stati
-c void main(String[] args) { Display display = new Display(); Shell shell = new Shell(display); shell.setLayout(new FillLayout()); final Table table = new Table(shell, SWT.BORDER | SWT.MULTI); table.setLinesVisible(true); for (int i = 0; i 
+package com.abmira.swt.snippets.control.table; import org.eclipse.swt.SWT; import org.eclipse.swt.custom.TableEditor; import org.eclipse.swt.graphics.
+Point; import org.eclipse.swt.graphics.Rectangle; import org.eclipse.swt.layout.FillLayout; import org.eclipse.swt.widgets.Display; import org.eclipse
+.swt.widgets.Event; import org.eclipse.swt.widgets.Listener; import org.eclipse.swt.widgets.Shell; import org.eclipse.swt.widgets.Table; import org.ec
+lipse.swt.widgets.TableColumn; import org.eclipse.swt.widgets.TableItem; import org.eclipse.swt.widgets.Text; public class TableEditor2 { public stati
+c void main(String[] args) { Display display = new Display(); Shell shell = new Shell(display); shell.setLayout(new FillLayout()); final Table table =
+ new Table(shell, SWT.BORDER | SWT.MULTI); table.setLinesVisible(true); for (int i = 0; i 
 < 3; i++) { TableColumn column = new TableColumn(table, SWT.NONE); column.setWidth(100); } for (int i = 0; i 
-< 3; i++) { TableItem item = new TableItem(table, SWT.NONE); item.setText(new String[] { "" + i, "" + i, "" + i }); if (i == 1) { // BUG in Fedora Core 1 Linux with SWT 3.0M6 and below // If the background color is set then the row will not appear as // selected if it is edited (different behaviour 
-from other rows) // The problem is that I need to set the background color because // for example before I set the background color to Green and now // I want to restore it.
-It should be selected when edited (that is // the behaviour on windows) but it is not item.setBackground(item.getDisplay().getSystemColor( SWT.COLOR_LIST_BACKGROUND)); } } final TableEditor editor = new TableEditor(table); editor.horizontalAlignment = SWT.LEFT; editor.grabHorizontal = true; table.ad
-dListener(SWT.MouseDown, new Listener() { public void handleEvent(Event event) { Rectangle clientArea = table.getClientArea(); Point pt = new Point(event.x, event.y); int index = table.getTopIndex(); while (index 
+< 3; i++) { TableItem item = new TableItem(table, SWT.NONE); item.setText(new String[] { "" + i, "" + i, "" + i }); if (i == 1) { // BUG in Fedora Cor
+e 1 Linux with SWT 3.0M6 and below // If the background color is set then the row will not appear as // selected if it is edited (different behaviour 
+from other rows) // The problem is that I need to set the background color because // for example before I set the background color to Green and now /
+/ I want to restore it.
+It should be selected when edited (that is // the behaviour on windows) but it is not item.setBackground(item.getDisplay().getSystemColor( SWT.COLOR_L
+IST_BACKGROUND)); } } final TableEditor editor = new TableEditor(table); editor.horizontalAlignment = SWT.LEFT; editor.grabHorizontal = true; table.ad
+dListener(SWT.MouseDown, new Listener() { public void handleEvent(Event event) { Rectangle clientArea = table.getClientArea(); Point pt = new Point(ev
+ent.x, event.y); int index = table.getTopIndex(); while (index 
 < table.getItemCount()) { boolean visible = false; final TableItem item = table.getItem(index); for (int i = 0; i 
-< table.getColumnCount(); i++) { Rectangle rect = item.getBounds(i); if (rect.contains(pt)) { final int column = i; final Text text = new Text(table, SWT.NONE); Listener textListener = new Listener() { public void handleEvent(final Event e) { switch (e.type) { case SWT.FocusOut : item.setText(column
-, text.getText()); text.dispose(); break; case SWT.Traverse : switch (e.detail) { case SWT.TRAVERSE_RETURN : item.setText(column, text.getText()); //FALL THROUGH case SWT.TRAVERSE_ESCAPE : text.dispose(); e.doit = false; } break; } } }; text.addListener(SWT.FocusOut, textListener); text.addListener(
-SWT.Traverse, textListener); editor.setEditor(text, item, i); text.setText(item.getText(i)); text.selectAll(); text.setFocus(); return; } if (!visible && rect.intersects(clientArea)) { visible = true; } } if (!visible) return; index++; } } }); shell.pack(); shell.open(); while (!shell.isDisposed()) 
+< table.getColumnCount(); i++) { Rectangle rect = item.getBounds(i); if (rect.contains(pt)) { final int column = i; final Text text = new Text(table, 
+SWT.NONE); Listener textListener = new Listener() { public void handleEvent(final Event e) { switch (e.type) { case SWT.FocusOut : item.setText(column
+, text.getText()); text.dispose(); break; case SWT.Traverse : switch (e.detail) { case SWT.TRAVERSE_RETURN : item.setText(column, text.getText()); //F
+ALL THROUGH case SWT.TRAVERSE_ESCAPE : text.dispose(); e.doit = false; } break; } } }; text.addListener(SWT.FocusOut, textListener); text.addListener(
+SWT.Traverse, textListener); editor.setEditor(text, item, i); text.setText(item.getText(i)); text.selectAll(); text.setFocus(); return; } if (!visible
+ && rect.intersects(clientArea)) { visible = true; } } if (!visible) return; index++; } } }); shell.pack(); shell.open(); while (!shell.isDisposed()) 
 { if (!display.readAndDispatch()) display.sleep(); } display.dispose(); } }

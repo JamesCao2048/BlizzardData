@@ -1,6 +1,7 @@
 uppercase ZIP and JAR classpath entries ignored
 From bug 45897 : 
------ The JDT's ..batch.FileSystem() constructor only accepts lowercase .zip and .jar and silently ignores other entries, which affects any such entry on the classpath.
+----- The JDT's ..batch.FileSystem() constructor only accepts lowercase .zip and .jar and silently ignores other entries, which affects any such entry
+ on the classpath.
 (Java and Javac both handle uppercase-suffixed files fine.) Test case checked in, uses libraries org.aspectj/modules/tests/bugs/extdirs/lib/uppercase.
 
 ----- This is a bug in the jdt batch compiler.

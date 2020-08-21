@@ -1,3 +1,4 @@
 Runtime is no longer a plugin
-The fact that runtime is no longer a real plugin causes some griefs to some plugins that were used to get the plugin object and then access preferences.
+The fact that runtime is no longer a real plugin causes some griefs to some plugins that were used to get the plugin object and then access preference
+s.
 One example of such a problem occurs to the CVS UI.

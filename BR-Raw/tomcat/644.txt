@@ -1,4 +1,5 @@
 AspectJ weaver API is not threadsafe
 I am using the weaver API (mostly BcelWorld and BcelWeaer) in a multithreaded environment and ran into problems.
-I tracked them down to some static variables in the BCEL library implementation that can cause exceptions in the weaver (signatures are not parsed correctly) when executed via mulitiple threads.
+I tracked them down to some static variables in the BCEL library implementation that can cause exceptions in the weaver (signatures are not parsed cor
+rectly) when executed via mulitiple threads.
 Maybe the weaver implementation can use the BCEL library in a threadsafe way to allow multiple threads working with the weaver API.

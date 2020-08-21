@@ -1,6 +1,8 @@
 Exception when entering text in Console for input
 Build 1.2.0.59 OS: Windows While Debugging, and the execution performs a "cin >>"", the application is waiting for input in the application window.
 The input from the application worked with no problems.
-However, I've entered text into the eclipse's Console window and this exception occurred: java.io.IOException: target is suspended at org.eclipse.cdt.debug.mi.core.MIInferior$1.write(MIInferior.java:67) at java.io.OutputStream.write(Unknown Source) at java.io.OutputStream.write(Unknown Source) at or
-g.eclipse.debug.internal.core.InputStreamMonitor.writeNext (InputStreamMonitor.java:116) at org.eclipse.debug.internal.core.InputStreamMonitor.write (InputStreamMonitor.java:99) at org.eclipse.debug.internal.core.InputStreamMonitor$1.run (InputStreamMonitor.java:75) at java.lang.Thread.run(Unknown S
+However, I've entered text into the eclipse's Console window and this exception occurred: java.io.IOException: target is suspended at org.eclipse.cdt.
+debug.mi.core.MIInferior$1.write(MIInferior.java:67) at java.io.OutputStream.write(Unknown Source) at java.io.OutputStream.write(Unknown Source) at or
+g.eclipse.debug.internal.core.InputStreamMonitor.writeNext (InputStreamMonitor.java:116) at org.eclipse.debug.internal.core.InputStreamMonitor.write (
+InputStreamMonitor.java:99) at org.eclipse.debug.internal.core.InputStreamMonitor$1.run (InputStreamMonitor.java:75) at java.lang.Thread.run(Unknown S
 ource)

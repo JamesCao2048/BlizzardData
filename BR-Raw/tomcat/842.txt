@@ -11,7 +11,8 @@ Now change the source folder to /MyDir/src and the output folder to /MyDir as fo
 - Right click on the project and select Properties->Java Build Path->Source.
 
 - click on Allow output folders for source folders.
-Click on Output folder, (expand the source folder MyProject/MyDir/src if necessary), press Edit, click on "Specific Output Folder" and change it to MyDir.
+Click on Output folder, (expand the source folder MyProject/MyDir/src if necessary), press Edit, click on "Specific Output Folder" and change it to My
+Dir.
 Click OK.
 
 - You'll get a message about not being able to nest MyProject/MyDir/src inside MyProject/MyDir.
@@ -20,4 +21,5 @@ Make this message go away by changing the Default output folder at the bottom of
 - Click OK.
 You'll get a message box asking if it's OK to remove the old generated sources from the old output folder; click Yes.
 BOOM! If you're using Eclipse 3.0 or 2.1.1, this will immediately wipe out your source directory.
-(If you're using 2.1, you get a reprieve; your source directory won't get wiped until try to run Hello.java when you get an error about the main class not being found.)
+(If you're using 2.1, you get a reprieve; your source directory won't get wiped until try to run Hello.java when you get an error about the main class
+ not being found.)

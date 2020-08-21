@@ -1,5 +1,7 @@
 Deferred creation of Table items
 Creating large Tables (10,000 or more items) in SWT is currently very slow and memory-intensive.
-It would be possible to improve the runtime if the SWT Table could request TableItems via a callback when they first become visible rather than requiring all TableItems to be created in advance.
+It would be possible to improve the runtime if the SWT Table could request TableItems via a callback when they first become visible rather than requir
+ing all TableItems to be created in advance.
 This would also allow Table to reclaim the resources for TableItems that are no longer visible.
-Alternatively, the SWT Table widget could provide a Listener interface that sends notifications when rows gain and lose visibility, allowing some higher-level object to implement a deferred creation strategy.
+Alternatively, the SWT Table widget could provide a Listener interface that sends notifications when rows gain and lose visibility, allowing some high
+er-level object to implement a deferred creation strategy.

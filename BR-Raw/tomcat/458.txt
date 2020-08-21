@@ -5,18 +5,32 @@ How to reproduce: 1.Create a new C/C++ Make project containing file.c: #include
 <stdlib.h> int main(int argc, char* argv[]) { return EXIT_SUCCESS; } 2.Add the proper include path (eg /dir/to/usr/include) to the project properties.
 3.Open file.c.
 Right-click stdio.h from the Outline view and select Open.
-4.Stack trace follows: org.eclipse.core.launcher.Main at localhost:1928 Thread [main] (Suspended (exception NullPointerException)) CModelBuilder.parse(ITranslationUnit, boolean, boolean) line: 125 CModelBuilder.parse(boolean) line: 150 CFileElementWorkingCopy(TranslationUnit).parse() line: 472 CFile
-ElementWorkingCopy(TranslationUnit).generateInfos(OpenableInfo, IProgressMonitor, Map, IResource) line: 303 CFileElementWorkingCopy(TranslationUnit).buildStructure(OpenableInfo, IProgressMonitor) line: 222 CFileElementWorkingCopy(Openable).openWhenClosed(IProgressMonitor) line: 279 CFileElementWorki
-ngCopy(CElement).openHierarchy() line: 317 CFileElementWorkingCopy(CElement).getElementInfo() line: 200 CFileElementWorkingCopy(Parent).getChildren() line: 47 CElementContentProvider(BaseCElementContentProvider).getChildren(Object) line: 129 CElementContentProvider(BaseCElementContentProvider).getEl
-ements(Object) line: 100 ProblemTreeViewer(StructuredViewer).getRawChildren(Object) line: 516 ProblemTreeViewer(AbstractTreeViewer).getRawChildren(Object) line: 725 ProblemTreeViewer(StructuredViewer).getFilteredChildren(Object) line: 463 ProblemTreeViewer(StructuredViewer).getSortedChildren(Object)
- line: 567 AbstractTreeViewer$1.run() line: 361 BusyIndicator.showWhile(Display, Runnable) line: 84 ProblemTreeViewer(AbstractTreeViewer).createChildren(Widget) line: 349 AbstractTreeViewer$5.run() line: 808 ProblemTreeViewer(StructuredViewer).preservingSelection(Runnable) line: 810 ProblemTreeViewe
-r(AbstractTreeViewer).inputChanged(Object, Object) line: 798 ProblemTreeViewer(ContentViewer).setInput(Object) line: 238 ProblemTreeViewer(StructuredViewer).setInput(Object) line: 1004 CContentOutlinePage.createControl(Composite) line: 210 ContentOutline.doCreatePage(IWorkbenchPart) line: 125 Conten
-tOutline(PageBookView).createPage(IWorkbenchPart) line: 306 ContentOutline(PageBookView).partActivated(IWorkbenchPart) line: 561 PartListenerList$1.run() line: 49 InternalPlatform.run(ISafeRunnable) line: 813 Platform.run(ISafeRunnable) line: 457 PartListenerList.firePartActivated(IWorkbenchPart) li
-ne: 47 WorkbenchPage.firePartActivated(IWorkbenchPart) line: 1251 WorkbenchPage.setActivePart(IWorkbenchPart) line: 2513 WorkbenchPage.activate(IWorkbenchPart) line: 448 WorkbenchPage.busyOpenEditor(IEditorInput, String, boolean) line: 2061 WorkbenchPage.access$6(WorkbenchPage, IEditorInput, String,
- boolean) line: 1990 WorkbenchPage$9.run() line: 1977 BusyIndicator.showWhile(Display, Runnable) line: 84 WorkbenchPage.openEditor(IEditorInput, String, boolean) line: 1972 EditorUtility.openInEditor(IEditorInput, String, boolean) line: 125 EditorUtility.openInEditor(Object, boolean) line: 94 Editor
-Utility.openInEditor(Object) line: 74 OpenIncludeAction.run() line: 111 OpenIncludeAction(Action).runWithEvent(Event) line: 842 ActionContributionItem.handleWidgetSelection(Event, boolean) line: 509 ActionContributionItem.access$2(ActionContributionItem, Event, boolean) line: 461 ActionContributionI
-tem$5.handleEvent(Event) line: 408 EventTable.sendEvent(Event) line: 82 MenuItem(Widget).sendEvent(Event) line: 847 Display.runDeferredEvents() line: 2311 Display.readAndDispatch() line: 1992 Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 1506 Workbench.runUI() line: 1482 Workbench.
-createAndRunWorkbench(Display, WorkbenchAdvisor) line: 246 PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 139 IDEApplication.run(Object) line: 47 PlatformActivator$1.run() line: 226 EclipseStarter.run(String[], Runnable) line: 85 NativeMethodAccessorImpl.invoke0(Method, Object, Ob
-ject[]) line: not available [native method] NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39 DelegatingMethodAccessorImpl.invoke(Object, Object[]) line: 25 Method.invoke(Object, Object[]) line: 324 Main.basicRun(String[]) line: 279 Main.run(String[]) line: 742 Main.main(String[]) line: 581
- Thread [Framework Event Dispatcher] (Running) Thread [Start Level Event Dispatcher] (Running) Thread [CDT Indexer] (Running) Thread [Worker-0] (Running) Thread [Worker-1] (Running) Thread [Worker-2] (Running) Thread [Worker-3] (Running) Thread [org.eclipse.cdt.internal.ui.text.CSourceViewerConfigur
+4.Stack trace follows: org.eclipse.core.launcher.Main at localhost:1928 Thread [main] (Suspended (exception NullPointerException)) CModelBuilder.parse
+(ITranslationUnit, boolean, boolean) line: 125 CModelBuilder.parse(boolean) line: 150 CFileElementWorkingCopy(TranslationUnit).parse() line: 472 CFile
+ElementWorkingCopy(TranslationUnit).generateInfos(OpenableInfo, IProgressMonitor, Map, IResource) line: 303 CFileElementWorkingCopy(TranslationUnit).b
+uildStructure(OpenableInfo, IProgressMonitor) line: 222 CFileElementWorkingCopy(Openable).openWhenClosed(IProgressMonitor) line: 279 CFileElementWorki
+ngCopy(CElement).openHierarchy() line: 317 CFileElementWorkingCopy(CElement).getElementInfo() line: 200 CFileElementWorkingCopy(Parent).getChildren() 
+line: 47 CElementContentProvider(BaseCElementContentProvider).getChildren(Object) line: 129 CElementContentProvider(BaseCElementContentProvider).getEl
+ements(Object) line: 100 ProblemTreeViewer(StructuredViewer).getRawChildren(Object) line: 516 ProblemTreeViewer(AbstractTreeViewer).getRawChildren(Obj
+ect) line: 725 ProblemTreeViewer(StructuredViewer).getFilteredChildren(Object) line: 463 ProblemTreeViewer(StructuredViewer).getSortedChildren(Object)
+ line: 567 AbstractTreeViewer$1.run() line: 361 BusyIndicator.showWhile(Display, Runnable) line: 84 ProblemTreeViewer(AbstractTreeViewer).createChildr
+en(Widget) line: 349 AbstractTreeViewer$5.run() line: 808 ProblemTreeViewer(StructuredViewer).preservingSelection(Runnable) line: 810 ProblemTreeViewe
+r(AbstractTreeViewer).inputChanged(Object, Object) line: 798 ProblemTreeViewer(ContentViewer).setInput(Object) line: 238 ProblemTreeViewer(StructuredV
+iewer).setInput(Object) line: 1004 CContentOutlinePage.createControl(Composite) line: 210 ContentOutline.doCreatePage(IWorkbenchPart) line: 125 Conten
+tOutline(PageBookView).createPage(IWorkbenchPart) line: 306 ContentOutline(PageBookView).partActivated(IWorkbenchPart) line: 561 PartListenerList$1.ru
+n() line: 49 InternalPlatform.run(ISafeRunnable) line: 813 Platform.run(ISafeRunnable) line: 457 PartListenerList.firePartActivated(IWorkbenchPart) li
+ne: 47 WorkbenchPage.firePartActivated(IWorkbenchPart) line: 1251 WorkbenchPage.setActivePart(IWorkbenchPart) line: 2513 WorkbenchPage.activate(IWorkb
+enchPart) line: 448 WorkbenchPage.busyOpenEditor(IEditorInput, String, boolean) line: 2061 WorkbenchPage.access$6(WorkbenchPage, IEditorInput, String,
+ boolean) line: 1990 WorkbenchPage$9.run() line: 1977 BusyIndicator.showWhile(Display, Runnable) line: 84 WorkbenchPage.openEditor(IEditorInput, Strin
+g, boolean) line: 1972 EditorUtility.openInEditor(IEditorInput, String, boolean) line: 125 EditorUtility.openInEditor(Object, boolean) line: 94 Editor
+Utility.openInEditor(Object) line: 74 OpenIncludeAction.run() line: 111 OpenIncludeAction(Action).runWithEvent(Event) line: 842 ActionContributionItem
+.handleWidgetSelection(Event, boolean) line: 509 ActionContributionItem.access$2(ActionContributionItem, Event, boolean) line: 461 ActionContributionI
+tem$5.handleEvent(Event) line: 408 EventTable.sendEvent(Event) line: 82 MenuItem(Widget).sendEvent(Event) line: 847 Display.runDeferredEvents() line: 
+2311 Display.readAndDispatch() line: 1992 Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 1506 Workbench.runUI() line: 1482 Workbench.
+createAndRunWorkbench(Display, WorkbenchAdvisor) line: 246 PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 139 IDEApplication.run(Ob
+ject) line: 47 PlatformActivator$1.run() line: 226 EclipseStarter.run(String[], Runnable) line: 85 NativeMethodAccessorImpl.invoke0(Method, Object, Ob
+ject[]) line: not available [native method] NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39 DelegatingMethodAccessorImpl.invoke(Object, Obj
+ect[]) line: 25 Method.invoke(Object, Object[]) line: 324 Main.basicRun(String[]) line: 279 Main.run(String[]) line: 742 Main.main(String[]) line: 581
+ Thread [Framework Event Dispatcher] (Running) Thread [Start Level Event Dispatcher] (Running) Thread [CDT Indexer] (Running) Thread [Worker-0] (Runni
+ng) Thread [Worker-1] (Running) Thread [Worker-2] (Running) Thread [Worker-3] (Running) Thread [org.eclipse.cdt.internal.ui.text.CSourceViewerConfigur
 ation$1] (Running) Thread [org.eclipse.cdt.internal.ui.text.CSourceViewerConfiguration$1] (Running)

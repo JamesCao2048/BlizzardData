@@ -1,5 +1,6 @@
 Unexpected warning when launching Eclipse in Eclipse
-Build 20031120 After importing all Eclipse plug-ins in self-hosted workspace, the target platform got set to point at my SDK install (which I imported).
+Build 20031120 After importing all Eclipse plug-ins in self-hosted workspace, the target platform got set to point at my SDK install (which I imported
+).
 Attempting to launch plugin Junit tests, I get notified that my workspace contains now twice as many plugins, is it ok to continue ?
 I have the impression that it automatically append the plugins from the target platform, which I don't need as I have them all in my workspace now.
 I don't recall this occurring before.

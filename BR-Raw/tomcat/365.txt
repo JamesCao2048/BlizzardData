@@ -6,4 +6,5 @@ After consulting with Nick, both IProduct and IBundleGroup were left open ended 
 Rather they provide a general getProperty() method.
 The valid key value pairs are to be defined by the consumers/users of the objects.
 So the UI should define the form of the information it needs for the product branding (e.g., windowImage, ...) and the about dialog.
-I don't know where this should be specified but the update team for example will need to know how to map the about.ini information onto IProducts and similarly, how to populate IBundleGroups.
+I don't know where this should be specified but the update team for example will need to know how to map the about.ini information onto IProducts and 
+similarly, how to populate IBundleGroups.

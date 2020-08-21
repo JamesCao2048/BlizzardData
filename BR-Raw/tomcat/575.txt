@@ -1,6 +1,10 @@
 The code formatter should be enhanced to handle XDoclet tags better.
-The code formatter keeps changing my java doc from /** * @ejb.bean * name = "CustomProperty" * display-name = "Custom Property EJB" * jndi-name = "ejb/CustomPropertyHome" * local-jndi-name = "ejb/CustomPropertyLocalHome" * type = "CMP" * cmp-version = "2.x" * schema = "CustomProperty" * primkey-fiel
-d = "identityKey" * description = "A user/application defined name and value pair." * view-type = "local" * transaction-type = "Container" * * @ejb.value-object * name = "CustomProperty" * match = "*" * * @ejb.persistence * table-name = "CUSTOMPROPERTY" * */ to /** * @ejb.bean name = "CustomProperty
-" display-name = "Custom Property EJB" * jndi-name = "ejb/CustomPropertyHome" local-jndi-name = * "ejb/CustomPropertyLocalHome" type = "CMP" cmp-version = "2.x" schema = * "CustomProperty" primkey-field = "identityKey" description = "A * user/application defined name and value pair." view-type = "lo
-cal" * transaction-type = "Container" * * @ejb.value-object name = "CustomProperty" match = "*" * * @ejb.persistence table-name = "CUSTOMPROPERTY" * */ The only solution I have found is to turn off comment formatting which is a great loss.
+The code formatter keeps changing my java doc from /** * @ejb.bean * name = "CustomProperty" * display-name = "Custom Property EJB" * jndi-name = "ejb
+/CustomPropertyHome" * local-jndi-name = "ejb/CustomPropertyLocalHome" * type = "CMP" * cmp-version = "2.x" * schema = "CustomProperty" * primkey-fiel
+d = "identityKey" * description = "A user/application defined name and value pair." * view-type = "local" * transaction-type = "Container" * * @ejb.va
+lue-object * name = "CustomProperty" * match = "*" * * @ejb.persistence * table-name = "CUSTOMPROPERTY" * */ to /** * @ejb.bean name = "CustomProperty
+" display-name = "Custom Property EJB" * jndi-name = "ejb/CustomPropertyHome" local-jndi-name = * "ejb/CustomPropertyLocalHome" type = "CMP" cmp-versi
+on = "2.x" schema = * "CustomProperty" primkey-field = "identityKey" description = "A * user/application defined name and value pair." view-type = "lo
+cal" * transaction-type = "Container" * * @ejb.value-object name = "CustomProperty" match = "*" * * @ejb.persistence table-name = "CUSTOMPROPERTY" * *
+/ The only solution I have found is to turn off comment formatting which is a great loss.
 It would be better if there was a way to maintain the formatting in these cases.

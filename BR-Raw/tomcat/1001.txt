@@ -3,4 +3,5 @@ I have developed a plugin that contains 1.4 'assert' statements.
 I have set the compiler preferences to 1.4.If I export a JAR file containing this code, everything works fine.
 If I export the plugin using 'Deployable plug-ins and fragments' I get an un specified compiler error while it builds the ZIP file.
 The only way to find out what the error is, is to install the plugin and then try to run it.
-After that the workspace/.metadata/.log file contains an entry that indicates an unresolved compilation error at the line that contains 'assert' statement.
+After that the workspace/.metadata/.log file contains an entry that indicates an unresolved compilation error at the line that contains 'assert' state
+ment.

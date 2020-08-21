@@ -1,6 +1,7 @@
 [plan item] Improve file encoding support
 Improve file encoding support.
 Eclipse 2.1 uses a single global file encoding setting for reading and writing files in the workspace.
-This is problematic; for example, when Java source files in the workspace use OS default file encoding while XML files in the workspace use UTF-8 file encoding.
+This is problematic; for example, when Java source files in the workspace use OS default file encoding while XML files in the workspace use UTF-8 file
+ encoding.
 The Platform should support non-uniform file encodings.
 [Platform Core, Platform UI, Text, Search, Compare, JDT UI, JDT Core] [Theme: User experience]
