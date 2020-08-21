@@ -2,12 +2,4 @@ Missing Running/Dead thread events creation and times of of currently created th
 Here are few remarks (and more ?) about Thread Events model loader.
 1/ I think "Running" thread event at thread start time: I have added this in XMLthreadStartLoader.java (see patch file below).
 2/ Same thing for "Dead" thread events when a thread ends: I have added this in XMLthreadEndLoader.java (see patch file below).
-3/I have also changed all "setTime( time )" for the fourth XMLmon*.java file to "setTime(createDeltaTime())", seems to have better result in thread vi
-ew (I prefer to see 10/20 s times rather than 1.079E9 seconds ! ;-) ).
-Here a patch file for the 3 points above, it's created using Eclipse CVS "create patch" command at org.eclipse.hyades.models.trace level: Index: src/o
-rg/eclipse/hyades/loaders/trace/XMLmonContendedEnterLoader.java =================================================================== retrieving revisio
-n 1.1 diff 
--u 
--r1.1 XMLmonContendedEnterLoader.java 
---- src/org/eclipse/hyades/loaders/trace/XMLmonContendedEnterLoader.java 16 Mar 2004 22:58:08 
--00
+3/I have also changed all "setTime( time )" for the fourth XMLmon*.java file to "setTime(createDeltaTime())", seems to have better result in thread view (I prefer to see 10/20 s

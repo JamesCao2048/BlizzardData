@@ -8,12 +8,4 @@ This will set the new default output directory to MyProject/bin.
 
 - Create a class, package com.abs.stc, name Hello, in this directory.
 Now change the source folder to /MyDir/src and the output folder to /MyDir as follows: 
-- Right click on the project and select Properties->Java Build Path->Source.
-
-- click on Allow output folders for source folders.
-Click on Output folder, (expand the source folder MyProject/MyDir/src if necessary), press Edit, click on "Specific Output Folder" and change it to My
-Dir.
-Click OK.
-
-- You'll get a message about not being able to nest MyProject/MyDir/src inside MyProject/MyDir.
-Make this message go away by changing the Default output folder at the bottom of the dialog box from MyProject/bi
+- Righ

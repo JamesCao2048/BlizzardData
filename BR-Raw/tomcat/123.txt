@@ -1,9 +1,5 @@
 CbeFormatter.fromCanonicalXMLString() does not handle ExtendedDataElements with no values/hexValues.
 CbeFormatter.fromCanonicalXMLString() does not handle ExtendedDataElements with no values/hexValues.
 Input to CbeFormatter.fromCanonicalXMLString: 
-<CommonBaseEvent creationTime="2004-03-15 19:45:43.609000000" extensionName="CommonBaseEvent" globalInstanceId="N2D8D53006E311D88000B60C83D33035" loca
-lInstanceId="9.42.117.4810793979458591171597459" msg="PMGR0000E: Call stack:" severity="50" version="1.0.1"><extendedDataElements name="ExtendedMessag
-e" type="string"/><extendedDataElements name="Category" type="string"><values>ERROR</values></extendedDataElements><sourceComponentId application="App
-licationServer" component="WebSphere" componentIdType="ProductName" executionEnvironment="acdevx1acdevx1server1" location="9.42.117.48" locationType="
-IPV4" processId="2588" subComponent="com.ibm.ws.ejbpersistence.dataaccess.DataAccessRequestImpl" threadId="31e3047"/><msgDataElement msgLocale="en- US
-"><msgId>PMGR0000E</msgId><msgIdType>IBM4.4.1</msgIdType></msgDataElement><sit uation categoryNam
+<CommonBaseEvent creationTime="2004-03-15 19:45:43.609000000" extensionName="CommonBaseEvent" globalInstanceId="N2D8D53006E311D88000B60C83D33035" localInstanceId="9.42.117.4810793979458591171597459" msg="PMGR0000E: Call stack:" severity="50" version="1.0.1"><extendedDataElements name="ExtendedMessag
+e" type="string"/><extendedDataElements name="Categ

@@ -1,6 +1,4 @@
 [Navigator] file icons are not updated when file associations are modified.
-I20031203 1.launch Eclipse on a new workspace 2.create a project 3.create a file named 'test1.xml' The new file is displayed with the default (text) f
-ile icon.
-4.associate '*.xml' files to the ant editor in window>preferences>workbench>file associations 5.create a file named 'test2.xml' The new file is displa
-yed with the ant file icon, test1.xml is still displayed with the default file icon.
+I20031203 1.launch Eclipse on a new workspace 2.create a project 3.create a file named 'test1.xml' The new file is displayed with the default (text) file icon.
+4.associate '*.xml' files to the ant editor in window>preferences>workbench>file associations 5.create a file named 'test2.xml' The new file is displayed with the ant file icon, test1.xml is still displayed with the default file icon.
 Closing/re-opening the view solves the problem.

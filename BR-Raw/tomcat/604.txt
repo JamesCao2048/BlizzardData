@@ -2,8 +2,4 @@ NPE in org.eclipse.jdt.internal.compiler.ast.Argument.bind
 Just got this in M6 trying to edit a Java source file.
 I didn't notice anything wrong with the editor other than the error dialog and log message.
 Error Dec 19, 2003 21:06:58.612 Problems occurred when invoking code from plug- in: "org.eclipse.core.runtime".
-java.lang.NullPointerException at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:38) at org.eclipse.jdt.internal.compiler.ast.Abstr
-actMethodDeclaration.bindArguments (AbstractMethodDeclaration.java:86) at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve (Abs
-tractMethodDeclaration.java:357) at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve (TypeDeclaration.java:926) at org.eclipse.jdt.intern
-al.compiler.ast.TypeDeclaration.resolve (TypeDeclaration.java:975) at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve (Compil
-ationUnitDeclaration.java:271) at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve (HierarchyResolver.java:668) at org.e
+java.lang.NullPointerException at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:38) at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments (AbstractMethodDeclaration.java:86) at org.eclipse.jdt.i

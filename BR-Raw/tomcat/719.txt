@@ -1,9 +1,5 @@
 Incremental Compilation Bug
 I encountered this stack trace when using incremental compilation in Eclipse.
 I can't repeatably reproduce the bug.
-Kind Status Priority Description Resource In Folder Location Error Internal compiler error java.lang.NullPointerException at org.aspectj.weaver.Resolv
-edTypeMunger.matches (ResolvedTypeMunger.java:53) at org.aspectj.weaver.ConcreteTypeMunger.matches (ConcreteTypeMunger.java:52) at org.aspectj.ajdt.in
-ternal.compiler.lookup.AjLookupEnvironment.weaveInterTypeDec larations(AjLookupEnvironment.java:291) at org.aspectj.ajdt.internal.compiler.lookup.AjLo
-okupEnvironment.weaveInterTypeDec larations(AjLookupEnvironment.java:236) at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.doPendingWe
-aves (AjLookupEnvironment.java:137) at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindi ngs(AjLookupEnvironment.java:10
-6) at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile (Compiler.java:310) at org.eclipse.jdt.internal.compiler.Compiler
+Kind Status Priority Description Resource In Folder Location Error Internal compiler error java.lang.NullPointerException at org.aspectj.weaver.ResolvedTypeMunger.matches (ResolvedTypeMunger.java:53) at org.aspectj.weaver.ConcreteTypeMunger.matches (ConcreteTypeMunger.java:52) at org.aspectj.ajdt.in
+ternal.compiler.lookup.AjLookupEnvironment.weaveInterTypeDec larations(AjLookupEnvi

@@ -1,14 +1,8 @@
 Global Cursor Position History for the editor
-New Feature: Global Cursor Position History for the editor Should record the cursor positions and allow jumping forward and backward, even between sev
-eral open files/within one open file.
+New Feature: Global Cursor Position History for the editor Should record the cursor positions and allow jumping forward and backward, even between several open files/within one open file.
 More details+features, see below.
 *** I proposed this as a feature for the kdevelop-project (KDE/Linux).
 Perhaps something similar is possible in eclipse, too (port to Java).
 My implementation in C++: stack: i Pos2 | Pos1 v | *---------------------* UP | DOWN | | history 
 <<<<<-------- current 
------------->>>> future LEFT RIGHT NavigateBack(int &line, int &column); // Ctrl-Alt-Left for example NavigateLeave(int &line, int &column); // Ctrl-A
-lt-Up for example NavigateForward(int &line, int &column); // Ctrl-Alt-Right for example NavigatePop(int &line, int &column); // Ctrl-Alt-Down for exa
-mple Special features: 
-- if navigating within a "block" of +/- 7 lines no additional history entry is inserted 
-- if navigating back and then changing the cursor position, the "future" isn't deleted 
-- NavigateLe
+------------>>>>

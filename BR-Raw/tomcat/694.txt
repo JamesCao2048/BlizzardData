@@ -1,7 +1,5 @@
 3.0M5 - java editing performance killed by unnecessary "Java AST creation" threads
-Monitoring the "Progress" tab, I'm noticing 3.0M5 takes a ton of CPU, and it looks like the "Java AST creation" threads that happen aren't just when t
-he java source changes, but even when the cursor just moves.
+Monitoring the "Progress" tab, I'm noticing 3.0M5 takes a ton of CPU, and it looks like the "Java AST creation" threads that happen aren't just when the java source changes, but even when the cursor just moves.
 Just clicking around to select things can have up to 3 or 4 of those threads going (all but one goes to "cancelled" state fine).
 It's making the editing basically unusable on a decent (p3/700, 512MB) system, especially when a number of cut-and-paste operations are needed.
-It "feels" like 3.0M4 was much more responsive on the same machine.
-What things can I do or provide to help debug this if necessary?
+It "feels" like 

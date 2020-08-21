@@ -1,12 +1,6 @@
 [MPE] [EditorMgmt] MultiPageEditorPart should be supported better by editor manager
 Eclipse Forms add support for multi-page editors where some pages are forms, but one or more pages are source editors.
-Here is the scenario that will represent a significant problem for PDE: Imagine a multi-page editor based on MultiPageEditorPart that has more than on
-e source editor as tabs.
+Here is the scenario that will represent a significant problem for PDE: Imagine a multi-page editor based on MultiPageEditorPart that has more than one source editor as tabs.
 Each source editor opens a different file in the project.
 Example: new PDE manifest editor will open plugin.xml, META- INF/MANIFEST.MF and build.properties in their corresponding tabs all the time.
-The same editor is registered for all three files 
-- the only difference is that different pages are initially selected for each file.
-Imagine that you opened plugin.xml.
-Since there are source editors in MultiPageEditorPart, some have editor input for files opened by the editor itself (not by the user).
-Now imagine that while the editor is still open, you select 'build.properties' and open it as well.
-Today: a new instance of the multi-page editor is opened Desired behaviour: editor manager should det
+The same

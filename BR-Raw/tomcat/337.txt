@@ -1,4 +1,3 @@
 Allow Bitwise-Or for listener type on widgets
 Allow the addListener method on widgets to accept a bitwise or to allow a single handler to be easily specified.
-For example: If I have a handler class that implements several listeners Then I could add this in a single call like: widget.addListener( SWT.KeyPress
-ed | SWT.MouseUp | SWT.MouseMove, listener ); instead of: widget.addKeyListener( listener ); widget.addMouseListener( listener ); etc.
+For example: If I have a handler class that implements several listeners Then I could add this in a single call like: widget.addListener( SWT.KeyPressed | SWT.MouseUp | SWT.MouseMove, listener ); instead of: widget.addKeyListener( listener ); widget.addMouseListener( listener ); etc.

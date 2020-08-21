@@ -1,9 +1,3 @@
 [DND] NPE while PasteAction.updateSelection
-Version: 3.0.0 Build id: 200402101200 Win 98SE, Sun JDK 1.4.2_03 !ENTRY org.eclipse.core.runtime 4 2 Feb 22, 2004 17:02:33.580 !MESSAGE Problems occur
-red when invoking code from plug-in: "org.eclipse.core.runtime".
-!STACK 0 org.eclipse.swt.SWTException: Invalid thread access at org.eclipse.swt.SWT.error(SWT.java:2608) at org.eclipse.swt.SWT.error(SWT.java:2538) a
-t org.eclipse.swt.dnd.DND.error(DND.java:230) at org.eclipse.swt.dnd.DND.error(DND.java:181) at org.eclipse.swt.dnd.Clipboard.checkWidget(Clipboard.ja
-va:129) at org.eclipse.swt.dnd.Clipboard.getAvailableTypes(Clipboard.java:444) at org.eclipse.ui.views.navigator.PasteAction.updateSelection(PasteActi
-on.java:220) at org.eclipse.ui.actions.BaseSelectionListenerAction.selectionChanged(BaseSelectionListenerAction.java:102) at org.eclipse.ui.views.navi
-gator.RefactorActionGroup.updateActionBars(RefactorActionGroup.java:139) at org.eclipse.ui.views.navigator.MainActionGroup.handleResourceChanged(MainA
-ctionGroup.java:109) at org.e
+Version: 3.0.0 Build id: 200402101200 Win 98SE, Sun JDK 1.4.2_03 !ENTRY org.eclipse.core.runtime 4 2 Feb 22, 2004 17:02:33.580 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.runtime".
+!STACK 0 org.eclipse.swt.SWTException: Invalid thread access at org.eclipse.swt.SWT.error(SWT.java:2608) at org.eclipse.swt.SWT.error(SWT.java:2538) at org.eclipse.swt.dnd.DND.error(DND.java:230) at org.eclipse.swt.dnd.DND.error(DND.java:181) at org.eclipse.swt.dnd.Clipboard.checkWidg

@@ -2,8 +2,4 @@ NPE when updating a plugin that removes a hard coded manifest
 The following NPE happened when a plugin was replaced with a new version that removed the hardcoded bundle manifest.
 I assume this is causing the manifest timestamp checker to fail because it does not find the original manifest that it is expecting.
 !SESSION 
----------------------------------------------------------------------- !ENTRY org.eclipse.core.launcher 4 0 Feb 13, 2004 11:09:42.141 !MESSAGE Excepti
-on launching the Eclipse Platform: !STACK java.lang.NullPointerException at org.eclipse.core.runtime.adaptor.EclipseBundleData.checkManifestTimeStamp 
-(EclipseBundleData.java:96) at org.eclipse.core.runtime.adaptor.EclipseBundleData.initializeExistingBundle (EclipseBundleData.java:83) at org.eclipse.
-core.runtime.adaptor.EclipseAdaptor.getInstalledBundles (EclipseAdaptor.java:286) at org.eclipse.osgi.framework.internal.core.Framework.initialize (Fr
-amework.java:173) at org.eclipse.osgi.framework.internal.core.Framework.<init> (Framework.java:97) at org.eclipse.osgi.framework.interna
+---------------------------------------------------------------------- !ENTRY org.eclipse.core.launcher 4 0 Feb 13, 2004 11:09:42.141 !MESSAGE Exception launching the Eclipse Platform: !STACK java.lang.NullPointerException at org.eclipse.co

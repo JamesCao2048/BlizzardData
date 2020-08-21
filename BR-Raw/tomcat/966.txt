@@ -2,9 +2,5 @@ NPE in DeltaProcessor
 3.0 I20030916 Was replacing a project with the contents from the server.
 During the change notification the following NPE occured in JDT Core.
 I don't have background build enabled.
-Thread [ModalContext] (Suspended (exception NullPointerException)) DeltaProcessor.traverseDelta(IResourceDelta, int, DeltaProcessor$RootInfo, DeltaPro
-cessor$OutputsInfo) line: 1963 DeltaProcessor.traverseDelta(IResourceDelta, int, DeltaProcessor$RootInfo, DeltaProcessor$OutputsInfo) line: 1954 Delta
-Processor.traverseDelta(IResourceDelta, int, DeltaProcessor$RootInfo, DeltaProcessor$OutputsInfo) line: 1954 DeltaProcessor.traverseDelta(IResourceDel
-ta, int, DeltaProcessor$RootInfo, DeltaProcessor$OutputsInfo) line: 1954 DeltaProcessor.traverseDelta(IResourceDelta, int, DeltaProcessor$RootInfo, De
-ltaProcessor$OutputsInfo) line: 1954 DeltaProcessor.traverseDelta(IResourceDelta, int, DeltaProcessor$RootInfo, DeltaProcessor$OutputsInfo) line: 1954
- DeltaProcessor.traverseDelta(IResourceDelta, int, DeltaProcess
+Thread [ModalContext] (Suspended (exception NullPointerException)) DeltaProcessor.traverseDelta(IResourceDelta, int, DeltaProcessor$RootInfo, DeltaProcessor$OutputsInfo) line: 1963 DeltaProcessor.traverseDelta(IResourceDelta, int, DeltaProcessor$RootInfo, DeltaProcessor$OutputsInfo) line: 1954 Delta
+Processor.travers

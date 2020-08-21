@@ -1,15 +1,7 @@
 [typing] Tabs are messed up
 When I type code that has string literals in it, and press enter to move the string literal to the next line, the tab logic seems strange.
 e.g.
-String twoLines = "System Contains Many Defects,Systemet innehåller många feln"+"Stories Are Too Complicated,Stories är för komplicerade"; Move the cu
-rsor after + and press enter.
+String twoLines = "System Contains Many Defects,Systemet innehåller många feln"+"Stories Are Too Complicated,Stories är för komplicerade"; Move the cursor after + and press enter.
 It somehow moves the new line to column 0, while I'd expect it to align with the first line.
 If you try this with a single string, the bug will still be seen.
-Interestingly, when I am within a method's parantheses, the behavior is different.
-e.g.
-assertEquals( "converted data", "Systemet+innehåller+många+fel|Stories+är+för+komplicerade",convertedData .toString() ); Note, the two lines within ha
-ve a single tab each.
-Now position the cursor on convertedData and press enter 
-- while I'd expect it to line up with the previous line (two tabs), the IDE adds three tabs.
-Now here's the one which really annoys me: assertEquals( There is one tab before assertEquals.
-Press ent
+Interestingly, wh

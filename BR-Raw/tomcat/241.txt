@@ -1,9 +1,5 @@
 N200404040010 fails to launch, cannot find org.eclipse.core.runtime manifest
 Here is the .log !SESSION Mar 04, 2004 10:34:58.191 
 --------------------------------------------- java.version=1.4.2_03 java.vendor=Sun Microsystems Inc.
-BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US !ENTRY org.eclipse.core.runtime 4 13 Mar 04, 2004 10:34:58.192 !MESSAGE Unable to locate ap
-plication extension: org.eclipse.ui.ide.workbench !STACK 0 java.lang.RuntimeException: Unable to locate application extension: org.eclipse.ui.ide.work
-bench at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:236) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(
-EclipseStarter.java:173) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106) at sun.reflect.NativeMethodAccessorImpl.invok
-e0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(
-DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) 
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US !ENTRY org.eclipse.core.runtime 4 13 Mar 04, 2004 10:34:58.192 !MESSAGE Unable to locate application extension: org.eclipse.ui.ide.workbench !STACK 0 java.lang.RuntimeException: Unable to locate application extension: org.eclipse.ui.ide.work
+bench at org.eclipse.core.internal.runtime.P

@@ -1,10 +1,9 @@
 [Commands] Error in command schema context definition
-The explanation of the "context" definition within the org.eclipse.ui.commands extension point schema includes both a "parent" and "parentId" attribut
-e.
+The explanation of the "context" definition within the org.eclipse.ui.commands extension point schema includes both a "parent" and "parentId" attribute.
 Since the descriptions are identical, it looks like one of them is outdated?
 # parent 
 - The unique id of the parent context.
 If this context has a parent, it will borrow all key bindings from its parent, in addition to the key bindings defined in its own context.
 # parentId 
 - The unique id of the parent context.
-If this context has a parent, it will borrow all key bindings from its parent, in addition to the key bindings defined in its own context.
+If this context has a parent, i

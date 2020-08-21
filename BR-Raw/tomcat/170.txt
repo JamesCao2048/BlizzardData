@@ -1,4 +1,3 @@
 Types and elements are not visible when an include is added
-If you add an include and specify a valid schemaLocation, the included types and elements aren't shown (in the semantics view of the Sample Schema edi
-tor) It looks like the resolved schema is null.
+If you add an include and specify a valid schemaLocation, the included types and elements aren't shown (in the semantics view of the Sample Schema editor) It looks like the resolved schema is null.
 Reproducible on 1.1.1 and 1.1.0.

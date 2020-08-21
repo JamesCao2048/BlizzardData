@@ -1,9 +1,4 @@
 Unable to load class (exception in Bundle.loadBundleActivator)
-I am trying to convert my 2.1.2 plugins to 3.0M6.I get the following error for most of my plugins: Error Jan 23, 2004 05:01:22.535 Plug-in com.xxx was
- unable to load class com.xxx.MyPlugin.
-java.lang.InstantiationException: com.windriver.ide.ui.UIPlugin at java.lang.Class.newInstance0(Class.java:293) at java.lang.Class.newInstance(Class.j
-ava:261) at org.eclipse.osgi.framework.internal.core.Bundle.loadBundleActivator (Bundle.java:178) at org.eclipse.osgi.framework.internal.core.BundleCo
-ntext.start (BundleContext.java:1105) at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker (BundleHost.java:458) at org.eclipse.osgi.fra
-mework.internal.core.Bundle.start(Bundle.java:328) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensio n(Configuration
-Element.java:133) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensio n(ConfigurationElement.java:125) at org.eclipse.
-core.internal.registry.ConfigurationElement.createExec
+I am trying to convert my 2.1.2 plugins to 3.0M6.I get the following error for most of my plugins: Error Jan 23, 2004 05:01:22.535 Plug-in com.xxx was unable to load class com.xxx.MyPlugin.
+java.lang.InstantiationException: com.windriver.ide.ui.UIPlugin at java.lang.Class.newInstance0(Class.java:293) at java.lang.Class.newInstance(Class.java:261) at org.eclipse.osgi.framework.internal.core.Bundle.loadBundleActivator (Bundle.java:178) at org.eclipse.osgi.framework.internal.core.BundleCo
+ntext.sta

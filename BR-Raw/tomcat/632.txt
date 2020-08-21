@@ -5,5 +5,4 @@ I found the public interface IJavaColorConstants and IColorManager.
 But I could not find an API to get access to an implementation of IColorManager.
 The only thing I could find was JavaPlugin.getDefault().getJavaTextTools ().getColorManager().
 But JavaPlugin is an internal class.
-Is there some API I did not see to accomplish this?
-If not, could one be added?
+Is there some API I did not see to accomplis

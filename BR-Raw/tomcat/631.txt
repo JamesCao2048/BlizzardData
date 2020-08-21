@@ -1,9 +1,4 @@
 HyadesResourceExtensions getInstance() will not run in standalone mode
 When HyadesResourceExtensions.getInstance() is executed in standalone mode, an error stating that the Plugin class is not found is returned.
 For standalone mode, the Plugin class should not be referenced.
-java.lang.NoClassDefFoundError: org/eclipse/core/runtime/Plugin at org.eclipse.hyades.models.hierarchy.impl.TRCAgentImpl.getDefaultEvents (TRCAgentImp
-l.java:456) at org.eclipse.hyades.loaders.cbe.XMLCommonBaseEventLoader.addYourselfInContext (XMLCommonBaseEventLoader.java:253) at org.eclipse.hyades.
-loaders.util.XMLLoader.endElement (XMLLoader.java:270) at org.eclipse.hyades.loaders.util.SAXFragmentHandler.endElement (SAXFragmentHandler.java:84) a
-t org.apache.xerces.parsers.AbstractSAXParser.endElement (AbstractSAXParser.java:569) at org.apache.xerces.impl.XMLNamespaceBinder.endElement (XMLName
-spaceBinder.java:646) at org.apache.xerces.impl.dtd.XMLDTDValidator.handleEndElement (XMLDTDValidator.java:3003) at org.apache.xerces.impl.dtd.XMLDTDV
-alidator.endElement (XMLDTDValidator.jav
+java.lang.NoClassDefFoundError: org/eclipse/core/runtime/Plugin at org.eclipse.hyades.models.hierarchy.impl.TRCAgentImpl.getDefaultEvents (TRCAgentImpl.java:456) at org.eclipse.hyades.loaders.cbe.XMLCommonBaseEventLoader.addYourselfInContext (XMLCommonBaseEventLoader.java:253) at org.eclipse.hy

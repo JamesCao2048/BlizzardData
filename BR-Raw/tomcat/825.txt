@@ -1,8 +1,3 @@
 [JUnit] Double click in stack trace doesn't work with M5
-Using M5, as soon as I click in a stack trace to open the related type, I get: java.lang.NoClassDefFoundError: org/eclipse/jface/text/BadLocationExcep
-tion at org.eclipse.jdt.internal.junit.ui.FailureTraceView.createOpenEditorAction(FailureTraceView.java:119) at org.eclipse.jdt.internal.junit.ui.Fail
-ureTraceView.access$2(FailureTraceView.java:103) at org.eclipse.jdt.internal.junit.ui.FailureTraceView$1.handleOpen(FailureTraceView.java:62) at org.e
-clipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:209) at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:204) at org.ecli
-pse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:233) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.sw
-t.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2187) at org.eclipse.swt.widgets.Display
-.readAndDispatch(Display.java:1877) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbenc
+Using M5, as soon as I click in a stack trace to open the related type, I get: java.lang.NoClassDefFoundError: org/eclipse/jface/text/BadLocationException at org.eclipse.jdt.internal.junit.ui.FailureTraceView.createOpenEditorAction(FailureTraceView.java:119) at org.eclipse.jdt.internal.junit.ui.Fail
+ureTraceView.access$2(FailureTraceView.java:103) at org.eclipse.jdt.internal.junit.ui.FailureTraceView$1.handleOpen(FailureTraceView.java:62) at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(Open

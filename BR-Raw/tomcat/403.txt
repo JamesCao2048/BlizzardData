@@ -1,9 +1,4 @@
 Adding breakpoint in unsaved java file leads to NotPresentException
-Adding another class to an existing java file and creating a breakpoint somewhere within the new class leads to the following exception: !ENTRY org.ec
-lipse.jdt.core 4 969 Aug 18, 2003 16:33:51.490 !MESSAGE SingleSelectionModel [in SList.java [in com.hvb.rco.tacoma.client.view.core [in src [in TACOMA
+Adding another class to an existing java file and creating a breakpoint somewhere within the new class leads to the following exception: !ENTRY org.eclipse.jdt.core 4 969 Aug 18, 2003 16:33:51.490 !MESSAGE SingleSelectionModel [in SList.java [in com.hvb.rco.tacoma.client.view.core [in src [in TACOMA
 ]]]] does not exist.
-!ENTRY org.eclipse.jdt.debug.ui 4 150 Aug 18, 2003 16:34:04.38 !MESSAGE Internal Error !STACK 1 Java Model Exception: Java Model Status [SingleSelecti
-onModel [in SList.java [in com.hvb.rco.tacoma.client.view.core [in src [in TACOMA]]]] does not exist.] at org.eclipse.jdt.internal.core.JavaElement.ne
-wNotPresentException (JavaElement.java:481) at org.eclipse.jdt.internal.core.SourceRefElement.getUnderlyingResource (SourceRefElement.java:128) at org
-.eclipse.jdt.internal.debug.ui.actions.ManageBreakpointRulerAction.getBreakpo intResource(ManageBreakpointRulerAction.java:315) at org.eclipse.jdt.int
-ernal.debug.ui.actions.ManageBreakpointRulerAction.addMarker (ManageBreak
+!ENTRY org.eclipse.jdt.debug.ui 4 150 Aug 18, 2003 16:34:04.38 !MESSAGE Internal Error !STACK 1 Java Model Exception: Java Model Status [SingleSelectionModel [in SList.java [in c

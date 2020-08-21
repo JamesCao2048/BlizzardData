@@ -1,8 +1,4 @@
 [Actions] NPE when executing Project>Clear...
 I'm not fully sure about the context when it happend, but I think I didn't have any project selected.
-!ENTRY org.eclipse.ui 4 4 Mar 23, 2004 11:36:43.935 !MESSAGE Unhandled event loop exception Unhandled event loop exception Reason: !ENTRY org.eclipse.
-ui 4 0 Mar 23, 2004 11:36:43.935 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.ui.internal.ide.action
-s.BuildSetAction.extractProjects (Bu ildSetAction.java:47) at org.eclipse.ui.internal.ide.actions.BuildCleanAction.run (BuildCleanAc tion.java:39) at 
-org.eclipse.jface.action.Action.runWithEvent(Action.java:881) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContribu
-tionItem.java:550) at org.eclipse.jface.action.ActionContributionItem.access$2 (ActionContri butionItem.java:502) at org.eclipse.jface.action.ActionCo
-ntributionItem$5.handleEvent (ActionC ontributionItem.java:435) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.ecli
+!ENTRY org.eclipse.ui 4 4 Mar 23, 2004 11:36:43.935 !MESSAGE Unhandled event loop exception Unhandled event loop exception Reason: !ENTRY org.eclipse.ui 4 0 Mar 23, 2004 11:36:43.935 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.ui.internal.ide.action
+s.BuildSetAction.extractProjects (Bu ildSetAction.java:47) at org.eclipse.ui.internal.ide.actions

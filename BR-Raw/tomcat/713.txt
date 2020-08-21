@@ -1,8 +1,3 @@
 NPE launching eclipse in keybinding code
-Caused by: java.lang.NullPointerException at org.eclipse.ui.keys.KeyStroke.hashCode(KeyStroke.java:301) at java.util.HashMap.hash(Unknown Source) at j
-ava.util.HashMap.get(Unknown Source) at org.eclipse.ui.internal.commands.KeySequenceBindingNode.add (KeySequenceBindingNode.java:175) at org.eclipse.u
-i.internal.commands.KeySequenceBindingMachine.validateTree (KeySequenceBindingMachine.java:224) at org.eclipse.ui.internal.commands.KeySequenceBinding
-Machine.validateSolution (KeySequenceBindingMachine.java:203) at org.eclipse.ui.internal.commands.KeySequenceBindingMachine.getKeySequenceBindin gsByC
-ommandId(KeySequenceBindingMachine.java:73) at org.eclipse.ui.internal.commands.CommandManager.calculateKeySequenceBindings (CommandManager.java:274) 
-at org.eclipse.ui.internal.commands.CommandManager.readRegistry (CommandManager.java:701) at org.eclipse.ui.internal.commands.CommandManager.<init> (C
-ommandManager.java:233) at org.eclipse.ui.internal.commands.CommandManager.<init> (CommandMana
+Caused by: java.lang.NullPointerException at org.eclipse.ui.keys.KeyStroke.hashCode(KeyStroke.java:301) at java.util.HashMap.hash(Unknown Source) at java.util.HashMap.get(Unknown Source) at org.eclipse.ui.internal.commands.KeySequenceBindingNode.add (KeySequenceBindingNode.java:175) at org.eclipse.u
+i.internal.commands.KeySequenceBindingMachine.validateTree (KeySequenceBindingMachine.java:224) at org.eclipse.ui.internal.commands.KeySequenceBindingMachine.validateSolution (KeySequenceBindingMachi

@@ -6,8 +6,4 @@ The preference dialog wouldn't even come up.
 So I removed it.
 Preference Dialog would come up, but was empty.
 I reinstalled eclipse-cs, and I got the same thing.
-I installed both of them, and the Preference Dialog returns, but it refuses to bring up preferences for those plugins.
-Here is the stack trace puke that happens when the preference dialog is blank 
---- java.lang.NullPointerException at org.eclipse.ui.internal.registry.RegistryReader$1.compare(RegistryReader.java:103) at java.util.Arrays.mergeSort
-(Unknown Source) at java.util.Arrays.mergeSort(Unknown Source) at java.util.Arrays.mergeSort(Unknown Source) at java.util.Arrays.mergeSort(Unknown Sou
-rce) at
+I insta

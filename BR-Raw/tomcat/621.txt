@@ -5,8 +5,4 @@ Error log follows.
 Note: This is an intermittent problem but it occurs enough to be a concern (approx.
 1 shutdown in 50).
 An unexpected exception has been detected in native code outside the VM.
-Unexpected Signal : EXCEPTION_ACCESS_VIOLATION occurred at PC=0x77F83905 Function=RtlSizeHeap+0x5EF Library=C:WINDOWSSystem32ntdll.dll Current Java th
-read: at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method) at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:1298) at org.eclip
-se.swt.widgets.Scrollable.callWindowProc(Scrollable.java:77) at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:394) at org.eclipse.swt.widget
-s.Control.windowProc(Control.java:2845) at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1229) at org.eclipse.swt.widgets.Display.wi
-ndowProc(Display.java:2361) at org.eclipse.swt.internal.win32.OS.D
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION occurred at PC=0x77F83905 Function=RtlSizeHeap+0x5EF Library=C:WINDOWSSystem32ntdll.dll Current Java thread: at org.eclipse

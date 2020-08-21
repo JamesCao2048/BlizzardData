@@ -7,7 +7,4 @@ BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US Command-line argume
 -dev bin 
 -data c:0317eclipseworkspace 
 -vmargs 
--Xmx999999999 !ENTRY org.eclipse.core.runtime 4 2 Mar 17, 2004 17:51:19.529 !MESSAGE An internal error occurred during: "Updating workspace".
-!STACK 0 java.lang.ArrayIndexOutOfBoundsException at java.lang.System.arraycopy(Native Method) at org.eclipse.core.internal.jobs.DeadlockDetector.resi
-zeGraph(DeadlockDetector.java:595) at org.eclipse.core.internal.jobs.DeadlockDetector.setToWait(DeadlockDetector.java:632) at org.eclipse.core.interna
-l.jobs.DeadlockDetector.lockWaitStart(DeadlockDetector.java:375) at org.
+-Xmx999999999 !E

@@ -2,8 +2,4 @@ Index out of bounds exception exiting workbench throwing away changes
 M2 (20030718) in a self hosted environment with platform-ui loaded from HEAD at 20030722-9:13 AM EST.
 When I exited my self hosted workbench with an editor that had changes I got the following exception.
 Please note that I did not get this every time so there is likely some other step involved.
-STEPS 1) Self host Eclipse 2) Edit a file 3) Exit self hosted workbench and choose not to save file 4) Exception java.lang.IndexOutOfBoundsException: 
-Index: 1, Size: 0 at java.util.ArrayList.RangeCheck(ArrayList.java(Inlined Compiled Code)) at java.util.ArrayList.get(ArrayList.java(Compiled Code)) a
-t org.eclipse.jface.text.source.VisualAnnotationModel.modelChanged (VisualAnnotationModel.java:131) at org.eclipse.jface.text.source.AnnotationModel.f
-ireModelChanged (AnnotationModel.java:220) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$Compilat ionUnitAnnotationModel.f
-ireModelChanged (CompilationUnitDocumentProvider.java:551) at org.eclipse.jdt.internal.ui.javaeditor
+STEPS 1) Self host Eclipse 2) Edit a file 3) Exit self hosted workbench and choose not to save file 4) Exception java.lang.IndexOutOfBoundsException: Index: 1, Size: 0 at java.util.ArrayList.RangeCheck(Ar

@@ -1,11 +1,6 @@
 Assertion failed in quick diff
 I20030910 
 - first got an IllegalArgumentException in SWT.
-java.lang.IllegalArgumentException: Argument not valid at org.eclipse.swt.SWT.error(SWT.java:2355) at org.eclipse.swt.SWT.error(SWT.java:2299) at org.
-eclipse.jface.text.DocumentAdapter.getLine (DocumentAdapter.java:122) at org.eclipse.swt.custom.StyledText$ContentWidthCache.calculate (StyledText.jav
+java.lang.IllegalArgumentException: Argument not valid at org.eclipse.swt.SWT.error(SWT.java:2355) at org.eclipse.swt.SWT.error(SWT.java:2299) at org.eclipse.jface.text.DocumentAdapter.getLine (DocumentAdapter.java:122) at org.eclipse.swt.custom.StyledText$ContentWidthCache.calculate (StyledText.jav
 a:1220) at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:6187) 
-- after closing the editor and trying to reopen I now get an assertion failed.
-org.eclipse.jface.util.Assert$AssertionFailedException: Assertion failed: Invariant violated (lines: 186 size: 185) at org.eclipse.jface.util.Assert.i
-sTrue(Assert.java:168) at org.eclipse.ui.internal.texteditor.quickdiff.DocumentLineDiffer.invariant (DocumentLineDiffer.java:984) at org.eclipse.ui.in
-ternal.texteditor.quickdiff.DocumentLineDiffer.connect (DocumentLineDiffer.java:1007) at org.eclipse.jface.text.source.AnnotationModel.connect (Annota
-tionModel.java:155) at org.eclip
+- after closing the editor and trying to reopen I now get an asse

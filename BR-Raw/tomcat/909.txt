@@ -1,5 +1,4 @@
 Code Complete finds local variables
 Searches for the declarations of local variables return the function name they are defined in as the search result.
-Code Complete should not include local variables for 2 reasons: 1) search will find locals not visible at the point the user hits ctrl-space and 2) th
-e function name will appear in the code complete list and it will not usually start with the same prefix.
+Code Complete should not include local variables for 2 reasons: 1) search will find locals not visible at the point the user hits ctrl-space and 2) the function name will appear in the code complete list and it will not usually start with the same prefix.
 Search needs to provide support for excluding local variables from the search and Code complete needs to use that support.

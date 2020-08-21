@@ -2,10 +2,5 @@
 1.Open preference 
 - java 
 - code templates 
-- constructor comments 2.Edit the comment template: Press CTRL + SPACE, choose $date 3.press CTRL + Z (undo) viewer.addTextListener(new ITextListener(
-) { public void textChanged(TextEvent event) { doSourceChanged(event.getDocumentEvent().getDocument()); 
-<- NPE here } }); java.lang.NullPointerException at org.eclipse.jdt.internal.ui.preferences.EditTemplateDialog$3.textChanged(EditTemplateDialog.java:4
-64) at org.eclipse.jface.text.TextViewer.updateTextListeners(TextViewer.java:2146) at org.eclipse.jface.text.TextViewer.fireRedrawChanged(TextViewer.j
-ava:4055) at org.eclipse.jface.text.TextViewer.enabledRedrawing(TextViewer.java:4109) at org.eclipse.jface.text.TextViewer.setRedraw(TextViewer.java:4
-161) at org.eclipse.jface.text.DefaultUndoManager$CompoundTextCommand.undo(DefaultUndoManager.java:235) at org.eclipse.jface.text.DefaultUndoManager.i
-nternalUndo(DefaultUndoManager.java:529) at org.eclipse.jface.text.DefaultUndoManager.undo(Defa
+- constructor comments 2.Edit the comment template: Press CTRL + SPACE, choose $date 3.press CTRL + Z (undo) viewer.addTextListener(new ITextListener() { public void textChanged(TextEvent event) { doSourceChanged(event.getDocumentEvent().getDocument()); 
+<- NPE here } }); java.lang.NullPointerException at org.eclipse.jdt.internal.ui.preferences.EditTemplateDialog$3.textChanged(EditTemplateDialog.java:464) at org.eclipse.jface.text.TextViewer.updateTex

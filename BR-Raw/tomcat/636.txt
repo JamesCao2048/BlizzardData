@@ -2,9 +2,5 @@ java.lang.NullPointerException on starting eclipse (KeyStroke error)
 Here is the .log file of eclipse newly installed.
 The 2.1.2 is working fine, 3.0M6 is hanging and I20040106 is hanging too ...
 !SESSION 
----------------------------------------------------------------------- !ENTRY org.eclipse.core.launcher 4 0 Jan 06, 2004 09:42:37.638 !MESSAGE Excepti
-on launching the Eclipse Platform: !STACK java.lang.NullPointerException at org.eclipse.ui.keys.KeyStroke.hashCode(KeyStroke.java:308) at java.util.Ha
-shMap.hash(HashMap.java:250) at java.util.HashMap.get(HashMap.java:301) at org.eclipse.ui.internal.commands.KeySequenceBindingNode.add(KeySequenceBind
-ingNode.java:175) at org.eclipse.ui.internal.commands.KeySequenceBindingMachine.validateTree(KeySequenceBindingMachine.java:224) at org.eclipse.ui.int
-ernal.commands.KeySequenceBindingMachine.validateSolution(KeySequenceBindingMachine.java:203) at org.eclipse.ui.internal.commands.KeySequenceBindingMa
-chine.getKeySequenceBindingsByCommandId(KeySequenceBindingMachine.java:73) at org.eclipse.ui.internal.comman
+---------------------------------------------------------------------- !ENTRY org.eclipse.core.launcher 4 0 Jan 06, 2004 09:42:37.638 !MESSAGE Exception launching the Eclipse Platform: !STACK java.lang.NullPointerException at org.eclipse.ui.keys.KeyStroke.hashCode(KeyStroke.java:308) at java.util.Ha
+shMap.hash(HashMap.java:250) at java.util.HashMap.get(HashMap.

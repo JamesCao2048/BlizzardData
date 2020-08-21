@@ -1,9 +1,6 @@
 Support for Breakpoint groups
 I saw few enh.
-requests concerning the breakpoints view, and I thing that the best would be to have an arborescent view, permitting to group them logically and enabl
-e only some groups.
+requests concerning the breakpoints view, and I thing that the best would be to have an arborescent view, permitting to group them logically and enable only some groups.
 Groups would have to be 3-state for the view to be really efficient, internal selection should be kept when the parent group is enabled/disabled.
 The view could provide a global toggle action to enable/enable all the breakpoints, without needing to put them under a top level root node.
-By the way, when a breakpoint is disabled (maybe because its parent group is), its font should be grayed (more user friendly).
-Tell me if you need nore info on that, but it is something I would really be happy with ! 
---Steve
+By the way, when a breakpoin

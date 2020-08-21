@@ -3,10 +3,4 @@ M7 Brian So reports in bug 52405 : I am using 3.0M7 build on Solaris 8 to perfor
 I created 2 new projects.
 When I right click on the projects in the Navigation view, the eclipse crashes.
 The following is the hs_err log: An unexpected exception has been detected in native code outside the VM.
-Unexpected Signal : 11 occurred at PC=0xF1634FC0 Function=XFilterEvent+0x24 Library=/usr/openwin/lib/libX11.so.4 Current Java thread: at org.eclipse.s
-wt.internal.motif.OS.XtDispatchEvent(Native Method) 
-- locked 
-<0xf5c0b3a8> (a java.lang.Class) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2155) at org.eclipse.ui.internal.Workbench.runEventLo
-op(Workbench.java:1550) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1526) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench (Wo
-rkbench.java:265) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run (IDEApplic
-ation.java:47) at o
+Unexpected Signal : 11 occurred at PC=0xF1634FC0 Function=XFilterEvent+0x24 Library=/usr/openwin/lib/libX11.so.4 Current Java thread: at org.eclipse.swt.internal.motif.OS.XtDispatchEvent

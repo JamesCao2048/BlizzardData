@@ -1,9 +1,5 @@
 BundleException thrown opening Synchronize view
 I got the following stack trace in my log when trying to open the synch view.
 It appears to work fine despite the error, however....
-org.osgi.framework.BundleException: The BundleActivator is invalid at org.eclipse.osgi.framework.internal.core.Bundle.loadBundleActivator(B undle.java
-:170) at org.eclipse.osgi.framework.internal.core.BundleContext.start(BundleCo ntext.java:967) at org.eclipse.osgi.framework.internal.core.BundleHost.
-startWorker(Bundl eHost.java:404) at org.eclipse.osgi.framework.internal.core.Bundle.start(Bundle.java:304 ) at org.eclipse.core.runtime.adaptor.Eclip
-seClassLoader.findLocalClass(Ec lipseClassLoader.java:89) at org.eclipse.osgi.framework.internal.core.BundleLoader.findLocalClass( BundleLoader.java:3
-15) at org.eclipse.osgi.framework.internal.core.BundleLoader.requireClass(Bu ndleLoader.java:280) at org.eclipse.osgi.framework.internal.core.BundleLo
-ader.findRequiredCla ss(BundleLoader.java:855) at org.eclipse.osgi.framework.internal.core.BundleLoader.findClas
+org.osgi.framework.BundleException: The BundleActivator is invalid at org.eclipse.osgi.framework.internal.core.Bundle.loadBundleActivator(B undle.java:170) at org.eclipse.osgi.framework.internal.core.BundleContext.start(BundleCo ntext.java:967) at org.eclipse.osgi.framework.internal.core.BundleHost.
+startWorker(Bundl eHost.java:404) at org.eclipse.osgi.framework.in

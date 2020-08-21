@@ -1,11 +1,4 @@
 Target request failed: Thread ID 3 not known dialog box occurs when first breakpoint hit
-After starting a CDT launch that performs an "attach to process" and resuming it, the first time a breakpoint is hit, I receive anywhere from 3 to 8 d
-ialogs all stating "Error: An error has occurred.
-See error log for more details." Finally, the first dialog issued (the one at the bottom of the stack of dialogs) states, "Target request failed: Thre
-ad ID 3 not known.
-Reason: Target request failed: Thread ID 3 not known." I can see similar messages from the gdb trace in the Eclipse Console (included at the bottom of
- this message).
-This seems to be related to the fact that there is a thread that is present when the attach first occurs that goes away before the breakpoint is hit.
-Note that on subsequent launches in the same Eclipse session, this does NOT occur.
-[1,076,614,222,936] (gdb) [1,076,614,223,116] 20-thread-select 3 [1,076,614,223,126] &"Thread ID 3 not known.n" [1,076,614,223,126] 20^error,msg="Thre
-ad ID 3 not known." [1,076,614,223,126] (gdb) [1,076,614,223,126] 21-thread-se
+After starting a CDT launch that performs an "attach to process" and resuming it, the first time a breakpoint is hit, I receive anywhere from 3 to 8 dialogs all stating "Error: An error has occurred.
+See error log for more details." Finally, the first dialog issued (the one at the bottom of the stack of dialogs) states, "Target request failed: Thread ID 3 not known.
+Reason: Target request failed: Thread ID 3 not known." I can see similar messages from the gdb trace in the Eclipse Console (includ

@@ -9,11 +9,4 @@ BootLoader constants: OS=macosx, ARCH=ppc, WS=carbon, NL=en_US Command-line argu
 -keyring /Users/weinand/.eclipse_keyring 
 -showlocation 
 -data workspace 
--vm / Eclipse/SDKs/eclipse/Eclipse.app/Contents/MacOS/java_swt 
--vmargs 
--Xms30M 
--Xmx150M 
--cp / Eclipse/SDKs/eclipse/startup.jar org.eclipse.core.launcher.Main !ENTRY org.eclipse.core.runtime 4 2 Mar 09, 2004 23:57:35.60 !MESSAGE Problems o
-ccurred when invoking code from plug-in: "org.eclipse.core.runtime".
-!STACK 0 java.lang.NullPointerException at org.eclipse.core.internal.runtime.DataArea.getStateLocation(DataArea.java:85) at org.eclipse.core.internal.
-runtime.InternalPlatform.getStateLocation(Inter
+-vm / Ecli

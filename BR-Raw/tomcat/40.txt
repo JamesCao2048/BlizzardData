@@ -1,8 +1,5 @@
 getCharset should return parent's default charset when file does not exist
-i20040318 Frédéric reported: "Currently, when I try to get encoding using getCharset() method on a IFile which does not exist yet, I got a CoreExcepti
-on.
+i20040318 Frédéric reported: "Currently, when I try to get encoding using getCharset() method on a IFile which does not exist yet, I got a CoreException.
 Is it normal?
 I thought it should give me the default encoding of its parent instead.
-If this is the expected behavior, this means that each time I want to get encoding on a file I have to write: String encoding = null; try { if (file.e
-xists()) { encoding = file.getCharset(); } else { encoding = file.getParent().getDefaultCharset(); // get folder encoding as file is not accessible } 
-} catch (CoreException ce) { // use no encoding } "
+If this is the expected behavior, this means that each time I want to get encoding on a file I have to write: String encoding = null; try { if (file.exists()) { encoding = file.getCharset(); } else { encoding = file.getParent().getDefaultCharset(); // get fold

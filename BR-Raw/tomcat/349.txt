@@ -1,6 +1,5 @@
 Remove all infopop plugins
 In the interest of having less plugins, and being more like the Eclipse platform, we should remove all our infopop plugins.
 The infopop .xml files should be inside the user documentation plugins (*.doc.user), as they are user docs.
-To see examples of this, see the following plugins from the JDT and PDE: org.eclipse.jdt.doc.user org.eclipse.pde.doc.user Note: We don't have a Doc c
-omponent in Bugzilla like the platform and JDT..
+To see examples of this, see the following plugins from the JDT and PDE: org.eclipse.jdt.doc.user org.eclipse.pde.doc.user Note: We don't have a Doc component in Bugzilla like the platform and JDT..
 should we create one?

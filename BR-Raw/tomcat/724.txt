@@ -1,8 +1,5 @@
 [GlobalActions] "Forward" & "Back" global actions dont seem to be global
 I tried registering my own actions against the Forward and Back global actions, and my action doesnt seem to be invoked.
 here is the code snippet: // register with global action service.
-IActionBars actionBars = introArea.getActionBars(); actionBars.setGlobalActionHandler(ActionFactory.FORWARD.getId(),forwardAction); actionBars.setGlob
-alActionHandler(ActionFactory.BACK.getId(),backAction); am I missing something?
-The above code does not enable any of the Forward or Back action in the Eclipse Navigate menu.
-If I use PREVIOUS and NEXT all words well.
-thanks Mazen Faraj
+IActionBars actionBars = introArea.getActionBars(); actionBars.setGlobalActionHandler(ActionFactory.FORWARD.getId(),forwardAction); actionBars.setGlobalActionHandler(ActionFactory.BACK.getId(),backAction); am I missing something?
+The above code does not enable any of the Forward or Back action in the Eclipse Nav

@@ -7,9 +7,5 @@ I 20040226
 
 - turn off 'guess filled..' 
 - In the following code do a code assist at the marked position 
--> StackOverFlow public class A { public void foo() { setViewerSorter(new ViewerSorter() { public int compare(Viewer viewer, Object e1, Object e2) { r
-eturn super.c|<< code assist here } }); } /** * @param sorter */ private void setViewerSorter(ViewerSorter sorter) { // TODO Auto-generated method stu
-b } public class ViewerSorter { public int compare(Viewer viewer, Object e1, Object e2) { return 1; } } public class Viewer { } } 
------- java.lang.StackOverflowError at java.lang.Throwable.<init>(Throwable.java) at java.lang.Throwable.<init>(Throwable.java) at java.lang.StackOver
-flowError.<init>(StackOverflowError.java:48) at org.eclipse.jdt.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java) at org.eclipse.jd
-t.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java) at org.eclipse.jdt.
+-> StackOverFlow public class A { public void foo() { setViewerSorter(new ViewerSorter() { public int compare(Viewer viewer, Object e1, Object e2) { return super.c|<< code assist here } }); } /** * @param sorter */ private void setViewerSorter(ViewerSorter sorter) { // TODO Auto-generated method stu
+b } public class ViewerS

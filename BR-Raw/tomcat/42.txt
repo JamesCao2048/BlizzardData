@@ -1,8 +1,3 @@
 [Intro] NPE in ContextHelpPart.createContextHelp
-I20040323 Started fresh workspace and added a new Jave project java.lang.NullPointerException at org.eclipse.ui.intro.internal.parts.ContextHelpPart.c
-reateContextHelp(ContextHelpPart.java:241) at org.eclipse.ui.intro.internal.parts.ContextHelpPart.handlePartActivation(ContextHelpPart.java:225) at or
-g.eclipse.ui.intro.internal.parts.ContextHelpPart.access$0(ContextHelpPart.java:210) at org.eclipse.ui.intro.internal.parts.ContextHelpPart$PartListen
-er.partActivated(ContextHelpPart.java:53) at org.eclipse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45) at org.eclipse.core.internal.r
-untime.InternalPlatform.run(InternalPlatform.java:610) at org.eclipse.core.runtime.Platform.run(Platform.java:521) at org.eclipse.ui.internal.PartList
-enerList2.firePartActivated(PartListenerList2.java:43) at org.eclipse.ui.internal.WWinPartService$1.partActivated(WWinPartService.java:30) at org.ecli
-pse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45) at org.eclipse.core.interna
+I20040323 Started fresh workspace and added a new Jave project java.lang.NullPointerException at org.eclipse.ui.intro.internal.parts.ContextHelpPart.createContextHelp(ContextHelpPart.java:241) at org.eclipse.ui.intro.internal.parts.ContextHelpPart.handlePartActivation(ContextHelpPart.java:225) at or
+g.eclipse.ui.intro.internal.parts.ContextHelpPart.access$0(ContextHelpPart.java:210) at org.eclipse.ui.intro.internal.parts.ContextHelpPart$PartListener.partActivated(ContextHelpPart.java:53) at org.

@@ -1,8 +1,3 @@
 exception while editing java file
-Sidecar 2003-10-23 IBuild 2003-10-23 ZRH build input 10/28 1) follow the JDT UI smoke test up to "Editing" section 2) When using the actions "shift le
-ft" and "shift right", I got the following exception in the console: java.lang.ClassCastException: org/eclipse/jdt/internal/core/LocalVariable incomp 
-atible with org/eclipse/jdt/core/IMember at java.lang.Throwable.<init>(Throwable.java) at java.lang.Throwable.<init>(Throwable.java) at java.lang.Clas
-sCastException.<init>(ClassCastException.java:53) at org.eclipse.jdt.internal.core.util.HandleFactory$1$Visitor.visit(Hand leFactory.java:167) at org.
-eclipse.jdt.internal.compiler.ast.AnonymousLocalTypeDeclaration.t raverse(AnonymousLocalTypeDeclaration.java:139) at org.eclipse.jdt.internal.compiler
-.ast.QualifiedAllocationExpression.t raverse(QualifiedAllocationExpression.java:342) at org.eclipse.jdt.internal.compiler.ast.LocalDeclaration.travers
-e(Local Declaration.java:224) at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.trave
+Sidecar 2003-10-23 IBuild 2003-10-23 ZRH build input 10/28 1) follow the JDT UI smoke test up to "Editing" section 2) When using the actions "shift left" and "shift right", I got the following exception in the console: java.lang.ClassCastException: org/eclipse/jdt/internal/core/LocalVariable incomp 
+atible with org/eclipse/jdt/core/IMember at java.lang.Throwable.<init>(Throwable.java) at java.lang.Throwable.<init>(Throwable.java) at java.lang.ClassCastException.<init>(ClassCastException.java:53)

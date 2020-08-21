@@ -2,9 +2,5 @@ NPE on switching perspective for debugging
 I received this NPE when switching from the Java perspective to the debug perspective after launching a program and hitting a breakpoint.
 I have set to switch always.
 In my target on the HEAD code.
-java.lang.NullPointerException at org.eclipse.ui.internal.PerspectivePresentation.addPart (PerspectivePresentation.java:203) at org.eclipse.ui.interna
-l.Perspective.showView(Perspective.java:1401) at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:721) at org.eclipse.ui.internal
-.WorkbenchPage.access$9(WorkbenchPage.java:698) at org.eclipse.ui.internal.WorkbenchPage$13.run(WorkbenchPage.java:2883) at org.eclipse.swt.custom.Bus
-yIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:2880) at org.eclipse.debug.internal.u
-i.views.launch.LaunchViewContextListener.contextActi vated(LaunchViewContextListener.java:235) at org.eclipse.debug.internal.ui.views.launch.LaunchVie
-wContextListener.contextChan ged(LaunchViewCont
+java.lang.NullPointerException at org.eclipse.ui.internal.PerspectivePresentation.addPart (PerspectivePresentation.java:203) at org.eclipse.ui.internal.Perspective.showView(Perspective.java:1401) at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:721) at org.eclipse.ui.internal
+.

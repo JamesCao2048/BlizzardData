@@ -4,13 +4,6 @@ I20031216 (20:00), Win XP * Selected a target in the Ant view, and "Open With
 The editor never competed opening.
 Busy cursor remained, and Eclipse stopped responding.
 Had to kill Eclipse.
-Thread dump: Full thread dump Java HotSpot(TM) Client VM (1.4.2_01-b06 mixed mode): "Worker-16" prio=5 tid=0x0314b478 nid=0x754 in Object.wait() [3c1f
-000..3c1fd94] at java.lang.Object.wait(Native Method) 
+Thread dump: Full thread dump Java HotSpot(TM) Client VM (1.4.2_01-b06 mixed mode): "Worker-16" prio=5 tid=0x0314b478 nid=0x754 in Object.wait() [3c1f000..3c1fd94] at java.lang.Object.wait(Native Method) 
 - waiting on 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184) 
-- locked 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (WorkerPool.java:21 0) at org.eclipse
-.core.internal.jobs.Worker.run(Worker.java:55) "Worker-15" prio=5 tid=0x0325f738 nid=0xf4c in Object.wait() [3bdf000..3bdfd94] at java.lang.Object.wai
-t(Native Method) 
-- waiting on 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.W
+<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclip

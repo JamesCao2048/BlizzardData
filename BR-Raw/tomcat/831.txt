@@ -1,13 +1,4 @@
 [misc] NPE in default position updater
-Build 200311201600 This is not reproducable, but these are steps that I remember: 1) surround a method call with a try catch using quick fix 2) replac
-e e2.printStacktrace() with the comment //fall through using copy paste try { test= (Test)setup.invoke(null, new Object[] {reloadedTest}); } catch (Il
-legalArgumentException e2) { e2.printStackTrace(); } catch (IllegalAccessException e2) { e2.printStackTrace(); } catch (InvocationTargetException e2) 
-{ e2.printStackTrace(); } 3) 
--> NPE attached below 4) Once I'm in this state every key stroke I enter triggers the same exception and save also failed with an NPE (also attached b
-elow) Here is the NPE after paste !SESSION Nov 22, 2003 21:59:52.510 
--------------------------------------------- 
-- java.version=1.4.1-beta java.vendor=Sun Microsystems Inc.
-BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US Command-line arguments: 
--consolelog 
--data c:eclipsews0321plugins 
--install file:C:/eclipse/20031120/eclipse/ !ENTRY org.eclipse
+Build 200311201600 This is not reproducable, but these are steps that I remember: 1) surround a method call with a try catch using quick fix 2) replace e2.printStacktrace() with the comment //fall through using copy paste try { test= (Test)setup.invoke(null, new Object[] {reloadedTest}); } catch (Il
+legalArgumentException e2) { e2.printStackTrace(); } catch (IllegalAccessException e2) { e2.printStackTrace(); } catch (InvocationTargetException e2) { e2.printStackTrace(); } 3) 
+-> NPE attached bel

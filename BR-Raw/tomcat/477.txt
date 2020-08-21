@@ -8,6 +8,4 @@ build 20021017
 ->This dismisses both the "Browse projects" dialog and the "Browse Refresh Scope" dialog.
 This may be intended to hide the fact that ok in the refresh scope dialog sneaks another prompt on you.
 However, it is confusing and unexpected.
-If I clicked ok in the refresh scope dialog I probably really want to select a scope.
-If I click cancel in the project selection dialog I should just get back to the scope dialog.
-The working set selection dialog has the same problem.
+If I clicked ok in the refresh scope dialog I probably really want to 

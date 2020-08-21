@@ -2,9 +2,4 @@ IndexOutOfBoundsException during debugging (stepping over)
 I20031119 Internal error (dialog) during debugging.
 Sorry no steps.
 Here's .log: !ENTRY org.eclipse.jface 4 2 Nov 19, 2003 15:14:54.73 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface".
-!STACK 0 java.lang.IndexOutOfBoundsException: Invalid index of stack frames given at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferen
-ceImpl.java:194) at org.eclipse.jdi.internal.ThreadReferenceImpl.frame(ThreadReferenceImpl.java:140) at org.eclipse.jdt.internal.debug.core.model.JDIT
-hread.getUnderlyingFrame(JDIThread.java:553) at org.eclipse.jdt.internal.debug.core.model.JDIStackFrame.getUnderlyingStackFrame(JDIStackFrame.java:950
-) at org.eclipse.jdt.internal.debug.core.model.JDIStackFrame.getUnderlyingMethod(JDIStackFrame.java:223) at org.eclipse.jdt.internal.debug.core.model.
-JDIStackFrame.isOutOfSynch(JDIStackFrame.java:874) at org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.computeJDIAdornmentFlags(JDIModelPresenta
-tion.java:814) at org.eclipse
+!STACK 0 java.lang.IndexOutOfBoundsException: Invalid index of stack frames given at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:194) at org.eclipse.jdi.internal.ThreadReferenceImpl.frame(ThreadReferenceImpl.java:140) at org.eclipse.jdt.internal.debug

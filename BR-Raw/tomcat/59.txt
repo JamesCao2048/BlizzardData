@@ -1,8 +1,4 @@
 Invalid thread access from CVSOutputConsole
 I20040210 0800 Not entirely sure what triggered this but thought you would like to investigate.
-org.eclipse.swt.SWTException: Invalid thread access at org.eclipse.swt.SWT.error(SWT.java:2608) at org.eclipse.swt.SWT.error(SWT.java:2538) at org.ecl
-ipse.swt.widgets.Widget.error(Widget.java:377) at org.eclipse.swt.widgets.Shell.<init>(Shell.java:245) at org.eclipse.swt.widgets.Shell.<init>(Shell.j
-ava:236) at org.eclipse.swt.widgets.Shell.<init>(Shell.java:189) at org.eclipse.swt.widgets.Shell.<init>(Shell.java:127) at org.eclipse.jface.resource
-.FontRegistry.defaultFont (FontRegistry.java:293) at org.eclipse.jface.resource.FontRegistry.get(FontRegistry.java:370) at org.eclipse.team.internal.c
-cvs.ui.console.CVSOutputConsole.<init> (CVSOutputConsole.java:78) at org.eclipse.team.internal.ccvs.ui.CVSUIPlugin.startup (CVSUIPlugin.java:683) at o
-rg.eclipse.core.internal.compatibility.PluginActivator.start (PluginActivator.java:49) at org.eclipse.osgi.framework.internal.core.BundleContext$1.ru
+org.eclipse.swt.SWTException: Invalid thread access at org.eclipse.swt.SWT.error(SWT.java:2608) at org.eclipse.swt.SWT.error(SWT.java:2538) at org.eclipse.swt.widgets.Widget.error(Widget.java:377) at org.eclipse.swt.widgets.Shell.<init>(Shell.java:245) at org.eclipse.swt.widgets.Shell.<init>(Shell.j
+ava:236) at org.eclipse.swt.widgets.Shell.<init>(Shell.java:189) at org.eclipse.swt.widgets.Shell.<init

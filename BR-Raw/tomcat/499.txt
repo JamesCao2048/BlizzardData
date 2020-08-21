@@ -1,9 +1,5 @@
 Updating a bundle causes IllegalStateException
 When I update a bundle that is Active, the State throws an IllegalStateException.
 It would be good if we could have a fix for that by the end of the week.
-at org.eclipse.osgi.internal.resolver.StateDeltaImpl.recordBundleAdded (StateDeltaImpl.java:44) at org.eclipse.osgi.internal.resolver.StateImpl.addBun
-dle (StateImpl.java:38) at org.eclipse.osgi.internal.resolver.SystemState.addBundle (SystemState.java:17) at org.eclipse.osgi.framework.internal.defau
-ltadaptor.DefaultAdaptor$2.commit (DefaultAdaptor.java:614) at org.eclipse.osgi.framework.internal.core.Bundle.updateWorkerPrivileged (Bundle.java:788
-) at org.eclipse.osgi.framework.internal.core.Bundle$3.run (Bundle.java:693) at java.security.AccessController.doPrivileged(Native Method) at org.ecli
-pse.osgi.framework.internal.core.Bundle.updateWorker (Bundle.java:733) at org.eclipse.osgi.framework.internal.core.Bundle.update (Bundle.java:687) at 
-org.eclipse.osgi.framework.internal.core.FrameworkCommandProvider._update (FrameworkComman
+at org.eclipse.osgi.internal.resolver.StateDeltaImpl.recordBundleAdded (StateDeltaImpl.java:44) at org.eclipse.osgi.internal.resolver.StateImpl.addBundle (StateImpl.java:38) at org.eclipse.osgi.internal.resolver.SystemState.addBundle (SystemState.java:17) at org.eclipse.osgi.framework.internal.defau
+ltadaptor.DefaultAdaptor$2.commit (DefaultAd

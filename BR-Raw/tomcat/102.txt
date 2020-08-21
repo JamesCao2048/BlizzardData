@@ -1,8 +1,3 @@
 NPE in the log from CustomHashtable
-I was pulling in some new plug-ins from the repository, and noticed this in my log: !ENTRY org.eclipse.ui 4 4 Mar 04, 2004 11:21:30.759 !MESSAGE *** S
-WT nested exception !ENTRY org.eclipse.ui 4 0 Mar 04, 2004 11:21:30.759 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerExceptio
-n at org.eclipse.jface.viewers.CustomHashtable.put (CustomHashtable.java:284) at org.eclipse.jface.viewers.StructuredViewer.mapElement (StructuredView
-er.java:754) at org.eclipse.jface.viewers.StructuredViewer.associate (StructuredViewer.java:241) at org.eclipse.jface.viewers.AbstractTreeViewer.assoc
-iate (AbstractTreeViewer.java:301) at org.eclipse.jface.viewers.AbstractTreeViewer.updateChildren (AbstractTreeViewer.java:1532) at org.eclipse.jface.
-viewers.AbstractTreeViewer.internalRefreshStruct (AbstractTreeViewer.java:1058) at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefreshStruct 
-(AbstractTreeViewer.java:1065) at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh
+I was pulling in some new plug-ins from the repository, and noticed this in my log: !ENTRY org.eclipse.ui 4 4 Mar 04, 2004 11:21:30.759 !MESSAGE *** SWT nested exception !ENTRY org.eclipse.ui 4 0 Mar 04, 2004 11:21:30.759 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerExceptio
+n at org.eclipse.jface.viewers.CustomHashtable.put (CustomHashtable.java:284) at org.eclipse.jface.viewers.StructuredViewer.mapElement (StructuredViewer.java:754) at org.eclipse.jface.viewers.Structu

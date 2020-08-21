@@ -1,10 +1,5 @@
 Marker sets not thread safe
 3.0 M4 Sorry no steps 
-- found in .log !ENTRY org.eclipse.core.resources 4 2 Okt 14, 2003 14:50:20.621 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclip
-se.core.resources".
-!STACK 0 java.lang.NullPointerException at org.eclipse.jdt.internal.core.builder.JavaBuilder.isClasspathBroken(JavaBuilder.java:487) at org.eclipse.jd
-t.internal.core.builder.JavaBuilder.isWorthBuilding(JavaBuilder.java:498) at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:
-132) at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:475) at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalP
-latform.java:1018) at org.eclipse.core.runtime.Platform.run(Platform.java:461) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManage
-r.java:130) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:201) at org.eclipse.core.internal.events.BuildManager.basicB
-uild(BuildManager.java:156) at org.eclipse.core.int
+- found in .log !ENTRY org.eclipse.core.resources 4 2 Okt 14, 2003 14:50:20.621 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0 java.lang.NullPointerException at org.eclipse.jdt.internal.core.builder.JavaBuilder.isClasspathBroken(JavaBuilder.java:487) at org.eclipse.jdt.internal.core.builder.JavaBuilder.isWorthBuilding(JavaBuilder.java:498) at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:
+132) a

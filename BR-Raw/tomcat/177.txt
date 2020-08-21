@@ -4,6 +4,4 @@ To see the problem, start a Change Method Signature refactoring, and try to add 
 IllegalArgumentException).
 The dialog complains that the Exception is not an exception, but it is.
 Same problem in "Add Java Exception Breakpoint" dialog.
-You can set a breakpoint in ChangeExceptionsControl#checkException(IType) to see it happen: The hierarchy on the binary type IllegalArgumentException 
-only includes one superclass, instead of the whole hierarchy.
-Might be related to bug 53500 .
+You can set a breakpoint in ChangeExceptionsControl#checkException(IType) to see it happen: The hierarchy on the binary type IllegalArgumentException only includes one superclass, i

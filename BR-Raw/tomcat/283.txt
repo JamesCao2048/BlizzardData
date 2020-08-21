@@ -2,8 +2,4 @@
 Build 20040226 I've got a test case that is consistently locking up the workbench.
 The UI doesn't totally freeze, it just stops responding to most input.
 I can still give focus to some of my visible views and perform some actions, but most things (like trying to activate a non-visible view) don't work.
-It happens right after I select a stack frame in the Debug view (the LaunchView in the stack trace): !ENTRY org.eclipse.core.runtime 4 2 Feb 26, 2004 
-12:58:29.418 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.runtime".
-!STACK 0 org.eclipse.swt.SWTException: Widget is disposed at org.eclipse.swt.SWT.error(SWT.java:2625) at org.eclipse.swt.SWT.error(SWT.java:2555) at o
-rg.eclipse.swt.widgets.Widget.error(Widget.java:373) at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:309) at org.eclipse.swt.widgets.ToolBar
-.getItems(ToolBar.java:244) at org.eclipse.ui.internal.FastViewBar.update(FastViewBar.java:487) at org.eclipse.ui.internal.WorkbenchWindow$3.p
+It happens right after I select a stack frame in the Debug view (the LaunchView in the stack trace): !ENTRY org.eclipse.core.runtime 4 2 Feb 26, 2004 12:58:29.418 !MESSAGE Problems occurred when i

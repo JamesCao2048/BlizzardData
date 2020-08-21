@@ -1,11 +1,4 @@
 NPE while launching JUnit Plug-in test with no UI
-build I20040121 While attempting to create a test case for the new RCP APIs, we created a JUnit Plug-in launcher pointing to the test case, and desele
-cted "Exception caught while creating platform configuration".
+build I20040121 While attempting to create a test case for the new RCP APIs, we created a JUnit Plug-in launcher pointing to the test case, and deselected "Exception caught while creating platform configuration".
 This is blocking us from developing the RCP test suite.
-Got an error dialog immediately after pressing the Run or Debug button saying "exception caught while creating the launch config !ENTRY org.eclipse.pd
-e.core 4 4 Jan 27, 2004 16:36:51.318 !MESSAGE Exception caught while creating platform configuration.
-!STACK 0 java.lang.NullPointerException at java.util.TreeMap.compare(Unknown Source) at java.util.TreeMap.getEntry(Unknown Source) at java.util.TreeMa
-p.get(Unknown Source) at org.eclipse.pde.internal.core.TargetPlatform.getLocation(TargetPlatform.
-java:232) at org.eclipse.pde.internal.core.TargetPlatform.
-createConfigIniFile(TargetPlatform.java:206) at org.eclipse.pde.internal.core.TargetPlatform.
-createPlatformConfigurationArea(TargetPlatform.java:171) at org.eclipse.pde
+Got an error dialog immediately after pressing the Run or Debug button saying "exception caught while creating the launch config !ENTRY org.eclipse.pde.core 4 4 Jan 27, 2004 16:36:51.318 !MESSAGE Exception caught while creating pla

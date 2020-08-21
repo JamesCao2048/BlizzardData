@@ -3,8 +3,4 @@ Actually label decorations for warning/errors/cvs conflicts are only represented
 Sometimes it's really difficult to see such small labels, expecially if you have more decorations.
 Allowing users to select a backgroung/foreground color for labels will really improve user experience.
 A similar feature is currently implemented in instantiations codepro, but only using custom views (they call them package explorer+, resources+).
-It sound strange to reimplement views only to add a (also if useful) background color...
-it would be really great to have a support for this feature available in the base UI framework, so that could be used in any view.
-This is a screeshot from codepro colored view: http://www.instantiations.com/codepro/ws/docs/images/package_explorer_plus_view .
-gif And the preference page where users can choose colors: http://www.instantiations.com/codepro/ws/docs/images/preferences_browsers.gif This would be
- a nice addiction in the new [workbench]
+It sound strange to reimplement views on

@@ -3,8 +3,4 @@ I was remote debugging and I was then presented with a resume failed
 - I think when I hit play in debug mode 
 - and then hitting the details button a message told me to check my log which kept on growing with these same messages until I killed my remote app.
 Eclipse was unresponsive until the remote app terminated.
-!ENTRY org.eclipse.jdt.debug 4 120 Mar 03, 2004 15:56:29.448 !MESSAGE Internal error logged from JDI Debug: !STACK 0 org.eclipse.jdi.TimeoutException 
-at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:149) at org.eclipse.jdi.internal.connect.PacketReceiveMana
-ger.getReply(PacketReceiveManager.java:158) at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:173) at org.eclipse.jdi.internal.MirrorIm
-pl.requestVM(MirrorImpl.java:191) at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:522) at org.eclipse.jdi.in
-ternal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:549) at org.ec
+!ENTRY org.eclipse.jdt.debug 4 120 Mar 03, 2004 15:56:29.448 !MESSAGE Internal error logged from JDI Debug: !STACK 0 org.eclipse.jdi.TimeoutException at org.eclipse.jdi.internal.conn

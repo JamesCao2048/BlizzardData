@@ -4,4 +4,4 @@ So the JAR that we have in the plugin gets added to the ANT classpath but the JA
 When we use the Update Classpath option, the dialog opens and it says one is selected but our plugin does not appear in the list.
 If I click finish, the classpath is not updated.
 The only workaround is to put a bogus runtime JAR in the plugin.xml and then select the option.
-Then we have to remove this JAR once we are finished.
+Then we have to remove th

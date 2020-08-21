@@ -1,9 +1,4 @@
 refactoring: NPE when using "Generalize Type" on field in local type
-I20031119 (M5 test pass) 1.have this code: public class Test { public void foobar() { class Listener3 { private Test fTest; private Listener3() { fTes
-t= new Test(); } public int bar() { return foo(); } public int foo() { return 1; } private String getProperty() { return null; } } this.addListener(ne
-w Listener3() { public int bar() { return 1; } }); } public void addListener(Object o) { } } 2.Select the type name ('Test') of field fTest in the loc
-al type 3.Choose Refactor->Generalize Type 
--> The dialog comes up, but then an exception is thrown, stack trace of the inner exception (inside a runnable): java.lang.NullPointerException at jav
-a.lang.Throwable.<init>(Throwable.java) at java.lang.Throwable.<init>(Throwable.java) at java.lang.NullPointerException.<init>(NullPointerException.ja
-va:60) at org.eclipse.jdt.internal.ui.refactoring.ChangeTypeWizard$ChangeTypeInputPage$ValidTypesTask.run(ChangeTypeWizard.java:173) at org.eclipse.sw
-t.widgets.RunnableLock.run(RunnableLock.java) at o
+I20031119 (M5 test pass) 1.have this code: public class Test { public void foobar() { class Listener3 { private Test fTest; private Listener3() { fTest= new Test(); } public int bar() { return foo(); } public int foo() { return 1; } private String getProperty() { return null; } } this.addListener(ne
+w Listener3() { public int bar() { return 1; } }); } public void addListener(Object o) { } } 2.Select the type name ('Test') of field fTest in the local type 3.Choose Refactor->Generalize Type 
+-> Th

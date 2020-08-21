@@ -5,7 +5,4 @@ How to reproduce: 1.Create a new C/C++ Make project containing file.c: #include
 <stdlib.h> int main(int argc, char* argv[]) { return EXIT_SUCCESS; } 2.Add the proper include path (eg /dir/to/usr/include) to the project properties.
 3.Open file.c.
 Right-click stdio.h from the Outline view and select Open.
-4.Stack trace follows: org.eclipse.core.launcher.Main at localhost:1928 Thread [main] (Suspended (exception NullPointerException)) CModelBuilder.parse
-(ITranslationUnit, boolean, boolean) line: 125 CModelBuilder.parse(boolean) line: 150 CFileElementWorkingCopy(TranslationUnit).parse() line: 472 CFile
-ElementWorkingCopy(TranslationUnit).generateInfos(OpenableInfo, IProgressMonitor, Map, IResource) line: 303 CFileElementWorkingCopy(TranslationUnit).b
-uildStructure(OpenableInfo, IProgressMonitor) line: 222 CFileElementWorkingCopy(Openable).openWhenClosed(IProgressMonitor) line: 279 CFileElementWorki
+4.Stack trace follows: org.eclipse.core.launcher.Main at localhost:1928 Thread [main] (Suspended (except

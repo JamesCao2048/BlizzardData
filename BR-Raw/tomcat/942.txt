@@ -5,10 +5,4 @@ Checkout is performed in background
 - opened Java editor an a file that under version control 
 - changed it and pressed save 
 - got a progress indicator in the status bar of the workbench window 
-- press cancel after a while The VM dump is: "VM Thread" prio=5 tid=0x009fb730 nid=0x580 runnable "VM Periodic Task Thread" prio=10 tid=0x009fc040 nid
-=0x8f4 waiting on condition "Suspend Checker Thread" prio=10 tid=0x009c2088 nid=0xd70 runnable Full thread dump Java HotSpot(TM) Client VM (1.4.2-b28 
-mixed mode): "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x0421ea58 n id=0xe8c waiting for monitor entry [4a8f000..4a8fd94] at
- org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconci le(JavaReconcilingStrategy.java:72) 
-- waiting to lock 
-<0x12adb960> (a org.eclipse.jdt.internal.core.Compilat ionUnit) at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconci le(JavaReconc
-ilingStra
+- press cancel after a while The VM dump is: "VM Thread" prio=5 tid=0x009fb730 nid=0x580 runnable "VM Periodic Task Thread" prio=10 tid=0x009fc040 nid=0x8f4 waiting on condition "Suspend Checker Thread" prio=10 tid=0x009c2088 nid=0xd70 runn

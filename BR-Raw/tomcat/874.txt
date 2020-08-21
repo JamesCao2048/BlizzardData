@@ -1,12 +1,5 @@
 Need proper shutdown hook for cleaning up platform on termination.
-The current code (eclipse 3.0 and before) handles shutdown with the following code snippet in the InternalBootLoader.run() method: public static Objec
-t run(String applicationName/*R1.0 compatibility*/, URL pluginPathLocation/*R1.0 compatibility*/, String location, String[] args, Runnable handler) th
+The current code (eclipse 3.0 and before) handles shutdown with the following code snippet in the InternalBootLoader.run() method: public static Object run(String applicationName/*R1.0 compatibility*/, URL pluginPathLocation/*R1.0 compatibility*/, String location, String[] args, Runnable handler) th
 rows Exception { ....
-try { result = runnable.run(applicationArgs); } catch (Throwable e) { e.printStackTrace(); throw new InvocationTargetException(e); } finally { shutdow
-n(); } ...
-} The shutdown method is used to clean up the platform at shutdown.
-Among other things, it goes through and tells all plugins to shutdown and it also invokes the code to remove the workspace .lock file.
-The problem with this code is that the finally clause is not guaranteed to run.
-It will only run if the java code in the runnable.run() method exits normally or throws a Throwable.
-However, it is not guaranteed to run if the java run-time environment recieves a termination signal from the operating system.
-The
+try { result = runnable.run(applicationArgs); } catch (Throwable e) { e.printStackTrace(); throw new InvocationTargetException(e); } finally { shutdown(); } ...
+} The shutdown m

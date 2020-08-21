@@ -2,12 +2,4 @@ Update wizard only works if eclipse directory in $HOME
 I have been having problems with my eclipse install...namely the update wizard not working (could be more, but haven't found them yet).
 I've narrowed it down to a $PATH problem I believe.
 Namely I can download a binary.zip extract it into my home directory, and run it from within that directory and all is well.
-But if I move the same (freshly unzipped) binary into /opt/ it no longer works (I have taken care to delete all 'workspaces' and '.eclipse*' directori
-es for each test).I have also ensured that /opt/eclipse is in my $PATH and that the user has rw permisions for the eclipse directory.
-I.
-Steps to reproduce.
-1.Unzip eclipse-binary into home directory.
-2.Enter Directory and start eclipse.
-3.Go to Help-->Software Updates-->Update Manager-->select an update/package/etc.
-4.Click install 5.Go through wizard and related license agreements 6.Accept default install location, click finish....works 7.Repeat 1-5 replacing /* 
-with $HOME, no install location available, cannot add install loca
+But if I move the same (freshly unzipped) binary into /opt/ it no longer works (I have taken care to delete all 'workspaces' and '.eclipse*' directories for each test).I have also ensured

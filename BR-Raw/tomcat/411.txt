@@ -1,6 +1,5 @@
 [Fonts] Java Pref Pages leak 17 fonts
-How I did it: With sleak and graphics-trace on: Open Resource perspective; open sleak view; close all perspectives but resource perspective; close all
- views but sleak view.
+How I did it: With sleak and graphics-trace on: Open Resource perspective; open sleak view; close all perspectives but resource perspective; close all views but sleak view.
 Close Eclipse.
 Open Eclipse again.
 Open Window/Preferences.
@@ -8,9 +7,4 @@ Close Preferences.
 Reopen and close again.
 => loads Dialog fonts and all fonts on the first preference page.
 Take a snapshot in sleak view.
-We start w/ 52 colors, 2 cursors, 5 fonts, 1 GC, 87 images For each pref page: open preferences select page in tree, close preference dialog, reopen p
-reference, close preference, note new resources.
-Java: 52 colors, 2 cursors, 6 fonts, 1 GC, 87 images [+1 font] Appearance: 52 colors, 2 cursors, 7 fonts, 1 GC, 87 images [+1 font => "Note" should be
- in the Banner font which has been already loaded through the Workbench pref page] Members Sort Order: 52 colors, 2 cursors, 8 fonts, 1 GC, 96 images 
-[+1 font; +9 images (the member/visibility icons) 
--> no leak] Classpath Variables: 52 colors, 2 cursors, 8 fonts, 1 GC, 101
+We start w/ 52 colors, 2 cursors, 5 fonts, 1 GC, 87 images For each pref page: open preferences select page in tree, close pref

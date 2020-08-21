@@ -1,5 +1,4 @@
 Javadoc inside DOM AST does not support starting characters in unicode
 build 20040229 
 ------------------- /*u002A * Test */ public class X { } 
-------------------- u002A is * character The DOM Javadoc of this test case seems not correct Javadoc +TagElement +TextElement '02A' +TextElement 'Test
-'
+------------------- u002A is * character The DOM Javadoc of this test case seems not correct Javadoc +TagElement +TextElement '02A' +TextElement 'Test'

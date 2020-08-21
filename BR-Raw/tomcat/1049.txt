@@ -2,10 +2,5 @@ can't debug into class if file/class name identifier has _$$_
 I got a problem: _$$_ is legal identifier for class name.
 Eclipse can run it properly, but there is problem to debug into it.
 This is a test case(file name:B_$$_uckets.java).
-When put in same package, error message is :""There is no source file attached to the class file B_$$_uckets.class" When put in difference packages, e
-rror message is :"The source of the type 'B__$$__uckets' could not be shown as the type was not found".
-Examples: /** * Counters of random values that fall within each interval.
-*/ public class B__$$__uckets { private static final int MAX_BAR_SIZE = 50; private AlignRight ar = new AlignRight(); /** number of intervals */ priva
-te int n; /** counters per interval */ private int counters[]; /** minimum random value */ private float rMin; /** maximum random value */ private flo
-at rMax; /** from min to max */ private float width; /** * Constructor.
-* @param n the number of intervals */ public B__$$__uckets(int n) { this.n = n; this.counters = new int[n]; clear(); } /**
+When put in same package, error message is :""There is no source file attached to the class file B_$$_uckets.class" When put in difference packages, error message is :"The source of the type 'B__$$__uckets' could not be shown as the type was not found".
+Examples: /** * Counters of random values that fall within each interva

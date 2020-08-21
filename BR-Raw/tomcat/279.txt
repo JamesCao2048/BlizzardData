@@ -1,9 +1,5 @@
 NPE in SourceLookupUtils#shutdown
 N20030229 + debug plug-ins from HEAD I get this error in the log about every time I launch the Debug test suite.
 I don't get this error in the log of the host, or of a normal (non-test) target.
-!SUBENTRY 1 org.eclipse.jdt.debug 4 4 Feb 29, 2004 21:53:03.305 !MESSAGE Invalid stack frame !ENTRY org.eclipse.core.runtime.compatibility 4 1 Feb 29,
- 2004 21:53:56.912 !MESSAGE Error while stopping plug-in "reference:file:/home/luc/target/org.eclipse.debug.core/ [6]".
-!STACK 0 org.osgi.framework.BundleException: Exception in org.eclipse.core.internal.compatibility.PluginActivator.stop() at org.eclipse.osgi.framework
-.internal.core.BundleContext.stop(BundleContext.java:1045) at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:481) at o
-rg.eclipse.osgi.framework.internal.core.Bundle.stop(Bundle.java:477) at org.eclipse.core.internal.plugins.PluginStopper.run(PluginStopper.java:101) at
- org.eclipse.core.internal.runtime.PlatformActivator.stopLegacyBundles(PlatformAct
+!SUBENTRY 1 org.eclipse.jdt.debug 4 4 Feb 29, 2004 21:53:03.305 !MESSAGE Invalid stack frame !ENTRY org.eclipse.core.runtime.compatibility 4 1 Feb 29, 2004 21:53:56.912 !MESSAGE Error while stopping plug-in "reference:file:/home/luc/target/org.eclipse.debug.core/ [6]".
+!STACK 0 org.osgi.framework.BundleEx

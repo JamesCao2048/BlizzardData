@@ -1,7 +1,4 @@
 [find/replace] Regular Expression Search and Replace hangs eclipse
 The Search/Replace dialog (ctrl-f) hangs Eclipse when I enter the following regexp.
-Find: ([^s]+), Replace With: $1 = "$1", Direction: Forward Scope: Selected Lines Options: Case Sensitive, Regular expressions The following lines of t
-ext were highlighted in the current buffer in the Java editor when this happened (they are part of a multiple line String definition): CAT_YEAR1_KEY, 
-DEDUCTIBLE_YEAR1_KEY, FAMILY_DEDUCTIBLE_YEAR1_KEY, CAT_CAP_FOR_YEAR1_KEY, CAT_YEAR2_KEY, DEDUCTIBLE_YEAR2_KEY, FAMILY_DEDUCTIBLE_YEAR2_KEY, CAT_CAP_FO
-R_YEAR2_KEY; This only happens when I have several lines of text highlighted and have the Scope set to Selected Lines.
-When I do the same regexp search and replace with the Scope set to All and do a line-by-line search and replace with Replace/Find everything is OK.
+Find: ([^s]+), Replace With: $1 = "$1", Direction: Forward Scope: Selected Lines Options: Case Sensitive, Regular expressions The following lines of text were highlighted in the current buffer in the Java editor when this happened (they are part of a multiple line String definition): CAT_YEAR1_KEY, 
+DEDUCTIBLE_YEAR1_KEY, FAMILY_DEDUCTIBLE_YEAR1_KEY, CAT_CAP_FOR_YEAR1_KEY, CAT_YEAR2_KEY, DEDUCTIBLE_YEAR2_KEY, FAMI

@@ -1,12 +1,5 @@
 Allow apps to specify multiple Shell image icons for different resolutions
-Native windows apps can set both a small and large system icon for their windows (Shells), but SWT (Win32) only allows setting the small icon "decorat
-ions.setImage(Image)".
+Native windows apps can set both a small and large system icon for their windows (Shells), but SWT (Win32) only allows setting the small icon "decorations.setImage(Image)".
 The small icon (generally 16x16) is used on the window decoration and the large (generally 32x32) is used for the Alt- Tab task switcher.
-Without being able to specify the large icon, the OS is forced to scale the small icon producing a ragged looking image (the Eclipse icon looks fairly
- rough in the Alt-Tab window).
-Other OSs may have similar functionality that this enhancement may benefit, so this is probably not a Win32 specific problem.
-SWT developers are currently forced to chose 1 size Shell icon to work for all platform specific purposes.
-I am recommending the following additions to the Decorations class API.
-Included is a potential Win32 implementation.
-Implementations of other OSs should be fairly similar and trivial.
-This includes the addition of a new ImageProvider interface which allows the application
+Without being able to specify the large icon, the OS is forced to scale the small icon producing a ragged looking image (the Eclipse icon looks fairly rough in the Alt-Tab window).
+Other OS

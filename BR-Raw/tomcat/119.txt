@@ -1,7 +1,5 @@
 Launch Configuration dialogs only know about Run and Debug modes.
-If you add an additional launch mode, say "program", in addition to the usual "run" and "debug" modes, various bits in the UI don't know about the mod
-e.
-For instance, org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog makes a button that says "Run" or "Debug", and there is no
- facility to extend this to add additional modes.
+If you add an additional launch mode, say "program", in addition to the usual "run" and "debug" modes, various bits in the UI don't know about the mode.
+For instance, org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog makes a button that says "Run" or "Debug", and there is no facility to extend this to add additional modes.
 To make the main action button read "Program", a lot of code duplication and extension is required.
-It seems like this would easily be more data driven.
+It seems like this would easily be more data dr

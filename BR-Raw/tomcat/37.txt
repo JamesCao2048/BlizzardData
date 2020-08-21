@@ -4,9 +4,5 @@ Test case (reproducible here):
 - Ctrl-O to element in editor 
 - invoke replace from local history in the editor context menu 
 - single click on first entry of local history 
--> StackOverflow !ENTRY org.eclipse.ui 4 0 Mar 23, 2004 14:18:44.657 !MESSAGE Failed to execute runnable (java.lang.StackOverflowError) !STACK 0 org.e
-clipse.swt.SWTException: Failed to execute runnable (java.lang.StackOverflowError) at org.eclipse.swt.SWT.error(SWT.java:2625) at org.eclipse.swt.widg
-ets.Synchronizer.runAsyncMessages(Synchronizer.java:109) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2561) at org.eclipse.swt.wid
-gets.Display.readAndDispatch(Display.java:2266) at org.eclipse.jface.window.Window.runEventLoop(Window.java:670) at org.eclipse.jface.window.Window.op
-en(Window.java:650) at org.eclipse.compare.EditionSelectionDialog.selectEdition(EditionSelectionDialog.java:454) at org.eclipse.jdt.internal.ui.compar
-e.JavaReplaceWithEditionAction.run(JavaReplaceWithEdi
+-> StackOverflow !ENTRY org.eclipse.ui 4 0 Mar 23, 2004 14:18:44.657 !MESSAGE Failed to execute runnable (java.lang.StackOverflowError) !STACK 0 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.StackOverflowError) at org.eclipse.swt.SWT.error(SWT.java:2625) at org.eclipse.swt.widg
+ets.Syn

@@ -9,11 +9,4 @@ Workaround/Warning: As an unofficial "workaround", you can edit {WebSphere Studi
 <filter selected="false" pattern="EJS*"> 
 </filter> 
 </extension> ...
-to add a filter in the base workbench/eclipse Navigator View.
-In this case I added the "EJS*" filter.
-It works, but is not officially supported.
-You can use this at you own discretion.
-However any core workbench problems reported with any such change present are not be supported.
-At the current time, the only sanctioned way to add a filter to the Navigator view, is to create separate plugin and contribute the filters instead of
- modifying an existing product plugin.
-The UI is a separate plug-in in core Eclipse which happens to o
+to add a filter in the base workbe

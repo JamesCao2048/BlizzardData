@@ -2,10 +2,4 @@ progress, background operations, and novice users
 Build I20030304 There has been much discussion elsewhere about insufficiently visible progress indications for builds.
 I'd like to raise a more general issue about the kind of feedback that will help novice users of Eclipse.
 If it helps, think of my mom as the user (you can imagine that she's not too comfortable with computers<g>).
-The problem is that when the user performs any command that will complete sometime later in the background, whether it be build, synchronize, or whate
-ver, she needs to know this immediately.
-I mean "in your face" immediately.
-A smoldering cigarette in the lower right corner of the screen does signal this to the novice user, even when accompanied by a slightly larger hover.
-Something as unmistakable as a 2.1 modal progress dialog is what we're talking about.
-The reason why its so important for the novice is that they expect the commands they give to happen in the background (a more sophisticated notion).
-Novice users are more familiar with simple turn-taking
+The problem is that when the user performs any command that will complete sometime later in the background, whether it be build, synchronize, or whatever, she needs t

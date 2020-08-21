@@ -1,9 +1,4 @@
 Error when trying to read or write keyring while selfhosting
-I get the following error whenever I try to read or write to the keyring file while selfhosting using I20040317.!SUBENTRY 1 org.eclipse.core.runtime 4
- 5 Mar 18, 2004 14:20:41.391 !MESSAGE Unable to write to authorization database: D:devworkspace.metadata.pluginsorg.eclipse.pde.coreD__dev_runtime- wo
+I get the following error whenever I try to read or write to the keyring file while selfhosting using I20040317.!SUBENTRY 1 org.eclipse.core.runtime 4 5 Mar 18, 2004 14:20:41.391 !MESSAGE Unable to write to authorization database: D:devworkspace.metadata.pluginsorg.eclipse.pde.coreD__dev_runtime- wo
 rkspace.keyring.
-!STACK 0 java.io.IOException: The system cannot find the path specified at java.io.WinNTFileSystem.createFileExclusively(Native Method) at java.io.Fil
-e.createNewFile(File.java:827) at org.eclipse.core.internal.runtime.AuthorizationDatabase.save (AuthorizationDatabase.java:297) at org.eclipse.core.in
-ternal.runtime.DataArea.flushAuthorizationInfo (DataArea.java:205) at org.eclipse.core.internal.runtime.InternalPlatform.flushAuthorizationInfo (Inter
-nalPlatform.java:1128) at org.eclipse.core.runtime.Platform.flushAuthorizationInfo (Platform.java:283) at org.eclipse.team.internal.ccvs.core.connecti
-on.CVSRepositoryLocation.flushCache (CVSRepositoryLocation.java:150) at org.e
+!STACK 0 java.io.IOException: The system cannot find the path specified at java.io.WinNTFileSystem.createFileExclusively(Native Method) at java.io.File.createNewFile(File.java:827) a

@@ -1,9 +1,5 @@
 [ViewMgmt] HideViewTest failure
 I saw this test failure while preparing the build submission for I200403231600 (using I2004031208 and the latest from HEAD).
 This problem did not occur on the Windows XP box.
-test3(org.eclipse.ui.tests.zoom.HideViewTest) junit.framework.AssertionFailedError at junit.framework.Assert.fail(Assert.java:47) at junit.framework.A
-ssert.assertTrue(Assert.java:20) at junit.framework.Assert.assertTrue(Assert.java:27) at org.eclipse.ui.tests.zoom.HideViewTest.test3(HideViewTest.jav
-a:48) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) 
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at junit.
-framework.TestCase.runTest(TestCase.java:154) at junit.framework.TestCase.runBare(TestCase.java:127) at junit.framework.TestResult$1.protect(TestResul
-t.java:106) at junit.framework.TestResult.runProtected(TestResult.java
+test3(org.eclipse.ui.tests.zoom.HideViewTest) junit.framework.AssertionFailedError at junit.framework.Assert.fail(Assert.java:47) at junit.framework.Assert.assertTrue(Assert.java:20) at junit.framework.Assert.assertTrue(Assert.java:27) at org.eclipse.ui.tests.zoom.HideViewTest.test3(HideViewTest.jav
+a:48) at sun.reflect.Nat

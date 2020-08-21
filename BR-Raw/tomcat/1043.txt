@@ -5,8 +5,4 @@ Indeed the variables are not expanded and so instead results in the creation of 
 The solution consists in replacing carefully the appearance of those values into the build.xml.
 Here is an example of a bogus target: 
 <target name="$os$/win32.jar" depends="init" unless="$os$/win32.jar" description="Create jar: $os$/win32.jar."> 
-<property name="destdir" value="${temp.folder}/$os$/win32.jar.bin"/> 
-<delete dir="${temp.folder}/$os$/win32.jar.bin"/> 
-<mkdir dir="${temp.folder}/$os$/win32.jar.bin"/> ...
-
-</target>
+<property name="destdir" value="${temp.fol

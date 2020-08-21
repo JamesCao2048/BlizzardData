@@ -1,10 +1,5 @@
 repeted NPE in swt, loosing control of UI
 Don't know how to reproduce.
 Hapenned twice it 2 run of eclipse, in different context.
-eclipse sdk i20040209 10h20 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException) at org.eclipse.swt.SWT.error(SWT
-.java:2608) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:105) at org.eclipse.swt.widgets.Display.runAsyncMessages(Displa
-y.java:2325) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:15
-50) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1526) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:265) at 
-org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47) at org.
-eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:236) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarte
-r.java:
+eclipse sdk i20040209 10h20 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException) at org.eclipse.swt.SWT.error(SWT.java:2608) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:105) at org.eclipse.swt.widgets.Display.runAsyncMessages(Displa
+y.java:2325) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033) at org.eclipse.ui.internal.Wo

@@ -1,7 +1,6 @@
 Updating through http proxy (almost) locks PC with 100% CPU usage
-I've correctly specified the http proxy for updates, which requires authentication (NTLM by default, although has also worked with basic for other app
-lications, Java and non-Java) on a different domain than the client or proxy.
+I've correctly specified the http proxy for updates, which requires authentication (NTLM by default, although has also worked with basic for other applications, Java and non-Java) on a different domain than the client or proxy.
 Non-NTLM authentication requires the "AUTH-DOMAINusername" format for the username.
 As soon as the updater requires some http communication, the java process hits 100% cpu usage, severely crippling other processes (i.e.
 they're "as slow as molasses in January").
-This continues indefinitely unless Cancel is pressed.
+This cont

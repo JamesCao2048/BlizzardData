@@ -7,9 +7,4 @@ Select the two components so that the alignment actions are enabled.
 Close the dialog.
 Now select the JPanel while holding down the ctrl key so that the two components and the JPanel are selected.
 Bring up the alignment dialog again and it will be blank (no actions) and a NullpointerException is thrown in the log.
-If this doesn't happen, try closing the dialog, deselecting one of the components and reopening the dialog.
-You may have to do this with deselecting and selecting the components and the JPanel...
-each time closing and reopening the alignment dialog.
-At some point, the NPE is thrown when you open the dialog and the dialog comes up blank.
-From the stack trace and code it looks like there is no primary selection and as a result there is no anchor object in the distribute request.
-Here's the stack trace from the .log file: java.lang.Nu
+If this doesn't happen, try closing t

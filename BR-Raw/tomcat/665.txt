@@ -1,9 +1,5 @@
 Error in .log file when JRE install location is removed/renamed
 When a launch configuration with an undefined JRE is opened in the launch configuration dialog, the error shouldn't be logged.
 It's a user error, which is already reported to the user in the UI.
-org.eclipse.core.runtime.CoreException: Specified VM install not found: type Standard VM, name jdk1.4.2 at java.lang.Throwable.<init>(Throwable.java) 
-at java.lang.Throwable.<init>(Throwable.java) at org.eclipse.core.runtime.CoreException.<init>(CoreException.java:35) at org.eclipse.jdt.launching.Jav
-aRuntime.abort(JavaRuntime.java:1092) at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1078) at org.eclipse.jdt.launching.JavaRuntime.c
-omputeVMInstall(JavaRuntime.java:1060) at org.eclipse.jdt.internal.debug.ui.launcher.RuntimeClasspathEntryLabelProvider.getText(RuntimeClasspathEntryL
-abelProvider.java:141) at org.eclipse.jface.viewers.TableViewer.doUpdateItem(TableViewer.java:202) at org.eclipse.jface.viewers.StructuredViewer$Updat
-eItemSafeRunnable.run(StructuredViewer.java:119) a
+org.eclipse.core.runtime.CoreException: Specified VM install not found: type Standard VM, name jdk1.4.2 at java.lang.Throwable.<init>(Throwable.java) at java.lang.Throwable.<init>(Throwable.java) at org.eclipse.core.runtime.CoreException.<init>(CoreException.java:35) at org.eclipse.jdt.launching.Jav
+aRun

@@ -1,8 +1,4 @@
 Class cast exception during PDE search
 setup: build I2003-09-30 + jdt plugin import 2003-10-06 I searched for org.eclipse.* with the plugin search page.
-I got the following exception in the log: java.lang.ClassCastException at org.eclipse.pde.internal.ui.search.PluginSearchLabelProvider.getText(PluginS
-earchLabelProvider.java:56) at org.eclipse.search.internal.ui.SearchResultLabelProvider.getText(SearchResultLabelProvider.java:35) at org.eclipse.jfac
-e.viewers.TableViewer.doUpdateItem(TableViewer.java:201) at org.eclipse.search.internal.ui.SearchResultViewer.doUpdateItem(SearchResultViewer.java:197
-) at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:119) at org.eclipse.core.internal.runtime.InternalPla
-tform.run(InternalPlatform.java:1034) at org.eclipse.core.runtime.Platform.run(Platform.java:432) at org.eclipse.jface.viewers.StructuredViewer.update
-Item(StructuredViewer.java:1263) at org.eclipse.jface.viewers.TableViewer.add(TableViewer.java:115) at org.eclipse.jface.viewers.Ta
+I got the following exception in the log: java.lang.ClassCastException at org.eclipse.pde.internal.ui.search.PluginSearchLabelProvider.getText(PluginSearchLabelProvider.java:56) at org.eclipse.search.internal.ui.SearchResultLabelProvider.getText(SearchResultLabelProvider.java:35) at org.eclipse.jfac
+e.viewers.TableViewer.doUpdateItem(TableViewer.java:201) at org.eclipse.search.intern

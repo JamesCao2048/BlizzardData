@@ -1,3 +1,2 @@
 Vertical scrollbar is not created as expected
-The following code doesn't work: Shell shell = new Shell(); Text text = new Text(shell, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL); ScrollBar topBar = tex
-t.getVerticalBar(); topBar.setEnabled(true); shell.open(); getVerticalBar() returns null.
+The following code doesn't work: Shell shell = new Shell(); Text text = new Text(shell, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL); ScrollBar topBar = text.getVerticalBar(); topBar.setEnabled(true); shell.open(); getVerticalBar() returns null.

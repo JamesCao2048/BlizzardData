@@ -1,10 +1,5 @@
 cannot run the program in the localhost of the Browser
 I am using Tomcat4.1.24, jdk1.4 and eclipse.
 Have these error in console window.
-Error running javac.exe compiler at org.apache.tools.ant.taskdefs.compilers.DefaultCompilerAdapter.executeExternalCo mpile(DefaultCompilerAdapter.java
-:455) at org.apache.tools.ant.taskdefs.compilers.JavacExternal.execute (JavacExternal.java:81) at org.apache.tools.ant.taskdefs.Javac.compile(Javac.ja
-va:840) at org.apache.tools.ant.taskdefs.Javac.execute(Javac.java:682) at org.apache.jasper.compiler.Compiler.generateClass(Compiler.java:317) at org.
-apache.jasper.compiler.Compiler.compile(Compiler.java:370) at org.apache.jasper.JspCompilationContext.compile (JspCompilationContext.java:473) at org.
-apache.jasper.servlet.JspServletWrapper.service (JspServletWrapper.java:190) at org.apache.jasper.servlet.JspServlet.serviceJspFile (JspServlet.java:2
-95) at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:241) at javax.servlet.http.HttpServlet.service(HttpServlet.java:853) at org.apache
-.catalina.cor
+Error running javac.exe compiler at org.apache.tools.ant.taskdefs.compilers.DefaultCompilerAdapter.executeExternalCo mpile(DefaultCompilerAdapter.java:455) at org.apache.tools.ant.taskdefs.compilers.JavacExternal.execute (JavacExternal.java:81) at org.apache.tools.ant.taskdefs.Javac.compile(Javac.ja
+va:840) at org.apache.tools.ant.taskdefs.Javac.execute(Javac.java:682) at org.apache.jasper.compiler.Compiler.generate

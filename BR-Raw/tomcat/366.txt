@@ -1,14 +1,11 @@
 Cryptic Error Message from Platform Loader
 I try to launch my runtime workbench.
 Apparently, there is something wrong with my plugin.
-However, all I get as a message is "Problems encountered starting up plug-in: "org.osgi.framework.BundleException: The BundleActivator org.eclipse.cor
-e.xray.Plugin is invalid".
+However, all I get as a message is "Problems encountered starting up plug-in: "org.osgi.framework.BundleException: The BundleActivator org.eclipse.core.xray.Plugin is invalid".
 What does that mean?
 What is a BundleActivator?
 Why is it invalid?
 What can make it invalid?
 I also get a java.lang.InstantiationException: org/eclipse/core/xray/Plugin.<init>()V, so something went wrong there?
 What?
-2 other messages in the .log file are identical and similarly cryptic: "Unhandled Exception", "An exception stack trace could not be found.".
-Seems like someone is swallowing and translating an exception.
-I would like to know what the original exception is, so I can debug my plugin.
+2 other message

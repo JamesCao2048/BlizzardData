@@ -1,14 +1,9 @@
 can't open fragment manifest editor
-i20040219 (See also bug 49494 ) For the first few times I try to open a PDE editor for a fragment manifest, it will fail with an internal error (stack
-trace below).
+i20040219 (See also bug 49494 ) For the first few times I try to open a PDE editor for a fragment manifest, it will fail with an internal error (stacktrace below).
 !SESSION Feb 19, 2004 11:39:17.432 
 --------------------------------------------- java.version=1.4.2_01 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CA Command-line arguments: 
 -console 
 -showlocation 
 -data d:target_instancesreleasingplugins 
--keyring d:target_instancesreleasingplugins.metadata.keyring !ENTRY org.eclipse.core.runtime 4 2 Feb 19, 2004 11:39:17.432 !MESSAGE Problems occurred 
-when invoking code from plug-in: "org.eclipse.core.runtime".
-!STACK 0 java.lang.IllegalArgumentException: Group not found: group.editor at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionMana
-ger.java:113) at org.eclipse.jface.action.ContributionManager.prependToGroup(ContributionManager.java:337) at org.eclipse.ui.internal.EditorActionBars
-.getToolBarManager(EditorActio
+-keyring d:target_instancesreleasingplugins.m

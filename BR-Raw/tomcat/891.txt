@@ -5,7 +5,4 @@ Is it supposed to use the same JVM as the Eclipse workbench specified with eclip
 Or maybe the JVM specified in the system path?
 My application does not behave correctly with JDK 1.4.I started eclipse with a 
 -vm option to use JDK 1.3, but I have JDK 1.4 in my system path.
-I'm not too sure which JDK Hyades is using when launching my application using Lauch Java Process, but the runtime behavior of my application suggests
- that Hyades is using JDK 1.4 (i.e.
-the JDK in my system path).
-Please explain how Hyades selects the JDK used to run applications, and how to control this.
+I'm not too sure which JDK Hyades is using when launching my application using Lauch 

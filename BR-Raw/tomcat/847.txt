@@ -1,12 +1,8 @@
 [Jobs] Deadlock in modal cvs dialog
 I20031111 I was using "Update and Overwrite" on a conflicting resource from the sync view.
 As you can see from the dump the modal CVS dialog locks itself up.
-Full thread dump Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode): "ModalContext" prio=7 tid=0x039dc658 nid=0xf44 in Object.wait() [441f000..441fd94]
- at java.lang.Object.wait(Native Method) 
+Full thread dump Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode): "ModalContext" prio=7 tid=0x039dc658 nid=0xf44 in Object.wait() [441f000..441fd94] at java.lang.Object.wait(Native Method) 
 - waiting on 
 <0x1019bd10> (a org.eclipse.ui.internal.Semaphore) at org.eclipse.ui.internal.Semaphore.acquire(Semaphore.java:37) 
 - locked 
-<0x1019bd10> (a org.eclipse.ui.internal.Semaphore) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:42) at org.eclipse.swt.widge
-ts.Display.syncExec(Display.java:2504) at org.eclipse.team.internal.ccvs.ui.subscriber.CVSSubscriberAction.promptForOverwrite(CVSSubscriberAction.java
- at org.eclipse.team.internal.ccvs.ui.subscriber.OverrideAndUpdateAction.run(OverrideAndUpdateAction.java:42) at org.eclipse.team.internal.ccvs.ui.sub
-scriber.CVSSubscriberAction$2.run(CVSSubscriberAction.ja
+<0x1019bd1

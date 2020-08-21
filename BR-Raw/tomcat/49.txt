@@ -9,4 +9,4 @@ Create the makefile as follows: all: NL.exe main.o: main.cpp g++
 -o NL.exe main.o clean: rm NL.exe main.o main.cpp looks like: #include 
 <iostream> using namespace std; int main(int argc, char **argv) { cout 
 << "Hello CDT!" 
-<< endl; } int Lißä(){} The method Lißä shows up in the outline view as "Li(): int".
+<< endl; } int Lißä(){} The method Lißä shows up in th

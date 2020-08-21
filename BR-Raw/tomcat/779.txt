@@ -1,9 +1,4 @@
 setEditable() method doesn't work
 The following solution is used to make the editor readonly or locking it so that no one can write in it.
 I am using the following method in JavaEditor example that is extending CompilationUnitEditor.
-public void setEditable(boolean editable) { ISourceViewer viewer = getSourceViewer(); if (viewer != null) { viewer.setEditable(editable); } } this did
-n't work and then I got another hack from Andrew about getting the sourceviewer after the creation of the editor.I do get the viewer throught that but
- I still can't get the seteditable method do any work.I used the following way of getting the SourceViewer() .
-IWorkbench workbench = PlatformUI.getWorkbench(); IWorkbenchWindow window = workbench.getActiveWorkbenchWindow(); workbench.getActiveWorkbenchWindow()
-; IWorkbenchPage page = window.getActivePage(); IEditorPart part = page.getActiveEditor(); if (part instanceof CompilationUnitEditor) { CompilationUni
-tEditor editor = (CompilationUnitEditor)part; ITextViewer viewer = (ITextViewer)edito
+public void setEditable(boolean editable) { ISourceViewer viewer = getSourceViewer(); if (viewer != null) { viewer.setEditable(editable); } } this didn't work and then I got another hack from Andrew about getting the sourceviewer after the creation of the editor.I do get the viewer throught that but

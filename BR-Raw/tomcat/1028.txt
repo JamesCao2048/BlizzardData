@@ -2,5 +2,4 @@ ResizeTracker needs a disabled cursor and default cursor for intial state
 When using the ResizeTracker, it doesn't have a disabled cursor set at ctor time (whereas the DragEditPartsTracker does).
 When the current command is not executable, the cursor remains the same (the default cursor) thus not providing the correct feedback to the user.
 Also...
-when you first select the resize handle, the tracker is in the initial state (command = null) and at this point the default cursor should be returned 
-instead of the disabled cursor which is the default behavior inherited from AbstractTool (see AbstractTool.calculateCursor().
+when you first select the resize handle, the tracker is in the initial state (command = null) and at this point the default cursor should be returned instead of the disabled cursor which is the default behavior inherited fro

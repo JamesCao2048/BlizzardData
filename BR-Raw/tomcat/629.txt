@@ -1,10 +1,6 @@
 Table row doesn't stay colored as selected when editor is displayed on Linux
 BUG in Fedora Core 1 Linux with SWT 3.0M6 and below.
-If the background color is set then the row will not appear as selected if it is edited (different behaviour from other rows) The problem is that I ne
-ed to set the background color because for example before I set the background color to Green and now I want to restore it.
+If the background color is set then the row will not appear as selected if it is edited (different behaviour from other rows) The problem is that I need to set the background color because for example before I set the background color to Green and now I want to restore it.
 It should appear as selected when edited (that is the behaviour on windows) but it is not.
 Here is the snippet adapted from the standard code.
-package com.abmira.swt.snippets.control.table; import org.eclipse.swt.SWT; import org.eclipse.swt.custom.TableEditor; import org.eclipse.swt.graphics.
-Point; import org.eclipse.swt.graphics.Rectangle; import org.eclipse.swt.layout.FillLayout; import org.eclipse.swt.widgets.Display; import org.eclipse
-.swt.widgets.Event; import org.eclipse.swt.widgets.Listener; import org.eclipse.swt.widgets.Shell; import org.eclipse.swt.widgets.Table; import org.ec
-lipse.swt.widgets.TableColumn; import org.eclipse.swt.widgets.TableItem; imp
+package com.abmira.swt.snippet

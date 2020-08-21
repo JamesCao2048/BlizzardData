@@ -7,10 +7,4 @@ STEPS:
 ----- 1.) Open a Java file in a Java editor.
 2.) Move that Java file from one project to another 
 -- preferrably breaking as many things as possible (e.g., 500+ compile-time errors).
-3.) A stub opens in the editor view for the newly-moved file.
-4.) Immediately double-click on the title bar for the moved file to cause it to maximize.
-OBSERVED RESULTS: 
----------------- The window maximizes, but is empty.
-It appears as though the contents are still being loaded by Eclipse.
-The virtual machine then crashes with a small dialog box.
-Unfortunately, I wasn't running from a terminal, so I have no additional output.
+3.) A stub opens in the e

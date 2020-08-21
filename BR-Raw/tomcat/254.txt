@@ -5,7 +5,4 @@ Got an error dialog.
 Title is "Error Executing Command", message is "The command for the key you pressed failed", reason is "Argument not valid".
 After that, the editor did not redraw anymore, keeping the contents of any window that was in front of it before.
 After closing the editor, everything seemed to work properly.
-Found the following entries in my log (dozens of occurrences): !ENTRY org.eclipse.ui 4 4 Mar 03, 2004 11:32:12.843 !MESSAGE Unhandled event loop excep
-tion !ENTRY org.eclipse.ui 4 0 Mar 03, 2004 11:32:12.859 !MESSAGE Argument not valid !STACK 0 java.lang.IllegalArgumentException: Argument not valid a
-t org.eclipse.swt.SWT.error(SWT.java:2611) at org.eclipse.swt.SWT.error(SWT.java:2555) at org.eclipse.swt.graphics.GC.setBackground(GC.java:2183) at o
-rg.eclipse.swt.custom.StyledText.performPaint(StyledText.java:6090) at org.eclipse.swt.custom.StyledText.handlePaint(S
+Found the following entries in my log (dozens of occurrences): !ENTRY o

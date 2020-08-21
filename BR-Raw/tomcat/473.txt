@@ -1,5 +1,4 @@
 Provide UI for showing call graph affected by flow advice
 The effects of cflow advice can be challenging to infer and currently get no help from the tool support.
-Now the at the IDEs are starting to show static call graphs, we can use this information to give the programmer an idea of the execution that will be 
-affected by a cflow advice.
+Now the at the IDEs are starting to show static call graphs, we can use this information to give the programmer an idea of the execution that will be affected by a cflow advice.
 The attached mock-up shows a first pass at how this could look in AJDT.

@@ -5,5 +5,4 @@ Multiple breakpoints can be hit simultaneously.
 The default behavior of the Debug view is to select a new Stack Frame when a breakpoint is hit, open up the source code, and position it at this line.
 This is very confusing in the multi-core environment.
 I may be stepping through code when another breakpoint is hit, and suddenly I am staring at a completely different file.
-The control I would like to exert over the debug view would include: 1) Control whether or not selection occurs.
-2) Control whether or not tree expansion/contraction occurs.
+T

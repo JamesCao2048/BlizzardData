@@ -1,4 +1,3 @@
 Wrong completion kind when declaring an argument type
-In declaring a function/method: void foo( (CTRL+SP) you get : Kind = Variable_Type / Field_Type Expected : Kind = Argument_Type Although in the three 
-cases (Variable type, Field type and Argument type) types are looked up, there are other differences in the proposed list regarding the templates that
+In declaring a function/method: void foo( (CTRL+SP) you get : Kind = Variable_Type / Field_Type Expected : Kind = Argument_Type Although in the three cases (Variable type, Field type and Argument type) types are looked up, there are other differences in the proposed list regarding the templates that
  would appear in the specified scope, for example.

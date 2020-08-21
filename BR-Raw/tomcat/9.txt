@@ -1,10 +1,5 @@
 [OLE] Open with in-place editor on html file freezes
 I performed an Open with in-place editor on an html file and Eclipse froze.
 I've included the complete stack trace below (sorry for the poor format) and here's what main is doing.
-"main" prio=7 tid=0x00034CB8 nid=0x81c runnable [7f000..7fc40] at org.eclipse.swt.internal.ole.win32.COM.VtblCall(Native Method) at org.eclipse.swt.in
-ternal.ole.win32.IDispatch.Invoke Entire stack trace "VM Periodic Task Thread" prio=10 tid=0x009E7008 nid=0x4f4 waiting on condition "Suspend Checker 
-Thread" prio=10 tid=0x009E7958 nid=0xf04 runnable preview: D:/dev/workspace/org.eclipse.team.tests.cvs.core/html/00042.html Full thread dump Java HotS
-pot(TM) Client VM (1.4.1_02-b06 mixed mode): "Worker-52" prio=5 tid=0x17D47850 nid=0xbb8 in Object.wait() [1860f000..1860fd8c ] at java.lang.Object.wa
-it(Native Method) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184) 
-- locked 
-<0413D3B0> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob (Wor
+"main" prio=7 tid=0x00034CB8 nid=0x81c runnable [7f000..7fc40] at org.eclipse.swt.internal.ole.win32.COM.VtblCall(Native Method) at org.eclipse.swt.internal.ole.win32.IDispatch.Invoke Entire stack trace "VM Periodic Task Thread" prio=10 tid=0x009E7008 nid=0x4f4 waiting on condition "Suspend Checker 
+Thread" prio=10 tid

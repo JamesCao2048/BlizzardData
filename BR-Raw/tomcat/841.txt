@@ -1,9 +1,4 @@
 Eclipse locking when creating a new dir or executing an ant script
-I'm using suse 8.2, with eclipse 2.1.2, with tomcat plugin (not used when the error occured) Sometimes eclipse locks when executing ant scripts, but i
-t unlocks after canceling.
-The locking when creating a directory is even more critic, since it locks (with clock cursor), and cancel button does not work (it becomes disabled af
-ter pressing it), and when I try to close the windows it gives the msg : "wizard can not be closed due to an active operation.
-you must cancel the operation before you can close the wizard" I got another lock, that I can't exactly appoint what task I was doing when it occured.
-But it gave me the following stacktrace !ENTRY org.eclipse.ui 4 0 Nov 19, 2003 13:53:48.509 !MESSAGE Widget is disposed !STACK 0 org.eclipse.swt.SWTEx
-ception: Widget is disposed at org.eclipse.swt.SWT.error(SWT.java:2330) at org.eclipse.swt.SWT.error(SWT.java:2260) at org.eclipse.swt.widgets.Widget.
-error(Widget.java:370) at org.eclipse.swt.widgets.Control.getDisplay(Control.java:1365) at 
+I'm using suse 8.2, with eclipse 2.1.2, with tomcat plugin (not used when the error occured) Sometimes eclipse locks when executing ant scripts, but it unlocks after canceling.
+The locking when creating a directory is even more critic, since it locks (with clock cursor), and cancel button does not work (it becomes disabled after pressing it), and when I try to close the windows it gives the msg : "wizard can not be closed due to an active operation.
+you must cancel the operation before you can c

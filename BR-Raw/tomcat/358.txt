@@ -1,8 +1,4 @@
 Error when clicking ok in preferences page
 I just installed eclipse m7 and when clicking ok in preferences page, the page didn't close, and the following stacktrace appeared at .log.
-!ENTRY org.eclipse.ui 4 4 Fev 17, 2004 18:18:05.917 !MESSAGE Unhandled event loop exception !ENTRY org.eclipse.ui 4 0 Fev 17, 2004 18:18:05.918 !MESSA
-GE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.ui.internal.dialogs.EditorsPreferencePage.performOk(EditorsPr
-eferencePage.java:139) at org.eclipse.ui.internal.ide.dialogs.IDEEditorsPreferencePage.performOk(IDEEditorsPreferencePage.java:206) at org.eclipse.jfa
-ce.preference.PreferenceDialog.okPressed(PreferenceDialog.java:779) at org.eclipse.jface.preference.PreferenceDialog.buttonPressed(PreferenceDialog.ja
-va:223) at org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.buttonPressed(WorkbenchPreferenceDialog.java:75) at org.eclipse.jface.dialogs.Dia
-log$1.widgetSelected(Dialog.java:402) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.
+!ENTRY org.eclipse.ui 4 4 Fev 17, 2004 18:18:05.917 !MESSAGE Unhandled event loop exception !ENTRY org.eclipse.ui 4 0 Fev 17, 2004 18:18:05.918 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.ui.internal.dialogs.EditorsPreferencePage.performOk(EditorsPr
+eferencePage.java:139) at org.eclipse.ui.internal.ide.dialo

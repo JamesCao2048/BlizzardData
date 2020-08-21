@@ -6,9 +6,4 @@ When I launch my development workspace with the
 <ws location>.
 It works fine when I specify the absolute path for 
 <ws location>.
-When the development workspace is launched with the relative path, and I launch the target from it, I get the following message in my console : Ignori
-ng bundle at: reference:file:/VE_3.0_M7/org.eclipse.myplugin Ignoring bundle at: reference:file:/VE_3.0_M7/org.eclipse.myplugin.A ..
-etc.
-and sure enough the plugins dont show up in the launched target.
-This works fine when I specify the absolute path to the 
-<ws location>.
+When the development workspace is launched with the relative path, and I launch the target from it, I get the following message in m

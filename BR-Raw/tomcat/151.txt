@@ -1,8 +1,3 @@
 Program quit working with no intervention
-I have been using M7 since the day it was released with no problems whatsoever, I tried to start it up today and I get the following error: java.io.EO
-FException at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:400) at java.io.DataInputStream.readUTF(DataInputStream.java:633) at java
-.io.DataInputStream.readUTF(DataInputStream.java:610) at org.eclipse.osgi.internal.resolver.StateReader.readBundleDescription(StateReader.java:88) at 
-org.eclipse.osgi.internal.resolver.StateReader.readState(StateReader.java:52) at org.eclipse.osgi.internal.resolver.StateReader.loadState(StateReader.
-java:146) at org.eclipse.osgi.internal.resolver.StateObjectFactoryImpl.readSystemState(StateObjectFactoryImpl.java:136) at org.eclipse.osgi.internal.r
-esolver.StateManager.readState(StateManager.java:58) at org.eclipse.osgi.internal.resolver.StateManager.<init>(StateManager.java:33) at org.eclipse.co
-re.runtime.adaptor.EclipseAdaptor.createStateManager(EclipseAdaptor.java:104) at org.eclipse.o
+I have been using M7 since the day it was released with no problems whatsoever, I tried to start it up today and I get the following error: java.io.EOFException at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:400) at java.io.DataInputStream.readUTF(DataInputStream.java:633) at java
+.io.DataInputStream.readUTF(DataInputStream.java:610) at org.eclipse.osgi.internal.resolver.StateReader.readBundleDescription(StateReader.java:88) at org.eclipse.osgi.internal.resolver.StateReader.re

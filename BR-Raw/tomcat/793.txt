@@ -4,6 +4,4 @@ This was OK before since it iterates through a hashMap, which order does not mat
 However in CBE 101, it uses ArrayList instead of hashMap.
 By using a iterator, we have clone a copy of the ArrayList which has elements in different order than the original.
 This is what stated in the sun javadoc: public Iterator iterator()Returns an iterator over the elements in this collection.
-There are no guarantees concerning the order in which the elements are returned (unless this collection is an instance of some class that provides a g
-uarantee).
-Classes affected by this bug: CommonBaseEventImpl.java ExtendedDataElementImpl.java
+There a

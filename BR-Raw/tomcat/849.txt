@@ -1,11 +1,3 @@
 Deadlock OrderedLock <-> DeadlockDetector
-Found one Java-level deadlock: ============================= "Worker-5": waiting to lock monitor 0x8f72d4 (object 0x3e2a4e0, a org.eclipse.core.intern
-a l.jobs.OrderedLock), which is held by "Worker-4" "Worker-4": waiting to lock monitor 0x8f74d4 (object 0x3e05d48, a org.eclipse.core.interna l.jobs.D
-eadlockDetector), which is held by "Worker-5" Java stack information for the threads listed above: ===================================================
- "Worker-5": at org.eclipse.core.internal.jobs.OrderedLock.doRelease(OrderedLock.java :177) 
-- waiting to lock 
-<03E2A4E0> (a org.eclipse.core.internal.jobs.OrderedLo ck) at org.eclipse.core.internal.jobs.OrderedLock.forceRelease(OrderedLock.j ava:202) at org.ec
-lipse.core.internal.jobs.LockManager$LockState.suspend(LockMana ger.java:32) at org.eclipse.core.internal.jobs.LockManager.addLockWaitThread(LockMana 
-ger.java:107) 
-- locked 
-<03E05D48> (a org.eclipse.core.internal.jobs.DeadlockDetector) at org.eclipse.core.internal.jobs.OrderedLock
+Found one Java-level deadlock: ============================= "Worker-5": waiting to lock monitor 0x8f72d4 (object 0x3e2a4e0, a org.eclipse.core.interna l.jobs.OrderedLock), which is held by "Worker-4" "Worker-4": waiting to lock monitor 0x8f74d4 (object 0x3e05d48, a org.eclipse.core.interna l.jobs.D
+eadlockDetector), which is held by "Worker-5" Java stack information for the threads listed above: =================================================== "Worker-5": at org.eclipse.core.internal.jobs.Or

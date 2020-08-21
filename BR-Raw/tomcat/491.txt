@@ -3,10 +3,5 @@ IAE in linked mode
 - select 'IOException' from 'foo' signature.
 
 - local rename, press 'RR' 
--> Illegal Argument Exception package x; import java.io.IOException; import java.io.Reader; public class B { private Reader reader; public void dispos
-e() { if (reader != null) { try { reader.
-close() ; // my formatting } catch (IOException e) { } } } /** * @param name1 * @throws IOException */ public void foo(int name1) throws IOException {
- } } java.lang.IllegalArgumentException: Argument not valid at java.lang.Throwable.<init>(Throwable.java) at java.lang.Throwable.<init>(Throwable.java
-:73) at org.eclipse.swt.SWT.error(SWT.java:2594) at org.eclipse.swt.SWT.error(SWT.java:2538) at org.eclipse.jface.text.DocumentAdapter.replaceTextRang
-e(DocumentAdapter.java:196) at org.eclipse.swt.custom.StyledText.modifyContent(StyledText.java:6017) at org.eclipse.swt.custom.StyledText.sendKeyEvent
-(StyledText.java:6953) at org.eclipse.swt.custom.StyledText.doContent(StyledTex
+-> Illegal Argument Exception package x; import java.io.IOException; import java.io.Reader; public class B { private Reader reader; public void dispose() { if (reader != null) { try { reader.
+close() ; // my formatting } catch (IOException e) { } } } /** * @param name1 * @throws IOException */ public void foo(int name1) throws IOException { } } java.lang.IllegalArgumentExce

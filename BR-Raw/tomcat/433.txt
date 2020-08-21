@@ -1,8 +1,3 @@
 [infrastructure] NPE running JDT Core tests
-Build 20040205 + latest from THAW_402 Got the following NPE running the JDT Core tests: java.lang.NullPointerException at org.eclipse.jdt.internal.cor
-e.index.DiskIndex.readCategoryTable (DiskIndex.java:558) at org.eclipse.jdt.internal.core.index.DiskIndex.addQueryResults (DiskIndex.java:142) at org.
-eclipse.jdt.internal.core.index.Index.query(Index.java:137) at org.eclipse.jdt.internal.core.search.matching.TypeDeclarationPattern.queryIn (TypeDecla
-rationPattern.java:188) at org.eclipse.jdt.internal.core.search.pattern.InternalSearchPattern.findIndexMatc hes(InternalSearchPattern.java:47) at org.
-eclipse.jdt.internal.core.search.PatternSearchJob.search (PatternSearchJob.java:119) at org.eclipse.jdt.internal.core.search.PatternSearchJob.execute 
-(PatternSearchJob.java:62) at org.eclipse.jdt.internal.core.search.processing.JobManager.performConcurrentJob (JobManager.java:261) at org.eclipse.jdt
-.core.search.SearchEngine.searchAllTypeNames (SearchEngine.java:810) at org.eclipse.jdt.tests.
+Build 20040205 + latest from THAW_402 Got the following NPE running the JDT Core tests: java.lang.NullPointerException at org.eclipse.jdt.internal.core.index.DiskIndex.readCategoryTable (DiskIndex.java:558) at org.eclipse.jdt.internal.core.index.DiskIndex.addQueryResults (DiskIndex.java:142) at org.
+eclipse.jdt.internal.core.index.Index.query(Index.java:137) at org.eclipse.jdt.internal.core.search.matching.TypeDeclarationPattern.queryIn (TypeDeclarationPattern.java:188) at org.eclipse.jdt.intern

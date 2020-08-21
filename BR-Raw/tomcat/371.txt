@@ -1,10 +1,4 @@
 Ant complains about missing jars in classpath
-In build M5, there seems to be a problem with running Ant for any target when the containing project points to jar files which are are currently missi
-ng AND the project is not associated with CVS.
-Normally I use CVS, check out projects containing source code only, use an Ant target to retrieve external resources (jars, zips, tlds, etc.) and then
- add the needed jars to the Java Project's libraries under the "Java Build Path" section of the project's properties.
-Once I have the project set up I can build the project, clean the project (run an Ant "clean" target which deletes all generated and retrieved resourc
-es), and then build the project again or whatever I want.
-However, trying this same senerio with a local (non-CVS) project Ant gives the following type of error (depending on the needed resource): ERROR: Laun
-ch: The archive: /someproject/some.jar which is referenced by the classpath, does not exist.
-This sort of error is given even if I edit the build.xml file to include only a 
+In build M5, there seems to be a problem with running Ant for any target when the containing project points to jar files which are are currently missing AND the project is not associated with CVS.
+Normally I use CVS, check out projects containing source code only, use an Ant target to retrieve external resources (jars, zips, tlds, etc.) and then add the needed jars to the Java Project's libraries under the "Java Build Path" section of the project's properties.
+Once I have the project set up I ca

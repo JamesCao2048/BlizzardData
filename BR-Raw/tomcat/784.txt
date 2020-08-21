@@ -1,14 +1,8 @@
 Source code not always found in debugger
-This report includes a description of my setup, a description of the problem, a description of the source of the problem, and a description of two pos
-sible solutions.
+This report includes a description of my setup, a description of the problem, a description of the source of the problem, and a description of two possible solutions.
 SETUP: My setup is a little complex.
 I think that most of this is irrelevent, but I'm including it all just in case.
 I'm running Eclipse 2.1.2 with CDT 1.2 on Windows XP.
 I have a current cygwin installation (as of 2003-12-4) and prc-tools 2.3 installed (< http://prc 
 - tools.sf.net>).
-I'm running from a drive (K:) that's mapped to my Documents directory (C:Documents and SettingsKeith Rollin.PALMSOURCEMy Documents).
-My workspace (K:ProjectsEclipseplugins) is outside of my Eclipse directory (K:Downloadseclipse2.1.2eclipse).
-I launch Eclipse with a shortcut that specifies the following command line: K:Downloadseclipse2.1.2 eclipseeclipse.exe 
--data k:ProjectsEclipseplugins.
-My runtime workspace is in the normal location relative to the main workspace (K:ProjectsEclipseruntime-workspace).
-I am using the Eclipse for Palm OS 
+I'm running from a drive (K:) that's mapped to

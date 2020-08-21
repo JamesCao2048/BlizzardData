@@ -4,7 +4,4 @@ In handling an imported file (using the
 The difficulty in implementing this, I am guessing, is that imports are probably resolved at runtime rather than at parse time.
 A build file author might, perhaps, use a property dereference to in the 
 <import file=""/> declaration.
-To accomediate this an action in the views could prompt the user with a dialog allowing him to associate the import with a specific file in the file s
-ystem.
-This configuration detail could be saved in a comment in the build file itself or else in some other configuration store.
-Of course, we could handle direct file references now and code for property dereferences in the import's file attribute later.
+To accomediate this an action in the views could prompt the user with a dialog allowing him to associate the import wi

@@ -2,8 +2,4 @@ NPE displaying JavaMethodBreakpoint that has no signature
 I created a JavaMethodBreakpoint using JDIDebugModel.createMethodBreakpoint(), specifying null for the methodSignature.
 This lead to a NPE when the UI tries to display the breakpoint in the Breakpoints view.
 I saw this problem while using the M3 driver.
-java.lang.NullPointerException at org.eclipse.jdt.core.Signature.toString(Signature.java:1438) at org.eclipse.jdt.internal.debug.ui.JDIModelPresentati
-on.getMethodBreakpointText(JDIModelPresentation.java:1382) at org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.getBreakpointText(JDIModelPresent
-ation.java:1179) at org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.getText(JDIModelPresentation.java:218) at org.eclipse.debug.internal.ui.Laz
-yModelPresentation.getText(LazyModelPresentation.java:121) at org.eclipse.debug.internal.ui.DelegatingModelPresentation.getText(DelegatingModelPresent
-ation.java:181) at org.eclipse.jface.viewers.TableViewer.doUpdateItem(TableViewer.java:201) at org.eclipse.jface.viewers.StructuredViewer$Upda
+java.lang.NullPointerException at org.eclipse.jdt.core.Signature.toString(Signature.java:1438) at org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.getMethodBreakpointText(JDIModelPresentation.java:1382) at org.eclipse.jdt.internal.debug.ui.

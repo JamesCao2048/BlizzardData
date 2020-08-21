@@ -1,14 +1,7 @@
 Wrong JDK source lookup if Compile-JDK <> Debug-JDK
-Dear experts, I work in a server developement environment where compilation of sources is done with JDK 1.3.1 (my company policy), but the resulting J
-AR's are currently executed on a server running JDK 1.4.2 and need to be debugged there.
+Dear experts, I work in a server developement environment where compilation of sources is done with JDK 1.3.1 (my company policy), but the resulting JAR's are currently executed on a server running JDK 1.4.2 and need to be debugged there.
 My Eclipse setup is: Window 
 --> Preferences 
 --> installed JREs 
 --> JDK 1.3.1 (to compile with 1.3.1).
-I have a debug configuration that has the following setup: In "Source" tab: "Use defualt source look up path" deselected (otherwise, JRE System librar
-y for 1.3.1 would be in) and manually added JRE System library JDK 1.4.2 using "Advanced 
---> Add container" and moved this item to the top of the source list.
-But when debugging and stepping through SUN code (e.g.
-class java.lang.Thread), I see the 1.3.1 source and the code pointer moves through non-code parts of the source, e.g.
-comments, space lines, ...
-If I switch the preferences to using 1.4.2 as default JDK, I get the correct code when debugging, but as said I shall compile using 1.3.1 in ord
+I have a debug configuration that has the following setup: In "Source" tab: "Use defualt source look up path" deselected (otherwise, JRE System library for 

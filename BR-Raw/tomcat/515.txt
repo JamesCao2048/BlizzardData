@@ -6,7 +6,4 @@ The NPE pasted below was found in the log.
 I suspect this has something to do with something more general, as in failure of loading a class when a background build is going on.
 Perhaps ( bug 47255 ).
 Error Jan 26, 2004 11:33:45.556 Plug-in org.eclipse.team.cvs.ui was unable to load class org.eclipse.team.internal.ccvs.ui.CVSLightweightDecorator.
-java.lang.NullPointerException at org.eclipse.osgi.framework.internal.defaultadaptor.DefaultClassLoader.findClass (DefaultClassLoader.java:174) at org
-.eclipse.osgi.framework.adaptor.BundleClassLoader.findLocalClass (BundleClassLoader.java:264) at org.eclipse.core.runtime.adaptor.EclipseClassLoader.f
-indLocalClass (EclipseClassLoader.java:69) at org.eclipse.osgi.framework.internal.core.BundleLoader.findLocalClass (BundleLoader.java:333) at org.ecli
-pse.osgi.framework.internal.core.BundleLoader.findClass (BundleLoader.
+java.lang.NullPointerEx

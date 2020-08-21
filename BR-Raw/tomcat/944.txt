@@ -1,12 +1,7 @@
 Deadlock on 'Introduce local variable'
-20031007 1.Selected an expression and used Alt + Shift + L 2.Dielaog shows up, pressed ok 3.Progress monito goes to 50%, then a deadlock Full thread d
-ump Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode): "Worker-5" prio=5 tid=0x02e0d1d8 nid=0xa88 in Object.wait() [3dcf000..3dcfd94] at java.lang.Obj
+20031007 1.Selected an expression and used Alt + Shift + L 2.Dielaog shows up, pressed ok 3.Progress monito goes to 50%, then a deadlock Full thread dump Java HotSpot(TM) Client VM (1.4.2-b28 mixed mode): "Worker-5" prio=5 tid=0x02e0d1d8 nid=0xa88 in Object.wait() [3dcf000..3dcfd94] at java.lang.Obj
 ect.wait(Native Method) 
 - waiting on 
 <0x113d9628> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:108) 
 - locked 
-<0x113d9628> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:134) at org.eclipse.c
-ore.internal.jobs.Worker.run(Worker.java:55) "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x0318f1d8 nid=0x724 in Object.wait()
- [3e9f000..3e9f d94] at java.lang.Object.wait(Native Method) 
-- waiting on 
-<0x12cae8d8> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue) at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThrea
+<0x113d9628> (a or

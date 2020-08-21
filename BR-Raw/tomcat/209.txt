@@ -7,8 +7,4 @@ Steps:
 
 - Hit enter in the console to terminate execution.
 2.Click on the Open Log View toolbar button in the Profiling perspective to open the log view.
-After clicking on the Open Log View toolbar button, I see this in the .log file: !ENTRY org.eclipse.ui 4 4 Mar 09, 2004 15:13:23.125 !MESSAGE Unhandle
-d exception caught in event loop.
-!ENTRY org.eclipse.ui 4 0 Mar 09, 2004 15:13:23.141 !MESSAGE org.eclipse.hyades.models.cbe.impl.CBEDefaultEventImpl !STACK 0 java.lang.ClassCastExcept
-ion: org.eclipse.hyades.models.cbe.impl.CBEDefaultEventImpl at org.eclipse.hyades.sd.logc.internal.loader.LogInteractions.handleViewSelectionCh angedE
-vent(LogInteractions.java:839) at org.eclipse.hyades.trace.internal.ui.TraceUIManager.notifyViewSelection
+After clicking on the Open Log View toolbar button, I see this in the .log file: !ENTRY org.

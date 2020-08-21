@@ -1,6 +1,5 @@
 [CoolBar] [JFace] ApplicationWindow.createCoolBar tests coolBarManager 2x
-In ApplicationWindow, the createCoolBar method tests coolBarManager 2x, and doesn't test toolBarManager: if ((getShell() == null) && (coolBarManager =
-= null) && (coolBarManager == null)) { (Line 255) This is the case in 3.0 M6, as well as N20040207.Both win32.The effect of this is that if you call a
+In ApplicationWindow, the createCoolBar method tests coolBarManager 2x, and doesn't test toolBarManager: if ((getShell() == null) && (coolBarManager == null) && (coolBarManager == null)) { (Line 255) This is the case in 3.0 M6, as well as N20040207.Both win32.The effect of this is that if you call a
 ddToolBar(), then addCoolBar(), you get both toolbar and coolbar, though the documentation says you get one or the other.
 If you call addCoolBar(), then addToolBar(), only the coolbar gets created.
-Obviously, the code should read: if ((getShell() == null) && (toolBarManager == null) && (coolBarManager == null)) {
+O

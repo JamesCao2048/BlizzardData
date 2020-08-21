@@ -7,8 +7,4 @@ If you add
 <element name="foo" type="string"/> to the schema, all is still well.
 Change the type to "bar".
 A problem is correctly reported.
-If you then comment out the element statement with 
-<!-- and 
---> surrounding it either on separate lines or enclosed within, the error remains.
-The location of error does not match the layout of the file.
-If you close the file and re-open it, the errors are gone.
+If you then comment out the eleme

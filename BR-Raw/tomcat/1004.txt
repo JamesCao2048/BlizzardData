@@ -1,4 +1,3 @@
 Inconsistent wizard plugin wizard choice possible
-When creating a new plug-in project with the default plug-in structure, it is possible to check the option "Add support for resource bundles" and unch
-eck the option "Add default instance access".
+When creating a new plug-in project with the default plug-in structure, it is possible to check the option "Add support for resource bundles" and uncheck the option "Add default instance access".
 This creates a plugin class with a compiler error because the resource access code relies on the default instance access method.

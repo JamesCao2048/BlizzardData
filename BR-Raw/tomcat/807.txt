@@ -3,10 +3,4 @@ Choosing the Source->Generate Getter/Setter action seems to be broken.
 I tried explicitly choosing the class in the outline view, but it doesn't seem to help.
 Tried in several different classes, and tried a restart of the workbench, but still the same effect.
 Major PITA.
-Stack trace follows: !ENTRY org.eclipse.ui 4 0 Nov 25, 2003 11:28:01.568 !MESSAGE null argument; !STACK 0 org.eclipse.jface.util.Assert$AssertionFaile
-dException: null argument; at org.eclipse.jface.util.Assert.isNotNull(Assert.java:139) at org.eclipse.jface.util.Assert.isNotNull(Assert.java:116) at 
-org.eclipse.jface.viewers.AbstractTreeViewer.
-reveal(AbstractTreeViewer.java:1233) at org.eclipse.jdt.ui.actions.
-AddGetterSetterAction$GetterSetterTreeSelectionDialog.
-createDialogArea(AddGetterSetterAction.java:972) at org.eclipse.jface.dialogs.Dialog.createContents(Dialog.java:573) at org.eclipse.jface.window.Windo
-w.create(Window.java:305) at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:883) at org.eclipse.ui.di
+Stack trace follows: !ENTRY org.eclipse.ui 4 0 Nov 25, 2003 11:28:01.568 !MESSAGE null argument; !STACK 0 org.eclipse.jface.util.Assert$AssertionFailedException: null argument; at org.eclipse.jface.util.Assert.isNotNull(Assert.j

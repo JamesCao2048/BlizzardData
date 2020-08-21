@@ -3,8 +3,4 @@ See bug 50174 .
 3.0 M6 While using the Plugin Registry view, i noticed that some extension points showed up with non-localized names.
 Perhaps missing resource translations should be logged to the platform log, as it indicates the programmer has forgotten to translate something.
 I got htis list by logging MREs in the BundelModel class.
-Here is a list of all the missing resource keys (and their plugin) that i could find: org.eclipse.core.variables %valueVariablesExtensionPointName org
-.eclipse.core.variables %dynamicVariablesExtensionPointName org.eclipse.debug.core %logicalStructureTypesExtensionPointName org.eclipse.jdt.debug.ui %
-vmInstallTypePage org.eclipse.jdt.ui %deleteProcessorExtensionPoint org.eclipse.team.ui %ActionSet.description org.eclipse.ui %ExtPoint.actionSetPartA
-ssociations org.eclipse.ui %ExtPoint.elementFactories org.eclipse.ui.editors %ExtPoint.documentProviders org.eclipse.ui.editors %ExtPoint.markerUpdate
-rs org.eclipse.ui.workbench.texteditor %category.textEditor
+Here is a list of all the missing resource keys (and their plugin) that i could find: org.eclipse.core.variables %valueVariablesExtensionPointName org.eclipse.core

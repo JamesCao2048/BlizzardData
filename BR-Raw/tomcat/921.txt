@@ -1,6 +1,4 @@
 Workbench Help set on wrong Composite
-In BuildPathsPropertyPage and SourceAttachmentPropertyPage the Workbench Help is set on the parent Composite passed to createContents(Composite parent
-) rather than on the control that is returned from getControl().
+In BuildPathsPropertyPage and SourceAttachmentPropertyPage the Workbench Help is set on the parent Composite passed to createContents(Composite parent) rather than on the control that is returned from getControl().
 As a result the Help for the preference page cannot be used in when performHelp() is called.
-In JavadocConfigurationPropertyPage and JavaElementInfoPage the Workbench Help is set on a different composite, but still not the control that is retu
-rned from getControl().
+In JavadocConfigurationPropertyPage and JavaElementInfoPage the Workbench Help is set on a different composite, but still not the control that is returned from getControl().

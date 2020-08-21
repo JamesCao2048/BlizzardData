@@ -3,6 +3,5 @@ project A and B opened.
 working set contains only project B.
 in project A, some class x, has e.printStackTrace() in it.
 right-click "printStackTrace", search reference in working set above (B).
-it returns no results, although the project B contains many printStackTrace(); goto project B, find an example of printStackTrace, and search again bu
-t in workspace.
+it returns no results, although the project B contains many printStackTrace(); goto project B, find an example of printStackTrace, and search again but in workspace.
 Returns results (granted you create some!)

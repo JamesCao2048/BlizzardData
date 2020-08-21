@@ -1,9 +1,4 @@
 [implementation] The Open External File action is broken
 When I try and us the File->Open External File...
-action in eclipse 3.0M6, I get the following exception: org.eclipse.ui.PartInitException[0]: java.lang.IllegalArgumentException: Path must include pro
-ject and resource name: /boot.ini at org.eclipse.core.internal.utils.Assert.isLegal(Assert.java:56) at org.eclipse.core.internal.resources.Workspace.n
-ewResource(Workspace.java:1400) at org.eclipse.core.internal.resources.Container.getFile(Container.java:117) at org.eclipse.core.filebuffers.FileBuffe
-rs.getWorkspaceFileAtLocation(FileBuffers.java:55) at org.eclipse.core.internal.filebuffers.TextFileBufferManager.isWorkspaceResource(TextFileBufferMa
-nager.java:106) at org.eclipse.core.internal.filebuffers.TextFileBufferManager.createFileBuffer(TextFileBufferManager.java:99) at org.eclipse.core.int
-ernal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:64) at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(
-TextFileDocumentProvider.java:465) at org.ec
+action in eclipse 3.0M6, I get the following exception: org.eclipse.ui.PartInitException[0]: java.lang.IllegalArgumentException: Path must include project and resource name: /boot.ini at org.eclipse.core.internal.utils.Assert.isLegal(Assert.java:56) at org.eclipse.core.internal.resources.Workspace.n
+ewResource(Workspace.java:1400) at org.eclipse.core.internal.resources.Container.getFile(Container.java:117) at org.eclipse.core.filebuffers.FileBuff

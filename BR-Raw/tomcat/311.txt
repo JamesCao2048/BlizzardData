@@ -4,10 +4,4 @@ Yes indeed, thats what I'm saying.
 Developing the plugin and running it by starting the runtime-workspace (spawns a separate IDE window) works ok.
 But when restarting the initial IDE, invoking the plugin will cause the same NoClassDefFoundError.
 Turning on the OSGI support did not work.
-I'm able to reproduce the bug by starting in a clean environment, choose a new project plugin with a view.
-In the action1 button, instead of showing a message, I construct a Frame via the SWT_AWT class, set the size, add a JPanel containing a JButton and ma
-ke it visible.
-If you now choose "run as..." a runtime workbench is started and everything works fine.
-Now export the project as a deployable plugin.
-Then, extract the zip file to the eclipse folder so that the plugin is in the appropriate place.
-Stop and restart Eclipse, adjust perspective so that the vie
+I'm able to reproduce the bug by starting in a clean environment,

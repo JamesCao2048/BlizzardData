@@ -1,3 +1,2 @@
 [Parser] Pointer To functions are not recognized in expression result evaluation
-In the code: int m(int); int *pm; int f(){} int f(int); int x = f((*pm)(5)); The call to "f" is not resolved properly as the expression's type is not 
-evaluated properly.
+In the code: int m(int); int *pm; int f(){} int f(int); int x = f((*pm)(5)); The call to "f" is not resolved properly as the expression's type is not evaluated properly.

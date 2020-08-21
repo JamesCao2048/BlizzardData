@@ -1,9 +1,5 @@
 NPE when using ICU.reconcile(GET_AST_TRUE, ...)
 I200403161300 + new code to use AST on reconcile (not yet in HEAD).
 Difference is that we request the AST.
-This time I have steps :-) 1.started fresh workspace 2.create Java project 3.create package org.eclipse.swt.custom 4.create empty file StyledText.java
- 5.paste StyledText.java into a fresh workspace ==> java.lang.NullPointerException at java.lang.Throwable.<init>(Throwable.java) at java.lang.Throwabl
-e.<init>(Throwable.java) at java.lang.NullPointerException.<init>(NullPointerException.java:60) at org.eclipse.jdt.core.dom.TypeBinding.getKey(TypeBin
-ding.java) at org.eclipse.jdt.core.dom.MethodBinding.getKey(MethodBinding.java) at org.eclipse.jdt.core.dom.DefaultBindingResolver.resolveMethod(Defau
-ltBindingResolver.java:470) at org.eclipse.jdt.core.dom.MethodDeclaration.resolveBinding(MethodDeclaration.java:869) at org.eclipse.jdt.core.dom.ASTCo
-nverter.convert(ASTConverter.java) at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:1005) at org.eclipse.j
+This time I have steps :-) 1.started fresh workspace 2.create Java project 3.create package org.eclipse.swt.custom 4.create empty file StyledText.java 5.paste StyledText.java into a fresh workspace ==> java.lang.NullPointerException at java.lang.Throwable.<init>(Throwable.java) at java.lang.Throwabl
+e.<init>(Throwable.java) at java.lang.NullPointerException.<init>(NullPointerException.java:

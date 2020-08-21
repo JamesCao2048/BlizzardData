@@ -1,9 +1,4 @@
 Cannot open default Editor (Java Files) when Link Folder 3.0 M4
 When use link folder to my project, i cant open java files because crash.
-and get Cannot open defaul editor on XX.java Editor could not be initizalized if i move the file to other no link folder i could open, but in link fol
-der wasn't !ENTRY org.eclipse.ui.workbench.texteditor 4 0 oct 30, 2003 12:11:10.240 !MESSAGE Editor could not be initialized.
+and get Cannot open defaul editor on XX.java Editor could not be initizalized if i move the file to other no link folder i could open, but in link folder wasn't !ENTRY org.eclipse.ui.workbench.texteditor 4 0 oct 30, 2003 12:11:10.240 !MESSAGE Editor could not be initialized.
 !STACK 0 java.lang.NullPointerException at org.eclipse.jdt.internal.ui.javaeditor.filebuffers.CompilationUnitDocumentProvid er2.createFileInfo(Compila
-tionUnitDocumentProvider2.java:774) at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect (TextFileDocumentProvider.java:332) at org.eclipse
-.ui.texteditor.AbstractTextEditor.doSetInput (AbstractTextEditor.java:2500) at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput (StatusTextEditor
-.java:162) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput (JavaEditor.java:2099) at org.eclipse.jdt.internal.ui.javaeditor.Compilatio
-nUnitEditor.doSetInput (CompilationUnitEditor

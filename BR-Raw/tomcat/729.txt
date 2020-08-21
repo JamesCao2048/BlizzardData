@@ -1,12 +1,6 @@
 All bookmarks and tasks lost after Eclipse crashes.
-////////// My configuration: ///////////////////// 1.Eclipse platform Version: 2.1.0 Build id: 200303272130 2.Besides the standard plugins came with E
-clispse platform, I've installed the following plugin: 
+////////// My configuration: ///////////////////// 1.Eclipse platform Version: 2.1.0 Build id: 200303272130 2.Besides the standard plugins came with Eclispse platform, I've installed the following plugin: 
 - PHPEclipse Tools Core (1.0.9) 
-- PHPEclipse SQL Utility (1.0.1) ///////// How did the problem rise: /////////////// 1.I'm doing a PHP project on another machine (mounted the remote 
-directory with NFS to my local disk).
+- PHPEclipse SQL Utility (1.0.1) ///////// How did the problem rise: /////////////// 1.I'm doing a PHP project on another machine (mounted the remote directory with NFS to my local disk).
 2.The remote computer reboot without closing Eclipse properly.
-And then Eclipse goes dead ("ps afx" command reveals that the status of Eclipse's main thread is "D" (uninterrupted IO process?
-not sure...) ) 3.I "kill" all its child-threads by force, but I was not able to kill its main thread.
-4.The remote computer done its reboot, and Eclipse threads got killed automatically.
-5.I re-open Eclipse and the project, and I found all my bookmarks and tasks disappeared...
-(All other settings, like short-cut keys, are working fine) this is TOO bad because there were more th
+And then E

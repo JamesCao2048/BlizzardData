@@ -1,8 +1,3 @@
 Activities UI synch needed
-org.eclipse.swt.SWTException: Invalid thread access at org.eclipse.swt.SWT.error(SWT.java:2625) at org.eclipse.swt.SWT.error(SWT.java:2555) at org.ecl
-ipse.swt.widgets.Widget.error(Widget.java:377) at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:307) at org.eclipse.swt.widgets.Menu.getItems
-(Menu.java:702) at org.eclipse.jface.action.MenuManager.update(MenuManager.java:564) at org.eclipse.jface.action.MenuManager.update(MenuManager.java:5
-25) at org.eclipse.ui.internal.activities.ws.WorkbenchActivitySupport$1.activityManager Changed(WorkbenchActivitySupport.java:56) at org.eclipse.ui.in
-ternal.activities.AbstractActivityManager.fireActivityManagerCh anged(AbstractActivityManager.java:46) at org.eclipse.ui.internal.activities.MutableAc
-tivityManager.setEnabledActivityIds (MutableActivityManager.java:513) at org.eclipse.ui.internal.activities.ws.WorkbenchActivitySupport.setEnabledActi
-vit yIds(WorkbenchActivitySupport.java:78) at org.eclipse.ui.internal.ide.IDEWorkbenchActivity
+org.eclipse.swt.SWTException: Invalid thread access at org.eclipse.swt.SWT.error(SWT.java:2625) at org.eclipse.swt.SWT.error(SWT.java:2555) at org.eclipse.swt.widgets.Widget.error(Widget.java:377) at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:307) at org.eclipse.swt.widgets.Menu.getItems
+(Menu.java:702) at org.eclipse.jface.action.MenuManager.update(MenuManager.java:564) at org.eclipse.jface.action.MenuManager.update(MenuManager.java:525) at org.eclipse.ui.internal.activities.ws.Work

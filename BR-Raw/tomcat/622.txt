@@ -1,8 +1,6 @@
 dump only changed classes
 As suggested by William Louth on aspectj-users, could the compiler support a flag to only dump unchanged classes?
-That would permit a simple copy rule for updating jars and provide the SCM world with concrete de-minimus proof and protection against aspects gone wi
-ld.
+That would permit a simple copy rule for updating jars and provide the SCM world with concrete de-minimus proof and protection against aspects gone wild.
 It might soothe some of the pain if we don't fully support 
 -outjar.
-For those interested in contributing a patch on point, Jim suggested how to implement this: modify the method org.aspectj.weaver.bcel.BcelWeaver.dumpU
-nchanged to do nothing.
+For those interested in contributing a patch on point, Jim suggested how to implement this: modify the method org.aspectj.weaver.bcel.BcelWeaver.dumpUnchanged to d

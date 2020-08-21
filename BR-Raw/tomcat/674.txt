@@ -2,10 +2,7 @@ java.lang.OutOfMemoryError when running LoggingUtilSample
 machine: peanuts when running the the LoggingUtilSample with profiling turn on (e.g.
 java 
 - XrunpiAgent:server=standalone 
-- classpath "$CLASSPATH:hlcore.jar:hexr.jar:logutil.jar" LoggingUtilSample) the following exception got thrown: In Main before creating the logging ob
-ject In constructor: before creating all objects Exception in thread "main" java.lang.OutOfMemoryError: requested 
+- classpath "$CLASSPATH:hlcore.jar:hexr.jar:logutil.jar" LoggingUtilSample) the following exception got thrown: In Main before creating the logging object In constructor: before creating all objects Exception in thread "main" java.lang.OutOfMemoryError: requested 
 -512444872 bytes I try increase the heapsize by 
 -Xms 500M 
--Xmx1000M but get the same result NOTE: it works with profiling turned off.
-this is the jvm: java version "1.3.1_01" Java(TM) 2 Runtime Environment, Standard Edition (build 1.3.1_01) Java HotSpot(TM) Client VM (build 1.3.1_01,
- mixed mode)
+-Xmx1000M but get the same result NOTE: it works wi

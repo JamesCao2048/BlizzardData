@@ -6,7 +6,4 @@ Then a deadlock with CVS was detected.
 I'm not sure if this is PDE, Core or Team, so I'm arbitrarily assigning it to Core and cc'ing Mike and John A.
 Two stacks below: Error Nov 18, 2003 18:54:09.509 Deadlock detected.
 All locks owned by thread Worker-7 will be suspended.
-java.lang.IllegalStateException at org.eclipse.core.internal.jobs.DeadlockDetector.reportDeadlock (DeadlockDetector.java:388) at org.eclipse.core.inte
-rnal.jobs.LockManager.addLockWaitThread (LockManager.java:100) at org.eclipse.core.internal.jobs.OrderedLock.doAcquire(OrderedLock.java:151) at org.ec
-lipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:98) at org.eclipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:74) at org.ec
-lipse.team.internal.ccvs.core.resources.EclipseSynchronizer.beginOperatio n(EclipseSynchronizer.jav
+java.lang.IllegalStateException at org.eclipse.core.

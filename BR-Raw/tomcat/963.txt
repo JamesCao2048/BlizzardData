@@ -1,8 +1,3 @@
 Custom Perspective action is causing a NPE
-I20030930 The Window->Customize Perspective action is causing a NPE: WorkbenchActionBuilder.fillStatusLine(IStatusLineManager) line: 360 WorkbenchActi
-onBuilder.fillActionBars(WWinActionBars) line: 287 WorkbenchWindow.fillActionBars(WWinActionBars) line: 965 CustomizePerspectiveDialog.<init>(Shell, P
-erspective) line: 567 WorkbenchPage.editActionSets() line: 1155 EditActionSetsAction.run() line: 46 EditActionSetsAction(Action).runWithEvent(Event) l
-ine: 842 ActionContributionItem.handleWidgetSelection(Event, boolean) line: 543 ActionContributionItem.access$4(ActionContributionItem, Event, boolean
-) line: 496 ActionContributionItem$6.handleEvent(Event) line: 468 EventTable.sendEvent(Event) line: 82 MenuItem(Widget).sendEvent(Event) line: 847 Dis
-play.runDeferredEvents() line: 2188 Display.readAndDispatch() line: 1878 Workbench.runEventLoop(Window$IExceptionHandler) line: 2108 Workbench.run(Obj
-ect) line: 2091 InternalBootLoader.run(String, URL, String, String[], Runnable) line: 858 Boot
+I20030930 The Window->Customize Perspective action is causing a NPE: WorkbenchActionBuilder.fillStatusLine(IStatusLineManager) line: 360 WorkbenchActionBuilder.fillActionBars(WWinActionBars) line: 287 WorkbenchWindow.fillActionBars(WWinActionBars) line: 965 CustomizePerspectiveDialog.<init>(Shell, P
+erspective) line: 567 WorkbenchPage.editActionSets() line: 1155 EditActionSetsAction.run() line: 46 EditActionSetsAction(Action).runWithEvent(Event) line: 842 ActionContributionItem.handleWidgetSelec

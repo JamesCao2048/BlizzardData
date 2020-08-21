@@ -3,9 +3,6 @@ Create a new SelectionTool subclass.
 I want it to behave exactly like the existing selection tool, with the following additions: 
 - When selection tool is in its initial state, if it receives the SPACE keydown, it will switch to a PAN state 
 - While in the PAN (or PAN_IN_PROGRESS) state, a hand cursor will appear 
-- If I mouse down in the pan state, I will transition to a PAN_IN_PROGRESS state which allows scrolling the viewport by pressing and dragging the mous
-e.
+- If I mouse down in the pan state, I will transition to a PAN_IN_PROGRESS state which allows scrolling the viewport by pressing and dragging the mouse.
 
-- When leaving the state PAN_IN_PROGRESS, return to either the PAN state or the STATE_INITIAL based on whether the SPACE bar is still depressed.
-Use the obvious name choices for constants, not exactly what I've used.
-Pratik to review changes before releasing.
+- When leaving the state PAN_I

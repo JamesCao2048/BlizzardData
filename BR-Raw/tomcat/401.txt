@@ -1,5 +1,4 @@
 [formatting] formatter removes last line with block comments
 The formatter seems to remove anything contained on the line with the end block comment.
-before formating: example: /* style.process( xmlinput, new XSLTResultTarget(response.getWriter())); */ After formating: /* * style.process( xmlinput, 
-*/ If I put the end block comment on the next line if format properly.
+before formating: example: /* style.process( xmlinput, new XSLTResultTarget(response.getWriter())); */ After formating: /* * style.process( xmlinput, */ If I put the end block comment on the next line if format properly.
 I am using all the default settings for 3.0M6

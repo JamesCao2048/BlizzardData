@@ -1,9 +1,5 @@
 Bug with DebugModelContextBindings
 I am using jdk build 1.4.2-b28 on linux.
 After Migration from M6 to M7 I got an exception, probably because my DebugModel does not extend the DebugModelContextBindings extension point.
-The source of the error seems to be in LaunchView::showViewsForCurrentSelection 1:if (contextIds.isEmpty() && selection instanceof IStackFrame) { 2: S
-tring contextId = contextListener.getDebugModelContext(((IStackFrame) selection).getModelIdentifier()); 3: contextIds.add(contextId); 4: 5:} 6: if (!c
-ontextIds.isEmpty()) { 7: Set set= new HashSet(); 8: set.addAll(contextIds); 9: contextListener.getContextManager().setEnabledContextIds(set); 10:} co
-ntextId in line 2 is null and null is added to contextIds The guard clause in line 6 fails and contextListener.getContextManager()setEnabledContextIds
-(set) is called where the exception occurs.
-If I prevent adding null to contextIds, the code works.
+The source of the error seems to be in LaunchView::showViewsForCurrentSelection 1:if (contextIds.isEmpty() && selection instanceof IStackFrame) { 2: String contextId = contextListener.getDebugModelContext(((IStackFrame) selection).getModelIdentifier()); 3: contextIds.add(contextId); 4: 5:} 6: if (!c
+ontextIds.isEm

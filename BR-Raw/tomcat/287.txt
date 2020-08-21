@@ -1,6 +1,5 @@
 Refresh produces duplicate on case rename
-Eclipse 3.0M7, Windows XP If a package is renamed, but only changing the case, in Windows explorer, then when refresh is pressed package explorer will
- have both versions of the package.
+Eclipse 3.0M7, Windows XP If a package is renamed, but only changing the case, in Windows explorer, then when refresh is pressed package explorer will have both versions of the package.
 Probably a Windows only problem.
 1) Create a package called testCase.
 2) Create a class called Test, but have the package line as "testcase".

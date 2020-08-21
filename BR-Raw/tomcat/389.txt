@@ -1,10 +1,5 @@
 NPE attempting to search NLS
-I200402102000 With the RefactoringMessages.properties from org.eclipse.jdt.internal.debug.core.refactoring (renamed from RefractoringMessages.properti
-es) selected in the PackageExplorer, I clicked on the Search toolbar button.
+I200402102000 With the RefactoringMessages.properties from org.eclipse.jdt.internal.debug.core.refactoring (renamed from RefractoringMessages.properties) selected in the PackageExplorer, I clicked on the Search toolbar button.
 From the NLS keys page, I clicked search.
 Related to the fact that there is another RefactoringMessages class?
-java.lang.reflect.InvocationTargetException at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:283) at org.eclipse.search.internal.ui.u
-til.ExtendedDialogWindow.run (ExtendedDialogWindow.java:180) at org.eclipse.jdt.internal.ui.refactoring.nls.search.NLSSearchPage.performAction (NLSSea
-rchPage.java:199) at org.eclipse.search.internal.ui.SearchDialog.performAction (SearchDialog.java:363) at org.eclipse.search.internal.ui.util.Extended
-DialogWindow.buttonPressed (ExtendedDialogWindow.java:147) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402) at org.eclipse.swt.wi
-dgets.TypedListener.handleEvent(TypedListener.java:89) at
+java.lang.reflect.InvocationTargetException at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:283) at org.eclipse.search.internal.ui.util.Extended

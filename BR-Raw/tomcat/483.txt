@@ -2,10 +2,5 @@ Internal Error in the log.
 Build id: 200302050800 Got this excecption in the log.
 After clicking in an item in the search view.
 Eclipse was not responding for 30 seconds.
-!ENTRY org.eclipse.jdt.ui 4 10001 Feb 05, 2003 15:25:09.893 !MESSAGE Internal Error !STACK 1 org.eclipse.core.internal.resources.ResourceException: Ma
-rker id: 92868 not found.
-at org.eclipse.core.internal.resources.Marker.checkInfo(Marker.java:53) at org.eclipse.core.internal.resources.Marker.getType(Marker.java:176) at org.
-eclipse.core.internal.resources.Marker.isSubtypeOf (Marker.java:194) at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.hasCorrect
-i ons(JavaCorrectionProcessor.java:107) at org.eclipse.jdt.internal.ui.javaeditor.JavaMarkerAnnotation.mustShowQuickFixIco n(JavaMarkerAnnotation.java
-:132) at org.eclipse.jdt.internal.ui.javaeditor.JavaMarkerAnnotation.getImage (JavaMarkerAnnotation.java:232) at org.eclipse.ui.texteditor.MarkerAnnot
-ation.paint (MarkerAnnotation.java:196) at org.eclipse.jface.text.source.An
+!ENTRY org.eclipse.jdt.ui 4 10001 Feb 05, 2003 15:25:09.893 !MESSAGE Internal Error !STACK 1 org.eclipse.core.internal.resources.ResourceException: Marker id: 92868 not found.
+at org.eclipse.core.internal.resources.Marker.checkInfo(Marker.java:53) at org.eclipse.core.internal.resources.Marker.getType(Marker.java:176) at org.eclipse.core.internal.resource

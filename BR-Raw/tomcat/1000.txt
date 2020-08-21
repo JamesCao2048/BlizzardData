@@ -1,11 +1,6 @@
 Junit Plug-in Test not working for whole project
-I20030826-rebuild I have my JDT development workspace containing almost everything as source and also the JDT UI tests (org.eclipse.jdt.ui.tests) as s
-ource.
+I20030826-rebuild I have my JDT development workspace containing almost everything as source and also the JDT UI tests (org.eclipse.jdt.ui.tests) as source.
 1.Run...
 2.Create new Junit Plug-in Test 3.Select "Run all tests in the selected...
 4.Enter org.eclipse.jdt.ui.tests 5.Click Run ==> see console output below Note: It works if I run a specific suite (e.g.
-AutomatedSite) JspUIPlugin: startup Class not found org.eclipse.jdt.ui.tests.AutomatedSuite Class not found org.eclipse.jdt.ui.tests.astrewrite.ASTRew
-ritingTypeDeclTest Class not found org.eclipse.jdt.ui.tests.core.AllTypesCacheTest Class not found org.eclipse.jdt.ui.tests.core.TypeHierarchyTest Cla
-ss not found org.eclipse.jdt.ui.tests.dialogs.WizardsTest Class not found org.eclipse.jdt.ui.tests.packageview.ContentProviderTests3 Class not found o
-rg.eclipse.jdt.ui.tests.astrewrite.ASTRewritingMoveCodeTest Class not found org.eclipse.jdt.ui.tests.quickfix.UnresolvedTypesQuickFixTest Class not fo
-und org.eclipse.jdt.ui.tests.UIIn
+AutomatedSite) JspUIPlugin: startup Class not found org.eclipse.jdt.ui.tests.AutomatedSuite Class not found org.eclipse.jdt.ui.tests.astre

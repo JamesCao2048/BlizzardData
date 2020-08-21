@@ -1,11 +1,6 @@
 extra any elements created when new lines and spaces are used in the XML string
-I have used the following XML fragment in a CBE XML string and I got one extra any element created in the CBE event, which contains a blank string: XM
-L fragment: (with 5 any elements) 
+I have used the following XML fragment in a CBE XML string and I got one extra any element created in the CBE event, which contains a blank string: XML fragment: (with 5 any elements) 
 <any namespace="##other" processContents="skip" /> 
 <any1 abc="def" /><any2>This is an any element</any2> 
 <GetLastTrade><symbol>DEF</symbol></GetLastTrade><any3><xyz> a="b c" 
-</xyz></any3> this is the any attribute of the created CBE: (with 6 any elements) any= EDataTypeEList (id=65) data= String[10] (id=100) [0]= "<any nam
-espace="##other" processContents="skip" />" [1]= "<any1 abc="def" />" [2]= "<any2>This is an any element</any2>" [3]= "<GetLastTrade><symbol>DEF</symb
-ol></GetLastTrade>" [4]= "<any3><xyz> a="b c" 
-</xyz></any3>" =====> [5]= "" [6]= null [7]= null [8]= null [9]= null dataClass= Class (java.lang.String) (id=31) featureID= 11 modCount= 6 owner= Com
-monBaseEventImpl (id=61) =====> size= 6 Note: a new any element is created if the new lines and spaces appear in any place, before the an
+</xyz></any3> this is the any attribute of the created CBE: (with 6 any elements) any= EDataTypeEList (id=65) data= String[10] (id=100) [0

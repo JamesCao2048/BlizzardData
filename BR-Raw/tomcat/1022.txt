@@ -7,8 +7,4 @@ Steps to reproduce: Install only FtrA and not the optional FtrB.
 Use Help > SoftwareUpdates > NewUpdates to search for fixes.
 It reports that a patch for FtrA is available.
 Attempt to install it.
-You get an error message saying that the ftrB plugin is not found.
-What's going on: During an install from a bookmarked site the user is shown the "optional features" panel.
-Since FtrB isn't installed, that choice is not selected by default.
-However, when installing via "New Updates", this panel is bypassed, and it seems that the default selections in that case includes FtrB.
-I have a working demo of this available if needed.
+You get a

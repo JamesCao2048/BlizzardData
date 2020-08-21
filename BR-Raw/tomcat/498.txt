@@ -1,9 +1,4 @@
 Null pointer at dispose time of Tree if no columns created
 3.0 m5 Create a TreeViewer with headervisible true but dont add any columns.
-At dispose time you get this java.lang.NullPointerException at org.eclipse.swt.widgets.Table.releaseWidget(Table.java:1143) at org.eclipse.swt.widgets
-.Widget.releaseResources(Widget.java:724) at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:366) at org.eclipse.swt.widgets.Composit
-e.releaseWidget(Composite.java:371) at org.eclipse.swt.widgets.Widget.releaseResources(Widget.java:724) at org.eclipse.swt.widgets.Composite.releaseCh
-ildren(Composite.java:366) at org.eclipse.swt.widgets.Composite.releaseWidget(Composite.java:371) at org.eclipse.swt.widgets.Widget.releaseResources(W
-idget.java:724) at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:366) at org.eclipse.swt.widgets.Composite.releaseWidget(Composite.
-java:371) at org.eclipse.swt.widgets.Widget.releaseResources(Widget.java:724) at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:366)
- at org.eclipse.s
+At dispose time you get this java.lang.NullPointerException at org.eclipse.swt.widgets.Table.releaseWidget(Table.java:1143) at org.eclipse.swt.widgets.Widget.releaseResources(Widget.java:724) at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:366) at org.eclipse.swt.widgets.Composit
+e.releaseWidget(Composite.java:371) at org.eclipse.swt.widgets.Widget.releaseResources(Widget.java:724) at org.eclipse.swt

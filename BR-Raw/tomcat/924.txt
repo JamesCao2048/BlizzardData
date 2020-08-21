@@ -4,5 +4,4 @@ From two similar pages only the first page created is displayed correctly, in th
 I traced through the construction of these pages and through PreferenceDialog.showPage().
 Both were executed correctly.
 Both pages were set to visible when selected but on the second page setVisible(true) seems not to work properly.
-I could bypass this error by adding another widget (Label) to one of the pages.
-Bug in Windows?
+I could bypass 

@@ -1,10 +1,4 @@
 NPE in AnnotationManager
 I20040310 Philippe reported this to me and said that in happens in some form of a loop.
-!ENTRY org.eclipse.core.runtime 4 2 Mar 11, 2004 13:43:10.702 !MESSAGE Problems occurred when invoking code from plug- in: "org.eclipse.core.ru ntime"
-.
-!STACK 0 java.lang.NullPointerException at org.eclipse.search2.internal.ui.text.AnnotationManager.removeAnnotati ons(AnnotationManager.java:181) at or
-g.eclipse.search2.internal.ui.text.AnnotationManager.removeAnnotati ons(AnnotationManager.java:133) at org.eclipse.search2.internal.ui.text.Annotation
-Manager.partActivated ( AnnotationManager.java:112) at org.eclipse.search2.internal.ui.text.AnnotationManager.setWindow (Anno tationManager.java:152) 
-at org.eclipse.search2.internal.ui.text.AnnotationManager.switchedTo (Ann otationManager.java:72) at org.eclipse.search2.internal.ui.text.AnnotationMa
-nager$1.windowActiva ted(AnnotationManager.java:48) at org.eclipse.ui.internal.Workbench$6.run(Workbench.java:373) at org.eclipse.core.internal.runtim
-e.In
+!ENTRY org.eclipse.core.runtime 4 2 Mar 11, 2004 13:43:10.702 !MESSAGE Problems occurred when invoking code from plug- in: "org.eclipse.core.ru ntime".
+!STACK 0 java.lang.NullPointerException at org.eclipse.search2.internal.ui.text.AnnotationManager.removeAnnotati ons(AnnotationManager.java:181) at org.eclipse.search2.internal.ui.text.AnnotationManager.removeAnnotati ons(AnnotationManager.java:133) at org.ecl

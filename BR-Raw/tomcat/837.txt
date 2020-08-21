@@ -1,10 +1,5 @@
 Manifest builder taking a very long time to perform
-Build 20031119 Restarting an existing workspace with this build, autobuild off, I forced an incremental workspace build, and got surprised by the amou
-nt of time spent in the manifest builder.
+Build 20031119 Restarting an existing workspace with this build, autobuild off, I forced an incremental workspace build, and got surprised by the amount of time spent in the manifest builder.
 It took about 20-30 seconds on one project, and pretty much traversed all the Java projects in less time than that afterwards.
 Setup is full source Eclipse workspace.
-Full thread dump Java HotSpot(TM) Client VM (1.4.1_01-b01 mixed mode): "ModalContext" prio=7 tid=0x16EFE3D0 nid=0x888 runnable [1925e000..1925fd88] at
- java.util.regex.Pattern$SliceA.match(Pattern.java:3246) at java.util.regex.Pattern$Start.match(Pattern.java:2699) at java.util.regex.Matcher.find(Mat
-cher.java:705) at java.util.regex.Matcher.find(Matcher.java:440) at org.eclipse.jface.text.FindReplaceDocumentAdapter.findReplace (FindReplaceDocument
-Adapter.java:204) at org.eclipse.jface.text.FindReplaceDocumentAdapter.search (FindReplaceDocumentAdapter.java:87) at org.eclipse.pde.internal.core.pl
-ugin.DocumentModelHandler.getStartOf
+Full thread dump Java HotSpot(TM) Client VM (1.4.1_01-b01 mixed mode): "ModalContext" prio=7 tid=0x16EFE3D0 nid=0x888 runnable [1925e000..192

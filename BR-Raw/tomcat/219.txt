@@ -7,20 +7,4 @@ They work OK in 2.1.2 and 2.1.3.plugin.xml toc extension:
 <toc file="toc.xml" primary="true"/> 
 <toc file="mainToc.xml"/> 
 <toc file="tocguide.xml"/> 
-<toc file="tocreference.xml"/> 
-</extension> toc.xml 
-<?xml version="1.0" encoding="UTF-8"?> 
-<?NLS TYPE="org.eclipse.help.toc"?> 
-<toc label="Remote System Explorer Developer Guide" topic="toc.html"> 
-<topic label="Extending the RSE Perspective" href="rseToc.html"> 
-<link toc="mainToc.xml" /> 
-</topic> 
-<anchor id="mainToc"/> 
-</toc> mainToc.xml 
-<?xml version="1.0" encoding="UTF-8"?> 
-<?NLS TYPE="org.eclipse.help.toc"?> 
-<toc> 
-<topic label="Programmer's Guide"> 
-<anchor id="guide"/> 
-</topic> 
-<topic
+<toc fil

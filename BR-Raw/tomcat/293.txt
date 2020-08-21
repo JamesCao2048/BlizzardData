@@ -2,8 +2,4 @@ TrimLayout ignores preferred size of widgets even if not resizable
 I am looking at replacing the progress indicator with a wider component that also includes some text.
 The when I replace it in the code in WorkbenchWindow it is drawn truncated despite my attempts to size it.
 Here is the layout code in my composite.
-region = new Composite(parent, SWT.NONE); FormLayout regionLayout = new FormLayout(); region.setLayout(regionLayout); item = new AnimationItem(window)
-; item.createControl(region); Control itemControl = item.getControl(); FormData itemData = new FormData(); itemData.right = new FormAttachment(100); i
-temData.top = new FormAttachment(0); itemData.width = AnimationManager.getInstance ().getPreferredWidth() + 5; itemControl.setLayoutData(itemData); vi
-ewer = new ProgressViewer(region, SWT.NONE, 1); viewer.setUseHashlookup(true); Control viewerControl = viewer.getControl(); setInfoColors(viewerContro
-l); FormData viewerData = new FormData(); viewerData.left = new FormAttachment(0); viewerData.right = new FormAttachment(itemControl, 0); viewerDa
+region = new Composite(parent, SWT.NONE); FormLayout regionLayout = new FormLayout(); region.setLayout(regionLayout); item = new AnimationItem(window); item.createControl(region); Control itemControl = item.getControl(); FormData itemData = new FormD

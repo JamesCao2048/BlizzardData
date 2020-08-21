@@ -1,12 +1,6 @@
 [RFP44] 4.2.5 Filter packages form base classloader
-Otherwise known as "handling the endorsed libs" Currently class load requests are first delegated to the parent class loader of the bundle (typically 
-the Application ClassLoader or Bootstrap ClassLoader; we will call it the base classloader here).
+Otherwise known as "handling the endorsed libs" Currently class load requests are first delegated to the parent class loader of the bundle (typically the Application ClassLoader or Bootstrap ClassLoader; we will call it the base classloader here).
 This is standard classloader practice.
 However, sometimes it may be desireable to “hide” packages provided by the base classloader so that a bundle may instead provide them.
 For example, you are running the OSGi environment on J2SE.
-The J2SE installation provides a version of Xerces and the org.w3c.dom and org.xml.sax packages.
-However, these packages are an older version that the one needed by bundles running in the framework, e.g.
-the latest version of Xerces.
-So we want to install a bundle which exports a newer version of these packages.
-The framework must be configured to “hide” the old version of these packages from all bundles, so that the new versions of the packages can be instead
- used.
+The J2SE installati

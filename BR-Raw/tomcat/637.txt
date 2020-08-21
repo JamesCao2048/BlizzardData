@@ -2,9 +2,4 @@ Snippet 98 missing import statements
 The following import statements are missing from this Snippet.
 import org.eclipse.swt.*; import org.eclipse.swt.layout.*; import org.eclipse.swt.widgets.*; /* * Copyright (c) 2000, 2003 IBM Corp.
 All rights reserved.
-* This file is made available under the terms of the Common Public License v1.0 * which accompanies this distribution, and is available at * http://ww
-w.eclipse.org/legal/cpl-v10.html */ /* * Composite example snippet: create and dispose children of a composite * * For a list of all SWT example snipp
-ets see * http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt 
-- home/dev.html#snippets */ public class Main { static int pageNum = 0; static Composite pageComposite; public static void main(String args[]) { Displ
-ay display = new Display(); final Shell shell = new Shell(display); shell.setLayout(new GridLayout()); Button button = new Button(shell, SWT.PUSH); bu
-tton.setText("Push"); pageComposite = new Composite(shell, SWT.NONE); pageComposite.setLayout(new G
+* This file is made available under the terms of the Common Public License v1.0 * which accompanies this distribution, and is available at * http://www.eclipse.org/legal/cpl-v10.html */ /* * Composite example snippet: create and dispose children of a composite * * For a list of all 

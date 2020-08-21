@@ -1,8 +1,4 @@
 [painting] NPE in AnnotationPainter.catchupWithModel
 A whole bunch of these show up in my log using N20040115.This might be a duplicate of Bug 50100 .
-!ENTRY org.eclipse.ui 4 0 Jan 16, 2004 14:47:11.866 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.jfa
-ce.text.source.AnnotationPainter.catchupWithModel (AnnotationPainter.java:283) at org.eclipse.jface.text.source.AnnotationPainter.updatePainting (Anno
-tationPainter.java:531) at org.eclipse.jface.text.source.AnnotationPainter.access$1 (AnnotationPainter.java:528) at org.eclipse.jface.text.source.Anno
-tationPainter$1.run (AnnotationPainter.java:597) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchron
-izer.runAsyncMessages (Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:1822) at org.eclipse.swt.widgets.Displa
-y.readAndDispatch(Display.java:1628) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1518) at org.eclipse.ui.internal.Workbench.ru
+!ENTRY org.eclipse.ui 4 0 Jan 16, 2004 14:47:11.866 !MESSAGE java.lang.NullPointerException !STACK 0 java.lang.NullPointerException at org.eclipse.jface.text.source.AnnotationPainter.catchupWithModel (AnnotationPainter.java:283) at org.eclipse.jface.text.source.AnnotationPainter.updatePainting (Anno
+tationPainter.java:531) at org.eclipse.jface.text.source.AnnotationPainter.access$1 (AnnotationPainte

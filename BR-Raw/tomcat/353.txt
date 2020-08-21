@@ -3,8 +3,4 @@ I opened a large Java project (~4000 source files) from the Resource Perspective
 It takes a while, fine, but the cursor and all of the Perspective icons in the left bar flash like *mad* b/w the hourglass cursor and normal pointer.
 The Progress view reveals that eclipse it calculating state for every file.
 CPU usage is 100% by the Windows Task Manager.
-This causes an odd problem on Windows XP: While E is opening the project, when I mouse over to the task bar to click on a different app (Mozilla 1.6, 
-which happens to have multiple windows open, so you get a popup of window titles in the task bar), the pop flashes to and it is very hard to get it to
- stay open to switch to one of the opened windows.
-I wonder if the changing of state of the cursor causes some side effects with the OS?
-Version 3.0.m7.
+This causes an odd problem on Windows XP: While E is opening the project, when I mouse over to the task bar to click 

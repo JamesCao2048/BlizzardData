@@ -1,9 +1,4 @@
 Out of bounds error
 Build: 3.0 M2 The error below was logged twice at two distinct instances.
-I'm not sure what exactly provoked it: java.lang.IllegalArgumentException: Index out of bounds at org.eclipse.swt.SWT.error(SWT.java:2351) at org.ecli
-pse.swt.SWT.error(SWT.java:2295) at org.eclipse.swt.custom.StyledText.redrawRange(StyledText.java:6340) at org.eclipse.jdt.internal.ui.javaeditor.Java
-Editor$MouseClickListener.repairRepr esentation(JavaEditor.java:478) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$MouseClickListener.deactivat
-e (JavaEditor.java:301) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$MouseClickListener.deactivate (JavaEditor.java:294) at org.eclipse.jdt.in
-ternal.ui.javaeditor.JavaEditor$1.run(JavaEditor.java:813) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widget
-s.Synchronizer.runAsyncMessages(Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2165) at org.eclipse.swt.widge
-ts.Display.readAndDi
+I'm not sure what exactly provoked it: java.lang.IllegalArgumentException: Index out of bounds at org.eclipse.swt.SWT.error(SWT.java:2351) at org.eclipse.swt.SWT.error(SWT.java:2295) at org.eclipse.swt.custom.StyledText.redrawRange(StyledText.java:6340) at org.eclipse.jdt.internal.ui.javaeditor.Java
+Editor$MouseClickListener.repairRepr esentation(JavaEditor.java:478) at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor$Mou

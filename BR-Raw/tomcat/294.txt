@@ -1,19 +1,6 @@
 Problem with name collision in XML-schema generated models(?)
-I have a fairly large XML schema (142 Classes, 133 DataTypes, 30 Enums, 549 Features, 1 Package) that I used to generate an EMF model (EMF 2.0.0_20031
-219 though I have the same problem with 2.0.0_20040127).
+I have a fairly large XML schema (142 Classes, 133 DataTypes, 30 Enums, 549 Features, 1 Package) that I used to generate an EMF model (EMF 2.0.0_20031219 though I have the same problem with 2.0.0_20040127).
 I'm using this schema to send and receive SOAP messages, and for most of my messages this works fine.
 Unfortunately, for one type of message I'm seeing a strange exception thrown when I try to parse a particular XML document.
 The failing XML is small, and correct by the schema: 
-<sch:LocationList xmlns:sch=" http://coalition/xml/schema "> 
-<sch:Location locationId="271095"> 
-<sch:Name>Brisbane Australia</sch:Name> 
-<sch:Code codeType="GEOLOC"> 
-<sch:Parameter parmName="GEOLOC">CKKJ</sch:Parameter> 
-</sch:Code> 
-</sch:Location> 
-</sch:LocationList> Whereas this XML works fine: 
-<sch:LocationList xmlns:sch=" http://coalition/xml/schema "> 
-<sch:Location locationId="271095"> 
-<sch:Name>Brisbane Australia</sch:Name> 
-</sch:Location> 
-</sch:LocationList> The problem appears to revolve a
+<sch:Location

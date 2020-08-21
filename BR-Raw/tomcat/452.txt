@@ -1,12 +1,5 @@
 Unclear text in Code Formatter|Style panel of Preferences
 A couple of options on the Code Formatter|Style panel of the Preferences is really unclear in my opinion.
-I am talking about Indentation is represented by a tab Number of spaces representing a tab The first option would be clearer if it said something like
- Use hard tabs for indentation, not spaces or something to that effect, like Insert tabs for indentation, not spaces Insert hard tabs for indentation,
+I am talking about Indentation is represented by a tab Number of spaces representing a tab The first option would be clearer if it said something like Use hard tabs for indentation, not spaces or something to that effect, like Insert tabs for indentation, not spaces Insert hard tabs for indentation,
  not spaces The second one is really bad though.
-It has nothing to do with tabs, but rather the number of spaces to use when indenting, when tabs are turned off (e.g.
-if the first option is not checked).
-So, first of all, it should be greyed out if the first option is selected, since it will have no effect in that case.
-And the description should be changed to something clearer, like: Number of spaces to insert per indentation level.
-Number of spaces representing an indentation level.
-etc.
-That, together with the fact that it will be greyed out if tabs are turned on, will make it clear
+It has nothing to do with tabs, but rather t

@@ -1,11 +1,6 @@
 [ContextMgmt] Enhance ContextManagerEvent
 I propose the following API for ContextManagerEvent.
 These are the methods I'd like the event to have (no more and no less).
-getContextManager() submissionAdded(String contextId) submissionRemoved(String contextId) contextEnabled(String contextId) contextDisabled(String cont
-extId) contextDefined(String contextId) We in debugland want to know when submissions are added in order to promote views.
+getContextManager() submissionAdded(String contextId) submissionRemoved(String contextId) contextEnabled(String contextId) contextDisabled(String contextId) contextDefined(String contextId) We in debugland want to know when submissions are added in order to promote views.
 It's important that we hear about submissions, not just enablement.
-A context will stay enabled for the life of a debug session, but we want to react when the user's selection switches between enabled contexts.
-Telling us when submissions are added is basically a way for us to know which context is the "most active." The story we want to implement in debug la
-nd is: Responding to context changes: 1.When a debugging context is enabled, actions bound to that context appear (the workbench gives us this for fre
-e).
-2.When a debugging context is submitted, views bound to that context appear (our cod
+A context will stay enabled for th

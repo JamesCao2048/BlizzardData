@@ -5,8 +5,4 @@ N20030915 class A{ native m(); }
 -> NPE in PatternLocator.matchesTypeReference() is logged.
 This worked with the last I-build, even though the method has no return type.
 The same NPE is thrown when searching for method declaration "m() int" in the search dialog.
-!ENTRY org.eclipse.jdt.ui 4 10001 Sep 15, 2003 12:14:17.843 !MESSAGE Internal Error !STACK 0 java.lang.reflect.InvocationTargetException at org.eclips
-e.jface.operation.ModalContext.run(ModalContext.java:283) at org.eclipse.jdt.internal.ui.refactoring.RefactoringWizardDialog2.run(RefactoringWizardDia
-log2.java:271) at org.eclipse.jdt.internal.ui.refactoring.RefactoringWizard.internalCheckCondition(RefactoringWizard.java:430) at org.eclipse.jdt.inte
-rnal.ui.refactoring.RefactoringWizard.checkInput(RefactoringWizard.java:415) at org.eclipse.jdt.internal.ui.refactoring.UserInputWizardPage.performFin
-ish(UserInputWizardPage.java:111) at org.eclipse.jdt.internal.ui.refactoring.Refactori
+!ENTRY org.eclipse.jdt.ui 4 10001 Sep 15, 2003 12:14:17.843 !MESSAGE Internal Error !STACK 0 java.lang.reflect.InvocationTargetException at org.eclipse.jface.operation.ModalContext.run(Modal

@@ -1,12 +1,5 @@
 JDT compiler more restrictive than javac
-Here is the scenario that is causing problems to PDE when self-hosting against OSGi runtime: 1) Take M4 build 2) Download OSGi runtime from Equinox ho
-me page (build 1010) and unzip on top of the build 3) Start another Eclipse driver (not this one) with a clean workspace.
+Here is the scenario that is causing problems to PDE when self-hosting against OSGi runtime: 1) Take M4 build 2) Download OSGi runtime from Equinox home page (build 1010) and unzip on top of the build 3) Start another Eclipse driver (not this one) with a clean workspace.
 Configure it so that PDE->Target Platform points at the M4 OSGi build created in 2).
 4) Import all the external plug-ins and fragments as binary projects into the workspace.
-5) Create 'Hello, World' plug-in using PDE 'New Plug-in project' wizard.
-Keep all the defaults.
-Notice that the build fails with the following error in XyzPlugin.java: The type org.osgi.framework.Bundle cannot be resolved.
-It is indirectly referenced from required .class files.
-XyzPlugin.java XyzPlugin does not reference Bundle type directly anywhere.
-However, it does extend AbstractUIPlugin, which in turn extends Plugin (provided by org.eclipse.runtime.compatibility) and this class has 'Bundle getB
-undle()' method, as well as Bundle private field
+5) Create 'Hello, World' plug-in using PDE 'New Plug-i

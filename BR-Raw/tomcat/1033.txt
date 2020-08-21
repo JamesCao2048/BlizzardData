@@ -1,11 +1,6 @@
 keybindings not working in StyledText when in plugin (but working externally)
 I have an SWT view that uses a StyledText control and binds ctrl-c to copy, ctrl-v to paste, etc.
-It works find outside of eclipse, but when I run it in a plugin, it gets the keypress for the control key, but no subsequent keypresses, so control-c 
-comes in as just a press of the control key.
+It works find outside of eclipse, but when I run it in a plugin, it gets the keypress for the control key, but no subsequent keypresses, so control-c comes in as just a press of the control key.
 I have tried binding SWT.HardKeyDown, but that doesn't register either.
 I tried running the external app using the libraries in the eclipse distribution, and it worked fine.
-I also tried running the plugin in my regular eclipse (instead of as a run-time workbench) and that didn't fix the behavior.
-might this be related to bug #40798 ?
-I'm using gentoo with gtk+2.2.2 and eclipse build 200307230800 If anyone wants to test with my plugin, email me and I'll send it (it's a meg and bugzi
-lla seems to have trouble with my web browser's file uploading 
--- using MozillaFirebird, BTW).
+I also tried running the plugin i

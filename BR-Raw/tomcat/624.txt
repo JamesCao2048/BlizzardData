@@ -6,9 +6,5 @@ M6, maybe related to bug 49700 (?)
 - press Add Library...
 button on right side 
 - select JRE System Library, press Next 
-- press Finish, Cancel to close the Properties dialog sleak claims that the image in the wizard banner of the JRE System Library page is being leaked 
-each time this is done.
-A trace showing the allocation of this image is included below: java.lang.Error at org.eclipse.swt.graphics.Device.new_Object(Device.java:648) at org.
-eclipse.swt.graphics.Image.<init>(Image.java:556) at org.eclipse.jface.resource.ImageDescriptor.createImage (ImageDescriptor.java:137) at org.eclipse.
-jface.resource.ImageDescriptor.createImage (ImageDescriptor.java:94) at org.eclipse.jface.resource.ImageDescriptor.createImage (ImageDescriptor.java:8
-3) at org.eclipse.jdt.internal.debug.ui.jres.JREContainerWizardPage.getImage (JREContainerWizardPage.java:151) at org.eclipse.jface.wizard.WizardDi
+- press Finish, Cancel to close the Properties dialog sleak claims that the image in the wizard banner of the JRE System Library page is being leaked each time this is done.
+A trace showing the allocation of this image is included below: java.lang.Error at org.eclipse.swt.gr

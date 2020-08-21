@@ -8,6 +8,4 @@ To reproduce this bug, go to Windows
 -> Edit 
 -> Arguments 
 -> and set line wrapping to "Wrap always except first element if necessary".
-Then format some source like the following: SomeObject someObject = new SomeObject("Parameter1", //$NON-NLS-1$ "Parameter2", //$NON-NLS-1$ null); This
- will end up like: SomeObject someObject = new SomeObject("Parameter1", //$NON-NLS-1$ "Parameter2", //$NON-NLS-1$ null); Which defeats the whole purpo
-se of using the non-internationalizable comments.
+Then format some source like the following: SomeObject someObject = new SomeObject("Parameter1", //$NON-NLS-1$ "Parameter2", //$NON-NLS-1$ null); This will end up like: SomeObject someObject = new SomeObject

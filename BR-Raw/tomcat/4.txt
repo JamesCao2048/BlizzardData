@@ -12,16 +12,4 @@ It should handle all the following cases:
 - invoke IStartup.earlyStartup() on plugin class 
 - 
 <startup> element doesn't hurt 
-<extension point="org.eclipse.ui.startup"> 
-<startup class="SomeClass"/> 
-</extension> 
-- invoke IStartup.earlyStartup() on SomeClass 
-- 
-<startup> element is required to specify explicit class 
-<extension point="org.eclipse.ui.startup"> 
-<startup class="SomeClass"/> 
-<startup class="SomeOtherClass"/> 
-</extension> 
-- invoke IStartup.earlyStartup() on both SomeClass and SomeOtherClass 
-- 
-<startup> element is required to specify explicit class
+<extension point="org.eclip

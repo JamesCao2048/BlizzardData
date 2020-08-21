@@ -1,8 +1,6 @@
 [EditorMgmt] Typo in IPageLayout.ID_EDITOR_AREA = "org.eclipse.ui.editorss"
 Someone asked me if they could add a few to a perspective relative to the editor area instead of another view.
 I believe the answer should be yes, they just have to refer to the area by name in their plugin.xml.
-However, looking at the source code, the editor area name is defined by the constant IPageLayout.ID_EDITOR_AREA which has the value "org.eclipse.ui.ed
-itorss".
+However, looking at the source code, the editor area name is defined by the constant IPageLayout.ID_EDITOR_AREA which has the value "org.eclipse.ui.editorss".
 This looks like a typo so it probably shouldn't be documented this way and it should be changed.
-Changing it would probably break binary compatibility but I think you can just add a check to test for both the right and wrong values in IPageLayout.
-addView() and any similar functions to support plug-ins using the old value.
+Changing it would probably break

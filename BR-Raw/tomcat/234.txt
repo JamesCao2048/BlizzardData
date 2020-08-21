@@ -2,5 +2,4 @@ The Ctrl + Space
 I try to create a class that will implements an ActionListener.
 After I have created it, I type public void action(follow by Ctrl+Space) and the next thing I know is, I been given this message.
 "void is an invalid type for the variable act".
-private class CancelAction implements ActionListener { public void actionPerformed(ActionEvent ae){ } } As you can see here, I try to create the actio
-nPerformed using the friendly Ctrl+Space but, eventually it end up...I need to type myself.
+private class CancelAction implements ActionListener { public void actionPerformed(ActionEvent ae){ } } As you can see here, I try to create the actionPerformed using the friendly Ctrl+Space but, eventually it end up...I need to type myself.

@@ -1,6 +1,5 @@
 SWT: must set text of menu item before adding sub items (windows only)
 If you do not set the text of a menu item before adding its submenu, the submenu does not appear (windows only).
 GTK version does not do this.
-This can be demonstrated by taking the SWT sample: http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet29.html and m
-odifying it as follows // fileItem.setText ("File"); Menu submenu = new Menu (shell, SWT.DROP_DOWN); fileItem.setMenu (submenu); fileItem.setText ("Fi
+This can be demonstrated by taking the SWT sample: http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet29.html and modifying it as follows // fileItem.setText ("File"); Menu submenu = new Menu (shell, SWT.DROP_DOWN); fileItem.setMenu (submenu); fileItem.setText ("Fi
 le");

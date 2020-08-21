@@ -3,5 +3,4 @@ We have several plugin projects where we use source folders to organize our code
 It is not uncommon to have a plugin with five source folders each of which is built into a seperate runtime JAR.
 This setup compiles fine and runs just fine but the PDE build is failing.
 It fails because our source folders depend upon each other and PDE requires that a dependent JAR be built first.
-The problem is that since they depend on each other, it doesn't matter which order we put the JARs in the build.properties file, it will always fail.
-An example is a plugin with three runtime libraries mapped to three source folders A, B, and C where A depends on B and C and C depends on A.
+The problem is that since they depend on each other, it doesn't matter which order we put the JARs in the build.proper

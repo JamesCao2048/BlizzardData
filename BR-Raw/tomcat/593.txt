@@ -1,6 +1,5 @@
 [DCR] Quick assist : unneeded bracing
 it would be nice to have quick assist which can detect that there is unneeded bracketing example class A { int foo() { int a; { // 
-<-- detect unneeded bracketting a = 2; } return a; } } may be in a second time it could be more interresting to detect variable name collision and to 
-provide renaming example class A { int foo() { int a; { // 
+<-- detect unneeded bracketting a = 2; } return a; } } may be in a second time it could be more interresting to detect variable name collision and to provide renaming example class A { int foo() { int a; { // 
 <-- detect unneeded bracketting with name collision after int b = 2; a = b; } { int b = 3; // 
-<-- name collision if the upper brackets where removed a = b; } return a; } }
+<-- name collision if the upper brackets where removed a = b; }

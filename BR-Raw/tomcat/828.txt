@@ -1,9 +1,4 @@
 Add Ant task error in preferences in 3.0M5
 when i probe add ant task on the preferences page got this error & exception: 
---------- error1: unhadled event loop exception error2: java.lang.ClassCastException at org.eclipse.ant.internal.ui.preferences.AddCustomDialog.create
-RootDirectoryGroup(AddCustomDialog.java:210) at org.eclipse.ant.internal.ui.preferences.AddCustomDialog.createDialogArea(AddCustomDialog.java:109) at 
-org.eclipse.jface.dialogs.Dialog.createContents(Dialog.java:573) at org.eclipse.jface.window.Window.create(Window.java:305) at org.eclipse.jface.dialo
-gs.Dialog.create(Dialog.java:883) at org.eclipse.ant.internal.ui.preferences.StatusDialog.create(StatusDialog.java:94) at org.eclipse.ant.internal.ui.
-preferences.AddCustomDialog.create(AddCustomDialog.java:613) at org.eclipse.jface.window.Window.open(Window.java:555) at org.eclipse.ant.internal.ui.p
-references.AntTasksPage.addTask(AntTasksPage.java:63) at org.eclipse.ant.internal.ui.preferences.AntTasksPage.buttonPressed(AntTasksPage.java:94) at o
-rg.eclipse.ant.
+--------- error1: unhadled event loop exception error2: java.lang.ClassCastException at org.eclipse.ant.internal.ui.preferences.AddCustomDialog.createRootDirectoryGroup(AddCustomDialog.java:210) at org.eclipse.ant.internal.ui.preferences.AddCustomDialog.createDialogArea(AddCustomDialog.java:109) at 
+org.eclipse.jface.dialogs.Dialog.createContents(Dialog.java:573) at org.eclipse.jface.window.Window.create(Window.java:3

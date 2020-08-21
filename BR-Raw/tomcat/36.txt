@@ -1,8 +1,3 @@
 [Sync Info] NPE in EclipseSynchronizer.endOperation
-java.lang.NullPointerException at org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.endOperation(EclipseSynchronizer.java:560) at org.
-eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.getFolderSync(EclipseSynchronizer.java:184) at org.eclipse.team.internal.ccvs.core.synci
-nfo.CVSBaseResourceVariantTree.getBytes(CVSBaseResourceVariantTree.java:39) at org.eclipse.team.internal.core.subscribers.DescendantResourceVariantByt
-eStore.getBytes(DescendantResourceVariantByteStore.java:59) at org.eclipse.team.internal.ccvs.core.syncinfo.CVSResourceVariantTree.getParentBytes(CVSR
-esourceVariantTree.java:151) at org.eclipse.team.internal.ccvs.core.syncinfo.CVSResourceVariantTree.getResourceVariant(CVSResourceVariantTree.java:124
-) at org.eclipse.team.core.variants.ResourceVariantTreeSubscriber.getSyncInfo(ResourceVariantTreeSubscriber.java:50) at org.eclipse.team.internal.ccvs
-.core.CVSSyncTreeSubscriber.getSyncInfo(CVSSyncTreeSubscriber.java:77) at org.eclipse.team.int
+java.lang.NullPointerException at org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.endOperation(EclipseSynchronizer.java:560) at org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.getFolderSync(EclipseSynchronizer.java:184) at org.eclipse.team.internal.ccvs.core.synci
+nfo.CVSBaseResourceVariantTree.getBytes(CVSBaseResourceVariantTree.java:39) at org.eclipse.team.internal.core.subscribers.DescendantResourceVariantByteStore.getBytes(DescendantResourceVariantByteStor

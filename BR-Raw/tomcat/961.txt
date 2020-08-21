@@ -2,7 +2,5 @@
 This bug is for build 200309250800.The option Code Formatter 
 -> Comments 
 -> Empty line before Javadoc tags, will insert multiple line at each formatting (unless used the Clear all blank lines is also checked).
-Example: Create test class and insert his method /** * Test line before javadoc * @param args */ public static void main(String[] args) { } Press the 
-format command and for each format another empty line will be added before the @param tag.
-The new formatting are much better then the one from 2.x but we need some description of how to use it, like what kind of comments will be acceptable 
-for the formatter.
+Example: Create test class and insert his method /** * Test line before javadoc * @param args */ public static void main(String[] args) { } Press the format command and for each format another empty line will be added before the @param tag.
+The new formatting are much better then the one

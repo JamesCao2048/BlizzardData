@@ -1,9 +1,4 @@
 Can't save & code assist not working
 Code assist no longer works & I can't save any files.
-This exception was taken from the PDE error log: java.lang.NullPointerException at java.lang.String.<init>(String.java(Compiled Code)) at org.eclipse.
-jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Sco
-pe.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.co
-mpiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compil
-ed Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.C
-lassScope.findSupertype (ClassScope.java:789) at org.eclipse.jdt.internal.compiler.lookup.ClassScope.connectSuperInterfaces (ClassScope.java:627) at o
-rg.eclipse.jdt.internal.compiler.lookup.
+This exception was taken from the PDE error log: java.lang.NullPointerException at java.lang.String.<init>(String.java(Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Sco
+pe.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.intern

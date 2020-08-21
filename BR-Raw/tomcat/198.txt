@@ -1,11 +1,5 @@
 JUnit: NPE in .log
 I20040309 Sorry no steps.
 I saw this in the .log.
-!ENTRY org.eclipse.pde.core 4 4 Mrz 10, 2004 10:00:50.198 !MESSAGE Project cannot reference itself: org.eclipse.osgi !ENTRY org.eclipse.jdt.core 4 979
- Mrz 10, 2004 10:00:53.333 !MESSAGE Project cannot reference itself: org.eclipse.osgi !ENTRY org.eclipse.ui 4 4 Mrz 10, 2004 12:23:28.307 !MESSAGE Unh
-andled event loop exception !ENTRY org.eclipse.core.runtime 4 2 Mrz 10, 2004 12:23:28.307 !MESSAGE Problems occurred when invoking code from plug-in: 
-"org.eclipse.core.runtime".
-!STACK 0 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException) at org.eclipse.swt.SWT.error(SWT.java:2625) at org.
-eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:162) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:25) at org.ecl
-ipse.swt.widgets.Display.syncExec(Display.java:2691) at org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.postSyncRunnable(TestRunnerViewPart.java:
-701) at org.ecli
+!ENTRY org.eclipse.pde.core 4 4 Mrz 10, 2004 10:00:50.198 !MESSAGE Project cannot reference itself: org.eclipse.osgi !ENTRY org.eclipse.jdt.core 4 979 Mrz 10, 2004 10:00:53.333 !MESSAGE Project cannot reference itself: org.eclipse.osgi !ENTRY org.eclipse.ui 4 4 Mrz 10, 2004 12:23:28.307 !MESSAGE Unh
+andled event loop exception !ENTRY org.eclipse.core.runtime 4 2 Mrz 10, 2004 12:23:28.307 !MESSAGE Problems occurred when invoking code from plug-in:

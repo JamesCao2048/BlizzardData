@@ -5,9 +5,4 @@ No editors open, just a navigator with a few hundred HTML files.
 I selected one and deleted it.
 Then, progress monitor pops up without any progress.
 CPU is at 100% for almost 2 minutes.
-As you can see from the included Xray report, 32 million objects were created, 1 gigabyte was burned on the heap and about 32MB was read from disk (su
-mmary somehow missing in the report).
-I can see when this happens to a large workspace that the user simply kills the eclipse instance (as I was close to doing).
-I sent the bug report to Platform-Core as they would probably have the best insight into what happened.
-The thread to look for is ModalContext.
-No, I cannot replicate.
+As you can see from the included Xray report, 32 million objects were created, 1 gigabyte was burned on the heap and about 32MB was read from disk (summary somehow missing in the repor

@@ -8,5 +8,4 @@ Exp:
 </pre> Extracting the loop body would produce: 
 <pre> for (int i= 0; i 
 < 10; i++) { loopBody(); } // ...
-private void loopBody() { if (condition1) return; if (condition2) return; doStuff(); } 
-</pre>
+private void 
