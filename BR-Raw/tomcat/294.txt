@@ -31,6 +31,4 @@ pache.crimson.parser.Parser2.maybeElement(Parser2.java:1637) at org.apache.crims
 ser.Parser2.maybeElement(Parser2.java:1654) at org.apache.crimson.parser.Parser2.content(Parser2.java:1926) at org.apache.crimson.parser.Parser2.maybe
 Element(Parser2.java:1654) at org.apache.crimson.parser.Parser2.parseInternal(Parser2.java:634) at org.apache.crimson.parser.Parser2.parse(Parser2.jav
 a:333) at org.apache.crimson.parser.XMLReaderImpl.parse(XMLReaderImpl.java:448) at javax.xml.parsers.SAXParser.parse(SAXParser.java:345) at org.eclips
-e.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:89) at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:141) at org.e
-clipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:879) at t2.test.Test2.main(Test2.java:42) I've attached the relevant subset of the 
-schema (the full schema is proprietary and huge), the program that exposes the problem, as well as the genmodel and ecore files.
+e.emf.ecore.xmi.impl.XMLLoadImpl.lo

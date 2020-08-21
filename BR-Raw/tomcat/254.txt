@@ -22,13 +22,4 @@ ipse.ui.internal.keys.WorkbenchKeyboard.access$2(WorkbenchKeyboard.java:500) at 
 Keyboard.java:256) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Display.filterEvent(Display.java:699
 ) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:832) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857) at org.eclipse.swt.widgets
 .Widget.sendEvent(Widget.java:842) at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716) at org.eclipse.swt.widgets.Control.sendKeyEvent(
-Control.java:1712) at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:3037) at org.eclipse.swt.widgets.Control.windowProc(Control.java:2940) at o
-rg.eclipse.swt.widgets.Display.windowProc(Display.java:2880) at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method) at org.eclipse.swt.i
-nternal.win32.OS.DispatchMessage(OS.java:1376) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2031) at org.eclipse.ui.internal.Workbe
-nch.runEventLoop(Workbench.java:1509) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1480) at org.eclipse.ui.internal.Workbench.createAndRu
-nWorkbench(Workbench.java:257) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.r
-un(IDEApplication.java:48) at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:260) at org.eclipse.core.runtime.adapto
-r.EclipseStarter.run(EclipseStarter.java:173) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106) at sun.reflect.NativeMet
-hodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMetho
-dAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basic
-Run(Main.java:305) at org.eclipse.core.launcher.Main.run(Main.java:745) at org.eclipse.core.launcher.Main.main(Main.java:713)
+Cont

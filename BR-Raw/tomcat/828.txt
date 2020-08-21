@@ -19,6 +19,4 @@ se.ui.internal.Workbench.runUI(Workbench.java:1381) at org.eclipse.ui.internal.W
 latformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47) at org.eclipse.core.int
 ernal.boot.InternalBootLoader.run(InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMetho
 dAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke
-(Unknown Source) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.core.launcher.Main.basicRun(Main.java:299) at org.eclipse.core.laun
-cher.Main.run(Main.java:767) at org.eclipse.core.launcher.Main.main(Main.java:601) 
----------
+(Unknown Source) at java.lang.reflect.Method.invoke(

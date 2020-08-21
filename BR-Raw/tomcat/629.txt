@@ -23,7 +23,4 @@ ent.x, event.y); int index = table.getTopIndex(); while (index
 < table.getColumnCount(); i++) { Rectangle rect = item.getBounds(i); if (rect.contains(pt)) { final int column = i; final Text text = new Text(table, 
 SWT.NONE); Listener textListener = new Listener() { public void handleEvent(final Event e) { switch (e.type) { case SWT.FocusOut : item.setText(column
 , text.getText()); text.dispose(); break; case SWT.Traverse : switch (e.detail) { case SWT.TRAVERSE_RETURN : item.setText(column, text.getText()); //F
-ALL THROUGH case SWT.TRAVERSE_ESCAPE : text.dispose(); e.doit = false; } break; } } }; text.addListener(SWT.FocusOut, textListener); text.addListener(
-SWT.Traverse, textListener); editor.setEditor(text, item, i); text.setText(item.getText(i)); text.selectAll(); text.setFocus(); return; } if (!visible
- && rect.intersects(clientArea)) { visible = true; } } if (!visible) return; index++; } } }); shell.pack(); shell.open(); while (!shell.isDisposed()) 
-{ if (!display.readAndDispatch()) display.sleep(); } display.dispose(); } }
+ALL THROUGH

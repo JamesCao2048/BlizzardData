@@ -27,16 +27,4 @@ er.add(PartTabFolder.java:89) at org.eclipse.ui.internal.PartTabFolder.add(PartT
 stackView (PerspectivePresentation.java:1573) at org.eclipse.ui.internal.PerspectivePresentation.stack (PerspectivePresentation.java:1546) at org.ecli
 pse.ui.internal.PerspectivePresentation.addPart (PerspectivePresentation.java:164) at org.eclipse.ui.internal.Perspective.showView(Perspective.java:14
 75) at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:714) at org.eclipse.ui.internal.WorkbenchPage.access$9 (WorkbenchPage.jav
-a:694) at org.eclipse.ui.internal.WorkbenchPage$13.run(WorkbenchPage.java:2796) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:8
-4) at org.eclipse.ui.internal.WorkbenchPage.showView (WorkbenchPage.java:2793) at org.eclipse.ui.internal.WorkbenchPage.showView (WorkbenchPage.java:2
-779) at org.eclipse.ui.internal.ShowViewAction.run(ShowViewAction.java:51) at org.eclipse.jface.action.Action.runWithEvent(Action.java:842) at org.ecl
-ipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContributionItem.java:509) at org.eclipse.jface.action.ActionContributionItem.ac
-cess$2 (ActionContributionItem.java:461) at org.eclipse.jface.action.ActionContributionItem$5.handleEvent (ActionContributionItem.java:408) at org.ecl
-ipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Disp
-lay.runDeferredEvents(Display.java:2311) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1992) at org.eclipse.ui.internal.Workbench.ru
-nEventLoop(Workbench.java:1506) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1482) at org.eclipse.ui.internal.Workbench.createAndRunWorkb
-ench(Workbench.java:246) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run (ID
-EApplication.java:47) at org.eclipse.core.internal.runtime.PlatformActivator$1.run (PlatformActivator.java:226) at org.eclipse.core.runtime.adaptor.Ec
-lipseStarter.run(EclipseStarter.java:85) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke
-(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.
-core.launcher.Main.basicRun(Main.java:279) at org.eclipse.core.launcher.Main.run(Main.java:742) at org.eclipse.core.launcher.Main.main(Main.java:581)
+a:694) at org.eclipse.ui.internal.WorkbenchPage$13.run(WorkbenchPage.j

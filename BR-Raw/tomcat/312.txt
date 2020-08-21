@@ -21,7 +21,4 @@ t known." [1,076,614,223,246] (gdb) [1,076,614,223,256] 28-thread-select 3 [1,07
 14,223,427] 29^error,msg="Thread ID 3 not known." [1,076,614,223,427] (gdb) [1,076,614,223,427] 30-thread-select 3 [1,076,614,223,427] &"Thread ID 3 n
 ot known.n" [1,076,614,223,427] 30^error,msg="Thread ID 3 not known." [1,076,614,223,427] (gdb) [1,076,614,223,437] 31-thread-select 3 [1,076,614,223,
 437] &"Thread ID 3 not known.n" [1,076,614,223,437] 31^error,msg="Thread ID 3 not known." [1,076,614,223,437] (gdb) [1,076,614,223,437] 32-thread-sele
-ct 3 [1,076,614,223,447] &"Thread ID 3 not known.n" [1,076,614,223,447] 32^error,msg="Thread ID 3 not known." [1,076,614,223,447] (gdb) [1,076,614,223
-,447] 33-thread-select 3 [1,076,614,223,447] &"Thread ID 3 not known.n" [1,076,614,223,457] 33^error,msg="Thread ID 3 not known." [1,076,614,223,457] 
-(gdb) [1,076,614,223,457] 34-thread-select 3 [1,076,614,223,457] &"Thread ID 3 not known.n" [1,076,614,223,457] 34^error,msg="Thread ID 3 not known." 
-[1,076,614,223,457] (gdb) [1,076,614,223,517] 35-stack-list-frames 0 4
+ct 3 [1,076,614,223,447] &"Thread ID 3 not known.n" [1,076,614,223,447] 32^error,msg="Thread ID 3 not known." [1,07

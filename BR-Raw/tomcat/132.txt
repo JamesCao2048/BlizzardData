@@ -20,21 +20,4 @@ ugView$DebugViewPartListener.partVisible (AbstractDebugView.java:161) at org.ecl
 t org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:646) at org.eclipse.core.runtime.Platform.run(Platform.java:497) at or
 g.eclipse.ui.internal.PartListenerList2.firePartVisible (PartListenerList2.java:173) at org.eclipse.ui.internal.WorkbenchPage$1.propertyChange (Workbe
 nchPage.java:137) at org.eclipse.ui.internal.LayoutPart.setVisible(LayoutPart.java:233) at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:3
-81) at org.eclipse.ui.internal.PartTabFolder.setSelection(PartTabFolder.java:1208) at org.eclipse.ui.internal.PartTabFolder.setSelection(PartTabFolder
-.java:1192) at org.eclipse.ui.internal.PartTabFolder.createControl(PartTabFolder.java:534) at org.eclipse.ui.internal.PartSashContainer.createControl 
-(PartSashContainer.java:240) at org.eclipse.ui.internal.PerspectivePresentation.activate (PerspectivePresentation.java:117) at org.eclipse.ui.internal
-.Perspective.onActivate(Perspective.java:630) at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:2667) at org.eclipse.ui.inter
-nal.WorkbenchPage.busySetPerspective (WorkbenchPage.java:688) at org.eclipse.ui.internal.WorkbenchPage.access$8(WorkbenchPage.java:673) at org.eclipse
-.ui.internal.WorkbenchPage$12.run(WorkbenchPage.java:2797) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.
-internal.WorkbenchPage.setPerspective(WorkbenchPage.java:2795) at org.eclipse.ui.internal.Workbench.showPerspective(Workbench.java:1522) at org.eclips
-e.debug.internal.ui.launchConfigurations.PerspectiveManager.switchToPe rspective(PerspectiveManager.java:173) at org.eclipse.debug.internal.ui.launchC
-onfigurations.PerspectiveManager$5.run (PerspectiveManager.java:317) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.
-swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:106) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2344) at org.eclipse
-.swt.widgets.Display.readAndDispatch(Display.java:2051) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1451) at org.eclipse.ui.inter
-nal.Workbench.runUI(Workbench.java:1422) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:258) at org.eclipse.ui.PlatformUI.c
-reateAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:48) at org.eclipse.core.internal.runti
-me.PlatformActivator$1.run (PlatformActivator.java:260) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:173) at org.eclipse
-.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.Native
-MethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:25) 
-at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:305) at org.eclipse.core.launcher.Main.run(Ma
-in.java:745) at org.eclipse.core.launcher.Main.main(Main.java:713)
+81) at org.eclipse.ui.internal.PartTabFolder.setSelection(PartTabFolder.java:1208) a

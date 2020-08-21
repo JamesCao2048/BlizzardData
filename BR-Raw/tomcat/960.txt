@@ -19,16 +19,4 @@ ava.JavaCompletionProcessor.internalComputeCo mpletionProposals(JavaCompletionPr
 ionProcessor.computeCompletion Proposals(JavaCompletionProcessor.java:315) at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionP
 roposal s(ContentAssistant.java:1291) at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals (CompletionProposalPopup.java:1
 99) at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$7 (CompletionProposalPopup.java:198) at org.eclipse.jface.text.contentassis
-t.CompletionProposalPopup$3.run (CompletionProposalPopup.java:161) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java(Compiled Code)
-) at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals (CompletionProposalPopup.java:157) at org.eclipse.jface.text.contentas
-sist.ContentAssistant.showPossibleCompletions (ContentAssistant.java:1211) at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor$AdaptedSour
-ceViewe r.doOperation(CompilationUnitEditor.java:151) at org.eclipse.ui.texteditor.ContentAssistAction$1.run (ContentAssistAction.java:83) at org.ecli
-pse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java(Compiled Code)) at org.eclipse.ui.texteditor.ContentAssistAction.run (ContentAssistAction.ja
-va:81) at org.eclipse.jface.action.Action.runWithEvent(Action.java:842) at org.eclipse.ui.internal.WWinKeyBindingService.pressed (WWinKeyBindingServic
-e.java:214) at org.eclipse.ui.internal.WWinKeyBindingService$5.widgetSelected (WWinKeyBindingService.java:332) at org.eclipse.ui.internal.AcceleratorM
-enu$2.handleEvent (AcceleratorMenu.java:65) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java(Compiled Code)) at org.eclipse.swt.widge
-ts.Display.runDeferredEvents(Display.java(Compiled Code)) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java(Compiled Code)) at org.ecl
-ipse.swt.widgets.Display.readAndDispatch(Display.java(Compiled Code)) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java(Compiled Code))
- at org.eclipse.ui.internal.Workbench.run(Workbench.java:1385) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:845) 
-at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at java.lang.reflect.Method.invoke(Native Method) at org.eclipse.core.launcher.Main.basic
-Run(Main.java:291) at org.eclipse.core.launcher.Main.run(Main.java:747) at org.eclipse.core.launcher.Main.main(Main.java:583)
+t.CompletionProposalPopup$3.run (CompletionProposalPopup.java:161) at org.ecl

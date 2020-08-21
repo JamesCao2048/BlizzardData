@@ -19,6 +19,4 @@ org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:4
 a:477) at org.eclipse.core.internal.plugins.PluginStopper.run(PluginStopper.java:101) at org.eclipse.core.internal.runtime.PlatformActivator.stopLegac
 yBundles(PlatformActivator.java:290) at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:272) at org.eclipse.core.runt
 ime.adaptor.EclipseStarter.run(EclipseStarter.java:173) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106) at sun.reflect
-.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.Deleg
-atingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.
-Main.basicRun(Main.java:305) at org.eclipse.core.launcher.Main.run(Main.java:745) at org.eclipse.core.launcher.Main.main(Main.java:713)
+.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImp

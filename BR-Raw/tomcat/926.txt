@@ -21,24 +21,4 @@ d(EditorWorkbook.java:123) at org.eclipse.ui.internal.EditorArea.addEditor(Edito
 r (EditorPresentation.java:351) at org.eclipse.ui.internal.EditorManager$2.run(EditorManager.java:585) at org.eclipse.swt.custom.BusyIndicator.showWhi
 le (BusyIndicator.java:84) at org.eclipse.ui.internal.EditorManager.createEditorTab (EditorManager.java:574) at org.eclipse.ui.internal.EditorManager.
 openInternalEditor (EditorManager.java:668) at org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor (EditorManager.java:459) at org.eclipse.
-ui.internal.EditorManager.openEditorFromInput (EditorManager.java:333) at org.eclipse.ui.internal.EditorManager.openEditor (EditorManager.java:424) at
- org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor (WorkbenchPage.java:2081) at org.eclipse.ui.internal.WorkbenchPage.access$6 (WorkbenchPage.java:
-2029) at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2016) at org.eclipse.swt.custom.BusyIndicator.showWhile (BusyIndicator.java:84
-) at org.eclipse.ui.internal.WorkbenchPage.openEditor (WorkbenchPage.java:2011) at org.eclipse.ui.internal.WorkbenchPage.openEditor (WorkbenchPage.jav
-a:1912) at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor (EditorUtility.java:133) at org.eclipse.jdt.internal.ui.javaeditor.Editor
-Utility.openInEditor (EditorUtility.java:111) at org.eclipse.jdt.internal.ui.search.GotoMarkerAction.showWithoutReuse (GotoMarkerAction.java:88) at or
-g.eclipse.jdt.internal.ui.search.GotoMarkerAction.show (GotoMarkerAction.java:78) at org.eclipse.jdt.internal.ui.search.GotoMarkerAction.run (GotoMark
-erAction.java:61) at org.eclipse.search.internal.ui.SearchResultViewer.openCurrentSelection (SearchResultViewer.java:548) at org.eclipse.search.intern
-al.ui.SearchResultViewer.showResult (SearchResultViewer.java:453) at org.eclipse.search.internal.ui.SearchResultViewer$2.open (SearchResultViewer.java
-:153) at org.eclipse.jface.viewers.StructuredViewer$2.run (StructuredViewer.java:392) at org.eclipse.core.internal.runtime.InternalPlatform.run (Inter
-nalPlatform.java:1016) at org.eclipse.core.runtime.Platform.run(Platform.java:420) at org.eclipse.jface.viewers.StructuredViewer.fireOpen (StructuredV
-iewer.java:390) at org.eclipse.jface.viewers.StructuredViewer.handleOpen (StructuredViewer.java:600) at org.eclipse.jface.viewers.StructuredViewer$6.h
-andleOpen (StructuredViewer.java:689) at org.eclipse.jface.util.OpenStrategy.fireOpenEvent (OpenStrategy.java:209) at org.eclipse.jface.util.OpenStrat
-egy.access$2(OpenStrategy.java:204) at org.eclipse.jface.util.OpenStrategy$1.mouseSelectItem (OpenStrategy.java:344) at org.eclipse.jface.util.OpenStr
-ategy$1.handleEvent (OpenStrategy.java:289) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.send
-Event(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2188) at org.eclipse.swt.widgets.Display.readAndDispatch(Disp
-lay.java:1878) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2037) at org.eclipse.ui.internal.Workbench.run(Workbench.java:2020) at
- org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at s
-un.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:39) at sun.re
-flect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.co
-re.launcher.Main.basicRun(Main.java:295) at org.eclipse.core.launcher.Main.run(Main.java:751) at org.eclipse.core.launcher.Main.main(Main.java:587)
+ui.internal.EditorManager.openEditorFromInput (EditorManager.java:333

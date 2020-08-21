@@ -20,7 +20,4 @@ l.core.CompilationUnit.makeConsistent(CompilationUnit.java:931) at org.eclipse.j
 ileWorkingCopyOperation.java:56) at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:700) at org.eclipse.jdt.internal.core
 .JavaModelOperation.runOperation(JavaModelOperation.java:739) at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1043) at
  org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:84) at org.eclipse.jdt.internal.ui.text.java.Jav
-aReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:109) at org.eclipse.jface.text.reconciler.CompositeReconcilingStrategy.reconcile(Composite
-ReconcilingStrategy.java:83) at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:97) 
-at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76) at org.eclipse.jface.text.reconciler.AbstractReconciler$Background
-Thread.run(AbstractReconciler.java:189)
+aReconcilingStrategy.rec

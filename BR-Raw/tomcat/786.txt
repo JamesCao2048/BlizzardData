@@ -30,15 +30,4 @@ Eventually, it occurred to me that the paths being generated had a lower-case dr
 and line in the shortcut I use to launch Eclipse.
 Changing that, and changing the path to the runtime-workspace in my launch configuration (which appears to have been generated from the path I'd speci
 fied in the shortcut) fixed the problem.
-As an interesting workaround, I also noticed that the source files could be found if my project was not in the workspace directory (that is, when I'd 
-imported an existing project into my workspace from another location on my hard drive without actually copying the files into my workspace).
-I never bothered to track down why this was so.
-SOLUTION: One obvious fix to this problem would be to make more use of getCanonicalPath, thus generating consistant paths that could be compared again
-st each other.
-However, I have another suggestion.
-While tracking down this bug, I noticed that the source-locator routines were given a simple file name (no path information), and were asked to find a
- file with that name in the project.
-The algorithm used to perform this search involved iterating over the project, prefixing the file name with every possible path in the project, and th
-en iterating over the project again looking for a file with that full path.
-It seems to me that a much simpler approach would be to iterate over the project, and for each IFile, to see if the file name (without the path) match
-ed the simple file name that was passed to the source locator.
+As an interesting workaround, I also noticed that the source files could be found if my project was not in the workspace 

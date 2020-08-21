@@ -24,16 +24,3 @@ lipse.swt.widgets.Display.windowProc(Display.java:2825) at org.eclipse.swt.inter
 .widgets.Display.readAndDispatch(Display.java:1903) at part3.fileexplorer.FileExplorer.main(FileExplorer.java:68) The odd thing is, invalidateChildren
 VisibleRegion is failing in this case because the itemCount is non-zero, even though the items array has been nulled out: void invalidateChildrenVisib
 leRegion (int control) { super.invalidateChildrenVisibleRegion (control); for (int i=0; i<itemCount; i++) { ToolItem item = items [i]; item.resetVisib
-leRegion (control); } } If I patch the releaseWidget method for ToolBar to set itemCount to zero, like this...
-Index: ToolBar.java ============================================================ ======= retrieving revision 1.20 diff 
--u 
--r1.20 ToolBar.java 
---- ToolBar.java 7 May 2003 22:25:37 
--0000 1.20 +++ ToolBar.java 3 Feb 2004 02:23:42 
--0000 @@ 
--394,6 +394,7 @@ ToolItem item = items [i]; if (!item.isDisposed ()) item.releaseResources (); } + itemCount = 0; items = null; super.releaseWidget ()
-; } ...
-then the example appears to work perfectly.
-This last change, seems like a good thing to do anyway.
-I don't have high confidence in the first one, but it definitely fixes the "in place rename does not redraw the tree" bug in my example, so something 
-like that is needed.

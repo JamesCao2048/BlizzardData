@@ -28,14 +28,4 @@ Given this, the preferred way to have the shutdown() method invoked in the Inter
 invokes it like so: public static Object run(String applicationName/*R1.0 compatibility*/, URL pluginPathLocation/*R1.0 compatibility*/, String locati
 on, String[] args, Runnable handler) throws Exception { ....
 Runnable shutDownHook= new Runnable(){ public void run(){ InternalBootLoader.shutdown(); } } Runtime.getRuntime().addShutdownHook(shutDownHook); try {
- result = runnable.run(applicationArgs); } catch (Throwable e) { e.printStackTrace(); throw new InvocationTargetException(e); } ...
-} A variation on this might be to use redundant shutdown paths (i.e.
-keep the finally clause in addition to the shutdown hook) that do different things based on the termination scenario and check state to avoid redundan
-t or conflicting actions.
-However, I don't think that is necessary with this case.
-The above is the simplest fix to address the problem as it is presented in the platform right now.
-It is, however inelegant in general to separate the cleanup responsibility for a temporal resource so far from the creation of the resource.
-A better design/fix would put responsibility for cleanup of each such resource in need of it back in the class responsible for creation.
-For example, since it is the PlatformConfiguration class that creates the .lock file, it would be proper for that class to register a shutdown hook sp
-ecifically to delete the .lock file.
-I'm not certain, but I think File.deleteOnExit() does this for you so at a minimum that method should be invoked when the file is created.
+ result = runnable.run(applicationArgs); } catch (Throwable e) { e.printStackTrace(); throw new Invocat

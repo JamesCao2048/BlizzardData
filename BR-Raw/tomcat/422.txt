@@ -21,37 +21,4 @@ anager.getDecorations (LightweightDecoratorManager.java:228) at org.eclipse.ui.i
 :266) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62) And also this error: org.osgi.framework.BundleException: Exception in org.eclipse.c
 ore.internal.compatibility.PluginActivator.start() at org.eclipse.osgi.framework.internal.core.BundleContext.startActivator (BundleContext.java:1071) 
 at org.eclipse.osgi.framework.internal.core.BundleContext.start (BundleContext.java:991) at org.eclipse.osgi.framework.internal.core.BundleHost.startW
-orker (BundleHost.java:403) at org.eclipse.osgi.framework.internal.core.Bundle.start(Bundle.java:312) at org.eclipse.core.internal.registry.Configurat
-ionElement.createExecutableExtensi on(ConfigurationElement.java:133) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtens
-i on(ConfigurationElement.java:125) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensi on(ConfigurationElement.java:11
-4) at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:171) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:51)
- at org.eclipse.ui.internal.WorkbenchPlugin.createExtension (WorkbenchPlugin.java:168) at org.eclipse.ui.internal.decorators.LightweightDecoratorDefin
-ition$1.run (LightweightDecoratorDefinition.java:83) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:819) at org.ecli
-pse.core.runtime.Platform.run(Platform.java:483) at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.internalGetDe corator(Lightweigh
-tDecoratorDefinition.java:79) at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate (LightweightDecoratorDefinition.java:153) 
-at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunna ble.run(LightweightDecoratorManager.java:59) at org.eclipse.core.in
-ternal.runtime.InternalPlatform.run (InternalPlatform.java:819) at org.eclipse.core.runtime.Platform.run(Platform.java:483) at org.eclipse.ui.internal
-.decorators.LightweightDecoratorManager.decorate (LightweightDecoratorManager.java:245) at org.eclipse.ui.internal.decorators.LightweightDecoratorMana
-ger.getDecorations (LightweightDecoratorManager.java:228) at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run (DecorationScheduler.java:26
-6) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62) Nested exception: org.eclipse.swt.SWTException: Invalid thread access at org.eclipse.s
-wt.SWT.error(SWT.java:2608) at org.eclipse.swt.SWT.error(SWT.java:2538) at org.eclipse.swt.widgets.Widget.error(Widget.java:377) at org.eclipse.swt.wi
-dgets.Shell.<init>(Shell.java:245) at org.eclipse.swt.widgets.Shell.<init>(Shell.java:236) at org.eclipse.swt.widgets.Shell.<init>(Shell.java:189) at 
-org.eclipse.swt.widgets.Shell.<init>(Shell.java:127) at org.eclipse.jface.resource.FontRegistry.defaultFont(FontRegistry.java:293) at org.eclipse.jfac
-e.resource.FontRegistry.get(FontRegistry.java:370) at org.eclipse.team.internal.ccvs.ui.console.CVSOutputConsole.<init> (CVSOutputConsole.java:78) at 
-org.eclipse.team.internal.ccvs.ui.CVSUIPlugin.startup(CVSUIPlugin.java:683) at org.eclipse.core.internal.compatibility.PluginActivator.start (PluginAc
-tivator.java:49) at org.eclipse.osgi.framework.internal.core.BundleContext$1.run (BundleContext.java:1054) at java.security.AccessController.doPrivile
-ged(Native Method) at org.eclipse.osgi.framework.internal.core.BundleContext.startActivator (BundleContext.java:1050) at org.eclipse.osgi.framework.in
-ternal.core.BundleContext.start (BundleContext.java:991) at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker (BundleHost.java:403) at o
-rg.eclipse.osgi.framework.internal.core.Bundle.start(Bundle.java:312) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExten
-si on(ConfigurationElement.java:133) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensi on(ConfigurationElement.java:1
-25) at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensi on(ConfigurationElement.java:114) at org.eclipse.ui.internal.Wo
-rkbenchPlugin$1.run(WorkbenchPlugin.java:171) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:51) at org.eclipse.ui.internal.Work
-benchPlugin.createExtension (WorkbenchPlugin.java:168) at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition$1.run (LightweightDecorato
-rDefinition.java:83) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:819) at org.eclipse.core.runtime.Platform.run(Pl
-atform.java:483) at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.internalGetDe corator(LightweightDecoratorDefinition.java:79) at
- org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate (LightweightDecoratorDefinition.java:153) at org.eclipse.ui.internal.decor
-ators.LightweightDecoratorManager$LightweightRunna ble.run(LightweightDecoratorManager.java:59) at org.eclipse.core.internal.runtime.InternalPlatform.
-run (InternalPlatform.java:819) at org.eclipse.core.runtime.Platform.run(Platform.java:483) at org.eclipse.ui.internal.decorators.LightweightDecorator
-Manager.decorate (LightweightDecoratorManager.java:245) at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations (LightweightD
-ecoratorManager.java:228) at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run (DecorationScheduler.java:266) at org.eclipse.core.internal.
-jobs.Worker.run(Worker.java:62)
+orker (BundleHost.java:403) at org.eclipse.osgi.framework.internal.core.Bundle.start(Bundle.java:312) at org.eclipse.core.internal.registry.Co

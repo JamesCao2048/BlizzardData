@@ -19,17 +19,4 @@ al.ui.search.JavaSearchPage.performAction(JavaSearchPage.java:199) at org.eclips
  at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.buttonPressed(ExtendedDialogWindow.java:140) at org.eclipse.jface.dialogs.Dialog$1.widget
 Selected(Dialog.java:423) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(
 EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:217
-3) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1863) at org.eclipse.jface.window.Window.runEventLoop(Window.java:583) at org.eclip
-se.jface.window.Window.open(Window.java:563) at org.eclipse.search.internal.ui.OpenSearchDialogAction.run(OpenSearchDialogAction.java:60) at org.eclip
-se.search.internal.ui.OpenSearchDialogAction.run(OpenSearchDialogAction.java:46) at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.jav
-a:265) at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:207) at org.eclipse.jface.action.ActionContributionItem.handleWi
-dgetSelection(ActionContributionItem.java:543) at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:496) at org.ecl
-ipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:443) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.jav
-a:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2173) at org.ecli
-pse.swt.widgets.Display.readAndDispatch(Display.java:1863) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2106) at org.eclipse.ui.in
-ternal.Workbench.run(Workbench.java:2089) at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858) at org.eclipse.core.bo
-ot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(N
-ativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.
-invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:298) at org.eclipse.core.launcher.Main.run(Main.java:764) at org.eclipse.
-core.launcher.Main.main(Main.java:598) I've tried to repeat the failure but haven't been successful.
-Maybe this has something to do with bug 44385 ?
+3) at org.eclipse

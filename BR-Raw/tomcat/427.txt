@@ -20,7 +20,4 @@ internal.runtime.logview.LogView$21.run(LogView.java:572) at org.eclipse.swt.wid
 s.Display.readAndDispatch(Display.java:2033) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550) at org.eclipse.ui.internal.Workben
 ch.runUI(Workbench.java:1526) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:265) at org.eclipse.ui.PlatformUI.createAndRun
 Workbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47) at org.eclipse.core.internal.runtime.Platform
-Activator$1.run(PlatformActivator.java:236) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:101) at sun.reflect.NativeMetho
-dAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodA
-ccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRu
-n(Main.java:279) at org.eclipse.core.launcher.Main.run(Main.java:742) at org.eclipse.core.launcher.Main.main(Main.java:581)
+Activator$1.run(PlatformActivator.java:236) 

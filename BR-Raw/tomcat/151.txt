@@ -19,11 +19,4 @@ BundleData.java:231) at org.eclipse.core.runtime.adaptor.EclipseBundleData.loadM
 r.CachedManifest.getManifest(CachedManifest.java:31) at org.eclipse.core.runtime.adaptor.CachedManifest.get(CachedManifest.java:66) at org.eclipse.osg
 i.internal.resolver.StateBuilder.createBundleDescription(StateBuilder.java:34) at org.eclipse.osgi.internal.resolver.StateObjectFactoryImpl.createBund
 leDescription(StateObjectFactoryImpl.java:21) at org.eclipse.core.runtime.adaptor.EclipseAdaptor.createStateManager(EclipseAdaptor.java:117) at org.ec
-lipse.osgi.framework.internal.defaultadaptor.DefaultAdaptor.initialize(DefaultAdaptor.java:120) at org.eclipse.osgi.framework.internal.core.Framework.
-initialize(Framework.java:118) at org.eclipse.osgi.framework.internal.core.Framework.<init>(Framework.java:97) at org.eclipse.osgi.framework.internal.
-core.OSGi.createFramework(OSGi.java:90) at org.eclipse.osgi.framework.internal.core.OSGi.<init>(OSGi.java:31) at org.eclipse.core.runtime.adaptor.Ecli
-pseStarter.run(EclipseStarter.java:86) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(N
-ativeMethodAccessorImpl.java:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.
-invoke(Method.java:324) at org.eclipse.core.launcher.Main.basicRun(Main.java:279) at org.eclipse.core.launcher.Main.run(Main.java:742) at org.eclipse.
-core.launcher.Main.main(Main.java:581) Again, it was working fine not 15 hours ago.
-Debian 2.4.18-bf2.4 i686 Gnome 2.2 GTK 2.0
+lipse.o

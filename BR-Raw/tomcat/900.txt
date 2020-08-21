@@ -19,9 +19,4 @@ va:2029) at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2016)
 84) at org.eclipse.ui.internal.WorkbenchPage.openEditor (WorkbenchPage.java:2011) at org.eclipse.ui.internal.WorkbenchPage.openEditor (WorkbenchPage.j
 ava:1896) at org.eclipse.jdt.internal.ui.wizards.NewElementWizard$1.run (NewElementWizard.java:61) at org.eclipse.swt.widgets.RunnableLock.run(Runnabl
 eLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages (Synchronizer.java:102) at org.eclipse.swt.widgets.Display.runAsyncMessages(Di
-splay.java:2150) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1867) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.jav
-a:2347) at org.eclipse.ui.internal.Workbench.run(Workbench.java:2330) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.jav
-a:858) at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.Nati
-veMethodAccessorImpl.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unkn
-own Source) at org.eclipse.core.launcher.Main.basicRun(Main.java:299) at org.eclipse.core.launcher.Main.run(Main.java:765) at org.eclipse.core.launche
-r.Main.main(Main.java:599)
+splay.java:2150) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1

@@ -20,17 +20,4 @@ bugConfigurations (org.eclipse.debug.ui.actions.OpenLaunchDialogAction).run() li
 org.eclipse.debug.ui.actions.OpenLaunchDialogAction).run (org.eclipse.jface.action.IAction) line: 97 org.eclipse.ui.internal.WWinPluginAction (org.ecl
 ipse.ui.internal.PluginAction).runWithEvent (org.eclipse.swt.widgets.Event) line: 273 org.eclipse.ui.internal.WWinPluginAction.runWithEvent (org.eclip
 se.swt.widgets.Event) line: 207 org.eclipse.ui.internal.PluginActionContributionItem (org.eclipse.jface.action.ActionContributionItem).handleWidgetSel
-ection (org.eclipse.swt.widgets.Event, boolean) line: 538 org.eclipse.jface.action.ActionContributionItem.access$2 (org.eclipse.jface.action.ActionCon
-tributionItem, org.eclipse.swt.widgets.Event, boolean) line: 490 org.eclipse.jface.action.ActionContributionItem$5.handleEvent (org.eclipse.swt.widget
-s.Event) line: 423 org.eclipse.swt.widgets.EventTable.sendEvent (org.eclipse.swt.widgets.Event) line: 82 org.eclipse.swt.widgets.MenuItem (org.eclipse
-.swt.widgets.Widget).sendEvent(org.eclipse.swt.widgets.Event) line: 833 org.eclipse.swt.widgets.Display.runDeferredEvents() line: 2352 org.eclipse.swt
-.widgets.Display.readAndDispatch() line: 2033 org.eclipse.ui.internal.Workbench.runEventLoop (org.eclipse.jface.window.Window$IExceptionHandler, org.e
-clipse.swt.widgets.Display) line: 1543 org.eclipse.ui.internal.Workbench.runUI() line: 1519 org.eclipse.ui.internal.Workbench.createAndRunWorkbench (o
-rg.eclipse.swt.widgets.Display, org.eclipse.ui.application.WorkbenchAdvisor) line: 258 org.eclipse.ui.PlatformUI.createAndRunWorkbench (org.eclipse.sw
-t.widgets.Display, org.eclipse.ui.application.WorkbenchAdvisor) line: 139 org.eclipse.ui.internal.ide.IDEApplication.run(java.lang.Object) line: 47 or
-g.eclipse.core.internal.runtime.PlatformActivator$1.run() line: 257 org.eclipse.core.runtime.adaptor.EclipseStarter.run(java.lang.String [], java.lang
-.Runnable) line: 106 sun.reflect.NativeMethodAccessorImpl.invoke0(java.lang.reflect.Method, java.lang.Object, java.lang.Object[]) line: not available 
-[native method] sun.reflect.NativeMethodAccessorImpl.invoke(java.lang.Object, java.lang.Object[]) line: 39 sun.reflect.DelegatingMethodAccessorImpl.in
-voke(java.lang.Object, java.lang.Object[]) line: 25 java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[]) line: 324 org.eclipse.core.l
-auncher.Main.basicRun(java.lang.String[]) line: 279 org.eclipse.core.launcher.Main.run(java.lang.String[]) line: 742 org.eclipse.core.launcher.Main.ma
-in(java.lang.String[]) line: 581
+ection (org.eclipse.swt.widgets.Event, boolean) line:

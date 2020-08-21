@@ -18,7 +18,4 @@ ntributionItem.java:529) at org.eclipse.jface.action.ActionContributionItem.acce
 ionContributionItem$6.handleEvent (ActionContributionItem.java:454) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse
 .swt.widgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2188) at org.eclipse.swt.widgets.Disp
 lay.readAndDispatch(Display.java:1878) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2036) at org.eclipse.ui.internal.Workbench.run
-(Workbench.java:2019) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(B
-ootLoader.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) at s
-un.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.core.launcher.Main.ba
-sicRun(Main.java:295) at org.eclipse.core.launcher.Main.run(Main.java:751) at org.eclipse.core.launcher.Main.main(Main.java:587)
+(Workbench.java:2019) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.bo

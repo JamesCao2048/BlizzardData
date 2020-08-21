@@ -20,40 +20,4 @@ atorLabelDecorator.java:121) at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorat
 pse.jdt.internal.ui.viewsupport.JavaUILabelProvider.decorateImage (JavaUILabelProvider.java:119) at org.eclipse.jdt.internal.ui.viewsupport.JavaUILabe
 lProvider.getImage (JavaUILabelProvider.java:134) at org.eclipse.jface.viewers.DecoratingLabelProvider.getImage (DecoratingLabelProvider.java:73) at o
 rg.eclipse.jdt.internal.ui.viewsupport.DecoratingJavaLabelProvider.getImage (DecoratingJavaLabelProvider.java:103) at org.eclipse.jface.viewers.TreeVi
-ewer.doUpdateItem(TreeViewer.java:99) at org.eclipse.jface.viewers.AbstractTreeViewer$UpdateItemSafeRunnable.run (AbstractTreeViewer.java:87) at org.e
-clipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:813) at org.eclipse.core.runtime.Platform.run(Platform.java:457) at org.eclip
-se.jface.viewers.AbstractTreeViewer.doUpdateItem (AbstractTreeViewer.java:469) at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.ru
-n (StructuredViewer.java:119) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:813) at org.eclipse.core.runtime.Platfo
-rm.run(Platform.java:457) at org.eclipse.jface.viewers.StructuredViewer.updateItem (StructuredViewer.java:1285) at org.eclipse.jface.viewers.AbstractT
-reeViewer.createTreeItem (AbstractTreeViewer.java:383) at org.eclipse.jface.viewers.AbstractTreeViewer$1.run (AbstractTreeViewer.java:363) at org.ecli
-pse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren (AbstractTreeViewer.java:
-349) at org.eclipse.jface.viewers.AbstractTreeViewer.internalExpandToLevel (AbstractTreeViewer.java:926) at org.eclipse.jdt.internal.ui.javaeditor.Jav
-aOutlinePage$JavaOutlineViewer.intern alExpandToLevel(JavaOutlinePage.java:423) at org.eclipse.jface.viewers.AbstractTreeViewer.internalExpandToLevel 
-(AbstractTreeViewer.java:935) at org.eclipse.jdt.internal.ui.javaeditor.JavaOutlinePage$JavaOutlineViewer.intern alExpandToLevel(JavaOutlinePage.java:
-423) at org.eclipse.jface.viewers.AbstractTreeViewer$5.run (AbstractTreeViewer.java:809) at org.eclipse.jface.viewers.StructuredViewer.preservingSelec
-tion (StructuredViewer.java:810) at org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged (AbstractTreeViewer.java:798) at org.eclipse.jface.viewe
-rs.ContentViewer.setInput(ContentViewer.java:238) at org.eclipse.jface.viewers.StructuredViewer.setInput (StructuredViewer.java:1004) at org.eclipse.j
-dt.internal.ui.javaeditor.JavaOutlinePage.createControl (JavaOutlinePage.java:1056) at org.eclipse.ui.views.contentoutline.ContentOutline.doCreatePage
- (ContentOutline.java:125) at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:306) at org.eclipse.ui.part.PageBookView.partActivated(Pag
-eBookView.java:561) at org.eclipse.ui.internal.PartListenerList$1.run(PartListenerList.java:49) at org.eclipse.core.internal.runtime.InternalPlatform.
-run (InternalPlatform.java:813) at org.eclipse.core.runtime.Platform.run(Platform.java:457) at org.eclipse.ui.internal.PartListenerList.firePartActiva
-ted (PartListenerList.java:47) at org.eclipse.ui.internal.WorkbenchPage.firePartActivated (WorkbenchPage.java:1251) at org.eclipse.ui.internal.Workben
-chPage.setActivePart(WorkbenchPage.java:2513) at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:448) at org.eclipse.ui.internal.Wor
-kbenchPage.busyOpenEditor (WorkbenchPage.java:2061) at org.eclipse.ui.internal.WorkbenchPage.access$6(WorkbenchPage.java:1990) at org.eclipse.ui.inter
-nal.WorkbenchPage$9.run(WorkbenchPage.java:1977) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84) at org.eclipse.ui.internal.W
-orkbenchPage.openEditor(WorkbenchPage.java:1972) at org.eclipse.ui.ide.IDE.openEditor(IDE.java:265) at org.eclipse.ui.ide.IDE.openEditor(IDE.java:317)
- at org.eclipse.ui.views.markers.internal.ActionOpenMarker.run (ActionOpenMarker.java:76) at org.eclipse.ui.views.markers.internal.MarkerView.handleOp
-enEvent (MarkerView.java:422) at org.eclipse.ui.views.markers.internal.TableView$2.open(TableView.java:162) at org.eclipse.jface.viewers.StructuredVie
-wer$2.run(StructuredViewer.java:406) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:813) at org.eclipse.core.runtime
-.Platform.run(Platform.java:457) at org.eclipse.jface.viewers.StructuredViewer.fireOpen (StructuredViewer.java:404) at org.eclipse.jface.viewers.Struc
-turedViewer.handleOpen (StructuredViewer.java:614) at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen (StructuredViewer.java:703) at org.eclip
-se.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:209) at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:204) at org.eclipse.
-jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:233) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.wi
-dgets.Widget.sendEvent(Widget.java:847) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2311) at org.eclipse.swt.widgets.Display.rea
-dAndDispatch(Display.java:1992) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1506) at org.eclipse.ui.internal.Workbench.runUI(Work
-bench.java:1482) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:246) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(Pla
-tformUI.java:139) at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47) at org.eclipse.core.internal.runtime.PlatformActivator$1.r
-un (PlatformActivator.java:226) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:85) at sun.reflect.NativeMethodAccessorImpl
-.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Sour
-ce) at java.lang.reflect.Method.invoke(Unknown Source) at org.eclipse.core.launcher.Main.basicRun(Main.java:279) at org.eclipse.core.launcher.Main.run
-(Main.java:742) at org.eclipse.core.launcher.Main.main(Main.java:581)
+ewer.doUpdateItem(TreeV

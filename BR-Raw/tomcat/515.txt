@@ -22,5 +22,4 @@ ternalGetDe corator(LightweightDecoratorDefinition.java:79) at org.eclipse.ui.in
 DecoratorDefinition.java:153) at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunna ble.run(LightweightDecoratorManager.j
 ava:59) at org.eclipse.core.internal.runtime.InternalPlatform.run (InternalPlatform.java:842) at org.eclipse.core.runtime.Platform.run(Platform.java:4
 58) at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate (LightweightDecoratorManager.java:212) at org.eclipse.ui.internal.decor
-ators.LightweightDecoratorManager.getDecorations (LightweightDecoratorManager.java:195) at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ru
-n (DecorationScheduler.java:245) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
+ators.LightweightDecoratorManager.getDecorations (LightweightDecoratorManager.java:195) at org.eclipse.ui.i

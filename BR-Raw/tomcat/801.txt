@@ -25,11 +25,4 @@ ve.internal.cde.core.AlignmentWindow.createTabPage (AlignmentWindow.java:167) at
 tWindow.java:205) at org.eclipse.ve.internal.cde.core.AlignmentWindow.setEditorPart (AlignmentWindow.java:260) at org.eclipse.ve.internal.cde.core.Ali
 gnmentWindowAction.run (AlignmentWindowAction.java:272) at org.eclipse.jface.action.Action.runWithEvent(Action.java:842) at org.eclipse.ui.actions.Ret
 argetAction.runWithEvent (RetargetAction.java:187) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection (ActionContributionItem.ja
-va:456) at org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent (ActionContributionItem.java:403) at org.eclipse.jface.action.ActionContr
-ibutionItem.access$0 (ActionContributionItem.java:397) at org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent (ActionContributi
-onItem.java:72) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java (Compiled Code)) at org.eclipse.swt.widgets.Display.runDeferredEvent
-s(Display.java (Compiled Code)) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java (Compiled Code)) at org.eclipse.swt.widgets.Display.
-readAndDispatch(Display.java (Compiled Code)) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java (Compiled Code)) at org.eclipse.ui.inte
-rnal.Workbench.run(Workbench.java:1385) at org.eclipse.core.internal.boot.InternalBootLoader.run (InternalBootLoader.java:858) at org.eclipse.core.boo
-t.BootLoader.run(BootLoader.java:461) at java.lang.reflect.Method.invoke(Native Method) at org.eclipse.core.launcher.Main.basicRun(Main.java:291) at o
-rg.eclipse.core.launcher.Main.run(Main.java:747) at org.eclipse.core.launcher.Main.main(Main.java:583)
+va:456) at org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent (ActionContribu

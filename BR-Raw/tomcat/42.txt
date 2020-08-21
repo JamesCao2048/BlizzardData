@@ -18,22 +18,4 @@ d.java:58) at org.eclipse.jdt.internal.ui.wizards.NewElementWizard$2.run(NewElem
 ecuteOperation(BatchOperation.java:34) at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:700) at org.eclipse.core.intern
 al.resources.Workspace.run(Workspace.java:1559) at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:3196) at org.eclipse.jdt.core.JavaCore.run(JavaCore
 .java:3153) at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:50) at org.eclipse.jface.operation.Modal
-Context.runInCurrentThread(ModalContext.java:302) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252) at org.eclipse.jface.wizard.W
-izardDialog.run(WizardDialog.java:756) at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.performFinish(NewElementWizard.java:107) at org.eclipse
-.jface.wizard.WizardDialog.finishPressed(WizardDialog.java:606) at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:319) at org.e
-clipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:413) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89) at org.eclip
-se.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:769) at org.eclipse.swt.widgets.Displa
-y.runDeferredEvents(Display.java:2584) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2262) at org.eclipse.jface.window.Window.runEve
-ntLoop(Window.java:670) at org.eclipse.jface.window.Window.open(Window.java:650) at org.eclipse.ui.actions.NewWizardAction.run(NewWizardAction.java:16
-4) at org.eclipse.ui.internal.ide.NewWizardDropDownAction.run(NewWizardDropDownAction.java:129) at org.eclipse.jface.action.Action.runWithEvent(Action
-.java:881) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:550) at org.eclipse.jface.action.Actio
-nContributionItem.access$2(ActionContributionItem.java:502) at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.ja
-va:474) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:769) at org.eclips
-e.swt.widgets.Display.runDeferredEvents(Display.java:2584) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2262) at org.eclipse.ui.int
-ernal.Workbench.runEventLoop(Workbench.java:1488) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1462) at org.eclipse.ui.internal.Workbench
-.createAndRunWorkbench(Workbench.java:259) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139) at org.eclipse.ui.internal.ide.IDEA
-pplication.run(IDEApplication.java:90) at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:288) at org.eclipse.core.ru
-ntime.adaptor.EclipseStarter.run(EclipseStarter.java:214) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:115) at sun.refle
-ct.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at sun.reflect.Del
-egatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) at org.eclipse.core.launche
-r.Main.basicRun(Main.java:315) at org.eclipse.core.launcher.Main.run(Main.java:740) at org.eclipse.core.launcher.Main.main(Main.java:724)
+Context.runInCurrentThread(ModalContext.java:302) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252) at org.ecl

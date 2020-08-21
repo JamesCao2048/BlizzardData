@@ -19,20 +19,4 @@ h(LaunchConfigurationsDialog.java:1202) at org.eclipse.debug.internal.ui.launchC
 figurationsDialog.java:1170) at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.buttonPressed(LaunchConfigurationsDialog
 .java:313) at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:423) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.ja
 va:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:923) at org.eclipse
-.swt.widgets.Display.runDeferredEvents(Display.java:1847) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1639) at org.eclipse.jface.w
-indow.Window.runEventLoop(Window.java:583) at org.eclipse.jface.window.Window.open(Window.java:563) at org.eclipse.debug.internal.ui.launchConfigurati
-ons.LaunchConfigurationsDialog.openDialogOnSelection(LaunchConfigurationsDialog.java:504) at org.eclipse.debug.internal.ui.launchConfigurations.Launch
-ConfigurationsDialog.open(LaunchConfigurationsDialog.java:458) at org.eclipse.debug.ui.DebugUITools$1.run(DebugUITools.java:369) at org.eclipse.swt.cu
-stom.BusyIndicator.showWhile(BusyIndicator.java:69) at org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:373) a
-t org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:315) at org.eclipse.debug.ui.actions.OpenLaunchDialogAction
-.run(OpenLaunchDialogAction.java:70) at org.eclipse.jface.action.Action.runWithEvent(Action.java:842) at org.eclipse.jface.action.ActionContributionIt
-em.handleWidgetSelection(ActionContributionItem.java:456) at org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent(ActionContributionItem.
-java:403) at org.eclipse.jface.action.ActionContributionItem.access$0(ActionContributionItem.java:397) at org.eclipse.jface.action.ActionContributionI
-tem$ActionListener.handleEvent(ActionContributionItem.java:72) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81) at org.eclipse.swt.
-widgets.Widget.sendEvent(Widget.java:923) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:1847) at org.eclipse.swt.widgets.Display.r
-eadAndDispatch(Display.java:1639) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1402) at org.eclipse.ui.internal.Workbench.run(Work
-bench.java:1385) at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858) at org.eclipse.core.boot.BootLoader.run(BootLoa
-der.java:461) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.j
-ava:39) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) at java.lang.reflect.Method.invoke(Method.java:324) a
-t org.eclipse.core.launcher.Main.basicRun(Main.java:291) at org.eclipse.core.launcher.Main.run(Main.java:747) at org.eclipse.core.launcher.Main.main(M
-ain.java:583) The .log file inside workspace didn't give any error.
+.swt.widgets.Display.runDeferredEvents(Display.java:1847) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1639) 

@@ -22,27 +22,4 @@ n (NotificationManager.java:251) at org.eclipse.core.internal.runtime.InternalPl
 atform.run(Platform.java:464) at org.eclipse.core.internal.events.NotificationManager.notify (NotificationManager.java:244) at org.eclipse.core.intern
 al.events.NotificationManager.broadcastChanges (NotificationManager.java:138) at org.eclipse.core.internal.resources.Workspace.broadcastChanges (Works
 pace.java:146) at org.eclipse.core.internal.resources.Workspace.endOperation (Workspace.java:847) at org.eclipse.core.internal.resources.Workspace.run
-(Workspace.java:1563) at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run (NotificationManager.java:37) at org.eclipse.core.internal
-.jobs.Worker.run(Worker.java:62) Error Nov 18, 2003 18:54:09.609 Problems occurred when invoking code from plug- in: "org.eclipse.core.resources".
-java.lang.RuntimeException: Illegal attempt to modify an immutable tree.
-at org.eclipse.core.internal.dtree.AbstractDataTree.handleImmutableTree (AbstractDataTree.java:235) at org.eclipse.core.internal.dtree.DeltaDataTree.d
-eleteChild (DeltaDataTree.java:390) at org.eclipse.core.internal.watson.ElementTree.deleteElement (ElementTree.java:330) at org.eclipse.core.internal.
-resources.Workspace.deleteResource (Workspace.java:802) at org.eclipse.core.internal.resources.Resource.deleteResource (Resource.java:735) at org.ecli
-pse.core.internal.resources.ResourceTree.deletedFile (ResourceTree.java:351) at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile (R
-esourceTree.java:553) at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFile (ResourceTree.java:489) at org.eclipse.team.internal.ccvs
-.core.util.MoveDeleteHook$1.run (MoveDeleteHook.java:79) at org.eclipse.team.internal.ccvs.core.resources.EclipseSynchronizer.performMoveDe lete(Eclip
-seSynchronizer.java:1620) at org.eclipse.team.internal.ccvs.core.util.MoveDeleteHook.deleteFile (MoveDeleteHook.java:74) at org.eclipse.team.internal.
-core.MoveDeleteManager.deleteFile (MoveDeleteManager.java:50) at org.eclipse.core.internal.resources.Resource.unprotectedDelete (Resource.java:1417) a
-t org.eclipse.core.internal.resources.Resource.delete (Resource.java:649) at org.eclipse.core.internal.resources.Resource.delete (Resource.java:683) a
-t org.eclipse.pde.internal.builders.ExtensionPointSchemaBuilder.compileFile (ExtensionPointSchemaBuilder.java:173) at org.eclipse.pde.internal.builder
-s.ExtensionPointSchemaBuilder.compileSchemasIn (ExtensionPointSchemaBuilder.java:265) at org.eclipse.pde.internal.builders.ExtensionPointSchemaBuilder
-.compileSchemasIn (ExtensionPointSchemaBuilder.java:263) at org.eclipse.pde.internal.builders.ExtensionPointSchemaBuilder.build (ExtensionPointSchemaB
-uilder.java:88) at org.eclipse.core.internal.events.BuildManager$2.run (BuildManager.java:482) at org.eclipse.core.internal.runtime.InternalPlatform.r
-un (InternalPlatform.java:1127) at org.eclipse.core.runtime.Platform.run(Platform.java:464) at org.eclipse.core.internal.events.BuildManager.basicBuil
-d (BuildManager.java:130) at org.eclipse.core.internal.events.BuildManager.basicBuild (BuildManager.java:201) at org.eclipse.core.internal.events.Buil
-dManager.basicBuild (BuildManager.java:156) at org.eclipse.core.internal.events.BuildManager$1.run (BuildManager.java:182) at org.eclipse.core.interna
-l.runtime.InternalPlatform.run (InternalPlatform.java:1127) at org.eclipse.core.runtime.Platform.run(Platform.java:464) at org.eclipse.core.internal.e
-vents.BuildManager.basicBuild (BuildManager.java:185) at org.eclipse.core.internal.events.BuildManager.basicBuildLoop (BuildManager.java:219) at org.e
-clipse.core.internal.events.BuildManager.build (BuildManager.java:247) at org.eclipse.core.internal.resources.Workspace.build (Workspace.java:165) at 
-org.eclipse.pde.internal.ui.preferences.CompilersPreferencePage$3.run (CompilersPreferencePage.java:279) at org.eclipse.jface.operation.ModalContext$M
-odalContextThread.run (ModalContext.java:101)
+(Workspace.java:1563) at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run (NotificationManager.java:37) at org.eclipse

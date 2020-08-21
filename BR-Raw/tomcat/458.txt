@@ -22,15 +22,4 @@ n() line: 49 InternalPlatform.run(ISafeRunnable) line: 813 Platform.run(ISafeRun
 ne: 47 WorkbenchPage.firePartActivated(IWorkbenchPart) line: 1251 WorkbenchPage.setActivePart(IWorkbenchPart) line: 2513 WorkbenchPage.activate(IWorkb
 enchPart) line: 448 WorkbenchPage.busyOpenEditor(IEditorInput, String, boolean) line: 2061 WorkbenchPage.access$6(WorkbenchPage, IEditorInput, String,
  boolean) line: 1990 WorkbenchPage$9.run() line: 1977 BusyIndicator.showWhile(Display, Runnable) line: 84 WorkbenchPage.openEditor(IEditorInput, Strin
-g, boolean) line: 1972 EditorUtility.openInEditor(IEditorInput, String, boolean) line: 125 EditorUtility.openInEditor(Object, boolean) line: 94 Editor
-Utility.openInEditor(Object) line: 74 OpenIncludeAction.run() line: 111 OpenIncludeAction(Action).runWithEvent(Event) line: 842 ActionContributionItem
-.handleWidgetSelection(Event, boolean) line: 509 ActionContributionItem.access$2(ActionContributionItem, Event, boolean) line: 461 ActionContributionI
-tem$5.handleEvent(Event) line: 408 EventTable.sendEvent(Event) line: 82 MenuItem(Widget).sendEvent(Event) line: 847 Display.runDeferredEvents() line: 
-2311 Display.readAndDispatch() line: 1992 Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 1506 Workbench.runUI() line: 1482 Workbench.
-createAndRunWorkbench(Display, WorkbenchAdvisor) line: 246 PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 139 IDEApplication.run(Ob
-ject) line: 47 PlatformActivator$1.run() line: 226 EclipseStarter.run(String[], Runnable) line: 85 NativeMethodAccessorImpl.invoke0(Method, Object, Ob
-ject[]) line: not available [native method] NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39 DelegatingMethodAccessorImpl.invoke(Object, Obj
-ect[]) line: 25 Method.invoke(Object, Object[]) line: 324 Main.basicRun(String[]) line: 279 Main.run(String[]) line: 742 Main.main(String[]) line: 581
- Thread [Framework Event Dispatcher] (Running) Thread [Start Level Event Dispatcher] (Running) Thread [CDT Indexer] (Running) Thread [Worker-0] (Runni
-ng) Thread [Worker-1] (Running) Thread [Worker-2] (Running) Thread [Worker-3] (Running) Thread [org.eclipse.cdt.internal.ui.text.CSourceViewerConfigur
-ation$1] (Running) Thread [org.eclipse.cdt.internal.ui.text.CSourceViewerConfiguration$1] (Running)
+g, boolean) line: 1972 EditorUtility.
