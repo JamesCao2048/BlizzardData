@@ -8,6 +8,5 @@ This prints out:
 Point {0, 13}
 Point {0, 0}
 Expectation: the preferred height of an empty Link widget should be the font height (or more perhaps if the underline takes space).
-Otherwise, the usual approach of using SWT.CENTER for the vertical alignment in GridData fails
--- it gets a height of 0.
+Otherwise, the usual approach of using SWT.CENTER for the vertical alignment in GridData fails -- it gets a height of 0.
 We're using a workaround of setting a height hint based on the height of the font.

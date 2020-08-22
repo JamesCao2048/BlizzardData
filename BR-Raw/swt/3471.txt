@@ -1,9 +1,7 @@
 [interop] Components in SWT_AWT don't show in Workbench.
 Components in SWT_AWT don't show in Workbench.
 It you put back some of what was removed from SWT_AWT.java between M5 and M6
-then things work again.
-Specifically the code below.
-Will also attach
+then things work again.  Specifically the code below.  Will also attach
 a sampple plugin project that shows this.
 parent.addListener (org.eclipse.swt.SWT.Resize, new
 org.eclipse.swt.widgets.Listener() {

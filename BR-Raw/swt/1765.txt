@@ -3,25 +3,20 @@ SWT activates the sun.awt.EmbeddedFrame by means of dispatching it
 the WINDOW_ACTIVATED & WINDOW_GAINED_FOCUS events (on opening an
 embedding shell).
 From AWT's perspective the EmbeddedFrame is a heavyweight component
-(particularly a toplevel window).
-A heavyweight component (in contrast
+(particularly a toplevel window). A heavyweight component (in contrast
 to a lightweight) actually can't be focused by simply dispatching
-(or posting) it a focus event.
-Setting it a focused component should
+(or posting) it a focus event. Setting it a focused component should
 be made on the native level.
 The approach used by SWT has worked prior to JDK 1.5 but no longer works.
-Unfortunately, the only reason it worked was a bug in AWT.
-The bug has
+Unfortunately, the only reason it worked was a bug in AWT. The bug has
 been fixed and then for activation of the EmbeddedFrame there has been introduced another (correct) way, namely the following method in the
 sun.awt.EmbeddedFrame class:
 /**
 * Synthesize native message to activate or deactivate EmbeddedFrame
-* window depending on the value of parameter
-<code>b</code>.
+* window depending on the value of parameter <code>b</code>.
 * Peers should override this method if they are to implement
 * this functionality.
-* @param b if
-<code>true</code>, activates the window;
+* @param b if <code>true</code>, activates the window;
 * otherwise, deactivates the window
 */
 public void synthesizeWindowActivation(boolean b)
@@ -31,8 +26,7 @@ WINDOW_ACTIVATED & WINDOW_GAINED_FOCUS events.
 This method serves to activate the EmbeddedFrame on the native level.
 It correctly generates appropriate activation & focus Java events that are
 dispatched asynchronously.
-The testcase below reproduces the problem.
-When it's run with JDK 1.4
+The testcase below reproduces the problem. When it's run with JDK 1.4
 the button is focused when the shell is opened, with JDK 1.5 it's not.
 --------------------------------------------
 import java.awt.Frame;

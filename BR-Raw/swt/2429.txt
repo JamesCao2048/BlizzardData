@@ -1,11 +1,9 @@
 Disabled image loses transparency
 SWT-win32, v3229
 In the test case below, a new image is created based on an existing image
-using the SWT.IMAGE_DISABLE operation.
-Since the base image had transparency,
+using the SWT.IMAGE_DISABLE operation. Since the base image had transparency,
 the expectation is that the greyed-out image will be (partially) transparent
-too.
-Currently, however, that does not seem to be the case.
+too. Currently, however, that does not seem to be the case.
 Note: The native/GDI+ image loading code gets this right.
 ---
 import org.eclipse.swt.*;

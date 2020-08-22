@@ -3,10 +3,10 @@ Created  attachment 82151   [details]
 test program to demonstrate issue
 Build ID: 3.3.1.1
 Steps To Reproduce:
-1. Use the attached Main.java to run a test application
-2. Test application consists of 2 Browser widgets & 1 Text widget, each with listeners for Activate, Deactivate, FocusIn, FocusOut
-3. Clicking on the various widgets should produce output on the console when the events are fired
-4. The Text widget fires Activate/Deactivate events appropriately, but the Browser widgets do not
+1.  Use the attached Main.java to run a test application
+2.  Test application consists of 2 Browser widgets & 1 Text widget, each with listeners for Activate, Deactivate, FocusIn, FocusOut
+3.  Clicking on the various widgets should produce output on the console when the events are fired
+4.  The Text widget fires Activate/Deactivate events appropriately, but the Browser widgets do not
 This behavior occurs on Browser widgets created using the SWT.NONE or SWT.MOZILLA styles.
 More information:
 This test was run on Ubuntu 7.04 with Firefox 2.0.0.6.

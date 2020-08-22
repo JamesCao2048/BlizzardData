@@ -1,4 +1,2 @@
 Bug 130492 Provide a method to serialize the report with library information.
-Currently, when engine generate the report document file, the document does not contain any library information.
-That will cause many propblem on server side.
-Model should provide a method to serialize the report with library information to a stream so that the generated report document can contain all information that the report need.
+Currently, when engine generate the report document file, the document does not contain any library information. That will cause many propblem on server side. Model should provide a method to serialize the report with library information to a stream so that the generated report document can contain all information that the report need.

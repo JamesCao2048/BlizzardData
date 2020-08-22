@@ -1,14 +1,10 @@
 ToolItems on a wrapped ToolBar do not "unwrap" correctly
-I am creating a window with a wrapping ToolBar.
-When I first make the window
+I am creating a window with a wrapping ToolBar. When I first make the window
 smaller so that some ToolItems wrap and then increase the window's width by one
 pixel after one of the ToolItems has just wrapped, that ToolItem disappears from
-the second (wrapped) line but is not shown on the first line.
-Covering and
-uncovering the window does not help, neither does maximizing and restoring.
-When
-I increase the width some more, the right edge of the ToolItem is shown.
-At this
+the second (wrapped) line but is not shown on the first line. Covering and
+uncovering the window does not help, neither does maximizing and restoring. When
+I increase the width some more, the right edge of the ToolItem is shown. At this
 point covering and uncovering the window will make the ToolItem render correctly
 again.
 Here's the snippet (a modified version of Snippet58):

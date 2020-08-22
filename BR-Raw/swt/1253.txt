@@ -1,10 +1,10 @@
 Can't invoke context menu using keybindings
 Build ID: I20081104-0916
 Steps To Reproduce:
-1.open a file in the navigator
-2.ensure focus in the file content
-3.move mouse into editor window
-4.press cmd-option-w.
+1. open a file in the navigator
+2. ensure focus in the file content
+3. move mouse into editor window
+4. press cmd-option-w.
 expected: On Mac OS X swt carbon, this would bring up the "show in..." context menu
 actual: nothing.
 More information:

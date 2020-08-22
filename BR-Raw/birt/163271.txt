@@ -1,9 +1,2 @@
 Bug 163271 Cascading parameter dialog - Changing from multiple to single dataset does not work
-Steps to reproduce
--
-- Create a new cascading parameter group
-- Select multiple dataset
-- define parameter country and associate it with datasetCountry
-- define parameter state and associate with datasetSate Now try to change from multiple dataset to single dataset.
-The second dataset still shows up and also the report design file is wrong.
-The single dataset should be saved ast he cascading parameter group level.
+Steps to reproduce - - Create a new cascading parameter group - Select multiple dataset - define parameter country and associate it with datasetCountry - define parameter state and associate with datasetSate Now try to change from multiple dataset to single dataset. The second dataset still shows up and also the report design file is wrong. The single dataset should be saved ast he cascading parameter group level.

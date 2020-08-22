@@ -1,6 +1,5 @@
 Recent changes causing a VM crash
-Running with SWT from head is causing the UI test suites to die with a VM crash.
-The last thing to
+Running with SWT from head is causing the UI test suites to die with a VM crash.  The last thing to
 occur before this happens is a failed test with the following stack:
 org.eclipse.swt.SWTException: Widget is disposed
 at org.eclipse.swt.SWT.error(SWT.java:3241)

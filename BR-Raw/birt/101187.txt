@@ -1,6 +1,2 @@
 Bug 101187 Localization key can't be blank when adding.
-Description:If key is blank, externalized text can't be displayed in chart.
-Steps to reproduce: 1.Set externalize text in chart title.
-2.In properties file, let key blank, but it has valid value.
-Expected result: it can be externalized in chart title.
-Actual result: it can't be displayed.
+Description:If key is blank, externalized text can't be displayed in chart. Steps to reproduce: 1. Set externalize text in chart title. 2. In properties file, let key blank, but it has valid value. Expected result: it can be externalized in chart title. Actual result: it can't be displayed.

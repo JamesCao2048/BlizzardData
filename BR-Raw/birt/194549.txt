@@ -1,4 +1,2 @@
 Bug 194549 Memory leak in chart device renderers
-After memory analysis for Chart code, it indicates java.awt.Font objects are not garbage collected.
-Investigating the renderer code, Graphics2D objects in IDisplayServer and IDeviceRenderer are not disposed after chart rendering finished.
-Need to invoke IDeviceRenderer.dispose() after ChartReportItemPresentationImpl being finished, and dispose all required resources in that method, including IDisplayServer and anything else.
+After memory analysis for Chart code, it indicates java.awt.Font objects are not garbage collected. Investigating the renderer code, Graphics2D objects in IDisplayServer and IDeviceRenderer are not disposed after chart rendering finished. Need to invoke IDeviceRenderer.dispose() after ChartReportItemPresentationImpl being finished, and dispose all required resources in that method, including IDisplayServer and anything else.

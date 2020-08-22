@@ -1,8 +1,6 @@
 AIOOBException caused by Tree.setRedraw()
 I20050816-1235
-My Sync view is currently hosed.
-Any attempt to refresh it results in the following exception in my log.
-
+My Sync view is currently hosed.  Any attempt to refresh it results in the following exception in my log.
 I have no idea how I've gotten into this state.
 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.ArrayIndexOutOfBoundsException:
 4)
@@ -41,5 +39,4 @@ at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
 at org.eclipse.team.internal.ui.Utils$4.run(Utils.java:664)
 at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:123)
-...
-18 more
+... 18 more

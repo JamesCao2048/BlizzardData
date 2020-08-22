@@ -1,15 +1,2 @@
 Bug 153488 Page Break - Page breaks are created for groups automatically
-In the latest build, engine alyways creats a page break before the outermost group.
-Issues: 1) If i add a group with company logo and header, followed by a table (with groups).
-The output is confusing, a page break occurs between the grid and table.
-A better solution would be page break occurs before each group, except the first group.
-Current behavior PageBreakBefore = Always Better solution would be PageBreakBefore = Always but first 2) Looks like engine is automatically putting page breaks for groups.
-But when I click on the group definition i see the following values.
-PageBreakBefore
-- Auto PageBreakAfter
-- Auto // Auto means inserts a page break before the element if necesary.
-Suggested solution
-- When user click on new group dialog, BIRT designer by default sets the value PageBreakBefore = Always but first.
-This way it is less confusing to end users.
-Cons
-- Older reports will not have auto page breaks for groups.
+In the latest build, engine alyways creats a page break before the outermost group. Issues: 1) If i add a group with company logo and header, followed by a table (with groups). The output is confusing, a page break occurs between the grid and table. A better solution would be page break occurs before each group, except the first group. Current behavior PageBreakBefore = Always Better solution would be PageBreakBefore = Always but first 2) Looks like engine is automatically putting page breaks for groups. But when I click on the group definition i see the following values. PageBreakBefore - Auto PageBreakAfter - Auto // Auto means inserts a page break before the element if necesary. Suggested solution - When user click on new group dialog, BIRT designer by default sets the value PageBreakBefore = Always but first. This way it is less confusing to end users. Cons - Older reports will not have auto page breaks for groups.

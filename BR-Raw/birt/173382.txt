@@ -1,9 +1,2 @@
 Bug 173382 Scale for linear Date/Time X-Axis does not work correctly [0001]
-Description: Scale for linear Date/Time X-Axis does not work correctly.
-Build number: 2.2.0.v20070207-1530 Steps to reproduce: 1.New a sample data source, new a data set: select * from ORDERS, add Filters:row["ORDERDATE"]="May 21, 2003 12:00 AM".
-2.New a bar chart, Value (Y) Series: row["ORDERNUMBER"], Category (X) Series: row["ORDERDATE"].
-3.In Format Chart tab, go to Chart Area->Axis->X-Axis, click Gridlines button, untick Is Category Axis checkbox, click Finish, preview.
-4.Double click the chart, click Scale button, choose Step Size, enter 15 Minutes, click Finish, preview.
-Expected result: After set Step Size the scale works correctly.
-Actual result: After set Step Size the chart (step.jpg) is not shown as the auto scale one (auto.jpg), and the chart is not shown correctly in Layout (layout.jpg).
-Error log: N/A
+Description: Scale for linear Date/Time X-Axis does not work correctly. Build number: 2.2.0.v20070207-1530 Steps to reproduce: 1. New a sample data source, new a data set: select * from ORDERS, add Filters:row["ORDERDATE"]="May 21, 2003 12:00 AM". 2. New a bar chart, Value (Y) Series: row["ORDERNUMBER"], Category (X) Series: row["ORDERDATE"]. 3. In Format Chart tab, go to Chart Area->Axis->X-Axis, click Gridlines button, untick Is Category Axis checkbox, click Finish, preview. 4. Double click the chart, click Scale button, choose Step Size, enter 15 Minutes, click Finish, preview. Expected result: After set Step Size the scale works correctly. Actual result: After set Step Size the chart (step.jpg) is not shown as the auto scale one (auto.jpg), and the chart is not shown correctly in Layout (layout.jpg). Error log: N/A

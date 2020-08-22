@@ -3,10 +3,9 @@ Build ID: I20090313
 Linux RedHat 5
 Steps To Reproduce:
 1.Install eclipse with Bidi translation (NLpackBidi...zip)
-2.Run mirrored eclipse (use
--nl iw)
+2.Run mirrored eclipse (use -nl iw)
 3.Open C/C++ perspective
-4.Hover the mouse over the screen or open/close menus
+4. Hover the mouse over the screen or open/close menus
 Expected result: correct window repaint
 Actual result: wrong window repaint
 More information:

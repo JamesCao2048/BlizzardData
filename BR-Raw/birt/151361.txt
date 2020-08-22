@@ -1,4 +1,2 @@
 Bug 151361 default value for reousrce folder user preference
-When user does not sepecify the resourec foler user preference, can we make the current project folder (in IDE) or the current report design file's folder (in RCP) as the default value for the resource folder.
-This way, by default the current project folder is the resource folder where user can create their libs and images.
-Also please set the default user preference to be null when BIRT is freshly installed.
+When user does not sepecify the resourec foler user preference, can we make the current project folder (in IDE) or the current report design file's folder (in RCP) as the default value for the resource folder. This way, by default the current project folder is the resource folder where user can create their libs and images. Also please set the default user preference to be null when BIRT is freshly installed.

@@ -10,8 +10,7 @@ final Table table = new Table(shell, SWT.NONE);
 table.setBounds(10,10,200,200);
 table.setLinesVisible(true);
 table.setHeaderVisible(true);
-for (int i = 0; i
-< 2; i++) {
+for (int i = 0; i < 2; i++) {
 TableColumn column = new TableColumn(table, SWT.NONE);
 column.setWidth(60);
 column.setText("col" + i);
@@ -23,8 +22,7 @@ button.setBounds(10,230,70,30);
 button.setText("Push");
 button.addListener(SWT.Selection, new Listener() {
 public void handleEvent(Event event) {
-new TableColumn(table, SWT.NONE, 0).setWidth(60); //
-<--
+new TableColumn(table, SWT.NONE, 0).setWidth(60); // <--
 }
 });
 while (!shell.isDisposed()) {

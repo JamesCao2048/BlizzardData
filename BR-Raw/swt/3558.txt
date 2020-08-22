@@ -1,8 +1,7 @@
 Eclipse crashes using SWT Designer plugin
 I20030930
 Trying to take a look at Instantiations' SWT Designer, Eclipse immediately exits when switching its
-design perspective.
-The crash log of MacOS X contains the follwing output:
+design perspective. The crash log of MacOS X contains the follwing output:
 Thread 0 Crashed:
 #0   0x969e962c in TestWindowGroupAttributes
 #1   0x969eb71c in HiliteAndActivateWindow

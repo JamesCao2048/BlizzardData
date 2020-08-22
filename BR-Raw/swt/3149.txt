@@ -1,9 +1,7 @@
 TextLayout doesn't produce proper runs when newlines present
-I'm trying to reproduce Bidi text rendering.
-The following two controls paint
+I'm trying to reproduce Bidi text rendering. The following two controls paint
 the same text in a different way.
 Felipe said the problem is related to the presence of the newline character.
-
 StyledText only renders lines.
 public static void main(String[] args) {
 final Display display = new Display();

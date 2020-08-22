@@ -1,9 +1,7 @@
 Problems disposing TrayItem
 Hi,
-I noticed problems disposing a TrayItem.
-In my application the user may chose
-to have the trayicon, or not.
-This is set in preferences without restart, so
+I noticed problems disposing a TrayItem. In my application the user may chose
+to have the trayicon, or not. This is set in preferences without restart, so
 creation and disposal of TrayItems are handled during runtime.
 When first calling TrayItem.dispose() and afterwards creating a new TrayItem,
 the old one is still showing in the tray, but without an image or Menu set to

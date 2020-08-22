@@ -1,7 +1,5 @@
 NPE in Control.invalidateVisibleRegion when expanding/collapsing tree node
-3.6 M7
-- Cocoa
-- 32-bit
+3.6 M7 - Cocoa - 32-bit
 In RTC,
 - select a change set in the Pending Changes view (uses an owner-draw Tree)
 - hit F2 to open the edit field (a child text field)
@@ -47,4 +45,4 @@ at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
 at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:662)
 at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
 at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
-at org.eclipse.equinox.internal.app.EclipseAppHandle.ru
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(

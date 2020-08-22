@@ -30,10 +30,8 @@ at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
 at org.eclipse.core.launcher.Main.run(Main.java:747)
 at org.eclipse.core.launcher.Main.main(Main.java:583)
 Expected Results:
-Eclipse should start normally.
-I have tested this with a Japanese locale
-(ja_JP.eucJP), and Eclipse started normally.
-Note that no Eclipse language packs
+Eclipse should start normally. I have tested this with a Japanese locale
+(ja_JP.eucJP), and Eclipse started normally. Note that no Eclipse language packs
 were installed, as my intention was only to test the functionality of an English
 version of Eclipse in a different locale.
 Build Date & Platform:
@@ -42,8 +40,7 @@ Additional Builds and Platforms:
 - Also Occurs On
 Build 200211071448 (2.0.2) on Sun Solaris 9
 However, on Eclipse 2.0.2, a different exception is thrown, and instead of
-crashing, Eclipse hangs.
-Here is the exception:
+crashing, Eclipse hangs. Here is the exception:
 java.lang.NullPointerException
 at org.eclipse.swt.graphics.Device.<init>(Device.java:121)
 at org.eclipse.swt.widgets.Display.<init>(Display.java:319)

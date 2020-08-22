@@ -1,7 +1,6 @@
 SWT.RIGHT not working on Text control on Mac OS X
 On Mac OS X 10.3 it is not possible to have right aligned text within a Text
-control (AKA text field).
-This works on Windows XP and Linux GTK, however, I
+control (AKA text field). This works on Windows XP and Linux GTK, however, I
 don't know anything about Carbon, so this might just be unsupported.
 Here's a small snippet showing the problem:
 public static void main(String[] args) {
@@ -18,5 +17,4 @@ display.sleep();
 }
 display.dispose();
 }
-I'm sorry if this is a dup, couldn't find a bug.
-Tested with Eclipse 3.1M6.
+I'm sorry if this is a dup, couldn't find a bug. Tested with Eclipse 3.1M6.

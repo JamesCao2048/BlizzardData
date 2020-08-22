@@ -1,5 +1,2 @@
 Bug 312529 Exception is thrown out when select Ascending in "Group and sorting" dialogue when running "ChartWizardLauncher.java
-Description: Exception is thrown out when select Ascending in "Group and sorting" dialogue when running "ChartWizardLauncher.java".
-Build number: 2.6.0.v20100512-0630 Steps to reproduce: 1.Run /org.eclipse.birt.chart.examples/src/org/eclipse/birt/chart/examples/builder/ChartWizardLauncher.java 2.In Select Data tab, click "Edit group and sorting" button, select "Ascending".
-Expected result: No exception.
-Actual result: Exception is thrown out.
+Description: Exception is thrown out when select Ascending in "Group and sorting" dialogue when running "ChartWizardLauncher.java". Build number: 2.6.0.v20100512-0630 Steps to reproduce: 1. Run /org.eclipse.birt.chart.examples/src/org/eclipse/birt/chart/examples/builder/ChartWizardLauncher.java 2. In Select Data tab, click "Edit group and sorting" button, select "Ascending". Expected result: No exception. Actual result: Exception is thrown out.

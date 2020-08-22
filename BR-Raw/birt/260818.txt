@@ -1,5 +1,2 @@
 Bug 260818 Should enable axis labe ellipsis when axis is category style
-Currently, only if axis is text type, the axis label ellipsis is enabled.
-However, if axis is not text type, but is category style, the ellipsis UI is disabled.
-This should be treated as the same case.
-Expected result: If axis is Text type or category style, the axis label ellipsis should be enabled.
+Currently, only if axis is text type, the axis label ellipsis is enabled. However, if axis is not text type, but is category style, the ellipsis UI is disabled. This should be treated as the same case. Expected result: If axis is Text type or category style, the axis label ellipsis should be enabled.

@@ -2,10 +2,10 @@ Tooltip for table column not appearing
 OS: Mac OS X 10.5.2 (intel)
 Build: 3.4M6a (SWT v3436)
 Steps:
-1.Create a Java project and import a snippet code org.eclipse.swt.snippets.Snippet2.java from CVS
-2.Insert the following lines below "column2.setWidth(100);" (around line 46)
+1. Create a Java project and import a snippet code org.eclipse.swt.snippets.Snippet2.java from CVS
+2. Insert the following lines below "column2.setWidth(100);" (around line 46)
 column1.setToolTipText("Column 1");
 column2.setToolTipText("Column 2");
-3.Run a SWT application (platform specific swt JAR file may be needed in the build path)
-4.Move a mouse cursor over the table columns and stay there for a couple of seconds
+3. Run a SWT application (platform specific swt JAR file may be needed in the build path)
+4. Move a mouse cursor over the table columns and stay there for a couple of seconds
 None of given tooltips "Column 1" and "Column 2" appeared for each table column

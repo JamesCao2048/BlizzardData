@@ -1,10 +1,7 @@
 Ctrl+Space gives two key down events
-On Windows XP using I20030923, "Ctrl+Space" gives two key down events.
-This
-key binding is used by Eclipse for code assist.
-Affects keys preference page,
-and causes a flicker as the code assist is executed twice.
-If the key is
+On Windows XP using I20030923, "Ctrl+Space" gives two key down events.  This
+key binding is used by Eclipse for code assist.  Affects keys preference page,
+and causes a flicker as the code assist is executed twice.  If the key is
 bound to any other command, it can make the command completely unusable.
 Problem does not occur on Linux-GTK.
 This is required for M4.

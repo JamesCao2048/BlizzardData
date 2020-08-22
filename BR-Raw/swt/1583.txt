@@ -1,8 +1,5 @@
 FileDialog does not provide enough information to open multiple files from different directories
-On Mac OSX, opening a FileDialog with SWT.MULTI allows the selection of multiple files from multiple different directories.
-However, after running FileDialog.open(), calling FileDialog.getFileNames() returns only the base names of each of the selected files, and does not provide any means of discovering the directories for the files.
-The return value of FileDialog.open() does indeed return the full path, but only to the first file that is selected.
-This effectively makes it impossible to robustly support opening multiple from different directories on OSX.
+On Mac OSX, opening a FileDialog with SWT.MULTI allows the selection of multiple files from multiple different directories. However, after running FileDialog.open(), calling FileDialog.getFileNames() returns only the base names of each of the selected files, and does not provide any means of discovering the directories for the files. The return value of FileDialog.open() does indeed return the full path, but only to the first file that is selected. This effectively makes it impossible to robustly support opening multiple from different directories on OSX.
 For example, if I run:
 public static void main(String[] args) throws Exception {
 FileDialog fd = new FileDialog(new Shell(), SWT.OPEN | SWT.MULTI);

@@ -2,8 +2,7 @@ GTK: Cannot type in Text widget contained in Shell which has style bit as NO_TRI
 When the Shell has NO_TRIM as its style bit we cannot type in the text widget in
 that Shell.
 Here is the test:
--------------test case starts here
-----------------------------
+-------------test case starts here ----------------------------
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -45,5 +44,4 @@ disp.sleep();
 }
 }
 }
---------------------------test case ends here
---------------------------
+--------------------------test case ends here --------------------------

@@ -2,8 +2,7 @@ Unable to create view ID org.eclipse.jdt.ui.PackageExplorer: An unexpected excep
 After JAX09/EclipseForum I downloaded Eclipse 3.5M6 form Mac in various forms carbon/cocoa/cocoa-64bit.
 When opening an existing workspace last edited in 3.4.2 I received this error and the PackageExplorer refuses to open.
 This does not occur when opening/creating a new workspace.
--- Error Details
---
+-- Error Details --
 Date: Fri Apr 24 12:04:13 CEST 2009
 Message: Unable to create view ID org.eclipse.jdt.ui.PackageExplorer: An unexpected exception was thrown.
 Severity: Error
@@ -13,16 +12,8 @@ eclipse.buildId=I20090313-0100
 java.version=1.5.0_16
 java.vendor=Apple Inc.
 BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=nl_NL
-Framework arguments:
--keyring /Users/maarten/.eclipse_keyring
--showlocation
-Command-line arguments:
--os macosx
--ws cocoa
--arch x86
--keyring /Users/maarten/.eclipse_keyring
--consoleLog
--showlocation
+Framework arguments:  -keyring /Users/maarten/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/maarten/.eclipse_keyring -consoleLog -showlocation
 Exception Stack Trace:
 java.lang.NullPointerException
 at org.eclipse.swt.program.Program.getProgram(Program.java:152)
@@ -48,4 +39,4 @@ at org.eclipse.ui.internal.WorkbenchPage.updateActivePart(WorkbenchPage.java:122
 at org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1417)
 at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1406)
 at org.eclipse.ui.internal.WorkbenchPage.access$14(WorkbenchPage.java:1397)
-at org.eclipse.ui.internal.Workbench
+at org.eclipse.ui.internal.WorkbenchPage$15.r

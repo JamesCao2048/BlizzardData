@@ -1,14 +1,11 @@
 Border width on Table incorrect - creates unwanted scrollbars
 It appears that on Windows the Table class always allocates a small border,
 with a width equal to the value of OS.GetSystemMetrics (OS.SM_CXEDGE),
-whether you explicitly set a border or not.
-If you don't set a border then
-the actual physical border is equal to this value.
-If you set a border
+whether you explicitly set a border or not. If you don't set a border then
+the actual physical border is equal to this value. If you set a border
 then this value has to be added to the reported value.
 The current implementation of getBorderWidth(), inherited from the Control
-class, doesn't take this into account.
-This results id that the preferred
+class, doesn't take this into account. This results id that the preferred
 size of the Table is being slightly underestimated, which causes unwanted
 scrollbars.
 Here's a test case that shows the problem:

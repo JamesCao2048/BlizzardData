@@ -2,13 +2,11 @@
 I20090929-0800 on Windows 7.
 When the indeterminate ProgressBar is small (like in the Eclipse status bar) then it does not go to the end and hence looks broken.
 Test Case:
-1.start SWT Control Example
-2.switch to 'ProgressMonitor' tab
-3.check style SWT.INDETERMINATE
-4.make the progress bar narrow (same size as in the status line of the Eclipse
+1. start SWT Control Example
+2. switch to 'ProgressMonitor' tab
+3. check style SWT.INDETERMINATE
+4. make the progress bar narrow (same size as in the status line of the Eclipse
 workbench window)
-==> the progress indication does not go to the end which looks broken.
-This looks fine on XP and Vista.
+==> the progress indication does not go to the end which looks broken. This looks fine on XP and Vista.
 Most likely a native issue but something we need to fix or workaround as it is very prominent in the status line of each Eclipse workbench window.
-Side note: the normal (non-indeterminate) Windows 7 progress bar seems to be more precise/accurate which makes it very visible if end values are not correctly set when an operation is finished (looks like the operation doesn't reach its end).
-That however, is a problem that has to get fixed on the client side.
+Side note: the normal (non-indeterminate) Windows 7 progress bar seems to be more precise/accurate which makes it very visible if end values are not correctly set when an operation is finished (looks like the operation doesn't reach its end). That however, is a problem that has to get fixed on the client side.

@@ -1,9 +1,8 @@
 [DND] DragSourceEffect creates cheese
 Build ID: I20070222-0951
 Steps To Reproduce:
-1.Run the attached snippet.
-2.Open another window (ie.
-a cmd shell) and place it just to the right of the button in the snippet.
-3.Start dragging the button while the cmd shell is still on top of the swt snippet shell
+1. Run the attached snippet.
+2. Open another window (ie. a cmd shell) and place it just to the right of the button in the snippet.
+3. Start dragging the button while the cmd shell is still on top of the swt snippet shell
 Bug: notice there is cheese left behind where the image set for the drag source overlapped the cmd shell.
 More information:

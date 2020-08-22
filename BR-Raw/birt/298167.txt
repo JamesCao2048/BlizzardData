@@ -1,5 +1,2 @@
 Bug 298167 reources for library, report are shown multiply times
-Build Identifier: 20090920-1017 I have this levels in BIRT project: datasource->dataset->element->report If I use javascript file in datasource library , in report the js file is shown 3x in "Property editor/Resources tab".
-Because dataset and element library use js file too but only in sharing mode.
-It would be better to show in which library it is resourced (datasource library) or if it's resourced in actual library.
-Reproducible: Always
+Build Identifier: 20090920-1017 I have this levels in BIRT project: datasource->dataset->element->report If I use javascript file in datasource library , in report the js file is shown 3x in "Property editor/Resources tab". Because dataset and element library use js file too but only in sharing mode. It would be better to show in which library it is resourced (datasource library) or if it's resourced in actual library. Reproducible: Always

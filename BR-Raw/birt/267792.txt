@@ -1,7 +1,2 @@
 Bug 267792 [Regression] Exception is thown out when edit the filter condition for crosstab [1302]
-Description: Exception is thown out when edit the filter condition for crosstab.
-Build number: 2.5.0.v20090310-0630 Steps to reproduce: 1.New a crosstab binding to the data set.
-2.Add filter condition for the crosstab.
-3.Double click to edit the filter condition.
-Expected result: No exception.
-Actual result: Exception is thrown out.
+Description: Exception is thown out when edit the filter condition for crosstab. Build number: 2.5.0.v20090310-0630 Steps to reproduce: 1. New a crosstab binding to the data set. 2.Add filter condition for the crosstab. 3. Double click to edit the filter condition. Expected result: No exception. Actual result: Exception is thrown out.

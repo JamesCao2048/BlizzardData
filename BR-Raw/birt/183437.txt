@@ -1,9 +1,3 @@
 Bug 183437 images from resource folder in packed wars aren't displayed
-The servlet spec allows a web container to run a war without unpacking the war.
-If you use this feature and you use reports with images, which are taken from a library (which is somewhere in the war), the image will not be displayed.
-I use a selfwritten resoure locator, which searches the library in WEB-INF/birt directory with "servletContext.getResource(filename)".
-This method returns a URL, which is the desired type for a resource locator.
-Tomcat 5.5 returns something like "jndi:/localhost/mycontext/WEB-INF/birt/myimage.jpg" or "jndi:/localhost/mycontext/WEB-INF/birt/mylib.rptlibrary".
-The rptlibrary will be handled correctly from the birt runtime, but not images.
-The reason is the incorrect behaviour of org.eclipse.birt.report.engine.executor.ImageItemExecutor: In the method "handleImage" there's a big switch statement.
-If the image is a image from a library (or better from resource folder), it will be handled as "ImageItemDesign.IMAGE_FILE" and therefore the "jndi:" prefix will be stripped (url.getFile( ) instead of urr.toExternalForm( ) is called) which is in most situation correct but not if it is in a packed war!
+The servlet spec allows a web container to run a war without unpacking the war. If you use this feature and you use reports with images, which are taken from a library (which is somewhere in the war), the image will not be displayed. I use a selfwritten resoure locator, which searches the library in WEB-INF/birt directory with "servletContext.getResource(filename)". This method returns a URL, which is the desired type for a resource locator. Tomcat 5.5 returns something like "jndi:/localhost/mycontext/WEB-INF/birt/myimage.jpg" or "jndi:/localhost/mycontext/WEB-INF/birt/mylib.rptlibrary". The rptlibrary will be handled correctly from the birt runtime, but not images. The reason is the incorrect behaviour of org.eclipse.birt.report.engine.executor.ImageItemExecutor: In the method "handleImage" there's a big switch statement. If the image is a image from a library (or better from resource folder), it will be handled as "ImageItemDesign.IMAGE_FILE" and therefore the "jndi:" prefix will be
+stripped (url.getFile( ) instead of urr.toExternalForm( ) is called) which is in most situation correct but not if it is in a packed war!

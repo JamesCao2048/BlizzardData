@@ -1,6 +1,2 @@
 Bug 224297 [regression]Add a normal aggregation in chart will cause error msg[13]
-Description: Add a normal aggregation in chart will cause error msg Build number:2.3.0.v200803270956 Steps to reproduce: 1.New sample dataset from CUSTOMERS 2.New a chart, bind to dataset.
-3.Click Data Binding in Select Data pane.
-4.Add aggregation, select sum function and field CUSTOMERNUMBER, click OK.
-Expected result: No error msg.
-Actual result: Wrong number of arguments to aggregate function: Aggregation Error log:n/a
+Description: Add a normal aggregation in chart will cause error msg Build number:2.3.0.v200803270956 Steps to reproduce: 1. New sample dataset from CUSTOMERS 2. New a chart, bind to dataset. 3. Click Data Binding in Select Data pane. 4. Add aggregation, select sum function and field CUSTOMERNUMBER, click OK. Expected result: No error msg. Actual result: Wrong number of arguments to aggregate function: Aggregation Error log:n/a

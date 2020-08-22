@@ -1,10 +1,8 @@
 DND - move reported to drag source even though cancelled
 RC1
-Run the following example.
-The dragSource.dragFinished listener shoul dhave an
+Run the following example.  The dragSource.dragFinished listener shoul dhave an
 event.detail of DND.DROP_NONE but instead it has an event.detail of
-DND.DROP_MOVE.
-this is bad because it means the drag source may delete data
+DND.DROP_MOVE.  this is bad because it means the drag source may delete data
 even though the operation failed:
 public static void main(String[] args) {
 Display display = new Display();

@@ -1,12 +1,12 @@
 too many paint events have been sent out when key down in Canvas
 Build ID: I20070306-1200
 Steps To Reproduce:
-1.Write a simple example using Canvas
-2.Listen to key down and paint event
-3.Holding down the arrow down key, you will find too many paint events have been sent out, key down event and paint event are alternate.
-4.If you run this in build I20070222-0951, it only sends out key down event, which is correct.
-5.I have tried this in 3.2, it only sends out key down event too.
-6.Too many paint events have blocked UI main thread, so that it can not get time to do other UI job.
+1. Write a simple example using Canvas
+2. Listen to key down and paint event
+3. Holding down the arrow down key, you will find too many paint events have been sent out, key down event and paint event are alternate.
+4. If you run this in build I20070222-0951, it only sends out key down event, which is correct.
+5. I have tried this in 3.2, it only sends out key down event too.
+6. Too many paint events have blocked UI main thread, so that it can not get time to do other UI job.
 More information:
 Code to test:
 import org.eclipse.swt.SWT;

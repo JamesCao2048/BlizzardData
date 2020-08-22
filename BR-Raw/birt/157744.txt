@@ -1,3 +1,2 @@
 Bug 157744 [Regression]GUI has memory leak
-Causes by 153732, designer has a regression to hold the report design handle in a hashmap.
-That causes the report design can not be released.
+Causes by 153732, designer has a regression to hold the report design handle in a hashmap. That causes the report design can not be released.

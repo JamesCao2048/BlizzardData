@@ -1,12 +1,9 @@
 Widget is disposed in ControlExample
 - run the ControlExample
-- press the Set/Get API Button
---> shows a dialog
-- press this button again
---> shows another dialog
+- press the Set/Get API Button --> shows a dialog
+- press this button again --> shows another dialog
 - close the second of these dialogs
 - in the first dialog choose anything in the Combo and you'll get the error at the bottom
-
 -> the problem is that Tab.resetLabels() is sending #getText() to the Text that was on the second of the dialogs; this happens because the two shown dialogs were sharing Tab's fields like setText, get/setButton, etc.
 Exception in thread "main" org.eclipse.swt.SWTException: Widget is disposed
 at org.eclipse.swt.SWT.error(SWT.java:3773)

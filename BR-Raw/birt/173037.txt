@@ -1,8 +1,2 @@
 Bug 173037 How to get drill-through "action/targetFileType" property at runtime?
-My report design contains drill-through hyperlinks to another report design or particular report document.
-The link target document type is represented by action/targetFileType property in the design XML file, for example:
-<structure name="action">
-<property name="reportName">cust_orders_payments.rptdocument</property>
-<property name="targetFileType">report-document</property> ...
-</structure> At runtime, I receive IAction object, for example in a custom IHTMLActionHandler implementation, but it has no targetFileType property.
-Is it possible to obtain it somehow or is it a bug?
+My report design contains drill-through hyperlinks to another report design or particular report document. The link target document type is represented by action/targetFileType property in the design XML file, for example: <structure name="action"> <property name="reportName">cust_orders_payments.rptdocument</property> <property name="targetFileType">report-document</property> ... </structure> At runtime, I receive IAction object, for example in a custom IHTMLActionHandler implementation, but it has no targetFileType property. Is it possible to obtain it somehow or is it a bug?

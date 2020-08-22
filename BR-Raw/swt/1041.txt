@@ -3,5 +3,4 @@ Using the latest 3.5 from HEAD.
 1) Run the attached revised snippet Snippet059CellNavigationIn34.
 (It has ColumnViewerEditorActivationEvent.MOUSE_DOUBLE_CLICK_SELECTION added as an activation strategy).
 2) Click on Wayne's  Givenname cell.
-3) Close the window using the "X" button.
-An SWT.Error is thrown while deactivating the cell editor.
+3) Close the window using the "X" button.  An SWT.Error is thrown while deactivating the cell editor.

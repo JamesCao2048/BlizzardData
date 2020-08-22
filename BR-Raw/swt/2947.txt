@@ -1,7 +1,6 @@
 Table not getting expose events when partially obscured by another window
 I20050215-2300
-The following example creates a table in a wide, but short, window.
-When this
+The following example creates a table in a wide, but short, window.  When this
 shell is being partially obscured by another window, moving a third window
 around above it causes the table to miss expose events, making it look blank or
 draw badly.
@@ -25,8 +24,7 @@ table.setLinesVisible(true);
 table.setHeaderVisible(true);
 String[] titles = { " ", "C", "!", "Description", "Resource",
 "In Folder", "Location" };
-for (int i = 0; i
-< titles.length; i++) {
+for (int i = 0; i < titles.length; i++) {
 TableColumn column = new TableColumn(table, SWT.NULL);
 column.setText(titles[i]);
 }
@@ -36,8 +34,7 @@ return table;
 }
 public static void makeColumns(Table table, boolean pack) {
 int count = 1024;
-for (int i = 0; i
-< count; i++) {
+for (int i = 0; i < count; i++) {
 TableItem item = new TableItem(table, SWT.NULL);
 item.setText(0, "x");
 item.setText(1, "y");
@@ -47,6 +44,5 @@ item.setText(4, "almost everywhere");
 item.setText(5, "some.folder");
 item.setText(6, "line " + i + " in nowhere");
 }
-for (int i = 0; i
-< table.getColumnCount(); i++) table.getColumn(i).pack();
+for (int i = 0; i < table.getColumnCount(); i++) table.getColumn(i).pack();
 }

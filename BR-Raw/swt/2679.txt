@@ -1,6 +1,5 @@
 DirectoryDialog and FileDialog bring CPU utilization to 100%
-It seems that this fix for 76195 creates problems is Eclipse 3.1.When I open
+It seems that this fix for 76195 creates problems is Eclipse 3.1. When I open
 DierectoryDialog and there are pending asyncExecs the dialog keeps receiving
-WM_ENTERIDLE events and that brings the CPU utilization to 100%.
-That makes the
+WM_ENTERIDLE events and that brings the CPU utilization to 100%. That makes the
 DiarctoryDialog node expanding extremely slow, almost impossible to use.

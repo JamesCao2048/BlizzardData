@@ -1,21 +1,16 @@
 Opening a fast view crashes Eclipse
-1.Make a view a fast view.
-2.Click on the new fast view's icon to expand the view.
-3.Eclipse crashes with a dump to the console similiar to this:
-2008-04-02 00:29:27.910 java[35545:80f] *** _NSAutoreleaseNoPool(): Object 0x23a50680 of class NSException autoreleased with no pool in place
-- just leaking
+1. Make a view a fast view.
+2. Click on the new fast view's icon to expand the view.
+3. Eclipse crashes with a dump to the console similiar to this:
+2008-04-02 00:29:27.910 java[35545:80f] *** _NSAutoreleaseNoPool(): Object 0x23a50680 of class NSException autoreleased with no pool in place - just leaking
 Stack: (0x955e312f 0x954efec2 0x954f7378 0x90a1162e 0x90a11d18 0x513e 0x258a)
 2008-04-02 00:29:27.915 java[35545:80f] An uncaught exception was raised
-2008-04-02 00:29:27.915 java[35545:80f] ***
--[NSCFArray insertObject:atIndex:]: index (17) beyond bounds (17)
-2008-04-02 00:29:27.915 java[35545:80f] *** _NSAutoreleaseNoPool(): Object 0x23a506f0 of class NSCFString autoreleased with no pool in place
-- just leaking
+2008-04-02 00:29:27.915 java[35545:80f] *** -[NSCFArray insertObject:atIndex:]: index (17) beyond bounds (17)
+2008-04-02 00:29:27.915 java[35545:80f] *** _NSAutoreleaseNoPool(): Object 0x23a506f0 of class NSCFString autoreleased with no pool in place - just leaking
 Stack: (0x955e312f 0x954efec2 0x954fb02a 0x90a8b1ce 0x9539d0fb 0x90a11aec 0x90a11d18 0x513e 0x258a)
-2008-04-02 00:29:27.916 java[35545:80f] *** _NSAutoreleaseNoPool(): Object 0x168bc0 of class NSCFData autoreleased with no pool in place
-- just leaking
+2008-04-02 00:29:27.916 java[35545:80f] *** _NSAutoreleaseNoPool(): Object 0x168bc0 of class NSCFData autoreleased with no pool in place - just leaking
 Stack: (0x955e312f 0x954efec2 0x955042a5 0x95503e81 0x90a8b1e2 0x9539d0fb 0x90a11aec 0x90a11d18 0x513e 0x258a)
-2008-04-02 00:29:27.916 java[35545:80f] *** Terminating app due to uncaught exception 'NSRangeException', reason: '***
--[NSCFArray insertObject:atIndex:]: index (17) beyond bounds (17)'
+2008-04-02 00:29:27.916 java[35545:80f] *** Terminating app due to uncaught exception 'NSRangeException', reason: '*** -[NSCFArray insertObject:atIndex:]: index (17) beyond bounds (17)'
 2008-04-02 00:29:27.917 java[35545:80f] Stack: (
 2426974795,
 2503594235,

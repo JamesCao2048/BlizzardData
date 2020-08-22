@@ -4,20 +4,15 @@ NPE at org.eclipse.swt.widgets.Shell.createHandle(Shell.java:735)
 Using the simple test case attached, there is a NPE each time one tries to create a new Shell, see the terminal output attached with stackTrace.
 OS is Mac OS X 10.5.8
 I've tried with:
-- Java 6 1.6.0_26
-- 64-bit
-- Java 5 1.5.0_30
-- 64-bit
-- Java 5 1.5_0_30
-- 32-bit
+- Java 6 1.6.0_26 - 64-bit
+- Java 5 1.5.0_30 - 64-bit
+- Java 5 1.5_0_30 - 32-bit
 All with the same result.
-Some users reported the same issue with Java 6 1.6.0_24
-- always on Leopard 10.5.8
+Some users reported the same issue with Java 6 1.6.0_24 - always on Leopard 10.5.8
 The same code runs fine in Snow Leopard 10.6.8
 This is a critical issue for us since it basically breaks Leopard compatibility.
 Thanks for having a look.
 Reproducible: Always
 Steps to Reproduce:
-1.Run the sample code attached
-2.NPE happends at line 32
-- caused by Shell.createHandle(Shell.java:735)
+1. Run the sample code attached
+2. NPE happends at line 32 - caused by Shell.createHandle(Shell.java:735)

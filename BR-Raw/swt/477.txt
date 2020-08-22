@@ -3,7 +3,6 @@ Build Identifier: 3.6.2
 1.Run ComboSample in atttachment:
 final Combo combo = new Combo(shell, SWT.DROP_DOWN | SWT.LEFT_TO_RIGHT);		combo.setText("ABCDEFG.....................................................");
 Result:
-On Windows, the cursor is at the beginning of the text, which is the expected behavior.
-But on Mac OS X, the cursor is at the end of the text, it will be hard for use to read the string.
+On Windows, the cursor is at the beginning of the text, which is the expected behavior. But on Mac OS X, the cursor is at the end of the text, it will be hard for use to read the string.
 See screenshot in attachment.
 Reproducible: Always

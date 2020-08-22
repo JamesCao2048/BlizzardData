@@ -4,6 +4,6 @@ When a page contains a link that uses a target="_blank" to open a new window, th
 This seems to only happen with XULRunner on Mac (32 bit mode, XULRunner 1.9.2.8)
 Reproducible: Always
 Steps to Reproduce:
-1.Take Snippet 270
-2.Change browser styles to MOZILLA
-3.Browser.setText(x) where x contains links with target="_blank"
+1. Take Snippet 270
+2. Change browser styles to MOZILLA
+3. Browser.setText(x) where x contains links with target="_blank"

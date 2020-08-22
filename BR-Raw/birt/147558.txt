@@ -1,7 +1,2 @@
 Bug 147558 Passing date parameters to drill-through reports
-Due to the date/time format, I can't pass a date parameter to a drill-through report.
-The date/time input requires that the user enters the date in a very specific format otherwise, the viewer does not recognize it as a valid date.
-Therefore, I set my text box to be have the date/time format 'dd-MMM-yyyy HH:mm' which is user-friendly.
-When I bind the param to the drill-through report, it passes 'Jan 1, 20006 22:33' or something in that order.
-Then the report that was being called returns that it is not a valid date.
-There is no function to format a date object to a specific format (or that I could find).
+Due to the date/time format, I can't pass a date parameter to a drill-through report. The date/time input requires that the user enters the date in a very specific format otherwise, the viewer does not recognize it as a valid date. Therefore, I set my text box to be have the date/time format 'dd-MMM-yyyy HH:mm' which is user-friendly. When I bind the param to the drill-through report, it passes 'Jan 1, 20006 22:33' or something in that order. Then the report that was being called returns that it is not a valid date. There is no function to format a date object to a specific format (or that I could find).

@@ -1,8 +1,6 @@
 NPE in PrintDialog
-Windows has code in setPrinterData to ensure that the printerData instanceVariable is never null.
-This code is missing on every other platform.
-missing line is in setPrinterData
--> if (data == null) data = new PrinterData();
+Windows has code in setPrinterData to ensure that the printerData instanceVariable is never null. This code is missing on every other platform.
+missing line is in setPrinterData -> if (data == null) data = new PrinterData();
 example of NPE from trying to print on Cocoa.
 java.lang.NullPointerException
 at org.eclipse.swt.printing.PrintDialog.open(PrintDialog.java:157)
@@ -40,4 +38,4 @@ at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:209)
 at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:1890)
 at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:1983)
 at org.eclipse.swt.widgets.Display.windowProc(Display.java:4901)
-at org.eclipse.swt.internal.coco
+at org.eclipse.swt.internal.cocoa

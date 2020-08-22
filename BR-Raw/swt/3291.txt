@@ -1,8 +1,7 @@
 SHADOW_IN style hides Group title
 RC2 candidate
 - run the ControlExample, go to the Group tab
-- turn on the Title Text checkbox
---> adds a title to the example Group
+- turn on the Title Text checkbox --> adds a title to the example Group
 - select the SWT.SHADOW_IN radio and the title disappears
 - the title remains visible for all of the other SHADOW_* radios, and should be
 for SHADOW_IN as well

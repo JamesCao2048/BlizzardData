@@ -5,13 +5,11 @@ BIDI3.4:HCG TreeColumn has wrong BIDI alignment with style SWT.NONE
 >Build ID: Integration build ID I20080324-1005
 >Steps To Reproduce:
 >Linux RedHat 5
->1.Install:
-- Eclipse SDK with NL Bidi package
->2.Run Eclipse with command line including following argument
--nl iw
->3.Open "Software updates and Add-ons" dialog: Help->Software Updates鈥
->4.Open tab " Available Features"
->5.Inspect caption alignment of "Version" and "Name"
+>1. Install:  - Eclipse SDK with NL Bidi package
+>2. Run Eclipse with command line including following argument -nl iw
+>3. Open "Software updates and Add-ons" dialog: Help->Software Updates鈥
+>4. Open tab " Available Features"
+>5. Inspect caption alignment of "Version" and "Name"
 >Expected result: The text of the captions aligned right
 >Actual result:  The text of the captions aligned left
 >Note:  in the tab "Installed features" the captions aligned right

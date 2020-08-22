@@ -2,8 +2,7 @@ List hangs on GTK
 Eclipse 20021113
 Using the SWT snippet combo#create a combo box (non-editable), change the line
 Combo combo = new Combo(..) to CCombo combo = new CCombo(..).
-Run the application and pull down the combo box.
-Select one of the entries,
+Run the application and pull down the combo box.  Select one of the entries,
 the application now hangs.
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;

@@ -1,8 +1,5 @@
 [Widgets] Background of widgets in Group are incorrect
-When no background is set on widgets within a Group that has a parent whose BackgroundMode is SWT.INHERIT_DEFAULT, the widget's background appears to be the background of the parent.
-This is a cocoa-only regression.
-Windows displays it fine, as well as Carbon and Cocoa SWT 3.5 (and early Cocoa SWT 3.6).
-I'm currently seeing this bug with build 3624.
+When no background is set on widgets within a Group that has a parent whose BackgroundMode is SWT.INHERIT_DEFAULT, the widget's background appears to be the background of the parent.  This is a cocoa-only regression.  Windows displays it fine, as well as Carbon and Cocoa SWT 3.5 (and early Cocoa SWT 3.6).  I'm currently seeing this bug with build 3624.
 Snippet:
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -36,14 +33,11 @@ group.setLayout(new RowLayout());
 
 String s = "This is a line on SWT " + SWT.getPlatform() + "/"
 + SWT.getVersion();
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 new Label(group, SWT.LEFT).setText(s);
 new Button(group, SWT.CHECK).setText("Checkbox");
 }
 }
 }
 ====================
-The first composite sets the color, and the result is both the label and the checkbox having the wrong background.
-The second composite doesn't set the background, and only the checkbox has the wrong background.
-If I remove the INHERIT_DEFAULT, it all works fine.
+The first composite sets the color, and the result is both the label and the checkbox having the wrong background.  The second composite doesn't set the background, and only the checkbox has the wrong background.  If I remove the INHERIT_DEFAULT, it all works fine.

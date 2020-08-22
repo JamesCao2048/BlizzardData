@@ -1,9 +1,2 @@
 Bug 150899 Cannot bind data values to chart series, which causes chart preview fail.
-How to reproduce it?
-1.Create a new chart, bind it with valid data set.
-2.Assign the valid data values to category series and value series.
-Current result: 1.There is no chart live preview in chart builder.
-It still uses the default sample data.
-2.Preview, dataset invalid exception is thrown out.
-Investigation: It is perhaps caused by ResultSetWrapper.java.
-There is no initializeMeta( ) in the Constructor.
+How to reproduce it? 1. Create a new chart, bind it with valid data set. 2. Assign the valid data values to category series and value series. Current result: 1. There is no chart live preview in chart builder. It still uses the default sample data. 2. Preview, dataset invalid exception is thrown out. Investigation: It is perhaps caused by ResultSetWrapper.java. There is no initializeMeta( ) in the Constructor.

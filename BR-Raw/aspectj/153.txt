@@ -64,5 +64,4 @@ Josh
 Josh is correct that using aspectpath will pull in the aspects for application to other types, the problem is that when pulling in type Advised, we reapply known ITDs and it clashes with the one added in the original build of the type.
 Two possible fixes that I am looking at:
 - don't reapply the ITDs (they are added to ensure type system is consistent) to binary types pulled in from the aspectpath
-- recognize the ITD is clashing with a member previously applied through the same ITD
-I am not sure we can determine it came from the aspectpath at the point the clash is detected.  I have option (2) already implemented, but I'll try a little more with option 1 before giving up ;)
+- recognize the ITD is clashing with a member previously applied through the same I

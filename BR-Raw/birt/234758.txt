@@ -1,3 +1,2 @@
 Bug 234758 BIRT JDBC driver logs password
-The BIRT JDBC driver manager logs conenction password, it needs to be escaped.
-[Thread-27] May 29, 2008 6:58:36 PM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager getConnection FINE: Request JDBC Connection: driverClass=com.actuate.actuatedd.jdbc.sqlserver.SQLServerDriver; url=jdbc:actuate:sqlserver://dbsrv10-win:1433;DatabaseName=EIITESTDB;User=eiiTest;Password=sysTest; jndi name url=null
+The BIRT JDBC driver manager logs conenction password, it needs to be escaped. [Thread-27] May 29, 2008 6:58:36 PM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager getConnection FINE: Request JDBC Connection: driverClass=com.actuate.actuatedd.jdbc.sqlserver.SQLServerDriver; url=jdbc:actuate:sqlserver://dbsrv10-win:1433;DatabaseName=EIITESTDB;User=eiiTest;Password=sysTest; jndi name url=null

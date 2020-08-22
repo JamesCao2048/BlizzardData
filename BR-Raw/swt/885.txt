@@ -3,6 +3,5 @@ A ToolItem t1, style PUSH, is being disabled with setEnabled(false) in the Selec
 When enabled, as consequence of another action, the status appears to be as if the mouse would be still over it, although it is not.
 I noticed the behavior occurs when disabled on the push (perhaps the status is not being updated and when enabled it is being repainted exactly how it was when disabled), but this is only good if the mouse would be over it on the moment of enabling.
 I use Ubuntu 8.10, GTK
-Thank you very much.
-This entire platform rocks.
+Thank you very much. This entire platform rocks.
 Best regards,

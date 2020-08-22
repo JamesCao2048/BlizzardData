@@ -12,20 +12,17 @@ e.doit = false;
 naiively if  I add a '!' before translateTraversal in the code below it starts to work:
 int kEventRawKeyPressed (int nextHandler, int theEvent, int userData) {
 /*
-* Feature in the Macintosh.
-The combo box widget consumes the
+* Feature in the Macintosh. The combo box widget consumes the
 * kEventRawKeyDown event when the Return key or up and down arrow
 * keys are pressed, causing kEventTextInputUnicodeForKeyEvent not
-* to be sent.
-The fix is to handle these keys in kEventRawKeyDown.
+* to be sent.  The fix is to handle these keys in kEventRawKeyDown.
 */
 int [] keyCode = new int [1];
 OS.GetEventParameter (theEvent, OS.kEventParamKeyCode, OS.typeUInt32, null, keyCode.length *
 4, null, keyCode);
 switch (keyCode [0]) {
 case 36: /* Return */
->> MVM added !
-<<<		if (!translateTraversal (keyCode [0], theEvent)) return OS.noErr;
+>> MVM added ! <<<		if (!translateTraversal (keyCode [0], theEvent)) return OS.noErr;
 if (!sendKeyEvent (SWT.KeyDown, theEvent)) return OS.noErr;
 postEvent(SWT.DefaultSelection);
 break;

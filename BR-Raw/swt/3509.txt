@@ -36,7 +36,6 @@ if (!display.readAndDispatch()) display.sleep();
 display.dispose();
 }
 }
-In SWT 2135 it works (even not so clear too
-- the 1st item in a list is selected
+In SWT 2135 it works (even not so clear too - the 1st item in a list is selected
 (even if nothing selected before) instead of deselecting items, this appeared on
 Linux-GTK, on MS Windows it's OK).

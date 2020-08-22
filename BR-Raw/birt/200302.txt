@@ -1,5 +1,2 @@
 Bug 200302 Can not link to the specific bookmark as web view[04]
-Description: Can not link to the specific bookmark as web view[04] Step: 1.Two labels, which have a page break between them.
-2.The second label set the bookmark as "bk\" 3.The first label set the hyperlink to the internal bookmark to the bookmark that is second label's.
-4.Preview as web view and click the hyperlink Actual result: It can not link to the second label.( If use the drill-through, it is work.
-) Expected result: It can link to the second label.
+Description: Can not link to the specific bookmark as web view[04] Step: 1. Two labels, which have a page break between them. 2. The second label set the bookmark as "bk\" 3. The first label set the hyperlink to the internal bookmark to the bookmark that is second label's. 4. Preview as web view and click the hyperlink Actual result: It can not link to the second label.( If use the drill-through, it is work. ) Expected result: It can link to the second label.

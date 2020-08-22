@@ -41,5 +41,4 @@ display.sleep();
 }
 }
 More information:
-Calling setFullScreen(true) when in fullscreen mode, overwrites the saved shell size.
-I'm not sure if it is a valid use case, but this case works fine in windows & gtk.
+Calling setFullScreen(true) when in fullscreen mode, overwrites the saved shell size. I'm not sure if it is a valid use case, but this case works fine in windows & gtk.

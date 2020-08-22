@@ -1,8 +1,7 @@
 [Viewers] 
 expected:<true> but was:<false>
 junit.framework.AssertionFailedError: expected:<true> but was:<false>
-at org.eclipse.jface.tests.viewers.
-Bug201002 TableViewerTest.testBug201002( Bug201002 TableViewerTest.java:90)
+at org.eclipse.jface.tests.viewers. Bug201002 TableViewerTest.testBug201002( Bug201002 TableViewerTest.java:90)
 at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:354)
 at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:206)
 at org.eclipse.test.CoreTestApplication.runTests(CoreTestApplication.java:35)

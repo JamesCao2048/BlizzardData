@@ -1,3 +1,2 @@
 Bug 151202 [regression]Set default master page to item in cell will cause blank page
-Description: Set default master page to item in cell will cause blank page Steps to reproduce: 1.New a report 2.Insert a grid(1*1) 3.Insert a label to grid cell 4.Select the label and set default master page to it 5.Preview in Web Viewer and pdf Expected result: No blank page, just one page for grid display.
-Actual result: A blank page before grid page
+Description: Set default master page to item in cell will cause blank page Steps to reproduce: 1. New a report 2. Insert a grid(1*1) 3. Insert a label to grid cell 4. Select the label and set default master page to it 5. Preview in Web Viewer and pdf Expected result: No blank page, just one page for grid display. Actual result: A blank page before grid page

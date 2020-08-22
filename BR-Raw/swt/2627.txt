@@ -1,8 +1,7 @@
 Regression: Disabling tool bar makes separator items disappear
 SWT-win32, 3.2M3
 When calling setEnabled(false) on a tool bar, items with SWT.SEPARATOR style
-disappear.
-This did not happen in 3.2M2 and earlier versions.
+disappear. This did not happen in 3.2M2 and earlier versions.
 Snippet to reproduce:
 ===
 import org.eclipse.swt.*;

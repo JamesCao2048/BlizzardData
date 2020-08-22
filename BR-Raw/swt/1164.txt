@@ -6,8 +6,6 @@ which leaves the idea of the on screen text inside an assistive technology like
 a screen reader out of sync with reality.
 I observe this on Linux with GTK + AT-SPI.
 To reproduce, simply invoke Ctrl+SPACE in a situation where only one possible
-completion is valid.
-The newly inserted text appears on screen, but
+completion is valid.  The newly inserted text appears on screen, but
 eclipse does not fire any object:text-changed:insert events via
-ATK.
-Use accerciser for a quick inspection tool.
+ATK.  Use accerciser for a quick inspection tool.

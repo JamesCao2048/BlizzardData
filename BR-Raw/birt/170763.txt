@@ -1,7 +1,2 @@
 Bug 170763 Log files are created even if the log level has been set to OFF or the log dir to null
-Even if you set the log level to OFF (e.g.
-within the BIRT report viewer web application) empty log files are created in BIRT's log directory.
-The same is the case if the log directory has been set to null.
-If the directory does not exist, a stack trace is printed to System.err.
-This is due to the fact that org.eclipse.birt.report.engine.api.impl.EngineLogger sets up a java.util.logging.FileHandler no matter what.
-It shouldn't do this if the log level is OFF or the directory is null.
+Even if you set the log level to OFF (e.g. within the BIRT report viewer web application) empty log files are created in BIRT's log directory. The same is the case if the log directory has been set to null. If the directory does not exist, a stack trace is printed to System.err. This is due to the fact that org.eclipse.birt.report.engine.api.impl.EngineLogger sets up a java.util.logging.FileHandler no matter what. It shouldn't do this if the log level is OFF or the directory is null.

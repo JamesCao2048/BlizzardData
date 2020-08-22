@@ -1,8 +1,7 @@
 Can't drawPath on image GC
 Nothing is drawn to the screen in this example.
 Replacing the call to drawPath with drawPlain
-works as expected.
-I'm using M6.
+works as expected.  I'm using M6.
 shell.addPaintListener(new PaintListener() {
 public void paintControl(PaintEvent e) {
 Rectangle clientArea=shell.getClientArea();

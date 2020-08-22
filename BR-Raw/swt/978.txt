@@ -1,7 +1,6 @@
 BlockSelection: Arrow_Left and Arrow_Right should set caret to beginning/end of selection
 I20090514-2000
-In a StyledText, have a block selection.
-Arrow_Left and Arrow_Right should set the caret to the beginning/end of the selection, like in normal selection mode (regardless of where inside the selection the caret is).
+In a StyledText, have a block selection. Arrow_Left and Arrow_Right should set the caret to the beginning/end of the selection, like in normal selection mode (regardless of where inside the selection the caret is).
 - Example:
 .......
 ..ABC..

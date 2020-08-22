@@ -1,6 +1,2 @@
 Bug 117815 If I apply a style to a table first then apply another style to a table row, select this row, related style is not selected.
-Description:If I apply a style to a table first then apply another style to a table row, select this row, related style is not selected.
-Steps to reproduce: 1.Create a table and apply a style to it.
-2.Select a table row and apply another style to the table row.
-3.Select this row and find that the related style is not selected.
-But it has worked.
+Description:If I apply a style to a table first then apply another style to a table row, select this row, related style is not selected. Steps to reproduce: 1. Create a table and apply a style to it. 2. Select a table row and apply another style to the table row. 3. Select this row and find that the related style is not selected. But it has worked.

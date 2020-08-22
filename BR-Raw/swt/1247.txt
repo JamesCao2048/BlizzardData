@@ -6,7 +6,6 @@ Cannot activate shell programatically on gtk
 - click on the tray icon that was added by this snippet and note that it activates the snippet's shell successfully
 - give focus to some other open shell again
 - this time right-click on the tray icon added by this snippet and select its menu item
-
 -> this item attempts to activate the snippet's shell in an identical manner, but is not successful
 public static void main(String[] args) {
 final Display display = new Display();

@@ -1,11 +1,8 @@
 ToolItem.setText(") should remove Text and return to initial Height
 When calling setText("") on a ToolItem, the item is still requiring more height,
-as if a Text was visible.
-I would expect the ToolItem to return to the initial
-State it had before calling any setText.
-Otherwise it would not be possible to
-restore the state.
-A common usecase is to switch between "Only Icons" and "Icons
+as if a Text was visible. I would expect the ToolItem to return to the initial
+State it had before calling any setText. Otherwise it would not be possible to
+restore the state. A common usecase is to switch between "Only Icons" and "Icons
 and Text" interface for Toolbars (compare Firefox Toolbar).
 Snippet:
 public class Main {

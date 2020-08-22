@@ -1,8 +1,6 @@
 DCR: Table.setSelection(int, int) -- order matters
 Build 20020226
 In a call to Table.setSelection(int start, int end), it matters in which order
-the arguments are given.
-It assumes start
-<= end.
+the arguments are given.  It assumes start <= end.
 It would be more resilient if it also allowed start >= end.
 If it doesn't allow this, the spec should indicate the ordering requirement.

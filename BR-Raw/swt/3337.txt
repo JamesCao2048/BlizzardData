@@ -1,7 +1,5 @@
 Wrong cursor used for SWT.CURSOR_SIZEALL
 I200405260800
-SWT is using the incorrect Gtk+ cursor for SWT.CURSOR_SIZEALL.
-SWT uses
-GDK_DIAMOND_CROSS when the correct cursor is GDK_FLEUR.
-Fixing this would make
+SWT is using the incorrect Gtk+ cursor for SWT.CURSOR_SIZEALL.  SWT uses
+GDK_DIAMOND_CROSS when the correct cursor is GDK_FLEUR.  Fixing this would make
 moving fastbars and coolbars look a lot better.

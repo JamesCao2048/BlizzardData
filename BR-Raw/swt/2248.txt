@@ -1,16 +1,10 @@
 Table widget leaks
-Display#controlTable keeps every controls existing on the display.
-When a control is created, Display#addControl will be called from Control#register, to add handle of the control to Display#controlTable.
-When the control is disposed, Display#removeControl will be called from Control#deregister, to remove handle of the control from Display#controlTable.
-However, it seems that Table#deregister won't call Display#removeControl.
-I have tested it with the following steps:
-1.Set a breakpoint to Table#deregister
-2.Run the attached snippet
-3.Push [Dispose] button
-=> Table#deregister is called, however, hwndHeader is null.
-So, Display#removeControl won't be called.
-Checking out Display#controlTable with the Variables view on the Debug perspective, I was able to confirm that handle of the Table widget remained.
-When you repeat creating and disposing a Table, Display#controlTable would keep all disposed Table widgets.
+Display#controlTable keeps every controls existing on the display. When a control is created, Display#addControl will be called from Control#register, to add handle of the control to Display#controlTable. When the control is disposed, Display#removeControl will be called from Control#deregister, to remove handle of the control from Display#controlTable.
+However, it seems that Table#deregister won't call Display#removeControl. I have tested it with the following steps:
+1. Set a breakpoint to Table#deregister
+2. Run the attached snippet
+3. Push [Dispose] button
+=> Table#deregister is called, however, hwndHeader is null. So, Display#removeControl won't be called. Checking out Display#controlTable with the Variables view on the Debug perspective, I was able to confirm that handle of the Table widget remained. When you repeat creating and disposing a Table, Display#controlTable would keep all disposed Table widgets.
 >>>>> snippet
 public class TableSample {
 public static void main(String[] args) {
@@ -67,15 +61,13 @@ table.setLinesVisible(true);
 
 // Header
 String[] cols = {"Column1", "Column2", "Column3"};
-for(int columnIndex = 0; columnIndex
-< cols.length; columnIndex++){
+for(int columnIndex = 0; columnIndex < cols.length; columnIndex++){
 TableColumn col = new TableColumn(table,SWT.LEFT);
 col.setText(cols[columnIndex]);
 col.setWidth(50);
 }
 // Data
-for(int itemIndex = 0; itemIndex
-< 5; itemIndex++){
+for(int itemIndex = 0; itemIndex < 5; itemIndex++){
 TableItem item = new TableItem(table, SWT.NULL);
 String[] data = {
 String.valueOf(itemIndex + 1) + "-1",

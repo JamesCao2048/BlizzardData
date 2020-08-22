@@ -1,6 +1,3 @@
 [Mozilla] XPCOM error when removing DOM listeners should not crash
-When showing the Welcome page at startup, if a Mozilla-based Browser is successfully created but then fails on the subsequent setText() call the workbench is immediately brought down.
-This disposes the Browser, which unhooks its DOM listeners.
-However the setText() failure can leave the underlying browser in an inconsistent state, which causes the listener unhooking to fail also.
-Currently when this happens an error is thrown for the listener unhooking failure, which covers up the original error.
-This failure should not cause a crash, firstly because the original error should not be covered up (it's the one that matters), and secondly because failure to remove DOM listeners does not really matter (the Browser's future function should not be affected).
+When showing the Welcome page at startup, if a Mozilla-based Browser is successfully created but then fails on the subsequent setText() call the workbench is immediately brought down.  This disposes the Browser, which unhooks its DOM listeners.  However the setText() failure can leave the underlying browser in an inconsistent state, which causes the listener unhooking to fail also.
+Currently when this happens an error is thrown for the listener unhooking failure, which covers up the original error.  This failure should not cause a crash, firstly because the original error should not be covered up (it's the one that matters), and secondly because failure to remove DOM listeners does not really matter (the Browser's future function should not be affected).

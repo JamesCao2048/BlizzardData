@@ -1,10 +1,2 @@
 Bug 132943 Cache Data Set Metadata in Report Design
-In BIRT 2.0, Report Designer must be able to connect to a Data Set's external data source in order for the data set to be usable for the design session.
-This is because the Data Set metadata is not cached.
-It is desirable for us to allow offline design sessions even if the data source is not available.
-To do this, we need to (1) Cache a data set's metadata in the report design when the data set is first defined, or every time that its definition is updated.
-ROM/DE already has the API to handle cached metadata persistence.
-We need to enable this feature in report designer.
-(2)When a data set is first open for use in a design session, designer should attempt to obtain the data set's metadata from the external source.
-If this fails, the cached metadata is used.
-If it succeeds, the cached metadata should be updated if it is out of date.
+In BIRT 2.0, Report Designer must be able to connect to a Data Set's external data source in order for the data set to be usable for the design session. This is because the Data Set metadata is not cached. It is desirable for us to allow offline design sessions even if the data source is not available. To do this, we need to (1) Cache a data set's metadata in the report design when the data set is first defined, or every time that its definition is updated. ROM/DE already has the API to handle cached metadata persistence. We need to enable this feature in report designer. (2)When a data set is first open for use in a design session, designer should attempt to obtain the data set's metadata from the external source. If this fails, the cached metadata is used. If it succeeds, the cached metadata should be updated if it is out of date.

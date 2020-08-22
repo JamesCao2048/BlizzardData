@@ -2,15 +2,10 @@ StyledText: Incorrect style.length in paintObject events
 Build Identifier: M20100211-1343
 After setting a StyleRange with a length of 1 and a non null glyph metrics on a StyledText, the paint events received by paint listeners have an event such that event.style.length = 0.
 This seems to come from the way int array ranges are computed and interpreted in StyledTextRenderer vs TextLayout:
-- in TextLayout.getRanges() the int[] array is said (javadoc) to contain the "start and end of each text style", and for a style with a length of 1 the array contains [...,
-<start>,<start>, ...].
+- in TextLayout.getRanges() the int[] array is said (javadoc) to contain the "start and end of each text style", and for a style with a length of 1 the array contains [..., <start>,<start>, ...].
 Also the setStyle implementation shows that those offsets are inclusive.
-- however in StyledTextRenderer.drawLine (end of the method when styles[i].metrics != null) the int[] array obtained from the layout is assumed to contain
-<start>,<start+1> since the style length is computed as
-int length = ranges[(i
-<< 1) + 1]
-- ranges[i
-<< 1];
+- however in StyledTextRenderer.drawLine (end of the method when styles[i].metrics != null) the int[] array obtained from the layout is assumed to contain <start>,<start+1> since the style length is computed as
+int length = ranges[(i << 1) + 1] - ranges[i << 1];
 Reproducible: Always
 Steps to Reproduce:
 1.
@@ -18,4 +13,4 @@ StyledText styledText = new StyledText(parent, SWT.MULTI);
 StyleRange range = new StyleRange(10, 1, fg, bg);
 range.metrics = new GlyphMetrics(ascent, descent,25 );
 styledText.setStylesRanges(new StyleRange[] { range  };
-2.Observe that event.style.length == 0 when the listener is invoked
+2. Observe that event.style.length == 0 when the listener is invoked

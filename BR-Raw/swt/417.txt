@@ -1,11 +1,6 @@
 Allow SWT to use gvfs instead of gnome-vfs
-At present, SWT uses gnome-vfs on Linux/GNOME.
-gnome-vfs in turn relies on HAL which is now in maintenance mode [1].
-GNOME is trying to get rid of dependencies on HAL [2] and gnome-vfs [3].
-Linux distributions are working to get rid of things that depend upon HAL and in turn gnome-vfs [4, 5, 6].
-It would be good to allow SWT to use gvfs instead of gnome-vfs.
-Compatibility with gnome-vfs should be kept for distributions which still carry gnome-vfs.
-Information about porting can be found here:
+At present, SWT uses gnome-vfs on Linux/GNOME.  gnome-vfs in turn relies on HAL which is now in maintenance mode [1].  GNOME is trying to get rid of dependencies on HAL [2] and gnome-vfs [3].  Linux distributions are working to get rid of things that depend upon HAL and in turn gnome-vfs [4, 5, 6].
+It would be good to allow SWT to use gvfs instead of gnome-vfs.  Compatibility with gnome-vfs should be kept for distributions which still carry gnome-vfs.  Information about porting can be found here:
 http://live.gnome.org/GioPort
 [1]
 http://www.freedesktop.org/wiki/Software/hal

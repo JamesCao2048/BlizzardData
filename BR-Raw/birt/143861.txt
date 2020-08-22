@@ -1,11 +1,2 @@
 Bug 143861 PDF emitter doesn't recognize Merge Row operation
-If I select several rows in a vertical column and merge them, it works fine in html.
-But when I run a PDF preview of the report, the merge doesn't work.
-If I add large text, or something else that stretches past where the first row would be, it stretches the whole first row, instead of using the entire merged area to stretch.
-To duplicate this problem, create a report that contains a table or grid with several rows and two columns.
-Then type text in each of the rows in the left column with normal font size.
-Merge the rows in the right column, and type text of size 78 pt.
-Now do a PDF preview of the report.
-The first row in the left column will have a space underneath it the size of the 78 pt.
-font in the right merged rows.
-If the same preview is done in html, it won't have this problem.
+If I select several rows in a vertical column and merge them, it works fine in html. But when I run a PDF preview of the report, the merge doesn't work. If I add large text, or something else that stretches past where the first row would be, it stretches the whole first row, instead of using the entire merged area to stretch. To duplicate this problem, create a report that contains a table or grid with several rows and two columns. Then type text in each of the rows in the left column with normal font size. Merge the rows in the right column, and type text of size 78 pt. Now do a PDF preview of the report. The first row in the left column will have a space underneath it the size of the 78 pt. font in the right merged rows. If the same preview is done in html, it won't have this problem.

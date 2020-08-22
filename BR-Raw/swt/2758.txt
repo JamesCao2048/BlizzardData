@@ -37,8 +37,7 @@ display.sleep();
 display.dispose();
 }
 Basically on 3.0.2 the window that appears has a label of about 80 pixels wide
-and a textbox of 400 pixels wide.
-With 3.1 the label is about 400 pixels wide,
+and a textbox of 400 pixels wide.  With 3.1 the label is about 400 pixels wide,
 with the text box being about 2000 pixels wide.
 This appears to be a combination of the text box spanning 5 columns and the use
 of layout.makeColumnsEqualWidth = true;

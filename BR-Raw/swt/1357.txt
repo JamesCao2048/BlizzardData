@@ -1,5 +1,4 @@
 SWT.ARROW Button direction not consistent when RTL
 - run the ControlExample, go to the Button tab
 - select the SWT.RIGHT_TO_LEFT radio and the "Right" alignment radio
-
 -> on 64-bit Vista this makes the arrows on the buttons point to the right, but on win2000 and RHEL5 they point to the left

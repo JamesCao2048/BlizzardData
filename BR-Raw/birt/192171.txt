@@ -1,10 +1,2 @@
 Bug 192171 Layout still display css style from library after removing library.[01]
-Description: Layout still display css style from library after removing library.
-Build number:2.2.0.v20070612 Steps to reproduce: 1.Add a css file in Library Explorer 2.New a library file.
-3.Use css file in library default theme.
-4.New a report and use the library.
-5.Insert a label and apply the style from library.
-6.Remove the library in report Outline.
-Expected result: Style effect disappears from label in Layout.
-Actual result: Label in Layout still displays the style effect.
-Error log:N/A
+Description: Layout still display css style from library after removing library. Build number:2.2.0.v20070612 Steps to reproduce: 1. Add a css file in Library Explorer 2. New a library file. 3. Use css file in library default theme. 4. New a report and use the library. 5. Insert a label and apply the style from library. 6. Remove the library in report Outline. Expected result: Style effect disappears from label in Layout. Actual result: Label in Layout still displays the style effect. Error log:N/A

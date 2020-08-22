@@ -1,9 +1,9 @@
 StyledText - Fix calculating of cursor level
 Cursor level is broken in the following cases:
-1.doBackspace(), doDelete().
+1. doBackspace(), doDelete().
 Expected behavior: cursor level is set to the level of the deleted character.
 Actual behavior: cursor level is set to the level of the preceding character.
-2.doLineStart(), doLineEnd().
+2. doLineStart(), doLineEnd().
 Expected: cursor level is derived from the paragraph level.
 Actual: cursor level is derived from the level of the first/last character.
 Suggested solution: cache cursor level in the above methods.

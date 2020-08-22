@@ -2,5 +2,4 @@ Shell.setActive() is not implemented
 Created  attachment 100809   [details]
 Shell.setActive() implementation
 Shell.setActive() method doesn't have any implementation now.
-I'm not very sure about what should be there, but a window.makeKeyAndOrderFront(null) call seems to be an appropriate implementation.
-In case, I've attached a patch.
+I'm not very sure about what should be there, but a window.makeKeyAndOrderFront(null) call seems to be an appropriate implementation. In case, I've attached a patch.

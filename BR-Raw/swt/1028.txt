@@ -22,12 +22,10 @@ Mac Error Report:
 Process:         java [8015]
 Path:            /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
 Identifier:      java
-Version:         ???
-(???)
+Version:         ??? (???)
 Code Type:       X86 (Native)
 Parent Process:  eclipse [198]
-Date/Time:       2009-02-11 09:52:04.688
--0800
+Date/Time:       2009-02-11 09:52:04.688 -0800
 OS Version:      Mac OS X 10.5.6 (9G55)
 Report Version:  6
 Exception Type:  EXC_BAD_ACCESS (SIGBUS)
@@ -36,8 +34,7 @@ Crashed Thread:  0
 Application Specific Information:
 Java information:
 Version: Java HotSpot(TM) Client VM (1.5.0_16-133 mixed mode)
-Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_16-133) for macosx-x86, built on Aug 27 2008 11:00:20 by root with gcc 4.0.1 (Apple Inc.
-build 5465)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_16-133) for macosx-x86, built on Aug 27 2008 11:00:20 by root with gcc 4.0.1 (Apple Inc. build 5465)
 Exception type: Bus Error (0xa) at pc=0x9342f688
 Current thread (0x0100c320):  JavaThread "Thread-0" daemon [_thread_in_native, id=-1609767136]
 Stack: [0xbf800000,0xc0000000)
@@ -55,4 +52,4 @@ v  ~OSRAdapter
 j  org.eclipse.ui.internal.Workbench.runUI()I+393
 j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
 j  org.eclipse.ui.internal.Workbench$5.run()V+23
-j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Re
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Rea

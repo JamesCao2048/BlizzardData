@@ -2,10 +2,10 @@
 Build Identifier: SWT 3.7M1
 When embedding a Browser in an AWT application (but other controls may have the same issue), cursor behavior is messed up between AWT and SWT.
 Here are several things I noticed:
-1.When an AWT control has the focus, the cursor does not change when hovering the SWT controls.
-2.When a text field of a XULRunner browser is focused (caret), hovering an AWT component does not always change the cursor (generally the first time only).
-3.When a text field of a Safari browser is focused (caret), hovering other DOM elements do not change the cursor, this until we hover an AWT component or click elsewhere.
+1. When an AWT control has the focus, the cursor does not change when hovering the SWT controls.
+2. When a text field of a XULRunner browser is focused (caret), hovering an AWT component does not always change the cursor (generally the first time only).
+3. When a text field of a Safari browser is focused (caret), hovering other DOM elements do not change the cursor, this until we hover an AWT component or click elsewhere.
 Reproducible: Always
 Steps to Reproduce:
-1.Open an SWT_AWT application containing a browser and an AWT control with a defined cursor.
-2.Give focus to the SWT control and see what happens when you hover the AWT component, and vice versa.
+1. Open an SWT_AWT application containing a browser and an AWT control with a defined cursor.
+2. Give focus to the SWT control and see what happens when you hover the AWT component, and vice versa.

@@ -1,5 +1,2 @@
 Background for read only Text objects is wrong in dialogs.
-Look at any of the error messages at the top of any Property Page, the background is white but should be the striped aqua background.
-The fix is simple really, since these controls use HITextView all you have to do is call HITextViewSetBackgroundColor with null as the color param.
-I would presume SWT could do this on the OS X implementation when setBackground is called with null as the color, and then the ImageAndMessageArea could call setBackground(null).
-I made the changes locally and it seems to fix the problem just fine.
+Look at any of the error messages at the top of any Property Page, the background is white but should be the striped aqua background. The fix is simple really, since these controls use HITextView all you have to do is call HITextViewSetBackgroundColor with null as the color param. I would presume SWT could do this on the OS X implementation when setBackground is called with null as the color, and then the ImageAndMessageArea could call setBackground(null). I made the changes locally and it seems to fix the problem just fine.

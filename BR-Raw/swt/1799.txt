@@ -3,8 +3,7 @@ Eclipse build id or SWT version: M2
 Platform(s) tested on: Windows XP SP2 Dutch
 Snippet title: MS Word OLE Crash
 Snippet code:
-When opening MS Word with the OLE support of SWT, it opens but after some random clicks (or run the spell checker) the window resizes and all menu's disapear.
-Then Word crashes.
+When opening MS Word with the OLE support of SWT, it opens but after some random clicks (or run the spell checker) the window resizes and all menu's disapear. Then Word crashes.
 All office updates are installed, and I tried with Office XP (2002) and 2003 as well.
 Code:
 import java.io.File;

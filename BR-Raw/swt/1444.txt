@@ -1,4 +1,3 @@
 disposing first column in Tree fails
 Attempting to dispose a Tree's first column fails and spews:
-*** NSOutlineView cannot remove outlineTableColumn with removeTableColumn:.
-Use setOutlineTableColumn: instead.
+*** NSOutlineView cannot remove outlineTableColumn with removeTableColumn:.  Use setOutlineTableColumn: instead.

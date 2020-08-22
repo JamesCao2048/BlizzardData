@@ -1,6 +1,2 @@
 Bug 124950 [Scripting usability] ability to use an expression as default parameter value
-The ability to use an expression as default parameter value has been removed from designer.
-I believe in many cases it's useful to provide that functionality.
-In many cases reports use current date and time (directly or indirectly) to define params values.
-Also sometimes needs to put in parameters values origin from user environment such as data related to browser or operating system.
-Beside that values of parameters can be depend on other more complicated factors like values from other dataset or parameters.
+The ability to use an expression as default parameter value has been removed from designer. I believe in many cases it's useful to provide that functionality. In many cases reports use current date and time (directly or indirectly) to define params values. Also sometimes needs to put in parameters values origin from user environment such as data related to browser or operating system. Beside that values of parameters can be depend on other more complicated factors like values from other dataset or parameters.

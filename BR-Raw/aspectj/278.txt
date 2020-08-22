@@ -27,8 +27,4 @@ at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org_asp
 at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:528)
 at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:329)
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:811)
-at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:230)
-at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:156)
-at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
-at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
-StringIndexOutOfBoundsException thrown: String index out of range: -2
+at org.aspectj.ajdt.

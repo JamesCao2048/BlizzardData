@@ -1,8 +1,2 @@
 Bug 201236 Issue about Allow multiple and duplicate values in Layout preview[0705]
-Description: Issue about Allow multiple and duplicate values in Layout preview Build number:2.2.1.v20070827 Steps to reproduce: 1.New sample data source and dataset from CUSTOMERS.
-2.New a parameter p1, listbox, dynamic, value field COUNTRY, tick on allow duplicate value, tick on allow multiple values.
-3.Insert a data item to Layout, set expression as var values=""; for (i=0;i<params["p1"].value.length;i++) values=values+params["p1"].value[i]+"."; values; 4.In Layout, click Preview and select France.
-Expected result: Display one France.
-Actual result: Display several France.
-I tried the same action but preview in Web viewer and extenal html, the result is only one France.
-Error log:n/a
+Description: Issue about Allow multiple and duplicate values in Layout preview Build number:2.2.1.v20070827 Steps to reproduce: 1. New sample data source and dataset from CUSTOMERS. 2. New a parameter p1, listbox, dynamic, value field COUNTRY, tick on allow duplicate value, tick on allow multiple values. 3. Insert a data item to Layout, set expression as var values=""; for (i=0;i<params["p1"].value.length;i++) values=values+params["p1"].value[i]+"."; values; 4. In Layout, click Preview and select France. Expected result: Display one France. Actual result: Display several France. I tried the same action but preview in Web viewer and extenal html, the result is only one France. Error log:n/a

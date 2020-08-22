@@ -2,20 +2,14 @@ List Control: item is shown twice after select in "handleEvent(SWT.Selection)
 Created  attachment 143883   [details]
 The snippet
 1) Run the snippet
-
 -> Dialog is shown; [1-open.gif]
 2) Scroll the list down to the end
-
 -> [2-scrolled.gif]
 3) Select item "Line 5"
-
 -> [3-selected.gif]
 4) Click Botton "remove"
-
 -> Item "Line 5" is removed; [4-removed.gif]
 5) Click an Item "Line 6"
-
 -> The text changes to "Line 4", "Line 4" is shown twice; [5-item-twice.gif]
 It seems that the items are scrolled, but the control is not repainted.
-The "handleEvent(SWT.Selection)" calls "select" with the currently selected item.
-This is not necessary, but happened in the context of a bigger application and should not result in a wrong displayed control.
+The "handleEvent(SWT.Selection)" calls "select" with the currently selected item. This is not necessary, but happened in the context of a bigger application and should not result in a wrong displayed control.

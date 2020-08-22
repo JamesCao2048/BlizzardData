@@ -1,8 +1,8 @@
 FileDialog passes files with no extension, even when filter requires extension
 Build ID: 120080617-2000
 Steps To Reproduce:
-1.Create a FileDialog
-2.Set a filter for *.txt using FileDialog.setFilterExtensions
-3.open the dialog, and navigate to a file with no extension
+1. Create a FileDialog
+2. Set a filter for *.txt using FileDialog.setFilterExtensions
+3. open the dialog, and navigate to a file with no extension
 More information:
 This is probably only an OSX bug.

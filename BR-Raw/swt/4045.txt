@@ -1,17 +1,11 @@
 StyledText - example Text Editor bug in copy/paste
 build 20020602 (F2)
-1
-- Run TextEditor example on org.eclipse.swt.examples
-2
-- aaaa on it
-3
-- set a style (bold, blue, red, whatever you want) for the first and the last
-chars.
-(it have to be the same style for both)
-4
-- Copy it and paste
-5
-- The style you choice will be applied on the first and on the second char of
+1 - Run TextEditor example on org.eclipse.swt.examples
+2 - aaaa on it
+3 - set a style (bold, blue, red, whatever you want) for the first and the last
+chars. (it have to be the same style for both)
+4 - Copy it and paste
+5 - The style you choice will be applied on the first and on the second char of
 the paste string.
 Bug, can be on Styled Text, Drag'n Drop, or in the example itself.
 Tested on Windows/Motif (both show the problem).

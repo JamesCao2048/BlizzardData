@@ -1,9 +1,2 @@
 Bug 212238 [Regression] Pagebreak on chart does not work when preview in PDF/PPT/PostScritp.
-Description: Pagebreak on chart does not work when preview in PDF/PPT/PostScritp.
-build version: 2.3.0 v20071207-0800.steps to reproduce: 1.New a report.
-2.Insert a label in layout.
-3.Insert a chart in layout.
-4.Add pagebreak: Before Always on chart.
-5.Preview in PDF/PPT/Postscript.
-Expected result: The chart should be displayed on the second page.
-Actual result: The chart is displayed on the first page.
+Description: Pagebreak on chart does not work when preview in PDF/PPT/PostScritp. build version: 2.3.0 v20071207-0800. steps to reproduce: 1. New a report. 2. Insert a label in layout. 3. Insert a chart in layout. 4. Add pagebreak: Before Always on chart. 5. Preview in PDF/PPT/Postscript. Expected result: The chart should be displayed on the second page. Actual result: The chart is displayed on the first page.

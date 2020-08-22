@@ -1,10 +1,7 @@
 setSize on Spinner doesn't have an effect
-As Spinner is a composite, setSize doesn't appear to resize the view.
-However, setting FILL_HORIZONTAL and FILL_VERTICAL do appear to work.
+As Spinner is a composite, setSize doesn't appear to resize the view. However, setting FILL_HORIZONTAL and FILL_VERTICAL do appear to work.
 Steps to reproduce:
 Run ControlExample
 Go to Spinner tab
-Click on '10x10', '50x50' or '100x100'
-- no effect seen
-Cilck on Horizontal Fill or Vertical Fill
-- spinner expands to full size of view
+Click on '10x10', '50x50' or '100x100' - no effect seen
+Cilck on Horizontal Fill or Vertical Fill - spinner expands to full size of view

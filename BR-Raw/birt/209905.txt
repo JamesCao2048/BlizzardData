@@ -1,7 +1,2 @@
 Bug 209905 OutOfMemoryError was detected when rendering large excel report
-report designs: 20 columns, no group, 25 rows x 5000 pages heap size settings:
--Xms512m
--Xmx1024m via profiling the execution it's found that ExcelLayoutEngine cached 125000 data rows in memory, while ExcelEmitter could output no more than 65525 data rows(the upper limit).
-so in this case, only 65525 data rows should be cached, the rest should be discarded.
-if reducing the amount of data rows to 65525, the OutOfMemoryError was gone.
-However render such a report requiring at least 512m heap size, which is quite large somehow.
+report designs: 20 columns, no group, 25 rows x 5000 pages heap size settings: -Xms512m -Xmx1024m via profiling the execution it's found that ExcelLayoutEngine cached 125000 data rows in memory, while ExcelEmitter could output no more than 65525 data rows(the upper limit). so in this case, only 65525 data rows should be cached, the rest should be discarded. if reducing the amount of data rows to 65525, the OutOfMemoryError was gone. However render such a report requiring at least 512m heap size, which is quite large somehow.

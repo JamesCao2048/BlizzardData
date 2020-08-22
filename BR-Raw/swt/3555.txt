@@ -1,7 +1,6 @@
 StyledText does not handle case where printing not supported
 StyledText$Printing() assumes that printer.getPrinterData will return a non-
-null value.
-On machines where printing is not supported (or a printer is not
+null value.  On machines where printing is not supported (or a printer is not
 installed) this is not true.
 Run Test_org_eclipse_swt_custom_StyledText.test_print on GTK or Mac and you
 will get an NPE.

@@ -2,8 +2,7 @@ IllegalStateException in ProjectionMapping toImageLine
 Build ID: M20090211-1700
 Steps To Reproduce:
 In our editor we implement documentChanged where we new up a WorkspaceModifyOperation to update markers and run it passing in the IProgressMonitor returned from AbstractTextEditor.getProgressMonitor().
-This code works fine on all platforms, but mac users who upgrade their OS to 10.5.7 experience the following errors and the editor becomes useless.
-Mac users on 10.5.6 do not see the errors.
+This code works fine on all platforms, but mac users who upgrade their OS to 10.5.7 experience the following errors and the editor becomes useless. Mac users on 10.5.6 do not see the errors.
 Strangely, if we pass in null for the progress monitor when we call WorkspaceModifyOperation.run(), the errors do not happen, even on 10.5.7.
 More information:
 java.lang.IllegalStateException

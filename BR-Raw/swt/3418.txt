@@ -2,14 +2,11 @@ Tooltip for CTabFolder shows up on wrong monitor
 I200403260800
 Using a dual-monitor setup on Windows XP.
 Open Eclipse with at least one editor and let the mouse hover over the editor's
-tab.
-Notice that a tooltip opens showing the current filename.
-Now move Eclipse to another monitor and try the same thing.
-Notice that the
+tab. Notice that a tooltip opens showing the current filename.
+Now move Eclipse to another monitor and try the same thing. Notice that the
 tooltips will always open on the same monitor, regardless of which monitor
 contains Eclipse (that is, they will display correctly on one monitor but not
 the other).
-This seems to be an issue with CTabItem and CTabFolder.
-For your reference, the
+This seems to be an issue with CTabItem and CTabFolder. For your reference, the
 problematic widgets are created in
 org.eclipse.ui.internal.presentations.EditorPresentation.

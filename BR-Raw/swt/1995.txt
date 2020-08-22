@@ -4,10 +4,8 @@ Eclipse crashes on startup with the following setup (dump is at bottom):
 - RHEL3
 - eclipse linux-motif build
 - XULRunner installed and registered
-XULRunner wants to use a newer version of libexpat.so (0.4) than RHEL3 provides (0.5).
-I've verified this by temporarily copying the libexpat.so (0.5) from RHEL4 to RHEL3 and this makes it work on RHEL3.
-The fix for this is to delete the RHEL3-specific swt xulrunner libraries (*xulrunner* and *xpcominit*).
-Making this change will result in mozilla/firefox always being used in the Browser on RHEL3, which was the case prior to eclipse 3.3. This strategy has been in place in swt's gtk port for a few months now.
+XULRunner wants to use a newer version of libexpat.so (0.4) than RHEL3 provides (0.5).  I've verified this by temporarily copying the libexpat.so (0.5) from RHEL4 to RHEL3 and this makes it work on RHEL3.
+The fix for this is to delete the RHEL3-specific swt xulrunner libraries (*xulrunner* and *xpcominit*).  Making this change will result in mozilla/firefox always being used in the Browser on RHEL3, which was the case prior to eclipse 3.3.  This strategy has been in place in swt's gtk port for a few months now.
 #
 # An unexpected error has been detected by HotSpot Virtual Machine:
 #
@@ -17,8 +15,7 @@ Making this change will result in mozilla/firefox always being used in the Brows
 # Problematic frame:
 # C  [libexpat.so.0+0x11578]
 #
----------------  T H R E A D
----------------
+---------------  T H R E A D  ---------------
 Current thread (0x08081fe0):  JavaThread "main" [_thread_in_native, id=32545]
 siginfo:si_signo=11, si_errno=0, si_code=1, si_addr=0x0006a22e
 Registers:

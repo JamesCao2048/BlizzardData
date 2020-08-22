@@ -27,7 +27,4 @@ display.sleep();
 }
 While there is no output on mac.cocoa.x86_64, running the code on win32.win32.x86 gives you the following output:
 Event occured: Event {type=5 FigureCanvas {} time=6678468 data=null x=50 y=50 width=0 height=0 detail=0}
-I am not sure, whether it is considered part of the API-contract of Display#setCursorLocation(Point) that a SWT.MouseMove will occur as a result.
-Even if not, I think the behavior should be consistent across platforms.
-Certain GEF mechanisms dependent on the event occurence and are currently broken (e.g.
-consider  bug #242481 ), thus rating severity as major.
+I am not sure, whether it is considered part of the API-contract of Display#setCursorLocation(Point) that a SWT.MouseMove will occur as a result. Even if not, I think the behavior should be consistent across platforms. Certain GEF mechanisms dependent on the event occurence and are currently broken (e.g. consider  bug #242481 ), thus rating severity as major.

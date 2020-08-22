@@ -1,12 +1,10 @@
 [browser] investigate support for custom popup menu
 The Browser widget for 3.0 has the following behaviour:
-1.By default, expose the native popup menu if the embedded native browser
-exposes one (at the moment, this applies to IE only.
-Other browsers don't
-provide a 'free' default one).
-No custom menu can be set or modified on any
+1. By default, expose the native popup menu if the embedded native browser
+exposes one (at the moment, this applies to IE only. Other browsers don't
+provide a 'free' default one). No custom menu can be set or modified on any
 platform.
-2.allow apps to block the default popup menu by catching the SWT.MenuDetect
+2. allow apps to block the default popup menu by catching the SWT.MenuDetect
 event and setting the field event.doit to false.
 Scenario 1 is for people using the Browser to navigate HTML documents.
 Scenario 2 is for people using the Browser to render a portion of HTML and

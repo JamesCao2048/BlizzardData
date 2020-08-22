@@ -1,7 +1,2 @@
 Bug 288431 Apply 'none' does not work until you remove focus from the report item.[0300]
-description: Apply 'none' does not work until you remove focus from the report item.
-build id: 2.5.1 v20090903-0630 steps to reproduce: 1.New a style with red font.
-2.Right click a label and apply the style to it.
-3.Right click the label and apply 'none' to label.
-Actual result: Applying 'none' does not work.
-If you click somewhere else to remove focus from the label, applying 'none' will work.
+description: Apply 'none' does not work until you remove focus from the report item. build id: 2.5.1 v20090903-0630 steps to reproduce: 1. New a style with red font. 2. Right click a label and apply the style to it. 3. Right click the label and apply 'none' to label. Actual result: Applying 'none' does not work. If you click somewhere else to remove focus from the label, applying 'none' will work.

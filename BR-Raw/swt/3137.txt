@@ -1,9 +1,7 @@
 Components in SWT_AWT are not displayed on Solaris
 Swing components added to an AWT frame generated from SWT_AWT.new_Frame() are
-not being displayed.
-The code below works fine on Windows XP, but not on
-Solaris.
-I am using Eclipse 3.0RC3 and Java 1.5.0 Beta 2.
+not being displayed.  The code below works fine on Windows XP, but not on
+Solaris.  I am using Eclipse 3.0RC3 and Java 1.5.0 Beta 2.
 /*** Begin Java Source ***/
 package com.tsccos.eclipse.tools.mvs.timeline.views;
 import java.awt.Frame;

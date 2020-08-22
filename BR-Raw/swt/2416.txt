@@ -4,17 +4,13 @@ My understanding of SWT.Traverse is as follows:
 - for navigation keys in a control, SWT.Traverse should always be received before the corresponding SWT.KeyDown event for that key
 - setting the doit field to true should cause the Traverse described in the detail field to occur
 - setting the doit field to false should cancel the Traverse and a corresponding SWT.KeyDown event will be sent for that key.
-This is NOT happening on the Mac when using the arrowup and arrowdown keys.
-Instead, a KeyDown event is received, then a Traverse event, and then (optionally) a second keydown event.
-This is breaking the platform UI field assist popup.
-It causes double handling of the keystroke.
+This is NOT happening on the Mac when using the arrowup and arrowdown keys.  Instead, a KeyDown event is received, then a Traverse event, and then (optionally) a second keydown event.  This is breaking the platform UI field assist popup.  It causes double handling of the keystroke.
 The following snippet will demonstrate the problem by printing the received keystrokes to the console.
 package snippets;
 /*
 * Shouldn't traverse always come before keydown?
 * On the Mac, hitting the up or down arrow causes a KeyDown before
 * a Traverse, and then another KeyDown.
-
 */
 import org.eclipse.swt.*;
 import org.eclipse.swt.layout.*;
@@ -42,8 +38,7 @@ private void dump(String who, Event e) {
 StringBuffer sb = new StringBuffer(
 "--- [ContentProposalAdapter]n"); //$NON-NLS-1$
 sb.append(who);
-sb.append("
-- e: keyCode=" + e.keyCode + hex(e.keyCode)); //$NON-NLS-1$
+sb.append(" - e: keyCode=" + e.keyCode + hex(e.keyCode)); //$NON-NLS-1$
 sb.append("; character=" + e.character + hex(e.character)); //$NON-NLS-1$
 sb.append("; stateMask=" + e.stateMask + hex(e.stateMask)); //$NON-NLS-1$
 sb.append("; doit=" + e.doit); //$NON-NLS-1$

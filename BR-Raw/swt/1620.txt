@@ -1,13 +1,8 @@
 Tooltips not shown for some widgets
 On RedHat 9 and SuSE tooltips are not displayed in predictable or consistent
-manner in StyledText and Tree controls (possibly others).
-When mouse hovers
-over tree item whose text is too long to fit in the Tree control horizontally
--
-tooltip must be displayed with full item's text.
-This happens only occasionaly
-on these platoforms.
-The same with StyledText.
-When there are some regions that
+manner in StyledText and Tree controls (possibly others). When mouse hovers
+over tree item whose text is too long to fit in the Tree control horizontally -
+tooltip must be displayed with full item's text. This happens only occasionaly
+on these platoforms. The same with StyledText. When there are some regions that
 must display tootips (not the entire Styledtext widget), these tooltips also
 displayed *very* rarely.

@@ -1,6 +1,2 @@
 Bug 153405 Null parameter value is inconsistent between designer and preview
-Description: Null parameter value is inconsistent between designer and preview Steps to reproduce: 1.New a report parameter, list-box, tick AllowNull.
-2.Click New button, click OK without input anything.
-3.Drag the parameter to Layout and preview Actual result: After step2, display text is "Null" and value is empty.
-However, when preview, the display text is "Null Value".
-Expected result: Display text and value should be consistent between Edit Parameter Dialog in Layout and Parameter dialog during preview.
+Description: Null parameter value is inconsistent between designer and preview Steps to reproduce: 1. New a report parameter, list-box, tick AllowNull. 2. Click New button, click OK without input anything. 3. Drag the parameter to Layout and preview Actual result: After step2, display text is "Null" and value is empty. However, when preview, the display text is "Null Value". Expected result: Display text and value should be consistent between Edit Parameter Dialog in Layout and Parameter dialog during preview.

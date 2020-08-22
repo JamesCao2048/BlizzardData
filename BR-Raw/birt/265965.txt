@@ -1,11 +1,2 @@
 Bug 265965 joining webservice dataset fails when the right set is empty
-I'm using the BIRT 2.3.2-RC2 runtime supplied web viewer and created a report a defined below using the BIRT designer 2.3.2-RC2.In the report I defined 2 webservice data sources and for each data source I defined a data set.
-These 2 data sets are combined in a joint data set using a left join.
-This joint dataset is used in a table.
-The right data set can be empty due to range parameters.
-When the right set is empty, the report engine outputs the following error: The following items have errors: Table (id = 1581): + Fail to compute value from sort, group or filter expression.
-A BIRT exception occurred: There are errors evaluating script "dataSetRow["stationId"]": Invalid field name: stationId.
-(<inline>#1)..
-See next exception for more information.
-There are errors evaluating script "dataSetRow["stationId"]": Invalid field name: stationId.
-(<inline>#1).
+I'm using the BIRT 2.3.2-RC2 runtime supplied web viewer and created a report a defined below using the BIRT designer 2.3.2-RC2. In the report I defined 2 webservice data sources and for each data source I defined a data set. These 2 data sets are combined in a joint data set using a left join. This joint dataset is used in a table. The right data set can be empty due to range parameters. When the right set is empty, the report engine outputs the following error: The following items have errors: Table (id = 1581): + Fail to compute value from sort, group or filter expression. A BIRT exception occurred: There are errors evaluating script "dataSetRow["stationId"]": Invalid field name: stationId. (<inline>#1).. See next exception for more information. There are errors evaluating script "dataSetRow["stationId"]": Invalid field name: stationId. (<inline>#1).

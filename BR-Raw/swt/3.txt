@@ -1,7 +1,6 @@
 StyledText with SWT.H_SCROLL shows horizontal scrollbar after setWordWrap(true)
 A StyledText with SWT.H_SCROLL shows horizontal scrollbar after setAlwaysShowScrollBars(false) and setWordWrap(true) have been called.
-If SWT.WRAP is set in the constructor, then checkStyle(..) always removes the H_SCROLL flag and the horizontal scroll bar is never created.
-When wrapping is disabled dynamically, then we should ensure it's not made visible later.
+If SWT.WRAP is set in the constructor, then checkStyle(..) always removes the H_SCROLL flag and the horizontal scroll bar is never created. When wrapping is disabled dynamically, then we should ensure it's not made visible later.
 import org.eclipse.swt.*;
 import org.eclipse.swt.custom.*;
 import org.eclipse.swt.layout.*;

@@ -1,11 +1,9 @@
 [browser] Download.java uses wrong pointer
 From Javier Pedemonte:
 I think there is a bug in the Init() method of Eclipse SWT
-Browser/mozilla/org/eclipse/swt/browser/Download.java.
-I'm not too
+Browser/mozilla/org/eclipse/swt/browser/Download.java.  I'm not too
 familiar with this code, so I decided to send you a note rather than
-open a bug.
-Here is the code in question:
+open a bug.  Here is the code in question:
 nsILocalFile target = new nsILocalFile(aTarget);
 int aNativeTarget = XPCOM.nsEmbedCString_new();
 target.GetNativeLeafName(aNativeTarget);

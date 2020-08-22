@@ -1,7 +1,6 @@
 reducing item count can send Selection event
 - happens only on Table, not on Tree
 - run the snippet below, wait for a few seconds, and you'll see that a Selection event is received when the Table's item count is set to 4
-
 -> on win32 and gtk this Selection event does not happen (haven't tried Carbon)
 - it may be another case of ignoreSelect = true/false needed around noteNumberOfRowsChanged() invocation
 public static void main(String[] args) {
@@ -10,8 +9,7 @@ Shell shell = new Shell(display);
 shell.setBounds(200, 200, 200, 200);
 shell.setLayout(new FillLayout());
 final Table table = new Table(shell, SWT.MULTI);
-for (int i = 0; i
-< 9; i++) {
+for (int i = 0; i < 9; i++) {
 new TableItem(table, SWT.NONE).setText("hi " + i);
 }
 shell.open();

@@ -1,14 +1,9 @@
 Word unexpectedly selected when user types ctrl+arrow in editor and using screen reader
 3.6RC1
 Note that this behavior only happens when a screen reader is running.
-One of the new Accessibility API's we have provided in 3.6 is "what is the word at this offset?" I was surprised to see that when JAWS or AccProbe use this API, a word in the editor becomes selected.
-It happens every time the editor gets focus.
+One of the new Accessibility API's we have provided in 3.6 is "what is the word at this offset?" I was surprised to see that when JAWS or AccProbe use this API, a word in the editor becomes selected. It happens every time the editor gets focus.
 I looked into it a bit and sent the following email to Felipe:
-"The strange selection behavior in getText(offset, WORD) is something that Eclipse is doing.
-For some reason, it thinks it got a double-click.
-This does not happen in CustomControlExample.
-I can show you the steps to see this using AccProbe inspector or JAWS.
-Here's a stack trace:
+"The strange selection behavior in getText(offset, WORD) is something that Eclipse is doing. For some reason, it thinks it got a double-click. This does not happen in CustomControlExample. I can show you the steps to see this using AccProbe inspector or JAWS. Here's a stack trace:
 Thread [main] (Suspended (breakpoint at line 9443 in StyledText))
 StyledText.setSelection(int, int, boolean, boolean) line: 9443
 StyledText.setSelectionRange(int, int) line: 9506

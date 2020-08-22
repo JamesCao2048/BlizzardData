@@ -1,13 +1,9 @@
 StyledText: getLineHeight(int) and getBaseline(int): code do not match spec
 N20051127-0010
 The Javadoc says:
-* @exception IllegalArgumentException
-<ul>
-*
-<li>ERROR_INVALID_RANGE when the offset is outside the valid range (< 0 or > getCharCount())</li>
+* @exception IllegalArgumentException <ul>
+*   <li>ERROR_INVALID_RANGE when the offset is outside the valid range (< 0 or > getCharCount())</li>
 While the code tests:
-if (!(0
-<= offset && offset
-< content.getCharCount())) {
+if (!(0 <= offset && offset < content.getCharCount())) {
 SWT.error(SWT.ERROR_INVALID_RANGE);
 Which one is correct?

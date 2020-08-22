@@ -1,8 +1,2 @@
 Bug 211004 Failed to remove temp db directory after running multiple reports
-Description: I use Report Engine API to do runAndrender, run and dataextract tasks on multiple reports.
-Before the Platform started, I change the temp folder(System.setProperty( "java.io.tmpdir", TEMP_HOME )).
-Each task is closed after it finished and I shutdown the Platform after all the tasks finished.
-In log I found "Fail to remove one or more file in temp db directory,but it will be removed when the VM exits: D:BIRT_NGtemp/BIRTSampleDB_1196129572031_10a6ae2".
-In temp folder the BIRTSampleDB_XXX is still here but not removed.
-I think it is the issue when remove the Temp sampleDB.
-Build number: 2.3.0.v20071127-0630
+Description: I use Report Engine API to do runAndrender, run and dataextract tasks on multiple reports. Before the Platform started, I change the temp folder(System.setProperty( "java.io.tmpdir", TEMP_HOME )). Each task is closed after it finished and I shutdown the Platform after all the tasks finished. In log I found "Fail to remove one or more file in temp db directory,but it will be removed when the VM exits: D:BIRT_NGtemp/BIRTSampleDB_1196129572031_10a6ae2". In temp folder the BIRTSampleDB_XXX is still here but not removed. I think it is the issue when remove the Temp sampleDB. Build number: 2.3.0.v20071127-0630

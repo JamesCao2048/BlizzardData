@@ -1,9 +1,2 @@
 Bug 123545 DateTimeSpan not working properly in Edit Data Set
-i cannot use the following script in Edit Data Set, DateTimeSpan.addDate(row["SHIPPEDDATE"], 0, 0, 10) seps to reproduce:
-- open the attached report design
-- go to Data Explorer
-- open Edit Data Set
-- Preview Results expected behavior:
-- the above script is executed.
-actual behavior:
-- errors were thrown.
+i cannot use the following script in Edit Data Set, DateTimeSpan.addDate(row["SHIPPEDDATE"], 0, 0, 10) seps to reproduce: - open the attached report design - go to Data Explorer - open Edit Data Set - Preview Results expected behavior: - the above script is executed. actual behavior: - errors were thrown.

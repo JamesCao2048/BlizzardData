@@ -1,12 +1,9 @@
 SWTException stacktrace misleading when in Display.syncExec
 Build ID: M20060921-0945
 Steps To Reproduce:
-1.Run something outside the UI thread.
-2.Issue a Display.syncExec(Runnable)
-3.Throw an SWTException
-The resulting stack trace contains no information from where the Display.syncExec has been issued.
-This makes bug tracking quite difficult for a supporter.
+1. Run something outside the UI thread.
+2. Issue a Display.syncExec(Runnable)
+3. Throw an SWTException
+The resulting stack trace contains no information from where the Display.syncExec has been issued. This makes bug tracking quite difficult for a supporter.
 More information:
-Change Display.syncExec such that the original SWTException is caught in the issuer thread.
-Issue a new SWTException with the previous one as cause.
-As result the reported Exception contains sufficient information.
+Change Display.syncExec such that the original SWTException is caught in the issuer thread. Issue a new SWTException with the previous one as cause. As result the reported Exception contains sufficient information.

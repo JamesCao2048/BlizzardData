@@ -34,7 +34,6 @@ display.sleep ();
 display.dispose ();
 }
 I don't know if gtk has icons to represent all the combinations swt needs
-(uncheck, check, uncheck+gray, check+gray).
-If not, I think we should make the
+(uncheck, check, uncheck+gray, check+gray). If not, I think we should make the
 uncheck+gray be the same as uncheck.
 This needs to be fixed in Tree and Table probably.

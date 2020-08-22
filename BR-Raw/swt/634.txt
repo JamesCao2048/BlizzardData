@@ -1,21 +1,17 @@
 Missing AddRef in new Accessible(parent)
 Created  attachment 168082   [details]
 patch containing print statements to show problem
-When a lightweight Accessible is created, a reference needs to be counted right away in the constructor.
-This prevents the object from being prematurely released.
+When a lightweight Accessible is created, a reference needs to be counted right away in the constructor. This prevents the object from being prematurely released.
 Steps to show problem:
-1) apply the attached patch to Accessible.java (note that this patch is not the fix
-- this patch contains the commented-out fix, plus some prints that show the problem)
+1) apply the attached patch to Accessible.java (note that this patch is not the fix - this patch contains the commented-out fix, plus some prints that show the problem)
 2) run the LightweightAccessible snippet, below
 3) run inspect32.exe
 4) hover the mouse over the center of the shell, then close the shell
-5) look at the console.
-The child object was released too many times
+5) look at the console. The child object was released too many times
 (you will see "release=-1")
 6) now uncomment the "AddRef();" in the constructor:
 public Accessible(Accessible parent)
-7) repeat steps 2
-- 5, except that this time, the child object refCount only goes down to 0.
+7) repeat steps 2 - 5, except that this time, the child object refCount only goes down to 0.
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.accessibility.*;
 public class LightweightAccessible {

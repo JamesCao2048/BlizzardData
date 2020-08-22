@@ -5,21 +5,18 @@ I'm using org.eclipse.swt.widgets.ToolTip objects to display some info messages.
 There exists a display bug in the tooltip if the title text set with setText("...") is too long (> 100 chars).
 2 different display bugs:
 1) the title text (setText) is too long and the message text (setMessage) is set, then the tooltip is displayed only with the message text and no title is shown.
-2) the title text (setText) is too long and no message text (setMessage) is set for this tooltip, then the tooltip is displayed as very small empty tooltip
-- with border and background but no content.
+2) the title text (setText) is too long and no message text (setMessage) is set for this tooltip, then the tooltip is displayed as very small empty tooltip - with border and background but no content.
 notes:
 * this happens on Windows 7 and Windows XP
 * the tooltip style (SWT.BALLOON or none) is irrelevant
 Reproducible: Always
 Steps to Reproduce:
 final ToolTip toolTip3 = new ToolTip(shell, SWT.BALLOON | SWT.ICON_INFORMATION);
-toolTip3.setText("Here is a message for the user.
-When the message is too long it shoudl wrap, but instead it is not displayed because it is too long!!!");
+toolTip3.setText("Here is a message for the user. When the message is too long it shoudl wrap, but instead it is not displayed because it is too long!!!");
 //toolTip3.setMessage("balloon tip with Title-text not displayed because too long"); // either set message (1) or not (2)
 toolTip3.setLocation(400, 400);
 Button button3 = new Button(shell, SWT.PUSH);
-button3.setText("Press for balloon tip: with only a too long Title-text and no message
--> damaged display");
+button3.setText("Press for balloon tip: with only a too long Title-text and no message -> damaged display");
 button3.addListener(SWT.Selection, new Listener() {
 public void handleEvent(Event event) {
 toolTip3.setVisible(true);

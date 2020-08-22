@@ -5,8 +5,5 @@ textFormatter.setMaximum(NSNumber.numberWithInt(value));
 textFormatter.setMaximumFractionDigits(digits);
 when the values are set with Spinner#setValues() these natives methods are never called.
 checking history they were added by skovatch with this description:
-222791, 222795
-- Added key filtering to the text field, and a number formatter to aid in presentation.
-Scott, add the calls to setValues were remove them from the other places.
-Please check if they are really necessary.
-thanks.
+222791, 222795 - Added key filtering to the text field, and a number formatter to aid in presentation.
+Scott, add the calls to setValues were remove them from the other places. Please check if they are really necessary. thanks.

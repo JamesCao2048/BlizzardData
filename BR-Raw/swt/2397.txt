@@ -1,9 +1,8 @@
 Browser Cannot Be Disposed (Intel Carbon SWT)
-The following Snippet works under 3.1 (with universal SWT), but not under 3.2M5 and 3.2M6.My computer is an Intel iMac.
+The following Snippet works under 3.1 (with universal SWT), but not under 3.2M5 and 3.2M6. My computer is an Intel iMac.
 public static void main(String [] args) {
 String html = "<HTML><HEAD><TITLE>HTML Test</TITLE></HEAD><BODY>";
-for (int i = 0; i
-< 20; i++) html += "<P>This is line "+i+"</P>";
+for (int i = 0; i < 20; i++) html += "<P>This is line "+i+"</P>";
 html += "</BODY></HTML>";
 Display display = new Display();
 Shell shell = new Shell(display);

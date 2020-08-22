@@ -1,10 +1,8 @@
 Coolbar - platform wrapping should not change item sizes
 Build 200207161002
-1.Run the attached test case.
-2.Size the window slightly smaller horizontally so that the Open Type (last
+1. Run the attached test case.
+2. Size the window slightly smaller horizontally so that the Open Type (last
 cool item) gets wrapped to the next row.
-Notice that the first cool item on the first row is resized bigger.
-Also
-notice how flashy the auto wrapping is as you size the window smaller.
-You can
+Notice that the first cool item on the first row is resized bigger.  Also
+notice how flashy the auto wrapping is as you size the window smaller.  You can
 actually see the items being moved to the left than back to the right.

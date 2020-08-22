@@ -1,11 +1,9 @@
 Emulated Coolbar does not support wrapping
 The emulated coolbar does not support wrapping.
-
 In eclipse this results in bad resize behaviour in the top toolbar area on
 Mac, Motif, and GTK.
 Wrapping only occurs if the wrap indices are explicitely set through the API
-setWrapIndices.
-It should occur when there is not enough horizontal room to
+setWrapIndices.  It should occur when there is not enough horizontal room to
 show all the coolitems but there is enough vertical room.
 Also, CoolBar.computeSize does not give a wrapped height if the width is less
 than the default width.
@@ -21,8 +19,7 @@ final CoolBar coolbar1 = new CoolBar (shell, SWT.FLAT | SWT.WRAP);
 coolbar1.setBackground(display.getSystemColor(SWT.COLOR_RED));
 
 ToolBar toolBar1 = new ToolBar (coolbar1, SWT.FLAT);
-for (int i = 0; i
-< 20; i++) {
+for (int i = 0; i < 20; i++) {
 ToolItem coolToolItem = new ToolItem (toolBar1, SWT.PUSH);
 coolToolItem.setImage(smallImage);
 }
@@ -33,8 +30,7 @@ coolItem1.setMinimumSize(toolBar1.computeSize (size.x, size.y));
 coolItem1.setSize(coolItem1.computeSize (size.x, size.y));
 
 toolBar1 = new ToolBar (coolbar1, SWT.FLAT);
-for (int i = 0; i
-< 20; i++) {
+for (int i = 0; i < 20; i++) {
 ToolItem coolToolItem = new ToolItem (toolBar1, SWT.PUSH);
 coolToolItem.setImage(smallImage);
 }
@@ -45,8 +41,7 @@ coolItem1.setMinimumSize(toolBar1.computeSize (size.x, size.y));
 coolItem1.setSize(coolItem1.computeSize (size.x, size.y));
 
 toolBar1 = new ToolBar (coolbar1, SWT.FLAT);
-for (int i = 0; i
-< 20; i++) {
+for (int i = 0; i < 20; i++) {
 ToolItem coolToolItem = new ToolItem (toolBar1, SWT.PUSH);
 coolToolItem.setImage(smallImage);
 }

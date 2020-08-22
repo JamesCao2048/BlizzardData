@@ -1,8 +1,7 @@
 [browser] widget not sized properly
 I was using I20040528-0010 build.
 The browser wiget on motif displays about 200x200 size, not the size parent
-expects it to take.
-Resizing a window causes browser to be redrawn correctly.
+expects it to take.  Resizing a window causes browser to be redrawn correctly.
 This is visible when launching help, as well as using "bring up the browser" SWT
 snippet.
 Interestingly if shell.setSize() is not called before shell.open(), it works

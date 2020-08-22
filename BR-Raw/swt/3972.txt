@@ -3,11 +3,11 @@ Eclipse 2.0.1 Build 21 Aug 1513 was installed on a Solaris 8 machine and was
 run through Exceed  V7.1 Xterm window on Windows 2000
 Install SWT examples and run ControlExample.
 Steps to reproduce:
-1.Start ControlExample java application
-2.From available tabs select "Shell" and click on it to open
-3.Select the following options in shell creation:
+1. Start ControlExample java application
+2. From available tabs select "Shell" and click on it to open
+3. Select the following options in shell creation:
 Parent + Primary Modal + SWT resize + SWT on Top
-4.Click on "Create shell"
+4. Click on "Create shell"
 Result: Shell creation is not finished.
 Eclipse crashes and no controls may be activated.
 Eclipse may be restarted only after killing Eclipse and Java

@@ -1,8 +1,6 @@
 HTMLTransfer uses UTF-16 to copy to clipboard (should use UTF-8 to be compatible with paste)
 Bug 376589  fixed pasting of Unicode characters from the HTML clipboard to use UTF-8 by default (but still accepting UTF-16 with BOM).
-Unfortunately, this fix breaks copy-paste inside the same SWT application when HTMLTransfer is used.
-The problem is that HTMLTransfer#javaToNative(..) still uses UTF-16 but without a BOM.
-This is incompatible with the new #nativeToJava(..).
+Unfortunately, this fix breaks copy-paste inside the same SWT application when HTMLTransfer is used. The problem is that HTMLTransfer#javaToNative(..) still uses UTF-16 but without a BOM. This is incompatible with the new #nativeToJava(..).
 http://developer.gnome.org/gtk/stable/gtk-question-index.html#id478682  says: "GTK+ uses Unicode (more exactly UTF-8) for all text."
 That makes SWT's HTMLTransfer#javaToNative(..) implementation illegal.
 This conditional breakpoint in HTMLTransfer line 71 fixed the bug for me:

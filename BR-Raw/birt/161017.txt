@@ -1,14 +1,3 @@
 Bug 161017 output columns not refreshed after schema change
-I have following data set: select * from assertion_result where result_data_id=?
-Output columns contained cca 7 values and I designed some report.
-Another developer introduced new columns in this table so I reopened the report to update it.
-Schema browser in Query "tab" is updated and I can see new columns in my table.
-When I click on Preview results "tab", I can see new columns there too.
-But when I click on Output columns "tab", then there are still only old columns and no new columns despite the fact, that I have * in my sql query.
-I tried to click on Cache preferences "tab" and press on Clear cache button (check box is turned off) but it didn't help.
-I have another data set, which is join of two tables and there is another issue, that may be caused by same issue.
-The SQL query is: select T.*, R.* from validation_task T, resources R where T.id=?
-and T.bp=R.id One column is named endtime and it occurs once in both tables.
-It was used in Computed columns "tab" and worked fine.
-But now it is displayed in Preview results as id_9, while Output columns still holds endtime column and id_9 was column for second table (both tables have PK column id).
-The computed column now does not work, it says that second value is null.
+I have following data set: select * from assertion_result where result_data_id=? Output columns contained cca 7 values and I designed some report. Another developer introduced new columns in this table so I reopened the report to update it. Schema browser in Query "tab" is updated and I can see new columns in my table. When I click on Preview results "tab", I can see new columns there too. But when I click on Output columns "tab", then there are still only old columns and no new columns despite the fact, that I have * in my sql query. I tried to click on Cache preferences "tab" and press on Clear cache button (check box is turned off) but it didn't help. I have another data set, which is join of two tables and there is another issue, that may be caused by same issue. The SQL query is: select T.*, R.* from validation_task T, resources R where T.id=? and T.bp=R.id One column is named endtime and it occurs once in both tables. It was used in Computed columns "tab" and worked fine. But now
+it is displayed in Preview results as id_9, while Output columns still holds endtime column and id_9 was column for second table (both tables have PK column id). The computed column now does not work, it says that second value is null.

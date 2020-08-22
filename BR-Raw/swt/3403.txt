@@ -1,42 +1,33 @@
 Unhandled event loop exception (Widget is disposed) when using "Open Type Hierarchy
 With Eclipse 3.0M8 on Solaris 9 and HP-UX11.11 plantform, "Open Type Hierarchy"
-for a Java interface may cause "Unhandle event loop exception".
-The following
+for a Java interface may cause "Unhandle event loop exception". The following
 is the procedure to reproduce the problem:
-1.Download the 3.0M8 SWT Examples zip file from the eclipse.org site and load
+1. Download the 3.0M8 SWT Examples zip file from the eclipse.org site and load
 it on to Eclipse workbench.
-2.Create a Java project and call it "JUnit".
-3.In the Packages Explorer view, select JUnit project and from its context
+2. Create a Java project and call it "JUnit".
+3. In the Packages Explorer view, select JUnit project and from its context
 menu "Import->Zip file".
-4.Browse to junit37src.jar file in
+4. Browse to junit37src.jar file in
 <eclipse>/plugins/org.eclipse.jdt.ui.examples.projects/archive/junit/ directory.
 Select file name and click "Ok".
-5.Click the "Select All" button to make sure that all the files are selected
-in the folder.
-Ensure that the destination folder is "JUnit".
-Click "Finish"
+5. Click the "Select All" button to make sure that all the files are selected
+in the folder. Ensure that the destination folder is "JUnit". Click "Finish"
 and click "Yes" on the question box concerning .classpath file.
-6.In the Package Explorer view, expand the junit.framework package, and select
-the "TestCase.java" class.
-From the Workbench menu select 'Navigate > Open Type
+6. In the Package Explorer view, expand the junit.framework package, and select
+the "TestCase.java" class. From the Workbench menu select 'Navigate > Open Type
 Hierarchy' menu option.
-7.Stacked on top of Package Explorer the Hierarchy view now opens with the
-TestCase class displayed.
-The Hierarchy view has two panes, the top pane shows
+7. Stacked on top of Package Explorer the Hierarchy view now opens with the
+TestCase class displayed. The Hierarchy view has two panes, the top pane shows
 the inheritance structure, and the bottom pane shows the currently selected
 Type's members.
-8.Make sure that in the Hierarchy view, "Show the Type Hierarchy" button is
+8. Make sure that in the Hierarchy view, "Show the Type Hierarchy" button is
 engaged in the local toolbar.
-9.In the Package Explorer view, select the "Test.java" class.
-From the
+9. In the Package Explorer view, select the "Test.java" class. From the
 Workbench menu select 'Navigate > Open Type Hierarchy' menu option.
-10.Stacked on top of Package Explorer the Hierarchy view now opens with the
-Test class displayed.
-The top pane shows the inheritance structure for the Test
-class.
-However the bottom pane shows the members for the TestCase class instead
-(which is incorrect).
-The "Unhandled event loop exception" is also occurred at
+10. Stacked on top of Package Explorer the Hierarchy view now opens with the
+Test class displayed. The top pane shows the inheritance structure for the Test
+class. However the bottom pane shows the members for the TestCase class instead
+(which is incorrect). The "Unhandled event loop exception" is also occurred at
 this point.
-11.Click the "Show the Supertype Hierarchy" button or the "Show the Subtype
+11. Click the "Show the Supertype Hierarchy" button or the "Show the Subtype
 Hierarchy" button from the local toolbar will provide correct members display.

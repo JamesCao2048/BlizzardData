@@ -1,10 +1,8 @@
 StyledText - Tab does not tab out of non-editable
 Bugzilla  Bug 16205  fixed StyledText such that you can do a tab traversal on
-multi-line read-only StyledText widget.
-Since a style of SWT.READ_ONLY is
+multi-line read-only StyledText widget.  Since a style of SWT.READ_ONLY is
 considered the same as setEditable(false), StyledText should also allow a tab
 traversal on multi-line non-editable StyledText widgets.
-
 (Actually, if you set StyledText's style to SWT.READ_ONLY, setEditable(false)
 is called, so it might be better just to check for editable=false instead of
 both SWT.READ_ONLY or editable=false)

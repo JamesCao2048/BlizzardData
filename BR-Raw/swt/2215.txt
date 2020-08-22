@@ -1,14 +1,11 @@
 Read only text widget renders background differently with WIN XP Theme
-The text widget that describes the contents of the page on a properties page needs to be made transparent instead of just gray.
-Setting the background to gray does not work under Windows XP default theme which renders the tabs a lighter shade of gray.
-Will attach a screen shot.
+The text widget that describes the contents of the page on a properties page needs to be made transparent instead of just gray. Setting the background to gray does not work under Windows XP default theme which renders the tabs a lighter shade of gray. Will attach a screen shot.
 The text widget has the SWT.READ_ONLY bit set as well as using the .setEditable(false) method.
 Reproducer (sorry for the dependencies on WTP)
-1.Install latest maintenance version of WTP 1.5
-2.Create new J2EE Enterprise Application Project
-3.Create new EJB Project
-4.Create new Dynamic Web Project
-5.Get Properties for Web Project
-6.Click on J2EE Module Dependencies in tree.
-You should see two tabs (J2EE Modules and Web Libraries).
-The description in each tab will have a different background from the TabFolder.
+1. Install latest maintenance version of WTP 1.5
+2. Create new J2EE Enterprise Application Project
+3. Create new EJB Project
+4. Create new Dynamic Web Project
+5. Get Properties for Web Project
+6. Click on J2EE Module Dependencies in tree.
+You should see two tabs (J2EE Modules and Web Libraries). The description in each tab will have a different background from the TabFolder.

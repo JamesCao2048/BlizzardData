@@ -1,16 +1,13 @@
 No chevron when not enough space to show all the tabs in CTabFolder
-PDE editors (schema and feature) use CTabFolder inside a page.
-When the page
+PDE editors (schema and feature) use CTabFolder inside a page. When the page
 is made narrow enough, some tabs are dropped but there is no way to access
 them (no chevron).
 Steps to reproduce:
 1) Create a new feature project
-2) Switch to the 'Information' page in the newly opened feature editor.
-It
+2) Switch to the 'Information' page in the newly opened feature editor. It
 should have three tabs 'Feature description', 'Copyright Notice' and 'License
 Agreement'.
 3) Make the editor narrower until 'License Agreement' goes away.
-4) Observe
-- there is no way to access the tab.
+4) Observe - there is no way to access the tab.
 This is a problem for us because some people already asked as if License
 Agreement is not required in 3.0.

@@ -1,28 +1,19 @@
 SWT of the eclipse 3.0 versions crashes on start (mouse-problem)
-The problem occurs on a G4/G5 Mac running OS X.
-Using an IntelliMouse USB the
-SWT crashes right after starting the platform.
-This happened for all 3.0
-versions of eclipse.
-With 2.1 or Windows as OS the problem did not occur.
+The problem occurs on a G4/G5 Mac running OS X. Using an IntelliMouse USB the
+SWT crashes right after starting the platform. This happened for all 3.0
+versions of eclipse. With 2.1 or Windows as OS the problem did not occur.
 Perhaps this report may help:
 Exception:  EXC_BAD_ACCESS (0x0001)
 Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000000
 Thread 0 Crashed:
 0   libswt-pi-carbon-3052.jnilib 	0x024e4f0c
 Java_org_eclipse_swt_internal_carbon_OS_WaitMouseMoved + 0x50
-1
-<<00000000>> 	0x0411e5c0 0 + 0x411e5c0
-2
-<<00000000>> 	0x04117e10 0 + 0x4117e10
-3
-<<00000000>> 	0x04117f90 0 + 0x4117f90
-4
-<<00000000>> 	0x04117ed0 0 + 0x4117ed0
-5
-<<00000000>> 	0x04117ed0 0 + 0x4117ed0
-6
-<<00000000>> 	0x0411516c 0 + 0x411516c
+1   <<00000000>> 	0x0411e5c0 0 + 0x411e5c0
+2   <<00000000>> 	0x04117e10 0 + 0x4117e10
+3   <<00000000>> 	0x04117f90 0 + 0x4117f90
+4   <<00000000>> 	0x04117ed0 0 + 0x4117ed0
+5   <<00000000>> 	0x04117ed0 0 + 0x4117ed0
+6   <<00000000>> 	0x0411516c 0 + 0x411516c
 7   libjvm.dylib                 	0x8137a428 JVM_GetCPMethodClassNameUTF + 0xb38
 8   libjvm.dylib                 	0x8139b878 JVM_GetCPClassNameUTF + 0x998
 9   libjvm.dylib                 	0x814935a0 JVM_UnloadLibrary + 0x12550
@@ -44,34 +35,21 @@ void*) + 0x1e8
 21  com.apple.HIToolbox          	0x927e4a34 SendEventToEventTarget + 0x28
 22  libswt-pi-carbon-3052.jnilib 	0x024e06d8
 Java_org_eclipse_swt_internal_carbon_OS_SendEventToEventTarget + 0x30
-23
-<<00000000>> 	0x0411e5c0 0 + 0x411e5c0
-24
-<<00000000>> 	0x04117ed0 0 + 0x4117ed0
-25
-<<00000000>> 	0x04117e10 0 + 0x4117e10
-26
-<<00000000>> 	0x04117f90 0 + 0x4117f90
-27
-<<00000000>> 	0x04117ed0 0 + 0x4117ed0
-28
-<<00000000>> 	0x04117ed0 0 + 0x4117ed0
-29
-<<00000000>> 	0x04117ed0 0 + 0x4117ed0
-30
-<<00000000>> 	0x04118200 0 + 0x4118200
-31
-<<00000000>> 	0x04118200 0 + 0x4118200
-32
-<<00000000>> 	0x04117ea0 0 + 0x4117ea0
-33
-<<00000000>> 	0x0411516c 0 + 0x411516c
+23  <<00000000>> 	0x0411e5c0 0 + 0x411e5c0
+24  <<00000000>> 	0x04117ed0 0 + 0x4117ed0
+25  <<00000000>> 	0x04117e10 0 + 0x4117e10
+26  <<00000000>> 	0x04117f90 0 + 0x4117f90
+27  <<00000000>> 	0x04117ed0 0 + 0x4117ed0
+28  <<00000000>> 	0x04117ed0 0 + 0x4117ed0
+29  <<00000000>> 	0x04117ed0 0 + 0x4117ed0
+30  <<00000000>> 	0x04118200 0 + 0x4118200
+31  <<00000000>> 	0x04118200 0 + 0x4118200
+32  <<00000000>> 	0x04117ea0 0 + 0x4117ea0
+33  <<00000000>> 	0x0411516c 0 + 0x411516c
 34  libjvm.dylib                 	0x8137a428 JVM_GetCPMethodClassNameUTF + 0xb38
 35  libjvm.dylib                 	0x8139b878 JVM_GetCPClassNameUTF + 0x998
 36  libjvm.dylib                 	0x81413664 JVM_IsNaN + 0x5b24
 37  libjvm.dylib                 	0x8143af84 __floatdisf + 0xef4
 38  libjvm.dylib                 	0x81468e40 JVM_InvokeMethod + 0x1f0
-39
-<<00000000>> 	0x0411e5c0 0 + 0x411e5c0
-40
-<<00000000>>
+39  <<00000000>> 	0x0411e5c0 0 + 0x411e5c0
+40  <<00000000>> 	0x04117ea0 0 + 0x4

@@ -1,8 +1,2 @@
 Bug 161180 PDF output problem
-Birt 2.1.1 PDF emitter seems to have a bug.
-It doesn't render floating width table columns correctly.
-I have n fixed width columns and one floating column width in my designs.
-This column width should be equal to page width
-- fixed widths
-- margins.
-The resulting width in Birt 2.1.1 is 0.Birt 2.1 renders these reports without problems.
+Birt 2.1.1 PDF emitter seems to have a bug. It doesn't render floating width table columns correctly. I have n fixed width columns and one floating column width in my designs. This column width should be equal to page width - fixed widths - margins. The resulting width in Birt 2.1.1 is 0. Birt 2.1 renders these reports without problems.

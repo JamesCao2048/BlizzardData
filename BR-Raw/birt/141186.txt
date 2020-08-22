@@ -1,7 +1,2 @@
 Bug 141186 [Automation] Rewrite build files for test plugins and integrate with build
-BIRT test framework has changed.
-QA's test plug-ins also need some changes.
-We need to rewrite the build scripts for each test plug-ins.
-Here is the requirements: 1.Public targets Each build file should define the several public targets: a) UnitTest b) APIJavadoc c) Clean d) Report 2.Private targets Follow the names: e) compileTest (depend on f) ) f) buildDependents g) utest (for develop usage, depend on b),c),d) ) 3.Integration Work with build team, integrate the test with daily build, we should be able to see the log and test result from our build page.
-4.Misc 1) Move reusable logic or script code into our "org.eclipse.birt.tests.core" plugin 2) The caller(daily build) should be able to redirect all the outputs like logs, reports etc.
-These path should be defined as variables.
+BIRT test framework has changed. QA's test plug-ins also need some changes. We need to rewrite the build scripts for each test plug-ins. Here is the requirements: 1. Public targets Each build file should define the several public targets: a) UnitTest b) APIJavadoc c) Clean d) Report 2. Private targets Follow the names: e) compileTest (depend on f) ) f) buildDependents g) utest (for develop usage, depend on b),c),d) ) 3. Integration Work with build team, integrate the test with daily build, we should be able to see the log and test result from our build page. 4. Misc 1) Move reusable logic or script code into our "org.eclipse.birt.tests.core" plugin 2) The caller(daily build) should be able to redirect all the outputs like logs, reports etc. These path should be defined as variables.

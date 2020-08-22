@@ -1,7 +1,6 @@
 Eclipse "Problems Tab": dragging column separators causes application to hang
 Builds: Eclipse SDK Mac OSX Cocoa N20081126-2000 (compared to Carbon N20081126-2000)
 In the context of the Eclipse SDK Workbench, re the Problems Tab:
-Reproducible hang: Dragging the column separators until they touch (or cross each other) causes the application to go into an infinite loop requiring a force quit.
-The problem is so bad (seems to use so many resources) that my entire laptop froze until I was able to shut down the offending Eclipse app.
+Reproducible hang: Dragging the column separators until they touch (or cross each other) causes the application to go into an infinite loop requiring a force quit. The problem is so bad (seems to use so many resources) that my entire laptop froze until I was able to shut down the offending Eclipse app.
 The source of the problem appears to be that columns in the Problems tab do not have a minimum width; this allows one to drag the column separators until they effectively overlap.
 For Carbon, columns in the Problems tab have a minimum width which prevents column separators from being dragged too close together.

@@ -1,3 +1,2 @@
 Bug 205570 Ellipsis for long Axis labels
-Currently the chart engine drops Axis labels if there isn't enough space to display them.
-It should first attempt to truncate and add an ellipsis to them before dropping them completely.
+Currently the chart engine drops Axis labels if there isn't enough space to display them. It should first attempt to truncate and add an ellipsis to them before dropping them completely.

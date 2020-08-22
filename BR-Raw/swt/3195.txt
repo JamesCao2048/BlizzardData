@@ -7,8 +7,7 @@ Display display = new Display();
 Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 CTabFolder folder = new CTabFolder(shell, SWT.CLOSE);
-for (int i = 0; i
-< 12; i++) {
+for (int i = 0; i < 12; i++) {
 CTabItem item = new CTabItem(folder, SWT.NONE);
 item.setText("Item " + i);
 Text text = new Text(folder, SWT.BORDER | SWT.MULTI);
@@ -25,15 +24,11 @@ display.dispose();
 }
 }
 Click on the button top-right to popup the small list with Tabs that are
-currently not visible.
-Leave the popup open and close the application.
-A
-SWTException is thrown.
-I am able to reproduce this with latest SWT 3106
+currently not visible. Leave the popup open and close the application. A
+SWTException is thrown. I am able to reproduce this with latest SWT 3106
 and with earlier 3062.
 Somehow SWT.MouseUp Event is fired when closing the application with opened
-Popup.
-The call to getDisplay() then results in the Exception, since Display
+Popup. The call to getDisplay() then results in the Exception, since Display
 is disposed in that situation.
 Regards,
 Ben

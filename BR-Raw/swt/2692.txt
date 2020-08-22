@@ -1,13 +1,9 @@
 Tree with lines visible not painted correctly
-Background: I used the TableTree in my application up to now.
-Since it is marked
+Background: I used the TableTree in my application up to now. Since it is marked
 as deprecated in Eclipse 3.1, I tried to replace it with the tree widget using
 columns.
 When using columns in the Tree widget with setLinesVisible(true), not all lines
-are painted as in the old TableTree.
-Only the lines of rows with content are
-shown, but not those lines of rows with no content.
-Furthermore the lines are
-totally invisible while rearraning the size of a column.
-In my opinion the lines
+are painted as in the old TableTree. Only the lines of rows with content are
+shown, but not those lines of rows with no content. Furthermore the lines are
+totally invisible while rearraning the size of a column. In my opinion the lines
 should be always shown in the widget if setLinesVisible is set to true.

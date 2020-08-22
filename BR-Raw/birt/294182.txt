@@ -1,12 +1,2 @@
 Bug 294182 Show values outside Axis ranges
-I changed the scaling of the Y-Axis of a bar chart to min 105
-- max 110 (Format Chart
--> Y-Axis
--> Scale).
-There are Y-Values which are smaller than 105 and so no bars are shown in the chart.
-Thats correct, but I want to display the values for instance value "99" for the second X-Value etc.
-but with no success.
-The checkbox "Show values outside Axis ranges" (Format Chart
--> Y-Axis
--> Scale) doesn't work.
-I tried it with Birt Designer 2.2 and 2.5.1
+I changed the scaling of the Y-Axis of a bar chart to min 105 - max 110 (Format Chart -> Y-Axis -> Scale). There are Y-Values which are smaller than 105 and so no bars are shown in the chart. Thats correct, but I want to display the values for instance value "99" for the second X-Value etc. but with no success. The checkbox "Show values outside Axis ranges" (Format Chart -> Y-Axis -> Scale) doesn't work. I tried it with Birt Designer 2.2 and 2.5.1

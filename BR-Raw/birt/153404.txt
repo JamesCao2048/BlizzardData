@@ -1,5 +1,2 @@
 Bug 153404 Custom format string in report parameter doesn't work correctly
-Description: Custom format string in report parameter doesn't work correctly Steps to reproduce: 1.New a report parameter, string type, text-box, input qwewretry as default value.
-2.Click change button, select Zip code format, click OK 3.Drag the parameter to Layout and preview Expected result: Format works Actual result: In popup dialog, value are formated and click OK, display value is not formatted.
-Then I switched back to Layout and changed the parameter format to lowercase, then preview.
-This time I saw Zip code format worked instead of lowercase effect!
+Description: Custom format string in report parameter doesn't work correctly Steps to reproduce: 1. New a report parameter, string type, text-box, input qwewretry as default value. 2. Click change button, select Zip code format, click OK 3. Drag the parameter to Layout and preview Expected result: Format works Actual result: In popup dialog, value are formated and click OK, display value is not formatted. Then I switched back to Layout and changed the parameter format to lowercase, then preview. This time I saw Zip code format worked instead of lowercase effect!

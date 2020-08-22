@@ -1,8 +1,2 @@
 Bug 217031 Datatype in aggregation builder is wrong.[0001]
-Description: Datatype in aggregation builder is wrong.
-Build number:2.3.0.v20080130 Steps to reproduce: 1.Open attached report in #211400 2.Select the table, select Binding pane.
-3.Double click column binding TopSix and check the data type.
-Expected result: Display boolean as data type.
-Actual result: Display any as data type.
-but in column binding list, the data type is boolean.
-Error log:n/a
+Description: Datatype in aggregation builder is wrong. Build number:2.3.0.v20080130 Steps to reproduce: 1. Open attached report in #211400 2. Select the table, select Binding pane. 3. Double click column binding TopSix and check the data type. Expected result: Display boolean as data type. Actual result: Display any as data type. but in column binding list, the data type is boolean. Error log:n/a

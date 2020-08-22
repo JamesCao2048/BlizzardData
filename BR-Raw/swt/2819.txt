@@ -2,13 +2,10 @@ ToolItem with image is blank or shows cheese
 3.1 RC1
 - check the "Always run in background" preference
 - show the Progress view
-- kick off some long-running operation (e.g.
-Project > Clean)
+- kick off some long-running operation (e.g. Project > Clean)
 - in the Progress view, the cancel button for this Job is blank
 - resize the window while the job is still going
-- the button is not redrawn properly, i.e.
-it shows cheese from what was in that screen rectangle before
+- the button is not redrawn properly, i.e. it shows cheese from what was in that screen rectangle before
 Also saw this in the progress dialog on shutdown.
-This uses a ToolItem with image set.
-The image changes depending on the state of the job.
+This uses a ToolItem with image set.  The image changes depending on the state of the job.
 See code in NewProgressViewer.JobItem's constructor.

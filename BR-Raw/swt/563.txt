@@ -1,9 +1,7 @@
 [DND] [Mac] Erratic DND behaviour on Mac OS X
 Created  attachment 109485   [details]
 Minimal sample project
-I have added drop support to a viewer using the ResourceTransfer type, so that I can receive dragged resources from the standard workbench views.
-I have done this using ViewerDropAdapter.
-Unfortunately the drop target does not receive the dragged data correctly, depending on the view from which the drag was initiated:
+I have added drop support to a viewer using the ResourceTransfer type, so that I can receive dragged resources from the standard workbench views. I have done this using ViewerDropAdapter. Unfortunately the drop target does not receive the dragged data correctly, depending on the view from which the drag was initiated:
 1) When dragging from Project Explorer, I receive the resource correctly (array of IResource with 1 entry).
 2) When dragging from Package Explorer (JDT) I always receive an empty array of IResource.
 3) When dragging from Navigator, I get the following NPE:
@@ -34,5 +32,4 @@ at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3047)
 [stack trace truncated]
 Note that with the same code, all three of the above cases work perfectly when running on Windows.
-Attached is a minimal example plugin project that reproduces the problem.
-Open the "Drop Target View" and drop resources into any part of the view.
+Attached is a minimal example plugin project that reproduces the problem. Open the "Drop Target View" and drop resources into any part of the view.

@@ -1,22 +1,13 @@
 CTabFolder throws exception when closing a tab
-Create a CTabFolder with n CTabItems.
-Select the last item.
-Close the last
-item.
-An ArrayIndexOutOfBoundsException is thrown.
+Create a CTabFolder with n CTabItems.  Select the last item.  Close the last
+item.  An ArrayIndexOutOfBoundsException is thrown.
 This can be produces by using the snippet found here:
-http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt
--
+http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt -
 home/snippits/snippet82.html
-Paste the snippet into a Java file.
-Comment out from "final CTabItem
+Paste the snippet into a Java file.  Comment out from "final CTabItem
 special..." to "specialItem.setControl(text);"  Also comment out the code
-inside the itemClosed method (leaving just a stub).
-Run the code.
-First
-select the last item.
-Then attemp to close that item.
-Exception thrown.
+inside the itemClosed method (leaving just a stub).  Run the code.  First
+select the last item.  Then attemp to close that item.  Exception thrown.
 Thanks for the help.
 My stacktrace:
 java.lang.ArrayIndexOutOfBoundsException: 1

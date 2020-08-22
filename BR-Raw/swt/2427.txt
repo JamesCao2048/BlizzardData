@@ -3,16 +3,12 @@ I'm using Eclipse-3.1M4/JDK1.5
 Creating an image using
 new Image(device, image, SWT.IMAGE_COPY)
 does not work as expected.
-I have the following code to highlight a part of the image.
-When the imageData is set into the imageCanvas the image appears to be mirrored diagonally (i.e.
-mirrored vertically then horizontally)
+I have the following code to highlight a part of the image. When the imageData is set into the imageCanvas the image appears to be mirrored diagonally (i.e. mirrored vertically then horizontally)
 The behaviour of the snippet is different on Windows 2000 and Windows XP.
 On windows XP the image is mirrored diagonally, and the highlighted box appears on the image, at the correct position.
-On windows 2000 the image is mirrored diagonally, but the image is NOT highlighted.
-Setting the alpha to 255(or not setting alpha at all) will draw an opaque highlighted box.
+On windows 2000 the image is mirrored diagonally, but the image is NOT highlighted. Setting the alpha to 255(or not setting alpha at all) will draw an opaque highlighted box.
 The snippet works OK on Linux (Ubuntu Linux ver 5.10)
---- begin code
----
+--- begin code ---
 protected void highlightImage(ImageMapDescriptor descriptor) {
 Image image = Activator.getImage("resources/images/page1.png");
 Image imageCopy = new Image(image.getDevice(), image, SWT.IMAGE_COPY);
@@ -28,5 +24,4 @@ imageCopy.dispose();
 gc.dispose();
 this.imageCanvas.setImageData(imageData);
 }
---- end code
----
+--- end code ---

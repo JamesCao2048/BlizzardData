@@ -1,18 +1,14 @@
 SWT Tree#setTopItem(TreeItem) on Mac OS X doesn't take the header height into account
 Build ID: I20070222-0951
 Steps To Reproduce:
-1.Initialize a Tree instance.
-2.Make sure the Tree instance from step 1.is configured to have its header visible using Tree#setHeaderVisible(boolean)
-3.Initialize a TreeColumn instance parented by the Tree instance from step 1.
-4.Populate the Tree instance from step 1 with enough TreeItem instances so that they do NOT fit vertically in the Tree client area i.e.
-the vertical scroll bar is visible, enabled and its thumb can be used to scroll through the items of the Tree.
-5.Scroll vertically to the bottom of the Tree so that the first item in the Tree i.e.
-the one at index 0 (zero) in the array returned by by Tree#getItems() is not visible.
-6.Instruct the Tree using Tree#setTopItem(TreeItem) to set the first item i.e the one at index 0 (zero) in the array returned by Tree#getItems() to the top.
-7.Note that the TreeItem in question is not made fully visible and it appears under the header of the Tree.
+1. Initialize a Tree instance.
+2. Make sure the Tree instance from step 1. is configured to have its header visible using Tree#setHeaderVisible(boolean)
+3. Initialize a TreeColumn instance parented by the Tree instance from step 1.
+4. Populate the Tree instance from step 1 with enough TreeItem instances so that they do NOT fit vertically in the Tree client area i.e. the vertical scroll bar is visible, enabled and its thumb can be used to scroll through the items of the Tree.
+5. Scroll vertically to the bottom of the Tree so that the first item in the Tree i.e. the one at index 0 (zero) in the array returned by by Tree#getItems() is not visible.
+6. Instruct the Tree using Tree#setTopItem(TreeItem) to set the first item i.e the one at index 0 (zero) in the array returned by Tree#getItems() to the top.
+7. Note that the TreeItem in question is not made fully visible and it appears under the header of the Tree.
 More information:
 The problem is only observed and reported for Mac OS X SWT (macosx-carbon).
-While Tree#getTopItem() seems to take the values of both getBorder() and getHeaderHeight() in account when calculating the rectangle of  a TreeItem, Tree#setTopItem() only considers the value of getBorder().
-I think Tree#setTopItem() should also subtract the value of Tree#getHeaderHeight() in the expression in which it subtracts the value of Tree#getBorder().
-My local modification that does just that seems to fix the problem and Tree#setTopItem(Tree#getItems()[0]) no longer causes the TreeItem in question to appear under the header.
+While Tree#getTopItem() seems to take the values of both getBorder() and getHeaderHeight() in account when calculating the rectangle of  a TreeItem, Tree#setTopItem() only considers the value of getBorder(). I think Tree#setTopItem() should also subtract the value of Tree#getHeaderHeight() in the expression in which it subtracts the value of Tree#getBorder(). My local modification that does just that seems to fix the problem and Tree#setTopItem(Tree#getItems()[0]) no longer causes the TreeItem in question to appear under the header.
 I don't know if it's important but just for the sake of clarity, I'm running Mac OS X 10.4.8 on a MacBook Pro with Intel Core Duo.

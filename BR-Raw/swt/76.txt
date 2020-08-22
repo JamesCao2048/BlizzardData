@@ -1,9 +1,9 @@
 [GTK3] CTabFolder rendering hangs
 Eclipse 4.3M4 run with SWT_GTK3=1
 Fedora 17, Gtk+ 3.4.4
-1.Open Problems view (empty)
-2.Click on Description header for sorting
-3.Eclipse hangs, using 100% CPU
+1. Open Problems view (empty)
+2. Click on Description header for sorting
+3. Eclipse hangs, using 100% CPU
 Stack trace:
 "main" prio=10 tid=0x00007fc8f4008800 nid=0xc79 runnable [0x00007fc8fb1e0000]
 java.lang.Thread.State: RUNNABLE
@@ -41,4 +41,4 @@ at org.eclipse.ui.internal.progress.ProgressManager.busyCursorWhile(ProgressMana
 at org.eclipse.ui.internal.progress.WorkbenchSiteProgressService.busyCursorWhile(WorkbenchSiteProgressService.java:186)
 at org.eclipse.ui.internal.views.markers.CachedMarkerBuilder.refreshContents(CachedMarkerBuilder.java:259)
 at org.eclipse.ui.internal.views.markers.ExtendedMarkersView.setPrimarySortField(ExtendedMarkersView.java:1403)
-at org.eclipse
+at org.ecli

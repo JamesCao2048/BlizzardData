@@ -1,9 +1,4 @@
 Provide ability to handle reopen-events (user clicks dock icon for running application)
 Build Identifier:
-On OS X, applications may not show windows while still running.
-Usually, there are two options to open a new application window: using the menu bar or clicking the dock icon.
-The first one is already supported by SWT 3.7, but not the second one (at least I did not found a possibility).
-Please add support for these reopen events.
-When clicking on the dock icon and the application shows at least one window, bring it to front.
-For the case where no application window is visible, we need API to be notified about the dock icon click, so we can show a new window.
+On OS X, applications may not show windows while still running. Usually, there are two options to open a new application window: using the menu bar or clicking the dock icon. The first one is already supported by SWT 3.7, but not the second one (at least I did not found a possibility). Please add support for these reopen events. When clicking on the dock icon and the application shows at least one window, bring it to front. For the case where no application window is visible, we need API to be notified about the dock icon click, so we can show a new window.
 Reproducible: Always

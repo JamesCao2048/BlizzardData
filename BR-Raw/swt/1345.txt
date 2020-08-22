@@ -2,5 +2,4 @@ StyledText should handle mouse click sequences in block selection mode
 Follow-up from splitting  bug 8521 :
 StyledText should not change its behavior in block selection mode unless it is absolutely necessary.
 When double or triple clicking into the widget, StyledText should select the same range whether it is in block selection mode or not.
-Not a strict requirement for  bug 19771
-- but IMO we'd look bad if we behave differently here.
+Not a strict requirement for  bug 19771  - but IMO we'd look bad if we behave differently here.

@@ -1,14 +1,3 @@
 Bug 139110 GUI enhancement to support create subquery more conveniently.
-Description: GUI enhancement to support create subquery more conveniently.
-Steps to reproduce: Subquery means insert table/list inside another table/list item, and the inner table/list item doesn't has its own dataset binding.
-In latest build, if you want to creat a subquery structure, you have to use dataSetRow as binding expression for data items in inner table/list item.
-For example: 1.Insert a list, generate column data binding for it.
-2.Add a group for the list.
-3.Insert table to list group header which is used to display data rows in list group.
-Dont' bind table to dataset.
-4.Insert a data to table detail row.
-5.New a binding column for data, click to Open Expression Builder.
-The issue is that only "Availabel column bindings" is listed in Category but no "Available Data Sets".
-So I have to type dataSetRow[".."] by myself to generate correct subquery.
-For users, maybe they will mistakenly use "Available column bindings" which will generate expression like row._outer[".."] and get wrong result.
-So it is recommended to add "Available Data Sets" in Expression Builder for such case.
+Description: GUI enhancement to support create subquery more conveniently. Steps to reproduce: Subquery means insert table/list inside another table/list item, and the inner table/list item doesn't has its own dataset binding. In latest build, if you want to creat a subquery structure, you have to use dataSetRow as binding expression for data items in inner table/list item. For example: 1. Insert a list, generate column data binding for it. 2. Add a group for the list. 3. Insert table to list group header which is used to display data rows in list group. Dont' bind table to dataset. 4. Insert a data to table detail row. 5. New a binding column for data, click to Open Expression Builder. The issue is that only "Availabel column bindings" is listed in Category but no "Available Data Sets". So I have to type dataSetRow[".."] by myself to generate correct subquery. For users, maybe they will mistakenly use "Available column bindings" which will generate expression like row._outer[".."] and
+get wrong result. So it is recommended to add "Available Data Sets" in Expression Builder for such case.

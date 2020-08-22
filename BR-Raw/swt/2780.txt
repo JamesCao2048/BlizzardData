@@ -1,11 +1,9 @@
 ImageData.getTransparencyMask - incorrect javadoc or implementation wrong
 The implementation of getTransparencyMask appears to return a fully opaque
-mask when the image has no transparency.
-The javadoc seems to infer that it
+mask when the image has no transparency. The javadoc seems to infer that it
 would return null in that case.
 /**
-* Returns an
-<code>ImageData</code> which specifies the
+* Returns an <code>ImageData</code> which specifies the
 * transparency mask information for the receiver, or null if the
 * receiver has no transparency and is not an icon.
 *

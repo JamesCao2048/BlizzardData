@@ -1,6 +1,3 @@
 [Presentations] [perfs] Performance regression in PresentationCreateTest* tests
-On windows, there is 30-50% performance regression in tests of org.eclipse.ui.tests.performance.presentations.PresentationCreateTest#*.
-Linux looks good.
-The regression seems to have got introduced around 6th January.
-There was a regression in December first but it got good on 4th January build.
-Hence, I initially thought it was noise but it has been consistent since then.
+On windows, there is 30-50% performance regression in tests of org.eclipse.ui.tests.performance.presentations.PresentationCreateTest#*. Linux looks good.
+The regression seems to have got introduced around 6th January. There was a regression in December first but it got good on 4th January build. Hence, I initially thought it was noise but it has been consistent since then.

@@ -2,7 +2,5 @@ Display#post(Event) confuses mouse buttons 2 and 3 on Cocoa
 Display#post(Event) confuses mouse buttons 2 and 3 on Cocoa.
 To reproduce, use Snippet142 but click the right mouse button:
 event.button = 3;
-The console says that button 2 has been pressed.
-With button = 2, the console says button 3.
-This works fine on Windows 7 and GTK.
-If you change Button to Text in the snippet, you see that button 3 correctly opens the context menu.
+The console says that button 2 has been pressed. With button = 2, the console says button 3.
+This works fine on Windows 7 and GTK. If you change Button to Text in the snippet, you see that button 3 correctly opens the context menu.

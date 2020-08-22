@@ -1,15 +1,13 @@
 StyledText does not always redraw when the line style changes
 Build 20020312
 In the following code, we attempt to change the color of the line that contains
-the caret while the caret is moving.
-To see the problem:
+the caret while the caret is moving.  To see the problem:
 0) use the arrow keys to move the caret to another line
 - line style listener called, line color is changed
 1) press the button
 - the widget redraws, showing where the line should be
 Knut: We belive that the line color background should be changed when the
-callback is called.
-Also, why is the callback called 3 times for every caret
+callback is called.  Also, why is the callback called 3 times for every caret
 move?
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.*;
@@ -32,8 +30,7 @@ int start = text.getOffsetAtLine(line);
 int end = start + event.lineText.length();
 int p = text.getCaretOffset();
 System.out.println("lineGetStyle");
-if( p >= start && p
-<= end){
+if( p >= start && p <= end){
 event.styles = new StyleRange[1];
 StyleRange avacadoStyle = new StyleRange ();
 avacadoStyle.start = start;
@@ -51,8 +48,7 @@ String words[] = {"public","import","class","interface","try",
 "test","oti","blabla","13241234","style","helloworld"};
 
 int length = words.length;
-for (int i = 1; i
-< 500; i++) {
+for (int i = 1; i < 500; i++) {
 text.append(words[ (int) ( Math.random() * words.length ) ] + " ");
 if(i%9 == 0) text.append("n");
 }

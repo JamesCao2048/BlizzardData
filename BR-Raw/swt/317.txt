@@ -1,9 +1,5 @@
 Add accessible keyboard shortcut to TabFolder and CTabFolder
-Eclipse does not use the shortcut Ctrl+Tab to change tab pages.
-It uses an alternate documented shortcut Ctrl+PgDn.
-It also uses the Microsoft standard UI navigation for accessing tabs in a tab control.
-Arrow navigates the tabs (active UI elements) when they have focus.
-Microsoft tab control navigation is documented here:  http://msdn.microsoft.com/en-us/library/ms971323.aspx#atg_keyboardshortcuts_accessing_tab_controls
+Eclipse does not use the shortcut Ctrl+Tab to change tab pages. It uses an alternate documented shortcut Ctrl+PgDn. It also uses the Microsoft standard UI navigation for accessing tabs in a tab control. Arrow navigates the tabs (active UI elements) when they have focus. Microsoft tab control navigation is documented here:  http://msdn.microsoft.com/en-us/library/ms971323.aspx#atg_keyboardshortcuts_accessing_tab_controls
 Response from a JAWS developer:
 We were concerned about announcing ctrl+pgdn and ctrl+PGUP on tab controls that did not support this key combination.
 As a way to handle this, I added code to JAWS that looked at the tab control containing the individual tabs for a shortcut key.
@@ -21,8 +17,7 @@ Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 shell.setText("TabFolder");
 TabFolder tabFolder = new TabFolder(shell, SWT.NONE);
-for (int i = 0; i
-< 5; i++) {
+for (int i = 0; i < 5; i++) {
 TabItem tab = new TabItem(tabFolder, SWT.NONE);
 tab.setText("Tab &" + i);
 Canvas tabContent = new Canvas(tabFolder, SWT.NONE);

@@ -1,10 +1,10 @@
 On carbon platform, when scroll the mouse wheel on top of the vertical scroll bar of a canvas, no selection event is generated.
 Build ID: M20070212-1330
 Steps To Reproduce:
-1.Create a shell.
-2.Create a canvas on the shell which has larger height than the shell.
-3.Add a selection listener to the vertical bar of the canvas.
-4.When scrolling the wheel on the vertical scrollbar, no selection event is sent.
+1. Create a shell.
+2. Create a canvas on the shell which has larger height than the shell.
+3. Add a selection listener to the vertical bar of the canvas.
+4. When scrolling the wheel on the vertical scrollbar, no selection event is sent.
 More information:
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;

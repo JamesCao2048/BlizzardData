@@ -1,7 +1,2 @@
 Bug 192075 [SVG] There is an extra line in the legend area [0001]
-Description: There is an extra line in the legend area Regression of #146973 Build number: 2.2.0.v200706011-1025 Steps to reproduce: 1.New a style: Font Color(Red), Decoration(Line through).
-2.New a chart, apply the style to the chart.
-3.Preview from the layout.
-Expected result: The legend does not have the red line just as PDF does.
-Actual result: See the screenshot.
-Error log: N/A
+Description: There is an extra line in the legend area Regression of #146973 Build number: 2.2.0.v200706011-1025 Steps to reproduce: 1. New a style: Font Color(Red), Decoration(Line through). 2. New a chart, apply the style to the chart. 3. Preview from the layout. Expected result: The legend does not have the red line just as PDF does. Actual result: See the screenshot. Error log: N/A

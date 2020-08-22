@@ -9,6 +9,5 @@ event.image = display.getSystemImage(SWT.ICON_WARNING)
 }
 is working as expected, I was unable to make the D&D effect work with any other image.
 - If I use any image that is already in memory, there is no drag feedback.
-- If i create a new Image during the dragStart event, the creation seems to fail : (image size is
--1,-1).
+- If i create a new Image during the dragStart event, the creation seems to fail : (image size is -1,-1).
 Has anyone used the Drag source effect successfully ?

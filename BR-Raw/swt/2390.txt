@@ -10,8 +10,7 @@ shell.setLayout(new FillLayout());
 final Table table = new Table(shell, SWT.VIRTUAL | SWT.FULL_SELECTION
 | SWT.MULTI);
 final int columns = 2;
-for (int i = 0; i
-< columns; i++) {
+for (int i = 0; i < columns; i++) {
 TableColumn tc = new TableColumn(table, SWT.RIGHT);
 tc.setText("COL" + i);
 tc.setWidth(174);
@@ -23,8 +22,7 @@ table.addListener(SWT.SetData, new Listener() {
 public void handleEvent(Event event) {
 TableItem item = (TableItem) event.item;
 System.err.println("SETTING " + event.index + ": " + s);
-for (int i = 0; i
-<= columns; i++) {
+for (int i = 0; i <= columns; i++) {
 item.setText(i, s);
 }
 }

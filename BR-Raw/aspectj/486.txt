@@ -51,14 +51,4 @@ sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.jav
 [iajc]     at java.lang.reflect.Method.invoke(Method.java:324)
 [iajc]     at org.apache.tools.ant.TaskAdapter.execute(TaskAdapter.java:147)
 [iajc]     at
-org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:193)
-[iajc]     at org.apache.tools.ant.Task.perform(Task.java:341)
-[iajc]     at org.apache.tools.ant.Target.execute(Target.java:309)
-[iajc]     at org.apache.tools.ant.Target.performTasks(Target.java:336)
-[iajc]     at org.apache.tools.ant.Project.executeTarget(Project.java:1339)
-[iajc]     at org.apache.tools.ant.Project.executeTargets(Project.java:1255)
-[iajc]     at org.apache.tools.ant.Main.runBuild(Main.java:609)
-[iajc]     at org.apache.tools.ant.Main.start(Main.java:196)
-[iajc]     at org.apache.tools.ant.Main.main(Main.java:235)
-[if] Error in class net.sf.antcontrib.logic.IfTask
-Sorry, i have no simple test case for that problem...
+o

@@ -1,3 +1,2 @@
 Bug 143068 Update the way that viewer sets the image cache folder.
-Use this code segment below to set image cache folder.
-HTMLRenderContext ctx = new HTMLRenderContext(); ctx.setImageDirectory("images"); HashMap map = new HashMap(); map.put(EngineConstants.APPCONTEXT_HTML_RENDER_CONTEXT, ctx); task.setAppContext(map); The one related to 132063
+Use this code segment below to set image cache folder. HTMLRenderContext ctx = new HTMLRenderContext(); ctx.setImageDirectory("images"); HashMap map = new HashMap(); map.put(EngineConstants.APPCONTEXT_HTML_RENDER_CONTEXT, ctx); task.setAppContext(map); The one related to 132063

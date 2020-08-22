@@ -1,5 +1,4 @@
 BIDI:GC.drawImage(0, ... draws at 1, ... when using RIGHT_TO_LEFT
 build 20030429 (+ todays latest from HEAD)
-Run the attached test case.
-Observe the one pixel wide background leaking
+Run the attached test case. Observe the one pixel wide background leaking
 through to the right of the double buffer image.

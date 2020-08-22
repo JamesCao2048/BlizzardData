@@ -1,4 +1,2 @@
 Bug 194161 Have not removed the measure binding column when hide the measure[1102]
-Description: Have not removed the measure binding column when hide the measure[1102] Step: 1.New a datasource, dataset 2.New a data cube 3.Add a cross table, drop the group and measure into the cross table 4.Right click on measure in cross table and select Show/Hide Measure 5.Untick the measure and press OK Actual result: The measure binding column has not removed.
-When preview it will pop up an error.
-Exception result: Remove the binding column
+Description: Have not removed the measure binding column when hide the measure[1102] Step: 1.New a datasource, dataset 2.New a data cube 3.Add a cross table, drop the group and measure into the cross table 4.Right click on measure in cross table and select Show/Hide Measure 5.Untick the measure and press OK Actual result: The measure binding column has not removed. When preview it will pop up an error. Exception result: Remove the binding column

@@ -1,9 +1,2 @@
 Bug 190440 Dimensions from same column will affact each other.[1101]
-Description: Dimensions from same column will affact each other.
-Build number:2.2.0.v200706011658 Steps to reproduce: 1.Open attached report.
-The cube in the report contains "static amount" and "interval amount".
-2.Preview the report.
-3.Delete interval amount group and preview again.
-Expected result: Step2 and step 3 display same effect.
-Actual result: In step2 preview, xtab display effect of "interval amount" level value instead of "static amount" level value.
-Error log:N/A
+Description: Dimensions from same column will affact each other. Build number:2.2.0.v200706011658 Steps to reproduce: 1. Open attached report. The cube in the report contains "static amount" and "interval amount". 2. Preview the report. 3. Delete interval amount group and preview again. Expected result: Step2 and step 3 display same effect. Actual result: In step2 preview, xtab display effect of "interval amount" level value instead of "static amount" level value. Error log:N/A

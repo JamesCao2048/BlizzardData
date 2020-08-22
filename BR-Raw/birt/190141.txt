@@ -1,6 +1,2 @@
 Bug 190141 Could not view img with height/width in doc
-Build ID: RC0-0518 Steps To Reproduce: 1.create a report design 2.insert a text with
-<IMG src="C:WINDOWSBlue Lace 16.bmp" height="100"> result: view as html or pdf is ok view as doc, exception occurs: org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report; nested exception is: java.lang.IllegalArgumentException: "fromUnits"must be one of the absolute units(CM, IN, MM, PT).
-More information: It should accept the default unit in html the whole report will fail once this exception occurs.
-Appreciate it could be fixed as soon as possible.
-Thanks!
+Build ID: RC0-0518 Steps To Reproduce: 1. create a report design 2. insert a text with <IMG src="C:WINDOWSBlue Lace 16.bmp" height="100"> result: view as html or pdf is ok view as doc, exception occurs: org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report; nested exception is: java.lang.IllegalArgumentException: "fromUnits"must be one of the absolute units(CM, IN, MM, PT). More information: It should accept the default unit in html the whole report will fail once this exception occurs. Appreciate it could be fixed as soon as possible. Thanks!

@@ -1,11 +1,11 @@
 Exception in Table with SWT.MEASUREITEM
 Build ID: 3.4.0.v20080603-2000
 Steps To Reproduce:
-1.Create a table and add a listener for SWT.MEASUREITEM
-2.Add columns
-3.In the view place the mouse cursor above the table and column header
-4.Press the left or right cursor key
-5.A tooltip is requested with an item index below 0, which causes an exception (although p.y is lower than 0, the hit test succeeds for some reason):
+1. Create a table and add a listener for SWT.MEASUREITEM
+2. Add columns
+3. In the view place the mouse cursor above the table and column header
+4. Press the left or right cursor key
+5. A tooltip is requested with an item index below 0, which causes an exception (although p.y is lower than 0, the hit test succeeds for some reason):
 Thread [main] (Suspended)
 Table.wmNotifyToolTip(NMHDR, int, int) line: 6734
 Table.wmNotify(NMHDR, int, int) line: 6216

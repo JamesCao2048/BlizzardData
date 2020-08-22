@@ -1,5 +1,2 @@
 Bug 155138 Complete support of Decimal data type in BIRT
-Data type Decimal (which maps to java.math.BigDecimal) support in BIRT engine/data engine is incomplete.
-Currently decimal values are converted to Double before any calculation and formatting.
-This behavior is incorrect since it loses the arbitury-precision aspect of the Decimal data type (which is really what Decimal type is designed for).
-The proper handling of Decimal type will require that expressions involving Decimal values be calculated outside of the Rhino engine (since Rhino does not handle Decimal types).
+Data type Decimal (which maps to java.math.BigDecimal) support in BIRT engine/data engine is incomplete. Currently decimal values are converted to Double before any calculation and formatting. This behavior is incorrect since it loses the arbitury-precision aspect of the Decimal data type (which is really what Decimal type is designed for). The proper handling of Decimal type will require that expressions involving Decimal values be calculated outside of the Rhino engine (since Rhino does not handle Decimal types).

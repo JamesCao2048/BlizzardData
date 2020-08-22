@@ -18,10 +18,8 @@ Elapsed Process: 757 ms
 Elapsed Process: 731 ms
 average: 746ms
 increase: 96 over 746 = 13% slower
-I've only included the times for the debug perspective.
-The other perspectives
+I've only included the times for the debug perspective.  The other perspectives
 showed less of a change, and seemed to correlate with the numer of icons (either
-in the menus or toolbars or both).
-The debug perspective has the most icons.
+in the menus or toolbars or both).  The debug perspective has the most icons.
 I'm suspicious of the ImageList change to always specify OS.ILC_MIRROR.
 I'll see if unwinding that single change makes a difference.

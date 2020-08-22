@@ -1,9 +1,7 @@
 Compile warnings in official build I20100127-1800
 I20100127-1800.
-1.WARNING in _64/temp.folder/@dot.src/org/eclipse/swt/accessibility/Accessible.java
+1. WARNING in _64/temp.folder/@dot.src/org/eclipse/swt/accessibility/Accessible.java
 (at line 2685)
 Object [] siblings = event.children;
 The local variable siblings is never read
-Note that you can set the project specific settings for the SWT projects so that those things are flagged in the developer workspace.
-Maybe they are already set to 'Warning' but the developers tend to ignore them?
-If so, you can boost the severity to 'Error' so that those things get noticed easily in the workspace.
+Note that you can set the project specific settings for the SWT projects so that those things are flagged in the developer workspace. Maybe they are already set to 'Warning' but the developers tend to ignore them? If so, you can boost the severity to 'Error' so that those things get noticed easily in the workspace.

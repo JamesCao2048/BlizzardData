@@ -1,6 +1,2 @@
 Bug 295062 Print report as html produces false html header
-If you click "Print Report" and print format "HTML" the BIRT Report Viewer produces a html page wich has a closing
-</meta> tag in the header:
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf8"></meta> As a consequence IE and Firefox don't use UTF-8 encoding, and many characters are false (u, a etc.).
-On other Birt Viewer pages the header is correct, only
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf8"> without the false closing "</meta>."
+If you click "Print Report" and print format "HTML" the BIRT Report Viewer produces a html page wich has a closing </meta> tag in the header: <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf8"></meta> As a consequence IE and Firefox don't use UTF-8 encoding, and many characters are false (u, a etc.). On other Birt Viewer pages the header is correct, only <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf8"> without the false closing "</meta>."

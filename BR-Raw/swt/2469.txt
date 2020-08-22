@@ -1,15 +1,13 @@
 Tree: Sorted background column colour does not move with movable columns
 SWT Win32 CVS
-Drag a Tree column header to a different location.
-The sorted background colour does not move with the column.
+Drag a Tree column header to a different location.  The sorted background colour does not move with the column.
 public static void main(String[] args) {
 final Display display = new Display();
 final Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 final int columns = 5;
 final Tree tree = new Tree(shell, SWT.BORDER | SWT.VIRTUAL | SWT.FULL_SELECTION | SWT.MULTI);
-for (int i = 0; i
-< columns; i++) {
+for (int i = 0; i < columns; i++) {
 TreeColumn tc = new TreeColumn(tree, SWT.LEFT);
 tc.setWidth(75);
 tc.setMoveable(true);
@@ -24,8 +22,7 @@ tree.addListener(SWT.SetData, new Listener() {
 public void handleEvent(Event event) {
 TreeItem item = (TreeItem) event.item;
 String text = String.valueOf(event.index);
-for (int i = 0; i
-<= columns; i++) {
+for (int i = 0; i <= columns; i++) {
 item.setText(i, text);
 }
 

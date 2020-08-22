@@ -1,16 +1,11 @@
 BIDI: StyledText has problem with drawing of selection in both ltr and rtl orientation of this widget in the bidi locale.
-This problem was reported in the  bug 30434 .
-Vertical line, which has width of
+This problem was reported in the  bug 30434 . Vertical line, which has width of
 some pixels, sometimes remains with it's current background between two
-selected characters.
-We suggested to solve it by widening of area, which should
-be redraw, by some pixels.
-Lynne Kues wrote in the  comment #43  to  bug 30434 ,
+selected characters. We suggested to solve it by widening of area, which should
+be redraw, by some pixels. Lynne Kues wrote in the  comment #43  to  bug 30434 ,
 that "...After much discussion, we've decided StyledText needs to work around
-Bug 37427 / Bug 4776 .
-We will put back the magic + 1 in StyledText.redraw
-(int,int,int,int, boolean)".
-In the code of StyledText it seems as follow:
+Bug 37427 / Bug 4776 . We will put back the magic + 1 in StyledText.redraw
+(int,int,int,int, boolean)". In the code of StyledText it seems as follow:
 if (isBidi()) {
 // workaround for  bug 4776
 super.redraw(x, y, width + 1, height, all);

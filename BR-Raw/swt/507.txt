@@ -1,13 +1,10 @@
 [Browser] After clicking certain links, mouse/key events are not sent anymore
 Build Identifier: SWT N20101017-2000
 When adding input events to trigger certain actions, they stop working after a link calling a JS action is clicked.
-This was tested with a recent nightly build and 3.6, both have the issue.
-I only tried with IE.
+This was tested with a recent nightly build and 3.6, both have the issue. I only tried with IE.
 For some users, this can be very problematic.
 Reproducible: Always
 Steps to Reproduce:
-1.Create a Browser with mouse/key listeners.
-2.invoke a link in the form
-<a href="javascript:void(0)"> or
-<a href="javascript:alert('a text')">
-3.Click/type in the browser: events are not sent anymore.
+1. Create a Browser with mouse/key listeners.
+2. invoke a link in the form <a href="javascript:void(0)"> or <a href="javascript:alert('a text')">
+3. Click/type in the browser: events are not sent anymore.

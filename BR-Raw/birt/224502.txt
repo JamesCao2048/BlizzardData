@@ -1,14 +1,2 @@
 Bug 224502 BIRT aggregate dialog "Data Field" label incorrect
-Open or create a BIRT report.
-Add a table.
-Open the Bindings tab in the table property editor.
-Click on the "Add Aggregate" button to add an aggregate.
-Notice that the fifth field is "Data Field:" This is a bit of a misnomer.
-Using the expression builder, I can reference a data field.
-I can call a JavaScript function.
-I can reference a column binding.
-Or, I can create an expression that includes all of the above.
-"Expression:" would be a better name for this label.
-Or perhaps "Value:".
-Or even the awkward "Value Expression:".
-These names will better suggest to the user that this field can hold an expression.
+Open or create a BIRT report. Add a table. Open the Bindings tab in the table property editor. Click on the "Add Aggregate" button to add an aggregate. Notice that the fifth field is "Data Field:" This is a bit of a misnomer. Using the expression builder, I can reference a data field. I can call a JavaScript function. I can reference a column binding. Or, I can create an expression that includes all of the above. "Expression:" would be a better name for this label. Or perhaps "Value:". Or even the awkward "Value Expression:". These names will better suggest to the user that this field can hold an expression.

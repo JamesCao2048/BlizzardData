@@ -1,5 +1,4 @@
 getCharCount() in Combo throws NullPointerException
 The internal method getCharCount in the Combo widget on Mac OS X throws nullpointer if 'NSString str' stays null, which gets its content from view.titleOfSelectedItem() because I believe no item was selected.
-We experience when call getSelection() on a fresh Combo Widget.
-getSelection calls getCharCount() and throws a nullpointer.
+We experience when call getSelection() on a fresh Combo Widget. getSelection calls getCharCount() and throws a nullpointer.
 getCharCount should check for null and return 0 in this case I believe.

@@ -1,9 +1,2 @@
 Bug 200524 Repeated Header in Table after Pagebreak in PDF
-A duplicate header is shown in a table in a PDF-Report.
-The header is repeated in the case when the previous report element has the style 'pagebreak-after: avoid' and the following table does not fit completely on the page.
-The table together with the previous element is moved to the next page and the header is repeated where the original pagebreak would be.
-The expected result should be, that there is a pagebreak within the table.
-The attached report demonstrates the problem.
-The heading has the style 'pagebreak-after: avoid' and the following table does not fit completely on the page.
-Everything is moved to the next page and the header is repeated.
-Removing 'pagebreak: avoid' from the heading shows the result as it should be.
+A duplicate header is shown in a table in a PDF-Report. The header is repeated in the case when the previous report element has the style 'pagebreak-after: avoid' and the following table does not fit completely on the page. The table together with the previous element is moved to the next page and the header is repeated where the original pagebreak would be. The expected result should be, that there is a pagebreak within the table. The attached report demonstrates the problem. The heading has the style 'pagebreak-after: avoid' and the following table does not fit completely on the page. Everything is moved to the next page and the header is repeated. Removing 'pagebreak: avoid' from the heading shows the result as it should be.

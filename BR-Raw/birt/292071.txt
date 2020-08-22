@@ -1,22 +1,4 @@
 Bug 292071 Mixed-page render performance
-When I create a report that contains both a table and a chart (of the same data set), the preview render is incredibly slow, database server churns amazingly.
-Haven't tried this in production, yet ...
-I'm afraid to! Here are some numbers, to give you scale on those adverbs: To retrieve the data set directly from the database (command-line mysql):
-- 4.92 seconds
-- mysqld running the whole time at 98% CPU To retrieve the data set into the BIRT Data Set preview (in the Data Set Editor):
-- 10 seconds
-- mysqld: 98% CPU To render a report containing only the table of values:
-- 11 seconds / 98% To render a report containing only the chart of values:
-- 12 seconds / 98% OK, those are all within reasonable range of each other.
-But now: To render a report containing both a table and a chart of the same data set:
-- 140 seconds
-- mysqld churning at 180% CPU (it's a 2-core system) I don't seem to by doing much disc I/O during that long processing.
-I'm forced to suspect that the table-plus-chart report is posting the query many times, not just once or twice.
-Or, perhaps it's removing part of my query?
-Might this be some botch in the way I created the report?
-Is there something else I can do about it?
-Some of those details that make life worthwhile: All operations (database, Eclipse) on one box:
-- 2.66 GHz Intel Core 2 Duo, 8GB RAM, SSD BIRT: 2.5.1.v20090624 Eclipse: 3.5.1.R35x_v2009 MySQL: 5.1.37 JDBC: mysql-connector-java-5.1.10-bin.jar Query: select count(1) 'Count', component 'Component' from access natural join componentDIM group by 2 order by 1 desc limit 20 (yes, the "limit 20" is in the query defined in the Data Set Editor, and I notice the editor doesn't color-code "limit 20" as if it knew it was SQL) rows in table access: about 7M rows in the data set if you remove the limit: 201 Time to do the unlimited query from command-line: 128 seconds So I guess the "render report with both table and chart" time is roughly comparable to the "query without the limit clause" time, and maybe the problem is not multiple queries but incomplete query spec?
--- Configuration Details
--- Product: Eclipse 1.2.1.20090812-1036 (org.eclipse.epp.package.jee.product) Installed Features: org.eclipse.pde 3.5.1.R35x_v20090811-7Z7_F9zFDX-aT6Ywvh8_S93 All operations (database, Eclipse) on one box:
-- 2.66 GHz Intel Core 2 Duo, 8GB RAM, SSD BIRT: 2.5.1.v20090624 Eclipse: 3.5.1.R35x_v2009 MySQL: 5.1.37 JDBC: mysql-connector-java-5.1.10-bin.jar
+When I create a report that contains both a table and a chart (of the same data set), the preview render is incredibly slow, database server churns amazingly. Haven't tried this in production, yet ... I'm afraid to! Here are some numbers, to give you scale on those adverbs: To retrieve the data set directly from the database (command-line mysql): - 4.92 seconds - mysqld running the whole time at 98% CPU To retrieve the data set into the BIRT Data Set preview (in the Data Set Editor): - 10 seconds - mysqld: 98% CPU To render a report containing only the table of values: - 11 seconds / 98% To render a report containing only the chart of values: - 12 seconds / 98% OK, those are all within reasonable range of each other. But now: To render a report containing both a table and a chart of the same data set: - 140 seconds - mysqld churning at 180% CPU (it's a 2-core system) I don't seem to by doing much disc I/O during that long processing. I'm forced to suspect that the table-plus-chart repo
+rt is posting the query many times, not just once or twice. Or, perhaps it's removing part of my query? Might this be some botch in the way I created the report? Is there something else I can do about it? Some of those details that make life worthwhile: All operations (database, Eclipse) on one box: - 2.66 GHz Intel Core 2 Duo, 8GB RAM, SSD BIRT: 2.5.1.v20090624 Eclipse: 3.5.1.R35x_v2009 MySQL: 5.1.37 JDBC: mysql-connector-java-5.1.10-bin.jar Query: select count(1) 'Count', component 'Component' from access natural join componentDIM group by 2 order by 1 desc limit 20 (yes, the "limit 20" is in the query defined in the Data Set Editor, and I notice the editor doesn't color-code "limit 20" as if it knew it was SQL) rows in table access: about 7M rows in the data set if you remove the limit: 201 Time to do the unlimited query from command-line: 128 seconds So I guess the "render report with both table and chart" time is roughly comparable to the "query without the limit clause" time, and
+maybe the problem is not multiple queries but incomplete query spec? -- Configuration Details -- Product: Eclipse 1.2.1.20090812-1036 (org.eclipse.epp.package.jee.product) Installed Features: org.eclipse.pde 3.5.1.R35x_v20090811-7Z7_F9zFDX-aT6Ywvh8_S93 All operations (database, Eclipse) on one box: - 2.66 GHz Intel Core 2 Duo, 8GB RAM, SSD BIRT: 2.5.1.v20090624 Eclipse: 3.5.1.R35x_v2009 MySQL: 5.1.37 JDBC: mysql-connector-java-5.1.10-bin.jar

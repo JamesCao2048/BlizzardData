@@ -1,5 +1,4 @@
 Extremely jumpy resizing in the ControlExample
 3.1RC2, GTK+ 2.6.7
-Bug 97697  removed a call to gtk_fixed_set_has_window() in Group.
-For some
+Bug 97697  removed a call to gtk_fixed_set_has_window() in Group.  For some
 reason, this change causes the ControlExample to flicker wildly as it is resized.

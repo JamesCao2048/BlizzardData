@@ -1,3 +1,2 @@
 Bug 259552 Pb with text-indent in dynamic text
-I upgraded recently from 2.2.2 to 2.3.1.The text-indent worked well in 2.2.2 It seems that there is a regression bug in 2.3.1: the beginning of the first line is well shifted, but the end of this line is truncated.
-I use the PDF renderer for the printing.
+I upgraded recently from 2.2.2 to 2.3.1. The text-indent worked well in 2.2.2 It seems that there is a regression bug in 2.3.1: the beginning of the first line is well shifted, but the end of this line is truncated. I use the PDF renderer for the printing.

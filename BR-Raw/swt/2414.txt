@@ -1,11 +1,8 @@
 Failed to execute runnable (java.lang.ArrayIndexOutOfBoundException) in debug mode
 Build id: I20060412-0847
-To reproduce run any snippet in debug mode (i ran snippet229).
-Expand some variable names, click on some random variables and then click on variable 'this' a couple times, the exception will show.
-Failed to execute runnable(java.lang.ArrayIndexOutOfBoundException:
--1)
-org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.ArrayIndexOutOfBoundsException:
--1)
+To reproduce run any snippet in debug mode (i ran snippet229). Expand some variable names, click on some random variables and then click on variable 'this' a couple times, the exception will show.
+Failed to execute runnable(java.lang.ArrayIndexOutOfBoundException: -1)
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.ArrayIndexOutOfBoundsException: -1)
 at org.eclipse.swt.SWT.error(SWT.java:3374)
 at org.eclipse.swt.SWT.error(SWT.java:3297)
 at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:126)
@@ -29,8 +26,7 @@ at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
 at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
 at org.eclipse.core.launcher.Main.run(Main.java:977)
 at org.eclipse.core.launcher.Main.main(Main.java:952)
-Caused by: java.lang.ArrayIndexOutOfBoundsException:
--1
+Caused by: java.lang.ArrayIndexOutOfBoundsException: -1
 at org.eclipse.swt.widgets.Tree.redrawItem(Tree.java:3024)
 at org.eclipse.swt.widgets.Tree.checkData(Tree.java:263)
 at org.eclipse.swt.widgets.TreeItem.getBounds(TreeItem.java:800)
@@ -41,4 +37,4 @@ at org.eclipse.debug.internal.ui.viewers.AsynchronousTreeModel.setIsContainer(As
 at org.eclipse.debug.internal.ui.viewers.ContainerRequestMonitor.performUpdate(ContainerRequestMonitor.java:45)
 at org.eclipse.debug.internal.ui.viewers.AsynchronousRequestMonitor$1.runInUIThread(AsynchronousRequestMonitor.java:51)
 at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:94)
-at
+at org

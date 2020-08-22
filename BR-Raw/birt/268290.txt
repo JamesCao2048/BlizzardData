@@ -1,7 +1,2 @@
 Bug 268290 Enhance to support page-break-inside in Crosstab [1302]
-Description: Enhance to support page-break-inside in Crosstab.
-Build number: 2.5.0.v20090312-0630 Steps to reproduce: 1.New a report with a crosstab binding to the data cube.
-2.Set page-break for row/column area.
-Expected result: Support page-break-inside in Crosstab as support page-break-inside in table.
-Actual result: Only support page-break-before and page-break-after in Crosstab.
-Error log: N/A
+Description: Enhance to support page-break-inside in Crosstab. Build number: 2.5.0.v20090312-0630 Steps to reproduce: 1. New a report with a crosstab binding to the data cube. 2. Set page-break for row/column area. Expected result: Support page-break-inside in Crosstab as support page-break-inside in table. Actual result: Only support page-break-before and page-break-after in Crosstab. Error log: N/A

@@ -1,6 +1,5 @@
 ScrollBar works incorrectly with StyledText
 Created  attachment 100806   [details]
 Fix for ScrollBar (setValues() and setEnabled() implementations)
-Being used with StyledText ScrollBar flashes on every typed char.
-Also if the document has smaller size than StyledText's height the vertical scroll bar is not disabled.
+Being used with StyledText ScrollBar flashes on every typed char. Also if the document has smaller size than StyledText's height the vertical scroll bar is not disabled.
 The attached patch provides a fix (the problem was in incorrect implementation of ScrollBat.setValues() and commented out contents of setEnabled()).

@@ -3,5 +3,4 @@ Eclipse 3.4.2 and 3.5, Linux GTK
 - add a dispose listener to a composite
 - call fComposite.getAccessible().removeAccessibleListener()
 Actual results:
-A NPE is thrown because accessibleListener is null at the time when the dispose listener is called.
-This is because another dispose listener sets accessibleListeners to NULL before our listener is called.
+A NPE is thrown because accessibleListener is null at the time when the dispose listener is called. This is because another dispose listener sets accessibleListeners to NULL before our listener is called.

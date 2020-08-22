@@ -1,23 +1,18 @@
 SWT Cocoa should not change Cocoa cell classes permanently
 Build Identifier: SWT Cocoa 3.7.1
-In its org.eclipse.swt.widgets.Display.initClasses method, SWT Cocoa registers various cell subclasses (e.g.
-SWTAccessibleNSTextFieldCell) and replaces Cocoa cell classes (NSTextField.setCellClass) permanently.
-This is fine if all the UI controls are created and managed by SWT.
-However, it will impact all native code that create these Cocoa controls at run time and can cause unexpected behaviors like repainting issues.
+In its org.eclipse.swt.widgets.Display.initClasses method, SWT Cocoa registers various cell subclasses (e.g. SWTAccessibleNSTextFieldCell) and replaces Cocoa cell classes (NSTextField.setCellClass) permanently.
+This is fine if all the UI controls are created and managed by SWT. However, it will impact all native code that create these Cocoa controls at run time and can cause unexpected behaviors like repainting issues.
 For example, if we run below code:
 id o = [[NSTextField alloc] init];
 Within SWT, [[o cell] class] will be SWTAccessibleNSTextFieldCell rather than NSTextFieldCell (the default).
 There are two possible fixes:
-1.Instead of calling setCellClass, provide an override of the cellClass method for the control subclass, i.e.
-(pseudo code):
+1. Instead of calling setCellClass, provide an override of the cellClass method for the control subclass, i.e. (pseudo code):
 class SWTTextField {
 int cellClass() {
-return
-<SWTAccessibleNSTextFieldCell class>;
+return <SWTAccessibleNSTextFieldCell class>;
 }
 };
-2.Only change the control cell class before creating the control and restore back after the control is created, i.e.
-(pseudo code):
+2. Only change the control cell class before creating the control and restore back after the control is created, i.e. (pseudo code):
 int cls = NSTextField.cellClass();
 NSTextField.setCellClass(<SWTAccessibleNSTextFieldCell class>);
 NSTextField textWidget = (NSTextField)new SWTTextField().alloc();

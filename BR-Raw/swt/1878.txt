@@ -2,10 +2,5 @@ Modal behavior on GTK when I ask for modeless
 If you do something simple like this on GTK:
 Shell shell = new Shell(parentShell, SWT.CLOSE | SWT.MODELESS);
 shell.open();
-where the parent shell is a workbench window, you see a dialog and you can still access the workbench.
-So far so good.
-Now try it where the parent shell is a modal dialog, like the New Project wizard
-- you see the shell, but it blocks the wizard (it is modal).
-So it seems to depends on the context.
-This is causing problems with the existing context help window: Open the New Project wizard and hit Shift-F1, then try to follow the steps in a help page; you can't because you can't go back to the wizard unless you close the help window.
-We're going to be bringing cheat sheets right up to dialogs in 3.2 so that you can follow along, but this is preventing us from doing so in GTK, which is why I mark it as major.
+where the parent shell is a workbench window, you see a dialog and you can still access the workbench. So far so good. Now try it where the parent shell is a modal dialog, like the New Project wizard - you see the shell, but it blocks the wizard (it is modal). So it seems to depends on the context.
+This is causing problems with the existing context help window: Open the New Project wizard and hit Shift-F1, then try to follow the steps in a help page; you can't because you can't go back to the wizard unless you close the help window. We're going to be bringing cheat sheets right up to dialogs in 3.2 so that you can follow along, but this is preventing us from doing so in GTK, which is why I mark it as major.

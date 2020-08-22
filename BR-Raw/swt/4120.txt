@@ -1,6 +1,4 @@
 StyledText - Put back double buffering
 Changes that have been made in Eclipse have improved scrolling but typing still
-remains flashy due to unnecessary style setting.
-Put double buffering back in
-in all instances.
-Felipe checked performance and gave the okay on it.
+remains flashy due to unnecessary style setting.  Put double buffering back in
+in all instances.  Felipe checked performance and gave the okay on it.

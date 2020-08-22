@@ -1,10 +1,8 @@
 Shells assuming SWT.RESIZE on GTK and Motif (BBAWT)
 On Windows, if you create a Shell without the SWT.RESIZE flag, the shell is
-*not* resizeable.
-However, on GTK *and* Motif, the shell is resizeable.
+*not* resizeable.  However, on GTK *and* Motif, the shell is resizeable.
 SWT version 3.002
-In the following testcase, click on the "open dialog" button.
-The child shell
+In the following testcase, click on the "open dialog" button.  The child shell
 should not be resizeable since RESIZE was not used, but both Motif and GTK use a
 resizeable shell.
 === testcase ===

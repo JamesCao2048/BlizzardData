@@ -1,5 +1,3 @@
 Accessible should not add dispose listener to its control
-In the GTk implementation of accessibility, a dispose listener is added to the Accessible's control right in the Accessible constructor in order to do cleanup when the control is disposed.
-All of the other platforms call internal_dispose_Accessible from inside releaseWidget.
-GTk should use the same release/cleanup mechanism as the other platforms.
+In the GTk implementation of accessibility, a dispose listener is added to the Accessible's control right in the Accessible constructor in order to do cleanup when the control is disposed. All of the other platforms call internal_dispose_Accessible from inside releaseWidget. GTk should use the same release/cleanup mechanism as the other platforms.
 This cannot be fixed right now because it involves adding a public method (even though it is "internal", it will be flagged by the API tooling, and no new API is allowed in now)

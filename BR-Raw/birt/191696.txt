@@ -1,6 +1,2 @@
 Bug 191696 WordUtil is getScreenResolution()-dependent
-WordUtil class, in org.eclipse.birt.report.engine.emitter.wpml package, makes the following call to the getScreenResolution() method: public final static double INCH_PX = java.awt.Toolkit.getDefaultToolkit ( ).getScreenResolution ( ); which makes it dependent on Java runtime being non-headless.
-When run on JVM with
--Djava.awt.headless=true, an java.awt.HeadlessException is thrown.
-It makes impossible to use BIRT on non-X Linux environment.
-Maybe there should be a default value of INCH_PX variable?
+WordUtil class, in org.eclipse.birt.report.engine.emitter.wpml package, makes the following call to the getScreenResolution() method: public final static double INCH_PX = java.awt.Toolkit.getDefaultToolkit ( ).getScreenResolution ( ); which makes it dependent on Java runtime being non-headless. When run on JVM with -Djava.awt.headless=true, an java.awt.HeadlessException is thrown. It makes impossible to use BIRT on non-X Linux environment. Maybe there should be a default value of INCH_PX variable?

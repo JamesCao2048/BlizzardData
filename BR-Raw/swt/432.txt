@@ -3,22 +3,15 @@ Received via email:
 ===========================================
 - Unzip "TestSWTAWTApplet.zip"
 - cd TestSWTAWTApplet
-- ant
--f build.xml
+- ant -f build.xml
 - Go to "/Applications/Utilities/Java Preferences.app" and check "Run
 applets in their own process".
 - open SWTAWTAppletMac.html
-It uses SWT 3.7M5, 32-bit (JVM is forced with
--d32, even in 64-bit systems).
-The default test page is a full-screen Flash animation with sound, but you can change it to anything you like in the HTML applet params.
-e.g.: " http://www.adobe.com/software/flash/about/ " to actually see html and Flash in the same page.
+It uses SWT 3.7M5, 32-bit (JVM is forced with -d32, even in 64-bit systems). The default test page is a full-screen Flash animation with sound, but you can change it to anything you like in the HTML applet params. e.g.: " http://www.adobe.com/software/flash/about/ " to actually see html and Flash in the same page.
 ===========================================
-When 'Run applets in their own process' is checked you are using the new Plugin2 which runs applets in their own process instead of in the browser.
-Once you do that:
+When 'Run applets in their own process' is checked you are using the new Plugin2 which runs applets in their own process instead of in the browser. Once you do that:
 - Click on the 'Some Swing  Button'
 - Hold down the command key and a window title bar should appear at the top of the applet.
 - Drag the window away from the browser.
 - Now drag the window back into the browser.
-===> Check the Java console.
-You should see exceptions.
-The applet should also stop updating and stop responding to clicks.
+===> Check the Java console. You should see exceptions. The applet should also stop updating and stop responding to clicks.

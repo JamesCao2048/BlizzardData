@@ -4,8 +4,8 @@ My mozilla version:
 Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.6) Gecko/20091216 Fedora/3.5.6-1.fc12 Firefox/3.5.6
 Reproducible: Always
 Steps to Reproduce:
-1.Open some URI, which contains web form
-2.Fill and submit the form with some values, to get errors by web page
-3.Click refresh
-4.Browser should ask you 'To display this page, application must send information that will repeat any action (such as a search or order information) that was performed earlier'
-5.Select 'Cancel'
+1. Open some URI, which contains web form
+2. Fill and submit the form with some values, to get errors by web page
+3. Click refresh
+4. Browser should ask you 'To display this page, application must send information that will repeat any action (such as a search or order information) that was performed earlier'
+5. Select 'Cancel'

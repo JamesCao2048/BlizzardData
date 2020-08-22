@@ -1,9 +1,2 @@
 Bug 287534 [regression]Cannot dataset select columns from expression builder when add filter[0802]
-Description: No dataset columns in expression builder for choose when try to add a dataset filter or cube dataset filter Build number:2.5.1.v200908250630 Steps to reproduce: 1.New sample data source.
-2.New a dataset, input query text, select Filter, click add and try to add dataset column from expression builder.
-No available datasets in expression builder Category.
-3.New a cube, keep default dataset untouched, click filter, no available datasets in expression builder, either.
-Expected result: Expression builder provides available datasets item for choose.
-Actual result: In step2, no such item.
-In step3, if you re-select the default dataset, then available datasets item will show up in expression builder-category.
-Error log:n/a
+Description: No dataset columns in expression builder for choose when try to add a dataset filter or cube dataset filter Build number:2.5.1.v200908250630 Steps to reproduce: 1. New sample data source. 2. New a dataset, input query text, select Filter, click add and try to add dataset column from expression builder. No available datasets in expression builder Category. 3. New a cube, keep default dataset untouched, click filter, no available datasets in expression builder, either. Expected result: Expression builder provides available datasets item for choose. Actual result: In step2, no such item. In step3, if you re-select the default dataset, then available datasets item will show up in expression builder-category. Error log:n/a

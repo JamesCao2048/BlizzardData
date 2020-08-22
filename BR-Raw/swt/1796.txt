@@ -1,12 +1,6 @@
 up/down arrows don't work in a combobox on Linux
 Eclipse 3.3 M5eh (I20070222-0951)
-Up and down keyboard keys don't work in a combobox.
-To reproduce:
-1.Open Find dialog in text editor.
-Search for something.
-Close the dialog.
-2.Open Find dialog again.
-Type something else in Find combobox.
-Press down arrow key.
-Noting happens.
-Expected behavior is scrolling to the previous search string.
+Up and down keyboard keys don't work in a combobox. To reproduce:
+1. Open Find dialog in text editor. Search for something. Close the dialog.
+2. Open Find dialog again. Type something else in Find combobox. Press down arrow key.
+Noting happens. Expected behavior is scrolling to the previous search string.

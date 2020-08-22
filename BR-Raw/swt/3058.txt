@@ -1,7 +1,6 @@
 Use GDK_HAND2 instead of GDK_HAND1 for SWT.CURSOR_HAND
-A common use for the hand cursor is for use with links as in a web browser.
-The
+A common use for the hand cursor is for use with links as in a web browser.  The
 cursor used by default for links in Mozilla Firefox looks like GDK_HAND2, while
-currently we use the right-pointing hand, GDK_HAND1. It would be nicer to
+currently we use the right-pointing hand, GDK_HAND1.  It would be nicer to
 follow Mozilla on this one, as the hand cursor we currently use often looks out
 of place.

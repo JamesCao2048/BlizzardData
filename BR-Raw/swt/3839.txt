@@ -1,8 +1,7 @@
 DCR - Tree.getTopItem/setTopItem
 build 20021001
 To better restore the last UI state we would like to have a
-Tree.getTopIndex/setTopIndex API that works just like the Table API.
-I.e.,
+Tree.getTopIndex/setTopIndex API that works just like the Table API. I.e.,
 based on the current visible items return/set the index of the topmost visible
 item.
 See also  bug 4676 .

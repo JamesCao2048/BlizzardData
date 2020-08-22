@@ -1,14 +1,9 @@
 SWT printing snippet not working on MacOS X
-I'm currently working with a few people on a SWT project where printing is needed.
-We are developing
-for the MacOS X 10.3.3 platform.
-Currently we're having trouble in implementing swt printing in our
-project.
-We then looked for some examples on swt printing and found this:  http://dev.eclipse.org/
+I'm currently working with a few people on a SWT project where printing is needed. We are developing
+for the MacOS X 10.3.3 platform. Currently we're having trouble in implementing swt printing in our
+project. We then looked for some examples on swt printing and found this:  http://dev.eclipse.org/
 viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet132.html?rev=1.3&content-
-type=text/plain .
-We tried to run this on our target platform but were not successfull.
-What we get is
+type=text/plain . We tried to run this on our target platform but were not successfull. What we get is
 the following NullPointerException on stringExtent():
 Exception in thread "main" java.lang.NullPointerException
 at org.eclipse.swt.graphics.GC.setString(GC.java:2033)
@@ -16,10 +11,6 @@ at org.eclipse.swt.graphics.GC.textExtent(GC.java:2145)
 at org.eclipse.swt.graphics.GC.stringExtent(GC.java:2085)
 at Main.main(Main.java:45)
 We also tried to run the example without getExtent() and failed also with a NullPointerException on
-drawString() .
-Are there any issues with GC on MacOS X?
-On a win32 machine everything worked fine.
-Are there any fixes for this?
-We are really pressed with this and would be glad if there was a bugfix or
-some help with this issue.
-Also, would it be possible to use AWT printing in a SWT project?
+drawString() . Are there any issues with GC on MacOS X? On a win32 machine everything worked fine.
+Are there any fixes for this? We are really pressed with this and would be glad if there was a bugfix or
+some help with this issue. Also, would it be possible to use AWT printing in a SWT project?

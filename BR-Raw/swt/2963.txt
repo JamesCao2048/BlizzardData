@@ -1,6 +1,5 @@
 Table not visible
-For some reason, I can't see the table when I run this code.
-It works fine on
+For some reason, I can't see the table when I run this code.  It works fine on
 GTK+ and Win32.
 Shell shell = new Shell(display);
 Text text = new Text(shell, SWT.NONE);

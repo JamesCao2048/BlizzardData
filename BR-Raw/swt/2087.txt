@@ -1,22 +1,15 @@
 Draw2D fails to print on Mac OSX 10.3
-I am trying to print out a figure using Draw2D.
-I have the  code working under Windows XP.
-It is a
-standalone application using SWT (3062) and the Draw2D jar (3.0.0).
-The code is below (it's sloppy, but
-this is just a prototyping application to make sure everything works).
-The interesting part is:
+I am trying to print out a figure using Draw2D.  I have the  code working under Windows XP.  It is a
+standalone application using SWT (3062) and the Draw2D jar (3.0.0).  The code is below (it's sloppy, but
+this is just a prototyping application to make sure everything works).  The interesting part is:
 PrintDialog dialog = new PrintDialog(this.getShell(), SWT.NULL);
 Printer printer = new Printer(dialog.open());
 PrintFigureOperation pfo = new PrintFigureOperation(printer, c);
 pfo.run("TEST PRINT JOB");
-This run method "hangs" the application.
-I've tried debugging it and it looks like it's just printing really
-slowly down int the JNI code, but I'm not sure about that.
-Anyway, I haven't gotten it to print anything
+This run method "hangs" the application.  I've tried debugging it and it looks like it's just printing really
+slowly down int the JNI code, but I'm not sure about that.  Anyway, I haven't gotten it to print anything
 yet on Mac OS X even after wait for about 10 minutes (on a really simple figure) so I know something is
-wrong there.
-Let me know if I'm doing something wrong with the code ...
+wrong there.  Let me know if I'm doing something wrong with the code ...
 File NewSWTApp.java
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Display;
@@ -51,11 +44,9 @@ import org.eclipse.draw2d.geometry.*;
 /**import org.
 * This code was generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
-* use.
-If Jigloo is being used commercially (ie, by a
+* use. If Jigloo is being used commercially (ie, by a
 * for-profit company or business) then you should purchase
-* a license
-- please visit www.cloudgarden.com for details.
+* a license - please visit www.cloudgarden.com for details.
 */
 public class NewSWTApp extends org.eclipse.swt.widgets.Composite {
 private Scale scale1;
@@ -73,4 +64,4 @@ private MenuItem exitMenuItem;
 private MenuItem closeFileMenuItem;
 private MenuItem saveFileMenuItem;
 private MenuItem newFileMenuItem;
-private MenuItem openFileM
+private MenuItem openFileMe

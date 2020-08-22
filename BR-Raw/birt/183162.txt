@@ -1,8 +1,2 @@
 Bug 183162 OutOfMemoryError
-In some case (depends on data), during the design or even in the web viewer, an outOfMemoryError occured when try to creates / display a chart (bar, line, scatter) with these kind of values : X = toto for example ;) Y =
--45000000 Error with 2.1.1 or 2.2 M6.After some little search, it seems that it comes from the Autoscale class which tries to computeTicks with a step of 1 (=> initialization of a double[90000000]).
-I suggest when min = max, to set the min or max value to 0.The step is then, well computed.
-Just for my comprehension, i'm not sure the getPrecision method works fine or comments are not synchronise with the code:
-- I always get a NaN for negative values (abs on log(value)),
-- The while that verify precision always return 1 (precision /= 10 ...)
-- The return value is supposed to be a 10 power.
+In some case (depends on data), during the design or even in the web viewer, an outOfMemoryError occured when try to creates / display a chart (bar, line, scatter) with these kind of values : X = toto for example ;) Y = -45000000 Error with 2.1.1 or 2.2 M6. After some little search, it seems that it comes from the Autoscale class which tries to computeTicks with a step of 1 (=> initialization of a double[90000000]). I suggest when min = max, to set the min or max value to 0. The step is then, well computed. Just for my comprehension, i'm not sure the getPrecision method works fine or comments are not synchronise with the code: - I always get a NaN for negative values (abs on log(value)), - The while that verify precision always return 1 (precision /= 10 ...) - The return value is supposed to be a 10 power.

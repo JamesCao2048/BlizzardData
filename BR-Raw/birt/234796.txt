@@ -1,6 +1,2 @@
 Bug 234796 [Regression]DateTime format in html is different with in XLS
-Description: DateTime format in HTML is different with in XLS.
-build version:2.3.0.v20080530-1410 Steps to reproduce: 1.A Date in dataset which value is "2003-01-06".
-Set format on the data, the format like "May 30,2008 4:52:50PM GMT+8:00", preview in HTML, the output is "January 6, 2003 12:00:00 AM GMT+08:00".
-While preview in XLS, the output is "January 6, 2003 0:00:00 az".
-Preview in other output, the format is as HTML.
+Description: DateTime format in HTML is different with in XLS. build version:2.3.0.v20080530-1410 Steps to reproduce: 1.A Date in dataset which value is "2003-01-06". Set format on the data, the format like "May 30,2008 4:52:50PM GMT+8:00", preview in HTML, the output is "January 6, 2003 12:00:00 AM GMT+08:00". While preview in XLS, the output is "January 6, 2003 0:00:00 az". Preview in other output, the format is as HTML.

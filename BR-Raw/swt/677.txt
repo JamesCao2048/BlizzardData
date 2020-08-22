@@ -1,9 +1,7 @@
 [Program] VM crash in SWT native code while importing preferences
 Build Identifier: I20100312-1448
-I created a new workspace and tried to import my preferences.
-This resulted in a VM crash.
-hs_err log and preferences file attached.
+I created a new workspace and tried to import my preferences. This resulted in a VM crash. hs_err log and preferences file attached.
 Reproducible: Always
 Steps to Reproduce:
-1.Create a new workspace
-2.Attempt to import the attached preferences files
+1. Create a new workspace
+2. Attempt to import the attached preferences files

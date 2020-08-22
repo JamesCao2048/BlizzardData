@@ -16,8 +16,7 @@ anything.
 This is problematic; in the testcase, item 4 is the only selected
 item initially and it has the focus rectangle too, so the user can
 reasonably expect that extending the selection range will begin
-at that item.
-And it does, but only if the user has selected the item
+at that item. And it does, but only if the user has selected the item
 manually, not when it's done via a Table.setSelection(...) call.
 Programmatic and manual selection should, where possible, result in
 the same adjustment of the anchor index/item.
@@ -34,8 +33,7 @@ shell.setLayout(new FillLayout());
 
 Table tbl = new Table(shell, SWT.MULTI);
 
-for (int idx = 0; idx
-< 10; idx++) {
+for (int idx = 0; idx < 10; idx++) {
 new TableItem(tbl, SWT.NONE).setText("Item " + idx);
 }
 

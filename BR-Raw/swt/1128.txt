@@ -1,9 +1,6 @@
 Null pointer resizing fast view
 I20090312-0100
-Make the "Problems View" a Fast View.
-Select the "Error Log".
-Show the "Problems View".
-Try to resize it by grabbing the sash over the "Error Log" view.
+Make the "Problems View" a Fast View. Select the "Error Log". Show the "Problems View". Try to resize it by grabbing the sash over the "Error Log" view.
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Sash.mouseDown(Sash.java:354)
 at org.eclipse.swt.widgets.Display.windowDelegateProc(Display.java:4254)

@@ -1,12 +1,7 @@
 Controls in shell blocked by a modal shell still scroll via the scroll wheel
 I20080415-1646
-The following snippet shows the problem.
-When the shells are up, click on the shell underneith.
-Note that it doesn't get focus.
-Now (while the mouse is still over this bottom shell) use the scroll the scrollwheel.
-It should scroll.
-SYSTEM_MODAL causes the same behaviour.
-I cant reproduce this behaviour on Windows or in other OS X applications with Modal dialogs (Safari File->Export for instance)
+The following snippet shows the problem.  When the shells are up, click on the shell underneith.  Note that it doesn't get focus.  Now (while the mouse is still over this bottom shell) use the scroll the scrollwheel.  It should scroll.
+SYSTEM_MODAL causes the same behaviour.  I cant reproduce this behaviour on Windows or in other OS X applications with Modal dialogs (Safari File->Export for instance)
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridLayout;

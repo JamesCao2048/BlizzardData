@@ -1,23 +1,17 @@
 crash in Safari browser while handling key events
 In eclipse:
-1
-- open content assist
-2
-- select a content assist item that open the second content assist window
-3
-- click in the second content assist window
-4
-- press escape to dismiss second content assist window
-5
-- type the word "crash"
+1 - open content assist
+2 - select a content assist item that open the second content assist window
+3 - click in the second content assist window
+4 - press escape to dismiss second content assist window
+5 - type the word "crash"
 Process:         eclipse [6615]
 Path:            /Users/kevinbarnes/Eclipse/eclipse/Eclipse.app/Contents/MacOS/eclipse
 Identifier:      org.eclipse.eclipse
 Version:         3.4 (3.4)
 Code Type:       PPC (Native)
 Parent Process:  launchd [76]
-Date/Time:       2008-05-14 11:06:59.241
--0400
+Date/Time:       2008-05-14 11:06:59.241 -0400
 OS Version:      Mac OS X 10.5.2 (9C7010)
 Report Version:  6
 Exception Type:  EXC_BAD_ACCESS (SIGBUS)
@@ -26,8 +20,7 @@ Crashed Thread:  0
 Application Specific Information:
 Java information:
 Version: Java HotSpot(TM) Client VM (1.5.0_13-119 mixed mode, sharing)
-Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_13-119) for macosx-ppc, built on Sep 28 2007 23:55:48 by root with gcc 4.0.1 (Apple Inc.
-build 5465)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_13-119) for macosx-ppc, built on Sep 28 2007 23:55:48 by root with gcc 4.0.1 (Apple Inc. build 5465)
 Exception type: Bus Error (0xa) at pc=0x912c41b0
 Current thread (0x01001670):  JavaThread "main" [_thread_in_native, id=-1600085900]
 Stack: [0xbf800000,0xc0000000)
@@ -51,4 +44,4 @@ j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(L
 j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
 j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
 j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
-v  ~StubRo
+v  ~StubRoutines

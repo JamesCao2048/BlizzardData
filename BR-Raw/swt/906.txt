@@ -4,14 +4,12 @@ Java source which illustrates problem.
 Build ID: 3.5M6
 Steps To Reproduce:
 On SWT, on Cocoa:
-1.Set up a display Transform with negative, fractional translation
-2.Get the current GC clip rectangle, with "oldClip = getClipping()"
-3.(optionally) change the clipping, and draw other stuff.
-(Other stuff draws okay.)
-4.Attempt to restore clipping with "setClipping(oldClip)"
+1. Set up a display Transform with negative, fractional translation
+2. Get the current GC clip rectangle, with "oldClip = getClipping()"
+3. (optionally) change the clipping, and draw other stuff. (Other stuff draws okay.)
+4. Attempt to restore clipping with "setClipping(oldClip)"
 => CLIP REGION GETS SCREWED UP
 More information:
 Note that changing the initial clip region (by resizing the window) causes the effect to change.
 Java file attached which illustrates the problem.
-Carbon does not exhibit the same problems, though it does have a clipping  bug 151670  which means that the attached Java program also produces wrong behaviour.
-The Linux version (of 3.5M6) seems to produce correct output.
+Carbon does not exhibit the same problems, though it does have a clipping  bug 151670  which means that the attached Java program also produces wrong behaviour. The Linux version (of 3.5M6) seems to produce correct output.

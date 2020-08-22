@@ -1,7 +1,2 @@
 Bug 199862 Master page should not an inheritable property [05]
-Description: Master page should not an inheritable property.
-Build number: 2.2.1.v20070814-0630 Steps to reproduce: 1.New a table with a label in one cell.
-2.Select "Simple MasterPage" for "Master Page" of table in Property Editor.
-Expected result: "Master Page" of label in Property editor should be "None".
-Actual result: "Master Page" of label in Property is "Simple MasterPage".
-Error log: N/A
+Description: Master page should not an inheritable property. Build number: 2.2.1.v20070814-0630 Steps to reproduce: 1. New a table with a label in one cell. 2. Select "Simple MasterPage" for "Master Page" of table in Property Editor. Expected result: "Master Page" of label in Property editor should be "None". Actual result: "Master Page" of label in Property is "Simple MasterPage". Error log: N/A

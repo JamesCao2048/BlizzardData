@@ -1,11 +1,8 @@
 Dialog displays small sometimes in GTK
-This problem seems similar to  bug 100328  but I was asked to file a new bug.
-The
+This problem seems similar to  bug 100328  but I was asked to file a new bug. The
 problem is that we have a dialog that allows the user to display a child dialog.
-That child dialog sometimes displays small.
-We have not observed this behavior
-on Windows.
-I am using kubuntu linux with the GTK libaries
+That child dialog sometimes displays small. We have not observed this behavior
+on Windows. I am using kubuntu linux with the GTK libaries
 ii  kwin           3.4.0-0ubuntu1 KDE Window Manager
 We are using a jface dialog and using hints on the GridData to size the
 components within the dialog so are not sizing it ourselves

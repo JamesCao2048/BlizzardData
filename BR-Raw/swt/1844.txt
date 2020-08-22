@@ -14,8 +14,7 @@ final TreeItem item = new TreeItem(tree, SWT.RIGHT);
 
 final TreeItem item2 = new TreeItem(tree2, SWT.RIGHT);
 
-for (int i = 0; i
-< 4; ++i) {
+for (int i = 0; i < 4; ++i) {
 TreeItem newItem = new TreeItem(tree, SWT.None);
 newItem.setText("Item" + i);
 
@@ -55,13 +54,10 @@ display.dispose ();
 }
 }
 Resize the window horizontally and vertically, notice that they return the same client area.
-Click the checkbox to add a MeasureItem listener to the first tree.
-Resize the window larger vertically to notice that the trees return different width.
-(Noteably, tree1's width is tree2's width + 17).
+Click the checkbox to add a MeasureItem listener to the first tree.  Resize the window larger vertically to notice that the trees return different width.  (Noteably, tree1's width is tree2's width + 17).
 resize the window smaller vertically and note that when then vertical scroll bar appears, the width returned is equal for the two trees.
 Note that removing the listener by unchecking the checkbox does not remove the symptoms.
-To make this effect more drastic, install a TreeEditor on the items like snippet111. The changes below is setting editor.grabHorizontal = true, text = new Text(composite, SWT.RIGHT), and removing the text size calculation (since grabHorizontal will do it).
-Insert this snippet before the shell.pack().
+To make this effect more drastic, install a TreeEditor on the items like snippet111.  The changes below is setting editor.grabHorizontal = true, text = new Text(composite, SWT.RIGHT), and removing the text size calculation (since grabHorizontal will do it).  Insert this snippet before the shell.pack().
 final Color black = display.getSystemColor (SWT.COLOR_BLACK);
 final TreeItem [] lastItem = new TreeItem [1];
 final TreeEditor editor = new TreeEditor (tree);

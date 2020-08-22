@@ -1,8 +1,7 @@
 [Mac] Test failure in 
 Incorrect key code for 'Shift+Alt+' expected:<65536> but was:<27>
 junit.framework.AssertionFailedError: Incorrect key code for 'Shift+Alt+' expected:<65536> but was:<27>
-at org.eclipse.ui.tests.keys.
-Bug43610 Test$1.handleEvent( Bug43610 Test.java:48)
+at org.eclipse.ui.tests.keys. Bug43610 Test$1.handleEvent( Bug43610 Test.java:48)
 at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
 at org.eclipse.swt.widgets.Display.filterEvent(Display.java:948)
 at org.eclipse.swt.widgets.Display.sendEvent(Display.java:3480)
@@ -26,8 +25,7 @@ at org.eclipse.swt.widgets.Display.applicationProc(Display.java:4286)
 at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
 at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:101)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3036)
-at org.eclipse.ui.tests.keys.
-Bug43610 Test.testShiftAlt( Bug43610 Test.java:62)
+at org.eclipse.ui.tests.keys. Bug43610 Test.testShiftAlt( Bug43610 Test.java:62)
 at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:354)
 at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:206)
 at org.eclipse.test.UITestApplication$3.run(UITestApplication.java:195)

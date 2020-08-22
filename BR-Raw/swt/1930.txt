@@ -1,12 +1,10 @@
 Text SWT.MULTI with backgroundimage don't show deleted characters
 A multiline textarea with a backgroundimage does not show the deleted characters until a mouseclick out and again in the textarea.
 Steps to reproduce:
-1.create a textarea with SWT.MULTI, SWT.WRAP or SWT.V_SCROLL (textArea = new Text(top, SWT.MULTI  | SWT.WRAP | SWT.V_SCROLL | SWT.FLAT);)
-2.add a background image (textArea.setBackgroundImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/images/bg.png")));)
-3.at runtime add some characters
-4.delete some characters with backspace or delete
---> the cursor moves back but the characters are not removed
-5.click on another item
-6.click back to the textarea
---> the characters are now removed
+1. create a textarea with SWT.MULTI, SWT.WRAP or SWT.V_SCROLL (textArea = new Text(top, SWT.MULTI  | SWT.WRAP | SWT.V_SCROLL | SWT.FLAT);)
+2. add a background image (textArea.setBackgroundImage(new Image(Display.getCurrent(), getClass().getResourceAsStream("/images/bg.png")));)
+3. at runtime add some characters
+4. delete some characters with backspace or delete --> the cursor moves back but the characters are not removed
+5. click on another item
+6. click back to the textarea --> the characters are now removed
 Version: 3.2 RC7

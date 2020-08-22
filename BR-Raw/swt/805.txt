@@ -4,6 +4,6 @@ Build Identifier: I20090917-0100
 On Mac OS X (Snow Leopard, 64-bit Intel, running the 64-bit version of Eclipse), calling ColorDialog.open() will either always return null, or hang.
 Reproducible: Always
 Steps to Reproduce:
-1.Use the 64-bit Eclipse on Snow Leopard on a 64-bit intel mac (naturally)
-2.Call ColorDialog.open()
-3.Get frustrated.
+1. Use the 64-bit Eclipse on Snow Leopard on a 64-bit intel mac (naturally)
+2. Call ColorDialog.open()
+3. Get frustrated.

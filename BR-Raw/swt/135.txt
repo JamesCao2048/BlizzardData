@@ -3,19 +3,14 @@ Created  attachment 219862   [details]
 Fix
 Tree and Table tooltips cut text after the first line delimiter.
 A prominent example of this is the EGit multi-pull result dialog in case the workspace contains pending changes in files that would be updated by the pull.
-The patch ensures that tooltips show the complete text.
-The changes in the Snippets are NOT to be released
--- I just used them to verify the fix and left them for the reviewer's convenience.
+The patch ensures that tooltips show the complete text. The changes in the Snippets are NOT to be released -- I just used them to verify the fix and left them for the reviewer's convenience.
 Note that Table and Tree treat line delimiters differently:
 - Table just concatenates all lines and strips the line delimiters.
 => The fix does the same for the tooltips.
 - Tree:
-
 - first column: cuts the text after the first line delimiter
-
 - other columns: concatenates all lines and strips delimiter
-=> The fix enables multi-line tooltips like it already works for header tooltips.
-It doesn't fix the different behavior for the first column (that's a separate bug).
+=> The fix enables multi-line tooltips like it already works for header tooltips. It doesn't fix the different behavior for the first column (that's a separate bug).
 Other platforms:
 - Mac: items show only the first line, but tooltips show all lines
 - GTK: there are no free tooltips, but items are already rendered multi-line

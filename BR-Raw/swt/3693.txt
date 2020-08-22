@@ -6,20 +6,17 @@ JDK Ver.: IBM JDK1.3.1 + SR3
 
 Summary: DBCS: Encoding change at the Preferences cause core dump  in motif
 Steps to recreate problem:
-1.Launch workbench with motif build on RedHat 8 JP
-2.Create a Simple project
-3.Import build.xml file
-4.Open Preferences (Window
--> Preferences)
-5.Select Workbench
--> Editors
-6.Select "Others" of test file encoding and select "UTF-8"
-7.Click OK
-8.Open buildjp.xml and edit it
-9.Save and Close the file
-10.Open Preferences
-11.Change the encoding to Default(EUC_JP) at the Workbench
-
+1. Launch workbench with motif build on RedHat 8 JP
+2. Create a Simple project
+3. Import build.xml file
+4. Open Preferences (Window -> Preferences)
+5. Select Workbench -> Editors
+6. Select "Others" of test file encoding and select "UTF-8"
+7. Click OK
+8. Open buildjp.xml and edit it
+9. Save and Close the file
+10. Open Preferences
+11. Change the encoding to Default(EUC_JP) at the Workbench
 -> Editors , then click "OK"
 
 <<Error>>

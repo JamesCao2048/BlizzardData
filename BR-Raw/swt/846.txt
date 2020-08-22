@@ -1,13 +1,10 @@
 [Graphics] GDI+ drawText is not consistent with GDI
-The spacing between letters is sometimes off when using drawText() with GDI+.
-This essentially duplicates the issue reported and fixed in  Bug 95410  but for the method drawText() instead of drawString().
+The spacing between letters is sometimes off when using drawText() with GDI+.  This essentially duplicates the issue reported and fixed in  Bug 95410  but for the method drawText() instead of drawString().
 The following snippet shows that the problem with the badly-spaced l's
 still occurs when the drawText() method is used (the funny thing is that it
 only seems to happen when there are tab characters in the string).
 My real issue is that the tab expansion differs so much when advanced graphics
-mode is being used.
-As Randy pointed out in his first comment in  Bug 95410 , I need to be able to predict how large the string is going to be painted, but when I don't know whether GDI+ or GDI is going to be used, it makes it rather difficult.
-Does anyone know if the difference in tab expansion is an issue we can do something about in SWT or is it just a GDI/GDI+ difference?
+mode is being used.  As Randy pointed out in his first comment in  Bug 95410 , I need to be able to predict how large the string is going to be painted, but when I don't know whether GDI+ or GDI is going to be used, it makes it rather difficult.  Does anyone know if the difference in tab expansion is an issue we can do something about in SWT or is it just a GDI/GDI+ difference?
 package org.eclipse.draw2d;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;

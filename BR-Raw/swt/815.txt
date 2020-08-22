@@ -3,10 +3,8 @@ Created  attachment 136685   [details]
 Simple test case showing the JS document.open() bug.
 Build ID: 3.5RC1
 Steps To Reproduce:
-1.Have some JS object with a method that calls document.open()
-2.Call the object's method: the call to document.open() fails.
+1. Have some JS object with a method that calls document.open()
+2. Call the object's method: the call to document.open() fails.
 More information:
-This is a regression: 3.5 M6 was working fine, M7 and RC1 have the problem.
-Also, this works fine with IE.
-This is very problematic: several JS libraries make use of such call.
-I found the problem with an embedded FCKeditor (after several hours of stepping through complex JS...) but this can potentially affect many other libraries.
+This is a regression: 3.5 M6 was working fine, M7 and RC1 have the problem. Also, this works fine with IE.
+This is very problematic: several JS libraries make use of such call. I found the problem with an embedded FCKeditor (after several hours of stepping through complex JS...) but this can potentially affect many other libraries.

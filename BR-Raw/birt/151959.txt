@@ -1,10 +1,2 @@
 Bug 151959 inappropriate screen operation
-steps to reproduce:
-- create a report
-- add a grid item (3x3)
-- switch to Outline view
-- expand the grid item to see its rows and cells
-- select the grid item, and drag it into any of its own cell expected behavior:
-- is it an invalid screen operation?
-if it is, it should be banned actual behavior:
-- the grid item was disappeared surprisingly
+steps to reproduce: - create a report - add a grid item (3x3) - switch to Outline view - expand the grid item to see its rows and cells - select the grid item, and drag it into any of its own cell expected behavior: - is it an invalid screen operation? if it is, it should be banned actual behavior: - the grid item was disappeared surprisingly

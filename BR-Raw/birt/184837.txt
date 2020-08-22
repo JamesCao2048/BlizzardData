@@ -1,3 +1,2 @@
 Bug 184837 ResultMetaData#getColumnAlias and ResultMetaData#getColumnLabel do not work
-Methods org.eclipse.birt.report.engine.api.impl.ResultMetaData#getColumnAlias and org.eclipse.birt.report.engine.api.impl.ResultMetaData#getColumnLabel are not implemented in fact.
-They both return "column name" and not "column alias" and "column label".
+Methods org.eclipse.birt.report.engine.api.impl.ResultMetaData#getColumnAlias and org.eclipse.birt.report.engine.api.impl.ResultMetaData#getColumnLabel are not implemented in fact. They both return "column name" and not "column alias" and "column label".

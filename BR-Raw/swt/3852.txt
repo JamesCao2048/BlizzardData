@@ -3,8 +3,6 @@ When the toolbars and menus are disabled in the UI due to a UI blocking
 operation being run the accelerators are still active.
 STEPS
 1) Open a java editor
-2) Save it using Ctrl-S
-- the menu and toolbars are disabled
-3) Hit Ctrl-B (the build) while the menu bars are disabled
-- this will get
+2) Save it using Ctrl-S - the menu and toolbars are disabled
+3) Hit Ctrl-B (the build) while the menu bars are disabled - this will get
 serviced even though the UI should not be accepting events.

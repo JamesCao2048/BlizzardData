@@ -1,4 +1,2 @@
 Bug 132515 Expression like "Toltal.rank(Tolta.ave(row[a]),ture,Null,1)" is return an error
-Description: Add an expression like "Toltal.rank(Tolta.ave(row[a]),ture,Null,1)" is return an error.The nesting "Toltal" seem not to be work.
-Step to reproduce: 1.new a datasource and dataset 2.drag the dataset to layout veiw for a table 3.set a group on the table 4.Insert a data into the group header with the expression e.g.
-"Toltal.rank(Tolta.ave(row[a]),ture,Null,1)" Actual result: An error was thrown out Expected result: It should work correctly in order to support some requirments
+Description: Add an expression like "Toltal.rank(Tolta.ave(row[a]),ture,Null,1)" is return an error.The nesting "Toltal" seem not to be work. Step to reproduce: 1.new a datasource and dataset 2.drag the dataset to layout veiw for a table 3.set a group on the table 4.Insert a data into the group header with the expression e.g. "Toltal.rank(Tolta.ave(row[a]),ture,Null,1)" Actual result: An error was thrown out Expected result: It should work correctly in order to support some requirments

@@ -1,39 +1,28 @@
 [SWT Examples] 鈥淪ave As鈥 Dialog of Image Analyzer does not provide the correct file path
-When I tried to save an image by selecting 鈥淔ile
--> Save As鈥 from the main
+When I tried to save an image by selecting 鈥淔ile -> Save As鈥 from the main
 menu of the Image Analyzer application, the 鈥淪ave As鈥 dialog provided me with
 the following file path in the selection
 field: /alfred2/home/swijenay/images2//alfred2/home/swijenay/images2/test.png
 The correct file path should have been the following:
 /alfred2/home/swijenay/images2/test.png
 Here are the steps to follow in order to regenerate this scenario:
-1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
-2.Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
-http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
--
+1. Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
+2. Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
 examples-3.0M7.zip and install them.
-3.Launch Eclipse
-4.Select 鈥淲indow
--> Show View
--> Other鈥︹.
-This will launch the 鈥淪how View鈥
+3. Launch Eclipse
+4. Select 鈥淲indow -> Show View -> Other鈥︹. This will launch the 鈥淪how View鈥
 Dialog.
-5.From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples
--> SWT Example Launcher鈥.
+5. From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples -> SWT Example Launcher鈥.
 This will launch the 鈥淪WT Example Launcher鈥 View.
-6.In the 鈥淓xamples鈥 group, expand 鈥淪tandalone鈥 category, select 鈥淚mage
-Analyzer鈥 from the list and press 鈥淩un鈥 button.
-This will launch the 鈥淚mage
+6. In the 鈥淓xamples鈥 group, expand 鈥淪tandalone鈥 category, select 鈥淚mage
+Analyzer鈥 from the list and press 鈥淩un鈥 button. This will launch the 鈥淚mage
 Analyzer鈥 application.
-7.Open an image file and then attempt to save it by selecting 鈥淔ile
-- > Save
+7. Open an image file and then attempt to save it by selecting 鈥淔ile - > Save
 As鈥 from the main menu of the application.
-Expected Behavior: 鈥淪ave As鈥 dialog pops up.
-Its selection field should
-contain the correct file path.
-In my case, it should have been the
+Expected Behavior: 鈥淪ave As鈥 dialog pops up. Its selection field should
+contain the correct file path. In my case, it should have been the
 following: /alfred2/home/swijenay/images2/test.png
-Actual Behavior: The provided file path is invalid.
-In my attempt, the
+Actual Behavior: The provided file path is invalid. In my attempt, the
 following was the file path it provided:
 /alfred2/home/swijenay/images2//alfred2/home/swijenay/images2/test.png

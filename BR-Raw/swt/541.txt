@@ -1,7 +1,7 @@
 SWT.TOOL window doesn't show minimize button when specified
 Steps:
-1.Run this code.
-2.Note that the minimize button isn't enabled, even though SWT.SHELL_TRIM is set.
+1. Run this code.
+2. Note that the minimize button isn't enabled, even though SWT.SHELL_TRIM is set.
 --------------------------------------------------
 package snippets;
 import org.eclipse.swt.*;

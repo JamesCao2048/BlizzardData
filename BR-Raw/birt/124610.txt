@@ -1,8 +1,2 @@
 Bug 124610 Add a filter on a boolean computed column will cause error.
-Description: Add a filter on a boolean computed column will cause error.
-Steps to reproduce: 1.New a BIRT sample data source and a dataset from table "orders" 2.Create a computed column with name="yes/no", type = any(no boolean for choose), value= if(row[1]%2==0){ true; }else{ false; } 3.Drag the dataset from Data Explorer to Layout 4.Select the table, click Filters tab in Property Editor.
-5.Click Add button.
-6.Select yes/no as Expression, Is True as Operator.
-7.Save and preview.
-Expected result: Filter works.
-Actual result: Error0 : data.engine.ConvertToDataTypeError ( 1 time(s) ) detail : org.eclipse.birt.data.engine.core.DataException: can not be converted to class java.lang.Boolean.
+Description: Add a filter on a boolean computed column will cause error. Steps to reproduce: 1. New a BIRT sample data source and a dataset from table "orders" 2. Create a computed column with name="yes/no", type = any(no boolean for choose), value= if(row[1]%2==0){ true; }else{ false; } 3. Drag the dataset from Data Explorer to Layout 4. Select the table, click Filters tab in Property Editor. 5. Click Add button. 6. Select yes/no as Expression, Is True as Operator. 7. Save and preview. Expected result: Filter works. Actual result: Error0 : data.engine.ConvertToDataTypeError ( 1 time(s) ) detail : org.eclipse.birt.data.engine.core.DataException: can not be converted to class java.lang.Boolean.

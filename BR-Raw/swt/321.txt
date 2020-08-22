@@ -8,19 +8,14 @@ col = new TreeColumn(tree, SWT.LEFT);
 col.setText("event-type & number");
 ...
 ----------------
-Apparently ampersands are filtered, at least they are not displayed at all.
-I also tried '&&' but still no ampersand in the header.
-How can I define a column header that DOES contain an ampersand?
-Is there some "escape"?
+Apparently ampersands are filtered, at least they are not displayed at all. I also tried '&&' but still no ampersand in the header.
+How can I define a column header that DOES contain an ampersand? Is there some "escape"?
 Michael
-"Grant Gayed"
-< grant_gayed@ca.ibm.com > wrote in message news:<echjt1$lfb$ 1@utils.eclipse.org >...
+"Grant Gayed" < grant_gayed@ca.ibm.com > wrote in message news:<echjt1$lfb$ 1@utils.eclipse.org >...
 This appears to be a platform behaviour on windows (tested on win2000),
 because there's nothing in TableColumn.setText(...) that processes the
-string's ampersands.
-On gtk using && will put an ampersand in the title.
+string's ampersands.  On gtk using && will put an ampersand in the title.
 Please log a bug report with SWT about this difference (
-https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Platform  ).
-There may
+https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Platform  ).  There may
 be nothing that can be done about this on windows, but I couldn't find a
 previous report of this, so it should at least be investigated.

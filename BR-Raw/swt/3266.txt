@@ -1,7 +1,6 @@
 Combobox computeSize() doesn't take the down arrow into account
 When performing a computeSize(SWT.DEFAULT, SWT.DEFAULT) on a combobox, the size
 adjusts properly minus the size of the drop down arrow!  When this arrow is
-pressed, the list is the appropriate size for all items.
-If the largest item is
+pressed, the list is the appropriate size for all items.  If the largest item is
 selected, and displayed when "rolled up" then the full text cannot be seen.
 I don't know if this happens in 2.1.2 or higher since I am using 2.1.1 at this time.

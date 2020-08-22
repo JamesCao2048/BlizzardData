@@ -1,8 +1,5 @@
 [64][Browser] Browser crashes on Snippet307
-Happens on 64-bit gtk only.
-The problem is that nsIMemory's return value is being cast as an int.
-This is correct for most xpcom interfaces, but because nsIMemory is not scriptable, this value represents a pointer, not just a return code, so it is being truncated.
-The dump is:
+Happens on 64-bit gtk only.  The problem is that nsIMemory's return value is being cast as an int.  This is correct for most xpcom interfaces, but because nsIMemory is not scriptable, this value represents a pointer, not just a return code, so it is being truncated.  The dump is:
 #
 # An unexpected error has been detected by HotSpot Virtual Machine:
 #
@@ -12,8 +9,7 @@ The dump is:
 # Problematic frame:
 # C  [libc.so.6+0x7262a]
 #
----------------  T H R E A D
----------------
+---------------  T H R E A D  ---------------
 Current thread (0x0000000040115d50):  JavaThread "main" [_thread_in_native, id=9151]
 ...<snip>...
 Stack: [0x0000007fbfe00000,0x0000007fc0000000),  sp=0x0000007fbfff8a98,  free space=2018k
@@ -37,8 +33,7 @@ j  org.eclipse.swt.snippets.Snippet307.main([Ljava/lang/String;)V+126
 v  ~StubRoutines::call_stub
 ...<snip>...
 VM Arguments:
-jvm_args:
--Dfile.encoding=UTF-8
+jvm_args: -Dfile.encoding=UTF-8
 java_command: org.eclipse.swt.snippets.Snippet307
 Launcher Type: SUN_STANDARD
 Environment Variables:
@@ -56,4 +51,4 @@ SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
 SIGUSR2: [libjvm.so+0x55fc00], sa_mask[0]=0x00000004, sa_flags=0x14000004
 SIGHUP: [libjvm.so+0x55f6d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
 SIGINT: [libjvm.so+0x55f6d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
-SIGQUIT: [libjvm.so+0x55f6d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x140
+SIGQUIT: [libjvm.so+0x55f6d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000

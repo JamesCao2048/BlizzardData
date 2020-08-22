@@ -1,5 +1,2 @@
 Bug 153244 Master Page content is lost when set pagination for RenderTask
-Description: Master Page content is lost when set pagination to false in HTMLRenderOption for RenderTask.
-Steps to reproduce: 1.Render a report with master page.
-Codes: IRenderOption options = new HTMLRenderOption( ); options.setOutputFileName( outputFile ); options.setOutputFormat( format ); ( (HTMLRenderOption) options ).setHtmlPagination( false ); HashMap appContext = new HashMap( ); task.setRenderOption( options ); task.render( ); task.close( ); Expected result: In output html, master page content is displayed.
-Actual result: Master page content is lost in output html file.
+Description: Master Page content is lost when set pagination to false in HTMLRenderOption for RenderTask. Steps to reproduce: 1. Render a report with master page. Codes: IRenderOption options = new HTMLRenderOption( ); options.setOutputFileName( outputFile ); options.setOutputFormat( format ); ( (HTMLRenderOption) options ).setHtmlPagination( false ); HashMap appContext = new HashMap( ); task.setRenderOption( options ); task.render( ); task.close( ); Expected result: In output html, master page content is displayed. Actual result: Master page content is lost in output html file.

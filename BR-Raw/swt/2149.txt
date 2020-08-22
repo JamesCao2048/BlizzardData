@@ -1,9 +1,7 @@
 [Browser] SWTError (XPCOM error -2147467259) when using the SWT 3.3 Broswer widget on Linux with Mozilla 1.7.8
-SWTError (XPCOM error
--2147467259) when using the SWT 3.3 Broswer widget on Linux with Mozilla 1.7.8
+SWTError (XPCOM error -2147467259) when using the SWT 3.3 Broswer widget on Linux with Mozilla 1.7.8
 When using the eclipse-SDK-I20070123-1715 driver, creaating a SWT Browser widget causes the following exception:
-org.eclipse.swt.SWTError: XPCOM error
--2147467259
+org.eclipse.swt.SWTError: XPCOM error -2147467259
 at org.eclipse.swt.browser.Mozilla.error(Mozilla.java:1308)
 at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:262)
 at org.eclipse.swt.browser.Browser.<init>(Browser.java:99)
@@ -11,14 +9,10 @@ JRE:
 java version "1.5.0"
 Java(TM) 2 Runtime Environment, Standard Edition (build pxi32dev-20061002a (SR3) )
 IBM J9 VM (build 2.3, J2RE 1.5.0 IBM J9 2.3 Linux x86-32 j9vmxi3223-20061001 (JIT enabled)
-J9VM
-- 20060915_08260_lHdSMR
-JIT
-- 20060908_1811_r8
-GC
-- 20060906_AA)
-JCL
-- 20061002
+J9VM - 20060915_08260_lHdSMR
+JIT  - 20060908_1811_r8
+GC   - 20060906_AA)
+JCL  - 20061002
 OS:
 Linux paules 2.6.16.21-0.8-smp #1 SMP Mon Jul 3 18:25:39 UTC 2006 x86_64 x86_64 x86_64 GNU/Linux
 Mozilla:

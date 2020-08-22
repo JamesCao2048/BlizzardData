@@ -1,7 +1,6 @@
 TabFolder title does not handle mnemonics properly
 RC2, running on SuSE with gtk2.0.6
-- open Eclipse's Preferences dialog, go to page Java
-- Compiler
+- open Eclipse's Preferences dialog, go to page Java - Compiler
 - the third tab on the page should say "Compliance & Classfiles", but instead
 appears as "Compliance _ Classfiles"
 - verified this works fine on win32, motif and photon

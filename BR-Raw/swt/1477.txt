@@ -2,10 +2,8 @@ Table: setBackground is not deferred by setRedraw(false)
 3.1RC1
 - run the snippet at the bottom
 - click on the shell and Table.setRedraw(false) is invoked
-- click on the shell again and Table.setBackground(green) is invoked.
-This
-clears the entire table, including the header, to green.
-It seems like this
+- click on the shell again and Table.setBackground(green) is invoked.  This
+clears the entire table, including the header, to green.  It seems like this
 should do nothing because of the previous setRedraw(false)
 - click on the shell again and Table.setRedraw(true) is invoked: now the header
 and table contents reappear

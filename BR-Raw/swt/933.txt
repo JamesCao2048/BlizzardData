@@ -1,8 +1,7 @@
 Korean Input text flickers in StyledText widget in case the sentence exceeds a row.
 Build ID: 3.4
 Steps To Reproduce:
-The issue is SWT related.
-With SWT 3.4, the problem can be reproduced.
+The issue is SWT related. With SWT 3.4, the problem can be reproduced.
 However, with SWT version 3.2 and 3.3, problem is not there.
 Sample Code:
 __________________________________________________________
@@ -46,10 +45,8 @@ text.setEnabled(true);
 text.setTextLimit(2000);
 FormData formData = new FormData();
 formData.top = new FormAttachment(0, 2);
-formData.bottom = new FormAttachment(100,
--2);
-formData.right = new FormAttachment(100,
--2);
+formData.bottom = new FormAttachment(100, -2);
+formData.right = new FormAttachment(100, -2);
 formData.left = new FormAttachment(0, 2);
 com.setLayoutData(formData);
 text.setLayoutData(formData);
@@ -66,12 +63,9 @@ e.printStackTrace();
 }
 _________________________________________________________
 Enter some random Korean text in the Shell that opens, you will see a flicker if you keep typing many sentences together(i.e, write to many lines.)
-To enable the Korean language, go to Control Panel-> Regional and language prefrences.
-In the advanced tab, select the Korean Language.
-Run the sample code above on Eclipse 3.2.2(SWT3.2)/or 3.3.1, type the long korean sentences
----  cannot reproduce this issue
+To enable the Korean language, go to Control Panel-> Regional and language prefrences. In the advanced tab, select the Korean Language.
+Run the sample code above on Eclipse 3.2.2(SWT3.2)/or 3.3.1, type the long korean sentences ---  cannot reproduce this issue
 
 Run this on Eclipse 3.4 (SWT3.4), type the long korean sentences, reproduce this issue
-More information: The issue looks to be coming from Styledtext widget.
-When using a simple Text widget, flicker is not seen.
-The bug has been reported as Critical severity as it is affecting a functionali
+More information: The issue looks to be coming from Styledtext widget. When using a simple Text widget, flicker is not seen.
+The bug has been reported as Critical severity as it is affecting a functionality

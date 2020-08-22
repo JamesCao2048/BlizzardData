@@ -1,6 +1,5 @@
 GC.drawRoundRectangle/GC.fillRoundRectangle
 the arcWidth and arcHeight arguments of GC.drawRoundRectangle and
 GC.fillRoundRectangle are spec'd as "the horizontal[vertical] diameter of the
-arc at the four corners".
-The Windows implementation actually draws the corners
+arc at the four corners". The Windows implementation actually draws the corners
 with a radius, not a diameter, of arcWidth and arcHeight.

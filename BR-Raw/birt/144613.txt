@@ -1,5 +1,2 @@
 Bug 144613 Blank page when set group page break before as always.
-Description: Blank page when set group page break before as always.
-Steps to reproduce: 1.Insert a table.
-2.Add a group, set group page break before to always 3.Delete table header and footer 4.Preview in html and pdf Expected result: No blank page Actual result: A blank page in html.
-If you set group page-break-after to always and preview, no blank page.
+Description: Blank page when set group page break before as always. Steps to reproduce: 1. Insert a table. 2. Add a group, set group page break before to always 3. Delete table header and footer 4. Preview in html and pdf Expected result: No blank page Actual result: A blank page in html. If you set group page-break-after to always and preview, no blank page.

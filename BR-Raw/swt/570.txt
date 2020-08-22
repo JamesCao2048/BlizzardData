@@ -1,16 +1,14 @@
 Carbon: DnD fails when dropping object to a child control.
 Build Identifier: SWT v3646a
 DnD fails when dropping object to a child control.
-So far, we see this issue on Carbon/Mac OS X.
-Windows works.
+So far, we see this issue on Carbon/Mac OS X. Windows works.
 Reproducible: Always
 Steps to Reproduce:
-1.Create a Composite and setup DropTarget for it.
-2.Create a child control in the Composite.
-3.Drop an object to the child control.
+1. Create a Composite and setup DropTarget for it.
+2. Create a child control in the Composite.
+3. Drop an object to the child control.
 result:
 the dropped object ignored, and DnD fails.
 problem:
 The bug is in DropTarget.FindDropTarget().
-The bug happens because DropTarget.FindDropTarget() thinks the DnD object dropped to the child control, But, since the child control's getData() returns null, the line "return (DropTarget) widget.getData(DND.DROP_TARGET_KEY);" returns null.
-It should return correct parent in this case.
+The bug happens because DropTarget.FindDropTarget() thinks the DnD object dropped to the child control, But, since the child control's getData() returns null, the line "return (DropTarget) widget.getData(DND.DROP_TARGET_KEY);" returns null. It should return correct parent in this case.

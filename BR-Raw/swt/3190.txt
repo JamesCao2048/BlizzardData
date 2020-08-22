@@ -35,7 +35,6 @@ See that in case sr2 is first in the StyleRange[] Array,
 the "www.heise.de" is not painted RED.
 If the sort order of StyleRanges in the StyleRange[] argument
 is dependand for the result, it should at least be mentioned in
-the Api.
-Nevertheless, the method should give the same result,
+the Api. Nevertheless, the method should give the same result,
 regardless of the Order of the StyleRage[] array.
 Ben

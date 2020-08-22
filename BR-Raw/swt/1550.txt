@@ -1,8 +1,6 @@
 NPE in Tree.windowProc when starting to drag elements
 I20080523-0100
-I got into a state where dragging any element from the Synchronize view resulted in the NPE below.
-Drag and drop from the Synchronize view to the editor area worked fine before.
-Worked fine after a restart of the workbench.
+I got into a state where dragging any element from the Synchronize view resulted in the NPE below. Drag and drop from the Synchronize view to the editor area worked fine before. Worked fine after a restart of the workbench.
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:5709)
 at org.eclipse.swt.widgets.Display.windowProc(Display.java:4506)

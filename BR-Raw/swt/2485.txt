@@ -1,8 +1,6 @@
 background color problems in tree with columns
 I20060309-1000
-The background color in tree columns gets corrupted when a window is moved to the background and then brought back to the foreground.
-The background color is extended to the "non-existant n+1" column in the tree (i.e.
-if a tree has 2 columns, the 3rd column takes on the background color of the 2nd column).
+The background color in tree columns gets corrupted when a window is moved to the background and then brought back to the foreground. The background color is extended to the "non-existant n+1" column in the tree (i.e. if a tree has 2 columns, the 3rd column takes on the background color of the 2nd column).
 Example code:
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -76,17 +74,14 @@ TreeItem[] items = tree.getItems();
 if (counter > items.length) {
 counter = 0;
 }
-for (int i = 0; i
-< items.length; i++) {
+for (int i = 0; i < items.length; i++) {
 TreeItem item = items[i];
 if (counter == i) {
-for (int j = 0; j
-< tree.getColumnCount(); j++) {
+for (int j = 0; j < tree.getColumnCount(); j++) {
 item.setBackground(j, red);
 }
 } else {
-for (int j = 0; j
-< tree.getColumnCount(); j++) {
+for (int j = 0; j < tree.getColumnCount(); j++) {
 item.setBackground(j, null);
 }
 }
@@ -95,4 +90,4 @@ counter++;
 }
 });
 }
-/* (non-J
+/* (non-Java

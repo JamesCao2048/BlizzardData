@@ -1,16 +1,11 @@
 defaultButton for a Shell is not getting unset after clicking on any button on the Shell
 User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5
 Build Identifier: Version 3.5, Build Id: 120091030-1201
-After clicking on any button in a shell Button.gtk_focus_in_event() is setting this specific button as the defaultButton for the shell.
-Later Button.gtk_focus_out_event() is getting hit, but as (!OS.GTK_WIDGET_HAS_DEFAULT(handle)) is returning false defaultButton for Shell is not getting set to null.
-Because of this, in Decorations.traverseReturn() the value of button is not null and hence in TypedListener.handleEvent(), KeyDown event is not getting generated.
-We have a set of functions that should get called in keyDown event.
-Because of this problem our functions are not getting called.
+After clicking on any button in a shell Button.gtk_focus_in_event() is setting this specific button as the defaultButton for the shell. Later Button.gtk_focus_out_event() is getting hit, but as (!OS.GTK_WIDGET_HAS_DEFAULT(handle)) is returning false defaultButton for Shell is not getting set to null.
+Because of this, in Decorations.traverseReturn() the value of button is not null and hence in TypedListener.handleEvent(), KeyDown event is not getting generated. We have a set of functions that should get called in keyDown event. Because of this problem our functions are not getting called.
 This happens only in Linux.
-In Windows, the corresponding function is LRESULT WM_SETFOCUS () and LRESULT WM_KILLFOCUS ().
-Here the defaultButton for Shell is getting set to null in LRESULT WM_KILLFOCUS () and hence keyDown event is getting generated.
-Note: In Linux I see that menu.defaultButton is used for setting the defaultButton instead of using the setter (Decorations.setDefaultButton).
-Please use the setter as this makes debugging easier.
+In Windows, the corresponding function is LRESULT WM_SETFOCUS () and LRESULT WM_KILLFOCUS (). Here the defaultButton for Shell is getting set to null in LRESULT WM_KILLFOCUS () and hence keyDown event is getting generated.
+Note: In Linux I see that menu.defaultButton is used for setting the defaultButton instead of using the setter (Decorations.setDefaultButton). Please use the setter as this makes debugging easier.
 Reproducible: Always
 Steps to Reproduce:
 1.Create a Shell with a button.

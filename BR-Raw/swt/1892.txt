@@ -1,7 +1,6 @@
 Accessibility: ROLE_TABLE does not work correctly on GTK
 Returning a role of ACC.ROLE_TABLE[*] in Accessible.getRole() currently confuses GTK's gnopernicus, and as a result it does not speak the name strings of table headers or cells.
-Until this bug is fixed, a workaround for this is to return ACC.ROLE_LIST for the table, and ACC.ROLE_LISTITEM for the table cells when SWT is running on GTK.
-Here is an example snippet that shows this workaround (see the getRole method):
+Until this bug is fixed, a workaround for this is to return ACC.ROLE_LIST for the table, and ACC.ROLE_LISTITEM for the table cells when SWT is running on GTK. Here is an example snippet that shows this workaround (see the getRole method):
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.accessibility.*;
@@ -16,10 +15,8 @@ CustomTable table = new CustomTable(shell, SWT.BORDER);
 table.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 table.setColumnCount(3);
 table.setRowCount(5);
-for (int row = 0; row
-< table.getRowCount(); row++) {
-for (int col = 0; col
-< table.getColumnCount(); col++) {
+for (int row = 0; row < table.getRowCount(); row++) {
+for (int col = 0; col < table.getColumnCount(); col++) {
 CustomTableCell cell = new CustomTableCell(table, SWT.NONE);
 cell.setText("cell " + col + "/" + row);
 }
@@ -71,8 +68,7 @@ SWT.Paint,
 SWT.Resize,
 SWT.Traverse,
 };
-for (int i = 0; i
-< events.length; i++) {
+for (int i = 0; i < events.length; i++) {
 addListener(events[i], new Listener() {
 public void handleEvent(Event event) {
 switch (event.type) {
@@ -91,4 +87,4 @@ case SWT.Traverse:         onTraverse(event); break;
 public void setColumnCount(int columnCount) {
 this.columnCount = columnCount;
 }
-public int getCo
+public int getColum

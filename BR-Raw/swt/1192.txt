@@ -2,12 +2,9 @@ Tree selection may not be preserved when creating/disposing items
 - run the snippet below
 - expand the root item
 - select "item 1"
-- press any key
---> disposes "item 8"
-
+- press any key --> disposes "item 8"
 --> note that the selection moved from "item 1" up to "item 0"
 - to see another case of the same problem, comment out the snippet's "root.getItem(7).dispose();" line and uncomment the line below it
-
 --> this causes the selection to move down one line when the new item is created below
 public static void main(String[] args) {
 final Display display = new Display();
@@ -17,8 +14,7 @@ shell.setLayout(new FillLayout());
 final Tree tree = new Tree(shell, SWT.NONE);
 final TreeItem root = new TreeItem(tree, SWT.NONE);
 root.setText("root");
-for (int i = 0; i
-< 8; i++) {
+for (int i = 0; i < 8; i++) {
 new TreeItem(root, SWT.NONE).setText("item " + i);
 }
 tree.addListener(SWT.KeyDown, new Listener() {

@@ -1,14 +1,9 @@
 TableItem.getBounds - small inconsistencies
 Eclipse 3.2 I20050808-2000
-1) TableItem.getImageBounds(int)
-- this should return a rectangle that is the
-height of the row.
-Currently, it is returning a rectangle the height of the image.
-2) Tableitem.getBounds(int)
-- this is returning a rectangle that overlaps the
-gridlines.
-It should return a rectangle that is just inside the gridlines.
-I
+1) TableItem.getImageBounds(int) - this should return a rectangle that is the
+height of the row.  Currently, it is returning a rectangle the height of the image.
+2) Tableitem.getBounds(int) - this is returning a rectangle that overlaps the
+gridlines.  It should return a rectangle that is just inside the gridlines.  I
 used xmag to look closely at the pixels to see this.
 Below is an example that shows these problems:
 public static void main(String[] args) {
@@ -24,13 +19,9 @@ final Color darkGreen = display.getSystemColor(SWT.COLOR_DARK_GREEN);
 int s1 = 20, s2 = 10;
 final Image image1 = new Image (display, s1, s2);
 GC gc1 = new GC (image1);
-gc1.drawRectangle (0, 0, s1
-- 1, s2
-- 1);
+gc1.drawRectangle (0, 0, s1 - 1, s2 - 1);
 gc1.setBackground (display.getSystemColor (SWT.COLOR_CYAN));
-gc1.fillRectangle (1, 1, s1
-- 2, s2
-- 2);
+gc1.fillRectangle (1, 1, s1 - 2, s2 - 2);
 gc1.dispose ();
 
 Shell shell = new Shell(display);
@@ -45,8 +36,7 @@ TableColumn column2 = new TableColumn(table, SWT.NONE);
 column2.setText("column2");
 TableColumn column3 = new TableColumn(table, SWT.NONE);
 column3.setText("column3");
-for (int i = 0; i
-< 20; i++) {
+for (int i = 0; i < 20; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText(new String[] { "item " + i, "column 1 asdad as das da sd asd" +
 i, "asd asd asd as das d asd ad sdasdasdasd"});
@@ -86,4 +76,4 @@ Rectangle r2;
 TableItem item = table.getItem(4);
 r1 = item.getBounds(0);
 c1.setBounds(r1);
-r2 = item.
+r2 = item.getBoun

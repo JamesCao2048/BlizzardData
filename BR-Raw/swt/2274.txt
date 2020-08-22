@@ -3,8 +3,7 @@ NPE in CCombo.setVisible(false) if some of affected listeners has disposed it
 I get NPE when setting visibility of CCombo to false if this CCombo gets disposed by one of its listeners, that were called during visibility loss.
 </p>
 <p>
-Here is the exception itself:
-<br>
+Here is the exception itself: <br>
 <code>
 java.lang.NullPointerException
 at org.eclipse.swt.custom.CCombo.setVisible(CCombo.java:1362)
@@ -22,8 +21,7 @@ And here is the reason, the setVisible method of CCombo:<br>
 <code>
 public void setVisible (boolean visible) {
 super.setVisible(visible);
-if (!visible) popup.setVisible(false); //
-<< NPE here if disposed
+if (!visible) popup.setVisible(false); // << NPE here if disposed
 }
 </code>
 </p>
@@ -76,4 +74,4 @@ try {
 combo.setVisible(false);
 } catch (NullPointerException npe) {
 StringWriter stringWriter = new StringWriter();
-PrintWrite
+PrintWriter

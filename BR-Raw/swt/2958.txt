@@ -1,8 +1,5 @@
 Embedded Swing: Enter key does not work
 I'm running Fedora Core 3 with all the latest updates, JDK 1.5, and the 3.1M5
-GTK version of the SWT binary.
-For some reason, the enter key event does not
-fire inside an embedded JTextPane.
-In case it matters, it's also inside multiple
-embedded JSplitPanes.
-All other key events work fine.
+GTK version of the SWT binary. For some reason, the enter key event does not
+fire inside an embedded JTextPane. In case it matters, it's also inside multiple
+embedded JSplitPanes. All other key events work fine.

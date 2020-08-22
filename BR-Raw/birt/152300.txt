@@ -1,3 +1,2 @@
 Bug 152300 Model api is wrong.
-In the LibrarCommand class,the method reloadLibrary , code lije this: activityStack.commit( ); // clears the activity stack to avoid potential problems.
-activityStack.flush( ); LibraryReloadedEvent event = new LibraryReloadedEvent( module .getLibraryByLocation( url.toExternalForm( ) ) ); module.broadcast( event ); Please first fire model event,then fire the commandstack event.
+In the LibrarCommand class,the method reloadLibrary , code lije this: activityStack.commit( ); // clears the activity stack to avoid potential problems. activityStack.flush( ); LibraryReloadedEvent event = new LibraryReloadedEvent( module .getLibraryByLocation( url.toExternalForm( ) ) ); module.broadcast( event ); Please first fire model event,then fire the commandstack event.

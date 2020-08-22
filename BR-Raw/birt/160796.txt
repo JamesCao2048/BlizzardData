@@ -1,3 +1,2 @@
 Bug 160796 Refresh library explorer will look for libraries recursively in resource folder.
-The refresh action in library explorer's context menu will first disposes all opened libraries in library explorer then reload the libraries.
-There is a bug that recursively look for libraries when dispose libraries.
+The refresh action in library explorer's context menu will first disposes all opened libraries in library explorer then reload the libraries. There is a bug that recursively look for libraries when dispose libraries.

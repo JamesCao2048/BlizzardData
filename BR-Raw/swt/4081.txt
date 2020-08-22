@@ -1,12 +1,12 @@
 Variable sorting changes unexpectedly
-1.Debug the following program to a breakpoint on the first line of foo().
+1. Debug the following program to a breakpoint on the first line of foo().
 Variables view looks like:
 this = VariableTest
-2.Perform a step over.
+2. Perform a step over.
 Variables view looks like:
 x = 1
 this = VariableTest
-3.Perform a step over.
+3. Perform a step over.
 Variables view looks like:
 this = VariableTest
 y = 2

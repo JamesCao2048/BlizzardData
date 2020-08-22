@@ -1,7 +1,6 @@
 Custom-Drawing Selection-Color not working on col = 0 with sorting
 SWT 3.3 M3
-I noticed that its not possible to override the selection-color for the first column, when this column was set as sorting-column.
-In the following snippet, simply change the setSortColumn() to use the second column and its working as expected.
+I noticed that its not possible to override the selection-color for the first column, when this column was set as sorting-column. In the following snippet, simply change the setSortColumn() to use the second column and its working as expected.
 Consider this snippet:
 public class Main {
 public static void main(String[] args) {
@@ -15,8 +14,7 @@ new TreeColumn(tree, SWT.NONE).setWidth(200);
 new TreeColumn(tree, SWT.NONE).setWidth(200);
 tree.setSortColumn(tree.getColumn(0));
 tree.setSortDirection(SWT.DOWN);
-for (int i = 0; i
-< 20; i++) {
+for (int i = 0; i < 20; i++) {
 new TreeItem(tree, SWT.NONE).setText("Hello World");
 }
 tree.addListener(SWT.EraseItem, new Listener() {

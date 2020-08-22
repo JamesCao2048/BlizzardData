@@ -21,14 +21,9 @@ GC gc = new GC(imageTick);
 gc.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
 gc.setForeground(display.getSystemColor (SWT.COLOR_BLACK));
 gc.fillRectangle(0, 0, size, size);
-gc.drawPolyline(new int[]{1, half, half
-- 1, size
-- 2, size
-- 2, 0});
+gc.drawPolyline(new int[]{1, half, half - 1, size - 2, size - 2, 0});
 gc.setForeground(display.getSystemColor(SWT.COLOR_DARK_GRAY));
-gc.drawRectangle(0, 0, size
-- 1, size
-- 1);
+gc.drawRectangle(0, 0, size - 1, size - 1);
 gc.dispose();
 /*
 *

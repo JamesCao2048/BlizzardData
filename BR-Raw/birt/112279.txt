@@ -1,7 +1,2 @@
 Bug 112279 [Acceptance]Relative path doesn't work in image builder.
-Description: Relative path doesn't work in image builder.
-Steps to reproduce: 1.New a report 2.copy one image file(**.jpg,etc) to the same path as the report.
-3.Insert an image, input "**.jpg" below "Enter URI".
-4.Save and preview.
-Expected result: Image displays when preview.
-Actual result: No images display.
+Description: Relative path doesn't work in image builder. Steps to reproduce: 1. New a report 2. copy one image file(**.jpg,etc) to the same path as the report. 3. Insert an image, input "**.jpg" below "Enter URI". 4. Save and preview. Expected result: Image displays when preview. Actual result: No images display.

@@ -1,15 +1,7 @@
 Canvas and mouseMoveListener and MacOS
 * I posted on eclipse.platform.swt:
-This problem is specific SWT on MacOS.
-It does not seem to be a problem on Windows or Linux.
-Here's a program that creates a Table, a Label, and a Canvas, and listens for MouseMoveEvents from all of them.
-Select a row in the Table, hold the mouse button down, and drag it to the label.
-The program keeps getting MouseEvents while the mouse moves across the label.
-Good.
-But move it across the Canvas.
-Neither the Table nor the Canvas will generate MouseEvents until you release the mouse button.
-Is there some way I can get those MouseEvents?
-Can this be considered a bug in the MacOS implementation?
+This problem is specific SWT on MacOS.  It does not seem to be a problem on Windows or Linux.
+Here's a program that creates a Table, a Label, and a Canvas, and listens for MouseMoveEvents from all of them.  Select a row in the Table, hold the mouse button down, and drag it to the label.  The program keeps getting MouseEvents while the mouse moves across the label.  Good.  But move it across the Canvas.  Neither the Table nor the Canvas will generate MouseEvents until you release the mouse button.
+Is there some way I can get those MouseEvents?  Can this be considered a bug in the MacOS implementation?
 * And the response was:
-The event reported by the OS in this case is kEventMouseDragged and for some  reason, SWT is deliberately not sending the MouseMove event for Table (and  all subclasses of Composite).
-This sounds like a bug and should be reported against Platform SWT.
+The event reported by the OS in this case is kEventMouseDragged and for some  reason, SWT is deliberately not sending the MouseMove event for Table (and  all subclasses of Composite).  This sounds like a bug and should be reported against Platform SWT.

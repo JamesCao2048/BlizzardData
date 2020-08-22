@@ -1,16 +1,3 @@
 Bug 403306 Nested DataEngineSessions and wrong initialization of classLoaderHolder
-I have following use case:
-- Data Cube with measure or level attribute of DataType JavaObject
-- The concrete value type is loaded from the EAR where BIRT is integrated
-- Crosstab with Highlight conditions defined The type of the measure value is loaded by the ClassLoader provided by current DataEngineSession: DataEngineSession.getCurrentClassLoader().
-DataEngineSession defines a static ThreadLocal classLoaderHolder that is (1) initialized (with correct classloader) on instantiation of DataEngineSession (along with creation of DataEngine instance) (2) reset to null on shutdown of DataEngine instance Problem arises when some code creates a new DataEngine instance within an active DataEngine instance / DataEngineSession (within the same thread).
-Then on shutdown of the nested / inner DataEngine instance the static ThreadLocal classLoaderHolder is reset to null.
-Afterwards the ClassLoader is missing (null) also in outer DataEngineSession, resulting in the error that external classes can not be loaded any longer from the EAR (or from an included library).
-This error occurs in above use case.
-On processing of the Crosstab's highlight styles a new DataEngine and DataEngineSession is created and directly shutdown after processing.
-The attached stacktrace files show the sequence of DataEngine(Session) creation and shutdown in above use case:
-- 1st: create outer DataEngine
-- 2nd: create inner DataEngine (for hightlight style processing)
-- 3rd: shutdown inner DataEngine Possible fixes:
-- convert classLoaderHolder from static thread-local class attribute to instance attribute (if there is no real reason for thread-local nature)
-- manage a stack of classloaders with classLoaderHolder (this one i used as workaround because i am not aware of the necessity of the thread-local nature of classLoaderHolder)
+I have following use case: - Data Cube with measure or level attribute of DataType JavaObject - The concrete value type is loaded from the EAR where BIRT is integrated - Crosstab with Highlight conditions defined The type of the measure value is loaded by the ClassLoader provided by current DataEngineSession: DataEngineSession.getCurrentClassLoader(). DataEngineSession defines a static ThreadLocal classLoaderHolder that is (1) initialized (with correct classloader) on instantiation of DataEngineSession (along with creation of DataEngine instance) (2) reset to null on shutdown of DataEngine instance Problem arises when some code creates a new DataEngine instance within an active DataEngine instance / DataEngineSession (within the same thread). Then on shutdown of the nested / inner DataEngine instance the static ThreadLocal classLoaderHolder is reset to null. Afterwards the ClassLoader is missing (null) also in outer DataEngineSession, resulting in the error that external classes can no
+t be loaded any longer from the EAR (or from an included library). This error occurs in above use case. On processing of the Crosstab's highlight styles a new DataEngine and DataEngineSession is created and directly shutdown after processing. The attached stacktrace files show the sequence of DataEngine(Session) creation and shutdown in above use case: - 1st: create outer DataEngine - 2nd: create inner DataEngine (for hightlight style processing) - 3rd: shutdown inner DataEngine Possible fixes: - convert classLoaderHolder from static thread-local class attribute to instance attribute (if there is no real reason for thread-local nature) - manage a stack of classloaders with classLoaderHolder (this one i used as workaround because i am not aware of the necessity of the thread-local nature of classLoaderHolder)

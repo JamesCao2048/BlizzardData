@@ -1,6 +1,5 @@
 CCombo#setVisible() doesn't check if the popup shell is disposed
-Before call CCombo#setVisible(false) we are checking if the CCombo is not already disposed.
-I guess
+Before call CCombo#setVisible(false) we are checking if the CCombo is not already disposed. I guess
 CCombo Line 1539:
 -------8<-------
 if (!visible) popup.setVisible(false);

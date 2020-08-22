@@ -1,6 +1,5 @@
 [table] [SWT.CHECK] SWT.CHECK on a table does not behave consistently
-A table with SWT.CHECK does not render the column label correctly.
-On a macosx/carbon, the first column header("foo") appears on the second column which is not the checkbox.
+A table with SWT.CHECK does not render the column label correctly. On a macosx/carbon, the first column header("foo") appears on the second column which is not the checkbox.
 On gtk and even win32, the column "foo" is the same as column as the checkbox.
 Testcase:
 public class Main {
@@ -25,8 +24,7 @@ tableColumn3.setText("baz");
 new TableItem(table, SWT.NONE).setText(new String[]{ "cell-1-1", "cell-1-2", "cell-1-3"});
 new TableItem(table, SWT.NONE).setText(new String[]{ "cell-2-1", "cell-2-2", "cell-2-3"});
 
-for (int i = 0; i
-< table.getColumnCount(); i++) {
+for (int i = 0; i < table.getColumnCount(); i++) {
 table.getColumn(i).pack();
 }
 shell.pack();

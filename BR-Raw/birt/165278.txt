@@ -1,5 +1,2 @@
 Bug 165278 this.getDisplayContent()=" in script of text will destroy preview[0801]
-Description: this.getDisplayContent()="" in script of text will destroy preview Build number:2.1.2.v20061120 and 2.2.0.v20061117 Steps to reproduce: 1.Insert a text item, select it and switch to script editor 2.Input this.getDisplayContent()="" and preview Expected result: Error message about the incorrect script.
-Actual result: In 2.1.2, I saw HTTP Status 500
-- type Exception report message description The server encountered an internal error () that prevented it from fulfilling this request.
-In 2.2.0, I saw error dialog with java.lang.ClassCastException.
+Description: this.getDisplayContent()="" in script of text will destroy preview Build number:2.1.2.v20061120 and 2.2.0.v20061117 Steps to reproduce: 1. Insert a text item, select it and switch to script editor 2. Input this.getDisplayContent()="" and preview Expected result: Error message about the incorrect script. Actual result: In 2.1.2, I saw HTTP Status 500 - type Exception report message description The server encountered an internal error () that prevented it from fulfilling this request. In 2.2.0, I saw error dialog with java.lang.ClassCastException.

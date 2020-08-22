@@ -4,17 +4,14 @@ Steps To Reproduce:
 1.Just create this two simples HTML files
 File 1: (frameset.html)
 炉炉炉炉炉炉炉
-
 <html>
 <frameset id="froot" cols="*,1">
 <frame src="page1.htm" name="f1"/>
 <frame src=" http://www.google.fr/ " name="google" />
 </frameset>
-
 </html>
 File 2: (frame1.html)
 炉炉炉炉炉炉炉
-
 <html>
 <head>
 <title>Frame1</title>
@@ -22,8 +19,7 @@ File 2: (frame1.html)
 <body>
 <a onclick="top.close();" href="#">This link closes Eclipse</a>
 </body>
-
 </html>
-2.Launch frameset.html in the Eclipse Internal Browser
-3.Click on the link
+2. Launch frameset.html in the Eclipse Internal Browser
+3. Click on the link
 More information:

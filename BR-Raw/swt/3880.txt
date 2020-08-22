@@ -1,10 +1,8 @@
 Exception in StyledText with WRAP flag.
 Eclipse 2.1 M3, Windows 2000
 The following exception occurs, when deleting some lines in a wrapped
-StyledText widget.
-It is important, that the selection starts at a real line
-wich is not the last one and ends at the last virtual line.
-(Real line is a
+StyledText widget. It is important, that the selection starts at a real line
+wich is not the last one and ends at the last virtual line. (Real line is a
 line terminated with "rn", and the virtual line is a line shown by the
 StyledText widget.) It is also important that all selected lines are wrapped by
 the widget.
@@ -54,16 +52,14 @@ StyledText text = new StyledText(shell, SWT.BORDER | SWT.WRAP);
 String string = "0123456789 ";
 StringBuffer sb = new StringBuffer();
 
-for (int j = 0; j
-< 4; j++)
+for (int j = 0; j < 4; j++)
 {
 if (j != 0)
 {
 sb.append("rn");
 }
 
-for (int i = 0; i
-< 30; i++)
+for (int i = 0; i < 30; i++)
 {
 sb.append(string);
 }

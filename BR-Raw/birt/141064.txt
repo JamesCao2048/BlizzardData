@@ -1,3 +1,2 @@
 Bug 141064 Remove group level data binding
-This bug covers the engine part of the task to remove group level data binding.
-After the hange, all binding expressions will be defined on the table level, and each binding expression will have an AggregateOn field to explicitly define the group level for that expression.
+This bug covers the engine part of the task to remove group level data binding. After the hange, all binding expressions will be defined on the table level, and each binding expression will have an AggregateOn field to explicitly define the group level for that expression.

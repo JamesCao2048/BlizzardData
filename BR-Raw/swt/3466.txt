@@ -1,6 +1,5 @@
 TableCursor always paints left-aligned text
 In the case with a table that is center/right aligned, having a cursor makes
 the text displayed in the cursor inconsistent with table's alignment.
-
 TableCursor is always left-aligned and does not provide any means to allow user
 to set its text alignment to match its table's alignment.

@@ -4,32 +4,27 @@ Linux/GTK
 The code completion system doesn't work quike well when it is activited on an
 other frame that the main frame (dialog, preference page, ...).
 Test case #1:
-1.Open the Preferences page.
-2.Select java templates (java
--> templates).
-3.Edit one template.
-4.Put the cursor at the end of the template pattern and hit [CTRL]+[SPACE].
+1. Open the Preferences page.
+2. Select java templates (java -> templates).
+3. Edit one template.
+4. Put the cursor at the end of the template pattern and hit [CTRL]+[SPACE].
 The code completion dialog is displayed.
-5.Hit some keys, nothing happens.
-6.Select a proposal with the mouse (single click).
-7.Hit some keys, only the arrow up, arrow down and enter keys work.
+5. Hit some keys, nothing happens.
+6. Select a proposal with the mouse (single click).
+7. Hit some keys, only the arrow up, arrow down and enter keys work.
 Test case #2:
-1.Create two compilation units called Test1 and Test2, without javadoc
+1. Create two compilation units called Test1 and Test2, without javadoc
 associated to the classes.
-2.Open the Preferences page
-3.Select detail formatters (java
--> debug
--> detail formatters)
-4.Create a new detail formatter, select Test1 as its type.
-5.Type "Test" in the source viewer.
-Hit [CTRS]+[SPACE].
+2. Open the Preferences page
+3. Select detail formatters (java -> debug -> detail formatters)
+4. Create a new detail formatter, select Test1 as its type.
+5. Type "Test" in the source viewer. Hit [CTRS]+[SPACE].
 The code completion dialog is displayed.
 The first proposals should be Test1, Test2
-6.Hit some keys, nothing happens.
-7.Select Test2 with the mouse (single click).
-8.Hit some keys, only the arrow up, arrow down and enter keys work.
-9.Select an other proposal, which has an associated additionnal info (class
-javadoc).
-After the additionnal info is displayed, all keys can be used as expected.
+6. Hit some keys, nothing happens.
+7. Select Test2 with the mouse (single click).
+8. Hit some keys, only the arrow up, arrow down and enter keys work.
+9. Select an other proposal, which has an associated additionnal info (class
+javadoc). After the additionnal info is displayed, all keys can be used as expected.
 It looks like a GTK problem, as the code completion works fine on others
 platformes (Win32 and Linux/Motif).

@@ -1,6 +1,4 @@
 'set data' callback not sent after all items are cleared in virtual tree
 I20060428-0010
-On Mac, we're seeing a problem in the debug view where we clear all the items in the tree, but do not get a 'set data' callback.
-The tree, and items that are cleared are visible in the tree.
-If we then bring another application to the foreground, and then switch back to the debugger, the 'set data' callbacks are generated and the view updates.
+On Mac, we're seeing a problem in the debug view where we clear all the items in the tree, but do not get a 'set data' callback. The tree, and items that are cleared are visible in the tree. If we then bring another application to the foreground, and then switch back to the debugger, the 'set data' callbacks are generated and the view updates.
 We have not been able to generate a simple tree test case that fails the same way.

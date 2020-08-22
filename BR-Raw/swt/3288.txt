@@ -2,19 +2,19 @@ Eclipse crashes on GTK (linux) while Cell Editor in Property View loosing focus
 During implementation of custom contents for properties view (IPropertySource
 for specific selection) we found that eclipse crashes on GTK (Linux) in some
 special conditions:
-0.In our IPropertySource implementation we have editable text property.
-1.Open CellEditor for the editable property
-2.Change it's value
-3.Click to some other property in properties view of to the properties view
+0. In our IPropertySource implementation we have editable text property.
+1. Open CellEditor for the editable property
+2. Change it's value
+3. Click to some other property in properties view of to the properties view
 background.
-We found that after step 3.The following sequence of calls lead us to the
+We found that after step 3. The following sequence of calls lead us to the
 crash:
-1.Cell Editor receive focuslost event and start "applyEditorValue()" process
-2.PropertySheetEntry is trying to refresh property sheet contents
+1. Cell Editor receive focuslost event and start "applyEditorValue()" process
+2. PropertySheetEntry is trying to refresh property sheet contents
 (refreshFromRoot() method) by looking for appropriate IPropertySource and
 trying to collect valid IPropertyDescriptors from this IPropertySource
 instance by calling IPropertySource.getPropertyDescriptors()
-3.Eclipse crashes sometimes later if our instance of IPropertySoruce return
+3. Eclipse crashes sometimes later if our instance of IPropertySoruce return
 empty array (IPropertyDescriptors [0]) during this call.
 The same sequence works correctly on Windows.
 The following trace present in console on setting

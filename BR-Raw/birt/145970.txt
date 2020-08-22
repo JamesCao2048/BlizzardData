@@ -1,10 +1,2 @@
 Bug 145970 [REGRESSION] Set format in parameter dialog will lose the orginal data set by user.
-Reproduce: 1.New a report scalar parameter, "p1", in the initialize dialog, set format to be uppercase.
-2.New a data set with query "select * from CLASSICMODELS.CUSTOMERS where CLASSICMODELS.CUSTOMERS.CONTACTFIRSTNAME = ?".
-And bind the data set parameter to the report parameter "p1".
-3.Insert a table into layout view, drag column [CUSTOMERNUMBER], [CONTACTLASTNAME], [CONTACTFIRSTNAME] from Data Explorer into table detail row respectively.
-4.Preview.
-In the pop-up parameter dialog, type "Eric".
-Press "ok".
-Actually result: There was no data displayed.
-Expected result: There is one record whose first name is "Eric" in database.
+Reproduce: 1. New a report scalar parameter, "p1", in the initialize dialog, set format to be uppercase. 2. New a data set with query "select * from CLASSICMODELS.CUSTOMERS where CLASSICMODELS.CUSTOMERS.CONTACTFIRSTNAME = ?". And bind the data set parameter to the report parameter "p1". 3. Insert a table into layout view, drag column [CUSTOMERNUMBER], [CONTACTLASTNAME], [CONTACTFIRSTNAME] from Data Explorer into table detail row respectively. 4. Preview. In the pop-up parameter dialog, type "Eric". Press "ok". Actually result: There was no data displayed. Expected result: There is one record whose first name is "Eric" in database.

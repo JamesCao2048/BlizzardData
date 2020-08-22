@@ -1,6 +1,4 @@
 [Browser] Stop calling HIJavaViewCreateWithCocoaView
 Build ID: n/a
 Steps To Reproduce:
-The SWT calls HIJavaViewCreateWithCocoaView to create an HIView that embeds an AWT frame.
-While it's now just a pass-through to HICocoaViewCreate, it's still SPI, so new work that is Leopard-only (like the Cocoa port) should not use it.
-Use HICocoaViewCreate instead.
+The SWT calls HIJavaViewCreateWithCocoaView to create an HIView that embeds an AWT frame. While it's now just a pass-through to HICocoaViewCreate, it's still SPI, so new work that is Leopard-only (like the Cocoa port) should not use it. Use HICocoaViewCreate instead.

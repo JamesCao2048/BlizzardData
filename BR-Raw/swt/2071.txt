@@ -1,5 +1,4 @@
 [OSX] Printer instance unusable after cancelJob()
-A Printer is unusable on OSX after calling cancelJob().
-It can be used over and over with startJob()/endJob(), but not after startJob()/cancelJob().
+A Printer is unusable on OSX after calling cancelJob().  It can be used over and over with startJob()/endJob(), but not after startJob()/cancelJob().
 This behavior increases the difficulty of working around  bug 179201 .
 I will attach a test case that demonstrates this problem on OSX.

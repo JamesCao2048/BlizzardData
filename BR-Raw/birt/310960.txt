@@ -1,8 +1,2 @@
 Bug 310960 [Regression]Exception occurs when preview a crosstab without data
-Set cube filter which there is no data match the condition, and preview the crosstab, exception occurs.
-Build version:2.6.0.v20100429-0630 Steps to reproduce: 1.Get the attached report design file.
-2.There is a filter in the cube-dataset tab, after filter there is no data matches.
-3.Pull the cube to layout, and preview.
-Exception occurs.
-Expected result: If there is no data matches, show the blank report.
-Actual result: org.eclipse.birt.report.service.api.ReportServiceException:Error happened while running the report.
+Set cube filter which there is no data match the condition, and preview the crosstab, exception occurs. Build version:2.6.0.v20100429-0630 Steps to reproduce: 1.Get the attached report design file. 2.There is a filter in the cube-dataset tab, after filter there is no data matches. 3.Pull the cube to layout, and preview. Exception occurs. Expected result: If there is no data matches, show the blank report. Actual result: org.eclipse.birt.report.service.api.ReportServiceException:Error happened while running the report.

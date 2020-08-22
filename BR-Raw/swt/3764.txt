@@ -1,9 +1,8 @@
 [Motif] Tree and Table views not getting proper selection
 To reproduce: (example)
-1.Open a view containing a tree or table.
-2.Select an item by left clicking it once.
-3.Right click (and hold) a different item to bring up a context menu.
-The
+1. Open a view containing a tree or table.
+2. Select an item by left clicking it once.
+3. Right click (and hold) a different item to bring up a context menu. The
 context menu will contain items appropriate to the first item selected.
 Noticed this behavior in CVS Repositories view, Navigator view, Package
 Explorer, Task List.

@@ -2,5 +2,4 @@ FormData throws "Widget is disposed" when it's widget is dispose()d
 FormData.getXXXAttachment() throws SWTException "Widget is disposed" because it
 doesn't do any isDisposed() checks.
 I originally thought hiding the component first and forcing a layout(true) would
-fix it, but that must have been some other problem.
-I am attaching a snippit.
+fix it, but that must have been some other problem. I am attaching a snippit.

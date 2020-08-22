@@ -1,13 +1,13 @@
 SWTException thrown from CCombo
 The ingredients are:
-1.A CCombo widget.
-2.This CCombo widget added to an Eclipse View.
-3.The View has to be detached (this is important as it triggers the exception).
+1. A CCombo widget.
+2. This CCombo widget added to an Eclipse View.
+3. The View has to be detached (this is important as it triggers the exception).
 The steps to reproduce are:
-1.Open the View (detached) containing the CCombo widget.
-2.Activite the CCombo by selecting an item from it.
-3.Close the (detached) View ensuring that the focus is still on the CCombo widget.
-4.Repeat steps 1-2 but this time selecting an item from the CCombo throws an exception:
+1. Open the View (detached) containing the CCombo widget.
+2. Activite the CCombo by selecting an item from it.
+3. Close the (detached) View ensuring that the focus is still on the CCombo widget.
+4. Repeat steps 1-2 but this time selecting an item from the CCombo throws an exception:
 !MESSAGE Unhandled event loop exception
 !STACK 0
 org.eclipse.swt.SWTException: Widget is disposed
@@ -46,4 +46,4 @@ at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
 at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
 at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
 at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
-at org.tencompetence.ldauthor.LDAuthorApp.st
+at org.tencompetence.ldauthor.LDAutho

@@ -1,12 +1,10 @@
 Focus not visible on radio buttons
 Build 20021001
 Radio buttons do not show the hashed line around them that indicates focus on
-XP.
-This works fine in 2.0.
+XP. This works fine in 2.0.
 STEPS
 1)Run the example below
-2) Use the arrow keys to go up and down
-- you will see you do have focus on
+2) Use the arrow keys to go up and down - you will see you do have focus on
 the radio buttons but there is no visual indication of this.
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.layout.*;
@@ -29,8 +27,7 @@ Point size = buttonComposite.computeSize(SWT.DEFAULT,
 SWT.DEFAULT);
 buttonComposite.setBounds(10, 10, size.x, size.y);
 //radio2.setFocus();
-for (int i = 0; i
-< 3; i++) {
+for (int i = 0; i < 3; i++) {
 Button b = new Button(shell, SWT.NULL);
 b.setBounds(20 + (i * 50), 120, 50, 25);
 b.setText("B::" + i);

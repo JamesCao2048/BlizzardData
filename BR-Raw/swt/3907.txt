@@ -1,7 +1,6 @@
 Drag and drop crashes Eclipse
 The new GTK tree seems to support drag and drop, but my VM dies everytime I try to use D&D.
-I'm using JDK 1.4.1 on Mandrake 9.0 (gtk+2.0-2.0.6).
-I'll attach the entire file that's generated, but here's the stack trace:
+I'm using JDK 1.4.1 on Mandrake 9.0 (gtk+2.0-2.0.6). I'll attach the entire file that's generated, but here's the stack trace:
 Current Java thread:
 at org.eclipse.swt.internal.gtk.OS.gtk_tree_view_get_column(Native Method)
 at org.eclipse.swt.widgets.TreeItem.getBounds(TreeItem.java:223)

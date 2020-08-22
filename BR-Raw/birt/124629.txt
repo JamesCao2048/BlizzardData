@@ -1,6 +1,2 @@
 Bug 124629 Use Top/Bottom n in a field containing null value inside will cause DataException.
-Description: Use Top/Bottom n in a field containing null value inside will cause DataException.
-Steps to reproduce: 1.New a data source and dataset 2.Add a filter on a field, set operator to top 5 3.Click Preview Result.
-Result: A BIRT exception occurred.
-Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.0.0 Error Code:data.engine.DataConversionError Error Message:An error happened in data type conversion.
-Can not convert the value of {NULL_VALUE_!@#$%^&} to Double type.
+Description: Use Top/Bottom n in a field containing null value inside will cause DataException. Steps to reproduce: 1. New a data source and dataset 2. Add a filter on a field, set operator to top 5 3. Click Preview Result. Result: A BIRT exception occurred. Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.0.0 Error Code:data.engine.DataConversionError Error Message:An error happened in data type conversion. Can not convert the value of {NULL_VALUE_!@#$%^&} to Double type.

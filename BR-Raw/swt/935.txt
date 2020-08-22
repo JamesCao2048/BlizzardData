@@ -12,5 +12,4 @@ at org.eclipse.swt.widgets.Menu._setVisible(Unknown Source)
 at org.eclipse.swt.widgets.Display.runPopups(Unknown Source)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
 [no more swt in stack trace below this line]
-I have looked at the code and no idea how this can happen.
-It looks like 'display' was null.
+I have looked at the code and no idea how this can happen. It looks like 'display' was null.

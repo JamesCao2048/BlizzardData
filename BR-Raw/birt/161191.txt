@@ -1,6 +1,2 @@
 Bug 161191 Null is inserted when drag columns to query text with ctrl key pressed
-Description: Null is inserted when drag columns to query text with ctrl key pressed Steps to reproduce: 1.New a data source.
-2.New a dataset.
-3.Press and hold ctrl key, select OFFICECODE and CITY columns, drag to query text.
-Expected result: "CLASSICMODELS.OFFICES.OFFICECODE,CLASSICMODELS.OFFICES.CITY" is inserted in query text.
-Actual result: "null,CLASSICMODELS.OFFICES.OFFICECODE,CLASSICMODELS.OFFICES.CITY" is inserted
+Description: Null is inserted when drag columns to query text with ctrl key pressed Steps to reproduce: 1. New a data source. 2. New a dataset. 3. Press and hold ctrl key, select OFFICECODE and CITY columns, drag to query text. Expected result: "CLASSICMODELS.OFFICES.OFFICECODE,CLASSICMODELS.OFFICES.CITY" is inserted in query text. Actual result: "null,CLASSICMODELS.OFFICES.OFFICECODE,CLASSICMODELS.OFFICES.CITY" is inserted

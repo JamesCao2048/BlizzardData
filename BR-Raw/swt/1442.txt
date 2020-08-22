@@ -1,60 +1,57 @@
 Compiler warnings in cocoa port in N20080914-2000
-1.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Shell.java
+1. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Shell.java
 (at line 1513)
 Display display = this.display;
 The local variable display is never read
-1.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
+1. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
 (at line 834)
 TableColumn column = columns [i];
 The local variable column is never read
-2.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
+2. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
 (at line 1746)
 TableColumn column = columns [index];
 The local variable column is never read
-3.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
+3. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
 (at line 1755)
 TableColumn column = columns [index];
 The local variable column is never read
-4.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
+4. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Table.java
 (at line 1756)
-int position = (style & SWT.CHECK) != 0 ?
-i + 1 : i;
+int position = (style & SWT.CHECK) != 0 ? i + 1 : i;
 The local variable position is never read
-1.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/TableItem.java
+1. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/TableItem.java
 (at line 130)
 Image image = getImage (index);
 The local variable image is never read
-1.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Text.java
+1. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Text.java
 (at line 548)
 NSRange range = ((NSTextView)view).selectedRange();
 The local variable range is never read
-1.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
+1. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
 (at line 861)
 TreeColumn column = columns [i];
 The local variable column is never read
-2.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
+2. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
 (at line 1700)
 int [] disclosure = new int [1];
 The local variable disclosure is never read
-3.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
+3. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
 (at line 1701)
 boolean [] expandableRows = new boolean [1];
 The local variable expandableRows is never read
-4.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
+4. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
 (at line 1703)
 TreeColumn firstColumn = columns [order [0]];
 The local variable firstColumn is never read
-5.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
+5. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
 (at line 1712)
 TreeColumn column = columns [index];
 The local variable column is never read
-6.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
+6. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
 (at line 1721)
 TreeColumn column = columns [index];
 The local variable column is never read
-7.WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
+7. WARNING in /builds/N200809132000/src/plugins/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/Tree.java
 (at line 1722)
-int position = (style & SWT.CHECK) != 0 ?
-i + 1 : i;
-The local variable position is never read
-1.WARNING i
+int position = (style & SWT.CHECK) != 0 ? i + 1 : i;
+The local variable position is never rea

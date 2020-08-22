@@ -1,9 +1,7 @@
 SWT Mouse Enter comes before Mouse Exit [portability]
 If I have two controls, A and B, and move the mouse from one to the other,
-control B will get entered, and then control A exited.
-These events are out of
-order.
-The exit should happen first, followed by the enter.
+control B will get entered, and then control A exited.  These events are out of
+order.  The exit should happen first, followed by the enter.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.*;
 import org.eclipse.swt.events.MouseEvent;

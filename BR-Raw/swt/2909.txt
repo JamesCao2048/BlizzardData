@@ -1,6 +1,5 @@
 List.showSelection() scrolls list although item already visible
 The javadoc of a showSelection states that the list will not be scrolled if the
-item is already visible.
-This holds true for win32 but at least on my linux box
+item is already visible. This holds true for win32 but at least on my linux box
 the list is scrolled(until selected item is at the top) although the item is
 visible already

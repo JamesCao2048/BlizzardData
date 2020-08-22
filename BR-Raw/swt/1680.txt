@@ -1,21 +1,17 @@
 Table events screwed up if asyncExec happens on focus lost / out
 I20080311-0800.
-Not sure whether this is a regression as I detected this while working on a new feature: if an asyncExec is sent inside a focusLost/Out listener then the event notification is completely screwed, e.g.
-mouseDown on the new widget is not sent when the mouse was pressed but instead a mouseDown is sent when it is released.
-Test Case: start the following snippet and move the mouse over 'Item 0' or 'Item 1' then press down (and don't release and don't move the mouse) the left mouse button ==> only "focus lost" gets written to Console view (should also: "down").
-Release the mouse ==> "down" is written to the Console view.
+Not sure whether this is a regression as I detected this while working on a new feature: if an asyncExec is sent inside a focusLost/Out listener then the event notification is completely screwed, e.g. mouseDown on the new widget is not sent when the mouse was pressed but instead a mouseDown is sent when it is released.
+Test Case: start the following snippet and move the mouse over 'Item 0' or 'Item 1' then press down (and don't release and don't move the mouse) the left mouse button ==> only "focus lost" gets written to Console view (should also: "down"). Release the mouse ==> "down" is written to the Console view.
 Test Snippet:
 /*******************************************************************************
 * Copyright (c) 2008 IBM Corporation and others.
-* All rights reserved.
-This program and the accompanying materials
+* All rights reserved. This program and the accompanying materials
 * are made available under the terms of the Eclipse Public License v1.0
 * which accompanies this distribution, and is available at
 *  http://www.eclipse.org/legal/epl-v10.html
 *
 * Contributors:
-*     IBM Corporation
-- initial API and implementation
+*     IBM Corporation - initial API and implementation
 *******************************************************************************/
 package org.eclipse.swt.snippets;
 import org.eclipse.swt.SWT;
@@ -46,8 +42,7 @@ public void run() {
 shell.open();
 Shell shell2= new Shell(shell, SWT.TOOL | SWT.ON_TOP | SWT.RESIZE);
 Table table= new Table(shell2, SWT.SINGLE);
-for (int i= 0; i
-< 2; i++) {
+for (int i= 0; i < 2; i++) {
 TableItem item= new TableItem(table, 0);
 item.setText("Item " + i);
 }

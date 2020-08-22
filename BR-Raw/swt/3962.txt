@@ -1,14 +1,11 @@
 Cannot draw transparent PNG files properly
 I have a problem with the following code.
 The problem is that the image drawn on my canvas is collapsed if the imageData
-is created from a PNG file with transparency.
-It seems that RGBs are drawn well
-but an alpha channel has shifted to the right.
-There is no problem with
+is created from a PNG file with transparency. It seems that RGBs are drawn well
+but an alpha channel has shifted to the right. There is no problem with
 transparent GIFs or non-transparent PNGs.
 It happens on Linux.
------- code
-------
+------ code ------
 void drawHalf(GC gc, ImageData imageData, int destx, int desty) {
 Image image = new Image(null, imageData);
 gc.setClipping(destx + imageData.width/2, desty,

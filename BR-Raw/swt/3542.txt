@@ -1,5 +1,4 @@
 PENs are being leaked during painting
-GEF uses double-buffered painting.
-At some point when painting to an offscreen
+GEF uses double-buffered painting.  At some point when painting to an offscreen
 Image, GDI objects (Pens in this case) are being leaked.
 Let me know if you need more information or a snippet.

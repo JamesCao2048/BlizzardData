@@ -1,3 +1,2 @@
 swt dependecy on msvfw32.dll
-This msvfw32.dll is not available in pre install recovery environments and causes all applications based on swt to not work.
-Either swt needs to look at windows/system32 folder to look for this dll or need to remove this dependency to allow swt to run in windows PE.
+This msvfw32.dll is not available in pre install recovery environments and causes all applications based on swt to not work. Either swt needs to look at windows/system32 folder to look for this dll or need to remove this dependency to allow swt to run in windows PE.

@@ -1,8 +1,7 @@
 Java core [WM_BUTTONDOWN] when selecting a tree in Vista
 Windows Vista Beta 2
 Build I20060929
-When I select the Outline View on Vista I periodically get a Java VM exception.
-I can't do this consistently (it happens every 2 hours or so).
+When I select the Outline View on Vista I periodically get a Java VM exception. I can't do this consistently (it happens every 2 hours or so).
 Here is the trace
 An unexpected exception has been detected in native code outside the VM.
 Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at PC=0x750F9B16
@@ -38,19 +37,11 @@ at org.eclipse.core.launcher.Main.basicRun(Main.java:285)
 at org.eclipse.core.launcher.Main.run(Main.java:987)
 at org.eclipse.core.launcher.Main.main(Main.java:962)
 Dynamic libraries:
-0x00400000
-- 0x0040B000 	C:R330921eclipsejrebinjava.exe
-0x77B20000
-- 0x77C2D000 	C:Windowssystem32ntdll.dll
-0x777F0000
-- 0x778BE000 	C:Windowssystem32kernel32.dll
-0x77730000
-- 0x777EA000 	C:Windowssystem32ADVAPI32.dll
-0x77680000
-- 0x77728000 	C:Windowssystem32RPCRT4.dll
-0x76790000
-- 0x76838000 	C:Windowssystem32MSVCRT.dll
-0x08000000
-- 0x08138000 	C:R330921eclipsejrebinclientjvm.dll
-0x775E0000
-- 0x7767C000 	C:Windows
+0x00400000 - 0x0040B000 	C:R330921eclipsejrebinjava.exe
+0x77B20000 - 0x77C2D000 	C:Windowssystem32ntdll.dll
+0x777F0000 - 0x778BE000 	C:Windowssystem32kernel32.dll
+0x77730000 - 0x777EA000 	C:Windowssystem32ADVAPI32.dll
+0x77680000 - 0x77728000 	C:Windowssystem32RPCRT4.dll
+0x76790000 - 0x76838000 	C:Windowssystem32MSVCRT.dll
+0x08000000 - 0x08138000 	C:R330921eclipsejrebinclientjvm.dll
+0x775E0000 - 0x7767C000 	C:Windowssystem32

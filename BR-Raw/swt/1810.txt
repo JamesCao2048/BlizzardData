@@ -3,9 +3,8 @@ Created  attachment 80367   [details]
 Screenshots and diff file
 Build ID: 3.4M2
 Steps To Reproduce:
-1.Run application, containing RTL-oriented ExpandBar with some ExpandItems.
+1. Run application, containing RTL-oriented ExpandBar with some ExpandItems.
 Not-expandable parts of RTL-oriented ExpandItems remain LTR-oriented.
 More information:
 Direction of GtkExpander (and direction of all its children) is not set in accordance with orientation of ExpandItem.
-Attachment contains screenshots and suggested changes, which may help to avoid this problem.
-Diffs are done on the base of sources from build 3.4M2.
+Attachment contains screenshots and suggested changes, which may help to avoid this problem. Diffs are done on the base of sources from build 3.4M2.

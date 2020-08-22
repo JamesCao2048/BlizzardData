@@ -1,12 +1,9 @@
 [DND] JVM crash with "Invalid memory access" after calling dispose() in dragFinished()
 User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3
 Build Identifier: 20090619-0625
-Trying to dispose a dragged composite in dragFinished() ends up in an "Invalid memory access" JVM crash.
-Happens with SWT versions 3.5 and M20090917-800 (both cocoa 64bit), using java 1.6 on OS X 10.5.8.Trying to dispose the parent of the dragged composite results in the same crash too.
-This doesn't happen on Linux (SWT 3.5 64bit, java 1.6, Ubuntu 9.04).
-I attached a test class and the crash dump.
+Trying to dispose a dragged composite in dragFinished() ends up in an "Invalid memory access" JVM crash. Happens with SWT versions 3.5 and M20090917-800 (both cocoa 64bit), using java 1.6 on OS X 10.5.8. Trying to dispose the parent of the dragged composite results in the same crash too. This doesn't happen on Linux (SWT 3.5 64bit, java 1.6, Ubuntu 9.04). I attached a test class and the crash dump.
 Reproducible: Always
 Steps to Reproduce:
-1.Drag one composite onto the other
+1. Drag one composite onto the other
 2.
 3.

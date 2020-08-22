@@ -1,14 +1,10 @@
 [Workbench] CTabFolder flashes on tab switch
 I20040420
-My system background colour is set to grey.
-Java editors in eclipse have a
-white background.
-When I switch between two editors, I see a flash to the grey
-system background colour.
-The grey is visible for a fair amount of time during
+My system background colour is set to grey.  Java editors in eclipse have a
+white background.  When I switch between two editors, I see a flash to the grey
+system background colour.  The grey is visible for a fair amount of time during
 the switch, and even longer if it is the first time I have accessed the file
-either in the current session or after it has been inactive for some time.
-The
+either in the current session or after it has been inactive for some time.  The
 same behavior can be seen upon switching view tabs (easier to see when the view
 is maximized).
 A plausible reason for the flash may be that when we show the next widget, X

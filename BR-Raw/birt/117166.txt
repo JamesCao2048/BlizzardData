@@ -1,27 +1,4 @@
 Bug 117166 Stored Procedures in Oracle
-In Oracle, stored procedures that return Result Sets are written so that they have an output parameter of Type Ref Cursor or Table of Records.
-Even more, they must be included in packages.
-I'm giving an example trying to be clear with the problem.
-This is a very simple package taht contains just one procedure that returns a ref cursor:
--- Start of DDL Script for Package INFOMEDIA.PK_PRUEBAS_BIRT
--- Generated 2005-11-18 18:06:36 from INFOMEDIA@GURIDB CREATE OR REPLACE PACKAGE pk_pruebas_birt IS
---========================== Data definition ===================================
--- Registro de datos de clientes type clientes_rec is record( nitcliente varchar2(30),
--- Nit del cliente nombre varchar2(200));
--- Nombre del cliente
---========================== Cursor definition =================================
--- Cursor de datos de clientes type cur_clientes_rec is ref cursor return clientes_rec;
---========================== Procedure definition ==============================
--- Devuelve un cursor con datos de clientes procedure p_clientes_rec ( p_fila OUT cur_clientes_rec); END;
--- Package spec / CREATE OR REPLACE PACKAGE BODY pk_pruebas_birt IS
--- Devuelve un cursor con datos de clientes procedure p_clientes_rec ( p_fila OUT cur_clientes_rec) is BEGIN open p_fila for select nit_cliente, nombre||' '||apellido from im_clientes where nombre like '%ANTONIO%'; END;
---============================================================================== END; / BIRT extracts all the procedures and functions of the DB schema included or not in packages.
-Even though this looks correct, it should use the package.procedure notation for procedures included in packages or you could loose yourself if you have a whole bunch of them.
-And what happens if you have two procedures with the same name in different packages?
-What happens if you have overloaded packages?
-In the case of this example, BIRT shows in the navigation tree an entry for P_CLIENTES_REC (the procedures name) with this contents: P_FILA (REF CURSOR, Output) param1 (PL/SQL RECORD, Output)
---> Included by BIRT NITCLIENTE (VARCHAR2, Output) NOMBRE (VARCHAR2, Output) What is the param1 entry, included by BIRT for?
-Comparing with plain Java, you should declare an output parameter of Type.CURSOR that maps to the result set.
-In BIRT there is no way to declare this output parameters because its list of types show only the JDBC standard and Type.CURSOR is an Oracle extension.
-So, you should start with showing standard types plus extended types found in the particular JDBC Source (Oracle has quite a few!).
-I beleive than, in the case of the example, this should be all what is needed to do and BIRT should map this output parameter to the Result Set.
+In Oracle, stored procedures that return Result Sets are written so that they have an output parameter of Type Ref Cursor or Table of Records. Even more, they must be included in packages. I'm giving an example trying to be clear with the problem. This is a very simple package taht contains just one procedure that returns a ref cursor: -- Start of DDL Script for Package INFOMEDIA.PK_PRUEBAS_BIRT -- Generated 2005-11-18 18:06:36 from INFOMEDIA@GURIDB CREATE OR REPLACE PACKAGE pk_pruebas_birt IS --========================== Data definition =================================== -- Registro de datos de clientes type clientes_rec is record( nitcliente varchar2(30), -- Nit del cliente nombre varchar2(200)); -- Nombre del cliente --========================== Cursor definition ================================= -- Cursor de datos de clientes type cur_clientes_rec is ref cursor return clientes_rec; --========================== Procedure definition ============================== -- Devuelve un curs
+or con datos de clientes procedure p_clientes_rec ( p_fila OUT cur_clientes_rec); END; -- Package spec / CREATE OR REPLACE PACKAGE BODY pk_pruebas_birt IS -- Devuelve un cursor con datos de clientes procedure p_clientes_rec ( p_fila OUT cur_clientes_rec) is BEGIN open p_fila for select nit_cliente, nombre||' '||apellido from im_clientes where nombre like '%ANTONIO%'; END; --============================================================================== END; / BIRT extracts all the procedures and functions of the DB schema included or not in packages. Even though this looks correct, it should use the package.procedure notation for procedures included in packages or you could loose yourself if you have a whole bunch of them. And what happens if you have two procedures with the same name in different packages? What happens if you have overloaded packages? In the case of this example, BIRT shows in the navigation tree an entry for P_CLIENTES_REC (the procedures name) with this contents: P_F
+ILA (REF CURSOR, Output) param1 (PL/SQL RECORD, Output) --> Included by BIRT NITCLIENTE (VARCHAR2, Output) NOMBRE (VARCHAR2, Output) What is the param1 entry, included by BIRT for? Comparing with plain Java, you should declare an output parameter of Type.CURSOR that maps to the result set. In BIRT there is no way to declare this output parameters because its list of types show only the JDBC standard and Type.CURSOR is an Oracle extension. So, you should start with showing standard types plus extended types found in the particular JDBC Source (Oracle has quite a few!). I beleive than, in the case of the example, this should be all what is needed to do and BIRT should map this output parameter to the Result Set.

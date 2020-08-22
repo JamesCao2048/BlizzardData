@@ -1,5 +1,2 @@
 Bug 119398 Using RenderTask to render pdf file but the master page information lost.
-Description: Using RenderTask to render pdf file but the master page information lost.
-Steps to reproduce: 1.Generate attached case1.rptdesign to report document 2.Using RenderTask to render report document to pdf file.
-Expected result: Master Page contents show in pdf file.
-Actual result: In generated pdf file, I saw "NO DATA FOUND!!!" instead of master page contents
+Description: Using RenderTask to render pdf file but the master page information lost. Steps to reproduce: 1. Generate attached case1.rptdesign to report document 2. Using RenderTask to render report document to pdf file. Expected result: Master Page contents show in pdf file. Actual result: In generated pdf file, I saw "NO DATA FOUND!!!" instead of master page contents

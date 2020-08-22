@@ -9,9 +9,7 @@ Library=/usr/local/lib/libgtk-x11-2.0.so.0
 Current Java thread:
 at org.eclipse.swt.internal.gtk.OS.gtk_editable_delete_selection(Native
 Method)
-
-- locked
-<0x48578df8> (a java.lang.Class)
+- locked <0x48578df8> (a java.lang.Class)
 at org.eclipse.swt.widgets.Combo.clearSelection(Combo.java:279)
 at org.eclipse.ui.internal.commands.KeyPreferencePage.setActiveKeyConfig
 urationId(KeyPreferencePage.java:1600)
@@ -33,9 +31,7 @@ at org.eclipse.jface.util.OpenStrategy$3.run(OpenStrategy.java:333)
 at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.ja
 va:98)
-
-- locked
-<0x44bedb08> (a org.eclipse.swt.widgets.RunnableLock)
+- locked <0x44bedb08> (a org.eclipse.swt.widgets.RunnableLock)
 at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:1614)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1432)
 at org.eclipse.jface.window.Window.runEventLoop(Window.java:583)

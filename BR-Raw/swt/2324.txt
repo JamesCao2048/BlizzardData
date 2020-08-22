@@ -1,12 +1,9 @@
 Table.showSelection() doesn't show selection with images
 Hi,
-I have a table (org.eclipse.swt.widgets.Table) to which I added some table items (org.eclipse.swt.widgets.TableItem).
-For each of the table items I set an image using the TableItem.setImage(Image image) method.
-When I now call select(tableItemIndex) on the table to select a table item the image of this table item gets not display grayed to indicate the selection.
-Also calling Table.showSelection() or Table.redraw() do not gray the image.
+I have a table (org.eclipse.swt.widgets.Table) to which I added some table items (org.eclipse.swt.widgets.TableItem). For each of the table items I set an image using the TableItem.setImage(Image image) method.
+When I now call select(tableItemIndex) on the table to select a table item the image of this table item gets not display grayed to indicate the selection. Also calling Table.showSelection() or Table.redraw() do not gray the image.
 If I now click with the mouse on this table item nothing happens since this table item is internally already marked as selected.
-Selecting other table items with the mouse works fine, here the image gets grayed.
-If the image is shown grayed (because the table item was selected with the mouse) and I do a redraw() of the table the graying of the selected image is lost.
+Selecting other table items with the mouse works fine, here the image gets grayed. If the image is shown grayed (because the table item was selected with the mouse) and I do a redraw() of the table the graying of the selected image is lost.
 Another thing that I noticed is that when I select an table item with the select(int) method (where the image is not shown grayed) and I scroll the table with using the mouse wheel so that the selected table item goes out of the visible table area and comes in again, its image is displayed correctly as grayed.
 By the way the deselect() method seems to work fine.
 I faced this problem on the following eclipse versions:

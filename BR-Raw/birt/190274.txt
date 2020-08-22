@@ -1,17 +1,2 @@
 Bug 190274 TVT33:TCT507: ja: "Create Crosstab" in English
-<response_by> Eriko Takahashi at 2007.05.31.10.54.12
-</response_by> OS: Linux Build date: 20070530 Component name : BIRT Blocking: NO Tester Name: Eriko Takahashi (Japanese tester) Testcase: 04.001970
-- BIRT
-- CONTEXT INSERT Steps to recreate the problem: 1.Click on Test_Report_1.rptdesign 2.Right click in the report editor to open the context menu.
-3.Expand the Insert menu.
-4.Choose Cross Table.
-Cross table is added 5.Right click in the report editor again 6."Redo: Create Crosstab" is displayed at the top of the nemu Problem Description: "Create Crosstab" is shown in English.
-I am not able to find this string in the latest file package.
-Please investigate.
-Thank you.
-<response_by> Bryan Green at 2007.05.31.10.59.11
-</response_by> Routing to BIRT.
-<response_by> Bryan Green at 2007.05.31.10.59.30
-</response_by> Changing status in TCT.
-<response_by> Bryan Green at 2007.05.31.11.00.03
-</response_by> This article was reassigned from Category:''TVT Testcases''.
+<response_by> Eriko Takahashi at 2007.05.31.10.54.12 </response_by> OS: Linux Build date: 20070530 Component name : BIRT Blocking: NO Tester Name: Eriko Takahashi (Japanese tester) Testcase: 04.001970 - BIRT - CONTEXT INSERT Steps to recreate the problem: 1. Click on Test_Report_1.rptdesign 2. Right click in the report editor to open the context menu. 3. Expand the Insert menu. 4. Choose Cross Table. Cross table is added 5. Right click in the report editor again 6. "Redo: Create Crosstab" is displayed at the top of the nemu Problem Description: "Create Crosstab" is shown in English. I am not able to find this string in the latest file package. Please investigate. Thank you. <response_by> Bryan Green at 2007.05.31.10.59.11 </response_by> Routing to BIRT. <response_by> Bryan Green at 2007.05.31.10.59.30 </response_by> Changing status in TCT. <response_by> Bryan Green at 2007.05.31.11.00.03 </response_by> This article was reassigned from Category:''TVT Testcases''.

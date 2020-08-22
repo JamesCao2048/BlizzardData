@@ -1,29 +1,20 @@
 LineStyles in Very Long Lines Takes Forever
-Well, not literally forever, but way way too long
--- users will have to "end
-process" and start over.
-Bug 108806  is the most recent one opened against us in
-WTP, but have seen before for less extreme examples.
-I'm opening this bug to
-determine what improvements can be made at SWT level.
-I've marked as major since
+Well, not literally forever, but way way too long -- users will have to "end
+process" and start over.  Bug 108806  is the most recent one opened against us in
+WTP, but have seen before for less extreme examples. I'm opening this bug to
+determine what improvements can be made at SWT level. I've marked as major since
 bug 108806  was marked as major by user-client.
 For the case described in  bug 108806 , I've noticed that for the 500K character
 line, we produce about 100K "styles" passed back to StyledText via
-LineStyleEvent.
-One thing I noticed, for
+LineStyleEvent. One thing I noticed, for
 example, is that a loop in DisplayRenderer goes through each style, eventually
-calling TextLayout.setStyle.
-There, is some code in there which is creating a
+calling TextLayout.setStyle. There, is some code in there which is creating a
 (new) array of TextStyles, and it grows the array one item at a time, ending up
-using 100K System.arraycopies to grow the array "as they come in one by one".
-I
+using 100K System.arraycopies to grow the array "as they come in one by one". I
 did not test, but seems there might be ways to anticipate the size of this array
 and avoid all those array copies?
-So, first question ...
-why is it even requested of us to provide "all
-StyleRanges" for the line, when they are not all visible, obviously.
-Could some
+So, first question ... why is it even requested of us to provide "all
+StyleRanges" for the line, when they are not all visible, obviously. Could some
 short cut be made there?
 Second question, do you think these "DisplayRendering" methods could be made
 more efficient, to at least allow user to limp along, or would problems just be

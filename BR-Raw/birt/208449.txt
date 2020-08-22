@@ -1,5 +1,2 @@
 Bug 208449 crosstab/chart integration framework
-In order to enable charts inside crosstab, some specific logic needs to be written for that particular scenario.
-This enhancement aims to
-- Design how to add this new logic in a modular way by either creating a new plugin org.eclipse.birt.chart.reportitem.crosstab (needs extension?) or using OO design.
-- Implement the framework structure that will contain the business logic to render charts in crosstabs.
+In order to enable charts inside crosstab, some specific logic needs to be written for that particular scenario. This enhancement aims to - Design how to add this new logic in a modular way by either creating a new plugin org.eclipse.birt.chart.reportitem.crosstab (needs extension?) or using OO design. - Implement the framework structure that will contain the business logic to render charts in crosstabs.

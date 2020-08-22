@@ -1,8 +1,6 @@
 DCR - alignment in a text widget
 I am looking for a way to set the string in a text widget right aligned
-(e.g.
-for numbers).
+(e.g. for numbers).
 For a javax.swing.JTextField there exists a function setHorizontalAlignment(
-JTextField.RIGHT)
-- There should be something similar for
+JTextField.RIGHT) - There should be something similar for
 org.eclipse.widgets.Text to set left / right / center alignment.

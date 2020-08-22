@@ -1,8 +1,7 @@
 Eclipse 2.1.1 does not come up on HP when remotely attaching from a linux box
 When starting Eclipse,  tjchiass@ca.ibm.com  gets this stack trace as reported
 By Kevin H.
-!SESSION
-----------------------------------------------------------------------
+!SESSION ----------------------------------------------------------------------
 !ENTRY org.eclipse.core.launcher 4 0 Jul 29, 2003 10:33:23.402
 !MESSAGE Exception launching the Eclipse Platform:
 !STACK
@@ -54,4 +53,4 @@ at org.eclipse.swt.widgets.Composite.setBounds(Composite.java:539)
 at org.eclipse.swt.widgets.Control.setBounds(Control.java:1854)
 at org.eclipse.ui.internal.LayoutPart.setBounds(LayoutPart.java:245)
 at org.eclipse.ui.internal.EditorWorkbook.setControlSize
-(Edito
+(Editor

@@ -1,10 +1,2 @@
 Bug 142928 Item from library is changed to a report design item after revert to report item
-Details: Item from library is changed to a report design item after revert to report item.
-Setp: 1.New a template.
-2.Use a libary contain a label.
-3.Drop the label from library explorer into layout.
-4.Change the label to template item.
-5.Revert the template item to report item.
-Actual result: The label is become a report item, but a item from library.
-Please see the attach image.
-Exception result: The lable is revert a item from library.
+Details: Item from library is changed to a report design item after revert to report item. Setp: 1.New a template. 2.Use a libary contain a label. 3.Drop the label from library explorer into layout. 4.Change the label to template item. 5.Revert the template item to report item. Actual result: The label is become a report item, but a item from library. Please see the attach image. Exception result: The lable is revert a item from library.

@@ -1,7 +1,2 @@
 Bug 223296 Script setting caption, summary does not work for grid, table and crosstab [0802]
-Description: Script works for table does not work for grid.
-Build number: 2.3.0.v20080320-0800 Steps to reproduce: 1.New a report with a grid and a table.
-2.Select the grid and table, input scripts: this.summary="Summary"; this.caption=this.summary 3.Preview.
-Expected result: The caption of the grid and table are both "Summary".
-Actual result: The scripts only works for table.
-Error log: N/A
+Description: Script works for table does not work for grid. Build number: 2.3.0.v20080320-0800 Steps to reproduce: 1. New a report with a grid and a table. 2. Select the grid and table, input scripts: this.summary="Summary"; this.caption=this.summary 3. Preview. Expected result: The caption of the grid and table are both "Summary". Actual result: The scripts only works for table. Error log: N/A

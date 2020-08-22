@@ -1,13 +1,10 @@
 Extra non-functional horizontal scroll bar in TreeViewer
 I removed the deprecated TableTree on a preferences page created previously and
-replaced it with Tree.
-Everything seems to work and look the same except for a
-non-functional horizontal scroll bar that now appears below the Tree.
-This
+replaced it with Tree.  Everything seems to work and look the same except for a
+non-functional horizontal scroll bar that now appears below the Tree.  This
 horizontal scroll bar does nothing and appears no matter how the page is sized.
 When the page is small enough to where a horizontal scroll bar is needed,
 another scroll bar appears under the non-functional scroll bar.
-
 Here is my ceateContents() code:
 protected Control createContents(Composite parent)
 {

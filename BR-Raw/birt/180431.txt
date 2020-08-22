@@ -1,10 +1,2 @@
 Bug 180431 Exported files from Export Report have no extension name.[0002]
-Description: Exported files from Export Report have no extension name.
-Build number:2.2.0.v20070402 Steps to reproduce: 1.New a report.
-2.Preview in Web Viewer.
-3.Click Export Report.
-4.Select any kind of format and click OK.
-5.Save the report intead of open it.
-6.Check the saved file.
-Expected result: If I choose PDF, the file name should be like "new_report_1.pdf" Actual result: The file name is new_report without extension name.
-Error log:N/A
+Description: Exported files from Export Report have no extension name. Build number:2.2.0.v20070402 Steps to reproduce: 1. New a report. 2. Preview in Web Viewer. 3. Click Export Report. 4. Select any kind of format and click OK. 5. Save the report intead of open it. 6. Check the saved file. Expected result: If I choose PDF, the file name should be like "new_report_1.pdf" Actual result: The file name is new_report without extension name. Error log:N/A

@@ -1,7 +1,5 @@
 getSelection() method for VIRTUAL Tree returns max. eight items
-When I select more then eight tree items in a Tree with SWT.VIRTUAL, tree.getSelection() only returns (the first) eight selected items.
-The example given at  Bug 125621  shows this strange behaviour.
-Executing the sample and selecting all 10 top level nodes results in the output:
+When I select more then eight tree items in a Tree with SWT.VIRTUAL, tree.getSelection() only returns (the first) eight selected items. The example given at  Bug 125621  shows this strange behaviour. Executing the sample and selecting all 10 top level nodes results in the output:
 Selection changed:
 item: 1
 item: 2

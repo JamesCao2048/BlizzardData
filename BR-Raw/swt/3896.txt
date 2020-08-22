@@ -1,12 +1,10 @@
 Removing a Text field leaves behind crud
 Build 20021105
 Linux-GTK
-1.Go to the step filter preference page under
+1. Go to the step filter preference page under
 "Window->Java->Debug->Step Filtering"
-2.Press alt+f to create a new filter.
-An inline editor (a Text) appears.
-3.Press alt+f again.
-The old editor is removed and a new editor is created.
+2. Press alt+f to create a new filter. An inline editor (a Text) appears.
+3. Press alt+f again. The old editor is removed and a new editor is created.
 However, the new editor is smaller than the original editor and there is a
 line of garbage drawn under it.
 The code responsible for this action is

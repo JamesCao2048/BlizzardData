@@ -1,6 +1,5 @@
 Sashes should resize interactively
 3.0
 The following patch modifies Sash to resize interactively, rather than drawing
-an XOR stipple.
-This makes Eclipse feel a lot more modern, and follows the
+an XOR stipple.  This makes Eclipse feel a lot more modern, and follows the
 behaviour of other Linux applications.

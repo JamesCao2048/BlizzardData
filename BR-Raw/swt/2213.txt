@@ -20,8 +20,7 @@ shell.setText("Single-Line Text Test");
 
 text = new Text(shell, SWT.SINGLE);
 text.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-text.setText("xx
-< type here");
+text.setText("xx < type here");
 text.setSelection(0, 2);
 
 text.addVerifyListener(new VerifyListener() {
@@ -31,8 +30,7 @@ System.out.println(
 " e.start=" + e.start +
 " e.end=" + e.end +
 " ignore=" + ignore +
-(e.start == e.end && ignore == false ?
-" (BOGUS)" : ""));
+(e.start == e.end && ignore == false ? " (BOGUS)" : ""));
 if (ignore) return;
 ignore = true;
 text.insert("yy");

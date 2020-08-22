@@ -1,16 +1,9 @@
 Widget is disposed using Browser in Section
 Created  attachment 233333   [details]
-Sample to show the exception.
-To duplicate, run the attachment, click "Dispose Browser3" button at the bottom.
-I have a Section and it contains a Browser.
-When I dispose the Section, I get following exception.
-If I use ExpandableComposite instead of Section, I will not get this issue.
-The attached example shows how to duplicate it.
-We have a tree on the left, and upon selecting an object, the corresponding UI will be loaded on the right hand side.
-Some of the UI contains a Browser.
-Before loading the new UI, we need to dispose the old one, that's where the issue is found.
-The issue can be worked around by disposing the Browser first, then dispose the Section.
-However, the UI can be very complex and I don't want to search recursively for the Browser and dispose it.
+Sample to show the exception. To duplicate, run the attachment, click "Dispose Browser3" button at the bottom.
+I have a Section and it contains a Browser. When I dispose the Section, I get following exception. If I use ExpandableComposite instead of Section, I will not get this issue.
+The attached example shows how to duplicate it. We have a tree on the left, and upon selecting an object, the corresponding UI will be loaded on the right hand side. Some of the UI contains a Browser. Before loading the new UI, we need to dispose the old one, that's where the issue is found.
+The issue can be worked around by disposing the Browser first, then dispose the Section. However, the UI can be very complex and I don't want to search recursively for the Browser and dispose it.
 Exception in thread "main" org.eclipse.swt.SWTException: Widget is disposed
 at org.eclipse.swt.SWT.error(SWT.java:4361)
 at org.eclipse.swt.SWT.error(SWT.java:4276)

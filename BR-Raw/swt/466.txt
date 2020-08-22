@@ -3,9 +3,9 @@ Build Identifier: SWT3.4.2
 switch styledtext Orientation, and resize styledtext size, the caret position is incorrect.
 Reproducible: Always
 Steps to Reproduce:
-1.launch my sample code
-2.press CTRL+G to swith Orientation from LTR to RTL
-3.resize the shell
+1. launch my sample code
+2. press CTRL+G to swith Orientation from LTR to RTL
+3. resize the shell
 Bug:
 if change size smaller, the caret is lost;
 if change size bigger, the caret is not at line end

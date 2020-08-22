@@ -1,9 +1,6 @@
 DND exception when dragging file within a Common Navigator in 3.4M5
-This happened when dragging a ".doc" file within a custom Common Navigator that's similar in nature to the Project Explorer.
-The exception happened repeatedly on each drag attempt.
-It is possible that we're doing something weird in our navigator, although I've never seen this before.
--- Error Log
---
+This happened when dragging a ".doc" file within a custom Common Navigator that's similar in nature to the Project Explorer.  The exception happened repeatedly on each drag attempt.  It is possible that we're doing something weird in our navigator, although I've never seen this before.
+-- Error Log --
 Date: Fri Feb 22 16:21:08 PST 2008
 Message: Unhandled event loop exception
 Severity: Error
@@ -45,4 +42,4 @@ at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:362)
 at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:175)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-at sun.ref
+at sun.refl

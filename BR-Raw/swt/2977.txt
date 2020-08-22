@@ -4,10 +4,8 @@ fill a table with columns does not work if the vertical size is just slightly
 larger than that needed to cover the display of rows preferred.
 In this case the code reckons the availiable horizontal area is smaller than
 it really is and only alots "most" of the space leaving a small anonymous
-phantom column on the right hand side.
-I noticed that this remainder column
-is about the size of a vertical scrollbar.
-On debugging it indeed appears when
+phantom column on the right hand side. I noticed that this remainder column
+is about the size of a vertical scrollbar. On debugging it indeed appears when
 the snippet code calculates there will be a vertical scrollbar but the
 SWT system decides none is required.
 The reason the snippet code gets is wrong is this "if" condition, it tests:
@@ -18,8 +16,7 @@ if (preferredSize.y > area.height) {
 // Subtract the scrollbar width from the total column width
 // if a vertical scrollbar will be required
 Point vBarSize = table.getVerticalBar().getSize();
-width
--= vBarSize.x;
+width -= vBarSize.x;
 }
 However it appears that
 table.computeSize(SWT.DEFAULT,SWT.DEFAULT); //DOES INCLUDE HEADER VERTICAL SPACE

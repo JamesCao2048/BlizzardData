@@ -6,10 +6,8 @@ Language: ja_JP
 I got errors in the .log file during launching the WB with NLS language
 package, and WB did not launch.
 Steps
-1.Extract the eclipse-SDK.zip
-2.Extract the NLS Language package (eclipse-nls-SDK-2.0.x.zip) under the same
+1. Extract the eclipse-SDK.zip
+2. Extract the NLS Language package (eclipse-nls-SDK-2.0.x.zip) under the same
 directory
-3.Launch the eclipse (./eclipse
--vm /......)
-Then I got the error dialog and got errors in the .log file.
-WB startup failed.
+3. Launch the eclipse (./eclipse -vm /......)
+Then I got the error dialog and got errors in the .log file. WB startup failed.

@@ -1,12 +1,9 @@
 possible bug in TableItem.setImage (int index, Image image)
-This function appears as though it would have a bug in it
-- basically there appears to be an underlying assumption that the setImage function is used to change an image from one to another.
-If you use this function to turn on or off an image, it won't redraw correctly.
+This function appears as though it would have a bug in it - basically there appears to be an underlying assumption that the setImage function is used to change an image from one to another. If you use this function to turn on or off an image, it won't redraw correctly.
 This line of code is the last in the function:
 redraw (index, false, true);
 I think it should be:
 redraw (index, true, true);
-So that the text will be redrawn.
-The text needs to be redrawn in (at least) 2 cases:
-1.When the image was previously null and is change to be non-null
-2.The converse.
+So that the text will be redrawn. The text needs to be redrawn in (at least) 2 cases:
+1. When the image was previously null and is change to be non-null
+2. The converse.

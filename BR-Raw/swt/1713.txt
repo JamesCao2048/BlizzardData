@@ -1,7 +1,5 @@
 Shell with ON_TOP style stay behind of Shell with APPLICATION_MODAL style.
-Shell with ON_TOP style is often used as tooltip window which should always stay on top of window.
-But if you create a Shell with ON_TOP style while there is an active Shell with APPLICATION_MODAL style, the Shell with ON_TOP will be behind the Shell with APPLICATION_MODAL.
+Shell with ON_TOP style is often used as tooltip window which should always stay on top of window. But if you create a Shell with ON_TOP style while there is an active Shell with APPLICATION_MODAL style, the Shell with ON_TOP will be behind the Shell with APPLICATION_MODAL.
 A demo java file is attached.
 I think the root cause is: Shell with SWT.ON_TOP is a sheet window in floating window group which z-order is below the window in modal window group.
-In SWT.java, the description of SWT.ON_TOP is : "Style constant for always on top behavior".
-So Shell with ON_TOP style should has higher z-order than Shell with APPLICATION_MODAL style.
+In SWT.java, the description of SWT.ON_TOP is : "Style constant for always on top behavior". So Shell with ON_TOP style should has higher z-order than Shell with APPLICATION_MODAL style.

@@ -1,9 +1,2 @@
 Bug 139107 Birt viewer with no error messages response
-My birt viewer is under tomcat 5.5 webapps.
-I have a report with report parameters, account and password, to connect to database.
-Everything is doing just fine with correct account and password.
-However, when the account/password is wrong, the viewer show up the report title and got no error message or data.
-I've tried the report at Eclipse.
-if the password is wrong, I can get error message something like "failed to get connection".
-And I also turn the viewer log to FINEST, the "failed to get connection" message exist in the log file.
-Don't know how to let the error message response to the browser, otherwise users got no idea is there errors or no data.
+My birt viewer is under tomcat 5.5 webapps. I have a report with report parameters, account and password, to connect to database. Everything is doing just fine with correct account and password. However, when the account/password is wrong, the viewer show up the report title and got no error message or data. I've tried the report at Eclipse. if the password is wrong, I can get error message something like "failed to get connection". And I also turn the viewer log to FINEST, the "failed to get connection" message exist in the log file. Don't know how to let the error message response to the browser, otherwise users got no idea is there errors or no data.

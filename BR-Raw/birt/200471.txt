@@ -1,4 +1,2 @@
 Bug 200471 Add "need not sort for grouping" option in report item
-Currently when Data engine proceeds groups, it always sorts the result set according to given group key.However that should not be necessary when the raw data is already sorted.
-So we'd like to add new options so that user can indicate whether should we sort the data before grouping.
-In model, we should allow user to set a "need not do sort for grouping" option to all the report element that can be grouped(table, list,etc.)
+Currently when Data engine proceeds groups, it always sorts the result set according to given group key.However that should not be necessary when the raw data is already sorted. So we'd like to add new options so that user can indicate whether should we sort the data before grouping. In model, we should allow user to set a "need not do sort for grouping" option to all the report element that can be grouped(table, list,etc.)

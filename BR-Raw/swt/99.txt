@@ -1,12 +1,10 @@
 GC.copyarea does not work correctly on linux
 Created  attachment 222606   [details]
 A screenshot of the bug
-In our code we have a custom paint implementation.
-We do the following:
+In our code we have a custom paint implementation. We do the following:
 public void paint(final GC gc, OutlineResources resources) {
 int alphaValue= getAlphaValue();
-if (alphaValue
-< 255 && !getDisplay().getHighContrast()) {
+if (alphaValue < 255 && !getDisplay().getHighContrast()) {
 Rectangle view= getTransformation().toViewPort(fBounds);
 final Image bufferImage= new Image(gc.getDevice(), fBounds.width, fBounds.height);
 gc.copyArea(bufferImage, view.x, view.y);
@@ -30,12 +28,7 @@ bufferImage.dispose();
 super.paint(gc, resources);
 }
 }
-In the above code, we first determine if we want to paint the object with an alpha level or not.
-If we paint it with an alpha level, we first paint everything on a separate image and then draw that image on the GC.
-We use the gc.copyArea(bufferImage, view.x, view.y); call to paint the background on the image so that the image has a transparent background.
-As far as I know there is not "simple" way of creating an in memorory image with a transparent background, therefore we are forced to use the gc.copyArea.
-This worked fine in Eclipse 3.6.In Eclipse 3.8 this call seems to copy some random artifacts, making the rendered text very hard to read.
-(see attachment).
-We also cannot simply set the alpha value on the gc, as we use a textlayout for rendering text.
-Unfortunately, the textlayout.draw(...) does not respect the alpha value from the gc.
+In the above code, we first determine if we want to paint the object with an alpha level or not. If we paint it with an alpha level, we first paint everything on a separate image and then draw that image on the GC. We use the gc.copyArea(bufferImage, view.x, view.y); call to paint the background on the image so that the image has a transparent background. As far as I know there is not "simple" way of creating an in memorory image with a transparent background, therefore we are forced to use the gc.copyArea.
+This worked fine in Eclipse 3.6. In Eclipse 3.8 this call seems to copy some random artifacts, making the rendered text very hard to read.  (see attachment).
+We also cannot simply set the alpha value on the gc, as we use a textlayout for rendering text. Unfortunately, the textlayout.draw(...) does not respect the alpha value from the gc.
 Unless there is a different way of solving this issue, I would rate this bug as major.

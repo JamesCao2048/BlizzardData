@@ -1,10 +1,6 @@
 NPE in OleClientSite on a clean Windows install
 On Windows test machines the test OpenSystemInPlaceEditorTest#testExternalFile() fails.
 This seem to happen if no MS OFfice is installed on the computer (the test tries to open an embdedd editor for a .doc file).
-The problem in the test can be replicated by simply creating a file "test.doc" in a project and opening it.
-On my computer that opens WordPad (not as OLE site, but as an extenrnal editor) if I remove file associatations.
-However, on the test machine this results in error in editor opening with NPE in
-org.eclipse.swt.ole.win32.OleClientSite.isOffice2007()    ln.
-871
-It seems that this code was changed recently for the  bug 288474  (ver.
-1.60 of the OleClientSite file).
+The problem in the test can be replicated by simply creating a file "test.doc" in a project and opening it. On my computer that opens WordPad (not as OLE site, but as an extenrnal editor) if I remove file associatations. However, on the test machine this results in error in editor opening with NPE in
+org.eclipse.swt.ole.win32.OleClientSite.isOffice2007()    ln. 871
+It seems that this code was changed recently for the  bug 288474  (ver. 1.60 of the OleClientSite file).

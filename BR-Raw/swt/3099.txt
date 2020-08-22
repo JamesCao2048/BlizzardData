@@ -1,12 +1,9 @@
 Missing selectionEvent when disposing TreeItem
 When I remove a TreeItem from my Tree by using TreeItem.dispose()
-another item is 'armed' (as in 'ready to be selected'
-- on Windows the
+another item is 'armed' (as in 'ready to be selected' - on Windows the
 item has normal font color and grey background) as opposed to
 'selected' (on Windows inverted font color and dark blue background).
 The important part is this: When this happen in 3.0.1 a selectionEvent
-is sent.
-In 3.1M4 this event is missing.
-AFAICS this means you have no
+is sent. In 3.1M4 this event is missing. AFAICS this means you have no
 control over where the current selection is in the Tree before the user
 selects another item.

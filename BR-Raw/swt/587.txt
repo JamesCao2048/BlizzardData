@@ -1,11 +1,8 @@
 SWT.COLOR_INFO_BACKGROUND is brighter than the OS tooltip bg color
 N20100623-2000 Cocoa, Mac OS X 10.6.4
-SWT.COLOR_INFO_BACKGROUND is brighter than the OS tooltip bg color.
-It should not be hardcoded in Display#getWidgetColorRGB(int).
-Unfortunately, Safari uses yet another color for "background-color: InfoBackground;" than native tooltips.
-Firefox uses the OS tooltip color.
-For my application ( bug 313530 ), it would be best if SWT could use the Safari color (251, 252, 197), not the native Tooltip color (255, 255, 199).
-But I could also work with the latter.
+SWT.COLOR_INFO_BACKGROUND is brighter than the OS tooltip bg color. It should not be hardcoded in Display#getWidgetColorRGB(int).
+Unfortunately, Safari uses yet another color for "background-color: InfoBackground;" than native tooltips. Firefox uses the OS tooltip color.
+For my application ( bug 313530 ), it would be best if SWT could use the Safari color (251, 252, 197), not the native Tooltip color (255, 255, 199). But I could also work with the latter.
 package org.eclipse.swt.snippets;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;

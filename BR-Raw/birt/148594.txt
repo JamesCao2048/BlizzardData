@@ -1,4 +1,2 @@
 Bug 148594 [regression]Block Image's padding left doesn't work correctly in pdf
-Description: Block Image's padding left doesn't work correctly in pdf.
-Steps to reproduce: 1.Insert an image 2.Set padding left and bottom border style 3.Preview in html and pdf Expected result: Bottom border should extend to the left blank padding space of image item.
-Actual result: Bottom border didn't extend to the left blank padding space of image item.
+Description: Block Image's padding left doesn't work correctly in pdf. Steps to reproduce: 1. Insert an image 2. Set padding left and bottom border style 3. Preview in html and pdf Expected result: Bottom border should extend to the left blank padding space of image item. Actual result: Bottom border didn't extend to the left blank padding space of image item.

@@ -1,8 +1,2 @@
 Bug 287515 [Regression]Data set preview failed if data set parameter linked to a report parameter which has default value
-Description: Data set preview failed if data set parameter linked to a report parameter which has default value Build number: 2.5.1.v20090825-0630 Steps to reproduce: 1, New a sample data set from CUSTOMERS where CUSTOMERNUMBER
-< ?
-2, Linked data set parameter to a report parameter and set the default value of report parameter to 160 3, Preview in data set Expected result: CUSTOMERNUMBER less than 160 are shown in preview result Actual result: Unexpected exception occurred: params["NewParameter"].
-See next exception for more information.
-Error evaluating Javascript expression.
-Script engine error: ReferenceError: "params" is not defined.
-Error log:
+Description: Data set preview failed if data set parameter linked to a report parameter which has default value Build number: 2.5.1.v20090825-0630 Steps to reproduce: 1, New a sample data set from CUSTOMERS where CUSTOMERNUMBER < ? 2, Linked data set parameter to a report parameter and set the default value of report parameter to 160 3, Preview in data set Expected result: CUSTOMERNUMBER less than 160 are shown in preview result Actual result: Unexpected exception occurred: params["NewParameter"]. See next exception for more information. Error evaluating Javascript expression. Script engine error: ReferenceError: "params" is not defined. Error log:

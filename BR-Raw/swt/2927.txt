@@ -1,8 +1,7 @@
 Dialog opens with no contents; resizing shows contents
 I20050112-1200, Linux 2.6.9, GTK+ 2.4.9, KDE 3.3.1
 
-When some dialogs first open, they do not paint their contents.
-If the dialog
+When some dialogs first open, they do not paint their contents.  If the dialog
 is resized, then the contents become visible.
 
 
@@ -15,10 +14,7 @@ STEPS TO REPRODUCE:
 5.) Select "Tag with Existing..."
 
 
-The dialog opens, but it is blank.
-Resizing the dialog by even the slightest
-amount causes it to paint its contents.
-Switching virtual desktops (i.e.,
-unmapping the window) does not cause it to paint.
-Neither does obscuring it
+The dialog opens, but it is blank.  Resizing the dialog by even the slightest
+amount causes it to paint its contents.  Switching virtual desktops (i.e.,
+unmapping the window) does not cause it to paint.  Neither does obscuring it
 with another window.

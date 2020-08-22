@@ -1,8 +1,2 @@
 Bug 168383 Non-exists svg image isn't processed as the normal image.[0001]
-Description: Non-exists svg image isn't processed as the normal image.
-Build number:2.2.0.v20061216 Steps to reproduce: 1.Copy a svg image to resource folder.
-2.New a report, insert an image and select the svg file, set alt-text as "not found".
-3.Delete the svg file and preview the report in IE and Firefox.
-Expected result: Because the svg image doesn't exist, so alt-text should display Actual result: In IE, I saw a gray background, right click will see svg context menu.
-In Firefox, I saw error message as:org.eclipse.birt.report.service.api.ReportServiceException: Missing image file.
-Error log:N/A
+Description: Non-exists svg image isn't processed as the normal image. Build number:2.2.0.v20061216 Steps to reproduce: 1. Copy a svg image to resource folder. 2. New a report, insert an image and select the svg file, set alt-text as "not found". 3. Delete the svg file and preview the report in IE and Firefox. Expected result: Because the svg image doesn't exist, so alt-text should display Actual result: In IE, I saw a gray background, right click will see svg context menu. In Firefox, I saw error message as:org.eclipse.birt.report.service.api.ReportServiceException: Missing image file. Error log:N/A

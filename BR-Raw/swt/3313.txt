@@ -3,11 +3,9 @@ One of my users has reported me that my application was leaking some memory, slo
 consistently, mainly by chunks of 192 bytes.
 In order to test it, I've set the environement variable MallocStackLogging using :
 export MallocStackLogging=1
-and then I started my application (with java_swt
--cp ......)
+and then I started my application (with java_swt -cp ......)
 then, from another window I've run :
-leaks
--nocontext 555 > leaks.txt
+leaks -nocontext 555 > leaks.txt
 (555 being the process ID of my application).
 I'll attach the leaks.txt file, but here are some stack trace of calls that create those 192 bytes leaks :
 Leak: 0x088254d0  size=192

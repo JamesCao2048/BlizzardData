@@ -1,14 +1,10 @@
 OS.AlphaBlend causes "bddraw" stdout spew
-This is in the same vein of  Bug 121896 , except it deals with AlphaBlend.
-Calling AlphaBlend on Windows 98 will cause a "bddraw = 0" or "bddraw = 1" log to be outputed from Msimg32.dll.
-Also, there are some bugs with AlphaBlend on Windows 98 that have made it not favorable to use.
-Both Cairo and Mozilla (Gecko) have disabled calling it for Win98.
+This is in the same vein of  Bug 121896 , except it deals with AlphaBlend.  Calling AlphaBlend on Windows 98 will cause a "bddraw = 0" or "bddraw = 1" log to be outputed from Msimg32.dll.  Also, there are some bugs with AlphaBlend on Windows 98 that have made it not favorable to use.  Both Cairo and Mozilla (Gecko) have disabled calling it for Win98.
 For Cairo, see:
 http://cvs.cairographics.org/cairo/src/cairo-win32-surface.c#rev1.34
 For Mozilla, their bugzilla link is:
 https://bugzilla.mozilla.org/show_bug.cgi?id=36694#c61
-Neither mention the reason why Alphablend is broken, just that it is.
-Google Newsgroup searches seem to suggest a variety of ways it's broken on Win98. From a "minor" bug of  the src offset is ignored if src and dst sizes are different, to crashing alltogether.
+Neither mention the reason why Alphablend is broken, just that it is.  Google Newsgroup searches seem to suggest a variety of ways it's broken on Win98.  From a "minor" bug of  the src offset is ignored if src and dst sizes are different, to crashing alltogether.
 Snippet:
 System.out.println("SWT Version: " + SWT.getVersion());
 final Display display = new Display();

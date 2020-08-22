@@ -1,7 +1,6 @@
 COMObject leakage on OleControlSite
 Both constructors of  OleControlSite and OleClientSite calls the same
-function : "createCOMInterfaces()".
-If you create new instance of
+function : "createCOMInterfaces()".  If you create new instance of
 OleControlSite, its field COMObjects (such as iDispatch, iUnknown) are
 initialized two time but the first ones are never disposed.
 COMObject::ObjectMap manages all instances of COMObject, so this

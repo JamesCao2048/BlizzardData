@@ -38,16 +38,4 @@ Output of AJDT Event trace window:
 11:21:38      Configuration was [PROJECTSOURCEFILES_CHANGED, JAVAOPTIONS_CHANGED, ASPECTPATH_CHANGED, CLASSPATH_CHANGED, INPATH_CHANGED, NONSTANDARDOPTIONS_CHANGED, OUTJAR_CHANGED, PROJECTSOURCERESOURCES_CHANGED, OUTPUTDESTINATIONS_CHANGED, INJARS_CHANGED]
 11:21:38 Resetting list of modified source files.  Was null
 11:21:38 Preparing for build: not going to be incremental because no successful previous full build
-11:21:40 Timer event: 1252ms: Time to first compiled message
-11:21:40 Timer event: 1276ms: Time to first woven message
-11:21:45 AspectJ reports build successful, build was: FULL
-11:21:45 AJDE Callback: finish. Was full build: true
-11:21:45 Timer event: 6456ms: Total time spent in AJDE
-11:21:45 Timer event: 157ms: Refresh after build
-11:21:45 Types affected during build = 308
-11:21:45 Crosscutting model sanity checked with no problems
-11:21:45 Timer event: 0ms: Post compile
-11:21:45 Timer event: 7248ms: Total time spent in AJBuilder.build()
-11:21:45 Timer event: 2ms: Delete markers: SOME_webapp (Finished deleting markers for SOME_webapp)
-11:21:45 Timer event: 179ms: Create markers: SOME_webapp (Finished creating markers for SOME_webapp)
---------------------------------
+11

@@ -1,7 +1,5 @@
 Cursor ignores horizontal hotspot location and uses vertical instead
 On Mac in both Cursor constructors that take a hostpot location, the following line
-cursor.hotSpot_h = (short)Math.max(0, Math.min(15, hotspotY
-- minX));
+cursor.hotSpot_h = (short)Math.max(0, Math.min(15, hotspotY - minX));
 should be fixed to this:
-cursor.hotSpot_h = (short)Math.max(0, Math.min(15, hotspotX
-- minX));
+cursor.hotSpot_h = (short)Math.max(0, Math.min(15, hotspotX - minX));

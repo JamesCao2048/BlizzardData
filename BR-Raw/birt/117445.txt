@@ -1,6 +1,2 @@
 Bug 117445 When exporting a report item, extension name ".rptlibrary" is not added after a file name.
-Description: When exporting a report item, extension name ".rptlibrary" is not added after a file name.
-Steps to reproduce: 1.Export a report item.
-2.Set file name as "a", select ".rptlibrary" as file type.
-3.Click on "OK".
-4.Open the folder and try to find a.rptlibrary, it is displayed as "a" not "a.rptlibrary'.
+Description: When exporting a report item, extension name ".rptlibrary" is not added after a file name. Steps to reproduce: 1. Export a report item. 2. Set file name as "a", select ".rptlibrary" as file type. 3. Click on "OK". 4. Open the folder and try to find a.rptlibrary, it is displayed as "a" not "a.rptlibrary'.

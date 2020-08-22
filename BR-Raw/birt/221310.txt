@@ -1,9 +1,2 @@
 Bug 221310 [Improve Page Break Management] Multiple autotexts cause unwanted indentation in PDF
-Description: Inside a 1x1 grid with right text alignment on the page footer, more than one autotext causes an unwanted indentation in the PDF, but not in HTML.
-Steps to reproduce: 1.Add a 1x1 grid to the page footer and give it a border for better visibility.
-Set its cell to right text alignment.
-2.Add the total page count to the cell and set it to inline positioning.
-3.Add the current page number to teh cell before the total page count and set it to inline positioning.
-Expected result: A box with "11" close to the the right edge.
-This result is produced by the preview and the web viewer.
-Actual result: In PDF, the numbers have moved ~1 inch from the border, to the left.
+Description: Inside a 1x1 grid with right text alignment on the page footer, more than one autotext causes an unwanted indentation in the PDF, but not in HTML. Steps to reproduce: 1. Add a 1x1 grid to the page footer and give it a border for better visibility. Set its cell to right text alignment. 2. Add the total page count to the cell and set it to inline positioning. 3. Add the current page number to teh cell before the total page count and set it to inline positioning. Expected result: A box with "11" close to the the right edge. This result is produced by the preview and the web viewer. Actual result: In PDF, the numbers have moved ~1 inch from the border, to the left.

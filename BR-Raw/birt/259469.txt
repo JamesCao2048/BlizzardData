@@ -1,10 +1,2 @@
 Bug 259469 The quotation marks surrounding LegendItemText should be removed for consistency.
-description: The quotation marks surrounding LegendItemText should be removed for consistency.
-build id: 2.5.0 v20081222-0630 steps to reproduce: 1.New a report with two parameters of text type,named as single and expression.Drag the two parameters to layout.
-2.New another report with a chart, select Legend on format chart page.
-Define dtrill through to the first report, define the expression for parameter "single" as simply "legendItemText",define the expression of parameter "expression" as ""this is legend text"+legendItemText".
-3.Preview report and click on the legend.
-Acutal result: The value for parameter "single" is "Series 1" with quotation marks included.
-The value for parameter "expression" is "this is legend textSeries 1".
-The quotatiion marks on the legendItemText is removed in expression.
-Expected result: The quotation marks for legendItemText should be removed for consistency.
+description: The quotation marks surrounding LegendItemText should be removed for consistency. build id: 2.5.0 v20081222-0630 steps to reproduce: 1. New a report with two parameters of text type,named as single and expression.Drag the two parameters to layout. 2. New another report with a chart, select Legend on format chart page. Define dtrill through to the first report, define the expression for parameter "single" as simply "legendItemText",define the expression of parameter "expression" as ""this is legend text"+legendItemText". 3. Preview report and click on the legend. Acutal result: The value for parameter "single" is "Series 1" with quotation marks included. The value for parameter "expression" is "this is legend textSeries 1". The quotatiion marks on the legendItemText is removed in expression. Expected result: The quotation marks for legendItemText should be removed for consistency.

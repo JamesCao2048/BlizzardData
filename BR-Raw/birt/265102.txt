@@ -1,7 +1,2 @@
 Bug 265102 Series Palette does not work when the chart has two axis and is colored by categories.
-description: Series Palette does not work when the chart has two axis and colored by categories.
-build id: 2.3.2 v20090217-0730 steps to reproduce: 1.New a chart with two axis.
-2.On Format Chart page, select series node and select Color By Categories.
-3.Click Series Palette and try to change the color.
-Actual result: Changing color does not work.
-Expected result: It should work.
+description: Series Palette does not work when the chart has two axis and colored by categories. build id: 2.3.2 v20090217-0730 steps to reproduce: 1. New a chart with two axis. 2. On Format Chart page, select series node and select Color By Categories. 3. Click Series Palette and try to change the color. Actual result: Changing color does not work. Expected result: It should work.

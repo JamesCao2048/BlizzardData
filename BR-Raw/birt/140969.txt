@@ -1,6 +1,2 @@
 Bug 140969 In library,delete item inside grid should not transfer current view.
-Description: In library,delete item inside grid should not transfer current view.
-steps to reproduce: 1.New a library 2.Insert a grid.
-3.Insert items to grid cell.
-4.Select one item in grid and press delete Expected result: Focus is on grid for next operation.
-Actual result: Grid disppeared, focus changed to whole library.
+Description: In library,delete item inside grid should not transfer current view. steps to reproduce: 1. New a library 2. Insert a grid. 3. Insert items to grid cell. 4. Select one item in grid and press delete Expected result: Focus is on grid for next operation. Actual result: Grid disppeared, focus changed to whole library.

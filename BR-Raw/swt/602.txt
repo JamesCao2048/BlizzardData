@@ -1,4 +1,2 @@
 [Accessibility] Implement retrieval of visible children
-Cocoa accessibility supports returning the visible children for things like tables, lists, menubars and menus.
-There is a comment in Accessible.java that says "SWT has no visible children API", but Carolyn says that one was added just for the Mac support.
-We need to change Accessible to call it and return the right values.
+Cocoa accessibility supports returning the visible children for things like tables, lists, menubars and menus. There is a comment in Accessible.java that says "SWT has no visible children API", but Carolyn says that one was added just for the Mac support. We need to change Accessible to call it and return the right values.

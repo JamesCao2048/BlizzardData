@@ -1,13 +1,7 @@
 [Widgets] New API for a single menu bar per application/Display
-Some time ago, Steve N.
-and I discussed the idea of the SWT supporting a single menu bar per application, much like native applications on the Mac.
-Because Menus are currently associated with Shells, this leads to a couple of problems.
+Some time ago, Steve N. and I discussed the idea of the SWT supporting a single menu bar per application, much like native applications on the Mac. Because Menus are currently associated with Shells, this leads to a couple of problems.
 -- Any window opened on top of the active Shell (modal dialogs, Find dialog, etc.) causes the menu bar to disappear.
--- An application with no windows open has no menu bar, except for the Apple and application menu.
-Closing the last window of an application normally does not end the application on the Mac, so you need some way to let the user open a new document or perform some other operation.
-The first problem can be worked around because you can create a menu bar every time you open a window and adjust it as needed.
-The second problem has no workaround.
-I have seen some solutions that rely on an offscreen window that becomes active when all other windows are closed, but this breaks down with the arrival of Expose because the user could potentially select it.
+-- An application with no windows open has no menu bar, except for the Apple and application menu. Closing the last window of an application normally does not end the application on the Mac, so you need some way to let the user open a new document or perform some other operation.
+The first problem can be worked around because you can create a menu bar every time you open a window and adjust it as needed. The second problem has no workaround. I have seen some solutions that rely on an offscreen window that becomes active when all other windows are closed, but this breaks down with the arrival of Expose because the user could potentially select it.
 It's also a performance improvement because adding and removing NSMenus from the menu bar is an expensive operation.
-A cross-platform way to handle this would be a new method Display.setMenuBar(), that would establish a 'menu of last resort' that gets used if the active Shell does not display a menu bar.
-This would let the current Shell-based API coexist with the new in that Shells could continue to create menu bars that take higher priority over the default menu bar.
+A cross-platform way to handle this would be a new method Display.setMenuBar(), that would establish a 'menu of last resort' that gets used if the active Shell does not display a menu bar. This would let the current Shell-based API coexist with the new in that Shells could continue to create menu bars that take higher priority over the default menu bar.

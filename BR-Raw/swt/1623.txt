@@ -4,8 +4,6 @@ Steps To Reproduce:
 The fix of  bug 218224  has broken heights of Combos on Linux GTK.
 Diff:
 http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt/Eclipse  SWT/gtk/org/eclipse/swt/widgets/Combo.java?r1=1.165&r2=1.166
-It used to be possible to set the height of Combos on GTK before the fix in order to match the preferred height of other components (Text boxes).
-Now, Combo has the fixed height which is too small
-- all combos look much smaller than preferred sizes of other controls.
+It used to be possible to set the height of Combos on GTK before the fix in order to match the preferred height of other components (Text boxes). Now, Combo has the fixed height which is too small - all combos look much smaller than preferred sizes of other controls.
 If fixing the height of Combos on GTK is absolutely necessary (only because Mac and Windows don't support it?), fixed height must match the preferred height of other components that use the same font.
 More information:

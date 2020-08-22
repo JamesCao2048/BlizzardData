@@ -7,7 +7,7 @@ Attached TestProject.zip, which shows the error;
 1.To test, extract code, import the project into your workspace, and run it as an SWT Application.
 2.Click in window;
 3.Type;  1 + 1
-4.As you type, the events will be written to the dialog.
+4. As you type, the events will be written to the dialog.
 NOTE:
 Once the KEY_RELEASED for the shift (utilized for '+') has been issued.
 The next KEY_PRESSED and KEY_RELEASED for the '1' does not show '1' for the keyChar but instead returns '!' as if the SHIFT modifier is still active.

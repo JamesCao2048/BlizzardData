@@ -1,7 +1,7 @@
 Getting immediately setting back a Region on a GC once setAdvanced is set to true causes the region to change provided the repaint region is offset
 Build ID: I20080617-2000
 Steps To Reproduce:
-1.Run the accompanying code
+1. Run the accompanying code
 2.
 3.
 More information:
@@ -44,8 +44,7 @@ public void run()
 {
 if(canvas.isDisposed())
 return;
-// canvas.redraw (); //
-<-- bad, damages more than is needed
+// canvas.redraw (); // <-- bad, damages more than is needed
 GC gc = new GC(canvas);
 gc.dispose();
 canvas.redraw(50, 50, 200, 200, false);
@@ -69,8 +68,7 @@ gc.setAdvanced(true);
 
 Region aRegion = new Region(gc.getDevice());
 gc.getClipping(aRegion);
-System.out.println("Initial Clip Region.
-" + aRegion.getBounds());
+System.out.println("Initial Clip Region. " + aRegion.getBounds());
 System.out.println("Initial Clip Rectangle " + gc.getClipping());
 gc.setClipping(aRegion);
 //Region was just immediately set back into GC but when we get it out again
@@ -90,7 +88,6 @@ public static void main(String args[])
 new SimplestSWT3().run();
 }
 }
-I also reproduced (1) the same bug under Windows XP SP3 and a variant under Windows Vista SP1 32bit.
-I have given you the minimum code set for clarity, if you want an example of why it causes me problems then I can send another example
+I also reproduced (1) the same bug under Windows XP SP3 and a variant under Windows Vista SP1 32bit. I have given you the minimum code set for clarity, if you want an example of why it causes me problems then I can send another example
 Aside: I'm investigating it further, but for various reasons (setting up a native Windows dev env) this is going to take a couple of days to set up.
 The main problem I have is that I am getting

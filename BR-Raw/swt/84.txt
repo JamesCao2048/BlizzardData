@@ -1,11 +1,8 @@
 [GTK+3] Implement SwtFixed preferred height/width methods
-Many widgets like ToolItems are clipped to the height and clipped in the width when you run them with GTK+ 3.The problem is that height/width calculations in GTK+ 3 are different from GTK+2.
+Many widgets like ToolItems are clipped to the height and clipped in the width when you run them with GTK+ 3. The problem is that height/width calculations in GTK+ 3 are different from GTK+2.
 One of the solutions could be to implement swt_fixed_get_preferred_width/height, which currently assigns minimal and natural sizes to 0, so it calculates minimal and natural sizes for GTK+3 as it is suppose to.
 Here is the patch I propose:
 http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=swt_fixed
 This patch fixes height-width clippings issues.
-Couple of side-effects of the calculating  height/width is that Preference window cannot be resized and CoolBar is taking more space than it should (see ControlExample
--> Coolbar Tab), however, there is possibility that there is problem within calculations of CoolBar itself and regarding Preferences window
-- it has resizing problem without this patch too.
-Silenio, when you have time, could you please take a look  and tell me what are your thoughts on this issue.
-Thanks!
+Couple of side-effects of the calculating  height/width is that Preference window cannot be resized and CoolBar is taking more space than it should (see ControlExample -> Coolbar Tab), however, there is possibility that there is problem within calculations of CoolBar itself and regarding Preferences window - it has resizing problem without this patch too.
+Silenio, when you have time, could you please take a look  and tell me what are your thoughts on this issue. Thanks!

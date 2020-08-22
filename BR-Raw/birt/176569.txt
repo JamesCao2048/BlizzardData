@@ -1,7 +1,2 @@
 Bug 176569 123 is treated as Blank Value in Scalar Parameter [0705]
-Description: 123 is treated as Blank Value in Scalar Parameter.
-Build number: 2.2.0.v20070307-1128 Steps to reproduce: 1.New a Parameter.
-2.Untick Allow null value checkbox.
-Expected result: Parameter works correctly.
-Actual result: Another Parameter dialogue pops up and when you click OK button again, warning message "NewParameter cannot be blank" pops up (see the screenshot).
-Error log: N/A
+Description: 123 is treated as Blank Value in Scalar Parameter. Build number: 2.2.0.v20070307-1128 Steps to reproduce: 1. New a Parameter. 2. Untick Allow null value checkbox. Expected result: Parameter works correctly. Actual result: Another Parameter dialogue pops up and when you click OK button again, warning message "NewParameter cannot be blank" pops up (see the screenshot). Error log: N/A

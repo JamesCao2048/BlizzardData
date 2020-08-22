@@ -1,4 +1,2 @@
 Button.computeSize() may change the button size
-As part of the changes for  bug 251460  I added a change that sets the control size during computeSize if the image makes the button taller than a particular threshold value.
-That may change the cell size, and makes the button size calculated above invalid.
-We should revisit this change.
+As part of the changes for  bug 251460  I added a change that sets the control size during computeSize if the image makes the button taller than a particular threshold value. That may change the cell size, and makes the button size calculated above invalid. We should revisit this change.

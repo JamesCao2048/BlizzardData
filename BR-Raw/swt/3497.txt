@@ -1,7 +1,5 @@
 StyledText leaking StyleRanges
 Each time a java editor is open, even repeatedly for a given resource, a new
-set of StyleRanges is created for its contents.
-However when the editor is
-closed the StyleRanges don't go away.
-These accumulate quite quickly, need to
+set of StyleRanges is created for its contents.  However when the editor is
+closed the StyleRanges don't go away.  These accumulate quite quickly, need to
 find out what's happening here.

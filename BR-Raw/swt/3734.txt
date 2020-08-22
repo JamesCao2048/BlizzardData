@@ -1,7 +1,6 @@
 Tab Event weirdly handled in motif
 This is similar to  bug 33495  except it occurs on motif and the symptoms are
-different.
-The problem is that if the user assigns a command to the Tab key on
+different. The problem is that if the user assigns a command to the Tab key on
 motif, the action is performed, but focus transfers to the buttons in the toolbar.
 To reproduce:
 1) Get Eclipse for Linux/Motif/RC2

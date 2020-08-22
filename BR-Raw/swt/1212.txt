@@ -1,9 +1,9 @@
 Drag feedback image draws above cursor when dragging a Label
 Using I20090127-0100:
-1.Run DNDExample
-2.Select Label from the left popup
-3.Drag to the drop target
+1. Run DNDExample
+2. Select Label from the left popup
+3. Drag to the drop target
 ----> The feedback image that tells you a drag is underway draws above the cursor about 10 pixels or so.
-4.Now, select any other item in the popup
-5.Drag to the drop target
+4. Now, select any other item in the popup
+5. Drag to the drop target
 ----> Image draws centered around the cursor, as expected.

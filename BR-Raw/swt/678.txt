@@ -1,11 +1,10 @@
 [Widgets] setting minimum size on an ON_TOP Shell makes it unable to grow
-From the swt newsgroup (post + snippet below), I also see it on RHEL4. If line "shell2.setMinimumSize(MIN_SIZE, MIN_SIZE);" is commented out then the ON_TOP Shell is able to grow.
+From the swt newsgroup (post + snippet below), I also see it on RHEL4.  If line "shell2.setMinimumSize(MIN_SIZE, MIN_SIZE);" is commented out then the ON_TOP Shell is able to grow.
 "
 I'm trying to create a borderless shell (NO_TRIM) with a minimum size on
 Linux.
 When I do this, resizing the window to be *larger* doesn't seem to work
-(though resizing smaller works until it hits the minimum size).
-I've
+(though resizing smaller works until it hits the minimum size).  I've
 attached a snippet which illustrates the problem I'm seeing.
 public class ResizeShellSnippet {
 private static final int INITIAL_SIZE = 525;
@@ -28,10 +27,8 @@ shrink.addSelectionListener(new SelectionAdapter() {
 @Override
 public void widgetSelected(SelectionEvent e) {
 Rectangle rect = shell.getBounds();
-rect.height = rect.height
-- 5;
-rect.width = rect.width
-- 5;
+rect.height = rect.height - 5;
+rect.width = rect.width - 5;
 shell.setBounds(rect);
 }
 });

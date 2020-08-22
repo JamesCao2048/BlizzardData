@@ -2,12 +2,9 @@ NPE pressing enter on DateTime widget if using SWT.TIME only
 Created  attachment 221979   [details]
 Java project showing issue
 This class shows an immediate NPE when enter is pressed in any of the fields of the SECOND DateTime widget (the one w/ style SWT.TIME | SWT.MEDIUM).
-minimal code snippet pasted here, but also attached project to reproduce.
-OSX only due to different impl.
-at least on Windows.
+minimal code snippet pasted here, but also attached project to reproduce. OSX only due to different impl. at least on Windows.
 /**
-* Shows OSX NPE issue.
-If you press enter on a DateTime widget displaying only the time fields, NPE.
+* Shows OSX NPE issue. If you press enter on a DateTime widget displaying only the time fields, NPE.
 */
 public class DateTimeOSX {
 public static void main(String[] args) {
@@ -19,8 +16,7 @@ b.addSelectionListener(new SelectionAdapter() {
 @Override
 public void widgetSelected(SelectionEvent e) {
 PopupDialog dlg = new PopupDialog(shell, PopupDialog.INFOPOPUP_SHELLSTYLE, true, false, false, false, false, null,
-"OSX only: Press enter on date side, OK.
-Press enter on time field and NPE") {;
+"OSX only: Press enter on date side, OK. Press enter on time field and NPE") {;
 @Override
 protected Control createDialogArea(Composite parent) {
 Composite composite = (Composite) super.createDialogArea(parent);

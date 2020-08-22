@@ -1,9 +1,7 @@
 Grayed PNG image displayed white background in some Linux
 Build ID: M20060921-0945
 Steps To Reproduce:
-The following code displays a transparent image(transparent.png) in a window.
-There should be nothing displayed.
-But in some machine(ThinkPad T60, ThinkCenter 8212, ThinkCenter 8141) with SLED10 linux, it displayed a white image.
+The following code displays a transparent image(transparent.png) in a window. There should be nothing displayed. But in some machine(ThinkPad T60, ThinkCenter 8212, ThinkCenter 8141) with SLED10 linux, it displayed a white image.
 public class TestImage
 {
 public TestImage()
@@ -64,5 +62,4 @@ catch(java.lang.Exception exception) { }
 return null;
 }
 More information:
-The following bugs may relate to it:164691, 165751.In my test, if the PNG is not transformed to gray, it has no problem.
-GIF file has no problem.
+The following bugs may relate to it:164691, 165751. In my test, if the PNG is not transformed to gray, it has no problem. GIF file has no problem.

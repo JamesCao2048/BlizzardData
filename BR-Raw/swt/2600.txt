@@ -1,28 +1,20 @@
 [PerspectiveBar] Alignment of items in perspective switcher when switcher docked to the left is incorrect
 Steps to reproduce:
-1.Launch Eclipse 3.0.2 SDK
-2.From perspective switcher, select Dock On > Left
-3.Open a few perspectives
-- PDE, Java, CVS, etc...
-3.On Windows, all the perspectives are left-aligned.
-However, on linux the
+1. Launch Eclipse 3.0.2 SDK
+2. From perspective switcher, select Dock On > Left
+3. Open a few perspectives - PDE, Java, CVS, etc...
+3. On Windows, all the perspectives are left-aligned. However, on linux the
 perspectives are center-aligned.
-This looks pretty ugly.
-Behaviour of perspective switcher on linux should match
+This looks pretty ugly. Behaviour of perspective switcher on linux should match
 the behaviour on Windows.
-To give you some background on why Im making this request
-- In the WebSphere
+To give you some background on why Im making this request - In the WebSphere
 Everyplace Deployment runtime, I've morphed the perspective switcher
 (org/eclipse/ui/internal/PerspectiveSwitcher) to a launcher which allows users
-to navigate between and run various applications deployed to the runtime.
-I'd
+to navigate between and run various applications deployed to the runtime. I'd
 like for the application (our perspectives) icons to be stacked one on top of
-the other and be left-aligned.
-For reference, this launcher is similar to what
+the other and be left-aligned. For reference, this launcher is similar to what
 is used in Lotus Workplace Client.
 I am using the default style used by the workbench for the perspective
-switcher
-- SWT.FLAT | SWT.WRAP | SWT.RIGHT | SWT.HORIZONTAL.
-I tried various
+switcher - SWT.FLAT | SWT.WRAP | SWT.RIGHT | SWT.HORIZONTAL. I tried various
 permutations and combinations of these style bits but I cant get the
 perspectives to left-align on Linux GTK.

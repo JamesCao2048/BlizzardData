@@ -1,4 +1,2 @@
 Bug 117436 Adding dynamic text in context menu and palette are inconsistent
-Description: Adding dynamic text in context menu and palette are inconsistent Steps to reproduce: 1.Add a dynamic text from palette 2.Add a dynamic text from context menu Expected result: Both two way to add a dynamic text are the same Actual result:
-<property name="contentType">html</property> will be added in the source when adding a dynamic text from palette.
-but no such property in the source when adding a dynamic text from context menu
+Description: Adding dynamic text in context menu and palette are inconsistent Steps to reproduce: 1.Add a dynamic text from palette 2.Add a dynamic text from context menu Expected result: Both two way to add a dynamic text are the same Actual result: <property name="contentType">html</property> will be added in the source when adding a dynamic text from palette. but no such property in the source when adding a dynamic text from context menu

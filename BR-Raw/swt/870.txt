@@ -5,5 +5,4 @@ Steps to reproduce this bug:
 - create and open a MessageBox with style SWT.SHEET,
 - close this MessageBox,
 - create and open a FileDialog or a DirectoryDialog (it doesn't matter if it is created with SWT.SHEET or not),
-- select a file (or directory) and press OK or Cancel button
-- the dialog won't close and selected file/directory can't be obtained from it.
+- select a file (or directory) and press OK or Cancel button - the dialog won't close and selected file/directory can't be obtained from it.

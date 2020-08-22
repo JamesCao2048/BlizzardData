@@ -80,12 +80,4 @@ Manager.java:125)
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
 (AjBu
 ildManager.java:70)
-at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:99)
-at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:53)
-at org.aspectj.tools.ajc.Main.run(Main.java:217)
-at org.aspectj.tools.ajc.Main.runMain(Main.java:155)
-at org.aspectj.tools.ajc.Main.main(Main.java:72)
-C:eclipseworkspaceatracksrcSampleExceptionHandling.java:15 circular
-pointcu
-t declaration involving: executionsThrowingChecked()
-1 error
+at org.aspectj.ajdt.aj

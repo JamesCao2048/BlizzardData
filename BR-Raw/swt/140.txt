@@ -1,5 +1,3 @@
 [Browser] having a detectable XULRunner can cause a WebKit Browser to fail
-Bug 344487  added lines to ensure that a native XULRunner's libraries are always loaded (if detected) before WebKit libraries.
-This resolved a dependent library conflict that was occurring between the XULRunner and WebKit releases at the time.
-However it seems that this change can also have the opposite effect, and can cause a WebKit-based Browser to fail when no XULRunner-based Browser is being used at all.
-The fix for  Bug 344487  should just come out, and clients that instantiate either a SWT.MOZILLA or SWT.WEBKIT Browser should specify the org.eclipse.swt.browser.DefaultType property as described in  http://www.eclipse.org/swt/faq.php#browserspecifydefault  .
+Bug 344487  added lines to ensure that a native XULRunner's libraries are always loaded (if detected) before WebKit libraries.  This resolved a dependent library conflict that was occurring between the XULRunner and WebKit releases at the time.
+However it seems that this change can also have the opposite effect, and can cause a WebKit-based Browser to fail when no XULRunner-based Browser is being used at all.  The fix for  Bug 344487  should just come out, and clients that instantiate either a SWT.MOZILLA or SWT.WEBKIT Browser should specify the org.eclipse.swt.browser.DefaultType property as described in  http://www.eclipse.org/swt/faq.php#browserspecifydefault  .

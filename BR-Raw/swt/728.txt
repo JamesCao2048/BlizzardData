@@ -2,11 +2,8 @@
 Build ID: M20080911-1700
 Steps To Reproduce:
 I have prepared a simple snippet to illustrate the bug and included it below.
-Run it, move focus to the browser and click Ctrl+D (the shortcut that is associated with the single dummy menu action that prints "text" at the console).
-You will see that the text "menuAboutToShow called" is shown in the console, indicating that the method menuAboutToShow of the menu listener that I add to the menu is called.
-I expect this is a bug.
-The reason why I submit this bug report is that I have some logic that relies on menuAboutToHide/menuAboutToShow in my real application, and this behavior screws it up.
-In addition, the browser widget does not send focus events, which makes it impossible to write a workaround based on that.
+Run it, move focus to the browser and click Ctrl+D (the shortcut that is associated with the single dummy menu action that prints "text" at the console). You will see that the text "menuAboutToShow called" is shown in the console, indicating that the method menuAboutToShow of the menu listener that I add to the menu is called. I expect this is a bug.
+The reason why I submit this bug report is that I have some logic that relies on menuAboutToHide/menuAboutToShow in my real application, and this behavior screws it up. In addition, the browser widget does not send focus events, which makes it impossible to write a workaround based on that.
 More information:
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener2;

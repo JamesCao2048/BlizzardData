@@ -1,8 +1,2 @@
 Bug 104397 JDBC Data Set Editor showing empty/system schemas
-Some recent enhancements to the JDBC Data Set Editor in 1.0.1 dev build has introduced an unintended side effect: the Schema browser now shows empty and/or system schemas, which are never used to build queries.
-This is a regression against 1.0.0 Final.
-See attached screenshot for an example.
-This is shown when creating a Sample DB data set.
-Note that the "Available Items" pane shows a large number of empty and system schema names (APP, SYS, SYSCAT, etc.).
-Previously with 1.0.0 Final build, only the "CLASSICMODELS" schema is shown.
-We need to preserve that behavior.
+Some recent enhancements to the JDBC Data Set Editor in 1.0.1 dev build has introduced an unintended side effect: the Schema browser now shows empty and/or system schemas, which are never used to build queries. This is a regression against 1.0.0 Final. See attached screenshot for an example. This is shown when creating a Sample DB data set. Note that the "Available Items" pane shows a large number of empty and system schema names (APP, SYS, SYSCAT, etc.). Previously with 1.0.0 Final build, only the "CLASSICMODELS" schema is shown. We need to preserve that behavior.

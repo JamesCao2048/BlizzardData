@@ -3,15 +3,13 @@ JVM terminates when closing web broser with Command W on Mac OS X
 - open the .html file with the web browser
 - close that editor tab using Command W
 -> JVM running eclipse terminates reproducible
-It seems to be important to use Command W.
-Using the mouse just closes the
+It seems to be important to use Command W. Using the mouse just closes the
 editor Tab.
 Environment:
 Eclipse 3.2M1
 Safari Version 2.0 (412.2)
 Mac OS X 10.4.2 Build 8C46
-$ java
--version
+$ java -version
 java version "1.4.2_07"
 Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2_07-215)
 Java HotSpot(TM) Client VM (build 1.4.2-50, mixed mode)

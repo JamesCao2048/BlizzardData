@@ -1,8 +1,6 @@
 Package Explorer 'Hierarchical' package presentation
-Up till eclipse 3.3, if i had a project with packages that start like
--
+Up till eclipse 3.3, if i had a project with packages that start like -
 com.mycompany.product.core
 and all other packages below it, the hierarchical view would show an entire node for com.mycompany.product.core and all other packages below it in their own nodes.
-In 3.4m6 however, in hierarchical view, each of com, mycomapny, product,core get their own nodes.
-Since actions like 'format' and 'cleanup' cannot be applied to packages that dont contain any classes, like 'com' I am unable to apply formatting to the entire project without selecting each package under 'core' individually'.
+In 3.4m6 however, in hierarchical view, each of com, mycomapny, product,core get their own nodes. Since actions like 'format' and 'cleanup' cannot be applied to packages that dont contain any classes, like 'com' I am unable to apply formatting to the entire project without selecting each package under 'core' individually'.
 Why was this change made, the previous method of collapsing the empty packages into one node was far more intuitive.

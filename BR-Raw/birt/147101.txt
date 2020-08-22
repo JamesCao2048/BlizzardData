@@ -1,8 +1,2 @@
 Bug 147101 Report generation performance is sluggish
-The overall performance of report generation appears to be quite sluggish.
-Here are numbers that we have measured using ORACLE as a DB.
-We use ORACLE 10g w/ojdbc14.jar thin driver.
-select rownum, datetime_id, another_id, text from ( select max(datetime_id) as datetime_id, another_id, text from some_oracle_schema.sample_table where text
-< 'c%' group by another_id, text ) Query resulting in 8465 rows Using PL/SQL developer:
------------------------ Execution: approx 1 second Iterating through all rows via PL/SQL developer UI: 10 seconds BIRT:
------ Preview page (via dataset editor): shows all 8465 rows in 53 seconds Preview tab (in the designer): shows all 8465 rows in 79 seconds Generation of rptdocument from rptdesign using API: 55 seconds
+The overall performance of report generation appears to be quite sluggish. Here are numbers that we have measured using ORACLE as a DB. We use ORACLE 10g w/ojdbc14.jar thin driver. select rownum, datetime_id, another_id, text from ( select max(datetime_id) as datetime_id, another_id, text from some_oracle_schema.sample_table where text < 'c%' group by another_id, text ) Query resulting in 8465 rows Using PL/SQL developer: ----------------------- Execution: approx 1 second Iterating through all rows via PL/SQL developer UI: 10 seconds BIRT: ----- Preview page (via dataset editor): shows all 8465 rows in 53 seconds Preview tab (in the designer): shows all 8465 rows in 79 seconds Generation of rptdocument from rptdesign using API: 55 seconds

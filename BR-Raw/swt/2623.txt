@@ -1,10 +1,8 @@
 Handle leak in TextLayout
 3.2 M3
 I am not entirely sure of how handles get managed in SWT, but I think I found a
-leak in TextLayout.draw(TextLayout.java:324).
-I noticed that I get frequent "No
-more handles" SWTErrors in the last couple of weeks.
-Running Sleak reveals that
+leak in TextLayout.draw(TextLayout.java:324). I noticed that I get frequent "No
+more handles" SWTErrors in the last couple of weeks. Running Sleak reveals that
 after a while of editing, there are thousands of Region objects with the
 following allocation path:
 at org.eclipse.swt.graphics.Device.new_Object(Device.java:658)

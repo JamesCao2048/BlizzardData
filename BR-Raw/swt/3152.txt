@@ -1,11 +1,8 @@
 No more handles error when running the Browser demo
 3.1M3 first candidate build
 - run eclipse with the examples
-- Window
--> Show View
--> Other...
-- select SWT Examples
-- Browser Demo, OK
+- Window -> Show View -> Other...
+- select SWT Examples - Browser Demo, OK
 - the following error is spewed:
 org.eclipse.swt.SWTError: No more handles
 at org.eclipse.swt.SWT.error(SWT.java:2723)
@@ -68,4 +65,4 @@ tionItem.java:896)
 at
 org.eclipse.jface.action.ActionContributionItem$7.handleEvent(ActionCon
 tributionItem.java:810)
-at org.eclipse.swt.wi
+at org.eclipse.swt.widge

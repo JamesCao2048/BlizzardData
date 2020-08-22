@@ -25,8 +25,7 @@ shell.setLayout(new FillLayout());
 final Table table = new Table(shell, SWT.VIRTUAL
 | SWT.FULL_SELECTION | SWT.MULTI);
 final int columns = 11;
-for (int i = 0; i
-< columns; i++) {
+for (int i = 0; i < columns; i++) {
 TableColumn tc = new TableColumn(table, SWT.LEFT);
 tc.setText("Directory");
 tc.setWidth(137);

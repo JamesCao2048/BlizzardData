@@ -1,3 +1,2 @@
 Bug 145491 [deployment]BIRT_VIEWER_LOCALE in web.xml doesn't work
-Description: BIRT_VIEWER_LOCALE in web.xml doesn't work Steps to reproduce: 1.Deploy birt 2.Set ko_kr to BIRT_VIEWER_LOCALE inside web.xml file 3.Start application server and preview report.
-Expected result: The default locale for report should be ko_kr Actual result: The report still used en_us locale to display datetime data.
+Description: BIRT_VIEWER_LOCALE in web.xml doesn't work Steps to reproduce: 1. Deploy birt 2. Set ko_kr to BIRT_VIEWER_LOCALE inside web.xml file 3. Start application server and preview report. Expected result: The default locale for report should be ko_kr Actual result: The report still used en_us locale to display datetime data.

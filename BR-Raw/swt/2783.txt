@@ -1,8 +1,7 @@
 Can Widget.getDisplay() be called from a background thread?
 3.1 M5
 Widget.getDisplay()'s Javadoc has:
-<li>ERROR_THREAD_INVALID_ACCESS
-- if not called from the thread that created the
+<li>ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the
 receiver</li>
 But the implementation, at least on Windows, does not check the thread.
 It seems like this should work from any thread, otherwise it would really

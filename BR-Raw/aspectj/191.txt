@@ -39,5 +39,3 @@ adding a whitespace before the aspect declaration results in an adviceDidNotMatc
 14:38:23 Timer event: 6ms: Create element map (2 rels in project:  bug92895 )
 14:38:23 Types affected during build = 1
 14:38:23 Timer event: 3ms: Add markers (2 markers)
-14:38:24 Timer event: 1274ms: Total time spent in AJBuilder.build()
-namely, the adviceDidNotMatch warning was added and then we fell back to a full build and the warning wasn't cleared. Performing a "clean" build fixes the problem. This is since the pipelining changes.

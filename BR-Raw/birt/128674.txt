@@ -1,32 +1,3 @@
 Bug 128674 PDF not obeying width or background color
-I have a simple SQL table with columns for dept, firstname, MI, lastname.
-I created a grouped report using the wizard, and associated it with the above table.
-By default the report thus created it has 3 columns.
-I added a 4th column and set the widths of all columns to 25%.
-I then put dept in as the grouping field, and fname, mi, lastname as the 3 detail columns.
-I displays correctly in the preview tab, and in file-->preview as PDF and file-->preview as HTML.
-I now adjust the column widths to make them reflect the actual data, and set them to 10/40/10/40%.
-preview tab shows the new widths correctly.
-file--->preview as HTML also shows them correctly.
-But File-->preview as PDF still shows the columns distributed 25/25/25/25% To check this a little further, I go back to layout mode and assign a different arbitrary background color to each column, and preview mode and preview as HTML show the colors correctly, but previews as PDF does not show the colors and still shows 25/25/25/25%.
-I save the rptdesign file and look at the xml.
-I see the following:
-<column id="35">
-<property name="width">10%</property>
-<property name="backgroundColor">#80FFFF</property>
-</column>
-<column id="64">
-<property name="width">40%</property>
-<property name="backgroundColor">#FFFF80</property>
-</column>
-<column id="37">
-<property name="width">10%</property>
-<property name="backgroundColor">#FF80FF</property>
-</column>
-<column id="56">
-<property name="width">40%</property>
-<property name="backgroundColor">#FF8080</property>
-</column> So the xml is saved correcrtly with the %width and the bgcolor set.
-The PDF viewer is not obeying it.
-Is this a restriction?
-I think if this was ever an itext problem it would have been fixed ages ago.
+I have a simple SQL table with columns for dept, firstname, MI, lastname. I created a grouped report using the wizard, and associated it with the above table. By default the report thus created it has 3 columns. I added a 4th column and set the widths of all columns to 25%. I then put dept in as the grouping field, and fname, mi, lastname as the 3 detail columns. I displays correctly in the preview tab, and in file-->preview as PDF and file-->preview as HTML. I now adjust the column widths to make them reflect the actual data, and set them to 10/40/10/40%. preview tab shows the new widths correctly. file--->preview as HTML also shows them correctly. But File-->preview as PDF still shows the columns distributed 25/25/25/25% To check this a little further, I go back to layout mode and assign a different arbitrary background color to each column, and preview mode and preview as HTML show the colors correctly, but previews as PDF does not show the colors and still shows 25/25/25/25%. I sav
+e the rptdesign file and look at the xml. I see the following: <column id="35"> <property name="width">10%</property> <property name="backgroundColor">#80FFFF</property> </column> <column id="64"> <property name="width">40%</property> <property name="backgroundColor">#FFFF80</property> </column> <column id="37"> <property name="width">10%</property> <property name="backgroundColor">#FF80FF</property> </column> <column id="56"> <property name="width">40%</property> <property name="backgroundColor">#FF8080</property> </column> So the xml is saved correcrtly with the %width and the bgcolor set. The PDF viewer is not obeying it. Is this a restriction? I think if this was ever an itext problem it would have been fixed ages ago.

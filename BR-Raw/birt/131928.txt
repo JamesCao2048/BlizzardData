@@ -1,5 +1,2 @@
 Bug 131928 tabs in the sql editor for a dataset break the syntax highlighting for the next keyword
-if you type in the query like this (where
-<tab> is a press of the tab key) select name from user
-<tab>inner join address on address.user_id = user.id the syntax highlighting does not apply the correct colour to the word "inner" if you change the
-<tab> to a space the colour is displayed correctly.
+if you type in the query like this (where <tab> is a press of the tab key) select name from user <tab>inner join address on address.user_id = user.id the syntax highlighting does not apply the correct colour to the word "inner" if you change the <tab> to a space the colour is displayed correctly.

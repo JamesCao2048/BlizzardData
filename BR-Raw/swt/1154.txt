@@ -2,7 +2,5 @@ Scrollbar cheese and autoscroll behavior in debugger
 Build id: N20090226-2000
 Put a breakpoint in some code (has to be more than one page of code) and run under the debugger until you get to the breakpoint.
 Now grab the thumb in the current editor and try to drag-scroll UP a little to see some code that comes before the breakpoint.
-The scrollbar thumb jumps up, draws itself twice, and then begins rapidly auto-scrolling DOWN, which is the opposite direction to the one you began scrolling in.
-The auto-scrolling stops if you release the mouse, or if the auto-scrolling thumb gets to the mouse cursor's location.
-The only way to get the additional image of the scrollbar thumb to disappear is to grab the "real" thumb and drag over the cheesy thumb.
-:)
+The scrollbar thumb jumps up, draws itself twice, and then begins rapidly auto-scrolling DOWN, which is the opposite direction to the one you began scrolling in. The auto-scrolling stops if you release the mouse, or if the auto-scrolling thumb gets to the mouse cursor's location.
+The only way to get the additional image of the scrollbar thumb to disappear is to grab the "real" thumb and drag over the cheesy thumb.   :)

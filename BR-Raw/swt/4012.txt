@@ -1,6 +1,5 @@
 StyledText - initial bidi caret position wrong when widget empty
 build 2.0
 When no initial text is set in the widget the caret is not positioned at the
-left edge of the widget.
-It is a few pixels too far right.
+left edge of the widget. It is a few pixels too far right.
 This does not happen when setText has been called.

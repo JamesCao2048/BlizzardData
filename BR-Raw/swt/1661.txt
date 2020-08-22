@@ -4,8 +4,7 @@ I20080325-0100, Mac OS X only (could not reproduce on WinXP)
 - open Open Resource dialog and start to type
 => message in log:
 !ENTRY org.eclipse.jface 2 0 2008-03-25 15:52:20.036
-!MESSAGE Ignored reentrant call while viewer is busy.
-This is only logged once per viewer instance, but similar calls will still be ignored.
+!MESSAGE Ignored reentrant call while viewer is busy. This is only logged once per viewer instance, but similar calls will still be ignored.
 !STACK 0
 java.lang.RuntimeException
 at org.eclipse.jface.viewers.ColumnViewer.checkBusy(ColumnViewer.java:743)

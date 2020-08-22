@@ -1,9 +1,3 @@
 Bug 190157 A few potential possibilities of NullPointerException have been found in BIRT CORE projects.
-Build ID: 2.1.2 Steps To Reproduce: I have been running Jtest's BugDetective feature on BIRT source code and it reported a few possible dangerous places where a NullPoiterException may be thrown under some circumstances.
-The attached screenshots from BugDetective will help to understand the exact flow which may lead to the exception.
-org.eclipse.birt.core.archive.compound.ArchiveFile: At line 146 if the excetion is thrown at line 125 (Screenshot NP1).
-org.eclipse.birt.core.script.NativeDateTimeSpan: Lines 108,116,124,132,140,148 all are dangerous from this point of view because the variable 'startDate' may be null if toDate(String) method is not able to parse its argument throwing ParseException.
-Since all these violations have the same origin, only one screenshot that depicts the problem (NP2) is attached.
-org.eclipse.birt.core.ui.utils.UIHelper: At line 136 since getURL may return null if MalformedURLException occurs (see NP3).
-Please let me know if this is a real problem or BugDetective is mistaken.
-Thank you! More information:
+Build ID: 2.1.2 Steps To Reproduce: I have been running Jtest's BugDetective feature on BIRT source code and it reported a few possible dangerous places where a NullPoiterException may be thrown under some circumstances. The attached screenshots from BugDetective will help to understand the exact flow which may lead to the exception. org.eclipse.birt.core.archive.compound.ArchiveFile: At line 146 if the excetion is thrown at line 125 (Screenshot NP1). org.eclipse.birt.core.script.NativeDateTimeSpan: Lines 108,116,124,132,140,148 all are dangerous from this point of view because the variable 'startDate' may be null if toDate(String) method is not able to parse its argument throwing ParseException. Since all these violations have the same origin, only one screenshot that depicts the problem (NP2) is attached. org.eclipse.birt.core.ui.utils.UIHelper: At line 136 since getURL may return null if MalformedURLException occurs (see NP3). Please let me know if this is a real problem or BugDetec
+tive is mistaken. Thank you! More information:

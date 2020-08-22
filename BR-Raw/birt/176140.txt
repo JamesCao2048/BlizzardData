@@ -1,9 +1,2 @@
 Bug 176140 Exception is thrown out when preview the data set [07]
-Description: Exception is thrown out when preview the data set Build number: 2.2.0.v20070302-1053 Steps to reproduce: 1.New a sample data source.
-2.New a data set, click Preview Results.
-Expected result: No exception is thrown out.
-Actual result: Exception is thrown out.
-Error log: A BIRT exception occurred.
-Cannot set statement property.
-Unsupported query property: OdaConnProfileName Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.2.0.v20070302 Error Code:odaconsumer.CannotSetStatementProperty Error Message:Cannot set statement property.
-Unsupported query property: OdaConnProfileName
+Description: Exception is thrown out when preview the data set Build number: 2.2.0.v20070302-1053 Steps to reproduce: 1. New a sample data source. 2. New a data set, click Preview Results. Expected result: No exception is thrown out. Actual result: Exception is thrown out. Error log: A BIRT exception occurred. Cannot set statement property. Unsupported query property: OdaConnProfileName Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.2.0.v20070302 Error Code:odaconsumer.CannotSetStatementProperty Error Message:Cannot set statement property. Unsupported query property: OdaConnProfileName

@@ -1,9 +1,2 @@
 Bug 213810 [2.2.2 acceptance] Error occurs when create a third axis.
-description: Error occurs when create a third axis.
-build version: 2.2.2 v20071224-1008 steps to reproduce: 1.New a report.
-2.New a datasource with sample DB and new a dataset with table payments.
-3.New bar chart.
-4.On Select Chart Type page, select Multi-Y Axis as More Axes.
-5.On Select Data page, bind the dataset, select customernumber as Series1 of Axis1, create a secondary Axis, select PAYMENTDATE as Series1 of Axis2, create a third Axis.
-Expected result: The third Axis should be created correctly.
-Actual result: Error occurs: Unable to use a non-datetime data to render a datetime axis.
+description: Error occurs when create a third axis. build version: 2.2.2 v20071224-1008 steps to reproduce: 1. New a report. 2. New a datasource with sample DB and new a dataset with table payments. 3. New bar chart. 4. On Select Chart Type page, select Multi-Y Axis as More Axes. 5. On Select Data page, bind the dataset, select customernumber as Series1 of Axis1, create a secondary Axis, select PAYMENTDATE as Series1 of Axis2, create a third Axis. Expected result: The third Axis should be created correctly. Actual result: Error occurs: Unable to use a non-datetime data to render a datetime axis.

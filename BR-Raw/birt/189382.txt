@@ -1,6 +1,2 @@
 Bug 189382 [accessibility]Web Viewer content isn't accessible for some assistive tools.[0002]
-Description: Web Viewer content isn't accessible for some assistive tools.
-At present, viewer use ajax structure, so view the html source can only see many reference to outer files.
-From accessibility point of view, some accessibility rules are based on html source code, so this rules cannot be satisfied.
-For example, table Header rule require using
-<th> tag, id and header attributes so that assistive reader tools can find out the link between header and detail data, but in BIRT, this can only be done through using "preview" servlet and will fail for "frameset" and "run".
+Description: Web Viewer content isn't accessible for some assistive tools. At present, viewer use ajax structure, so view the html source can only see many reference to outer files. From accessibility point of view, some accessibility rules are based on html source code, so this rules cannot be satisfied. For example, table Header rule require using <th> tag, id and header attributes so that assistive reader tools can find out the link between header and detail data, but in BIRT, this can only be done through using "preview" servlet and will fail for "frameset" and "run".

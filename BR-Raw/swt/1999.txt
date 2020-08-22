@@ -1,6 +1,5 @@
 Foreground color not used from EraseItem callback
-Using custom owner drawn for a Table or Tree overriding the painting of the selection shows a bug on Linux.
-Consider this snippet:
+Using custom owner drawn for a Table or Tree overriding the painting of the selection shows a bug on Linux. Consider this snippet:
 public class Main {
 public static void main(String[] args) {
 Display display = new Display();

@@ -1,7 +1,6 @@
 infinite loop of repaint events on canvas view in plugin
 setting up a view with a canvas, I get a infinite loop of repaint events,
-if I set the background color of the canvas in the paint adapter.
-The problem
+if I set the background color of the canvas in the paint adapter. The problem
 does not occur on WinXp.
 I created a minimal example plugin, but I dont know how to attach it to the report.
 However, the following lines of code in the paint adapter cause the

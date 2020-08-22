@@ -1,9 +1,2 @@
 Bug 132805 Set descending to outer group will affect inner group.
-Description: Set descending to outer group will affect inner group.
-Steps to reproduce: 1.New a sample datasource and dataset from orders.
-2.Drag the dataset to Layout.
-3.Add a group on ordernumber, interval 10, descending.
-4.Add another group on orderdate, interval day 2, ascending.
-5.Preview.
-Expected result: Data are grouped correctly.
-Actual result: Inner group didn't work unless you set outer group's sort to asc.
+Description: Set descending to outer group will affect inner group. Steps to reproduce: 1. New a sample datasource and dataset from orders. 2. Drag the dataset to Layout. 3. Add a group on ordernumber, interval 10, descending. 4. Add another group on orderdate, interval day 2, ascending. 5. Preview. Expected result: Data are grouped correctly. Actual result: Inner group didn't work unless you set outer group's sort to asc.

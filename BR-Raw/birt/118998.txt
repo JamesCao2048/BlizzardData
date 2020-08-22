@@ -1,6 +1,2 @@
 Bug 118998 Background image set in inline items doesn't show up in pdf generated using BIRT PDF emitter.
-Description: Background image set in inline items doesn't show up in pdf generated using BIRT PDF emitter.
-Steps to reproduce: 1.run attached list-data-style-background(attribute).xml file to generate pdf file through birt pdf emitter.
-2.view the inline data items with background image setting in pdf file.
-Expected result: Images show.
-Actual result: Images didn't show up.
+Description: Background image set in inline items doesn't show up in pdf generated using BIRT PDF emitter. Steps to reproduce: 1. run attached list-data-style-background(attribute).xml file to generate pdf file through birt pdf emitter. 2. view the inline data items with background image setting in pdf file. Expected result: Images show. Actual result: Images didn't show up.

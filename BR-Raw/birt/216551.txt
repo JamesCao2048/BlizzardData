@@ -1,4 +1,2 @@
 Bug 216551 It doesn't call validate() for crosstab
-After implementing CrosstabReportItemHandle.validate() function, I find this function is not be called at all.
-Compared to Chart, crosstab has no ExtensionValidator to validate it.
-Please Model team update your code to support it.
+After implementing CrosstabReportItemHandle.validate() function, I find this function is not be called at all. Compared to Chart, crosstab has no ExtensionValidator to validate it. Please Model team update your code to support it.

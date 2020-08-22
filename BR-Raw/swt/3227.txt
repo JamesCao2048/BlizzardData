@@ -3,8 +3,7 @@ I have a view which has a Canvas and a Label, the Label has been added a
 MouseListener to catch the mouseDown event, whenever the mouse is down, it
 will show the ColorDialog to choose the color, based on the returned RGB
 value, the Label will update its background color.
-Everything works fine on WindowsXP and Linux9.0/gtk.
-When I move to MacOSX
+Everything works fine on WindowsXP and Linux9.0/gtk. When I move to MacOSX
 10.2.6/Carbon with the same code, the Label can update the background based
 on the seleceted color, however, after the dialog is closed, the mouse
 click event seems captured by the Label, and each time I click mouse,
@@ -13,8 +12,7 @@ the color.
 The same thing happens for FileDialog.
 The code:
 =========
-The code below is the view code.
-You can also get the full plug-in source code
+The code below is the view code. You can also get the full plug-in source code
 from following link:  http://rch01.rch.uky.edu/~cli4/mac/DialogView.tar
 =====================================================
 package DialogView.views;

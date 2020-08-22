@@ -1,8 +1,5 @@
 Program.findProgram(String extension) should gracefully handle long input
-The RegistryKey .net class does some pre-validation before actually hitting the registry.
-It would be nice to do something similar in the java layer before calling OS.RegistryKey_OpenSubKey
-- ideally not only in Program.findProgram but as a common sanity check.
-I believe the non-wpf win32 version returns null.
+The RegistryKey .net class does some pre-validation before actually hitting the registry.  It would be nice to do something similar in the java layer before calling OS.RegistryKey_OpenSubKey - ideally not only in Program.findProgram but as a common sanity check.  I believe the non-wpf win32 version returns null.
 e.g.
 String reallyLongExtension = "xxxxxx.....";
 Program.findProgram(reallyLongExtension);

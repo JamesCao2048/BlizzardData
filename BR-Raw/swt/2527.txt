@@ -1,7 +1,5 @@
 NPE when trying to dispose columns
-Memory View allows user to change the number of columns in a table.
-This is done by disposing the columns and recreating them.
-Got the following NPE when trying to reformat.
+Memory View allows user to change the number of columns in a table.  This is done by disposing the columns and recreating them.  Got the following NPE when trying to reformat.
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.TableItem.removeColumn(TableItem.java:1155)
 at org.eclipse.swt.widgets.Table.destroyItem(Table.java:612)

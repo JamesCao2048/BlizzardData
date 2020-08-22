@@ -1,7 +1,6 @@
 UnsatisfiedLinkError thrown when pressing a hardware key
 Using SWT 2047 on PocketPC I get an UnsatisfiedLinkError on OS.VkKeyScanW(S)S
-in Control#WM_KEYDOWN.
-OS.VkKeyScanW is not part of the 2047 SWT DLL for
+in Control#WM_KEYDOWN. OS.VkKeyScanW is not part of the 2047 SWT DLL for
 PocketPC (I believe the function does not exist on this platform).
 If I comment the snippet below for PocketPC it works fine:
 for (int i=0; i<ACCENTS.length; i++) {

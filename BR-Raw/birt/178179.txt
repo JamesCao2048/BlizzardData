@@ -1,25 +1,3 @@
 Bug 178179 The order of included css files keeps unchanged when reloading
-Xingjie once asked Rima this question, and Rima answered that the order kept unchanged.
-The question and answer are listed following: About reload css.
-Now there is duplicate style name problem.
-Which css file is added at last, which file has the highest priority.
-For example design file has two css file.
-base.css and new.css .
-Base.css
------ StyleA
------ StyleB New.css
------StyleA
------StyleC So the priority of new.css is higher.
-So we can get three styles: New.css.styleA, StyleB, StyleC When I execute reload base.css action, There is two choices.
-One is : keep every thing.
-That means the priority of new.css is higher too.
-Second is: After reload, priority of base.css is higher.
-And in report design you will see New.css
------StyleA
------StyleC Base.css
------ StyleA
------ StyleB And we can get three styles: base.css.styleA, styleB, styleC Which is the better choice?
-I will let Xiong send a bug about the choice that in future we can know the behavior.
-[Rima Kanguri] Always the priority of the last file included is highest.
-In your example the styles defined in New.css takes higher priority always.
-Even when user performs a reload operation.
+Xingjie once asked Rima this question, and Rima answered that the order kept unchanged. The question and answer are listed following: About reload css. Now there is duplicate style name problem. Which css file is added at last, which file has the highest priority. For example design file has two css file. base.css and new.css . Base.css ----- StyleA ----- StyleB New.css -----StyleA -----StyleC So the priority of new.css is higher. So we can get three styles: New.css.styleA, StyleB, StyleC When I execute reload base.css action, There is two choices. One is : keep every thing. That means the priority of new.css is higher too. Second is: After reload, priority of base.css is higher. And in report design you will see New.css -----StyleA -----StyleC Base.css ----- StyleA ----- StyleB And we can get three styles: base.css.styleA, styleB, styleC Which is the better choice? I will let Xiong send a bug about the choice that in future we can know the behavior. [Rima Kanguri] Always the priority
+of the last file included is highest. In your example the styles defined in New.css takes higher priority always. Even when user performs a reload operation.

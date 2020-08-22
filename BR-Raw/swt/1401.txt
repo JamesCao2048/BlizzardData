@@ -1,10 +1,10 @@
 StyledText SetStyleRange not working
 Build ID:  I20080917-0800
 Steps To Reproduce:
-1.Set 2 different style ranges using setStyleRange()
-2.Set 2 different style ranges using setStyleRanges()
-3.Use getStyleRanges to retrieve the style ranges
-4.Notice that style ranges (set by setStyleRange() method) are not returned correctly.
+1. Set 2 different style ranges using setStyleRange()
+2. Set 2 different style ranges using setStyleRanges()
+3. Use getStyleRanges to retrieve the style ranges
+4. Notice that style ranges (set by setStyleRange() method) are not returned correctly.
 More information:
 package bugs;
 import org.eclipse.swt.SWT;

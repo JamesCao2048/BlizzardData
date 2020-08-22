@@ -1,9 +1,7 @@
 Need a locale String from FontData
 2.1
-We need a way to get the Locale information so that it can be displayed.
-On
+We need a way to get the Locale information so that it can be displayed. On
 Motif the FontDialog is laid out in such a way that the encoding looks like
 the name and as a result it looks to the user like we have not displayed
-anything.
-We need to be able to display this value in the FontPreferencePage.
+anything. We need to be able to display this value in the FontPreferencePage.
 Something like getLocaleValue() would be fine.

@@ -1,7 +1,6 @@
 Eclipse 3.0.1crashes on HP-UX with a NullPointerException when starting up
 When I try to start eclipse, the splash screen appears, but a few seconds later
-a dialog box informs me that "An error has occured.
-See the log file 'xxx'."
+a dialog box informs me that "An error has occured. See the log file 'xxx'."
 and the process terminates.
 I attach the log file at the end of the message.
 Note: I entered 'Other' in the Platform field, as there was no option 'HP'.
@@ -10,8 +9,7 @@ in the log file and Jface is related to SWT, I choose SWT
 The system is running HP-UX B.11.00 with CDE 2.1.0.
 Thomas
 ---
-!SESSION Oct 18, 2004 10:50:59.644
----------------------------------------------
+!SESSION Oct 18, 2004 10:50:59.644 ---------------------------------------------
 eclipse.buildId=M200409161125
 java.version=1.4.2.05
 java.vendor=Hewlett-Packard Co.

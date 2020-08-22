@@ -1,5 +1,2 @@
 Bug 148761 Unable to copy a report item from template to report
-Steps: 1.Create a template, add a Text item "t1" or others 2.Create template item using "t1" 3.Double click the template item and we get a report item again.
-4.We copy the item, paste to another report file.
-Expected: the text item can be copied.
-Actual result: Nothing happened, not copied and no error msg.
+Steps: 1. Create a template, add a Text item "t1" or others 2. Create template item using "t1" 3. Double click the template item and we get a report item again. 4. We copy the item, paste to another report file. Expected: the text item can be copied. Actual result: Nothing happened, not copied and no error msg.

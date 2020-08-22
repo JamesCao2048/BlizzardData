@@ -1,17 +1,11 @@
 Accessibility: There is no way to supply group position information for IAccessible2 support
-There is get_groupPosition() method in IAccessible2 which is used to get accessibility group information for a child.
-But in 3.7.2, there is no implementation for that method which cause AT tools not able to get group information.
+There is get_groupPosition() method in IAccessible2 which is used to get accessibility group information for a child. But in 3.7.2, there is no implementation for that method which cause AT tools not able to get group information.
 Even in Eclipse 4.2.2, get_groupPosition() only implemented group information for radio button.
 We need to supply a way allowing developer specify those group information by themselves.
-I worked out fix below.
-The idea is to let developer set the group information in method AccessibleControlListener.getChild().
-When we need to get group information, we will call AccessibleControlListener.getChild() passing AccessibleControlEvent.childID = ACC.CHILDID_GROUP_POSITION.
-Then developer should set positionInGroup to event.detail, set groupLevel in event.x, set similarItemsInGroup in event.y.
-Thus we can get group information and return to AT tools.
+I worked out fix below. The idea is to let developer set the group information in method AccessibleControlListener.getChild(). When we need to get group information, we will call AccessibleControlListener.getChild() passing AccessibleControlEvent.childID = ACC.CHILDID_GROUP_POSITION. Then developer should set positionInGroup to event.detail, set groupLevel in event.x, set similarItemsInGroup in event.y. Thus we can get group information and return to AT tools.
 Accessible.java
 int get_groupPosition(int /*long*/ pGroupLevel, int /*long*/ pSimilarItemsInGroup, int /*long*/ pPositionInGroup) {
-// TODO: handle where possible
-- maybe add AccessibleGroup later
+// TODO: handle where possible - maybe add AccessibleGroup later
 //get the role
 //if it has role tree, then the level is the value else 0 (for N/A)
 
@@ -20,10 +14,8 @@ int similarItemsInGroup = 0;
 int positionInGroup = 0;
 AccessibleControlEvent event = new AccessibleControlEvent(this);
 event.childID = ACC.CHILDID_GROUP_POSITION;
-event.detail =
--1;
-for (int i = 0; i
-< accessibleControlListeners.size(); i++) {
+event.detail = -1;
+for (int i = 0; i < accessibleControlListeners.size(); i++) {
 AccessibleControlListener listener = (AccessibleControlListener) accessibleControlListeners.elementAt(i);
 listener.getChild(event);
 }
@@ -32,13 +24,11 @@ if(positionInGroup!=-1){
 groupLevel = event.x;
 similarItemsInGroup = event.y;
 }else if (control instanceof Button && ((control.getStyle() & SWT.RADIO) != 0)) {
-/* We currently only determine position and count for radio buttons.
-*/
+/* We currently only determine position and count for radio buttons. */
 Control [] children = control.getParent().getChildren();
 positionInGroup = 1;
 similarItemsInGroup = 1;
-for (int i = 0; i
-< children.length; i++) {
+for (int i = 0; i < children.length; i++) {
 Control child = children[i];
 if (child instanceof Button && ((child.getStyle() & SWT.RADIO) != 0)) {
 if (child == control) positionInGroup = similarItemsInGroup;
@@ -49,11 +39,9 @@ else similarItemsInGroup++;
 COM.MoveMemory(pGroupLevel, new int [] { groupLevel }, 4);
 COM.MoveMemory(pSimilarItemsInGroup, new int [] { similarItemsInGroup }, 4);
 COM.MoveMemory(pPositionInGroup, new int [] { positionInGroup }, 4);
-if (DEBUG) print(this + ".IAccessible2::get_groupPosition() returning" + hresult(groupLevel == 0 && similarItemsInGroup == 0 && positionInGroup == 0 ?
-COM.S_FALSE : COM.S_OK));
+if (DEBUG) print(this + ".IAccessible2::get_groupPosition() returning" + hresult(groupLevel == 0 && similarItemsInGroup == 0 && positionInGroup == 0 ? COM.S_FALSE : COM.S_OK));
 if (groupLevel == 0 && similarItemsInGroup == 0 && positionInGroup == 0) return COM.S_FALSE;
 return COM.S_OK;
 }
 AccessibleControlEvent.java
-public static final int CHILDID_GROUP_POSITION =
--6;
+public static final int CHILDID_GROUP_POSITION = -6;

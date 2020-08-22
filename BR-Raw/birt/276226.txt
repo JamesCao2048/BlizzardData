@@ -1,4 +1,2 @@
 Bug 276226 Support diagonal line in excel
-Currently, Diagonal line doesn't work in excel preview, may be excel doesn't support multiple diagonal lines.
-But excel supports diagonal(Antidiagonal) line border, so if user define 1 diagonal line in BIRT, we can export it to be a diagonal line border in excel.
-I think this case is very useful for Chinese report.
+Currently, Diagonal line doesn't work in excel preview, may be excel doesn't support multiple diagonal lines. But excel supports diagonal(Antidiagonal) line border, so if user define 1 diagonal line in BIRT, we can export it to be a diagonal line border in excel. I think this case is very useful for Chinese report.

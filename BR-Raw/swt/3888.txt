@@ -3,13 +3,13 @@ Build 20021015
 Linux-GTK
 A right click on a multiple selection unselects everything and selects just the
 element on which the right click was performed.
-1.In the package view, select multiple elements (with [CTRL]+left button or
+1. In the package view, select multiple elements (with [CTRL]+left button or
 [SHIFT]+left button)
-2.Right click on a selected element.
+2. Right click on a selected element.
 The element on which the right click was performed is selected (all other
 elements are unselected).
 The context menu displayed contains the elements for the multiple selection.
-3.Select an action.
+3. Select an action.
 The action is executed on the selected element only.
 A workaround to the problem is to use the right button with [CTRL] or [SHIFT]
 for create the selection.

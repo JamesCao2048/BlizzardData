@@ -1,13 +1,11 @@
 Display.gdkEventWidgets leaks widgets
 RC2, SWT/UI from HEAD, Linux 2.6.4, KDE 3.2.2, GTK+ 2.4.1
 
-I believe this variable is leaking references to widgets.
-I'm not sure of the
+I believe this variable is leaking references to widgets.  I'm not sure of the
 expected life cycle of the elements in this list, but it seems to be holding on
 to objects longer than expected.
 
 For example, opening a new workbench window and closing the old workbench
-window can leave references to disposed widgets in this list.
-Perhaps on
+window can leave references to disposed widgets in this list.  Perhaps on
 dispose, a widget should check to see if it is in the list (and remove itself,
 if so).

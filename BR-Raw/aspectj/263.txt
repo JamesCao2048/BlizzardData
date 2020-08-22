@@ -40,8 +40,4 @@ at 	at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org
 at 	at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:367)
 at 	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:811)
 at 	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:230)
-at 	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:156)
-at 	at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
-at 	at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
-trouble in:
-public class com.sun.imageio.plugins.gif.GIFImageMetadata extends javax.imageio.metadata.IIOMetadata:
+at 	at org.aspectj.ajdt.internal.core.builder.AjBui

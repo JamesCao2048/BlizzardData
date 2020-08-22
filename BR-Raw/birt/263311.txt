@@ -1,8 +1,2 @@
 Bug 263311 BirtDateTime.month() and weekDay() do not return locale-specific results
-1.Create data elements that use the BirtDateTime.month() and weekDay() functions.
-Specify the options to display the full or abbreviated month/weekday names.
-2.Preview the report.
-Month/weekday names appear in English.
-3.Change the preview locale.
-4.Preview the report again.
-Month/weekday names still appear in English.
+1. Create data elements that use the BirtDateTime.month() and weekDay() functions. Specify the options to display the full or abbreviated month/weekday names. 2. Preview the report. Month/weekday names appear in English. 3. Change the preview locale. 4. Preview the report again. Month/weekday names still appear in English.

@@ -1,6 +1,5 @@
 TableCursor crashes when scrolling vertically an empty table
 3.0 M8 line 507
 Method void resize() fails because row is set to '0' and table.getItem(row)
-will produce an IndexOutOfBounds Exception.
-Quite obviously.
+will produce an IndexOutOfBounds Exception. Quite obviously.
 Guess that's easy to fix.

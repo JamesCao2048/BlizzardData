@@ -1,7 +1,6 @@
 [consistency] Combo.pack() does not consider item lengths
 - run the snippet below
 - on platforms != gtk the Combo is pack()ed to a size that is able to fit its longest item
-
 -> but on gtk the Combo's preferred size is not influenced by its items
 public static void main(String[] args) {
 Display display = new Display();
@@ -11,8 +10,7 @@ Combo combo = new Combo(shell, SWT.NONE);
 combo.setLocation(10,10);
 combo.setItems(new String[] {"asdf","asdfasdfasdf","asdfasdfasdfasdfasdfasdf"});
 //  combo.add("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf"); // even longer
-System.out.println(combo.computeSize(-1,
--1));
+System.out.println(combo.computeSize(-1, -1));
 combo.pack();
 shell.open();
 while (!shell.isDisposed()) {

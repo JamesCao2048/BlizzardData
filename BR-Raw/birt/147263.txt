@@ -1,3 +1,2 @@
 Bug 147263 Data can't be retrieved for extended item
-Steps to reproduce: 1.Add a table in library 2.New a report, extend lib.table 3.Add a filter on table, choose "select value" Expected result: Available value will be listed Actual result: Error: The expression's value can not be retrieved.
-The DataSetHandle shouldn't be null.
+Steps to reproduce: 1.Add a table in library 2.New a report, extend lib.table 3.Add a filter on table, choose "select value" Expected result: Available value will be listed Actual result: Error: The expression's value can not be retrieved. The DataSetHandle shouldn't be null.

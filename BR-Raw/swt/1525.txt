@@ -1,13 +1,11 @@
 [Contributions] [Mac] Odd behaviour in help menu on OS X
 I20080604-2000
-I'm not even sure how to classify this bug.
-There are numerous bad things all happening at once.
+I'm not even sure how to classify this bug.  There are numerous bad things all happening at once.
 Steps to reproduce:
 1) open the team synch view in change set mode (and have some change sets)
 2) select one of the top level change sets
 3) open the help menu
-Note that the menu is empty and not only that the content of the team view disappears!  If you dismiss the menu the content returns.
-Opening the log you find the following stack:
+Note that the menu is empty and not only that the content of the team view disappears!  If you dismiss the menu the content returns.  Opening the log you find the following stack:
 java.lang.ArrayStoreException
 at java.lang.System.arraycopy(Native Method)
 at org.eclipse.ui.internal.actions.ModifyWorkingSetDelegate.getItems(ModifyWorkingSetDelegate.java:260)

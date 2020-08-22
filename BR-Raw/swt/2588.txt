@@ -1,7 +1,5 @@
 Problems with accents using SWT_AWT
-We have a big application wich uses Swing and SWT.
-In our app we have a big trouble with accents in Swing TextFields.
-When we try to punctuate a bowel, two accents appear in the TextField before the bowel is pressed.
+We have a big application wich uses Swing and SWT. In our app we have a big trouble with accents in Swing TextFields. When we try to punctuate a bowel, two accents appear in the TextField before the bowel is pressed.
 In this testcase, you can see our problem :
 import java.awt.BorderLayout;
 import java.awt.Panel;

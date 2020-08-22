@@ -1,18 +1,3 @@
 Bug 223758 BIRT property editor active in preview, does nothing
-Open a sample report, or create a simple table report using the customers table from the Classic Models sample database.
-Select a label.
-Open the Property Editor view.
-Preview the report.
-Notice that the Property Editor is still active.
-In the property editor, change the font.
-Change the background color.
-These have no effect on the preview.
-Select different bits of the preview: a label, a data field, the table.
-One can select text, but no other parts.
-And, the text selection has no effect on property editor focus.
-Expected one of two behaviors.
-First, and ideal, would be to have the property editor tied to the preview so I could change properties and immediately see the effect.
-Second, less ideal but at least consistent, would be to disable the property editor when in preview mode so that it is clear that the property editor has no effect.
-As it is, it is confusing what is happening.
-Eventually, I figured out that it is editing the label that had focus in the layout tab even though I'm now in the preview tab.
-But, this seems confusing.
+Open a sample report, or create a simple table report using the customers table from the Classic Models sample database. Select a label. Open the Property Editor view. Preview the report. Notice that the Property Editor is still active. In the property editor, change the font. Change the background color. These have no effect on the preview. Select different bits of the preview: a label, a data field, the table. One can select text, but no other parts. And, the text selection has no effect on property editor focus. Expected one of two behaviors. First, and ideal, would be to have the property editor tied to the preview so I could change properties and immediately see the effect. Second, less ideal but at least consistent, would be to disable the property editor when in preview mode so that it is clear that the property editor has no effect. As it is, it is confusing what is happening. Eventually, I figured out that it is editing the label that had focus in the layout tab even though I'
+m now in the preview tab. But, this seems confusing.

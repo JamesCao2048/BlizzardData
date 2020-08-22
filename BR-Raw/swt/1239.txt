@@ -1,7 +1,5 @@
 adding/removing TreeItems can be very slow
 - open the Cocoa class in eclipse
 - in the outline view press the Show/Hide Fields tool button
-
 -> this takes ~1 minute to complete on my machine
-
 -> eclipse is using setRedraw() here but the Tree implementation is not taking advantage of it

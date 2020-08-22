@@ -1,3 +1,2 @@
 Bug 208845 The Not In filter doesn't work correctly when specify multiple values[07]
-Description: The Not In filter doesn't work correctly when specify multiple values, but works only on single value.
-Build number: 2.3.0.v20071106-0800 Steps to reproduce: 1, New a table binding on customers dataset 2, New a Not In filter 3, Specify multiple values such as 103;112 4, Preview in layout Expected result: Both 103 and 112 should be filtered Actual result: 112 is still in preview result Error log:
+Description: The Not In filter doesn't work correctly when specify multiple values, but works only on single value. Build number: 2.3.0.v20071106-0800 Steps to reproduce: 1, New a table binding on customers dataset 2, New a Not In filter 3, Specify multiple values such as 103;112 4, Preview in layout Expected result: Both 103 and 112 should be filtered Actual result: 112 is still in preview result Error log:

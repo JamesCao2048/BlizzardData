@@ -1,3 +1,2 @@
 Bug 135821 Can't change data binding column when reverting from a template report item to a repot item
-Steps to reproduce: 1.New a data with data binding column "a = 'abc'" 2.Select the data and convert it to a template report item 3.Double click the data Expected result: In the pop-up data binding window, a tick box lists on the left Actual result: No tick box on the left(see the screenshot).
-That means user can't change data binding any more till he reopen the data binding window
+Steps to reproduce: 1.New a data with data binding column "a = 'abc'" 2.Select the data and convert it to a template report item 3.Double click the data Expected result: In the pop-up data binding window, a tick box lists on the left Actual result: No tick box on the left(see the screenshot). That means user can't change data binding any more till he reopen the data binding window

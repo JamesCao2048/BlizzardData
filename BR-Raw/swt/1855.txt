@@ -3,8 +3,6 @@ Build ID: 3.3
 Steps To Reproduce:
 Run the attached snippet.
 Under Linux item number 2 and 3 aren't passed to the SetData Listener because they where "touched" using setChecked(true) and setChecked(false).
-Under Win32 item number 2 (setChecked(false)) is passed to the SetData Listener.
-The item which was setChecked(true) is not passed.
-Is this correct behaviour at all?
-That SetData isn't call when you check items?
+Under Win32 item number 2 (setChecked(false)) is passed to the SetData Listener. The item which was setChecked(true) is not passed.
+Is this correct behaviour at all? That SetData isn't call when you check items?
 More information:

@@ -1,3 +1,2 @@
 Not calling init when creating SWTSearchField
-In Text.java we are now creating an instance of SWTSearchField with class_createInstance.
-However, nothing calls init(), which leads to crashes in some circumstances.
+In Text.java we are now creating an instance of SWTSearchField with class_createInstance. However, nothing calls init(), which leads to crashes in some circumstances.

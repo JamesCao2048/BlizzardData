@@ -1,5 +1,2 @@
 Bug 118738 can't preview meter chart with grouping
-Try to preview the following report with a meter chart group on the Y series, it fails.
-It used to work before, this is a regression.
-An exception is thrown org.eclipse.birt.chart.exception.ChartException: Can not plot meter series with null or non-numeric datapoint.
-at org.eclipse.birt.chart.render.DialRenderer.<init>(DialRenderer.java:132) at org.eclipse.birt.chart.render.Dial.compute(Dial.java:98) at org.eclipse.birt.chart.factory.Generator.build(Generator.java:759)
+Try to preview the following report with a meter chart group on the Y series, it fails. It used to work before, this is a regression. An exception is thrown org.eclipse.birt.chart.exception.ChartException: Can not plot meter series with null or non-numeric datapoint. at org.eclipse.birt.chart.render.DialRenderer.<init>(DialRenderer.java:132) at org.eclipse.birt.chart.render.Dial.compute(Dial.java:98) at org.eclipse.birt.chart.factory.Generator.build(Generator.java:759)

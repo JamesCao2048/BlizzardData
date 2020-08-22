@@ -2,15 +2,11 @@ Consider drawing the block selection on characters
 Follow-up from splitting  bug 8521 :
 From  bug 8521 comment 61 :
 - it is not always clear, which parts of the text really fall into the
-selection.
-While it looks nice to have a smooth rectangle, it might be more
+selection. While it looks nice to have a smooth rectangle, it might be more
 useful to actually draw the selection on the characters that are really
 selected.
 Bug 8521 comment 64  said:
 - You are basically suggesting going back to character-based ;-)
-MS Word has the same problem.
-The solution here is to use a monospaced font.
-I don't request managing the selection character based, I agree its better to have a pixel based selection.
-It is another story however how to present that selection to the user
-- I believe it would be better to give the user the information about which characters are really covered by the selection.
+MS Word has the same problem. The solution here is to use a monospaced font.
+I don't request managing the selection character based, I agree its better to have a pixel based selection. It is another story however how to present that selection to the user - I believe it would be better to give the user the information about which characters are really covered by the selection.
 Note that this problem exists also for monospaced fonts, as tabs have a non-standard width.

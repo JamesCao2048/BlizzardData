@@ -1,13 +1,9 @@
 [browser] Default WindowEvent to handle normal window open case - feature request
 In the documenation for WindowEvent is about 50-lines of code that is noted as
-this is the way "..are typically handled".
-This makes an HTML link that opens
-another window such as &lt;a href="...url.." target="_blank"&gt; work.
-Since
+this is the way "..are typically handled". This makes an HTML link that opens
+another window such as &lt;a href="...url.." target="_blank"&gt; work. Since
 this is the typical use (as stated in the docs), why not make this the default
-behavior?
-It's a lot of code to get in and get right.
+behavior? It's a lot of code to get in and get right.
 What I actually want is for the browser to handle _blank target by opening the
 system browser, as it would if I loaded the HTML into IE, not to open another
-SWT browser.
-I was not able to get this to work.
+SWT browser. I was not able to get this to work.

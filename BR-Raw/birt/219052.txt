@@ -1,8 +1,2 @@
 Bug 219052 Table detail data are bold in web viewer[0300][1102][0001]
-Description: Table detail data are bold in web viewer Build number:2.3.0.v20080215 Steps to reproduce: 1.Open attached report.
-The report has a xtab, a table inside xtab row area.
-2.Preview in web viewer and in html.
-Expected result: Display consistent style for both preview formats.
-Actual result: In web viewer, table detail row has normal weight style.
-In html, table detail row has bold style effect.
-Error log:n/a
+Description: Table detail data are bold in web viewer Build number:2.3.0.v20080215 Steps to reproduce: 1. Open attached report. The report has a xtab, a table inside xtab row area. 2. Preview in web viewer and in html. Expected result: Display consistent style for both preview formats. Actual result: In web viewer, table detail row has normal weight style. In html, table detail row has bold style effect. Error log:n/a

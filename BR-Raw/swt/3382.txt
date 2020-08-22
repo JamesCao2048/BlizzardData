@@ -1,26 +1,17 @@
 Can't force focus to a shell (BBAWT)
 I have a situation where I have my own "lightweight" widgets that are drawn
-within a real SWT widget.
-Since in SWT, *something* must have focus, I set the
-real focus to the lightweight widget's parent.
-When that parent is a shell,
+within a real SWT widget.  Since in SWT, *something* must have focus, I set the
+real focus to the lightweight widget's parent.  When that parent is a shell,
 and I call forceFocus() on the shell, the window manager (or someone) is
-being "helpful" by moving the focus to the first focusable child.
-In this
+being "helpful" by moving the focus to the first focusable child.  In this
 case, I really wanted the shell to be the focus widget.
-Here's a testcase that illustrates what I'm trying to do.
-When the shell
-opens, the text widget is given focus.
-Then, when I force the focus to be the
+Here's a testcase that illustrates what I'm trying to do.  When the shell
+opens, the text widget is given focus.  Then, when I force the focus to be the
 shell, I don't expect the button to then be given focus, especially since I
-have a traverse listener on the shell that sets the "doit" to false.
-Shouldn't
-the traverse listener allow me to prevent the button from receiving focus?
-If
+have a traverse listener on the shell that sets the "doit" to false.  Shouldn't
+the traverse listener allow me to prevent the button from receiving focus?  If
 not, how can I do this?
-
--- testcase
---
+-- testcase --
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.graphics.*;

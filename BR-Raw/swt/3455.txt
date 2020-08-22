@@ -1,35 +1,27 @@
 Changing the style of a Label from SWT.SHADOW_IN to SWT.SHADOW_NONE does not make a difference in the appearance of the Label
 When I was going through the Eclipse 3.0 M7 examples (eclipse-examples-
 3.0M7.zip) which I downloaded from
-http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
--
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
 examples-3.0M7.zip, I realized that changing the style of a Label from
 SWT.SHADOW_IN to SWT.SHADOW_NONE did not make a difference in the appearance
 of the Label.
 Here are the steps to follow in order to regenerate this scenario:
-1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
-2.Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
-http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
--
+1. Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
+2. Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
 examples-3.0M7.zip and install them.
-3.Launch Eclipse
-4.Select 鈥淲indow
--> Show View
--> Other鈥︹.
-This will launch the 鈥淪how View鈥
+3. Launch Eclipse
+4. Select 鈥淲indow -> Show View -> Other鈥︹. This will launch the 鈥淪how View鈥
 Dialog.
-5.From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples
--> SWT Controls鈥.
-This
+5. From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples -> SWT Controls鈥. This
 will display 鈥淪WT Controls鈥 View.
-6.From SWT Controls View, select 鈥淟abel鈥 tab.
-7.In the 鈥淪tyles鈥 group, make sure SWT.SEPARATOR, SWT.VERTICAL and
+6. From SWT Controls View, select 鈥淟abel鈥 tab.
+7. In the 鈥淪tyles鈥 group, make sure SWT.SEPARATOR, SWT.VERTICAL and
 SWT.SHADOW_IN options are checked and the rest are unchecked.
-8.In the 鈥淥ther鈥 group, make sure both 鈥淓nabled鈥 and 鈥淰isible鈥 options are
+8. In the 鈥淥ther鈥 group, make sure both 鈥淓nabled鈥 and 鈥淰isible鈥 options are
 checked.
-9.In the 鈥淪ize鈥 group, make sure 鈥100 X 100鈥 is selected.
-10.From the 鈥淪tyles鈥 group, select SWT.SHADOW_NONE option.
-This will uncheck
+9. In the 鈥淪ize鈥 group, make sure 鈥100 X 100鈥 is selected.
+10. From the 鈥淪tyles鈥 group, select SWT.SHADOW_NONE option. This will uncheck
 the SWT.SHADOW_IN option.
 Expected Behavior: The appearance of the Labels should change
 Actual Behavior: The appearance of the Labels remains unchanged

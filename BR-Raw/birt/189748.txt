@@ -1,13 +1,2 @@
 Bug 189748 Some HTML scripts do not work
-Steps to reproduce: 1.Start BIRT and create a blank report.
-2.Drag and drop a Text element from the palette onto the report designer.
-3.Double click on the Text element in the report designer to bring up its editor.
-4.Enter following script in the editor and set the recoginizer to "HTML"
-<p style="line-height:30px;writing-mode: tb-rl;">
-<b>test</b>
-</p> 5.Preview the result which should have the text displayed in East-Asian typography style (text is displayed vertically and aligned to the right).
-6.Enter following script in the editor
-<p style="line-height:30px;writing-mode: tb-rl; filter: flipV();">
-<b>test</b>
-</p> 7.Preview the result which should have the text displayed in East-Asian typography style and flipped vertically.
-(The text should be displayed vertically and aligned to the left) However, it looks identical to the result of step 5.
+Steps to reproduce: 1. Start BIRT and create a blank report. 2. Drag and drop a Text element from the palette onto the report designer. 3. Double click on the Text element in the report designer to bring up its editor. 4. Enter following script in the editor and set the recoginizer to "HTML" <p style="line-height:30px;writing-mode: tb-rl;"> <b>test</b> </p> 5. Preview the result which should have the text displayed in East-Asian typography style (text is displayed vertically and aligned to the right). 6. Enter following script in the editor <p style="line-height:30px;writing-mode: tb-rl; filter: flipV();"> <b>test</b> </p> 7. Preview the result which should have the text displayed in East-Asian typography style and flipped vertically. (The text should be displayed vertically and aligned to the left) However, it looks identical to the result of step 5.

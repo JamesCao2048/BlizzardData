@@ -5,6 +5,4 @@ Text#addSegmentListener(..) should work as a general transformation engine for r
 I know I'm using the SegmentListener in a way it was probably not intended to be used, but this functionality can be quite handy, and it is unexpected that the new API doesn't work like the old one.
 If you take  http://git.eclipse.org/c/platform/eclipse.platform.swt.git/tree/examples/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet332.java  , add the SWT.WRAP style and change the segmentChars to {'n', '$'}, then you get a perfectly working snippet that transparently adds a line break and a dollar sign to the rendered text, but doesn't include those characters when the user copies a text range that includes these characters.
 When I try the same via Text#addSegmentListener(..), then I run into trouble, see the attached Snippet332_Text.
-The main problem is that 'n' does not work as segmentChar.
-You have to use two segments at the same position with chars 'r', 'n' to make it work.
-This should not be necessary, since other APIs of Text add the 'r' behind the scenes on Windows.
+The main problem is that 'n' does not work as segmentChar. You have to use two segments at the same position with chars 'r', 'n' to make it work. This should not be necessary, since other APIs of Text add the 'r' behind the scenes on Windows.

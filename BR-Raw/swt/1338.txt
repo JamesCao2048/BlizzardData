@@ -1,10 +1,8 @@
 [Browser] Exception while disposing SWT Mozilla browser
 Created  attachment 116842   [details]
 sample html for displaying alert on onload event
-I have attached a file that, if opened in the SWT Mozilla browser using the SWT.MOZILLA style bit, calls a javascript function from the document's onload event, which simply displays some text using the alert function.
-Upon dismissing the alert box and closing the shell that contains the browser, I get the following Exception:
-Exception in thread "main" org.eclipse.swt.SWTError: XPCOM error
--2147467262
+I have attached a file that, if opened in the SWT Mozilla browser using the SWT.MOZILLA style bit, calls a javascript function from the document's onload event, which simply displays some text using the alert function. Upon dismissing the alert box and closing the shell that contains the browser, I get the following Exception:
+Exception in thread "main" org.eclipse.swt.SWTError: XPCOM error -2147467262
 at org.eclipse.swt.browser.Mozilla.error(Mozilla.java:1597)
 at org.eclipse.swt.browser.PromptService2.getBrowser(PromptService2.java:151)
 at org.eclipse.swt.browser.PromptService2.Alert(PromptService2.java:193)
@@ -41,4 +39,4 @@ at org.eclipse.swt.widgets.Control.windowProc(Control.java:3877)
 at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:337)
 at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1565)
 at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1937)
-at org.eclipse.swt.widgets.Display.windowProc(Display
+at org.eclipse.swt.widgets.Display.windowProc(Display.

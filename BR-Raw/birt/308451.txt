@@ -1,8 +1,2 @@
 Bug 308451 Merged cell with html-text content is not merged in Excel output
-Build Identifier: 2.3.1, 2.3.2.2, 2.5.2 If a merged cell in the report design contains a Text report item with Content Type == HTML, then this cell is not correctly merged in excel export.
-See attached rptdesign for an example.
-The fix is attached as patch with version 2.3.1 of excel-emitter plugin as basis.
-The fix is to set the RowSpanInDesign for each data in a XlsCell to the RowSpan of its cell.
-This was not done for data items that were not contained directly by an XlsCell.
-This applies for a Text report item with HTML content type, because the generated data item is then contained by a XlsContainer in a XlsCell.
-Reproducible: Always Steps to Reproduce: See attached rptdesign
+Build Identifier: 2.3.1, 2.3.2.2, 2.5.2 If a merged cell in the report design contains a Text report item with Content Type == HTML, then this cell is not correctly merged in excel export. See attached rptdesign for an example. The fix is attached as patch with version 2.3.1 of excel-emitter plugin as basis. The fix is to set the RowSpanInDesign for each data in a XlsCell to the RowSpan of its cell. This was not done for data items that were not contained directly by an XlsCell. This applies for a Text report item with HTML content type, because the generated data item is then contained by a XlsContainer in a XlsCell. Reproducible: Always Steps to Reproduce: See attached rptdesign

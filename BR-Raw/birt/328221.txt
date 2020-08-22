@@ -1,8 +1,2 @@
 Bug 328221 Several error messages are confusing/useless
-Build Identifier: BIRT 2.5.2 I've fixed a couple of error messages in BIRT 2.5.2 which are confusing/useless.
-See the attached patches.
-I'm aware that this patch is for an old version of BIRT but maybe they are still useful for someone stuck with BIRT 2.5.2.I didn't check whether the errors are still there in 2.6; feel free to have a look.
-Bugs fixed: 1.When a pre-compiled method is run and an error happens, the source of the method is included (so you get more than "There was an error in __bm_OPEN").
-2.Instead of "data.engine.BadFetchScriptReturnType", you get a real error message with the method name and the value returned.
-3.If logging is enabled for jdbc.Statement, the log would fill with thousands of stack traces warning that "setSpecification is not supported." Feel free to use the patches in any legal way.
-Reproducible: Always
+Build Identifier: BIRT 2.5.2 I've fixed a couple of error messages in BIRT 2.5.2 which are confusing/useless. See the attached patches. I'm aware that this patch is for an old version of BIRT but maybe they are still useful for someone stuck with BIRT 2.5.2. I didn't check whether the errors are still there in 2.6; feel free to have a look. Bugs fixed: 1. When a pre-compiled method is run and an error happens, the source of the method is included (so you get more than "There was an error in __bm_OPEN"). 2. Instead of "data.engine.BadFetchScriptReturnType", you get a real error message with the method name and the value returned. 3. If logging is enabled for jdbc.Statement, the log would fill with thousands of stack traces warning that "setSpecification is not supported." Feel free to use the patches in any legal way. Reproducible: Always

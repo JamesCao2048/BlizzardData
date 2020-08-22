@@ -1,6 +1,2 @@
 Bug 201673 Data Set Editor should not generate Parameter Position for an Named ODA Parameter
-It is valid for an ODA data set parameter definition to have a driver-defined (native) name and no position (value = 0).
-The Data Set Editor currently assumes that this is not valid.
-It should *not* have automatically assign a derived position ( >0 value) to the data set parameter and issue a user warning message.
-The warning message in this case is inaccurate.
-And by assigning a bogus parameter position, it may disable the ability for the Data Engine to use the parameter's native name when interacting with the ODA runtime driver.
+It is valid for an ODA data set parameter definition to have a driver-defined (native) name and no position (value = 0). The Data Set Editor currently assumes that this is not valid. It should *not* have automatically assign a derived position ( >0 value) to the data set parameter and issue a user warning message. The warning message in this case is inaccurate. And by assigning a bogus parameter position, it may disable the ability for the Data Engine to use the parameter's native name when interacting with the ODA runtime driver.

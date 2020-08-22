@@ -1,4 +1,3 @@
 TextLayout.getLineOffsets() leaks a pango iter
 TextLayout.getLineOffsets() calls pango_layout_get_iter() but does not call
-pango_layout_iter_free().
-I belive this is a leak.
+pango_layout_iter_free().  I belive this is a leak.

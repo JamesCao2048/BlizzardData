@@ -1,9 +1,2 @@
 Bug 284068 Edit Data Set dialog resets panel widths when height is changed
-Build: 2.5.0 GA Double-click a data set.
-Edit Data Set appears.
-Change the width of the Available items panel by dragging the divider between Available items and the query text panel.
-Now, change the height of the dialog box.
-Expected: The widths of the internal panels do not change.
-Actual: The widths of the internal panels revert to their original sizes.
-Also, the panel widths are reset when the width of the dialog box is changed.
-Only the right-most panel size should change unless the dialog box size is reduced below a threshold.
+Build: 2.5.0 GA Double-click a data set. Edit Data Set appears. Change the width of the Available items panel by dragging the divider between Available items and the query text panel. Now, change the height of the dialog box. Expected: The widths of the internal panels do not change. Actual: The widths of the internal panels revert to their original sizes. Also, the panel widths are reset when the width of the dialog box is changed. Only the right-most panel size should change unless the dialog box size is reduced below a threshold.

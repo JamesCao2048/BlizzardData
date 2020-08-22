@@ -1,7 +1,4 @@
 Tracker with SWT.Resize really slow
-Run the code from  bug 81399 .
-It's glacial on the Mac.
-The problem is that we
-reset the mouse position inside of adjustResizeCursor().
-If you comment out
+Run the code from  bug 81399 .  It's glacial on the Mac.  The problem is that we
+reset the mouse position inside of adjustResizeCursor().  If you comment out
 the GCWarpMouseCursorPosition() line, then it becomes fast.

@@ -1,10 +1,6 @@
 Mac: Menu Cleared After Shell Restored From Dock
-Create two new, non-modal Shells with MenuBars.
-Minimize one Shell to the Dock (making the other
-active).
-Restore the minimized Shell.
-The MenuBar is now AWOL.
-Switching applications or Shells will
+Create two new, non-modal Shells with MenuBars.  Minimize one Shell to the Dock (making the other
+active).  Restore the minimized Shell.  The MenuBar is now AWOL.  Switching applications or Shells will
 bring it back again.
 Observed with SWT 3.1 and Mac OS X 10.4.2.
 See marginally-related commentary at  bug #87884 .

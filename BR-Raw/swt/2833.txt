@@ -2,13 +2,9 @@ AIOOB when removing non-existent TableItem by index
 3.1RC1
 - run the snippet below, you'll get the exception that follows
 - it's because the bounds check in Table.remove(int) should change from:
-if (!(0
-<= index && index
-<= itemCount)) error (SWT.ERROR_ITEM_NOT_REMOVED);
+if (!(0 <= index && index <= itemCount)) error (SWT.ERROR_ITEM_NOT_REMOVED);
 to
-if (!(0
-<= index && index
-< itemCount)) error (SWT.ERROR_ITEM_NOT_REMOVED);
+if (!(0 <= index && index < itemCount)) error (SWT.ERROR_ITEM_NOT_REMOVED);
 snippet:
 public static void main(String[] args) {
 Display display = new Display();
@@ -17,8 +13,7 @@ shell.setBounds(10,10,400,400);
 Table table = new Table(shell, SWT.NONE);
 table.setBounds(10,10,300,300);
 shell.open();
-table.remove(0);	//
-<----
+table.remove(0);	// <----
 while (!shell.isDisposed()) {
 if (!display.readAndDispatch()) display.sleep();
 }

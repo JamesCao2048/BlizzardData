@@ -1,13 +1,2 @@
 Bug 190984 xtab filter/sort did not work properly when using a joined data set
-steps to reproduce:
-- use the attached report
-- try to add a filter/sort on xtab, e.g.
-using country column
-- notice that the value list is unavailable
-- try to enter the filter/sort condition manually, e.g.
-"USA"
-- preview in layout expected behavior:
-- when use joined data set, the value list should be available
-- report should be previewed properly actual behavior:
-- the value list was unavailable
-- NPE was thrown out when preview the report with the filter/sort condition being completed manually
+steps to reproduce: - use the attached report - try to add a filter/sort on xtab, e.g. using country column - notice that the value list is unavailable - try to enter the filter/sort condition manually, e.g. "USA" - preview in layout expected behavior: - when use joined data set, the value list should be available - report should be previewed properly actual behavior: - the value list was unavailable - NPE was thrown out when preview the report with the filter/sort condition being completed manually

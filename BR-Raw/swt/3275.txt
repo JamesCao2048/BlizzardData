@@ -1,8 +1,7 @@
 place arbitrary controls in a table has wrong tab order
 Given:
 /*
-* Copyright (c) 2000, 2003 IBM Corp.
-All rights reserved.
+* Copyright (c) 2000, 2003 IBM Corp.  All rights reserved.
 * This file is made available under the terms of the Common Public License v1.0
 * which accompanies this distribution, and is available at
 *  http://www.eclipse.org/legal/cpl-v10.html
@@ -59,5 +58,4 @@ display.dispose ();
 }
 }
 SWT on Linux/GTK just opens a window with a table in it and lets me hilight
-rows.
-No controls are ever displayed.
+rows.  No controls are ever displayed.

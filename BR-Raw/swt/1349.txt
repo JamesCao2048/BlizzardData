@@ -1,7 +1,3 @@
 [Mac] Application menu hook example needed
-Need a code sample/snippet that implements the equivalent "application menu hook" from carbon.
-This allows the SWT application to behave more like a native OS X application.
-
-In RCP/carbon the workbench has something called CarbonUIEnhancer.java
-- the same thing will be needed for cocoa.
-That file contains a good example of a SWT/carbon application menu hook for SWT/carbon.
+Need a code sample/snippet that implements the equivalent "application menu hook" from carbon.  This allows the SWT application to behave more like a native OS X application.
+In RCP/carbon the workbench has something called CarbonUIEnhancer.java - the same thing will be needed for cocoa.  That file contains a good example of a SWT/carbon application menu hook for SWT/carbon.

@@ -1,8 +1,2 @@
 Bug 154835 long text is truncated after page break in PDF report
-Long text is truncated after auto page break in PDF report.
-No matter how long the text is, PDF only shows one line in the second page.
-Steps to reproduce: 1.new a report in designer.
-2.insert a label, and ensure the text is long enough to exceed two page.
-3.preview in PDF.
-Expected result: PDF shows all text.
-Actual result Text is truncated, PDF only shows one line in the second page
+Long text is truncated after auto page break in PDF report. No matter how long the text is, PDF only shows one line in the second page. Steps to reproduce: 1.new a report in designer. 2.insert a label, and ensure the text is long enough to exceed two page. 3.preview in PDF. Expected result: PDF shows all text. Actual result Text is truncated, PDF only shows one line in the second page

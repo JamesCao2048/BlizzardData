@@ -1,6 +1,3 @@
 No drag/drop feedback selection on Table if using OwnerDrawLabelProvider on Windows
 Build ID: I20090611-1540
-I have a TableViewer that renders its own cells with an OwnerDrawLabelProvider.
-The Table also registers drag and drop operations.
-On Windows there is no highlighting feedback on the table cells at all during a drag/drop operation.
-It's fine on Mac and Linux.
+I have a TableViewer that renders its own cells with an OwnerDrawLabelProvider. The Table also registers drag and drop operations. On Windows there is no highlighting feedback on the table cells at all during a drag/drop operation. It's fine on Mac and Linux.

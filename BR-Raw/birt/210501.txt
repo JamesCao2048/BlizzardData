@@ -1,13 +1,2 @@
 Bug 210501 Table column still appears in emitter if you select xls/doc/html to hide at the same time.
-Description: When you select hide element for all outputs, it works well.
-If you select hide for specific outputs: xls,doc,html, it does not work correctly.
-But if you select xls, doc or html seperately, it also works well.
-build version: v20071121-0800 steps to reproduce: 1.New a report.
-2.New a datasource with sample DB, new a dataset with table customers.
-3.Insert a table with three columns, drag from dtaset COUNTRY, STATE and CITY to the detail row of the table.
-4.Select the third column of the table and switch to Properties Editor.
-5.On Visibilty page, select Hide Elements for Specific Outputs.
-Tick xls, doc and html.
-6.Preview in xls, doc and html.
-Expected result: The third column, namely CITY, should not display.
-Actual result: The CITY column is displayed.
+Description: When you select hide element for all outputs, it works well. If you select hide for specific outputs: xls,doc,html, it does not work correctly. But if you select xls, doc or html seperately, it also works well. build version: v20071121-0800 steps to reproduce: 1. New a report. 2. New a datasource with sample DB, new a dataset with table customers. 3. Insert a table with three columns, drag from dtaset COUNTRY, STATE and CITY to the detail row of the table. 4. Select the third column of the table and switch to Properties Editor. 5. On Visibilty page, select Hide Elements for Specific Outputs. Tick xls, doc and html. 6. Preview in xls, doc and html. Expected result: The third column, namely CITY, should not display. Actual result: The CITY column is displayed.

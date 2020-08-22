@@ -1,5 +1,2 @@
 Bug 216381 Filter/highlight/sorting/map in property editor on crosstab does not work on its chart view[1302]
-Description: There is a chart view of crosstab, and the filter on crosstab does not work on chart view.
-Build version:2.3.0.v20080124-0800 Steps to reproduce: 1.There is a crosstab, and with filter condition on group level.
-2.Create a chart view of crosstab and preview, the filter condition does not work.
-Expected result: Since the filter button in chart builder is disabled, and property editor for chart view extends the filter condition from crosstab, so the filter condition shall work on chart view too.
+Description: There is a chart view of crosstab, and the filter on crosstab does not work on chart view. Build version:2.3.0.v20080124-0800 Steps to reproduce: 1.There is a crosstab, and with filter condition on group level. 2.Create a chart view of crosstab and preview, the filter condition does not work. Expected result: Since the filter button in chart builder is disabled, and property editor for chart view extends the filter condition from crosstab, so the filter condition shall work on chart view too.

@@ -1,11 +1,8 @@
 [DND] Drop Target TreeItem not selected when Font was set
 Hi,
-I've implemented Drag and Drop in a Tree.
-That was done, similiar to Snippet 91
-("drag leaf items in a tree").
-Now, when dragging a TreeItem over valid
-DropTargets, the Target TreeItem becomes selected when hovering over it.
-But,
+I've implemented Drag and Drop in a Tree. That was done, similiar to Snippet 91
+("drag leaf items in a tree"). Now, when dragging a TreeItem over valid
+DropTargets, the Target TreeItem becomes selected when hovering over it. But,
 when I am setting a Font to the TreeItems, hovering over valid Drop Targets does
 not show the Selection.
 I have created a Snippet that shows this behaviour (at least on my WinXP), based
@@ -18,18 +15,15 @@ display.getSystemFont().getFontData()[0].getName(), 10, SWT.NORMAL);
 final Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 final Tree tree = new Tree(shell, SWT.BORDER);
-for (int i = 0; i
-< 3; i++) {
+for (int i = 0; i < 3; i++) {
 TreeItem item = new TreeItem(tree, SWT.NONE);
 item.setFont(font);
 item.setText("item " + i);
-for (int j = 0; j
-< 3; j++) {
+for (int j = 0; j < 3; j++) {
 TreeItem subItem = new TreeItem(item, SWT.NONE);
 subItem.setFont(font);
 subItem.setText("item " + i + " " + j);
-for (int k = 0; k
-< 3; k++) {
+for (int k = 0; k < 3; k++) {
 TreeItem subsubItem = new TreeItem(subItem, SWT.NONE);
 subsubItem.setFont(font);
 subsubItem.setText("item " + i + " " + j + " " + k);
@@ -89,4 +83,4 @@ while (!shell.isDisposed()) {
 if (!display.readAndDispatch())
 display.sleep();
 }
-display.dis
+display.dispos

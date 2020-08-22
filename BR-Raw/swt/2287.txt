@@ -1,8 +1,5 @@
 VerifyEvent e.doit inconsistent behavior on Linux GTK
-Try running the code below, type in some text, select the text, and type 'a' to trigger the e.doit=false.
-On Windows and Mac, after pressing 'a', the selection remains selected which is what I expect.
-On Linux, pressing 'a' causes the selection to go away and the caret to move to the end of the selection.
-Is this normal behavior?
+Try running the code below, type in some text, select the text, and type 'a' to trigger the e.doit=false.  On Windows and Mac, after pressing 'a', the selection remains selected which is what I expect.  On Linux, pressing 'a' causes the selection to go away and the caret to move to the end of the selection.  Is this normal behavior?
 public static void main(String[] args) {
 Display display = new Display();
 Shell shell = new Shell(display);

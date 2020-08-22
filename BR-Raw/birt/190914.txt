@@ -1,9 +1,2 @@
 Bug 190914 BIRT cross tab - Cube builder with multiple dataset
-- create a report design with multiple datasets ( ds1, ds2, ds3 )
-- Define a cube and chose one as the primary dataset ( ds1 )
-- Now drag fields from ds2 to create a group hierarchy.
-Current behavior
-- User is taken to the "Link Groups" page Expectec behavior
------------------- The current behavior did make sense with the old UI.
-But as the UI was revised to add "Link Groups" as a new category in cube builder We should not take the user to "Link groups" page, this will confuse the user.
-The sequence currently agreed is user defines the dimensions ( groups ) and then defines the relation ship with Note: User can click on Link group category and define the relations ship.
+- create a report design with multiple datasets ( ds1, ds2, ds3 ) - Define a cube and chose one as the primary dataset ( ds1 ) - Now drag fields from ds2 to create a group hierarchy. Current behavior - User is taken to the "Link Groups" page Expectec behavior ------------------ The current behavior did make sense with the old UI. But as the UI was revised to add "Link Groups" as a new category in cube builder We should not take the user to "Link groups" page, this will confuse the user. The sequence currently agreed is user defines the dimensions ( groups ) and then defines the relation ship with Note: User can click on Link group category and define the relations ship.

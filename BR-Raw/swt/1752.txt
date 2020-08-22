@@ -3,14 +3,12 @@ Created  attachment 88404   [details]
 PNG image that cannot be loaded
 Build ID: N20080130-0010
 Steps To Reproduce:
-1.Try to load the attached PNG image file, causes invalid argument exception
+1. Try to load the attached PNG image file, causes invalid argument exception
 2.
 3.
 More information:
 The problem are the lines added to ImageData contructor:
-if (data != null && data.length
-< bytesPerLine * height) {
+if (data != null && data.length < bytesPerLine * height) {
 SWT.error(SWT.ERROR_INVALID_ARGUMENT);
 }
-The PNFFileFormat incorrectly sets the depth field to 24 for the attached image.
-PNGFileFormat itself calculated 16 and reserves memory for this, but i passes 24 to ImageData because it uses another function to calculate the passed depth.
+The PNFFileFormat incorrectly sets the depth field to 24 for the attached image. PNGFileFormat itself calculated 16 and reserves memory for this, but i passes 24 to ImageData because it uses another function to calculate the passed depth.

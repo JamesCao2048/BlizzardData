@@ -1,8 +1,7 @@
 NullPointerException from mouse move
 Version: 3.2.0
 Build id: I20051123-1200
-I found this error in my console.
-No idea what i was doing and nothing bad seemed to happen.
+I found this error in my console.  No idea what i was doing and nothing bad seemed to happen.
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Widget.wmMouseMove(Widget.java:1919)
 at org.eclipse.swt.widgets.Control.WM_MOUSEMOVE(Control.java:3637)

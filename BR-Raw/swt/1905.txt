@@ -2,8 +2,7 @@
 Mac OS X 10.5 (9A527) installed from scratch
 - run the snippet below, and after closing the shell you'll get the error at the bottom
 - this happens for any SWT app that I run
-- this has always worked on OSX; has something changed in 10.5 that swt needs to adjust to?
-Or is this a bug in 10.5? Scott are you able to try this?
+- this has always worked on OSX; has something changed in 10.5 that swt needs to adjust to?  Or is this a bug in 10.5?  Scott are you able to try this?
 public class Snippet1 {
 public static void main (String [] args) {
 Display display = new Display ();
@@ -18,12 +17,10 @@ display.dispose ();
 Process:         java [1860]
 Path:            /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
 Identifier:      java
-Version:         ???
-(???)
+Version:         ??? (???)
 Code Type:       X86 (Native)
 Parent Process:  eclipse [1510]
-Date/Time:       2007-09-07 13:53:18.329
--0400
+Date/Time:       2007-09-07 13:53:18.329 -0400
 OS Version:      Mac OS X 10.5 (9A527)
 Report Version:  6
 Exception Type:  EXC_BAD_ACCESS (SIGBUS)
@@ -32,8 +29,7 @@ Crashed Thread:  0
 Application Specific Information:
 Java information:
 Version: Java HotSpot(TM) Client VM (1.5.0_12-115 mixed mode, sharing)
-Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_12-115) for macosx-x86, built on Aug 10 2007 19:51:24 by root with gcc 4.0.1 (Apple Inc.
-build 5465)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_12-115) for macosx-x86, built on Aug 10 2007 19:51:24 by root with gcc 4.0.1 (Apple Inc. build 5465)
 Exception type: Bus Error (0xa) at pc=0x0045c6cb
 Current thread (0x0100b210):  JavaThread "Thread-0" daemon [_thread_in_vm, id=-1606996192]
 Stack: [0xbf800000,0xc0000000)

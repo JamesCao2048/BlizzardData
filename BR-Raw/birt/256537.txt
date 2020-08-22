@@ -1,14 +1,2 @@
 Bug 256537 Listbox parameter with multiple values has issues with null values.
-Birt 2.3.2.Steps to reproduce: 1.Open the attached report.
-2.Open the parameter page.
-3.Select only the "Null value" in both boxes.
-4.Click OK.
-5.Then select the "Null Value" along with another value.
-6.Click OK.
-7.Unselect all values.
-8.Click OK.
-Expected result: At step 4, the value array of the parameters contain one null value.
-So params[paramName].value[0] == null.
-At step 6, the value array contains null and the second value.
-At step 8, the value array itself is null, params[paramName].value == null.
-Actual result: At step 4, the value array itself is null, which is wrong (exception is shown) At step 8, an alert box pops up and tells that values must be selected, even though both parameters are not required.
+Birt 2.3.2. Steps to reproduce: 1. Open the attached report. 2. Open the parameter page. 3. Select only the "Null value" in both boxes. 4. Click OK. 5. Then select the "Null Value" along with another value. 6. Click OK. 7. Unselect all values. 8. Click OK. Expected result: At step 4, the value array of the parameters contain one null value. So params[paramName].value[0] == null. At step 6, the value array contains null and the second value. At step 8, the value array itself is null, params[paramName].value == null. Actual result: At step 4, the value array itself is null, which is wrong (exception is shown) At step 8, an alert box pops up and tells that values must be selected, even though both parameters are not required.

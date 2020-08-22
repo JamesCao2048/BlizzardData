@@ -1,9 +1,2 @@
 Bug 184569 Time parameter format will affact other data item format.[0705]
-Description: Time parameter format will affact other data item format.
-Build number:2.2.0.v20070428 Steps to reproduce: 1.New a report parameter, Time type.
-2.Click Change to set format as hh:mm.
-3.Drag the parameter to layout.
-4.Insert a Data item, datetime type, input expression as "new Date()".
-5.Preview and input 8:30 as value Expected result: Display time value and the second line display datetime value.
-Actual result: Both parameter and data item display time value.
-Error log:N/A
+Description: Time parameter format will affact other data item format. Build number:2.2.0.v20070428 Steps to reproduce: 1. New a report parameter, Time type. 2. Click Change to set format as hh:mm. 3. Drag the parameter to layout. 4. Insert a Data item, datetime type, input expression as "new Date()". 5. Preview and input 8:30 as value Expected result: Display time value and the second line display datetime value. Actual result: Both parameter and data item display time value. Error log:N/A

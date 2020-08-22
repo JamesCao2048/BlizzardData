@@ -1,7 +1,6 @@
 StackOverflowError (recursive callWindowProc)
 I20060803-0835
-I got the SOE below after pressing Ctrl+Space in a Java Editor.
-The proposals list quickly showed up, but then I got the workbench "Internal error" dialog.
+I got the SOE below after pressing Ctrl+Space in a Java Editor. The proposals list quickly showed up, but then I got the workbench "Internal error" dialog.
 This happens reproducably in my workspace with the code below; but I could NOT reproduce in an empty workspace.
 package xy;
 public class Try {
@@ -10,8 +9,7 @@ System.out.println(IFace.CONST); // content assist after I of IFace
 }
 }
 interface IFace {
-int CONST= 1
-<< 3;
+int CONST= 1 << 3;
 }
 !ENTRY org.eclipse.ui 4 0 2006-08-03 19:38:08.860
 !MESSAGE java.lang.StackOverflowError
@@ -49,4 +47,4 @@ at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
 at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1847)
 at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:258)
 at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:183)
-at org.eclipse.swt.widgets.Control.windowPro
+at org.eclipse.swt.widgets.Control.windowProc

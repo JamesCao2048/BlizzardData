@@ -1,5 +1,2 @@
 Bug 212505 Use default script ID to skip script debugging
-In Dte side, when compile or evaluate java script, it would pass in a script source id.
-This kind of id is currenlty used by report script debugger.
-So to skip redundant processing for such kind of internal script evaluating, dte need pass in a default ID, which is defined as ScriptExpression.defaultID.
-If this id is already used for particular meaning and it can not pass in the default ID, we need define them as public constants and let script debugger check and skip them as well.
+In Dte side, when compile or evaluate java script, it would pass in a script source id. This kind of id is currenlty used by report script debugger. So to skip redundant processing for such kind of internal script evaluating, dte need pass in a default ID, which is defined as ScriptExpression.defaultID. If this id is already used for particular meaning and it can not pass in the default ID, we need define them as public constants and let script debugger check and skip them as well.

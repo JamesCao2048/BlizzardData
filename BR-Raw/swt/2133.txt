@@ -2,11 +2,7 @@ Contributions to CTabFolder, CTabItem: add highlight, remove ellipses, icon alwa
 The UI team made some changes to copies of CTabFolder and CTabItem during their 3.3 experimental presentation work.
 The following patch represents the cumulative changes which we'd like contributed back to SWT.
 The changes are:
-1) [Presentations] Selected tabs should have highlight to look nicer
--  Bug #177681
-2) [Presentations] Unselected tabs should be rounded in the round tab treatment
--  Bug #170119
-3) [Presentations] Add icons to the background tabs
--  Bug #171434
-4) [Presentations] CTabFolder should not use the ellipsis
--  Bug #169571
+1) [Presentations] Selected tabs should have highlight to look nicer -  Bug #177681
+2) [Presentations] Unselected tabs should be rounded in the round tab treatment -  Bug #170119
+3) [Presentations] Add icons to the background tabs -  Bug #171434
+4) [Presentations] CTabFolder should not use the ellipsis -  Bug #169571

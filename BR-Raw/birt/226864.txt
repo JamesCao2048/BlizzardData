@@ -1,6 +1,2 @@
 Bug 226864 Fail to initilize dataset parameter other than dataset dialog[07]
-Description: Set Dataset parameter in table binding doesn't work if doesn't set default value for it in Dataset definition Build number:2.3.0.v20080414 Steps to reproduce: 1.New a dataset with where clause and dataset parameter, do not offer default value for dataset parameter in parameter pane, click OK.
-2.Drag dataset to Layout.
-3.In propert Editor-binding, click Dataset Parameter and input value as dataset parameter value.
-4.preview report.
-Expected result: Display table content Actual result: Exception to indicate that dataset parameter isn't initialized Error log:n/a
+Description: Set Dataset parameter in table binding doesn't work if doesn't set default value for it in Dataset definition Build number:2.3.0.v20080414 Steps to reproduce: 1. New a dataset with where clause and dataset parameter, do not offer default value for dataset parameter in parameter pane, click OK. 2. Drag dataset to Layout. 3. In propert Editor-binding, click Dataset Parameter and input value as dataset parameter value. 4. preview report. Expected result: Display table content Actual result: Exception to indicate that dataset parameter isn't initialized Error log:n/a

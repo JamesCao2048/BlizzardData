@@ -7,14 +7,10 @@ external image
 - download the attached image
 - run the snippet below (first update the PATH_TO_IMAGE constant if necessary)
 - the snippet does the following:
-
 -> creates an image whose content is composed of some text and an image read from disk
-
 -> creates a Button and sets this image as its image
-
 -> crates a Canvas and draws this image in its Paint callback
 - problem: the image's text is not drawn in the Button
-
 -> but note that it is drawn in the Canvas, so the Image is correct
 - note that the string can be made to draw in the Button by commenting out the line that draws the disk image to the shared image
 public static void main(String[] args) {

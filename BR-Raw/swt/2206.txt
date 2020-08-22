@@ -1,10 +1,10 @@
 NPE when using mouse to select next editor
 Build ID: I20061214-1445
 Steps To Reproduce:
-1.Trigger next editor popoup (mapped to ctrl-tab for me)
-2.Release Tab
-3.Click one of the open editors in the popup (I only had two open)
-4. NPE reported
+1. Trigger next editor popoup (mapped to ctrl-tab for me)
+2. Release Tab
+3. Click one of the open editors in the popup (I only had two open)
+4.  NPE reported
 More information:
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Widget.kEventControlTrack(Widget.java:1068)
@@ -43,4 +43,4 @@ at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2963)
 at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1945)
 at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1909)
-at org.eclipse.ui.internal.Workbench.cr
+at org.eclipse.ui.internal.Workbenc

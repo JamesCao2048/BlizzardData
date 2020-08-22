@@ -3,10 +3,8 @@ Created  attachment 80676   [details]
 Screenshots
 Build ID: 3.4M2
 Steps To Reproduce:
-1.Run aplication with RTL-oriented Scrollable (Table, List, etc.) and resize it so, that horizontal scroll bar appears.
-Leftmost position of ScrollBar corresponds to rightmost position of scrollable, and vice versa.
-Moving bar causes moving viewport to the opposite direction.
+1. Run aplication with RTL-oriented Scrollable (Table, List, etc.) and resize it so, that horizontal scroll bar appears.
+Leftmost position of ScrollBar corresponds to rightmost position of scrollable, and vice versa. Moving bar causes moving viewport to the opposite direction.
 More information:
-Range of horizontal scroll bar with RTL orientation is set to inverted mode.
-This setting isn't needed for lates GTK versions.
+Range of horizontal scroll bar with RTL orientation is set to inverted mode. This setting isn't needed for lates GTK versions.
 Attachments contain screenshots and patch with suggested changes.

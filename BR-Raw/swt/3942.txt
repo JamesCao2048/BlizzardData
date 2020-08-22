@@ -1,13 +1,11 @@
 Labels with image only have extra space on GTK
 Build 20020917
 If you create a label on GTK with just an image the vertical axis will have
-extra space.
-This is not an issue on Motif or windows
+extra space. This is not an issue on Motif or windows
 STEPS
 1) Run the example below with the attached icon
 2) See that there is a lot of whitespace above and below the icon
-3) Do it again on Motif or Windows
-- no extra space
+3) Do it again on Motif or Windows - no extra space
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;

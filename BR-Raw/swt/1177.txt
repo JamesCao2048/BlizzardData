@@ -1,6 +1,5 @@
 Can't create multiple Displays in same application
-The following snippet will crash.
-This prevents our SnippetLaucher code from working on Cocoa.
+The following snippet will crash. This prevents our SnippetLaucher code from working on Cocoa.
 import org.eclipse.swt.widgets.*;
 public class Snippet1 {
 public static void main (String [] args) {

@@ -3,6 +3,5 @@ As you can see in the attached image, the 'Scale' control is not painted when I 
 The snippet used here is the same one posted on Eclipse 3.2m5 new and noteworthy page.
 http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet223.java?rev=HEAD&content-type=text/vnd.viewcvs-markup
 Eclipse 3.2m5 was used to compile the code.
-I used jvm 1.5 to run the code.
-Eclipse itself was running on jvm 1.6 build 72 (latest build).
+I used jvm 1.5 to run the code. Eclipse itself was running on jvm 1.6 build 72 (latest build).
 I also noticed that if you run the snippet using jvm 1.6 build 72, the cursor has the hourglass symbol near it (working in background cursor), although all the controls in the window work.

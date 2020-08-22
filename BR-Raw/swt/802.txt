@@ -1,8 +1,5 @@
 [CTabFolder] CTabItem messed up ToolTip
-When a CTabItem has a tooltip, it often does not dispose of it properly.
-Using the snippet below, hover over the tab until the tooltip appears.
-Then, quickly move the mouse to the middle of the label.
-The tooltip will not go away, it will move to where the mouse it (and follow the mouse around as you move it around the label area).
+When a CTabItem has a tooltip, it often does not dispose of it properly.  Using the snippet below, hover over the tab until the tooltip appears.  Then, quickly move the mouse to the middle of the label.  The tooltip will not go away, it will move to where the mouse it (and follow the mouse around as you move it around the label area).
 Furthermore, if you quickly moved the mouse to the button instead of the label,  you will get the button's tooltip, but moving to the label changes the tooltip back to the CTabItem's tooltip.
 Moving the mouse slowly down from the tab area makes the tooltip go away correctly (which is why I say, "move the mouse quickly")
 This is on Mac only, and I've been seeing it on 3.2M6 and 3.2RC1.

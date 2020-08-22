@@ -1,5 +1,2 @@
 Bug 235964 [Automation]Viewer parameter pageoverflow does not work when previewing report as PDF
-Description: Set __pageoverflow=2 when previewing report as PDF, the report can not be previewed.
-The pdf content returned was null.
-Test Date: 20080606 Test Build: BIRT2.3.0 v20080606-0630 Step to reproduce: 1.Use the report attached 2.Preview it as PDF 3.Add parameter __pageoverflow=2 to URL 4.Preview report with this parameter Expect result: The report can be previewed fit to page.
-Actual result: The report does not show anything.
+Description: Set __pageoverflow=2 when previewing report as PDF, the report can not be previewed. The pdf content returned was null. Test Date: 20080606 Test Build: BIRT2.3.0 v20080606-0630 Step to reproduce: 1. Use the report attached 2. Preview it as PDF 3. Add parameter __pageoverflow=2 to URL 4. Preview report with this parameter Expect result: The report can be previewed fit to page. Actual result: The report does not show anything.

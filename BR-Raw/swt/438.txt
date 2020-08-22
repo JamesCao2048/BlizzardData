@@ -6,5 +6,5 @@ It's used solely on Eclipse, but for applications that are not using Eclipse exe
 I've made quick fix on my local build of SWT, but would like to suggest streamlined version of it, for use in other applications, I can provide patch for it, essentially I've used Widget's data property "argument" that overrides default argument passed to new instance.
 Reproducible: Always
 Steps to Reproduce:
-1.Create Windows 7 Jump List items (TaskItem inside TaskBar)
-2.Use newly created item to launch new instance of application
+1. Create Windows 7 Jump List items (TaskItem inside TaskBar)
+2. Use newly created item to launch new instance of application

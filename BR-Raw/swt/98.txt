@@ -1,13 +1,10 @@
 Scroll bar selection changed event will only be fired once when hold down mouse key on top area of vertical scroll bar on Mac cocoa if checked "Use smooth scrolling
 Created  attachment 222157   [details]
 Mac "Use Smooth Scrolling" setting
-This problem only happened in Mac platform when "Use smooth scrolling" enabled(see attachment for how to enable this setting).
-Tested on 10.7 & 10.6.8
+This problem only happened in Mac platform when "Use smooth scrolling" enabled(see attachment for how to enable this setting). Tested on 10.7 & 10.6.8
 Here are steps to reproduce the problem:
 1.Create a Shell;
 2.Add one StyledText control into the Shell;
 3.Run this SWT program in Mac(using SWT cocoa);
 4.Input many lines of text to StyledText, so scroll bar is shown for the StyledText control;
-5.Put the mouse into the top area of the vertical scroll bar of StyledText and hold down mouse key.
-You will see that the text will only be scrolled up one page and then stop.
-In a normal case, this will keep scroll bar scroll to the place of mouse.
+5.Put the mouse into the top area of the vertical scroll bar of StyledText and hold down mouse key. You will see that the text will only be scrolled up one page and then stop. In a normal case, this will keep scroll bar scroll to the place of mouse.

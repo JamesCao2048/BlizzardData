@@ -1,7 +1,2 @@
 Bug 226742 INFO takes a precedence over SEVERE
-Build ID: I20080207-1530 Steps To Reproduce: 1.Set the reporting lavel to be SEVERE (in web.xml)
-<context-param>
-<param-name>BIRT_VIEWER_LOG_LEVEL</param-name>
-<param-value>SEVERE</param-value>
-</context-param> 2.Restart apache 3.Run your report 4.In the catalina.out, the INFO records will appear INFO: Data Engine starts up Apr 11, 2008 11:22:16 AM org.eclipse.birt.data.engine.odaconsumer.ConnectionManager addProfileProviderService( Map ) INFO: Added default property service: org.eclipse.datatools.connectivity.oda.profile.connectionPropertyService Apr 11, 2008 11:22:18 AM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager loadDriverExtensions INFO: Found JDBC driverinfo extension: driverClass=org.apache.derby.jdbc.EmbeddedDriver, connectionFactory=nul l ....
-More information:
+Build ID: I20080207-1530 Steps To Reproduce: 1. Set the reporting lavel to be SEVERE (in web.xml) <context-param> <param-name>BIRT_VIEWER_LOG_LEVEL</param-name> <param-value>SEVERE</param-value> </context-param> 2. Restart apache 3. Run your report 4. In the catalina.out, the INFO records will appear INFO: Data Engine starts up Apr 11, 2008 11:22:16 AM org.eclipse.birt.data.engine.odaconsumer.ConnectionManager addProfileProviderService( Map ) INFO: Added default property service: org.eclipse.datatools.connectivity.oda.profile.connectionPropertyService Apr 11, 2008 11:22:18 AM org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager loadDriverExtensions INFO: Found JDBC driverinfo extension: driverClass=org.apache.derby.jdbc.EmbeddedDriver, connectionFactory=nul l .... More information:

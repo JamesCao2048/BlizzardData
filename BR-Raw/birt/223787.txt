@@ -1,6 +1,2 @@
 Bug 223787 Disable actions for crosstab from library[1102]
-Description: Forbid to add the derived measure in crosstab from library[1102] Step: 1.Add a crosstab in library.
-2.Use the library in report and drop the crosstab to use.
-3.Add a derived measure on crosstab in report design.
-Actual result: No effect and measure has not been added.
-Expected result: Hint that the operation of add derived measure is forbid.
+Description: Forbid to add the derived measure in crosstab from library[1102] Step: 1. Add a crosstab in library. 2. Use the library in report and drop the crosstab to use. 3. Add a derived measure on crosstab in report design. Actual result: No effect and measure has not been added. Expected result: Hint that the operation of add derived measure is forbid.

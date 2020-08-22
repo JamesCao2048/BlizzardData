@@ -1,10 +1,7 @@
 StyledText printing feature doesn't work
 When I try to print StyledText content by calling method
 public Runnable print(Printer printer, StyledTextPrintOptions options);
-throws exception.
-I've noticed that it happen when styled text contains text with custom styles and not.
-For example first line is unstyled, second line has styled range with bold style.
-When I am trying print text rises exception:
+throws exception. I've noticed that it happen when styled text contains text with custom styles and not. For example first line is unstyled, second line has styled range with bold style. When I am trying print text rises exception:
 java.lang.NullPointerException
 at org.eclipse.swt.custom.StyledTextRenderer$LineInfo.<init>(StyledTextRenderer.java:82)
 at org.eclipse.swt.custom.StyledTextRenderer.copyInto(StyledTextRenderer.java:288)

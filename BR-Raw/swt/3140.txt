@@ -2,7 +2,6 @@ Control example coolbar tab uses images in drop down
 In the coolbar tab of the ControlExample, enable Item styles "SWT.DROP_DOWN".
 Now make the coolbar 100x100 so that a chevron is required to see some of the
 items.
-On WindowsNT, menus do not support images.
-When you select the menu from the
+On WindowsNT, menus do not support images.  When you select the menu from the
 chevron of the coolbar, it is blank because there are only images in the menu
 items.

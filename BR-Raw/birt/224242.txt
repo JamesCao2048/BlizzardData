@@ -1,17 +1,3 @@
 Bug 224242 BIRT group editor inserts unwanted key field
-Create a BIRT report design with groups, say a Country/State/Customer report using the CUSTOMERS table in Classic Models sample database.
-Create groups, but do them backwards: State (top), Country (lower).
-Next, decide to reverse the order of the groups.
-There does not seem to be any UI to do this, so do it the hard way.
-Edit the State (top) group and change the key to Country.
-Notice that the UI adds the [COUNTRY] field to the group header, even if the header already has fields.
-This is a nuisance; I must remove the field after each edit, making more work.
-The UI creates a key field when the group is first created.
-This is good and helpful.
-So, the issue here is simply that the UI always creates a key field when the group key changes, even if the header already contains contents.
-So, perhaps don't create the key field when changes occur.
-Or, perhaps only if the header is empty.
-Now, for fun, change the top group back to STATE.
-Notice that the UI helpfully creates a new [STATE] field in the header even though the header already contains a [STATE] field.
-This is really not helpful.
-So, another possible check might be to not create fields that already exist.
+Create a BIRT report design with groups, say a Country/State/Customer report using the CUSTOMERS table in Classic Models sample database. Create groups, but do them backwards: State (top), Country (lower). Next, decide to reverse the order of the groups. There does not seem to be any UI to do this, so do it the hard way. Edit the State (top) group and change the key to Country. Notice that the UI adds the [COUNTRY] field to the group header, even if the header already has fields. This is a nuisance; I must remove the field after each edit, making more work. The UI creates a key field when the group is first created. This is good and helpful. So, the issue here is simply that the UI always creates a key field when the group key changes, even if the header already contains contents. So, perhaps don't create the key field when changes occur. Or, perhaps only if the header is empty. Now, for fun, change the top group back to STATE. Notice that the UI helpfully creates a new [STATE] field i
+n the header even though the header already contains a [STATE] field. This is really not helpful. So, another possible check might be to not create fields that already exist.

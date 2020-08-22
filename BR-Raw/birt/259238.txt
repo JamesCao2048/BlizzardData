@@ -1,11 +1,2 @@
 Bug 259238 Inherited data source properties overridden after editing data set
-1) Publish a data source and data set to a library.
-2) Include the library in a new report design, and drag-and-drop the data source and data set into the design.
-At this stage, the data source properties are marked 'inherited' in the properties view, as expected.
-3) Double click on the data set to open the 'Edit Data Set' dialog and make a change to the query (e.g.
-select one less database column).
-Click 'Ok' to save the changes.
-Now, the data source properties are no longer marked inherited.
-Examination of the report xml shows that the oda-data-source element still extends the data source defined in the library, but property elements have been added to the xml, overridding those defined in the library.
-The data source properties should not be overridden in this way, as the data source has not been edited.
-The same behaviour is seen in BRD and BRD Pro 2.5M3.
+1) Publish a data source and data set to a library. 2) Include the library in a new report design, and drag-and-drop the data source and data set into the design. At this stage, the data source properties are marked 'inherited' in the properties view, as expected. 3) Double click on the data set to open the 'Edit Data Set' dialog and make a change to the query (e.g. select one less database column). Click 'Ok' to save the changes. Now, the data source properties are no longer marked inherited. Examination of the report xml shows that the oda-data-source element still extends the data source defined in the library, but property elements have been added to the xml, overridding those defined in the library. The data source properties should not be overridden in this way, as the data source has not been edited. The same behaviour is seen in BRD and BRD Pro 2.5M3.

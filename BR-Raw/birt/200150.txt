@@ -1,6 +1,2 @@
 Bug 200150 Improve the debug tabs
-- Is it possible to implement the classic debugger "immediate tab" where I can write and evaluate code?
-i.e.
-executing
-<?php $a = 1; $b = $a + 2; $c = $a + $b ?> I stop on a breakpoint on $c = $a + $b, go on the Immediate tab, write something like $b<enter> to obtain the result on the following line in that tab: $b 3
---- In the tab "Expressions" it would be nice if I could add/edit an expression to the list without open the dialog for it: the classic editing of a treeview.
+- Is it possible to implement the classic debugger "immediate tab" where I can write and evaluate code? i.e. executing <?php $a = 1; $b = $a + 2; $c = $a + $b ?> I stop on a breakpoint on $c = $a + $b, go on the Immediate tab, write something like $b<enter> to obtain the result on the following line in that tab: $b 3 --- In the tab "Expressions" it would be nice if I could add/edit an expression to the list without open the dialog for it: the classic editing of a treeview.

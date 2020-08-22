@@ -1,10 +1,7 @@
 nullpointer dispose table column
 When I dispose a table column I get a nullpointer at line 518 in table.java.
-My table model is only text (no column images).
-Since I am not using images
+My table model is only text (no column images).  Since I am not using images
 in my table, public Image getColumnImage(Object obj, int index), returns null
-which causes the nullpointer.
-If I return a "bogus" image, the problem is
-resolved.
-This did not happen in 2.0.x and is new in 2.1.x (M5 is the
+which causes the nullpointer.  If I return a "bogus" image, the problem is
+resolved.   This did not happen in 2.0.x and is new in 2.1.x (M5 is the
 first 2.1 version I have used).

@@ -3,12 +3,12 @@ Build F2 (20020602)
 Redhat 7.2, GTK2
 KDE 2.2-10
 (GTK2 only)
-1.Create an empty java project
-2.Open Debug perspective
-3.Open breakpoints view (tab under variables view)
-4.Right-click, add java exception breakpoint
-5.Pick any exception, hit ok
-6.Select and right click on the new breakpoint, go to Hit Count
-7.Type in an invalid value (ex: 'blah')
+1. Create an empty java project
+2. Open Debug perspective
+3. Open breakpoints view (tab under variables view)
+4. Right-click, add java exception breakpoint
+5. Pick any exception, hit ok
+6. Select and right click on the new breakpoint, go to Hit Count
+7. Type in an invalid value (ex: 'blah')
 There should be text under the textbox explaining why the input is invalid, but
 it's cut off by the 'Enable hit count' check box.

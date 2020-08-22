@@ -3,18 +3,16 @@ Eclipse 3.1 RC1
 Show the SWT Layouts view.
 Go to the GridLayout tab.
 Add three buttons.
-Click on the last Button entry in the "Children" table
-- an editor should pop
+Click on the last Button entry in the "Children" table - an editor should pop
 up but doesn't.
 Click on the second last Button entry in the "Children" table.
-This time an editor pops up
-- change Button to Combo and click away.
+This time an editor pops up - change Button to Combo and click away.
 Notice that "Combo" appears in the last row of the table and not the second
 row.
 Click on the second last Button entry in the "Children" table.
 Change the horizontalSpan to 2 and click away.
 Notice that the horizontalSpan of 2 appears for the last button.
 Click again on the second last Button entry in the "Children" table.
-Notice that the editor for horizontalSpan says 1 and not 2. Click away and
+Notice that the editor for horizontalSpan says 1 and not 2.  Click away and
 note that the horizontalSpan for the last Button has changed to 1.
 This example works fine on Windows.

@@ -1,5 +1,4 @@
 GC#drawText could use data.stringWidth and data.stringHeight
 we added data.stringWidth and data.stringHeight to GCData to improve the performance of GC#textExtent()
-I feel we could use these same fields in GC#drawText to speed things (little bit, verry little).
-If data.stringWidth and data.stringHeight were to initialized lazyly it would make the code in GC#drawText() and GC#textExtent() a bit simpler too.
+I feel we could use these same fields in GC#drawText to speed things (little bit, verry little). If data.stringWidth and data.stringHeight were to initialized lazyly it would make the code in GC#drawText() and GC#textExtent() a bit simpler too.
 Silenio, do you have any reason for not doing the above ?

@@ -20,17 +20,14 @@ at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
 at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3910)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3503)
 at org.eclipse.swt.snippets.Snippet308.main(Snippet308.java:62)
-The line generating the NPE is this a de-reference of the "script" variable that is passed into the Mozilla.execute() method.
-In this specific case execute it called by the OnStateChange method with a null due to the fact that the specific function that the code is attempting to "re-install" does not have a functionString defined because it appears to be an internal function and for whatever reason it was not assigned a functionString value when it was dynamically created.
+The line generating the NPE is this a de-reference of the "script" variable that is passed into the Mozilla.execute() method. In this specific case execute it called by the OnStateChange method with a null due to the fact that the specific function that the code is attempting to "re-install" does not have a functionString defined because it appears to be an internal function and for whatever reason it was not assigned a functionString value when it was dynamically created.
 I will attach a simple testcase based on Snippet308 that can be used to recreate the problem.
 Reproducible: Always
 Steps to Reproduce:
-1.Import the attached snippet project into your workspace
-2.Place the offers.html file into a dir on your PC (defaults to c:/tempy )
-3.If the location of the offers.html is not c:/tempy then update the test code to point to the location on your PC where you placed it.
-2.Run ( SWT snippet )
-3.When the UI appears click on the button on the right called "Change UrL".
-You will see that yahoo is loaded in to the browser frame on the left.
-4.Click this button several more times and your application will crash with the exception provided.
-While this may seem to be a strange case, it is an important piece of our application and is critical for us.
-When this NPE is generated we have been
+1. Import the attached snippet project into your workspace
+2. Place the offers.html file into a dir on your PC (defaults to c:/tempy )
+3. If the location of the offers.html is not c:/tempy then update the test code to point to the location on your PC where you placed it.
+2. Run ( SWT snippet )
+3. When the UI appears click on the button on the right called "Change UrL". You will see that yahoo is loaded in to the browser frame on the left.
+4. Click this button several more times and your application will crash with the exception provided.
+While this may seem to be a strange case, it is an important piece of our application and is critical for us. When this NPE is generated we hav

@@ -1,5 +1,2 @@
 Leaking accessible object
-AccessibleFactory.createAccessible() should call gtk_widget_get_accessible() instead of atk_object_factory_create_accessible().
-If it calls the former, the created atkobject has to be freed.
-This does not happen currently.
-The later is disposed when the widget is disposed.
+AccessibleFactory.createAccessible() should call gtk_widget_get_accessible() instead of atk_object_factory_create_accessible(). If it calls the former, the created atkobject has to be freed. This does not happen currently. The later is disposed when the widget is disposed.

@@ -2,9 +2,7 @@ StackOverflowError with Table.callWindowProc(..) etc.
 Created  attachment 125564   [details]
 Log
 HEAD of SWT, JDT, Text, Platform UI
-I started a runtime workbench with some existing projects.
-Opened the Open Type Dialog and typed 'HM' very quickly.
-After the first matching item has been rendered in the table, I got a StackOverflowError.
+I started a runtime workbench with some existing projects. Opened the Open Type Dialog and typed 'HM' very quickly. After the first matching item has been rendered in the table, I got a StackOverflowError.
 I could always reproduce by copying HM to the clipboard and then pressing Ctrl+Shift+T, Ctrl+V.
 Here's the start of the trace, full trace is attached.
 java.lang.StackOverflowError

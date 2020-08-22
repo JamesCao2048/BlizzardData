@@ -1,9 +1,6 @@
 Mouse cursor disappears in editor and gets progressively slower coming back
 Build ID: 3.4.0 (I20080617-2000)
 Steps To Reproduce:
-It is standard behavior on OS X that the mouse cursor disappears while typing.
-However, after using Eclipse for a little while (in this case it was an hour that I started noticing it), the mouse cursor does not immediately reappear on mouse move, but takes about a second or so to come back.
-This can be really disconcerting.
-I have verification of this behavior from two other people, as well.
+It is standard behavior on OS X that the mouse cursor disappears while typing. However, after using Eclipse for a little while (in this case it was an hour that I started noticing it), the mouse cursor does not immediately reappear on mouse move, but takes about a second or so to come back.  This can be really disconcerting.  I have verification of this behavior from two other people, as well.
 More information:
 Incidentally, I was afraid this might be related to my Mac refresh provider causing slowdowns in the kernel, so I pulled it out just in case, and I get the same behavior.

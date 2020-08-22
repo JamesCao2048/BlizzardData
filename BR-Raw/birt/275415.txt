@@ -1,8 +1,2 @@
 Bug 275415 "Aggregation On" is always on "List" when add aggregation for list group [0004]
-Description: "Aggregation On" is always on "List" when add aggregation for list group.
-Build number: 2.5.0.v20090508-0630 Steps to reproduce: 1.New a list binding to the data set.
-2.Add group for the list.
-3.Drag Aggregation from the Palette to the list group header.
-Expected result: "Aggregation On" is on "Group".
-Actual result: "Aggregation On" is always on "List", this works for table.
-Error log: N/A
+Description: "Aggregation On" is always on "List" when add aggregation for list group. Build number: 2.5.0.v20090508-0630 Steps to reproduce: 1. New a list binding to the data set. 2. Add group for the list. 3. Drag Aggregation from the Palette to the list group header. Expected result: "Aggregation On" is on "Group". Actual result: "Aggregation On" is always on "List", this works for table. Error log: N/A

@@ -1,8 +1,7 @@
 [Viewers] Arithmetic exception when typing show types dialog
 Build ID: M20080911-1700
 Steps To Reproduce:
-This bug isn't 100% reproducible, but when running eclipse on AIX via Exceed, when I open the show types dialog (using CTRL+SHIFT+T) and start typing  the error dialog informs me of an Arithmetic exception.
-Sometimes, every letter typed after that causes the same exception to show up.
+This bug isn't 100% reproducible, but when running eclipse on AIX via Exceed, when I open the show types dialog (using CTRL+SHIFT+T) and start typing  the error dialog informs me of an Arithmetic exception. Sometimes, every letter typed after that causes the same exception to show up.
 Stack trace is below.
 More information:
 java.lang.ArithmeticException: divide by zero

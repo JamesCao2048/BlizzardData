@@ -1,7 +1,6 @@
 Empty button has different height from one with text
 The following program passes on Win32, Linux-GTK, and MacOS X, but fails on
-Linux-Motif.
-I believe the behaviour on Motif should be fixed.
+Linux-Motif.  I believe the behaviour on Motif should be fixed.
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
 public class EmptyButton {

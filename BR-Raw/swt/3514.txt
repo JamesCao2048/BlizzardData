@@ -1,7 +1,5 @@
 No mouseUp events for the left mouse button
-I have attached a MouseListener to a Slider control.
-I see mouseDown events
+I have attached a MouseListener to a Slider control. I see mouseDown events
 fired when I click any of the mouse buttons, but I only receive mouseUp events
-for the right button and the wheel.
-No mouseUp event gets generated for the
+for the right button and the wheel. No mouseUp event gets generated for the
 left mouse button.

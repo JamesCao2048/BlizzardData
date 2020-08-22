@@ -1,17 +1,12 @@
 Error when returning null values from Javascript evaluations in IE 9 using SWT Browser
 Build Identifier: M20110210-1200
-Evaluating JavaScript expressions that return null or an undefined value using the SWT Browser control against Internet Explorer 9 (IE9) will result in an SWT Exception.
-I will attach a repro snippet or you can simply in an SWT Browser control execute something like:
+Evaluating JavaScript expressions that return null or an undefined value using the SWT Browser control against Internet Explorer 9 (IE9) will result in an SWT Exception.  I will attach a repro snippet or you can simply in an SWT Browser control execute something like:
 Object result = browser.evaluate("alert('evalute something that returns null')");
 On Windows with IE9 RTM installed you get:
 org.eclipse.swt.SWTException: Return value not valid
 On all other platforms (including Windows with prior version of IE including IE9 Beta), a null value is returned.
 The reason for this is that IE 9 has a new Javascript engine with significantly improved performance, however they also changed some behaviour which has resulted in a change to the way the COM interface works for null or undefined values.
-GetIDsOfNames on an Javascript Array鈥檚 IDispatch pointer now returns valid ids for the items in the array.
-If you have a single item array with the one item in it that is undefined or null, the old engine would return DISP_E_UNKNOWNNAME for this item, and so the SWT Browser code in the WebSite class simply skips over this element.
-However, the item does exist (albeit it is undefined), and so IE9 now return a valid dispid.
-SWT then tries to query for the item, and IE9 returns a VARIANT with its type set to VT_EMPTY which we鈥檙e then not handling in the SWT Browser code.
-(As VT_EMPTY was never returned by the older versions of IE the SWT Browser code never had to handle this condition before).
+GetIDsOfNames on an Javascript Array鈥檚 IDispatch pointer now returns valid ids for the items in the array. If you have a single item array with the one item in it that is undefined or null, the old engine would return DISP_E_UNKNOWNNAME for this item, and so the SWT Browser code in the WebSite class simply skips over this element.  However, the item does exist (albeit it is undefined), and so IE9 now return a valid dispid. SWT then tries to query for the item, and IE9 returns a VARIANT with its type set to VT_EMPTY which we鈥檙e then not handling in the SWT Browser code.  (As VT_EMPTY was never returned by the older versions of IE the SWT Browser code never had to handle this condition before).
 I believe the correct fix would be to have the org.eclipse.swt.browser.WebSite.convertToJava() method handle the new VT_EMPTY Variant, i.e.
 Object convertToJava (Variant variant) {
 switch (variant.getType ()) {
@@ -19,14 +14,12 @@ case OLE.VT_EMPTY:      // IE9 can return VT_EMPTY for null
 case OLE.VT_NULL: return null;
 case OLE.VT_BSTR: return variant.getString ();
 ...
-Let me know if you agree and I can send along a patch accordingly as it is a simple one-line fix.
-I鈥檝e checked with the folks this side and I have permission to contribute this simple fix to improve the interoperability of Eclipse and IE9.
-The only workaround I can find without the fix is to make sure that any Javascript you do execute never returns null or undefined (i.e.
-you can OR the result of the call that could return null with an empty string to ensure that the result coming back via IDispatch is always a non-null value)
+Let me know if you agree and I can send along a patch accordingly as it is a simple one-line fix.    I鈥檝e checked with the folks this side and I have permission to contribute this simple fix to improve the interoperability of Eclipse and IE9.
+The only workaround I can find without the fix is to make sure that any Javascript you do execute never returns null or undefined (i.e. you can OR the result of the call that could return null with an empty string to ensure that the result coming back via IDispatch is always a non-null value)
 Let me know if there is anything else I can do to help.
 Reproducible: Always
 Steps to Reproduce:
-1.Execute a browser.evaluate() call that returns null or undefined results from the Javascript expression when running with IE9
+1. Execute a browser.evaluate() call that returns null or undefined results from the Javascript expression when running with IE9
 Actual result:
 SWTException
 Expected result:

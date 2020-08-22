@@ -1,11 +1,8 @@
 ImageAnalyzer example - bug in the set background
 build 20020617
-1
-- Run the ImageAnalyzer found on org.eclipse.swt.examples.
-2
-- In the Background Combo choice a different Color
-3
-- the canvas on center will not changed its background color, only the
+1 - Run the ImageAnalyzer found on org.eclipse.swt.examples.
+2 - In the Background Combo choice a different Color
+3 - the canvas on center will not changed its background color, only the
 scrollbar will.
 The bug is on examples, though this is working properly on Windows.
 A possible fix is remove imageCanvas.fillRectangle(...) call from the

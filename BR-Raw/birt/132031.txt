@@ -1,6 +1,2 @@
 Bug 132031 access to chart scripting methods and related documentation
-It's very strange that access to chart scipting methods available only from script tab related to whole chart item.
-This approach is not consistent comparing to how script defined for such report items as table or dataset.
-That why inside of chart's script tab we see comment out bunch of chart scripting methods.
-I suggest that every component on chart item that have corresponding scripting methods must have separate script tab with set predefined methods.
-Beside that it would be nice to have at least some documentation and axamples on this topic.
+It's very strange that access to chart scipting methods available only from script tab related to whole chart item. This approach is not consistent comparing to how script defined for such report items as table or dataset. That why inside of chart's script tab we see comment out bunch of chart scripting methods. I suggest that every component on chart item that have corresponding scripting methods must have separate script tab with set predefined methods. Beside that it would be nice to have at least some documentation and axamples on this topic.

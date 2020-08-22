@@ -1,7 +1,6 @@
 NullPointerException in Table.callWindowProc
 Here is a stack trace I found when trying to kill a running process by
-pressing the "kill" button in the console view.
-I use 3.1M5a.
+pressing the "kill" button in the console view. I use 3.1M5a.
 !ENTRY org.eclipse.ui 4 0 2005-03-12 14:26:25.58
 !MESSAGE java.lang.NullPointerException
 !STACK 0

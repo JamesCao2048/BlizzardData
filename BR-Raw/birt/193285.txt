@@ -1,11 +1,2 @@
 Bug 193285 Add CSS file has issue when delete the css file in library explorer.
-Description: Add CSS file has issue when delete the css file.
-Build number:2.2.0.v20070619 Steps to reproduce: 1.In library explorer, add a css file.
-2.Use the css file in report.
-3.Delete the css file in Library Explorer.
-4.In report outline, select the css file, right click and select reload CSS file menu.
-5.Delete the css file in outline.
-Expected result: After step4, Exception throws out.
-Step 5 can be done.
-Actual result: After step4, the css file in report outline can not be deleted.
-Error log:n/a
+Description: Add CSS file has issue when delete the css file. Build number:2.2.0.v20070619 Steps to reproduce: 1. In library explorer, add a css file. 2. Use the css file in report. 3. Delete the css file in Library Explorer. 4. In report outline, select the css file, right click and select reload CSS file menu. 5. Delete the css file in outline. Expected result: After step4, Exception throws out. Step 5 can be done. Actual result: After step4, the css file in report outline can not be deleted. Error log:n/a

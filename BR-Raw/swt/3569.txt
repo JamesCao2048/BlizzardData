@@ -1,10 +1,8 @@
 update needed in javadoc for constructors ImageData specifying colorDepth
 The javadoc for constructors of ImageData (where depth is specified) states
-that an SWTException is thrwown for ERROR_UNSUPPORTED_DEPTH
-- if the depth
-argument is not one of 1, 2, 4, 8, 16, 24 or 32.Actually an IllegalArgument
-exception is thrown.
-Here is an example to recreate:
+that an SWTException is thrwown for ERROR_UNSUPPORTED_DEPTH - if the depth
+argument is not one of 1, 2, 4, 8, 16, 24 or 32. Actually an IllegalArgument
+exception is thrown.  Here is an example to recreate:
 import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.*;
 public class TestImageData_IllegalArgument {

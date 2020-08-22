@@ -6,25 +6,20 @@ int lineIndex = layout.getLineIndex(offsetInLine);
 int[] offsets = layout.getLineOffsets();
 if (lineIndex != 0 && offsetInLine == offsets[lineIndex]) {
 int lineY = layout.getLineBounds(lineIndex).y;
-int caretY = getCaret().getLocation().y
-- topMargin
-- getLinePixel(getCaretLine());
+int caretY = getCaret().getLocation().y - topMargin - getLinePixel(getCaretLine());
 if (lineY > caretY) lineIndex--;
 caretAlignment = OFFSET_LEADING;
 }
 return lineIndex;
 }
-topMargin is explicitly subtracted, but it is already included in value calculated by getLinePixel.
-The line should look like:
-int caretY = getCaret().getLocation().y
-- getLinePixel(getCaretLine());
+topMargin is explicitly subtracted, but it is already included in value calculated by getLinePixel. The line should look like:
+int caretY = getCaret().getLocation().y - getLinePixel(getCaretLine());
 Reproducible: Always
 Steps to Reproduce:
-1.Run the following snippet:
+1. Run the following snippet:
 public class Snippet {
 static String text =
-"Line One.
-Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Longn" +
+"Line One. Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Longn" +
 "Line Two.n" +
 "Line Three";
 public static void main(final String [] args) {
@@ -44,5 +39,5 @@ display.sleep();
 display.dispose();
 }
 }
-2.Press ARROW DOWN several times
-3.Notice that UP/DOWN keys are no more working
+2. Press ARROW DOWN several times
+3. Notice that UP/DOWN keys are no more working

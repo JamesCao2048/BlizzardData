@@ -2,5 +2,4 @@ Is TreeItem (.. int hParent, ..) supposed to be public?
 I20051122-1300
 Is the constructor
 public TreeItem (Tree parent, int style, int hParent, int hInsertAfter, int hItem)
-supposed to be public?
-I guess it should be package-private.
+supposed to be public? I guess it should be package-private.

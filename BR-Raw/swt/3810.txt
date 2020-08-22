@@ -1,16 +1,13 @@
 [Contributions] Combo control does not show on GTK toolbar, works fine on Win and Motif
 I created a combo control on the toolbar by extending ControlContribution and
-creating the control content with a Label and Combo.
-Via my editor
+creating the control content with a Label and Combo.  Via my editor
 MultiPageEditorActionBarContributor, I add this control to the platform
 toolbar.
 This works great on Windows, and works pretty well on motif (except that the
-combo is not properly vertically centered on motif.
-But on Linux GTK, all I
+combo is not properly vertically centered on motif.  But on Linux GTK, all I
 get is a blank space big enough to hold the label+combo, but no display.
-The same problem shows on GTK for 2.0.2 and 2.1M4. I am running RedHat 8.0,
-with basic new installation of the OS config.
-Also JDK 1.4.1.
+The same problem shows on GTK for 2.0.2 and 2.1M4.  I am running RedHat 8.0,
+with basic new installation of the OS config.  Also JDK 1.4.1.
 Here is a copy of the offending code:
 import org.eclipse.jface.action.ControlContribution;
 import org.eclipse.swt.SWT;

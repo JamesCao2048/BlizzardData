@@ -1,5 +1,2 @@
 Bug 145520 Group name will not show up in group list if the group use default name and key expression has no value
-Description: Group name will not show up in group list if key expression has no value.
-Steps to reproduce: 1.Insert a table into report, bind it to a data set 2.Switch to property editor
--> groups 3.Click on add button to open new group dialog, then press ok button Expected result: A new group with default name will be added to group list Actual result: A new group is added to group list, but without group name.
-But when let group tab lost focus and get focus again, you can see the group name.
+Description: Group name will not show up in group list if key expression has no value. Steps to reproduce: 1. Insert a table into report, bind it to a data set 2. Switch to property editor -> groups 3. Click on add button to open new group dialog, then press ok button Expected result: A new group with default name will be added to group list Actual result: A new group is added to group list, but without group name. But when let group tab lost focus and get focus again, you can see the group name.

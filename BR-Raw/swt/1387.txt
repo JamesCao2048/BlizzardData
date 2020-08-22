@@ -1,20 +1,19 @@
 [Browser] cannot type 脺 into web browser text area
 Build ID: M20080911-1700
 Steps To Reproduce:
-1.Configure your OS to use a German keyboard layout
-2.Create an html file with the following contents (see attachment):
+1. Configure your OS to use a German keyboard layout
+2. Create an html file with the following contents (see attachment):
 <html>
 <head></head>
 <body>
 <textarea></textarea>
 </body>
 </html>
-3.open the html file in the eclipse browser
-4.attempt to type a 脺 (capital letter, not 眉)("{" on most english keyboards) into the text area
-5.Nothing is printed
+3. open the html file in the eclipse browser
+4. attempt to type a 脺 (capital letter, not 眉)("{" on most english keyboards) into the text area
+5. Nothing is printed
 More information:
-This issue occurs on windows XP and Vista.
-Untested on other platforms.
+This issue occurs on windows XP and Vista.  Untested on other platforms.
 This issue also occurs for instances of the SWT Browser widget, NOT just the browser view used in eclipse to view html files.
 It's possible to type 眉
 It's possible to cut and paste the letters in

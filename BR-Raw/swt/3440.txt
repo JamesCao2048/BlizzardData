@@ -2,17 +2,14 @@ CheckboxTableViewer does not receive selection events
 This bug has appeared in today's integration build  I20040302 and always
 worked, including last week's integration build.
 Scenario:
-1.Help > Software Update > Find and Install ...
-to launch the install wizard
-2.select the second radio button (search for new features)
-3.Add update site (URL may wrap):  http://dev.eclipse.org/viewcvs/index.cgi/ %
+1. Help > Software Update > Find and Install ... to launch the install wizard
+2. select the second radio button (search for new features)
+3. Add update site (URL may wrap):  http://dev.eclipse.org/viewcvs/index.cgi/ %
 7Echeckout%7E/platform-update-home/3.0/site/
-4.Select the site and press Next, to move to the results page
-5.Once you see the list of features on the site, select the checkbox of any
-of of them.
-The expected behavior is to either see an error or to enable the
-Next button.
-In this build nothing happens.
+4. Select the site and press Next, to move to the results page
+5. Once you see the list of features on the site, select the checkbox of any
+of of them. The expected behavior is to either see an error or to enable the
+Next button. In this build nothing happens.
 The listener code is in
 org.eclipse.update.internal.ui.wizards.ReviewPage at line 432.
 I put a breakpoint there but it is never reached.

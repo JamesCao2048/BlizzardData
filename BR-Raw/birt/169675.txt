@@ -1,9 +1,2 @@
 Bug 169675 rptdocument folder should be configurable independent of the rptdesign folder
-The folder in which rptdesign Report Design files are stored can be configured using the context parameters BIRT_VIEWER_WORKING_FOLDER or BIRT_VIEWER_DOCUMENT_FOLDER.
-But: The rptdocument files (generated temporarily during runtime) are always stored in a subfolder of the rptdesign folder called "documents".
-This behaviour is hard-coded.
-It should be configurable instead: We should have the possibility to place the rptdesign files in one folder, and the rptdocuments in a completely different folder, not necessarily a subdir of the rptdesign folder.
-This especially because the rptdocument files are created during run-time.
-In some production environments no write access is granted to the deployment dirs.
-In that case it would be necessary to point the rptdocument folder to some temp dir.
-Ideally, the environment variable "java.io.tmpdir" would be supported for this purpose as well.
+The folder in which rptdesign Report Design files are stored can be configured using the context parameters BIRT_VIEWER_WORKING_FOLDER or BIRT_VIEWER_DOCUMENT_FOLDER. But: The rptdocument files (generated temporarily during runtime) are always stored in a subfolder of the rptdesign folder called "documents". This behaviour is hard-coded. It should be configurable instead: We should have the possibility to place the rptdesign files in one folder, and the rptdocuments in a completely different folder, not necessarily a subdir of the rptdesign folder. This especially because the rptdocument files are created during run-time. In some production environments no write access is granted to the deployment dirs. In that case it would be necessary to point the rptdocument folder to some temp dir. Ideally, the environment variable "java.io.tmpdir" would be supported for this purpose as well.

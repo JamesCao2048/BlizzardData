@@ -23,9 +23,9 @@ display.sleep();
 }
 display.dispose();
 }
-1.Run the testcase
-2.stop the mouse over a toolitem (which becomes hot)
-3.stop the keyboard (tab or arrows) to move the hot item around
+1. Run the testcase
+2. stop the mouse over a toolitem (which becomes hot)
+3. stop the keyboard (tab or arrows) to move the hot item around
 --> the toolbar fights you back and change the hot to item under the mouse
 --> the tooltip tops at 0,0 of the screen
 Happens on Eclipse.

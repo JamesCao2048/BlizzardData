@@ -1,10 +1,6 @@
 Bug in List.showSelection method
-List.showSelection method doesn't always make the selection visible.
-The
+List.showSelection method doesn't always make the selection visible. The
 problem is in calculation of bottomIndex.
-int bottomIndex = Math.min (topIndex + visibleCount + 1, count
-- 1);
+int bottomIndex = Math.min (topIndex + visibleCount + 1, count - 1);
 has to be changed to:
-int bottomIndex = Math.min (topIndex + visibleCount
-- 1, count
-- 1);
+int bottomIndex = Math.min (topIndex + visibleCount - 1, count - 1);

@@ -1,6 +1,3 @@
 [DND] StyledText.getSelection() not valid during DnD?
 I20070123-1715
-In order to resolve  bug 172174  I tried to get the selection in DropTargetListener.drop(...) using styledTextWidget.getSelection().
-During drop this seems to return the current drop insertion offset and not the selection that's in the widget.
-Is this intentional?
-If so, where is this documented?
+In order to resolve  bug 172174  I tried to get the selection in DropTargetListener.drop(...) using styledTextWidget.getSelection(). During drop this seems to return the current drop insertion offset and not the selection that's in the widget. Is this intentional? If so, where is this documented?

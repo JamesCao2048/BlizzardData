@@ -1,13 +1,10 @@
 TableTree.setSelection/showItem fails for deeply nested items
 I built a TableTree with three nested TableTreeItems.
-
 If I close the tree entirely and call showItem() on the
 innermost child, I get a null argument exception even though
 the child is not null.
-
 I don't get an exception if I expand the tree entirely, or if
 I call showItem() on the first or second level child items.
-
 I get the same results if I use setSelection().
 Also calling showItem() successively from the higher level to lower level
 items (to "gradually" open the tree) produces the same exception.

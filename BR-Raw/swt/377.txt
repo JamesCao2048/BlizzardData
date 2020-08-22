@@ -1,7 +1,6 @@
 Parent shell wrongly focused via Expos茅 (should activate primary modal child shell)
 HEAD Cocoa
-- Open a child shell with PRIMARY_MODAL (e.g.
-in ControlExample)
+- Open a child shell with PRIMARY_MODAL (e.g. in ControlExample)
 - Via Expos茅, select the parent shell
 => Parent shell gets activated, but keyboard interaction doesn't work
 => Expected: Child shell should be active

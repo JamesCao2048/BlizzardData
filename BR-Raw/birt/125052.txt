@@ -1,6 +1,2 @@
 Bug 125052 Ability to embed javascript in the html output.
-The main reason behind this enhancement is to provide interactivity in a static report.
-For example, consider the scenario where an application uses the birt report engine to export the reports to an html file.
-The exported html file has no interactivity such as sorting, hover over text, etc.
-With the ability to embed javascript in the html output exploiters can provide interactive reports.
-I would like to have the ability to provide the html renderer javascript to embed in the report or embed the url where the javascript is located.
+The main reason behind this enhancement is to provide interactivity in a static report. For example, consider the scenario where an application uses the birt report engine to export the reports to an html file. The exported html file has no interactivity such as sorting, hover over text, etc. With the ability to embed javascript in the html output exploiters can provide interactive reports. I would like to have the ability to provide the html renderer javascript to embed in the report or embed the url where the javascript is located.

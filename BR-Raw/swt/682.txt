@@ -5,8 +5,7 @@ It is happened in SUSE11/TR.
 Run C++ project.
 Paste EN characters in Console, the console return hello EN characters.
 Paste TR characters in Console, the "ArrayIndexoutOfBoundsException" message is displayed.
-We had tried this on RHEL environment and this was working OK.
-Just seems to be SLES problem only.
+We had tried this on RHEL environment and this was working OK.  Just seems to be SLES problem only.
 ==== Environment =====
 Build Level: 		I20100403-1602
 Component: 		CDT
@@ -20,48 +19,31 @@ The TR character is displayed in console correctly.
 Reproducible: Always
 Steps to Reproduce:
 ===== Steps To Reproduce =====
-1.Create a new C++ project
-2.Enter a project name in NL characters in the input field.
-Select Executable project > Empty project as project type.
-
+1. Create a new C++ project
+2. Enter a project name in NL characters in the input field.  Select Executable project > Empty project as project type.
 If you鈥檙e testing in Windows, choose the MinGW toolchain in the wizard.
-
-For RHEL, use the Linux GCC toolchain.
-For Mac OS X, use the MacOSX GCC toolchain.
-
+For RHEL, use the Linux GCC toolchain.  For Mac OS X, use the MacOSX GCC toolchain.
 Click Next, Click Finish.
-3.Create a new C++ source file: Name the source file main.cpp
-4.Click Finish.
-The editor will be opened.
-Type the following into main.cpp.
-#include
-<iostream>
-#include
-<string>
+3. Create a new C++ source file: Name the source file main.cpp
+4. Click Finish.  The editor will be opened.  Type the following into main.cpp.
+#include <iostream>
+#include <string>
 using namespace std;
-//This is a comment.
-Hello World!
+//This is a comment. Hello World!
 int main()
 {
 string yourName;
-cout
-<< "Enter your name: ";
+cout << "Enter your name: ";
 cin  >> yourName;
-cout
-<< "Hello " + yourName
-<< endl;
+cout << "Hello " + yourName << endl;
 return 0;
 }
-5.Create a new C++ class using the New Class Wizard:
-6.Make sure the checkbox beside the Namespace input field is checked.
-Create 鈥淐lass1鈥 in 鈥淣amespace1鈥.
-7.Click Finish.
-8.Right click on it and select 鈥淏uild Project鈥 to build your project.
-
-Go to the toolbar and select Run
--> Run Configurations...
-9.Click on C/C++ Local Application.
-10.You鈥檒l be prompted to specify a C/C++ Application to run.
-11.Click on the Run button.
-12.The Console View is now in focus and your program鈥檚 output is displayed.
-Enter a name in TR characters and press Enter.
+5. Create a new C++ class using the New Class Wizard:
+6. Make sure the checkbox beside the Namespace input field is checked.  Create 鈥淐lass1鈥 in 鈥淣amespace1鈥.
+7. Click Finish.
+8. Right click on it and select 鈥淏uild Project鈥 to build your project.
+Go to the toolbar and select Run -> Run Configurations...
+9. Click on C/C++ Local Application.
+10. You鈥檒l be prompted to specify a C/C++ Application to run.
+11. Click on the Run button.
+12. The Console View is now in focus and your program鈥檚 output is displayed.  Enter a name in TR characters and press Enter.

@@ -11,8 +11,7 @@ Shell shell = new Shell(display);
 shell.setBounds(10,10,200,200);
 final Table table = new Table(shell, SWT.NONE);
 table.setBounds(10,10,100,100);
-for (int i = 0; i
-< 99; i++) {
+for (int i = 0; i < 99; i++) {
 new TableItem(table, SWT.NONE).setText("item " + i);
 }
 
@@ -20,8 +19,7 @@ table.setTopIndex(20);
 shell.open();
 System.out.println("top visible index: " + table.getTopIndex());
 
-for (int i = 0; i
-< 5; i++) {
+for (int i = 0; i < 5; i++) {
 new TableItem(table, SWT.NONE).setText("item " + i);
 }
 table.setTopIndex(40);
@@ -34,11 +32,9 @@ display.dispose();
 }
 Table.setTopIndex fails to position to the correct table item if new items are
 added to the table after the shell is opened.
-The first call to setTopIndex succeeds.
-The table is correctly positioned at
-item 20. After adding new table items to the table, calling setTopTable(40) has
-no effect.
-Calling getTopIndex continues to return 20.
+The first call to setTopIndex succeeds.  The table is correctly positioned at
+item 20.  After adding new table items to the table, calling setTopTable(40) has
+no effect. Calling getTopIndex continues to return 20.
 Expected Result:
 Calling setTopIndex(40) should move table item #40 to the top of the table.
 Calling getTopIndex after should return 40.

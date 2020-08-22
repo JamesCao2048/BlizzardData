@@ -3,13 +3,11 @@ OS: Windows XP.
 Must Fix: YES.
 Blocking: No.
 Build Date: 0518
-Component: BIRT
-- New Data Set Wizard.
+Component: BIRT - New Data Set Wizard.
 Language: AR
 Tester Name: Omar Bahy
 Scenario:
-1- Right click on data set and choose "New Data Set".
-Click Finish
+1- Right click on data set and choose "New Data Set". Click Finish
 2- Inspect the SQL statement box.
 Problem:
 SQL statement box should be unmirrored to maintain readability.

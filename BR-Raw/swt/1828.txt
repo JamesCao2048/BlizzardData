@@ -1,7 +1,7 @@
 GC.setLineAttributes() uses "join" as "cap
 Build ID: M20071023-1652
 Steps To Reproduce:
-1.try to set line attributes in GC with a cap style other than the default
+1. try to set line attributes in GC with a cap style other than the default
 More information:
 The code says "int cap = attributes.join" which should be "int cap = attributes.cap"
 Attached patch is based on current HEAD

@@ -1,14 +1,10 @@
 Can't apply a patch via a wizard
 Build id: N20090829-2000
-1.Open an Apply Patch Wizard
-2.Copy a valid patch into the clipboard
-3.Select Clipboard as the patch location and click Next
+1. Open an Apply Patch Wizard
+2. Copy a valid patch into the clipboard
+3. Select Clipboard as the patch location and click Next
 Result:
-4.The wizard freezes and can only be closed by 'x' button
-5.After closing the wizard two exceptions are logged
-This failure was exposed by DNFs in compare tests in few recent N-builds.
-After some investigation I assume it's caused by recent changes in SWT.
-I mean build I20090818-0800 work fine, the same build with compare from HEAD works fine too.
-Adding SWT from HEAD to that configuration makes the problem appear.
-I'll attach log entries shortly.
-However they probably don't convey to much information.
+4. The wizard freezes and can only be closed by 'x' button
+5. After closing the wizard two exceptions are logged
+This failure was exposed by DNFs in compare tests in few recent N-builds. After some investigation I assume it's caused by recent changes in SWT. I mean build I20090818-0800 work fine, the same build with compare from HEAD works fine too. Adding SWT from HEAD to that configuration makes the problem appear.
+I'll attach log entries shortly. However they probably don't convey to much information.

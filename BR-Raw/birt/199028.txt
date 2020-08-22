@@ -1,9 +1,2 @@
 Bug 199028 A problem with dataset valid check
-Description: There is a sample datasource and dataset, delete the datasource, the dataset will be invalid.
-Then create a datasource like the previous one, the dataset still does not work.
-Build version:2.2.0.v20070807-0630 Steps to reproduce: 1.Create a sample datasource and dataset.
-2.Delete the datasource, and the dataset will be invalid.
-3.Create a sample datasource again, with the same name as the deleted one.
-4.Double click on the dataset, error pops "The datasource of this dataset is missing".
-Expected result: The dataset shall be refer to the same name datasource.
-Actual result: If remove a datasource, the related datasets will not workable and repairable.
+Description: There is a sample datasource and dataset, delete the datasource, the dataset will be invalid. Then create a datasource like the previous one, the dataset still does not work. Build version:2.2.0.v20070807-0630 Steps to reproduce: 1. Create a sample datasource and dataset. 2. Delete the datasource, and the dataset will be invalid. 3. Create a sample datasource again, with the same name as the deleted one. 4. Double click on the dataset, error pops "The datasource of this dataset is missing". Expected result: The dataset shall be refer to the same name datasource. Actual result: If remove a datasource, the related datasets will not workable and repairable.

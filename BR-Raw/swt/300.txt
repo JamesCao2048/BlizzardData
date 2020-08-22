@@ -2,5 +2,4 @@ Remove GtkList related functions
 The attached patch is removing GtkList related functions which are using
 only for pre gtk 2.4.0 which is unsupported by latest SWT.
 Build and tested locally without any problems seen (gtk 2.24)
-Note that the this patch is only appliable after the patch from  bug 360872 .
-This reduces problems for gtk3 even more.
+Note that the this patch is only appliable after the patch from  bug 360872 . This reduces problems for gtk3 even more.

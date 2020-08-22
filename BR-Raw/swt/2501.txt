@@ -28,8 +28,7 @@ Button btn = new Button(shell, SWT.PUSH);
 btn.setText("Click me");
 btn.addListener(SWT.Selection, new Listener() {
 public void handleEvent(Event e) {
-tbl.setSortColumn((tbl.getSortColumn() == null) ?
-col : null);
+tbl.setSortColumn((tbl.getSortColumn() == null) ? col : null);
 tbl.redraw();
 }
 });

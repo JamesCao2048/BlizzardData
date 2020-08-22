@@ -1,4 +1,3 @@
 Negative values not displaying with Read-Only style combo.
 I've tried this on XP and Mac OS X...doesn't seem to be a problem on XP.
-If you add negative values to a combo box that is of SWT.READ_ONLY style, the negative values do not show up in the drop-down list.
-If the combo style is  SWT.DROP_DOWN style, negative values that are added to the combo will correctly be displayed in the list.
+If you add negative values to a combo box that is of SWT.READ_ONLY style, the negative values do not show up in the drop-down list. If the combo style is  SWT.DROP_DOWN style, negative values that are added to the combo will correctly be displayed in the list.

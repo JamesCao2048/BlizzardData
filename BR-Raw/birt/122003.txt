@@ -1,6 +1,2 @@
 Bug 122003 Could not export data properly
-Description: Using a flatfile dataset in the report, there are a lot of columns name missed when exporting data.
-Steps to reproduce: 1.Using the attached flatfile to create datasource and dataset.
-2.Pull the dataset to the layout and preview in html.
-3.Click "Export data" in the toolbar and select all the columns to export.
-4.Open the export csv file, there are a lot of columns name turn to be null.
+Description: Using a flatfile dataset in the report, there are a lot of columns name missed when exporting data. Steps to reproduce: 1.Using the attached flatfile to create datasource and dataset. 2.Pull the dataset to the layout and preview in html. 3.Click "Export data" in the toolbar and select all the columns to export. 4.Open the export csv file, there are a lot of columns name turn to be null.

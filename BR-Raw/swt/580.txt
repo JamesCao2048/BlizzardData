@@ -1,13 +1,11 @@
 Absolute positioning shifts the position around 10 pixels vertical dirction swt cocoa
 Build Identifier: version 3.617
-If I position a widget relative to an other widget by absolute values (setBounds(x,y,width, height)) the position of the widget is around 10 pixel shifted, so I need to workaround like this.decimalSeparatorLabel.setBounds(10, OSDE.IS_MAC_COCOA ?
-14 : 24, 140, 22);
+If I position a widget relative to an other widget by absolute values (setBounds(x,y,width, height)) the position of the widget is around 10 pixel shifted, so I need to workaround like this.decimalSeparatorLabel.setBounds(10, OSDE.IS_MAC_COCOA ? 14 : 24, 140, 22);
 There is also a shift in horizontal direction, but this seams acceptable.
 I see this mainly if the parent widget is of type Group.
 The Carbon version only does not have this problem, but Text widget seams to small in viewpoint of height.
 Reproducible: Always
 Steps to Reproduce:
 1.code a small application where labels combos text is positioned absolute to a surrounding Group
-2.compile this and execute for different platforms.
-Linux and Windows seams identically where the Cocoa version has it misplaced.
+2.compile this and execute for different platforms. Linux and Windows seams identically where the Cocoa version has it misplaced.
 3.copy the application as image of an screen shot and overlay using a graphical editor supporting layer and opacity.

@@ -1,10 +1,8 @@
 Regression: table viewer cannot edit cell without text
-The attached sample view used to work with 3.2 M5, stopped working in the more recent integration builds.
-To reproduce:
+The attached sample view used to work with 3.2 M5, stopped working in the more recent integration builds. To reproduce:
 1) Import the attached archive as a project into the workspace
 2) Launch second Eclipse and show 'Sample View'
 3) Click on one of the images in the first table column.
-Expected behaviour (as in M5): combo box cell editor should show up allowing you to change from 'Low', 'Medium' and 'High'.
-When leaving the edit mode, image in the first column should switch.
+Expected behaviour (as in M5): combo box cell editor should show up allowing you to change from 'Low', 'Medium' and 'High'. When leaving the edit mode, image in the first column should switch.
 Current behaviour: nothing happens when clicking on the image cell.
 Some debugging points at strange value returned by getBounds for the cell when reacting to the mouse down event (looks like the cell didn't take image width into acount, just text).

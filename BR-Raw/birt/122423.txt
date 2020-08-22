@@ -1,10 +1,2 @@
 Bug 122423 Support page range in RenderTask
-Support page range in render task.
-For PDF format, simply log a message saying range is not supported if a range is specified, and still output whole report.
-For HTML format, support page range in the form of "1,2,5-10" + "All".
-The code should check if there is range set.
-If so, parse it and form a range and output them one after another, with a page splitter in between just like the runAndRenderTask.
-If no range is set, check if page number is set.
-There can only be one page in case a page number is set.
-Invalid page number should be logged, and error message is returned.
-If neither is set, we default to all pages, instead of the current behavior of giving an error message.
+Support page range in render task. For PDF format, simply log a message saying range is not supported if a range is specified, and still output whole report. For HTML format, support page range in the form of "1,2,5-10" + "All". The code should check if there is range set. If so, parse it and form a range and output them one after another, with a page splitter in between just like the runAndRenderTask. If no range is set, check if page number is set. There can only be one page in case a page number is set. Invalid page number should be logged, and error message is returned. If neither is set, we default to all pages, instead of the current behavior of giving an error message.

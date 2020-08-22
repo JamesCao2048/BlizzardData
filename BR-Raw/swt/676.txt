@@ -1,10 +1,9 @@
 [Widgets] Problems with repeating events of Spinner widgets on Linux/GTK
 User-Agent:       Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1) Gecko/20090707 Iceweasel/3.5 (Debian-3.5-1) GTB5
 Build Identifier: I20090611-1540
-When the buttons on a spinner with digits are a selecting the spinner jumps quickly to its maximum or minimal values on Linux using GTK version.
-For Snipped190, it happens only if the increment is below 10.E.g., "spinner.setIncrement(1)" instead of
+When the buttons on a spinner with digits are a selecting the spinner jumps quickly to its maximum or minimal values on Linux using GTK version. For Snipped190, it happens only if the increment is below 10. E.g., "spinner.setIncrement(1)" instead of
 "spinner.setIncrement(10)".
 Reproducible: Always
 Steps to Reproduce:
-1.Click the "up" button in the Snippet190 (with spinner.setIncrement(1)) and hold it.
-2.Same happens with the up arrow of the keyboards.
+1. Click the "up" button in the Snippet190 (with spinner.setIncrement(1)) and hold it.
+2. Same happens with the up arrow of the keyboards.

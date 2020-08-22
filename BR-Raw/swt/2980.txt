@@ -1,7 +1,6 @@
 gtk_entry_set_text crashes when passed a zero-length buffer
 The Combo box (Combo.java:1369) passes 'gtk_entry_set_text' a zero-length byte
-buffer.
-This seems to cause the VM to crash after _gtk_entry_set_text exits.
+buffer. This seems to cause the VM to crash after _gtk_entry_set_text exits.
 I am triggering this bug using the following procedure:
 - Using eclipse 3.1M6
 - Using CDT 3.0.1 build

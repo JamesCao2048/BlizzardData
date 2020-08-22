@@ -1,3 +1,2 @@
 Bug 117444 The method setDefault(Object) in UserPropertyDefn should be public.
-The method setDefault(Object) in UserPropertyDefn should be public to let the user set the default value for the user defined property.
-In the current implemntation, this method is a protected method.
+The method setDefault(Object) in UserPropertyDefn should be public to let the user set the default value for the user defined property. In the current implemntation, this method is a protected method.

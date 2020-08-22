@@ -21,10 +21,8 @@ imageGC.fillRectangle(image.getBounds());
 imageGC.dispose();
 
 ImageData data = image.getImageData();
-for (int y = 0; y
-< data.height; y++) {
-for (int x = 0; x
-< data.width; x++) {
+for (int y = 0; y < data.height; y++) {
+for (int x = 0; x < data.width; x++) {
 data.setAlpha(x, y, 0xFF);
 }
 }

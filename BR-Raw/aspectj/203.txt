@@ -26,6 +26,4 @@ at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:887)
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:244)
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:163)
-at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
-at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
-NullPointerException thrown: null
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdap

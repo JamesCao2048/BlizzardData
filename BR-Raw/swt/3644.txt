@@ -7,8 +7,7 @@ build 20030611
 -Mouse select to the right to activate auto scrolling and then select up one
 line (to the blank line)
 ->An ArrayIndexOutOfBoundsException is thrown in StyledTextBidi.getVisualOffset
-java.lang.ArrayIndexOutOfBoundsException:
--1
+java.lang.ArrayIndexOutOfBoundsException: -1
 at org.eclipse.swt.custom.StyledTextBidi.getVisualOffset
 (StyledTextBidi.java:807)
 at org.eclipse.swt.custom.StyledText.doVisualNext(StyledText.java:3351)

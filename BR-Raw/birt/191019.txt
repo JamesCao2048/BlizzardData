@@ -1,10 +1,2 @@
 Bug 191019 Add a second measure to xtab detail area affacts Totals.[1102]
-Description: Add a second measure to xtab detail area affacts Totals.
-Build number:2.2.0.v20070605 Steps to reproduce: 1.Open attached report.
-2.Add max measure to detail area and observe Layout change.
-3.In Row area, remove max grand total and observe Layout change.
-Expected result: If adding measure to detail area will afface grand total, it should affact both column grand total and row grand total.
-Otherwise, both grand totals should not be affacted.
-Actual result: In step2, max grand total add to row area but not to column area.
-In step3, max grand total appears in column grand total instead of remove max grand total in row area.
-Error log:N/A
+Description: Add a second measure to xtab detail area affacts Totals. Build number:2.2.0.v20070605 Steps to reproduce: 1. Open attached report. 2. Add max measure to detail area and observe Layout change. 3. In Row area, remove max grand total and observe Layout change. Expected result: If adding measure to detail area will afface grand total, it should affact both column grand total and row grand total. Otherwise, both grand totals should not be affacted. Actual result: In step2, max grand total add to row area but not to column area. In step3, max grand total appears in column grand total instead of remove max grand total in row area. Error log:N/A

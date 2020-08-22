@@ -1,4 +1,2 @@
 Bug 206861 The data set cache should handle IOException and the cancel request from customer
-The data set data will be saved into disk file in the first query and it will be loaded in the later time.
-The processing of write disk file may be cancelled by customer request or IOException.
-Using the data from the bad file will cause error.
+The data set data will be saved into disk file in the first query and it will be loaded in the later time. The processing of write disk file may be cancelled by customer request or IOException. Using the data from the bad file will cause error.

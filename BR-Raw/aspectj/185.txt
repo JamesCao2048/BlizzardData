@@ -42,4 +42,4 @@ at org.aspectj.ext.ltw13.ClassPreProcessorAdapter.preProcess(ClassPreProcessorAd
 at org.codehaus.aspectwerkz.hook.impl.ClassPreProcessorHelper.defineClass0Pre(ClassPreProcessorHelper.java:107)
 at java.lang.ClassLoader.defineClass(ClassLoader.java:539)
 ...
-NOTE: I'm using Alex Vasseur's adaptor to invoke AspectJ LTW from a 1.4 VM, but with recursion protection added. I don't think that should change the expected behavior of Aj.
+NOTE: I'm using Alex Vasseur's adaptor to invoke AspectJ LTW from a 1

@@ -1,9 +1,6 @@
 [Cell Editors] Can not see what value I am typing in the Properties
 The "Value" field in property sheets does not scroll properly when entering a
-value longer than the column size.
-It does scroll but it's behind, e.g.
-if I
+value longer than the column size.  It does scroll but it's behind, e.g. if I
 type "org.eclipse.longtestcase.abcd", after I type "d" it may only scroll up
-to "a"
-- so I don't see what I am typing.
+to "a" - so I don't see what I am typing.
 This happens on WinXP, but on GTK it scrolls correctly.

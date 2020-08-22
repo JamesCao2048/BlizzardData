@@ -1,11 +1,8 @@
 GTK Error calling TreeItem.getExpanded() on a tree item being disposed.
 Here's a simple test case that works just fine on Motif, Windows and OS X, but
-crashes on GTK.
-We do something similar in GEF and it crashes the entire
-workbench
--- I couldn't find anything in the log or console that even showed an
-error occured.
-This test case here shows the following error message in the
+crashes on GTK.  We do something similar in GEF and it crashes the entire
+workbench -- I couldn't find anything in the log or console that even showed an
+error occured.  This test case here shows the following error message in the
 console:
 Gtk-ERROR **: file gtktreestore.c: line 576 (gtk_tree_store_get_path): assertion
 failed: (G_NODE (iter->user_data)->parent != NULL)

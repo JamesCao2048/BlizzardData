@@ -1,7 +1,2 @@
 Bug 223053 Undo issue when adjusting size for plot/axis chart
-Currently, adjusting the size of plot/axis chart, will sync axis/plot chart via listener.
-This leads to endless undo.
-For instance, enlarge plot chart will enlarge axis chart.
-If you undo it, plot chart will be shorten and axis chart will be shorten via listener.
-Then you can still undo because axis chart being shorten occurs.
-We need to figure out the sync means without listener.
+Currently, adjusting the size of plot/axis chart, will sync axis/plot chart via listener. This leads to endless undo. For instance, enlarge plot chart will enlarge axis chart. If you undo it, plot chart will be shorten and axis chart will be shorten via listener. Then you can still undo because axis chart being shorten occurs. We need to figure out the sync means without listener.

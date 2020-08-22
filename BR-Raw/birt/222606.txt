@@ -1,5 +1,2 @@
 Bug 222606 BIRT 2.2. a margin of 0px added to the body
-I moved from BIRT 2.1 to 2.2 and my reports are not coming up properly.
-On further investigation, i found out that in 2.2 reports, it looks like:
-<body class="style_report" style=" margin:0px;"> this margin style wasn't there in 2.1.AS a result, the reports i get in 2.2 don't have any spacing around .
-So if I have table in the report, it just takes up the whole space
+I moved from BIRT 2.1 to 2.2 and my reports are not coming up properly. On further investigation, i found out that in 2.2 reports, it looks like: <body class="style_report" style=" margin:0px;"> this margin style wasn't there in 2.1. AS a result, the reports i get in 2.2 don't have any spacing around . So if I have table in the report, it just takes up the whole space

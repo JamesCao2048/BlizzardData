@@ -1,10 +1,8 @@
 Tree: Text corruption in cells after moving column 0 and resizing column
 SWT CVS Win32
-This problem only occurs if TreeColumn 0 is moved and resized.
-Setting it as the sort column doesn't seem to matter, but it highlights the problem in this snippet.
-1.Move column 0 (drag and drop).
-2.Resize that same selected column thinner and then wider.
-The text in all cells in that column becomes corrupted.
+This problem only occurs if TreeColumn 0 is moved and resized.  Setting it as the sort column doesn't seem to matter, but it highlights the problem in this snippet.
+1. Move column 0 (drag and drop).
+2. Resize that same selected column thinner and then wider.  The text in all cells in that column becomes corrupted.
 public static void main(String[] args) {
 final Display display = new Display();
 final Shell shell = new Shell(display);
@@ -12,8 +10,7 @@ shell.setLayout(new FillLayout());
 final int columns = 5;
 final Tree tree = new Tree(shell, SWT.BORDER | SWT.VIRTUAL | SWT.FULL_SELECTION | SWT.MULTI);
 
-for (int i = 0; i
-< columns; i++) {
+for (int i = 0; i < columns; i++) {
 TreeColumn tc = new TreeColumn(tree, SWT.LEFT);
 tc.setWidth(75);
 tc.setMoveable(true);
@@ -28,8 +25,7 @@ tree.addListener(SWT.SetData, new Listener() {
 public void handleEvent(Event event) {
 TreeItem item = (TreeItem) event.item;
 String text = String.valueOf(event.index) + "MMMMMMMMMMMMMMMMMMMMMMMM";
-for (int i = 0; i
-<= columns; i++) {
+for (int i = 0; i <= columns; i++) {
 item.setText(i, text);
 }
 }

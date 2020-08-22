@@ -1,8 +1,7 @@
 CCombo dropdown list can go off the top screen bound
 Build Identifier: Version: 3.7.2 Build id: M20120208-0800
 If there are too many items in the dropdown list of CCombo (setVisibleItemCount = getItemCount > display.height / getItemHeight), dropdown goes off the top edge of the screen, making it impossible to select topmost items.
-Once there was a  bug 37329  that mentioned all screen bounds for CCombo dropdown.
-It was closed as invalid (duplicate), however:
+Once there was a  bug 37329  that mentioned all screen bounds for CCombo dropdown. It was closed as invalid (duplicate), however:
 -  bug 135040  was fixed to prevent going off the right edge
 -  bug 308083  proposes a fix to prevent going off the left edge
 -  bug 7946  was fixed to prevent going off the bottom edge

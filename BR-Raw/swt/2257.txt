@@ -1,8 +1,6 @@
 Combo displays selection range without focus
 Editable Combos display their selection range even when they don't have focus.
-Text does not do this.
-Maybe this is just a bug in windows.
-It is confusing
+Text does not do this. Maybe this is just a bug in windows. It is confusing
 because it makes it hard to identify which control has keyboard focus.
 public static void main(String[] args) {
 Display display = new Display();

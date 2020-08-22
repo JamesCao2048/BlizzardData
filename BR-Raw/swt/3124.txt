@@ -27,15 +27,11 @@ display.dispose();
 }
 }
 Grab the second Sash (right to the button), move it as far as possible to the
-left (the button becomes very thin).
-Try to grab the same Sash again.
-Notice
+left (the button becomes very thin). Try to grab the same Sash again. Notice
 that its not possible.
 Note: Bug does not occur when not using SWT.SMOOTH
-Suggestion: Its possible to size the button thiner, as without SWT.SMOOTH.
-I
+Suggestion: Its possible to size the button thiner, as without SWT.SMOOTH. I
 guess when using SWT.SMOOTh the button becomes that thin, that the Sash itself
-becomes invisible.
-The SashForm should not allow to resize the Sash to a smaller
+becomes invisible. The SashForm should not allow to resize the Sash to a smaller
 value than possible when not using SWT.SMOOTH.
 Ben

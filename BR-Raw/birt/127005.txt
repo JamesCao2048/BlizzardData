@@ -1,6 +1,2 @@
 Bug 127005 Dynamic drill thru link to book mark
-To create a drill thru link to a report document, user has to pre-create book marks in the target report today.
-But in many cases, the target report could be designed by a different report writer.
-And that report writer may not know what section of the report others want to link to.
-We shall not require the target report has pre-created book mark for other reports to link to it.
-We shall allow link to a report's TOC, and allow link to report based on report item ID + row id (col name, col value) For BIRT 2.1, we only need to add support of drill thru link to tarket report's TOC.
+To create a drill thru link to a report document, user has to pre-create book marks in the target report today. But in many cases, the target report could be designed by a different report writer. And that report writer may not know what section of the report others want to link to. We shall not require the target report has pre-created book mark for other reports to link to it. We shall allow link to a report's TOC, and allow link to report based on report item ID + row id (col name, col value) For BIRT 2.1, we only need to add support of drill thru link to tarket report's TOC.

@@ -5,5 +5,4 @@ StyledText styledText = new StyledText(shell, SWT.V_SCROLL
 | SWT.H_SCROLL);
 Enter the following characters and observe where the cursor moves after each character:
 abcdeffg
-Note that after entering the second 'f' the cursor is in the wrong position.
-Happens for the ligature 'fi' as well.
+Note that after entering the second 'f' the cursor is in the wrong position. Happens for the ligature 'fi' as well.

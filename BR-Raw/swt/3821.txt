@@ -1,20 +1,13 @@
 Accessibility - Tabbing causes a button to become the default
 I am currently running the F4 build of Eclipse 2.0.
-I have an editor with some push buttons on them.
-As I tab through my controls
+I have an editor with some push buttons on them.  As I tab through my controls
 in my editor, I get to a push button which is not specified as being the
-default button.
-When tabbing into it, it gets the default.
-when tabbing out
-of it, it loses the default.
-This is working fine, but the next time I tab in,
-it gets the default, but when I tab out, the default remains.
-If I tab to
+default button.  When tabbing into it, it gets the default.  when tabbing out
+of it, it loses the default.  This is working fine, but the next time I tab in,
+it gets the default, but when I tab out, the default remains.  If I tab to
 another button and press enter, I get the action for the default button, which
 is wrong because it is not the one with the focus.
-Here is a proposed code fix.
-This fixes my problem.
-I am not sure if it
+Here is a proposed code fix.  This fixes my problem.  I am not sure if it
 breaks other things???:
 org.eclipse.swt.widgets.Decorations
 void setDefaultButton (Button button, boolean save) {

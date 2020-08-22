@@ -1,6 +1,2 @@
 Bug 209599 Enable getSize() in IReportItemPresentation and IReportItemGeneration
-Currently, engines IReportItemPresentation and IReportItemGeneration.getSize() are not invoked by any classes.
-However, in some cases, such as cross tab integration, chart should set the dimension to output an image with specified size.
-The rule is, if ExtendedItems dimension property is undefined, engine will use getSize() to get the dimension of ExtendedItem.
-If user sets ExtendedItems dimension property, engine will get the dimension.
-Additionally, when chart is dropped into cross tab, the dimension property should be unset, so chart dimension can be resized correctly by internal computation.
+Currently, engines IReportItemPresentation and IReportItemGeneration.getSize() are not invoked by any classes. However, in some cases, such as cross tab integration, chart should set the dimension to output an image with specified size. The rule is, if ExtendedItems dimension property is undefined, engine will use getSize() to get the dimension of ExtendedItem. If user sets ExtendedItems dimension property, engine will get the dimension. Additionally, when chart is dropped into cross tab, the dimension property should be unset, so chart dimension can be resized correctly by internal computation.

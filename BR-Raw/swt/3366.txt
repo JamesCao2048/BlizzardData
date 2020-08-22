@@ -1,8 +1,6 @@
 NPE Pressing CTRL-O in java editor
-I20040511 8AM build.
-I had a java editor open, and pressed CTRL-O (it had been
-working for a long time).
-This appeared in the log:
+I20040511 8AM build. I had a java editor open, and pressed CTRL-O (it had been
+working for a long time). This appeared in the log:
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Control.WM_KEYDOWN(Control.java:3393)
 at org.eclipse.swt.widgets.Control.windowProc(Control.java:2978)

@@ -1,12 +1,9 @@
 WinCE: Image 32bits is incorrect
-Following should display 2 blue squares.
-The second square appears red on
+Following should display 2 blue squares. The second square appears red on
 WinCE.
-The bug is in Image.java
-- when creating a dibsection the BI_BITFIELDS masks
+The bug is in Image.java - when creating a dibsection the BI_BITFIELDS masks
 are not written in the same endianess (little endian) as the
-ImageData.setPixel and ImageData.bitblit do (big endian).
-This is correct for
+ImageData.setPixel and ImageData.bitblit do (big endian). This is correct for
 16 bits.
 public static void main(String[] args) {
 Display display = new Display();
@@ -14,20 +11,16 @@ Shell shell = new Shell(display, SWT.CLOSE);
 /* 16bit blue square */
 ImageData data16 = new ImageData(30,30, 16,
 new PaletteData(0x7C00, 0x3E0, 0x1F));
-for (int y = 0; y
-< data16.height; y++) {
-for (int x = 0; x
-< data16.width; x++) {
+for (int y = 0; y < data16.height; y++) {
+for (int x = 0; x < data16.width; x++) {
 data16.setPixel(x,y,0x1f);
 }
 }
 /* 32bit blue square */
 ImageData data32 = new ImageData(30,30, 32,
 new PaletteData(0xff00, 0xff, 0xff0000));
-for (int y = 0; y
-< data32.height; y++) {
-for (int x = 0; x
-< data32.width; x++) {
+for (int y = 0; y < data32.height; y++) {
+for (int x = 0; x < data32.width; x++) {
 data32.setPixel(x,y,0xff0000);
 }
 }

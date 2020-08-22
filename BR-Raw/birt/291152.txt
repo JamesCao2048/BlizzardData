@@ -1,15 +1,3 @@
 Bug 291152 GC scaling and translation not applied to chart drawing
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 Build Identifier: M20090211-1700 when drawing a chart to a GC the transformation matrix stored in the GC is not used while painting the chart to the GC.
-Instead the chart is painted with usting identity transformation.
---- I am using paperclips to print pages and show previews.
-Printing works well, but when previewing the transformation stored in the GC (gc.get/setTransform) is not respected.
-Instead everything is painted unscaled from the untranslated origin of the GC.
-to be more precise: A printer image GC is initiliazed with 300 dpi and scaled to fit into the screen and thus having a scaling factor of about 0.14...
-.
-Birt draws a chart on the printer image GC without any scaling/translation and therefore
-- after drawing the image on the screen
-- out of my screen boundaries exept the white background pane which is at its right place.
-when setting the rendering boundaries to 0.14...
-of the previosly used chart size, the drawing might be in the right place, but the fonts are shown 0.14...^-1 times larger as they should be.
-When moving the displayed area of the enlarged page the chart is drawn always in the same position on the screen and doesn't move around with the rest of the page (This is where the translation comes into play).
-Reproducible: Always Steps to Reproduce: 1.draw a shart to a GC with a non-identity transformation matrix
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 Build Identifier: M20090211-1700 when drawing a chart to a GC the transformation matrix stored in the GC is not used while painting the chart to the GC. Instead the chart is painted with usting identity transformation. --- I am using paperclips to print pages and show previews. Printing works well, but when previewing the transformation stored in the GC (gc.get/setTransform) is not respected. Instead everything is painted unscaled from the untranslated origin of the GC. to be more precise: A printer image GC is initiliazed with 300 dpi and scaled to fit into the screen and thus having a scaling factor of about 0.14... . Birt draws a chart on the printer image GC without any scaling/translation and therefore - after drawing the image on the screen - out of my screen boundaries exept the white background pane which is at its right place. when setting the rendering boundaries to 0.14... of th
+e previosly used chart size, the drawing might be in the right place, but the fonts are shown 0.14...^-1 times larger as they should be. When moving the displayed area of the enlarged page the chart is drawn always in the same position on the screen and doesn't move around with the rest of the page (This is where the translation comes into play). Reproducible: Always Steps to Reproduce: 1. draw a shart to a GC with a non-identity transformation matrix

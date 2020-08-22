@@ -4,16 +4,14 @@ Hide Column 1
 Show Column 1
 Resize Column 1
 Hide Column 1 action sets the width of column 1 to zero.
-Show Column 1 action sets the width of column 1 to 100. It also adds a control listener to catch the columns's resize event.
+Show Column 1 action sets the width of column 1 to 100.  It also adds a control listener to catch the columns's resize event.
 To see the problem:
-1. Press Hide Column 1 action.
-2. Press Show Column 1 action.
+1.  Press Hide Column 1 action.
+2.  Press Show Column 1 action.
 Expected Result:
 When the Show Column 1 button is pressed, it's expected that my control listener will get a resize event and will print out "Column Resized" in the console.
-
 Actual Result:
-My listener never gets a resize event when "Show Column 1" action is run.
-However, if I press the "Resize Column 1" action which further resizes the column, my listener will be notified.
+My listener never gets a resize event when "Show Column 1" action is run.  However, if I press the "Resize Column 1" action which further resizes the column, my listener will be notified.
 If I run this testcase on Windows, my control listener is notified consistenly when "Show Column 1" is pressed.
 public class TestResize {
 private static TableColumn column1;
@@ -39,8 +37,7 @@ column1.setText("B");
 column3 = new TableColumn(table, SWT.NONE);
 column1.setText("C");
 
-for (int i = 0; i
-< 500; i++) {
+for (int i = 0; i < 500; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText(new String[] { "cell "+i+" 0", "cell "+i+" 1", "cell "+i+" 2"});
 }
@@ -81,4 +78,4 @@ Button action3 = new Button(shell, SWT.PUSH);
 action3.setText("Resize Column 1");
 action3.addSelectionListener(new SelectionListener() {
 public void widgetSelected(SelectionEvent e) {
-// expect to see Control Resized printed whe
+// expect to see Control Resized printed w

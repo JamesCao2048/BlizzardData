@@ -1,10 +1,7 @@
 Selection in open type dialog does not work
 I200411010800, I200411021200, GTK+ 2.2.1
 
-This problem is specific to GTK+ 2.2.1. It does not occur in GTK+ 2.2.4 or the
-GTK+ 2.4.0 series.
-Open the "Open Type" dialog, and type in part of a class
-name (not a complete class name).
-Normally, this should select the top item.
-
+This problem is specific to GTK+ 2.2.1.  It does not occur in GTK+ 2.2.4 or the
+GTK+ 2.4.0 series.  Open the "Open Type" dialog, and type in part of a class
+name (not a complete class name).  Normally, this should select the top item.
 Currently, it selects nothing.

@@ -1,18 +1,14 @@
 Editor drop down performance slow on Linux-GTK on mouse move
-I wonder if the fix to  bug 44915  introduced a performance regression.
-I'm using
-I20040513 GTK and the UI is sluggish in a number of places.
-The most apparent
+I wonder if the fix to  bug 44915  introduced a performance regression.  I'm using
+I20040513 GTK and the UI is sluggish in a number of places.  The most apparent
 is when using the "Open Editor Drop Down" command to bring up the list of open
 editors.
-1. Open 5 or so files.
-2. Open Editor Drop Down.
-3. Move the mouse cursor up and down over the list of editors quickly a few times.
+1.  Open 5 or so files.
+2.  Open Editor Drop Down.
+3.  Move the mouse cursor up and down over the list of editors quickly a few times.
 Notice that the highlighting of the list elements trails behind the mouse
-movement significantly.
-That is, if I move the mouse over the first, then
-second, then third, etc.
-editor in the list and then reverse the direction back
+movement significantly.  That is, if I move the mouse over the first, then
+second, then third, etc. editor in the list and then reverse the direction back
 up to the first editor in the list, the highlight moves from the first to the
 second to the third, etc., but it lags behind the mouse.
 This kind of behavior seems suspiciously likely to be a result of queuing UI

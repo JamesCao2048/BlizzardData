@@ -1,10 +1,9 @@
 Mylyn task list draws icons in wrong spot
 Created  attachment 127868   [details]
 Screen shot
-This is with I20090304 + HEAD of SWT from about 11 a.m.
-PST on 3/6.
-1.Set up mylyn so you have a task list from the Eclipse bugzilla
-2.Run a query so the task list is populated.
-3.View results.
+This is with I20090304 + HEAD of SWT from about 11 a.m. PST on 3/6.
+1. Set up mylyn so you have a task list from the Eclipse bugzilla
+2. Run a query so the task list is populated.
+3. View results.
 --> Task status icons are first drawn at the far left of the row and again in the correct spot.
 See attached screen shot.

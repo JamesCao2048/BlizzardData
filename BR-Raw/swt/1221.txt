@@ -5,8 +5,7 @@ Identifier:      org.eclipse.eclipse
 Version:         3.4 (3.4)
 Code Type:       X86 (Native)
 Parent Process:  launchd [1]
-Date/Time:       2009-01-27 14:09:34.311
--0600
+Date/Time:       2009-01-27 14:09:34.311 -0600
 OS Version:      Mac OS X 10.5.6 (9G55)
 Report Version:  6
 Exception Type:  EXC_BAD_ACCESS (SIGBUS)
@@ -15,8 +14,7 @@ Crashed Thread:  0
 Application Specific Information:
 Java information:
 Version: Java HotSpot(TM) Client VM (1.5.0_16-133 mixed mode)
-Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_16-133) for macosx-x86, built on Aug 27 2008 11:00:20 by root with gcc 4.0.1 (Apple Inc.
-build 5465)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_16-133) for macosx-x86, built on Aug 27 2008 11:00:20 by root with gcc 4.0.1 (Apple Inc. build 5465)
 Exception type: Bus Error (0xa) at pc=0x3cd30c4f
 Current thread (0x00601500):  JavaThread "main" [_thread_in_native, id=-1607416032]
 Stack: [0xbf800000,0xc0000000)
@@ -42,4 +40,4 @@ j  org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(Lorg/e
 j  org.eclipse.debug.ui.actions.OpenLaunchDialogAction.run()V+53
 j  org.eclipse.jface.action.Action.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+1
 j  org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Lorg/eclipse/swt/widgets/Event;Z)V+354
-j  org.eclipse.jface.action.ActionContributionItem.access$2(Lorg/eclipse/jface/action/ActionContributionItem;Lorg/eclipse/s
+j  org.eclipse.jface.action.ActionContributionItem.access$2(Lorg/eclipse/jface/action/ActionContributionItem;Lorg/eclipse/sw

@@ -9,9 +9,6 @@ Steps in the SDK:
 - click Cancel
 => now, the Properties dialog is broken:
 - Tab or Ctrl+Tab don't move the focus
-- when you Command+Tab to another application, the Properties dialog still looks active (colored trim buttons), but it isn't.
-When you try to Command+Tab back to the dialog, it doesn't take focus.
-- when you try to click OK or Cancel, the first click does not press the button.
-But the second click works as expected.
-I didn't find a good pattern to tell where or why this happens, but it happens consistently for some dialogs.
-Another case in the SDK is when you add a resource filter and then double-click to edit a filter.
+- when you Command+Tab to another application, the Properties dialog still looks active (colored trim buttons), but it isn't. When you try to Command+Tab back to the dialog, it doesn't take focus.
+- when you try to click OK or Cancel, the first click does not press the button. But the second click works as expected.
+I didn't find a good pattern to tell where or why this happens, but it happens consistently for some dialogs. Another case in the SDK is when you add a resource filter and then double-click to edit a filter.

@@ -1,7 +1,2 @@
 Bug 161912 One more blank page in web view when set a page break on detail data item
-Details: One more blank page in web view when set a page break on detail data item Step: 1.New a datasource and dataset 2.New a table that binding the dataset.
-3.Add a group and a data item in detail row.
-4.Set the page break on the data item.
-5.Preview as web view.
-Actual result: One more blank page display in web view.
-(Find in org.eclipse.birt.report.tests.enginesrcorgeclipsebirtreporttestsengineregressionRegression_156969.java)
+Details: One more blank page in web view when set a page break on detail data item Step: 1.New a datasource and dataset 2.New a table that binding the dataset. 3.Add a group and a data item in detail row. 4.Set the page break on the data item. 5.Preview as web view. Actual result: One more blank page display in web view. (Find in org.eclipse.birt.report.tests.enginesrcorgeclipsebirtreporttestsengineregressionRegression_156969.java)

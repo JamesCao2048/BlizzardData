@@ -1,13 +1,10 @@
 UnsatisfiedLinkError jawt.dll already loaded in another classloader
-I am developing plugins for various IDEs.
-Till now all our products were Swing
+I am developing plugins for various IDEs. Till now all our products were Swing
 based and all the plugins were working fine.
-We recently switched from Swing to SWT.
-Now I am trying to embedd our products
+We recently switched from Swing to SWT. Now I am trying to embedd our products
 (SWT components) in various IDEs( Swing components).
 I am using jars and dlls of Eclipse 3.
-Embedding of SWT in Swing is working fine in stand alone application.
-But when
+Embedding of SWT in Swing is working fine in stand alone application. But when
 I deploy my plugin in IDE eg IntelliJ IDEA, following error is thrown
 org.eclipse.swt.SWTError: Not implemented (java.lang.UnsatisfiedLinkError:
 Native Library D:AppsIDEsIdea4.0jrebinjawt.dll already loaded in another
@@ -35,14 +32,11 @@ at com.appperfect.plugins.common.DisplayThread.swtEventLoop(DisplayThrea
 d.java:72)
 at com.appperfect.plugins.common.DisplayThread.run
 (DisplayThread.java:65)
-We are not able to proceed because of this problem.
-If problem is not resolved
-then we may have to switched back to Swing.
-:(
+We are not able to proceed because of this problem. If problem is not resolved
+then we may have to switched back to Swing. :(
 Problem is because SWT_AWT explicitly loads jawt.dll, this may be because
 SWT_AWT or some other class in swt.jar directly calls a native method in
-jawt.dll.
-If this is not so and just swt dlls have internal dependeny on
+jawt.dll. If this is not so and just swt dlls have internal dependeny on
 jawt.dll then I think explicit loading of jawt is not required.
 Is there any work around?
 Am I missing something?

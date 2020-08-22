@@ -1,10 +1,9 @@
 [Win32] MessageBox gets stuck in event loop
-Here is the follow up got  Bug 227968 .
-The problem:
-1.Bring up a message box.
-2.Bring up another modal dialog.
-3.Click on the message box buttons to dismiss it.
-4.Other dialog is now frozen.
+Here is the follow up got  Bug 227968 . The problem:
+1. Bring up a message box.
+2. Bring up another modal dialog.
+3. Click on the message box buttons to dismiss it.
+4. Other dialog is now frozen.
 What happens is that we never get out of the message box event loop after dismissing the messagebox.
 The snippet that illustrates the problem:
 public static void main (String [] args) {

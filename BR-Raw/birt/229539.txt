@@ -1,12 +1,2 @@
 Bug 229539 BIRT converts names of imported styles to upper case
-Create a sample CSS file and place it in a Resources folder within your BIRT project.
-In this file, create a style called "My-Style".
-Create a report.
-Import the CSS file into the report.
-Create a label in the report.
-Use the context menu Style->Assign Style.
-Notice that the style is listed as "MY-STYLE".
-Now, it may be true that CSS is case-insensitive.
-However, it is not helpful to me as a user if BIRT converts my style names to upper case.
-Instead, BIRT should preserve the case of the names from the CSS file.
-Hence, the menu should list the style as "My-Style" (as it was in the CSS file.)
+Create a sample CSS file and place it in a Resources folder within your BIRT project. In this file, create a style called "My-Style". Create a report. Import the CSS file into the report. Create a label in the report. Use the context menu Style->Assign Style. Notice that the style is listed as "MY-STYLE". Now, it may be true that CSS is case-insensitive. However, it is not helpful to me as a user if BIRT converts my style names to upper case. Instead, BIRT should preserve the case of the names from the CSS file. Hence, the menu should list the style as "My-Style" (as it was in the CSS file.)

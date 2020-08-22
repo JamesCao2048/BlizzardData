@@ -1,21 +1,11 @@
 [OLE] Failure save 2003 Word document with embedded Word 2007 editor
 Build ID: N20090322-2000
 Steps To Reproduce:
-1.Create a Word doc (it can have just one word) saved in the 2003 format with the .doc extension.
-2.Open it in a Word 2007 embedded Eclipse editor.
-3.Modify it and try to save.
-You might get the "Cannot save
-<docname>" error dialog.
+1. Create a Word doc (it can have just one word) saved in the 2003 format with the .doc extension.
+2. Open it in a Word 2007 embedded Eclipse editor.
+3. Modify it and try to save.  You might get the "Cannot save <docname>" error dialog.
 More information:
-So, basically, saving a 2003 doc from an embedded 2007 Word editor fails on certain machines consistently.
-This was reported by one of our customers as happening on every machine at their site.
-That suggests that there might be some configuration leading to this problem.
-Out of the five machines we tried this on, only one had the same problem.
-The others worked fine.
-Note that the people who ran into this problem did not have a problem saving Excel 2003 docs in an embedded OLE editor.
-There is no error being logged.
-By debugging, we found that the following line (line 1205) in OleClientSite#saveToStorageFile() returns
--2147287007.
+So, basically, saving a 2003 doc from an embedded 2007 Word editor fails on certain machines consistently.  This was reported by one of our customers as happening on every machine at their site.  That suggests that there might be some configuration leading to this problem.  Out of the five machines we tried this on, only one had the same problem.  The others worked fine.  Note that the people who ran into this problem did not have a problem saving Excel 2003 docs in an embedded OLE editor.
+There is no error being logged.  By debugging, we found that the following line (line 1205) in OleClientSite#saveToStorageFile() returns -2147287007.
 int result = COM.StgCreateDocfile(path, mode, 0, address);
-We're based on Eclipse 3.4 but we were able to reproduce this in the latest code stream as well.
-I found defect 35026 and defect 43379 that were similar, but not quite the same, so I opened this new defect.
+We're based on Eclipse 3.4 but we were able to reproduce this in the latest code stream as well.  I found defect 35026 and defect 43379 that were similar, but not quite the same, so I opened this new defect.

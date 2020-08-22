@@ -1,10 +1,7 @@
 Eclipse won't start due to error in System.Windows.FontStretch.FromOpenTypeStretch
 Build: I20070403
-This WPF build fails to start the workbench.
-There are hundreds of errors on stdout/stderr, and a number of errors in the log.
-Here is a sample of the errors that appear on stderr:
-LEAK
--> 99=#FF5F3F5F type=System.Windows.Media.Color
+This WPF build fails to start the workbench. There are hundreds of errors on stdout/stderr, and a number of errors in the log. Here is a sample of the errors that appear on stderr:
+LEAK -> 99=#FF5F3F5F type=System.Windows.Media.Color
 java.lang.Exception
 at org.eclipse.swt.internal.wpf.OS.Color_FromArgb(Native Method)
 at org.eclipse.swt.graphics.Color.init(Color.java:234)

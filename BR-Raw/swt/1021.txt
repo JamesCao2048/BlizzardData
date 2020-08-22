@@ -1,10 +1,8 @@
 [KeyBindings] copy/paste doesn't always work in dialogs
-It seems that pasting into a dialog doesn't always work.
-To reproduce follow these steps exactly:
+It seems that pasting into a dialog doesn't always work.  To reproduce follow these steps exactly:
 # open an editor (of almost any kind, as long as it's a text editor)
 # in the package explorer view from the context menu select 'copy qualified name'
-# use the *Search
--> File* function, and attempt to paste into the *Containing Text* editable combo
+# use the *Search -> File* function, and attempt to paste into the *Containing Text* editable combo
 ## observe that it doesn't work
 # close the dialog
 # paste into the editor that we opened previously

@@ -1,7 +1,6 @@
 Regression: Spinner reports wrong value
 SWT-win32, v3128 (3.1M6)
-Run the snippet below.
-Press the down button of the spinner widget.
+Run the snippet below. Press the down button of the spinner widget.
 Even though the visible value is now 99, getSelection() reports a value
 of 100 when called from within the modify listener attached to the spinner.
 In v3127, the correct value (99) was returned.

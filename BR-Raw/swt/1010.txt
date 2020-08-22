@@ -1,7 +1,4 @@
 Save As.. dialog is not seeded with selection's file name
-Cocoa issue.
-This is verifiable by attempting to view an attachment for a bug on Eclipse.org that has been uploaded as (application/octet-stream).
-When the Save As..
-dialog comes up the file name text field is blank, while on Carbon this field would have been populated by with the original file's name.
+Cocoa issue. This is verifiable by attempting to view an attachment for a bug on Eclipse.org that has been uploaded as (application/octet-stream). When the Save As.. dialog comes up the file name text field is blank, while on Carbon this field would have been populated by with the original file's name.
 Version: 3.5.0
 Build id: I20090416-1053

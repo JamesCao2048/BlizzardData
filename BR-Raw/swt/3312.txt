@@ -8,14 +8,12 @@ Color [] bgSelectedGradient = new Color[] {display.getSystemColor
 int[] bgSelectedPercents = new int[] {50};
 folder.setSelectionBackground(bgSelectedGradient, bgSelectedPercents, true);
 The fix is to replace this:
-if (pos
-< height) {
+if (pos < height) {
 gc.setBackground(defaultBackground);
 gc.fillRectangle(x, pos, width, height-pos);
 }
 with this:
-if (pos
-< height) {
+if (pos < height) {
 gc.setBackground(defaultBackground);
 gc.fillRectangle(x, pos, width, height-pos+1);
 }

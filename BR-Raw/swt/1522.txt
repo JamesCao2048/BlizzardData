@@ -4,11 +4,8 @@ exception when removing TableItem
 - File > Import...
 - Plug-in Development > Plug-ins and Fragments, Next
 - Next
-- select org.eclipse.jface from the left-side list, press the "Add
--->" button, which moves this item to the right-side list
-- press the "Required Plug-ins
--->" button, which moves a few other projects over to the right-side list
-
+- select org.eclipse.jface from the left-side list, press the "Add -->" button, which moves this item to the right-side list
+- press the "Required Plug-ins -->" button, which moves a few other projects over to the right-side list
 -> NOTE that the org.eclipse.jface item has disappeared from the right-side list but shouldn't have
 - now press the "<-- Remove All" button, and you'll get the error below, possibly a side-effect of the disappeared org.eclipse.jface item:
 org.eclipse.swt.SWTError: Item not removed
@@ -41,4 +38,4 @@ at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
 at org.eclipse.jface.window.Window.open(Window.java:801)
 at org.eclipse.ui.internal.handlers.WizardHandler$Import.executeHandler(WizardHandler.java:146)
 at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:273)
-at org.eclipse.ui.internal.handlers.HandlerProxy.e
+at org.eclipse.ui.internal.handlers.HandlerProxy.exec

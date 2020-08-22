@@ -1,8 +1,7 @@
 TextLayout#getBounds() only considers first line on carbon
 I20080325-0100, regression introduced by fix for  bug 223179  (was OK with TextLayout 1.79)
 TextLayout#getBounds() now only considers the first line of the text.
-E.g.
-when I set text to "CnnEror", the height is only 18.TextLayout#getLineBounds(int) also returns 0 as width for the third line.
+E.g. when I set text to "CnnEror", the height is only 18. TextLayout#getLineBounds(int) also returns 0 as width for the third line.
 This can be seen in Eclipse when hovering over C in this snippet (hover too small):
 /**
 * Eror

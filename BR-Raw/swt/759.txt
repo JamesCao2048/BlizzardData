@@ -1,9 +1,7 @@
 Crash due to call in SWT code for RHEL 4
 Build ID: Eclipse 3.4.2
 Steps To Reproduce:
-Our product, based on Eclipse 342 is crashing on RHEL 4 only for a particular scenario.
-The core dump below indicates the crash point is in the SWT code.
-
+Our product, based on Eclipse 342 is crashing on RHEL 4 only for a particular scenario.  The core dump below indicates the crash point is in the SWT code.
 1XHEXCPMODULE  Module: /usr/lib/libgtk-x11-2.0.so.0
 1XHEXCPMODULE  Module_base_address: 021C7000
 The crash point is in swt code:

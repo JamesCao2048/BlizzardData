@@ -1,6 +1,5 @@
 Display.ayncExec(null) does not cause readAndDispatch() to return true.
-Run this snippet and stop moving the mouse or typing.
-On all platforms but cocoa, you get a sequence
+Run this snippet and stop moving the mouse or typing. On all platforms but cocoa, you get a sequence
 like this printed to the console.
 loop=true
 loop=false

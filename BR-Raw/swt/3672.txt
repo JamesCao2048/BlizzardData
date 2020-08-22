@@ -1,22 +1,16 @@
 Override default behavior of 'F10' key
 I'm writing a terminal emulation application that emulates terminals where the
-functions keys are valid key strokes, including 'F10'.
-I need to be able to
+functions keys are valid key strokes, including 'F10'.  I need to be able to
 override the default behavior of the 'F10' key to have terminal applications run
-properly.
-As for the special key sequences (Ctrl + Esc), the default behavior
+properly.  As for the special key sequences (Ctrl + Esc), the default behavior
 does not need to be overridden because they are not valid user inputs on a terminal.
 Attached is a previous discussion with Steve Northover:
-I agree you have the case where you need to see F10. Please enter a
+I agree you have the case where you need to see F10.  Please enter a
 bugzilla report describing your case to avoid me telling you later that
 you don't really need to do this.
 The problem I see is that there are all kinds of special key sequences on
-the various platforms that do magic things.
-We might be able to work
-around F10 on Windows but what about Ctrl+Esc?
-The list goes on, can
-change between operating system releases and is not well documented.
-Let's
-continue the discussion in the bug report.
-Please paste in this text.
+the various platforms that do magic things.  We might be able to work
+around F10 on Windows but what about Ctrl+Esc?  The list goes on, can
+change between operating system releases and is not well documented. Let's
+continue the discussion in the bug report.  Please paste in this text.
 Thanks.

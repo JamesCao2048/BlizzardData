@@ -1,9 +1,6 @@
 ToolBar only needs to resize its children if the bounds are required
-ToolBar currently calls forceResize() in layoutItems().
-This is required to
-ensure that items with controls can update their position.
-This call is
+ToolBar currently calls forceResize() in layoutItems().  This is required to
+ensure that items with controls can update their position.  This call is
 expensive, and so deferring it until someone requires the bounds is a
-performance improvement.
-A similar strategy to the one used for getClientArea()
+performance improvement.  A similar strategy to the one used for getClientArea()
 of TabFolder and Group can be used.

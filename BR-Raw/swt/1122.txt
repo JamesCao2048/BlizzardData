@@ -1,7 +1,6 @@
 Using 'SWT.YES | SWT.NO' on a MessageBox shows Yes/No instead of No/Yes
 On a gtk+ system, I would expect the buttons to show up as No/Yes instead of Yes/No but the sample below shows otherwise.
-Actually, I lie, I haven't tested this snippet on a Linux system (but it _should_ work).
-You can also see the Yes/No dialog in action as follows 'Window > Preferences > Security > Secure Storage > Contents > Delete'.
+Actually, I lie, I haven't tested this snippet on a Linux system (but it _should_ work). You can also see the Yes/No dialog in action as follows 'Window > Preferences > Security > Secure Storage > Contents > Delete'.
 -------------
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
@@ -38,5 +37,4 @@ if ((style & SWT.RETRY) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMb
 if ((style & SWT.IGNORE) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, SWT.getMessage("SWT_Ignore"), true), SWT.IGNORE);
 }
 -------------
-I used hot code replace to create the SWT.NO button before the SWT.YES button and then it shows up as No/Yes as expected.
-I am not sure if this is the proper fix or not though.
+I used hot code replace to create the SWT.NO button before the SWT.YES button and then it shows up as No/Yes as expected. I am not sure if this is the proper fix or not though.

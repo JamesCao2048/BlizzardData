@@ -3,8 +3,7 @@ SWT CVS win32
 The tree adds a vertical scrollbar that is useless, the table does not.
 
 I'm also not sure why the clientArea() of the tree is negative(0,-20...).
-TREE  CLIENT AREA: Rectangle {0,
--20, 392, 562}	BOUNDS: Rectangle {0, 0, 396, 566}
+TREE  CLIENT AREA: Rectangle {0, -20, 392, 562}	BOUNDS: Rectangle {0, 0, 396, 566}
 TABLE CLIENT AREA: Rectangle {0, 0, 392, 562}	BOUNDS: Rectangle {396, 0, 396, 566}
 public static void main(String[] args) {
 final Display display = new Display();
@@ -14,8 +13,7 @@ final int columns = 5;
 final int itemCount = 15;
 final Tree tree = new Tree(shell, SWT.BORDER | SWT.VIRTUAL | SWT.FULL_SELECTION | SWT.MULTI);
 tree.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
-for (int i = 0; i
-< columns; i++)
+for (int i = 0; i < columns; i++)
 new TreeColumn(tree, SWT.LEFT).setWidth(75);
 tree.setHeaderVisible(true);
 tree.setLinesVisible(true);
@@ -30,11 +28,9 @@ String text = null;
 if (parentItem == null) {
 text = "node " + tree.indexOf(item);
 } else {
-text = parentItem.getText() + "
-- " + parentItem.indexOf(item);
+text = parentItem.getText() + " - " + parentItem.indexOf(item);
 }
-for (int i = 0; i
-< columns; i++) {
+for (int i = 0; i < columns; i++) {
 item.setText(i, text);
 }
 if (index % 2 == 0) {
@@ -46,8 +42,7 @@ item.setItemCount(itemCount);
 });
 final Table table = new Table(shell, SWT.VIRTUAL | SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
 table.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
-for (int i = 0; i
-< columns; i++)
+for (int i = 0; i < columns; i++)
 new TableColumn(table, SWT.LEFT).setWidth(75);
 table.setLinesVisible(true);
 table.setHeaderVisible(true);
@@ -59,8 +54,7 @@ TableItem item = (TableItem) event.item;
 int index = event.index;
 String text = null;
 text = "node " + index;
-for (int i = 0; i
-< columns; i++) {
+for (int i = 0; i < columns; i++) {
 item.setText(i, text);
 }
 if (index % 2 == 0) {
@@ -72,13 +66,11 @@ item.setBackground(c);
 final int timerDelay = 1250;
 final Runnable r = new Runnable() {
 public void run() {
-if (c++ >= columns
-- 1)
+if (c++ >= columns - 1)
 c = 0;
-int dir = table.getSortDirection() == SWT.DOWN ?
-SWT.UP : SWT.DOWN;
+int dir = table.getSortDirection() == SWT.DOWN ? SWT.UP : SWT.DOWN;
 tree.setItemCount(itemCount);
 table.setItemCount(itemCount);
 table.setSortDirection(dir);
 table.setSortColumn(table.getColumn(c));
-tree.setSortColu
+tree.setSortColumn(tree

@@ -1,8 +1,7 @@
 Invoking spinner.getSelection() in a modify event causes infinite loop
 We're seeing test failures in the N20070726 build for data binding.
 http://download.eclipse.org/eclipse/downloads/drops/N20070726-0010/testresults/html/org.eclipse.jface.tests.databinding_macosx.carbon.ppc_5.0.html
-The issue seems to be that if you invoke spinner.getSelection() from a modify listener an infinite loop will occur.
-The following snippet recreates the issue.
+The issue seems to be that if you invoke spinner.getSelection() from a modify listener an infinite loop will occur.  The following snippet recreates the issue.
 public class Snippet {
 public static void main(String[] args) {
 Shell shell = new Shell();

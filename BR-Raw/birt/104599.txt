@@ -1,8 +1,2 @@
 Bug 104599 Report Property->Comment page is not displayed on Korean locale.
-Report Property->Comment page is not displayed on Korean locale.
-Please check the attached bitmap file for detail.
-To reproduce: 1.start the Eclipse with
--nl ko_KR option, 2.Create any report, open Report property.
-3.Select Description.
---> Description page is displayed 4.Select Comment.
-Note: "Description" and "Comments" are the same word in Korean.
+Report Property->Comment page is not displayed on Korean locale. Please check the attached bitmap file for detail. To reproduce: 1. start the Eclipse with -nl ko_KR option, 2. Create any report, open Report property. 3. Select Description. --> Description page is displayed 4. Select Comment. Note: "Description" and "Comments" are the same word in Korean.

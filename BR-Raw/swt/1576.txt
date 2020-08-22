@@ -1,10 +1,7 @@
 Bidi3.4: Unicode Markers don't have any effect in Console View
 Build ID: I20070410-1043
 Steps To Reproduce:
-It was noticed that Unicode markers have no effect to Bidi text printed to console.
-For instance, the snippet code below insert NADs Unicode marker before numerals and thus it forces all numerals afterwards to be displayed in its national form.
-However this doesn't occur.
-Please run the following snippet code in order to reproduce the problem:
+It was noticed that Unicode markers have no effect to Bidi text printed to console. For instance, the snippet code below insert NADs Unicode marker before numerals and thus it forces all numerals afterwards to be displayed in its national form. However this doesn't occur. Please run the following snippet code in order to reproduce the problem:
 public class BidiTest{
 public static void main(String[] args) {
 System.out.println("u206e 123");

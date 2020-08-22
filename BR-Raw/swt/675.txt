@@ -2,6 +2,5 @@ SWT Browser.refresh() does not fire ProgressEvent
 I am using Eclipse 3.1 on Windows XP Pro SP2.
 I have adapted the Web Browser SWT example for use in a plugin I am
 developing, and noticed that the Browser.refresh() method does not fire a
-ProgressEvent.
-However, using the native browser refresh hot key (F5) does
+ProgressEvent. However, using the native browser refresh hot key (F5) does
 fire the event.

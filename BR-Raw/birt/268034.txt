@@ -1,8 +1,2 @@
 Bug 268034 Refactor chart code to use non-static copy method
-Currently, chart model uses static method to copy instance.
-There are several disadvantages for static method as follows: 1.Hard to maintain.
-Parent class needs to check instance of subclass.
-2.Hard to use.
-Client needs to find implementation class to invoke static method.
-3.Not follow OO methodology.
-The expected behavior is like this (Chart copy): Add a method in Chart: public Chart copyInstance(); Add two methods in ChartImpl: public Chart copyInstance() { Chart chart = new Chart(); setProperties(chart); return chart; } protected void set(Chart newChart);// set property In subclass ChartWithAxes, just override these two methods by reusing super class methods.
+Currently, chart model uses static method to copy instance. There are several disadvantages for static method as follows: 1. Hard to maintain. Parent class needs to check instance of subclass. 2. Hard to use. Client needs to find implementation class to invoke static method. 3. Not follow OO methodology. The expected behavior is like this (Chart copy): Add a method in Chart: public Chart copyInstance(); Add two methods in ChartImpl: public Chart copyInstance() { Chart chart = new Chart(); setProperties(chart); return chart; } protected void set(Chart newChart);// set property In subclass ChartWithAxes, just override these two methods by reusing super class methods.

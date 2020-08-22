@@ -6,8 +6,7 @@ drawn not fully opaque but with a soft gradient into the transparent
 background).
 The icons are displayed correctly in toolbars or coolbars, but on Windows
 Vista/Windows 7 the icons are displayed ugly inside the menubar-dropdown menu
-...
-the transparent icon border is drawn in black and not filled with the
+... the transparent icon border is drawn in black and not filled with the
 current background color.
 The implementation looks like:
 * create JFace Action: org.eclipse.jface.action.Action with the desired
@@ -15,8 +14,6 @@ ImageDescriptor to set the icon
 * add the JFace action instances
 a) either to a MenuManager
 b) or to a ToolBarManager (optionally wrapped inside a CoolBarManager)
-...
-a) does look ugly
-...
-b) does look fine.
+... a) does look ugly
+... b) does look fine.
 for more details see the attachments.

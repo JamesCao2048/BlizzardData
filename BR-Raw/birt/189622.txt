@@ -1,3 +1,2 @@
 Bug 189622 DesignElementHandle.getMethods( ) shouldn't return null value
-The return type of DesignElementHandle.getMethods( ) is List; if the design element handle doesn't have script methods, then it return null value.
-The return value is empty list will be better.
+The return type of DesignElementHandle.getMethods( ) is List; if the design element handle doesn't have script methods, then it return null value. The return value is empty list will be better.

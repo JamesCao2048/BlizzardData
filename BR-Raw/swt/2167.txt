@@ -1,12 +1,7 @@
 Table's FULL_SELECTION does not work correctly on custom draw table with background color
-Clicking on area that is not on first column does NOT select the row.
-This happens for custom-draw table, with FULL_SELECTION style and background color.
-Run this example.
-Click on a table row on any column, except first.
-See that row is NOT selected.
-Only when click is on item's text itself, the row is selected.
-Now, move line "table.setBackground(display.getSystemColor(SWT.COLOR_WHITE));" before the listener definition.
-See, that now snippet works correctly, pressing anywhere selects the row.
+Clicking on area that is not on first column does NOT select the row. This happens for custom-draw table, with FULL_SELECTION style and background color.
+Run this example. Click on a table row on any column, except first. See that row is NOT selected. Only when click is on item's text itself, the row is selected.
+Now, move line "table.setBackground(display.getSystemColor(SWT.COLOR_WHITE));" before the listener definition. See, that now snippet works correctly, pressing anywhere selects the row.
 import org.eclipse.swt.*;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;
@@ -19,14 +14,12 @@ shell.setLayout(new FillLayout());
 Table table = new Table(shell, SWT.FULL_SELECTION);
 table.setHeaderVisible(true);
 table.setLinesVisible(true);
-for (int i = 0; i
-< 4; i++) {
+for (int i = 0; i < 4; i++) {
 TableColumn column = new TableColumn(table, SWT.NONE);
 column.setText("Column " + i);
 column.setWidth(50);
 }
-for (int i = 0; i
-< 20; i++)
+for (int i = 0; i < 20; i++)
 new TableItem(table, SWT.NONE).setText("item " + i);
 
 //When table.setBackground moved here works fine !!!

@@ -1,4 +1,2 @@
 Bug 124251 the data cann't been exported.
-Description: the data cann't been exported.
-Steps to reproduce: 1.new a report 2.new a datasource and a data set(DS_A) 3.use an external library 4.drag a table to the report layout from the imported library 5.insert an another table into the layout of the report and bind the data set(DS_A) 6.preview in the 'Web Viewer' and export the data Actual result: The data can been exported.
-Expect result: The data can been exporteded
+Description: the data cann't been exported. Steps to reproduce: 1. new a report 2. new a datasource and a data set(DS_A) 3. use an external library 4. drag a table to the report layout from the imported library 5. insert an another table into the layout of the report and bind the data set(DS_A) 6. preview in the 'Web Viewer' and export the data Actual result: The data can been exported. Expect result: The data can been exporteded

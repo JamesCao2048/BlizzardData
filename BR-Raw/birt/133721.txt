@@ -1,10 +1,2 @@
 Bug 133721 Generating PDF/Printable HTML reports with input parameters
-I made improvements to the JSP for the Web Viewer to add the option to run the report with the parameters input by the users as a PDF or HTML page that is printable (using the /run?).
-The parameters are stored as form field and the form is submitted.
-This way, the user input parameters are passed to the /run?
-I wanted to submit my changes, but can't figure out a way to do so
--- I can't go to the CVS right now...
-Please advice so I can give you the changes.
-I noticed that this feature was requested a lot on the newsgroup
-- and I needed it myself...
-So this should be integrated in the future release builds.
+I made improvements to the JSP for the Web Viewer to add the option to run the report with the parameters input by the users as a PDF or HTML page that is printable (using the /run?). The parameters are stored as form field and the form is submitted. This way, the user input parameters are passed to the /run? I wanted to submit my changes, but can't figure out a way to do so -- I can't go to the CVS right now... Please advice so I can give you the changes. I noticed that this feature was requested a lot on the newsgroup - and I needed it myself... So this should be integrated in the future release builds.

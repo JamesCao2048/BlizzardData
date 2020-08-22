@@ -1,5 +1,2 @@
 Bug 144825 [Regression]Can't select operator other than "equal to" during create filter for table
-Steps: 1.Create new data source and data set based on the following database (Sample DB , select all the data from the table customers) 2.Drag data set to layout 3.Select table, click "filter" tab in "Property editor", add a filter for table "CustomNumber Top 10" Actual result: The default operator is "equal to".
-So whatever the operators I select it will be "equal to".
-It means that the selection action for the operator field is invalid.
-Please check! Thanks! Addition information: The build I used is the latest one(2006.6.1) Please check! Thanks!
+Steps: 1. Create new data source and data set based on the following database (Sample DB , select all the data from the table customers) 2.Drag data set to layout 3.Select table, click "filter" tab in "Property editor", add a filter for table "CustomNumber Top 10" Actual result: The default operator is "equal to". So whatever the operators I select it will be "equal to". It means that the selection action for the operator field is invalid. Please check! Thanks! Addition information: The build I used is the latest one(2006.6.1) Please check! Thanks!

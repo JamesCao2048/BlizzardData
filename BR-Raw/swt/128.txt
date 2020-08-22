@@ -3,7 +3,5 @@
 - create a Shell with a XULRunner 10 browser and a default button
 - navigate the Browser to google
 - type some chars in its search text and press Enter
-
 -> this should initiate the search in google, but instead activates the default button
-The root difference is that older XULRunner versions answered 4 (DLGC_WANTALLKEYS) for OS.SendMessage(hwnd, OS.WM_GETDLGCODE, 0, 0), but XULRunner 10 answers 0 for this, which affects Control.translateTraversal(MSG msg).
-Some other traversals may be affected as well.
+The root difference is that older XULRunner versions answered 4 (DLGC_WANTALLKEYS) for OS.SendMessage(hwnd, OS.WM_GETDLGCODE, 0, 0), but XULRunner 10 answers 0 for this, which affects Control.translateTraversal(MSG msg).  Some other traversals may be affected as well.

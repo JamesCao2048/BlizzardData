@@ -1,8 +1,2 @@
 Bug 252915 Chart background image is repeated
-Build ID: M20080911-1700 Steps To Reproduce: 1.Create a report and insert a chart.
-2.Go to Advanced properties and add a "Background image" to the chart-background-background image.
-Hint: it is easy to see the problem if the background image is less than 1/4 of the chart size.
-3.Set "Background repeat" to "No Repeat".
-The chart still shows the image repeated.
-Image repeats across and down the chart.
-More information:
+Build ID: M20080911-1700 Steps To Reproduce: 1. Create a report and insert a chart. 2. Go to Advanced properties and add a "Background image" to the chart-background-background image. Hint: it is easy to see the problem if the background image is less than 1/4 of the chart size. 3. Set "Background repeat" to "No Repeat". The chart still shows the image repeated. Image repeats across and down the chart. More information:

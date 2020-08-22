@@ -64,44 +64,4 @@ elements.add(element);
 
 public int length()       { return elements.size(); }
 public T elementAt(int i) { return elements.elementAt(i); }
-public Sequence add(T element) {
-elements.add(element);
-return this;
-}
-
-public Sequence add(int pos, T element) {
-elements.add(pos, element);
-return this;
-}
-
-public Sequence addAll(Sequence<T> others) {
-if(  others == null ) return this;
-elements.addAll(others.elements);
-return this;
-}
-
-public void visitChildren(Visitor v) {
-for( AST element : elements ) {
-element.visit(v);
-}
-}
-
-public void replaceChild(AST old, AST gnu) {
-T NEW = (T)gnu;
-for(int i = 0; i < elements.size(); i++ ) {
-if( elements.get(i) == old ) {
-elements.set(i, NEW);
-return;
-}
-}
-throw new Driver.CompileError("Can't find child in replaceChild.");
-}
-/*** START GENERATED VISITOR PROTOCOL ***///TODO
-public void visit(mj.compiler.Visitor v) {
-v.visitSequence(this);
-}
-/*** END GENERATED VISITOR PROTOCOL ***/
-}
-Hope this helps something.
-ps- I am able to create and run a very simple AspectJ project with an aspect,
-advice, and some Java 5 syntax.
+public Sequen

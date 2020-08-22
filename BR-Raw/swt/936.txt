@@ -1,6 +1,5 @@
 Second call to setFont produces incorrect text
-In this example code, the second call to gc.setFont causes the text to be displayed incorrectly.
-The result looks like a series of odd characters.
+In this example code, the second call to gc.setFont causes the text to be displayed incorrectly. The result looks like a series of odd characters.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.GC;

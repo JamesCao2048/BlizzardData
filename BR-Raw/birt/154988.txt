@@ -1,6 +1,2 @@
 Bug 154988 [regression]Group toc doesn't work in pdf
-Description: Group toc doesn't work in pdf Steps to reproduce: 1.new a data source and a dataset 2.Drag the dataset to Layout and add a group for it.
-3.Preview in pdf and click group toc.
-Expected result: group toc can link to target page.
-Actual result: Not scroll the target page.
-Web Viewer is ok.
+Description: Group toc doesn't work in pdf Steps to reproduce: 1. new a data source and a dataset 2. Drag the dataset to Layout and add a group for it. 3. Preview in pdf and click group toc. Expected result: group toc can link to target page. Actual result: Not scroll the target page. Web Viewer is ok.

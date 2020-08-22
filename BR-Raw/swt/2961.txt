@@ -1,9 +1,7 @@
 Ctrl+SPACE is not a valid keybinding assignment for actions on native widgets
 The keybinding preferences should not allow you to assign CTRL+SPACE as the
-keybinding to actions which are invoked when a Tree or Table has focus.
-This is
+keybinding to actions which are invoked when a Tree or Table has focus. This is
 the platform keybinding for toggle selection.
 For example, assign Navigate->Go Into to CTRL+SPACE, and then try to invoke in
-the package explorer.
-It seems to work every other time and of course
+the package explorer.  It seems to work every other time and of course
 interferes with platform accelerators

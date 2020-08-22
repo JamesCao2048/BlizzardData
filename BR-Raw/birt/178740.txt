@@ -1,11 +1,2 @@
 Bug 178740 Missing <a> element in dynamic text when publish to pdf
-Steps to show the bug: 1 create a design file 2 add a dynamic text, input
-<code>Just a
-<a href="/text.html">Test</a></code> 3 publish it to PDF 4 open the pdf, you will get ONLY
-<code>Just a</code> Cause: In org.eclipse.birt.report.engine.layout.pdf.util.HTML2Content#handleElement when tagName is "a", only setParent function is called.
-Actually, the parent attribute of "container" is setted, but the "container" is not in the child list of that parent.
-So we will miss this ContainerContent.
-We can see
-<code>container.setParent(content);//FIXME addChild to replace?</code> there.
-I think add a sentence
-<code>addChild(content, container);</code> may solve this bug.
+Steps to show the bug: 1 create a design file 2 add a dynamic text, input <code>Just a <a href="/text.html">Test</a></code> 3 publish it to PDF 4 open the pdf, you will get ONLY <code>Just a</code> Cause: In org.eclipse.birt.report.engine.layout.pdf.util.HTML2Content#handleElement when tagName is "a", only setParent function is called. Actually, the parent attribute of "container" is setted, but the "container" is not in the child list of that parent. So we will miss this ContainerContent. We can see <code>container.setParent(content);//FIXME addChild to replace?</code> there. I think add a sentence <code>addChild(content, container);</code> may solve this bug.

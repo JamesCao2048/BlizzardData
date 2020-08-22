@@ -3,11 +3,10 @@ Build Identifier: 3.7.0 (I20110613-1736)
 AVG is a popular free anti-virus program, but their latest version seems to cause SWT virtual tables to crash.
 Reproducible: Always
 Steps to Reproduce:
-1.Download and install the free version of AVG here:
+1. Download and install the free version of AVG here:
 http://free.avg.com/au-en/free-antivirus-download
-2.Run the snippet shown below.
-3.When the table appears, scroll up and down for about 15 seconds.
-Eventually the following exception is thrown:
+2. Run the snippet shown below.
+3. When the table appears, scroll up and down for about 15 seconds.  Eventually the following exception is thrown:
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
 at org.eclipse.swt.widgets.Table.wmNotifyChild(Table.java:6743)
 at org.eclipse.swt.widgets.Control.wmNotify(Control.java:5534)
@@ -29,8 +28,7 @@ at org.eclipse.swt.internal.win32.OS.PeekMessageW(Native Method)
 at org.eclipse.swt.internal.win32.OS.PeekMessage(OS.java:3095)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3749)
 at TestVirtualTable.main(TestVirtualTable.java:64)
-------------------- code snippet
--------------------------
+------------------- code snippet -------------------------
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.layout.RowLayout;
@@ -57,10 +55,8 @@ shell.setLayout (new RowLayout (SWT.VERTICAL));
 final Table table = new Table (shell, SWT.VIRTUAL | SWT.BORDER);
 table.addListener (SWT.SetData, new Listener () {
 public void handleEvent (Event event) {
-if(event.index
-< 0) {
-throw new RuntimeException("Index
-< 0");
+if(event.index < 0) {
+throw new RuntimeException("Index < 0");
 }
 
 TableItem item = (TableItem) event.item;

@@ -1,7 +1,2 @@
 Bug 183704 [Automation][Regression] text decoration was output twice in html source
-steps to reproduce:
-- set font underline, overline, or line-through
-- preview in html
-- check source expected behavior:
-- text decoration should be output once only for each style attribute actual behavior:
-- it was output twice actually
+steps to reproduce: - set font underline, overline, or line-through - preview in html - check source expected behavior: - text decoration should be output once only for each style attribute actual behavior: - it was output twice actually

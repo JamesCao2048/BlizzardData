@@ -1,12 +1,9 @@
 gc.setBackgroundPattern does not draw correctly in Cocoa
 Build Identifier: Cocoa version 3.7.2 M20120208-0800
-When using an image as the background pattern of GC and later call gc.fillRoundRectangle to draw a rectangle, the background is not drawn correctly.
-It seems the origin of the background is the lower-left of the control , but not the top-left of the control.
+When using an image as the background pattern of GC and later call gc.fillRoundRectangle to draw a rectangle, the background is not drawn correctly. It seems the origin of the background is the lower-left of the control , but not the top-left of the control.
 Reproducible: Always
 Steps to Reproduce:
-1.This can be reproduced with SWT snippets :  http://git.eclipse.org/c/platform/eclipse.platform.swt.git/tree/examples/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet200.java
-2.Run this snippets with Cocoa SWT
-3.Drag the right bottom conner to resize the shell , make in smaller in y axis
-4.You will notice the background of the shell moves when the shell is being resized.
-In fact, the bottom of the background does not move, as the shell height changes, the upper background changes.
-If the test case runs with Carbon , you will see the top of the background does not move, but the bottom background parts changes as the height changes.
+1. This can be reproduced with SWT snippets :  http://git.eclipse.org/c/platform/eclipse.platform.swt.git/tree/examples/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet200.java
+2. Run this snippets with Cocoa SWT
+3. Drag the right bottom conner to resize the shell , make in smaller in y axis
+4. You will notice the background of the shell moves when the shell is being resized.  In fact, the bottom of the background does not move, as the shell height changes, the upper background changes.  If the test case runs with Carbon , you will see the top of the background does not move, but the bottom background parts changes as the height changes.

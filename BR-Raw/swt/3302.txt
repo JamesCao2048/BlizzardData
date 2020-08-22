@@ -1,9 +1,6 @@
 CCombo does not respond to keyboard or mouse actions when it it dropped down
 In RC1, when you click on the drop down button for a CCombo, it doesn't respond
-to any mouse or keyboard actions, other than to click it to undrop it.
-If you
-do this in a wizard and hit "<back", it stays showing.
-Fortunately the up and
+to any mouse or keyboard actions, other than to click it to undrop it.  If you
+do this in a wizard and hit "<back", it stays showing.  Fortunately the up and
 down arrows work when it's not showing the drop down, but this is very hard to
-discover.
-This problem will block many EMF clients from using our tools.
+discover.  This problem will block many EMF clients from using our tools.

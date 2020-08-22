@@ -1,8 +1,2 @@
 Bug 151185 Chart position wrong at PDF
-- Create a 1x1 table.
-- Put a chart in the table
-- Position of chart is vertical=middle, textaligment=center, style=middle (The Chart is in the middle of the table-cell)
-- Use reportengine to create html
--> All works fine
-- Use reportengine to create pdf
--> The chart is left (not in the middle!)
+- Create a 1x1 table. - Put a chart in the table - Position of chart is vertical=middle, textaligment=center, style=middle (The Chart is in the middle of the table-cell) - Use reportengine to create html -> All works fine - Use reportengine to create pdf -> The chart is left (not in the middle!)

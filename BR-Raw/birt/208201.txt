@@ -1,8 +1,2 @@
 Bug 208201 Grid width doesn't work in word and excel.[1202][1203]
-Description: Grid width doesn't work in word.
-Build number:2.2.2.v20071031 Steps to reproduce: 1.Insert a grid (1*1).
-2.Insert a label to grid cell.
-3.Select the grid and set width as 0.5in 4.Preview in word and excel.
-Expected result: Display grid with 0.5in width.
-Actual result: Display grid with 100% width.
-Error log:n/a
+Description: Grid width doesn't work in word. Build number:2.2.2.v20071031 Steps to reproduce: 1. Insert a grid (1*1). 2. Insert a label to grid cell. 3. Select the grid and set width as 0.5in 4. Preview in word and excel. Expected result: Display grid with 0.5in width. Actual result: Display grid with 100% width. Error log:n/a

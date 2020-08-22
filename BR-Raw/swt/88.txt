@@ -1,9 +1,4 @@
 Focus is not passed to the next window after a window minimized
 Created  attachment 226149   [details]
 sample code
-I have created two shells with normal style.
-Both shells call open() and are showed in normal size.
-I minimized the front shell.
-But the focus was not passed to the next shell.
-I confirmed this by calling Display.getActiveShell().
-Sample code is attached.
+I have created two shells with normal style. Both shells call open() and are showed in normal size. I minimized the front shell. But the focus was not passed to the next shell. I confirmed this by calling Display.getActiveShell(). Sample code is attached.

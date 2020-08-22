@@ -1,7 +1,2 @@
 Bug 142462 Cannot create bindings for data set output parameters
-Define a JDBC Stored Procedure data set with at least one data set output parameter.
-Bind this data set to a table.
-Edit data binding for the table and add a new binding.
-In the expression builder, under "Available Data Sets", only the columns for the data set are shown as available.
-The output parameters are not shown.
-This is a regression against 2.0.This bug makes data set parameters unusable.
+Define a JDBC Stored Procedure data set with at least one data set output parameter. Bind this data set to a table. Edit data binding for the table and add a new binding. In the expression builder, under "Available Data Sets", only the columns for the data set are shown as available. The output parameters are not shown. This is a regression against 2.0. This bug makes data set parameters unusable.

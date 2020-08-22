@@ -1,4 +1,2 @@
 Bug 106425 Percent value doesn't work properly in height property of image and chart items
-Description: Percent value doesn't work properly in height property of image and chart items Steps to reproduce: 1.Insert a chart 2.Set it's width to 100% and height to 100% 3.In Chart Builder,modify some attributes and click OK 4.Insert a image 5.Set it's width to 100% Expected result: It work normal.
-Actual result: Chart item's width and height changed back to default values.
-Image shrink to a small size in layout viewer.
+Description: Percent value doesn't work properly in height property of image and chart items Steps to reproduce: 1.Insert a chart 2.Set it's width to 100% and height to 100% 3.In Chart Builder,modify some attributes and click OK 4.Insert a image 5.Set it's width to 100% Expected result: It work normal. Actual result: Chart item's width and height changed back to default values. Image shrink to a small size in layout viewer.

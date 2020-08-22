@@ -1,6 +1,2 @@
 Bug 267577 hasExpression property for Text and TextData
-Add an new hasExpression property to
-<text-data> and
-<text> to indicate if there is an expression in the text value of text-data that needs engine to parse the text data strings.
-Need UI to allow user to set this property on a text-data and text, and need engine to check this property before parsing the string.
-For backward compatibility, old version of design treat hasExpression=true.
+Add an new hasExpression property to <text-data> and <text> to indicate if there is an expression in the text value of text-data that needs engine to parse the text data strings. Need UI to allow user to set this property on a text-data and text, and need engine to check this property before parsing the string. For backward compatibility, old version of design treat hasExpression=true.

@@ -1,41 +1,32 @@
 swtlib-64 is created and left behind in tmp directory in world writable mode (chmod 777). This is a security issue.
 Build Identifier: SWT 3.5.0.v3550b
-Using Eclipse Memory Analyzer 1.0.1 I noticed that SWT is leaving behind temporary data in /tmp, namely the directory /tmp/swtlib-64 in our case.
-This directory is world writable and reported as security issue by our systems.
+Using Eclipse Memory Analyzer 1.0.1 I noticed that SWT is leaving behind temporary data in /tmp, namely the directory /tmp/swtlib-64 in our case. This directory is world writable and reported as security issue by our systems.
 The problematic code line is
 Runtime.getRuntime ().exec (new String []{"chmod", "777", path}).waitFor(); //$NON-NLS-1$ //$NON-NLS-2$
 in
 org.eclipse.swt.internal.Library
-It is not trivial to resolve as the current approach assumes that the swtlib can be shared system wide (hence world writable flag is necessary).
-However, this assumption is challenged on security sensitive systems with multiple users.
+It is not trivial to resolve as the current approach assumes that the swtlib can be shared system wide (hence world writable flag is necessary). However, this assumption is challenged on security sensitive systems with multiple users.
 Code could be injected into the SWT libraries and would be executed with the rights of the user running any Eclipse product on the same system.
 Reproducible: Always
 Steps to Reproduce:
-1.Check /tmp and remove potentially existing directory swtlib-64:
+1. Check /tmp and remove potentially existing directory swtlib-64:
 txruf@passent1:/tmp/ [] ls swtlib-64
 /bin/ls: swtlib-64: No such file or directory
-2.Run an Eclipse product
-- e.g.
-Eclipse Memory Analyzer.
-3.Check /tmp, it will contain swtlib-64 with world writable flag set:
+2. Run an Eclipse product - e.g. Eclipse Memory Analyzer.
+3. Check /tmp, it will contain swtlib-64 with world writable flag set:
 txruf@passent1:/tmp/ [] ll swtlib-64
 total 196
 drwxrwxrwx  2 txruf txruf    80 2010-11-29 10:47 .
 drwxrwxrwt 22 root  root    700 2010-11-29 10:47 ..
-
 -rwxr-xr-x  1 txruf txruf 89120 2010-11-29 10:47 libswt-mozilla-gcc3-gtk-3550.so
-
 -rwxr-xr-x  1 txruf txruf 93192 2010-11-29 10:47 libswt-mozilla-gtk-3550.so
-4.Different user replaces original library with modified version:
+4. Different user replaces original library with modified version:
 tpdev@svwdpass16:/tmp/swtlib-64/ [rdbms10204] mv libswt-mozilla-gcc3-gtk-3550.so libswt-mozilla-gcc3-gtk-3550.so.original
 tpdev@svwdpass16:/tmp/swtlib-64/ [rdbms10204] touch libswt-mozilla-gcc3-gtk-3550.so
 tpdev@svwdpass16:/tmp/swtlib-64/ [rdbms10204] ll
 total 196
 drwxrwxrwx  2 txruf txruf   100 2010-11-29 10:48 .
 drwxrwxrwt 22 root  root    700 2010-11-29 10:48 ..
-
 -rw-r--r--  1 tpdev tpdev     0 2010-11-29 10:48 libswt-mozilla-gcc3-gtk-3550.so
-
 -rwxr-xr-x  1 txruf txruf 89120 2010-11-29 10:47 libswt-mozilla-gcc3-gtk-3550.so.original
-
 -rwxr-xr-x  1 txruf txruf 93192 2010-11-29 10:47 libswt-mozilla-gtk-3550.so

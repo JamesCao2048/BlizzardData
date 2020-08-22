@@ -4,39 +4,30 @@ Sun JVM 1.4.2_03
 Within a StyledText box paste in a Unicode supplementary character, for example
 MATHEMATICAL_BOLD_CAPITAL_A with hexadecimal code point 1D400h:
 < http://www.unicode.org/charts/PDF/U1D400.pdf >
-You have to construct the character.
-I just used CLISP from the GNOME Terminal:
+You have to construct the character. I just used CLISP from the GNOME Terminal:
 (princ #mathematical_bold_capital_a)
-I selected the character and pasted it into a StyledText box.
-In GTK without the
+I selected the character and pasted it into a StyledText box. In GTK without the
 gylph being available this will appropriately display as a character with the
 hexadecimal value in a rectangle:
 [01D]
 [400]
-Now push the left arrow to attempt to move the caret before the character.
-Type
-a character and the text disappears and nothing more typed is visible.
-This is
+Now push the left arrow to attempt to move the caret before the character. Type
+a character and the text disappears and nothing more typed is visible. This is
 probably because the valid UTF-16 character composed of high and low 16 bit
 surrogates has been split, creating an illegal UTF-16 sequence.
-Inserting text is also affected after a supplementary character.
-Paste a
-supplementary character then type "abc".
-Press the left arrow and type some
-additional letters.
-The caret doesn't move to before "c" even though letters are
+Inserting text is also affected after a supplementary character. Paste a
+supplementary character then type "abc". Press the left arrow and type some
+additional letters. The caret doesn't move to before "c" even though letters are
 inserted before "c".
 D800h to DFFFh are reserved for UTF-16 surrogate pairs and no code points are
-assigned to them.
-This means each surrogate is individually distinguishable and
+assigned to them. This means each surrogate is individually distinguishable and
 cannot be mistake for a single 16 bit code point.
 "Supplementary Characters in the Java Platform"
 < http://java.sun.com/developer/technicalArticles/Intl/Supplementary/ >
 Character navigation of supplementary Unicode characters within a StyledText box
-should be feasible even without Java 1.5.It is going to be just as awkward to
+should be feasible even without Java 1.5. It is going to be just as awkward to
 implement in Java 1.5 because the char type is not being upgraded to a size that
-will fit all Unicode code points.
-The number of code points in a Java string or
+will fit all Unicode code points. The number of code points in a Java string or
 array of char can only be determined by parsing the entire string or array.
 UTF-16 is a variable width encoding without the space advantage of UTF-8 nor the
 fixed width advantage of UTF-32.

@@ -1,16 +1,12 @@
 IAE when setting menu on TaskItem with only a SWT.Cascade MenuItem
 From  bug 293229 :
 (In reply to  comment #30 )
-> Hey Felipe, I may have found a bit of a bug in this.
-It seems that if the
+> Hey Felipe, I may have found a bit of a bug in this. It seems that if the
 > menu that is set on the TaskItem only has 1 MenuItem and it has the SWT.Cascade
 > style, the call to AddUserTasks on line 507 fails and causes an invalid
-> argument exception.
-It seems that it should be valid to have a single item
-> that is a submenu.
-If there is at least 1 other menu item that is not a
-> submenu, all works as expected.
-Any thoughts on how we should fix this?
+> argument exception. It seems that it should be valid to have a single item
+> that is a submenu. If there is at least 1 other menu item that is not a
+> submenu, all works as expected. Any thoughts on how we should fix this?
 Hmm, IObjectArray has GetCount() method, maybe the fix is not to call ICustomDestinationList->AddUserTasks() and ICustomDestinationList->AppendCategory() when poa->GetCount()==0.
 Enter a new problem report and lets have it fixed.
 Other option is to stop throwing SWT.ERROR_INVALID_ARGUMENT for every call...

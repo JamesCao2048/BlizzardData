@@ -1,13 +1,12 @@
 SIGSEGV in _G_OBJECT_TYPE during moveAbove
 Build Identifier: I20100520-1744
 Using moveAbove to move a Label in a Composite after a Label from that Composite has previously been disposed results in a segfault in the circumstances described in "Steps to Reproduce".
-The test case works fine with Eclipse 3.5.1 (M20090917-0800), SWT jarfile org.eclipse.swt.gtk.linux.x86.source_3.5.1.v3555a.jar.
-It crashes with 3.6RC2 (SWT jarfile org.eclipse.swt.gtk.linux.x86.source_3.6.0.v3649.jar).
+The test case works fine with Eclipse 3.5.1 (M20090917-0800), SWT jarfile org.eclipse.swt.gtk.linux.x86.source_3.5.1.v3555a.jar. It crashes with 3.6RC2 (SWT jarfile org.eclipse.swt.gtk.linux.x86.source_3.6.0.v3649.jar).
 Reproducible: Always
 Steps to Reproduce:
-1.Run attached test case.
-2.Click "Crash Me".
+1. Run attached test case.
+2. Click "Crash Me".
 Or,
-1.Add a Label widget and then a Text widget to a Composite.
-2.Dispose the Label.
-3.Add a new Label widget to the Composite and use moveAbove to move it above the Text widget.
+1. Add a Label widget and then a Text widget to a Composite.
+2. Dispose the Label.
+3. Add a new Label widget to the Composite and use moveAbove to move it above the Text widget.

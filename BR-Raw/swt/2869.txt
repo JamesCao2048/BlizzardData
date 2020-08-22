@@ -1,8 +1,7 @@
 Spinner does't update internal state during text modify
 The following code from Spinner.sendKeyEvent does not seem to be correct:
 default:	/* Tab and other characters */
-if (key != 't' && key
-< 0x20) return true;
+if (key != 't' && key < 0x20) return true;
 oldText = new String (new char [] {key});
 break;
 }
@@ -13,7 +12,7 @@ TCHAR buffer = new TCHAR (getCodePage (), newText, true);
 OS.SendMessage (hwndText, OS.EM_SETSEL, start [0], end [0]);
 OS.SendMessage (hwndText, OS.EM_REPLACESEL, 0, buffer);
 Consider a test when the Spiner is set to 1, the whole contents is selected,
-and user presses key 2.The code will exit at "if (newText == oldText) return
+and user presses key 2. The code will exit at "if (newText == oldText) return
 true;" since oldText is set to "2" by "oldText = new String (new char []
 {key});"
 Similar problem affects wmClipboard method too:

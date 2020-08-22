@@ -3,18 +3,14 @@ Created  attachment 219291   [details]
 A workspace containing a sample RCP app displaying the GLCanvas problem
 Version: Indigo Service Release 2
 Build id: 20120216-1857
-I use GLCanvas in my RCP app and a common workflow is to open multiple editors, each containing a GLCanvas.
-In Eclipse SDK 3.7.2 and 3.8, closing an editor disables the GLCanvas in the remaining open editors.
-The disabled GLCanvas appear as black canvases.
-You can recover all canvases by opening a new GLCanvas-containing editor.
+I use GLCanvas in my RCP app and a common workflow is to open multiple editors, each containing a GLCanvas. In Eclipse SDK 3.7.2 and 3.8, closing an editor disables the GLCanvas in the remaining open editors. The disabled GLCanvas appear as black canvases. You can recover all canvases by opening a new GLCanvas-containing editor.
 I confirmed that problem is not observed when the RCP app is using Eclipse SDK 3.7.1 or when using a simple SWT shell with two CFolderTabs (regardless of SWT version).
 I marked this bug CRITICAL as it introduced a broken behavior into two releases.
 Reproducible: Always
 Steps to Reproduce:
-1.Open two or more editors containing a GLCanvas
-2.Close one editor, the remaining GLCanvas editors turn black
-3.Open a new GLCanvas editor, the other editors recover
+1. Open two or more editors containing a GLCanvas
+2. Close one editor, the remaining GLCanvas editors turn black
+3. Open a new GLCanvas editor, the other editors recover
 In the attached workspace:
-* Run the GLProblem project as an Eclipse application to launch the sample app.
-Use "File | New Editor One" to open an editor containing a GLCanvas.
+* Run the GLProblem project as an Eclipse application to launch the sample app. Use "File | New Editor One" to open an editor containing a GLCanvas.
 * Run the GLProblemMain class as a Java application to launch the SWT Shell/CFolderTab snippet.

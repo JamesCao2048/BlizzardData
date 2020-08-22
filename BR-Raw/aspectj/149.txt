@@ -35,7 +35,4 @@ at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBu
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:260)
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:176)
 at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
-at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
-at org.aspectj.tools.ajc.Main.run(Main.java:378)
-at org.aspectj.tools.ajc.Main.runMain(Main.java:253)
-at org.aspectj.tools.ajc.Main.main(Main.java:88)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.

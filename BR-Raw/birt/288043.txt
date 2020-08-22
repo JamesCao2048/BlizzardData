@@ -1,11 +1,2 @@
 Bug 288043 the data report item cut in excel format
-User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; eSafeUser=CN=Bloch Minka,OU=Starhome Users & Groups,DC=starhome,DC=local) Build Identifier: Version 2.5.0.v20090603 Build
-<2.5.0.v20090617-0630> when use data report item (alone
-- not in a grid or table) in the report
-- and font is big (e.g.
-17) the text is cut in excel format ,even define the height of the elemant(in PDF and PPT format it display OK)
--( the same is with the lable item.) Reproducible: Always Steps to Reproduce: 1.drag the report item (like lable or data) 2.set the font to 17 points and bold and set the height of the item and the height of the line.
-3.open the report in excel format
-- the item is cut
-- and the text is unreadable.
-I expected that the text will be readable in excel format even don't set the height of the line/report item (according to the font size), if it isn't possible, at least that the height will take effect in the excel format.
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; eSafeUser=CN=Bloch Minka,OU=Starhome Users & Groups,DC=starhome,DC=local) Build Identifier: Version 2.5.0.v20090603 Build <2.5.0.v20090617-0630> when use data report item (alone - not in a grid or table) in the report - and font is big (e.g. 17) the text is cut in excel format ,even define the height of the elemant(in PDF and PPT format it display OK) -( the same is with the lable item.) Reproducible: Always Steps to Reproduce: 1.drag the report item (like lable or data) 2.set the font to 17 points and bold and set the height of the item and the height of the line. 3.open the report in excel format - the item is cut - and the text is unreadable. I expected that the text will be readable in excel format even don't set the height of the line/report item (according to the font size), if it isn't possible, at least that the height will take effect in the excel format.

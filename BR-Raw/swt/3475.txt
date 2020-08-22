@@ -1,5 +1,4 @@
 Right Aligned Table Column Headers do not appear until after a resize
 Table column headers are initially blank when set with style SWT.RIGHT on 3.0
-M6 SWT-GTK2 until manually resized.
-The header text then appears properly
+M6 SWT-GTK2 until manually resized.  The header text then appears properly
 right aligned for all columns to the right of the one that has been resized.

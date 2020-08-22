@@ -1,9 +1,2 @@
 Bug 331333 In DOC format, table cells inherit margin/padding properties of the parent table when they shouldn't
-Build Identifier: 20100617-1415 Table cells in reports, when exported to DOC format, inherit parent table's margin/padding properties, even when these properties are redefined for these cells.
-We have take a look at startTable* methods in AbstractWordXmlWriter class and there are no references to padding in table cells.
-This problem exists only in DOC exporter and not in PDF.
-Please see attached screenshot for an example.
-Reproducible: Always Steps to Reproduce: 1.Create a table with multiple columns/rows.
-2.Change padding properties of one cell.
-3.Export this report into DOC format
-- the cell has parent table's properties.
+Build Identifier: 20100617-1415 Table cells in reports, when exported to DOC format, inherit parent table's margin/padding properties, even when these properties are redefined for these cells. We have take a look at startTable* methods in AbstractWordXmlWriter class and there are no references to padding in table cells. This problem exists only in DOC exporter and not in PDF. Please see attached screenshot for an example. Reproducible: Always Steps to Reproduce: 1. Create a table with multiple columns/rows. 2. Change padding properties of one cell. 3. Export this report into DOC format - the cell has parent table's properties.

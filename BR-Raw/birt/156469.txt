@@ -1,11 +1,2 @@
 Bug 156469 Should not new a file that is not a *.properties on resource file
-Desctiption: Should not create a file that is not a *.properties on resource file when the resource folder has not any other *.properties Step: 1.Set the resource folder path is blank.
-2.New a report project.
-3.New a report design.
-4.Click the blank area on layout.
-5.Select Property Editor
-- General
-- Resources 6.Click Add to add a resource file.
-7.The browse resource file is pop up and select Resource Folder.
-8.Input any word in text field.
-Excepted result: It prompt that the file name must end with .properties Actual result: Click OK and the file is create.
+Desctiption: Should not create a file that is not a *.properties on resource file when the resource folder has not any other *.properties Step: 1.Set the resource folder path is blank. 2.New a report project. 3.New a report design. 4.Click the blank area on layout. 5.Select Property Editor - General - Resources 6.Click Add to add a resource file. 7.The browse resource file is pop up and select Resource Folder. 8.Input any word in text field. Excepted result: It prompt that the file name must end with .properties Actual result: Click OK and the file is create.

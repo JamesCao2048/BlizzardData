@@ -12,14 +12,11 @@ scrollbar will be enabled.
 5) Scroll the view horizontally until the end of the line.
 6) Using the mouse, scroll the view vertically until the long line is no longer
 visible, and the short line is visible.
-7) Click in the short line
-- not in a blank line.
+7) Click in the short line - not in a blank line.
 Actual Results:
-The scrollbar is disabled.
-The window area remains scrolled horizontally.
+The scrollbar is disabled. The window area remains scrolled horizontally.
 Expected Results:
-The horizontal scrollbar should remain enabled.
-At least while the content is
+The horizontal scrollbar should remain enabled. At least while the content is
 horizontally scrolled.
 Build Date & Platform:
 Version: 3.0.0

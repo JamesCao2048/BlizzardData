@@ -28,8 +28,7 @@ final Image img = new Image(display, data);
 img.setBackground(yellow);
 System.out.println(Integer.toHexString(img.getImageData().getPixel(0, 50)));
 ImageData d = img.getImageData();
-d.transparentPixel =
--1;
+d.transparentPixel = -1;
 final Image img2 = new Image(display, d);
 shell.addListener(SWT.Paint, new Listener() {
 public void handleEvent(Event event) {

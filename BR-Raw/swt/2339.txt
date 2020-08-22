@@ -1,7 +1,5 @@
 Performance of GC.fill* methods on GTK
-The following example from Ian Bull on the SWT newsgroup demonstrates that GC.fill* methods are very slow on GTK.
-The time is being spent in OS.gdk_gc_get_values(handle, values).
-We could cache the GdkGCValues and this would bring the GTK performance in line with Windows.
+The following example from Ian Bull on the SWT newsgroup demonstrates that GC.fill* methods are very slow on GTK.  The time is being spent in OS.gdk_gc_get_values(handle, values).  We could cache the GdkGCValues and this would bring the GTK performance in line with Windows.
 import org.eclipse.swt.*;
 import org.eclipse.swt.events.*;
 import org.eclipse.swt.graphics.*;
@@ -46,8 +44,7 @@ canvas.redraw();
 long start = System.currentTimeMillis();
 canvas.update();
 long end = System.currentTimeMillis();
-System.out.println("Total: " + ( end
-- start ));
+System.out.println("Total: " + ( end - start ));
 
 }
 });
@@ -57,10 +54,8 @@ public void paintControl(PaintEvent e) {
 if (true) return;
 e.gc.setBackground(red);
 e.gc.fillRectangle(3, 3, 600, 300);
-for ( int i = 0; i
-< 200; i++ ) {
-for ( int j = 0; j
-< 200; j++ ) {
+for ( int i = 0; i < 200; i++ ) {
+for ( int j = 0; j < 200; j++ ) {
 e.gc.setBackground(blue);
 e.gc.fillOval(i*4, j*4, 3,3);
 }

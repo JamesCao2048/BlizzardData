@@ -67,14 +67,4 @@ System.err.println(thisJoinPoint.getSignature());
 System.err.println();
 }
 }
-//calls of any JComponent constructor, including subclasses
-before(): call(JComponent+.new(..)) {
-if (isStressChecking && !SwingUtilities.isEventDispatchThread()) {
-System.err.println(thisJoinPoint.getSourceLocation());
-System.err.println(thisJoinPoint.getSignature() +
-" *constructor*");
-System.err.println();
-}
-}
-}
-Running with SwingSet2.
+//calls of any JComponent const

@@ -4,6 +4,5 @@ Using StyledText with SWT.WRAP.
 The last word in the text is wrapped.
 When deleting characters from this last word until the word goes up one line
 (need not to be wrapped) then the widget does not redraw the last line (which
-should now be empty).
-This last word is now shown two times.
+should now be empty). This last word is now shown two times.
 This can be reproduced with the SWT Examples.

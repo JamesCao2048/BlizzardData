@@ -1,12 +1,10 @@
 [SWT Mac] Incorrect mouseExit event generated when balloon ToolTip is shown
 Build ID: 3.4
 Steps To Reproduce:
-1.In SWT control's mouseHover event handler, create and show a balloon ToolTip.
-2.On Mac OS X 10.5, When the ToolTip is shown, the background control will receive an extra (incorrect) mouseExit event (which is generated in Display.runEnterExit).
-The extra mouseExit event is not generated on Windows & Linux.
-3.You can try compile and run the example.
-On Windows, the tooltip will show normally, but on Mac, the tooltip will disappear immediately after it is shown.
-4.Also, the mouseHover interval on Mac seems much bigger than Windows, but that's another story.
+1. In SWT control's mouseHover event handler, create and show a balloon ToolTip.
+2. On Mac OS X 10.5, When the ToolTip is shown, the background control will receive an extra (incorrect) mouseExit event (which is generated in Display.runEnterExit). The extra mouseExit event is not generated on Windows & Linux.
+3. You can try compile and run the example. On Windows, the tooltip will show normally, but on Mac, the tooltip will disappear immediately after it is shown.
+4. Also, the mouseHover interval on Mac seems much bigger than Windows, but that's another story.
 More information:
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;

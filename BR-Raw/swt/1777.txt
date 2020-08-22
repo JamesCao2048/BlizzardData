@@ -17,14 +17,10 @@ at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:194)
 at XXXXXXXXXXXXXXX
 Source code:
 -------------------------------------------------------------------
-if (compressedHeight
-< componentHeight) {
-int srcOfs = (compressedHeight
-- 1) * componentWidth;
-for (int yPos = compressedHeight; yPos
-<= componentHeight; yPos++) {
-int dstOfs = (yPos
-- 1) * componentWidth;
+if (compressedHeight < componentHeight) {
+int srcOfs = (compressedHeight - 1) * componentWidth;
+for (int yPos = compressedHeight; yPos <= componentHeight; yPos++) {
+int dstOfs = (yPos - 1) * componentWidth;
 System.arraycopy(imageComponent, srcOfs, imageComponent, dstOfs,
 componentWidth);
 }

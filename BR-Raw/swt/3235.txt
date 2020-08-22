@@ -18,7 +18,6 @@ check.setText( "TEST" );
 On win32 both versions are working.
 Versions used: libswt-gtk-3062
 GTK, I don't know what's apropiate:
-[tom@vinea tom]$ pkg-config
---modversion gtk+-2.0
+[tom@vinea tom]$ pkg-config --modversion gtk+-2.0
 2.4.4
 [tom@vinea tom]$

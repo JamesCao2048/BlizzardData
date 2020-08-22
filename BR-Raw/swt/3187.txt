@@ -1,17 +1,12 @@
 DCR - GridLayout should not treat width/height hint as minumum size when grab/fill is specified
 The GridLayout manager treats the width and height hint as a minumum width even
-if fill and grab is specified for the cell.
-But is doesn't treat it as a
-maximum width.
-This makes it hard to design dialogs which are opened on
-a "smaller" screen.
-Consider the following example:
+if fill and grab is specified for the cell. But is doesn't treat it as a
+maximum width. This makes it hard to design dialogs which are opened on
+a "smaller" screen. Consider the following example:
 - a shell with a tree and some label below the tree
 - the layout is managed by a GridLayout manager.
 - we specify a width hint of 500 for the tree and make it fill and grab.
-Open the dialog.
-When you resize it (make it larger) the tree gets enlarged as
-well.
-If you make the dialog small the tree get clipped.
+Open the dialog. When you resize it (make it larger) the tree gets enlarged as
+well. If you make the dialog small the tree get clipped.
 When you now open the dialog on a smaller screen (600x480) the tree gets
 clipped right from the beginning.

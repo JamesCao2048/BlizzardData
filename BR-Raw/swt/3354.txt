@@ -1,15 +1,13 @@
 packing a shell has the effect of creating an unusable shell on pocketpc
 If I create a shell, then pack the shell, the shell is sized only large enough
-to have a title bar.
-Using the following code as an example, when it is run on
+to have a title bar. Using the following code as an example, when it is run on
 pocketpc, a small title bar displays below the navigation bar, but that it all.
 If I remove shell.pack(), then the shell displays full screen as expected.
 However, nothing indicates that it is invalid for me to use shell.pack() on
 pocketpc (alternatively, I can leave shell.pack() and add shell.setMaximized
 (true)).
 /*
-* Copyright (c) 2000, 2003 IBM Corp.
-All rights reserved.
+* Copyright (c) 2000, 2003 IBM Corp.  All rights reserved.
 * This file is made available under the terms of the Common Public License v1.0
 * which accompanies this distribution, and is available at
 *  http://www.eclipse.org/legal/cpl-v10.html
@@ -19,8 +17,7 @@ All rights reserved.
 * GC example snippet: measure a string
 *
 * For a list of all SWT example snippets see
-*  http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt
--
+*  http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt -
 home/dev.html#snippets
 */
 import org.eclipse.swt.*;
@@ -43,8 +40,7 @@ GC gc = new GC (label);
 Point size = gc.textExtent ("Hello");
 gc.dispose ();
 //HHa begin
-label.setText ("Hello
--> " + size);
+label.setText ("Hello -> " + size);
 FormData data1 = new FormData();
 data1.left = new FormAttachment(0, 0);
 data1.top = new FormAttachment(0, 0);

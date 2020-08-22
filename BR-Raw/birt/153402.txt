@@ -1,9 +1,2 @@
 Bug 153402 Format report parameter issue
-Description: Format report parameter issue Steps to reproduce: 1.New a report parameter, list-box.
-2.Click New button, keep display text empty, input test as value.
-3.Click Change, select Uppercase as format.
-4.Drag the parameter to Layout.
-5.Preview, select TEST in select list and click OK 6.Back to Layout, and preview again, click Show Report Parameters button Issues: After step5, I saw test display.
-So uppercase is applied to display text.
-But in step6, I saw TEST in input box of Parameter Dialog and input box was ticked, how to explain this?
-Is the uppercased display text is regarded as value when I preview the second time?
+Description: Format report parameter issue Steps to reproduce: 1. New a report parameter, list-box. 2. Click New button, keep display text empty, input test as value. 3. Click Change, select Uppercase as format. 4. Drag the parameter to Layout. 5. Preview, select TEST in select list and click OK 6. Back to Layout, and preview again, click Show Report Parameters button Issues: After step5, I saw test display. So uppercase is applied to display text. But in step6, I saw TEST in input box of Parameter Dialog and input box was ticked, how to explain this? Is the uppercased display text is regarded as value when I preview the second time?

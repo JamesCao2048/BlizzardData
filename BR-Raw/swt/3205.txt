@@ -1,28 +1,20 @@
 DirectoryDialog widget does not allow resize to smaller width
 The DirectoryDialog control on Linux does not seem to allow the user to resize
 the dialog to a width smaller than the longest string displayed in the dialog.
-
-Windows does not seem to have this problem
--- it both wraps the string and also
+Windows does not seem to have this problem -- it both wraps the string and also
 allows for resizing to a width smaller than even the wrapped string (though I
 think there may be another problem here in that rezising does not repaint the
 control, because if resizing on Windows to a width smaller than the displayed
-string, and then resizing back wider
--- the string is not repainted).
+string, and then resizing back wider -- the string is not repainted).
 Steps to reproduce:
-1.Start Eclipse (tried this on 3.0 and 3.0.1 RC1)
-2.Open Help > Software Updates > Manage Configuration...
-3.Click Add an Extension Location
+1. Start Eclipse (tried this on 3.0 and 3.0.1 RC1)
+2. Open Help > Software Updates > Manage Configuration...
+3. Click Add an Extension Location
 On Linux, the width of this dialog is fairly large, to accomodate the long
-message in the dialog.
-Attempts to resize to a smaller width fail.
-But can
+message in the dialog.  Attempts to resize to a smaller width fail.  But can
 resize width to a larger size (and height larger as well).
-
 On Windows, the width of this dialog is reasonable, because the text has been
-wrapped.
-Dialog can be resized here, but text is not resized as well
--- this
+wrapped.  Dialog can be resized here, but text is not resized as well -- this
 is not a huge issue, but when resizing width larger again, the text is not
 repainted.
 This behavior causes issues on lower resolutions (message runs off sides of
@@ -30,5 +22,4 @@ screen) with no remedy (other than dragging the window around so that the
 entire message can be read).
 Attempts to force wrapping of text prior to setMessage() for the dialog work
 okay, but then the text is always centered (on Linux), and does not look
-correct
--- I would think this would need to be right-justified.
+correct -- I would think this would need to be right-justified.

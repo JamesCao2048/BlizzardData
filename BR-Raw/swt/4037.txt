@@ -2,5 +2,4 @@ Too much flashin in Control Example
 - run the control example
 - resize the window _in_the_vertical_direction_only_
 - notice that all tabs in the TabFolder and all Frames flash.
-- why?
-only the bottom edge of the outermost frames need to be repainted.
+- why? only the bottom edge of the outermost frames need to be repainted.

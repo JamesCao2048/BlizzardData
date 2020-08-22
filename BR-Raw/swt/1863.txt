@@ -3,8 +3,8 @@ Created  attachment 77973   [details]
 Screenshots showing the current behaviour and the desired behaviour on Windows Vista
 Build ID: I20070621-1340
 Steps To Reproduce:
-1.Create a Table control with sortable columns
-2.Specify the sort order for one of the columns
+1. Create a Table control with sortable columns
+2. Specify the sort order for one of the columns
 The text will indent as space for an image is being left.
 More information:
 In the org.eclipse.swt.win32.x86 implementation of TableColumn.setSortDirection(int direction) the initial HDItem mask is being set up as:-
@@ -14,10 +14,6 @@ Note that in Windows Explorer, the coumn headers do not indent.
 With a bit of experimenting, it seems that the most appropriate thing is to set the mask to be simply:-
 hdItem.mask = OS.HDI_FORMAT;
 This will still display column images correctly if used, but will not indent text only column headers when sorted.
-Interestingly, I can find no combination that appears to allow the sort column arrow to be displayed as well as the column image.
-I suspect this is a limitation of the API as noted here:-
+Interestingly, I can find no combination that appears to allow the sort column arrow to be displayed as well as the column image.  I suspect this is a limitation of the API as noted here:-
 http://msdn2.microsoft.com/en-us/library/ms671802.aspx
-"HDF_SORTDOWN
-- Draws a down-arrow on this item.
-This is typically used to indicate that information in the current window is sorted on this column in descending order.
-This flag cannot be combined with HDF_IMAGE or HDF_BITMAP."
+"HDF_SORTDOWN - Draws a down-arrow on this item. This is typically used to indicate that information in the current window is sorted on this column in descending order. This flag cannot be combined with HDF_IMAGE or HDF_BITMAP."

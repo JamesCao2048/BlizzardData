@@ -1,34 +1,4 @@
 Bug 355407 Chart interactivity menu to specify the Event does not expand
-I'm testing the BIRT charting package on OSX.
-Everything seems to work fine except picking the Event for chart interactivity options.
-Here's how I configured the Eclipse plugin:
-- Downloaded eclipse-SDK-3.7-macosx-cocoa.tar.gz straight from the BIRT site
-- Clicked on Help
--> Install New Software
-- Work with:
---All Available Sites--
-- Selected the entire Business Intelligence, Reporting and Charting branch
-- Next, Next, Agree to license, and Install Now the Report Design view is available.
-So then:
-- I created a new Report
-- Created a new Data Source using ClassicModels
-- Created a new Data Set using [code] select CUSTOMERNAME, CLASSICMODELS.CUSTOMERS.CREDITLIMIT from CLASSICMODELS.CUSTOMERS where CLASSICMODELS.CUSTOMERS.STATE='CA' [/code]
-- Created a new Chart.
-Leaving the default options as they were: Bar chart, 2D, SVG [b]NOTE:[/b] if you continue to the next step and try to set the data series for the chart, you might [b]crash Eclipse[/b].
-This has happened to me consistently, so the work around I've found is to create the Chart and simply hit Finish without going to the Select Data tab.
-Save the report, and then double click on the chart to get the Edit Chart window back and go to Select Data and continue setting it all up.
-- Under 'Select Data' I used the CREDITLIMIT for my Y series, and CUSTOMERNAME for my X series
-- Under 'Format Chart' I selected Value (Y) Series and clicked on the Interactivity button
-- The 'Series Interactivity' pop-up window appeared.
-- Clicking the top drop-down list to select an Event didn't do anything.
-It looked like the list expanded for a split second but the overall effect was no access to selecting any of the Events other than 'Mouse Click'.
-- The Action drop-down list worked just fine, and so did the Cursor list.
-The Event list has a different style than the other two lists (Combo box vs.
-List???) so that might be where the problem lies?
-Following the same steps using the Windows installation of Eclipse correctly displayed the Event drop-down menu.
-I also tried loading a report (designed under the Windows installation) with interactivity options using various Events, and it loaded and ran fine under OSX.
-I just wasn't able to modify any of the events.
-So this must be a UI issue in the OSX version of the BIRT plugin.
-This seems like a simple fix.
-Would anyone know if/how it can be fixed?
-Thank you, Marco
+I'm testing the BIRT charting package on OSX. Everything seems to work fine except picking the Event for chart interactivity options. Here's how I configured the Eclipse plugin: - Downloaded eclipse-SDK-3.7-macosx-cocoa.tar.gz straight from the BIRT site - Clicked on Help -> Install New Software - Work with: --All Available Sites-- - Selected the entire Business Intelligence, Reporting and Charting branch - Next, Next, Agree to license, and Install Now the Report Design view is available. So then: - I created a new Report - Created a new Data Source using ClassicModels - Created a new Data Set using [code] select CUSTOMERNAME, CLASSICMODELS.CUSTOMERS.CREDITLIMIT from CLASSICMODELS.CUSTOMERS where CLASSICMODELS.CUSTOMERS.STATE='CA' [/code] - Created a new Chart. Leaving the default options as they were: Bar chart, 2D, SVG [b]NOTE:[/b] if you continue to the next step and try to set the data series for the chart, you might [b]crash Eclipse[/b]. This has happened to me consistently, so th
+e work around I've found is to create the Chart and simply hit Finish without going to the Select Data tab. Save the report, and then double click on the chart to get the Edit Chart window back and go to Select Data and continue setting it all up. - Under 'Select Data' I used the CREDITLIMIT for my Y series, and CUSTOMERNAME for my X series - Under 'Format Chart' I selected Value (Y) Series and clicked on the Interactivity button - The 'Series Interactivity' pop-up window appeared. - Clicking the top drop-down list to select an Event didn't do anything. It looked like the list expanded for a split second but the overall effect was no access to selecting any of the Events other than 'Mouse Click'. - The Action drop-down list worked just fine, and so did the Cursor list. The Event list has a different style than the other two lists (Combo box vs. List???) so that might be where the problem lies? Following the same steps using the Windows installation of Eclipse correctly displayed the Ev
+ent drop-down menu. I also tried loading a report (designed under the Windows installation) with interactivity options using various Events, and it loaded and ran fine under OSX. I just wasn't able to modify any of the events. So this must be a UI issue in the OSX version of the BIRT plugin. This seems like a simple fix. Would anyone know if/how it can be fixed? Thank you, Marco

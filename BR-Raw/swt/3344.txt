@@ -1,12 +1,9 @@
 GTK: Text.setCursor() does not function.
 In this test selecting an item from the list would set the Cursor of the Text
-widget by calling Text.setCursor().
-But it is seen that the Cursor of the Text
-widget is not set .
-This test  works fine on Windows.
+widget by calling Text.setCursor(). But it is seen that the Cursor of the Text
+widget is not set . This test  works fine on Windows.
 The test case :
----------test case starts here
-----------------------------------------
+---------test case starts here ----------------------------------------
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -45,5 +42,4 @@ disp.sleep();
 }
 }
 }
--------------test case ends here
------------------------------------------
+-------------test case ends here -----------------------------------------

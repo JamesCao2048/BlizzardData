@@ -59,12 +59,4 @@ at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.jav
 a:286)
 at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:95)
 at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(C
-lassPreProcessorAgentAdapter.java:52)
-at sun.instrument.TransformerManager.transform(TransformerManager.java:1
-22)
-at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java
-:155)
-at java.lang.ClassLoader.defineClass1(Native Method)
-at java.lang.ClassLoader.defineClass(ClassLoader.java:620)
-
-I also tried using aspectjweaver-1.6.4 version however got the same error.
+lassPreProcessorAgent

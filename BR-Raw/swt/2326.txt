@@ -1,11 +1,4 @@
 PNG Load Speed Terrible for medium to large images
-PNGs more than a couple of megs are extremely slow for loading in Windows.
-I have reviewed the fragment "org.eclipse.swt.win32.win32.x86" and discovered it is due to the org.eclipse.swt.internal.image.PNGFileFormat.
-I'm not well versed in image loading, but this PNGFileFormat loads image data in chunks, then checks byte by byte for compression, end of header, etc.
-This is extremely slow and I can't imagine the format is meant to be used this way.
-In doing some comparisons, a large png of 14 megs took 13,891 milliseconds and a medium png of 2 megs took 6,312 milliseconds using the SWT image loading.
-Both images are compressed.
-AWT took under a second for both.
-I assume some of this has to do with optimizations performed by the OS.
-The point is, I could load these images faster by using the AWT loader and converting to SWT ImageData than I can using the natural SWT loader.
+PNGs more than a couple of megs are extremely slow for loading in Windows.  I have reviewed the fragment "org.eclipse.swt.win32.win32.x86" and discovered it is due to the org.eclipse.swt.internal.image.PNGFileFormat.  I'm not well versed in image loading, but this PNGFileFormat loads image data in chunks, then checks byte by byte for compression, end of header, etc.  This is extremely slow and I can't imagine the format is meant to be used this way.
+In doing some comparisons, a large png of 14 megs took 13,891 milliseconds and a medium png of 2 megs took 6,312 milliseconds using the SWT image loading.  Both images are compressed.  AWT took under a second for both.  I assume some of this has to do with optimizations performed by the OS.  The point is, I could load these images faster by using the AWT loader and converting to SWT ImageData than I can using the natural SWT loader.
 I am using a Windows XP machine with 500 megs of RAM, a NVIDIA GeForce 6600 GT (128-bit, 128 megs of RAM), an an Intel Pentium 4 2.53 GHz.

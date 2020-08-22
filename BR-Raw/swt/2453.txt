@@ -1,10 +1,8 @@
 ControlExample crash when setting background image on SEPARATOR Label
-Feb.
-14th 8:00am build
+Feb. 14th 8:00am build
 - run the Control Example, go to the Label tab
 - check the Background Image checkbox
 - check the SWT.SEPARATOR checkbox
-
 -> this crashes the control example with the following:
 An unexpected exception has been detected in native code outside the VM.
 Unexpected Signal : 11 occurred at PC=0x4A3AA7
@@ -47,4 +45,4 @@ Dynamic libraries:
 004d8000-004dc000 rwxp 0004c000 03:02 1295143    /usr/X11R6/lib/libXt.so.6.0
 005b2000-005c7000 r-xp 00000000 03:02 670237     /lib/ld-2.3.4.so
 005c7000-005c8000 r-xp 00014000 03:02 670237     /lib/ld-2.3.4.so
-0
+00

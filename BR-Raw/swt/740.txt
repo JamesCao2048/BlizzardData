@@ -1,13 +1,10 @@
 TRAVERSAL-Events not delivered to InteractiveSplashHandler
 i have extended the extensionpoint org.eclipse.ui.splashHandlers to provide a
-custom splashscreen for my rcp application.
-it works right now on mac os x,
+custom splashscreen for my rcp application. it works right now on mac os x,
 but when i start it on a linux machine it seems that no one of the traversal-events,
-e.g.
-SWT.TRAVERSAL_TAB_NEXT and SWT.TRAVERSAL_TAB_PREVIOUS are delivered.
+e.g. SWT.TRAVERSAL_TAB_NEXT and SWT.TRAVERSAL_TAB_PREVIOUS are delivered.
 to reproduce you can simply try the 'simulated login session', the TAB-key is
-not working to change the focus to the password-field.
-i have tried to add an
+not working to change the focus to the password-field. i have tried to add an
 TraverseListener and it was never triggered.
 -Eclipse 3.3M7
 -Linux Ubuntu Feisty Fawn (latest Release)

@@ -1,10 +1,9 @@
 Cocoa: exception gets logged when opening views while a detached view exists
-I am seeing a lot of logged exceptions, and it seems to be caused by the fact that I have a detached (torn off) view.
-I am out of time to boil this down to reproducible steps, but it should be reproducible as follows:
-1.Reset Java perspective.
-2.Tear off Package Explorer.
-3.Open views and editors in various configurations.
-4.Check the error log view regularly.
+I am seeing a lot of logged exceptions, and it seems to be caused by the fact that I have a detached (torn off) view. I am out of time to boil this down to reproducible steps, but it should be reproducible as follows:
+1. Reset Java perspective.
+2. Tear off Package Explorer.
+3. Open views and editors in various configurations.
+4. Check the error log view regularly.
 Here is an example stack trace:
 java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.debug.ui.BreakpointView while still in the middle of activating part org.eclipse.team.ui.GenericHistoryView
 at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3481)
@@ -40,4 +39,4 @@ at org.eclipse.ui.internal.WorkbenchPage.activatePart(WorkbenchPage.java:621)
 at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3527)
 at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:614)
 at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:1092)
-at org.eclipse.ui.internal.WorkbenchPage.busyShowView(Wo
+at org.eclipse.ui.internal.WorkbenchPage.busyShowVie

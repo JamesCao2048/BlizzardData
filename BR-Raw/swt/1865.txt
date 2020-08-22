@@ -1,21 +1,13 @@
 custom drawn tree: 1st selection behaves oddly
 Build ID: 3.3.1  M20070921-1145
-I have a tree.
-It looks something like this, ignore the '*' for now:
+I have a tree.  It looks something like this, ignore the '*' for now:
 Text Header
 (i) Item long text
 (i) Item long text that continues * out here
 (i) Item more long text
-All of the items at the top level of the tree.
-The font on the Text Header item is large (2x normal & bold), but it has no icon.
-All of the other items have icons designated with (i).
-Everything is custom measured and painted.
-What I have found is that right after the tree is first created the hit test appears to use the width/height of the Text Header to determine selections.
-If I click off to the side (like where the '*' is) the Text Header is selected.
+All of the items at the top level of the tree.  The font on the Text Header item is large (2x normal & bold), but it has no icon.  All of the other items have icons designated with (i).  Everything is custom measured and painted.
+What I have found is that right after the tree is first created the hit test appears to use the width/height of the Text Header to determine selections.  If I click off to the side (like where the '*' is) the Text Header is selected.
 Once a selection has been made SWT/Windows seems to figure out what's going on and selections occur normally.
-My workaround is to make and remove a selection right after item creation.
-If there aren't selection listeners it happens fast enough that there isn't a flicker.
-The tree is set up with FULL_SELECTION and has no columns.
-I expect selecting anywhere in the row should select that item.
-I'd love to give an example, and if time permits I will.
-At this point I'm too under the gun.
+My workaround is to make and remove a selection right after item creation.  If there aren't selection listeners it happens fast enough that there isn't a flicker.
+The tree is set up with FULL_SELECTION and has no columns.  I expect selecting anywhere in the row should select that item.
+I'd love to give an example, and if time permits I will.  At this point I'm too under the gun.

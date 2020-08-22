@@ -1,8 +1,2 @@
 Bug 283674 The right-sided buttons in the data set parameters should be updated
-Build ID: I20090611-1540 Steps To Reproduce: 1, New a data set with query select * from CUSTOMERS where CUSTOMERNUMBER BETWEEN ?
-AND ?
-2, Go to data set parameter page and input the default values for the two parameters.
-3, Select the first parameter and the "Up" button is still enabled.
-Actually it should be disabled.
-4, Select the last parameter and the "Down" button is still enabled.Actually it should be disabled.
-Expect to update the buttons right to the table in time.
+Build ID: I20090611-1540 Steps To Reproduce: 1, New a data set with query select * from CUSTOMERS where CUSTOMERNUMBER BETWEEN ? AND ? 2, Go to data set parameter page and input the default values for the two parameters. 3, Select the first parameter and the "Up" button is still enabled. Actually it should be disabled. 4, Select the last parameter and the "Down" button is still enabled.Actually it should be disabled. Expect to update the buttons right to the table in time.

@@ -1,13 +1,9 @@
 Deadlock/Hang on UI Thread
 Build Identifier: 3.6.2
-Our product recently update to SWT 3.6.2 and found a hang/deadlock on a common use case for us.
-We did some digging and found it was caused by the fix for  bug 322137 .
-
-We have a Shell that we display that uses style SWT.ON_TOP.
-An Eclipse action is run that calls MessageBox and the result is the user can never click on the OK button in the MessageBox.
-Due to the complexity of the product, I was able to reproduce the issue by creating a sample project.
-The project consists of piecing together SWT Snippet fragments, resulting in a flow that does not really make sense but does reproduce the problem.
+Our product recently update to SWT 3.6.2 and found a hang/deadlock on a common use case for us.  We did some digging and found it was caused by the fix for  bug 322137 .
+We have a Shell that we display that uses style SWT.ON_TOP.  An Eclipse action is run that calls MessageBox and the result is the user can never click on the OK button in the MessageBox.
+Due to the complexity of the product, I was able to reproduce the issue by creating a sample project.  The project consists of piecing together SWT Snippet fragments, resulting in a flow that does not really make sense but does reproduce the problem.
 Reproducible: Always
 Steps to Reproduce:
-1.Run the Snippet50.java class in the project that will be attached.
-2.Note how you cannot click the OK button on the MessageBox that is displayed.
+1. Run the Snippet50.java class in the project that will be attached.
+2. Note how you cannot click the OK button on the MessageBox that is displayed.

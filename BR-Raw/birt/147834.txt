@@ -1,3 +1,2 @@
 Bug 147834 Drill through multi-page report document will only show the first page when preview in HTML/PDF
-Description: When target report document has multiple pages, drill through will only show the first page.
-Steps to reproduce: 1.New a report with multiple pages, preview it in web viewer to create report document 2.New another report, drill through to this report document 3.Preview in HTML/PDF, only the first page of target document shows up Notes: Preview in WebViewer will get correct result
+Description: When target report document has multiple pages, drill through will only show the first page. Steps to reproduce: 1. New a report with multiple pages, preview it in web viewer to create report document 2. New another report, drill through to this report document 3. Preview in HTML/PDF, only the first page of target document shows up Notes: Preview in WebViewer will get correct result

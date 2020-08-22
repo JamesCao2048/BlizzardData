@@ -1,8 +1,2 @@
 Bug 189832 Change xtab binding should process the existed binding.[1102]
-Description: Change xtab binding should process the existed binding.
-Build number:2.2.0.v200705300630 Steps to reproduce: 1.New a cube and a crosstab.
-2.Drag measure and dimension from cube to crosstab.
-3.In Property Editor, change xtab binding cube to none.
-Expected result: A dialog should pop up to ask how to process the old binding as table does.
-Actual result: Nothing happens.
-Error log:N/A
+Description: Change xtab binding should process the existed binding. Build number:2.2.0.v200705300630 Steps to reproduce: 1. New a cube and a crosstab. 2. Drag measure and dimension from cube to crosstab. 3. In Property Editor, change xtab binding cube to none. Expected result: A dialog should pop up to ask how to process the old binding as table does. Actual result: Nothing happens. Error log:N/A

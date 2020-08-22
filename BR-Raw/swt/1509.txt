@@ -1,14 +1,12 @@
 Clarify/improve TextLayout.setText(String)
 3.4 M6.
 TextLayout.setText(String) has two undocumented side effects:
-1.if the new string is not the same as the old one it sets the text *and* it
+1. if the new string is not the same as the old one it sets the text *and* it
 resets all the style information
-2.if the new string is the same it does nothing
-Currently
-- as there is no reset[Styles]() method clients have to read the code and then do the following to reset their text layout in order to reuse it:
+2. if the new string is the same it does nothing
+Currently - as there is no reset[Styles]() method clients have to read the code and then do the following to reset their text layout in order to reuse it:
 textLayout.setText(""); // ensure styles get cleared
 textLayout.setText(realText);
 A good fix for me would be:
-1.document that setText also clears the style information
-2.always clear the style information.
-I guess that is what clients would expect
+1. document that setText also clears the style information
+2. always clear the style information. I guess that is what clients would expect

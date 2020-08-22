@@ -1,3 +1,2 @@
 Bug 214254 Expose Javascript "event" object for interactivity
-When doing interactivity with a chart, and specifying a Mouse Click event with an Invoke Script action, the browser event object should be passed into the script.
-This object should be named "evt", and accompany the other standard category and value series parameters.
+When doing interactivity with a chart, and specifying a Mouse Click event with an Invoke Script action, the browser event object should be passed into the script. This object should be named "evt", and accompany the other standard category and value series parameters.

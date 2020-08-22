@@ -8,18 +8,12 @@ final java.awt.Panel ilogpanel = SWT_AWT.new_Panel(composite);
 ...
 }
 but does not work in build after 20020502 and give the following log,
-!SESSION
-----------------------------------------------------------------------
+!SESSION ----------------------------------------------------------------------
 java.version=1.3.1_03
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
-Command-line arguments:
--os win32
--ws win32
--arch x86
--feature
-org.eclipse.platform
--install file:D:/java_dev/eclipse/
+Command-line arguments: -os win32 -ws win32 -arch x86 -feature
+org.eclipse.platform -install file:D:/java_dev/eclipse/
 !ENTRY org.eclipse.jdt.debug.ui 4 150 02-5-21 脧脗脦莽2:50
 !MESSAGE Internal Error
 !STACK 1
@@ -68,4 +62,4 @@ at org.eclipse.swt.widgets.TypedListener.handleEvent
 at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:75)
 at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:841)
 at org.eclipse.swt.widgets.Tree.wmNotifyChild(Tree.java:1715)
-at org.eclipse.swt.widgets.Contr
+at org.eclipse.swt.widgets.Control.WM_

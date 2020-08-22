@@ -1,10 +1,8 @@
 StyledText - move StyledTextRenderer#bidiTextWidth to DisplayRenderer
 build 20020321
 bidiTextWidth is used by the StyledTextRenderer to calculate the line start
-location on bidi platforms.
-This is important for display rendering because of
-the bidi caret inset.
-For printing however there is no need for a bidi caret
+location on bidi platforms. This is important for display rendering because of
+the bidi caret inset. For printing however there is no need for a bidi caret
 inset.
 The current method should be moved to DisplayRenderer, made abstract in
 StyledTextRenderer and just return 0 in the PrintRenderer.

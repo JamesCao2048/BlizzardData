@@ -3,10 +3,7 @@ Build id: I20090511-2000 on Cocoa (32-bit, 10.5.6)
 Load project org.eclipse.swt.snippets.
 Run SnippetLauncher.
 Close the first shell (HelloWorld) with the keyboard (Command+Q).
-Try to close the 2nd shell with the keyboard
-- the shell does not close, and this message is printed to the console:
-2009-05-12 10:10:02.286 java[54557:10b] ***
--[NSCFString quitRequested:]: unrecognized selector sent to instance 0x12b9b0
+Try to close the 2nd shell with the keyboard - the shell does not close, and this message is printed to the console:
+2009-05-12 10:10:02.286 java[54557:10b] *** -[NSCFString quitRequested:]: unrecognized selector sent to instance 0x12b9b0
 You can close this shell (and subsequent shells) with the mouse (click on red x) but you cannot close any of them, except the first one, using the keyboard.
-This is probably some display cleanup-on-dispose problem.
-The snippet launcher creates and disposes successive displays, which not many applications will do.
+This is probably some display cleanup-on-dispose problem. The snippet launcher creates and disposes successive displays, which not many applications will do.

@@ -1,10 +1,2 @@
 Bug 284870 TVT35:TCT314: TRK: Wrong default placement for % symbol in Property Editor.
-<response_by> Albatros at 2009.07.28.01.52.19
-</response_by> Build: 20090726-0100-nl2-win32 Language: Turkish Must-fix: Yes Steps: 1) Expand BIRTproject in the Navigator, right click on Test_Report_1.rptdesign and select Open.
-2) In the report, click on the cell with [CUSTOMNAME] in it.
-3) In the Property Editor, select Format Number under the Properties tab.
-4) Open the drop down list next to Format as: and select Custom.
-Problem Description: The default placment for % symbol is wrong for Turkish.
-It should be before the numbers (ex: %123456,00) Thanks, Nilgun.
-<response_by> Matthew McClintock at 2009.07.28.09.18.24
-</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.
+<response_by> Albatros at 2009.07.28.01.52.19 </response_by> Build: 20090726-0100-nl2-win32 Language: Turkish Must-fix: Yes Steps: 1) Expand BIRTproject in the Navigator, right click on Test_Report_1.rptdesign and select Open. 2) In the report, click on the cell with [CUSTOMNAME] in it. 3) In the Property Editor, select Format Number under the Properties tab. 4) Open the drop down list next to Format as: and select Custom. Problem Description: The default placment for % symbol is wrong for Turkish. It should be before the numbers (ex: %123456,00) Thanks, Nilgun. <response_by> Matthew McClintock at 2009.07.28.09.18.24 </response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

@@ -1,18 +1,12 @@
 SWT: Program.getImageData() returns null when icon name has quotes.
 Build ID: R-3.3-200706251500
 Steps To Reproduce:
-My VLC application is registered for several extensions, but not all the ones it supports.
-In the registry, there is:
+My VLC application is registered for several extensions, but not all the ones it supports. In the registry, there is:
 VLC.aac, VLC.ac3, etc.
 Now VLC.ac3 is registered for the ac3 extension, and the
-getImageData() works.
-But for VLC.aac, getImageData() returns null.
-In the registry though, the two entries map to the same DefaultIcon.
-I found that the icon contains double quotes in its path.
-The entry is:
+getImageData() works. But for VLC.aac, getImageData() returns null. In the registry though, the two entries map to the same DefaultIcon.
+I found that the icon contains double quotes in its path. The entry is:
 "C:Program FilesVideoLANVLCvlc.exe", 0
-In the Program.getImageData(), in the code that executes when the extension is null, I modified the value (at runtime) of the filename (after the substring in that case) to remove the double quotes, and it does return a non null image data.
-I guess the code should check if the name contains quotes and remove them before extracting the icon.
+In the Program.getImageData(), in the code that executes when the extension is null, I modified the value (at runtime) of the filename (after the substring in that case) to remove the double quotes, and it does return a non null image data. I guess the code should check if the name contains quotes and remove them before extracting the icon.
 More information:
-SWT 3.3 win32 Final Release
-- 25 June 2007
+SWT 3.3 win32 Final Release - 25 June 2007

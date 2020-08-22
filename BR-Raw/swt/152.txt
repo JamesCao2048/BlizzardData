@@ -1,11 +1,4 @@
 GC.copyArea() not work correctly on Mac retina screen
-I use copyArea(Image image, int x, int y) to store the specified screen region to an image.
-But it copes a wrong region.
-This happens on retina Macbook pro only.
-Other non-retina 10.8 is not impacted.
-It looks like coordinates issue.
-The x, y and the size of the image are obtained by other SWT calls, such as Display.getDefault().getCursorLocation().
-The coordinates are logical.
-That means, if I set the screen resolution to 800x600 for example, the max of 'x' is 800 which is returned by getCursorLocation().
-If I set the screen resolution to 'retina best fit' (actually 1440x900 in logical), the max of 'x' is 1440.Then I pass the coordinates to copyArea() and expect it to capture the screen within the logical region, but it treats them as physical coordinates (2880x1800) and actually copies wrong screen (the content is smaller and origin has an offset).
+I use copyArea(Image image, int x, int y) to store the specified screen region to an image. But it copes a wrong region. This happens on retina Macbook pro only. Other non-retina 10.8 is not impacted.
+It looks like coordinates issue. The x, y and the size of the image are obtained by other SWT calls, such as Display.getDefault().getCursorLocation(). The coordinates are logical. That means, if I set the screen resolution to 800x600 for example, the max of 'x' is 800 which is returned by getCursorLocation(). If I set the screen resolution to 'retina best fit' (actually 1440x900 in logical), the max of 'x' is 1440. Then I pass the coordinates to copyArea() and expect it to capture the screen within the logical region, but it treats them as physical coordinates (2880x1800) and actually copies wrong screen (the content is smaller and origin has an offset).
 This impacts IBM Sametime screen capture feature.

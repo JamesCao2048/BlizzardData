@@ -1,7 +1,2 @@
 Bug 146867 TVT3.2:TCT915: DE : Birt : Title "Warning" in English
-Description: OS : RHEL 3.1 Must fix or not a must fix: Should be for next release Build date: 0611 Component name = BIRT Blocking: no Language: de Bitmap Location: V:defectsde Tester Name: Ruth Nestvold Problem Description: Title of dialog box and feature element in English.
-See attached screen shot.
-Steps: On Navigator view, right click the project and select Import Select File System, and select the Test_Report_4.rptdesign and Test_Report_1.properties Click Finish Double click the Test_Report_4.rptdesign Same for Netherlands.
-John I believe that the "column binding" might be a name.
-Warning definitely should be externalized though.
-This article was reassigned from Category:''TVT/Testing''.
+Description: OS : RHEL 3.1 Must fix or not a must fix: Should be for next release Build date: 0611 Component name = BIRT Blocking: no Language: de Bitmap Location: V:defectsde Tester Name: Ruth Nestvold Problem Description: Title of dialog box and feature element in English. See attached screen shot. Steps: On Navigator view, right click the project and select Import Select File System, and select the Test_Report_4.rptdesign and Test_Report_1.properties Click Finish Double click the Test_Report_4.rptdesign Same for Netherlands. John I believe that the "column binding" might be a name. Warning definitely should be externalized though. This article was reassigned from Category:''TVT/Testing''.

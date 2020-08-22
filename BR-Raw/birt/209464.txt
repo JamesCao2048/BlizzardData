@@ -1,7 +1,2 @@
 Bug 209464 Drill-through link should pass svg parameter value[0002]
-Description: Drill-through link should pass svg parameter value Build number:2.3.0.v20071112 Steps to reproduce: 1.Insert a chart.
-2.Define drill-through link in chart interactivity which link to the current report.
-3.In preference, enable svg.
-4.Preview and click the link.
-Expected result: Display chart with same type after drill-through link Actual result: In preview page, chart is svg chart.After drill-through link, the same chart in the linked page has gray background which means the chart is converted to non-svg image.
-Error log:n/a
+Description: Drill-through link should pass svg parameter value Build number:2.3.0.v20071112 Steps to reproduce: 1. Insert a chart. 2. Define drill-through link in chart interactivity which link to the current report. 3. In preference, enable svg. 4. Preview and click the link. Expected result: Display chart with same type after drill-through link Actual result: In preview page, chart is svg chart.After drill-through link, the same chart in the linked page has gray background which means the chart is converted to non-svg image. Error log:n/a

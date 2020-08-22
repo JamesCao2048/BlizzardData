@@ -3,17 +3,15 @@ Created  attachment 138141   [details]
 Image1
 Build ID: I20090531-2000
 Steps To Reproduce:
-1.Launch the Clipboard example.
-2.Click on "open image" to open the attached image.
-3.Click on copy
-4.Click on paste
+1. Launch the Clipboard example.
+2. Click on "open image" to open the attached image.
+3. Click on copy
+4. Click on paste
 The application exits (due to SWT error).
-It worked fine for full screen images but failed for other images.
-Tried on both .png and .jpg images.
+It worked fine for full screen images but failed for other images. Tried on both .png and .jpg images.
 More information:
 Debugging shows that we get SWT error in ImageData
-if (data != null && data.length
-< minBytesPerLine * height) {
+if (data != null && data.length < minBytesPerLine * height) {
 SWT.error(SWT.ERROR_INVALID_ARGUMENT);
 }
 Also, in Image.getImageData(), the imageRep.bytesPerRow() and imageRep.bitsPerPixel() return different values during copy and paste.

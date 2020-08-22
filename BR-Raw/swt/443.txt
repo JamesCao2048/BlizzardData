@@ -1,6 +1,5 @@
 Broken DND feedback indicator when dragging TableItems on Mac
-I want to set correct DND.FEEDBACK_INSERT_BEFORE and DND.FEEDBACK_INSERT_AFTER when dragging TableItems inside dragOver method.
-Although feedback indicator appears, this can result in wrong indication where item will be dropped; expected drop position is different from the actual position after drop.
+I want to set correct DND.FEEDBACK_INSERT_BEFORE and DND.FEEDBACK_INSERT_AFTER when dragging TableItems inside dragOver method. Although feedback indicator appears, this can result in wrong indication where item will be dropped; expected drop position is different from the actual position after drop.
 Please, consider this DND example:  http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/SWTDNDDrag  andDropcomprehensiveExample.htm
 Run the example and check the following options:
 Inside the left-hand pane:
@@ -15,19 +14,15 @@ Inside the right-hand pane:
 - check DND.DROP_MOVE,
 - check DND.FEEDBACK_INSERT_BEFORE,
 - check DND.FEEDBACK_INSERT_AFTER
-Now if you drag a TableItem from the left-hand Table UP the destination table so that mouse pointer is at highest possible position before insertion line jumps one item higher (not so simple to achieve, since we have to move mouse pixel by pixel up the destination Table), insertion line indicates that this item will be dropped AFTER the item.
-But once we release the mouse button, and drop takes place, item is unexpectedly dropped BEFORE the item.
+Now if you drag a TableItem from the left-hand Table UP the destination table so that mouse pointer is at highest possible position before insertion line jumps one item higher (not so simple to achieve, since we have to move mouse pixel by pixel up the destination Table), insertion line indicates that this item will be dropped AFTER the item. But once we release the mouse button, and drop takes place, item is unexpectedly dropped BEFORE the item.
 This happens only on Mac, while it works perfectly on Windows (haven't tried with GTK yet though).
 The other issue (I think it's related to this one, so I'm not opening another bug) is the following:
-inside the dragOver method, where I want to set correct feedback (insertion line) depending on mouse pointer location inside the TableItem, this results in chaotic jumping of insertion line.
-This is a bit hard to describe, but the point is that this straight forward piece of code that I can use without problems when dragging over TreeItems fails on Mac.
-Code for determining event location that I use:
+inside the dragOver method, where I want to set correct feedback (insertion line) depending on mouse pointer location inside the TableItem, this results in chaotic jumping of insertion line. This is a bit hard to describe, but the point is that this straight forward piece of code that I can use without problems when dragging over TreeItems fails on Mac. Code for determining event location that I use:
 TableItem item = (TableItem) event.item;
 Point point = item.getParent().getDisplay().map(null, item.getParent(), event.x, event.y);
 Rectangle bounds = item.getBounds();
 
-if (point.y
-< bounds.y + bounds.height / 2)
+if (point.y < bounds.y + bounds.height / 2)
 {
 // Event location in the upper half of TableItem
 event.feedback |= DND.FEEDBACK_INSERT_BEFORE;
@@ -37,10 +32,8 @@ else if (point.y >= bounds.y + bounds.height / 2)
 // Event location in the lower half of TableItem
 event.feedback |= DND.FEEDBACK_INSERT_AFTER;
 }
-Again, this code works perfectly on Windows with Tree and also with Table.
-It won't work with Table on Mac.
-Here is a complete runnable snippet that demonstrates insertion line jumping inside dragOver method on Mac.
-Methods dragEnter and drop are not implemented:
+Again, this code works perfectly on Windows with Tree and also with Table. It won't work with Table on Mac.
+Here is a complete runnable snippet that demonstrates insertion line jumping inside dragOver method on Mac. Methods dragEnter and drop are not implemented:
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -49,4 +42,4 @@ import org.eclipse.swt.dnd.DragSourceEvent;
 import org.eclipse.swt.dnd.DropTarget;
 import org.eclipse.swt.dnd.DropTargetAdapter;
 import org.eclipse.swt.dnd.DropTargetEvent;
-im
+imp

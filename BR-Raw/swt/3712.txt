@@ -1,13 +1,10 @@
 Crash when opening a MessageBox on a Text focusLost event
-Opening a MessageBox when a Text receives a focusLost event (e.g.
-when user
+Opening a MessageBox when a Text receives a focusLost event (e.g. when user
 press Tab) crashes on linux-gtk (works fine in linux-motif and windows).
 System: Red Hat 9, gtk2-2.2.1
 Eclipse: 2.1 release, libswt-gtk-213
---- GTK error message
-----
-(<unknown>:3061): Gtk-WARNING **: GtkEntry
-- did not receive focus-out-event.
+--- GTK error message ----
+(<unknown>:3061): Gtk-WARNING **: GtkEntry - did not receive focus-out-event.
 If you
 connect a handler to this signal, it must return
 FALSE so the entry gets the event as well
@@ -15,8 +12,7 @@ FALSE so the entry gets the event as well
 Gtk-ERROR **: file gtkentry.c: line 4302 (blink_cb): assertion failed:
 (GTK_WIDGET_HAS_FOCUS (entry))
 aborting...
---- code snippet
----
+--- code snippet ---
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.*;
 import org.eclipse.swt.layout.*;

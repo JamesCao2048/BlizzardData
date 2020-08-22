@@ -2,11 +2,9 @@
 Build Identifier: SWT 3.7M7
 Shell.setEnabled(enable) has this code:
 if (enabled && window.isMainWindow())
-window can be null for embedded case and should be taken into account.
-Being able to disable the control hierarchy (and not setEnabled on the control itself) is a useful capability which is working on other SWT ports.
-I may be wrong but I think this is a regression for the Mac port.
+window can be null for embedded case and should be taken into account. Being able to disable the control hierarchy (and not setEnabled on the control itself) is a useful capability which is working on other SWT ports. I may be wrong but I think this is a regression for the Mac port.
 Reproducible: Always
 Steps to Reproduce:
-1.disable an embedded shell
-2.enable it
+1. disable an embedded shell
+2. enable it
 -> NPE

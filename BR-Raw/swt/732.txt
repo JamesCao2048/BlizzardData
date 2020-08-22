@@ -3,13 +3,11 @@ Created  attachment 94602   [details]
 A Canvas that gets removed
 Build ID: 3.4M6
 Steps To Reproduce:
-1.Create an embedded Shell on an AWT Canvas
-2.Remove the Shell from its parent (which disposes the associated native resources)
-3.See the following message printed in the console
+1. Create an embedded Shell on an AWT Canvas
+2. Remove the Shell from its parent (which disposes the associated native resources)
+3. See the following message printed in the console
 (SWT:9436): Gtk-CRITICAL **: gtk_window_group_remove_window: assertion `window->group == window_group' failed
 Note that the number in "SWT:XXXX" changed at every run.
 More information:
-This did not occur until a few days ago.
-I use an Ubuntu 7.10 installation on which I accept all the automatic upgrades.
-Maybe a library has changed.
+This did not occur until a few days ago. I use an Ubuntu 7.10 installation on which I accept all the automatic upgrades. Maybe a library has changed.
 This is problematic because users will panic when they will start to see this message in their logs.

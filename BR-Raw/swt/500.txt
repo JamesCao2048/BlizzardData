@@ -1,4 +1,2 @@
 Tree with SWT.VIRTUAL not working
-The WPF TreeView widget does not virutalize its items like ListView can/does.
-We use OnRender to send our SetData event that tells the user to populate the SWT TreeItem or TableItem.
-Because WPF TreeView widget does not use a virtualized panel to layout it's children, all of the the children are rendered at the same time, regardless of whether they are visible or not.
+The WPF TreeView widget does not virutalize its items like ListView can/does. We use OnRender to send our SetData event that tells the user to populate the SWT TreeItem or TableItem. Because WPF TreeView widget does not use a virtualized panel to layout it's children, all of the the children are rendered at the same time, regardless of whether they are visible or not.

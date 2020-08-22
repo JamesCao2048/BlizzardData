@@ -1,12 +1,9 @@
 Need API to check advanced graphics mode
 Most operating systems offer a different library to do advanced graphics (Mac
-does not).
-The advanced graphics support in SWT makes use of this library to
-implement features such as antialiasing, tranformations, alpha etc.
-When one
+does not).  The advanced graphics support in SWT makes use of this library to
+implement features such as antialiasing, tranformations, alpha etc.  When one
 of these features is requested, SWT graphics begins to use the advanced
-library for all graphics operations, even those that are not advanced.
-Since
+library for all graphics operations, even those that are not advanced.  Since
 two different operating system graphics libraries are in use, there may be
 differences in output (such as string measuring) and performance.
 We would like to add GC.getAdvanced() and GC.setAdvanced(boolean) to allow

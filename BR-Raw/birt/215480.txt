@@ -1,10 +1,2 @@
 Bug 215480 Chart labels on DateTime x-axis can be incorrect
-Build ID: 2.2.1 Steps To Reproduce: I've found a reproduceable case of problematic x-axis labeling.
-Consider a line or scatter chart with an integer Y axis and a DateTime X axis.
-The attached rptdesign, which is build on classic cars, has two charts which differ only in their size.
-I've also attached a screenshot of the rendered report.
-Look at the label on the X axis label furthest to the right.
-On the large chart, it is "4/1/05" but on the small chart it is "1/1/05".
-Expected result: The last label, which corresponds with the right-most pixel of the x axis, should always have the same label regardless of the size of the chart, and certainly shouldn't have a discrepancy of three months.
-I would expect the first and last values would always be the same, and the intermediate values would differ depending on the chart size.
-More information:
+Build ID: 2.2.1 Steps To Reproduce: I've found a reproduceable case of problematic x-axis labeling. Consider a line or scatter chart with an integer Y axis and a DateTime X axis. The attached rptdesign, which is build on classic cars, has two charts which differ only in their size. I've also attached a screenshot of the rendered report. Look at the label on the X axis label furthest to the right. On the large chart, it is "4/1/05" but on the small chart it is "1/1/05". Expected result: The last label, which corresponds with the right-most pixel of the x axis, should always have the same label regardless of the size of the chart, and certainly shouldn't have a discrepancy of three months. I would expect the first and last values would always be the same, and the intermediate values would differ depending on the chart size. More information:

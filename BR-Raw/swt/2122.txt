@@ -13,8 +13,7 @@ layout.marginHeight = layout.marginWidth = 10;
 shell.setLayout(layout);
 
 CTabFolder folder = new CTabFolder(shell, SWT.NONE);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 CTabItem item = new CTabItem(folder, SWT.NONE);
 item.setText("Item" + i);
 }

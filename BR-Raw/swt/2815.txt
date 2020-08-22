@@ -31,8 +31,7 @@ e.gc.setClipping(0, 0, halfWidth, height);
 e.gc.setBackground(cnv.getDisplay().getSystemColor(SWT.COLOR_RED));
 e.gc.fillRectangle(0, 0, width, height);
 
-e.gc.setClipping(halfWidth, 0, width
-- halfWidth, height);
+e.gc.setClipping(halfWidth, 0, width - halfWidth, height);
 e.gc.setBackground(cnv.getDisplay().getSystemColor(SWT.COLOR_GREEN));
 e.gc.fillRectangle(0, 0, width, height);
 }

@@ -1,4 +1,2 @@
 Bug 234298 [Automation][Regression]Label style does not work correctly in PDF
-Description: Set label section inline and add some style on it, the style does not work correctly when preview it as PDF.
-Test Date: 20080528 Test Build: BIRT2.3.0 v20080528-0630 Step to reproduce: 1.Use the report attached 2.Preview it as PDF Expect result: The label content should be in vertical center.
-Actual result: Please refer to the attachment.
+Description: Set label section inline and add some style on it, the style does not work correctly when preview it as PDF. Test Date: 20080528 Test Build: BIRT2.3.0 v20080528-0630 Step to reproduce: 1. Use the report attached 2. Preview it as PDF Expect result: The label content should be in vertical center. Actual result: Please refer to the attachment.

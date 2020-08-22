@@ -59,48 +59,4 @@ ABORT
 Exception thrown from AspectJ 1.2.1
 This might be logged as a bug already -- find current bugs at
 http://bugs.eclipse.org/bugs/buglist.cgi?product=AspectJ&component=Compiler
-Bugs for exceptions thrown have titles File:line from the top stack,
-e.g., "SomeFile.java:243"
-If you don't find the exception below in a bug, please add a new bug
-at  http://bugs.eclipse.org/bugs/enter_bug.cgi?product=AspectJ
-To make the bug a priority, please include a test program
-that can reproduce this exception.
-illegal change to pointcut declaration: calls(<nothing>)
-illegal change to pointcut declaration: calls(<nothing>)
-org.aspectj.weaver.BCException: illegal change to pointcut declaration:
-calls(<nothing>)
-at
-org.aspectj.weaver.patterns.ReferencePointcut.concretize1(ReferencePointcut.java:268)
-at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:167)
-at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:154)
-at org.aspectj.weaver.Checker.concretize(Checker.java:35)
-at
-org.aspectj.weaver.CrosscuttingMembers.addShadowMunger(CrosscuttingMembers.java:78)
-at
-org.aspectj.weaver.CrosscuttingMembers.addDeclare(CrosscuttingMembers.java:102)
-at
-org.aspectj.weaver.CrosscuttingMembers.addDeclares(CrosscuttingMembers.java:92)
-at
-org.aspectj.weaver.CrosscuttingMembersSet.addAdviceLikeDeclares(CrosscuttingMembersSet.java:68)
-at
-org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.addAdviceLikeDeclares(AjLookupEnvironment.java:163)
-at
-org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindings(AjLookupEnvironment.java:138)
-at
-org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.beginToCompile(Compiler.java:331)
-at
-org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:348)
-at
-org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:680)
-at
-org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:168)
-at
-org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:102)
-at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:109)
-at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
-at org.aspectj.tools.ajc.Main.run(Main.java:291)
-at org.aspectj.tools.ajc.Main.runMain(Main.java:227)
-at org.aspectj.tools.ajc.Main.main(Main.java:80)
-Dumping to ajcore.20041125.132911.022.txt
-1 fail|abort, 2 errors, 1 warning
-Signal 127
+Bugs for exceptions thrown hav

@@ -1,8 +1,2 @@
 Bug 209126 DataException throws out when set highlight condition in sub-report[0302]
-Description: Set highlight condition in sub-report, when "select value..." in the highlight dialog, DataException throws out.
-Build version:2.3.0.v20071108-0800 Steps to reproduce: 1.Get the attached report design file, which contains a sub-report.
-2.Select the inner table, and then go to "highlight" tab in the property editor view to set a highlight rule.
-When click "select value...", DataException throws out.
-Error: The expression's value can not be retrieved.
-An error happened in data type conversion.
-Can not convert the value of org.eclipse.birt.data.engine.script.DataExceptionMocker@79c17b to Integer type.
+Description: Set highlight condition in sub-report, when "select value..." in the highlight dialog, DataException throws out. Build version:2.3.0.v20071108-0800 Steps to reproduce: 1.Get the attached report design file, which contains a sub-report. 2.Select the inner table, and then go to "highlight" tab in the property editor view to set a highlight rule. When click "select value...", DataException throws out. Error: The expression's value can not be retrieved. An error happened in data type conversion. Can not convert the value of org.eclipse.birt.data.engine.script.DataExceptionMocker@79c17b to Integer type.

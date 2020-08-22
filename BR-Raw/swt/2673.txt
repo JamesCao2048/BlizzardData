@@ -5,13 +5,10 @@ is not redrawn, ie the image that has been visible before will not be cleared.
 The changes to the item is visible only after covering the application with
 another window and revealing it again (or minimizing and restoring the window).
 Here is a snippet that reproduces the issue on my Windows XP box with 3.1 SWT
-(Start the application, you will see a 2x2 table with 4 blue squares.
-Pressing
+(Start the application, you will see a 2x2 table with 4 blue squares. Pressing
 the button calls setImage(0,null) and setImage(1,null) on the first row of the
-table.
-The expected result is that the two blue boxes vanish in the first row.
-In fact, only the first box vanishes; the second box is still visible.
-It can be
+table. The expected result is that the two blue boxes vanish in the first row.
+In fact, only the first box vanishes; the second box is still visible. It can be
 made to vanish if you temporarily hide the table with some other window):
 package snippets;
 import org.eclipse.swt.SWT;

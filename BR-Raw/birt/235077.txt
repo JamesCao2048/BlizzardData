@@ -1,4 +1,2 @@
 Bug 235077 [Regression]Exception throws out when preview a boolean type column binding in crosstab
-It's a regression bug of 209605.When preview a boolean type column binding in crosstab, exception throws out.
-build version: 2.3.0.v20080602-0930 Steps to reproduce: 1, New a crosstab with one measure(e.g.
-measure["A"]) 2, Drag a dataitem into measure view and type: boolean, expression: measure["A"] 3, Preview 4, Modify the dataitem's expression to measure["A"]>30000 5, Preview
+It's a regression bug of 209605. When preview a boolean type column binding in crosstab, exception throws out. build version: 2.3.0.v20080602-0930 Steps to reproduce: 1, New a crosstab with one measure(e.g. measure["A"]) 2, Drag a dataitem into measure view and type: boolean, expression: measure["A"] 3, Preview 4, Modify the dataitem's expression to measure["A"]>30000 5, Preview

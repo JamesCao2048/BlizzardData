@@ -1,7 +1,6 @@
 [browser] F5 blanks out the Browser widget when setText used
 Press F5 inside the Intro page in Eclipse .
-IE refreshes the URL (about:blank)
-- causing a blank page to be displayed.
+IE refreshes the URL (about:blank) - causing a blank page to be displayed.
 setText is used to render html in memory.
 We should probably block default IE accelerators when URL is about:blank so
 that the content of setText is not cleared when the user presses F5.

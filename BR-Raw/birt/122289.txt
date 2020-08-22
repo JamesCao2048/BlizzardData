@@ -1,4 +1,2 @@
 Bug 122289 [Smoke][Regression][SPM-Linux WS]Item can't be dropped to layout from library
-Details: Item can't be dropped to layout from library Setp: 1.New a library and insert a label 2.New a report design and use library 3.Drop label from library explorer to layout Actual results: Nothing is dropped into layout.
-Not only use library in outline, but also in library explorer is no effect.
-But when I drop the label without use library, it will use library and label can drop in it.
+Details: Item can't be dropped to layout from library Setp: 1.New a library and insert a label 2.New a report design and use library 3.Drop label from library explorer to layout Actual results: Nothing is dropped into layout. Not only use library in outline, but also in library explorer is no effect. But when I drop the label without use library, it will use library and label can drop in it.

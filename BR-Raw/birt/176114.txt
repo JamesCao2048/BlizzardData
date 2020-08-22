@@ -1,11 +1,3 @@
 Bug 176114 row._rownum implementation issues
-This Bugzilla seeks to clarify the usage of the "row.__rownum" binding, and to track its correct implementation in BIRT Data engine.
-We shall define the "__rownum" binding to mean: the 0-based index of the current data row in the final result set available to a listing report item.
-"Final" result set means the result set after all applicable filter and sort conditions are applied.
-This definition implies: (1) "row.__rownum" is not available to expressions used to define a filter or sort condition.
-Since filtering and sorting affects the row indexes, they cannot make forward reference to the final row index.
-This restriction applies to all filters and sorts, including those defined on groups.
-(2) Group key expression can use "row.__rownum", since grouping does not change the row ordering or ID.
-In fact one of the common usage of the row.__rownum binding is to create row number based interval grouping (e.g., put every 20 rows in a group).
-BIRT should report a sensible error message if row.__rownum is found to be used in sorting or filtering.
-Where a row number based sort/filter is desired, the report designer is encouraged to use the Total.runningCount aggregation.
+This Bugzilla seeks to clarify the usage of the "row.__rownum" binding, and to track its correct implementation in BIRT Data engine. We shall define the "__rownum" binding to mean: the 0-based index of the current data row in the final result set available to a listing report item. "Final" result set means the result set after all applicable filter and sort conditions are applied. This definition implies: (1) "row.__rownum" is not available to expressions used to define a filter or sort condition. Since filtering and sorting affects the row indexes, they cannot make forward reference to the final row index. This restriction applies to all filters and sorts, including those defined on groups. (2) Group key expression can use "row.__rownum", since grouping does not change the row ordering or ID. In fact one of the common usage of the row.__rownum binding is to create row number based interval grouping (e.g., put every 20 rows in a group). BIRT should report a sensible error message if ro
+w.__rownum is found to be used in sorting or filtering. Where a row number based sort/filter is desired, the report designer is encouraged to use the Total.runningCount aggregation.

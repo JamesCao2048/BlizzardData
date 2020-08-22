@@ -1,7 +1,6 @@
 create caret from image does not work
 Build id: I20090428-0100
 Run Snippet43.
-On Cocoa, this does not appear to work at all
-- no caret is shown in the example.
+On Cocoa, this does not appear to work at all - no caret is shown in the example.
 On Carbon, this does not work well because the image background is opaque (should be transparent).
 On Windows and GTk, this works well.

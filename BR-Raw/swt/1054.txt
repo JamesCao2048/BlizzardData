@@ -1,7 +1,5 @@
 Explicit class pre-initialization breaks "new Display()" on motif
 Created  attachment 132383   [details]
 test case
-The attached test case throws SWTException (ERROR_THREAD_INVALID_ACCESS) inside new Display() on motif (unlike gtk or win32).
-This happens because DropTraget registers types in
-<clinit>() and Transfer.registerType() uses Display.getDefault().
+The attached test case throws SWTException (ERROR_THREAD_INVALID_ACCESS) inside new Display() on motif (unlike gtk or win32). This happens because DropTraget registers types in <clinit>() and Transfer.registerType() uses Display.getDefault().
 The bug effects applications that do explicit initialization of all used classes at start-up (eg., for speed issue).

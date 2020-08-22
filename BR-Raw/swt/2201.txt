@@ -1,16 +1,11 @@
 SWT_AWT not working in CTabFolder with JDK 6 on Linux
-If a SWT_AWT.newFrame is embedded into CTabFolder, the SWT_AWT frame is not rendered.
-It works if CTabFolder is replaced with TabFolder.
-In WinXP everything is ok.
-Works also fine in JDK 1.5.0_09.
+If a SWT_AWT.newFrame is embedded into CTabFolder, the SWT_AWT frame is not rendered. It works if CTabFolder is replaced with TabFolder. In WinXP everything is ok. Works also fine in JDK 1.5.0_09.
 Failing Linux configuration:
 Java(TM) SE Runtime Environment (build 1.6.0-b105)
 Java HotSpot(TM) Client VM (build 1.6.0-b105, mixed mode, sharing)
-SWT Build 3.3 020
-- Tuesday December 12, 2006
+SWT Build 3.3 020 - Tuesday December 12, 2006
 Ubuntu 6.10
-Code to test
---->
+Code to test --->
 import java.awt.Frame;
 import javax.swing.JButton;
 import org.eclipse.swt.SWT;

@@ -1,27 +1,18 @@
 Poor table scrolling performance on motif aix ppc platform due to multiple XQueryColor calls per widget
 Build Identifier: 20090619-0625
-Using the OpenText's (www.opentext.com) remote connection technology called ExceedOnDemand, we run an eclipse rcp application which has scroll performance problems (15-30 seconds on a 5000 row table) which make it unusable.
-Even natively, the performance is much slower than linux/gtk.
-After analyzing some traces, the OpenText developers had the following comments:
-1. QueryColors is being called far too often.
-I dug into the SWT code, and this is arguably a bug in SWT.
-Please open a bug report against SWT and try to get them to fix it
--- at the very least, they should be caching XQueryColor replies instead of calling a fresh XQueryColor (two, actually) per widget (table cell in this case).
-2.XSync is also being called too often, but it's not as bad as QueryColors.
-Again, SWT/Motif only.
+Using the OpenText's (www.opentext.com) remote connection technology called ExceedOnDemand, we run an eclipse rcp application which has scroll performance problems (15-30 seconds on a 5000 row table) which make it unusable.  Even natively, the performance is much slower than linux/gtk.  After analyzing some traces, the OpenText developers had the following comments:
+1.  QueryColors is being called far too often. I dug into the SWT code, and this is arguably a bug in SWT. Please open a bug report against SWT and try to get them to fix it -- at the very least, they should be caching XQueryColor replies instead of calling a fresh XQueryColor (two, actually) per widget (table cell in this case).
+2. XSync is also being called too often, but it's not as bad as QueryColors. Again, SWT/Motif only.
 
 Any chance of
 Reproducible: Always
 Steps to Reproduce:
-1. Create a plugin project
-
+1.  Create a plugin project
 - Eclipse 3.5
-
 - create an RCP application
-
 - choose RCP application with view template
-2. Replace the View.java with the class at the end of this description to create a large table
-3. Run and compare scroll performance between motif/ppc and linux/gtk
+2.  Replace the View.java with the class at the end of this description to create a large table
+3.  Run and compare scroll performance between motif/ppc and linux/gtk
 The performance gets even worse when remote technology is capturing the graphics commands and scroll performance is 15x worse due to the multiple XQueryColor calls.
 Code for View.java:
 package swtexample;
@@ -42,10 +33,8 @@ private int rows = 6000;
 private int columns = 50;
 /**
 * The content provider class is responsible for providing objects to the
-* view.
-It can wrap existing objects in adapters or simply return objects
-* as-is.
-These objects may be sensitive to the current input of the view,
+* view. It can wrap existing objects in adapters or simply return objects
+* as-is. These objects may be sensitive to the current input of the view,
 * or ignore it and always show the same content (like Task List, for
 * example).
 */
@@ -56,11 +45,9 @@ public void dispose() {
 }
 public Object[] getElements(Object parent) {
 String[][] data = new String[rows][columns];
-for (int r = 0; r
-< rows; r++)
+for (int r = 0; r < rows; r++)
 {
-for (int c = 0; c
-< columns; c++)
+for (int c = 0; c < columns; c++)
 {
 String rowText = new Integer(r).toString();
 String columnText = new Integer(c).toString();

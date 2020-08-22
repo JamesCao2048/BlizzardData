@@ -1,11 +1,9 @@
 [GTK3] Widget.getStyle() does not report a set SWT.BORDER value
 - 4.3M5 test build, observed on Ubuntu 12.04LTS
-I noticed in ControlExample that controls would draw a border when their SWT.BORDER style was set, but their SWT.BORDER checkbox would never become selected.
-The following snippet shows the problem, the last line should print 2048, not 0 (ControlExample can be used to visually confirm that Tables do support showing a border):
+I noticed in ControlExample that controls would draw a border when their SWT.BORDER style was set, but their SWT.BORDER checkbox would never become selected.  The following snippet shows the problem, the last line should print 2048, not 0 (ControlExample can be used to visually confirm that Tables do support showing a border):
 public static void main(String[] args) {
 Display display = new Display();
 Shell shell = new Shell(display);
 Table table = new Table(shell, SWT.BORDER);
-System.out.println(table.getStyle() & SWT.BORDER); //
-<---
+System.out.println(table.getStyle() & SWT.BORDER); // <---
 }

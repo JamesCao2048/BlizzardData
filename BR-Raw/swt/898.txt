@@ -2,7 +2,5 @@
 Attempting to open a .doc file results in the following error dialog:
 Cannot create the in-place editor
 Reason: this is probably because there is no OLE editor registered against the type of file you were trying to open
-Details: failed to create OLE client.
-result =
--2147024891
+Details: failed to create OLE client. result = -2147024891
 This appears to only happen in Windows Vista and only for Word documents (ppt and xls opened fine).

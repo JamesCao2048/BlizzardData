@@ -1,8 +1,6 @@
 Excess clipping/dirty area for Table PaintListener's paintControl(PaintEvent)
-This is new in M8 for Windows.
-Linux GTK has always had this bug.
-The code snippet below changes the text on one cell.
-Clicking the "Bug" button:
+This is new in M8 for Windows. Linux GTK has always had this bug.
+The code snippet below changes the text on one cell.  Clicking the "Bug" button:
 On Windows 2000, SWT 3.0M7 returns the cell area
 gc.getClipping=Rectangle {50, 16, 50, 14}
 On Windows 2000, SWT 3.0M8 returns the TableItem area
@@ -10,10 +8,8 @@ gc.getClipping=Rectangle {0, 16, 350, 14}
 On GTK, both 3.0M7 and 3.0M8 versions returns the whole table
 gc.getClipping=Rectangle {0, 0, 368, 113}
 This makes for really slow updates if one is continuously changing only one
-cell.
-Especially when the developer is drawing/refreshing his/her own objects
-based on the clipping area.
-e.x y width height are the same as clipping.
+cell.  Especially when the developer is drawing/refreshing his/her own objects
+based on the clipping area.  e.x y width height are the same as clipping.
 Code snippet:
 public static void main(String[] args) {
 System.out.println(SWT.getVersion());
@@ -22,17 +18,14 @@ Shell shell = new Shell(display, SWT.CLOSE | SWT.TITLE);
 shell.setLayout(new GridLayout());
 final Table table = new Table(shell, SWT.BORDER);
 table.setLayoutData(new GridData(GridData.FILL_BOTH));
-for (int i = 0; i
-< 7; i++) {
+for (int i = 0; i < 7; i++) {
 TableColumn column = new TableColumn(table, SWT.BORDER);
 column.setResizable(false);
 column.setWidth(50);
 }
-for (int x = 0; x
-< 5; x++) {
+for (int x = 0; x < 5; x++) {
 TableItem item = new TableItem(table, SWT.NONE);
-for (int i = 0; i
-< 7; i++) {
+for (int i = 0; i < 7; i++) {
 item.setText(i, String.valueOf(i));
 }
 }

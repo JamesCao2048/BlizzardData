@@ -9,8 +9,7 @@ final Tree tree = new Tree(shell, SWT.MULTI | SWT.FULL_SELECTION);
 tree.setBounds(10,10,150,150);
 TreeItem item = new TreeItem(tree, SWT.NONE);
 item.setText("root");
-for (int i = 0; i
-< 4; i++) {
+for (int i = 0; i < 4; i++) {
 item = new TreeItem(item, SWT.NONE);
 item.setText("child " + i);
 }

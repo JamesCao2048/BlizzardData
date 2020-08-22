@@ -1,8 +1,5 @@
 Pixel corruption when setSelection() called from within SWT.SetData
 Using I20060125-0800, while debugging, I sometimes get an erratic behavior when scrolling in debug or variable view.
-The labels in the view are incomplete on the first letter and the scrolling doesn't work.
-As soon as I released the mouse or stop using the rolling button on the mouse, the view jumps at the previous location.
-It is difficult to explain what happens exactly.
-I also don't have reproducable steps.
-It happens in an erratic and unpredicatable way.
+The labels in the view are incomplete on the first letter and the scrolling doesn't work. As soon as I released the mouse or stop using the rolling button on the mouse, the view jumps at the previous location.
+It is difficult to explain what happens exactly. I also don't have reproducable steps. It happens in an erratic and unpredicatable way.
 I didn't get this behavior with previous integration builds.

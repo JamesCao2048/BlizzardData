@@ -1,11 +1,9 @@
 Redraw problem with Table/Tree header after scrolling
 Reproducible on Cocoa I20110124-1800 build.
-I first saw this in the preference dialog
--> Installed JREs.
+I first saw this in the preference dialog -> Installed JREs.
 Also reproducible with Tree and Table in Control Example.
 Steps:
-1) Open preference dialog
--> Installed JREs
+1) Open preference dialog -> Installed JREs
 2) Scroll towards the right in the Installed JREs table such that the checkbox column is not visible.
 3) Now scroll back so that checkbox column is visible.
 4) The text in the header of first column ("Name") is not redrawn correctly.

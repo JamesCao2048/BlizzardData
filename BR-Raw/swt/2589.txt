@@ -1,3 +1,2 @@
 Can't reliably change the cursor during Tracker.open()
-Changing the cursor of a tracker requires that we break the X grab and re-grab with the new cursor.
-In the current code though, you can only do this once, as we seem to never update the "lastCursor" field.
+Changing the cursor of a tracker requires that we break the X grab and re-grab with the new cursor.  In the current code though, you can only do this once, as we seem to never update the "lastCursor" field.

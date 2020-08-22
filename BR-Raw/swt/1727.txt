@@ -1,6 +1,5 @@
 [Browser] Support click-through for Browser and toolbar buttons
 I20080129-1400
 On Windows and GTK, widgets always react on mouse clicks, even if the containing shell did not have focus before.
-On the Mac, Apple's UI Guidelines leave it up to the application designer to decide whether widget instances should be click-through or not.
-Note that some SWT widgets already support click-through, e.g Link, Tree, Table, Label, Canvas, drop-down menu in ToolBar buttons (but not for normal toolbar buttons or other buttons).
+On the Mac, Apple's UI Guidelines leave it up to the application designer to decide whether widget instances should be click-through or not.  Note that some SWT widgets already support click-through, e.g Link, Tree, Table, Label, Canvas, drop-down menu in ToolBar buttons (but not for normal toolbar buttons or other buttons).
 I need a way to activate click-through behavior for the Browser and for ToolItems  in rich hovers (TOOL|ON_TOP Shells that don't take focus when made visible).

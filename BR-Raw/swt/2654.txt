@@ -1,7 +1,5 @@
 Antialiasing causes incorrect drawing
 Using Cairo 1.0 and SWT 3.2M2, antialiasing causes incorrect drawing in some
-situations.
-It appears things are drawn when moving the raster when it should
-not actually be in a draw operation.
-The attached image and code describe this
+situations.  It appears things are drawn when moving the raster when it should
+not actually be in a draw operation.  The attached image and code describe this
 better than I could here in words.

@@ -1,12 +1,8 @@
 GLCanvas doesn't set hint for merging mouse motion events
 At least on GTK, the GLCanvas doesn't merge multiple mouse motion events that
-might happen to be in the event queue.
-Instead, it floods the listener with
-lists of old events.
-Other widgets like Canvas do not show this behaviour.
+might happen to be in the event queue. Instead, it floods the listener with
+lists of old events. Other widgets like Canvas do not show this behaviour.
 
-Test case exhibiting this bug is appended.
-It uses a waiting event handler to
-facilitate queuing of mouse motion events.
-You can see in the program output
+Test case exhibiting this bug is appended. It uses a waiting event handler to
+facilitate queuing of mouse motion events. You can see in the program output
 that the output keeps coming long after the mouse is resting again.

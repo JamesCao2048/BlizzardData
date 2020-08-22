@@ -1,7 +1,6 @@
 remove() function in combo behaves inconsistently (BBAWT)
 On Linux (GTK AND Motif), if you remove() the last item in a combo, the text
-field of the combo still shows that item.
-But on Windows and QNX, it does not.
+field of the combo still shows that item. But on Windows and QNX, it does not.
 The following test case demonstrates this, as there are no items remaining in
 the combo, but it still shows 'Item 2' in the textfield.
 import org.eclipse.swt.SWT;

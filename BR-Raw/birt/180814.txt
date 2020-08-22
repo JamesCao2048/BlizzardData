@@ -1,9 +1,2 @@
 Bug 180814 Viewe as XLS does not work with non English locale.
-Viewe as XLS does not work with non English locale.
-Please check the attached screen shot for detail.
-if the eclipse is started with
--nl en_US option, then the same operation works.
-To reproduce: 1.Start the eclipse with
--nl zn_CN (or ja_JP) locale.
-2.Open tha attached JPN_FLAT_FILE.rptdesign.
-3.Preview it as XLS.
+Viewe as XLS does not work with non English locale. Please check the attached screen shot for detail. if the eclipse is started with -nl en_US option, then the same operation works. To reproduce: 1. Start the eclipse with -nl zn_CN (or ja_JP) locale. 2. Open tha attached JPN_FLAT_FILE.rptdesign. 3. Preview it as XLS.

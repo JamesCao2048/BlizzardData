@@ -1,13 +1,10 @@
 Confirm dialog doesn't work in the embedded Mozilla browser widget
 Eclipse 3.0 RC3, mozilla-1.4-3.0.18
 Confirm dialog doesn't work in the embedded Mozilla browser widget (work in the
-external Mozilla browser).
-Here's a testcase:
+external Mozilla browser). Here's a testcase:
 <html>
-
 <body>
 This is a test.
-
 </body>
 </html>
 <script language="javascript">
@@ -17,8 +14,7 @@ else
 alert('You clicked Cancel');
 </script>
 In the external Mozilla browser, the confirm dialog and the alert dialog show
-up correctly.
-However, in the embedded Mozilla browser, the confirm dialog
+up correctly. However, in the embedded Mozilla browser, the confirm dialog
 doesn't show up at all.
 Studio v6's Web services tooling, more specifically, the Web Services Explorer
 is depended on this fix for the Eclipse 3.0 timeframe.

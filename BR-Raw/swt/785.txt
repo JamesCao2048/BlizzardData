@@ -1,9 +1,3 @@
 e4 CSS: css attribute storage and notification
-The CSS support needs to associate CSS class, CSS ID and style sheet with a given widget.
-It currently does so by using Widget.setData().
-This has the advantage that callers do not need to create a dependency on CSS packages, but has the problem that setData() lacks notification of value change: if any of CSS class/id/stylesheet of a widget change, style information must be reapplied.
-We either need custom API for setting these values (e.g.
-Widget.setCSSID(String), Widget.setCSSClass(String),...), or we need notification of Widget.setData() change.
-An issue with the latter approach is blanket broadcast notification of everyone who happens to store values on a widget and wants notification (i.e.
-the values tend to be orthogonal extensions of the widget data so listeners will only be interested in a specific subset of the keys).
-Thus a notification mechanism based on key set would be best.
+The CSS support needs to associate CSS class, CSS ID and style sheet with a given widget.  It currently does so by using Widget.setData().  This has the advantage that callers do not need to create a dependency on CSS packages, but has the problem that setData() lacks notification of value change: if any of CSS class/id/stylesheet of a widget change, style information must be reapplied.
+We either need custom API for setting these values (e.g. Widget.setCSSID(String), Widget.setCSSClass(String),...), or we need notification of Widget.setData() change.  An issue with the latter approach is blanket broadcast notification of everyone who happens to store values on a widget and wants notification (i.e. the values tend to be orthogonal extensions of the widget data so listeners will only be interested in a specific subset of the keys).  Thus a notification mechanism based on key set would be best.

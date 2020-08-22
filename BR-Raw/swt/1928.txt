@@ -2,5 +2,4 @@ TableColumn sets image when SWT.CENTER alignment is used.
 Build ID: M20061214-1200
 Steps To Reproduce:
 If you create a table with a column and set the column alignment to SWT.CENTER, it will place the image returned by the label provider for the first row in the table at the header image for the column.
-If you do not set the alignment, it does not show the image.
-I didn't believe me at first either.
+If you do not set the alignment, it does not show the image.  I didn't believe me at first either.

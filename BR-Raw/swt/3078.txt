@@ -3,8 +3,7 @@ Version: 3.1.0
 Build id: I20050112-1200
 When i hover over the check mark of a table that was created with the SWT.CHECK
 style bit and have no text in the first column i get an
-EXCEPTION_ACCESS_VIOLATION.
-Will attach a snippet to reproduce.
+EXCEPTION_ACCESS_VIOLATION.  Will attach a snippet to reproduce.
 An unexpected exception has been detected in native code outside the VM.
 Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at
 PC=0x773D4933

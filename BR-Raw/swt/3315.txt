@@ -1,7 +1,6 @@
 DBCS: After pressing "Tab", anything can not be inputed
 Reporter:Louis Cai
-OS: RHEL WS 3.0
--GTK
+OS: RHEL WS 3.0 -GTK
 Language: CHS
 Build level: M8-200404329
 JDK Version: IBM JDK 1.4.2 Beta
@@ -14,11 +13,9 @@ Steps to recreate problem:
 inputing SBCS or DBCS data in the "Source Folder Name"field.
 <<Error>>
 After pressing "Tab", anything can not be inputed.
-
 <note>
 After pressing "Tab" key, in other panel, we also can not input any
 character.
-
 </note>
 <<Expected Result>>
 After pressing "Tab",  whether DBCS or SBCS can be input in the field.

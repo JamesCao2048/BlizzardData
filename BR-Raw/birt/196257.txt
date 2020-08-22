@@ -1,3 +1,2 @@
 Bug 196257 NPE when call ArgumentInfoList.argumentsIterator()
-When call ArgumentInfoList.argumentsIterator(), it will throw NPE sometimes.
-This is caused the inner "arguments" member may not initialized when call this method.
+When call ArgumentInfoList.argumentsIterator(), it will throw NPE sometimes. This is caused the inner "arguments" member may not initialized when call this method.

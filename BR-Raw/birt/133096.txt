@@ -1,7 +1,2 @@
 Bug 133096 Mapping of ODA data type literal value to code value
-The ODA dataSource extension point specifies an ODA scalar data type in its literal value.
-But most handling of an ODA data type in the ODA framework is done with its code value.
-The oda.util.manifest package should provide the conversion utility to map from an ODA literal value to its corresponding code value.
-Another issue is with the native data type code.
-If a native data type is unknown, a 0 value has been used to represent "unknown" value.
-The latest implementation in the ODA design-time framework should be consistent with the definition.
+The ODA dataSource extension point specifies an ODA scalar data type in its literal value. But most handling of an ODA data type in the ODA framework is done with its code value. The oda.util.manifest package should provide the conversion utility to map from an ODA literal value to its corresponding code value. Another issue is with the native data type code. If a native data type is unknown, a 0 value has been used to represent "unknown" value. The latest implementation in the ODA design-time framework should be consistent with the definition.

@@ -1,4 +1,2 @@
 Bug 193245 Should block user to set content type property on the child element
-After we switch from the slot to content element type property, all the rules that we applied to the slot before should be applied to the content element type property.
-When an element is extended from the library element, it should not be allowed to change the child element structure.
-So, when user call setProperty() to set the value of the content element type property, Model should throw out exception.
+After we switch from the slot to content element type property, all the rules that we applied to the slot before should be applied to the content element type property. When an element is extended from the library element, it should not be allowed to change the child element structure. So, when user call setProperty() to set the value of the content element type property, Model should throw out exception.

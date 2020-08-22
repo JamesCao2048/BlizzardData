@@ -1,15 +1,13 @@
 Password fields can be copied to the clipboard on Mac OS X
 Build ID: I20080617-2000
 Steps To Reproduce:
-1.Start Eclipse
-2.Open Eclipse
--> Preferences
-3.Navigate to General
--> Network Connections
-4.Enable Manual Proxy Configuration and Enable proxy authentication
-5.Enter some text in the Password field
-6.Select the text and press command-c to copy it
-7.Paste it in the User Name field
-8.Notice the password is visible in plain text
+1. Start Eclipse
+2. Open Eclipse -> Preferences
+3. Navigate to General -> Network Connections
+4. Enable Manual Proxy Configuration and Enable proxy authentication
+5. Enter some text in the Password field
+6. Select the text and press command-c to copy it
+7. Paste it in the User Name field
+8. Notice the password is visible in plain text
 More information:
 This seems to happen with any SWT password field.

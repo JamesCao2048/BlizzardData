@@ -1,13 +1,11 @@
 Win32 org.eclipse.swt.widgets.Combo computeSize() is wrong
-The call to GetWindowText() is passing a one-too-small length.
-It should include
+The call to GetWindowText() is passing a one-too-small length. It should include
 the space for the terminator (as per observation & MSDN)
 int length = OS.GetWindowTextLength (handle);
 int cp = getCodePage ();
 TCHAR buffer = new TCHAR (cp, length + 1);
 >>	OS.GetWindowText (handle, buffer, length);
 OS.DrawText (hDC, buffer, length, rect, flags);
-width = Math.max (width, rect.right
-- rect.left);
+width = Math.max (width, rect.right - rect.left);
 should be:
 >>	OS.GetWindowText (handle, buffer, length + 1);

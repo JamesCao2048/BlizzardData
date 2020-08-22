@@ -1,14 +1,11 @@
 CCombo method redraw() does not work
 Build 20020611
 Win2k
-Calling the redraw() method on a CCombo does not redraw the CCombo.
-It will,
-however, draw a CCombo's border if one is present.
-Using the redraw(int, int,
+Calling the redraw() method on a CCombo does not redraw the CCombo. It will,
+however, draw a CCombo's border if one is present. Using the redraw(int, int,
 int, int, boolean) method does work though.
 The redraw(int, int, int, int, boolean) is overridden in CCombo to deal with
-the fact that it is implemented using a Text and a Button as children.
-However,
+the fact that it is implemented using a Text and a Button as children. However,
 redraw() is not overridden, so it will only draw the underlying composite, and
 not the children (which is what you see).
 Here's an example to see this:

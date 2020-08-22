@@ -1,6 +1,2 @@
 Bug 150776 Binding parameters of datasources are not evaluated when datasource in a library
-I used to defined a datasource with binding parameters (depending on parameters ...).
-It works well when datasource is defined in the report, but when i tried to put this datasource in a library, binding expressions are not evaluated or not used by the datasource.
-When debugging the code, two datasources appears, the initial from the library (module=Library) and the linked from the report (module=ReportDesign).
-The dataset used the datasource of the report, but no binding values are found on the report datasource.
-The datasource from the library is evaluated correctly but not used.
+I used to defined a datasource with binding parameters (depending on parameters ...). It works well when datasource is defined in the report, but when i tried to put this datasource in a library, binding expressions are not evaluated or not used by the datasource. When debugging the code, two datasources appears, the initial from the library (module=Library) and the linked from the report (module=ReportDesign). The dataset used the datasource of the report, but no binding values are found on the report datasource. The datasource from the library is evaluated correctly but not used.

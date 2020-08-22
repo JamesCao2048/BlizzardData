@@ -1,8 +1,7 @@
 TabFolder no longer sets focus to tab when mnemonic pressed
-I20041208-1200.This worked as expected up to at least I200411170800.
+I20041208-1200. This worked as expected up to at least I200411170800.
 TabFolder no longer sets focus to tab when the frontmost tab's mnemonic is
-pressed.
-Steps:
+pressed. Steps:
 public class C {
 void method(Object o) {}
 }

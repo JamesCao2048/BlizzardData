@@ -1,8 +1,7 @@
 Tree Expand all "*" sends expand event regardless of current state
 Run the code below, select a node in the tree and press the "*" key repeatedly.
 The Tree sends an expand event for each sub-item in the tree regardless of
-whether the item was already expanded or not.
-Getting an expand event for an
+whether the item was already expanded or not.  Getting an expand event for an
 expanded node seems wrong.
 If this is correct behaviour (sending Expand event for an expanded node), then
 TableTree should be modified to do the same.

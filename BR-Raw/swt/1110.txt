@@ -1,4 +1,2 @@
 Path#addString baseline aligning
-When adding a string to a Path at a given coordinate (with Path#addString()), normally, the text's baseline is aligned to the same position as if it was drawn at the given location.
-Under OS X Cocoa however, the text's baseline is aligned to the bottom of the text's bounding box (calculated with TextUtilities#getStringExtents()).
-This is strange behaviour, and makes it impossible to calculate the text's relative baseline in the Path or to align it to a given location.
+When adding a string to a Path at a given coordinate (with Path#addString()), normally, the text's baseline is aligned to the same position as if it was drawn at the given location. Under OS X Cocoa however, the text's baseline is aligned to the bottom of the text's bounding box (calculated with TextUtilities#getStringExtents()). This is strange behaviour, and makes it impossible to calculate the text's relative baseline in the Path or to align it to a given location.

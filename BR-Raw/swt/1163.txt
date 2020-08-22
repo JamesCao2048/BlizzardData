@@ -1,6 +1,5 @@
 CCombo not dismissing popups
-Run the following code.
-Open the last CCombo, then the second last third last...
+Run the following code. Open the last CCombo, then the second last third last...
 You shouldn't be able to have more than one popup open at once.
 public static void main(String[] args) {
 try {

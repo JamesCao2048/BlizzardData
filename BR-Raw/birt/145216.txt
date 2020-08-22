@@ -1,4 +1,2 @@
 Bug 145216 Drag and drop multiple columns in Edit Data Set dialog does not work
-It is possible to select multiple columns in Edit Data Set dialog, but dragging and dropping them into the query text inserts only one of the selected columns.
-Expected: Either only on column is selectable or all selected columns are inserted (with comma as separator).
-Tested with BIRT2.1RC4.
+It is possible to select multiple columns in Edit Data Set dialog, but dragging and dropping them into the query text inserts only one of the selected columns. Expected: Either only on column is selectable or all selected columns are inserted (with comma as separator). Tested with BIRT2.1RC4.

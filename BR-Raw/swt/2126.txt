@@ -1,9 +1,7 @@
 Table.getItem(Point) always returns null when first column is 0 pixels wide
 Build ID: M20060921-0945
 Steps To Reproduce:
-This snippet shows the bug.
-It should print out the item to stdout when hovering, but when the width is 0, it always gets null.
-This snippet works properly on Windows and GTK.
+This snippet shows the bug. It should print out the item to stdout when hovering, but when the width is 0, it always gets null. This snippet works properly on Windows and GTK.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -35,8 +33,7 @@ else col.setWidth(0);
 TableColumn col2 = new TableColumn(t, SWT.LEFT, 1);
 col2.setWidth(250);
 
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 new TableItem(t, SWT.NONE).setText(1, "FOobarrrr " + i);
 }
 

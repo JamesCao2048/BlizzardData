@@ -1,5 +1,2 @@
 Bug 276276 View Report blocked by deleting and closing report files
-Description: View Report blocked by deleting and closing report files Steps to reproduce: 1.New two report: report1.rptdesign and report2.rptdesign 2.Make sure they are open, and focus on report2 3.Delete report2 in Navigator 4.Click View Report button Expect result: Report1 should be previewed.
-Actual result: View Report does not work.
-In addition, if delete report1 at step3, View report works and no error.
-Errorlog: n/a
+Description: View Report blocked by deleting and closing report files Steps to reproduce: 1. New two report: report1.rptdesign and report2.rptdesign 2. Make sure they are open, and focus on report2 3. Delete report2 in Navigator 4. Click View Report button Expect result: Report1 should be previewed. Actual result: View Report does not work. In addition, if delete report1 at step3, View report works and no error. Errorlog: n/a

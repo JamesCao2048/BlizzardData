@@ -1,8 +1,6 @@
 Table column is not zero sized initially
-Run the test case.
-Note that the item is visible, but the table column should have zero size (other platfoms).
-Also the horizontal scroll is not showing.
-It does not show if you press the button to pack either.
+Run the test case. Note that the item is visible, but the table column should have zero size (other platfoms).
+Also the horizontal scroll is not showing. It does not show if you press the button to pack either.
 public static void main(String[] args) {
 final Display display = new Display();
 Shell shell = new Shell(display);
@@ -11,8 +9,7 @@ shell.setLayout(new FillLayout());
 final Table table = new Table(shell, SWT.MULTI | SWT.BORDER);
 final TableColumn column = new TableColumn(table, SWT.NONE);
 table.setFont(new Font(display, "Monaco", 40, SWT.NORMAL));
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText("Itemxxxxxxxxxxxxxxxxxxxxx" + table.indexOf(item));
 }

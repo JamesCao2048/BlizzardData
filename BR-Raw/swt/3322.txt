@@ -1,6 +1,5 @@
 UI hangs while attempting to add missing methods.
-I have a workspace with a single plugin project ("ca.mikew.LowMemoryDetector") in it.
-If I perform the
+I have a workspace with a single plugin project ("ca.mikew.LowMemoryDetector") in it. If I perform the
 following steps on my Mac...
 - switch to java perspective
 - expand ca.mikew.LowMemoryDetector project
@@ -10,54 +9,43 @@ following steps on my Mac...
 - add "implements org.eclipse.ui.IStartup" to class definition in editor
 - click on "quick fix" icon on the line containing the class definition
 - double click "Add unimplemented methods"
-...
-eclipse frequently (occurred 5 out of 7 attempts) becomes unresponsive and must be "kill"ed.
+... eclipse frequently (occurred 5 out of 7 attempts) becomes unresponsive and must be "kill"ed.
 Here is a stack trace from one such case:
 Full thread dump Java HotSpot(TM) Client VM (1.4.2-34 mixed mode):
 "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=1 tid=0x0059e100 nid=0x1f86600 in
 Object.wait() [f0911000..f0911b20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x63810d78> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue)
+- waiting on <0x63810d78> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue)
 at
 org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:161)
-- locked
-<0x63810d78> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue)
+- locked <0x63810d78> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue)
 "Java indexing" daemon prio=4 tid=0x00560880 nid=0x1c93600 in Object.wait()
 [f0407000..f0407b20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x62f001a0> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager)
+- waiting on <0x62f001a0> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager)
 at java.lang.Object.wait(Object.java:429)
 at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:344)
-- locked
-<0x62f001a0> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager)
+- locked <0x62f001a0> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager)
 at java.lang.Thread.run(Thread.java:552)
 "Worker-3" prio=5 tid=0x00553190 nid=0x1bda600 in Object.wait() [f080f000..f080fb20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
+- waiting on <0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
 at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:209)
-- locked
-<0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
+- locked <0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
 at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:236)
 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:59)
 "Worker-1" prio=5 tid=0x005528f0 nid=0x1bcca00 in Object.wait() [f070d000..f070db20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
+- waiting on <0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
 at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:209)
-- locked
-<0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
+- locked <0x62cbb6e8> (a org.eclipse.core.internal.jobs.WorkerPool)
 at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:236)
 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:59)
 "Thread-1" prio=6 tid=0x00540830 nid=0x1a1ee00 in Object.wait() [f068c000..f068cb20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x62d8a800> (a java.lang.ref.ReferenceQueue$Lock)
+- waiting on <0x62d8a800> (a java.lang.ref.ReferenceQueue$Lock)
 at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:111)
-- locked
-<0x62d8a800> (a java.lang.ref.ReferenceQueue$Lock)
+- locked <0x62d8a800> (a java.lang.ref.ReferenceQueue$Lock)
 at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127)
 at
-or
+org.eclipse.

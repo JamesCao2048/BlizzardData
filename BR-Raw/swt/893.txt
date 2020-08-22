@@ -1,5 +1,2 @@
 [DND] Gtk ImageTransfer prefers JPEG over PNG
-Mylyn's screen capture tools supports importing images from the clipboard using ImageTransfer.
-On Gtk images imported from the clipboard are always fuzzy since the transfer seems to select JPEG and not a loss-less format such as PNG which works better for screen shots.
-There doesn't seem to be any obvious way to control the priority of the formats.
-Could the order be changed so that a loss-less format is tried first?
+Mylyn's screen capture tools supports importing images from the clipboard using ImageTransfer. On Gtk images imported from the clipboard are always fuzzy since the transfer seems to select JPEG and not a loss-less format such as PNG which works better for screen shots. There doesn't seem to be any obvious way to control the priority of the formats. Could the order be changed so that a loss-less format is tried first?

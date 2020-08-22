@@ -1,7 +1,6 @@
 controlMoved event fired by Control.setBounds() on Windows, but not on Photon (BBAWT)
 The following test case, when run on Windows, prints the notification that a
-controlMoved event was produced.
-But this does not happen when run on Photon.
+controlMoved event was produced. But this does not happen when run on Photon.
 This is significant to us because in our AWT implementation, we need to create
 the moved event if it is not given to us by SWT, so we need consistent behavior.
 Right now, our code assumes that the event is produced by SWT (we prefer the
@@ -33,8 +32,7 @@ colors[5] = new Color(display, 0, 255, 255);
 colors[6] = new Color(display, 255, 255, 255);
 colors[7] = new Color(display, 0, 0, 0);
 GC shellGC = new GC(shell);
-for (int j = 0; j
-< 8; j++) {
+for (int j = 0; j < 8; j++) {
 gc.setBackground(colors[j]);
 gc.fillArc(0, 0, 200, 200, 0, 360);
 ImageData retrievedData = image.getImageData();

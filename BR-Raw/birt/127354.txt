@@ -1,7 +1,2 @@
 Bug 127354 For template, relative path to template image does not work
-Steps to reproduce: 1.Create a new template.
-2.In the wizard, in Template Image, type a relative path to an image.
-For example, use an image in the project directory in which you are creating the template.
-Expected: It works.
-Actual: Error "Image file '<file name>' does not exist" shows in the UI.
-If you go ahead and create the template anyway, you cannot publish to the template folder, because Finish is not enabled.
+Steps to reproduce: 1. Create a new template. 2. In the wizard, in Template Image, type a relative path to an image. For example, use an image in the project directory in which you are creating the template. Expected: It works. Actual: Error "Image file '<file name>' does not exist" shows in the UI. If you go ahead and create the template anyway, you cannot publish to the template folder, because Finish is not enabled.

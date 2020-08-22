@@ -1,8 +1,5 @@
 MouseUp incorrectly fired on Tree
-Run the following snippet, click on row one and hold your mouse button down.
-A MouseDown AND a MouseUp event is fired.
-Release the mouse and another MouseUp is fired.
-Works okay if you click on an area in the tree that's not part of a TreeItem row.
+Run the following snippet, click on row one and hold your mouse button down.  A MouseDown AND a MouseUp event is fired.  Release the mouse and another MouseUp is fired.  Works okay if you click on an area in the tree that's not part of a TreeItem row.
 3.2M5
 Snippet:
 Display display = Display.getDefault();

@@ -6,7 +6,5 @@ Steps:
 - Set/Get API
 - hover over fist item of example toolbar => hover is SWT.PUSH
 - move mouse horizontally to third item
-=> hover is still SWT.PUSH but should be SWT.RADIO.
-When the mouse leaves the toolbar area, the hover disappears and correctly appears the next time.
-In the SDK, this can e.g.
-be seen in the main window toolbar when the Find/Replace dialog of a text editor is active, or in Javadoc hovers when you move the mouse into the hover, wait until the toolbar appears, and then hover over the tool items (without giving focus to the Javadoc hover)
+=> hover is still SWT.PUSH but should be SWT.RADIO. When the mouse leaves the toolbar area, the hover disappears and correctly appears the next time.
+In the SDK, this can e.g. be seen in the main window toolbar when the Find/Replace dialog of a text editor is active, or in Javadoc hovers when you move the mouse into the hover, wait until the toolbar appears, and then hover over the tool items (without giving focus to the Javadoc hover)

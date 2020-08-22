@@ -8,11 +8,9 @@ if ((clipboards & DND.CLIPBOARD) == 0) return new TransferData[0];
 NSPasteboard pasteboard = NSPasteboard.generalPasteboard();
 if (pasteboard == null) return new TransferData[0];
 NSArray types = pasteboard.types();
-int count = (int)/*64*/types.count();
-<-------- NPE happens here
+int count = (int)/*64*/types.count();                  <-------- NPE happens here
 TransferData[] result = new TransferData[count];
-for (int i = 0; i
-< count; i++) {
+for (int i = 0; i < count; i++) {
 result[i] = new TransferData();
 result[i].type = Transfer.registerType(new NSString(types.objectAtIndex(i)).getString());
 }
@@ -48,4 +46,4 @@ at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3610)
 at com.wuala.presentation.WualaApplication.runGui(Z:545)
 at com.wuala.presentation.WualaApplication.doLaunch(Z:316)
 at com.wuala.presentation.WualaApplication.launch(Z:194)
-at com.wuala.platfo
+at com.wuala.platform

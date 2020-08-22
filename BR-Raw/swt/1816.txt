@@ -1,18 +1,13 @@
 GraphicsExample crashes
-I ran GraphicsExample, and used 'next' to step through the cycles of animations.
-A couple after it was drawing a spirograph-like drawing, it crashed.
-Looking through the list, it looks like it crashed on the one after the StarPolyTab was shown; but that would have been the intro tab.
-I wonder whether doing a full cycle and coming across a new tab again results in calling code that's previously been free'd?
-2007-11-29 00:17:56.228 java[23179:10b] *** _NSAutoreleaseNoPool(): Object 0xa847eb0 of class NSException autoreleased with no pool in place
-- just leaking
+I ran GraphicsExample, and used 'next' to step through the cycles of animations. A couple after it was drawing a spirograph-like drawing, it crashed.
+Looking through the list, it looks like it crashed on the one after the StarPolyTab was shown; but that would have been the intro tab. I wonder whether doing a full cycle and coming across a new tab again results in calling code that's previously been free'd?
+2007-11-29 00:17:56.228 java[23179:10b] *** _NSAutoreleaseNoPool(): Object 0xa847eb0 of class NSException autoreleased with no pool in place - just leaking
 Stack: (0x954e9178 0x954170f8 0x9541d8e0 0x912ed39c 0x46ac)
 2007-11-29 00:17:56.276 java[23179:10b] An uncaught exception was raised
 2007-11-29 00:17:56.279 java[23179:10b] NSAffineTransform: Transform has no inverse
-2007-11-29 00:17:56.282 java[23179:10b] *** _NSAutoreleaseNoPool(): Object 0x13bd30 of class NSCFString autoreleased with no pool in place
-- just leaking
+2007-11-29 00:17:56.282 java[23179:10b] *** _NSAutoreleaseNoPool(): Object 0x13bd30 of class NSCFString autoreleased with no pool in place - just leaking
 Stack: (0x954e9178 0x954170f8 0x95420d04 0x9135b014 0x9641a6ac 0x912ede28 0x46ac)
-2007-11-29 00:17:56.284 java[23179:10b] *** _NSAutoreleaseNoPool(): Object 0x1693b0 of class NSCFData autoreleased with no pool in place
-- just leaking
+2007-11-29 00:17:56.284 java[23179:10b] *** _NSAutoreleaseNoPool(): Object 0x1693b0 of class NSCFData autoreleased with no pool in place - just leaking
 Stack: (0x954e9178 0x954170f8 0x95428858 0x95428704 0x9135b068 0x9641a6ac 0x912ede28 0x46ac)
 2007-11-29 00:17:56.286 java[23179:10b] *** Terminating app due to uncaught exception 'NSGenericException', reason: 'NSAffineTransform: Transform has no inverse'
 2007-11-29 00:17:56.289 java[23179:10b] Stack: (

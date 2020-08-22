@@ -24,8 +24,7 @@ for (int i=0; i<2; i++) {
 table.getColumn (i).pack ();
 }
 shell.open ();
-table.getItem (new Point (100, 100));   //
-<---
+table.getItem (new Point (100, 100));   // <---
 while (!shell.isDisposed ()) {
 if (!display.readAndDispatch ()) display.sleep ();
 }

@@ -1,10 +1,2 @@
 Bug 183307 JS error with cascading group in birt:paramDef tag.[0603]
-Description: JS error with cascading group in birt:paramDef tag.
-Build number:2.2.0.v200704190630 Steps to reproduce: 1.New a report with cascading group from sample table OFFICES(COUNTRY, OFFICECODE).
-2.New a jsp file with content:
-<birt:parameterPage id="0" name="custom param page" reportDesign="report.rptdesign" isCustom="true" pattern="frameset">
-<birt:paramDef id="9" name="country" value="USA"/>
-<input type="submit" name="OK" value="submit"/>
-</birt:parameterPage> 3.Preview the jsp file.
-Expected result: Display Listbox/combobox with value "USA" as default.
-Actual result: JS error A runtime error is occurred Error log:N/A
+Description: JS error with cascading group in birt:paramDef tag. Build number:2.2.0.v200704190630 Steps to reproduce: 1. New a report with cascading group from sample table OFFICES(COUNTRY, OFFICECODE). 2. New a jsp file with content: <birt:parameterPage id="0" name="custom param page" reportDesign="report.rptdesign" isCustom="true" pattern="frameset"> <birt:paramDef id="9" name="country" value="USA"/> <input type="submit" name="OK" value="submit"/> </birt:parameterPage> 3. Preview the jsp file. Expected result: Display Listbox/combobox with value "USA" as default. Actual result: JS error A runtime error is occurred Error log:N/A

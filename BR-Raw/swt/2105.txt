@@ -1,10 +1,5 @@
 Default behaviour for FileDialog different on Vista
 I'm using Windows Vista with Eclipse 3.3M6 WPF running.
-When you try to import a team project set and click the "browse" button to locate the psf file, it shows a "Save As" Dialog.
-I dug into the implementation org.eclipse.team.internal.ui.wizards.ImportProjectSetMainPage and discovered that they are using the single-argument constructor for FileDialog, i.e.
-new FileDialog(shell).
-I modified Snippet72 to use the single-argument constructor and ran the results on Windows XP and Windows Vista.
-On XP, I'm presented with an "Open File" dialog.
-On Windows Vista, I'm presented with a "Save As" dialog.
-The JavaDoc doesn't specify what the behaviour should be, but I imagine that it should be consistent from platform to platform.
-This constructor is used around 20 different places in the SDK.
+When you try to import a team project set and click the "browse" button to locate the psf file, it shows a "Save As" Dialog. I dug into the implementation org.eclipse.team.internal.ui.wizards.ImportProjectSetMainPage and discovered that they are using the single-argument constructor for FileDialog, i.e. new FileDialog(shell).
+I modified Snippet72 to use the single-argument constructor and ran the results on Windows XP and Windows Vista. On XP, I'm presented with an "Open File" dialog. On Windows Vista, I'm presented with a "Save As" dialog.
+The JavaDoc doesn't specify what the behaviour should be, but I imagine that it should be consistent from platform to platform. This constructor is used around 20 different places in the SDK.

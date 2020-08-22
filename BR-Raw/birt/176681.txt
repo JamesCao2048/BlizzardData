@@ -1,6 +1,2 @@
 Bug 176681 Issue about creating context-parameter path in read-only path[0601]
-Description: Issue about creating context-parameter path in read-only path Build number:2.2.0.v20070308 Steps to reproduce: 1.Deploy birt.
-2.Set BIRT_VIEWER_DOCUMENT_FOLDER/BIRT_VIEWER_IMAGE_DIR/..
-to a read-only path.
-3.Preview report.
-Expected result: Because the path is read-only, folders should be created in ${java.io.tmpdir} Actual result: No folders are created in ${java.io.tmpdir} and reports cannot be previewed in frameset mode.
+Description: Issue about creating context-parameter path in read-only path Build number:2.2.0.v20070308 Steps to reproduce: 1. Deploy birt. 2. Set BIRT_VIEWER_DOCUMENT_FOLDER/BIRT_VIEWER_IMAGE_DIR/.. to a read-only path. 3. Preview report. Expected result: Because the path is read-only, folders should be created in ${java.io.tmpdir} Actual result: No folders are created in ${java.io.tmpdir} and reports cannot be previewed in frameset mode.

@@ -1,8 +1,2 @@
 Bug 288440 Custom property 'enable.area.alt' will be restored when reopen chart builder.[13]
-description: Custom property 'enable.area.alt' will be restored when reopen chart builder.
-build id: 2.5.1 v20090903-0630 steps to reproduce: 1.Insert a chart.
-2.On Format Chart page, select Chart Area and click Custom Properties button.
-3.Remove the 'enable.area.alt' property and click Finish to close chart builder.
-4.Reopen chart builder.
-Actual result: The property is restored.
-Expected result: If the property is necessary, disable Remove;otherwise, the property should not be restored after it is removed.
+description: Custom property 'enable.area.alt' will be restored when reopen chart builder. build id: 2.5.1 v20090903-0630 steps to reproduce: 1. Insert a chart. 2. On Format Chart page, select Chart Area and click Custom Properties button. 3. Remove the 'enable.area.alt' property and click Finish to close chart builder. 4. Reopen chart builder. Actual result: The property is restored. Expected result: If the property is necessary, disable Remove;otherwise, the property should not be restored after it is removed.

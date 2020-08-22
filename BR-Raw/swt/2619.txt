@@ -1,20 +1,13 @@
 Font smooth does not work in Eclipse Forms
-Sorry for my bad english
-- it is not my native language.
-Eclipse build ID I20051102-1600 (3.2M3 I think).
-I try this version for our RCP app because in Eclipse
-3.1.1 we have some UI problems and 3.2M3 solves many of them.
-However, I found that text drawing
-with the Eclipse Forms toolkit does not have font smoothing.
-For example if you open a plugin.xml
+Sorry for my bad english - it is not my native language.
+Eclipse build ID I20051102-1600 (3.2M3 I think). I try this version for our RCP app because in Eclipse
+3.1.1 we have some UI problems and 3.2M3 solves many of them. However, I found that text drawing
+with the Eclipse Forms toolkit does not have font smoothing. For example if you open a plugin.xml
 overview page some text have font smooth but many of them have not.
 I try to create a small snippet below to demonstrate the problem (adding swt, jface, forms, core.runtime
-and osgi plugin jars to the classpath).
-It paints a text and two links.
-Initially none of them use font
+and osgi plugin jars to the classpath). It paints a text and two links. Initially none of them use font
 smoothing but if you hover any link they will print using font smoothing.
-In Eclipse 3.1 font smoothing works as expected.
-Also setting font smoothing style in the operating
+In Eclipse 3.1 font smoothing works as expected. Also setting font smoothing style in the operating
 system seems does not affect this behaviour.
 Regards,
 Csaba
@@ -41,13 +34,11 @@ ScrolledForm form = toolkit.createScrolledForm(shell);
 form.setText("Hello, Eclipse form.");
 form.getBody().setLayout(new TableWrapLayout());
 FormText formText = toolkit.createFormText(form.getBody(), true);
-formText.setText("<form><p><a href="" http://www.eclipse.org "">Link sample
-- hover on
+formText.setText("<form><p><a href="" http://www.eclipse.org "">Link sample - hover on
 it with the mouse</a></p></form>", true, false);
 formText.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB));
 formText = toolkit.createFormText(form.getBody(), true);
-formText.setText("<form><p><a href="" http://www.eclipse.org "">Link sample
-- hover on
+formText.setText("<form><p><a href="" http://www.eclipse.org "">Link sample - hover on
 it with the mouse</a></p></form>", true, false);
 formText.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB));
 

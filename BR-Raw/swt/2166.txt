@@ -1,12 +1,3 @@
 SWT Toggle Buttons on CoolBar keep pressed.
-It isn't a critical bug.
-Even in Eclipse 3.2.1 Build id: M20060921-0945 you can reproduce it.
-Move your mouse over any coolbar with toogle buttons.
-Now press your second mouse button (suddenly, the right button) and, without release it, you can see that only that CoolBar buttons will be affected.
-Now, without release it, press the first mouse button (suddenly, the left button), and release them both when you want.
-The toolbar toogle button keeps pressed.
-And I felt impressed.
-Anyway, the best comes now.
-You can press now another toogle button with first mouse button of the same coolbar and, without release it, move away of it.
-When you release the mouse button, it still is pressed.
-And, for example, if you change a document and Save toogle button become active, you can do the same and when become inactive because you use ctrl+'S' or change the document to another previously saved, it still looks-like pressed.
+It isn't a critical bug. Even in Eclipse 3.2.1 Build id: M20060921-0945 you can reproduce it. Move your mouse over any coolbar with toogle buttons. Now press your second mouse button (suddenly, the right button) and, without release it, you can see that only that CoolBar buttons will be affected. Now, without release it, press the first mouse button (suddenly, the left button), and release them both when you want. The toolbar toogle button keeps pressed. And I felt impressed.
+Anyway, the best comes now. You can press now another toogle button with first mouse button of the same coolbar and, without release it, move away of it. When you release the mouse button, it still is pressed. And, for example, if you change a document and Save toogle button become active, you can do the same and when become inactive because you use ctrl+'S' or change the document to another previously saved, it still looks-like pressed.

@@ -97,12 +97,4 @@ ListAspect.aspectOf().ajc$before$test_ListAspect$1$3f3247a5(list$node1);
 //   16   29:invokestatic    #37  <Method test.ListAspect
 test.ListAspect.aspectOf()>
 //   17   32:aload           6
-//   18   34:invokevirtual   #41  <Method void
-test.ListAspect.ajc$before$test_ListAspect$1$3f3247a5(java.lang.Object)>
-list$node1.value = i;
-//   19   37:aload           6
-//   20   39:iload           5
-//   21   41:putfield        #21  <Field int test.List$Node.value>
-//   22   44:return
-}
-}
+//   18   34:invokevirtual   #

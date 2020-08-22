@@ -1,10 +1,7 @@
 StyledText: Horizontal scrollbar is not reset when calling setText(String)
 Build Identifier:
-When the StyledText displays a horizontal scrollbar and the text is cleared by calling StyledText.setText(""), the horizontal scrollbar is not updated.
-However, this problem does not occur when the text is cleared by manually selecting and deleting the text.
+When the StyledText displays a horizontal scrollbar and the text is cleared by calling StyledText.setText(""), the horizontal scrollbar is not updated. However, this problem does not occur when the text is cleared by manually selecting and deleting the text.
 Reproducible: Always
 Steps to Reproduce:
-1) Run the attached snippet and click on the 'Clear' button.
-Result: The horizontal scrollbar is not reset correctly, but the vertical scrollbar is.
-2) Re-run the snippet, delete all text by pressing Ctrl+A, then Delete key.
-Result: Both scrollbars are reset correctly.
+1) Run the attached snippet and click on the 'Clear' button. Result: The horizontal scrollbar is not reset correctly, but the vertical scrollbar is.
+2) Re-run the snippet, delete all text by pressing Ctrl+A, then Delete key. Result: Both scrollbars are reset correctly.

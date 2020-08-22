@@ -1,5 +1,3 @@
 DirectoryDialog does not remember last selected directory
-For 3.6m7 I fixed a bug where FileDialogs didn't remember the last selected directory on subsequent calls to open().
-DirectoryDialogs have the same bug, and I missed it when I fixed FileDialog.
-See the original FileDialog bug for steps to reproduce.
-They apply here, too.
+For 3.6m7 I fixed a bug where FileDialogs didn't remember the last selected directory on subsequent calls to open(). DirectoryDialogs have the same bug, and I missed it when I fixed FileDialog.
+See the original FileDialog bug for steps to reproduce. They apply here, too.

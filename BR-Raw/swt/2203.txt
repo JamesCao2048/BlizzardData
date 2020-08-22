@@ -1,9 +1,7 @@
 [Viewers] SWT/JFace TableEditors don't work in 3.3M4 on OSX
 Build ID: I20061214-1445
 Steps To Reproduce:
-After upgrading to SWT and JFace 3.3M4, neither the JFace table editing snippets (Snippet019TableViewerAddRemoveColumnsWithEditingNewAPI, Snippet018TableViewerAddRemoveColumnsWithEditing) nor the SWT snippets (Snippet124) work on OS X anymore.
-This, of course, is not limited to the snippets, but also affects all other table editing code.
+After upgrading to SWT and JFace 3.3M4, neither the JFace table editing snippets (Snippet019TableViewerAddRemoveColumnsWithEditingNewAPI, Snippet018TableViewerAddRemoveColumnsWithEditing) nor the SWT snippets (Snippet124) work on OS X anymore. This, of course, is not limited to the snippets, but also affects all other table editing code.
 More information:
 It seems the listeners are firing correctly, and the text controls are created, but fail to display or gain focus.
-In Snippet124, I was able to activate the text controls by changing focus to another window before double-clicking on the table cell.
-They will not activate if the Shell is already in focus.
+In Snippet124, I was able to activate the text controls by changing focus to another window before double-clicking on the table cell. They will not activate if the Shell is already in focus.

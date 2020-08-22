@@ -4,5 +4,5 @@ When we add a mouse listener to a Browser with Webkit rendering, we receive even
 Normal values are 1, 2 and 3 but we receive 0, 1 and 2.
 Reproducible: Always
 Steps to Reproduce:
-1.Create a Browser.
-2.Add a mouse listener that prints e.button
+1. Create a Browser.
+2. Add a mouse listener that prints e.button

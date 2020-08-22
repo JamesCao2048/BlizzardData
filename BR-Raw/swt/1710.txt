@@ -4,7 +4,6 @@ Steps To Reproduce:
 (1) Create a styled text with the SWT.WRAP flag.
 (2) Insert some text so it wraps
 (3) Try using getTextBounds
-> It will always use the y coordinate of the first visual line.
-However, x is correct.
+> It will always use the y coordinate of the first visual line. However, x is correct.
 More information:
 Tried this on MacOS 10.5 and Win XP

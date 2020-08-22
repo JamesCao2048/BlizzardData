@@ -2,15 +2,12 @@
 Provide support for the test case in the attachement below
 - unzip
 - open the document index.html
-- click on links.
-The Browser widget should correctly handle the new window
+- click on links. The Browser widget should correctly handle the new window
 requests in those 2 cases.
 Current approach is to provide the following event (names not finalized yet,
 to give an idea):
-public class NewWindow ...
-{
-/** user provides the Browser instance that is to host the new window
-- null:
+public class NewWindow ... {
+/** user provides the Browser instance that is to host the new window - null:
 cancel new window request */
 public Browser browser;
 }
@@ -26,10 +23,8 @@ int height;
 }
 Typically, in response to javascript window.open
 ("dialog.html","Dialog", "resizeable=no,height=200,left=50,top=400", the
-application will receive a NewWindow event.
-It will create a new Shell and a
-new Browser.
-The new Browser will display the file 'dialog.html' and receive
+application will receive a NewWindow event. It will create a new Shell and a
+new Browser. The new Browser will display the file 'dialog.html' and receive
 the events ResizeControlEvent and MoveControlEvent to give a chance to the
 application to resize the new Shell and the new Browser to the bounds set in
 javascript.

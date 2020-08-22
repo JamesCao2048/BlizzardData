@@ -6,19 +6,15 @@ This breaks RTF transfer if the system codepage is not set correctly (data is
 lost during conversion).
 Text in more than one local codepage (e.g., mixed Japanese and Hebrew) can
 never be transfered correctly because RTFTransfer converts to a single local
-codepage.
-Data represented in a different codepage would be lost.
+codepage. Data represented in a different codepage would be lost.
 In addition, the RTF spec mandates escaping non 7-bit characters using 'hh
-where hh is the hex value.
-Even if the codepage is set correctly and the text
-is in a single locale it should still be written in the espaced form.
-Note
+where hh is the hex value. Even if the codepage is set correctly and the text
+is in a single locale it should still be written in the espaced form. Note
 however that all Windows applications we tested seemed to tolerate the non
 escaped 8 bit form for transfering Hebrew text.
 In order to support text in more than one locale we would need to encode the
 text using RTF unicode escapes (ud..d where d is the decimal value of the
-unicode character).
-Since some applications don't support the Unicode encoded
+unicode character). Since some applications don't support the Unicode encoded
 RTF transfer (e.g., Lotus Notes) we need to use the mixed Unicode/ANSI text
 encoding which is backward compatible for non Unicode aware applications.
 Open questions:

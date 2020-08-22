@@ -1,6 +1,5 @@
 [implementation] IllegalArgumentException in StyledText
-I get IllegalArgumentExceptions from StyledText.
-I got a couple of them while running org.eclipse.ui.tests.multieditor.MultiEditorTest (see Test Exception).
+I get IllegalArgumentExceptions from StyledText.  I got a couple of them while running org.eclipse.ui.tests.multieditor.MultiEditorTest (see Test Exception).
 I used CTRL+SHIFT+T(x2) to go to the java file, and received one in the error log (see Error Log Exception).
 Test Exception:
 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.IllegalArgumentException: Index out of bounds)

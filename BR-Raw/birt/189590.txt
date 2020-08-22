@@ -1,6 +1,2 @@
 Bug 189590 Error occurs when click drill-through link in sample report "OrderMasterAfter.rptdesign
-Description: Open "Report Example" view, open "Drill to Details" directory.
-Open "OrderMasterAfter.rptdesign" file.
-Preview in layout, and then click the first column "ORDERNUMBER" value, which defines drill-through link in it.
-Exception throws out when click on it.
-Build version:2.2.0.v20070529-0630.Expected result: Even if the "OrderDetailAfter.rptdesign" isn't opened, the drill-through link in the master report should drill to the detailed report.
+Description: Open "Report Example" view, open "Drill to Details" directory. Open "OrderMasterAfter.rptdesign" file. Preview in layout, and then click the first column "ORDERNUMBER" value, which defines drill-through link in it. Exception throws out when click on it. Build version:2.2.0.v20070529-0630. Expected result: Even if the "OrderDetailAfter.rptdesign" isn't opened, the drill-through link in the master report should drill to the detailed report.

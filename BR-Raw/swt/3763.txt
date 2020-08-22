@@ -1,5 +1,4 @@
 TabFolder.getClientArea() not correct.
 The getClientArea() for TabFolders in Photon are not using the PtPanelGroup's
-canvas area to calculate the client area.
-The assumption used in the current
+canvas area to calculate the client area.  The assumption used in the current
 code breaks on 6.2.1.

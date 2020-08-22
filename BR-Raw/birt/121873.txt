@@ -1,8 +1,2 @@
 Bug 121873 Can't load birt classes in report item script
-In report item script functions, i.e.
-onCreate(), onRender(), try writing some javascript code to use birt classes which are in plugins that are not explicitly depended on by the Viewer(for example, org.eclipse.birt.chart.util.CDateTime in birt.chart.engine plugin), Exception will be thrown out.
-This is because Viewer now uses the EclipseClassLoader to load all plugin classes while EclipseClassLoader will restrict the accessing privilege due to the plugin dependency rules.
-So only classes in birt.core, birt.report.engine, birt.report.model, birt.data can be accessed currently in script.
-So this prevents the user from using those birt classes in script.
-Reargding to chart, this lowers the usability a lot, since in chart scripting, user usually need to use/access many chart attributes classes to change the chart model, but now they can't do this in BIRT.
-This works fine for chart standalone mode.
+In report item script functions, i.e. onCreate(), onRender(), try writing some javascript code to use birt classes which are in plugins that are not explicitly depended on by the Viewer(for example, org.eclipse.birt.chart.util.CDateTime in birt.chart.engine plugin), Exception will be thrown out. This is because Viewer now uses the EclipseClassLoader to load all plugin classes while EclipseClassLoader will restrict the accessing privilege due to the plugin dependency rules. So only classes in birt.core, birt.report.engine, birt.report.model, birt.data can be accessed currently in script. So this prevents the user from using those birt classes in script. Reargding to chart, this lowers the usability a lot, since in chart scripting, user usually need to use/access many chart attributes classes to change the chart model, but now they can't do this in BIRT. This works fine for chart standalone mode.

@@ -80,8 +80,7 @@ int i;
 int j;
 boolean indent = false;
 
-for (i = 0; i
-< 30; i++) {
+for (i = 0; i < 30; i++) {
 if (indent) {
 lx = 32;
 indent = false;
@@ -90,5 +89,4 @@ lx = 0;
 indent = true;
 }
 
-for (j = 0; j
-<
+for (j = 0; j < 1

@@ -1,11 +1,9 @@
 [breadcrumb] Open type dialog pops up behind breadcrumb drop down on OSX
 I20080513-2000
 In breadcrumb
-1.Click on a item to open its drop down
-2.Open Type
+1. Click on a item to open its drop down
+2. Open Type
 Is:
-Drop down is not closed, open type dialog pops up behind drop down.
-Same for open resource, sort members and probably others.
-This dialogs do not take focus?!
+Drop down is not closed, open type dialog pops up behind drop down. Same for open resource, sort members and probably others. This dialogs do not take focus?!
 Should:
 Close drop down.

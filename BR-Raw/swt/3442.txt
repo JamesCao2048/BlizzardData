@@ -1,46 +1,35 @@
 [SWT Examples] Setting the style to SWT.FLAT has no effect on Buttons
 When I was going through the Eclipse 3.0 M7 examples (eclipse-examples-
 3.0M7.zip) which I downloaded from
-http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
--
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
 examples-3.0M7.zip on Solaris 9 and HP-UX 11.11, I realized that setting the
 style of a Button to SWT.FLAT had no effect on its appearance on the screen.
 Here are the steps to follow in order to regenerate this scenario:
-1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
-2.Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
-http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
--
+1. Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
+2. Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
 examples-3.0M7.zip and install them.
-3.Launch Eclipse
-4.Select 鈥淲indow
--> Show View
--> Other鈥︹.
-This will launch the 鈥淪how View鈥
+3. Launch Eclipse
+4. Select 鈥淲indow -> Show View -> Other鈥︹. This will launch the 鈥淪how View鈥
 Dialog.
-5.From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples
--> SWT Controls鈥.
-This
+5. From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples -> SWT Controls鈥. This
 will display 鈥淪WT Controls鈥 View.
-6.From SWT Controls View, select 鈥淏utton鈥 tab.
-7.In the 鈥淪tyles鈥 group, make sure SWT.FLAT option is unchecked and SWT.PUSH
+6. From SWT Controls View, select 鈥淏utton鈥 tab.
+7. In the 鈥淪tyles鈥 group, make sure SWT.FLAT option is unchecked and SWT.PUSH
 is checked.
 Expected Behavior: The Buttons look similar to the
 image 鈥渇lat_unchecked_on_3.0M7.jpg鈥
-8.Check option SWT.FLAT in the 鈥淪tyles鈥 group.
+8. Check option SWT.FLAT in the 鈥淪tyles鈥 group.
 Expected Behavior: The Buttons should look similar to the
 image 鈥渇lat_checked_on_2.1.2.jpg鈥
 Important: 鈥渇lat_checked_on_2.1.2.jpg鈥 shows the appearance of the Buttons
 when SWT.FLAT is applied on the Eclipse 2.1.2 examples on the Eclipse 2.1.2
 workbench.
-Actual Behavior: The appearance of the Buttons does not change.
-They still
-appear the same way they did before SWT.FLAT was applied.
-See image
+Actual Behavior: The appearance of the Buttons does not change. They still
+appear the same way they did before SWT.FLAT was applied. See image
 flat_checked_on_3.0M7.jpg
 Important: When I ran the same tests on the Examples of Eclipse 2.1.2 on the
 Eclipse 2.1.2 workbench, the effect of setting SWT.FLAT on Buttons was
-visible.
-A snapshot of the appearance of Buttons is shown in
-figure 鈥渇lat_checked_on_2.1.2.jpg鈥.
-However, when it comes to Eclipse 3.0M7,
+visible. A snapshot of the appearance of Buttons is shown in
+figure 鈥渇lat_checked_on_2.1.2.jpg鈥. However, when it comes to Eclipse 3.0M7,
 SWT.FLAT option seems to have no effect on Buttons.

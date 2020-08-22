@@ -1,9 +1,7 @@
 DCR - need Display.getSystemCursor()
 I20030605 Red Hat 9
-Eclipse
-- open the SWT GTK file OS.java
-The method outliner takes a long time.
-This seems to be caused by the new
+Eclipse - open the SWT GTK file OS.java
+The method outliner takes a long time. This seems to be caused by the new
 animated wait cursor used by Gnome in RH9.
 OptimizeIt reports ~40% spent in Cursor.init, from BusyIndicator.showWhile
 (itself from AbstractTreeViewer probably calling us for each method/variable

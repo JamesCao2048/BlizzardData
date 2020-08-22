@@ -1,6 +1,5 @@
 Cursor X/Y hotspots don't work with all constructors
 When using org.eclipse.swt.graphics.Cursor(Device device, ImageData source, int
 hotspotX, int hotspotY) [win32 version] to create a custom cursor, the
-hotspotX/hotspotY parameters are ignored.
-They're checked for validity at the
+hotspotX/hotspotY parameters are ignored. They're checked for validity at the
 top of the function, but then they're never referenced again.

@@ -1,6 +1,2 @@
 Bug 116358 Data source defined in library can't be used in report file.
-Description:Data source defined in library can't be used in report file.
-Steps to reproduce: 1.Add a data source "ds1" and data set "dset1" in a library file.
-2.Use this library in report design.
-3.Create a data set related to "ds1" data source.
-Actual result: Error message "no datasource available" pops up.
+Description:Data source defined in library can't be used in report file. Steps to reproduce: 1. Add a data source "ds1" and data set "dset1" in a library file. 2. Use this library in report design. 3. Create a data set related to "ds1" data source. Actual result: Error message "no datasource available" pops up.

@@ -1,16 +1,2 @@
 Bug 154697 Dataset - Property Binding and Dynamic parameter
-Content in a dynamic list box parameter are NOT reload after a query actualization.
-Example:
-- A hidden parameter called COUNTRY.
-- A Dynamic list box parameter called CUSTOMERS filtered by COUNTRY.
-COUNTRY param is set only via URL (&country=USA) Expected: only USA customers list on viewer paramenter window.
-I had test query actualization via:
-- Dataset parameter (where country = ?)
-- beforeOpen()
-- Property Binding on dataset.
-Result:
-- empty list box if not default value assigned to parameter.(no matter country parameter value i set via URL).
-- custormer list filtered by default value.
-(no matter country parameter value i set via URL).
-for more details and examples, see on newsgroup for same subject.
-Regards, Mauro
+Content in a dynamic list box parameter are NOT reload after a query actualization. Example: - A hidden parameter called COUNTRY. - A Dynamic list box parameter called CUSTOMERS filtered by COUNTRY. COUNTRY param is set only via URL (&country=USA) Expected: only USA customers list on viewer paramenter window. I had test query actualization via: - Dataset parameter (where country = ?) - beforeOpen() - Property Binding on dataset. Result: - empty list box if not default value assigned to parameter.(no matter country parameter value i set via URL). - custormer list filtered by default value. (no matter country parameter value i set via URL). for more details and examples, see on newsgroup for same subject. Regards, Mauro

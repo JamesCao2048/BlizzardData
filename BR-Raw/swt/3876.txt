@@ -1,8 +1,6 @@
 Crash in Carbon native CopyMask
-Saved an edited file, causing an incremental compile.
-The drive the file was on
-was asleep so I got the spinning beach ball while it spun up.
-After the normal
+Saved an edited file, causing an incremental compile.  The drive the file was on
+was asleep so I got the spinning beach ball while it spun up.  After the normal
 spin-up time, Eclipse crashed.
 partial Eclipse.crash.log contents:
 &#65279;Thread 1 Crashed:
@@ -41,12 +39,9 @@ OpaqueRgnHandle*, unsigned char, unsigned char, unsigned char, HIView*, CGContex
 #28  0x92bb02f0 in HIView::Draw(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
 unsigned long, HIView*, CGContext*)
 #29  0x03b94524 in Java_org_eclipse_swt_internal_carbon_OS_ShowControl
-I'm running the M1 Mac Eclipse build under jdk 1.4.1 dp5. I filed a similar bug
-for a different subroutine call yesterday.
-Since these look like calls into the
+I'm running the M1 Mac Eclipse build under jdk 1.4.1 dp5.  I filed a similar bug
+for a different subroutine call yesterday.  Since these look like calls into the
 Carbon libs, I can't tell if the fault is there (and should be reported to
-Apple) or if Eclipse should be handling the exception.
-In any case, it doesn't
-look like a jdk 1.4.1 issue to me.
-Hopefully I'm not revealing any of the NDA
+Apple) or if Eclipse should be handling the exception.  In any case, it doesn't
+look like a jdk 1.4.1 issue to me.  Hopefully I'm not revealing any of the NDA
 secrets.

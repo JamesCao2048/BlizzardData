@@ -1,7 +1,4 @@
 Request for a notification of full-screen changes
 Platform/UI would like to request some kind of notification for a change in a shell's full-screen status.
 Surprisingly there is no SWT.Resize event sent on the shell.
-Background: we've provided support for Window > Toggle Full Screen for MacOS X Lion ( bug 376394 ).
-In 4.2, we try to maintain window state in the UI model.
-Since the user can trigger a full-screen with the toolbar, our model state can become out-of-sync with the reality.
-SWT does receive notification from the OS (Shell#windowDidEnterFullScreen() and windowDidExitFullScreen()); we just need some way to hook into this notification.
+Background: we've provided support for Window > Toggle Full Screen for MacOS X Lion ( bug 376394 ).  In 4.2, we try to maintain window state in the UI model.  Since the user can trigger a full-screen with the toolbar, our model state can become out-of-sync with the reality.  SWT does receive notification from the OS (Shell#windowDidEnterFullScreen() and windowDidExitFullScreen()); we just need some way to hook into this notification.

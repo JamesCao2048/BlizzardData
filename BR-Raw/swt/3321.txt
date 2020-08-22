@@ -1,11 +1,8 @@
 Shell location is not properly used
-I'm using SWT 3.0RC1 to try and make a Shell inside my default outer Shell.
-If I
+I'm using SWT 3.0RC1 to try and make a Shell inside my default outer Shell. If I
 set a location for the internal Shell before it is opened, the internal Shell is
-centered inside the outer Shell.
-I can position the internal Shell once it has
+centered inside the outer Shell. I can position the internal Shell once it has
 been opened, but this creates a flashing effect.
-I'll attach an example snippet that demonstrates the effect.
-The snippet tries
+I'll attach an example snippet that demonstrates the effect. The snippet tries
 to position an internal Shell at 50,50 but it doesn't work (at least not under
 GTK for me).

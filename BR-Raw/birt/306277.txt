@@ -1,11 +1,2 @@
 Bug 306277 Designer: BIRT doesn't automatically link to library
-I have a strange but very annoying issue.
-Every time I open a report for which some items are linked to a library, the items are highlighted in red with an error "Content of this report item is corrupted...".
-To get rid of this, I have to right-click on the rptdesign and choose "refresh library".
-However, if I close the report and re-open it, the issue is back.
-A better workaround is to keep the libraries open (first) and then open the reports.
-In all cases, this is very annoying for users / developers.
-I think that this is related to the fact that:
-- we are using an absolute path for the resource and template folders (Eclipse settings).
-- documents are using resources from a library which itself requires another library (common one).
-The only workaround I found was to move all libraries inside my project.
+I have a strange but very annoying issue. Every time I open a report for which some items are linked to a library, the items are highlighted in red with an error "Content of this report item is corrupted...". To get rid of this, I have to right-click on the rptdesign and choose "refresh library". However, if I close the report and re-open it, the issue is back. A better workaround is to keep the libraries open (first) and then open the reports. In all cases, this is very annoying for users / developers. I think that this is related to the fact that: - we are using an absolute path for the resource and template folders (Eclipse settings). - documents are using resources from a library which itself requires another library (common one). The only workaround I found was to move all libraries inside my project.

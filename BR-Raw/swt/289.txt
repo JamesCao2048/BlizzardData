@@ -1,12 +1,10 @@
 Open context menu via keyboard shortcut on the Mac
 N20080217-0010
 Add a shortcut to the open the context menu on the current selection.
-In Eclipse, some views have actions that are only available as context menu items on certain selections (e.g.
-Synchronize view's "Mark as Merged", or Package Explorer's "Assign Working Sets...").
-These actions are currently very hard to use on the Mac without a mouse.
-The only way I found is to
+In Eclipse, some views have actions that are only available as context menu items on certain selections (e.g. Synchronize view's "Mark as Merged", or Package Explorer's "Assign Working Sets...").
+These actions are currently very hard to use on the Mac without a mouse. The only way I found is to
 - enable MouseKeys,
 - move the cursor to a selected item, and then
 - press Ctrl+Numpad_5
-Other platforms have a dedicated 'Menu' key on the keyboard and also open the menu on Shift+F10.Note that Mac OS X by default binds Shift+F10 to a slow version of Expose > Application Windows, so unless you can override this, we have to find another shortcut for the Mac.
+Other platforms have a dedicated 'Menu' key on the keyboard and also open the menu on Shift+F10. Note that Mac OS X by default binds Shift+F10 to a slow version of Expose > Application Windows, so unless you can override this, we have to find another shortcut for the Mac.
 If you decide that SWT is not the right place to fill in this missing platform functionality, please move to Platform/UI to consider adding a command for opening the context menu (with a default key binding on the Mac).

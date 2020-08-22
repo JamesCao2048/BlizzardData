@@ -1,8 +1,2 @@
 Bug 220723 Series name in legend is not refreshed after delete the first series.
-description: Series name in legend is not refreshed after delete the first series.
-build version: 2.3.0 v20080228-1124 steps to reproduce: 1.New a chart.
-2.New two series.
-Now the default series names are series1, series2.3.Delete the first series.
-4.Check the series name in legend.
-Expected result: Series name in legend should be consistent with that in value series.
-Actual result; Series name in legend is series2 but the series name in value series is series1.This is confusing.
+description: Series name in legend is not refreshed after delete the first series. build version: 2.3.0 v20080228-1124 steps to reproduce: 1. New a chart. 2. New two series. Now the default series names are series1, series2. 3. Delete the first series. 4. Check the series name in legend. Expected result: Series name in legend should be consistent with that in value series. Actual result; Series name in legend is series2 but the series name in value series is series1. This is confusing.

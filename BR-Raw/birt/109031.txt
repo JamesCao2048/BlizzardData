@@ -1,3 +1,2 @@
 Bug 109031 Content can't be deleted if multi select cells and delete if one cell doesn't contain report element
-details: Content can't be deleted if multi select cells and then delete steps to reproduce: 1.multi select two cells in a table, one of which contains an report element, the other contains nothing 2.press delete actual result: the report element won't disappear expected result: If multi select cells of a table, press delete.
-All the content in table cells should disappear.
+details: Content can't be deleted if multi select cells and then delete steps to reproduce: 1.multi select two cells in a table, one of which contains an report element, the other contains nothing 2.press delete actual result: the report element won't disappear expected result: If multi select cells of a table, press delete. All the content in table cells should disappear.

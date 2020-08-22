@@ -3,11 +3,9 @@ eclipse.buildId=I200411050810
 java.version=1.4.2_06
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
-Command-line arguments:
--showlocation
+Command-line arguments: -showlocation
 If the bounds of a Label are set twice to the same thing, the wrapping stops
-working.
-Run the example below:
+working.  Run the example below:
 public static void main(String[] args) {
 Display display = new Display();
 Shell shell = new Shell(display);

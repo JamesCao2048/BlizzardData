@@ -16,10 +16,7 @@ StyledText(Control).setVisible(boolean) line: 3570
 , which ends up calling
 StyledText(Composite).nextValidKeyView(int, int) line: 845
 , which sends out the same KeyDown again.
-This is a problem for the Fix 2 from  bug 199499 .
-Steps to reproduce the bug there: Open a plugin.xml editor.
-Alt+PageDown lets you switch between subtabs of the multi page editor.
-But when you get to a source page, the keystroke does not work any more.
+This is a problem for the Fix 2 from  bug 199499 . Steps to reproduce the bug there: Open a plugin.xml editor. Alt+PageDown lets you switch between subtabs of the multi page editor. But when you get to a source page, the keystroke does not work any more.
 Daemon Thread [Thread-0] (Suspended (breakpoint at line 50 in Snippet76$1))
 Snippet76$1.handleEvent(Event) line: 50
 EventTable.sendEvent(Event) line: 84

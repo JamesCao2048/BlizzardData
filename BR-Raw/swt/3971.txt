@@ -2,11 +2,9 @@
 R2.0, Win2k, Linux/Motif, GTK
 Although the "*" key behaves differently for the TableTree widget on different
 platforms, pressing it under Win2k, Linux/Motif, or Linux/GTK can expand at
-least one branch of the tree.
-However, no SWT.Expand event is fired when the
+least one branch of the tree.  However, no SWT.Expand event is fired when the
 tree is expanded in this manner.
-The following code illustrates the problem.
-The number in square brackets
+The following code illustrates the problem.  The number in square brackets
 increments every time the tree fires an SWT.Expand event.
 -------------------8<----------------------
 import org.eclipse.swt.SWT;

@@ -1,9 +1,9 @@
 Outline view crashes on WinXP & Win2K
 I can reproduce this crash consistently.
-1.Open specific Java source file with 75 methods
-2.Press Ctrl-O
-3.Type first character 'c' of one of the methods
-4.CRASH
+1. Open specific Java source file with 75 methods
+2. Press Ctrl-O
+3. Type first character 'c' of one of the methods
+4. CRASH
 An unexpected exception has been detected in native code outside the VM.
 Unexpected Signal : EXCEPTION_ACCESS_VIOLATION occurred at PC=0x773607AB
 Function=ImageList_SetOverlayImage+0x68C0
@@ -53,4 +53,4 @@ at org.eclipse.swt.widgets.Text.callWindowProc(Text.java:96)
 at org.eclipse.swt.widgets.Control.windowProc(Control.java:2839)
 at org.eclipse.swt.widgets.Display.windowProc(Display.java:2361)
 at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
-at org
+at

@@ -1,9 +1,2 @@
 Bug 164599 [Regression]Can not get the correct output when preview in PDF[0000][0300]
-Description: There is a label with top padding (6 in), can not be displayed in pdf.
-While it works in html output.
-Build Number: 2.2.0.v20061115-1059 Steps to reproduce: 1.Get the attached report design file.
-2.There is a dataset in the report layout.
-And a label with top padding (6 in) in the layout too.
-3.Preview in HTML, it works.
-While preview in PDF, the label is missed.
-Expect result: The report should work in pdf.
+Description: There is a label with top padding (6 in), can not be displayed in pdf. While it works in html output. Build Number: 2.2.0.v20061115-1059 Steps to reproduce: 1.Get the attached report design file. 2.There is a dataset in the report layout. And a label with top padding (6 in) in the layout too. 3.Preview in HTML, it works. While preview in PDF, the label is missed. Expect result: The report should work in pdf.

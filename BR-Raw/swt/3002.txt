@@ -13,6 +13,5 @@ SWT.error(SWT.ERROR_NO_HANDLES);
 Being on AIX this code will always fail.
 If a Browser class exists for AIX the file should be replaced in the packages
 available for download.
-If not, at least change the message to "not supported" at least.
-"no more
+If not, at least change the message to "not supported" at least. "no more
 handles" was an extremly puzzling error ...

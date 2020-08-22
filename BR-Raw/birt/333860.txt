@@ -1,7 +1,2 @@
 Bug 333860 NullPointerException in DocumentExtension using RunTask
-Build Identifier: v20100915-1750 We are faced with a problem running one of our reports in our custom report viewer.
-Running the report using RunTask results in a NullPointerException.
-This error seems to be very rare but is always reproducible with the report.
-The root cause of the problem is DocumentExtension.add (line 117, 'latest' is null).
-RunAndRenderTask in contrast is working fine.
-Applies to Birt 2.6.1 Reproducible: Always Steps to Reproduce: 1.Run the report using RunTask
+Build Identifier: v20100915-1750 We are faced with a problem running one of our reports in our custom report viewer. Running the report using RunTask results in a NullPointerException. This error seems to be very rare but is always reproducible with the report. The root cause of the problem is DocumentExtension.add (line 117, 'latest' is null). RunAndRenderTask in contrast is working fine. Applies to Birt 2.6.1 Reproducible: Always Steps to Reproduce: 1. Run the report using RunTask

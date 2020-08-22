@@ -1,7 +1,2 @@
 Bug 192791 Lost first row level of xtab after page break in ps and pdf.[1102]
-Description: Lost first row level of xtab after page break in ps and pdf.
-Build number:2.2.0.v20070615 Steps to reproduce: 1.Open attached xtab.
-2.Preview in pdf or postscript.
-3.check second and the third page.
-Expected result: The last two level values "Mountain" and "Saddles" display Actual result: The two values in first row level lost.
-Error log:n/a
+Description: Lost first row level of xtab after page break in ps and pdf. Build number:2.2.0.v20070615 Steps to reproduce: 1. Open attached xtab. 2. Preview in pdf or postscript. 3. check second and the third page. Expected result: The last two level values "Mountain" and "Saddles" display Actual result: The two values in first row level lost. Error log:n/a

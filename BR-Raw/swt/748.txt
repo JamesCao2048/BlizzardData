@@ -1,17 +1,13 @@
 3.5.x regression: UI randomly freezes
 User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5
 Build Identifier: 3555
-Creating an ApplicationWindow which is updated by many threads can cause a stall within the display main loop.
-All UI events will freeze until a Windows event occurs (keyboard/mouse/window activity).
-The test code (see below) works fine on 3.4.x but not on 3.5.x.
-Using a modified version of 3.5.x with the Display.foregroundIdleProc method from 3.4.x works.
-This appears to be an SWT problem
-- my test case uses a JFace ApplicationWindow as I couldn't get a vanilla Shell to fail in a simple test.
+Creating an ApplicationWindow which is updated by many threads can cause a stall within the display main loop. All UI events will freeze until a Windows event occurs (keyboard/mouse/window activity).
+The test code (see below) works fine on 3.4.x but not on 3.5.x. Using a modified version of 3.5.x with the Display.foregroundIdleProc method from 3.4.x works.
+This appears to be an SWT problem - my test case uses a JFace ApplicationWindow as I couldn't get a vanilla Shell to fail in a simple test.
 Reproducible: Always
 Steps to Reproduce:
 Run the code below against 3.5.x SWT/JFace
-Leave the keyboard and mouse alone, and the application will (usually v.
-quickly) freeze.
+Leave the keyboard and mouse alone, and the application will (usually v. quickly) freeze.
 Moving the mouse over the window brings the application back to life.
 Test Code:
 import org.eclipse.jface.window.ApplicationWindow;
@@ -45,8 +41,7 @@ shell.setText("UI Thread Test");
 Composite contents = new Composite(parent, SWT.NONE);
 contents.setLayout(new GridLayout(1, false));
 contents.setLayoutData(new GridData(GridData.FILL_VERTICAL | GridData.GRAB_VERTICAL));
-for (int i = 0; i
-< labels.length; i++)
+for (int i = 0; i < labels.length; i++)
 {
 labels[i] = new Label(contents, 0);
 labels[i].setText("-----------------------------");
@@ -64,8 +59,7 @@ return contents;
 }
 };
 window.open();
-for (int i = 0; i
-< labels.length; i++)
+for (int i = 0; i < labels.length; i++)
 {
 final Label label = labels[i];
 final String id = "Thread " + (i + 1);
@@ -91,4 +85,4 @@ display.syncExec(new Runnable()
 public void run()
 {
 if (!label.isDisposed())
-label.setText(id
+label.setText(id + "

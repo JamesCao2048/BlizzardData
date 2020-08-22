@@ -1,50 +1,37 @@
 remove platform code throwing ClassNotFound exception
 Add a Platform class in a common platform specific folder with the Platform
-name.
-This change will benefit JavaWebStart apps using the lazy flag.
+name. This change will benefit JavaWebStart apps using the lazy flag.
 from the newsgroup:
 I've run into an obstacle while deploying SWT through Java web start.
 The problem I'm experiencing is related to Library.getPlatform() in
 org.eclipse.swt.internal.
-The swt.jar is downloaded eagerly (ie.
-before the application starts) by
-the JNLP client, while other jars should be lazily downloaded (ie.
-after
+The swt.jar is downloaded eagerly (ie. before the application starts) by
+the JNLP client, while other jars should be lazily downloaded (ie. after
 the application starts and when the jar is needed by the application).
 Here's a sample JNLP file:
 <jnlp>
-
 <resource>
-
 <jar href="AAA.jar" part="startup" download="eager"/>
-
 <jar href="BBB.jar" part="app" download="lazy"/>
 ....
-
 </resource>
-
 <resource os="Windows">
-
 <nativelib href="win-swt/win-corelibs.jar" part="startup"
 download="eager"/>
-
 <jar href="win-swt/swt.jar" part="startup" download="eager"/>
-
 </resource>
 </jnlp>
 In an attempt to locate missing classes, Java Webstart will download all
 jars listed in the JNLP file when a particular class is not in the
 current classpath of the application, regardless of the download=lazy
-attribute.
-In my scenario, org.eclipse.swt.internal.motif.OS does not
+attribute.  In my scenario, org.eclipse.swt.internal.motif.OS does not
 exist in the classpath (I'm using Windows SWT) and thus causes the
 download of every jar file.
 In Display.getPlatform(), the following piece of code exists:
 -----
 String [] names = new String [] {"motif", "gtk", "win32", "photon",
 "carbon"};
-for (int i = 0; i
-< names.length; i++) {
+for (int i = 0; i < names.length; i++) {
 try {
 Class.forName("org.eclipse.swt.internal."+names[i]+".OS");
 return names[i];
@@ -53,8 +40,7 @@ return names[i];
 return "unknown";
 -----
 The class org.eclipse.swt.internal.motif.OS will never exist in Windows
-SWT.
-Thus, Class.forName() will always trigger a
+SWT.  Thus, Class.forName() will always trigger a
 ClassNotFoundException, causing webstart to download everything.
 I'm suggesting that the following be added to correct this problem.
 Other suggestions would be much appreciated.
@@ -66,8 +52,7 @@ else
 {
 String [] names = new String [] {"motif", "gtk", "win32", "photon",
 "carbon"};
-for (int i = 0; i
-< names.length; i++) {
+for (int i = 0; i < names.length; i++) {
 try {
 Class.forName("org.eclipse.swt.internal."+names[i]+".OS");
 return names[i];

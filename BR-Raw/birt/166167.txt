@@ -1,3 +1,2 @@
 Bug 166167 ODA IResultSet.close never been called in DtE
-In DtE, we will close IConnection and IQuery from ODA, however the IResultSet.close() has never be called so that it is possible that even the ODA connection is closed the IResultSet is still open(If it is not closed when the IQuery or IConnection is closed).
-This is incorrect and needs a fix.
+In DtE, we will close IConnection and IQuery from ODA, however the IResultSet.close() has never be called so that it is possible that even the ODA connection is closed the IResultSet is still open(If it is not closed when the IQuery or IConnection is closed). This is incorrect and needs a fix.

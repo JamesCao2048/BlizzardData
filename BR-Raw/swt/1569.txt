@@ -3,5 +3,4 @@ When computing bounds,TextLayout does not take trailing line break into account
 > call getBounds()
 (2) set the text to "abc"
 > call getBounds()
-> the result for (1) and (2) are the same.
-The trailing line break is not taken into account
+> the result for (1) and (2) are the same. The trailing line break is not taken into account

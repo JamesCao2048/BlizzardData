@@ -1,15 +1,14 @@
 Keyboard focus not given to selected element in tree
 3.1M2
-1.Enable link in Navigator (or Package Explorer) view
-2.Click on the first element in the list
-3.Open two editors
-4.Click on each tab, watch the highlighted element change and the view scroll
-5.Click on the tab for the Navigator view
-6.Use the arrow keys, notice that keyboard navigation is still at some old
+1. Enable link in Navigator (or Package Explorer) view
+2. Click on the first element in the list
+3. Open two editors
+4. Click on each tab, watch the highlighted element change and the view scroll
+5. Click on the tab for the Navigator view
+6. Use the arrow keys, notice that keyboard navigation is still at some old
 location and not at the currently selected row
 This may be related to  bug 26388 .
-The following snippet reproduces the problem.
-When you click the button, the
+The following snippet reproduces the problem.  When you click the button, the
 selected item changes, but if you tab into the list you will notice that
 keyboard focus has not changed.
 public class SelectedFocus {
@@ -50,21 +49,18 @@ Table table = new Table(parent, SWT.MULTI | SWT.BORDER
 table.setLinesVisible(true);
 table.setHeaderVisible(true);
 String[] titles = { "Position", "Foobar" };
-for (int i = 0; i
-< titles.length; i++) {
+for (int i = 0; i < titles.length; i++) {
 TableColumn column = new TableColumn(table, SWT.NULL);
 column.setText(titles[i]);
 }
 int count = 256;
 table.removeAll();
-for (int i = 0; i
-< count; i++) {
+for (int i = 0; i < count; i++) {
 TableItem item = new TableItem(table, SWT.NULL);
 item.setText(0, String.valueOf(i));
 item.setText(1, "line " + i + " in nowhere");
 }
-for (int i = 0; i
-< table.getColumnCount(); i++)
+for (int i = 0; i < table.getColumnCount(); i++)
 table.getColumn(i).pack();
 table.pack();
 return table;

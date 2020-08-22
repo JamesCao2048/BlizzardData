@@ -11,6 +11,5 @@ e.doit = false;
 }
 });
 - with the focus in a widget inside the CTabFolder, press Ctrl+PageDown
-=> CTabFolder *first* switches pages, and only then calls my traverse listener.
-Console output is: TraverseEvent{CTabFolder {} time=262183171 data=null character='0' keyCode=16777222 stateMask=262144 doit=true detail=0}
+=> CTabFolder *first* switches pages, and only then calls my traverse listener. Console output is: TraverseEvent{CTabFolder {} time=262183171 data=null character='0' keyCode=16777222 stateMask=262144 doit=true detail=0}
 => Expected: Like in native SWT widgets, the client's traverse listeners should be called first, and the CTabFolder's traverse code should only be executed when e.doit == true and e.detail == TRAVERSE_TAB_NEXT/PREVIOUS

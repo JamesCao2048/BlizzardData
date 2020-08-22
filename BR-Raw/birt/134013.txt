@@ -1,6 +1,2 @@
 Bug 134013 <property name="cachedRowCount">200</property>
-Since the cache poperty is in the XML, this is taken during deployment also.
-WHen i design i need only few rows (say 100 rows ) But when i deploy i need all the rows SInce
-<property name="cachedRowCount">200</property> is part of the XML file, the output/pdf shows only what is specified during design phase.
-The documentation shows, during deployment this setting will not be considered, but i found the other way- during design and deployment.
-Hari Nair
+Since the cache poperty is in the XML, this is taken during deployment also. WHen i design i need only few rows (say 100 rows ) But when i deploy i need all the rows SInce <property name="cachedRowCount">200</property> is part of the XML file, the output/pdf shows only what is specified during design phase. The documentation shows, during deployment this setting will not be considered, but i found the other way- during design and deployment. Hari Nair

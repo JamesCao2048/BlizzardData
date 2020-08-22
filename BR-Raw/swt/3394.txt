@@ -11,13 +11,9 @@ Steps to recreate problem:
 newly created class.
 3- resizing eclipse window.
 Error:
-Eclipse fails to resize window.
-When window is extended, blank area is
-appeared.
-When window is shrinked, some view is concealed.
-This problem is
-caused by selecting Editors, such as Java Editor, Text Editor and so on.
-But
+Eclipse fails to resize window. When window is extended, blank area is
+appeared. When window is shrinked, some view is concealed. This problem is
+caused by selecting Editors, such as Java Editor, Text Editor and so on. But
 when selecting specific pages, such as Welcome pages and plugin.xml pages,
 window resizing works correctly.
 Expected Result:

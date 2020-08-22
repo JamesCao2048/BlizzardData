@@ -1,4 +1,2 @@
 Performance on OS X still degrades on 10.4.3
-Event after the fix in  Bug #95475 , there is still a major problem with performance degradation on OS X.
-This happens for me on JDK 1.4.2 and JDK 1.5.0, on Eclipse 3.1.1 and Eclipse 3.2M4, with the latest gen PowerBook running 10.4.3 with 2GB of RAM.
-This has been logged in Radar as Bug 4395238 as well, but it's unclear whether it's Apple's problem or Eclipse/SWT's problem at the moment.
+Event after the fix in  Bug #95475 , there is still a major problem with performance degradation on OS X.  This happens for me on JDK 1.4.2 and JDK 1.5.0, on Eclipse 3.1.1 and Eclipse 3.2M4, with the latest gen PowerBook running 10.4.3 with 2GB of RAM.  This has been logged in Radar as Bug 4395238 as well, but it's unclear whether it's Apple's problem or Eclipse/SWT's problem at the moment.

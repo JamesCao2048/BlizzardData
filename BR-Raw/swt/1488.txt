@@ -1,7 +1,6 @@
 GC.setAlpha() / GC.getAlpha() does not work properly on Linux
 +++ This bug was initially created as a clone of  Bug #193067  +++
-GC.setAlpha behaves differently to the other platforms (Windows and Mac).
-The following code snippet has a different behavior on Linux:
+GC.setAlpha behaves differently to the other platforms (Windows and Mac). The following code snippet has a different behavior on Linux:
 GC gc = ...;
 gc.setAlpha(100);
 gc.setAdvanced(false);
@@ -24,8 +23,7 @@ if (!data.disposeCairo) return;
 int /*long*/ cairo = data.cairo;
 if (cairo != 0) Cairo.cairo_destroy(cairo);
 data.cairo = 0;
->>>     data.alpha = 0xff;
-<<<
+>>>     data.alpha = 0xff;   <<<
 data.interpolation = SWT.DEFAULT;
 data.backgroundPattern = data.foregroundPatter = null;
 data.state = 0;

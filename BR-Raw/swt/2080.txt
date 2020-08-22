@@ -1,7 +1,6 @@
 KeyEvent.doit does not work for a CCombo
 I want to perform an action for a specific key sequence (Ctrl+Space).
 I do not want the space character to appear in the CCombo.
-
 Using the following code in a KeyListener does not work:
 public void keyPressed(KeyEvent event)
 {

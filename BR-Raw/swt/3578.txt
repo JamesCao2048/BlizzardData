@@ -3,8 +3,7 @@ Command+Q closes eclipse on Mac OS X due to this accelerator being registered on
 specific 'application menu'.
 This means you can close eclipse within a dialog, which causes unpredictable results (usually
 errors in the log regarding disposing of widgets..)
-Command+Q, perhaps all all accelerators in this menu, should be disabled when in dialogs.
-A
+Command+Q, perhaps all all accelerators in this menu, should be disabled when in dialogs. A
 more complete solution would provide us explicit control over these accelerators for rebinding.
 I remember Andre saying that he had a solution for this, and I know that the MRJ toolkit from
 apple has some (AWT dependant) API for managing this menu.

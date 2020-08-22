@@ -1,8 +1,2 @@
 Bug 229521 [Regression] Series name is not correct in context menu for chart with more axis [13]
-Description: Series name is not correct in context menu for chart with more axis.
-Build number: 2.3.0 v20080430-0630 Steps to reproduce: 1.New a data set binding to CUSTOMERS.
-2.New a chart with More Axis.
-3.In "Select Data" tab, binding the chart to the data set, create three Y axis.
-4.Right click one column and get the context menu Expected result: Series names are correct.
-Actual result: See the screenshot.
-Error log: N/A
+Description: Series name is not correct in context menu for chart with more axis. Build number: 2.3.0 v20080430-0630 Steps to reproduce: 1. New a data set binding to CUSTOMERS. 2. New a chart with More Axis. 3. In "Select Data" tab, binding the chart to the data set, create three Y axis. 4. Right click one column and get the context menu Expected result: Series names are correct. Actual result: See the screenshot. Error log: N/A

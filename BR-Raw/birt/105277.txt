@@ -1,3 +1,2 @@
 Bug 105277 NativeJavaObject is returned when script data set is used
-It's printing "org.mozilla.javascript.NativeJavaObject@154f4c7" instead of "Hello World!" This is the script I have on dataset.
-on open: s = Packages.HelloWorld.hello(); count = 1; on fetch: if (count > 0) { row["columnString"] = s; count--; return true; } return false; hello() method returns a String.
+It's printing "org.mozilla.javascript.NativeJavaObject@154f4c7" instead of "Hello World!" This is the script I have on dataset. on open: s = Packages.HelloWorld.hello(); count = 1; on fetch: if (count > 0) { row["columnString"] = s; count--; return true; } return false; hello() method returns a String.

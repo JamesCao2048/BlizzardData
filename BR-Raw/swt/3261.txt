@@ -1,10 +1,8 @@
 org.eclipse.swt.tools.internal.SwtJniGen is not working properly
 Jni generator uses org.eclipse.swt.internal.Platform claas to determine
-platform.
-This class is not part of SWT package for amd64 it generates it still
-thinks that platform is win32.This is happening due to swttools.jar is built
-using win32 platform and final PLATFORM string is inline into swttools.jar.
-So I
+platform. This class is not part of SWT package for amd64 it generates it still
+thinks that platform is win32. This is happening due to swttools.jar is built
+using win32 platform and final PLATFORM string is inline into swttools.jar. So I
 had to rebuild swttools.jar and make some dances to feed proper Platform.java.
 I suggest passing platform attribute to ant task org.eclipse.swt.tools.internal.
 SwtJniGen so swttool.jar has no dependency on org.eclipse.swt.internal.Platform

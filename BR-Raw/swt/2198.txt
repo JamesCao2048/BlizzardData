@@ -1,17 +1,12 @@
 StyledText down arrow (cursor) broken
-In StyledText with wrapped text when the cursor is in the first column (before the first letter), when the one attempts to move the cursor down via the arrow keys it will only move down one visual line.
-If the cursor is moved to the second column (after the first letter) then the cursor can be moved down with the arrow keys as expected.
-Also, when the cursor is placed at the bottom of the text (in the first column) and then moved up (via the arrow keys) the cursor will remain in the first column UNTIL the first row (the first visual line) where it will appear at the end of the line.
+In StyledText with wrapped text when the cursor is in the first column (before the first letter), when the one attempts to move the cursor down via the arrow keys it will only move down one visual line.  If the cursor is moved to the second column (after the first letter) then the cursor can be moved down with the arrow keys as expected.  Also, when the cursor is placed at the bottom of the text (in the first column) and then moved up (via the arrow keys) the cursor will remain in the first column UNTIL the first row (the first visual line) where it will appear at the end of the line.
 Steps to reproduce:
-1. C&P the code below (it's snippet 213 with the first line *not* indented (the code is purposefully commented out) to make it as easy as possible to display the problem).
-2. Run the snippet.
-3. (Without otherwise moving the cursor before) Move the cursor down with the down arrow key.
-It will only move down one visual line regardless of the number of times that the down arrow is pressed.
-4. Move the cursor right with the right arrow key.
-Pressing the down arrow will now move the cursor down.
-5. Place the cursor at the start of that last visual line.
-6. Using the up arrow key move the cursor to the first visual line.
-The cursor will remain "left justified" until the first visual line.
+1.  C&P the code below (it's snippet 213 with the first line *not* indented (the code is purposefully commented out) to make it as easy as possible to display the problem).
+2.  Run the snippet.
+3.  (Without otherwise moving the cursor before) Move the cursor down with the down arrow key.  It will only move down one visual line regardless of the number of times that the down arrow is pressed.
+4.  Move the cursor right with the right arrow key.  Pressing the down arrow will now move the cursor down.
+5.  Place the cursor at the start of that last visual line.
+6.  Using the up arrow key move the cursor to the first visual line.  The cursor will remain "left justified" until the first visual line.
 (FYI:  I'm using "visual line" to distinguish from a IDocument "line".)
 Version: 3.2.0
 Build id: I20060602-1317
@@ -19,16 +14,9 @@ This *did* work in other 3.2RC's but I'm not sure at what point it stopped.
 ===================================
 public class Snippet213
 {
-static String text = "The first paragraph has an indentation of fifty pixels.
-Indentation is the amount of white space in front of the first line of a paragraph.
-If this paragraph wraps to several lines you should see the indentation only on the first line.nn" + "The second paragraph is center aligned.
-Alignment only works when the StyledText is using word wrap.
-Alignment, as with all other line attributes, can be set for the whole widget or just for a set of lines.nn"
-+ "The third paragraph is justified.
-Like alignment, justify only works when the StyledText is using word wrap.
-If the paragraph wraps to several lines, the justification is performed on all lines but the last one.nn"
-+ "The last paragraph is justified and right aligned.
-In this case, the alignment is only noticeable in the final line.";
+static String text = "The first paragraph has an indentation of fifty pixels. Indentation is the amount of white space in front of the first line of a paragraph. If this paragraph wraps to several lines you should see the indentation only on the first line.nn" + "The second paragraph is center aligned. Alignment only works when the StyledText is using word wrap. Alignment, as with all other line attributes, can be set for the whole widget or just for a set of lines.nn"
++ "The third paragraph is justified. Like alignment, justify only works when the StyledText is using word wrap. If the paragraph wraps to several lines, the justification is performed on all lines but the last one.nn"
++ "The last paragraph is justified and right aligned. In this case, the alignment is only noticeable in the final line.";
 public static void main(String[] args)
 {
 Display display = new Display();

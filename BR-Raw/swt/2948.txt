@@ -1,9 +1,6 @@
 Support very large Image on Windows platform
-Currently an Image on Windows is size-limited
-- on my system to 16MB.
-However,
+Currently an Image on Windows is size-limited - on my system to 16MB.  However,
 a posting in eclipse.platform.swt in response to "Larger image problems"
 suggested that there is a way to get OS.CreateCompatibleBitmap to transparently
-return a DIB that is stored in main memory and can be any size.
-If there is a
+return a DIB that is stored in main memory and can be any size.  If there is a
 way to easily support this, it'd be really helpful.

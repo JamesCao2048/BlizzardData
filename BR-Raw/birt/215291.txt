@@ -1,5 +1,2 @@
 Bug 215291 Avoid unnecessary calls to find message files in BundleHelper
-For different locales, the BundleHelper may calls getSession().getResourceLocator().findResource() multiple times.
-However, in most cases, the user puts all message files in the same folder.
-And in some cases, if findResource involves network resources, the cost will be very significant.
-Enhances this part and only calls findResource once.
+For different locales, the BundleHelper may calls getSession().getResourceLocator().findResource() multiple times. However, in most cases, the user puts all message files in the same folder. And in some cases, if findResource involves network resources, the cost will be very significant. Enhances this part and only calls findResource once.

@@ -1,6 +1,2 @@
 Bug 261316 Bar width in multiple series Bar-Line charts
-Build ID: M20071023-1652
-- Version 3.3.1.1 Steps To Reproduce: 1.Create a bar graph with 3 series 2.Set last two series to line type 3.Base series bar width remains narrow, although other bar series have been converted to line type More information: When changing the chart type to stacked-bar, the width of the base series bars is adjusted properly, however, in this case the additional line type series appear stacked too, indicating wrong values compared to Y-axis scale.
-In version Version: 3.4.1
-- Build id: M20080911-1700 additional series 'stacked' property can be undone, but the base series bar widt appears narrow again.
-Solved one thing, recreated the other issue...
+Build ID: M20071023-1652 - Version 3.3.1.1 Steps To Reproduce: 1.Create a bar graph with 3 series 2.Set last two series to line type 3.Base series bar width remains narrow, although other bar series have been converted to line type More information: When changing the chart type to stacked-bar, the width of the base series bars is adjusted properly, however, in this case the additional line type series appear stacked too, indicating wrong values compared to Y-axis scale. In version Version: 3.4.1 - Build id: M20080911-1700 additional series 'stacked' property can be undone, but the base series bar widt appears narrow again. Solved one thing, recreated the other issue...

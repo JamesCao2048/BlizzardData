@@ -3,12 +3,10 @@ Created  attachment 232320   [details]
 A sample app to reproduce this problem
 When we enter chinese words in the StyledText control, sometimes some words are lost.
 How to reproduce this problem?
-1.Select Chinese
-- Simplified as input source, and check Pinyin
-- Simplified option, see picture 1.
-2.Run the sample app
-3.Switch the input source to Pinyin, see picture 2.
-4.Input the following chars:
+1. Select Chinese - Simplified as input source, and check Pinyin - Simplified option, see picture 1.
+2. Run the sample app
+3. Switch the input source to Pinyin, see picture 2.
+4. Input the following chars:
 wo faxian youshihou hui chuxian diuzi de qingkuang.
 The expected result in the StyledText: 鎴戝彂鐜版湁鏃跺欎細鍑虹幇涓㈠瓧鐨勬儏鍐点
 But sometimes, you will find there are some words lost.

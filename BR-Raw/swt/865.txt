@@ -3,11 +3,10 @@ Created  attachment 140265   [details]
 Snippet code and sample cursor images.
 Build ID: 20090619-0625
 Steps To Reproduce:
-1.Run the attached snippet (taken from www.eclipse.org/swt/snippets).
-2.Load the cursor from the attached sample PNG image.
-3.The transparent areas are incorrectly rendered as opaque black pixels.
+1. Run the attached snippet (taken from www.eclipse.org/swt/snippets).
+2. Load the cursor from the attached sample PNG image.
+3. The transparent areas are incorrectly rendered as opaque black pixels.
 More information:
 I've seen this problem on Windows, whereas on Linux the cursor is rendered correctly.
-A workaround is to export the cursor images as BMP, but those aren't loaded on Linux.
-So in my application I had to provide both image file types for every cursor used, and check at runtime on which platform it is running.
+A workaround is to export the cursor images as BMP, but those aren't loaded on Linux. So in my application I had to provide both image file types for every cursor used, and check at runtime on which platform it is running.
 Also cursors loaded from ICO images are rendered blocky in the edges, indicating that the alpha channel is encoded in 1 bit, although this image file type supports an 8 bit alpha channel.

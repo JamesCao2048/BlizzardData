@@ -2,12 +2,4 @@
 I'm using Eclipse 3.3 on a Gentoo Linux box with the following GTK versions installed:
 x11-libs/gtk+-1.2.10-r12
 x11-libs/gtk+-2.10.13
-(Don't know which one Eclipse uses.) I'm experiencing problems with the Slider widget: Under certain circumstances, the buttons at the end of the slider are drawn a bit too large
-- they even exceed the size of the scrollbar.
-This doesn't happen all the time
-- most of the delivered views and editors work fine.
-Until now, I've only seen this problem occur on horizontal scrollbars.
-It happens both inside the distributed Eclipse and inside my own RCP applications.
-The easiest way for me to reproduce this problem is to open the SWT Controls example view and go to the Sliders page.
-I'll attach a screenshots to illustrate the problem
-- the left scrollbar belongs to the package explorer and looks as it should, the right one is drawn by the SWT Controls example view.
+(Don't know which one Eclipse uses.) I'm experiencing problems with the Slider widget: Under certain circumstances, the buttons at the end of the slider are drawn a bit too large - they even exceed the size of the scrollbar. This doesn't happen all the time - most of the delivered views and editors work fine. Until now, I've only seen this problem occur on horizontal scrollbars. It happens both inside the distributed Eclipse and inside my own RCP applications. The easiest way for me to reproduce this problem is to open the SWT Controls example view and go to the Sliders page. I'll attach a screenshots to illustrate the problem - the left scrollbar belongs to the package explorer and looks as it should, the right one is drawn by the SWT Controls example view.

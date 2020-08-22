@@ -1,10 +1,6 @@
 Bus error in org.eclipse.swt.internal.cocoa.OS.object_getInstanceVariable (called from Tree.expandItem)
-Happened in a recent 4.1 stream build.
-I had a bunch of incoming changes in the sync view (displayed as change sets), selected them all and picked "Update".
-While the tree in the sync view changed (the change sets disappeared incrementally), I tried to expand one of the items, hoping to see what the change set contained before it disappeared.
-The crash may have happened because the item to expand didn't exist anymore when the event was processed.
-I'm going to attach the thread dump.
-Here are the first few lines from it:
+Happened in a recent 4.1 stream build. I had a bunch of incoming changes in the sync view (displayed as change sets), selected them all and picked "Update". While the tree in the sync view changed (the change sets disappeared incrementally), I tried to expand one of the items, hoping to see what the change set contained before it disappeared. The crash may have happened because the item to expand didn't exist anymore when the event was processed.
+I'm going to attach the thread dump. Here are the first few lines from it:
 Process:         eclipse [218]
 Path:            /Users/bokowski/Desktop/4.1M2a/Eclipse.app/Contents/MacOS/eclipse
 Identifier:      org.eclipse.eclipse
@@ -15,8 +11,7 @@ Interval Since Last Report:          22944436 sec
 Crashes Since Last Report:           5
 Per-App Interval Since Last Report:  2683260 sec
 Per-App Crashes Since Last Report:   1
-Date/Time:       2010-09-27 10:40:39.631
--0400
+Date/Time:       2010-09-27 10:40:39.631 -0400
 OS Version:      Mac OS X 10.5.8 (9L31a)
 Report Version:  6
 Anonymous UUID:  16031B24-5279-4D25-9BB4-90858BD86F29
@@ -52,4 +47,4 @@ J  org.eclipse.swt.widgets.Display.windowProc(JJJ)J
 v  ~StubRoutines::call_stub
 J  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;JJ)J
 j  org.eclipse.swt.widgets.Display.applicationSendEvent(JJJ)V+383
-j  org.eclipse.swt.widgets.Di
+j  org.eclipse.swt.widgets.Dis

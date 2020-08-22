@@ -1,3 +1,2 @@
 Bug 205557 PPT emitter
-BIRT 2.2.1 PPT emitter generates PPT files with references to "file:///C:/___Actuate___", which would of coure not work on no actuate pcs.
-e.g.: Content-Location: file:///C:/___Actuate___/slide-show Content-Location: file:///C:/___Actuate___/s1 Content-Location: file:///C:/___Actuate___/presentation Content-Location: file:///C:/___Actuate___/file-list
+BIRT 2.2.1 PPT emitter generates PPT files with references to "file:///C:/___Actuate___", which would of coure not work on no actuate pcs. e.g.: Content-Location: file:///C:/___Actuate___/slide-show Content-Location: file:///C:/___Actuate___/s1 Content-Location: file:///C:/___Actuate___/presentation Content-Location: file:///C:/___Actuate___/file-list

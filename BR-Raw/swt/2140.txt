@@ -1,10 +1,9 @@
 ToolItem Image not painted disabled on Mac OS X (when the ToolItem is set to be disabled)
 Build ID: I20070222-0951
 Steps To Reproduce:
-1.Create a ToolItem.
-2.Set its image to an existing Image using ToolItem#setImage(Image).
-3.Disable the ToolItem using ToolItem#setEnabled(boolean) (e.g.
-toolItem.setEnabled(false)).
+1. Create a ToolItem.
+2. Set its image to an existing Image using ToolItem#setImage(Image).
+3. Disable the ToolItem using ToolItem#setEnabled(boolean) (e.g. toolItem.setEnabled(false)).
 More information:
 The visual appearance of the Image of the ToolItem always suggests that the item is enabled even when the item in question has been disabled (and thus has started acting as a disabled widget).
 I'm running Mac OS X 10.4.8 on MacBook Pro 17" with Intel Core Duo (if any part of the information is related).

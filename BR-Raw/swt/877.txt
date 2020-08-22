@@ -1,8 +1,6 @@
 Cannot scroll to bottom of virtual table
 Build ID: 3.5M6
-Run snippet below, then select the scrollbar slider and drag it to the bottom
-- you cannot see the last 5 items.
-This problem only happens when the table has a column and the items have images.
+Run snippet below, then select the scrollbar slider and drag it to the bottom - you cannot see the last 5 items.  This problem only happens when the table has a column and the items have images.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;

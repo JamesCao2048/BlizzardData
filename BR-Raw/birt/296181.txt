@@ -1,4 +1,2 @@
 Bug 296181 SQB Data Set Page should not overwrite the Data Set Editor dialog title
-The SQL Query Builder dialog embedded in an ODA data set contribution page sets its own dialog title, which overwrites its container dialog.
-Being a contribution page, it should have preserved the title of its container dialog, i.e.
-the Data Set Editor.
+The SQL Query Builder dialog embedded in an ODA data set contribution page sets its own dialog title, which overwrites its container dialog. Being a contribution page, it should have preserved the title of its container dialog, i.e. the Data Set Editor.

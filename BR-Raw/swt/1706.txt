@@ -1,8 +1,7 @@
 GlyphMetrics behaves differently on carbon
 SWT version, as returned by SWT.getVersion(): 3346
 Use the following snippet that is adapted from  http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet211.java?view=co
-The zero width glyphs do not behave as zero width on carbon.
-The offset of the glyph is zero, but it renders over the previous character.
+The zero width glyphs do not behave as zero width on carbon. The offset of the glyph is zero, but it renders over the previous character.
 The interesting bits are styles[8] through [10] in the snippet.
 I've attached the screenshots on carbon and win32.
 package com.thoughtworks.tide.eclipse.ui.tests;
@@ -17,15 +16,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 // adapted from  http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet211.java?view=co
 public class GlyphMetricBehaviourOnWindowsAndMac {
-static String text = "You can set any font you want in a range.
-You can also set a baseline rise and all other old features"
-+ " like background and foreground, and mix them any way you want.
-Totally awesome."
-+ "The glyph metric does not behave same on Windows and Mac (Carbon).
-->*<- and
-->_<- is a hidden glyph"
-+ "And this is a 1 pixed width glyph
-->|<-";
+static String text = "You can set any font you want in a range. You can also set a baseline rise and all other old features"
++ " like background and foreground, and mix them any way you want. Totally awesome."
++ "The glyph metric does not behave same on Windows and Mac (Carbon). ->*<- and ->_<- is a hidden glyph"
++ "And this is a 1 pixed width glyph ->|<-";
 public static void main(String[] args) {
 Display display = new Display();
 Shell shell = new Shell(display);
@@ -49,8 +43,7 @@ styles[4].font = font2;
 styles[4].foreground = display.getSystemColor(SWT.COLOR_BLUE);
 styles[4].underline = true;
 styles[5] = new StyleRange();
-styles[5].rise =
--data.getHeight() / 3;
+styles[5].rise = -data.getHeight() / 3;
 styles[5].strikeout = true;
 styles[5].underline = true;
 styles[6] = new StyleRange();
@@ -62,4 +55,4 @@ styles[7].rise = data.getHeight() / 3;
 styles[7].underline = true;
 styles[7].fontStyle = SWT.BOLD;
 styles[7].foreground = display.getSystemColor(SWT.COLOR_RED);
-styles[7
+styles[7].ba

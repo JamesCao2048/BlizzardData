@@ -1,16 +1,12 @@
 Eclipse freezes when hovering over value in Variables view
-Eclipse freezes when hovering over value in Variables view.
-Longer tooltip results in longer freeze, up to several minutes.
-Problem is reproducible on Windows 7 using 3.8.1, 4.2.1 and latest I-build.
-Steps below use Java class as an example, but the problem is reproducible also when debugging applications written in other languages.
+Eclipse freezes when hovering over value in Variables view. Longer tooltip results in longer freeze, up to several minutes. Problem is reproducible on Windows 7 using 3.8.1, 4.2.1 and latest I-build. Steps below use Java class as an example, but the problem is reproducible also when debugging applications written in other languages.
 Steps to reproduce:
-1.Create the following Java class:
+1. Create the following Java class:
 ----------%<-----------
 public class X {
 public static void main(String[] args) {
 StringBuilder buf = new StringBuilder(15000);
-for (int i = 0; i
-< 15000; i++) {
+for (int i = 0; i < 15000; i++) {
 buf.append(' ');
 }
 String s = buf.toString();
@@ -18,7 +14,7 @@ System.out.println(s); // breakpoint here
 }
 }
 ----------%<-----------
-2.Set breakpoint in the marked line.
-3.Debug as Java application.
-4.When breakpoint is hit, go to Variables view and hover over value of s.
+2. Set breakpoint in the marked line.
+3. Debug as Java application.
+4. When breakpoint is hit, go to Variables view and hover over value of s.
 => Eclipse freezes and does not respond.

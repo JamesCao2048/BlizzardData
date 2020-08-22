@@ -1,55 +1,39 @@
 Eclipse crashes when pasting URL in Java-code
-This is repeatable, at least for me.
-I did the following:
-a) Right-click on link in MSIE, select "Copy shortcut".
-The link I got was the
+This is repeatable, at least for me. I did the following:
+a) Right-click on link in MSIE, select "Copy shortcut". The link I got was the
 following:  http://www.w3.org/TR/MathML2/bycodes.html#U000A9
 b) Paste it in notepad, just to check that it was copied OK.
 c) Paste it in Eclipse, in the middle of a Java source code file, for further
 editing (actually, it's the unicode for the (C) symbol that I wanted...) More
 specifically, I pasted it after the first opening { on a class definition,
 before the first instance variable declaration.
-d) *BANG!* Eclipse dies with a "JVM error
--10473247932489324" or something like
+d) *BANG!* Eclipse dies with a "JVM error -10473247932489324" or something like
 that.
-e) On restart, I get the following message in the log file.
-Don't know if
+e) On restart, I get the following message in the log file. Don't know if
 that's really related to the problem, or more to problems during restart.
-!SESSION aug 02, 2002 11:26:59.640
----------------------------------------------
+!SESSION aug 02, 2002 11:26:59.640 ---------------------------------------------
 java.version=1.4.0_01
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=sv_SE
-Command-line arguments:
--os win32
--ws win32
--arch x86
--data C:Workspace
--
+Command-line arguments: -os win32 -ws win32 -arch x86 -data C:Workspace -
 install file:F:/Program Files/eclipse/
 !ENTRY org.eclipse.ui 4 4 aug 02, 2002 11:26:59.650
-!MESSAGE Unable to restore editor
-- createElement returned null for input
+!MESSAGE Unable to restore editor - createElement returned null for input
 element factory: org.eclipse.ui.part.FileEditorInputFactory
 !ENTRY org.eclipse.ui 4 4 aug 02, 2002 11:26:59.660
-!MESSAGE Unable to restore editor
-- createElement returned null for input
+!MESSAGE Unable to restore editor - createElement returned null for input
 element factory: org.eclipse.ui.part.FileEditorInputFactory
 !ENTRY org.eclipse.ui 4 4 aug 02, 2002 11:27:05.438
-!MESSAGE Unable to restore editor
-- createElement returned null for input
+!MESSAGE Unable to restore editor - createElement returned null for input
 element factory: org.eclipse.ui.part.FileEditorInputFactory
 !ENTRY org.eclipse.ui 4 4 aug 02, 2002 11:27:05.448
-!MESSAGE Unable to restore editor
-- createElement returned null for input
+!MESSAGE Unable to restore editor - createElement returned null for input
 element factory: org.eclipse.ui.part.FileEditorInputFactory
 !ENTRY org.eclipse.ui 4 4 aug 02, 2002 11:27:05.468
-!MESSAGE Unable to restore editor
-- createElement returned null for input
+!MESSAGE Unable to restore editor - createElement returned null for input
 element factory: org.eclipse.ui.part.FileEditorInputFactory
 !ENTRY org.eclipse.ui 4 4 aug 02, 2002 11:27:05.478
-!MESSAGE Unable to restore editor
-- createElement returned null for input
+!MESSAGE Unable to restore editor - createElement returned null for input
 element factory: org.eclipse.ui.part.FileEditorInputFactory
 !ENTRY com.rational.clearcase 1 0 aug 02, 2002 11:27:07.802
 !MESSAGE traceLevel = 2(option=null)

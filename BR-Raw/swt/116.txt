@@ -1,5 +1,5 @@
 [GTK3] implement Control.print()
-Control.print() makes use of APIs not available in GTK 3.Need to reimplement it.
+Control.print() makes use of APIs not available in GTK 3. Need to reimplement it.
 Here are a couple, there could be more.
 GDK_PIXMAP_XID
 gdk_drawable_get_depth

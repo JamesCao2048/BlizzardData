@@ -1,10 +1,8 @@
 FocusIn and FocusOut events are processed with different cases in Shell.
-Since about org.eclipse.swt 3.3.0.v3339, a filter for x focus change event (FocusIn and FocusOut event)is added in org.eclipse.swt.widget.Shell.
-When the focus event meets some conditions, shell will set some fileds and send SWT event.
+Since about org.eclipse.swt 3.3.0.v3339, a filter for x focus change event (FocusIn and FocusOut event)is added in org.eclipse.swt.widget.Shell. When the focus event meets some conditions, shell will set some fileds and send SWT event.
 But the conditions to process FocusIn event and FocusOut event are not the same.
 For FocusOut event, when its detail is one of OS.NotifyNonlinear, OS.NotifyNonlinearVirtual and OS.NotifyVirtual, above actions will be done.
-But for FocusIn event, just when its detail is either OS.NotifyNonlinear or OS.NotifyVirtual, the corresponding actions will be done.
-Where is OS.NotifyNonlinearVirtual case?
+But for FocusIn event, just when its detail is either OS.NotifyNonlinear or OS.NotifyVirtual, the corresponding actions will be done. Where is OS.NotifyNonlinearVirtual case?
 It impacts general focus events.
 Following is the source code of filterProc:
 int /*long*/ filterProc (int /*long*/ xEvent, int /*long*/ gdkEvent, int /*long*/ data2) {

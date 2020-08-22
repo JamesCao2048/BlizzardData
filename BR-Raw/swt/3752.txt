@@ -1,24 +1,18 @@
 Cannot get file extension from swt FileDialog
 There's no way to get the file extension that the user selected from the
-FileDialog.
-It makes this dialog almost unusable since we can't determine the
-correct file extension to append to the file name.
-We need an api for the file
+FileDialog. It makes this dialog almost unusable since we can't determine the
+correct file extension to append to the file name. We need an api for the file
 dialog to return the "Save as type" field that the user selected in the
 FileDialog.
 Athough we are using this dialog in our own product, this problem can be
-illustrated when you export to a jar file.
-Select *.zip in the "Save as type"
-and enter a file name (eg.
-test).
-The export wizard should use the
+illustrated when you export to a jar file. Select *.zip in the "Save as type"
+and enter a file name (eg. test). The export wizard should use the
 file "test.zip" when this happens.
 STEPS:
 1) Select a java file
 2) Select File->Export...
 3) Select JAR file and press Next
-4) Press Browse...
-to select a Save As file dialog
+4) Press Browse... to select a Save As file dialog
 5) Enter test for the file name
 6) Select *.zip for the "Save as type" field
 7) Press Save

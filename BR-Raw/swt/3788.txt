@@ -4,26 +4,20 @@ When using the Button controls from the SWT Controls example, if SWT.ARROW
 buttons are used and SWT.BORDER property is selected or deselected, the arrow
 alignment property of all the arrow buttons is reset to UP.
 Steps to Reproduce:
-1.Ensure that Eclipse is not running.
-Install the M5 example plug-ins.
-2.Start Eclipse.
-3.Accept new configuration defaults.
-4.Go to Window->Show View->Other and select SWT Controls under SWT Examples.
-A
+1. Ensure that Eclipse is not running. Install the M5 example plug-ins.
+2. Start Eclipse.
+3. Accept new configuration defaults.
+4. Go to Window->Show View->Other and select SWT Controls under SWT Examples. A
 new SWT Controls view appears.
-5.Expand the new view if neccesary, and click on the button tab.
-6.On the right of the pane, select "SWT.ARROW" in the styles group.
-The
+5. Expand the new view if neccesary, and click on the button tab.
+6. On the right of the pane, select "SWT.ARROW" in the styles group. The
 buttons will change to arrow buttons, pointng up.
-7.Select an alignment other than "up" from the alignment group.
-The arrow
+7. Select an alignment other than "up" from the alignment group. The arrow
 buttons will change their orientation.
-8.Select or deselect SWT.BORDER in the styles group.
-The arrows will change
+8. Select or deselect SWT.BORDER in the styles group. The arrows will change
 their orientation back to "up".
-9.Select a new orientation for the arrows.
-Then (de)select SWT.BORDER again.
+9. Select a new orientation for the arrows. Then (de)select SWT.BORDER again.
 Note that the arrows will again change their orientation to "up".
 Found in:
-OS: HP-UX 11.11.  Eclipse: V2.1 Build Id: 200302061700 (M5), with M5 example
+OS: HP-UX 11.11.   Eclipse: V2.1 Build Id: 200302061700 (M5), with M5 example
 plugins.

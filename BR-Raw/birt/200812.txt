@@ -1,9 +1,2 @@
 Bug 200812 Issue when remove one separator setting in viewer.property[0002]
-Description: Issue when remove one separator setting in viewer.property Build number:2.2.1.v200708220927 Steps to reproduce: 1.Deploy birt.
-2.Open viewer.properties under WEB-INF folder.
-3.Delete "viewer.sep.0=," line 4.Start server.
-5.Preview report.
-6.Export Data, select columns and select "Comma(,)", click OK.
-Expected result: Comma(,) isn't in the separator list.
-Actual result: Nothing happened after step6 and no error logs.
-Error log:n/a
+Description: Issue when remove one separator setting in viewer.property Build number:2.2.1.v200708220927 Steps to reproduce: 1. Deploy birt. 2. Open viewer.properties under WEB-INF folder. 3. Delete "viewer.sep.0=," line 4. Start server. 5. Preview report. 6. Export Data, select columns and select "Comma(,)", click OK. Expected result: Comma(,) isn't in the separator list. Actual result: Nothing happened after step6 and no error logs. Error log:n/a

@@ -1,6 +1,5 @@
 [Browser] dialog is not shown in response to returned string from onbeforeunload JS event
-Probably happens on carbon as well.
-Sample HTML page:
+Probably happens on carbon as well.  Sample HTML page:
 <HTML>
 <head>
 <script>
@@ -13,7 +12,6 @@ window.onbeforeunload = closeIt;
 </script>
 </head>
 <body>
-
 <a href=" http://www.eclipse.org ">Click here to navigate to www.eclipse.org</a>
 </body>
 </html>

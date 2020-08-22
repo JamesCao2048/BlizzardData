@@ -1,5 +1,3 @@
 [Bidi] Text#addSegmentListener(..) should not require client to call setText(..)
-Text#addSegmentListener(..) should not require the client to call setText(..).
-This is confusing and it's also not necessary in the equivalent API on StyledText.
-Furthermore, setText(..) is not the only way to trigger the segment listener.
-If the programmer didn't account for this bug, then the segment listener may also be called for the first time as a response to user input that goes into the Text widget.
+Text#addSegmentListener(..) should not require the client to call setText(..). This is confusing and it's also not necessary in the equivalent API on StyledText.
+Furthermore, setText(..) is not the only way to trigger the segment listener. If the programmer didn't account for this bug, then the segment listener may also be called for the first time as a response to user input that goes into the Text widget.

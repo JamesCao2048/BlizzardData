@@ -1,11 +1,8 @@
 StyledText slow to update due to deferred flushing
 I20100511-0800
-The content of a StyledText doesn't keep up with your keystrokes.
-You can see this in CustomControlExample.
-1.Launch CustomControlExample.
-2.Switch to StyledText.
-3.Check the HORIZONTAL_FILL and VERTICAL_FILL checkboxes.
-4.Start typing at a fast pace.
-The text doesn't appear immediately.
-It seems to take a fraction of a second for the text you just typed in to repaint.
-Compare with a multiline Text, where there is no noticeable delay after typing.
+The content of a StyledText doesn't keep up with your keystrokes. You can see this in CustomControlExample.
+1. Launch CustomControlExample.
+2. Switch to StyledText.
+3. Check the HORIZONTAL_FILL and VERTICAL_FILL checkboxes.
+4. Start typing at a fast pace.
+The text doesn't appear immediately. It seems to take a fraction of a second for the text you just typed in to repaint. Compare with a multiline Text, where there is no noticeable delay after typing.

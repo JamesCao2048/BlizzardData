@@ -11,7 +11,6 @@ When starting on the left and pressing Ctrl+Right arrow repeatedly, the caret
 should stop on the left of d, then on the right of G, then on the right of J,
 then on the right of M, then on the left of p, then on the left of s.
 When starting on the right and pressing Ctrl+Left repeatedly, the caret should
-stop at the same positions in reverse order.
-Practically, Ctrl+Left behaves as
+stop at the same positions in reverse order.  Practically, Ctrl+Left behaves as
 required, but Ctrl+Right misbehaves at the transition from a LTR word to a RTL
 word: stops on the left of O instead of the right of G.

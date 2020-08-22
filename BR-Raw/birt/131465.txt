@@ -1,3 +1,2 @@
 Bug 131465 Fetching date from MySQL returns bogus values
-1) In MySQL I have a table with a column of type integer (Year int(11).
-2) I run the following SQL statement SELECT date_format(makedate(year, 1), "%Y") FROM census c 3) Which returns the following 1980 1990 2000 4) When I run the same query inside a data set I get the following: 31 39 38 30 31 39 39 30 32 30 30 30 This looks like hex code that is not being translated back to character format.
+1) In MySQL I have a table with a column of type integer (Year int(11). 2) I run the following SQL statement SELECT date_format(makedate(year, 1), "%Y") FROM census c 3) Which returns the following 1980 1990 2000 4) When I run the same query inside a data set I get the following: 31 39 38 30 31 39 39 30 32 30 30 30 This looks like hex code that is not being translated back to character format.

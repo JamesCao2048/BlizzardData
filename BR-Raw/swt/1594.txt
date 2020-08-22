@@ -1,10 +1,6 @@
 Cannot get focus out of browser widget any more
 I20080502-0100, was OK in M5.
-Cannot get focus out of browser widget any more.
-To reproduce, e.g.
-launch ControlExample, tab into the browser widget and then try to get out by keyboard.
+Cannot get focus out of browser widget any more. To reproduce, e.g. launch ControlExample, tab into the browser widget and then try to get out by keyboard.
 - Tab and Shift+Tab used to pass focus out after the last/first link was selected (worked fine in M5, broken in M6 and in HEAD)
 - Ctrl+Tab and Ctrl+Shift+Tab already didn't work in M5
-This is an accessibility problem.
-E.g.
-in Javadoc hovers (opened with F2 in a Java editor), you cannot reach the toolbar buttons any more.
+This is an accessibility problem. E.g. in Javadoc hovers (opened with F2 in a Java editor), you cannot reach the toolbar buttons any more.

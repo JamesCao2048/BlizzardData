@@ -6,12 +6,11 @@ This issue occurred both on Windows and RHEL.
 e.g.
 input 鈥漈est"銆->  entered text "TestT"
 Steps:
-1.Setup CVS environment
-2.Commit a project into CVS
+1. Setup CVS environment
+2. Commit a project into CVS
 Right click project > Team > Commit...
-3.Enter comments with IM is on
-e.g.
-type "a" key and Enter key from keyboard
+3. Enter comments with IM is on
+e.g. type "a" key and Enter key from keyboard
 expected result:
 entered text is "銇"
 actual result:

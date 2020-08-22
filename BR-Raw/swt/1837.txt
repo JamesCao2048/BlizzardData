@@ -1,18 +1,6 @@
 [CCombo] Using CCombo breaks default button behaviour in RCP view
-I have an RCP application.
-In one of my views I had a Text control with a Button next to it and a Table under them.
-I set the button up as the default button for the view's top composite' shell
-- using code like this:
+I have an RCP application.  In one of my views I had a Text control with a Button next to it and a Table under them.  I set the button up as the default button for the view's top composite' shell - using code like this:
 myTopComposite.getShell ().setDefaultButton (myRetrieveButton);
-This worked as I expected.
-After typing in the text box pressing the
-<enter> key caused the button's selection listener to recieve the widgetSelected event.
-Then I changed to a CCombo instead of the Text control.
-The default button is still being set the same way but now after typeing (or selecting a prepopulated selectin) pressing the
-<enter> key has no effect.
-If I use the mouse or
-<tab> key to put the focus on the table and pres the
-<enter> key things behave as I expected.
-I tried Combo (instead of CCombo) and that worked fine too.
-There seems to be something about the CCombo that is preventing the default button from getting the widgetSelected event when I press
-<enter>.
+This worked as I expected.  After typing in the text box pressing the <enter> key caused the button's selection listener to recieve the widgetSelected event.
+Then I changed to a CCombo instead of the Text control.  The default button is still being set the same way but now after typeing (or selecting a prepopulated selectin) pressing the <enter> key has no effect.  If I use the mouse or <tab> key to put the focus on the table and pres the <enter> key things behave as I expected.
+I tried Combo (instead of CCombo) and that worked fine too.  There seems to be something about the CCombo that is preventing the default button from getting the widgetSelected event when I press <enter>.

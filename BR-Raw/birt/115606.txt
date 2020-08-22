@@ -1,4 +1,2 @@
 Bug 115606 Invalid html tag for SVG output
-When generating SVG content in html output, Report Engine currently uses [width="xxx" height="xxxx"] as the html tag, which results in the wrong effect in browser.
-but when generating ordinary image content, it uses [style="width:xxxx;height:xxxx"] which shows the correct size.
-Expcected Report Engine also uses the html style tag to ouptut the SVG content.
+When generating SVG content in html output, Report Engine currently uses [width="xxx" height="xxxx"] as the html tag, which results in the wrong effect in browser. but when generating ordinary image content, it uses [style="width:xxxx;height:xxxx"] which shows the correct size. Expcected Report Engine also uses the html style tag to ouptut the SVG content.

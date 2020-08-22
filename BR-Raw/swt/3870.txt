@@ -2,14 +2,10 @@ en_US.UTF-8 locale not supported on Motif
 Ive noticed that some people had problems with accents in several languages.
 Here's a me-too.
 I'm using RedHat 8.0 and cannot type accents using dead keys in Eclipse's editor
-- nothing happens.
-Usually with other applications I can type tilde+a and get a
-a with tilde (茫).
-In Eclipse's editor I get the tilde followed by the character
-a
-- it seems that it ignores the dead-key combination.
-My keyboard is a Brazilian ABNT-2 so it has a c-cedilla (莽).
-None of the dead
+- nothing happens. Usually with other applications I can type tilde+a and get a
+a with tilde (茫). In Eclipse's editor I get the tilde followed by the character
+a - it seems that it ignores the dead-key combination.
+My keyboard is a Brazilian ABNT-2 so it has a c-cedilla (莽). None of the dead
 keys works.
 I've tried to set the LANG environment variable to the following values before
 running eclipse, without luck:

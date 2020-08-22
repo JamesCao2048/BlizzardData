@@ -7,8 +7,7 @@ Display display = new Display();
 Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 Browser b = new Browser(shell, SWT.NONE);
-b.setText("<a href="" http://www.eclipse.org "" target=""_blank""> http://www.eclipse.org
-</a>");
+b.setText("<a href="" http://www.eclipse.org "" target=""_blank""> http://www.eclipse.org </a>");
 b.addOpenWindowListener(new OpenWindowListener() {
 public void open(WindowEvent event) {
 final Shell s = new Shell();

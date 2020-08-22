@@ -5,12 +5,11 @@ Env:
 - Suse Linus ED10
 - XULRUnner 1.8.0.1 shipped with sled10
 - Eclipse 3.3M4/Eclipse 3.2.2
-1.Open Eclipse, show view "Intenet Web Browser".
-2.Visit a web page with frameset structure.(See attached sample html files)
-3.Click the "confirm" button.
-4.An exception is thown:
-rg.eclipse.swt.SWTError: XPCOM error
--2147467262
+1. Open Eclipse, show view "Intenet Web Browser".
+2. Visit a web page with frameset structure.(See attached sample html files)
+3. Click the "confirm" button.
+4. An exception is thown:
+rg.eclipse.swt.SWTError: XPCOM error -2147467262
 at org.eclipse.swt.browser.Browser.error(Browser.java:1328)
 at org.eclipse.swt.browser.PromptService.getBrowser(PromptService.java:117)
 at org.eclipse.swt.browser.PromptService.Confirm(PromptService.java:183)

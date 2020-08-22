@@ -1,5 +1,4 @@
 Display.getActiveShell() slow with lots of widgets
 If no shell is active, Display.getActiveShell() currently has to loop over every
-widget.
-Since only one shell can be active at any given time, we can optimize
+widget.  Since only one shell can be active at any given time, we can optimize
 this case.

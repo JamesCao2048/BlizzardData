@@ -1,12 +1,8 @@
 Cocoa: [New SWT style required]single click only bring a window to the top but do not take effective for the click object
-There is a different system behaviors against Mac Cocoa and Mac Carbon/Windows/Linux.
-IF there are two windows on the screen, window 1 has focus(on top), window 2 not, click a control on window 2:
-1.On Mac Carbon/Windows/Linux, window 2 will get focus(move to top) and the clicked control will take effective.
-It means single click do two things: (1) Windows got focus (2)Control is clicked
-2.On Mac Cocoa, partial controls has same behaviors, but most of other controls difference.
-Single click only make window get focus, if we want to the control work, another click is necessary.
-In the SWT's Control class, if the style is STW.ON_TOP, the acceptsFirstMouse will return true, then the control will be focused only a single click.
-But STW.ON_TOP will be used in other scenario, can we provide a new style to control whether accept the first mouse?
+There is a different system behaviors against Mac Cocoa and Mac Carbon/Windows/Linux. IF there are two windows on the screen, window 1 has focus(on top), window 2 not, click a control on window 2:
+1. On Mac Carbon/Windows/Linux, window 2 will get focus(move to top) and the clicked control will take effective.  It means single click do two things: (1) Windows got focus (2)Control is clicked
+2. On Mac Cocoa, partial controls has same behaviors, but most of other controls difference. Single click only make window get focus, if we want to the control work, another click is necessary.
+In the SWT's Control class, if the style is STW.ON_TOP, the acceptsFirstMouse will return true, then the control will be focused only a single click. But STW.ON_TOP will be used in other scenario, can we provide a new style to control whether accept the first mouse?
 boolean acceptsFirstMouse (int /*long*/ id, int /*long*/ sel, int /*long*/ theEvent) {
 Shell shell = getShell ();
 if ((shell.style & SWT.ON_TOP) != 0) return true;

@@ -1,8 +1,5 @@
 Table tooltip does not show after selection of a table item
-The tooltip for table item (per row based) stop showing as soon as you make a selection to a row.
-You will have to move the mouse outside of the table area (or to the column header) and then move back in, the tooltip will then be displayed.
-This problem only happens to the Linux OS.
-Same code on Windows works fine.
+The tooltip for table item (per row based) stop showing as soon as you make a selection to a row. You will have to move the mouse outside of the table area (or to the column header) and then move back in, the tooltip will then be displayed. This problem only happens to the Linux OS. Same code on Windows works fine.
 Here is the example code for reproducing the problem:
 import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.*;

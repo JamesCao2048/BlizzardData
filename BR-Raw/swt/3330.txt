@@ -1,15 +1,11 @@
 Embedded AWT windows use wrong location
 The code in SWT_AWT for 3.0M9 was modified slightly to change how the SWT.Move
 event was handled as well as how the initial location of the embedded window
-was handled.
-This causes the window to not be at the 0,0 location within its
-parent.
-In fact the window moves away from the 0,0 location of its parent as
-the whole app is moved away from the 0,0 screen location.
-The problem is the
+was handled. This causes the window to not be at the 0,0 location within its
+parent. In fact the window moves away from the 0,0 location of its parent as
+the whole app is moved away from the 0,0 screen location. The problem is the
 use of anything other than 0,0 in the setLocation and setBounds calls that
-were added.
-The problem goes away if
+were added. The problem goes away if
 frame.setBounds (bounds.x, bounds.y, bounds.width, bounds.height);
 is changed to:
 frame.setBounds (0,0, bounds.width, bounds.height);

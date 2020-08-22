@@ -3,8 +3,7 @@ Build ID: I20090515-1143
 Steps To Reproduce:
 1.Construct a tree
 2.Add a TreeItem to the tree
-3.Call removeAll on the TreeItem
--- instead of removing the child items from that TreeItem, it removes all items from the Tree.
+3.Call removeAll on the TreeItem -- instead of removing the child items from that TreeItem, it removes all items from the Tree.
 More information:
 The implementation for TreeItem.removeAll currently looks like this:
 public void removeAll () {

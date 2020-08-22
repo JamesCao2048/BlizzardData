@@ -36,8 +36,7 @@ GC gc = new GC(printer);
 System.out.println(gc.getClipping());
 
 
-for (int i = 0; i
-< 2; i++) {
+for (int i = 0; i < 2; i++) {
 printer.startPage();
 
 
@@ -108,4 +107,4 @@ layout.dispose();
 
 g.drawImage(img, 160, 50);
 
-g.dispos
+g.dispose

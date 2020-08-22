@@ -1,4 +1,2 @@
 Bug 269923 ImageHandle should be provided two new methods about expression.
-In the ImageHandle, there has two methods setURL and setFile, they contain complex logic.
-GUI can't set them via a simple way.
-So model should provider new two methods: setURL(Expression expr), setFile(Expression expr) or setURL(String url, String exprType), setFile(String file, String exprType).
+In the ImageHandle, there has two methods setURL and setFile, they contain complex logic. GUI can't set them via a simple way. So model should provider new two methods: setURL(Expression expr), setFile(Expression expr) or setURL(String url, String exprType), setFile(String file, String exprType).

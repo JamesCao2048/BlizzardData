@@ -1,8 +1,2 @@
 Bug 211379 Fail to print errors in target report to Problem View[0002]
-Description: Fail to print errors in target report to Problem View Build number:2.3.0.v20071129 Steps to reproduce: 1.Open attached report and preview.
-2.Input 'a' as value and click OK.
-3.Click link.
-The link will pass parameter value row["OFFICECODE"]to self report and change group key to invalid.
-Expected result: Print errors in Problem View.
-Actual result: No errors are added in Problem View.
-Error log: n/a
+Description: Fail to print errors in target report to Problem View Build number:2.3.0.v20071129 Steps to reproduce: 1. Open attached report and preview. 2. Input 'a' as value and click OK. 3. Click link. The link will pass parameter value row["OFFICECODE"]to self report and change group key to invalid. Expected result: Print errors in Problem View. Actual result: No errors are added in Problem View. Error log: n/a

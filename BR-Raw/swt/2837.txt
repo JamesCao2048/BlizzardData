@@ -1,10 +1,8 @@
 TabItems appear above TabFolder titles when set to a minimum size on Mac OS X
 If a TabFolder in a SashForm is reduced in size so that only the tab titles are
 visible, for certain positions, the TabItem appears on top of the tab titles.
-When this happens the TabItems can no longer be selected.
-The code below
-illustrates this problem.
-If the upper part of the SashForm is reduced in size
+When this happens the TabItems can no longer be selected. The code below
+illustrates this problem. If the upper part of the SashForm is reduced in size
 at certain positions when the TabItem should no longer be visible, it appears
 above the title.
 This occurs with Eclipse 3.1M6 Mac OS X (10.3)

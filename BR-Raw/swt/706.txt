@@ -1,8 +1,7 @@
 [Browser] Child shell with browser doesn't close on Esc
 I20100309-0100 Cocoa, already a problem before  bug 231311
 A child shell with a Browser doesn't close on Esc when the shell has been opened without focus and the Browser should have gotten focus on MouseDown.
-This is a problem in the SDK when you show a Javadoc hover, click into the hover, and then try to close it with Esc.
-On second click, it works.
+This is a problem in the SDK when you show a Javadoc hover, click into the hover, and then try to close it with Esc. On second click, it works.
 Snippet to reproduce (when you create the Text as first child of the popup, then everything is fine):
 package org.eclipse.swt.snippets;
 import org.eclipse.swt.SWT;
@@ -29,9 +28,7 @@ Shell popup = new Shell(shell, SWT.TOOL | SWT.ON_TOP
 | SWT.RESIZE);
 popup.setLayout(new GridLayout());
 Browser browser = new Browser(popup, SWT.NONE);
-browser.setText("Click me
-<b>once</b>, then press Esc.
-"
+browser.setText("Click me <b>once</b>, then press Esc. "
 + "Popup should hide but doesn't.");
 browser.setLayoutData(new GridData(500, 50));
 new Text(popup, SWT.SINGLE);

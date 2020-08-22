@@ -23,7 +23,4 @@ display.dispose();
 }
 Notice that the data.fileName field is clobbered on output.
 Also, it is not set into the dialog on open.
-On Windows, this is done in the PRINTDLG.hDevNames struct, which is also used to set the printer driver and name.
-The best time to fix this bug is when the printer driver and name are also set into the dialog.
-The doc for the DEVNAMES struct does not specify whether the "output" (i.e.
-filename) can be set without setting the driver and device name.
+On Windows, this is done in the PRINTDLG.hDevNames struct, which is also used to set the printer driver and name. The best time to fix this bug is when the printer driver and name are also set into the dialog. The doc for the DEVNAMES struct does not specify whether the "output" (i.e. filename) can be set without setting the driver and device name.

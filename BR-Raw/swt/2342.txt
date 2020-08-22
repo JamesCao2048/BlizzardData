@@ -1,4 +1,3 @@
 Cactus code should automatically configure web.xml
-Right now the user has to manually configure to the web.xml to have the cactus servlet.
-It would sure be nice and, I think, not too hard to make it add the server side configuration automatically, with prompting, of course.
+Right now the user has to manually configure to the web.xml to have the cactus servlet. It would sure be nice and, I think, not too hard to make it add the server side configuration automatically, with prompting, of course.
 In order to do this, we are almost certainly going to have to move the cactus code to prevent circular dependencies.

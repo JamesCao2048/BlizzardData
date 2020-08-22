@@ -8,20 +8,16 @@ I create an external tool with the following properties:
 Location: ${workspace_loc:/testcase/test2.sh}
 Arguments:
 Directory: ${workspace_loc:/testcase}
-Then I run it.
-Of course it sleeps for 1m, so I press "cancel", which doesn't
+Then I run it. Of course it sleeps for 1m, so I press "cancel", which doesn't
 kill the process, but rather attempts to wait for it to finish, I get bored of
 waiting for that, and click the X in the top right, asking my window manager to
-close the window.
-Eclipse promptly crashes, popping up the motif error dialog:
-JVM terminated.
-Exit code=6
+close the window. Eclipse promptly crashes, popping up the motif error dialog:
+JVM terminated. Exit code=6
 -cp /usr/local/lib/eclipse-F3/startup.jar org.eclipse.core.launcher.Main
 -os linux
 -ws gtk
 -arch x86
--showsplash /usr/local/lib/eclipse-F3/eclipse
--showsplash 600
+-showsplash /usr/local/lib/eclipse-F3/eclipse -showsplash 600
 -data /home/burner/.eclipse
 It also dumps a JVM crash page, so I'm attaching the hs_err_pid5155.log
 I assume this is an SWT problem with GTK because is says an exception was raised

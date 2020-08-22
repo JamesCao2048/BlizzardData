@@ -1,8 +1,6 @@
 NPEs when trying to close EGit Commit dialog
 The fix for  bug 422090  causes a severe issue:
-When I try to close the EGit Commit dialog, I get a ton of NPEs and the dialog stays open.
-I cannot commit through the dialog any more.
-I can close the dialog via Esc or the close box.
+When I try to close the EGit Commit dialog, I get a ton of NPEs and the dialog stays open. I cannot commit through the dialog any more. I can close the dialog via Esc or the close box.
 Workaround for EGit is to commit via the Git Staging view.
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Tree._getItem(Tree.java:254)

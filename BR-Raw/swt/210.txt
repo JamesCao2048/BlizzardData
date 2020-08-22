@@ -3,12 +3,7 @@ Build Identifier: 3.7.2
 The URLTransfer does not return the file url correctly and does not decode the url.
 Reproducible: Always
 Steps to Reproduce:
-1.on Mac OS X, create a file on local disk.
-The file name contains a space, for example, "a b".
-2.run  http://git.eclipse.org/c/platform/eclipse.platform.swt.git/tree/examples/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet284.java  with SWT Cocoa
-3.DND the file in to the snippet application.
-4.You will find the url is not correctly.
-It's like file://localhost/Users/linyunz/Desktop/a%b .
-The url is not decoded, also it should be file:/localhost/..., but not file://...
-.
-This kind of url could not be used by Java URL .
+1. on Mac OS X, create a file on local disk. The file name contains a space, for example, "a b".
+2. run  http://git.eclipse.org/c/platform/eclipse.platform.swt.git/tree/examples/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet284.java  with SWT Cocoa
+3. DND the file in to the snippet application.
+4. You will find the url is not correctly. It's like file://localhost/Users/linyunz/Desktop/a%b .  The url is not decoded, also it should be file:/localhost/..., but not file://... . This kind of url could not be used by Java URL .

@@ -15,8 +15,7 @@ t.setCapture(true);
 }
 });
 t = new Tree(shell, SWT.NONE);
-for (int i = 0; i
-< 100; i++) {
+for (int i = 0; i < 100; i++) {
 new TreeItem(t, SWT.None).setText("Hello World");
 }
 shell.open();
@@ -27,7 +26,6 @@ display.sleep();
 }
 }
 }
-Hitting the Button, I begin using my MouseWhell to scroll, but the Tree is not scrolling.
-From what the JavaDoc tells me, I had expected this behaviour.
+Hitting the Button, I begin using my MouseWhell to scroll, but the Tree is not scrolling. From what the JavaDoc tells me, I had expected this behaviour.
 Since I more think that this is a platform-limitation than a bug in setCapture() , at least the JavaDoc should clarify what this API is about.
 Ben

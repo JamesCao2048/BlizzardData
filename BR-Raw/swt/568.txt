@@ -1,10 +1,7 @@
 Segmentation Fault When Widget looses focus
 See related bug report in STS issue tracker:
 https://issuetracker.springsource.com/browse/STS-1046
-The bug is 100% reproducible on my machine, with my currently installed development setup.
-Unfortunately the example is bound up with a lot of dependencies to STS components.
-This behavior started appearing when I switched to Eclipse 3.6 today.
-It did not happen in Eclipse 3.5.
-I also submitted a bugreport to Sun, but later realized this is much more likely an issue with SWT native libraries for the linux platform.
-I tried the same sequence of steps on windows and mac, and it only happens on Linux.
+The bug is 100% reproducible on my machine, with my currently installed development setup. Unfortunately the example is bound up with a lot of dependencies to STS components.
+This behavior started appearing when I switched to Eclipse 3.6 today. It did not happen in Eclipse 3.5.
+I also submitted a bugreport to Sun, but later realized this is much more likely an issue with SWT native libraries for the linux platform. I tried the same sequence of steps on windows and mac, and it only happens on Linux.
 Crash log is attached.

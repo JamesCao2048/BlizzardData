@@ -1,26 +1,21 @@
 SWT.NO_BACKGROUND not working on Linux GTK
 I have composed a code snippet (attached) that does essentially what we are
-trying to do.
-For very large images or images that take time to process and
+trying to do.  For very large images or images that take time to process and
 compute, we render them one tile (sub-image) at a time to deliver better
-rendering performance and to help with memory management.
-We actually use Java
+rendering performance and to help with memory management.  We actually use Java
 Advanced Imaging to provide the infrastructure for this, but we have written a
 custom SWT widget that extends Canvas with SWT.NO_BACKGROUND set as a style and
 paints image tiles as they are computed, each in a separate thread.
 The included snippet emulates this process by loading a small (30x30 pixels or
 on that order) and creating 100 threads to tile the image in a 10x10 grid on the
-Canvas.
-The Canvas also has a mouse listener that paints a simple cross-shaped
-cursor when a mouse up event is detected.
-When this happens, the following
+Canvas.  The Canvas also has a mouse listener that paints a simple cross-shaped
+cursor when a mouse up event is detected.  When this happens, the following
 behaviors are noticed when the mouse is clicked repeatedly on the canvas, per
 platform:
 Windows: SWT.NO_BACKGROUND honored, no flicker.
 Linux-Motif: SWT.NO_BACKGROUND honored, no flicker.
 Linux-GTK: flicker nearly every time.
-We are running the Linux tests on a RedHat 9 machine.
-We also note that a
+We are running the Linux tests on a RedHat 9 machine.  We also note that a
 related  bug 39320  was recently reported to have fixed this for Linux-GTK, but we
 ran our code under 3.1M2 and the problem yet persists.
 Here is the snippet code for ease in reproducing the behavior:
@@ -50,8 +45,7 @@ import org.eclipse.swt.widgets.Shell;
 public class ImageCanvasSnippet {
 
 public static void main(String arg[]) {
-if (arg.length
-< 1) {
+if (arg.length < 1) {
 System.err.println("usage: ImageCanvasSnippet
 <image-file>");
 System.exit(1);

@@ -1,24 +1,15 @@
 [KeyBindings] dialog keyboard shortcuts gone
-3.0M4/linux-gtk/j2sdk1.4.2. I start eclipse with:
+3.0M4/linux-gtk/j2sdk1.4.2.  I start eclipse with:
 -----
 ECLIPSE_DIR=/usr/local/eclipse-SDK-3.0M4
 
-exec $ECLIPSE_DIR/eclipse
--data $HOME/.eclipse-3.0M4
--vm
+exec $ECLIPSE_DIR/eclipse -data $HOME/.eclipse-3.0M4 -vm
 /usr/local/j2sdk1.4.2/jre/bin/java
 ----
-Resize.
-Go directly into the preferences dialog.
-Scroll down to Java with arrow keys,
-hit space bar, scroll down to code generation.
-Hit Alt-E.
-Nothing.
-On further
-experimentation, all preferences keyboard shortcuts appear broken.
-In Code
+Resize.  Go directly into the preferences dialog.  Scroll down to Java with arrow keys,
+hit space bar, scroll down to code generation.  Hit Alt-E.  Nothing.  On further
+experimentation, all preferences keyboard shortcuts appear broken.  In Code
 Generation/Comments I continued to try using keyboard shortcuts, and at one point
 they all happened at once: I got three editors in a row corresponding to the three times
-(don't learn fast :) I pressed Alt-E.
-Mostly however there was no apparent result to
+(don't learn fast :) I pressed Alt-E.  Mostly however there was no apparent result to
 hitting the keyboard shortcut.

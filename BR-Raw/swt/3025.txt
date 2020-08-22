@@ -1,6 +1,4 @@
 Remove ImageLoader dependency in Test_org_eclipse_swt_graphics_Image and Test_org_eclipse_swt_graphics_ImageData
-The Image and ImageData tests use ImageLoader to load test data.
-Changing this
+The Image and ImageData tests use ImageLoader to load test data. Changing this
 to use the ImageData constructor directly will simplify the code and remove the
-dependency on the ImageLoader class.
-This is related to  bug 68867 .
+dependency on the ImageLoader class. This is related to  bug 68867 .

@@ -1,8 +1,2 @@
 Bug 197765 Static level display will be affected by display field in dynamic[1101]
-Description: Static level display will be affected by display field set previously in dynamic Build number:2.2.1.v20070725 Steps to reproduce: 1.Open attached report.
-(In the report.
-CUSTOMERNUMBER level in cube is dynamic level at first and I set CUSTOMERNAME as display field, then I change it to static.
-2.Preview.
-Expected result: Display static level in column area with the specified value in static level definition.
-Actual result: Display static level with CUSTOMAME value.
-Error log:n/a
+Description: Static level display will be affected by display field set previously in dynamic Build number:2.2.1.v20070725 Steps to reproduce: 1. Open attached report. (In the report. CUSTOMERNUMBER level in cube is dynamic level at first and I set CUSTOMERNAME as display field, then I change it to static. 2. Preview. Expected result: Display static level in column area with the specified value in static level definition. Actual result: Display static level with CUSTOMAME value. Error log:n/a

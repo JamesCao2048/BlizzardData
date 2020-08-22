@@ -1,9 +1,5 @@
 Table/Tree scrollbars bad after setVisible()
-Run the testcase.
-Grab the vertical scrollbar and note that the selection event is fired.
-Click on the table to hide the scrollbar.
-Click again to show it.
-Note the selection event is not fired anymore.
+Run the testcase. Grab the vertical scrollbar and note that the selection event is fired. Click on the table to hide the scrollbar. Click again to show it. Note the selection event is not fired anymore.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.*;
 public class PR {
@@ -13,8 +9,7 @@ final Display display = new Display();
 final Shell shell = new Shell(display);
 
 final Table table = new Table(shell, SWT.BORDER);
-for (int i = 0; i
-< 300; i++) {
+for (int i = 0; i < 300; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText("Item" + i);
 }

@@ -1,10 +1,7 @@
 Eclipse process halted when interacting with tree.
 Build ID: Build id: I20070625-1500
-I'can't reproduce it reliably...
-it happened when I was interacting with the tree (in a CNF-based package explorer), and I was only able to see it because I always start eclipse with
--Xdebug (so, I started another eclipse instance to see where it was locked).
-The stack where it gets halted is below.
-It happens on:
+I'can't reproduce it reliably... it happened when I was interacting with the tree (in a CNF-based package explorer), and I was only able to see it because I always start eclipse with -Xdebug (so, I started another eclipse instance to see where it was locked).
+The stack where it gets halted is below. It happens on:
 while (hDeselectItem != hAnchor){....}
 that never ends.
 The hAnchor was always: 1330616848 and the hDeselectItem was always 0 (zero).
@@ -81,4 +78,4 @@ ignoreItemHeight	false
 ignoreResize	false
 ignoreSelect	false
 ignoreShrink	false
-imageList	ImageList
+imageList	ImageList  (

@@ -1,14 +1,10 @@
 Snippet133 - NullPointerException
 Version: 3.2.0
 Build id: I20060412-0847- Run Snippet133
-ps.
-Couldn't reproduce the bug in windows, only motif.
+ps. Couldn't reproduce the bug in windows, only motif.
 - Add some text
-- Go to File
--> Change Foreground, pick any color
-- Go to File
--> Change Background, pick any color.
-The following exception appears:
+- Go to File -> Change Foreground, pick any color
+- Go to File -> Change Background, pick any color. The following exception appears:
 Exception in thread "main" java.lang.NullPointerException
 at org.eclipse.swt.widgets.Display.showToolTip(Display.java:3342)
 at org.eclipse.swt.widgets.Control.hoverProc(Control.java:1129)

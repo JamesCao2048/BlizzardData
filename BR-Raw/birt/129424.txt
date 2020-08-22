@@ -1,16 +1,3 @@
 Bug 129424 BIRT XML ODA Driver does not handle non-English strings properly
-When a report is bound to an XML data source with non-English strings, those strings cannot be displayed in the report properly.
-Steps to reproduce the problem: .
-Prepare an XML file with some non-English characters in the values/attributes of its XML elements.
-(A sample XML file with traditional Chinese strings is attached.
-Those strings can also be replaced by the other non-English strings.) .
-Inside BIRT's Report Design Perspective, create a new report design.
-.
-Use the XML Data Source option to create a new data source with this XML file.
-.
-Create a new data set using that data source.
-If you use the attached XML file, specify "/library/book" for the Table Mapping, and add "/title" to the Column Mapping.
-Look at the Preview Results and the data in the "title" column are already scrambled.
-.
-If we keep going forward to add a single-column table and bind the title column to the table, the preview/generated results shows illegible characters.
-This would be a serious issue for supporting non-English languages.
+When a report is bound to an XML data source with non-English strings, those strings cannot be displayed in the report properly. Steps to reproduce the problem: . Prepare an XML file with some non-English characters in the values/attributes of its XML elements. (A sample XML file with traditional Chinese strings is attached. Those strings can also be replaced by the other non-English strings.) . Inside BIRT's Report Design Perspective, create a new report design. . Use the XML Data Source option to create a new data source with this XML file. . Create a new data set using that data source. If you use the attached XML file, specify "/library/book" for the Table Mapping, and add "/title" to the Column Mapping. Look at the Preview Results and the data in the "title" column are already scrambled. . If we keep going forward to add a single-column table and bind the title column to the table, the preview/generated results shows illegible characters. This would be a serious issue for supporti
+ng non-English languages.

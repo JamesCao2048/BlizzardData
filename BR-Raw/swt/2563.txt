@@ -1,7 +1,6 @@
 GDI Object Leak
 Eclipse 3.2 M4
-Run the following example.
-Notice that each time the "test" button is pressed, the number of GDI Objects increases.
+Run the following example.  Notice that each time the "test" button is pressed, the number of GDI Objects increases.
 public static void main(String[] args) {
 final Display display = new Display();
 final Shell shell = new Shell(display);

@@ -1,9 +1,2 @@
 Bug 224054 Hyperlink tooltip doesn't work in word and excel[1202]
-Description: Hyperlink tooltip doesn't work in word and excel Build number:2.3.0.v20080326 Steps to reproduce: 1.New two label.
-2.Define bookmark in one label and define internal bookmark link in another label.
-3.Set tooltip for the internal bookmark link.
-4.Preview in word and excel.
-Expected result: Display tooltip for hyperlink Actual result: Display nothing or default tooltip.
-I think we can map tooltip to screentip in word and excel.
-If I set screentip in word and excel, it will show up when move over the link.
-Error log:n/a
+Description: Hyperlink tooltip doesn't work in word and excel Build number:2.3.0.v20080326 Steps to reproduce: 1. New two label. 2. Define bookmark in one label and define internal bookmark link in another label. 3. Set tooltip for the internal bookmark link. 4. Preview in word and excel. Expected result: Display tooltip for hyperlink Actual result: Display nothing or default tooltip. I think we can map tooltip to screentip in word and excel. If I set screentip in word and excel, it will show up when move over the link. Error log:n/a

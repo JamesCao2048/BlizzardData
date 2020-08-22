@@ -1,8 +1,7 @@
 Spinner accepts non-numeric input in Cocoa
 Build ID:  I20080207-1530
 Steps To Reproduce:
-1.Open Control example
-2.Choose 'Spinner' tab
-3.Type non-numeric characters into the spinner box (e.g.
-'abc')
+1. Open Control example
+2. Choose 'Spinner' tab
+3. Type non-numeric characters into the spinner box (e.g. 'abc')
 Note that the spinner input accepts non-numerics, unlike other platforms like Carbon where only numbers are accepted.

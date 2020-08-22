@@ -1,9 +1,2 @@
 Bug 213827 Axis title rotation lose effect after flip axis.
-description: Axis label rotation lose effect after flip axis.
-build version: 2.2.2 v20071225-0630 steps to reproduce: 1.New a report.
-2.New a chart.
-3.On Format Chart page, select Chart Area->Axis->X-Axis node, tick Title as visible.
-Click Title button and set rotation to 45 degree.
-4.Switch to Select Chart Type page, tick Flip Axis and then untick.
-Expected result: Title rotation should work when Flip Axis is selected and deselected.
-Actual result: Title rotation lose effect when Flip Axis is selected and deselected.
+description: Axis label rotation lose effect after flip axis. build version: 2.2.2 v20071225-0630 steps to reproduce: 1. New a report. 2. New a chart. 3. On Format Chart page, select Chart Area->Axis->X-Axis node, tick Title as visible. Click Title button and set rotation to 45 degree. 4. Switch to Select Chart Type page, tick Flip Axis and then untick. Expected result: Title rotation should work when Flip Axis is selected and deselected. Actual result: Title rotation lose effect when Flip Axis is selected and deselected.

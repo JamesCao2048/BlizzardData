@@ -1,12 +1,6 @@
 Paint example draws lots of garbage on mac
-When I try the paint example on the mac (double click on tab to maximize the view), I see all kinds of garbage being drawn while I'm using it.
-For example:
-- The shape tools (line, square, circle) draw two copies..
-one at the pointer and another about 100 pixels up and 20 pixels left.
-- The pencil doesn't draw where the pointer is..
-it draws up and to the left.
-- The text tool that stamps "Hello!" draws even if I don't click..
-i.e.
-it's drawing a whole bunch of "Hello!"s as I move the mouse.
-If I restore then maximize the view again, everything appears as it should.
-The garbage is gone and the lines are where they should be.
+When I try the paint example on the mac (double click on tab to maximize the view), I see all kinds of garbage being drawn while I'm using it. For example:
+- The shape tools (line, square, circle) draw two copies.. one at the pointer and another about 100 pixels up and 20 pixels left.
+- The pencil doesn't draw where the pointer is.. it draws up and to the left.
+- The text tool that stamps "Hello!" draws even if I don't click.. i.e. it's drawing a whole bunch of "Hello!"s as I move the mouse.
+If I restore then maximize the view again, everything appears as it should. The garbage is gone and the lines are where they should be.

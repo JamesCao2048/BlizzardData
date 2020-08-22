@@ -1,4 +1,2 @@
 Control.setTouchEventsEnabled(boolean)/isTouchEnabled() not consistent
-In the new API in Control.java to enabled touch events, the setter name is not consistent with the getter (TouchEvents instead of Touch).
-Also, traditionally if an API starts with is* in Control.java, it means that the state of the widget parent is checked.
-This is not the case for this API, so it should be getTouchEnabled() instead of isTouchEnabled().
+In the new API in Control.java to enabled touch events, the setter name is not consistent with the getter (TouchEvents instead of Touch). Also, traditionally if an API starts with is* in Control.java, it means that the state of the widget parent is checked. This is not the case for this API, so it should be getTouchEnabled() instead of isTouchEnabled().

@@ -1,11 +1,10 @@
 Eclipse will crash with message "Widget is disposed".
 Environment:  MacOSX 10.4.8(PowerPC), java 1.5.0_06, Eclipse SDK 3.3M3
 Steps to reproduce bug:
-1.Eclipse > Preferences...
-> Team > CVS > SSH2 Connection Method > Key Management
-2.Press "Generate DSA Key..."
-3.Select the textfield for "Confirm passphrase:".
-4.Press "Ok" button
+1. Eclipse > Preferences... > Team > CVS > SSH2 Connection Method > Key Management
+2. Press "Generate DSA Key..."
+3. Select the textfield for "Confirm passphrase:".
+4. Press "Ok" button
 The error log has following line,
 !MESSAGE Unhandled event loop exception
 !STACK 0
@@ -47,4 +46,4 @@ at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
 at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
 at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
 at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
-at org.eclipse.swt.widgets.Widget.release(Widget.java:1408
+at org.eclipse.swt.widgets.Widget.release(Widget.java:

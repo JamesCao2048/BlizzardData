@@ -1,7 +1,6 @@
 java.lang.ArrayIndexOutOfBoundsException in StyledTextRenderer.setStyleRanges
 I found the Bug, because i looking for a printing problem in the Plugin "Eclipse Colorer".
-Then the function setStyleRanges is called from StyledText$Printing.cacheLineData(StyledText.java:262) and newStyles can be a empty array.
-Is newStyles a empty array ArrayIndexOutOfBoundsException is throw.
+Then the function setStyleRanges is called from StyledText$Printing.cacheLineData(StyledText.java:262) and newStyles can be a empty array. Is newStyles a empty array ArrayIndexOutOfBoundsException is throw.
 old:
 void setStyleRanges (int[] newRanges, StyleRange[] newStyles) {
 if (newStyles == null) {

@@ -1,6 +1,2 @@
 Bug 239706 [Bidi] Deeply nested text content is misordered in PDF
-Build ID: 200806191030 Steps To Reproduce: 1.Create an RTL report containing a Text item with mixed Bidi content, e.g.
-englishHEBREW and "inline" display.
-2.Export report to PDF.
-3.Open it with a PDF reader (Adobe reader, xpdf etc.).
-Expected result: HEBREWenglish Actual result: englishHEBREW More information:
+Build ID: 200806191030 Steps To Reproduce: 1. Create an RTL report containing a Text item with mixed Bidi content, e.g. englishHEBREW and "inline" display. 2. Export report to PDF. 3. Open it with a PDF reader (Adobe reader, xpdf etc.). Expected result: HEBREWenglish Actual result: englishHEBREW More information:

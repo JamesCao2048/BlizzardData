@@ -3,12 +3,8 @@ Created  attachment 82774   [details]
 Test case
 Build ID: M20071023-1652
 Steps To Reproduce:
-1.run attached test case
-2.click on "Dispose Text"
--> works
-3.click on "Dispose Browser"
--> get an SWTException
+1. run attached test case
+2. click on "Dispose Text" -> works
+3. click on "Dispose Browser" -> get an SWTException
 More information:
-I have not found any indication that it is illegal to dipose a parent control in the dispose listener of a child.
-In fact, I've tried some and you can do that with all of them.
-The browser control however will produce an exception.
+I have not found any indication that it is illegal to dipose a parent control in the dispose listener of a child. In fact, I've tried some and you can do that with all of them. The browser control however will produce an exception.

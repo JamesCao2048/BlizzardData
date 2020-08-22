@@ -1,9 +1,7 @@
 Deprecated method being used in Tree, List, and Table
 According to the Cocoa documentation, the method [NSTableView selectRow:byExtendingSelection:] is deprecated, and that
-
 - (void)selectRowIndexes:(NSIndexSet *)indexes byExtendingSelection:(BOOL)extend
-should be used instead.
-The deprecated version is used in the following methods:
+should be used instead. The deprecated version is used in the following methods:
 List
 dragDetect(int, int, boolean, boolean[])
 menuForEvent(int, int, int)

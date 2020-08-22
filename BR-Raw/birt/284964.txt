@@ -1,7 +1,2 @@
 Bug 284964 URI image/shared resource image/dynamic image are not exported to library.
-description: URI image/shared resource image/dynamic image are not exported to library.
-build id: 2.5.1 v20090729-0630 steps to reproduce: 1.New a library and keep it open.
-2.New a report, insert a URI image/shared resource image/embed image/dynamic image.
-3.Right click the image and export to the library.
-4.Switch to the library and click Yes when asked to save the change.
-Actual result: Only the embed image is in the library, even after you close and reopen the library.
+description: URI image/shared resource image/dynamic image are not exported to library. build id: 2.5.1 v20090729-0630 steps to reproduce: 1. New a library and keep it open. 2. New a report, insert a URI image/shared resource image/embed image/dynamic image. 3. Right click the image and export to the library. 4. Switch to the library and click Yes when asked to save the change. Actual result: Only the embed image is in the library, even after you close and reopen the library.

@@ -1,3 +1,2 @@
 Bug 199834 Enable access to IContent object in IReportItemPresentation layer
-In IReportItemPresentation layer, the extended item may want to access properties from current IContent object, for example, bookmark, content style.
-So we need expose the content object in this layer.
+In IReportItemPresentation layer, the extended item may want to access properties from current IContent object, for example, bookmark, content style. So we need expose the content object in this layer.

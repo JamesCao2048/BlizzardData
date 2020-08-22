@@ -1,10 +1,3 @@
 Bug 259823 Report designer editor does not validate edits against workspace
-Build ID: M20080911-1700 Steps To Reproduce: 1.Using an Eclipse team provider, commit a *rptdesign or *rptlibrary file to a source control system that makes the file read-only after committing it.
-2.Open the design or library file in the designer, and attempt to make an edit.
-Actual Results: A prompt is displayed, "File ___ is read-only, please make sure it can be written to first." Changes are not saved.
-Expected Results: The team provider plugin is given a chance to prompt the user if they would like to check out the editor input (thus making it writable), prior to the Save operation proceeding successfully.
-More information: I'm using a team provider plugin for the Serena Dimensions source control system.
-It has integrated fine with all other Eclipse editors, including the text editors and the PDE editors.
-It appears that the report design editor is doing something a little out of the ordinary and thus preventing this behavior from working as it normally would.
-The end-user workaround is to check-out or make writable the file in advance of editing it.
-For more info, see IWorkspace#validateEdit(IFile[] files, Object context)
+Build ID: M20080911-1700 Steps To Reproduce: 1. Using an Eclipse team provider, commit a *rptdesign or *rptlibrary file to a source control system that makes the file read-only after committing it. 2. Open the design or library file in the designer, and attempt to make an edit. Actual Results: A prompt is displayed, "File ___ is read-only, please make sure it can be written to first." Changes are not saved. Expected Results: The team provider plugin is given a chance to prompt the user if they would like to check out the editor input (thus making it writable), prior to the Save operation proceeding successfully. More information: I'm using a team provider plugin for the Serena Dimensions source control system. It has integrated fine with all other Eclipse editors, including the text editors and the PDE editors. It appears that the report design editor is doing something a little out of the ordinary and thus preventing this behavior from working as it normally would. The end-user workar
+ound is to check-out or make writable the file in advance of editing it. For more info, see IWorkspace#validateEdit(IFile[] files, Object context)

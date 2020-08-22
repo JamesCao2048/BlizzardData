@@ -1,9 +1,7 @@
 Running operation that continuously refreshes/updates SWT Browser it does not stay minimized
 Build ID: 3.3
 Steps To Reproduce:
-When Running operation that continuously refreshes/updates SWT Browser it  does not stay minimized.
-When you minimize it , it again pops up  no matter how many times you minimize.
-It happens when the refresh operation is continously happening in screen.
+When Running operation that continuously refreshes/updates SWT Browser it  does not stay minimized. When you minimize it , it again pops up  no matter how many times you minimize. It happens when the refresh operation is continously happening in screen.
 The instance of browse is created by following:-
 Browser browser = new Browser(composite, SWT.MOZILLA);
 This issue is only happening in windows.

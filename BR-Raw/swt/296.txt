@@ -1,8 +1,7 @@
 [Accessibility] Focus indicator is missing for SWT Mozilla browser on windows platform
 Build Identifier: 3.6.2 M20110210-1200
-For accessibility, when user navigate to the SWT Mozilla browser widget via keyboard Tab/Shift+Tab, a dot-style rectangle is required to indicate current focus.
-On the other hand, we can see dot-Style rectangle on other widgets like button and tab header, or a blink caret in text input.
+For accessibility, when user navigate to the SWT Mozilla browser widget via keyboard Tab/Shift+Tab, a dot-style rectangle is required to indicate current focus. On the other hand, we can see dot-Style rectangle on other widgets like button and tab header, or a blink caret in text input.
 Reproducible: Always
 Steps to Reproduce:
-1.On windows platform, launch a simple SWT application with SWT Mozilla browser.
-2.User keyboard to navigate to SWT Mozilla browser widget
+1. On windows platform, launch a simple SWT application with SWT Mozilla browser.
+2. User keyboard to navigate to SWT Mozilla browser widget

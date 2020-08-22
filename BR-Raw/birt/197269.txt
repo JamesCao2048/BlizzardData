@@ -1,5 +1,2 @@
 Bug 197269 Cant set a series invisible per default
-I have a line chart with several value series.
-I want to have some invisible as the default, so I set the "OnLoad" event for the series to "Toggle Visbility".
-But the onLoad event is triggered for every segment of the series so the result, wether the line is visible or not, depends on a odd or even number of datapoints.
-The same happens with "Toggle Datapoint Visibility"
+I have a line chart with several value series. I want to have some invisible as the default, so I set the "OnLoad" event for the series to "Toggle Visbility". But the onLoad event is triggered for every segment of the series so the result, wether the line is visible or not, depends on a odd or even number of datapoints. The same happens with "Toggle Datapoint Visibility"

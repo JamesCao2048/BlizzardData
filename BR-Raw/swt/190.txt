@@ -9,8 +9,7 @@ int /*long*/ ptr = GNOME.gnome_vfs_mime_get_default_application(mimeTypeBuffer);
 if (ptr != 0) {
 [...]
 }
-return program.command != null ?
-program : null;
+return program.command != null ? program : null;
 }
 Unfortunately since JDT's label providers sometimes delegates to Program#findProgram(), this can kill the IDE.
 !ENTRY org.eclipse.jface 4 2 2012-07-30 12:46:24.775

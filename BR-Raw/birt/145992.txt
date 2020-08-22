@@ -1,9 +1,2 @@
 Bug 145992 [regression] drill through to report document with toc in target does not work properly
-steps to reproduce:
-- create 1st report
-- add a report element with toc entry
-- preview in viewer
-- create 2nd report
-- add a drill through link to the report document expected behavior:
-- drill through can be added actual behavior:
-- when select toc in target, exception was thrown out
+steps to reproduce: - create 1st report - add a report element with toc entry - preview in viewer - create 2nd report - add a drill through link to the report document expected behavior: - drill through can be added actual behavior: - when select toc in target, exception was thrown out

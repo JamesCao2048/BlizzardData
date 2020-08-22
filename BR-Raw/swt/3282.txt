@@ -1,9 +1,7 @@
 NPE in AddressBook example
 RC4
 - run the AddressBook example
-- File
--> Open Address Book...
---> opens a FileDialog
+- File -> Open Address Book... --> opens a FileDialog
 - change the file filter in the dialog to * to show all files (assuming you're
 on a platform whose FileDialog shows this filter)
 - select some random file that has nothing to do with the AddressBook example,

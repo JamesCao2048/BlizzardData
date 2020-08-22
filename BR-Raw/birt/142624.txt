@@ -1,5 +1,2 @@
 Bug 142624 TVT3.2:TCT559: tw : Buttons are truncated on Manage JDBC Drivers panel
-OS : RHEL 3.1 Must fix or not a must fix: YES Build date: 0516 Component name = BIRT Blocking: NO Language: tw Bitmap Location: V:defectscht Tester Name: Ivory Chang Problem Description: The bottom parts of characters for "Add", "Restore" & "delete" buttons are truncated.
-They can NOT be resized.
-Step: Select Window->Show View->Data Explorer menu Right click Data Source and select New Data Source context menu.
-Click Next Click Back Select JDBC Data Source Click Next Click Manage Drivers button This article was reassigned from Category:''TVT/Testing''.
+OS : RHEL 3.1 Must fix or not a must fix: YES Build date: 0516 Component name = BIRT Blocking: NO Language: tw Bitmap Location: V:defectscht Tester Name: Ivory Chang Problem Description: The bottom parts of characters for "Add", "Restore" & "delete" buttons are truncated. They can NOT be resized. Step: Select Window->Show View->Data Explorer menu Right click Data Source and select New Data Source context menu. Click Next Click Back Select JDBC Data Source Click Next Click Manage Drivers button This article was reassigned from Category:''TVT/Testing''.

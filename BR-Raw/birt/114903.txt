@@ -1,5 +1,2 @@
 Bug 114903 Default values are not shown in Show Report Parameters' dialog
-Description: Default values are not shown in Show Report Parameters' dialog Steps to reproduce: 1.Create several report parameters, only set default value for them.
-2.Drag them to Layout 3.Preview and click Show Report Parameters button.
-Expected result: Default values are shown in value box, so I can modify the parameter which I want to change.
-Actual result: In Enter Parameters dialog, all values were empty, I just wanted to modify one parameter and found that I had to input all values.
+Description: Default values are not shown in Show Report Parameters' dialog Steps to reproduce: 1. Create several report parameters, only set default value for them. 2. Drag them to Layout 3. Preview and click Show Report Parameters button. Expected result: Default values are shown in value box, so I can modify the parameter which I want to change. Actual result: In Enter Parameters dialog, all values were empty, I just wanted to modify one parameter and found that I had to input all values.

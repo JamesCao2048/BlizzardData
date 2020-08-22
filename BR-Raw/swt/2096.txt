@@ -1,6 +1,3 @@
 AddFontResourceEx missing for ANSI in OS
-According to MSDN, AddFontResourceEx is implemented as both Unicode and ANSI.
-However, it is unsupported in Windows 95/98/Me, only included in Windows 2000 and later.
-The older AddFontResource is implemented as both Unicode and ANSI.
-We currently implement AddFontResourceExW.
+According to MSDN, AddFontResourceEx is implemented as both Unicode and ANSI. However, it is unsupported in Windows 95/98/Me, only included in Windows 2000 and later. The older AddFontResource is implemented as both Unicode and ANSI. We currently implement AddFontResourceExW.
 Also, RemoveFontResourceExA is not implemented.

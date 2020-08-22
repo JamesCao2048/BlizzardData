@@ -1,10 +1,7 @@
 DirectoryDialog getFilterPath() always returns null
 OS: Red Hat 8, Gnome
-Eclipse 2.1 M1 (Thu, 5 Jun 2003
--- 17:37 (-0400))
+Eclipse 2.1 M1 (Thu, 5 Jun 2003 -- 17:37 (-0400))
 I am using the DirectoryDialog getFilterPath() method to get the directory the
-user selected after open() returns.
-It works fine on Windows XP but on the
-version of Linux I am using it always returns null.
-I am selecting a directory
+user selected after open() returns.  It works fine on Windows XP but on the
+version of Linux I am using it always returns null.  I am selecting a directory
 in the dropdown and then selecting a subdirectory in the list.

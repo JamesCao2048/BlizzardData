@@ -1,7 +1,6 @@
 height of Text widgets for SWT/GTK differs from native GTKEntry widgets
 The height of "Text" widgets rendered on GTK from within SWT is
-slightly taller than "GtkEntry" widgets.
-Below I include a GTK
+slightly taller than "GtkEntry" widgets.  Below I include a GTK
 program which displays a window containing just a single line
 GtkEntry, and a Java program which displays a single line Text widget.
 Both have the same appearance (they each have a border), but if you
@@ -10,8 +9,7 @@ is slightly taller.
 The programs also output the height of the text widget, giving sizes
 of 26 and 24 for SWT and GTK respectively.
 I think maybe this is happening as a result of the INNER_BORDER stuff
-inside gtk/org/eclipse/swt/widgets/Text.java
-- but I don't see why
+inside gtk/org/eclipse/swt/widgets/Text.java - but I don't see why
 this is being done, as it is it makes the windows I get in a SWT
 application look slightly different (I realise it's not a big
 difference but it sometimes catches the eye).
@@ -51,8 +49,7 @@ display.dispose();
 }
 ------------------------------------------------------------------------------
 /* C program gtktest.c */
-#include
-<gtk/gtk.h>
+#include <gtk/gtk.h>
 gint delete_event(GtkWidget *widget, GdkEvent event, gpointer data )
 {
 return FALSE;
@@ -87,4 +84,4 @@ NULL);
 gtk_widget_size_request(entry,&requisition);
 g_print ("height of text widget is %dn", requisition.height);
 
-gtk_container_add(GTK_CONTAINER(window), GT
+gtk_container_add(GTK_CONTAINER(window), GTK_

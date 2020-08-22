@@ -1,65 +1,46 @@
 Support for 2.0 startup sequence
 Defect created for tracking of changes to the executable launcher and Main.java
-to support the 2.0 startup sequence.
-Also see
+to support the 2.0 startup sequence. Also see
 http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-update-home/doc
 /working/startup.html
 Summary of prior email exchanges follows ...
------  kcornell@Rational.Com
------
+-----  kcornell@Rational.Com  -----
 A few questions:
 
 1) I have been looking at the Main.java code (from the Mar 21 stable drop) and
 the logic in the showSplash() method expects the corresponding showSplash
 process (with the bitmap pathname) to complete before it will format the end
-splash command.
-Am I correct?
+splash command. Am I correct?
 
 2) If the launcher detects an exit code of 23 (restart), is the splash screen
 supposed to be displayed again?
------  klicnik@ca.ibm.com
------
+-----  klicnik@ca.ibm.com  -----
 (1) the current assumption is that the executable launcher knows the relative
-name of the splash bitmap just like in R1.0.The Main.java code simply gets a
+name of the splash bitmap just like in R1.0. The Main.java code simply gets a
 chance to point it at a different directory to start the relative lookup (it
 optionally appends an extra argument to the "showsplash" command passed to
-Main.java).
-It expects the showsplash process to lookup the bitmap relative to
-the directory path.
-If directory was not specified (ie.
-Main.java did not supply
+Main.java). It expects the showsplash process to lookup the bitmap relative to
+the directory path. If directory was not specified (ie. Main.java did not supply
 the extra argument) the lookup should be relative to the location of the
-executable (just like in R1.0).
-The showsplash process should then shows the
+executable (just like in R1.0). The showsplash process should then shows the
 bitmap, write the resource handle to stdout (Main.java is reading the stream),
-and terminate.
-Main.java appends the resource handle to the endsplash command
-passed into Main.java, and propagates the comand argument "upstream".
-At some
+and terminate. Main.java appends the resource handle to the endsplash command
+passed into Main.java, and propagates the comand argument "upstream". At some
 later point the platform causes the endsplash to be executed.
-(2) good question ...
-given the restart time is not trivial (starting from
-scratch) my vote would be to put up the splash again (ie.
-restart exactly as if
-this was the original start).
-There are 2 cases that will cause restart ...
+(2) good question ... given the restart time is not trivial (starting from
+scratch) my vote would be to put up the splash again (ie. restart exactly as if
+this was the original start). There are 2 cases that will cause restart ...
 restart once the workbench was fully up and running, and restart due to
 completion of install/update (triggered during regular startup with changes
-detected).
-In both cases by the time the restart is triggered the original
+detected). In both cases by the time the restart is triggered the original
 splash is down.
------  kcornell@Rational.Com
------
+-----  kcornell@Rational.Com  -----
 I am trying to figure out how the launcher will work in the given startup
-sequence you have defined.
-There are some real problems because of multiple
-processes and the event processing loops.
-(It would be quite simple on Win32,
+sequence you have defined. There are some real problems because of multiple
+processes and the event processing loops. (It would be quite simple on Win32,
 but the Motif and Photon versions may require some interesting tricks, which I
-would like to avoid.
-I am starting to investigate a slightly different startup
-sequence, which will probably require some minor changes to Main.java.
-It will
+would like to avoid. I am starting to investigate a slightly different startup
+sequence, which will probably require some minor changes to Main.java. It will
 take me several days to come up with a solution that will work on all three
 window systems (win32, motif and photon), let alone make it work on Windows,
 Linux, Solaris, HP-UX , AIX and QNX.

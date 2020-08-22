@@ -1,13 +1,10 @@
 StyledText - Printing could end pages twice
 build R2.1
 In StyledText.Printing.print() we have a test to see if we need to call endPage
-on a partially printed page when printing is done.
-We also close pages while
+on a partially printed page when printing is done. We also close pages while
 printing lines when a full page has been printed.
 The test to close a partial page could theoretically close the page again when
-it was already closed based on completing a full page.
-The test is off by two
-lines.
-In practice this is unlikely to happen since the page size would have to
+it was already closed based on completing a full page. The test is off by two
+lines. In practice this is unlikely to happen since the page size would have to
 fall right between these two lines.
 The effect would be a blank page inserted after every printed page.

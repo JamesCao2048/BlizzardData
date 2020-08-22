@@ -2,11 +2,8 @@ Clicking on areas to left or right of cell editors in tree does not raise a Focu
 Build ID: M20071023-1652
 Steps To Reproduce:
 This happens only on Windows Vista
-1. Have a tree with multiple columns and cell editors (use CCombo based combo box cell editors).
-
-2. Click on the area to the left (i.e.
-where twisties would appear) or right (in blank columns area) of the place where cell editors would appear.
-3. Unlike in XP and other OSes, the tree does not raise a FocusIn event and become the focused widget--this causes the filter in CCombo to not pick up the event and thus not raise a FocusOut event, and thus the cell editor will not deactivate.
-
+1.  Have a tree with multiple columns and cell editors (use CCombo based combo box cell editors).
+2.  Click on the area to the left (i.e. where twisties would appear) or right (in blank columns area) of the place where cell editors would appear.
+3.  Unlike in XP and other OSes, the tree does not raise a FocusIn event and become the focused widget--this causes the filter in CCombo to not pick up the event and thus not raise a FocusOut event, and thus the cell editor will not deactivate.
 More information:
 We are using the 3.4M5 version of the SWT plugin though.

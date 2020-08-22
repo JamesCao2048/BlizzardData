@@ -1,4 +1,2 @@
 Bug 184411 Enhance CubeCursor cache performance.
-Performance is critical in CubeCursor cache(especially in report document).However in CachedAggregationResultSet the aggregationResultRow is load from input stream at the very time the instance is initialize.
-This defeat the purpose to save it to report document, which target to achieve high performance in page progressive viewing.
-We should populate the value based on the input stream in case of necessary.
+Performance is critical in CubeCursor cache(especially in report document).However in CachedAggregationResultSet the aggregationResultRow is load from input stream at the very time the instance is initialize. This defeat the purpose to save it to report document, which target to achieve high performance in page progressive viewing. We should populate the value based on the input stream in case of necessary.

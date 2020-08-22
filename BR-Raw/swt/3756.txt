@@ -1,11 +1,8 @@
 RedHat 8.0 - DefaultInformationControl hangs workbench
-Using DefaultInformationControl to provide tooltips for table items.
-Works
+Using DefaultInformationControl to provide tooltips for table items. Works
 flawlessly in windows and almost flawlessly in GTK.
-Almost in that they work great in Views and in my editor.
-However, I have a
-Dialog that includes a Table.
-The tooltip for an item in that table appears,
+Almost in that they work great in Views and in my editor. However, I have a
+Dialog that includes a Table. The tooltip for an item in that table appears,
 but then its like the tooltip has grabbed focus and will not let go.
 Once the tip is visible, there's no way to get rid of it and I have to kill
 the Eclipse process.

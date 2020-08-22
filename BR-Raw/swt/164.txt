@@ -3,6 +3,6 @@ Build Identifier: 3.7.2
 SWT does not send SWT.KeyDown event when pressing down key in combo control
 Reproducible: Always
 Steps to Reproduce:
-1.Run the Test.java in the attached test case
-2.Press down key in the combo control
-3.You will find selection event is triggered in cocoa, but in carbon it was key down event.
+1. Run the Test.java in the attached test case
+2. Press down key in the combo control
+3. You will find selection event is triggered in cocoa, but in carbon it was key down event.

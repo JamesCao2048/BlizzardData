@@ -2,8 +2,7 @@ Disposing a font still in use by a GC causes crashes
 Snippet to reproduce exception:
 public void paintFigure(Graphics g) {
 FontData[] fd = g.getFont().getFontData();
-for (int i=0 ; i
-< fd.length ; i++) {
+for (int i=0 ; i < fd.length ; i++) {
 fd[i].setStyle(SWT.BOLD | SWT.ITALIC);
 }
 Font font = new Font(null, fd);
@@ -18,11 +17,8 @@ g.setAntialias(SWT.OFF);
 The problem is the font being disposed before g.setAntialias(SWT.ON) is called.
 Postponing disposing the font to the end of the method fixes the problem.
 However it is not clear from the javadoc that setAntialias() needs some font
-being set
-- and even if,...
-it shouldn't crash this way ;)
-Tested SWT versions: 3.1
--> CVS
+being set - and even if,... it shouldn't crash this way ;)
+Tested SWT versions: 3.1 -> CVS
 Thanks a lot!
 An unexpected exception has been detected in native code outside the VM.
 Unexpected Signal : 11 occurred at PC=0xAA63B019

@@ -1,10 +1,7 @@
 Browser widget now has border
 I20070731-0800
-In earlier releases and 3.4 up to last week had no border in the Browser widget.
-Now there is a border which makes Javadoc hovers look awful.
-Also Javadoc view looks bad.
-Works fine under Linux.
+In earlier releases and 3.4 up to last week had no border in the Browser widget. Now there is a border which makes Javadoc hovers look awful. Also Javadoc view looks bad. Works fine under Linux.
 Please revert that change for M1.
 Test Case:
-1.run Snippet128 with R3.3 or I20070724-0800 ==> no border
-2.run Snippet128 with I20070731-0800 ==> border
+1. run Snippet128 with R3.3 or I20070724-0800 ==> no border
+2. run Snippet128 with I20070731-0800 ==> border

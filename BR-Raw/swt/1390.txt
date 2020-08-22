@@ -1,15 +1,7 @@
 [Dialogs] Table.remove(int, int) very slow with large lists
-We use an org.eclipse.ui.dialogs.FilteredItemsSelectionDialog to select from a list of ~500,000 items.
-This is initially displayed reasonably quickly, but when the user types a character to reduce the number of items, the UI thread hangs for several, sometimes many seconds.
-Each time I've interrupted this hang using the debugger, the UI thread is in org.eclipse.swt.widgets.Table.remove(int, int), where it is in a loop calling GTK to removing the elements one at a time.
-
+We use an org.eclipse.ui.dialogs.FilteredItemsSelectionDialog to select from a list of ~500,000 items.  This is initially displayed reasonably quickly, but when the user types a character to reduce the number of items, the UI thread hangs for several, sometimes many seconds.  Each time I've interrupted this hang using the debugger, the UI thread is in org.eclipse.swt.widgets.Table.remove(int, int), where it is in a loop calling GTK to removing the elements one at a time.
 I don't have a unit test demonstrating this, but a test that might mimic our plug-in environment is to list all of the Eclipse and JDK jar files to a text file:
 $ find /opt/eclipse /opt/eclipse-ext/ /usr/lib/jvm/java-6-sun
-
--name '*.jar'
--o
--name '*.zip' | xargs
--n 1 unzip
--l | grep / |
+-name '*.jar' -o -name '*.zip' | xargs -n 1 unzip -l | grep / |
 awk '{print $4}'| sort | uniq > /tmp/classes
 However, this "only" creates a list of 170k items, so adding other source bases to the list may be necessary for the problem to be obvious.

@@ -1,19 +1,18 @@
 IAE when leaving IME
 3.4 M7.
 See also  bug 222937 .
-Make sure a Bidi language is installed, e.g.
-Hebrew.
-1.Have this:
+Make sure a Bidi language is installed, e.g. Hebrew.
+1. Have this:
 public class Test {
 public static void main(String[] args) {
 }
 }
-2.put caret into 'args'
-3.Ctrl+1
-4.select 'Assign parameter to new field'
-5.switch IME to Japanese,Hiragana input mode
-6.quickly type many random chars
-7.hit 'Return'
+2. put caret into 'args'
+3. Ctrl+1
+4. select 'Assign parameter to new field'
+5. switch IME to Japanese,Hiragana input mode
+6. quickly type many random chars
+7. hit 'Return'
 ==>
 !ENTRY org.eclipse.ui 4 0 2008-05-07 17:24:37.899
 !MESSAGE Unhandled event loop exception
@@ -53,4 +52,4 @@ at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.j
 at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
 at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
 at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStart

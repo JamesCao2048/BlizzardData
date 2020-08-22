@@ -1,3 +1,2 @@
 Use gdk_x11_get_default_xdisplay for GTK 3
-The GTK2 gdk_x11_display_get_xdisplay(gdk_display_get_default()) path fails.
-Also there is way more convenient GTK3 api gdk_x11_get_default_xdisplay.
+The GTK2 gdk_x11_display_get_xdisplay(gdk_display_get_default()) path fails. Also there is way more convenient GTK3 api gdk_x11_get_default_xdisplay.

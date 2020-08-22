@@ -1,7 +1,6 @@
 widget.forceFocus() causes shell.setActive() ?
 Following code snippet causes the whole application window act something like
-SYSTEM_MODAL
-- a window containing a widget with such a focus listener is
+SYSTEM_MODAL - a window containing a widget with such a focus listener is
 always on top!
 -----------------------------------------------------------------------------
 widget.addFocusListener(new FocusListener()

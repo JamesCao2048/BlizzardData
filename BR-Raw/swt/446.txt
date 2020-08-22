@@ -1,7 +1,6 @@
 StyledText needs to implement AccessibleEditableTextListener
 From  bug 324005 , StyledText needs to implement AccessibleEditableTextListener so that accessibility tools such as speech recognition systems can replace text.
-It is understood that StyledText itself cannot implement the setTextAttributes method of AccessibleEditableTextListener because it is completely up to the application whether or not an "external tool" such as a speech recognition engine will be allowed to modify the styles of the text.
-(For example a Java Editor has its own syntax highlighting, so in that case it does not make sense for an external tool to selectively modify text styles).
+It is understood that StyledText itself cannot implement the setTextAttributes method of AccessibleEditableTextListener because it is completely up to the application whether or not an "external tool" such as a speech recognition engine will be allowed to modify the styles of the text. (For example a Java Editor has its own syntax highlighting, so in that case it does not make sense for an external tool to selectively modify text styles).
 Here is a Snippet that can be used as an example:
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
@@ -59,9 +58,8 @@ e.result = ACC.OK;
 
 public void replaceText(AccessibleEditableTextEvent e) {
 valueField.setText("replaceText " + e);
-text.replaceTextRange(e.start, e.end
-- e.start, e.string);
+text.replaceTextRange(e.start, e.end - e.start, e.string);
 e.result = ACC.OK;
 }
 public void setTextAttributes(AccessibleTextAttributeEvent e) {
-valueField.setTe
+valueField.setTex

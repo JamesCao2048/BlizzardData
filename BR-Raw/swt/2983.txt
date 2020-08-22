@@ -11,8 +11,7 @@ public void paintControl(PaintEvent e) {
 GC gc = e.gc;
 Transform t = new Transform(display);
 //t.translate(60, 60);
-t.
-scale(value, value);
+t. scale(value, value);
 gc.setTransform(t);
 String s = "Test string XYZ";
 Point d = gc.stringExtent(s);

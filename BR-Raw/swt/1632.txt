@@ -1,21 +1,13 @@
 Display.getCursorControl returning null for complex Xlib widget on Eclipse/Gtk
 Build ID: M20070212-1330
 Steps To Reproduce:
-1.We have a set of existing widgets created using Xlib which have child windows.
-2.We create an SWT control representing the top-level widget and use GtkSocket/plug to parent our widget in the SWT control.
-3.If we create a viewpart with this control and try dragging another view over this view, then the cursor will change to the cursor that appears when you drag a view over the desktop.
-Stepping through the code reveals that when Display.getCursorControl() is called from DragUtil.java, the result is null, so Eclipse thinks we've moved outside the bounds of the Eclipse window.
+1. We have a set of existing widgets created using Xlib which have child windows.
+2. We create an SWT control representing the top-level widget and use GtkSocket/plug to parent our widget in the SWT control.
+3. If we create a viewpart with this control and try dragging another view over this view, then the cursor will change to the cursor that appears when you drag a view over the desktop. Stepping through the code reveals that when Display.getCursorControl() is called from DragUtil.java, the result is null, so Eclipse thinks we've moved outside the bounds of the Eclipse window.
 More information:
-I did some investigation on the problem and noticed that getCursorControl is calling gdk_window_at_pointer to get the GdkWindow that the mouse pointer is currently over.
-Unfortunately, the child Xlib windows are "blocking" the parent GdkWindow from being seen, so gdk_window_at_pointer is returning 0.
-I experimented with using gdk_window_foreign_new on all the child windows, so that every window in the embedded widget is represented by a GdkWindow.
-However, this causes a problem when getCursorControl attempts to lookup a GtkWidget handle for the GdkWindow returned by gdk_window_at_pointer.
-It wouldn't be practical for us to create a GtkWidget for every child window.
-What I propose is: There is logic already for where the cursor is over a child GtkWidget but that widget isn't directly represented by an SWT control.
-In that case, getCursorControl will walk up the tree until it finds the top level GtkWidget that is represented by a Java control.
-It's this Java/SWT control that gets returned.
-We should extend the tree walking logic, so that we can work up the tree from an Xlib window until we find a parent GdkWindow that has an associated GtkWidget and then continue walking until we find the associated SWT control.
-That way, embedding foreign controls should work as well as it does in Windows.
+I did some investigation on the problem and noticed that getCursorControl is calling gdk_window_at_pointer to get the GdkWindow that the mouse pointer is currently over. Unfortunately, the child Xlib windows are "blocking" the parent GdkWindow from being seen, so gdk_window_at_pointer is returning 0.
+I experimented with using gdk_window_foreign_new on all the child windows, so that every window in the embedded widget is represented by a GdkWindow. However, this causes a problem when getCursorControl attempts to lookup a GtkWidget handle for the GdkWindow returned by gdk_window_at_pointer. It wouldn't be practical for us to create a GtkWidget for every child window.
+What I propose is: There is logic already for where the cursor is over a child GtkWidget but that widget isn't directly represented by an SWT control. In that case, getCursorControl will walk up the tree until it finds the top level GtkWidget that is represented by a Java control. It's this Java/SWT control that gets returned. We should extend the tree walking logic, so that we can work up the tree from an Xlib window until we find a parent GdkWindow that has an associated GtkWidget and then continue walking until we find the associated SWT control. That way, embedding foreign controls should work as well as it does in Windows.
 Here is some possible code that would do the above:
 org.eclipse.swt.Control getCursorControl()
 {
@@ -43,4 +35,4 @@ return parent;
 GtkWidget *GtkWidgetFromWindow( Window xid )
 {
 GdkWindow *gdk_window = gdk_window_lookup( xid );
-if( !gdk_windo
+if( !gdk_wi

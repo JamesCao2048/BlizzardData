@@ -1,4 +1,2 @@
 Bug 117597 BIRT script classes are not executed when previewing report
-Currently BIRT script classes are executed if you preview the report through the BIRT report debugger.
-However, if you directly preview within the report designer, those script methods (java) won't be executed.
-The reason for that is the script class loader won't be able to find the location if we preview the report directly without launch the debugger.
+Currently BIRT script classes are executed if you preview the report through the BIRT report debugger. However, if you directly preview within the report designer, those script methods (java) won't be executed. The reason for that is the script class loader won't be able to find the location if we preview the report directly without launch the debugger.

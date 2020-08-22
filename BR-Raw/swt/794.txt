@@ -1,9 +1,6 @@
 [CTabFolder] does not gain focus
-I have a CTabFolder which has a few CTabItems.
-Each CTabItem has a few widget
-controls (for example, texts and combos).
-If one of the widgets has the focus,
+I have a CTabFolder which has a few CTabItems. Each CTabItem has a few widget
+controls (for example, texts and combos). If one of the widgets has the focus,
 then the tab can not gain focus by clicking on the title of the tab using
-mouse.
-However, the tab can get focus if I use TAB key to tab through.
+mouse. However, the tab can get focus if I use TAB key to tab through.
 I do not see this problem with org.eclipse.swt.widgets.TabFolder.

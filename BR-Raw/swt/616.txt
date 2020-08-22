@@ -1,6 +1,3 @@
 TableItem/TreeItem.getBounds() needs more explicit documentation
-While fixing 309753 there was some confusion on my part about what TreeItem.getBounds() is really returning.
-It should return the bounds of the text portion of the item, but it's not clear from the javadoc that that is the case.
-If there is an image set for the item it isn't part of the bounds.
-Likewise, there's no documentation that I can find about SWT.MeasureItem, EraseItem and PaintItem.
-The snippets show how they are being used, but there's no documentation about the values sent in the event.
+While fixing 309753 there was some confusion on my part about what TreeItem.getBounds() is really returning. It should return the bounds of the text portion of the item, but it's not clear from the javadoc that that is the case. If there is an image set for the item it isn't part of the bounds.
+Likewise, there's no documentation that I can find about SWT.MeasureItem, EraseItem and PaintItem. The snippets show how they are being used, but there's no documentation about the values sent in the event.

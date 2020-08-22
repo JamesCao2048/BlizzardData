@@ -1,3 +1,2 @@
 Bug 168808 Display text is lost after launching import values dialog
-Steps to reproduce: 1.new a parameter; 2.select list box control type; 3.press "Import Values" button to import some values; 4.assign display texts for the imported values; 5.press "Import Values" button to launch import values dialog again; 6.press ok button on dialog; Expected result: The previous assigned display texts are remained.
-Actual result: The previous display texts are lost.
+Steps to reproduce: 1.new a parameter; 2.select list box control type; 3.press "Import Values" button to import some values; 4.assign display texts for the imported values; 5.press "Import Values" button to launch import values dialog again; 6.press ok button on dialog; Expected result: The previous assigned display texts are remained. Actual result: The previous display texts are lost.

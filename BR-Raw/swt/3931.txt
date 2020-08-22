@@ -1,10 +1,8 @@
 Top item on popup is often invisible
 0924 integration build
 When popping up a context menu there's a ~ 75% chance that the top item will
-not be visible.
-Its slot in the menu is reserved, and it can be selected by
-the user, but its label does not show.
-Very often tracing over the item makes
+not be visible.  Its slot in the menu is reserved, and it can be selected by
+the user, but its label does not show.  Very often tracing over the item makes
 its label appear.
 I don't know of a specific test case that is always reproducable, but the
 problem is very frequent.

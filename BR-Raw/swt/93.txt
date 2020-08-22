@@ -1,6 +1,2 @@
 Tooltips appearing randomly
-Found while testing 4.2.2 build M20130116-1800 that some of the tooltips on toolbar items are not appearing.
-Interestingly this is not happening uniformly to all toolitems.
-I was able to reproduce this with a fresh workspace as well as using an existing workspace.
-I'm not sure if this would be easily reproducible on a different machine but I noticed that within a single toolbar itself, some tooitems are showing tooltips while some are not.
-I was testing on Ubuntu 12.04 x86_64.
+Found while testing 4.2.2 build M20130116-1800 that some of the tooltips on toolbar items are not appearing. Interestingly this is not happening uniformly to all toolitems. I was able to reproduce this with a fresh workspace as well as using an existing workspace. I'm not sure if this would be easily reproducible on a different machine but I noticed that within a single toolbar itself, some tooitems are showing tooltips while some are not. I was testing on Ubuntu 12.04 x86_64.

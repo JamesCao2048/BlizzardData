@@ -1,17 +1,16 @@
 Image.getImageData crashes VM in win32.OS.MoveMemory
 Build ID:  M20070212-1330
 Steps To Reproduce:
-1.Create large image
-2.Allocate a lot of C heap memory
-3.call image.getImageData()
-I've reproduced the bug with this action.
-It may be easier by using OS.HeapAlloc to consume the C heap memory.
+1. Create large image
+2. Allocate a lot of C heap memory
+3. call image.getImageData()
+I've reproduced the bug with this action.  It may be easier by using OS.HeapAlloc to consume the C heap memory.
 public void run(IAction action) {
-// 1. Create a large image.
+// 1.  Create a large image.
 Display display = Display.getDefault();
 Image image = new Image(display,4096,4096);
 try {
-// 2.Allocate a lot of C heap memory
+// 2. Allocate a lot of C heap memory
 List<ByteBuffer> buffers = new ArrayList<ByteBuffer>();
 int meg = 1024*1024;
 for (int bufferSize=1024;bufferSize>0;bufferSize/=2) {
@@ -26,7 +25,7 @@ System.out.println("allocated " + count +
 " " + bufferSize + "meg buffers");
 }
 }
-// 3.call image.getImageData()
+// 3. call image.getImageData()
 ImageData d = image.getImageData();
 } finally {
 image.dispose();
@@ -58,8 +57,7 @@ C  [swt-win32-3236.dll+0x2fba3]
 C  [swt-win32-3236.dll+0x89d9]
 j  org.eclipse.swt.internal.win32.OS.MoveMemory([BII)V+0
 j  org.eclipse.swt.graphics.Image.getImageData()Lorg/eclipse/swt/graphics/ImageData;+1646
-Presumably a null pointer is being passed to MoveMemory, probably because OS.HeapAlloc failed returning a null pointer that wasn't checked.
-(The isDib path checks that bm.bits!=0 earlier.)
+Presumably a null pointer is being passed to MoveMemory, probably because OS.HeapAlloc failed returning a null pointer that wasn't checked.  (The isDib path checks that bm.bits!=0 earlier.)
 int lpvBits = OS.HeapAlloc(hHeap, OS.HEAP_ZERO_MEMORY, imageSize);
 if (OS.IsWinCE) SWT.error(SWT.ERROR_NOT_IMPLEMENTED);
 OS.GetDIBits(hBitmapDC, handle, 0, height, lpvBits, bmi, OS.DIB_RGB_COLORS);

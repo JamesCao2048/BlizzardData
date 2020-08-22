@@ -8,8 +8,6 @@ STEPS TO REPRODUCE:
 2.) Move the dialog off the screen.
 3.) Move back on the screen.
 With these steps, the table headers will sometimes not appear, or only paint
-partially.
-If the table is enabled, moving the mouse over a table column header
-will cause that table column header to repaint.
-If the table is disabled, the
+partially.  If the table is enabled, moving the mouse over a table column header
+will cause that table column header to repaint.  If the table is disabled, the
 table headers will remain unpainted or partially painted.

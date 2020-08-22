@@ -1,7 +1,5 @@
 querying GC alpha value requires Cairo
-on win32, calling getAlpha does not require GDI+.
-The value is returned from
-the data structure.
-But on Linux, GC attempts to load Cairo to obtain the same
+on win32, calling getAlpha does not require GDI+.  The value is returned from
+the data structure. But on Linux, GC attempts to load Cairo to obtain the same
 value.
 The workaround for us is to assume the value is 255.

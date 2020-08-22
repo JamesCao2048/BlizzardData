@@ -1,7 +1,2 @@
 Bug 213836 [2.2.2]paramDef tag accepts locale-based value with false isLocale value[0603]
-Description: paramDef tag accepts locale-based value when isLocale is false Build number:2.2.2.v200712181951 Steps to reproduce: 1.Create a BIRT web project.
-2.Copy attached report and jsp file to project.
-3.Run the jsp file.
-Expected result: Errors to indicate the second group values in parameterpage definition are wrong.
-Actual result: No errors and accept the value despite that the value is locale-based value.
-Error log:n/a
+Description: paramDef tag accepts locale-based value when isLocale is false Build number:2.2.2.v200712181951 Steps to reproduce: 1. Create a BIRT web project. 2. Copy attached report and jsp file to project. 3. Run the jsp file. Expected result: Errors to indicate the second group values in parameterpage definition are wrong. Actual result: No errors and accept the value despite that the value is locale-based value. Error log:n/a

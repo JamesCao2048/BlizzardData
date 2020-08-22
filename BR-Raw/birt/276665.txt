@@ -1,5 +1,2 @@
 Bug 276665 onPageBreak of label on masterpage head does not work
-Use script to change label text on masterpage head when page break occurs, failed.
-build version:2.5.0.v20090515-1111 Steps to reproduce: 1.Define global variable in report initialize(): i=10; 2.Get the attached report design, check masterpage head label onRender() and onPageBreak() function.
-Expected result: When page break occurs, the label text will be changed.
-Actual result: OnPageBreak() function does not work.
+Use script to change label text on masterpage head when page break occurs, failed. build version:2.5.0.v20090515-1111 Steps to reproduce: 1.Define global variable in report initialize(): i=10; 2.Get the attached report design, check masterpage head label onRender() and onPageBreak() function. Expected result: When page break occurs, the label text will be changed. Actual result: OnPageBreak() function does not work.

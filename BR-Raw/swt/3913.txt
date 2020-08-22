@@ -1,26 +1,19 @@
 GTK: Marking text using the mouse
-I found this bug using the M1 and M2 releases of Eclipse for Linux-GTK.
-The bug
+I found this bug using the M1 and M2 releases of Eclipse for Linux-GTK. The bug
 is not present in the 2.0.0 and 2.0.1 releases.
 When selecting text (marked in blue) in an editor using the mouse, and
-"dragging" the mouse to select text which is not currently visible (i.e.
-single
+"dragging" the mouse to select text which is not currently visible (i.e. single
 left clicking at some point in the visible text and then dragging the mouse
-below the editor view), Eclipse stops responding.
-If I then try to stop Eclipse,
-the OS tells me that: 'The Window "Java Browsing
-- Eclipse Platform" is not
-responding' and I then has to kill Eclipse.
-Doing this, Eclipse reports the
+below the editor view), Eclipse stops responding. If I then try to stop Eclipse,
+the OS tells me that: 'The Window "Java Browsing - Eclipse Platform" is not
+responding' and I then has to kill Eclipse. Doing this, Eclipse reports the
 following error (and exits):
-JVM terminated.
-Exit code=1
+JVM terminated. Exit code=1
 /coll/local/bin/java
 -cp /products/eclipse-2.1-M2/startup.jar org.eclipse.core.launcher.Main
 -os linux
 -ws gtk
 -arch x86
--showsplash /products/eclipse-2.1-M2/eclipse
--showsplash 600
+-showsplash /products/eclipse-2.1-M2/eclipse -showsplash 600
 -data /home/cnc/eclipseprojects
 If I instead selects the text using the keyboard it works fine.

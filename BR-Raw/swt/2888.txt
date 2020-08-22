@@ -2,7 +2,6 @@ Decorations.setDefaultButton() does not check for null
 Build: 3.1 M7 candidate
 On macosx, Decorations.setDefaultButton(Button) does not check if the button
 is null (a valid argument).
-
 The line:
 if (button.isDisposed()) throws an NPE when I pass in null.
 The win32 implementation does a null check.

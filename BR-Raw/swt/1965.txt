@@ -1,7 +1,5 @@
 StyledText: horizontal scrollbar doesn't handle indent
-In SWT 3.2 (build M20060629-1905) the horizontal scrollbar of StyledText doesn't take into account the use of 'setIndent(int)' or the use of bullets (via 'setLineBullet(int,int,Bullet)').
-It's annoying when editing the StyledText widget (deleting the last character a the longest line may cause the left margin to grow).
-I used the linux-gtk version of SWT.
+In SWT 3.2 (build M20060629-1905) the horizontal scrollbar of StyledText doesn't take into account the use of 'setIndent(int)' or the use of bullets (via 'setLineBullet(int,int,Bullet)'). It's annoying when editing the StyledText widget (deleting the last character a the longest line may cause the left margin to grow). I used the linux-gtk version of SWT.
 How to reproduce: run the example.
 Result: The end of the line goes out of the bounds of the widget and cannot be reached.
 Expected: Ability to scroll to the end of the line.
@@ -35,8 +33,7 @@ display.dispose();
 }
 }
 -------------------
-I think the problem lies in the class 'StyledTextRenderer' method 'calculate(int,int)'.
-Replace the line
+I think the problem lies in the class 'StyledTextRenderer' method 'calculate(int,int)'. Replace the line
 > lineWidth[i] = rect.width + hTrim;
 with
 > lineWidth[i] = layout.getIndent() + rect.width + hTrim;

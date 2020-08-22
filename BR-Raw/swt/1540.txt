@@ -1,6 +1,5 @@
 WRAP break font fallback , DBCS does not show
 The fix for  Bug 233638  introduce this bug:
 When a line containing DBCS chars wraps the glyphs draw a empty box.
-This happen because when the line wraps we slipt the run of text in two, but they share the same SCRIPT_ANALISYS.
-If the SCRIPT_ANALISYS had the fNoGlyphIndex set to true this will cause the reshapce of the run to fail.
+This happen because when the line wraps we slipt the run of text in two, but they share the same SCRIPT_ANALISYS. If the SCRIPT_ANALISYS had the fNoGlyphIndex set to true this will cause the reshapce of the run to fail.
 The fix is to have a SCRIPT_ANALISYS for each run and and set fNoGlyphIndex to false before shape the run.

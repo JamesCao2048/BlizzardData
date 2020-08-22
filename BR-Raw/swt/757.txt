@@ -1,9 +1,5 @@
 [Widgets] Embedded native view can not receive Enter key event on Mac.
 User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10
 Build Identifier: 3.5.1
-Due to the changes in Display.textInputProc() for bug  https://bugs.eclipse.org/bugs/show_bug.cgi?id=194887 , embedded native view can not receive Enter key event from on Mac.
-For 3.4.2, the Widget widget = getWidget (theControl [0]); in textInputProc() returns null.
-So SWT does not handle the event.
-With the patch for 194887, Widget widget = getFocusControl (theWindow, false); will return a SWT composite, and in SWT composite , it will filter out the Enter key event.
-So the event could not be passed to the native view.
+Due to the changes in Display.textInputProc() for bug  https://bugs.eclipse.org/bugs/show_bug.cgi?id=194887 , embedded native view can not receive Enter key event from on Mac.  For 3.4.2, the Widget widget = getWidget (theControl [0]); in textInputProc() returns null. So SWT does not handle the event. With the patch for 194887, Widget widget = getFocusControl (theWindow, false); will return a SWT composite, and in SWT composite , it will filter out the Enter key event. So the event could not be passed to the native view.
 Reproducible: Always

@@ -1,5 +1,2 @@
 Bug 123727 the 'Top N' and 'Buttom N' do not work
-Description: the 'Top N' and 'Buttom N' do not work Steps to reproduce: 1.new a report 2.new a datasource and a dataset 3.creat a report parameter, 4.drag a chart to the layout, In chart dialogue, click the 'select data' tab and click the button 'filters'.
-5.set two filters condition, one is used the 'Top N' function and the other used the report parameter.
-6.save and preview Actual result: NO data are displayed.
-Expect result: The data displayed according to the 'Top N' and 'Input Parameters'
+Description: the 'Top N' and 'Buttom N' do not work Steps to reproduce: 1. new a report 2. new a datasource and a dataset 3. creat a report parameter, 4. drag a chart to the layout, In chart dialogue, click the 'select data' tab and click the button 'filters'. 5. set two filters condition, one is used the 'Top N' function and the other used the report parameter. 6. save and preview Actual result: NO data are displayed. Expect result: The data displayed according to the 'Top N' and 'Input Parameters'

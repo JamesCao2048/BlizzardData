@@ -4,9 +4,7 @@ Ensure that your perspective is full of editor tabs, but not so full that
 the 'left/right' arrows appear in the tab area of the CTabFolder.
 Close the rightmost tab using your mouse.
 When you close it, the remaining tabs will expand a bit to fill the full space
-at the top.
-This means that another tab is now under the cursor.
-However the
+at the top. This means that another tab is now under the cursor. However the
 tab did not detect that it was redrawn under the mouse cursor, so it doesn't
 display its close box.
 Moving the mouse slightly causes the close box to appear.

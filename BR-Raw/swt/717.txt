@@ -1,4 +1,3 @@
 CCombo should not throw away event.doit of forwarded events
-One example if this is: CCombo forwards key events from its drop down list to key listeners on the combo, but creates a new event object for this.
-If a listener sets event.doit on this new event object to false, CCombo should set event.doit to false on the original event too.
+One example if this is: CCombo forwards key events from its drop down list to key listeners on the combo, but creates a new event object for this. If a listener sets event.doit on this new event object to false, CCombo should set event.doit to false on the original event too.
 I'll attach a snippet.

@@ -3,9 +3,7 @@ SWT Accessibility API needs to work on all Controls
 - run org.eclipse.swt.examples.accessibility.SimpleButtonNameExample
 - turn on VoiceOver
 - type the Tab key to switch focus back and forth from the button labelled "Button" and the button with a picture of a running man
-- VoiceOver should say "Running man button" when the image button has focus.
-Instead, it is just saying "button".
+- VoiceOver should say "Running man button" when the image button has focus. Instead, it is just saying "button".
 This needs to work for all native controls, and at present, it seems to only be working for subclasses of Canvas and Composite.
 Note that this example works on Carbon.
-For a more complicated example containing most of the native controls (no accessible api used for controls in left column; accessible name and help overridden for controls in right column), see org.eclipse.swt.examples.accessibility.ControlsWithAccessibleNamesExample.
-This example (mostly) works on Carbon, but only the Canvas, Composite, and Shell controls work on Cocoa.
+For a more complicated example containing most of the native controls (no accessible api used for controls in left column; accessible name and help overridden for controls in right column), see org.eclipse.swt.examples.accessibility.ControlsWithAccessibleNamesExample. This example (mostly) works on Carbon, but only the Canvas, Composite, and Shell controls work on Cocoa.

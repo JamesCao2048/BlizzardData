@@ -1,3 +1,2 @@
 Bug 205593 ClassCastException in excel emitter
-Build ID: 2.2.1 Steps To Reproduce: 1.export a design with a dynamic text (Ex: print: "Page "+ pageNumber) in excel format 2.3.More information: It tries to cast a DynamicTextItemDesign into a DataItemDesign.
-Thanks Nicolas
+Build ID: 2.2.1 Steps To Reproduce: 1. export a design with a dynamic text (Ex: print: "Page "+ pageNumber) in excel format 2. 3. More information: It tries to cast a DynamicTextItemDesign into a DataItemDesign. Thanks Nicolas

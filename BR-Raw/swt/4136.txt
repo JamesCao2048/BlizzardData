@@ -1,11 +1,9 @@
 StyledText - inefficient redraw during text change with word wrap
 build 20020416
 Appending N lines to StyledText in word wrap mode results in N redraws of the
-entire client area.
-This should at a maximum only be one redraw for each
+entire client area. This should at a maximum only be one redraw for each
 visible line.
-Run the test case below to reproduce.
-Add the following line to
+Run the test case below to reproduce. Add the following line to
 StyledText#performPaint to see the redraws occurring:
 System.out.println("lineCount " + lineCount + ", paintY " + paintY + ",
 renderHeight " + renderHeight);

@@ -1,8 +1,2 @@
 Bug 289728 Visual notification that item from library is overwritten
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729) Build Identifier: M20090211-1700 Hi, Is it possible to add visual notification in "Outline" view in "report design perspective" that item from library is overwritten?
-Sometimes I'm angry with strange behaviour and it's because overwritten item.
-Especilly with datasources or report parameters.
-I think that it's from library but it's overwritten.
-And maybe there is possible another enhancement
-- to freeze that item by user.
-Reproducible: Always Steps to Reproduce: 1.make library with report parameter 2.make rptdesign which include the library and the report parameter 3.overwrite report parameter in rptdesign 4.You are not able to see, it's overwritten, except XML source
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729) Build Identifier: M20090211-1700 Hi, Is it possible to add visual notification in "Outline" view in "report design perspective" that item from library is overwritten? Sometimes I'm angry with strange behaviour and it's because overwritten item. Especilly with datasources or report parameters. I think that it's from library but it's overwritten. And maybe there is possible another enhancement - to freeze that item by user. Reproducible: Always Steps to Reproduce: 1.make library with report parameter 2.make rptdesign which include the library and the report parameter 3.overwrite report parameter in rptdesign 4.You are not able to see, it's overwritten, except XML source

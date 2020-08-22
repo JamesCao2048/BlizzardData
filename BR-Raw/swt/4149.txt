@@ -2,11 +2,9 @@ Esc traverse does not go up hierarchy
 Build 20020226
 I'm trying to hook Esc so that it activates the current editor.
 (I tried doing this using an accelerator a while back, but that doesn't work
-since it steals it from other places, e.g.
-renaming a file).
+since it steals it from other places, e.g. renaming a file).
 I'm now trying to use a traverse listener on the shell, however it never gets
-notified of Esc.
-It looks like the traverse handling for Esc does not go up
+notified of Esc.  It looks like the traverse handling for Esc does not go up
 the parent chain.
 Is this as intended or a bug?
 Is there any way for me to hook Esc from a parent widget, yet still have

@@ -1,8 +1,7 @@
 StyledText Caused NPE while in word-wrap style
 build 200209230010
 While playing with the ControlExample in org.eclipse.swt.examples a NPE was
-thrown.
-I can not reproduce this and do not remeber what I did exactly.
+thrown. I can not reproduce this and do not remeber what I did exactly.
 Basically I changed the style of a text part to bold and changed the size.
 Perhaps the stacktrace is useful anyway.
 java.lang.ArrayIndexOutOfBoundsException

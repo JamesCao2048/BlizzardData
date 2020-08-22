@@ -8,7 +8,6 @@ One good example is:
 - select first node "Workbench"
 - use the arrow down key to move selection to next node
 Observe: on some layout changes the whole window contents (including the tree) first
-moves downward and immediately jumps back to the correct position.
-Sometimes even
+moves downward and immediately jumps back to the correct position. Sometimes even
 screen cheese remains in the top left corner (probably an interaction between tree
 selection rectangle and a tree repositioning)

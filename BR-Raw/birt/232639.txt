@@ -1,5 +1,2 @@
 Bug 232639 Dataset including dataset parameter can not retrieve selected value
-Description: Dataset including dataset parameter can not retrieve selected value Build number: 2.3.0.v20080517-0630 Steps to reproduce: 1, New a sample dataset 2, Specify the Query: select * from customers where customernumber<?
-3, Set the parameter's value to 160 4, New a filter and try to select value Expected result: The select value can be retrieved and if it is out expected behavior I think the error message should be enhanced.
-Actual result: Can not select value and warning message occurs: The expression's value can not be retrieved.
-org.eclipse.birt.model.api.OdaDataSetParameterHandle Error log:
+Description: Dataset including dataset parameter can not retrieve selected value Build number: 2.3.0.v20080517-0630 Steps to reproduce: 1, New a sample dataset 2, Specify the Query: select * from customers where customernumber<? 3, Set the parameter's value to 160 4, New a filter and try to select value Expected result: The select value can be retrieved and if it is out expected behavior I think the error message should be enhanced. Actual result: Can not select value and warning message occurs: The expression's value can not be retrieved. org.eclipse.birt.model.api.OdaDataSetParameterHandle Error log:

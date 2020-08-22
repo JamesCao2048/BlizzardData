@@ -1,6 +1,2 @@
 Bug 279898 [RCP]Repeat error occurs when pull library's report item from outline view to layout
-Description:Use BIRT RCP, pull a library's report item from outline view to layout.
-Build version:2.5.0.v20090611-0630 Steps to reproduce: 1.Create a library, insert a label.
-2.Pull the label from outline view to layout.
-Error occurs.
-Error: unknown protocol: d Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.5.0.v20090603 Error Code:Error.GUIException.invokedByIOException Error Message:unknown protocol: d There is no detail log for RCP build.
+Description:Use BIRT RCP, pull a library's report item from outline view to layout. Build version:2.5.0.v20090611-0630 Steps to reproduce: 1.Create a library, insert a label. 2.Pull the label from outline view to layout. Error occurs. Error: unknown protocol: d Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.5.0.v20090603 Error Code:Error.GUIException.invokedByIOException Error Message:unknown protocol: d There is no detail log for RCP build.

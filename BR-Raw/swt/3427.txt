@@ -12,5 +12,4 @@ at part4.fileexplorer.FileExplorer$40.run(FileExplorer.java:906)
 at org.eclipse.swt.widgets.Display.runTimers(Display.java:2320)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1878)
 at part4.fileexplorer.FileExplorer.main(FileExplorer.java:68)
-Appears to be the old "widget disposed in focus lost" bug.
-Steve can recreate.
+Appears to be the old "widget disposed in focus lost" bug. Steve can recreate.

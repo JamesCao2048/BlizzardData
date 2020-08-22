@@ -1,9 +1,7 @@
 Cheese in Table when changing font
 Eclipse 20020508
 Windows 2000
-Run the following example.
-Note the cheese in the header.
-Same thing happens
+Run the following example.  Note the cheese in the header.  Same thing happens
 when setting a small font.
 public static void main(String[] args) {
 Display display = new Display();
@@ -21,8 +19,7 @@ final TableColumn column2 = new TableColumn(table, SWT.NONE);
 column2.setText("Column 2");
 final TableColumn column3 = new TableColumn(table, SWT.NONE);
 column3.setText("Column 3");
-for (int i = 0; i
-< 100; i++) {
+for (int i = 0; i < 100; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText("item " + i);
 }

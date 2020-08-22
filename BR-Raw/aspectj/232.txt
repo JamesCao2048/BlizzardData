@@ -37,28 +37,4 @@ INVOKESPECIAL java.lang.Object.<init> ()V
 initialization(void org.apache.tapestry.internal.aspects.AbstractClassTargetting.<init>())
 |               ALOAD_0
 |               INVOKEVIRTUAL java.lang.Object.getClass ()Ljava/lang/Class;
-|               LDC org.apache.tapestry.internal.annotations.Synchronized
-|               INVOKEVIRTUAL java.lang.Class.isAnnotationPresent (Ljava/lang/Class;)Z
-|               IFEQ L0
-|               ALOAD_0
-|               INVOKESTATIC org.apache.tapestry.internal.aspects.InternalSynchronization.ajc$perObjectBind (Ljava/lang/Object;)V
-| constructor-execution(void org.apache.tapestry.internal.aspects.AbstractClassTargetting.<init>())
-| |         L0: ALOAD_0
-| |             INVOKEVIRTUAL java.lang.Object.getClass ()Ljava/lang/Class;
-| |             LDC org.apache.tapestry.internal.annotations.Synchronized
-| |             INVOKEVIRTUAL java.lang.Class.isAnnotationPresent (Ljava/lang/Class;)Z
-| |             IFEQ L1
-| |             ALOAD_0
-| |             INVOKESTATIC org.apache.tapestry.internal.aspects.InternalSynchronization.ajc$perObjectBind (Ljava/lang/Object;)V
-| |         L1: RETURN
-| constructor-execution(void org.apache.tapestry.internal.aspects.AbstractClassTargetting.<init>())
-initialization(void org.apache.tapestry.internal.aspects.AbstractClassTargetting.<init>())
-end public void <init>()
-abstract void ajc$pointcut$$targetClasses$274()    org.aspectj.weaver.MethodDeclarationLineNumber: 16:628
-;
-end public abstract class org.apache.tapestry.internal.aspects.AbstractClassTargetting
-when weaving type org.apache.tapestry.internal.aspects.AbstractClassTargetting
-when weaving aspects
-when weaving
-when batch building BuildConfig[C:workspace.metadata.pluginsorg.eclipse.ajdt.coretapestry5.generated.lst] #Files=70
-I'll attach the corresponding files.
+|               LDC org.apache.tapestry.internal

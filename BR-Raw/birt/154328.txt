@@ -1,3 +1,2 @@
 Bug 154328 Report doesn't include the library when drag an embedded image from lib explorer and drop onto layout editor
-Drap an embedded image form lib explorer and drop onto layout editor means: extends the embedded image into the target report firstly and then drag and drop it onto layout editor.
-So if the source library hasn't been included yet, the report should include the library in this operation.
+Drap an embedded image form lib explorer and drop onto layout editor means: extends the embedded image into the target report firstly and then drag and drop it onto layout editor. So if the source library hasn't been included yet, the report should include the library in this operation.

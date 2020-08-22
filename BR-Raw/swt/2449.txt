@@ -14,16 +14,14 @@ shell.setLayout(new FillLayout());
 Table table = new Table(shell, SWT.H_SCROLL);
 table.setHeaderVisible(true);
 table.setLinesVisible(true);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 new TableColumn(table, SWT.NONE).setWidth(100);
 }
 
 Tree tree = new Tree(shell, SWT.H_SCROLL);
 tree.setHeaderVisible(true);
 tree.setLinesVisible(true);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 new TreeColumn(tree, SWT.NONE).setWidth(100);
 }
 

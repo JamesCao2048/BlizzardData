@@ -1,9 +1,7 @@
 Don't flush X exposes for a SMOOTH Sash
 For a Sash that uses SWT.SMOOTH, we don't need to flush the Expose events from
-the X server since we do no XOR drawing.
-This will also make view resizing
+the X server since we do no XOR drawing.   This will also make view resizing
 smoother since we won't keep waiting for the X server.
 I tried this change and I like the effects, however it may show some temporary
 artifacts during resizing that may be more objectionable than the old behaviour
-in some configurations.
-I would like to make this change now to get feedback.
+in some configurations.  I would like to make this change now to get feedback.

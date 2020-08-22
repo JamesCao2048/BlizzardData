@@ -1,12 +1,8 @@
 StyledText - bidi - should force font script when keyboard language changed
 StyledText derives whether or not to reorder text based on what the font script
-is (this is what MS doc says to do when using GetCharacterPlacement).
-If you
-have your font script set incorrectly (e.g., Western vs.
-Hebrew/Arabic), RtoL
-text will be displayed as LtoR, which is confusing.
-Other applications (e.g.,
-WordPad) set the font script when the keyboard language is changed.
-We should
+is (this is what MS doc says to do when using GetCharacterPlacement).  If you
+have your font script set incorrectly (e.g., Western vs. Hebrew/Arabic), RtoL
+text will be displayed as LtoR, which is confusing.  Other applications (e.g.,
+WordPad) set the font script when the keyboard language is changed.  We should
 do this if we can.
 Post 2.0.

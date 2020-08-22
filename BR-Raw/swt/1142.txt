@@ -3,9 +3,7 @@ Created  attachment 126546   [details]
 Patch that makes SWT browser event constructors public
 Build ID: M20080911-1700
 Steps To Reproduce:
-The SWT browser events have package scoped constructors that prevents their reuse.
-I am prototyping a WebKit browser outside of the org.eclipse.swt.browser package atm.
-My design closely follows the SWT browser and it would really be helpful if the following constructors on the following events were public:
+The SWT browser events have package scoped constructors that prevents their reuse. I am prototyping a WebKit browser outside of the org.eclipse.swt.browser package atm. My design closely follows the SWT browser and it would really be helpful if the following constructors on the following events were public:
 WindowEvent
 LocationEvent
 ProgressEvent

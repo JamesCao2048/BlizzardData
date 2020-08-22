@@ -13,17 +13,13 @@ gc.setInterpolation(SWT.LOW);
 }
 gc.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_LIST_SELECTION));
 gc.setAlpha(170);
-gc.fillRoundRectangle(size.x
-- 300, size.y
-- 150, 280, 130, 15, 15);
+gc.fillRoundRectangle(size.x - 300, size.y - 150, 280, 130, 15, 15);
 FontData fd = new FontData();
 fd.setStyle(SWT.BOLD);
 Font f = new Font(gc.getDevice(), fd);
 gc.setFont(f);
 gc.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_TITLE_FOREGROUND));
 
-gc.drawText("Text", size.x
-- 300 + 10, size.y
-- 150 + 20, SWT.DRAW_TRANSPARENT | SWT.DRAW_DELIMITER);
+gc.drawText("Text", size.x - 300 + 10, size.y - 150 + 20, SWT.DRAW_TRANSPARENT | SWT.DRAW_DELIMITER);
 gc.setFont(null);
 f.dispose();

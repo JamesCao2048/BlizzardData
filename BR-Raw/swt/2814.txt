@@ -1,6 +1,4 @@
 Focus cannot be given to visible but zero-sized controls
 Calling setFocus() on a Control which has not yet been given bounds fails on
-GTK+.
-This is due to part of the fix applied for  bug 65053 .
-It seems this part
+GTK+. This is due to part of the fix applied for  bug 65053 .  It seems this part
 of the change may have been applied in error.

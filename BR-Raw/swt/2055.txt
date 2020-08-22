@@ -1,8 +1,8 @@
 SetItemCount() in Table extremly slow on MacOSX when lowering itemcount
 Build ID: I20070323-1616
 Steps To Reproduce:
-1.Create a virtual table, set itemcount to 30000 items.
-2.Now set itemcount to 5
-3.Go drink a coffee, you have enough time until the UI is ready again.
+1. Create a virtual table, set itemcount to 30000 items.
+2. Now set itemcount to 5
+3. Go drink a coffee, you have enough time until the UI is ready again.
 More information:
 mac only, tested with 3.3M6, and 3.2

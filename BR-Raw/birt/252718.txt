@@ -1,3 +1,2 @@
 Bug 252718 Centralize CDatetime conversion in chart engine
-In chart engine, there are a lot of codes/patches to convert Date/Calendar data to CDatetime.
-Since chart engine always uses CDatetime as datetime data, it's better to centralize this conversion to one point: after evaluation, so as to prevent ClassCastException and optimize code structure.
+In chart engine, there are a lot of codes/patches to convert Date/Calendar data to CDatetime. Since chart engine always uses CDatetime as datetime data, it's better to centralize this conversion to one point: after evaluation, so as to prevent ClassCastException and optimize code structure.

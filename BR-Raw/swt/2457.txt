@@ -1,7 +1,7 @@
 [DnD] [WorkbenchParts] Resizing tiled editors incorrectly sizes editor parts at start of drag
 Steps to reproduce:
-1.open 2 or more editors and tile them vertically
-2.start dragging the separator between them to resize them
+1. open 2 or more editors and tile them vertically
+2. start dragging the separator between them to resize them
 As you start the resize the top editor collapses to its minimum vertical size.
 You can keep dragging to resize the editors but the mouse is now in the wrong place.
 This also happens when resizing horizontally, the editor on the left collapses to its minimum horizontal

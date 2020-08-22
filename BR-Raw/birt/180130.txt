@@ -1,3 +1,2 @@
 Bug 180130 Bar chart becomes a line in right-to-left mode
-When setting a right-to-left mode, such as in arabic locale, all bar charts will become a line.
-After investigation, size field in DataPointHints is 0.
+When setting a right-to-left mode, such as in arabic locale, all bar charts will become a line. After investigation, size field in DataPointHints is 0.

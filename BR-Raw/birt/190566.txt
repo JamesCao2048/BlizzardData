@@ -1,24 +1,3 @@
 Bug 190566 TVT33:TCT542: ja: "expr" in English in Aggregation Builder panel
-<response_by> Eriko Takahashi at 2007.06.01.10.32.17
-</response_by> exprOS: Linux Build date: 20070531 Component name : BIRT Blocking: NO Tester Name: Eriko Takahashi (Japanese tester) Testcase: 04.002610
-- BIRT
-- CROSSTAB PROPERTIES BINDING TAB ADD AGGERATION Steps to recreate the problem: 1.Open Test_Report_CrossTab.rptdesign 2.Click on "Cross Table" in the editor 3.In the property editor view, click on Add Aggregation on the Binding tab 4.Aggregation Builder is displayed Problem Description: "expr" is shown in English.
-I am not able to find this string in our files.
-Please investigate.
-Thank you.
-<response_by> Cam-Thu Le at 2007.06.01.10.36.56
-</response_by> This article was reassigned from Category:''TVT Testcases''.
-<response_by> Bryan Green at 2007.06.01.10.53.22
-</response_by> Changing status in TCT.
-<response_by> Moravia IT at 2007.06.01.11.40.30
-</response_by> hello, The same in Polish build 20070531/Windows Kamil
-<response_by> Herbert Ros?n at 2007.06.01.13.25.29
-</response_by> sv: Swedish version shares the same problem.
-/Herbert
-<response_by> Dilhun Hacikulaoglu at 2007.06.01.14.15.37
-</response_by> Hi, Same for Turkish.
-Dilhun
-<response_by> Herbert Ros?n at 2007.06.01.14.28.36
-</response_by> sv: Please note that the window title also is in English
-- "Aggregation Builder" and I can't find that it has been externatlised (let's hope I'm wrong).
-Please investigate.
+<response_by> Eriko Takahashi at 2007.06.01.10.32.17 </response_by> exprOS: Linux Build date: 20070531 Component name : BIRT Blocking: NO Tester Name: Eriko Takahashi (Japanese tester) Testcase: 04.002610 - BIRT - CROSSTAB PROPERTIES BINDING TAB ADD AGGERATION Steps to recreate the problem: 1. Open Test_Report_CrossTab.rptdesign 2. Click on "Cross Table" in the editor 3. In the property editor view, click on Add Aggregation on the Binding tab 4. Aggregation Builder is displayed Problem Description: "expr" is shown in English. I am not able to find this string in our files. Please investigate. Thank you. <response_by> Cam-Thu Le at 2007.06.01.10.36.56 </response_by> This article was reassigned from Category:''TVT Testcases''. <response_by> Bryan Green at 2007.06.01.10.53.22 </response_by> Changing status in TCT. <response_by> Moravia IT at 2007.06.01.11.40.30 </response_by> hello, The same in Polish build 20070531/Windows Kamil <response_by> Herbert Ros?n at 2007.06.01.13.25.29 </respon
+se_by> sv: Swedish version shares the same problem. /Herbert <response_by> Dilhun Hacikulaoglu at 2007.06.01.14.15.37 </response_by> Hi, Same for Turkish. Dilhun <response_by> Herbert Ros?n at 2007.06.01.14.28.36 </response_by> sv: Please note that the window title also is in English - "Aggregation Builder" and I can't find that it has been externatlised (let's hope I'm wrong). Please investigate.

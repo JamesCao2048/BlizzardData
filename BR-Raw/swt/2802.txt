@@ -1,8 +1,6 @@
 GDI+ crash with icons where width > height [was: GEF paint() with setAlpha caused JVM crash]
-I'll give more information later if needed.
-Eclipse 3.1RC2, GEF 3.1RC1,
-WindowsXP.
-This might be a SWT but though and not GEF I'm guessing.
+I'll give more information later if needed. Eclipse 3.1RC2, GEF 3.1RC1,
+WindowsXP. This might be a SWT but though and not GEF I'm guessing.
 An unexpected exception has been detected in native code outside the VM.
 Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at
 PC=0x77F83AED
@@ -46,12 +44,10 @@ at
 org.eclipse.draw2d.DeferredUpdateManager.repairDamage(DeferredUpdateManager.java:225)
 at
 org.eclipse.draw2d.DeferredUpdateManager.performUpdate(DeferredUpdateManager.java:145)
-- locked
-<0x10da3ba0> (a org.eclipse.draw2d.DeferredUpdateManager)
+- locked <0x10da3ba0> (a org.eclipse.draw2d.DeferredUpdateManager)
 at
 org.eclipse.draw2d.DeferredUpdateManager$UpdateRequest.run(DeferredUpdateManager.java:40)
 at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:118)
-- locked
-<0x10014a00> (a org.eclipse.swt.widgets.RunnableLock)
-at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:30
+- locked <0x10014a00> (a org.eclipse.swt.widgets.RunnableLock)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3035

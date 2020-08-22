@@ -1,4 +1,2 @@
 Bug 121170 get column label from meta data object should return some user recognizable strings
-Calling IMetaData.getColumnLabel() before/after data extraction have different results.
-The labels returned before extraction are null, while the ones after extraction are recognizable strings.
-Since the labels need to be displayed to the end user before doing the extraction, getcolumnlabel before extraction should also return the same labels as after extraction.
+Calling IMetaData.getColumnLabel() before/after data extraction have different results. The labels returned before extraction are null, while the ones after extraction are recognizable strings. Since the labels need to be displayed to the end user before doing the extraction, getcolumnlabel before extraction should also return the same labels as after extraction.

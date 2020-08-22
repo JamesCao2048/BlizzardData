@@ -1,14 +1,13 @@
 Eclipse gets SIGSEGV
 Build ID: I20070209-1006
 Steps To Reproduce:
-1.Open EMF ecore file (use Sample Ecore Model Editor)
-2.Open Properties View for any attribute
-3.Open pop-up menu for EType property
-4.Using quick find select any type (for example type EString)
-5.Press enter
-6.Read info about segmentation fault in your shell
-This way I can reproduce problem with 100% success.
-But sometimes I can
+1. Open EMF ecore file (use Sample Ecore Model Editor)
+2. Open Properties View for any attribute
+3. Open pop-up menu for EType property
+4. Using quick find select any type (for example type EString)
+5. Press enter
+6. Read info about segmentation fault in your shell
+This way I can reproduce problem with 100% success. But sometimes I can
 crash Eclipse using any pop-up menu.
 More information:
 #

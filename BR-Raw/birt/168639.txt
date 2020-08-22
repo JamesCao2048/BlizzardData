@@ -1,8 +1,2 @@
 Bug 168639 Cannot set different maxrowofrecords for birt report tags [0603]
-Description: Cannot set different maxrowofrecords for different birt:report Build number:2.2.0.v20061220 Steps to reproduce: 1.New a jsp file in BIRT Web project.
-2.Input content in body as below:
-<birt:report id="1" contextRoot= "wtp_jsp_tags" reportDesign="max_rows.rptdesign" maxRowsOfRecords="3" height="600">
-</birt:report>
-<birt:report id="2" contextRoot= "wtp_jsp_tags" reportDesign="max_rows.rptdesign" maxRowsOfRecords="2" format="pdf" height="600">
-</birt:report> 3.run the jsp file Expected result: Because maxRowsOfRecords is a gloable variable, so the last value will be applied to all inner report, suggest to remove this attribute from birt:report and birt:viewer tags Actual result: The last value of maxRowsOfRecords attribute will be applied to all other reports.
-Error log:N/A
+Description: Cannot set different maxrowofrecords for different birt:report Build number:2.2.0.v20061220 Steps to reproduce: 1. New a jsp file in BIRT Web project. 2. Input content in body as below: <birt:report id="1" contextRoot= "wtp_jsp_tags" reportDesign="max_rows.rptdesign" maxRowsOfRecords="3" height="600"> </birt:report> <birt:report id="2" contextRoot= "wtp_jsp_tags" reportDesign="max_rows.rptdesign" maxRowsOfRecords="2" format="pdf" height="600"> </birt:report> 3. run the jsp file Expected result: Because maxRowsOfRecords is a gloable variable, so the last value will be applied to all inner report, suggest to remove this attribute from birt:report and birt:viewer tags Actual result: The last value of maxRowsOfRecords attribute will be applied to all other reports. Error log:N/A

@@ -1,8 +1,8 @@
 AntiAlias does not work in TextLayout
 Build ID: M20070921-1145
 Steps To Reproduce:
-1.Run the code snippet below:
-2.Four pieces of text are displayed, the first thre (using TextLayout) are not antiAliased
+1. Run the code snippet below:
+2. Four pieces of text are displayed, the first thre (using TextLayout) are not antiAliased
 More information:
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
@@ -41,8 +41,7 @@ public void paintControl(PaintEvent e)
 Rectangle client = canvas.getClientArea();
 layout.setWidth(client.width);
 
-// Option A
-- Top Quarter of Screen == Off Screen Bitmap
+// Option A - Top Quarter of Screen == Off Screen Bitmap
 Rectangle rectOptionA = new Rectangle(0, 0, client.width, client.height/4);
 
 Image imgOptionA = new Image(canvas.getDisplay(), rectOptionA);
@@ -61,8 +60,7 @@ layout.draw(gcOptionA, rectOptionA.x, rectOptionA.y);
 e.gc.drawImage(imgOptionA, rectOptionA.x, rectOptionA.y);
 gcOptionA.dispose();
 
-// Option B
-- Middle (Top) Quarter of Screen == Event GC
+// Option B - Middle (Top) Quarter of Screen == Event GC
 Rectangle rectOptionB = new Rectangle(client.x, client.y + client.height/4, client.width, client.height/4);
 
 GC gcOpti

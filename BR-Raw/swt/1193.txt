@@ -1,6 +1,4 @@
 Hover not working while the mouse is down.
 In Display.java, line 3681:
 //TODO hover does not happen while tracking because timer are not dispatched
-This is because the hover timer also needs to be added in NSEventTrackingRunLoopMode.
-NSTimer.scheduledTimer...
-only adds it in the default runloop mode.
+This is because the hover timer also needs to be added in NSEventTrackingRunLoopMode. NSTimer.scheduledTimer... only adds it in the default runloop mode.

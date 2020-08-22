@@ -1,13 +1,10 @@
 Program#execute(String) broken for file:/ arguments containing #
 I20110310-1119 Cocoa
-Program#execute(String) is broken for file:/ arguments containing #.
-When I generate Javadoc and then want to open the Javadoc of a method selected in the editor in the system browser, then # is wrongly escaped before the argument is passed to the browser (resulting in an URL with %23, which is wrong).
+Program#execute(String) is broken for file:/ arguments containing #. When I generate Javadoc and then want to open the Javadoc of a method selected in the editor in the system browser, then # is wrongly escaped before the argument is passed to the browser (resulting in an URL with %23, which is wrong).
 Example:
 String urlText = "file:/Users/mk/Documents/runtime-New_configuration/javaP/doc/p/A.html#foo()";
 Program program = Program.findProgram("html");
 program.execute(urlText);
-The problems is in org.eclipse.swt.program.Program.getURL(String).
-If I add
+The problems is in org.eclipse.swt.program.Program.getURL(String). If I add
 || lowercaseName.startsWith ("file:/")
-to the condition, then it works.
-And I can still open files with interesting names like "a,b#&c   [%23].html".
+to the condition, then it works. And I can still open files with interesting names like "a,b#&c   [%23].html".

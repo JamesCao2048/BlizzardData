@@ -1,14 +1,10 @@
 Display#update does not work on Windows XP
 (Creating this bug report to track your progress on this issue.)
-This is the problem we talked about
-- it seems that Display#update does not
-paint under certain circumstances.
-As Steve said, Windows might think we are
+This is the problem we talked about - it seems that Display#update does not
+paint under certain circumstances. As Steve said, Windows might think we are
 dead when we don't spin the event loop for some amount of time.
 For the record, I want to show progress while the Workbench is being restored.
-This is before we actually run the event loop.
-The event loop cannot be run
+This is before we actually run the event loop. The event loop cannot be run
 because the Workbench is not in a good state and because the restoring of the
-Workbench takes place in the UI thread.
-We would like to have the progress
+Workbench takes place in the UI thread. We would like to have the progress
 dialog repaint though...

@@ -1,7 +1,2 @@
 Bug 142432 MasterPage from library can't be restored to modify
-Details: MasterPage from library can't be restored to modify Step: 1.New a library named lib1, and insert a masterpage named lib-mp.
-2.Publish the library into resource folder.
-3.New a report design and use lib1.4.Drop the lib-mp from library explorer into outline of report design.
-5.Double click lib-mp, and switch to Property editro tab.
-6.Click restore.
-Actual result: Pop up an error message and said that the master page cannot specify size the page type is not custom.
+Details: MasterPage from library can't be restored to modify Step: 1.New a library named lib1, and insert a masterpage named lib-mp. 2.Publish the library into resource folder. 3.New a report design and use lib1. 4.Drop the lib-mp from library explorer into outline of report design. 5.Double click lib-mp, and switch to Property editro tab. 6.Click restore. Actual result: Pop up an error message and said that the master page cannot specify size the page type is not custom.

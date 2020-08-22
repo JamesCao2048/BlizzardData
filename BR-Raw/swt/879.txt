@@ -1,9 +1,9 @@
 [Widgets] NPE while switching between compare modes in Java compare editor
 I20090818-0800
 Steps:
-1.Open Java compare editor (compare two .java files)
-2.Switch to Text Compare using the drop down button next to "Java Source Compare" label
-3.Click anywhere
+1. Open Java compare editor (compare two .java files)
+2. Switch to Text Compare using the drop down button next to "Java Source Compare" label
+3. Click anywhere
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Display.runPopups(Display.java:3523)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3130)

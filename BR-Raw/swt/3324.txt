@@ -1,8 +1,7 @@
 [browser] setVisible(true) does not work
 taken from the Multipageeditor example , the folllowing code does not display
 the browser widget under Linux as expected: it _ONLY_ shows it when the maximize
-or minimize icon is pressed.
-Under Windows platform there is no problem:
+or minimize icon is pressed. Under Windows platform there is no problem:
 My settings:
 debian 3.0 sarge
 gnome 2.4
@@ -51,21 +50,14 @@ import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 /**
-* An example showing how to create a multi-page editor.
-This example has 3
+* An example showing how to create a multi-page editor. This example has 3
 * pages:
-*
-<ul>
-*
-<li>page 0 contains a nested text editor.
-*
-<li>page 1 allows you to change the font used in page 2
-*
-<li>page 2 shows the words in page 0 in sorted order *
-*
-<li>page 3 contains the html preview
-*
-</ul>
+* <ul>
+* <li>page 0 contains a nested text editor.
+* <li>page 1 allows you to change the font used in page 2
+* <li>page 2 shows the words in page 0 in sorted order *
+* <li>page 3 contains the html preview
+* </ul>
 */
 public class MultiPageEditor extends MultiPageEditorPart implements
 IResourceChangeListener
@@ -76,11 +68,11 @@ IResourceChangeListener
 */
 List               tmpFiles = null;
 public Browser     browser  = null;
-/** The text editor used in page 0.*/
+/** The text editor used in page 0. */
 private TextEditor editor;
-/** The font chosen in page 1.*/
+/** The font chosen in page 1. */
 private Font       font;
-/** The text widget used in page 2.*/
+/** The text widget used in page 2. */
 private StyledText text;
 private String     mytext   = "<html><body>test</body></html>";
 /**
@@ -89,4 +81,4 @@ private String     mytext   = "<html><body>test</body></html>";
 public MultiPageEditor()
 {
 super();
-ResourcesPlugin.getWorkspace().addResourceChangeListener(
+ResourcesPlugin.getWorkspace().addResourceChangeListener(thi

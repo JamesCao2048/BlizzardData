@@ -1,12 +1,10 @@
 Motif FileDialog often does not use reasonable default directory
 Build 20020521 Linux-motif
 If you have an invalid patch file specified in the Resource Patcher when you
-select browse you get * as a selection and no entries in the file dialog.
-You
+select browse you get * as a selection and no entries in the file dialog. You
 have to clear the * to get anything
 STEPS
 1) Select a file
 2) Select Compare with Patch
 3) Enter foo into the patch file location
-4) Hit browse
-- * is the selection and the file dialog is empty
+4) Hit browse - * is the selection and the file dialog is empty

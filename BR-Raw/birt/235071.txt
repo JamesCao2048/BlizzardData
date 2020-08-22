@@ -1,5 +1,2 @@
 Bug 235071 Value axis is removed when removing the row dimension
-Description: Value axis is removed when removing the row dimension.
-BuildId: 2.3.0.v20080602-0930 Steps to reproduce: 1.Open the attached report design 2.Remove the row dimension "year" Expected result: Value axis of chart view should not change.
-Actual result: Value axis is removed with row dimension.
-Error Log: N/A
+Description: Value axis is removed when removing the row dimension. BuildId: 2.3.0.v20080602-0930 Steps to reproduce: 1. Open the attached report design 2. Remove the row dimension "year" Expected result: Value axis of chart view should not change. Actual result: Value axis is removed with row dimension. Error Log: N/A

@@ -1,9 +1,2 @@
 Bug 178342 Bookmark hyperlinks are very slow
-I designed a report off the sample db that list orders in one table and order details right below.
-I then added a hyperlink to the top table to link to a bookmark in the details table below.
-I set the bookmark appropriately.
-This report works fine when I choos "View Report in Web Viewer" The links are very fast.
-When I choose "View Report in HTML" The hyperlink is very slow.
-It appears to be regenerating or something.
-The report is attached.
-Jason
+I designed a report off the sample db that list orders in one table and order details right below. I then added a hyperlink to the top table to link to a bookmark in the details table below. I set the bookmark appropriately. This report works fine when I choos "View Report in Web Viewer" The links are very fast. When I choose "View Report in HTML" The hyperlink is very slow. It appears to be regenerating or something. The report is attached. Jason

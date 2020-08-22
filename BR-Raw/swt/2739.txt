@@ -14,12 +14,9 @@ I don't know what could be the right solution that could be both portable and
 clean, but here are some ideas:
 Conceptually the AWT frame is a child of the composite is has been embedded in.
 Potentially a control type could be created for an embedded AWT object, and made
-a children of the receiving composite.
-There is a precedent for that with
-OleFrame.
-That control could either be found from the Composite#_getChildren or
-Composite#_getTabList and feed the getChildren normally.
-Or reference to the
+a children of the receiving composite. There is a precedent for that with
+OleFrame. That control could either be found from the Composite#_getChildren or
+Composite#_getTabList and feed the getChildren normally. Or reference to the
 frame coudl be kept as a member of the control and injected into the Children.
 In addition, this could be an opportunity standardize the semantics of the AWT
 frame creation with something like new AwtFrame(Composite parent) and

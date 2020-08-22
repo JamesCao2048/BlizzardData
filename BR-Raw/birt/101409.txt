@@ -1,7 +1,2 @@
 Bug 101409 Quotation mark is missing when select string value in data set filter.
-Description: Quotation mark is missing when select string value in data set filter.
-Steps to reproduce: 1.Add a data source and data set in a report design file.
-2.Edit data set filter.
-3.Select a string column and edit its value by selecting value.
-Expected result: quotation mark is added after selecting.
-Actual result: quotation mark is added only when select a character type.
+Description: Quotation mark is missing when select string value in data set filter. Steps to reproduce: 1. Add a data source and data set in a report design file. 2. Edit data set filter. 3. Select a string column and edit its value by selecting value. Expected result: quotation mark is added after selecting. Actual result: quotation mark is added only when select a character type.

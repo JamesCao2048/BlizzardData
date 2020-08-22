@@ -1,7 +1,5 @@
 firstColumn in Tables/Trees with no columns should not be resizable by user
-Tables/Trees must always have 1+ NSTableColumns in order to show any content, even if no swt Table/TreeColumns are created.
-If the header is visible then the NSColumn is resizable by the user, which should not be doable (similar to if the checkboxes column was resizable by the user).
-Snippet:
+Tables/Trees must always have 1+ NSTableColumns in order to show any content, even if no swt Table/TreeColumns are created.  If the header is visible then the NSColumn is resizable by the user, which should not be doable (similar to if the checkboxes column was resizable by the user).  Snippet:
 public static void main(String[] args) {
 final Display display = new Display();
 Shell shell = new Shell(display);

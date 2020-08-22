@@ -1,7 +1,6 @@
 Separator ToolItems with Controls do not wrap soon enough
 When putting a separator ToolItem with an attached Control on a wrapping
-ToolBar, this item does not wrap correctly.
-This does not happen in all cases (I
+ToolBar, this item does not wrap correctly. This does not happen in all cases (I
 have a wrapping ToolBar with such a separator item in an application where it
 works) but the following snippet exhibits this behaviour.
 This is a modified version of Snippet58 (added SWT.WRAP to ToolBar, put

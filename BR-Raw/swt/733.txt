@@ -25,19 +25,14 @@ registered by:
 --------------
 <extension
 point="org.eclipse.ui.splashHandlers">
-
 <splashHandler
 class="com.versant.tools.rcp.handlers.SpashHandler"
 id="com.versant.tools.rcp.handlers.splashHandler">
-
 </splashHandler>
-
 <splashHandlerProductBinding
 productId="com.versant.tools.rcp.product"
 splashId="com.versant.tools.rcp.handlers.splashHandler">
-
 </splashHandlerProductBinding>
-
 </extension>
 -----------------
 than both Label's are always painted in the default Colors like black on grey.

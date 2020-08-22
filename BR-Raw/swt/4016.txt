@@ -6,8 +6,7 @@ the caret.
 To reproduce add the line
 text.invokeAction(ST.COLUMN_NEXT);
 to the SwtStyledTextUseCase.createWorkRegion
-Observe that the caret is still at offset 0 when the user case is started.
-When
+Observe that the caret is still at offset 0 when the user case is started. When
 cursor next is pressed the caret is at offset 2.
 The problem is that StyledText.showLocation returns scroll == true when
 horizontal scroll was called even if the horizontal scroll does not actually

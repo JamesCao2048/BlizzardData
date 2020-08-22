@@ -1,20 +1,3 @@
 Bug 194649 Show if Blank property not working
-The "Show if Blank" advanced property found on most BIRT report elements, including tables, does not appear to work.
-I have several reports that use sub-tables that contain structural and visual elements, such as grids and borders, that I need to display even if the data set query bound to that table returns no records.
-More specifically, when BIRT processes a table, none of the detail rows will be printed if the query returns no records.
-Although the header and footer rows on the table will always print, there are many cases where I need labels, borders, and other elements in the detail rows to be printed.
-I could move everything into header and footer rows, but that would not work if I could expect more than one record from the query.
-Turning on the "Show if blank" property for the table should cause it to print the details rows once even if there is no data, so that visual and structural elements included in them will still be printed.
-At present, however, the property doesn't appear to have any effect.
-For example, a sub-table may be used in a form report to print one or more addresses.
-If there is no address in the database, the labels and borders used in the sub-table should still be printed on the form once (possibly to be filled in by hand later).
-At present, it seems that BIRT is not capable of this.
-Regardless of what the "Show if Blank" property is set to, everything in the detail rows of the sub-table disappears in the report output if there are no records selected for it.
-Steps to reproduce: 1.Create a data set with a query that returns no records.
-2.Create a table in the report layout and bind it to the new data set.
-3.Add data fields to the table in detail rows.
-4.Add visual non-data elements to the detail rows, such as labels or borders.
-5.Select the table and click the "Advanced" button in the Property Editor.
-6.Click the "Section" node in the Advanced Properties tree.
-7.Set the "Show if blank" property to "true".
-8.Preview the report.
+The "Show if Blank" advanced property found on most BIRT report elements, including tables, does not appear to work. I have several reports that use sub-tables that contain structural and visual elements, such as grids and borders, that I need to display even if the data set query bound to that table returns no records. More specifically, when BIRT processes a table, none of the detail rows will be printed if the query returns no records. Although the header and footer rows on the table will always print, there are many cases where I need labels, borders, and other elements in the detail rows to be printed. I could move everything into header and footer rows, but that would not work if I could expect more than one record from the query. Turning on the "Show if blank" property for the table should cause it to print the details rows once even if there is no data, so that visual and structural elements included in them will still be printed. At present, however, the property doesn't appea
+r to have any effect. For example, a sub-table may be used in a form report to print one or more addresses. If there is no address in the database, the labels and borders used in the sub-table should still be printed on the form once (possibly to be filled in by hand later). At present, it seems that BIRT is not capable of this. Regardless of what the "Show if Blank" property is set to, everything in the detail rows of the sub-table disappears in the report output if there are no records selected for it. Steps to reproduce: 1. Create a data set with a query that returns no records. 2. Create a table in the report layout and bind it to the new data set. 3. Add data fields to the table in detail rows. 4. Add visual non-data elements to the detail rows, such as labels or borders. 5. Select the table and click the "Advanced" button in the Property Editor. 6. Click the "Section" node in the Advanced Properties tree. 7. Set the "Show if blank" property to "true". 8. Preview the report.

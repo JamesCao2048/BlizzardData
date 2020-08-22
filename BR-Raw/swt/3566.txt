@@ -3,9 +3,7 @@ I20031008 on Windows 98
 Test_org_eclipse_swt_graphics_GC.test_getCharWidthC
 fails its assertion that the charWidth of 'a' is greater than 0.
 I believe this is because the test does not set a font, and it relies on the
-default font being valid.
-This appears not to be the case on Win98?
+default font being valid. This appears not to be the case on Win98?
 Although other similar tests, like getTextExtent, getStringExtent,
-getAdvanceWidth, and getFontMetrics all pass.
-I will write a snippet to
+getAdvanceWidth, and getFontMetrics all pass. I will write a snippet to
 investigate further.

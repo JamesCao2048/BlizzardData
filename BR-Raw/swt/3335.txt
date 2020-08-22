@@ -3,11 +3,10 @@ NPE in StyledText used by 'Change method signature' refactoring
 public interface ITextMeasurement {
 public int computeWidth(String string);
 }
-1.on the previous code open the 'Change method refactoring' wizard on
+1. on the previous code open the 'Change method refactoring' wizard on
 'computeWidth'
-2.change the parameter type to 'String1'
-3.press the 'Add' button
-
+2. change the parameter type to 'String1'
+3. press the 'Add' button
 -> NPE thrown
 The NPE comes from field StyleItem.analysis being null.
 Thread [main] (Suspended (exception NullPointerException))
@@ -57,4 +56,4 @@ ModifyParametersAction(SelectionDispatchAction).run() line: 188
 ModifyParametersAction(Action).runWithEvent(Event) line: 881
 ActionContributionItem.handleWidgetSelection(Event, boolean) line: 915
 ActionContributionItem.access$2(ActionContributionItem, Event, boolean) line: 866
-ActionContribut
+ActionContrib

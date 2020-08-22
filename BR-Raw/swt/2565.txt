@@ -1,37 +1,20 @@
 drilled to report shows stale data.
-I have to reports, report1 shows a list of items and from there I drill to report2, passing an item code.
-The link code is as follows:
+I have to reports, report1 shows a list of items and from there I drill to report2, passing an item code. The link code is as follows:
 <cell id="231">
-
 <data id="232">
-
 <expression name="valueExpr">row["CODE"]</expression>
-
 <structure name="action">
-
 <property name="formatType">html</property>
-
 <property name="linkType">drill-through</property>
-
 <property name="reportName">dimension.rptdesign</property>
-
 <property name="targetWindow">_self</property>
-
 <list-property name="paramBindings">
-
 <structure>
-
 <property name="paramName">ip_tydf_code</property>
-
 <expression name="expression">row["CODE"]</expression>
-
 </structure>
-
 </list-property>
-
 </structure>
-
 </data>
-
 </cell>
 The first time I navigate to report2, passing in code1, it works OK, the second time I go there, clicking on another instance of the link, passing in another parameter, code2, I still see the old report data for code1, even though code2 is passed in the URL.

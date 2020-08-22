@@ -1,10 +1,8 @@
 TableItem.getText(int) returns garbage in GTK
 Build F3, Linux/GTK
 Calling TableItem.getText(int) with a multicolumn table sometimes returns
-garbage.
-In the following example, the first item is retrieved correctly but
-the second and third come back mangled.
-This is what I see when I run the code
+garbage.  In the following example, the first item is retrieved correctly but
+the second and third come back mangled.  This is what I see when I run the code
 below:
 ---
 1

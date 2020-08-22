@@ -4,7 +4,5 @@ GLCanvas cannot be occluded by fast views, it just draws happily on top of them.
 Reproducible: Always
 Steps to Reproduce:
 1) Launch the IDE product including the 2 attached plugins (org.lwjgl and testcase).
-2) Show the "Bug View" from the "Bug Category".
-The canonical spinning torus example should appear in a view.
-3) Minimize another view and then reveal it such that it overlaps the bug view...
-the GLCanvas of the bug view keeps drawing the torus on top of the fast view.
+2) Show the "Bug View" from the "Bug Category". The canonical spinning torus example should appear in a view.
+3) Minimize another view and then reveal it such that it overlaps the bug view... the GLCanvas of the bug view keeps drawing the torus on top of the fast view.

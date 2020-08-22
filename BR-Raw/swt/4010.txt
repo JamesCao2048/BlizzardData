@@ -1,9 +1,7 @@
 GTK: Calling Text.setSelection() causes GPF
-When the test is run with the style bit as MULTI a GPF occurs.
-Here is the test
+When the test is run with the style bit as MULTI a GPF occurs. Here is the test
 case:
-------------------start of test case
----------------------------------
+------------------start of test case ---------------------------------
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.*;
@@ -31,5 +29,4 @@ disp.sleep();
 }
 }
 }
--------------------------end of test case
-------------------------
+-------------------------end of test case ------------------------

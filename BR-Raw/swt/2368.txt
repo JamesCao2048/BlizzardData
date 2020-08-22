@@ -27,8 +27,7 @@ tree.addListener(SWT.SetData, new Listener() {
 public void handleEvent(Event event) {
 TreeItem widget = (TreeItem) event.item;
 TreeItem parentItem = widget.getParentItem();
-int index =
--1;
+int index = -1;
 if (parentItem == null)
 index = tree.indexOf(widget);
 else

@@ -1,7 +1,4 @@
 TreeViewer setSelection does not scroll horizontally to show selection
 This could end up being an SWT bug.
-When calling treeViewer.setSelection( selection, true ), the tree is scrolled down vertically to reveal the selection but never seems to scroll horizontally.
-I confirmed that this is a bug in the platform because it happens in the Package Explorer when using the ShowIn context menu on Java source.
-To replicate, shrink the width of the Package Explorer and select some function in the Java source.
-Then right-click and do Show In--Package Explorer.
-If the width of the View is small enough, you will notice that the Tree scrolled enough vertically, but since it did not scroll horizontally, you cannot see the selected Tree node.
+When calling treeViewer.setSelection( selection, true ), the tree is scrolled down vertically to reveal the selection but never seems to scroll horizontally. I confirmed that this is a bug in the platform because it happens in the Package Explorer when using the ShowIn context menu on Java source.
+To replicate, shrink the width of the Package Explorer and select some function in the Java source. Then right-click and do Show In--Package Explorer. If the width of the View is small enough, you will notice that the Tree scrolled enough vertically, but since it did not scroll horizontally, you cannot see the selected Tree node.

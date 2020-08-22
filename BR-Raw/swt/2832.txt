@@ -1,9 +1,7 @@
 Antialiasing chops off edges of rectangles
-Antialiasing chops off some of the boundaries of rectangles.
-The included
+Antialiasing chops off some of the boundaries of rectangles. The included
 snippet will display a thin black line when antialiasing is turned on, but not
-when it is off.
-Antialiasing should have no effect on rectangles.
+when it is off. Antialiasing should have no effect on rectangles.
 package org.eclipse.swt.snippets;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;

@@ -1,19 +1,13 @@
 Help fails to open
-In 3.1M4 Help is failing to open.
-I get a dialog saying:
-"An exception offured while lauching help.
-Refer to the log for more details".
+In 3.1M4 Help is failing to open.  I get a dialog saying:
+"An exception offured while lauching help.  Refer to the log for more details".
 The log is as follows:
-!SESSION 2005-01-12 12:43:57.515
------------------------------------------------
+!SESSION 2005-01-12 12:43:57.515 -----------------------------------------------
 eclipse.buildId=I20041216-2000
 java.version=1.5.0
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
-Command-line arguments:
--os win32
--ws win32
--arch x86
+Command-line arguments:  -os win32 -ws win32 -arch x86
 !ENTRY org.eclipse.help.base 4 0 2005-01-12 12:43:57.515
 !MESSAGE An exception occurred while launching help.
 !STACK 0
@@ -58,3 +52,4 @@ at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:102)
 at
 org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:220)
 at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:273)
+at

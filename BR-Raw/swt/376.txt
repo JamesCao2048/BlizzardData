@@ -1,18 +1,11 @@
 Clipboard data is lost on exit (Should implement the freedesktop.org specification for clipboard management)
 Build Identifier: M20100211-1343
-When you quit Eclipse in X11-based systems, you lose any data that was on the clipboard.
-You can find more information about this bug and how to fix it at  https://wiki.ubuntu.com/ClipboardPersistence .
-Note: I've marked it as critical because it does cause loss of user data.
-However, it only causes loss of data in the uncommon use case of copy
--> do not save
--> quit
--> paste, so downgrading the severity might be appropriate.
+When you quit Eclipse in X11-based systems, you lose any data that was on the clipboard. You can find more information about this bug and how to fix it at  https://wiki.ubuntu.com/ClipboardPersistence .
+Note: I've marked it as critical because it does cause loss of user data. However, it only causes loss of data in the uncommon use case of copy -> do not save -> quit -> paste, so downgrading the severity might be appropriate.
 Reproducible: Always
 Steps to Reproduce:
-Pre-requisite: Machine running an X11-based window manager, without extended clipboard manager such as Klipper.
-Tested on Ubuntu Lucid.
-1.Copy text in Eclipse.
-You can copy this text from IDE, help documentation, dialog boxes, or any other UI element.
-2.Paste it to another window, this works as expected.
-3.Quit Eclipse.
-4.Try to paste, there is now nothing in the clipboard.
+Pre-requisite: Machine running an X11-based window manager, without extended clipboard manager such as Klipper. Tested on Ubuntu Lucid.
+1. Copy text in Eclipse. You can copy this text from IDE, help documentation, dialog boxes, or any other UI element.
+2. Paste it to another window, this works as expected.
+3. Quit Eclipse.
+4. Try to paste, there is now nothing in the clipboard.

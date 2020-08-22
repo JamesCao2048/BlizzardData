@@ -1,10 +1,8 @@
 hang in gtk_clipboard_wait_for_contents()
 I200405251200
-Pasting a large file in eclipse results in a hang.
-I reproduced the hang
+Pasting a large file in eclipse results in a hang.  I reproduced the hang
 copying ~ 170 lines from a text file into eclipse, pasting less than 100 lines
-seems to work just fine.
-Gtk+-2.4.
+seems to work just fine.  Gtk+-2.4.
 Thread [main] (Suspended)
 OS.gtk_clipboard_wait_for_contents(int, int) line: not available [native method]
 Clipboard.gtk_clipboard_wait_for_contents(int, int) line: 385

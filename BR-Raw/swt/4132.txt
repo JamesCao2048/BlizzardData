@@ -1,9 +1,7 @@
 TableColumns don't pack properly
 Build: 20020319
 When calling pack() on a TableColumn, the columns are packed smaller than the
-preferred size.
-The label on the column header cannot be fully seen.
-This does
+preferred size. The label on the column header cannot be fully seen. This does
 not occur on Windows.
 Sample code:
 import org.eclipse.swt.*;
@@ -18,8 +16,7 @@ shell.setLayout (new GridLayout ());
 Table table = new Table (shell, SWT.MULTI);
 table.setLinesVisible (true);
 table.setHeaderVisible (true);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 TableItem item = new TableItem (table, 0);
 TableColumn column = new TableColumn (table, 0);
 column.setText ("Column " + i);

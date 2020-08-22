@@ -8,11 +8,10 @@ public class A {
 private int a;
 private int b;
 }
-1.Set cursor on b
-2.open members drop down
+1. Set cursor on b
+2. open members drop down
 Is:
-the member where the cursor is in is the top item in the tree, it looks like there is only one member.
-Also the scrollbar is not at the correct position.
+the member where the cursor is in is the top item in the tree, it looks like there is only one member. Also the scrollbar is not at the correct position.
 Should:
 like on other platforms, it should only be the top item if there are enough items below it to fill the tree
 See screen shot

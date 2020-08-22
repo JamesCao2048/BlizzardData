@@ -1,5 +1,3 @@
 Mozilla SWT Browser AppFileLocProvider has caching issues
 The AppFileLocProvider changes it's answer for the location of "ProfD" part way through the initialization and this is really messing with the caching done in the nsDirectoryService.
-It looks like what's happening is the nsDirectoryService is remembering the
-<empty> value and not going back to the provider to check for it again.
-We need to signal the need to refresh the cache by perhaps re-registering the provider or else explicitly set the property (or else come up with something even better).
+It looks like what's happening is the nsDirectoryService is remembering the <empty> value and not going back to the provider to check for it again. We need to signal the need to refresh the cache by perhaps re-registering the provider or else explicitly set the property (or else come up with something even better).

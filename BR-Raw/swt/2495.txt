@@ -1,11 +1,10 @@
 BIDI: Output text have contextual order layout
 Scenario:
-1.Create a java project
-2.Create a java class.
-Make sure that you enter the com.ibm.dbcstesting.javatest for the package name and you select the inclusion of main() in the wizard.
-3.In Main method on the Editor, type the following code line:
+1. Create a java project
+2. Create a java class. Make sure that you enter the com.ibm.dbcstesting.javatest for the package name and you select the inclusion of main() in the wizard.
+3. In Main method on the Editor, type the following code line:
 System.out.println(" ABCabc ");
 where capitals are Hebrew characters.
-4.Run as Java application.
+4. Run as Java application.
 Result: The string is displayed on console as: "abcABC"
 Expected result: The output of the string should be as shown in the editor and shouldn't have contextual ordering.

@@ -1,13 +1,11 @@
 [CCombo] CCombo, CLabel - Custom widgets are nulling internal slots too soon
-This came up because StyledText is doing the same thing.
-StyledText will
+This came up because StyledText is doing the same thing.  StyledText will
 probably handle this by async'ing the slot nulling.
 If a client hooks a disposeListener to a custom widget then they're able to
 catch the widget in a middle state in which its internal slots have been nulled
 out, but its state hasn't been OR'd with DISPOSED yet (so it still passes
-checkWidget()).
-Two examples that show this:
-1.NPE in CCombo (type anything into the CCombo):
+checkWidget()).  Two examples that show this:
+1. NPE in CCombo (type anything into the CCombo):
 public static void main (String [] args) {
 Display display = new Display ();
 Shell shell = new Shell (display);
@@ -30,7 +28,7 @@ if (!display.readAndDispatch ()) display.sleep ();
 }
 display.dispose ();
 }
-2. Wrong answer in CLabel (hover over it):
+2.  Wrong answer in CLabel (hover over it):
 public static void main (String [] args) {
 Display display = new Display ();
 Shell shell = new Shell (display);

@@ -1,8 +1,6 @@
 Text - No Verify/Modify when a modifier key is down
 Eclipse 3.0M2
-It's not possible to create classpath variables with underscores.
-The dialog displays the error
-message "A variable name must be entered".
-When you remove the underscore and re-add it, the
+It's not possible to create classpath variables with underscores. The dialog displays the error
+message "A variable name must be entered". When you remove the underscore and re-add it, the
 message has disappeared but the created classpath variable will not be created as specified.
 Sometimes the underscore is missing, sometimes characters at the end of the variable.

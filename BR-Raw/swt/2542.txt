@@ -11,8 +11,7 @@ final Tree tree = new Tree(shell, /*SWT.VIRTUAL |*/ SWT.BORDER);
 tree.setItemCount(20);
 shell.setSize(400, 300);
 shell.open();
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 final TreeItem item = tree.getItem(i);
 display.asyncExec(new Runnable() {
 public void run() {
@@ -21,8 +20,7 @@ String text = null;
 if (parentItem == null) {
 text = "node "+tree.indexOf(item);
 } else {
-text = parentItem.getText()+"
-- "+parentItem.indexOf(item);
+text = parentItem.getText()+" - "+parentItem.indexOf(item);
 }
 item.setText(text);
 }

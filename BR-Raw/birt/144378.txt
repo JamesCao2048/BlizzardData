@@ -1,6 +1,2 @@
 Bug 144378 There is no checkbox for user to bind a dynamic image
-Description: Create a dynamic image, there is no checkbox for user to bind the column of dataset.
-Steps to reproduce: 1.Create a sample datasource and dataset with "select * from CLASSICMODELS.PRODUCTLINES".
-2.Add a image to the report layout, select dynamic image type, and then click "Binding" button, select the dataset, and want to bind a column.
-But there is no checkbox for user to do this action.
-Expected result: Like data item, there is a checkbox for user to bind the column.
+Description: Create a dynamic image, there is no checkbox for user to bind the column of dataset. Steps to reproduce: 1.Create a sample datasource and dataset with "select * from CLASSICMODELS.PRODUCTLINES". 2.Add a image to the report layout, select dynamic image type, and then click "Binding" button, select the dataset, and want to bind a column. But there is no checkbox for user to do this action. Expected result: Like data item, there is a checkbox for user to bind the column.

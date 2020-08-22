@@ -1,8 +1,7 @@
 crash in OS.gtk_main_iteration() when double-click disabled text widget
 using linux redhat 8.0 gtk eclipse base build wswb-2.1.1-M200305211757
 I have a view that contains a disabled styled text widget (i call setEnabled
-(false) on the widget).
-I notice that if the view does not have focus, then i
+(false) on the widget).  I notice that if the view does not have focus, then i
 double-click (or sometimes triple click,  or just keep clicking till crash)
 into the view, my workbench crashes!  If the view already has focus, and I
 triple-click the text widget, a cursor appears and i can type in the widget

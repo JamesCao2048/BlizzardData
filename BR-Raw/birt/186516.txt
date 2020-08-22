@@ -1,6 +1,2 @@
 Bug 186516 RCP Designer: Editing copied data item destroys the original element
-Build ID: 200609260959 Steps To Reproduce: 1.Create a report with a data source, data set and a table 2.Insert a column of the data set into the table.
-This generates a data item with an expression for the column 3.Copy this element into another table column using the
-<ctrl> key and drag'n drop function.
-4.Now double-cick the copy and change the Data Item name and press Ok 5.Examine the original data item and you will find that it's properties like name, expression etc.
-are destroyed More information: Confirmed with BIRT RCP Designer 2.1.1 and 2.2 M6
+Build ID: 200609260959 Steps To Reproduce: 1. Create a report with a data source, data set and a table 2. Insert a column of the data set into the table. This generates a data item with an expression for the column 3. Copy this element into another table column using the <ctrl> key and drag'n drop function. 4. Now double-cick the copy and change the Data Item name and press Ok 5. Examine the original data item and you will find that it's properties like name, expression etc. are destroyed More information: Confirmed with BIRT RCP Designer 2.1.1 and 2.2 M6

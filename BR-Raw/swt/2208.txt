@@ -1,6 +1,5 @@
 Snippet 252 a bit confusing
-Snippet 252 (the one posted on the N&N for M4) sets a line width of 1/2. Since these
-are both integers, it does the division first and then the cast.
-This sets the line style
-to 0.0. I assume (since the N&N says something about fractional line width) you meant
+Snippet 252 (the one posted on the N&N for M4) sets a line width of 1/2.  Since these
+are both integers, it does the division first and then the cast.  This sets the line style
+to 0.0.  I assume (since the N&N says something about fractional line width) you meant
 1/2f.

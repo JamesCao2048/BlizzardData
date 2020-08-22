@@ -1,14 +1,11 @@
 In the specifications some methods do not describe their return value fully
 In the specs, the return value of some methods has not been specified fully,
 especially when there is nothing to return or an error has occurred (eg an
-invalid parameter has been received).
-When there is nothing to return, should
-an empty array/string be returned or should null be returned?
-I suspect there
+invalid parameter has been received). When there is nothing to return, should
+an empty array/string be returned or should null be returned? I suspect there
 is a generic convention but I could not find it anywhere.
 Class           Method
------
-------
+-----           ------
 SWTError	public String getMessage()
 SWTException	public String getMessage()
 Combo	        public String [] getItems ()

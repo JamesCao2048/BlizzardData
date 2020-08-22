@@ -3,8 +3,7 @@ Build 20030115+
 Linux-GTK
 The classes 'browser' (tree viewer of the folders and list viewer of the
 classes) of the 'Add Type' and 'Add Task' dialogs are empty when the dialog are
-displayed.
-I have to select a jar file in the drop down list to display
+displayed. I have to select a jar file in the drop down list to display
 something in the 'browser', even if the jar file I want to use is the one which
 is already selected (or maybe it is not selected).
 The 'browser' should be initialized with the content of the jar file selected by

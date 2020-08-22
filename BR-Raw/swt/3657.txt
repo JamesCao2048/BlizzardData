@@ -4,19 +4,15 @@ Redhat 7.2, GTK2
 KDE 2.2-10
 (GTK2 only)
 If you add a SelectionListener to a Combo, then your widgetSelected() will be
-called many more times than would be expected.
-For example, If you click and
+called many more times than would be expected. For example, If you click and
 hold the arrow then move on one of the elements in the drop down list (still
 holding button), then it continually fires events even though you're not
-moving.
-Also, every element you move your mouse over causes multiple selection
+moving. Also, every element you move your mouse over causes multiple selection
 events.
 Another problem is that as soon as you click the arrow then move your mouse one
-pixel, the first element is selected.
-This can be bad if you don't remember
+pixel, the first element is selected. This can be bad if you don't remember
 what it was on before and just want to see the options.
-This example demonstrates this..
-it just prints "X" everytime widgetSelected()
+This example demonstrates this.. it just prints "X" everytime widgetSelected()
 is called.
 -----------------------------------------------
 public static void main(String[] args) {

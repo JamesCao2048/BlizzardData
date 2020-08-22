@@ -1,12 +1,10 @@
 Tree with columns shows horizontal scroll bar when it shouldn't
 SWT-win32, v3214
-The testcase below contains a tree with a single column.
-When the parent shell
+The testcase below contains a tree with a single column. When the parent shell
 is resized, the width of the column is set to exactly fill the available space.
 It works, but a horizontal scroll bar will appear even though none is needed.
 For some reason the widget thinks that there is one additional pixel to the
-right.
-If you replace the tree with a table (and the tree column with a table
+right. If you replace the tree with a table (and the tree column with a table
 column), you don't get a horizontal scroll bar.
 Note: To keep the snippet simple, it does not contain code for the case where
 a vertical scroll bar is visible.
@@ -30,11 +28,9 @@ shell.addControlListener(new ControlAdapter() {
 public void controlResized(ControlEvent e) {
 Rectangle area = shell.getClientArea();
 
-int width = area.width
-- 2 * tree.getBorderWidth();
+int width = area.width - 2 * tree.getBorderWidth();
 
-if (width
-< column.getWidth()) {
+if (width < column.getWidth()) {
 column.setWidth(width);
 tree.setSize(area.width, area.height);
 } else {

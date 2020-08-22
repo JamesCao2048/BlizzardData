@@ -1,3 +1,2 @@
 Bug 216386 Some kind of Crosstab's filter condition doesn't work[1102]
-Description: Some kind of Crosstab's filter condition doesn't work.
-Build number: 2.3.0.v20080124-0800 Steps to reproduce: 1, New a crosstab 2, Specify the filter on crosstab 3, Select the target level and filter condition is 1 Equal To 2 Or "a" Equal To "b" 4, Preview Expected result: If it return false, the crosstab can not be shown Actual result: The filter takes no effect.
+Description: Some kind of Crosstab's filter condition doesn't work. Build number: 2.3.0.v20080124-0800 Steps to reproduce: 1, New a crosstab 2, Specify the filter on crosstab 3, Select the target level and filter condition is 1 Equal To 2 Or "a" Equal To "b" 4, Preview Expected result: If it return false, the crosstab can not be shown Actual result: The filter takes no effect.

@@ -28,12 +28,4 @@ at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.f
 at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:66)
 at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:345)
 at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:309)
-at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:360)
-at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1343)
-at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:470)
-I've tried with with Spring 2.5.2 and 2.5.3 with JDK 1.5. We're using
-"@AspectJ" so <aop:aspectj-autoproxy/> is set, and aspectjweaver.jar
-and aspectjrt.jar are included. The Spring IDE shows that AOP advise
-is applied to expected pointcuts. When compiled and run outside of the
-Spring IDE, the application encounters the NPE.
-Ideas?
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostPr

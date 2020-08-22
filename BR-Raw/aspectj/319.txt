@@ -60,47 +60,4 @@ at org.aspectj.weaver.patterns.KindedPointcut.warnOnConfusingSig
 (KindedPointcut.java:151)
 at org.aspectj.weaver.patterns.KindedPointcut.matchInternal
 (KindedPointcut.java:108)
-at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:145)
-at org.aspectj.weaver.patterns.AndPointcut.matchInternal
-(AndPointcut.java:57)
-at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:145)
-at org.aspectj.weaver.patterns.AndPointcut.matchInternal
-(AndPointcut.java:55)
-at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:145)
-at org.aspectj.weaver.patterns.AndPointcut.matchInternal
-(AndPointcut.java:55)
-at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:145)
-at org.aspectj.weaver.patterns.AndPointcut.matchInternal
-(AndPointcut.java:55)
-at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:145)
-at org.aspectj.weaver.ShadowMunger.match(ShadowMunger.java:64)
-at org.aspectj.weaver.Advice.match(Advice.java:109)
-at org.aspectj.weaver.bcel.BcelAdvice.match(BcelAdvice.java:98)
-at org.aspectj.weaver.bcel.BcelClassWeaver.match
-(BcelClassWeaver.java:2098)
-at org.aspectj.weaver.bcel.BcelClassWeaver.matchInvokeInstruction
-(BcelClassWeaver.java:2085)
-at org.aspectj.weaver.bcel.BcelClassWeaver.match
-(BcelClassWeaver.java:1867)
-at org.aspectj.weaver.bcel.BcelClassWeaver.matchInit
-(BcelClassWeaver.java:1731)
-at org.aspectj.weaver.bcel.BcelClassWeaver.match
-(BcelClassWeaver.java:1660)
-at org.aspectj.weaver.bcel.BcelClassWeaver.weave
-(BcelClassWeaver.java:445)
-at org.aspectj.weaver.bcel.BcelClassWeaver.weave
-(BcelClassWeaver.java:101)
-at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1531)
-at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump
-(BcelWeaver.java:1485)
-at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify
-(BcelWeaver.java:1266)
-at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1088)
-at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes
-(WeavingAdaptor.java:266)
-at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass
-(WeavingAdaptor.java:198)
-at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:67)
-at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform
-(ClassPreProcessorAgentAdapter.java:52)
-鈥
+at org.aspectj.weaver.patterns.Pointcut.match(Poin

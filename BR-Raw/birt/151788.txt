@@ -1,5 +1,2 @@
 Bug 151788 Provide additional ODA runtime hints to the ODA consumer
-Some ODA runtime drivers are not able to obtain sufficient metadata on its parameters and result set column.
-Such metadata is thus needed to be collected at design time, for use by the BIRT ODA consumer.
-For example, the native data type of a parameter and column is often needed, but is not currently available to the odaconsumer in the Data Engine API runtime hints.
-This enhancement involves adding the native data type to the Data Engine API, and passing through its value from the ROM Model in report design to the ODA consumer.
+Some ODA runtime drivers are not able to obtain sufficient metadata on its parameters and result set column. Such metadata is thus needed to be collected at design time, for use by the BIRT ODA consumer. For example, the native data type of a parameter and column is often needed, but is not currently available to the odaconsumer in the Data Engine API runtime hints. This enhancement involves adding the native data type to the Data Engine API, and passing through its value from the ROM Model in report design to the ODA consumer.

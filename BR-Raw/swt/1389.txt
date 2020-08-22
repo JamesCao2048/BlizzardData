@@ -2,8 +2,6 @@ Wrong cursor when editing
 This happens in Eclipse.
 Open the console and a java editor.
 Give the Java editor focus, the move the mouse over the console and notice the I-beam cursor.
-Give focus to the console.
-The I-beam changes to the default arrow.
-Move the mouse over the editor, then back into the console.
-The I-beam is back and stays now.
+Give focus to the console. The I-beam changes to the default arrow.
+Move the mouse over the editor, then back into the console. The I-beam is back and stays now.
 The I-beam should not go away.

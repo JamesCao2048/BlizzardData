@@ -2,6 +2,5 @@ crash: fatal error in soup_session_feature_detach with WebKitGTK+ >= 1.11.91
 Created  attachment 229266   [details]
 Patch for the crash
 With recent versions of WebKitGTK+, Eclipse crashes whenever Javadoc hover help is to be displayed in Java editor.
-Looks this happens because WebKit doesn't attach a default Authenticate listener and therefore WebKitGTK.soup_session_get_feature() returns 0 in WebKit.create().
-See attached patch for fix.
+Looks this happens because WebKit doesn't attach a default Authenticate listener and therefore WebKitGTK.soup_session_get_feature() returns 0 in WebKit.create(). See attached patch for fix.
 Reproduced with all 3.8, 4.2 and 4.3 versions of SWT.

@@ -1,9 +1,7 @@
 Linux - Control.setEnabled disables more than it should
 Build ID: M20060629-1905
 Steps To Reproduce:
-Run the following SWT program.
-The button in the first column of the table and the text field in the second column should operate such that if the button is selected, the text field in the same row is enabled.
-If the button isn't selected, the text field is disabled.
+Run the following SWT program. The button in the first column of the table and the text field in the second column should operate such that if the button is selected, the text field in the same row is enabled. If the button isn't selected, the text field is disabled.
 The problem is on Linux if you unselect the button in the second row, it disables both the text field in its row, and the one in the first row.
 The problem appears to be the code in the Control.setEnabled between
 if (isDisposed ()) return;
@@ -51,8 +49,7 @@ connTypeTable.setLinesVisible(true);
 connTypeTable.setHeaderVisible(true);
 
 String [] headers = { "header1", "header2", "header3", "header4" };
-for (int i = 0; i
-< headers.length; i++) {
+for (int i = 0; i < headers.length; i++) {
 TableColumn column = new TableColumn(connTypeTable, SWT.NONE);
 column.setText(headers[i]);
 }
@@ -75,4 +72,4 @@ public void modifyText(ModifyEvent me) {
 });
 
 final Button conn2Check = toolkit.createButton(connTypeTable, "ConnType2", SWT.CHECK);
-conn2Check.setSelection(
+conn2Check.setSelection(t

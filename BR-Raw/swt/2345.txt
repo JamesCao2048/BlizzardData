@@ -1,14 +1,11 @@
 NPE when removing an item from a Table with custom draw hooks
-We are using a Table with hooks to handle SWT.MeasureItem and SWT.PaintItem.
-When an item is being deleted from this table, a NPE is thrown because getBounds is invoked on an already disposed TableItem.
+We are using a Table with hooks to handle SWT.MeasureItem and SWT.PaintItem. When an item is being deleted from this table, a NPE is thrown because getBounds is invoked on an already disposed TableItem.
 The stack trace looks as follows:
 Thread [main] (Suspended (exception NullPointerException))
 TableItem.getBounds(int, int, boolean, boolean, boolean, boolean, int) line: 234
 Table.sendMeasureItemEvent(TableItem, int, int, int) line: 2904
 Table.CDDS_SUBITEMPREPAINT(int, int) line: 481
-[ ...
-removed ...
-]
+[ ... removed ... ]
 Table.remove(int[]) line: 2445
 A bit more detailed:
 1) The item is being released and OS.LVM_DELETEITEM sent afterwards

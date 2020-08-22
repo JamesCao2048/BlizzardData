@@ -1,8 +1,7 @@
 Table: FULL_SELECTION focus outline too short when background image set
 SWT-win32, v3228
 The focus rectangle is not wide enough when a background image
-is set on a FULL_SELECTION table.
-See snippet and screenshot.
+is set on a FULL_SELECTION table. See snippet and screenshot.
 ---
 import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.*;

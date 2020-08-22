@@ -1,10 +1,8 @@
 TRAVERSE_RETURN closing a dialog cannot be suppressed in a combo box
 If you run the following snippet and hit "ESC", you will get "Busted" on GTK+
-but not on Windows XP.
-Basically, the traverse listener on the dialog is trying
+but not on Windows XP.  Basically, the traverse listener on the dialog is trying
 to block escape traversal, but it doesn't seem to work in the case where a combo
-box has focus.
-(A similar dialog without combo box seems to work properly.)
+box has focus.  (A similar dialog without combo box seems to work properly.)
 Display display = new Display();
 final Shell shell = new Shell(display);
 Button b = new Button(shell, SWT.PUSH);

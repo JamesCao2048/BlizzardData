@@ -5,34 +5,24 @@ Deadlock expand of HEAD
 - switched to CVS perspective
 - connected to eclipse.org
 - attempted to expand HEAD
-- eclipse became unresponsive (i.e.
-spinning ball cursor == no events being processed)
-!SESSION Feb 21, 2004 08:52:13.827
----------------------------------------------
+- eclipse became unresponsive (i.e. spinning ball cursor == no events being processed)
+!SESSION Feb 21, 2004 08:52:13.827 ---------------------------------------------
 java.version=1.4.2_03
 java.vendor=Apple Computer, Inc.
 BootLoader constants: OS=macosx, ARCH=ppc, WS=carbon, NL=en_US
-Command-line arguments:
--keyring /Users/mcq/.eclipse_keyring
--showlocation
--data workspace
+Command-line arguments: -keyring /Users/mcq/.eclipse_keyring -showlocation -data workspace
 !ENTRY org.eclipse.team.cvs.ssh 1 0 Feb 21, 2004 08:52:13.830
 !MESSAGE Host key for dev.eclipse.org was not found in the list of known hosts stored in /Users/mcq/
-Desktop/eclipse/workspace/.metadata/.plugins/org.eclipse.team.cvs.ssh/known_hosts.
-The key is
-being automatically added to the known_hosts file for you.
-This key, which is like a personal signature,
-is used by Eclipse to guarantee that the host it is communicating with is the correct one.
-If the Eclipse
+Desktop/eclipse/workspace/.metadata/.plugins/org.eclipse.team.cvs.ssh/known_hosts. The key is
+being automatically added to the known_hosts file for you. This key, which is like a personal signature,
+is used by Eclipse to guarantee that the host it is communicating with is the correct one. If the Eclipse
 client detects a change in this key you will be notified.
 Full thread dump Java HotSpot(TM) Client VM (1.4.2-34 mixed mode):
 "Worker-4" prio=5 tid=0x0055ac10 nid=0x1c9cc00 in Object.wait() [f080f000..f080fb20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x62dd4a58> (a org.eclipse.core.internal.jobs.WorkerPool)
+- waiting on <0x62dd4a58> (a org.eclipse.core.internal.jobs.WorkerPool)
 at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:185)
-- locked
-<0x62dd4a58> (a org.eclipse.core.internal.jobs.WorkerPool)
+- locked <0x62dd4a58> (a org.eclipse.core.internal.jobs.WorkerPool)
 at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:211)
 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 "Worker-0" prio=5 tid=0x0054d500 nid=0x1bd9600 waiting on condition [f0509000..f0509b20]
@@ -43,20 +33,16 @@ at org.eclipse.core.internal.jobs.Worker.run(Worker.java:62)
 "Start Level Event Dispatcher" daemon prio=5 tid=0x005140e0 nid=0x1851400 in Object.wait()
 [f0488000..f0488b20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x62ae4470> (a org.eclipse.osgi.framework.eventmgr.EventThread)
+- waiting on <0x62ae4470> (a org.eclipse.osgi.framework.eventmgr.EventThread)
 at java.lang.Object.wait(Object.java:429)
 at org.eclipse.osgi.framework.eventmgr.EventThread.getNextEvent(EventThread.java:167)
-- locked
-<0x62ae4470> (a org.eclipse.osgi.framework.eventmgr.EventThread)
+- locked <0x62ae4470> (a org.eclipse.osgi.framework.eventmgr.EventThread)
 at org.eclipse.osgi.framework.eventmgr.EventThread.run(EventThread.java:118)
 "Framework Event Dispatcher" daemon prio=5 tid=0x00511740 nid=0x186c800 in Object.wait()
 [f0407000..f0407b20]
 at java.lang.Object.wait(Native Method)
-- waiting on
-<0x62aa0140> (a org.eclipse.osgi.framework.eventmgr.EventThread)
+- waiting on <0x62aa0140> (a org.eclipse.osgi.framework.eventmgr.EventThread)
 at java.lang.Object.wait(Object.java:429)
 at org.eclipse.osgi.framework.eventmgr.EventThread.getNextEvent(EventThread.java:167)
-- locked
-<0x62aa0140> (a org.eclipse.osgi.framework.eventmgr.EventThread)
-at org.eclipse.osgi.framewor
+- locked <0x62aa0140> (a org.eclipse.osgi.framework.eventmgr.EventThread)
+at org.eclipse.osgi.framework.eventmgr

@@ -1,16 +1,15 @@
 Line numbers rendered too low
 Build ID: 3.5RC1
 Steps To Reproduce:
-1.Open preferences
-2.Go to General->Appearance->Colors and Fonts
+1. Open preferences
+2. Go to General->Appearance->Colors and Fonts
 3.Choose the Basic text font and change it to Droid Sans Mono regular 13 point
-4.In the Java source editor add a breakpoint by clicking in the bar to the left of the line number
-5.The dot appears between two line numbers
+4. In the Java source editor add a breakpoint by clicking in the bar to the left of the line number
+5. The dot appears between two line numbers
 More information:
-I am using a free font which is good for source editing.
-It is freely downloadable and is named Droid Sans Mono (see entry on Wikipedia).
+I am using a free font which is good for source editing. It is freely downloadable and is named Droid Sans Mono (see entry on Wikipedia).
 Having set the font as described above when I add a breakpoint the round blue circle that displays in the breakpoints column immediately to the left of the line number column displays between two line numbers.
 This is confusing as it is not obvious which line has the breakpoint.
-I am running Eclipse 3.5RC1 Cocoa 32 bit version on MacOSX 10.5.7.The font I installed was a TrueType TTF font from:
+I am running Eclipse 3.5RC1 Cocoa 32 bit version on MacOSX 10.5.7. The font I installed was a TrueType TTF font from:
 http://damieng.com/blog/2007/11/14/droid-sans-mono-great-coding-font
 I am assuming that the font files are valid and i have not tested on other platforms or Eclipse versions.

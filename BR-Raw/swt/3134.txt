@@ -1,6 +1,5 @@
 Combo box performance problem
 When adding items into a combo box , the performance slows way down ,
-depending on the number of items added.
-For example when adding 900 items in
+depending on the number of items added.  For example when adding 900 items in
 a windows app , it takes ~0.3 seconds when adding only 700 in a linux app it
 taks ~45 seconds.

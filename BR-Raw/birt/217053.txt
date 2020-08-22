@@ -1,9 +1,2 @@
 Bug 217053 [Regression] Sorting on dimension's attribute does not work.
-description: Sorting on dimension's attribute does not work.
-build version: 2.3.0 v20080130-0800 steps to reproduce: 1.New a datasource with sample db and new a dataset with table customers.
-2.New a cube, using the dataset, select state as dimension, add a attribute country for the dimension, select creditlimit as measure.
-3.Insert a crosstab to the layout, drag dimension state to row area, drag creditlimit to detail area.
-4.Add a sorting to state level, sort on state's attribute country.
-5.Preview.
-Expected result: The state level is sorted on the country.
-Actual result: The state level is unsorted.
+description: Sorting on dimension's attribute does not work. build version: 2.3.0 v20080130-0800 steps to reproduce: 1. New a datasource with sample db and new a dataset with table customers. 2. New a cube, using the dataset, select state as dimension, add a attribute country for the dimension, select creditlimit as measure. 3. Insert a crosstab to the layout, drag dimension state to row area, drag creditlimit to detail area. 4. Add a sorting to state level, sort on state's attribute country. 5. Preview. Expected result: The state level is sorted on the country. Actual result: The state level is unsorted.

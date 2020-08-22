@@ -1,7 +1,7 @@
 Setting style bits breaks SWT embedded Swing in Milestone M4
 Creating an SWT container with
 Composite container = new Composite(shell, SWT.BORDER|SWT.EMBEDDED);
-for embedding swing no longer works under Linux for milestone 4.The embedded
+for embedding swing no longer works under Linux for milestone 4. The embedded
 swing components aren't drawn when the SWT container appears.
 However it works if you create the container with
 Composite container = new Composite(shell, SWT.EMBEDDED);

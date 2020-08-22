@@ -10,8 +10,7 @@ shell.setLayout(new FillLayout());
 final Tree tree = new Tree(shell, SWT.H_SCROLL | SWT.V_SCROLL | SWT.VIRTUAL | SWT.BORDER | SWT.MULTI
 | SWT.FULL_SELECTION);
 final int columns = 20;
-for (int i = 0; i
-< columns; i++)
+for (int i = 0; i < columns; i++)
 new TreeColumn(tree, SWT.LEFT).setWidth(150);
 tree.setHeaderVisible(true);
 tree.setLinesVisible(true);
@@ -20,8 +19,7 @@ public void handleEvent(Event event) {
 TreeItem item = (TreeItem) event.item;
 Tree tree = (Tree) event.widget;
 String text = "X";
-for (int i = 0; i
-<= columns; i++) {
+for (int i = 0; i <= columns; i++) {
 if (!item.getText(i).equals(text))
 item.setText(i, text);
 }
@@ -37,8 +35,7 @@ final int timerDelay = 2000;
 final Runnable r = new Runnable() {
 public void run() {
 TreeItem[] items = tree.getItems();
-for (int i = 0; i
-< items.length; i++) {
+for (int i = 0; i < items.length; i++) {
 items[i].setItemCount(0);
 tree.clear(i, true);
 }

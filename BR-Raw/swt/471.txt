@@ -1,12 +1,6 @@
 SWT Snippets use incorrect positioning
-Quoting from Steve Northover's SWT book, section 4.2: "Very often, the location of the client area within the control is (0, 0), but this is not always the case.
-Figure 4.3 shows the client area of two group boxes from different platforms, with Windows on the left and GTK on the right.
-On Windows, the location of the client area is (3, 13).
-On GTK, it is (0, 0)".
-Therefore, portable SWT code should never position widgets relative to (0, 0) but relative to the parent's client area.
-While on most platforms, the assumption is true, it is not in Eclipse RAP.
-Unfortunately, a couple of the official SWT snippets show this bad practice, which causes incorrect layouting in RAP.
-An example is Snippet40:
+Quoting from Steve Northover's SWT book, section 4.2: "Very often, the location of the client area within the control is (0, 0), but this is not always the case. Figure 4.3 shows the client area of two group boxes from different platforms, with Windows on the left and GTK on the right. On Windows, the location of the client area is (3, 13). On GTK, it is (0, 0)".
+Therefore, portable SWT code should never position widgets relative to (0, 0) but relative to the parent's client area. While on most platforms, the assumption is true, it is not in Eclipse RAP. Unfortunately, a couple of the official SWT snippets show this bad practice, which causes incorrect layouting in RAP. An example is Snippet40:
 Shell shell = new Shell (display);
 Composite c1 = new Composite (shell, SWT.BORDER);
 c1.setSize (100, 100);

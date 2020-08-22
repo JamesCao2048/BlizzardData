@@ -1,10 +1,2 @@
 Bug 153842 BIRT Designer not storing date/time parameter value in locale-neutral format
-In BIRT Designer, create a new report parameter of "Date/Time" type.
-In the default value dialog enter a date/time string valid for the user locale.
-In my case, I am on US English locale and I entered a date string "1/23/2006 4:56pm".
-View the report design XML file and you find:
-<scalar-parameter name="dateParam" id="6">
-<property name="defaultValue">1/23/2006 4:56 pm</property> ...
-The default value string is stored in the format that's only valid for the current locale.
-EXPECTED BEHAVIOR: Date/time value should be stored in one of the following locale-neutral formats.
-Complete date: YYYY-MM-DD (eg 1997-07-16) Complete date plus hours and minutes: YYYY-MM-DDThh:mm (eg 1997-07-16T19:20) Complete date plus hours, minutes and seconds: YYYY-MM-DDThh:mm:ss (eg 1997-07-16T19:20:30) Complete date plus hours, minutes, seconds and a decimal fraction of a second YYYY-MM-DDThh:mm:ss.s (eg 1997-07-16T19:20:30.45)
+In BIRT Designer, create a new report parameter of "Date/Time" type. In the default value dialog enter a date/time string valid for the user locale. In my case, I am on US English locale and I entered a date string "1/23/2006 4:56pm". View the report design XML file and you find: <scalar-parameter name="dateParam" id="6"> <property name="defaultValue">1/23/2006 4:56 pm</property> ... The default value string is stored in the format that's only valid for the current locale. EXPECTED BEHAVIOR: Date/time value should be stored in one of the following locale-neutral formats. Complete date: YYYY-MM-DD (eg 1997-07-16) Complete date plus hours and minutes: YYYY-MM-DDThh:mm (eg 1997-07-16T19:20) Complete date plus hours, minutes and seconds: YYYY-MM-DDThh:mm:ss (eg 1997-07-16T19:20:30) Complete date plus hours, minutes, seconds and a decimal fraction of a second YYYY-MM-DDThh:mm:ss.s (eg 1997-07-16T19:20:30.45)

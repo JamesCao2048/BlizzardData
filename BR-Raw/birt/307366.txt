@@ -1,9 +1,2 @@
 Bug 307366 Cancel export dup embedded image to library but still get content change info
-Description: Cancel export dup image item to library and go to library file, but still get Confirm dialog that library content is changed outside and need reload.
-Test build:2.6.0.v20100329-0630 Steps to reproduce: 1.Insert an embedded image in report.
-2.Export the image to library.
-3.Open the library file to check.
-4.Change the embedded image name.
-5.Export the image to the same library, in Confirm replace dialog, click Cancel 6.Go to the open library.
-Expected result: Nothing changed.
-Actual behavior: Confirm dialog pop up to inform that The content in this editor may have been changed from outside.
+Description: Cancel export dup image item to library and go to library file, but still get Confirm dialog that library content is changed outside and need reload. Test build:2.6.0.v20100329-0630 Steps to reproduce: 1. Insert an embedded image in report. 2. Export the image to library. 3. Open the library file to check. 4. Change the embedded image name. 5. Export the image to the same library, in Confirm replace dialog, click Cancel 6. Go to the open library. Expected result: Nothing changed. Actual behavior: Confirm dialog pop up to inform that The content in this editor may have been changed from outside.

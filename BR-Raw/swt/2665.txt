@@ -1,11 +1,9 @@
 Button in a toolbar not sized correctly
 Hi,
 I added some more comments to  bug 71019 , but I don't know if anyone is
-still monitoring that bug.
-So, I created another one to track this issue I guess.
-I think a variation of  bug 71019  still exists, in 3.0.2 and 3.1. The
-following code reproduces the bug.
-I'm using Suse 9.2/GTK, and SWT 3.0.2 or 3.1.
+still monitoring that bug.  So, I created another one to track this issue I guess.
+I think a variation of  bug 71019  still exists, in 3.0.2 and 3.1.  The
+following code reproduces the bug.  I'm using Suse 9.2/GTK, and SWT 3.0.2 or 3.1.
 viewToolbar = new ToolBar(composite, SWT.HORIZONTAL|SWT.FLAT|SWT.WRAP);
 Button printTypeButton = new Button(toolbar, SWT.CHECK);
 printTypeButton.setText("Fit To Page");

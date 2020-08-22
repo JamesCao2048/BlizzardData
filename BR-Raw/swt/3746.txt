@@ -1,12 +1,11 @@
 GTK: Cascade MenuItem doesn't support image
 RC2
 Linux-GTK
-1.Launch the ControlExample and go to the Coolbar tab.
-2.Select the SWT.DROP_DOWN style.
-3.In the middle coolbar, grab the sash and pull it all the way to the left
+1. Launch the ControlExample and go to the Coolbar tab.
+2. Select the SWT.DROP_DOWN style.
+3. In the middle coolbar, grab the sash and pull it all the way to the left
 such that the pulldown menu appears for the second item.
-4.Click on the pulldown arrow.
-5.The item in the pulldown has no icon.
-The buttons in the right toolbar
+4. Click on the pulldown arrow.
+5. The item in the pulldown has no icon. The buttons in the right toolbar
 (the ones with no chevron) retain their icons when they appear in the
 pulldown.

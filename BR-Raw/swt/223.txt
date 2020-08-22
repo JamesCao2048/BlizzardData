@@ -1,7 +1,6 @@
 WinICOFileFormat cannot handle 256x256 icons
 Build Identifier: M20110909-1335
-The standard windows ico format supports icons up to 256x256 pixel in size.
-However as widht and height are stored in byte values 256 pixel widht/height is represented as 0 (see also  http://en.wikipedia.org/wiki/ICO_(file_format)#Icon_resource_structure ).
+The standard windows ico format supports icons up to 256x256 pixel in size. However as widht and height are stored in byte values 256 pixel widht/height is represented as 0 (see also  http://en.wikipedia.org/wiki/ICO_(file_format)#Icon_resource_structure ).
 Due to this fact the width/height of the ico header differs from the width/height in the BMP info header and the validation check at WinICOFileFormat.java:207 fails.
 Possible solution is to map a width/height of 0  in the ico header to 256 like it is done for numColors.
 Kind Regards,

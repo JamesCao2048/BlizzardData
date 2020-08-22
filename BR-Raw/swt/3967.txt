@@ -2,8 +2,7 @@ GTK: Label positioning incorrect when style bit used and bounds set(BBAWT)
 When I set the bound of the label and use SWT.CENTER as the style bit for the
 label the label positioning appears too far to the right on the shell.Here is
 the code that I used to test the label:
-//------------------starts here
-------------------------//
+//------------------starts here ------------------------//
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;

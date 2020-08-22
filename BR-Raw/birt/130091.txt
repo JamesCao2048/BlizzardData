@@ -1,7 +1,2 @@
 Bug 130091 [regression]Save button failed after edit script in data item.
-Description: Save button failed after edit script in data item.
-Steps to reproduce: 1.New a report 2.Insert a data item and input "data".
-3.Select data item and transfer to script pane, input some words.
-4.Transfer back to Layout and save the report.
-Expected result: Save action works.
-Actual result: Save action failed.
+Description: Save button failed after edit script in data item. Steps to reproduce: 1. New a report 2. Insert a data item and input "data". 3. Select data item and transfer to script pane, input some words. 4. Transfer back to Layout and save the report. Expected result: Save action works. Actual result: Save action failed.

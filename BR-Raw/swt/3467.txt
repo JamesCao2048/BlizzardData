@@ -1,23 +1,16 @@
 Patch(es) to fix redraw bug after ControlEditors close.
 Currently on the Mac, when a Control is disposed, it does not tell the parent to reset the clipping
-regions.
-This is what causes the area under a ControlEditor to not be redrawn properly after editing
-is complete.
-The most obvious hack to fix this (which is probably not the correct one) is to call
+regions. This is what causes the area under a ControlEditor to not be redrawn properly after editing
+is complete. The most obvious hack to fix this (which is probably not the correct one) is to call
 invalidateVisibleRegion in releaseWidget():
 Index: Control.java
 ============================================================
 =======
 retrieving revision 1.128
-diff
--u
--r1.128 Control.java
---- Control.java	18 Dec 2003 19:34:23
--0000	1.128
-+++ Control.java	3 Feb 2004 02:14:50
--0000
-@@
--1619,6 +1619,9 @@
+diff -u -r1.128 Control.java
+--- Control.java	18 Dec 2003 19:34:23 -0000	1.128
++++ Control.java	3 Feb 2004 02:14:50 -0000
+@@ -1619,6 +1619,9 @@
 menu.dispose ();
 }
 if (visibleRgn != 0) OS.DisposeRgn (visibleRgn);
@@ -27,8 +20,7 @@ if (visibleRgn != 0) OS.DisposeRgn (visibleRgn);
 visibleRgn = 0;
 menu = null;
 parent = null;
-There was at least one odd piece of fallout from making this change.
-In the FileExplorer app I have
+There was at least one odd piece of fallout from making this change. In the FileExplorer app I have
 been working on with Steve, I got the following walkback when closing the shell:
 Exception in thread "main" java.lang.NullPointerException
 at org.eclipse.swt.widgets.ToolBar.invalidateChildrenVisibleRegion(ToolBar.java:308)
@@ -59,4 +51,4 @@ non-zero, even though the items array has been nulled out:
 void invalidateChildrenVisibleRegion (int control) {
 super.invalidateChildrenVisibleRegion (control);
 for (int i=0; i<itemCount; i++) {
-ToolItem
+ToolItem item

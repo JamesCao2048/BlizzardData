@@ -1,7 +1,2 @@
 Bug 121956 Data set binding status is not consistent in layout editor and property editor view.
-Description: Data set binding status is not consistent in layout editor and property editor view.
-Steps to reproduce: 1.Drag a table from library into a report layout editor.
-2.Enable property editor view.
-3.change to "binding".
-Data set can be edited here.
-4.Right click on the table and find that "edit data set binding" is grayed out.
+Description: Data set binding status is not consistent in layout editor and property editor view. Steps to reproduce: 1. Drag a table from library into a report layout editor. 2. Enable property editor view. 3. change to "binding". Data set can be edited here. 4. Right click on the table and find that "edit data set binding" is grayed out.

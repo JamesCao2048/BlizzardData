@@ -1,5 +1,2 @@
 Bug 185931 Support to distinguish the week between Year-Week and Month-Week[1101]
-Description: In our OLAP builder, the datetime dimension is divided into YEAR-QUARTER-MONTH-WEEK-DAY.
-When select all the levels, the WEEK should be the week(1 to 5) in one MONTH When select YEAR-WEEK levels, the WEEK should be the week(1 to 52) in one YEAR But now in our OLAP builder, the WEEK only belong to the MONTH, But not belong to the year, so if only select the YEAR-WEEK level, the result of crosstab is meaningless.
-The YEAR-DAY, MONTH-DAY and WEEK-DAY also have the same issues.
-we should define a rule to make sure the WEEK has a correct relationship of his parent
+Description: In our OLAP builder, the datetime dimension is divided into YEAR-QUARTER-MONTH-WEEK-DAY. When select all the levels, the WEEK should be the week(1 to 5) in one MONTH When select YEAR-WEEK levels, the WEEK should be the week(1 to 52) in one YEAR But now in our OLAP builder, the WEEK only belong to the MONTH, But not belong to the year, so if only select the YEAR-WEEK level, the result of crosstab is meaningless. The YEAR-DAY, MONTH-DAY and WEEK-DAY also have the same issues. we should define a rule to make sure the WEEK has a correct relationship of his parent

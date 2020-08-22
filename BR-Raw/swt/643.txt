@@ -1,7 +1,6 @@
 [Program] Opening URLs in external browser fails with GLib 2.20
 Steps to reproduce:
-- Use a system that uses GLib >= 2.20, f.e.
-Ubuntu 9.10
+- Use a system that uses GLib >= 2.20, f.e. Ubuntu 9.10
 - Configure Eclipse to use the external browser via Preferences > General > Web Browser.
 - Open a http URL (for example by typing it in a JavaDoc document and ctrl + clicking it).
 - For  http://www.example.org/  , it will open file:///home/user/ http:/www.example.org

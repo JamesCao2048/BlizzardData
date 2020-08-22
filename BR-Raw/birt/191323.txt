@@ -1,9 +1,2 @@
 Bug 191323 Cannot set cross tab column width less than data item width.
-Steps
-- Create a cross tab item
-- DnD some dimensions to row/column area and define measures.
-- Now try to resize the column width of the cross tab.
-Current behavior
-- I cannot change column width lesser than the report item width ( data item, label width, image, text or any other report item ) Expected behavior
-- I should be able to set the cross tab column widht to whatever size i want and this should not be controlled by report item widht.
-There is no easy way to set the column width.
+Steps - Create a cross tab item - DnD some dimensions to row/column area and define measures. - Now try to resize the column width of the cross tab. Current behavior - I cannot change column width lesser than the report item width ( data item, label width, image, text or any other report item ) Expected behavior - I should be able to set the cross tab column widht to whatever size i want and this should not be controlled by report item widht. There is no easy way to set the column width.

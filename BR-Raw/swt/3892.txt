@@ -1,7 +1,6 @@
 SWT widget org.eclipse.swt.widgets.Sash is not properly constrained when in HORIZONTAL mode.
 The SWT "Sash" widget creates a sash that may be dragged by a mouse and is
 either vertical or
-horizontal.
-When created in HORIZONTAL mode, the sash can only move down
+horizontal. When created in HORIZONTAL mode, the sash can only move down
 through its
 container as far as the container is wide (not high).

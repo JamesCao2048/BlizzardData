@@ -1,4 +1,3 @@
 StyledText.setTabs(int) resets caret
 I20070424-0930
-Calling StyledText.setTabs(int) resets caret location to 0.This is not expected and not Javadoc'ed.
-If possible the caret should be preserved and if not it should be documented.
+Calling StyledText.setTabs(int) resets caret location to 0. This is not expected and not Javadoc'ed. If possible the caret should be preserved and if not it should be documented.

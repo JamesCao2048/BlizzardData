@@ -1,11 +1,8 @@
 Space in font name
 Build ID: I20080917-0800
 Steps To Reproduce:
-There is a problem when getting font names.
-Say we want "Lucida Grande", one version return this, but the other version returns without the space i.e.
-"LucidaGrande"
-They are the same font, but can't be matched because of the space.
-please see the snippet below.
+There is a problem when getting font names. Say we want "Lucida Grande", one version return this, but the other version returns without the space i.e. "LucidaGrande"
+They are the same font, but can't be matched because of the space. please see the snippet below.
 Snippet:
 package bugs;
 import org.eclipse.swt.graphics.*;
@@ -21,8 +18,7 @@ Font f  = new Font (display, d);
 System.out.println(f.getFontData()[0].getName()); // outputs "Lucida Grande"
 FontData[] fonts = display.getFontList(null, true);// getFontList returns "LucidaGrande"
 
-for (int i = 0; i
-< fonts.length; i++) {
+for (int i = 0; i < fonts.length; i++) {
 FontData fontData = fonts[i];
 System.out.println(fontData.getName());
 }

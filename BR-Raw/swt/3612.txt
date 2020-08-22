@@ -1,14 +1,10 @@
 Selection events not fired from Combo
 Build 20030703
-It looks like Combo boxes don't fire selection events.
-We have code that creates
-a Combo and registers a selection listener.
-On Win32, a selection event is
-received when the user selects an item from the Combo.
-On Linux-GTK, no event is
+It looks like Combo boxes don't fire selection events. We have code that creates
+a Combo and registers a selection listener. On Win32, a selection event is
+received when the user selects an item from the Combo. On Linux-GTK, no event is
 received.
 Our code for creating the Combo and registering the adapter is in org.eclipse.
 jdt.internal.debug.ui.launcher.
-RuntimeClasspathAdvancedDialog#createDialogArea(Composite).
-This bug blocks our
+RuntimeClasspathAdvancedDialog#createDialogArea(Composite). This bug blocks our
 solution to  Bug 39486 .

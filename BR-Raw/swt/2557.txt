@@ -1,26 +1,19 @@
 SWT_AWT.new_Shell() in GTK version blocks forever on RedHat 9
 We are using SWT in our Application and also providing the facility to plugin
-the application in various IDEs.
-I have been successfully embedding our UI in
-NetBeans on Windows and Linux (with motif version of SWT).
-Embedding did not
+the application in various IDEs. I have been successfully embedding our UI in
+NetBeans on Windows and Linux (with motif version of SWT). Embedding did not
 work with other Swing IDEs (I have reported that problem previously).
-Recently we switched from motif to GTK on Linux.
-After this our plugin has
+Recently we switched from motif to GTK on Linux. After this our plugin has
 stopped working in NetBeans.
 To debug the problem I used a sample application (taken from one of the bug
-reports) that embedds a SWT widget in JFrame.
-This application works fine on
-Windows with JDK 1.4 & 1.5.On Linux it works fine with motif and JDK 1.5 (with
+reports) that embedds a SWT widget in JFrame. This application works fine on
+Windows with JDK 1.4 & 1.5. On Linux it works fine with motif and JDK 1.5 (with
 1.4 application crashes).
 When I try the same application with GTK, the main UI (JFrame) comes up but SWT
-widget is not displayed.
-On adding debug statements I found that the application
-blocks on SWT_AWT.new_Shell() method call.
-It never returns and I have to kill
+widget is not displayed. On adding debug statements I found that the application
+blocks on SWT_AWT.new_Shell() method call. It never returns and I have to kill
 the process.
 I am using SWT jars from the Eclipse 3.0.1.
 I have tried changing the Theam from Bluecurve to Mist as suggested in one of
-the bug report.
-But that also did not work.
+the bug report. But that also did not work.
 -Sudhan

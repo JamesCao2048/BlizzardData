@@ -1,8 +1,2 @@
 Bug 103449 Log BIRT extension loading details information
-Sometimes engine returns the following errors: "org.eclipse.birt.report.engine.api.EngineException: The output format html is not supported." but we can't find any detail helpful information in log file, the potential reasons : (1).
-you application may be developed with one version of BIRT, while your installed plugins are from a different version.
-(2).
-you set BIRT_HOME configuration variable incorrectly.
-BIRT should log more specified and detail infomation about this.
-Then, in our log file, logs where we are loading the plugins.
-If the plugin definition does not match actual plugin.xml file, lets also log that
+Sometimes engine returns the following errors: "org.eclipse.birt.report.engine.api.EngineException: The output format html is not supported." but we can't find any detail helpful information in log file, the potential reasons : (1). you application may be developed with one version of BIRT, while your installed plugins are from a different version. (2). you set BIRT_HOME configuration variable incorrectly. BIRT should log more specified and detail infomation about this. Then, in our log file, logs where we are loading the plugins. If the plugin definition does not match actual plugin.xml file, lets also log that

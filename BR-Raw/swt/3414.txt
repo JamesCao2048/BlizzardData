@@ -2,8 +2,7 @@ Minimization of top Shell widgets impossible (SWT.MIN & SWT.NONE) on PocketPC (B
 [TESTCASE INCLUDED @ THE END]
 [ENVIRONMENT:]
 Version SWT 3.044.
-Platform PocketPC
-- Windows CE (PocketPC 2003) on ARM
+Platform PocketPC - Windows CE (PocketPC 2003) on ARM
 [STEPS TO RECREATE:]
 Create a Shell with style SWT.MIN or SWT.NONE.
 Add the shell to a Display.
@@ -15,8 +14,7 @@ There is an X botton at the top right corner.
 The title is different from that of the Shell (it is that of the prev window).
 Tapping on the X does not minimize the window.
 Selecting the Shell from the tasks list makes the Shell's title appear,
-but the Shell can still not be minimized.
-Tapping on the X button now
+but the Shell can still not be minimized.  Tapping on the X button now
 makes it disappear.
 Trying to close the Shell from the tasks list makes the application hang,
 and forces a PocketPC soft reboot.

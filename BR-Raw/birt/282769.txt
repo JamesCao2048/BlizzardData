@@ -1,7 +1,2 @@
 Bug 282769 The data set name can not be changed if you go back to New Data Set page.
-description: The data set name can not be changed if you go back to New Data Set page.
-build id: 2.5.1 v20090708-0630 steps to reproduce: 1.Right click Data Sets node in data explorer and select New Data Set.
-2.Keep the default data set name and click Next.
-3.Input the query text and click Back.
-4.Then change the data set name and click Finish.
-Actual result: The new name does not take effect.
+description: The data set name can not be changed if you go back to New Data Set page. build id: 2.5.1 v20090708-0630 steps to reproduce: 1. Right click Data Sets node in data explorer and select New Data Set. 2. Keep the default data set name and click Next. 3. Input the query text and click Back. 4. Then change the data set name and click Finish. Actual result: The new name does not take effect.

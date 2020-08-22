@@ -6,8 +6,5 @@ NullPointerException when VoiceOver asks for position of Shell
 The NPE comes from this line in getPositionAttribute:
 Point pt = control.getParent().toDisplay(location.x, location.y);
 The reason is that the control in this case is a Shell, and (top level) shells do not have a parent, so control.getParent() is null.
-The attached patch fixes the problem, however you will note that the patch goes further and it removes the entire 'else' case.
-This is because when the application does not answer anything, then we need to defer entirely to Cocoa for the position, size, etc.
-So the attached patch fixes the "if the app does nothing, then we do nothing" case for getPositionAttribute and getSizeAttribute.
-I did not go through the other attributes to do the same thing, but the same logic applies
-- we should only answer something if the app does.
+The attached patch fixes the problem, however you will note that the patch goes further and it removes the entire 'else' case. This is because when the application does not answer anything, then we need to defer entirely to Cocoa for the position, size, etc.
+So the attached patch fixes the "if the app does nothing, then we do nothing" case for getPositionAttribute and getSizeAttribute. I did not go through the other attributes to do the same thing, but the same logic applies - we should only answer something if the app does.

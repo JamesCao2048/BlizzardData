@@ -1,7 +1,6 @@
 Often can't see focus ring in Trees on Windows 7
 N20101003-2000, same in 3.6 and 3.5.2
 I often can't see the focus ring in Trees on Windows 7.
-On WinXP, I could always see which item had the keyboard focus (dotted focus ring).
-On Win7, I only see the focus item on plain SWT.MULTI trees and only if the focus is on an unselected item.
+On WinXP, I could always see which item had the keyboard focus (dotted focus ring). On Win7, I only see the focus item on plain SWT.MULTI trees and only if the focus is on an unselected item.
 If the focus is on a selected item, it is not drawn.
 In trees with an SWT.EraseItem listener, the focus is never drawn.

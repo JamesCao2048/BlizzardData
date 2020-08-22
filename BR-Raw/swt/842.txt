@@ -1,8 +1,8 @@
 Use GTK_STOCK_CLEAR instead of GTK_STOCK_CANCEL for Text ICON_* hinting support
 From looking at gtk-demo, I don't think GTK_STOCK_CANCEL was the right choice for implementing  bug 281352 .
-1.$ gtk-demo
-2.Expand 'Entry' on the left.
-3.Double-click on 'Search Entry'.
-4.See that it uses the GTK_STOCK_CLEAR stock icon instead of the GTK_STOCK_CANCEL icon.
+1. $ gtk-demo
+2. Expand 'Entry' on the left.
+3. Double-click on 'Search Entry'.
+4. See that it uses the GTK_STOCK_CLEAR stock icon instead of the GTK_STOCK_CANCEL icon.
 We should in my opinion be in line with GNOME's advertised images.
 http://library.gnome.org/misc/release-notes/2.26/figures/rndevelopers.entry-icons.png

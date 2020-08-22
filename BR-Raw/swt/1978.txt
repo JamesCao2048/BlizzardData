@@ -1,15 +1,11 @@
 Filter path does not behave as expected with new GtkFileChooser
 3.1M4
-On GTK+ 2.4.13, the filter path does not work as I would expect.
-If you use
+On GTK+ 2.4.13, the filter path does not work as I would expect.  If you use
 gtk_file_chooser_set_filename with "/home/vektor/.", the chooser does not open
-on /home/vektor, but rather on /home with "vektor" selected.
-I opened this bug
+on /home/vektor, but rather on /home with "vektor" selected.  I opened this bug
 about it in the GNOME bugzilla:
 http://bugzilla.gnome.org/show_bug.cgi?id=161670
 I do not remember this behaviour before so it may be a regression in the GTK+
-code.
-However, there is an easy fix in our code which may actually be clearer
-and better anyway.
-The fix is to use gtk_file_chooser_set_current_folder if the
+code.  However, there is an easy fix in our code which may actually be clearer
+and better anyway.  The fix is to use gtk_file_chooser_set_current_folder if the
 caller sets a filter path but does not provide a file name.

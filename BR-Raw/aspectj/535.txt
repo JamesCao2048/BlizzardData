@@ -67,20 +67,4 @@ public interface SpecialRunnable extends Runnable {
 package client;
 import lib.RunnablePointcuts;
 import lib.SpecialRunnable;
-public aspect Use {
-before(Object caller) : RunnablePointcuts.runnableCalls(*, caller) &&
-target(MyRunnable) {
-System.out.println("my runnable called from "+caller);
-}
-public static void main(String args[]) {
-Use.aspectOf().doIt();
-}
-public void doIt() {
-new MyRunnable().run();
-}
-}
-// the advice will run if you make this implement SpecialRunnable
-//class MyRunnable implements SpecialRunnable {
-class MyRunnable implements Runnable {
-public void run() {}
-}
+public aspect Use

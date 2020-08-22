@@ -1,25 +1,21 @@
 org.eclipse.swt.graphics.Rectangle.contains(int, int) returns incorrect results
 The implementation of Rectangle.contains(int, int) does not account for possible overflow or underflow and can return incorrect results if it occurs.
-Here is an example that shows SWT's Rectangle.contains(int, int) incorrectly returning true.
-It also shows AWT's and draw2d's implementations returning the correct value (false):
+Here is an example that shows SWT's Rectangle.contains(int, int) incorrectly returning true.  It also shows AWT's and draw2d's implementations returning the correct value (false):
 public class Rectmangler {
 public static void main(String[] args) {
 int x = 800;
 int y = Integer.MAX_VALUE;
 
 org.eclipse.swt.graphics.Rectangle swt =
-new org.eclipse.swt.graphics.Rectangle(0,
--1024, 1280, 1024);
+new org.eclipse.swt.graphics.Rectangle(0, -1024, 1280, 1024);
 System.out.printf("SWT says %sn", swt.contains(x, y));
 
 java.awt.Rectangle awt =
-new java.awt.Rectangle(0,
--1024, 1280, 1024);
+new java.awt.Rectangle(0, -1024, 1280, 1024);
 System.out.printf("AWT says %sn", awt.contains(x, y));
 
 org.eclipse.draw2d.geometry.Rectangle draw2d =
-new org.eclipse.draw2d.geometry.Rectangle(0,
--1024, 1280, 1024);
+new org.eclipse.draw2d.geometry.Rectangle(0, -1024, 1280, 1024);
 System.out.printf("draw2d says %sn", draw2d.contains(x, y));
 }
 }

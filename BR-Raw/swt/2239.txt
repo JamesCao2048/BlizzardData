@@ -11,8 +11,7 @@ JVM crash [Tree.setSelection] because SWT (Vista?) error
 # If you would like to submit a bug report, please visit:
 #    http://java.sun.com/webapps/bugreport/crash.jsp
 #
----------------  T H R E A D
----------------
+---------------  T H R E A D  ---------------
 Current thread (0x0185f800):  JavaThread "main" [_thread_in_native, id=4964]
 siginfo: ExceptionCode=0xc0000005, reading address 0x0003001f
 Registers:
@@ -60,4 +59,4 @@ j  org.eclipse.swt.widgets.Tree.setSelection([Lorg/eclipse/swt/widgets/TreeItem;
 j  org.eclipse.debug.internal.ui.viewers.AsynchronousTreeViewer.doAttemptSelectionToWidget(Lorg/eclipse/jface/viewers/ISelection;Z)Lorg/eclipse/jface/viewers/ISelection;+484
 j  org.eclipse.debug.internal.ui.viewers.AsynchronousViewer.attemptSelection(Z)V+19
 j  org.eclipse.debug.internal.ui.viewers.AsynchronousViewer$1.runInUIThread(Lorg/eclipse/core/runtime/IProgressMonitor;)Lorg/eclipse/core/runtime/IStatus;+8
-j  org.eclipse.ui.progress.UIJob$1.
+j  org.eclipse.ui.progress.UIJob$1.r

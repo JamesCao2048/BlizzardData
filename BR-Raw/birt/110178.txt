@@ -1,5 +1,2 @@
 Bug 110178 All report queries are being executed twice.
-If i turn on JDBC driver logging (using p6spy), i can see that every report query seems to be executed twice, even though each dataset is used only once?
-This is almost doubling the time it takes to generate the report.
-I would really appreciate a patch for this before the 2.0 release.
-Thanks.
+If i turn on JDBC driver logging (using p6spy), i can see that every report query seems to be executed twice, even though each dataset is used only once? This is almost doubling the time it takes to generate the report. I would really appreciate a patch for this before the 2.0 release. Thanks.

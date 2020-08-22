@@ -1,5 +1,4 @@
 Cannot tab out of Text with SWT.PASSWORD
 HEAD (same in 3.5)
-The Tab key (and combinations with Ctrl and Shift) don't work in a Text field with SWT.PASSWORD.
-They just select the whole field instead of traversing the focus to the next control.
+The Tab key (and combinations with Ctrl and Shift) don't work in a Text field with SWT.PASSWORD. They just select the whole field instead of traversing the focus to the next control.
 Bug 28524  sounds like there's special code for this on Carbon.

@@ -1,8 +1,5 @@
 [Viewers] OwnerDrawLabelProvider Causes NullPointerException on TableColumn.dispose()
-When attempting to dispose of the first column in a TreeViewer that utilizes a OwnerDrawLabelProvider after the first or second column has been resized the below exception is thrown.
-This only happens when you attempt to dispose of the first column and only after the first or second column has been resized by the user.
-A normal LabelProvider does not cause this issue.
-I have modified the JFace Snippet 010OwnerDraw to demonstrate this issue and attached it to this report.
+When attempting to dispose of the first column in a TreeViewer that utilizes a OwnerDrawLabelProvider after the first or second column has been resized the below exception is thrown. This only happens when you attempt to dispose of the first column and only after the first or second column has been resized by the user. A normal LabelProvider does not cause this issue. I have modified the JFace Snippet 010OwnerDraw to demonstrate this issue and attached it to this report.
 The exception seems to be thrown from the Widget class getData(String) method where "table" is null.
 One odd thing that I noticed while trying to debug this issue is that when using the Eclipse debugger with break points at the snippet dispose call, checkWidget call in getData(String), and checkWidget call in setData(String) the issue seemed to stop.
 public Object getData (String key) {

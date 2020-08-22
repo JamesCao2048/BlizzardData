@@ -1,7 +1,2 @@
 Bug 146526 table of contents and bookmarks in target document cannot be selected if report and target document are stored at different disk
-steps to reproduce:
-- create a document at disk D, and move it to disk C
-- create a report at disk D, and edit a drill through hyperlink
-- select table of contents and bookmarks in the document expected behavior:
-- table of contents and bookmarks can be selected actual behavior:
-- it simply didn't
+steps to reproduce: - create a document at disk D, and move it to disk C - create a report at disk D, and edit a drill through hyperlink - select table of contents and bookmarks in the document expected behavior: - table of contents and bookmarks can be selected actual behavior: - it simply didn't

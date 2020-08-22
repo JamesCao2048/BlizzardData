@@ -17,8 +17,7 @@ TreeColumn col3 = new TreeColumn(t, SWT.NONE);
 col3.setWidth(200);
 t.setSortColumn(col2);
 t.setSortDirection(SWT.UP);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 TreeItem tr = new TreeItem(t, SWT.NONE);
 tr.setText("Hello World");
 tr.setBackground(display.getSystemColor(SWT.COLOR_RED));

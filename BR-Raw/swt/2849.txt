@@ -1,7 +1,6 @@
 Memory Leak in EventTable listener array
 The EventTable arrays will grow infinitely in the presence of just a pair of
-listeners.
-Put a breakpoint in hook with a hit count of 20 and start typing.
+listeners. Put a breakpoint in hook with a hit count of 20 and start typing.
 public static void main(String[] args) {
 Display display = new Display();
 Shell shell = new Shell(display);

@@ -8,7 +8,6 @@ CTabItem item0 = new CTabItem(folder, SWT.NONE, 0);
 CTabItem item1 = new CTabItem(folder, SWT.NONE, 1);
 CTabItem item2 = new CTabItem(folder, SWT.NONE, 2);
 In this case, item0 should always be to the left of item2 whenever both are
-displayed at the same time.
-If item1 is the least recently used tab, then item0
+displayed at the same time. If item1 is the least recently used tab, then item0
 should appear immediately adjacent to item2 whenever there is only space for two
 tabs.

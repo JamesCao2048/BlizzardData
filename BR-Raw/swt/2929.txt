@@ -1,5 +1,4 @@
 Tree items do not animate as they expand
 GTK+ applications animate tree item expansion when the user clicks on the item.
 This currently does not occur in SWT applications, due to the fix for  bug
-42008 .
-The animation is disabled when you call gtk_tree_view_expand_row directly.
+42008 . The animation is disabled when you call gtk_tree_view_expand_row directly.

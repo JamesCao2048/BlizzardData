@@ -1,20 +1,13 @@
 Tabs in Debug configurations are messed up
-Run > Open Run Dialog...
-from the top menu.
+Run > Open Run Dialog... from the top menu.
 The tabs in launch configurations look messed up.
 I get the following exception below upon opening:
 eclipse.buildId=I20070320-0010
 java.version=1.5.0_03
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
-Framework arguments:
--startup D:Eclipseeclipsepluginsorg.eclipse.equinox.launcher_1.0.0.v20070318.jar
-Command-line arguments:
--os win32
--ws win32
--arch x86
--startup D:Eclipseeclipsepluginsorg.eclipse.equinox.launcher_1.0.0.v20070318.jar
--data D:EclipseUpdatedSourceplugins
+Framework arguments:  -startup D:Eclipseeclipsepluginsorg.eclipse.equinox.launcher_1.0.0.v20070318.jar
+Command-line arguments:  -os win32 -ws win32 -arch x86 -startup D:Eclipseeclipsepluginsorg.eclipse.equinox.launcher_1.0.0.v20070318.jar -data D:EclipseUpdatedSourceplugins
 Error
 Tue Mar 20 02:02:02 EST 2007
 Unhandled event loop exception
@@ -50,4 +43,4 @@ at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContribut
 at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
 at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:938)
 at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3673)
-a
+at org.

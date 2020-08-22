@@ -1,6 +1,2 @@
 Bug 156497 [Regression][Acceptance]Report isn't refreshed when delete used library file.
-Description: Report isn't refreshed when delete used library file.
-Steps to reproduce: 1.New a library, add a label, input actuate.
-2.New a report, extend lib.label 3.Delete the library file.
-4.Refresh the report in Outline of the report Expected result: Empty label in Layout.
-Actual result: label with content "actuate" in Layout.
+Description: Report isn't refreshed when delete used library file. Steps to reproduce: 1.New a library, add a label, input actuate. 2.New a report, extend lib.label 3.Delete the library file. 4.Refresh the report in Outline of the report Expected result: Empty label in Layout. Actual result: label with content "actuate" in Layout.

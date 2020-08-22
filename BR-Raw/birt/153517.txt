@@ -1,4 +1,2 @@
 Bug 153517 The DND of embeddedimage from lib explorer to outline view doesn'w work when the report in outline has used the lib
-If the report in outline view has used a library, then drag and drop an embeddedimage of the used library from lib explorer to outline view doesn't work.
-The DND drop nothing onto the embedded image of the target report.
-Steps to reproduce: 1.Create a library with an embeddediamge and export to resource folder; 2.Create a new report design; 3.Drag the embeddedimage of lib from lib explorer to outline view;
+If the report in outline view has used a library, then drag and drop an embeddedimage of the used library from lib explorer to outline view doesn't work. The DND drop nothing onto the embedded image of the target report. Steps to reproduce: 1.Create a library with an embeddediamge and export to resource folder; 2.Create a new report design; 3.Drag the embeddedimage of lib from lib explorer to outline view;

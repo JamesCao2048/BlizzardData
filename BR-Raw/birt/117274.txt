@@ -1,2 +1,2 @@
 Bug 117274 Computed column in report documnet can't work correctlly
-description: Computed column in report documnet can't work correctlly steps to reproduce: 1.create a query which include the computed column 2.in generation mode, save the report data (see org.eclipse.birt.tests.datatestorgeclipsebirttestsdataengineapiReportDoc_ComputedColumnTest.java ) actual result: NPE thrown out
+description: Computed column in report documnet can't work correctlly steps to reproduce: 1. create a query which include the computed column 2. in generation mode, save the report data (see org.eclipse.birt.tests.datatestorgeclipsebirttestsdataengineapiReportDoc_ComputedColumnTest.java ) actual result: NPE thrown out

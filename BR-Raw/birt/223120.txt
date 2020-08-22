@@ -1,6 +1,2 @@
 Bug 223120 Dragging a report parameter to report creates binding with Any type
-STEPS TO REPRODUCE: (1) Create a report parameter of String type (2) Drag the report parameter from Data Explorer view to report layout.
-A data item is created to hold the parameter.
-(3) Double click on the data item to examine its binding.
-The data type field is set to "Any" EXPECTED BEHAVIOR: The data binding type should be set to match the type of the report parameter (String in this example).
-ANY type should not be used unless the report designer cannot determine a reasonable data type to use.
+STEPS TO REPRODUCE: (1) Create a report parameter of String type (2) Drag the report parameter from Data Explorer view to report layout. A data item is created to hold the parameter. (3) Double click on the data item to examine its binding. The data type field is set to "Any" EXPECTED BEHAVIOR: The data binding type should be set to match the type of the report parameter (String in this example). ANY type should not be used unless the report designer cannot determine a reasonable data type to use.

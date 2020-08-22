@@ -1,8 +1,7 @@
 TableItem.setImageIndent does not indent items
 Build 2.0, Linux/GTK
 Try running the following under GTK and you'll notice that the TableTreeItems
-are not indented.
-They are indented under Win2k and Linux/Motif, though:
+are not indented.  They are indented under Win2k and Linux/Motif, though:
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.TableTree;
 import org.eclipse.swt.custom.TableTreeItem;

@@ -2,7 +2,6 @@ Mouse move events broken in SWT.TOOL shells
 Created  attachment 175787   [details]
 SnippetMouseMove.java
 I20100802-1800 Cocoa, was OK in 3.6
-Mouse move events are broken in SWT.TOOL shells.
-I don't get any events, but the widgets below the shell get the events.
+Mouse move events are broken in SWT.TOOL shells. I don't get any events, but the widgets below the shell get the events.
 This can be seen in the attached snippet when you click the button and then move the mouse in the second shell to where it overlaps the StyledText and the Sash.
 MouseDown works fine, and as soon as the mouse is down, I also get move events.

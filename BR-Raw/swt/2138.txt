@@ -1,10 +1,8 @@
 Combo with SWT.READ_ONLY does not trigger ModifyEvent
 Build ID: 3.3 M5
 Steps To Reproduce:
-1.Create a combo box with SWT.READ_ONLY property and prepopulate it with some data
-2.Call addModifyListener on it.
-Do something in modifyText().
-3.Run your sample and pick an element in the combo box.
-modifyText() never gets called.
+1. Create a combo box with SWT.READ_ONLY property and prepopulate it with some data
+2. Call addModifyListener on it. Do something in modifyText().
+3. Run your sample and pick an element in the combo box. modifyText() never gets called.
 More information:
-This used to work on XP and SLED 10 with 3.2.2.It continues to work on XP in 3.3 however it does not work on SLED10.
+This used to work on XP and SLED 10 with 3.2.2. It continues to work on XP in 3.3 however it does not work on SLED10.

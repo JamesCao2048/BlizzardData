@@ -3,11 +3,9 @@ Hello,
 I have some trouble with SWT (swt-N20031205-wince-arm-ppc) and WM2003.
 Device is ASUS MyPAL 620 (XScale 400), czech localization.
 I tested sample from article "Cup Of SWT", StylusHold application.
-When I hold tap on PDA, Popup menu is displayed.
-This is correct.
+When I hold tap on PDA, Popup menu is displayed. This is correct.
 But when I select any item, the popup menu will hide
-and then show again, on another (near) place.
-When I select the item again,
+and then show again, on another (near) place. When I select the item again,
 menu hides and action is correctly performed.
 The same result is with stylus and HW arrow keys (with arrows is location
 of "second" menu the same as "first" menu).

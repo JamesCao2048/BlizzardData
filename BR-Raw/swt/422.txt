@@ -2,10 +2,8 @@ Crash in SWT Carbon OS.ReceiveNextEvent / Display.trayItemProc
 Build Identifier: 3.6.1.v3655c
 We are sometimes getting crashes in the Carbon SWT at shutdown.
 It is intermittent, and but does occur during the time that the application is shutting down, and the Display is being shutdown.
-I will attach the Apple Crash Report of when the event occurred.
-Unfortunately, I can not recreate it at will.
-It appears to be related to receiving another event, and the tray item.
-The Java stack at the time of the crash is:
+I will attach the Apple Crash Report of when the event occurred.  Unfortunately, I can not recreate it at will.
+It appears to be related to receiving another event, and the tray item.  The Java stack at the time of the crash is:
 j org.eclipse.swt.widgets.Display.trayItemProc(IIII)I+4
 v ~StubRoutines::call_stub
 J org.eclipse.swt.internal.carbon.OS.ReceiveNextEvent(I[IDZ[I)I

@@ -4,10 +4,8 @@
 - possibly caused by the fix for  bug 252109  (?)
 - open a java file
 - modify its content in any way and save it to verify that saving a file is working as expected
-- right-click the file in the Package Explorer
--> Properties
+- right-click the file in the Package Explorer -> Properties
 - many of the texts on this page are selectable, so select one (eg.- "File (Java Source File)") and press Cmd+C to copy it
 - paste it into the java Editor with Cmd+V
 - save the java editor's content
-
 -> this now fails with error dialog: "...Some characters cannot be mapped using MacRoman character encoding..."

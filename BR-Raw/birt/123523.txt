@@ -1,7 +1,2 @@
 Bug 123523 Previewing a scripted data set mapped to a java event handler throws NPE
-When previewing a scripted data set we try to get a class loader from the ExecutionContext.
-(See ScriptExecutor.getClassUsingCustomClassPath).
-The context will be null in this case.
-The reason for using the context is to use cached class loaders when possible.
-Need to use some other mechanism to get the class loader if the context is null.
-We can either provide an external map to use as cache, or not bother with caching at all.
+When previewing a scripted data set we try to get a class loader from the ExecutionContext. (See ScriptExecutor.getClassUsingCustomClassPath). The context will be null in this case. The reason for using the context is to use cached class loaders when possible. Need to use some other mechanism to get the class loader if the context is null. We can either provide an external map to use as cache, or not bother with caching at all.

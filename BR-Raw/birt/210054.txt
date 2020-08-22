@@ -1,11 +1,2 @@
 Bug 210054 Axis labels will disappear when only select the first series as visible.
-Description: Axis labels will disappear when only select the first series to display.
-build version: 2.3 v20071115-0800 steps to reproduce: 1.New a report.
-2.New a datasource and dataset.
-3.New a bar chart.
-4.On Select Data page, create two value series.
-5.Switch to Format Chart page, select Series.
-6.Uncheck the two Visiable check box to hide the two series.
-7.Check the first Visible check box to display the first series.
-Expected result: The Axis lables should not disappear.
-Actual result: The Axis lables disappear both in live preview and in preview.
+Description: Axis labels will disappear when only select the first series to display. build version: 2.3 v20071115-0800 steps to reproduce: 1. New a report. 2. New a datasource and dataset. 3. New a bar chart. 4. On Select Data page, create two value series. 5. Switch to Format Chart page, select Series. 6. Uncheck the two Visiable check box to hide the two series. 7. Check the first Visible check box to display the first series. Expected result: The Axis lables should not disappear. Actual result: The Axis lables disappear both in live preview and in preview.

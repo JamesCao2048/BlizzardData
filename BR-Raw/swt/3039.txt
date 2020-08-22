@@ -4,11 +4,8 @@ Run the ControlExample
 Go to the Link tab
 Select 50x50 from the Size Area
 Select Preferred from the Size area
-Notice that the Link widget is still 50 pixels wide and wrapped to multiple lines.
-It should be one long
+Notice that the Link widget is still 50 pixels wide and wrapped to multiple lines. It should be one long
 line.
-Felipe says this is a bug in TextLayout on carbon.
-The call
+Felipe says this is a bug in TextLayout on carbon.  The call
 setLayoutControl(OS.kATSULineWidthTag, OS.Long2Fix(width), 4);
-is not doing the right thing when the width is
--1.
+is not doing the right thing when the width is -1.

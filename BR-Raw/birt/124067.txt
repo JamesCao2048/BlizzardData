@@ -1,5 +1,2 @@
 Bug 124067 When select the XML file, the relative path should be supported.
-Description: When select the XML file, the relative path should be supported.
-Step to reproduce: 1.new a report 2.new a datasource and dataset based on a XML file 3.select the XML file, the file relative path should be used.
-Actual result: only the absolute path is supported.
-Expect result: the relative and absolute path are supported.
+Description: When select the XML file, the relative path should be supported. Step to reproduce: 1. new a report 2. new a datasource and dataset based on a XML file 3. select the XML file, the file relative path should be used. Actual result: only the absolute path is supported. Expect result: the relative and absolute path are supported.

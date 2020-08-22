@@ -1,8 +1,7 @@
 ACC - I20030205 - Can't switch tabs using keyboard
 Major accessibility issue for Eclipse
 Open ControlExample
-Give focus to a tab folder.
-Press Tab or arrow or space or enter or anything:
+Give focus to a tab folder. Press Tab or arrow or space or enter or anything:
 cannot switch to the next tab folder.
 Problem seems that the tab folder 'eats' the arrow key and loses focus instead
 of giving focus to the next tab folder.

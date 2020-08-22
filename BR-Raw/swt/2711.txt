@@ -1,6 +1,5 @@
 Cannot set text selection in VerifyListener.verifyText
-On Linux GTK I cannot set the text selection inside the verifyText() method.
-In
+On Linux GTK I cannot set the text selection inside the verifyText() method.  In
 the example below, setting the text works correctly, so why not setting the
 selection?
 import org.eclipse.swt.SWT;

@@ -1,10 +1,8 @@
 org.eclipse.swt.custom.ControlEditor.computeBounds() is package private
 Suppose I've developed a custom SWT control called Grid, which is an
-alternative to the Table control.
-To support in-place cell editing, I would
+alternative to the Table control. To support in-place cell editing, I would
 like to also develop a GridEditor, which should be similar in spirit to the
-existing org.eclipse.swt.custom.TableEditor.
-My GridEditor should inherit from
+existing org.eclipse.swt.custom.TableEditor. My GridEditor should inherit from
 ControlEditor in order to reuse the code that tracks the scrollbars of the
 Grid control (which is a Composite, after all).
 However, I cannot do that, because in my GridEditor class I *have* to override

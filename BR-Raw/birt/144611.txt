@@ -1,8 +1,2 @@
 Bug 144611 [regression]viewer failed to handle larger amount of data
-steps to reproduce:
-- use attached reports customer1p-25kr.rptdocument (1 page, 25000 data rows) customer5x500p-10r.rptdocument ( 2500 pages, 10 data rows/page)
-- deploy these reports with birt report viewer (20060531)
-- retrieve rendered reports using frameset url keyword expected behavior:
-- attached reports can be retrieved actual behavior:
-- exceptions thrown out, refer to attached screen capture for detail
-- note that these didn't happen with RC3 build
+steps to reproduce: - use attached reports customer1p-25kr.rptdocument (1 page, 25000 data rows) customer5x500p-10r.rptdocument ( 2500 pages, 10 data rows/page) - deploy these reports with birt report viewer (20060531) - retrieve rendered reports using frameset url keyword expected behavior: - attached reports can be retrieved actual behavior: - exceptions thrown out, refer to attached screen capture for detail - note that these didn't happen with RC3 build

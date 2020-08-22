@@ -1,5 +1,4 @@
 [Accessibility] Accessible relations don't show up in accessibility inspector
 I20100504-0800
-The two examples for relations aren't working on Cocoa.
-AccessibleRelationsExample and AccessibleRelationsExample2 demonstrate the addRelation method, and on Cocoa this means that the Accessible in RELATION_LABEL_FOR should show up as an element in the  NSAccessibilityServesAsTitleForUIElementsAttribute list, and the Accessible in the RELATION_LABELLED_BY slot should appear as NSAccessibilityTitleUIElementAttribute.
+The two examples for relations aren't working on Cocoa. AccessibleRelationsExample and AccessibleRelationsExample2 demonstrate the addRelation method, and on Cocoa this means that the Accessible in RELATION_LABEL_FOR should show up as an element in the  NSAccessibilityServesAsTitleForUIElementsAttribute list, and the Accessible in the RELATION_LABELLED_BY slot should appear as NSAccessibilityTitleUIElementAttribute.
 Neither of these are showing up in Accessibility Inspector.

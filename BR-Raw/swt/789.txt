@@ -1,16 +1,7 @@
 Scrolling causes flush of all paint events.
 User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3
 Build Identifier:
-I have following problem.
-Within a resize listener's handleEvent() method, i'm calling twice Canvas.scroll().
-The areas scrolled are distincted.
-So what i would expect is that calling scroll() the second time do not trigger a paint event since there is nothing to be repainted.
-But that's not the case.
-The Javadoc of the method says: "In addition, outstanding paint events are flushed before the source area is copied to ensure that the contents of the canvas are drawn correctly.
-".
-This is somewhat misleading since it does not really say that all events are flushed.
-Even those that does not intersect the area to scroll.
-I would suggest to precise the javadoc or better only trigger paint events that intersect the area to scroll.
+I have following problem. Within a resize listener's handleEvent() method, i'm calling twice Canvas.scroll(). The areas scrolled are distincted. So what i would expect is that calling scroll() the second time do not trigger a paint event since there is nothing to be repainted. But that's not the case. The Javadoc of the method says: "In addition, outstanding paint events are flushed before the source area is copied to ensure that the contents of the canvas are drawn correctly. ". This is somewhat misleading since it does not really say that all events are flushed. Even those that does not intersect the area to scroll. I would suggest to precise the javadoc or better only trigger paint events that intersect the area to scroll.
 Reproducible: Always
 Steps to Reproduce:
 import org.eclipse.swt.SWT;
@@ -48,8 +39,7 @@ private Rectangle oldArea = null;
 public void handleEvent(final Event event) {
 if (this.oldArea != null) {
 final Rectangle newClientArea = canvas.getClientArea();
-final int xDiff = newClientArea.width
-- this.oldArea.width;
+final int xDiff = newClientArea.width - this.oldArea.width;
 final int destX = xDiff;
 final int x = 0;
 int width = this.oldArea.width;
@@ -57,11 +47,10 @@ width = newClientArea.width;
 int height = this.oldArea.height;
 height = newClientArea.height;
 System.out.println("scroll 1");
-canvas.scroll(destX, 19, x, 19, width, height
-- 19, true);
+canvas.scroll(destX, 19, x, 19, width, height - 19, true);
 System.out.println("scroll 1 done");
 System.out.println("scroll 2");
 canvas.scroll(destX, 0, x, 0, width, 18, true);
 System.out.println("scroll 2 done");
 }
-this.oldArea = canvas.getClien
+this.oldArea = canvas.getClientA

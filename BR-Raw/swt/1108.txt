@@ -5,7 +5,5 @@
 - create a JS Function
 - press the button in the third Browser again
 - crash happens, one of the traces indicated that it was happening in Free
-
 -> removing all Frees from Mozilla.convertJStoJava() made the crash stop happening
-
 -> need to investigate whether something(s) should not be freed, or if memory management is not being done properly (eg.- should nsIMemory be used instead?)

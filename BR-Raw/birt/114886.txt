@@ -1,5 +1,2 @@
 Bug 114886 [Acceptance]Font setting changes in highlight Editor everytime you reopen it.
-Description: Font setting(such as Cursive) changes in highlight Editor everytime you open it.
-Steps to reproduce: 1.Insert a data item 2.Add a highlight rule for it, set Font to Cursive and click Ok 3.Double click to reopen the highlight Editor, font changed to Monospace, click OK 4.Double click to reopen the highlight Editor, font changed to Serif, click OK 5.Repeat step4, font changed back to Cursive.
-Expected result: While edit the highligh rule, it displays the customer's setting.
-Actual result: The customer's font setting changed.
+Description: Font setting(such as Cursive) changes in highlight Editor everytime you open it. Steps to reproduce: 1. Insert a data item 2. Add a highlight rule for it, set Font to Cursive and click Ok 3. Double click to reopen the highlight Editor, font changed to Monospace, click OK 4. Double click to reopen the highlight Editor, font changed to Serif, click OK 5. Repeat step4, font changed back to Cursive. Expected result: While edit the highligh rule, it displays the customer's setting. Actual result: The customer's font setting changed.

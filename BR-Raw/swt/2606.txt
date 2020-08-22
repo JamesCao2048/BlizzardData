@@ -1,8 +1,7 @@
 Background colour not propagated inside group or tabfolder
 I200409211200
-The GTK+ theme "Indubstrial" is now the default in GNOME 2.8.One thing it does
+The GTK+ theme "Indubstrial" is now the default in GNOME 2.8. One thing it does
 is to use a lighter background colour inside notebooks (GtkNotebook) and group
-boxes (GtkFrame).
-This background colour is not being propagated to the child
+boxes (GtkFrame).  This background colour is not being propagated to the child
 widgets in SWT.
 For screenshots of this problem, please see  http://vektor.ca/bugs/gtk-frame.html

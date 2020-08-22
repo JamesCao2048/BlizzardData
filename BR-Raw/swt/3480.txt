@@ -1,7 +1,6 @@
 Text#getCaretLocation() sends erroneous Modify event
 When I call Text#getCaretLocation(), the implementation sends two
-OS.EM_REPLACESEL messages.
-Both of them cause an execution of sendEvent
+OS.EM_REPLACESEL messages. Both of them cause an execution of sendEvent
 (SWT.Modify), which can cause unexpected behavior in client code listening to
 "true" modify events.
 The two modify events (adding a space character, and removing it) should not be

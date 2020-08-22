@@ -2,13 +2,10 @@ ToolItem.getBounds() replied {-1,-1,1,1} is shell is not visible
 I200406090800, GTK+ 2.4.1, KDE 3.2.2, Linux 2.6.4
 
 In PerspectiveSwitcher, we are attempting to manipulate the layout of a ToolBar
-that is positioned in a Shell that is not yet open.
-When we ask for the bounds
-of the ToolBar, we get expected values.
-However, when we ask for the bounds of
+that is positioned in a Shell that is not yet open.  When we ask for the bounds
+of the ToolBar, we get expected values.  However, when we ask for the bounds of
 one of its items, we get {-1,-1,1,1}.
 
 Working with Steve Northover, we tried a simple fix of forcing the parent to
-relayout.
-This solved this immediate problem, but seemed to cause problems for
+relayout.  This solved this immediate problem, but seemed to cause problems for
 other pieces of UI code.

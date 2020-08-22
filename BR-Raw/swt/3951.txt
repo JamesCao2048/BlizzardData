@@ -1,8 +1,7 @@
 when swt window in focus palettes of other windows hosed, and vise versa
 When an swt window comes into focus, all background windows colors are changed
 to incorrect colors, and similarly when another window is in focus the swt
-windows colors will change to be incorrect.
-I have tested this on an Sh4
+windows colors will change to be incorrect.  I have tested this on an Sh4
 (BigSur/Tahoe) running a maxall configuration of WinCe 3.00 with j9 version 1.5
 from wsdd 4.0 runtimes with swt version 2104
 Test case

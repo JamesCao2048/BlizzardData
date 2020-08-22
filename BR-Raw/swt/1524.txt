@@ -13,10 +13,8 @@ label.setText("foo");
 label.setText("bar"); // the label disappears
 ...
 }
-After doing some experiments, I had found that removing "((NSBox)view).setContentView(textView);" from the setText() fixes the bug.
-So the following lines:
+After doing some experiments, I had found that removing "((NSBox)view).setContentView(textView);" from the setText() fixes the bug. So the following lines:
 if (((NSBox)view).contentView().id != textView.id)
 ((NSBox)view).setContentView(textView);
 seems to be an appropriate solution.
-I've attached a patch, however I need to note that I don't understand the reason of the problem clearly (Cocoa bug?).
-Thus any thoughts about the reason would be valuable.
+I've attached a patch, however I need to note that I don't understand the reason of the problem clearly (Cocoa bug?). Thus any thoughts about the reason would be valuable.

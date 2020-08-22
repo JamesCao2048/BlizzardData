@@ -3,17 +3,13 @@ This is a spin-off of  bug 35210 , which partially fixed the official R2.1 relea
 problem.
 In R2.1 Alt+<char> and Alt+Shift+<char> key combinations do *not*
 generate a KeyDown event on Windows, unlike all the other keys.
-1.- in a Shell without a menu bar it now works (nightly build n20030411
-- after
+1.- in a Shell without a menu bar it now works (nightly build n20030411 - after
 fix of 35210).
 2.- in an editor view insided the workbench it still does not work.
 Here's one way to recreate the problem.
-Modify the sample readmetool to add a key listener to its StyledText.
-Add these
+Modify the sample readmetool to add a key listener to its StyledText.  Add these
 lines to org.eclipse.ui.examples.readmetool.ReadmeEditor.java:
-.
-.
-.
+. . .
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.IVerticalRuler;
 import org.eclipse.swt.SWT;
@@ -21,9 +17,7 @@ import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.widgets.Composite;
-.
-.
-.
+. . .
 protected ISourceViewer createSourceViewer(Composite parent,
 IVerticalRuler ruler,
 int styles)
@@ -58,7 +52,5 @@ public void keyReleased(KeyEvent e) {}
 });
 return sourceViewer;
 }
-.
-.
-.
+. . .
 All regular keys are received fine, except for Alt+<char> combinations.

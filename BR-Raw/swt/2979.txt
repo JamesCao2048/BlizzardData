@@ -1,25 +1,17 @@
 Using PaintListener on Table destroys repainting (Button is the same case)
 We are using PaintLister on Table to do custom drawing within some parts of
-the table.
-(to workaround unrelated bug  Bug#90081 , Grid lines limitations etc.)
-We discovered that when you move another app.
-window across the table, it
-totaly destroys its content.
-(repaint broken).
-Please, see attached screenshot.
+the table. (to workaround unrelated bug  Bug#90081 , Grid lines limitations etc.)
+We discovered that when you move another app. window across the table, it
+totaly destroys its content. (repaint broken). Please, see attached screenshot.
 Trying to come up with simplest code, it happens as soon as the listener is
 registered (and even when the paintControl method does nothing)!!! Please, see
 the attached code.
 Note that same problem happens with Button (and I would expect other native
-widgets).
-On Button it is harder to reproduce (as the paint is quicker) but it
+widgets). On Button it is harder to reproduce (as the paint is quicker) but it
 is there as well.
 We are now (with our commercial RCP app.) in a quite difficult situation as we
 either have to drop using PaintListener (and usability goes down
 significantly) or keep it but then in the (perhaps not too frequent) case user
-spots this problem, the perception of quality is destroyed.
-(note that if the
-app.
-move is quick, we sometimes end up with table totally empty
-- filled by
+spots this problem, the perception of quality is destroyed. (note that if the
+app. move is quick, we sometimes end up with table totally empty - filled by
 backgound color).

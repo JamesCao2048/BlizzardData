@@ -1,3 +1,2 @@
 NSPasteboard.generalPasteboard () can be null
-We have to handle all cases when NSPasteboard.generalPasteboard () returns null because of ssh connections.
-The log from  bug#278975  shows that Clipboard.getAvailableTypes() is causing an exception.
+We have to handle all cases when NSPasteboard.generalPasteboard () returns null because of ssh connections. The log from  bug#278975  shows that Clipboard.getAvailableTypes() is causing an exception.

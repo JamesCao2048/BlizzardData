@@ -1,8 +1,2 @@
 Bug 282544 For output only, Bookmark only generated for the 1st table row.DOC
-Eclipse Build ID: 3.4.2.v200902111700 Steps To Reproduce: 1.Create a Table.
-2.For a cell in a detail row, add a bookmark(example
-- row["name"]).
-3.Create a report in DOC format.
-4.Open in Microsoft Word, selct Insert->Bookmark.
-5.You will see that the list of bookmarks only contains the bookmarks genertated for the 1st row of the table.
-More information: BIRT Build ID: 2.3.2.r232_v20081010-7N7Y7MAIe2QJZSgfOaAphGBR4t7b
+Eclipse Build ID: 3.4.2.v200902111700 Steps To Reproduce: 1.Create a Table. 2.For a cell in a detail row, add a bookmark(example - row["name"]). 3.Create a report in DOC format. 4.Open in Microsoft Word, selct Insert->Bookmark. 5.You will see that the list of bookmarks only contains the bookmarks genertated for the 1st row of the table. More information: BIRT Build ID: 2.3.2.r232_v20081010-7N7Y7MAIe2QJZSgfOaAphGBR4t7b

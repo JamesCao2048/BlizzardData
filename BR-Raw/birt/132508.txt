@@ -1,7 +1,2 @@
 Bug 132508 Mouse Click->URL Redirect does not work on Legend in PDF
-Descrition: Add an interactivity action on the chart legend (mouse click, URL redirect), when preview in pdf.
-It does not take effect.
-Steps to reproduce: 1.Create a chart, bind dataset.
-2.In the "Format Chart" tab of chart builder, add an interactivity to the legend.
-Type: Mouse Click, Action: URL Redirect.
-3.Preview in PDF, it could not take effect.
+Descrition: Add an interactivity action on the chart legend (mouse click, URL redirect), when preview in pdf. It does not take effect. Steps to reproduce: 1.Create a chart, bind dataset. 2.In the "Format Chart" tab of chart builder, add an interactivity to the legend. Type: Mouse Click, Action: URL Redirect. 3.Preview in PDF, it could not take effect.

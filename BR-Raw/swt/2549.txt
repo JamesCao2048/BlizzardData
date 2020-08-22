@@ -1,11 +1,5 @@
 Mistake in FormLayout.layout(Composite, boolean)
 Found minor coding mistake in FormLayout.layout(Composite, boolean) method:
-int width = Math.max (0, rect.width
-- marginLeft
-- 2 * marginWidth
-- marginRight);
-int height = Math.max (0, rect.height
-- marginLeft
-- 2 * marginHeight
-- marginBottom);
+int width = Math.max (0, rect.width - marginLeft - 2 * marginWidth - marginRight);
+int height = Math.max (0, rect.height - marginLeft - 2 * marginHeight - marginBottom);
 The height line subtracts marginLeft, but it should subtract marginTop.

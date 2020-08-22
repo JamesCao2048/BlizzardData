@@ -1,7 +1,2 @@
 Bug 201399 Fail to pass parameter with multi-values in drill-through link[0705][04]
-Description: Fail to pass parameter with multi-values in drill-through link Build number:2.2.1.v20070828 Steps to reproduce: 1.New a report with a report parameter p1 allowing multi-values.
-2.New a second report with a report parameter p2 allowing multi-values 3.In the first report, define a drill-through link and pass p1 to p2.4.Preview and click the link.
-Expected result: Values are passed to target report.
-Actual result: Object display in the second report instead of paramter values.
-Try attached master/slave report.
-Error log:n/a
+Description: Fail to pass parameter with multi-values in drill-through link Build number:2.2.1.v20070828 Steps to reproduce: 1. New a report with a report parameter p1 allowing multi-values. 2. New a second report with a report parameter p2 allowing multi-values 3. In the first report, define a drill-through link and pass p1 to p2. 4. Preview and click the link. Expected result: Values are passed to target report. Actual result: Object display in the second report instead of paramter values. Try attached master/slave report. Error log:n/a

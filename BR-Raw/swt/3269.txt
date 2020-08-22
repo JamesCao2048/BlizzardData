@@ -1,32 +1,25 @@
 SashForm right/bottom constraint is not computed correctly
 When you drag a sash in a SashForm to the right or bottom outside the allowed
 area and then release the mouse button, the sash snaps back to its previous
-position without changing the layout.
-Instead it should match the behaviour when
-you drag it outside at the left or top border.
-The sash should stay at the
+position without changing the layout. Instead it should match the behaviour when
+you drag it outside at the left or top border. The sash should stay at the
 hinted rightmost/bottommost position (which is also off a few pixels due to this
-bug) and adjust the layout accordingly.
-You can try this with the normal
+bug) and adjust the layout accordingly. You can try this with the normal
 SashForm snippet at
 http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt-home/snippits/snippet109.html .
 I tested this with 3.0M6 and 3.0M7 (which use the same SashForm implementation)
-on Windows XP.
-I presume it happens on all platforms.
+on Windows XP. I presume it happens on all platforms.
 The problem is that the right/bottom constraints in a SashForm are not computed
-correctly.
-The beginning of SashForm.onDragSash() currently reads:
+correctly. The beginning of SashForm.onDragSash() currently reads:
 void onDragSash(Event event) {
 if (event.detail == SWT.DRAG) {
 // constrain feedback
 Rectangle area = getClientArea();
 if (orientation == SWT.HORIZONTAL) {
-event.x = Math.min(Math.max(DRAG_MINIMUM, event.x), area.width
--
+event.x = Math.min(Math.max(DRAG_MINIMUM, event.x), area.width -
 DRAG_MINIMUM);
 } else {
-event.y = Math.min(Math.max(DRAG_MINIMUM, event.y), area.height
--
+event.y = Math.min(Math.max(DRAG_MINIMUM, event.y), area.height -
 DRAG_MINIMUM);
 }
 return;
@@ -37,15 +30,11 @@ if (event.detail == SWT.DRAG) {
 // constrain feedback
 Rectangle area = getClientArea();
 if (orientation == SWT.HORIZONTAL) {
-event.x = Math.min(Math.max(DRAG_MINIMUM, event.x), area.width
--
-DRAG_MINIMUM
-- SASH_WIDTH);
+event.x = Math.min(Math.max(DRAG_MINIMUM, event.x), area.width -
+DRAG_MINIMUM - SASH_WIDTH);
 } else {
-event.y = Math.min(Math.max(DRAG_MINIMUM, event.y), area.height
--
-DRAG_MINIMUM
-- SASH_WIDTH);
+event.y = Math.min(Math.max(DRAG_MINIMUM, event.y), area.height -
+DRAG_MINIMUM - SASH_WIDTH);
 }
 return;
 }

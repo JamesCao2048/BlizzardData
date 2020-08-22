@@ -1,7 +1,2 @@
 Bug 142091 Cannot group rows using row["__rowNum"]
-See attached report.
-The report is a simple listing report, and I want to insert a page break after every 10 rows.
-To accomplish this, I create a group which groups on row["__rowNum"], then set the interval to 10.When I preview the report, it displays an error: Error0 : data.engine.InvalidGroupKey ( 1 time(s) ) detail : org.eclipse.birt.data.engine.core.DataException: Group key "rowCount" in group 1 cannot depend on column bindings defined in the group lower than itself.
-...
-I tried defining the data binding at the table and the group level.
-Both methods return the same error.
+See attached report. The report is a simple listing report, and I want to insert a page break after every 10 rows. To accomplish this, I create a group which groups on row["__rowNum"], then set the interval to 10. When I preview the report, it displays an error: Error0 : data.engine.InvalidGroupKey ( 1 time(s) ) detail : org.eclipse.birt.data.engine.core.DataException: Group key "rowCount" in group 1 cannot depend on column bindings defined in the group lower than itself. ... I tried defining the data binding at the table and the group level. Both methods return the same error.

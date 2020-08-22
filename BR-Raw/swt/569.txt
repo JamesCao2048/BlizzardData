@@ -1,13 +1,10 @@
 [Widgets] [SWT/Carbon]SWT.MouseExit event being generated when it should not be.
 Build Identifier: 20090920-1017
 MouseExit event is being thrown on the first drag attempt when it should not be.
-In general, a MouseExit event will issue when you drag mouce outside out the widget and mouse left key up.
-But in this case, on the first drag, MouseExit event issue before your mouse left key up.
-This bug is tested in swt-carbon 3.5.2.And in swt-cocoa 3.5.2, this bug disappear.
+In general, a MouseExit event will issue when you drag mouce outside out the widget and mouse left key up. But in this case, on the first drag, MouseExit event issue before your mouse left key up.
+This bug is tested in swt-carbon 3.5.2. And in swt-cocoa 3.5.2, this bug disappear.
 Reproducible: Always
 Steps to Reproduce:
-1.Run source code.
-A shell will display.
-2.Click down mouse left key inside the blue area, and holding down, darg the mouse outside of the blue area.
-In this process, mouce left key still hold down.
+1.Run source code. A shell will display.
+2.Click down mouse left key inside the blue area, and holding down, darg the mouse outside of the blue area. In this process, mouce left key still hold down.
 3.Notice "exit" printed to stdout, showing that a MouseExit event was thrown when it should not be.

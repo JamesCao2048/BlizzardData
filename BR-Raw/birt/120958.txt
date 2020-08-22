@@ -1,5 +1,2 @@
 Bug 120958 Match operator does not work
-1.Insert a table and a data set field, such as customerName.
-2.Specify the following filter for the table: row["customerName"] Match /^Mini/i (This is a valid JavaScript regular expression) 3.Preview the report.
-An error message appears saying that the conditional operator is not supported.
-See attached report design.
+1. Insert a table and a data set field, such as customerName. 2. Specify the following filter for the table: row["customerName"] Match /^Mini/i (This is a valid JavaScript regular expression) 3. Preview the report. An error message appears saying that the conditional operator is not supported. See attached report design.

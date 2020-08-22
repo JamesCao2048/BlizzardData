@@ -3,16 +3,11 @@ Any operation which brings up a file dialog box rooted at "My Computer" tosses
 up a dialog box with the above error message whenever a harddrive is expanded.
 Click cancel or try again on dialog (has cancel, try again, and continue) twice,
 and then it opens up the disk, and proceeds normally.
-
 If you un-expand a drive, it does the same thing.
 Then again when you re-expand a drive.
 Examples:
-Import
--> File System
--> click Browse
-Feature.xml
--> Export
--> click Browse
-I have seen this all the way back through M4. May have existed sooner.
+Import -> File System -> click Browse
+Feature.xml -> Export -> click Browse
+I have seen this all the way back through M4.  May have existed sooner.
 Currently using RC3.
 Platform: Windows 2K SP3

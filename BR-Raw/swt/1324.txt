@@ -1,4 +1,2 @@
 Image size incorrect when using native loader.
-Some images that are loaded with the native loader are not getting the correct size.
-They're smaller than they should be.
-The size is getting set on the NSBitmapImageRep, but not on the NSImage itself.
+Some images that are loaded with the native loader are not getting the correct size. They're smaller than they should be. The size is getting set on the NSBitmapImageRep, but not on the NSImage itself.

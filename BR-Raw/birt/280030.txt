@@ -1,10 +1,2 @@
 Bug 280030 The default datetime format is not correct after grouping is set.
-Use attached report.
-Edit the first chart and open the grouping dialog in select data page.
-Now the chart is grouped by Year unit.
-There are two issues.
-1.The default format in Legend is wrong.
-In color by category case, it should be the same with categories, i.e.
-Legend entry should display 2003, 2004.2.If change to Month unit.
-The categories should display like Janu 2003, which depends on current locale.
-But now it displays the raw format.
+Use attached report. Edit the first chart and open the grouping dialog in select data page. Now the chart is grouped by Year unit. There are two issues. 1. The default format in Legend is wrong. In color by category case, it should be the same with categories, i.e. Legend entry should display 2003, 2004. 2. If change to Month unit. The categories should display like Janu 2003, which depends on current locale. But now it displays the raw format.

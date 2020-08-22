@@ -4,13 +4,8 @@ eclipse.buildId=I20060214-0800
 java.version=1.4.2_09
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=solaris, ARCH=sparc, WS=motif, NL=en_CA
-Command-line arguments:
--os solaris
--ws motif
--arch sparc
--data /opt/users/pwebster/workspaces/test320
-java.lang.ArrayIndexOutOfBoundsException:
--1
+Command-line arguments:  -os solaris -ws motif -arch sparc -data /opt/users/pwebster/workspaces/test320
+java.lang.ArrayIndexOutOfBoundsException: -1
 at org.eclipse.swt.widgets.Tree.redrawItems(Tree.java:3004)
 at org.eclipse.swt.widgets.Tree.redrawItem(Tree.java:2979)
 at org.eclipse.swt.widgets.Tree.deselectAll(Tree.java:507)
@@ -39,4 +34,4 @@ at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:775)
 at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3059)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2748)
 at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1899)
-at org.eclipse.ui.internal.Workbench.r
+at org.eclipse.ui.internal.Workbench.runUI(

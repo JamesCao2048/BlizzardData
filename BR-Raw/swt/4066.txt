@@ -6,10 +6,8 @@ GTK2
 - Open the Properties view
 - Highlight the plugin so you can see the properties
 - Try to collapse the tree by clicking on the '-' box
-It doesn't do anything.
-In fact, it is impossible to expand or collapse any
-tree node from the properties view in GTK2 (as far as I can see).
-To see a tree
+It doesn't do anything. In fact, it is impossible to expand or collapse any
+tree node from the properties view in GTK2 (as far as I can see). To see a tree
 with more nodes and levels, follow these steps..
 - Install the examples
 - Create a file called 'test.usr'
@@ -17,15 +15,12 @@ with more nodes and levels, follow these steps..
 - Click on 'richard' in the outline view
 You'll see a tree with '+' and '-' boxes visible but nothing happens when you
 try to expand/collapse them.
-NOTE: You'll also notice that the children of a node aren't indented at all.
-On
+NOTE: You'll also notice that the children of a node aren't indented at all. On
 top of this, when you click on a child that doesn't have children (no '+' or '-
 '), it sometimes scrolls the view such that the selected field appears at the
-top of the view, if your view is small enough vertically.
-And finally, if you
+top of the view, if your view is small enough vertically. And finally, if you
 have properties that you can edit (such as the "test.usr" one) and you shrink
 your view vertically enough to show vertical scrollbars, then when you click
 on, say, a text field to edit it, the editable box that comes up is on top of
 the scrollbar.
-McQ: Should I file each of these as individual PRs?
-Some of these look related.
+McQ: Should I file each of these as individual PRs? Some of these look related.

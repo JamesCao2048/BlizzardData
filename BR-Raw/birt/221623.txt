@@ -1,7 +1,2 @@
 Bug 221623 BIRT throw exception when the report design is provided as an InputStream
-When report design is provide as an input stream, Module will give that report design a name "<stream>".
-In DataAdapterTopLevelScope.getParamValue(), we have following code: String reportConfigName = designFileName.substring( 0, designFileName.length( )
-- "rptdesign".length( ) ) + "rptconfig"; This, however will lead to exception for when designFileName ==
-<stream> its length is less than that of "rptdesign".
-Meanwhile, it is not guaranteed that user will use a file with ext.
-"rptdesign".
+When report design is provide as an input stream, Module will give that report design a name "<stream>". In DataAdapterTopLevelScope.getParamValue(), we have following code: String reportConfigName = designFileName.substring( 0, designFileName.length( ) - "rptdesign".length( ) ) + "rptconfig"; This, however will lead to exception for when designFileName == <stream> its length is less than that of "rptdesign". Meanwhile, it is not guaranteed that user will use a file with ext. "rptdesign".

@@ -1,9 +1,7 @@
 JavaDoc for Composite.getChildren() is wrong
 The JavaDoc says that it returns the children in the order they are drawn, when
-the reverse is true.
-getChildren() actually seems to return the children in the
-opposite of the order they are drawn.
-(Calling Control.moveAbove(null) moves a
+the reverse is true. getChildren() actually seems to return the children in the
+opposite of the order they are drawn. (Calling Control.moveAbove(null) moves a
 control to the beginning of the list and makes it the topmost control)
 The JavaDoc would also be more clear if it had an example: "For example, the
 topmost control appears at the beginning of the array".

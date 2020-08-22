@@ -1,4 +1,2 @@
 Bug 130495 Get rid of SessionHandleAdapter
-Now, we use SessionHandleAdapter to keep current active report deisng.
-That's a bad practive for editor swith and rebuild will cuase lots of problmes.
-Need find way to replace it.
+Now, we use SessionHandleAdapter to keep current active report deisng. That's a bad practive for editor swith and rebuild will cuase lots of problmes. Need find way to replace it.

@@ -1,7 +1,6 @@
 NPE in Tree#sendMeasureItem()
 I20100412
-I have code that is running fine on 3.5 (cocoa x86_64), when I move to 3.6 I get the following NPE.
-If I run this code on 3.6 on other platforms, it runs fine.
+I have code that is running fine on 3.5 (cocoa x86_64), when I move to 3.6 I get the following NPE. If I run this code on 3.6 on other platforms, it runs fine.
 This indicates to me that there is a problem in the Cocoa implementation that is probably a regression.
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2446)

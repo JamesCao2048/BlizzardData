@@ -1,10 +1,2 @@
 Bug 116744 Dynamic text content type has no effect
-I have a db field with three types of content: 1) HTML text within
-<html> ...</html> tag.
-2) HTML fragments not within
-<html> tag 3) Text with RTF tags I use a dynamic text element to display the contents of this field.
-The report displays the same results whether I set the dynamic text element's Content Type property to Auto, Plain, or HTML.
-Expected results: For Plain, I expect the literal content (tags and all) to be displayed.
-For Auto, I expect content 1, 2 and 3 to appear properly without HTML or RTF tags.
-For HTML, I expect content 1 and 2 to appear properly without HTML tags, and content 3 to appear literally with RTF tags.
-See attached report.
+I have a db field with three types of content: 1) HTML text within <html> ...</html> tag. 2) HTML fragments not within <html> tag 3) Text with RTF tags I use a dynamic text element to display the contents of this field. The report displays the same results whether I set the dynamic text element's Content Type property to Auto, Plain, or HTML. Expected results: For Plain, I expect the literal content (tags and all) to be displayed. For Auto, I expect content 1, 2 and 3 to appear properly without HTML or RTF tags. For HTML, I expect content 1 and 2 to appear properly without HTML tags, and content 3 to appear literally with RTF tags. See attached report.

@@ -1,7 +1,2 @@
 Bug 121682 Exception throws when export data from table containing highlight/map.
-Description: Exception throws when export data from attached report.
-Steps to reproduce: 1.I add a table which has a group, a highlight rule and a map rule in group row.
-2.Preview the report attached.
-3.Export the data in table.
-Expected result: Data are exported.
-Actual result: Exception in: ReportEngineService.getMetaData( )
+Description: Exception throws when export data from attached report. Steps to reproduce: 1. I add a table which has a group, a highlight rule and a map rule in group row. 2. Preview the report attached. 3. Export the data in table. Expected result: Data are exported. Actual result: Exception in: ReportEngineService.getMetaData( )

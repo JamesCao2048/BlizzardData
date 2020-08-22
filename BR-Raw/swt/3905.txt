@@ -1,10 +1,9 @@
 GTK: X pointer grab when resizing a table column
 Build 20021009
 Linux/GTK
-1.Open the stack view.
-2.Position the mouse on the border of a resizable column.
-3.Press the right button.
-4.Quickly, move the mouse and release the button.
-The cursor image remainds the resize image and no input events are managed.
-I
+1. Open the stack view.
+2. Position the mouse on the border of a resizable column.
+3. Press the right button.
+4. Quickly, move the mouse and release the button.
+The cursor image remainds the resize image and no input events are managed. I
 have to kill the vm from a consol.

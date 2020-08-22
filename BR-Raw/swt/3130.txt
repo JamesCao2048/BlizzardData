@@ -1,10 +1,8 @@
 Inconsistency in layout handling during shell.setVisible
 build I20031216
 On Windows and other platforms, shell.setVisible(true) forces a layout, but on
-the Mac it does not.
-This led to a case where there was a layout bug on the
-Mac but not on the other platforms.
-Although there were other problems in our
+the Mac it does not.  This led to a case where there was a layout bug on the
+Mac but not on the other platforms.  Although there were other problems in our
 code having to do with creating some controls after setting the shell size, it
 would be good if the behaviour was consistent on all platforms.
 For more details, see  bug 49023 .

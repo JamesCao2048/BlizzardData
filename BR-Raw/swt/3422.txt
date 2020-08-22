@@ -2,40 +2,28 @@
 On Solaris 9 and HP-UX 11i, Image Analyzer (an SWT Example) crashed when I
 tried to save images in the following formats: PNG and ICO.
 Here are the steps to follow in order to regenerate this scenario:
-1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
-2.Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
-http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
--
+1. Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
+2. Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
 examples-3.0M7.zip and install them.
-3.Launch Eclipse
-4.Select 鈥淲indow
--> Show View
--> Other鈥︹.
-This will launch the 鈥淪how View鈥
+3. Launch Eclipse
+4. Select 鈥淲indow -> Show View -> Other鈥︹. This will launch the 鈥淪how View鈥
 Dialog.
-5.From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples
--> SWT Example Launcher鈥.
+5. From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples -> SWT Example Launcher鈥.
 This will launch the 鈥淪WT Example Launcher鈥 View.
-6.In the 鈥淓xamples鈥 group, expand 鈥淪tandalone鈥 category, select 鈥淚mage
-Analyzer鈥 from the list and press 鈥淩un鈥 button.
-This will launch the 鈥淚mage
+6. In the 鈥淓xamples鈥 group, expand 鈥淪tandalone鈥 category, select 鈥淚mage
+Analyzer鈥 from the list and press 鈥淩un鈥 button. This will launch the 鈥淚mage
 Analyzer鈥 application.
-7.Open the attached image file 鈥淎CT_RS.PNG鈥 by selecting 鈥淔ile
-- > Open鈥 from
+7. Open the attached image file 鈥淎CT_RS.PNG鈥 by selecting 鈥淔ile - > Open鈥 from
 the main menu of the application.
-8.Attempt to save file 鈥淎CT_RS.PNG鈥 as 鈥渕odified.png鈥 by selecting 鈥淔ile
-- >
+8. Attempt to save file 鈥淎CT_RS.PNG鈥 as 鈥渕odified.png鈥 by selecting 鈥淔ile - >
 Save As鈥 from the main menu of the application.
-Actual Behavior: Eclipse workbench displays an error message.
-[see image
+Actual Behavior: Eclipse workbench displays an error message. [see image
 saving_png_on_solaris9.jpg]
-9.Restart Eclipse workbench
-10.Open the attached image file 鈥渋ssi.ico鈥 by selecting 鈥淔ile
-- > Open鈥 from
+9. Restart Eclipse workbench
+10. Open the attached image file 鈥渋ssi.ico鈥 by selecting 鈥淔ile - > Open鈥 from
 the main menu of the application.
-11.Attempt to save file 鈥渋ssi.ico鈥 as 鈥渕odified.ico鈥 by selecting 鈥淔ile
-- >
+11. Attempt to save file 鈥渋ssi.ico鈥 as 鈥渕odified.ico鈥 by selecting 鈥淔ile - >
 Save As鈥 from the main menu of the application.
-Actual Behavior: Eclipse workbench displays an error message.
-[see image
+Actual Behavior: Eclipse workbench displays an error message. [see image
 saving_ico_on_solaris9.jpg]

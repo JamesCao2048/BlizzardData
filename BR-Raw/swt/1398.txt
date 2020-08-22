@@ -1,6 +1,4 @@
 XOR mode doesn't work with GC
 When GEF paints to an Image in XOR mode (fill or draw), it doesn't work.
-
-Nothing appears.
-Someone on the newsgroup was also reporting a similar
+Nothing appears.  Someone on the newsgroup was also reporting a similar
 problem for drawing to a Control's GC.

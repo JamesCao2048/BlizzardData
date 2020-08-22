@@ -1,10 +1,8 @@
 NPE exiting workspace
 build 2002-03-19 on Win98.
 Note that I was running with a special SWT.JAR with the leak tool.
-I started my image.
-Immediately ran a runtime-workbench, closed the runtime-
-workbench, and then closed my image.
-This message was printed to the console
+I started my image. Immediately ran a runtime-workbench, closed the runtime-
+workbench, and then closed my image. This message was printed to the console
 during shutdown.
 Log: Thu Mar 21 12:16:47 EST 2002
 2 org.eclipse.core.runtime 2 Problems occurred when invoking code from plug-in:

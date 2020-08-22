@@ -1,5 +1,4 @@
 [KeyBindings] Unicode keyboards on Mac OSX produce wrong keys when used with modifiers
-I use a custom unicode keyboard layout (.keylayout, cf.
-http://developer.apple.com/technotes/tn2002/tn2056.html ).
+I use a custom unicode keyboard layout (.keylayout, cf.  http://developer.apple.com/technotes/tn2002/tn2056.html ).
 Typing normal text results in the appropriate letters being printed, but in combination with a modifier, the wrong key events are triggered!
 For instance Command+J on my dvorak keyboard will incorrectly copy the selection (presumably because J on a dvorak keyboard is where the C is on a regular keybard).

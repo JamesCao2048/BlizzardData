@@ -1,8 +1,6 @@
 NPE in generator tool
 N20090226-2000
-The trace is below.
-It happened for me twice but I can't reproduce it now.
-I think it happened when I was doing a search in the tool for NSHTTPCookie.
+The trace is below.  It happened for me twice but I can't reproduce it now.  I think it happened when I was doing a search in the tool for NSHTTPCookie.
 java.lang.NullPointerException
 at org.eclipse.swt.tools.internal.MacGeneratorUI.selectNode(MacGeneratorUI.java:473)
 at org.eclipse.swt.tools.internal.MacGeneratorUI.searchFor(MacGeneratorUI.java:439)

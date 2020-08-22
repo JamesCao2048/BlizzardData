@@ -1,3 +1,2 @@
 Bug 135778 There is an error when the data item has no binding data set
-Data item can have no binding data set, if it happens, it indicates it only use the basic Java Script function such as new Date().
-At this moment, the data of data item is not stored in report document by DtE, which only supports these data items which has binding data set.
+Data item can have no binding data set, if it happens, it indicates it only use the basic Java Script function such as new Date(). At this moment, the data of data item is not stored in report document by DtE, which only supports these data items which has binding data set.

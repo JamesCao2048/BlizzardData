@@ -1,18 +1,11 @@
 lots of crashes since M8
 I20040428 (but seen since 20040413):
-Eclipse crashes on me frequently.
-No exact steps.
-Disk access ( bug 38305 ) seems
+Eclipse crashes on me frequently. No exact steps. Disk access ( bug 38305 ) seems
 to play a role, but not sure.
-I tried different vm combinations.
-It seems that specifying the
--Xdebug vm flag
-made crashes less frequent.
-The dumps look like the one below (other threads not
-included).
-It happens more often under KDE than Gnome, but it happens under both
-platforms.
-I use Mist as the Gnome theme, which has proven to be the least
+I tried different vm combinations. It seems that specifying the -Xdebug vm flag
+made crashes less frequent. The dumps look like the one below (other threads not
+included). It happens more often under KDE than Gnome, but it happens under both
+platforms. I use Mist as the Gnome theme, which has proven to be the least
 problematic (see  bug 38305  and  bug 36308 ).
 Unhandled exception
 Type=GPF vmState=0xffffffff

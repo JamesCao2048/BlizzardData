@@ -1,5 +1,4 @@
 Image(Device, InputStream) throws incorrect/unspec'd exception
 The existing JUnit test that attempts to load an empty file throws an exception
-with error code ERROR_UNSUPPORTED_FORMAT.
-Based on the spec I would have
+with error code ERROR_UNSUPPORTED_FORMAT. Based on the spec I would have
 expected an ERROR_INVALID_IMAGE.

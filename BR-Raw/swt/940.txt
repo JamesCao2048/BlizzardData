@@ -1,7 +1,5 @@
 Exception disposing menu in SWT.Hide
-Run test.
-Select "item2" in menu bar.
-This happens:
+Run test. Select "item2" in menu bar. This happens:
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Menu.menuDidClose(Menu.java:677)
 at org.eclipse.swt.widgets.Display.windowProc(Display.java:4706)

@@ -9,12 +9,8 @@ System.out.println("value="+values[i]);
 }
 }
 }
-after having put a breakpoint on for...
-line.
-In Variables view expand both local variables args and values.
-Select first item in args array and one item in values array.
-Look at displayed values in details pane:
+after having put a breakpoint on for... line.
+In Variables view expand both local variables args and values. Select first item in args array and one item in values array. Look at displayed values in details pane:
 one
 <unknown>
-In fact as soon as you select one of the arrays item, you have an
-<unknown> which appears in detail pane if you select an item in the other array...
+In fact as soon as you select one of the arrays item, you have an <unknown> which appears in detail pane if you select an item in the other array...

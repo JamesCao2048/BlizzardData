@@ -1,6 +1,2 @@
 Bug 201526 Mutil parameter value will show the mutil value[0705]
-Description: Mutil parameter value will show the mutil value[0705] Step: 1.New a list parameter and select allow multiple value 2.Add some value in it.
-3.Drop the parameter in layout( param["NewParameter1"] ).
-4.Preview and select several value.
-Actual result: It will preview a object string.
-Expected result: The value that is selected will be previewed.
+Description: Mutil parameter value will show the mutil value[0705] Step: 1. New a list parameter and select allow multiple value 2. Add some value in it. 3. Drop the parameter in layout( param["NewParameter1"] ). 4. Preview and select several value. Actual result: It will preview a object string. Expected result: The value that is selected will be previewed.

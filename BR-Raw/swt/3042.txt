@@ -1,11 +1,8 @@
 ImageLoader Save - produces invalid JPEG images
 The ImageLoader Save function appears to be producing bad JPG images.
-I have only verified this with JPEG output.
-Simple test case below loads
-PNG Files and Saves them as JPEG.
-Many files were tested and the majority
-did produced the proper JPG images as expected.
-The attached Zip file contains
+I have only verified this with JPEG output. Simple test case below loads
+PNG Files and Saves them as JPEG.  Many files were tested and the majority
+did produced the proper JPG images as expected. The attached Zip file contains
 only those files that did not save correctly to JPEG.
 
 

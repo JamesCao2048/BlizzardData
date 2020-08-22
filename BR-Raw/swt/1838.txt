@@ -1,7 +1,7 @@
 Call Shell.setFullScreen(true) make the shell invisible
 Build ID:  I20071101-2000
 Steps To Reproduce:
-1.run this snippet
+1. run this snippet
 public class FullScreenSnippet {
 public static void main(String[] args) {
 final Display display = new Display();
@@ -24,6 +24,6 @@ display.sleep();
 display.dispose();
 }
 }
-2.click the button, the shell disappear.
+2. click the button, the shell disappear.
 More information:
 My Operating System is Windows XP Prefessional SP2

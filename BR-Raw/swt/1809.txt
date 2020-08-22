@@ -1,10 +1,6 @@
 [OLE] ActiveX/OLE Document support not working correctly in 3.4M3
 Hi,
-I use a 3rd party chemical structure drawing ActiveX component in an eclipse RCP application.
-This has worked really well in the past (up to and including version 3.3).
-On trying version 3.4M3 I found that the ActiveX component no longer appears and I get no errors.
-Here is a snippet.
-This runs perfectly under 3.3, but for 3.4M3 this simply opens an empty shell with no errors.
+I use a 3rd party chemical structure drawing ActiveX component in an eclipse RCP application. This has worked really well in the past (up to and including version 3.3). On trying version 3.4M3 I found that the ActiveX component no longer appears and I get no errors. Here is a snippet. This runs perfectly under 3.3, but for 3.4M3 this simply opens an empty shell with no errors.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTError;
 import org.eclipse.swt.layout.FillLayout;
@@ -43,11 +39,9 @@ display.sleep();
 display.dispose();
 }
 }
-You can download the 3rd part chemical drawing plugin here (click on the free windows download button on the RHS).
-Simply run the installer to install the software.
+You can download the 3rd part chemical drawing plugin here (click on the free windows download button on the RHS). Simply run the installer to install the software.
 http://scistore.cambridgesoft.com/software/product.cfm?pid=4012
-After you have installed this, run the snippet I provided in version 3.3 and 3.4M3.Under 3.3 everything works you should get a white drawing area and popup toolbar should appear.
-Under 3.4M3 it doesn't seem to work.
+After you have installed this, run the snippet I provided in version 3.3 and 3.4M3. Under 3.3 everything works you should get a white drawing area and popup toolbar should appear. Under 3.4M3 it doesn't seem to work.
 Can you replicate the behavior I am seeing?
 Many thanks,
 Paul Watson

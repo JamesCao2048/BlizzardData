@@ -6,9 +6,7 @@ http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclips
 If you now add a drag / drop listener to the table as...
 DropTarget dropTarget = new DropTarget(table, DND.DROP_MOVE | DND.DROP_COPY);
 DragSource dragSource = new DragSource(table, DND.DROP_MOVE | DND.DROP_COPY);
-..
-and try to reorder columns, you now get an arrow icon with a little stop icon
-next to it.
-It still works actually reordering the columns, but the "feedback"
+.. and try to reorder columns, you now get an arrow icon with a little stop icon
+next to it. It still works actually reordering the columns, but the "feedback"
 while you're doing it is wrong.
 (This all works fine on Windows XP).

@@ -1,15 +1,7 @@
 [browser] Mozilla: reimplement hooking of DOM listeners
-Currently, DOM event listeners for focus and mouse events are hooked to the main content window and its child frames during the call to onStateChange() with STATE_TRANSFERRING flag set.
-There are several problems with this approach:
-(1) It is not very efficient, since during each state change with flags of (STATE_TRANSFERRING | STATE_DOCUMENT), the code hooks the main content window and loops over the child frames.
-The main content window and many of the child frames can get 'hooked' several times.
-(2) According to the docs of nsIWebProgressListener ( http://mxr.mozilla.org/mozilla/source/uriloader/base/nsIWebProgressListener.idl#59 ), the onStateChange() method may receive STATE_TRANSFERRING requests "zero or more times".
-So it would be best to not rely on getting that transfer notification.
-The solution is to work off of STATE_START.
-We receive requests with (STATE_START | STATE_DOCUMENT) flags for the main content window and for each of its child frames.
-That way, we only hook each frame once.
-However, we can't hook during STATE_START, since it appears that the DOM hasn't been setup yet for each window/frame.
-So what I did for ATF (patch attached below) was to cache the window/frame in STATE_START, and then to loop over the queue of waiting window/frames during the STATE_TRANSFERRING and STATE_STOP stages.
-We want to hook the DOM event listeners during STATE_TRANSFERRING so we can get focus notifications as early as possible.
-That way, we can still properly handle focus even though the window or frame hasn't finished loading yet.
-And we hook the listeners during STATE_STOP in case we don't receive a STATE_TRANSFERRING notification.
+Currently, DOM event listeners for focus and mouse events are hooked to the main content window and its child frames during the call to onStateChange() with STATE_TRANSFERRING flag set.  There are several problems with this approach:
+(1) It is not very efficient, since during each state change with flags of (STATE_TRANSFERRING | STATE_DOCUMENT), the code hooks the main content window and loops over the child frames.  The main content window and many of the child frames can get 'hooked' several times.
+(2) According to the docs of nsIWebProgressListener ( http://mxr.mozilla.org/mozilla/source/uriloader/base/nsIWebProgressListener.idl#59 ), the onStateChange() method may receive STATE_TRANSFERRING requests "zero or more times".  So it would be best to not rely on getting that transfer notification.
+The solution is to work off of STATE_START.  We receive requests with (STATE_START | STATE_DOCUMENT) flags for the main content window and for each of its child frames.  That way, we only hook each frame once.
+However, we can't hook during STATE_START, since it appears that the DOM hasn't been setup yet for each window/frame.  So what I did for ATF (patch attached below) was to cache the window/frame in STATE_START, and then to loop over the queue of waiting window/frames during the STATE_TRANSFERRING and STATE_STOP stages.
+We want to hook the DOM event listeners during STATE_TRANSFERRING so we can get focus notifications as early as possible.  That way, we can still properly handle focus even though the window or frame hasn't finished loading yet.  And we hook the listeners during STATE_STOP in case we don't receive a STATE_TRANSFERRING notification.

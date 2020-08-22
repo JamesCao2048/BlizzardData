@@ -1,6 +1,5 @@
 Use PfLoadMetrics() to speed up text extenting.
 If you use PfLoadMetrics() when using PfExtentWideText() (which we are already
-doing) then you can avoid all transactions to the external font server.
-This
+doing) then you can avoid all transactions to the external font server.  This
 provides a big drop in CPU usage when using Tables, Trees, and the StyledText
 editor.

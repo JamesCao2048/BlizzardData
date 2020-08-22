@@ -1,9 +1,7 @@
 NPE in MozillaDelegate
 I20080422-0800
-Just found this in my logs.
-Sorry, no steps to reproduce.
--- Error Log
---
+Just found this in my logs. Sorry, no steps to reproduce.
+-- Error Log --
 Date: Thu Apr 24 11:20:56 CEST 2008
 Message: Unhandled event loop exception
 Severity: Error
@@ -39,5 +37,4 @@ Caused by: java.lang.NullPointerException
 at org.eclipse.swt.browser.MozillaDelegate$2.run(MozillaDelegate.java:134)
 at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
-...
-22 more
+... 22 more

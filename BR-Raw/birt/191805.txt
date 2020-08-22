@@ -1,7 +1,2 @@
 Bug 191805 The default value radio button should be checked [0705]
-Description: The default value radio button should be checked.
-Build number: 2.2.0.v20070608-1028 Steps to reproduce: 1.New a parameter, type "boolean", select radio button, input 0 and 1 as values, set 1 as default value.
-2.Preview parameter dialog popps up.
-Expected result: The default value radio button is checked.
-Actual result: Neither of the radio buttons is checked (see the screenshot).
-Error log: N/A
+Description: The default value radio button should be checked. Build number: 2.2.0.v20070608-1028 Steps to reproduce: 1. New a parameter, type "boolean", select radio button, input 0 and 1 as values, set 1 as default value. 2. Preview parameter dialog popps up. Expected result: The default value radio button is checked. Actual result: Neither of the radio buttons is checked (see the screenshot). Error log: N/A

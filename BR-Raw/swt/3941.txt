@@ -37,8 +37,7 @@ shell.addControlListener( new ControlAdapter() {
 public void controlResized(ControlEvent e) {
 Rectangle rect = shell.getClientArea();
 
-Point size = coolBar.computeSize (rect.width
--
+Point size = coolBar.computeSize (rect.width -
 (2*border), SWT.DEFAULT);
 coolBar.setBounds(rect.x + border, rect.y + border,
 size.x, size.y);
@@ -64,8 +63,7 @@ display.dispose ();
 static void createCoolItem(int index, int atIndex) {
 ToolBar toolBar = new ToolBar(coolBar, SWT.FLAT);
 String[] toolFileNames = toolNames[index];
-for (int j = 0; j
-< toolFileNames.length; j++) {
+for (int j = 0; j < toolFileNames.length; j++) {
 String fileName = toolFileNames[j];
 if (fileName == null) {
 new ToolItem(toolBar, SWT.SEPARATOR);
@@ -75,8 +73,7 @@ item.setImage(createCoolBarIcon(display, toolFileNames[j]));
 }
 }
 CoolItem coolItem;
-if (atIndex ==
--1) {
+if (atIndex == -1) {
 coolItem = new CoolItem(coolBar, SWT.DROP_DOWN);
 } else {
 coolItem = new CoolItem(coolBar, SWT.DROP_DOWN, atIndex);

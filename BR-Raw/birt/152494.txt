@@ -1,6 +1,2 @@
 Bug 152494 Support deployment of ODA Bundles in Web Application
-When deploying a WAR package embedded with the ODA runtime plugins on a web application, e.g.
-WebLogic 9, the Stop( Shutdown Platform ) and restart service fails to restart platform correctly.
-This is due to instances not being released when WebLogic is shutdown.
-So in subsequent startup, those classes and their static variables are not re-initialized.
-Any objects referenced by singleton instances, such as plugin extensions objects, are thus from the previous platform instance, and are no longer valid.
+When deploying a WAR package embedded with the ODA runtime plugins on a web application, e.g. WebLogic 9, the Stop( Shutdown Platform ) and restart service fails to restart platform correctly. This is due to instances not being released when WebLogic is shutdown. So in subsequent startup, those classes and their static variables are not re-initialized. Any objects referenced by singleton instances, such as plugin extensions objects, are thus from the previous platform instance, and are no longer valid.

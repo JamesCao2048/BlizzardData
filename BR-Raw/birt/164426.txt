@@ -1,8 +1,2 @@
 Bug 164426 Different display between html and pdf output[0300]
-Description: Image background of label displays different between in html and pdf output.
-Build number: 2.2.0.v20061114-0634 Steps to reproduce: 1.Add a label and new a style.
-2.Set background image and set to no repeat.
-3.Preview in html and pdf.
-You will get two different output.
-HTML shows the topper part of image, while in pdf shows the bottom part of image.
-Expected result: Show the topper part of image in both two of outputs.
+Description: Image background of label displays different between in html and pdf output. Build number: 2.2.0.v20061114-0634 Steps to reproduce: 1.Add a label and new a style. 2.Set background image and set to no repeat. 3.Preview in html and pdf. You will get two different output. HTML shows the topper part of image, while in pdf shows the bottom part of image. Expected result: Show the topper part of image in both two of outputs.

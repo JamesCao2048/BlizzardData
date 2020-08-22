@@ -3,14 +3,5 @@ Created  attachment 107870   [details]
 Snippet reproducing the problem
 Build ID: M20080221-1800
 Steps To Reproduce:
-Under certain circumstances the OS (Win XP sp 2) will repaint a button, but no SWT.Paint event will be sent.
-I have noticed this on traversal primarily, and can reproduce it consistently and across machines.
-I will attach a snippet.
-I have tried this in XP using SWT 3.2.2 and 3.3.2, and as far as I can tell all styles of buttons have the problem, but no other widgets that I have tried.
-problem.
-
-In the snippet, run the snippet as a java application and a shell will open.
-There are three buttons, and the last one has a red box drawn on it.
-Hit the tab key and the box goes away.
-Tab and Shift+Tab between the first and second button and the box is not shown.
-Mouse over or tab to the button and the box is drawn again, and stays drawn.
+Under certain circumstances the OS (Win XP sp 2) will repaint a button, but no SWT.Paint event will be sent.  I have noticed this on traversal primarily, and can reproduce it consistently and across machines.  I will attach a snippet.  I have tried this in XP using SWT 3.2.2 and 3.3.2, and as far as I can tell all styles of buttons have the problem, but no other widgets that I have tried. problem.
+In the snippet, run the snippet as a java application and a shell will open.  There are three buttons, and the last one has a red box drawn on it.  Hit the tab key and the box goes away.  Tab and Shift+Tab between the first and second button and the box is not shown.  Mouse over or tab to the button and the box is drawn again, and stays drawn.

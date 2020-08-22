@@ -1,8 +1,7 @@
 table.setToolTipText(") does not disable native tooltips
 [I20071211-0010], Windows XP and Windows Vista
 Steps:
-1.Hit Ctrl-3 to open the Quick Access Dialog
-2.Type "er"
-3.Hover over one of the cut-off entries
--> Note that a native roll-over tooltip appears.
-My code calls table.setToolTipText(""), which should disable the native tooltips.
+1. Hit Ctrl-3 to open the Quick Access Dialog
+2. Type "er"
+3. Hover over one of the cut-off entries
+-> Note that a native roll-over tooltip appears. My code calls table.setToolTipText(""), which should disable the native tooltips.

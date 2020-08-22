@@ -1,23 +1,13 @@
 Cannot create circular Shell on Cocoa
-Build id: I20090428-0100
-- Cocoa
-Run Snippet285.(Note that this snippet works correctly on Carbon, Windows, and GTk).
+Build id: I20090428-0100 - Cocoa
+Run Snippet285. (Note that this snippet works correctly on Carbon, Windows, and GTk).
 A square Shell appears (should be a circle), and the following error messages are printed to the Console:
-2009-04-28 15:32:04.727 java[1089:10b] ***
--[NSFocusState transformUsingAffineTransform:]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:04.731 java[1089:10b] ***
--[NSFocusState addClip]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:04.733 java[1089:10b] ***
--[NSFocusState transformUsingAffineTransform:]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:04.835 java[1089:10b] ***
--[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:10.502 java[1089:10b] ***
--[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:10.518 java[1089:10b] ***
--[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:10.534 java[1089:10b] ***
--[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:10.551 java[1089:10b] ***
--[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
-2009-04-28 15:32:10.568 java[1089:10b] ***
--[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:04.727 java[1089:10b] *** -[NSFocusState transformUsingAffineTransform:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:04.731 java[1089:10b] *** -[NSFocusState addClip]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:04.733 java[1089:10b] *** -[NSFocusState transformUsingAffineTransform:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:04.835 java[1089:10b] *** -[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:10.502 java[1089:10b] *** -[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:10.518 java[1089:10b] *** -[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:10.534 java[1089:10b] *** -[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:10.551 java[1089:10b] *** -[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00
+2009-04-28 15:32:10.568 java[1089:10b] *** -[NSFocusState containsPoint:]: unrecognized selector sent to instance 0x146a00

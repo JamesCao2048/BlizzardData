@@ -4,15 +4,8 @@ log showing "gtk errors" while using search dialog
 I tried using
 export SWT_GTK3=1
 for a while, but found that "global file search" does not work well with that enabled.
-It works the first time, but subsequent searches searches with same options, no matter what I try.
-Will work (once) again, if I restart Eclipse.
+It works the first time, but subsequent searches searches with same options, no matter what I try. Will work (once) again, if I restart Eclipse.
 Details,
-Select package explorer, then Search (with "File" dialogue ...
-haven't tried other types).
-Fill in something like "antrun" and search through all "pom.xml" in workspace.
-Click 'Search' button, the dialog goes away, and matching files are displayed as expected.
-Now, try a section time, say search for "abc" in any file, click 'Search'.
-First notice the Search Dialog does not go away (is not dismissed, or closed) and the original "antrun" search (on  pom.xml files) is redisplayed (you can see search results being refreshed, as though repeating the search, but with old values).
-Log has "gtk" errors in it related to "tree items" ...
-hence might be related to other GTK3 bugs ...
-hard to tell.
+Select package explorer, then Search (with "File" dialogue ... haven't tried other types). Fill in something like "antrun" and search through all "pom.xml" in workspace. Click 'Search' button, the dialog goes away, and matching files are displayed as expected.
+Now, try a section time, say search for "abc" in any file, click 'Search'. First notice the Search Dialog does not go away (is not dismissed, or closed) and the original "antrun" search (on  pom.xml files) is redisplayed (you can see search results being refreshed, as though repeating the search, but with old values).
+Log has "gtk" errors in it related to "tree items" ... hence might be related to other GTK3 bugs ... hard to tell.

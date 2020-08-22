@@ -1,7 +1,4 @@
 IAccessible2::role is supposed to pass the MSAA role through
 Created  attachment 166727   [details]
 return MSAA (default) role for IA2::get_role if no role set
-Accessible.get_role was returning 0 when a role was not explicitly assigned by an application.
-This was causing JAWS to ask for the IAccessible2::role and then ask again for the IAccessible::accRole.
-This could potentially cause an AT to crash or loop needlessly, because 0 is not an expected return value.
-The fix is to return the MSAA role when the application does not return a role.
+Accessible.get_role was returning 0 when a role was not explicitly assigned by an application. This was causing JAWS to ask for the IAccessible2::role and then ask again for the IAccessible::accRole. This could potentially cause an AT to crash or loop needlessly, because 0 is not an expected return value. The fix is to return the MSAA role when the application does not return a role.

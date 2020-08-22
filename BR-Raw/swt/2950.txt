@@ -3,14 +3,8 @@ eclipse.buildId=I20041214-2000
 java.version=1.4.2_06
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=linux, ARCH=x86, WS=motif, NL=en_US
-Framework arguments:
--showlocation
-Command-line arguments:
--os linux
--ws motif
--arch x86
--showlocation
--clean
+Framework arguments:  -showlocation
+Command-line arguments:  -os linux -ws motif -arch x86 -showlocation -clean
 java.lang.NullPointerException
 at org.eclipse.swt.examples.controlexample.Tab.log(Tab.java:785)
 at org.eclipse.swt.examples.controlexample.Tab.setExampleWidgetState(Tab.java:951)

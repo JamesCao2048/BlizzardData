@@ -1,15 +1,11 @@
 Cocoa: Leak messages while running the FileViewer example
 Build: I20100126-0800
 Running the SWT FileViewer example prints the following messages in the console.
-2010-01-27 19:44:08.654 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x19bc70 of class NSCFString autoreleased with no pool in place
-- just leaking
+2010-01-27 19:44:08.654 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x19bc70 of class NSCFString autoreleased with no pool in place - just leaking
 Stack: (0x92ab4f4f 0x929c1432 0xe0628a3 0x35a0d07)
-2010-01-27 19:49:14.262 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x14c0b0 of class NSCFString autoreleased with no pool in place
-- just leaking
+2010-01-27 19:49:14.262 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x14c0b0 of class NSCFString autoreleased with no pool in place - just leaking
 Stack: (0x92ab4f4f 0x929c1432 0xe0628a3 0x35a0d07)
-2010-01-27 19:49:24.246 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x1a2f70 of class NSCFString autoreleased with no pool in place
-- just leaking
+2010-01-27 19:49:24.246 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x1a2f70 of class NSCFString autoreleased with no pool in place - just leaking
 Stack: (0x92ab4f4f 0x929c1432 0xe0628a3 0x35a0d07)
-2010-01-27 19:49:24.446 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x192ca0 of class NSCFString autoreleased with no pool in place
-- just leaking
+2010-01-27 19:49:24.446 java[75958:17603] *** _NSAutoreleaseNoPool(): Object 0x192ca0 of class NSCFString autoreleased with no pool in place - just leaking
 Stack: (0x92ab4f4f 0x929c1432 0xe0628a3 0x35a0d07)

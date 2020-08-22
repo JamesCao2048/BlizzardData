@@ -1,9 +1,7 @@
 ArrayIndexOutOfBoundsException TreeItem.setImage()
 An ArrayIndexOutOfBoundsException is thrown when setting an image through
-TreeItem.setImage() on 3.1M5a.
-This is specific to Linux-GTK, works on Windows
-XP platform.
-The image is a 16x18 png icon.
+TreeItem.setImage() on 3.1M5a. This is specific to Linux-GTK, works on Windows
+XP platform. The image is a 16x18 png icon.
 Here is the exception message that is thrown:
 !ENTRY org.eclipse.ui.workbench 4 2 2005-03-10 07:51:26.245
 !MESSAGE Problems occurred when invoking code from plug-
@@ -13,16 +11,14 @@ java.lang.ArrayIndexOutOfBoundsException: 288
 at org.eclipse.swt.widgets.ImageList.add(ImageList.java:81)
 at org.eclipse.swt.widgets.TreeItem.setImage(TreeItem.java:1147)
 at org.eclipse.swt.widgets.TreeItem.setImage(TreeItem.java:1157)
-There error appears to be thrown down in ImageList.add() method.
-Specifically
+There error appears to be thrown down in ImageList.add() method. Specifically
 in the for loops within the if(hasAlpah) block:
 if (hasAlpha) {
 byte [] alpha = data.alphaData;
 int stride = OS.gdk_pixbuf_get_rowstride (pixbuf);
 int /*long*/ pixels = OS.gdk_pixbuf_get_pixels (pixbuf);
 byte [] line = new byte [stride];
-for (int y = 0; y
-< h [0]; y++) {
+for (int y = 0; y < h [0]; y++) {
 int /*long*/ offset = pixels + (y * stride);
 OS.memmove (line, offset, stride);
 for (int x = 0; x<w [0]; x++) {
@@ -31,6 +27,5 @@ line [x*4+3] = alpha [y*h [0]+x];
 OS.memmove (offset, line, stride);
 }
 }
-alpha=byte[288] is returned by data.alphaData.
-The array exception is thrown
+alpha=byte[288] is returned by data.alphaData. The array exception is thrown
 at 288.

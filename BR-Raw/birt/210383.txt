@@ -1,9 +1,2 @@
 Bug 210383 Behavior on legend does not work when Enable Chart Interactivity is not selected.
-Description: Behavior on legend does not work when Enable Chart Interactivity is not selected.
-build version: v20071120-0800 steps to reproduce: 1.New a chart.
-2.On Format Chart page, select Chart Area, untick the Enable Chart Interacticvity option.
-3.Select Chart Area-> Legend, select behavior as Toggle Series Visibility.
-4.Preview and click the legend.
-Expected result: Toggle visibility should work.
-Or behavior should be disabled when Enable Chart Interactivity is not selected.
-Actual result: Toggle visibility does not work.
+Description: Behavior on legend does not work when Enable Chart Interactivity is not selected. build version: v20071120-0800 steps to reproduce: 1. New a chart. 2. On Format Chart page, select Chart Area, untick the Enable Chart Interacticvity option. 3. Select Chart Area-> Legend, select behavior as Toggle Series Visibility. 4. Preview and click the legend. Expected result: Toggle visibility should work. Or behavior should be disabled when Enable Chart Interactivity is not selected. Actual result: Toggle visibility does not work.

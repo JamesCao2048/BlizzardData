@@ -1,7 +1,6 @@
 Native crash in SWT when brower JavaScript closes the window
 1) In Windows XP with SWT 3.2 M4 (and also M3), open a Shell that has a Browser widget.
-2) In the Browser, run some asynchronous JavaScript to close the window.
-Something like the following JavaScript:
+2) In the Browser, run some asynchronous JavaScript to close the window.  Something like the following JavaScript:
 setTimeout("window.close();", 5000);
 The JVM will core dump with:
 #

@@ -1,9 +1,2 @@
 Bug 198221 Different master page when export report current page to different format.[05]
-Description: Different master page when export report current page to different format.
-Build number:2.2.1.v200707270630 Steps to reproduce: 1.Preview attached report in Web Viewer.
-(the report uses multiple master page) 2.Jump to the third page.
-3.Export report, select current page, select different formats.
-Expected result: All formats apply the same master page for the third page.
-Actual result: In pdf/ps, Master page content is page number in page header.
-In word/ppt, Master page content is current date in page footer.
-Error log:n/a
+Description: Different master page when export report current page to different format. Build number:2.2.1.v200707270630 Steps to reproduce: 1. Preview attached report in Web Viewer. (the report uses multiple master page) 2. Jump to the third page. 3. Export report, select current page, select different formats. Expected result: All formats apply the same master page for the third page. Actual result: In pdf/ps, Master page content is page number in page header. In word/ppt, Master page content is current date in page footer. Error log:n/a

@@ -92,6 +92,4 @@ Start  Length  Slot  Name   Signature
 45      12      2    local2       Ljava/lang/String;
 23      43      2    local1       Ljava/lang/String;
 We see that the two occurences of the "local1" variable erroneously have been
-combined into one entry, starting at byte 23 and ending at byte 66. This is
-obviously wrong, since "local1" has no value in the "local2" block. Secondly,
-the "local2" variable end is wrongly offset by one instruction offset.
+comb

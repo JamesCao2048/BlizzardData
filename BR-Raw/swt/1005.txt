@@ -5,11 +5,8 @@ N20090421-2000
 A Form Feed (f, 0x0c) character makes StyledText go crazy:
 - open a file containing an FF in a text editor or paste it to the CustomControlExample
 - move caret to line with FF
-=> StyledText content becomes right-aligned.
-It goes back into place when StyledText is resized.
-The editor stays mostly usable, but the current line highlighting draws cheese.
-$ hexdump
--C crazy.txt
+=> StyledText content becomes right-aligned. It goes back into place when StyledText is resized. The editor stays mostly usable, but the current line highlighting draws cheese.
+$ hexdump -C crazy.txt
 00000000  41 0a 0c 0a 41 66 74 65  72 20 46 46 0a           |A...After FF.|
 0000000d
 A real-life example of this can be seen in org.xml.sax.helpers.AttributesImpl from /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Classes/classes.jar: The FF is two lines after the { of the class declaration (you can't miss it when you just hold Arrow_Down).

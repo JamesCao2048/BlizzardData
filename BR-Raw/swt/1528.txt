@@ -1,3 +1,2 @@
 The visibility of the constructor org.eclipse.swt.graphics.Resource.Resource() has been reduced
-In the 3.4 stream, a default constructor was added to Resource that is only package visible.
-Before it was added, there were no constructors in the class so the new constructor reduces the visibility of the default constructor from public to package.
+In the 3.4 stream, a default constructor was added to Resource that is only package visible. Before it was added, there were no constructors in the class so the new constructor reduces the visibility of the default constructor from public to package.

@@ -3,8 +3,7 @@ build 3.2 RC5
 In Tree.setItemCount (TreeItem parentItem, int count)
 the code computes a new shrinked array but doesn't assgined it.
 Here:
-//TODO
-- move shrink to paint event
+//TODO - move shrink to paint event
 // shrink items array
 int lastIndex = items.length;
 for (int i=items.length; i>0; i--) {
@@ -13,9 +12,7 @@ lastIndex = i;
 break;
 }
 }
-if (lastIndex
-< items.length
-- 4) {
+if (lastIndex < items.length - 4) {
 int length = Math.max (4, (lastIndex + 3) / 4 * 4);
 TreeItem [] newItems = new TreeItem [length];
 System.arraycopy(items, 0, newItems, 0, Math.min(items.length, lastIndex));

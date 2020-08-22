@@ -5,8 +5,7 @@ Build id: I20070625-1500
 - If the vertical scrollbar is visible, increase the window height to avoid the vertical scroller
 - Trim the window width to the width of the columns so that the horizontal scrollbar is just not visible
 - Slowly reduce the height until only 1 row is visible (excluding the column header)
-Problem 1: Scrollbars start flickering at some point
-- seems like the widget is undecided whether scrollbars should be displayed or not
+Problem 1: Scrollbars start flickering at some point - seems like the widget is undecided whether scrollbars should be displayed or not
 - Leave the tree at 1 1/2 rows visible (no scrollbars)
 - Expand the top node
 Problem 2: The second (partially visible) row is not repainted
@@ -14,5 +13,4 @@ Problem 2: The second (partially visible) row is not repainted
 - Reduce column width again until horizontal scrollbar disappears (vertical scrollbar stays)
 - Increase width once again until vertical scrollbar disappears
 Problem 3: The tree is almost completely blank
-The scrollbar flickering (Problem 1) consumes quite some CPU time.
-It can even take several seconds to calm down while freezing the UI ( bug 205078 ).
+The scrollbar flickering (Problem 1) consumes quite some CPU time. It can even take several seconds to calm down while freezing the UI ( bug 205078 ).

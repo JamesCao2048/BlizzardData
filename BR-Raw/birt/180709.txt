@@ -1,6 +1,2 @@
 Bug 180709 the toke '<' changed to '>' if string is printed in preview
-the token '<' in a string wil be printed as '>' Reproduction make a textfield and in the 'value-of' tag the next function:
-<value-of> var d = 10 var e = 12 var result if (d
-< e ) { result = "the variable d with a value of " + d + "
-< " + "the variable e with a value of " + e } result
-</value-of> gives the next result in the preview the variable d with a value of 10 > the variable e with a value of 12 3-apr-2007 15:19 the token '<' has changed to '>'
+the token '<' in a string wil be printed as '>' Reproduction make a textfield and in the 'value-of' tag the next function: <value-of> var d = 10 var e = 12 var result if (d < e ) { result = "the variable d with a value of " + d + " < " + "the variable e with a value of " + e } result </value-of> gives the next result in the preview the variable d with a value of 10 > the variable e with a value of 12 3-apr-2007 15:19 the token '<' has changed to '>'

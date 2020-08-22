@@ -1,8 +1,6 @@
 BIDI: LTR-oriented MessageBox can't be created, if it's parent has RTL orientation.
 Currently MesageBox is always created with MB_RTLREADING bit, if it's parent
-has rtl orientation.
-It isn't correct, because it is supposed, that MessageBox
+has rtl orientation. It isn't correct, because it is supposed, that MessageBox
 should be created with orientation, which correspond to explicitly assigned
-orientation style.
-Only if orientation style isn't assigned, MessageBox should
+orientation style. Only if orientation style isn't assigned, MessageBox should
 inherit orientation from it's parent.

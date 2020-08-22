@@ -8,8 +8,7 @@ public void addLineStyleListener(LineStyleListener listener) {
 checkWidget();
 if (listener == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
 if (!isListening(LineGetStyle)) {
-resetLineStyles (); //
-<-- Replaced this code
+resetLineStyles (); // <-- Replaced this code
 }
 addListener(LineGetStyle, new StyledTextListener(listener));
 }
@@ -23,10 +22,7 @@ public void setBackground(Color color) {
 checkWidget();
 background = color;
 super.setBackground(color);
-resetLineStyles(); //
-<-- insert call here
+resetLineStyles(); // <-- insert call here
 super.redraw();
 }
-I'm not submitting a patch because I couldn't find a way to create one with Eclipse.
-I'll open an extra bug for that.
-That said, the change is trivial to make (one "Extract to method" and one line inserted), so whoever takes on this bug should have no problem to fix it.
+I'm not submitting a patch because I couldn't find a way to create one with Eclipse. I'll open an extra bug for that. That said, the change is trivial to make (one "Extract to method" and one line inserted), so whoever takes on this bug should have no problem to fix it.

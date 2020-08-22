@@ -1,9 +1,8 @@
 SWT Cocoa Shell class doesn't implement SWT.NO_FOCUS style
 Build Identifier: SWT 3.7.2
-SWT Cocoa Shell class doesn't implement SWT.NO_FOCUS style.
-A shell created with this style will take focus when clicked, this is unexpected behavior and breaks existing code than depends on SWT.NO_FOCUS.
+SWT Cocoa Shell class doesn't implement SWT.NO_FOCUS style. A shell created with this style will take focus when clicked, this is unexpected behavior and breaks existing code than depends on SWT.NO_FOCUS.
 Reproducible: Always
 Steps to Reproduce:
-1.Create a Shell with SWT.NO_FOCUS style and display it (setVisible);
-2.Click the shell;
-3.The shell now takes focus!
+1. Create a Shell with SWT.NO_FOCUS style and display it (setVisible);
+2. Click the shell;
+3. The shell now takes focus!

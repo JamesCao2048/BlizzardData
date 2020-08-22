@@ -1,12 +1,12 @@
 [Browser] setText can fail with IE6 on XP SP2
 Build ID: I20070625-1500
 Steps To Reproduce:
-1.Unzip eclipse-SDK-3.3-win32.zip to drive D:
-2.Run eclipse.exe
-3.A new file hs_err_pid2728.log was created in eclipse folder
+1. Unzip eclipse-SDK-3.3-win32.zip to drive D:
+2. Run eclipse.exe
+3. A new file hs_err_pid2728.log was created in eclipse folder
 Whenever I repeat the above steps even using Eclipse 3.3 zip files, I get files of the form hs_err_pid9999.log.
 More information:
-My OS is Windows XP Service Pack 2.My default browser is Firefox 2.0.0.6
+My OS is Windows XP Service Pack 2. My default browser is Firefox 2.0.0.6
 COntents of hs_err_pid2728.log:
 #
 # An unexpected error has been detected by Java Runtime Environment:
@@ -20,8 +20,7 @@ COntents of hs_err_pid2728.log:
 # If you would like to submit a bug report, please visit:
 #    http://java.sun.com/webapps/bugreport/crash.jsp
 #
----------------  T H R E A D
----------------
+---------------  T H R E A D  ---------------
 Current thread (0x00935c00):  JavaThread "main" [_thread_in_native, id=2732]
 siginfo: ExceptionCode=0xc0000005, writing address 0x80004005
 Registers:
@@ -54,4 +53,4 @@ j  org.eclipse.ui.intro.config.CustomizableIntroPart.standbyStateChanged(Z)V+88
 j  org.eclipse.ui.internal.ViewIntroAdapterPart$2.run()V+19
 j  org.eclipse.swt.custom.BusyIndicator.showWhile(Lorg/eclipse/swt/widgets/Display;Ljava/lang/Runnable;)V+116
 j  org.eclipse.ui.internal.ViewIntroAdapterPart.setStandby(Z)V+28
-j  org.eclipse.ui.internal.ViewIntroAdapterPart$
+j  org.eclipse.ui.internal.ViewIntroAdapterPa

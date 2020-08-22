@@ -32,10 +32,8 @@ display.sleep();
 }
 }
 }
-With 3.1 I am seeing the Blue Rectangle in the center of the Shell.
-A click on
+With 3.1 I am seeing the Blue Rectangle in the center of the Shell. A click on
 it updates to the Red Label.
-With 3.2 I am seeing the Blue Rectangle top-left of the Shell.
-A click on it
+With 3.2 I am seeing the Blue Rectangle top-left of the Shell. A click on it
 does not update to the Red Label until I call redraw.
 Ben

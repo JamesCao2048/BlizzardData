@@ -1,10 +1,7 @@
 Tab traversal order is broken
 I20070828-0800
-When traversing selectable controls in reverse, the focus will get stuck.
-I have seen this in many different dialogs, etc., which leads me to believe that it's an SWT problem, but I could be wrong.
-The following is one place this can be reproduced:
+When traversing selectable controls in reverse, the focus will get stuck. I have seen this in many different dialogs, etc., which leads me to believe that it's an SWT problem, but I could be wrong. The following is one place this can be reproduced:
 1) Open the preferences dialog in Eclipse.
 2) While holding Shift, press and hold Tab.
 3) The backwards tab traversal gets stuck on the OK button.
-I have also noticed weird orderings in the forward traversal, though I don't have details.
-The problems may be related though.
+I have also noticed weird orderings in the forward traversal, though I don't have details. The problems may be related though.

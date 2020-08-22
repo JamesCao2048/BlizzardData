@@ -1,4 +1,2 @@
 Bug 223297 Need a method to get all reference item list.
-Now ReportItemHandle class have some methods like getAvailableDataSetBindingReferenceList, they ignore no name items.
-Because UI need enhance this feature, so Model need provide new method to return all the reference list, including no name items.
-One solution is add an boolean argument in these methods.
+Now ReportItemHandle class have some methods like getAvailableDataSetBindingReferenceList, they ignore no name items. Because UI need enhance this feature, so Model need provide new method to return all the reference list, including no name items. One solution is add an boolean argument in these methods.

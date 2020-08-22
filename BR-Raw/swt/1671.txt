@@ -1,7 +1,6 @@
 click on end of line place cursor wrong offset
 I20080325-0100, regression introduced by fix for  bug 223179
-Click on a line has contains double quotes (these lines are wrapped with bidi segements by the platform).
-The cursor is placed before the last character of the line instead of being placed after the last character.
+Click on a line has contains double quotes (these lines are wrapped with bidi segements by the platform). The cursor is placed before the last character of the line instead of being placed after the last character.
 Simple Snippet:
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;

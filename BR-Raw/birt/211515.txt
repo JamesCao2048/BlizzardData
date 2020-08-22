@@ -1,7 +1,2 @@
 Bug 211515 Add Aggregation to Insert context menu
-In Report designer right click on a blank area in the layout and select "Insert".
-The list of report items does not include "Aggregation", which is only available through the Palette view.
-The user should be able to use the Insert context menu to add an aggregation.
-The list of available items under Insert submenu needs to be consistent with available items in the Palette view.
-Another minor issue: the order of items in the Palette view (Label, Text, Dynamic Text, ...) is not the same as the items in the Insert context menu (Text, Label, Data, ...).
-It will be easier for the user to locate stuff if we keep the ordering consistent.
+In Report designer right click on a blank area in the layout and select "Insert". The list of report items does not include "Aggregation", which is only available through the Palette view. The user should be able to use the Insert context menu to add an aggregation. The list of available items under Insert submenu needs to be consistent with available items in the Palette view. Another minor issue: the order of items in the Palette view (Label, Text, Dynamic Text, ...) is not the same as the items in the Insert context menu (Text, Label, Data, ...). It will be easier for the user to locate stuff if we keep the ordering consistent.

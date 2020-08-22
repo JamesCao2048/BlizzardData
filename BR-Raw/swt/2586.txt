@@ -1,7 +1,3 @@
 DirectoryDialog.open does not return choosen directory
-When I use DirectoryDialog.open() with Suse Linux 10.0 OSS and SWT-GTK, it does not return the selected directory.
-Instead it returns the directory I have changed to with the dialog.
-This behaviour is strange, since the motif dialog (SWT-Motif) does return a selected directory even when I have not changed to it.
-Also the original GtkFileChooser does return a selected directory even when I have not changed to it.
-The same behaviour applies for Windows: I don't have to change to the directory, I just have to mark it in the dialog and click ok.
+When I use DirectoryDialog.open() with Suse Linux 10.0 OSS and SWT-GTK, it does not return the selected directory. Instead it returns the directory I have changed to with the dialog. This behaviour is strange, since the motif dialog (SWT-Motif) does return a selected directory even when I have not changed to it. Also the original GtkFileChooser does return a selected directory even when I have not changed to it. The same behaviour applies for Windows: I don't have to change to the directory, I just have to mark it in the dialog and click ok.
 The bug is also in SWT 3.2M3

@@ -1,21 +1,15 @@
 Problems implementing MenuItem.setText (worked around for English)
 On the Mac the menu accelerator text isn't specified as a string but via a bitset similar to
-SWT's accelerator used in MenuItem.setAccelerator.
-In addition the accelerator's string is
-set as a side effect of setting the accelerator itself.
-So they are always in synch.
+SWT's accelerator used in MenuItem.setAccelerator. In addition the accelerator's string is
+set as a side effect of setting the accelerator itself. So they are always in synch.
 Therefore in the SWT Mac port I was ignoring the accelerator part of the string given to
-MenuItem.setText(...) and I was using the bitset from MenuItem.setAccelerator().
-I was
-relying on the assumption that both should be in synch.
-However this assumption is now
-broken.
-MenuItems on which an accelerator string has been set with setText  typically
+MenuItem.setText(...) and I was using the bitset from MenuItem.setAccelerator(). I was
+relying on the assumption that both should be in synch. However this assumption is now
+broken. MenuItems on which an accelerator string has been set with setText  typically
 have the accelerator 0, other menu items where the accelerator is not 0 have no
 accelerator string set.
 For the Mac port this means I have to parse the string given to MenuItem.setText.
 However, since the string is already localized parsing isn't feasible.
 How can I solve this dilemma?
-BTW: why are SWT's clients allowed to play dirty tricks with accelerators?
-I'm not sure
+BTW: why are SWT's clients allowed to play dirty tricks with accelerators? I'm not sure
 that I can get accelerators to work on MacOS X (without introducing wads of bogus code).

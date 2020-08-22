@@ -3,21 +3,16 @@ Created  attachment 96812   [details]
 Source text data (open with Safari)
 OS: Mac OS X 10.5.2 (intel)
 Build: 3.4M6a (SWT v3436)
-Locale: ja_JP.UTF-8 (Japanese
-- Japan)
+Locale: ja_JP.UTF-8 (Japanese - Japan)
 Steps:
-1.Open the attached HTML file in Safari
-2.Create a simple project and a text file.
-Make sure its encoding is set to UTF-8.
-3.Open the text file with (workbench's general) text editor.
-4.Select whole text in "line1" or "line1a" on Safari and drag&drop it onto the text editor of Step 3
-5.Most of the resulted characters on the text editor are garbled as shown in the attached screen image.
-SWT Snippet 210 would be an alternative to the text editor.
-Drop the text on the right side (target side) of the window.
+1. Open the attached HTML file in Safari
+2. Create a simple project and a text file. Make sure its encoding is set to UTF-8.
+3. Open the text file with (workbench's general) text editor.
+4. Select whole text in "line1" or "line1a" on Safari and drag&drop it onto the text editor of Step 3
+5. Most of the resulted characters on the text editor are garbled as shown in the attached screen image.
+SWT Snippet 210 would be an alternative to the text editor. Drop the text on the right side (target side) of the window.
 Expected:
 All of the characters are copied correctly.
 More info:
 1) By using Firefox 2.0, it is successful to drag&drop all texts from Firefox to StyledText widget.
-2) Texts in "line2" or "line2a" include user-defined characters.
-They are not copied in the text editor by drag&drop from Safari, while Firefox is successful.
-This is another phenomenon, but the cause of the problem may be identical.
+2) Texts in "line2" or "line2a" include user-defined characters. They are not copied in the text editor by drag&drop from Safari, while Firefox is successful. This is another phenomenon, but the cause of the problem may be identical.

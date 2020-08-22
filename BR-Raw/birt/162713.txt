@@ -1,4 +1,2 @@
 Bug 162713 [regression]Parameter value changed when set Medium Date format and preview in Layout
-Description: Parameter value changed when set Medium Date format and preview in Layout Test environment: Eclipse3.2.1 Preference locale: Hebrew Steps to reproduce: 1.New a report parameter, datetime type, input default value as 03/20/2005 12:00:00 AM, set format as Medium Date.
-2.Drag it to Layout and preview in Layout.
-Expected result: 00:00 03/20/2006 Actual result: 00:00 03/08/2006 Error logs: none
+Description: Parameter value changed when set Medium Date format and preview in Layout Test environment: Eclipse3.2.1 Preference locale: Hebrew Steps to reproduce: 1. New a report parameter, datetime type, input default value as 03/20/2005 12:00:00 AM, set format as Medium Date. 2. Drag it to Layout and preview in Layout. Expected result: 00:00 03/20/2006 Actual result: 00:00 03/08/2006 Error logs: none

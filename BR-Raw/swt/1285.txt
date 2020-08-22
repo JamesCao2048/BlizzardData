@@ -4,20 +4,12 @@ Steps To Reproduce:
 Set the system date to 31st aug 2008, run the following test, then set the date time to any other date and run the test, the test fails on 31st august, and passes on any other day.
 This happens because DateTime internally uses java.util.Calendar, which has this in it's documentation:
 <quote>
-set(f, value) changes calendar field f to value.
-In addition, it sets an internal member variable to indicate that calendar field f has been changed.
-Although calendar field f is changed immediately, the calendar's time value in milliseconds is not recomputed until the next call to get(), getTime(), getTimeInMillis(), add(), or roll() is made.
-Thus, multiple calls to set() do not trigger multiple, unnecessary computations.
-As a result of changing a calendar field using set(), other calendar fields may also change, depending on the calendar field, the calendar field value, and the calendar system.
-In addition, get(f) will not necessarily return value set by the call to the set method after the calendar fields have been recomputed.
-The specifics are determined by the concrete calendar class.
-Example: Consider a GregorianCalendar originally set to August 31, 1999.Calling set(Calendar.MONTH, Calendar.SEPTEMBER) sets the date to September 31, 1999.This is a temporary internal representation that resolves to October 1, 1999 if getTime()is then called.
-However, a call to set(Calendar.DAY_OF_MONTH, 30) before the call to getTime() sets the date to September 30, 1999, since no recomputation occurs after set() itself.
+set(f, value) changes calendar field f to value. In addition, it sets an internal member variable to indicate that calendar field f has been changed. Although calendar field f is changed immediately, the calendar's time value in milliseconds is not recomputed until the next call to get(), getTime(), getTimeInMillis(), add(), or roll() is made. Thus, multiple calls to set() do not trigger multiple, unnecessary computations. As a result of changing a calendar field using set(), other calendar fields may also change, depending on the calendar field, the calendar field value, and the calendar system. In addition, get(f) will not necessarily return value set by the call to the set method after the calendar fields have been recomputed. The specifics are determined by the concrete calendar class.
+Example: Consider a GregorianCalendar originally set to August 31, 1999. Calling set(Calendar.MONTH, Calendar.SEPTEMBER) sets the date to September 31, 1999. This is a temporary internal representation that resolves to October 1, 1999 if getTime()is then called. However, a call to set(Calendar.DAY_OF_MONTH, 30) before the call to getTime() sets the date to September 30, 1999, since no recomputation occurs after set() itself.
 </quote>
 The resolution seems to be to call DateTime#setDay() before DateTime#setMonth(), and swapping the two lines in code seems to be a workaround to the issue.
 Would it make sense for DateTime#setMonth() to be implemented as follows:
---- begin fix (macosx)
----
+--- begin fix (macosx) ---
 public void setMonth (int month) {
 checkWidget ();
 if (!isValid(Calendar.MONTH, month)) return;
@@ -31,10 +23,8 @@ OS.GetControlData (handle, (short)OS.kControlEntireControl, OS.kControlClockLong
 }
 redraw();
 }
---- end fix (macosx)
----
---- begin test
----
+--- end fix (macosx) ---
+--- begin test ---
 public class DateTimeTest extends TestCase {
 private DateTime	dateTime;
 protected void setUp() throws Exception {
@@ -49,4 +39,4 @@ assertAugust31Year2008();
 int NOV = 10;
 dateTime.setYear(2012);
 dateTime.setMonth(NOV); // Nov is 10
-dateTime.setD
+dateTime.setDa

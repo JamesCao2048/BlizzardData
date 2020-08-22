@@ -1,5 +1,2 @@
 Bug 192695 IReportEngine#shutdown deprecated javadoc needs more explanations
-In org.eclipse.birt.report.engine.api.IReportEngine.java, the shutdown method is deprecated.
-It's fine, but the javadoc doesn't explain if we should still use it or not?
-I suppose we should use the destroy() method now, but I would prefer you say is clearly in the shutdown method, a possible patch would be: /** * shut down the engine, release all the resources.
-* * @deprecated use the destroy() method instead */ public void shutdown( );
+In org.eclipse.birt.report.engine.api.IReportEngine.java, the shutdown method is deprecated. It's fine, but the javadoc doesn't explain if we should still use it or not? I suppose we should use the destroy() method now, but I would prefer you say is clearly in the shutdown method, a possible patch would be: /** * shut down the engine, release all the resources. * * @deprecated use the destroy() method instead */ public void shutdown( );

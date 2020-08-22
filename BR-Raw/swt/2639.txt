@@ -1,20 +1,13 @@
 Treeviewer doesn't de-select child when parent is closed
-This bugs appears in Windows XP.
-It doesn't seem to occur in Linux.
-In the
+This bugs appears in Windows XP.  It doesn't seem to occur in Linux. In the
 following sample code, do the following:
 1) Open 'parent2' for example.
-
-2) Click on 'child2'.
-It becomes selected (also reflected in the window on the
+2) Click on 'child2'.  It becomes selected (also reflected in the window on the
 right
-3) Close 'parent2'.
-There is currently no selection.
-4) Re-open 'parent2'.
-There is still no selection
+3) Close 'parent2'.  There is currently no selection.
+4) Re-open 'parent2'.  There is still no selection
 Repeat for 'parent3'
-When you close 'parent3', 'child3' remains selected.
-Re-open 'parent3' and
+When you close 'parent3', 'child3' remains selected.  Re-open 'parent3' and
 'child3' is still selected.
 The problem always happens with the last item in the tree.
 --------
@@ -65,8 +58,7 @@ IStructuredSelection selection = (IStructuredSelection)
 event.getSelection();
 
 Object newSelection = selection.getFirstElement();
-label.setText(newSelection == null ?
-"" : newSelection.toString());
+label.setText(newSelection == null ? "" : newSelection.toString());
 }
 });
 

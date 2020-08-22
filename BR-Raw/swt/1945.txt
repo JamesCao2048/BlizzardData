@@ -1,11 +1,10 @@
 SWT will crash when VoiceOver feature is turn on
-1.Turn on the VoiceOver feature on Mac OS X
-2.Implements the AccessibleControlAdapter in a Canvas sub-class (e.g public class MyCanvas extends Canvas)
+1. Turn on the VoiceOver feature on Mac OS X
+2. Implements the AccessibleControlAdapter in a Canvas sub-class (e.g public class MyCanvas extends Canvas)
 AccessibleControlAdapter  accessibleControlAdapter = new AccessibleControlAdapter(){
 //Implements the getFocus in order to change the e.childID.
 public void getFocus(AccessibleControlEvent e) {
-int childID = ACC.
-CHILDID_SELF;
+int childID = ACC. CHILDID_SELF;
 e.childID = childID;
 }
 }
@@ -18,8 +17,7 @@ OS.SetEventParameter (theEvent, OS.kEventParamAccessibleAttributeValue, OS.typeB
 return OS.noErr;
 }
 if (event.childID != ACC.CHILDID_MULTIPLE) {
->>>>>>>Crash at line 562 : "OS.CFEqua()"
-<<<<<	boolean hasFocus = OS.CFEqual(childIDToOs(event.childID), osChildID); // This will test for CHILDID_SELF also.
+>>>>>>>Crash at line 562 : "OS.CFEqua()" <<<<<	boolean hasFocus = OS.CFEqual(childIDToOs(event.childID), osChildID); // This will test for CHILDID_SELF also.
 OS.SetEventParameter (theEvent, OS.kEventParamAccessibleAttributeValue, OS.typeBoolean, 4, new boolean [] {hasFocus});
 return OS.noErr;
 }
@@ -32,8 +30,7 @@ Report Version: 4
 Command: java
 Path:    /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Commands/java
 Parent:  eclipse [211]
-Version: ???
-(???)
+Version: ??? (???)
 PID:    214
 Thread: 0
 Exception:  EXC_BAD_ACCESS (0x0001)
@@ -41,20 +38,13 @@ Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000004
 Thread 0 Crashed:
 0   com.apple.CoreFoundation     	0x9080d2f9 CFEqual + 227
 1   libswt-pi-carbon-3305.jnilib 	0x0b31c0a7 Java_org_eclipse_swt_internal_carbon_OS_CFEqual + 28 (bundle1.s:110)
-2
-<<00000000>> 	0x0457a1d1 0 + 72851921
-3
-<<00000000>> 	0x04574a6b 0 + 72829547
-4
-<<00000000>> 	0x045749bf 0 + 72829375
-5
-<<00000000>> 	0x045749bf 0 + 72829375
-6
-<<00000000>> 	0x045749bf 0 + 72829375
-7
-<<00000000>> 	0x045749bf 0 + 72829375
-8
-<<00000000>> 	0x0457215d 0 + 72819037
+2   <<00000000>> 	0x0457a1d1 0 + 72851921
+3   <<00000000>> 	0x04574a6b 0 + 72829547
+4   <<00000000>> 	0x045749bf 0 + 72829375
+5   <<00000000>> 	0x045749bf 0 + 72829375
+6   <<00000000>> 	0x045749bf 0 + 72829375
+7   <<00000000>> 	0x045749bf 0 + 72829375
+8   <<00000000>> 	0x0457215d 0 + 72819037
 9   libclient.dylib              	0x9b3afe4e jio_snprintf + 397272
 10  libclient.dylib              	0x9b3afb9c jio_snprintf + 396582
 11  libclient.dylib              	0x9b3bf241 JVM_MonitorWait + 12093
@@ -65,4 +55,4 @@ Thread 0 Crashed:
 16  com.apple.HIToolbox          	0x92ef7348 SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 304
 17  com.apple.HIToolbox          	0x92ef720d SendEventToEventTargetWithOptions + 55
 18  com.apple.HIToolbox          	0x9307c0a8 Accessible::SendEvent(OpaqueEventRef*, bool) const + 104
-19  com.apple.HIToolbox          	0x9307d56
+19  com.apple.HIToolbox          	0x9307d56e Acce

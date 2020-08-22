@@ -1,4 +1,2 @@
 Bug 136553 [regression]Preview error when set invalid group interval.
-Description: Preview error when set invalid group interval.
-Steps to reproduce: 1.Insert a table 2.Add a group on number column, set interval to Year,1 3.Preview 4.Edit group on string column set interval to Prefix,1 5.Preview Expected result: Error msg about invalid group interval.
-Actual result: Error happened while running the report
+Description: Preview error when set invalid group interval. Steps to reproduce: 1. Insert a table 2. Add a group on number column, set interval to Year,1 3. Preview 4. Edit group on string column set interval to Prefix,1 5. Preview Expected result: Error msg about invalid group interval. Actual result: Error happened while running the report

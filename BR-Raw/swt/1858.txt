@@ -2,9 +2,8 @@ line wrap at page end makes page number disapear when printing
 Created  attachment 81589   [details]
 test case
 I20071029-1800
-Given a CU with a line comment at the last line of the first page.
-The line comment must be longer then the line, forcing a wrap at the line when printing the document.
-1.Enable line numbering
-2.Print the CU
+Given a CU with a line comment at the last line of the first page. The line comment must be longer then the line, forcing a wrap at the line when printing the document.
+1. Enable line numbering
+2. Print the CU
 Is:
 there is now line number printed for the last line and no page number for the first page.

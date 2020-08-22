@@ -1,9 +1,2 @@
 Bug 259948 Difference on ReportDesignHandle between onPrepare and beforeFactory
-I want to dynamically add columns on a Table.
-I tried on the beforeFactory(...) method of ReportEventHandler and everything is alright.
-Then I tried on the onPrepare(...) method of TableEventHandler with the same code but it didn't work.
-In both case, I use the following code to get the TableHandle : (TableHandle) reportContext.getDesignHandle().findElement("myTableName") With the debugger, I saw that I have the same instance of reportContext in each method.
-But the ReportDesignHandle behind is not the same...
-I guess this is why I don't have the same final result.
-I post this problem on the birt newsgroup and Jason ask me to log it as a bug.
-Thanks.
+I want to dynamically add columns on a Table. I tried on the beforeFactory(...) method of ReportEventHandler and everything is alright. Then I tried on the onPrepare(...) method of TableEventHandler with the same code but it didn't work. In both case, I use the following code to get the TableHandle : (TableHandle) reportContext.getDesignHandle().findElement("myTableName") With the debugger, I saw that I have the same instance of reportContext in each method. But the ReportDesignHandle behind is not the same... I guess this is why I don't have the same final result. I post this problem on the birt newsgroup and Jason ask me to log it as a bug. Thanks.

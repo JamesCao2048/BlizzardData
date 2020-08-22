@@ -1,9 +1,6 @@
 Read only text widget : can't copy selection
 I20030121
-Try Apple-C on read only text widget in Eclipse (e.g.
-the properties views from the popup
-on a node on the debugger).
-Does not work.
-Discussed with SN.
-In Text, we are running away and never handle the key event, in this
+Try Apple-C on read only text widget in Eclipse (e.g. the properties views from the popup
+on a node on the debugger). Does not work.
+Discussed with SN. In Text, we are running away and never handle the key event, in this
 case.

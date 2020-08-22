@@ -1,11 +1,2 @@
 Bug 192115 <ul><li>effect in postscript doesn't display with dot.[1201]
-Description:
-<ul><li>effect in postscript doesn't display with dot.
-Build number:2.2.0.v20070612 Steps to reproduce: 1.Insert a text item, set type as html.
-2.Input content as
-<ul>
-<li>first</li><li>second</li><li>third</li>
-</ul> 3.Preview in pdf and postscript.
-Expected result: Dot before list item content.
-Actual result: Blank space before list item content in postscript.
-Error log:N/A
+Description: <ul><li>effect in postscript doesn't display with dot. Build number:2.2.0.v20070612 Steps to reproduce: 1. Insert a text item, set type as html. 2. Input content as <ul> <li>first</li><li>second</li><li>third</li> </ul> 3. Preview in pdf and postscript. Expected result: Dot before list item content. Actual result: Blank space before list item content in postscript. Error log:N/A

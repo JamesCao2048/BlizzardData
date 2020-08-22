@@ -1,3 +1,2 @@
 Bug 166001 The webpage can't be found in WebView, if "WebViewer.startup( null );" is not called.
-Now I'm using a SVG viewer to preview report in designer, it need not a HTTP server.
-So I removed "WebViewer.startup( null );" from designer's initial process, but I found those "web view as ..." all can not open a web page.
+Now I'm using a SVG viewer to preview report in designer, it need not a HTTP server. So I removed "WebViewer.startup( null );" from designer's initial process, but I found those "web view as ..." all can not open a web page.

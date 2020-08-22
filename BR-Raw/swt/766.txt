@@ -4,12 +4,11 @@ Build Identifier: Eclipse 3.5.1
 If the site certificate is sec_error_ca_cert_invalid, the invalid certificate dialog box does not display
 Reproducible: Always
 Steps to Reproduce:
-1.Lauch SWT browser with xulrunner 1.9.x
-2.Navigate to url  https://jazzop05.rtp.raleigh.ibm.com:9943/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/11108
-3.sec_error_ca_cert_invalid dialog box prompt.
+1. Lauch SWT browser with xulrunner 1.9.x
+2. Navigate to url  https://jazzop05.rtp.raleigh.ibm.com:9943/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/11108
+3. sec_error_ca_cert_invalid dialog box prompt.
 Expect result:
 Invalid Certificate Dialog box
 Adding
-textLabel.indexOf ("sec_error_ca_cert_invalid") !=
--1 ||
+textLabel.indexOf ("sec_error_ca_cert_invalid") != -1 ||
 to PromptService2.java Alert method could trigger the prompt

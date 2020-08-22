@@ -1,10 +1,2 @@
 Bug 276266 Failed to jump to element in xml source after formatting.
-description: Failed to jump to element in xml source after formatting.
-build id: 2.5.0 v20090514-0630 steps to reproduce: 1.New a report and insert a label.
-2.Switch to XML Source tab and open Outline view.
-3.Click the label in outline.
-You will see the highlight jump to the label in xml source.
-4.Right click in xml source and select source->format.
-5.Switch to layout, when asked save the change in xml source, click Yes.
-6.Switch to xml source again and click the label in outline.
-Actual result: The highlight failed to jump to the label.
+description: Failed to jump to element in xml source after formatting. build id: 2.5.0 v20090514-0630 steps to reproduce: 1. New a report and insert a label. 2. Switch to XML Source tab and open Outline view. 3. Click the label in outline. You will see the highlight jump to the label in xml source. 4. Right click in xml source and select source->format. 5. Switch to layout, when asked save the change in xml source, click Yes. 6. Switch to xml source again and click the label in outline. Actual result: The highlight failed to jump to the label.

@@ -1,8 +1,7 @@
 Shell opened on KDE3.2.x does not paint
 When a workbench window is first opened, it does not paint any of its contents
-(e.g., menu bars, cool bars, tool bars, composites, etc.).
-By moving or
+(e.g., menu bars, cool bars, tool bars, composites, etc.).  By moving or
 resizing the workbench window, a paint occurs and the contents become visible.
 
-This occurs using I200404270800 and GTK+ 2.4.0. It does not occur on similar
+This occurs using I200404270800 and GTK+ 2.4.0.  It does not occur on similar
 machines running GTK+ 2.2.x.

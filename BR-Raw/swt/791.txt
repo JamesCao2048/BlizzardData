@@ -4,8 +4,7 @@ Build Identifier: 3.5
 Line 1140 of the SWT cocoa source file org/eclipse/swt/widgets/Tree.java sets up the SWT.SELECTED bit incorrectly for the event parameter for the PaintItem event of the Tree.
 Currently the line reads:
 if (drawSelection) event.detail |= SWT.SELECTED;
-The drawSelection variable however is the result of a previous EraseItem event.
-According to the spec (and the behavior under Windows) the SWT.SELECTED bit should be set in event.detail when the respective tree cell is actually selected, even when a precious call to EraseItem prevented the drawing of a selection background for the cell by clearing the bit.
+The drawSelection variable however is the result of a previous EraseItem event. According to the spec (and the behavior under Windows) the SWT.SELECTED bit should be set in event.detail when the respective tree cell is actually selected, even when a precious call to EraseItem prevented the drawing of a selection background for the cell by clearing the bit.
 Reproducible: Always
 Can be easily fixed by changing line 1140 of the SWT cocoa source file org/eclipse/swt/widgets/Tree.java from
 if (drawSelection) event.detail |= SWT.SELECTED;

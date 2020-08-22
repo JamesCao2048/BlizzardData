@@ -1,8 +1,5 @@
 Horizontal ScrollBar not ReSized When Table Contents Changed
-The following snippet demonstrates the problem.
-Run the snippet, then re-size the window until there is a horizontal and vertical scrollbar.
-Select "Now" from "ReFill" menu.
-The vertical scrollbar is refreshed correctly, the horizontal retains it's previous size.
+The following snippet demonstrates the problem.  Run the snippet, then re-size the window until there is a horizontal and vertical scrollbar.  Select "Now" from "ReFill" menu.  The vertical scrollbar is refreshed correctly, the horizontal retains it's previous size.
 I have verified this behaviour on Windows XP and a Pocket PC.
 Cheers,
 Eddie
@@ -31,8 +28,7 @@ tDirs = new Table(shell, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
 gridData = new GridData(GridData.FILL_BOTH);
 tDirs.setLayoutData(gridData);
 
-for (int ii = 0; ii
-< 40; ii++) {
+for (int ii = 0; ii < 40; ii++) {
 TableItem item = new TableItem (tDirs, 0);
 item.setText("This is a very long item to fill the width of the table, and make it very wide indeed");
 }
@@ -60,8 +56,7 @@ display.dispose ();
 public void refillTable() {
 
 tDirs.removeAll();
-for (int ii = 0; ii
-< 4; ii++) {
+for (int ii = 0; ii < 4; ii++) {
 TableItem item = new TableItem (tDirs, 0);
 item.setText("Tiny item.");
 }

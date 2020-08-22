@@ -1,37 +1,30 @@
 errant ON_TOP | SYSTEM_MODAL Shell behaviour if tooltiptext is set on any control
 Shell ON_TOP behaviour stops when a tooltiptext is set for any control on the
-shell.
-The window goes to the background and never regains ON_TOP state again.
-Tried it with 2.1.2 and v.3.0 I20040406.The recent version improved: shell
-loosing ON_TOP only when I hover for the tooltip.
-Plase see sample code and
-explanation.
-Thanks.
+shell. The window goes to the background and never regains ON_TOP state again.
+Tried it with 2.1.2 and v.3.0 I20040406. The recent version improved: shell
+loosing ON_TOP only when I hover for the tooltip. Plase see sample code and
+explanation. Thanks.
 package com.test;
 /*
 * Created on Mar 31, 2004
-* ECLIPSE Version 2.1.2
-- 3.0
+* ECLIPSE Version 2.1.2 - 3.0
 * This small example was created using
 * SWT Designer Free edition from Instantiations
 * Issue:
 * errant ON_TOP | SYSTEM_MODAL Shell behaviour
 * How to test the flaw:
 * Run the app:
-* 1.click once to a list selection entry
-* 3.click once outside of the shell window (click on the app.behind)
-* 4.click once on the surface of the shell
-* 5.click again outside of the shell.
-* The last time click removes the shell window's ON_TOP behaviour.
-It will
+* 1. click once to a list selection entry
+* 3. click once outside of the shell window (click on the app.behind)
+* 4. click once on the surface of the shell
+* 5. click again outside of the shell.
+* The last time click removes the shell window's ON_TOP behaviour. It will
 never regain
 * ON_TOP again.
 * What's causing it?
 * Close the shell.
-* Comment out the last line that sets the tooltip text.
-Compile.
-* Try the previous steps again.
-It doesn't matter how many times you click,
+* Comment out the last line that sets the tooltip text. Compile.
+* Try the previous steps again. It doesn't matter how many times you click,
 * the shell keeps its ON_TOP habit as expected.
 *
 */
@@ -50,9 +43,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.graphics.Font;
 /**
 * Usage: Run it as any other SWT code under Eclipse:
-* Run..
--> New
-->
+* Run.. -> New ->
 * VM arguments:
 -Djava.library.path=D:eclipsepluginsorg.eclipse.swt.win32_2.1.2oswin32x86
 *
@@ -95,4 +86,4 @@ final RowData rowData = new RowData();
 rowData.height = 25;
 rowData.width = 480;
 composite.setLayoutData(rowData);
-final Label label =
+final Label label

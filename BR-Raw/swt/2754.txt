@@ -1,9 +1,7 @@
 Virtual table: flashes on clear
-The open type dialog has a virtual table with lets say 100 elements.
-Now I get a
+The open type dialog has a virtual table with lets say 100 elements. Now I get a
 new result set, adjust the item count (lets say to 90) and clear the whole table.
-This cases the table to be redrawn which can be recognized as a short flash.
-To
+This cases the table to be redrawn which can be recognized as a short flash. To
 reproduce:
 - take JDT/UI form HEAD
 - enable VIRTUAL support in TypeInfoViewer
@@ -11,7 +9,6 @@ reproduce:
 - load all Eclipse plug-ins as binary
 - open the dialog
 - type List
-- in the text field repeat removeing t and adding t at the end.
-You see the
+- in the text field repeat removeing t and adding t at the end. You see the
 table flashing.
 Is there anything I can do to avoid this.

@@ -1,10 +1,9 @@
 Editors can't display EUDC mapped to single font
 Created  attachment 159796   [details]
-notepad.gif
-- correct display in notepad
+notepad.gif - correct display in notepad
 A client has submitted this issue for our product:
 Steps:
-1.Using XP's eudcedit utility, create an "End User Defined Character" and map it to a specific font (Courier New for example)
-2.In Notepad, we can set the font to Courier New and insert the EUDC using the Character Map utility, and it will display correctly (see notepad.gif)
-3.In eclipse, we tried to do the same in text editor and also Java editor, but the character does not display (see eclipse.gif)
-4.Note that if the EUDC is mapped to all fonts, then the character does display in eclipse correctly (see eclipse2.gif)
+1. Using XP's eudcedit utility, create an "End User Defined Character" and map it to a specific font (Courier New for example)
+2. In Notepad, we can set the font to Courier New and insert the EUDC using the Character Map utility, and it will display correctly (see notepad.gif)
+3. In eclipse, we tried to do the same in text editor and also Java editor, but the character does not display (see eclipse.gif)
+4. Note that if the EUDC is mapped to all fonts, then the character does display in eclipse correctly (see eclipse2.gif)

@@ -1,7 +1,2 @@
 Bug 167812 Clear history result of table preview
-Create a table with data in the cells.
-Preview the table.
-If we delete a column from the table and preview again, the preview screen shows the previous table first then refreshes and shows the updated table.
-This confuses the user whether the table got updated or not.
-In the case where table data is really big, user might not wait for the preview to reload.
-Show the blank page every time the user previews the report to avoid confusion.
+Create a table with data in the cells. Preview the table. If we delete a column from the table and preview again, the preview screen shows the previous table first then refreshes and shows the updated table. This confuses the user whether the table got updated or not. In the case where table data is really big, user might not wait for the preview to reload. Show the blank page every time the user previews the report to avoid confusion.

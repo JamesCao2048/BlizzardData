@@ -1,11 +1,10 @@
 Shell.getAlpha() returns inconsistent values
 The javadoc doesn't seem to mention it, but I am guessing that setAlpha was meant to take a value from 0 (transparent) to 255 (opaque) to be consistent across platforms.
-On GTK and carbon getAlpha() returns an int from 0 to 255. On windows it returns a byte returned as an int, which can become negative.
+On GTK and carbon getAlpha() returns an int from 0 to 255.  On windows it returns a byte returned as an int, which can become negative.
 In shell.getAlpha() there is
 return pbAlpha [0];
 I suggest:
 return pbAlpha[0] & 0xFF;
 Example code:
 shell.setAlpha(254)
-System.err.println(shell.getAlpha()); // currently returns
--2, should probably return 254 to be consistent.
+System.err.println(shell.getAlpha()); // currently returns -2, should probably return 254 to be consistent.

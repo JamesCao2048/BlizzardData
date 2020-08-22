@@ -1,3 +1,2 @@
 Remove tests that don't instantiate the class they are supposed to test
-These tests are giving the illusion that there are tests to run, while in reality nothing is tested.
-The complicated SwtTestCase inheritance of methods even make people believe certain methods are called while they are executed only from parent class.
+These tests are giving the illusion that there are tests to run, while in reality nothing is tested. The complicated SwtTestCase inheritance of methods even make people believe certain methods are called while they are executed only from parent class.

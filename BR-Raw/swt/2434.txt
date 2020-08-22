@@ -5,9 +5,7 @@ I am starting eclipse with a minimal bash script:
 #!/bin/sh
 EXE=$HOME/local/eclipse/eclipse
 JAVA=/home/kjk/local/jdk-1_5_0_05-linux-amd64/bin/java
-$EXE
--vm $JAVA
--showLocation $*
+$EXE -vm $JAVA -showLocation $*
 I am not using an external help browser.
 Recipe:
 - Select "Help Contents" from the "Help" menu

@@ -2,8 +2,7 @@ Nested GridLayouts cut content if inner grabs vertical space
 Created  attachment 133757   [details]
 Screenshot
 I20090428-0100, WinXP classic look
-Nested GridLayouts cut the content of the inner composite if the inner grabs vertical space.
-In the screenshot, you can see that the "Button 3" is missing a dark gray horizontal line at the bottom.
+Nested GridLayouts cut the content of the inner composite if the inner grabs vertical space. In the screenshot, you can see that the "Button 3" is missing a dark gray horizontal line at the bottom.
 It doesn't matter whether the outer composite grabs vertical space.
 This was originally discovered in  bug 274269  (I fixed it there).
 package org.eclipse.swt.snippets;

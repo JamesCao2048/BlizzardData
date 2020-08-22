@@ -1,13 +1,12 @@
 NullPointerException when trying to print
 Build ID: M20080911-1700
 Steps To Reproduce:
-When I try to print a UML diagram created by the Soyatec eUML2 plugin, the print dialog does not open.
-In the log I see a NullPointerException in the string conversion code.
-1.Create class diagram
-2.Click on print button in toolbar
+When I try to print a UML diagram created by the Soyatec eUML2 plugin, the print dialog does not open. In the log I see a NullPointerException in the string conversion code.
+1. Create class diagram
+2. Click on print button in toolbar
 Obviously the plugin is not providing a filename for the "Print to file" option, but eclipse should not blow up just because a plugin is behaving badly.
 More information:
-Environemnt Ubuntu 8.04 32-bit, Sun JDK 1.6.0_07-b06.The stack trace from the log is as follows:
+Environemnt Ubuntu 8.04 32-bit, Sun JDK 1.6.0_07-b06. The stack trace from the log is as follows:
 !ENTRY org.eclipse.ui 4 0 2008-11-03 14:09:38.029
 !MESSAGE Unhandled event loop exception
 !STACK 0
@@ -43,4 +42,4 @@ at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:386)
 at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-at sun.reflect.DelegatingMethodAccessorImpl.i
+at sun.reflect.DelegatingMethodAccessorImp

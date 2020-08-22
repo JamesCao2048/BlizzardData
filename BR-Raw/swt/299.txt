@@ -1,6 +1,4 @@
 Platform.launch doesn't work on gio only systems.
-Currently gio_launch uses g_file_new_for_path function but it works for local paths only and fails for remote (http://, ftp:// and etc.).
-The correct function to use is g_file_new_for_commandline_arg which handles both local and remote paths/uris.
+Currently gio_launch uses g_file_new_for_path function but it works for local paths only and fails for remote (http://, ftp:// and etc.). The correct function to use is g_file_new_for_commandline_arg which handles both local and remote paths/uris.
 This can't be reproduced on systems that have gnome_vfs because launch function will fallback to gnome_24_launch.
-The attached patch is against master but it would be nice to be backported for Indigo SR2 because there are more and more systems that miss libgnome(and friends).
-This bug was identified because of azureus/vuze failing to start on the soon to be released Fedora 16 because it uses Program.launch("http://....).
+The attached patch is against master but it would be nice to be backported for Indigo SR2 because there are more and more systems that miss libgnome(and friends). This bug was identified because of azureus/vuze failing to start on the soon to be released Fedora 16 because it uses Program.launch("http://....).

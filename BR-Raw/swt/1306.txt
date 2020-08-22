@@ -1,30 +1,22 @@
 The logic for drawing Vertical gradient of Bottom tabs is incorrect
 Build ID: I20081030-1917
 Steps To Reproduce:
-The vertical gradient is not drawn proper when the following options are used
--
+The vertical gradient is not drawn proper when the following options are used -
 CTabFolder tabs = new CTabFolder(shell, SWT.BUTTON);
 tabs.setTabHeight(500); //just for clear visibility.
 tabs.setSelectionBackground(new Color[]{display.getSystemColor(SWT.COLOR_DARK_BLUE),
 display.getSystemColor(SWT.COLOR_RED),
 display.getSystemColor(SWT.COLOR_GREEN),	                           display.getSystemColor(SWT.COLOR_CYAN)},	               new int[] {5, 20, 99},true);
 More information:
-The logic in the method
-- CTabFolder.drawBackground(GC gc, int[] shape, int x, int y, int width, int height, Color defaultBackground, Image image, Color[] colors, int[] percents, boolean vertical) has to be modified as
--
-AT
---------->
+The logic in the method - CTabFolder.drawBackground(GC gc, int[] shape, int x, int y, int width, int height, Color defaultBackground, Image image, Color[] colors, int[] percents, boolean vertical) has to be modified as -
+AT --------->
 if (vertical) {
 if (onBottom) {
-TO
------------>
+TO ----------->
 //*********************************************************
 if (onBottom) {
-if (percents[percents.length
-- 1]
-<= 100) {
-int position = percents[percents.length
-- 1] * height / 100;
+if (percents[percents.length - 1] <= 100) {
+int position = percents[percents.length - 1] * height / 100;
 gc.setBackground(defaultBackground);
 gc.fillRectangle(x, y, width, position);
 }

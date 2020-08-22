@@ -77,38 +77,3 @@ locals = [ class com/foo/bar/Test$X ]
 After:
 public <T extends java/lang/Object> com.foo.bar.Test$X<T> createMessage(int);
 flags: ACC_PUBLIC
-Code:
-stack=3, locals=3, args_size=2
-0: iload_1
-1: ifne          16
-4: new           #2                  // class com/foo/bar/Test$X1
-7: dup
-8: aload_0
-9: invokespecial #3                  // Method com/foo/bar/Test$X1."<init>":(Lcom/foo/bar/Test;)V
-12: astore_2
-13: goto          25
-16: new           #4                  // class com/foo/bar/Test$X2
-19: dup
-20: aload_0
-21: invokespecial #5                  // Method com/foo/bar/Test$X2."<init>":(Lcom/foo/bar/Test;)V
-24: astore_2
-25: aload_2
-26: areturn
-LocalVariableTable:
-Start  Length  Slot  Name   Signature
-13       3     2     x   Lcom/foo/bar/Test$X;
-0      27     0  this   Lcom/foo/bar/Test;
-0      27     1     n   I
-25       2     2     x   Lcom/foo/bar/Test$X;
-LineNumberTable:
-line 17: 0
-line 18: 4
-line 20: 16
-line 22: 25
-StackMapTable: number_of_entries = 2
-frame_type = 16 /* same */
-frame_type = 252 /* append */
-offset_delta = 8
-locals = [ class java/lang/Object ]
-Note: This is probably the same bug as  https://bugs.eclipse.org/bugs/show_bug.cgi?id=417041
-Note2: I'm running jdk1.7.0_17

@@ -1,7 +1,2 @@
 Bug 195951 Focus for PNG does not work [13]
-Description: Focus for PNG does not work.
-Build number: 2.2.0.v20070710-1223 Steps to reproduce: 1.New a Chart, set Output Format as PNG, in "Format Chart" tab, add interactivity for Value Series, Event: Focus, Action: Hyperlink or invoke script.
-2.Preview, focus in Value Series.
-Expected result: Interactivity works.
-Actual result: It does not work.
-Error log: N/A
+Description: Focus for PNG does not work. Build number: 2.2.0.v20070710-1223 Steps to reproduce: 1. New a Chart, set Output Format as PNG, in "Format Chart" tab, add interactivity for Value Series, Event: Focus, Action: Hyperlink or invoke script. 2. Preview, focus in Value Series. Expected result: Interactivity works. Actual result: It does not work. Error log: N/A

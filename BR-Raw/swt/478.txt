@@ -7,5 +7,4 @@ Steps to reproduce:
 4) Switch to another application like firefox, textedit
 The dropdown calendar is still visible on top of the other application.
 Expected : the calendar should be hidden when we switch to another application.
-A related issue: The DateTime widget should get focus when we click on the dropdown button.
-Because this doesn't happen, the focus is on a different control and we can traverse between different controls while the dropdown calendar is still visible.
+A related issue: The DateTime widget should get focus when we click on the dropdown button. Because this doesn't happen, the focus is on a different control and we can traverse between different controls while the dropdown calendar is still visible.

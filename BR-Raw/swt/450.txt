@@ -1,6 +1,4 @@
 Browser.print() steals focus
-I have two browsers, one which acts as a rich text editor, and the other which shows the result within a canvas widget.
-The result on canvas is actually an image of the browser, so as the user types into the editor, the browser which is not visible is printed and that image is drawn on the canvas widget.
-When the second browser is printed, it steals focus from the editor browser, which interrupts user input.
+I have two browsers, one which acts as a rich text editor, and the other which shows the result within a canvas widget.  The result on canvas is actually an image of the browser, so as the user types into the editor, the browser which is not visible is printed and that image is drawn on the canvas widget.  When the second browser is printed, it steals focus from the editor browser, which interrupts user input.
 I believe that a call to print() should not affect the current focus, as was the behaviour in SWT for platform 3.5.
 I do not see this behaviour in XP.

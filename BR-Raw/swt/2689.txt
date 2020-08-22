@@ -1,8 +1,6 @@
 Right click on Tree does not honor the SWT.FULL_SELECTION style
-The Property View uses a Tree with the FULL_SELECTION style bit on.
-If you left-
-click anyhere the entry gets selected.
-However, if you RIGHT-click then the
+The Property View uses a Tree with the FULL_SELECTION style bit on. If you left-
+click anyhere the entry gets selected. However, if you RIGHT-click then the
 selection only occurs if you are over the rightmost label's text.
 To repro:
 Open the Property View

@@ -1,8 +1,6 @@
 Tree default selection event doesn't have item field set
 Build Identifier: 3.7m3
-Run example snippet below, select a tree item and press Enter
-- the 'item' field of the Event object is null.
-
+Run example snippet below, select a tree item and press Enter - the 'item' field of the Event object is null.
 Reproducible: Always
 Steps to Reproduce:
 import org.eclipse.swt.SWT;
@@ -19,21 +17,15 @@ Display display = new Display();
 Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 final Tree tree = new Tree(shell, SWT.BORDER);
-for (int i = 0; i
-< 4; i++) {
+for (int i = 0; i < 4; i++) {
 TreeItem iItem = new TreeItem(tree, 0);
-iItem.setText("TreeItem (0)
--" + i);
-for (int j = 0; j
-< 4; j++) {
+iItem.setText("TreeItem (0) -" + i);
+for (int j = 0; j < 4; j++) {
 TreeItem jItem = new TreeItem(iItem, 0);
-jItem.setText("TreeItem (1)
--" + j);
-for (int k = 0; k
-< 4; k++) {
+jItem.setText("TreeItem (1) -" + j);
+for (int k = 0; k < 4; k++) {
 TreeItem kItem = new TreeItem(jItem, 0);
-kItem.setText("TreeItem (2)
--" + k);
+kItem.setText("TreeItem (2) -" + k);
 }
 }
 }

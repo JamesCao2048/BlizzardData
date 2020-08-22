@@ -1,7 +1,5 @@
 Shell control: "remain on top" property is voided when one goes to another application
 Builds: Eclipse SDK Mac OSX Cocoa N20081126-2000 (compared to Carbon N20081126-2000)
 In the context of the SWT Controls Example, re the Shell control:
-When a Shell control is set to be On Top, the "on topness" applies correctly so long as one remains within the context of the application.
-As soon as one selects another application on the desktop, the Shell appears to "lose" the "On Top" property.
-When one returns to the original application (in this case the Eclipse workbench), the Shell is no longer on top.
+When a Shell control is set to be On Top, the "on topness" applies correctly so long as one remains within the context of the application. As soon as one selects another application on the desktop, the Shell appears to "lose" the "On Top" property. When one returns to the original application (in this case the Eclipse workbench), the Shell is no longer on top.
 This can cause quite a headache when the Shell is also set to be Modal: one cannot act on the original application until one has taken care of the modal Shell, but on returning to the original application, the "on-top" Shell is now lurking underneath all the other stuff on the desktop, and oftentimes one has no clue what is causing the ensuing system beep.

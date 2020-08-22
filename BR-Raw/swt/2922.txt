@@ -1,6 +1,5 @@
 Lines are misaligned (antialiased)
 I20050426
 The borders of editor and view parts appear to be 2 pixel wide (instead of 1 pixel), because they are
-probably drawn 0.5 pixel off the coordinate system.
-The anti aliasing makes them appear 2 pixel wide
+probably drawn 0.5 pixel off the coordinate system. The anti aliasing makes them appear 2 pixel wide
 and have a grey (instead of black) color.

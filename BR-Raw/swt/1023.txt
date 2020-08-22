@@ -1,7 +1,6 @@
 drawing problem after inserting Bullet into StyledText
 - run the snippet below
 - click in the StyledText, which inserts a Bullet
-
 -> note that the text following the linebreak has now disappeared
 - arrowing down once or twice will make the missing line re-appear at the bottom
 public static void main(String[] args) {

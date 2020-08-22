@@ -1,4 +1,2 @@
 Bug 124238 Grid without data binding will throw npe and break report.
-In GridItemExecutor the following line of code will throw npe if there is no result set: IResultIterator rsIterator = ( ( DteResultSet ) rset ).getResultIterator( ); Need a null check.
-This is very serious, it will break reports with grids that don't have data binding.
-I consider this a showstopper for the 2.0 release.
+In GridItemExecutor the following line of code will throw npe if there is no result set: IResultIterator rsIterator = ( ( DteResultSet ) rset ).getResultIterator( ); Need a null check. This is very serious, it will break reports with grids that don't have data binding. I consider this a showstopper for the 2.0 release.

@@ -1,11 +1,2 @@
 Bug 256307 [Improve support for stylesheets] Fixed layout no wrap does not work in PDF
-Build ID: I20080617-2000 Steps To Reproduce: 1.Create a "table" and set its minimal "height".
-2.Input longer text inside than the minimum size is.
-3.Set the report "layout preference" as "fixed layout".
-4.Go to "advanced" settings of the column and open "text".
-section and pick "no wrapping" for "whitespace".
-5.This doesn't work for output PDF.
-More information: Problem aroused when trying to set the height of table row as fixed value.
-I need the text in the cell no to change its height when it's longer.
-I can't get it work.
-Any ideas, please?
+Build ID: I20080617-2000 Steps To Reproduce: 1.Create a "table" and set its minimal "height". 2.Input longer text inside than the minimum size is. 3.Set the report "layout preference" as "fixed layout". 4.Go to "advanced" settings of the column and open "text". section and pick "no wrapping" for "whitespace". 5.This doesn't work for output PDF. More information: Problem aroused when trying to set the height of table row as fixed value. I need the text in the cell no to change its height when it's longer. I can't get it work. Any ideas, please?

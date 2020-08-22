@@ -1,6 +1,2 @@
 Bug 132401 access to value of display text of dynamic parameter
-I have parameter "departmentID".
-This is dynamic parameter that get values from DataSet "departments".
-The parameter keeps department id value.
-I need to show on the report name of department beside using departmentId in dataset query of the report.
-It would be good to have the way to get name of department without creating additional dataset, additional report item such as table and without additional parameter bounding.
+I have parameter "departmentID". This is dynamic parameter that get values from DataSet "departments". The parameter keeps department id value. I need to show on the report name of department beside using departmentId in dataset query of the report. It would be good to have the way to get name of department without creating additional dataset, additional report item such as table and without additional parameter bounding.

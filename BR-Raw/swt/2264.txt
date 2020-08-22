@@ -1,10 +1,9 @@
 Repaint issue with radio buttons in preference page
 Version: 3.3.0
 Build id: I20060906-1200
-1.Open the preference dialog
-2.Select the Java preferecne page
-3.resize the dialog horizontally as small as it will go
-4.slowly increase the width of the dialog (from the right hand side)
-5.The radio buttons in the "When opening a type heirarchy" section do not repaint correctly.
-hovering over the buttons forces them to replaint and the issue goes away.
+1. Open the preference dialog
+2. Select the Java preferecne page
+3. resize the dialog horizontally as small as it will go
+4. slowly increase the width of the dialog (from the right hand side)
+5. The radio buttons in the "When opening a type heirarchy" section do not repaint correctly.  hovering over the buttons forces them to replaint and the issue goes away.
 See screenshot for an example.

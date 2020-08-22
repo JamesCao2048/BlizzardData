@@ -1,4 +1,2 @@
 BIDI: Custom Draw Tree does not render properly in 2.8
-GTK 2.8 does not return the proper coordinates for text and image.
-As a result, all tree items are drawn flush right in RTL mode.
-(This is fixed >2.8).
+GTK 2.8 does not return the proper coordinates for text and image. As a result, all tree items are drawn flush right in RTL mode. (This is fixed >2.8).

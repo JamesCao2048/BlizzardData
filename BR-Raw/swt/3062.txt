@@ -17,8 +17,7 @@ TableColumn column3 = new TableColumn(table, SWT.NONE);
 column3.setText("Column 3");
 TableColumn column4 = new TableColumn(table, SWT.NONE);
 column4.setText("Column 4");
-for (int i = 0; i
-< 20; i++) {
+for (int i = 0; i < 20; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 String[] text = new String[]{"abc"+i, "def"+i, "ghi"+i, "jkl"+i, "mnop"+i};
 item.setText(text);

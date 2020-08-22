@@ -1,8 +1,5 @@
 Accessibility - Console message printed when custom control has focus
 Run VoiceOver and give focus to a CTabFolder tab or the maximize or minimize button in a CTabFolder.
 The following message is printed to the Console:
-20/05/09 1:04:48 PM eclipse[92305] ***
--[SWTAccessibleDelegate accessibilityIsAttributeSettable:]: unrecognized selector sent to instance 0xc7f91f0
-The message is printed many times.
-This probably began happening when  bug 274273  was fixed.
-We should fix this for 3.5 RC2.
+20/05/09 1:04:48 PM eclipse[92305] *** -[SWTAccessibleDelegate accessibilityIsAttributeSettable:]: unrecognized selector sent to instance 0xc7f91f0
+The message is printed many times. This probably began happening when  bug 274273  was fixed. We should fix this for 3.5 RC2.

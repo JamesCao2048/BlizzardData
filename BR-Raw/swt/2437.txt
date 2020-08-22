@@ -1,6 +1,5 @@
 [build] Dependency on libstdc++.so.5
-The swt-mozilla library depends on the libstdc++ library.
-Currently, we are
+The swt-mozilla library depends on the libstdc++ library.  Currently, we are
 compiling against libstdc++.so.5 however, RHEL4 defaults to libstdc++.so.6.
 We need a strategy for supporting both libstdc++.so.5 and libstdc++.so.6.
 It would appear that removing the dependency on this library altogether is not

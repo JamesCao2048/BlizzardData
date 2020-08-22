@@ -1,4 +1,2 @@
 Bug 220690 The level handle can't be gotten from its default HierarchyHandle.
-Build ID: I20071213-1700 Steps To Reproduce: In chart code, when I use the following code to get level handle, it returns null.
-Maybe it is an issue.
-CubeHandle.getDimension( levelDef.getHierarchy( ).getDimension( ).getName( ) ).getDefaultHierarchy( ).getLevel( levelName );
+Build ID: I20071213-1700 Steps To Reproduce: In chart code, when I use the following code to get level handle, it returns null. Maybe it is an issue. CubeHandle.getDimension( levelDef.getHierarchy( ).getDimension( ).getName( ) ).getDefaultHierarchy( ).getLevel( levelName );

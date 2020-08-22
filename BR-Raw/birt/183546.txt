@@ -1,12 +1,2 @@
 Bug 183546 Time parameter with format display wrong value.[0705]
-Description: Time parameter with format display wrong value.
-Build number:2.2.0.v2007042309 Steps to reproduce: Chinese Locale.
-1.New a report parameter, time type, input value as 04/23/2006 9:30:20 AM.
-2.Click Change button, set format as mm:hh.
-3.Drag the parameter to Layout and preview.
-Expected result: Display correct value Actual result: Display "1970 1 06:09" The value stored in config file is wrong.
-I saw
-<structure>
-<property name="name">time_6</property>
-<property name="value">06:09:00 AM</property>
-</structure> Error log:N/A
+Description: Time parameter with format display wrong value. Build number:2.2.0.v2007042309 Steps to reproduce: Chinese Locale. 1. New a report parameter, time type, input value as 04/23/2006 9:30:20 AM. 2. Click Change button, set format as mm:hh. 3. Drag the parameter to Layout and preview. Expected result: Display correct value Actual result: Display "1970 1 06:09" The value stored in config file is wrong. I saw <structure> <property name="name">time_6</property> <property name="value">06:09:00 AM</property> </structure> Error log:N/A

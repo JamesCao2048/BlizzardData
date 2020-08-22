@@ -1,13 +1,10 @@
 Clear text in Text.getTextChars()
-Currently, all our login dialogs have Text widget in it for password field.
-Per Java security best practices, passwords should always be stored as char[]  rather than String, so we use getTextChars() API to get password as char array and then zero it out for safety:
+Currently, all our login dialogs have Text widget in it for password field.  Per Java security best practices, passwords should always be stored as char[]  rather than String, so we use getTextChars() API to get password as char array and then zero it out for safety:
 char[] password = pwText.getTextChars();
 //..login with password
 Arrays.fill(password, '0'); //zero out the password.
-But we found we can still see password array in memory dump even we zero out the password array get from getTextChars().
-This is because getTextChar() itself
-creates a copy of input text, and it will and there is no way to clear it explictly.
-So the password will stay in memory until it is collected by GC.
+But we found we can still see password array in memory dump even we zero out the password array get from getTextChars(). This is because getTextChar() itself
+creates a copy of input text, and it will and there is no way to clear it explictly. So the password will stay in memory until it is collected by GC.
 Can we improve the implementation of getTextChars to further reduce the chances of a password being compromised?
 On Windows:
 public char[] getTextChars () {
@@ -16,8 +13,7 @@ int length = OS.GetWindowTextLength (handle);
 if (length == 0) return new char[0];
 TCHAR buffer = new TCHAR (getCodePage (), length + 1);
 OS.GetWindowText (handle, buffer, length + 1);
-if (segments != null) buffer = deprocessText (buffer, 0,
--1, false);
+if (segments != null) buffer = deprocessText (buffer, 0, -1, false);
 char [] chars = new char [length];
 System.arraycopy (buffer.chars, 0, chars, 0, length);
 +	Arrays.fill(buffer.chars, '0');

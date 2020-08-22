@@ -52,9 +52,7 @@ e.gc.setAntialias(SWT.DEFAULT);
 container.setLayout(new GridLayout());
 
 final CLabel label = new CLabel(container, SWT.NULL);
-label.setText("Drag this label.
-You should see a picture of the label while dragging.
-Try commenting the RIGHT_TO_LEFT style.");
+label.setText("Drag this label. You should see a picture of the label while dragging. Try commenting the RIGHT_TO_LEFT style.");
 DragSource source = new DragSource(label, DND.DROP_MOVE|DND.DROP_COPY);
 source.setTransfer(new Transfer[] { TextTransfer.getInstance() });
 source.setDragSourceEffect(new DragSourceEffect(label) {

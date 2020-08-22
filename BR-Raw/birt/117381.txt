@@ -1,11 +1,2 @@
 Bug 117381 Support multiple emitters foir same output format using emitter ID
-BIRT now has two emitters that can support PDF format.
-An fo emitter and a PDF emitter.
-BIRT should provide API for host (viewer) to choose which emitter to use.
-The proposed solution is that in IRenderTask, a method setEmitterID() is supported.
-Internally, BIRT should keep a list of (format, emitters).
-If setEmitterID() is not called, and there are multiple emitters for a specific format, engine will arbitrarily pick one emitter; otherwise, engine should use the emitter name specified; if the specified emitter is not available for whatever reasons, engine should throw "format not supported" exception, even if there is another emitter that supports the format.
-The APi change is already put into IRenderTask.
-Implementation class needs to be enhanced.
-Please also investigate whether the IRunAndRenderTask can support setEmitterID().
-For BIRT 2.0, viewer should be setting the fo emitter ID for RunAndRenderTask, and pdf emitter id for RenderTask.
+BIRT now has two emitters that can support PDF format. An fo emitter and a PDF emitter. BIRT should provide API for host (viewer) to choose which emitter to use. The proposed solution is that in IRenderTask, a method setEmitterID() is supported. Internally, BIRT should keep a list of (format, emitters). If setEmitterID() is not called, and there are multiple emitters for a specific format, engine will arbitrarily pick one emitter; otherwise, engine should use the emitter name specified; if the specified emitter is not available for whatever reasons, engine should throw "format not supported" exception, even if there is another emitter that supports the format. The APi change is already put into IRenderTask. Implementation class needs to be enhanced. Please also investigate whether the IRunAndRenderTask can support setEmitterID(). For BIRT 2.0, viewer should be setting the fo emitter ID for RunAndRenderTask, and pdf emitter id for RenderTask.

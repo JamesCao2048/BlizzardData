@@ -1,8 +1,6 @@
 Link widget with wrapped link: active area on wrong line
 I20050509-2010
-The Link widget has problems when a link extends over two lines.
-The active area
-of the part on the upper line is shifted one line down.
-Clicking on the first
+The Link widget has problems when a link extends over two lines. The active area
+of the part on the upper line is shifted one line down. Clicking on the first
 linked word only reveals the active area, but does not engage the link.
 Looks fine on GTK, but fails on WinXP.

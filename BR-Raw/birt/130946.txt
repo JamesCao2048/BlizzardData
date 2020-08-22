@@ -1,4 +1,2 @@
 Bug 130946 Switch to ICU collator class in JdbcDriverManagerDialog
-Class org.eclipse.birt.report.data.oda.jdbc.ui.JdbcDriverManagerDialog uses java.text.Collator.
-This should be converted to using ICU4J (icu.text.Collator).
-Since the ICU classes are somewhat different some code rewrite is needed in this class.
+Class org.eclipse.birt.report.data.oda.jdbc.ui.JdbcDriverManagerDialog uses java.text.Collator. This should be converted to using ICU4J (icu.text.Collator). Since the ICU classes are somewhat different some code rewrite is needed in this class.

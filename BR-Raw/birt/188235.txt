@@ -1,4 +1,2 @@
 Bug 188235 [Regression]Chart legend position is incorrect
-Steps to reproduce: 1.Set plot width = 150; height = 150; 2.Set legend position = right; Expected result: Legend is in the right side of plot.
-Actual result: Legend position is not plot left offset + plot width; but only plot width.
-So plot and legend are overlapped together.
+Steps to reproduce: 1. Set plot width = 150; height = 150; 2. Set legend position = right; Expected result: Legend is in the right side of plot. Actual result: Legend position is not plot left offset + plot width; but only plot width. So plot and legend are overlapped together.

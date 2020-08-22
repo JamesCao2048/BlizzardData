@@ -30,8 +30,7 @@ TreeColumn col1 = new TreeColumn(tree, SWT.None);
 col1.setWidth(100);
 TreeColumn col2 = new TreeColumn(tree, SWT.None);
 col2.setWidth(100);
-for (int k = 0; k
-< 3; k++) {
+for (int k = 0; k < 3; k++) {
 TreeItem subsubItem = new TreeItem(tree, SWT.NONE);
 subsubItem.setText(1, "item " + " " + k);
 }
@@ -77,4 +76,4 @@ while (!shell.isDisposed()) {
 if (!display.readAndDispatch())
 display.sleep();
 }
-display.dispose()
+display.dispose();

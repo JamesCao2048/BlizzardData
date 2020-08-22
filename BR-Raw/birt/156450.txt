@@ -1,6 +1,2 @@
 Bug 156450 Support BORDER style for table rows
-Currently the BORDEr style is supported only for cells.
-There is no way to set it on the row level.
-Suggestion: Enhancement to support BORDER style properties on the table row element.
-During rendering Engine can set the style property on the cell level.
-As CSS doesnt support border on the row level.
+Currently the BORDEr style is supported only for cells. There is no way to set it on the row level. Suggestion: Enhancement to support BORDER style properties on the table row element. During rendering Engine can set the style property on the cell level. As CSS doesnt support border on the row level.

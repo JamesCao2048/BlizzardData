@@ -24,34 +24,4 @@ During weaving, an instruction list is augmented with extra entries representing
 After some digging it is actually the remap() call for the handler (not the start or end) that leads to the problem.  The handler represents where to jump to in the code when an exception of the specified type occurs between the instructions pointed at by start and end.
 I sent a debug build to a user encountering this problem (I could not recreate it) and in that I was looking at where in fact the handler was pointing before we called remap().  I learned that when this problem occurs, the handler is not pointing to anywhere in the method currently being processed (not good).
 In a second debug build I tried to ascertain who was setting these handlers to point to nowhere.  This debug never triggered, no-one was setting them to point to nowhere...
-I happened to notice whilst going through the instructions in the debug output that cobertura was being used, a coverage toolkit that works by doing bytecode manipulation to insert calls out to a library.  AspectJ was being called after cobertura and I asked the user to try the steps the other way round - it worked fine.  Indicating cobertura was doing something to the bytecode that gave us problems.  After much messing about, I recreated it by applying around advice to within(*) to all the classes in rt.jar (I just used that as a very large standalone jar file I could weave into).
-I learned that Cobertura creates catch blocks that look a little different to what javac and other compilers create.  The typical bytecode sequence a compiler produces for a catch block starts with a STORE instruction, to store the exception being caught (whether the body of the catch block uses it or not).  But the cobertura catch blocks started with an INVOKESTATIC instruction, a call out to another method.  What does this mean?  It means the same instruction has two shadows, a 'handler' shadow and a 'method-call' shadow - and it turns out this is what causes our problem.  If around advice is applied to the call join point and it cannot be inlined then the body of the call shadow (the call itself) is pulled out into a new method.  Because the handler was the same instruction, this meant the handler *was also being pulled out* into the new method, leaving behind an exception handler that jumped to an invalid location (in fact it 'jumped' to an instruction in a different method!).  So the reason I never saw the handler location being set incorrectly is that it was set correctly up front, but then dragged out with the method-call shadow into the wrong place.  In bytecode terms it looks like this:
-method-execution()
-|               ICONST_0
-|               ISTORE_2
-|               SIPUSH -1
-|               ISTORE_3
-| catch java.lang.Exception (1806389629) -> E0
-| | method-call(ProjectData ProjectData.getGlobalProjectData())
-| | |           INVOKESTATIC ProjectData.getGlobalProjectData ()
-| | method-call(ProjectData getGlobalProjectData())
-| |             LDC "SomeString"
-| | method-call(ClassData getOrCreateClassData(java.lang.String))
-| | |           INVOKEVIRTUAL  ProjectData.getOrCreateClassData (LString;)
-| | method-call(ClassData ProjectData.getOrCreateClassData(String))
-| |             SIPUSH 106
-| | method-call(void ClassData.touch(int))
-| | |           INVOKEVIRTUAL ClassData.touch (I)V
-| | method-call(void ClassData.touch(int))
-| |             ALOAD_1
-| | method-call(Object Expression.getValue())
-| | |           INVOKEVIRTUAL Expression.getValue ()
-| | method-call(Object Expression.getValue())
-| catch java.lang.Exception (1806389629) -> E0
-|               ARETURN
-| method-call(nProjectData ProjectData.getGlobalProjectData())
-| |         E0: INVOKESTATIC ProjectData.getGlobalProjectData ()
-| method-call(ProjectData ProjectData.getGlobalProjectData())
-|               LDC "Object"
-We can see the problem in that final method-call.  The target for the exception handler seen earlier (E0) is within the method-call shadow.
-What to do?
+I happened to notice whilst going through the instr

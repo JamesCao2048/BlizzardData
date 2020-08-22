@@ -8,20 +8,17 @@ final Display display = new Display();
 final Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 //	final Tree tree = new Tree(shell, SWT.NONE);
-//	for (int i = 0; i
-< 100; i++) {
+//	for (int i = 0; i < 100; i++) {
 //		TreeItem item = new TreeItem(tree, SWT.NONE);
 //		item.setText("Item xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + i);
 //	}
 //	final Table tree = new Table(shell, SWT.NONE);
-//	for (int i = 0; i
-< 100; i++) {
+//	for (int i = 0; i < 100; i++) {
 //		TableItem item = new TableItem(tree, SWT.NONE);
 //		item.setText("Item xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + i);
 //	}
 final List tree = new List(shell, SWT.H_SCROLL | SWT.V_SCROLL);
-for (int i = 0; i
-< 100; i++) {
+for (int i = 0; i < 100; i++) {
 tree.add("Item" + i);
 }
 

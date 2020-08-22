@@ -1,7 +1,5 @@
 AccessibleObject interfering with default accessibility of Text (with Orca)
-SWT creates an AccessibleObject when the free Label relation is added.
-This causes a lot of code to start running in AccessibleObject even though there is no listener added to Accessible object associated to the text field in the sample below.
-For example, AcessibleObject.atkText_get_character_at_offset() is called as you type in the text field and the implementation gets the whole text of the widget and returns the character at the offset instead of calling the super optimized implementation.
+SWT creates an AccessibleObject when the free Label relation is added. This causes a lot of code to start running in AccessibleObject even though there is no listener added to Accessible object associated to the text field in the sample below. For example, AcessibleObject.atkText_get_character_at_offset() is called as you type in the text field and the implementation gets the whole text of the widget and returns the character at the offset instead of calling the super optimized implementation.
 public static void main(String[] args) {
 //		Device.DEBUG = true;
 Display display = new Display();

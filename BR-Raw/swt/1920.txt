@@ -1,8 +1,8 @@
 VerifyKeyListener broken
 Build ID: I20070828-0800
 Steps To Reproduce:
-1.Open a text editor
-2.Press Ctrl-J to start incremental find, "Incremental Find" appears in the status bar
-3.Typing text just cancels the search and inserts text into the editor
+1. Open a text editor
+2. Press Ctrl-J to start incremental find, "Incremental Find" appears in the status bar
+3. Typing text just cancels the search and inserts text into the editor
 More information:
 I think this is a regression, because incremental find was working ok in 3.4M1

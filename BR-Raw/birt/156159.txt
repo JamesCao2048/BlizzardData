@@ -1,10 +1,2 @@
 Bug 156159 [acceptance] data item disappears when preview in pdf
-steps to reproduce:
-- create a report
-- add a data item
-- bring up properties
-- set its width to 1cm or 50%, etc
-- set its background color to blue
-- preview in html and pdf expected behavior:
-- data item width is changed in html and pdf report actual behavior:
-- i got one empty report when preview in pdf
+steps to reproduce: - create a report - add a data item - bring up properties - set its width to 1cm or 50%, etc - set its background color to blue - preview in html and pdf expected behavior: - data item width is changed in html and pdf report actual behavior: - i got one empty report when preview in pdf

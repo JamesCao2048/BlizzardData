@@ -4,17 +4,14 @@ Description: When hooking a TraverseListener onto a control on a TabFolder,
 setting e.doit = false turns off the default behaviour on Windows, but not on
 Linux.
 This behaviour is found only when there is a TabFolder as a recursive parent of
-the control.
-If the same controls are built on a Composite or directly on a
+the control. If the same controls are built on a Composite or directly on a
 shell, setting e.doit = false will turn off the default behaviour.
 To see the behaviour:
-1.Run the following sample code.
-2.Click on the "Add" button.
-"Hit me" will be printed to the console.
-3.Click on the combo.
-4.Hit enter on the keyboard.
-5.On Windows, nothing will happen.
-On Motif, "Hit me" will be printed.
+1. Run the following sample code.
+2. Click on the "Add" button. "Hit me" will be printed to the console.
+3. Click on the combo.
+4. Hit enter on the keyboard.
+5. On Windows, nothing will happen. On Motif, "Hit me" will be printed.
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.layout.*;

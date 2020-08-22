@@ -1,15 +1,11 @@
 non composable key combinations erases first char in text editors
-On a mac entering characters via composition (i.e.
-a character like combination of ~ and n, to produce 帽) works fine for combinations that produce a combined char, but for non existing combinations, the first entered character is instead erased.
+On a mac entering characters via composition (i.e. a character like combination of ~ and n, to produce 帽) works fine for combinations that produce a combined char, but for non existing combinations, the first entered character is instead erased.
 This happens in editors, but not in fields in dialogs.
 Reproducible: Always.
 Reproduce by:
 - Open a text editor (I tested in Java, as well as in Xtext generated editors):
 - Type ~
 - Type =
-Result, the ~ is deleted.
-Expected result: "~="
-Work around: Type '~' then
-<space> or
-<esc> to exit compose mode, then type '='.
+Result, the ~ is deleted. Expected result: "~="
+Work around: Type '~' then <space> or <esc> to exit compose mode, then type '='.
 The issue is quite irritating as eclipse editors work differently than the standard on the mac.

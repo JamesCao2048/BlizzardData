@@ -3,7 +3,5 @@ No settings callback when High Contrast is turned off
 We only get the settings callback when High Contrast mode is turned on but not when it is turned off.
 STEPS
 1) Run the class attached
-2) Change to High Contrast mode
-- you get the callback (prints to console)
-3) Change it back
-- no print to console.
+2) Change to High Contrast mode - you get the callback (prints to console)
+3) Change it back - no print to console.

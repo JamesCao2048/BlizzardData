@@ -1,9 +1,3 @@
 Bug 130686 Request for an Aggregate builder in BIRT report designer
-It is somewhat difficult for a new BIRT user to figure out how to build an aggregate without reading the help or looking at examples.
-It's even more difficult to build an advanced aggregate (those that take advantage of filtering and non-default groupin.
-The issues are: (1) Aggregates are buried under BIRT functions/Total object in Expression builder.
-A novice may not be able to immediately locate this when he needs an aggregate.
-(2) The filter and group parameters are difficult to figure out without help.
-We should consider adding an aggregate builder to the Expression Builder.
-Some usability study is needed to figure out the exact UI, but I suggest the following guidelines: * Expression builder should list Aggregates as a top level construct (alongside operators/functions/data sets etc) rather than listing them under functions.
-* When an aggregate is selected, the builder should have a dialog to help the user construct the various arguments to the aggregate function, including (1) picking a column (or build an expression) to aggregate on; (2) Pick a group from a list of available groups; (3) build a filter expression
+It is somewhat difficult for a new BIRT user to figure out how to build an aggregate without reading the help or looking at examples. It's even more difficult to build an advanced aggregate (those that take advantage of filtering and non-default groupin. The issues are: (1) Aggregates are buried under BIRT functions/Total object in Expression builder. A novice may not be able to immediately locate this when he needs an aggregate. (2) The filter and group parameters are difficult to figure out without help. We should consider adding an aggregate builder to the Expression Builder. Some usability study is needed to figure out the exact UI, but I suggest the following guidelines: * Expression builder should list Aggregates as a top level construct (alongside operators/functions/data sets etc) rather than listing them under functions. * When an aggregate is selected, the builder should have a dialog to help the user construct the various arguments to the aggregate function, including (1) pi
+cking a column (or build an expression) to aggregate on; (2) Pick a group from a list of available groups; (3) build a filter expression

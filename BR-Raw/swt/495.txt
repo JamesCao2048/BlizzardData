@@ -1,10 +1,7 @@
 Setting foreground color in EraseItem listener has no effect
 Build Identifier: 3.7m2
-See example below.
-The selected row should be drawn in red, but in 3.7m2 (unlike 3.6.1) the text is drawn in white, making the line appear 'blank'.
-
-Note that this bug affects the JFace features that allow the user to select a cell in the table (eg.
-FocusCellOwnerDrawHighlighter).
+See example below.  The selected row should be drawn in red, but in 3.7m2 (unlike 3.6.1) the text is drawn in white, making the line appear 'blank'.
+Note that this bug affects the JFace features that allow the user to select a cell in the table (eg. FocusCellOwnerDrawHighlighter).
 Reproducible: Always
 Steps to Reproduce:
 import org.eclipse.swt.SWT;
@@ -28,8 +25,7 @@ table.setHeaderVisible(true);
 new TableColumn(table, SWT.NONE).setWidth(100);
 new TableColumn(table, SWT.NONE).setWidth(100);
 new TableColumn(table, SWT.NONE).setWidth(100);
-for (int i = 0; i
-< 5; i++) {
+for (int i = 0; i < 5; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText(0, "item " + i + " col 0");
 item.setText(1, "item " + i + " col 1");

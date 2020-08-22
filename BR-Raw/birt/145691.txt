@@ -1,7 +1,2 @@
 Bug 145691 the result set selection list in viewer data export shows names with *_<number>
-Create a report with mulitple table, dynamic text, or list that has data binding.
-preview the report in web viewer, try to export data from the web viewer.
-A selection list of result sets is pompted to the user.
-The names of these result sets seems to be a report item name plus "_nnnn" appended at the end.
-It is not user friendly to show this internal numbers.
-It will be better to show the table name, or the list name, or the report item name that has the result set in the selection list.
+Create a report with mulitple table, dynamic text, or list that has data binding. preview the report in web viewer, try to export data from the web viewer. A selection list of result sets is pompted to the user. The names of these result sets seems to be a report item name plus "_nnnn" appended at the end. It is not user friendly to show this internal numbers. It will be better to show the table name, or the list name, or the report item name that has the result set in the selection list.

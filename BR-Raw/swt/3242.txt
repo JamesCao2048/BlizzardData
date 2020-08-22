@@ -5,10 +5,8 @@ If the user types any text not supported by the current font on StyledText
 which calls TextLayout, the text becomes blank (in Eclipse3.0M9) on Windows.
 For Example, if the user selects "Microsoft Sans Serif" font on Windows, and
 type Japanese text which "Microsoft Sans Serif" font does not contain, then
-notepad.exe still can display Japanese text.
-It is because notepad.exe supports
-font substitution and finds Japanese "MS Gothic" or something like that.
-(maybe
+notepad.exe still can display Japanese text. It is because notepad.exe supports
+font substitution and finds Japanese "MS Gothic" or something like that. (maybe
 because notepad.exe may simply call TextOutW(), though.)
 Since StyledText/TextLayout is implemented by Uniscribe, TextLayout should
 support font substitution.

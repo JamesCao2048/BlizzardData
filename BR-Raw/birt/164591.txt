@@ -1,8 +1,2 @@
 Bug 164591 [Regression] No respond when set large number in filter TOPN[0702]
-Description: Set a large number(for example, 3444444) in the "value1" of filter topN.
-When preview the data in the "Edit dataset" dialog, it keeps processing and no respond.
-If cancel the operation, no reaction too.
-Build Number: 2.2.0.v20061115-1059 Step to reproduce: 1.new a datasource and a dataset 2.in the dataset add a filter with top N 3.enter 3655566 in top n 4.click the "Preview Results" Actual result: It keeps processing.
-Can not cancel the operation.
-Expected result: If the number is larger than the record number, shall return the whole result set immediately.
-And at the same time, user could cancel the operation.
+Description: Set a large number(for example, 3444444) in the "value1" of filter topN. When preview the data in the "Edit dataset" dialog, it keeps processing and no respond. If cancel the operation, no reaction too. Build Number: 2.2.0.v20061115-1059 Step to reproduce: 1.new a datasource and a dataset 2.in the dataset add a filter with top N 3.enter 3655566 in top n 4.click the "Preview Results" Actual result: It keeps processing. Can not cancel the operation. Expected result: If the number is larger than the record number, shall return the whole result set immediately. And at the same time, user could cancel the operation.

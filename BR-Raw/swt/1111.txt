@@ -1,4 +1,3 @@
 SWT test suite does not call readAndDispatch
-On cocoa this a big problem because we use readAndDispatch to release and create a new NSAutoreleasePool.
-Since this isn't happening, the first pool created gets used all the time, and the process eventually runs out of memory.
+On cocoa this a big problem because we use readAndDispatch to release and create a new NSAutoreleasePool. Since this isn't happening, the first pool created gets used all the time, and the process eventually runs out of memory.
 Adding a call to Display.getDefault().readAndDispatch to our tearDown() allows our test suite to run to completion.

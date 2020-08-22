@@ -3,11 +3,8 @@ Hi,
 I am using the Browser widget with a location text field, that calls setUrl()
 with the content from the text field after the default selection event occures.
 This is hitting the Enter key.
-Entering URLs that miss "http://" and "www." do not seem to work then.
-For
-example, I entered "heise.de" and hit the Enter key.
-Nothing happend.
-Then
+Entering URLs that miss "http://" and "www." do not seem to work then. For
+example, I entered "heise.de" and hit the Enter key. Nothing happend. Then
 after entering " http://www.heise.de " and hitting Enter, the page was loading.
 I was working on a G5 using current Mac OS X version.
 Ben

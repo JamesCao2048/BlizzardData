@@ -3,18 +3,11 @@ Created  attachment 104545   [details]
 JVM crash log, hs_err_pid15103.log.
 Build ID: M20080221-1800
 Steps To Reproduce:
-1.Run Eclipse from terminal/command line
-2.In the package explorer view, navigate to the source file I want to edit.
-The project is a Java project and it is already open when Eclipse starts.
-Double-click to open the Java file for editing.
-3.Click on the name of the class (e.g.
-to prepare to press F4 or use context menu).
-At this point, Eclipse crashes predictably.
-I was having some trouble with Eclipse/JVM crashing in libxul before, but it was not easily reproducible.
-I made a new install today to see if that would sort things out, and now it is reproducible every time.
-I will not change anything regarding Eclipse until people are satisfied there is enough information in this bug.
-The JVM will crash at the same point each time, but the exit data as shown in the crash dialog is variable.
-I don't know what this means.
+1. Run Eclipse from terminal/command line
+2. In the package explorer view, navigate to the source file I want to edit. The project is a Java project and it is already open when Eclipse starts. Double-click to open the Java file for editing.
+3. Click on the name of the class (e.g. to prepare to press F4 or use context menu).
+At this point, Eclipse crashes predictably. I was having some trouble with Eclipse/JVM crashing in libxul before, but it was not easily reproducible. I made a new install today to see if that would sort things out, and now it is reproducible every time. I will not change anything regarding Eclipse until people are satisfied there is enough information in this bug.
+The JVM will crash at the same point each time, but the exit data as shown in the crash dialog is variable. I don't know what this means.
 More information:
 Machine:
 RHEL 5
@@ -24,8 +17,7 @@ java version "1.6.0_06"
 Java(TM) SE Runtime Environment (build 1.6.0_06-b02)
 Java HotSpot(TM) Server VM (build 10.0-b22, mixed mode)
 Contents of displayed error dialog:
-JVM terminated.
-Exit code=1
+JVM terminated. Exit code=1
 /usr/bin/java
 -Xms40m
 -Xmx256m

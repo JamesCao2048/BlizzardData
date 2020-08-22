@@ -4,8 +4,5 @@ Only support IAccessibleText if there are accessibleTextListeners
 Run org.eclipse.swt.examples.accessibility.LiveRegionExample.
 Run AccProbe, and look at the Label at the top of the shell.
 This Label implements an accessibleAttributeListener so that it can return object attributes.
-The code for QI currently returns S_OK for IAccessibleText.
-This Label is just a plain Label
-- it is not an IAccessibleText (or even a ROLE_TEXT) so it returns all sorts of bogus information when AccProbe sends any of the text methods to the IAccessibleText interface.
-The fix is to only answer S_OK for IAccessibleText if there are accessibleTextListeners.
-It doesn't make sense for an application to return text attributes without also implementing accessibleTextListener.
+The code for QI currently returns S_OK for IAccessibleText. This Label is just a plain Label - it is not an IAccessibleText (or even a ROLE_TEXT) so it returns all sorts of bogus information when AccProbe sends any of the text methods to the IAccessibleText interface.
+The fix is to only answer S_OK for IAccessibleText if there are accessibleTextListeners. It doesn't make sense for an application to return text attributes without also implementing accessibleTextListener.

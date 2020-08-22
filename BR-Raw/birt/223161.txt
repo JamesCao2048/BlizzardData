@@ -1,9 +1,2 @@
 Bug 223161 Undo issue when try to change the crosstab orientation for chart in crosstab.
-description: Undo issue when try to change the crosstab orientation for chart in crosstab.
-build version: 2.3.0 v20080319-0800 steps to reproduce: 1.New a crosstab.
-2.Show measure as chart.
-3.In properties editor of the crosstab, try to change the crosstab orientation.
-Expected result: Since the crosstab orientation could not be changed any more, the operation should not create Undo record.
-Actual result: 1.Try to change the crosstab orientation (though failed)will lead to tag the report as modified.
-2.In the Undo list, you can see two Undo operation, first is Undo change Measure Direction, second is ChartElementCommandImpl.setProperty.chart.instance.
-And you can undo these operations for several times.
+description: Undo issue when try to change the crosstab orientation for chart in crosstab. build version: 2.3.0 v20080319-0800 steps to reproduce: 1. New a crosstab. 2. Show measure as chart. 3. In properties editor of the crosstab, try to change the crosstab orientation. Expected result: Since the crosstab orientation could not be changed any more, the operation should not create Undo record. Actual result: 1. Try to change the crosstab orientation (though failed)will lead to tag the report as modified. 2. In the Undo list, you can see two Undo operation, first is Undo change Measure Direction, second is ChartElementCommandImpl.setProperty.chart.instance. And you can undo these operations for several times.

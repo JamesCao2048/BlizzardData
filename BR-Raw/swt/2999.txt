@@ -1,5 +1,4 @@
 [CustomControlExample] CCombo caret moves at random when up and down arrows are press
 It correctly move to the previous and next item in the list but the caret is
-also repositioned.
-For example, move the caret to the end, hit up arrow and
+also repositioned.  For example, move the caret to the end, hit up arrow and
 the caret moves back by one character and stays there for subsequent up arrows.

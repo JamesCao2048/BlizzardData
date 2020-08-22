@@ -1,8 +1,7 @@
 Tree.setRedraw(true) doesn't redraw
 I20061024-0800
-The Package Explorer no longer refreshes in certain scenarios.
-This is a blocker since the Package Explorer is unusable.
+The Package Explorer no longer refreshes in certain scenarios. This is a blocker since the Package Explorer is unusable.
 Test Case:
-1.expand some elements
-2.click on the 'Collapse All' local tool bar button
+1. expand some elements
+2. click on the 'Collapse All' local tool bar button
 ==> tree doesn't collapse

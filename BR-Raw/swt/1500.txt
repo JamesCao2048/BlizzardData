@@ -2,8 +2,7 @@ dialog window distorted after going out of "Not responding" state
 Created  attachment 101293   [details]
 failure-screenshot
 I have an Eclipse plugin becoming very busy, and then displaying a message dialog.
-When interacting with busy Eclipse intensively, e.g.
-clicking around Eclipse window, it's becoming "Not Responding".
+When interacting with busy Eclipse intensively, e.g. clicking around Eclipse window, it's becoming "Not Responding".
 But after my busy processing is finished, there should be message dialog displayed.
 Eclipse main get's refreshed (from "Not responding" to normal state), but the dialog window appears distorted.
 See screenshot.

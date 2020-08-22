@@ -1,7 +1,6 @@
 cannot use icons with > 8 bit color depth
 eclipse complains when you ask it to load an icon (*.ico) file having
-greater than 8-bit color depth.
-i have tracked the error down to the
+greater than 8-bit color depth. i have tracked the error down to the
 following lines in WinICOFileFormat::loadInfoHeader():
 if (!((width == infoWidth) && (height * 2 == infoHeight) &&
 ((bitCount == 1) || (bitCount == 4) || (bitCount == 8))))

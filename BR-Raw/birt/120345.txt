@@ -1,4 +1,2 @@
 Bug 120345 Need a URL generator API from Engine
-The Chart Engine needs the ability to generate a viewer URL from an ActionHandle, this can be provided by a Report Engine public API for instance.
-The URL should usable as is by the viewer without any additional change.
-The Chart Engine can take care of evaluating the expressions inside the ActionHandle before calling the Report Engine API if necessary.
+The Chart Engine needs the ability to generate a viewer URL from an ActionHandle, this can be provided by a Report Engine public API for instance. The URL should usable as is by the viewer without any additional change. The Chart Engine can take care of evaluating the expressions inside the ActionHandle before calling the Report Engine API if necessary.

@@ -2,12 +2,9 @@ Order sependencies in setting up menus
 In the following code example, reordering the statements "A", "B", "C" produces
 differing results (you'll need to replace the 'icon' with a reference to an
 available icon on your system)
-ABC
-- menu is shown with text and icon, and is enabled
-CAB
-- text is not shown
-BCA
-- text is shown, but menu is disabled
+ABC - menu is shown with text and icon, and is enabled
+CAB - text is not shown
+BCA - text is shown, but menu is disabled
 package swtbuilder.mainwindow;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
@@ -55,8 +52,7 @@ Menu menuBar = new Menu(shell, SWT.BAR);
 shell.setMenuBar(getMenuBar(shell));
 shell.open();
 
-// start the event loop.
-We stop when the user has done
+// start the event loop. We stop when the user has done
 // something to dispose our window.
 //
 while (!shell.isDisposed()) {

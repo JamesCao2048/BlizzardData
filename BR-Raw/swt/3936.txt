@@ -1,26 +1,18 @@
 Table Column Resizable Doesn't work if you click on Column itself.
-I realized this bug because I had some hidden columns in my table.
-And when i
+I realized this bug because I had some hidden columns in my table. And when i
 click on the vertical separator of the column titles, i could expand those
 hidden column.
-Attached is the code snippet.
-I have a second column with "0" width and also,it
-s to setResizable(false).
-That means you shouldn't able to change the size of
-that column.
-But when you clik on vertical separator of the column titles, you
-can expand that column.
-You have to really click hard to get the particular
+Attached is the code snippet. I have a second column with "0" width and also,it
+s to setResizable(false). That means you shouldn't able to change the size of
+that column. But when you clik on vertical separator of the column titles, you
+can expand that column. You have to really click hard to get the particular
 timing or point.
 e.g             ID | HiddenID | Name
 If you have column tiles like above, you should slightly right to the first
-vertical separator.
-Also, that column does NOT have to be "0" width, It could
+vertical separator. Also, that column does NOT have to be "0" width, It could
 be any width and still you can change the size first time you click on
-separator.
-So once that column has expanded to particular size, then you can't
-change the size.
-Good luck in reproducing it..:)
+separator. So once that column has expanded to particular size, then you can't
+change the size. Good luck in reproducing it..:)
 import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.custom.*;
@@ -75,8 +67,7 @@ String[] columnTitles = {
 };
 
 // set up table columns
-for (int i = 0; i
-< columnTitles.length; i++)
+for (int i = 0; i < columnTitles.length; i++)
 {
 TableColumn tableColumn = new TableColumn(aTable,
 SWT.NONE);
@@ -86,8 +77,7 @@ tableColumn.setResizable(columnResizable[i]);
 }
 
 // add 5 rows for testing
-for (int i =0 ; i
-< 5; i++)
+for (int i =0 ; i < 5; i++)
 {
 // adding rows
 TableItem item = new TableItem(aTable, SWT.NONE);

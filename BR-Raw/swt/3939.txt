@@ -1,7 +1,6 @@
 StyledText - cheese when typing in SWT.SINGLE mode
 build 20020806
 StyledText.handleTextChanged does not take the top margin into account when
-rendering directly.
-The double buffer image ends up being too small and the
+rendering directly. The double buffer image ends up being too small and the
 bottom portion of the first line is not blitted to the screen resulting in
 cheese.

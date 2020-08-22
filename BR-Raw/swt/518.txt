@@ -1,3 +1,2 @@
 Composite#setLayoutDeferred missing a checkWidget call
-If Composite#setLayoutDeferred is called from a non-UI thread, it does not throw a ERROR_THREAD_INVALID_ACCESS although the documentation says so.
-The method should include a checkWidget() call, right?
+If Composite#setLayoutDeferred is called from a non-UI thread, it does not throw a ERROR_THREAD_INVALID_ACCESS although the documentation says so. The method should include a checkWidget() call, right?

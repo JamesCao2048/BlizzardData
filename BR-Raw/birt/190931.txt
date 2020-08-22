@@ -1,12 +1,2 @@
 Bug 190931 ReportEngine runtime output file name issue.[0600]
-Description: ReportEngine runtime output file name issue.
-Build number:2.2.0.v20070605 Steps to reproduce: 1.Run below commands: genReport
--m run
--o Test.rptdocument
--p "sample=hello" test.rptdesign genReport
--m render
--f html
--o Testdoc.html Test.rptdocument Expected result: The output file name is Testdoc.html.
-Actual result: The output file name is Testdoc_1.html.
-As the user has specify the output file name, the output file should use the name instead of change it.
-Error log:N/A
+Description: ReportEngine runtime output file name issue. Build number:2.2.0.v20070605 Steps to reproduce: 1. Run below commands: genReport -m run -o Test.rptdocument -p "sample=hello" test.rptdesign genReport -m render -f html -o Testdoc.html Test.rptdocument Expected result: The output file name is Testdoc.html. Actual result: The output file name is Testdoc_1.html. As the user has specify the output file name, the output file should use the name instead of change it. Error log:N/A

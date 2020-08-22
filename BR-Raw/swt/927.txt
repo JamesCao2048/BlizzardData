@@ -1,21 +1,17 @@
 [Cocoa] Deleting TableViewer elements and calling refresh() causes major crash
 Build ID: I20090611-1540
-1.I have a TableViewer with a IStructuredContentProvider model and OwnerDrawLabelProvider cell label provider (I use erase() / measure() / paint() to draw the row cell).
-2.I populate the model with 300 elements.
-The table correctly draws 300 custom rows via my OwnerDrawLabelProvider with a vertical scroll bar.
-3.I now select a selection of the Table's rows using Command-Click to select a random number of elements, scrolling up and down to get a varied selection.
-4.I delete the selected elements from the model.
-This in turn calls the TableViewer's refresh() method.
+1. I have a TableViewer with a IStructuredContentProvider model and OwnerDrawLabelProvider cell label provider (I use erase() / measure() / paint() to draw the row cell).
+2. I populate the model with 300 elements. The table correctly draws 300 custom rows via my OwnerDrawLabelProvider with a vertical scroll bar.
+3. I now select a selection of the Table's rows using Command-Click to select a random number of elements, scrolling up and down to get a varied selection.
+4. I delete the selected elements from the model. This in turn calls the TableViewer's refresh() method.
 At this point I get a SWTExceeption "Widget is disposed".
 The debug trace puts it in the TableItem class at line 462:
 protected void checkWidget () {
 Display display = this.display;
-if (display == null) error (SWT.ERROR_WIDGET_DISPOSED);
-<---------- HERE
+if (display == null) error (SWT.ERROR_WIDGET_DISPOSED); <---------- HERE
 and prior to that here:
 public Font getFont (int index) {
-checkWidget ();
-<------------ HERE
+checkWidget (); <------------ HERE
 and prior to that here:
 void sendMeasureItem (TableItem item, int columnIndex, NSSize size) {
 NSTableView widget = (NSTableView)this.view;
@@ -25,8 +21,7 @@ int itemHeight = (int)Math.ceil (widget.rowHeight() + spacing.height);
 GCData data = new GCData ();
 data.paintRect = widget.frame ();
 GC gc = GC.cocoa_new (this, data);
-gc.setFont (item.getFont (columnIndex));
-<------------------ HERE
+gc.setFont (item.getFont (columnIndex)); <------------------ HERE
 Which is called from
 void drawInteriorWithFrame_inView(int /*long*/ id, int /*long*/ sel, NSRect rect, int /*long*/ view)
 It's a show stopper for my RCP app.

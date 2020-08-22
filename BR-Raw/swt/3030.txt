@@ -1,10 +1,7 @@
 Table widget unexpectedly fire deactivated event while clicking scroll bar buttons.
 I have created listeners to a table widget for its activate and deactivate
-events.
-When I click on the table, the table fires an activate event.
-When
-the table becomes out of focus, it fires an deactivate event.
-If I have the
+events.  When I click on the table, the table fires an activate event.  When
+the table becomes out of focus, it fires an deactivate event.  If I have the
 table activated, and then keeps clicking on the scroll bar, the table will
 eventually fire a deactivate event.
 This behaviour is different from that on Windows and since the table is still
@@ -16,8 +13,7 @@ Shell shell = new Shell(display);
 shell.setBounds(10,10,400,400);
 final Table table = new Table(shell, SWT.NONE);
 table.setBounds(10,10,100,100);
-for (int i = 0; i
-< 99; i++) {
+for (int i = 0; i < 99; i++) {
 new TableItem(table, SWT.NONE).setText("item " + i);
 }
 

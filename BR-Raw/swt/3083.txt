@@ -4,8 +4,7 @@ I am using the SWT browser widget to display HTML and let the user navigate
 through the WWW in my application.
 Earlier the browser ignored clicking on links that would open in a new window
 (with having target="_blank").
-I've now found out the OpenWindowListener which could solve my problem.
-Playing
+I've now found out the OpenWindowListener which could solve my problem. Playing
 around with it, I came up to this snippet, which shows a very strange behaviour:
 public static void main(String[] args) {
 Display display = new Display();
@@ -32,8 +31,7 @@ this line!
 }
 The file "index.html" is a local HTML file with a simple link that uses
 target="_blank".
-Having the "event.browser.getUrl();" commented, nothing happens.
-But when
+Having the "event.browser.getUrl();" commented, nothing happens. But when
 uncommented, after clicking on the URL it opens in my system default browser
 (IE).
 I am also wondering, why the WindowEvent event does not provide information

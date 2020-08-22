@@ -1,6 +1,2 @@
 Bug 120448 Issue with returned id
-After the change of id, InstanceId.parse() can no long be able to parse the id and how can I determin the type of this element?
-What would be the component id based on the id I get?
-Or there is another api that I can use to query the type.
-Note that all these happened in the document processor that rendering the page.
-Js code has not been invoked to send back the idd that recognizable by the InstanceId.parse().
+After the change of id, InstanceId.parse() can no long be able to parse the id and how can I determin the type of this element? What would be the component id based on the id I get? Or there is another api that I can use to query the type. Note that all these happened in the document processor that rendering the page. Js code has not been invoked to send back the idd that recognizable by the InstanceId.parse().

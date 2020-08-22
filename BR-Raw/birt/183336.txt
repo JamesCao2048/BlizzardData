@@ -1,9 +1,2 @@
 Bug 183336 birt:paramDef should process parameters which do not echo input.
-Description: birt:paramDef should process parameters which do not echo input.
-Build number:2.2.0.v20070420 Steps to reproduce: 1.New a report with a parameter, string, tick on "do not echo input" option.
-2.New a birt jsp file with content.
-<birt:parameterPage id="0" name="page" reportDesign="report.rptdesign" isCustom="true"> echo parameter:<birt:paramDef id="1" name="p_echo"/>
-<input type="submit" name="OK" value="submit"/>
-</birt:parameterPage> 3.Preview the jsp and input content in input box.
-Expected result: Input content is replaced with other signals as "*" Actual result: User can see the input content.
-Error log:N/A
+Description: birt:paramDef should process parameters which do not echo input. Build number:2.2.0.v20070420 Steps to reproduce: 1. New a report with a parameter, string, tick on "do not echo input" option. 2. New a birt jsp file with content. <birt:parameterPage id="0" name="page" reportDesign="report.rptdesign" isCustom="true"> echo parameter:<birt:paramDef id="1" name="p_echo"/> <input type="submit" name="OK" value="submit"/> </birt:parameterPage> 3. Preview the jsp and input content in input box. Expected result: Input content is replaced with other signals as "*" Actual result: User can see the input content. Error log:N/A

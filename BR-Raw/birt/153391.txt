@@ -1,7 +1,2 @@
 Bug 153391 Some Options in Edit Parameter dialog haven't been saved.
-Description: Some Options in Edit Parameter dialog haven't been saved.
-Steps to reproduce: 1.new a parameter, boolean type, tick AllowNUll and sort alphabetically...
-2.Close the dialog and reopen it.
-3.new a parameter, string, combo-box, tick AllowNull.
-4.Close the dialog and reopen it.
-Expected result: Ticked options' status are saved Actual result: After reopen parameter dialog, options are unticked.
+Description: Some Options in Edit Parameter dialog haven't been saved. Steps to reproduce: 1. new a parameter, boolean type, tick AllowNUll and sort alphabetically... 2. Close the dialog and reopen it. 3. new a parameter, string, combo-box, tick AllowNull. 4. Close the dialog and reopen it. Expected result: Ticked options' status are saved Actual result: After reopen parameter dialog, options are unticked.

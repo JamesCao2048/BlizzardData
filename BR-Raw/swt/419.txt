@@ -1,7 +1,6 @@
 ClassCast exception when drop target is List
 Happens on Cocoa with 3.7 HEAD
-Run the DNDExample.
-Drag and drop to a the List as drop target.
+Run the DNDExample. Drag and drop to a the List as drop target.
 We get class cast exception.
 Exception in thread "main" java.lang.ClassCastException: org.eclipse.swt.widgets.List cannot be cast to org.eclipse.swt.widgets.Table
 at org.eclipse.swt.dnd.DropTarget.tableView_validateDrop_proposedRow_proposedDropOperation(DropTarget.java:965)

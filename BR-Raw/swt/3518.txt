@@ -1,10 +1,7 @@
 List.getFocusIndex() does not answer -1
 Run the snippet below, click on the empty list, and it prints its focus index
-as 0 even though it has no items.
-Same happens if you have a list with items
-and then do a List.removeAll().
-According to the javadoc these should answer
--
+as 0 even though it has no items.  Same happens if you have a list with items
+and then do a List.removeAll().  According to the javadoc these should answer -
 1, which is what (for instance) gtk does.
 public static void main(String[] args){
 Display display = new Display();
@@ -25,7 +22,5 @@ display.sleep();
 display.dispose();
 }
 Looking at the implementation of getFocusIndex(), I don't think that
-LB_GETCARETINDEX ever answers
--1. Perhaps we should just answer
--1 whenever
+LB_GETCARETINDEX ever answers -1.  Perhaps we should just answer -1 whenever
 the list contains no items.

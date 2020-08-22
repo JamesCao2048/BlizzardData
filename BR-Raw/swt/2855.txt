@@ -2,8 +2,7 @@
 The example cited in the online SWT documentation should add a test:
 // do time-intensive computations
 ...
-// now update the UI.
-We don't depend on the result,
+// now update the UI. We don't depend on the result,
 // so use async.
 display.asyncExec (new Runnable () {
 public void run () {
@@ -14,8 +13,7 @@ myWindow.redraw ();
 });
 // now do more computations
 In some products, I've noticed .log files littered with exceptions because the
-asyncExec is processed after the window has already closed.
-It wouldn't be a
+asyncExec is processed after the window has already closed.  It wouldn't be a
 bad idea to integrate this check into the SWT API, e.g.:
 myWindow.asyncUpdate(new Runnable...);
 This in turn would check if the widget still exists before executing the

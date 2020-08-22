@@ -1,9 +1,2 @@
 Bug 183346 Datetime value with pattern from birt:paramDef page to report is wrong.
-Description: Datetime value with pattern from birt:paramDef page to report is wrong.
-Build number:2.2.0.v20070420 Steps to reproduce: 1.New a report with a datetime type parameter, drag the parameter to layout.
-2.New a birt jsp file.
-<birt:parameterPage id="0" name="customparameterpage" reportDesign="report/customJspTagParamDefPattern.rptdesign" isCustom="true">
-<birt:paramDef id="5" name="p_dt" pattern="yyyy/MM/dd hh" value ="2006/09/23 10"/>
-<input type="submit" value="submit"/>
-</birt:parameterPage> 3.Preview the jsp file and click submit Expected result: Display datetime value correctly.
-Actual result: Display Apr 28, 0016 10:00 AM Error log:N/A
+Description: Datetime value with pattern from birt:paramDef page to report is wrong. Build number:2.2.0.v20070420 Steps to reproduce: 1. New a report with a datetime type parameter, drag the parameter to layout. 2. New a birt jsp file. <birt:parameterPage id="0" name="customparameterpage" reportDesign="report/customJspTagParamDefPattern.rptdesign" isCustom="true"> <birt:paramDef id="5" name="p_dt" pattern="yyyy/MM/dd hh" value ="2006/09/23 10"/> <input type="submit" value="submit"/> </birt:parameterPage> 3. Preview the jsp file and click submit Expected result: Display datetime value correctly. Actual result: Display Apr 28, 0016 10:00 AM Error log:N/A

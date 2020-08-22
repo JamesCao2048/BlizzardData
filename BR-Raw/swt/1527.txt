@@ -2,6 +2,5 @@ Disable automatic horizontal scrolling on tree item selection
 I200611108-1600, Vista RC2
 - create a Java project with source folder, package and Java file using longer names
 - open the package explorer, with small width, expand the items and select the entries one by one
-> The tree viewer scolls horizontally so that the beginning of the selected item is visible.
-Additionaly it also scrolls back if the mouse is over a parent item (no selection required).
+> The tree viewer scolls horizontally so that the beginning of the selected item is visible. Additionaly it also scrolls back if the mouse is over a parent item (no selection required).
 I remember that behavoir also existed in older windows versions and SWT found a way to prevent it from doing this...

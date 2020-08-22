@@ -2,5 +2,4 @@ org.eclipse.swt.graphics.GC: Transform has no effect to images with transarent c
 GC.setTransform(Transform) has no effect to those images that contain
 transparent color index, like PNG and GIF.
 I tested JPG, PNG (with and without transparent color index) and GIF (with
-transparent index).
-Transform has no effect to those transparent images.
+transparent index). Transform has no effect to those transparent images.

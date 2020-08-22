@@ -1,8 +1,6 @@
 Button.computeSize definition on Mac does not match other platforms
 3.1M1
 Button.computeSize() on carbon adds a 4 pixel padding factor to any size hints
-passed in.
-I think this padding may be added to compensate for the large
+passed in.  I think this padding may be added to compensate for the large
 internal border given to buttons, but this does not match the behaviour of other
-platforms.
-I think this should be cleaned up.
+platforms.  I think this should be cleaned up.

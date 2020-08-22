@@ -1,10 +1,9 @@
 SWT deletes libswt-cairo-motif if libcairo isn't found
 Build ID: M20080221-1800
 Steps To Reproduce:
-1. Compile all the SWT libraries, including libswt-cairo-motif (which requires libcairo to be present)
-2. Remove libcairo or make sure your SWT run won't find it.
-3. Run a snippet like Snippet10 which will fail with an error because it can't find libcairo.
-Make sure it is using the new SWT libraries (-Dswt.library.path should be set).
-4. Notice that it deleted the libswt-cairo-motif library you built earlier.
+1.  Compile all the SWT libraries, including libswt-cairo-motif (which requires libcairo to be present)
+2.  Remove libcairo or make sure your SWT run won't find it.
+3.  Run a snippet like Snippet10 which will fail with an error because it can't find libcairo.  Make sure it is using the new SWT libraries (-Dswt.library.path should be set).
+4.  Notice that it deleted the libswt-cairo-motif library you built earlier.
 More information:
 Although I've seen this problem on AIX with Motif, it may affect other platforms as well.

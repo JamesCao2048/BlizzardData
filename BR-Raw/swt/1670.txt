@@ -1,6 +1,5 @@
 TextLayout uses wrong system font
-Run the testcase.
-Note that the wrong font is used when org.eclipse.swt.internal.carbon.smallFonts system property is specified.
+Run the testcase. Note that the wrong font is used when org.eclipse.swt.internal.carbon.smallFonts system property is specified.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.widgets.*;

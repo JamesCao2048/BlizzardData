@@ -1,10 +1,7 @@
 Menu.getSize does not return the correct value
 The method Menu.getSize returns a different value depending on where the
-parent widget is located when the API is called.
-Run the following example.
-
-Move the shell around the screen and click on the button.
-Note the menu size
+parent widget is located when the API is called.  Run the following example.
+Move the shell around the screen and click on the button.  Note the menu size
 is reported for each click and it is different each time you move the window.
 public static void main(String[] args) {
 Display display = new Display();
@@ -16,8 +13,7 @@ b.addSelectionListener(new SelectionAdapter() {
 public void widgetSelected
 (org.eclipse.swt.events.SelectionEvent e) {
 Menu menu = new Menu(b);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 MenuItem item = new MenuItem(menu, SWT.NONE);
 item.setText("item "+i);
 }

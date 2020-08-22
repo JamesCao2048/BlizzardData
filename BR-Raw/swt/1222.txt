@@ -1,9 +1,5 @@
 GTK-BIDI: Mirrored drawText background has wrong size
-Below is a snippet to reproduce.
-There are 2 Canvases.
-One mirrored and one not.
-You should be able to see how the mirrored drawText behaves differently.
-It draws background far beyond the end of the string.
+Below is a snippet to reproduce. There are 2 Canvases. One mirrored and one not. You should be able to see how the mirrored drawText behaves differently. It draws background far beyond the end of the string.
 Display display = new Display();
 Shell shell = new Shell(display);
 shell.open();

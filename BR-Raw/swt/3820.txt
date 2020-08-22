@@ -30,8 +30,7 @@ column1.setText("second column");
 table.setHeaderVisible(true);
 table.setLinesVisible(true);
 TableItem[] items= new TableItem[19];
-for (int i= 0; i
-< items.length; i++) {
+for (int i= 0; i < items.length; i++) {
 TableItem item= new TableItem(table, SWT.NONE);
 item.setText(new String[]{"Item " + i, "" + i});
 items[i]= item;

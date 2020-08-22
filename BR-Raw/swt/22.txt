@@ -3,5 +3,4 @@ Version: 4.3.0
 Build id: I20130605-2000
 This is a regression from 3.x.
 If you stop at a breakpoint, the editor corresponding to the breakpoint is correctly made active and the cursor positioned at the breaking line as expected.
-However, if you then switch to another editor, and then double click on the stack trace line, it does nothing.
-It should do the same actions as when it hit the breakpoint.
+However, if you then switch to another editor, and then double click on the stack trace line, it does nothing. It should do the same actions as when it hit the breakpoint.

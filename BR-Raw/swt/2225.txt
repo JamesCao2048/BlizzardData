@@ -1,12 +1,9 @@
 CTabItem unnecessarily redraws entire Tab on setImage()
 Build ID: Build id: I20061102-1715
-When setting an image to a CTabItem, the method is smart enough to check the bounds of the image and compare it with the previous set image bounds.
-However, the redraw() call in line 746 (SWT Head) uses x, y, width and height as values, although the image bounds are enough to redraw.
-This actually causes flicker in the Tab's Name-Label when setImage() is called repeatedly, e.g.
-when using an animated GIF (see also  Bug 155083 ).
+When setting an image to a CTabItem, the method is smart enough to check the bounds of the image and compare it with the previous set image bounds. However, the redraw() call in line 746 (SWT Head) uses x, y, width and height as values, although the image bounds are enough to redraw.
+This actually causes flicker in the Tab's Name-Label when setImage() is called repeatedly, e.g. when using an animated GIF (see also  Bug 155083 ).
 Its actually not enough to just redraw the image-bounds, since the Image is positioned into the tab following this rule:
 - horizontal margin: 4 pixel (LEFT_MARGIN)
 - vertically centered
-There is also a slight difference weather the Tab is showing on top or on bottom.
-See the attached patch for a possible solution.
+There is also a slight difference weather the Tab is showing on top or on bottom. See the attached patch for a possible solution.
 Ben

@@ -2,11 +2,9 @@ Hitting the Enter/Return key in the Find/Replace dialog doesn't do anything on M
 Eclipse 3.0 M2
 Build id: 200307181617
 Mac OS X 10.2.6
-1) Open the Find/Replace dialog (Edit
--> Find/Replace).
+1) Open the Find/Replace dialog (Edit -> Find/Replace).
 2) Type in a search term into the text box.
 3) Hit the return key.
-Nothing happens.
-Hitting the Return key should do a "Find" operation (the
+Nothing happens.  Hitting the Return key should do a "Find" operation (the
 same as clicking on the "Find" button, which is highlighted as the "default"
 button in the Find/Replace dialog).

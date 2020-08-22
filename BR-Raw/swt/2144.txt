@@ -29,8 +29,7 @@ path.dispose();
 display.dispose();
 }
 }
---------------------- HERE IS THE LOG
------------------------------
+--------------------- HERE IS THE LOG -----------------------------
 #
 # An unexpected error has been detected by Java Runtime Environment:
 #
@@ -43,8 +42,7 @@ display.dispose();
 # If you would like to submit a bug report, please visit:
 #    http://java.sun.com/webapps/bugreport/crash.jsp
 #
----------------  T H R E A D
----------------
+---------------  T H R E A D  ---------------
 Current thread (0x003f6400):  JavaThread "main" [_thread_in_native, id=864]
 siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
 Registers:
@@ -72,4 +70,4 @@ j  cn.brainy.ui.mindmap.figures.decorations.boundaries.BoundaryShape.containsPoi
 j  cn.brainy.ui.mindmap.figures.BoundaryFigure.containsPoint(II)Z+20
 j  org.eclipse.draw2d.Figure.containsPoint(Lorg/eclipse/draw2d/geometry/Point;)Z+9
 j  cn.brainy.gef.part.GraphicalPart.containsPoint(Lorg/eclipse/draw2d/geometry/Point;)Z+17
-j  cn.brainy.gef.part.GraphicalPart.findAt(Lorg/eclipse/draw2d/geometry/Point;)Lcn
+j  cn.brainy.gef.part.GraphicalPart.findAt(Lorg/eclipse/draw2d/geometry/Point;)Lcn/b

@@ -6,5 +6,4 @@ org.eclipse.swt/Eclipse SWT
 Printing/win32/org/eclipse/swt/printing/Printer.java:143 Method call passes
 null for nonnull parameter of new org.eclipse.swt.internal.win32.TCHAR(int,
 String, boolean)
-it can only happen if buf (returned by GetProfileString) has no commas.
-is that possible ?
+it can only happen if buf (returned by GetProfileString) has no commas. is that possible ?

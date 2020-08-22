@@ -1,8 +1,2 @@
 Bug 131250 Parameter value set in runtime should be kept until close the preview viewer.
-Description: Parameter value set in runtime should be kept until close the preview viewer.
-Steps to reproduce: 1.New a parameter p1 without default value, drag it to Layout.
-2.Define bookmark to p1.3.Insert a label behind p1, set pageBreakBefore to always, hyperlink to p1 bookmark.
-4.Preview in Web Viewer and input p1 value.
-5.Go to the next page and click the label link.
-Expected result: The first page appears.
-Actual result: The parameter dialog appeared.
+Description: Parameter value set in runtime should be kept until close the preview viewer. Steps to reproduce: 1. New a parameter p1 without default value, drag it to Layout. 2. Define bookmark to p1. 3. Insert a label behind p1, set pageBreakBefore to always, hyperlink to p1 bookmark. 4. Preview in Web Viewer and input p1 value. 5. Go to the next page and click the label link. Expected result: The first page appears. Actual result: The parameter dialog appeared.

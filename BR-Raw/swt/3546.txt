@@ -3,8 +3,7 @@ When I double click on the window's icon (the one that is in the upper left
 corner) of the Decorations window, the top level Shell window closes instead of
 that Decorations window.
 I have confirmed that behaviour on Windows XP, Windows 2000 and Windows 2003
-with version 3.024 of SWT.
-This does not happen when I use version 2.135.
+with version 3.024 of SWT. This does not happen when I use version 2.135.
 Here is the snippet, that reproduces the error:
 package net.infogenia.gcoll2.client.tests;
 import org.eclipse.swt.SWT;

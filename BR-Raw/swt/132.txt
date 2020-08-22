@@ -22,8 +22,7 @@ shell = new Shell(display);
 shell.setLayout(new FillLayout());
 Browser browser = new Browser(shell, SWT.MOZILLA);
 shell.open();
-browser.setText((++counter % 2) == 0 ?
-file1Content : file2Content);
+browser.setText((++counter % 2) == 0 ? file1Content : file2Content);
 display.timerExec(10000, this);
 }
 };

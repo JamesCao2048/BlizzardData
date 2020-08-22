@@ -1,7 +1,2 @@
 Bug 223608 Check the API canDrop of the DesignElementHandl
-1:new a library, add a crosstab to the library, and add a label to the cell(Row 1, Column 1).
-2:new a reportdesign, add use the crostab from the library.
-3:Copy the crosstab in the reportdesign, then paste the crosstab.
-4:Select the label(Row 1, Column 1) in the paste crosstab.
-Actual result: The lable can be deleted.
-Expected reslt: The lable cann't be deleted.
+1:new a library, add a crosstab to the library, and add a label to the cell(Row 1, Column 1). 2:new a reportdesign, add use the crostab from the library. 3:Copy the crosstab in the reportdesign, then paste the crosstab. 4:Select the label(Row 1, Column 1) in the paste crosstab. Actual result: The lable can be deleted. Expected reslt: The lable cann't be deleted.

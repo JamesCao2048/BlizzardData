@@ -1,10 +1,8 @@
 [Accessibility] VoiceOver doesn't read the title of tabs in a tab group
 I20100429-1549
 VoiceOver isn't reading the title of a tab.
-1.Launch ControlExample
-2.Turn on VoiceOver.
-3.Click on a tab
-You hear "selected tab xx of 25" but the title isn't announced.
-Compare with System Preferences
--> Keyboard (for example), where the name of the tab is announced when you click on it.
+1. Launch ControlExample
+2. Turn on VoiceOver.
+3. Click on a tab
+You hear "selected tab xx of 25" but the title isn't announced. Compare with System Preferences -> Keyboard (for example), where the name of the tab is announced when you click on it.
 This is a standard control so we shouldn't be overriding anything.

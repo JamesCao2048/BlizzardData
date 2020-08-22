@@ -1,18 +1,14 @@
 StyledText overuse of Font.getFontData
 Running eclipse, using the Java Editor: A single key stroke can cause the API
-Font.getFontData() to be called 13 times.
-I believe, and many people agree,
+Font.getFontData() to be called 13 times. I believe, and many people agree,
 that this API don't need to be used at all by the StyledText when it's been
-typed.
-This API is also overused when we are scrolling the StyledText and
-selecting text.
-Try to add system.out.println in the first line of method
+typed. This API is also overused when we are scrolling the StyledText and
+selecting text. Try to add system.out.println in the first line of method
 Font#getFontData, run a selfhosted eclipse, watch the console.
 I concerned about this problem cause in some platform the performance of this
 method is very pour if compared with Windows.
-For example, Motif running on UTF-8.Each Font has 7 FontData, therefore every
-time I type 'a' in the JavaEditor 91 (7*13) FontData will be loaded.
-Btw, UTF-8
+For example, Motif running on UTF-8. Each Font has 7 FontData, therefore every
+time I type 'a' in the JavaEditor 91 (7*13) FontData will be loaded. Btw, UTF-8
 is the default english encoding for Redhat 8.
 FontMetrics API is also very used by the StyledText, I believe that the metric
 information should be cached in the StyledText and update only when the font is

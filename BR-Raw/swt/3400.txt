@@ -1,9 +1,7 @@
 Tables & Images refresh problem
 When setting an image on a table at a column >0 , every time the image is
 refreshed, the last bottom line of the image of the tableitem on the column>0
-does not get refreshed properly.
-This ends up having messy lines below the
+does not get refreshed properly. This ends up having messy lines below the
 images on columns > 0 .
-This issue only appears with Windows, under Linux it is fine.
-Is this a windows
+This issue only appears with Windows, under Linux it is fine. Is this a windows
 bug or SWT bug ?

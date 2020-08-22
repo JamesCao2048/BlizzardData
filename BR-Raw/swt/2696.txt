@@ -3,16 +3,11 @@ target, os, platform, swt :
 - windows ce.net 4.2 (processor PXA-255 aka ARMv5TE)
 - j9 jvm (wince-arm-ppro-5.7.2-P-20050701-1626) downloaded from IBM trials website
 - swt-3.1-win32-wce_ppc-arm-j2se (official SWT 3.1 release)
-j9 command : j9
--jcl:ppro10
--cp "swt.jat;my.jar"
--Djava.libray.path=.
-Snippet
+j9 command : j9 -jcl:ppro10 -cp "swt.jat;my.jar" -Djava.libray.path=. Snippet
 for example these following methods don't work in my platform :
 GC.setAntiAlias(SWT.ON|SWT.OFF)
 GC.setTramsform(Transform t)
-...
-more ...
+... more ...
 The following code works on Windows/Linux platform but no on CE.NET platform :
 package com.mail.reader;
 import org.eclipse.swt.SWT;
@@ -83,6 +78,5 @@ org.eclipse.swt.graphics.Point extPt = g.textExtent(spedooName);
 tr = new Transform(getDisplay());
 tr.translate((float)w/2, (float)w/2);
 g.setTransform(tr);
-g.drawString(spedooName,
--extPt.x/2, extPt.y*2, true);
-// draw
+g.drawString(spedooName, -extPt.x/2, extPt.y*2, true);
+// draw ind

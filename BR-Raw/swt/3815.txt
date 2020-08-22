@@ -1,10 +1,7 @@
 Add Menu.setRedraw(boolean) API
 On windows, when the workbench removes a number of menu item and adds a number
-of menu item, it causes the menu bar to flash a lot.
-I hack the Menu class to
+of menu item, it causes the menu bar to flash a lot. I hack the Menu class to
 have a setRedraw(boolean) method, and by doing so, it eliminated the flash we
 were seeing.
-Is it possible to have this API?
-It is important to overall feel of the
-workbench.
-Can this be fixed for 2.1?
+Is it possible to have this API? It is important to overall feel of the
+workbench. Can this be fixed for 2.1?

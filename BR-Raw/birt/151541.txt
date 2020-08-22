@@ -1,7 +1,2 @@
 Bug 151541 Can't find the embedded image name in Edit Image Item dialog that from library
-Details: Can't find the embedded image name in Edit Image Item dialog that from library Step: 1.New a library and insert an embedded image named img1.2.New a report design and use the library.
-3.Drop the img1 from library explorer into layout, and the Edit Image Item dialog pop up.
-Actual result: In Embedden image selection, nothing image name is list in embedded image list area.
-And the button of OK is gray.
-Exception reuslt: Can it show the embedded image from library in list area?
-I can click cancel to submit the image is insert in report design, but click ok will be more friendly.
+Details: Can't find the embedded image name in Edit Image Item dialog that from library Step: 1.New a library and insert an embedded image named img1. 2.New a report design and use the library. 3.Drop the img1 from library explorer into layout, and the Edit Image Item dialog pop up. Actual result: In Embedden image selection, nothing image name is list in embedded image list area. And the button of OK is gray. Exception reuslt: Can it show the embedded image from library in list area? I can click cancel to submit the image is insert in report design, but click ok will be more friendly.

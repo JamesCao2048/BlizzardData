@@ -12,9 +12,7 @@ display.syncExec(new Runnable(){});
 continueEventDispatching = false;
 display.asyncExec(null);
 The asyncExec(null) should wake up the SWT thread from display.sleep().
-Unfortunately, this does not work, when the asyncExec() is executed exactly between the display.readAndDispatch() and the display.sleep().
-This can happen, because there is no synchronisation.
-In this case the display.sleep() does not return immediately, but waits for the next event, which may come never.
+Unfortunately, this does not work, when the asyncExec() is executed exactly between the display.readAndDispatch() and the display.sleep(). This can happen, because there is no synchronisation. In this case the display.sleep() does not return immediately, but waits for the next event, which may come never.
 You can see the same problem in the following code snippet:
 public static void main(String[] args) throws InterruptedException {
 final Shell shell = new Shell();
@@ -38,5 +36,4 @@ display.asyncExec(new Runnable(){
 public void run(){
 }
 });
-In contrast to using the null argument, this Runnable generates a real event instead of just waking up the SWT thread.
-So the SWT thread does not really begin to sleep.
+In contrast to using the null argument, this Runnable generates a real event instead of just waking up the SWT thread. So the SWT thread does not really begin to sleep.

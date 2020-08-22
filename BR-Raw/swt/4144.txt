@@ -6,8 +6,7 @@ Scenario:
 4) Select the extension and create new menu.
 5) Select the menu and create a new separator.
 6) Select the separator and try to change its default name.
-Property sheet refuses to allow editing of the name.
-All other objects that
+Property sheet refuses to allow editing of the name. All other objects that
 have more than one property can be edited as before.
 This is a major problem for PDE because it makes the manifest editor useless
 for all the extension elements that have only one property.

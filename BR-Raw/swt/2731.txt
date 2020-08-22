@@ -1,10 +1,8 @@
 Crash while running JFace test suites
 3.1, GTK+ 2.2.1, Red Hat 9, GNOME
 A segmentation fault occurred while running
-org.eclipse.jface.tests.viewers.AllTests in org.eclipse.ui.tests.
-I'll attach
-the crash log.
-Here is the output on the console just as the crash occurs:
+org.eclipse.jface.tests.viewers.AllTests in org.eclipse.ui.tests.  I'll attach
+the crash log.  Here is the output on the console just as the crash occurs:
 --- testClearSorted
 Comparisons required by lazy collection: 104
 Comparisons required by reference implementation: 102

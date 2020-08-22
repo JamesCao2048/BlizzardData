@@ -1,11 +1,8 @@
 StyledText computes wrong control size when wrapping
 I20111205-1800
-StyledText computes a wrong control size just after wrapping to a second line.
-I didn't investigate where exactly the bug is, but the snippet below is a small extract of what happens in  bug 322556 .
+StyledText computes a wrong control size just after wrapping to a second line. I didn't investigate where exactly the bug is, but the snippet below is a small extract of what happens in  bug 322556 .
 My OS font is Tahoma 8, but I can also reproduce with other fonts.
-When you run the snippet, you can see that the StyledText doesn't reserve enough vertical space for the 2 lines.
-Problem persists when you resize the shell vertically.
-When you make the shell wider or narrower, you can see that there's a certain width at which the text already wraps but the second line doesn't appear.
+When you run the snippet, you can see that the StyledText doesn't reserve enough vertical space for the 2 lines. Problem persists when you resize the shell vertically. When you make the shell wider or narrower, you can see that there's a certain width at which the text already wraps but the second line doesn't appear.
 import org.eclipse.swt.*;
 import org.eclipse.swt.custom.*;
 import org.eclipse.swt.graphics.*;
@@ -38,8 +35,7 @@ styledText.setText("The constructor AssociativeInfixExpression" +
 styledText.setFont(new Font(display, "Tahoma", 8, SWT.NORMAL));
 shell.pack();
 Point size= shell.getSize();
-shell.setSize(size.x
-- 5, size.y * 2);
+shell.setSize(size.x - 5, size.y * 2);
 shell.open();
 while (!shell.isDisposed()) {
 if (!display.readAndDispatch ())

@@ -1,14 +1,9 @@
 XEmbeddedFrame not found
-Tried running some plugins.
-Works fine on windows.
-On my linux
+Tried running some plugins. Works fine on windows. On my linux
 install (with both blackdown1.4.2 and SUN VM1.4.2_04) some of the plugins
-throw an exception.
-The error seems to be generated from the SWT in not finding
+throw an exception. The error seems to be generated from the SWT in not finding
 the class sun.awt.X11.XEmbeddedFrame I checked the rt.jar and it doesnt have the
-same.
-Is there any other jar which needs to be included?
-A log from one of the
+same. Is there any other jar which needs to be included? A log from one of the
 plugins (metrics)
 ==========================================================
 java.version=1.4.2_04

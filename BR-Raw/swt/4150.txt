@@ -1,14 +1,9 @@
 Detection of CDE as active WM is platform-specific
 SWT code currently determines the active desktop by looking for defined "atoms"
-or properties that are associated with the root window.
-The atom that Eclipse
-now uses to identify CDE is DTWM_IS_RUNNING.
-This happens in
+or properties that are associated with the root window.  The atom that Eclipse
+now uses to identify CDE is DTWM_IS_RUNNING.  This happens in
 Program.getDesktop().
-CDE on AIX does not define this property.
-It would be nice to have a string
-that AIX, HP-UX, and Solaris have in common.
-Kevin Cornell and I have discussed
-using _DT_SM_PREFERENCES.
-which appears to be a defined property for all three
+CDE on AIX does not define this property.  It would be nice to have a string
+that AIX, HP-UX, and Solaris have in common.  Kevin Cornell and I have discussed
+using _DT_SM_PREFERENCES. which appears to be a defined property for all three
 platforms.

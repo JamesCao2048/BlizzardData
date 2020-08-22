@@ -1,10 +1,7 @@
 computeTrim and getClientArea are inconsistent in CTabFolder
 According to SWT documentation, given a desired client area, computeTrim should
-return a bounding rectangle required to produce that client area.
-Bounding
+return a bounding rectangle required to produce that client area. Bounding
 rectangle height taken into account in CTabFolder.getClientArea (line 613) is
 greater one row of pixels than the one calculated in CTabFolder.computeTrim
-(line 348).
-This is inconsistent.
-It also affects the patch to fix 10025.The
+(line 348). This is inconsistent. It also affects the patch to fix 10025. The
 workaround is to manually correct the bounds returned by computeTrim.

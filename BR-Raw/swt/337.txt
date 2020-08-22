@@ -1,5 +1,2 @@
 [Mozilla] should not use nsIFile.getNative*()
-BDS posted about this on a mozilla newsgroup today.
-nsIFile.getNative*() methods should not be used because they do not support filenames with unusual characters.
-The Browser's Mozilla implementation currently uses nsIFile.getNativePath() twice and nsIFile.getNativeLeafName() once.
-These should be changed to use their UTF-16 counterparts.
+BDS posted about this on a mozilla newsgroup today.  nsIFile.getNative*() methods should not be used because they do not support filenames with unusual characters.  The Browser's Mozilla implementation currently uses nsIFile.getNativePath() twice and nsIFile.getNativeLeafName() once.  These should be changed to use their UTF-16 counterparts.

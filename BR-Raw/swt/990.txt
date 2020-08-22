@@ -1,15 +1,12 @@
 [doc] getBackground() of Controls on a TabFolder returns not the shown background color
 Build ID: M20080911-1700
 Steps To Reproduce:
-1.Use WindowsXP (default blue theme) and SWT 3.4.1
-2.draw a Tabfolder with at least one TabItem
-3.draw a control e.g.
-Composite or checkbox (Button(SWT.CHECK) on the TabItem
-3.The control is shown with the same background color as the TabItem (nearly white)
-4.call control.getBackground()
--> it returns the default backgound color (gray)
-5.use the returned color somewhere, to see its different
+1. Use WindowsXP (default blue theme) and SWT 3.4.1
+2. draw a Tabfolder with at least one TabItem
+3. draw a control e.g. Composite or checkbox (Button(SWT.CHECK) on the TabItem
+3. The control is shown with the same background color as the TabItem (nearly white)
+4. call control.getBackground() -> it returns the default backgound color (gray)
+5. use the returned color somewhere, to see its different
 More information:
-In the given example, only default backgrounds are used.
-I made no call to setBackground() on any control.
+In the given example, only default backgrounds are used. I made no call to setBackground() on any control.
 In this case, to my observations, the color returned by getBackground() differs from the shown background color for TabItems and all nested controls on the TabItem.

@@ -1,7 +1,5 @@
 Image cheese when width of TreeColumn = 0
-Run this snippet and hit the Button on the right side.
-Notice the image still showing.
-This is related to the fact that the second column is used as sortcolumn.
+Run this snippet and hit the Button on the right side. Notice the image still showing. This is related to the fact that the second column is used as sortcolumn.
 public class Main {
 public static void main(String[] args) {
 Display display = new Display();
@@ -35,8 +33,7 @@ public void widgetSelected(SelectionEvent e) {
 treeColumn2.setWidth(0);
 }
 });
-for (int i = 0; i
-< tree.getColumnCount(); i++) {
+for (int i = 0; i < tree.getColumnCount(); i++) {
 tree.getColumn(i).pack();
 }
 shell.open();

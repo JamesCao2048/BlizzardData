@@ -1,8 +1,2 @@
 Bug 123708 A new Date() appears in a generated report between a Text element and a Table element
-A new Date() appears in a generated report between a Text element and a Table element.
-I did not observe this behavior before the 20060112 build.
-For example, using the 20051230 build, the date did not appear between the HTML text block and the table that follows it in the report.
-The date that appears in the generated report matches the date that appears in the footer, which uses the following script:
-<value-of>new Date()</value-of> The report design specifies no content in the header of the Master Page.
-The report design does not specify a page break after the Text element and before the Table element.
-The attached Customers.rptdesign that uses ClassicModels database.
+A new Date() appears in a generated report between a Text element and a Table element. I did not observe this behavior before the 20060112 build. For example, using the 20051230 build, the date did not appear between the HTML text block and the table that follows it in the report. The date that appears in the generated report matches the date that appears in the footer, which uses the following script: <value-of>new Date()</value-of> The report design specifies no content in the header of the Master Page. The report design does not specify a page break after the Text element and before the Table element. The attached Customers.rptdesign that uses ClassicModels database.

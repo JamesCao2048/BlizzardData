@@ -1,4 +1,3 @@
 Should call NSOutlineView.initWithFrame instead of init()
-NSOutline view reimplements init() and causes a small leak every time it's called.
-The work around is to call initWithFrame(new NSRect()) directly instead.
+NSOutline view reimplements init() and causes a small leak every time it's called. The work around is to call initWithFrame(new NSRect()) directly instead.
 The specific case I know of is in Display.getFont().

@@ -1,8 +1,2 @@
 Bug 146088 Add library context menu item not available in empty Library Explorer
-Steps to reproduce: 1.Make sure there are no libraries in your resource folder.
-Right-click in Library Explorer.
-2.If libraries exist in the resource folder, expand a library and highlight an item that is inside the library.
-Right-click in Library Explorer.
-Expected: Add Library is available in the context menu in both cases.
-Use Library is available in the context menu in case 2.Actual: Only Refresh is available in the context menu.
-It should not be necessary to select a library in order to add a library.
+Steps to reproduce: 1. Make sure there are no libraries in your resource folder. Right-click in Library Explorer. 2. If libraries exist in the resource folder, expand a library and highlight an item that is inside the library. Right-click in Library Explorer. Expected: Add Library is available in the context menu in both cases. Use Library is available in the context menu in case 2. Actual: Only Refresh is available in the context menu. It should not be necessary to select a library in order to add a library.

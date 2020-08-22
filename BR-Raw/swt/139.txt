@@ -1,7 +1,6 @@
 StyledText#addBidiSegmentListener doesn't support multiple chars per offset any more
 Follow-up to  bug 372760
-StyledText#addBidiSegmentListener doesn't support multiple chars per offset any more.
-In 3.7.2, this snippet worked fine, but in master, it throws an IAE.
+StyledText#addBidiSegmentListener doesn't support multiple chars per offset any more. In 3.7.2, this snippet worked fine, but in master, it throws an IAE.
 Javadocs of BidiSegmentEvent and SegmentEvent explicitly allow this if segmentsChars is not null.
 import org.eclipse.swt.*;
 import org.eclipse.swt.custom.*;

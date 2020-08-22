@@ -1,9 +1,8 @@
 GIF with origin geometry wrongly render transparency on windows 7
 Eclipse 3.5.1
 Sorry if this is a dup, I didn't find anything similar.
-Some GIF images produce wrong transparency rendering on Windows 7.Apparently, the problematic images specify an "Origin geometry" to offset the real image contents from the top-left corner.
-For the affected images, ImageMagick::identify
--verbose says something like the following:
+Some GIF images produce wrong transparency rendering on Windows 7. Apparently, the problematic images specify an "Origin geometry" to offset the real image contents from the top-left corner.
+For the affected images, ImageMagick::identify -verbose says something like the following:
 Geometry: 13x14+0+0
 ...
 Page geometry: 16x16+0+2
@@ -13,5 +12,4 @@ Geometry: 16x16+0+0
 ...
 Page geometry: 16x16+0+0
 The images were created using GIMP.
-When used as icons in a label provider, the problematic images have their transparent pixels filled with another palette color.
-I will attach screenshots and example images.
+When used as icons in a label provider, the problematic images have their transparent pixels filled with another palette color. I will attach screenshots and example images.

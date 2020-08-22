@@ -1,6 +1,5 @@
 [OS X 10.7] Incorrect window collection behavior for SWT.TOOL style shell under full screen mode
-In org.eclipse.swt.widgets.Shell.createHandle method, a non-owned shell is given the window collection behavior NSWindowCollectionBehaviorFullScreenPrimary.
-This is incorrect for SWT.TOOL style shell and it may cause space switch (a usability pain) if you show a SWT.TOOL style shell under full screen mode.
+In org.eclipse.swt.widgets.Shell.createHandle method, a non-owned shell is given the window collection behavior NSWindowCollectionBehaviorFullScreenPrimary. This is incorrect for SWT.TOOL style shell and it may cause space switch (a usability pain) if you show a SWT.TOOL style shell under full screen mode.
 The fix is to use NSWindowCollectionBehaviorFullScreenAuxiliary for SWT.TOOL style shell, i.e.:
 int behavior = 0;
 if (parent != null) behavior |= OS.NSWindowCollectionBehaviorMoveToActiveSpace;

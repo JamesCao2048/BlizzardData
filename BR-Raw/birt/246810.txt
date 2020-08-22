@@ -1,4 +1,2 @@
 Bug 246810 Running aggregate without no grouping has error.
-Steps: 1.Open attached report.
-2.There are two value series, series1 has no aggregate, series2 is set RunningSum.
-3.Open Chart Builder and live preview, 4.Result is error, series2 isn't running sum, it is same with series1.
+Steps: 1. Open attached report. 2. There are two value series, series1 has no aggregate, series2 is set RunningSum. 3. Open Chart Builder and live preview, 4. Result is error, series2 isn't running sum, it is same with series1.

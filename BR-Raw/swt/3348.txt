@@ -4,8 +4,7 @@ CDT     200405052036 (=~ 200405060200 + integration patches)
 I can't reproduce this problem, but I was doing thing something like
 creating, editing, building, then deleting a file in CDT.
 Suddenly, I had an error dialog:
-"An SWT error has occurred.
-You are recommended to exit the workbench."
+"An SWT error has occurred. You are recommended to exit the workbench."
 Upon exit, my .log file contained:
 !MESSAGE Unhandled event loop exception
 !ENTRY org.eclipse.ui 4 0 May 06, 2004 14:00:03.359

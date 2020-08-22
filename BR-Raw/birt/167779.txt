@@ -1,9 +1,2 @@
 Bug 167779 BIRT report jsp tag can't access sample report with document folder setted.[0603]
-Description: BIRT report jsp tag can't access sample report with document folder setted to other local directory.
-Build number:2.2.0.v20061213 Steps to reproduce: 1.New a BIRT Web project.
-2.Set BIRT_VIEWER_DOCUMENT_FOLDER to c: in web.xm 3.New a jsp file based on BIRT template 4.Input below content in body:
-<birt:report id="kkkk" name="first sample" reportDesign="test.rptdesign">
-</birt:report> 5.Run the server and preview the jsp file.
-Expected result: Sample report displays.
-Actual result: The report file : c:\test.rptdesign does not exist or contains errors.
-The report file : c:\test.rptdesign does not exist or contains errors Error log:N/A
+Description: BIRT report jsp tag can't access sample report with document folder setted to other local directory. Build number:2.2.0.v20061213 Steps to reproduce: 1. New a BIRT Web project. 2. Set BIRT_VIEWER_DOCUMENT_FOLDER to c: in web.xm 3. New a jsp file based on BIRT template 4. Input below content in body: <birt:report id="kkkk" name="first sample" reportDesign="test.rptdesign"> </birt:report> 5. Run the server and preview the jsp file. Expected result: Sample report displays. Actual result: The report file : c:\test.rptdesign does not exist or contains errors. The report file : c:\test.rptdesign does not exist or contains errors Error log:N/A

@@ -1,4 +1,2 @@
 Bug 314218 [Regression]NPE block to create joint data set if source data set has parameter
-Description: [Regression]NPE block to create joint data set if source data set has parameter Steps to reproduce: 1, New a data set from CUSTOMERS table in sampleDB 2, Specify query to select * from CLASSICMODELS.CUSTOMERS where CUSTOMERNUMBER
-< ?
-3, New a joint data set and using data set which has parameter 4, Click Finish button Expected Result: Finish successfully Actual Result: NPE blocks to finish the data set
+Description: [Regression]NPE block to create joint data set if source data set has parameter Steps to reproduce: 1, New a data set from CUSTOMERS table in sampleDB 2, Specify query to select * from CLASSICMODELS.CUSTOMERS where CUSTOMERNUMBER < ? 3, New a joint data set and using data set which has parameter 4, Click Finish button Expected Result: Finish successfully Actual Result: NPE blocks to finish the data set

@@ -1,10 +1,8 @@
 Posting mouse events locks up event handling
 I20040817, WinXP
 Experiments with posting mouse events by Display#post(..) in the main thread
-locked up while running the event queue.
-The main thread would eventually not
-return from OS.DispatchMessage(..).
-Posting the events from a background thread
+locked up while running the event queue. The main thread would eventually not
+return from OS.DispatchMessage(..). Posting the events from a background thread
 works.
 Using an additional thread makes the code more complicated and potentially
 changes measurements of performance tests.

@@ -1,3 +1,2 @@
 Bug 138828 Export data column are disordered
-Steps to reproduce: 1.Add a sample data source and a data set with table "CUSTOMERS" 2.Preview in Web Viewer 3.Click "Export data", choose columns "CUSTOMERNAME","PHONE","CITY","STATE" to be exported, click "OK" Expected result: The exported columns is alphabetic order or the same order as selected columns Actual result: The exported columns is disordered.
-they are "STATE","CITY","CUSTOMERNAME","PHONE".
+Steps to reproduce: 1.Add a sample data source and a data set with table "CUSTOMERS" 2.Preview in Web Viewer 3.Click "Export data", choose columns "CUSTOMERNAME","PHONE","CITY","STATE" to be exported, click "OK" Expected result: The exported columns is alphabetic order or the same order as selected columns Actual result: The exported columns is disordered. they are "STATE","CITY","CUSTOMERNAME","PHONE".

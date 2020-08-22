@@ -1,6 +1,2 @@
 Bug 134988 [regression]Available items in Query didn't change when change data source in Edit Data Set Dialog.
-Description: Available items in Query didn't change when change data source in Edit Data Set Dialog.
-Steps to reproduce: 1.New two different data sources.
-2.New a dataset, change data source, view Available Items in Query pane.
-Expected result: Available Items in Query pane changed according to new Data source.
-Actual result: Available Items in Query pane kept unchanged.
+Description: Available items in Query didn't change when change data source in Edit Data Set Dialog. Steps to reproduce: 1. New two different data sources. 2. New a dataset, change data source, view Available Items in Query pane. Expected result: Available Items in Query pane changed according to new Data source. Actual result: Available Items in Query pane kept unchanged.

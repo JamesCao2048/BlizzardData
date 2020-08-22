@@ -1,23 +1,3 @@
 Bug 289050 Date locale support not working for advanced pattern strings in Bar Chart
-Environment:
-- JBoss 4.2.2 running on XP
-- IE8 on XP
-- BIRT 2.5 When working with a chart that has a date or date time axis, advanced patterns fail to take the locale into account.
-Steps to reproduce: I created a report which displays a count of events by month in a bar chart and a table.
-Dates are displayed on the X axis of the chart.
-Because the dates specify a month I decided to change the date format for both the table and the chart.
-In the chart I used the advanced pattern string "MMM YYYY" and set the label to a 45 degree angle.
-In the table I used a custom format string "MMM YYYY".
-Expected result: This should show dates in the chart and table as Aug 2009, Jan 2008, etc.
-When the locale changes to say fr_FR the dates should appear in french, e.g.
-avr.
-2009, mai 2009, etc.
-Actual Result: I've been using JBoss 4.2.2 on XP to run the web viewer and using IE 8 to test the reports.
-When the client locale is set to en_GB all dates are displayed correctly.
-When I changed the locale to another language (e.g.
-fr_FR or de_DE) the table's dates are displayed correctly for the new locale but the chart still shows dates as they would be in english, i.e.
-Apr 2009, May 2009, etc.
-Additional information: I then changed the chart's date format to a standard one, SHORT or MEDIUM.
-The chart now shows dates according to the locale.
-It looks like locale support fails when using the advanced pattern string in the bar chart.
-Darren.
+Environment: - JBoss 4.2.2 running on XP - IE8 on XP - BIRT 2.5 When working with a chart that has a date or date time axis, advanced patterns fail to take the locale into account. Steps to reproduce: I created a report which displays a count of events by month in a bar chart and a table. Dates are displayed on the X axis of the chart. Because the dates specify a month I decided to change the date format for both the table and the chart. In the chart I used the advanced pattern string "MMM YYYY" and set the label to a 45 degree angle. In the table I used a custom format string "MMM YYYY". Expected result: This should show dates in the chart and table as Aug 2009, Jan 2008, etc. When the locale changes to say fr_FR the dates should appear in french, e.g. avr. 2009, mai 2009, etc. Actual Result: I've been using JBoss 4.2.2 on XP to run the web viewer and using IE 8 to test the reports. When the client locale is set to en_GB all dates are displayed correctly. When I changed the locale to
+another language (e.g. fr_FR or de_DE) the table's dates are displayed correctly for the new locale but the chart still shows dates as they would be in english, i.e. Apr 2009, May 2009, etc. Additional information: I then changed the chart's date format to a standard one, SHORT or MEDIUM. The chart now shows dates according to the locale. It looks like locale support fails when using the advanced pattern string in the bar chart. Darren.

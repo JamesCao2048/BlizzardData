@@ -1,16 +1,13 @@
 Focus not restored properly when breadcrumb bar is used
 Focus is not being set/restored properly when using the breadcrumb bar.
-This is fallout from  bug 330749
-- Markus found this bug while using the N20101201 build.
-- In a Java Editor, enable the breadcrumb (e.g.
-Navigate > Show in Breadcrumb)
+This is fallout from  bug 330749  - Markus found this bug while using the N20101201 build.
+- In a Java Editor, enable the breadcrumb (e.g. Navigate > Show in Breadcrumb)
 - click the last black arrow in the breadcrumb
 - click another member
 => focus is in the main toolbar; should be in the editor's text area
 
 When you set a breakpoint to Control#setFocus() with hit count 2, you see that
-the focus goes to the StyledText (it was on the breadcrumb tree before).
-Then
+the focus goes to the StyledText (it was on the breadcrumb tree before). Then
 set an access&modification breakpoint on Decorations#savedFocus and resume.
 When that breakpoint is hit, you see that Shell#windowDidResignKey() is called
 on the workbench window, and this destroys the contents of savedFocus for that

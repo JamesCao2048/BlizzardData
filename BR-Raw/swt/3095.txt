@@ -2,8 +2,8 @@ Table's SWT.FULL_SELECTION broken for empty table items
 I20050112-1200
 Empty cells do not get the selection bg color.
 Test Case:
-1.start fresh Eclipse
-2.Window > Preferences > Java > Editor > Hovers
-3.Select a line in the table that has an empty cell
+1. start fresh Eclipse
+2. Window > Preferences > Java > Editor > Hovers
+3. Select a line in the table that has an empty cell
 ==> empty cell does not get selection bg color
 This used to work in previous builds.

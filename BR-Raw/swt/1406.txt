@@ -1,9 +1,9 @@
 StyledText getRages(int start, int length) returns incorrect array
 Build ID:  I20080917-0800
 Steps To Reproduce:
-1.Set 2 different style ranges (different start and length value, no overlapping)
-2.get the range of the first style
-3.notice that an array of size 3 is returned, the size should be just 2
+1. Set 2 different style ranges (different start and length value, no overlapping)
+2. get the range of the first style
+3. notice that an array of size 3 is returned, the size should be just 2
 More information:
 package bugs;
 import org.eclipse.swt.SWT;

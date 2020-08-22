@@ -1,5 +1,2 @@
 Bug 288326 Chart builder keeps expanding with long expression[13]
-Description: Chart builder keeps expanding in width if exists long expression Build number:2.5.1.v20090902 Steps to reproduce: 1.Open attached chart, the chart has nothing set except long expression as "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhh" in category,series, y group.
-2.Switch between Select Chart Type and Select Data pane.
-3.Repeat step2 and pay attention to chart builder width.
-Expected result: Chart builder keeps unchanged in width Actual result: Chart builder expands in width step by step.~_~ Error log:n/a
+Description: Chart builder keeps expanding in width if exists long expression Build number:2.5.1.v20090902 Steps to reproduce: 1. Open attached chart, the chart has nothing set except long expression as "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhh" in category,series, y group. 2. Switch between Select Chart Type and Select Data pane. 3. Repeat step2 and pay attention to chart builder width. Expected result: Chart builder keeps unchanged in width Actual result: Chart builder expands in width step by step.~_~ Error log:n/a

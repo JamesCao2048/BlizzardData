@@ -1,7 +1,2 @@
 Bug 221784 Allow Duplicate Value doesn't work correctly with sort[0705]
-Description: Allow Duplicate Value doesn't work correctly with sort Build number:2.3.0.v20080307 Steps to reproduce: 1.Open attached report and preview.
-2.Check parameter dialog.
-Expected result: Country in parameter list sorts asc and there should be three USA.
-Actual result: Country in parameter list sorts asc but only one USA in list.
-Though I tick off allow duplicate value but since value column is OFFICECODE, so there should be three USA in list to bind with three different OFFICECODE values.
-Error log:n/a
+Description: Allow Duplicate Value doesn't work correctly with sort Build number:2.3.0.v20080307 Steps to reproduce: 1. Open attached report and preview. 2. Check parameter dialog. Expected result: Country in parameter list sorts asc and there should be three USA. Actual result: Country in parameter list sorts asc but only one USA in list. Though I tick off allow duplicate value but since value column is OFFICECODE, so there should be three USA in list to bind with three different OFFICECODE values. Error log:n/a

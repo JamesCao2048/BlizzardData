@@ -1,8 +1,7 @@
 TableTreeItem.setExpanded causes redraw which causes flickering
 WinXP / SWT 3.0
 When my mouse is not hovering over the window, the entire tableTree redraws
-all the lines.
-This extreme example hopefully shows that a redraw needlessly
+all the lines.  This extreme example hopefully shows that a redraw needlessly
 draws the lines which I see as flicker in normal apps.
 public static void main(String[] args) {
 Display display = new Display();

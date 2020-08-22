@@ -1,10 +1,9 @@
 No Popup on Tiger
 Hi,
 I have installed a Pre-Release of Mac OSX 10.4 (Tiger) on my Ibook.
-Popup Menus doesn't work on Eclipse 3.0.There is no text displayed in menu.
+Popup Menus doesn't work on Eclipse 3.0. There is no text displayed in menu.
 I receive this stacktrace on the Console :
-java.lang.ArrayIndexOutOfBoundsException:
--2
+java.lang.ArrayIndexOutOfBoundsException: -2
 at org.eclipse.swt.widgets.Menu.kEventMenuTargetItem(Menu.java:674)
 at org.eclipse.swt.widgets.Widget.menuProc(Widget.java:1018)
 at org.eclipse.swt.widgets.Display.menuProc(Display.java:2399)

@@ -9,16 +9,14 @@ final Table table = new Table(shell, SWT.NONE);
 table.setBounds(10,10,150,150);
 new TableColumn(table, SWT.NONE).setWidth(100);
 FontData data = table.getFont().getFontData()[0];
-data.setHeight(data.getHeight()
-- 2);
+data.setHeight(data.getHeight() - 2);
 final Font otherFont = new Font(display, data);
 final Color[] colours = new Color[] {
 display.getSystemColor(SWT.COLOR_BLUE),
 display.getSystemColor(SWT.COLOR_CYAN),
 display.getSystemColor(SWT.COLOR_GRAY),
 };
-for (int i = 0; i
-< 2; i++) {
+for (int i = 0; i < 2; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText("item " + i);
 item.setForeground(colours[i]);

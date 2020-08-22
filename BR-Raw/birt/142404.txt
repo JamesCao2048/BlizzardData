@@ -1,9 +1,2 @@
 Bug 142404 [smoke][regression] dynamic parameter does not work properly
-steps to reproduce:
-- create a report
-- create a data source
-- create a data set using the data set
-- create a dynamic parameter bound to the data set
-- preview report expected behavior:
-- dynamic parameter works properly actual behavior:
-- it simply didn't, there are no values listed in drop down box
+steps to reproduce: - create a report - create a data source - create a data set using the data set - create a dynamic parameter bound to the data set - preview report expected behavior: - dynamic parameter works properly actual behavior: - it simply didn't, there are no values listed in drop down box

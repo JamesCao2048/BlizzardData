@@ -2,17 +2,15 @@ IllegalArgumentException from StyledText Widget
 Version: 3.1.0
 Build id: 200412210800
 While playing with Eclipse WTP 1.0M2 I noticed a few exceptions appearing in the
-log about IllegalArgumentWxceptions from styled text.
-There is no mention of
-WTP in the stack trace, so i entered this against SWT.
-It is possible that WTP
+log about IllegalArgumentWxceptions from styled text.  There is no mention of
+WTP in the stack trace, so i entered this against SWT.  It is possible that WTP
 are doing Bad Things, causing this error.
 Test:
-1.Download WTP 1.0M2
-2.Window->Preferences
-3.Web & XML | CSS Files | CSS Styles
-4.Click in the text preview and drag past the bottom of the widget
-5.Exception should appear in the log
+1. Download WTP 1.0M2
+2. Window->Preferences
+3. Web & XML | CSS Files | CSS Styles
+4. Click in the text preview and drag past the bottom of the widget
+5. Exception should appear in the log
 java.lang.IllegalArgumentException: Index out of bounds
 at org.eclipse.swt.SWT.error(SWT.java:2813)
 at org.eclipse.swt.SWT.error(SWT.java:2752)
@@ -51,4 +49,4 @@ org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java
 at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:273)
 at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:129)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown So

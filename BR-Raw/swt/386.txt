@@ -1,6 +1,5 @@
 Shell.moveAbove() should not show widget if not visible
-Shell.moveAbove() doesn't show child area, just the frame.
-See snippet below:
+Shell.moveAbove() doesn't show child area, just the frame. See snippet below:
 =====
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;

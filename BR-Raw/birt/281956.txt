@@ -1,6 +1,2 @@
 Bug 281956 [Regression]Chart builder with data cube binding should not allow grouping.
-If chart binds data cube, the grouping is always set, so it's meaningless to enable or change grouping attributes.
-However in 2.5.0 build, open the Group and Sorting dialog for category series.
-You will find grouping UI is visible.
-In 2.3.2 build, it's correct that only sorting UI is visible.
-This is a UI regression.
+If chart binds data cube, the grouping is always set, so it's meaningless to enable or change grouping attributes. However in 2.5.0 build, open the Group and Sorting dialog for category series. You will find grouping UI is visible. In 2.3.2 build, it's correct that only sorting UI is visible. This is a UI regression.

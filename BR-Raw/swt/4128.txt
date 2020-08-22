@@ -3,17 +3,13 @@ Knut,
 I was playing with the your TableInteractiveTest this morning.
 the tests removeColumn and removeLastColumn are complete broken, removing a
 single column leads the table in a irreversible bad state (lost of cheeses).
-The problem is the method removeColumnVisual in Table.
-It's adding plus one for
-the index of first column to be shift.
-It's a bug because at this step the
+The problem is the method removeColumnVisual in Table. It's adding plus one for
+the index of first column to be shift. It's a bug because at this step the
 column been removed was already remove from the vector.
 So, changing the line:
-moveColumns(column.getIndex() + 1, columnWidth *
--1);
+moveColumns(column.getIndex() + 1, columnWidth * -1);
 by:
-moveColumns(column.getIndex(),
--columnWidth);
+moveColumns(column.getIndex(), -columnWidth);
 is enough to fix this bug.
 Here is the patch:
 Index: Eclipse SWT/emulated/treetable/org/eclipse/swt/widgets/Table.java
@@ -21,24 +17,17 @@ Index: Eclipse SWT/emulated/treetable/org/eclipse/swt/widgets/Table.java
 RCS file: /home/eclipse/org.eclipse.swt/Eclipse
 SWT/emulated/treetable/org/eclipse/swt/widgets/Table.java,v
 retrieving revision 1.16
-diff
--u
--r1.16 Table.java
+diff -u -r1.16 Table.java
 --- Eclipse SWT/emulated/treetable/org/eclipse/swt/widgets/Table.java	1 May
-2002 20:57:41
--0000	1.16
+2002 20:57:41 -0000	1.16
 +++ Eclipse SWT/emulated/treetable/org/eclipse/swt/widgets/Table.java	2 May
-2002 15:58:12
--0000
-@@
--1902,7 +1902,7 @@
+2002 15:58:12 -0000
+@@ -1902,7 +1902,7 @@
 int columnWidth = column.getWidth();
 
 // move following columns to the left
--	moveColumns(column.getIndex() + 1, columnWidth *
--1);
-+	moveColumns(column.getIndex(),
--columnWidth);
+-	moveColumns(column.getIndex() + 1, columnWidth * -1);
++	moveColumns(column.getIndex(), -columnWidth);
 redraw();
 getHeader().redraw();
 }

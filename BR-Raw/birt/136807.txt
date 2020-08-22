@@ -1,11 +1,2 @@
 Bug 136807 [Regression]Preview embedded image with web view will effect other way to preview
-Details: [Regression]Preview embedded image with web view will effect other way to preview Step: 1.New a library and insert a embedded image.
-2.New a report design and use the library.
-3.Drop the image form library into layout.
-4.Preview with HTML/PDF.
-5.Preview with web view.
-6.Preview with HTML/PDF.
-Actual result: In step 4, image is previewed.
-In step 5, image can't be previewed.
-In step 6, image can't be previewed.
-It means that, after I use web view to preview the embedded image from library, I can't preview this image any ways.
+Details: [Regression]Preview embedded image with web view will effect other way to preview Step: 1.New a library and insert a embedded image. 2.New a report design and use the library. 3.Drop the image form library into layout. 4.Preview with HTML/PDF. 5.Preview with web view. 6.Preview with HTML/PDF. Actual result: In step 4, image is previewed. In step 5, image can't be previewed. In step 6, image can't be previewed. It means that, after I use web view to preview the embedded image from library, I can't preview this image any ways.

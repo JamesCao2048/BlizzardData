@@ -6,8 +6,7 @@ Identifier:      org.eclipse.eclipse
 Version:         3.4 (3.4)
 Code Type:       X86-64 (Native)
 Parent Process:  launchd [70]
-Date/Time:       2009-01-09 16:41:59.431
--0500
+Date/Time:       2009-01-09 16:41:59.431 -0500
 OS Version:      Mac OS X 10.5.6 (9G55)
 Report Version:  6
 Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
@@ -16,8 +15,7 @@ Crashed Thread:  0
 Application Specific Information:
 Java information:
 Version: Java HotSpot(TM) 64-Bit Server VM (1.5.0_16-133 mixed mode)
-Virtual Machine version: Java HotSpot(TM) 64-Bit Server VM (1.5.0_16-133) for macosx-amd64, built on Aug 27 2008 11:07:32 by root with gcc 4.0.1 (Apple Inc.
-build 5465)
+Virtual Machine version: Java HotSpot(TM) 64-Bit Server VM (1.5.0_16-133) for macosx-amd64, built on Aug 27 2008 11:07:32 by root with gcc 4.0.1 (Apple Inc. build 5465)
 Exception type: Bus Error (0xa) at pc=0x00007fff831a2d72
 Current thread (0x0000000112800a00):  JavaThread "main" [_thread_in_native, id=1887008544]
 Stack: [0x00007fff5f400000,0x00007fff5fc00000)
@@ -52,4 +50,4 @@ j  org.eclipse.swt.widgets.Composite.resized()V+19
 j  org.eclipse.swt.widgets.Control.setFrameSize(JJLorg/eclipse/swt/internal/cocoa/NSSize;)V+69
 j  org.eclipse.swt.widgets.Display.windowDelegateProc(JJJ)J+230
 v  ~StubRoutines::call_stub
-j  o
+j  or

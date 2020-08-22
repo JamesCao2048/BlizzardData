@@ -1,7 +1,5 @@
 [Launcher] JVM crash on splash teardown on linux.gtk.x86
-Run the attached testApplication (use the ap.product file to launch as an application).
-Get a JVM crash as the splash screen is torn down.
-The application does the following:
+Run the attached testApplication (use the ap.product file to launch as an application).  Get a JVM crash as the splash screen is torn down.  The application does the following:
 public Object start(IApplicationContext context) throws Exception {
 Display display = PlatformUI.createDisplay();
 display.dispose();

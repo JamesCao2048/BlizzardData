@@ -1,12 +1,2 @@
 Bug 176107 row.__rownum cannot be directly used as group key
-Create a table that bind it to a data set.
-Insert a group.
-For the Group On field, click on the "..." button to edit the expression, and select from "Availble Column Bindings" | "Table" | "RowNum".
-This creates a Group On Expression "row.__rownum".
-The resulting report design cannot be run.
-It produces error: Column binding "row.__rownum" does not exist.
-To workaround this, one must create another binding on the table and set its expression to "row.__rownum", then use the new binding as group key.
-This should not have been necessary.
-The "__rownum" binding should be implicitly available in all contexts that have a data set.
-E.g., it should be usable directly as group key, sort key, and in conditional format expressions, etc.
-Attached is a sample report that produces the error.
+Create a table that bind it to a data set. Insert a group. For the Group On field, click on the "..." button to edit the expression, and select from "Availble Column Bindings" | "Table" | "RowNum". This creates a Group On Expression "row.__rownum". The resulting report design cannot be run. It produces error: Column binding "row.__rownum" does not exist. To workaround this, one must create another binding on the table and set its expression to "row.__rownum", then use the new binding as group key. This should not have been necessary. The "__rownum" binding should be implicitly available in all contexts that have a data set. E.g., it should be usable directly as group key, sort key, and in conditional format expressions, etc. Attached is a sample report that produces the error.

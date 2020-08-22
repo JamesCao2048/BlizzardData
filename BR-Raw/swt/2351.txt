@@ -1,8 +1,6 @@
 StyledText's font appears inconsistent with GC.drawString(..) font
 TextConsoleViewer (org.eclipse.ui.console plugin) uses GC.drawString(..) to change the color of an
-active console hyperlink.
-On mac this appears to change the fonts character spacing (ie the same string
+active console hyperlink. On mac this appears to change the fonts character spacing (ie the same string
 takes up more space).
-Code was just released to HEAD today.
-Please see TextConsoleViewer.paintControl(..)
+Code was just released to HEAD today.  Please see TextConsoleViewer.paintControl(..)
 Will attach screen shot.

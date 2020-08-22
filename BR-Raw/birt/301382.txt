@@ -1,5 +1,2 @@
 Bug 301382 Add VIEWPORT meta tag in HTML output to support mobile device viewing
-The VIEWPORT meta tag will allow compliant browsers to handle scaling of the page to best suit the area available for render.
-This is especially important in the mobile web.
-<meta name = "viewport" content = "width=${device-width}"> This is the syntax that is required.
-The spec for the tag supports fixed dimensions as well, but at a minimum we should implement the tag as it reads above.
+The VIEWPORT meta tag will allow compliant browsers to handle scaling of the page to best suit the area available for render. This is especially important in the mobile web. <meta name = "viewport" content = "width=${device-width}"> This is the syntax that is required. The spec for the tag supports fixed dimensions as well, but at a minimum we should implement the tag as it reads above.

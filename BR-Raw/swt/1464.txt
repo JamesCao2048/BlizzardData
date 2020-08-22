@@ -1,13 +1,9 @@
 losing keybindings...
 I started tracking this down this afternoon, but didn't get finished and I have to get to the airport now.
-1
-- start Eclipse
-2
-- in editor notice that ctrl-space works
-3
-- pretzel-tab to another application
-4
-- pretzel-tab back to eclipse
+1 - start Eclipse
+2 - in editor notice that ctrl-space works
+3 - pretzel-tab to another application
+4 - pretzel-tab back to eclipse
 --> ctrl-space doesn't work anymore.
 When you come back to eclipse, the org.eclipse.ui.window and org.eclipse.ui.dialogAndWindow contexts get removed from ContextManager.
 Stack to removeActiveContext call (note that I've been hacking around a lot so line number may be off):
@@ -59,4 +55,4 @@ EclipseAppLauncher.start(Object) line: 79
 EclipseStarter.run(Object) line: 382
 EclipseStarter.run(String[], Runnable) line: 179
 NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available [native method]
-NativeMethodAccessorImpl.invoke(Object, Obje
+NativeMethodAccessorImpl.invoke(Object, Object[]

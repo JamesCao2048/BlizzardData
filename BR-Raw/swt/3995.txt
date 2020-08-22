@@ -1,8 +1,6 @@
 GTK: Setting selection index to -1 for a Combo throws an exception.
-When the selection index for a Combo is set to
--1 an
-ArrayIndexOutofBoundsException is thrown.
-While this case in Windows is ignored
+When the selection index for a Combo is set to -1 an
+ArrayIndexOutofBoundsException is thrown. While this case in Windows is ignored
 and no exception is thrown.
 test:
 ------test case starts here--------------------------------
@@ -36,5 +34,4 @@ disp.sleep();
 }
 }
 }
------------test ends here
----------------------------------------
+-----------test ends here ---------------------------------------

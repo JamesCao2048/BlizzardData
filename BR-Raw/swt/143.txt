@@ -3,8 +3,7 @@ Created  attachment 120727   [details]
 Code snippet which exhibits the problem
 Build ID: M20080911-1700
 I was trying to use a TreeViewer with the SWT.VIRTUAL style, to display a model with many (several thousand) elements.
-When the Tree is given the SWT.SINGLE style, it performs fast.
-But when the SWT.MULTI style is used, the virtual TreeViewer becomes unbearably slow.
+When the Tree is given the SWT.SINGLE style, it performs fast. But when the SWT.MULTI style is used, the virtual TreeViewer becomes unbearably slow.
 I pinpointed it (with the help of TPTP) to the Tree.getSelection() method, which is called by TreeViewer.replace(..) to initialize the elements when they become visible.
 It looks like the getSelection method is O(n), n being the number of elements in the tree.
 I attached a self-contained code snippet which exhibits the problem.

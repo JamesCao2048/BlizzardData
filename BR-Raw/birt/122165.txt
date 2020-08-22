@@ -1,6 +1,2 @@
 Bug 122165 Publish template action should warn before overwriting existing template
-Publish a template to the templates folder.
-Make a change to the template.
-Publish it again.
-Expected result: Warning dialog that you are about to overwrite the existing template.
-(Similar to File->Save As warning when overwriting an existing file.) Actual result: The template just gets written without a warning.
+Publish a template to the templates folder. Make a change to the template. Publish it again. Expected result: Warning dialog that you are about to overwrite the existing template. (Similar to File->Save As warning when overwriting an existing file.) Actual result: The template just gets written without a warning.

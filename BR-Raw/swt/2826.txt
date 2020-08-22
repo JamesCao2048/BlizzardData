@@ -3,7 +3,6 @@ TreeColumns don't fire ControlEvents on dispose() [win32]
 - run the snippet below
 - each time the button to the right of the Tree is pressed, the Tree's first
 column is disposed
-
 -> this should fire a Move for all other columns as they shift left, but no
 events are fired
 - this works as expected for Table/TableColumn

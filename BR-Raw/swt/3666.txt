@@ -1,7 +1,6 @@
 Shell setMinimized(true) doesn't deactivate Shell
 Calling setMinimized(true) on a shell doesn't behave in the same way as
-clicking on the minimize button of the title bar.
-Specifically, calling
+clicking on the minimize button of the title bar. Specifically, calling
 setMinimized doesn't cause the shell to become deactivated.
 The following code snipped illustrates the problem:
 public static void main(String[] args)
@@ -48,13 +47,11 @@ if (!display.readAndDispatch ()) display.sleep ();
 display.dispose ();
 }
 Clicking the "Minimize (Current)" button causes the shell to be minimized
-but it remains active.
-Hence, no deactivate event is fired (but one is fire
+but it remains active. Hence, no deactivate event is fired (but one is fire
 when you click on the shell in the taskbar to restore it!), and the
 application under the shell (if there is one) doesn't become active.
 Clicking on the "Minimize (Proposed)" button minimizes the shell and
-does cause it to be become deactivated.
-Hence, the above issues are
+does cause it to be become deactivated. Hence, the above issues are
 resolved.
 My proposal is that the setMinimized method in Decorations be changed
 from:
@@ -76,7 +73,6 @@ swFlags = OS.SW_RESTORE;
 if (minimized) swFlags = OS.SW_SHOWMINNOACTIVE;
 if (!OS.IsWindowVisible (handle)) return;
 if (minimized == OS.IsIconic (handle)) return;
-int flag = (minimized) ?
-OS.SC_MINIMIZE : OS.SC_RESTORE;
+int flag = (minimized) ? OS.SC_MINIMIZE : OS.SC_RESTORE;
 OS.SendMessage(handle, OS.WM_SYSCOMMAND, flag, 0);
 }

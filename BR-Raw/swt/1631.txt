@@ -1,9 +1,7 @@
 UML causing stack overflow
 Build ID: n/a
 Steps To Reproduce:
-use the latest UML distro from eclipse website and enable view.
-it will cause eclipse to have a stack overflow.
-a clean launch will not reset eclipse so you will have to uninstall eclipse and reinstall
+use the latest UML distro from eclipse website and enable view.  it will cause eclipse to have a stack overflow.  a clean launch will not reset eclipse so you will have to uninstall eclipse and reinstall
 More information:
 stack overflow from terminal:
 mbp:~ chris$ Exception in thread "Thread-2" java.lang.StackOverflowError

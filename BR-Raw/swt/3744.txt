@@ -1,12 +1,11 @@
 Can't select styles in combo example
 RC2
 Linux-GTK
-1.Launch the ControlExample and go to the Combo tab.
-2.With SWT.SIMPLE selected, try to select SWT.READ_ONLY or SWT.BORDER.
-3.The checkboxes appear enabled but clicking in them only causes them to
+1. Launch the ControlExample and go to the Combo tab.
+2. With SWT.SIMPLE selected, try to select SWT.READ_ONLY or SWT.BORDER.
+3. The checkboxes appear enabled but clicking in them only causes them to
 flash.
-4.Select SWT.DROP_DOWN and repeat step 2.
-5.Now SWT.READ_ONLY can be selected, but SWT.BORDER still cannot.
-The checkboxes should appear disabled when they're not applicable.
-Also, if
+4. Select SWT.DROP_DOWN and repeat step 2.
+5. Now SWT.READ_ONLY can be selected, but SWT.BORDER still cannot.
+The checkboxes should appear disabled when they're not applicable. Also, if
 the SWT.BORDER style is never usable it probably shouldn't appear in the tab?

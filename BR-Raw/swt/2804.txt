@@ -43,8 +43,7 @@ OS.DeleteObject(hOldImage);
 
 /*
 * When STM_SETIMAGE encounters a bitmap with alpha information,
-* it takes a copy of the bitmap.
-Therefore the bitmap that was
+* it takes a copy of the bitmap.  Therefore the bitmap that was
 * created to preserve transparency can be deleted right away.
 */
 if (hasAlpha && hImage != 0) OS.DeleteObject (hImage);

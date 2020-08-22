@@ -1,3 +1,2 @@
 Bug 146796 Error message pop up if display text contain non-digital char when add next item
-Description: In decimal type parameter creation,display type is "list box", Error message pop up if "display text" contain non-digital char when add next item.
-Steps: 1.Create a new decimal parameter 2.Set display type as "list box" 3.Input one item: value:1, display text:test 4.Input another item: Value:2 Actual result: error message pop up: The display text already exists! Expected result: Input item succussfully.
+Description: In decimal type parameter creation,display type is "list box", Error message pop up if "display text" contain non-digital char when add next item. Steps: 1.Create a new decimal parameter 2.Set display type as "list box" 3.Input one item: value:1, display text:test 4.Input another item: Value:2 Actual result: error message pop up: The display text already exists! Expected result: Input item succussfully.

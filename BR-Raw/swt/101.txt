@@ -3,19 +3,10 @@ Created  attachment 223659   [details]
 Sample using browser to sum two numbers via Browser.evaluate
 The work to support XULRunner >= 4 appears to have broken Browser.evaluate for XULRunner 3.x.
 Reproduction steps:
-(1) Delete (or move aside) ~/.mozilla/eclipse.
-This is necessary because if you have previously run earlier versions of Eclipse this will already have the correct contents.
-We need to test initialising from a clean install.
-Note ~/.mozilla will also contain your Firefox profiles etc.
-so take care not to lose data.
-(2) Run the attached sample and note the output "null" where "2.0" would be expected.
-Note you need to configure the XULRunner path (or be sure detection works for your environment).
+(1) Delete (or move aside) ~/.mozilla/eclipse.  This is necessary because if you have previously run earlier versions of Eclipse this will already have the correct contents.  We need to test initialising from a clean install.  Note ~/.mozilla will also contain your Firefox profiles etc. so take care not to lose data.
+(2) Run the attached sample and note the output "null" where "2.0" would be expected.  Note you need to configure the XULRunner path (or be sure detection works for your environment).
 (3) Delete the cache of installed XPCOM components (?) ~/.mozilla/eclipse/xpti.dat
 (4) Re-run the sample and note the correct output "2.0".
-The problem is with the installation of external.xpt in Mozilla.java (initExternal).
-The file is correctly copied, but it's been moved too late in the process and it doesn't seem to be registered properly with XULRunner.
-I think this was motivated by putting it after the version check so it is only copied for XULRunner
-< 4. It seems this is too late.
-I have locally worked around this by restoring the original earlier initExternal call, just prior to initXPCOM.
-Note you have to remove the version check in initExternal to do this as the version details have not been established at that point.
+The problem is with the installation of external.xpt in Mozilla.java (initExternal).  The file is correctly copied, but it's been moved too late in the process and it doesn't seem to be registered properly with XULRunner.  I think this was motivated by putting it after the version check so it is only copied for XULRunner < 4.  It seems this is too late.
+I have locally worked around this by restoring the original earlier initExternal call, just prior to initXPCOM.  Note you have to remove the version check in initExternal to do this as the version details have not been established at that point.
 I don't know if there is any impact on other XULRunner versions in doing this (other than the unnecessary copy).

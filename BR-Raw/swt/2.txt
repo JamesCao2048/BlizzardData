@@ -1,6 +1,5 @@
 DateTime doesn't mark current date with SWT.CALENDAR style
 Build Identifier:
-DateTime needs to use gtk_calendar_mark_day() to mark the current date when the style is set to SWT.CALENDAR too.
-Currently, this is only done in the drop down calendar that pops up with SWT.DATE style.
+DateTime needs to use gtk_calendar_mark_day() to mark the current date when the style is set to SWT.CALENDAR too. Currently, this is only done in the drop down calendar that pops up with SWT.DATE style.
 Please refer to  Bug #329291  for more details.
 Reproducible: Always

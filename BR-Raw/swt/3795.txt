@@ -1,9 +1,7 @@
 Resistering TraverseListenter with Shell changes tabbing behavior.
 2.1 RC1 motif build.
 org.eclipse.help.ui.internal.ContextHelpDialog registers TraverseLisenter with
-Shell.
-It changes behavior of "Tab" key.
-Without registerning, the key can be
+Shell.  It changes behavior of "Tab" key.  Without registerning, the key can be
 used to move focus around widgets on the control, when TraverseListener is
 registered, using "Tab" moves focus until it reaches the shell and does not
 move to the next widget.

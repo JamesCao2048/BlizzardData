@@ -2,16 +2,11 @@ BIDI3.2: Arabic characters shaping is not handled correctly in Java Scrapbook pa
 Build date: m5a
 OS: Win XP, 2000 and 2003
 Steps to recreate problem:
-1. Create a new Scrap page (Go to file
--> New
--> other then select Java
--> Java run/debug
--> Scrapbook page and follow the wizad to create the page and add it to a Java project).
-2. Double click on the file to open it.
-3. Write any Arabic word (For example use the keys "fdk") then press space and write another one (For example use the keys "udk").
+1.  Create a new Scrap page (Go to file -> New -> other then select Java -> Java run/debug -> Scrapbook page and follow the wizad to create the page and add it to a Java project).
+2.  Double click on the file to open it.
+3.  Write any Arabic word (For example use the keys "fdk") then press space and write another one (For example use the keys "udk").
 Expected output:
 Arabic chracters are properly shaped.
 Actual output:
-Arabic characters are not correctly shaped, the last character in the first word in the example is represented in "Middle" shape while it is expected to be "Final" and the first character in the second word in the example is represented in "Middle" shape while it is expected to be "Initial".
-It seems the space is not being treated as a word separator, thus, the surronuding charcaters are being shaped as if it is an Arabic character.
+Arabic characters are not correctly shaped, the last character in the first word in the example is represented in "Middle" shape while it is expected to be "Final" and the first character in the second word in the example is represented in "Middle" shape while it is expected to be "Initial". It seems the space is not being treated as a word separator, thus, the surronuding charcaters are being shaped as if it is an Arabic character.
 See the attached screen capture

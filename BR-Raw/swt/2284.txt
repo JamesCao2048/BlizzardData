@@ -1,15 +1,13 @@
 BDI: Styledetxt setOrientation does not work, on the fly
 I am trying to use the setOrientation function on the styledText widget.
-When using it, it does not show the carret at the correct position, and when changing from RTL
--> LTR and back it draws the text on both sides (try selecting the text and on the othr side it is hidden , until u highlight it).
+When using it, it does not show the carret at the correct position, and when changing from RTL -> LTR and back it draws the text on both sides (try selecting the text and on the othr side it is hidden , until u highlight it).
 In the example I add 3 styled texts.
-1.initialized as LTR,
-2.initialized as RTL
-3.initialized without the flag
+1. initialized as LTR,
+2. initialized as RTL
+3. initialized without the flag
 A listener is put in place so when Ctrl+Shift is pressed, the GO changes.
 in widgets 1,2 the whole widget is disposed and a new one replaces it (this is the workaround).
-widget 3, only sets the setAligment, and setOrientation
-- this does not work ok.
+widget 3, only sets the setAligment, and setOrientation - this does not work ok.
 The workaround (create new widget) works, but is not good enough.
 <code>
 package test;
@@ -49,8 +47,7 @@ Object ld = widget.getLayoutData();
 String text = widget.getText();
 Composite par = widget.getParent();
 int offset = widget.getCaretOffset();
-int newOrientation = widget.getOrientation() == SWT.RIGHT_TO_LEFT ?
-SWT.LEFT_TO_RIGHT
+int newOrientation = widget.getOrientation() == SWT.RIGHT_TO_LEFT ? SWT.LEFT_TO_RIGHT
 : SWT.RIGHT_TO_LEFT;
 widget.removeVerifyKeyListener(listener);
 widget.dispose();
@@ -67,4 +64,4 @@ par.layout();
 }
 VeryListener listener = new VeryListener();
 /**
-* The content provide
+* The content provid

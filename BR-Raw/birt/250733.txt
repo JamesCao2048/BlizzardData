@@ -1,6 +1,2 @@
 Bug 250733 Cancel "Add Cascading Parameter", the default parameter name will change
-Description: New a cascading parameter,click "Add" button, then it pops up "Add Cascading parameter" dialog, and notice the default parameter name is "NewParameter".
-Then click "cancel" button.
-Try to add again, then in the "Add cascading parameter" dialog, the default name is changed to "NewParameter1".
-Evenif the creation is not succeed, the name of cascading parameter is remembered and it will be increased.
-Build version:2.3.2.v20081014-0730
+Description: New a cascading parameter,click "Add" button, then it pops up "Add Cascading parameter" dialog, and notice the default parameter name is "NewParameter". Then click "cancel" button. Try to add again, then in the "Add cascading parameter" dialog, the default name is changed to "NewParameter1". Evenif the creation is not succeed, the name of cascading parameter is remembered and it will be increased. Build version:2.3.2.v20081014-0730

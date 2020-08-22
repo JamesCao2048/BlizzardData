@@ -1,10 +1,7 @@
 Setting cursor to SWT.CURSOR_APPSTARTING doesn't seem to work
 The new sync view now shows the SWT.CURSOR_APPSTARTING cursor whenever
-background jobs are running that effect the contents of the view.
-This cursor
-appears on WinXP but does not appear on GTK.
-We are using setCursor on a tree
-or table control.
-To try it out, open the Team/Synchronize view and perform a
+background jobs are running that effect the contents of the view. This cursor
+appears on WinXP but does not appear on GTK. We are using setCursor on a tree
+or table control. To try it out, open the Team/Synchronize view and perform a
 refresh (left most toolbar button) in a workspace with some projects laoded
 from CVS.

@@ -1,5 +1,2 @@
 Bug 194695 Rightside borders of the last shown column are not printed in PDF for tables where the real last column is hidden
-I first noticed this problem on a very large table for which I must hide the last column(s).
-In HTML everythings looks neat, but on PDF the rightside borders of the last shown column are either invisible or at best 1 pixel wide (regardless of the zoom level!!) I tried hiding one of the inner columns and then the borders were shown (because the last column was visible) confirming my hypothesis.
-There is a workarround, but it's not pretty: I made a very thin "dummy" last column with only leftside borders and made it visible for PDF only :D Hope you nail this one soon.
-Thanks guys and keep up the good work.
+I first noticed this problem on a very large table for which I must hide the last column(s). In HTML everythings looks neat, but on PDF the rightside borders of the last shown column are either invisible or at best 1 pixel wide (regardless of the zoom level!!) I tried hiding one of the inner columns and then the borders were shown (because the last column was visible) confirming my hypothesis. There is a workarround, but it's not pretty: I made a very thin "dummy" last column with only leftside borders and made it visible for PDF only :D Hope you nail this one soon. Thanks guys and keep up the good work.

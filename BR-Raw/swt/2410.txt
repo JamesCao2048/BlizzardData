@@ -17,5 +17,4 @@ display.dispose();
 For me:
 ccombo computesize default: Point {220, 14}
 ccombo computesize 40: Point {220, 14}
-While the width and height are only hints the way inwhich the CCombo implements it is inconsistent with other widgets such as the Combo, Text, Table, etc.
-In those cases, the hint is returned largely "as is".
+While the width and height are only hints the way inwhich the CCombo implements it is inconsistent with other widgets such as the Combo, Text, Table, etc. In those cases, the hint is returned largely "as is".

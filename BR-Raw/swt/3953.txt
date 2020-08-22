@@ -1,18 +1,15 @@
 Print Dialog Is Not Modal, Resulting in Unpredictable Workbench Behavior
 Build: GM5
-The print dialog is not modal.
-This allows you to ignore it and return to the
-workbench.
-The trouble is, the workbench behaves in a strange way, probably
+The print dialog is not modal.  This allows you to ignore it and return to the
+workbench.  The trouble is, the workbench behaves in a strange way, probably
 because it expects you to be working in the print dialog.
 Steps to reproduce:
-1. Open a Java file to print.
-2. Select File > Print.
-3. Ignore the print dialog, but do not close it.
-4. Try bringing up a dialog box in the workbench, such with Search >
-Search...
-(You might have to click around on the menu bar to get it to open.)
-5. When another dialog box opens you lose control of mouse clicks and you have
+1.  Open a Java file to print.
+2.  Select File > Print.
+3.  Ignore the print dialog, but do not close it.
+4.  Try bringing up a dialog box in the workbench, such with Search >
+Search...  (You might have to click around on the menu bar to get it to open.)
+5.  When another dialog box opens you lose control of mouse clicks and you have
 to tab through the widgets to get to the Cancel button.
 The bottom line is that the print dialog is not modal which allows you to
 return the the workbench with unpredictable results.

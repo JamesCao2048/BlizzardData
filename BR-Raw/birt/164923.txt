@@ -1,10 +1,2 @@
 Bug 164923 Format mask
-this.style can be used only for single column,
-- this is not working for html text with an expression such as
-<value-of format="###,###,###.00"> row["AMOUNT"]
-</VALUE-OF> NOW THE NUMERIC FORMAT WILL BE AVAILABLE AS A PARAMETER SUCH AS params["NumericFormat"] when i write the script in oncreate
-<value-of format=params["NumericFormat"]> row["AMOUNT"]
-</VALUE-OF> this does not seems to work.
-The formating is ignored.
-Is there any workaround?
-regards
+this.style can be used only for single column, - this is not working for html text with an expression such as <value-of format="###,###,###.00"> row["AMOUNT"] </VALUE-OF> NOW THE NUMERIC FORMAT WILL BE AVAILABLE AS A PARAMETER SUCH AS params["NumericFormat"] when i write the script in oncreate <value-of format=params["NumericFormat"]> row["AMOUNT"] </VALUE-OF> this does not seems to work. The formating is ignored. Is there any workaround? regards

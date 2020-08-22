@@ -3,6 +3,5 @@ Created  attachment 206684   [details]
 snippet to demonstrate the problem
 A key event with the character field set to a lower-case letter results in a lower-case letter even if the Shift key is currently pressed.
 I would expect the event with the lower-case letter to be so modified during the post process, that an upper-case letter is produced.
-I've attached a snippet that demonstrates the problem.
-On Linux GTK the expected upper-case 'A' event is printed, but on Mac OS X 10.6.8 an 'a' event is printed instead.
+I've attached a snippet that demonstrates the problem. On Linux GTK the expected upper-case 'A' event is printed, but on Mac OS X 10.6.8 an 'a' event is printed instead.
 This is a big problem for the Jubula project, as it prevents simulating typing upper-case letters as well as symbols that require use of the Shift key.

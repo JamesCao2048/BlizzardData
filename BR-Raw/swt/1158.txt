@@ -4,5 +4,4 @@ swt-only steps:
 - run the CustomControlExample, go to the StyledText tab
 - remove "One Two Three" from the second line and its preceding CR/LF
 - now click the SWT.WRAP radio button and note that "dog." disappears (it has been wrapped to the next line)
-
 -> but it was able to fit in the identical width when the style wasn't SWT.WRAP

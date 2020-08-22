@@ -1,4 +1,2 @@
 Bug 283990 [Regression]Failed to use Parameter in XML Data source
-Description: [Regression]Failed to use Parameter in XML Data source Build number: 2.5.1.v20090720-0630 Steps to reproduce: 1, New a XML Data source 2, New a XML Data set 3, In Column Mapping, specify a parameter: {?p1?} in XPath 4, Click Finish button 5, Go to Parameter page and click Ok, Cancel button.
-Expected result: No Exception occurred Actual result: Exception occurred and it block to close the dialog and I can not use BIRT anymore.
-Error log:
+Description: [Regression]Failed to use Parameter in XML Data source Build number: 2.5.1.v20090720-0630 Steps to reproduce: 1, New a XML Data source 2, New a XML Data set 3, In Column Mapping, specify a parameter: {?p1?} in XPath 4, Click Finish button 5, Go to Parameter page and click Ok, Cancel button. Expected result: No Exception occurred Actual result: Exception occurred and it block to close the dialog and I can not use BIRT anymore. Error log:

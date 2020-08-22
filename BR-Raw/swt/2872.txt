@@ -3,10 +3,8 @@ Colors on a VIRTUAL table with columns will not show up on open
 If you set the colors on a VIRTUAL table that has columns in the callback for
 SetData this will be ignored if the callback is called during shell opening.
 STEPS
-1) Run the example below.
-You will see yellow in the first entry but no other.
-2) Scroll around.
-Anything hidden will start getting colored.
+1) Run the example below. You will see yellow in the first entry but no other.
+2) Scroll around. Anything hidden will start getting colored.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;

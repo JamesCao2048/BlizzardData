@@ -1,10 +1,10 @@
 Cocoa: Cmd-A to select all doesn't work in initial "Select a workspace" dialog
 Build ID: I20081211-1908
 Steps To Reproduce:
-1.Install Eclipse Cocoa version
-2.Launch
-3.When the "Select a workspace" dialog comes up, if the entire text is selected, click somewhere so there is just an insertion point
-4.Type Cmd-A to try to select all the text in the edit box
+1. Install Eclipse Cocoa version
+2. Launch
+3. When the "Select a workspace" dialog comes up, if the entire text is selected, click somewhere so there is just an insertion point
+4. Type Cmd-A to try to select all the text in the edit box
 Actual result:
 Beep, and selection doesn't change
 Expected result:

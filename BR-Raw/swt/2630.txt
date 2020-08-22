@@ -3,7 +3,6 @@ Tree.showColumn doesn't scroll column from left of viewport into view
 - note that the second column begins within the viewport but is too wide to be
 fully shown
 - press the button, which invokes Tree.showColumn(col2)
-
 -> this brings the second column fully into the viewport; good
 - now scroll to the right end of the tree and note that the second column now
 begins to the left of the viewport, but its right edge is visible

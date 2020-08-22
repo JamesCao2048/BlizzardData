@@ -1,8 +1,2 @@
 Bug 124570 Preview from toolbar always shows first report opened in session
-I am testing BIRT 2.0 RC2 and am running into a problem where Preview (from the toolbar) in the Web Viewer will only show the first report I opened in a session.
-To reproduce the problem: 1.Start BIRT 2.0 RC2, create a project and import the attached two designs into the project.
-2.Open Product Catalog and then click on the Preview button on the toolbar to see the report.
-Once you have viewed the report, close the viewer.
-3.Open Sales Invoice and click on the Preview button again.
-Actual Result: You see the Product Catalog report again.
-Expected Result: You should see the Sales Invoice report.
+I am testing BIRT 2.0 RC2 and am running into a problem where Preview (from the toolbar) in the Web Viewer will only show the first report I opened in a session. To reproduce the problem: 1. Start BIRT 2.0 RC2, create a project and import the attached two designs into the project. 2. Open Product Catalog and then click on the Preview button on the toolbar to see the report. Once you have viewed the report, close the viewer. 3. Open Sales Invoice and click on the Preview button again. Actual Result: You see the Product Catalog report again. Expected Result: You should see the Sales Invoice report.

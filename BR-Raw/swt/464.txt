@@ -1,6 +1,5 @@
 Inconsistent behavior of Combo#setItems() on MacOSX Cocoa
-Using the following snippet, one may observe that using Combo#setItems to set items on a combo (with an already selected item) will cause a selection event to occor on MacOSX Cocoa.
-This event does not occur on Windows XP; it does also not occur if no item is selected on the combo.
+Using the following snippet, one may observe that using Combo#setItems to set items on a combo (with an already selected item) will cause a selection event to occor on MacOSX Cocoa. This event does not occur on Windows XP; it does also not occur if no item is selected on the combo.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;

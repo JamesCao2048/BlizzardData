@@ -1,4 +1,2 @@
 Bug 159076 PDF emitter needs to response if "com.lowagie.itext" is missed.
-Previously on GUI, preview in PDF has to check the "com.lowagie.itext" is included in BIRT firstly.
-Now we think GUI doesn't need to do any check for emitters and in order to avoid any hard coded behaviors about emitter contribution, this check is remove from GUI codes.
-So, PDF emitter should be responsible to response if required resources is missed.
+Previously on GUI, preview in PDF has to check the "com.lowagie.itext" is included in BIRT firstly. Now we think GUI doesn't need to do any check for emitters and in order to avoid any hard coded behaviors about emitter contribution, this check is remove from GUI codes. So, PDF emitter should be responsible to response if required resources is missed.

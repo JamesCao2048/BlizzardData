@@ -1,10 +1,8 @@
 org.eclipse.swt.custom.PopupList - should be able to set the SWT.H_SCROLL style on the List widget
 Build Identifier: M20080911-1700
-When using org.eclipse.swt.custom.PopupList, their is no method or argument in the constructor to set the style of the List widget.
-More importantly I can't set the SWT.H_SCROLL style on the List widget, it only has SWT.V_SCROLL.
-This bug is blocking a core feature in our product where the customer cannot see the list of values if the values are very long.
-Even the tooltip doesn't wrap.
+When using org.eclipse.swt.custom.PopupList, their is no method or argument in the constructor to set the style of the List widget. More importantly I can't set the SWT.H_SCROLL style on the List widget, it only has SWT.V_SCROLL.
+This bug is blocking a core feature in our product where the customer cannot see the list of values if the values are very long. Even the tooltip doesn't wrap.
 Reproducible: Always
 Steps to Reproduce:
-1.Look in the constructor of org.eclipse.swt.custom.PopupList
-2.Notice when it instantiates the List widget it hardcodes the style with no SWT.H_SCROLL
+1. Look in the constructor of org.eclipse.swt.custom.PopupList
+2. Notice when it instantiates the List widget it hardcodes the style with no SWT.H_SCROLL

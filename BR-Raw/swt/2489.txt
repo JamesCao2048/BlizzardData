@@ -1,9 +1,7 @@
 ExpandBar leaves space for scrollbar when not required
-Run the following example.
-The top item should fill as much space as is available.
+Run the following example.  The top item should fill as much space as is available.
 When the shell first opens and when expanding and collapsing the bottom item sometimes there is space left for a scrollbar when none is needed or showing.
-Also, sometimes the top item does not grow when collapsing the bottom item.
-Not sure why.
+Also, sometimes the top item does not grow when collapsing the bottom item.  Not sure why.
 public static void main(String[] args) {
 final Display display = new Display();
 Shell shell = new Shell(display);
@@ -33,8 +31,7 @@ Rectangle area = expandBar.getClientArea();
 int spacing = expandBar.getSpacing();
 int header0 = 24; //items[0].getHeaderHeight();
 int header1 = 24; //items[1].getHeaderHeight();
-area.height
--= (items.length + 1)*spacing + header0 + header1;
+area.height -= (items.length + 1)*spacing + header0 + header1;
 boolean expanded1 = items[1].getExpanded();
 if (e.type == SWT.Expand || e.type == SWT.Collapse) {
 ExpandItem item = (ExpandItem)e.item;
@@ -42,8 +39,7 @@ if (item == items[1]) {
 expanded1 = !expanded1;
 }
 }
-if (expanded1) area.height
--= items[1].getHeight();
+if (expanded1) area.height -= items[1].getHeight();
 items[0].setHeight(area.height);
 }
 };

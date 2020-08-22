@@ -2,6 +2,5 @@ Win32 GDI Resource Leak in WrappedContent.java
 Applies to swt-win32-2047 & 2103
 Exists in current CVS (dev.eclipse.org : WrappedContent.java 1.6)
 Line 611 in org/eclipse/swt/custom/WrappedContent.java.
-
 Method: wrapLineRange
 Method returns without releasing renderer GC.

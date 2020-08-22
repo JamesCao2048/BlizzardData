@@ -1,14 +1,2 @@
 Bug 113139 port parameter Allow Null and Allow Blank Values not working as expected
-1.In query, specify the following WHERE clause: WHERE customers.state = ?
-or customers.custID = ?
-2.Create data set parameters 3.Create report parameters.
-Both parameters have Allow Null and Allow Blank Values selected.
-4.Preview report.
-In Enter Parameters, specify a value such as CT for state and 101 for custID.
-The report displays the correct results.
-5.Select Show Report Parameters.
-Specify blank values for both parameters.
-The report displays this error message: There are errors on the report page: + There are error(s) in Table:null 6.Select Show Report Parameters.
-Specify null values for both parameters.
-The report displays the same error message.
-Expected results when null or blank values are specified: A blank report because the data source does not contain null or blank values.
+1. In query, specify the following WHERE clause: WHERE customers.state = ? or customers.custID = ? 2. Create data set parameters 3. Create report parameters. Both parameters have Allow Null and Allow Blank Values selected. 4. Preview report. In Enter Parameters, specify a value such as CT for state and 101 for custID. The report displays the correct results. 5. Select Show Report Parameters. Specify blank values for both parameters. The report displays this error message: There are errors on the report page: + There are error(s) in Table:null 6. Select Show Report Parameters. Specify null values for both parameters. The report displays the same error message. Expected results when null or blank values are specified: A blank report because the data source does not contain null or blank values.

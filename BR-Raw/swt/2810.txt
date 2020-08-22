@@ -1,6 +1,5 @@
 GC.setAdvanced(false) changes line width from 0 to 2
 I am doing some painting at width==2, followed by some more painting at
-width==0.Then, I call setAdvanced(false).
-After stepping over
-setAdvanced(false), the line width gets changed back to 2.I do some more
+width==0. Then, I call setAdvanced(false). After stepping over
+setAdvanced(false), the line width gets changed back to 2. I do some more
 painting and expected the width to still be 0.

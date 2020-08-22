@@ -1,6 +1,5 @@
 MouseDown not delivered until drag started if a DragDetect listener is attached
-From
-< http://stackoverflow.com/questions/3908290/ > :
+From < http://stackoverflow.com/questions/3908290/ > :
 Run this code with 3.7:
 ==================================
 package swttest;
@@ -50,8 +49,7 @@ display.dispose();
 }
 }
 ========================
-The mouseDown doesn't arrive until the drag is underway or until you release the mouse.
-At that point you get a mouseDown and an immediate mouseUp afterwards.
+The mouseDown doesn't arrive until the drag is underway or until you release the mouse. At that point you get a mouseDown and an immediate mouseUp afterwards.
 Now, comment out these lines and run again:
 DragSource dragSource = new DragSource(shell, DND.DROP_COPY | DND.DROP_MOVE);
 dragSource.addDragListener(dragListener);

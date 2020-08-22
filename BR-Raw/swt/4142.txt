@@ -13,8 +13,7 @@ ToolItem ti = new ToolItem(toolBar, SWT.PUSH);
 ti = new ToolItem(toolBar, SWT.SEPARATOR);
 CCombo ccombo = new CCombo(toolBar, SWT.NONE);
 //	Combo ccombo = new Combo(toolBar, SWT.NONE);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 ccombo.add("item "+i);
 }
 ccombo.pack();
@@ -23,8 +22,7 @@ ti.setWidth(100);
 
 toolBar.setLocation(10, 10);
 toolBar.pack();
-//BUG
-- move above
+//BUG - move above
 //ccombo.moveAbove (null);
 shell.open();
 while (!shell.isDisposed()) {

@@ -1,6 +1,2 @@
 Bug 261772 [regression] Hyperlink dialog can not be correctly resize
-BuildId:
-<2.5.0.v20090121-0630> Steps to reproduce: 1.New a report
--> Insert label 2.Property editor
--> Hyperlink 3.Resize the pop-up hyperlink dialog Expected result: The dialog can be resize correctly, which used to work in 2.3.1 Actual result: The dialog did not redraw correctly after resize.
-Error Log: N/A
+BuildId: <2.5.0.v20090121-0630> Steps to reproduce: 1. New a report -> Insert label 2. Property editor -> Hyperlink 3. Resize the pop-up hyperlink dialog Expected result: The dialog can be resize correctly, which used to work in 2.3.1 Actual result: The dialog did not redraw correctly after resize. Error Log: N/A

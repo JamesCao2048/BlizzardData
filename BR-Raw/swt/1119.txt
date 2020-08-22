@@ -3,9 +3,9 @@ Created  attachment 127883   [details]
 Browser in AWT where clip does not work.
 Build ID: SWT-N20090305-2000
 Steps To Reproduce:
-1.have an AWT component with a clipped region (using JNA for example)
-2.browser.print(gc)
-3.The hidden areas are rendered black
+1. have an AWT component with a clipped region (using JNA for example)
+2. browser.print(gc)
+3. The hidden areas are rendered black
 More information:
 If fixPrintWindow is artificially forced to true in Control.printWidget(int, int, GC), then it prints correctly.
 Attached is a sample that shows the issue: after 5 seconds a screenshot is taken on a clipped area containing a browser.

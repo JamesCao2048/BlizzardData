@@ -1,21 +1,3 @@
 Bug 284064 TVT35:TCT202: TVT_SVE: Autom(Automatiskt)
-<response_by> Lena Hederberg at 2009.07.20.09.22.14
-</response_by> Hi Font listbox in Curve Fitting Line seems to have the extra wording Autom Seems that two strings are concatenated here.
-1) Expand BIRTproject in the Navigator, right click on Test_Report_4.rptdesign and select Open.
-2) Double click on the chart that is displayed in the Design View.
-3) Click the Format Chart tab.
-4) Click Value (Y) Series in the left panel, under Series.
-5) Check the box next to Show Curve Fitting Line.
-6) Click Curve Fitting Line.
-7) Verify the red circled areas on the panel below are correctly displayed.
-Pls see attached screenshot Thanx Lena
-<response_by> Matthew McClintock at 2009.07.20.15.22.38
-</response_by> This occurs when the text box is too small for both strings to fit in it.
-When this happens, the string on the right overlaps the one on the left.
-To make both strings visible, please expand the Curve Fitting Line dialog by clicking on the border and dragging it to the side.
-Please see the attached screenshot.
-Thank you, Matthew McClintock
-<response_by> Kit Lo at 2009.07.20.16.30.31
-</response_by> Doshiro-san, is there anything we can do to automatically adjust the dialog width?
-<response_by> Kit Lo at 2009.07.20.16.30.46
-</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.
+<response_by> Lena Hederberg at 2009.07.20.09.22.14 </response_by> Hi Font listbox in Curve Fitting Line seems to have the extra wording Autom Seems that two strings are concatenated here. 1) Expand BIRTproject in the Navigator, right click on Test_Report_4.rptdesign and select Open. 2) Double click on the chart that is displayed in the Design View. 3) Click the Format Chart tab. 4) Click Value (Y) Series in the left panel, under Series. 5) Check the box next to Show Curve Fitting Line. 6) Click Curve Fitting Line. 7) Verify the red circled areas on the panel below are correctly displayed. Pls see attached screenshot Thanx Lena <response_by> Matthew McClintock at 2009.07.20.15.22.38 </response_by> This occurs when the text box is too small for both strings to fit in it. When this happens, the string on the right overlaps the one on the left. To make both strings visible, please expand the Curve Fitting Line dialog by clicking on the border and dragging it to the side. Please see the at
+tached screenshot. Thank you, Matthew McClintock <response_by> Kit Lo at 2009.07.20.16.30.31 </response_by> Doshiro-san, is there anything we can do to automatically adjust the dialog width? <response_by> Kit Lo at 2009.07.20.16.30.46 </response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

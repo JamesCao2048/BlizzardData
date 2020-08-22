@@ -1,7 +1,2 @@
 Bug 315366 "Auto" for Curve Fitting Line is not black but transparent
-Description: "Auto" for Curve Fitting Line is not black but transparent.
-Build number: 2.6.0.v20100602-0949 Steps to reproduce: 1.New a chart, in Format Chart->Series->Value (Y) Series, tick "Shown Curve Fitting Line", click "Curve Fitting Line" button.
-2.Select "Auto" for Color.
-Expected result: The line is shown with color black.
-Actual result: The line disappears.
-Error log: N/A
+Description: "Auto" for Curve Fitting Line is not black but transparent. Build number: 2.6.0.v20100602-0949 Steps to reproduce: 1. New a chart, in Format Chart->Series->Value (Y) Series, tick "Shown Curve Fitting Line", click "Curve Fitting Line" button. 2. Select "Auto" for Color. Expected result: The line is shown with color black. Actual result: The line disappears. Error log: N/A

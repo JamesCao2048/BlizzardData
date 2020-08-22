@@ -1,6 +1,4 @@
 Shell.setEnabled(false) not implemented on Cocoa
 HEAD
-Shell.setEnabled(false) does not seem to be implemented on Cocoa.
-As a workaround for  bug 195834 , I need to disable the workbench window for a short time to prevent events from being delivered to the active widget.
-This works fine on Win32 and GTK, but on Coco, the shell still receives key events.
+Shell.setEnabled(false) does not seem to be implemented on Cocoa. As a workaround for  bug 195834 , I need to disable the workbench window for a short time to prevent events from being delivered to the active widget. This works fine on Win32 and GTK, but on Coco, the shell still receives key events.
 Looking at the code, I see commented code fragments copied from Carbon that have not been translated to Cocoa in Shell#setEnabled(boolean) and Control#fixFocus(Control).

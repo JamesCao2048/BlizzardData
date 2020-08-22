@@ -4,15 +4,13 @@ Screenshot
 Build ID: I20080502-0100
 Eclipse 3.4 M7
 Steps To Reproduce:
-1.create a SWT table (or JFace TableViewer)
-2.create columns with initial justification (e.g.
-CENTER)
-3.change the justification afterwards (e.g.
-LEFT or RIGHT)
-4.fill in some data
-5.the table headers are OK
-6.in the first row: data in first column is OK, second to last columns are wrong aligned (alignment is: LEFT, regardless of initial or afterward changed justification)
-7.in the second to last row: alignment is wrong for the first column and correct for the second to last column
+1. create a SWT table (or JFace TableViewer)
+2. create columns with initial justification (e.g. CENTER)
+3. change the justification afterwards (e.g. LEFT or RIGHT)
+4. fill in some data
+5. the table headers are OK
+6. in the first row: data in first column is OK, second to last columns are wrong aligned (alignment is: LEFT, regardless of initial or afterward changed justification)
+7. in the second to last row: alignment is wrong for the first column and correct for the second to last column
 More information:
 see attached SWT snippet
 see attached screenshot of resulting window

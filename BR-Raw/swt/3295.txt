@@ -2,8 +2,7 @@ Setting font back to its default value in a table tree widget causes an illegalA
 RC2, linux, motif.
 Custom widget example.
 Open the table tree tab.
-Change the font, then change the default.
-You will get the following exception.
+Change the font, then change the default. You will get the following exception.
 Exception in thread "main" java.lang.IllegalArgumentException: Argument not valid
 at org.eclipse.swt.SWT.error(SWT.java:2677)
 at org.eclipse.swt.SWT.error(SWT.java:2616)

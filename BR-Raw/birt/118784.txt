@@ -1,6 +1,2 @@
 Bug 118784 Relative path cannot be used in report property for drill-through link.
-Description: Relative path cannot be used in report property for drill-through link.
-Steps to reproduce: 1.New a report as report1, insert a label and define a bookmark on it.
-2.New a report as report2, insert a label and define a drill-through link, input report1 name in report property but got warning about invalid report design.
-Expected result: Relative path can be used here.
-Actual result: It is not recognized.
+Description: Relative path cannot be used in report property for drill-through link. Steps to reproduce: 1. New a report as report1, insert a label and define a bookmark on it. 2. New a report as report2, insert a label and define a drill-through link, input report1 name in report property but got warning about invalid report design. Expected result: Relative path can be used here. Actual result: It is not recognized.

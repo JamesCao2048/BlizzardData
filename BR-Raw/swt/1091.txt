@@ -1,12 +1,8 @@
 Cocoa SWT / GLCanvas Event Handling Problems
-GLCanvas does not deliver Events properly to listeners (e.g.
-MouseMove).
-See attached Snipped209 (with an added MouseMove Listener).
-Potential problem source: GLCanvas adds the NSOpenGLView instance to the parent's view, shoulnt it be the instances view itself?
-E.g, part of GLCanvas' constructor:
+GLCanvas does not deliver Events properly to listeners (e.g. MouseMove). See attached Snipped209 (with an added MouseMove Listener).
+Potential problem source: GLCanvas adds the NSOpenGLView instance to the parent's view, shoulnt it be the instances view itself? E.g, part of GLCanvas' constructor:
 // original: events not delivered
-glView.initWithFrame(parent.view.bounds(), pixelFormat, share != null ?
-share.glView : null);
+glView.initWithFrame(parent.view.bounds(), pixelFormat, share != null ? share.glView : null);
 glView.setAutoresizingMask(OS.NSViewWidthSizable | OS.NSViewHeightSizable);
 parent.view.addSubview(glView);
 // working: however no auto resizing (why?)

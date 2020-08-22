@@ -1,3 +1,2 @@
 Bug 284695 Make large MySQL report generation possible
-The data set property 'Row Fetch Size' is added.
-Customer can give the JDBC driver a hint as to the number of rows that should be fetched from the database when more rows are needed.
+The data set property 'Row Fetch Size' is added. Customer can give the JDBC driver a hint as to the number of rows that should be fetched from the database when more rows are needed.

@@ -1,15 +1,10 @@
 [Accessibility] Mac: cannot select checkboxes in trees, lists
-I have been doing an accessibility check on the Mac and have found that i cannot select checkbox list or tree items by using spacebar or return key.
-I have tried both 3.1.1 and 3.2 M3 and get the same result, as follows.
+I have been doing an accessibility check on the Mac and have found that i cannot select checkbox list or tree items by using spacebar or return key.  I have tried both 3.1.1 and 3.2 M3 and get the same result, as follows.
 Several examples to try in Eclipse:
-1.Import > File System
-
+1. Import > File System
 -tab to directory tree on left, use arrow keys to navigate to an item, attempt to select items in tree using space bar
-
 -tab to file list on right,use arrow keys to navigate to an item, attempt to select items in list using space bar
 Result: checkbox is not checked when space bar is used to select
-2.Help > Software Updates > Find and install...
-> Search for new features to install > Next
-
+2. Help > Software Updates > Find and install... > Search for new features to install > Next
 -tab to site list, use arrow keys to navigate to an item, attempt to select an item using space bar
 Result: not checked

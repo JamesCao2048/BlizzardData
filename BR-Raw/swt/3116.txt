@@ -15,8 +15,7 @@ shell.setLayout(new GridLayout());
 
 Combo cmb = new Combo(shell, SWT.NONE);
 cmb.setText("Sample Text");
-for (int idx = 0; idx
-< 10; idx++) {
+for (int idx = 0; idx < 10; idx++) {
 cmb.add("" + idx);
 }
 

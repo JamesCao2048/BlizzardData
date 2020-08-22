@@ -8,8 +8,7 @@ Steps to recreate problem:
 2.	Input a surrogate character ud840udc00 in the text file
 2.Try to delete character ud840udc00 using backspace
 <<Error>>
-Only half of the character was deleted.
-Another half appears as blank in the
+Only half of the character was deleted. Another half appears as blank in the
 text editor, you can select the character using keyboard or mouse, but cannot
 see it
 <<Expected Result>>

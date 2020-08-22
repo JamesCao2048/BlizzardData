@@ -1,7 +1,5 @@
 "xxx.getDisplay().update" does..."xxx.getShell().update" doesn't
 My new tracking behaviour is showing what I believe to be a bug in the Shell.update()...on Linux (at least).
-I'm dragging a control 'foo', a child of the shell, around the screen (doing setBounds repeatedly).
-After each move I'm trying to get the window in synch but calling "foo.getShell().update()" doesn't seem to work (with this call moving the control simply 'erases' the area it used to be).
-If I use "foo.getDisplay().update()" then everything seems to work.
+I'm dragging a control 'foo', a child of the shell, around the screen (doing setBounds repeatedly). After each move I'm trying to get the window in synch but calling "foo.getShell().update()" doesn't seem to work (with this call moving the control simply 'erases' the area it used to be). If I use "foo.getDisplay().update()" then everything seems to work.
 Since the drag logic can never damage an area outside foo's shell I'd expect that the "foo.getShell..." version should be optimal compared with the getDisplay() version.
 Let me know if you want a snippet or anything else I can provide...

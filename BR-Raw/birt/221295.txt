@@ -1,5 +1,2 @@
 Bug 221295 Very long decimal numbers multiplied by 100 in excel
-Build ID: v20080227-1131 Steps To Reproduce: 1.Create any datasource (for example Classic models sample DB) 2.Create a dataset and set the following query: select avg(0.0246481607545706052631578947368421052632) as foo from CLASSICMODELS.PAYMENTS 3.Drag & drop the dataset into the layout and run the report using the designer web viewer.
-The html output is: ,0246481607545706052631578947368421052632 5.Now, render the report as XLS.
-The output number is: 2,46 As you can see, the number is multiplied by 100.That only happens with very long decimals.
-More information:
+Build ID: v20080227-1131 Steps To Reproduce: 1.Create any datasource (for example Classic models sample DB) 2.Create a dataset and set the following query: select avg(0.0246481607545706052631578947368421052632) as foo from CLASSICMODELS.PAYMENTS 3.Drag & drop the dataset into the layout and run the report using the designer web viewer. The html output is: ,0246481607545706052631578947368421052632 5.Now, render the report as XLS. The output number is: 2,46 As you can see, the number is multiplied by 100. That only happens with very long decimals. More information:

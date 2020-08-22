@@ -1,7 +1,2 @@
 List.setTopIndex() should not leave excess space at bottom
-On OS X, when CCombo calls list.setTopIndex and the number of items in the drop down is smaller than visibleItemCount, the list turns on its scrollbars and ends up in a strange looking state.
-There is an easy fix for this
--- specifically, checking to make sure that top index
-<= (list.getItemCount()
-- visibleItemCount).
-I'm attaching the one line fix for this.
+On OS X, when CCombo calls list.setTopIndex and the number of items in the drop down is smaller than visibleItemCount, the list turns on its scrollbars and ends up in a strange looking state.  There is an easy fix for this -- specifically, checking to make sure that top index <= (list.getItemCount() - visibleItemCount).  I'm attaching the one line fix for this.

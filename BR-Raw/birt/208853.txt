@@ -1,8 +1,2 @@
 Bug 208853 <birt:param> display param as input box above report content[0603]
-Description:
-<birt:param> display parameter as input box above report content Build number:2.3.0.v20071106 Steps to reproduce: 1.New BIRT WEB project.
-2.Copy attached report and jsp to WebContent folder.
-3.Run project in Tomcat server and preview jsp page.
-Expected result: Display report content and parameter is passed into report.
-Actual result: Two parameter input box displayed above the report content.see attached.
-Error log:n/a
+Description: <birt:param> display parameter as input box above report content Build number:2.3.0.v20071106 Steps to reproduce: 1. New BIRT WEB project. 2. Copy attached report and jsp to WebContent folder. 3. Run project in Tomcat server and preview jsp page. Expected result: Display report content and parameter is passed into report. Actual result: Two parameter input box displayed above the report content.see attached. Error log:n/a

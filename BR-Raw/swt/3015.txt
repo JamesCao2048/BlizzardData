@@ -1,6 +1,5 @@
 GC.drawString uses BG color for font when alpha value < 255
-When drawing transparent strings, the foreground color is not used.
-It seems
+When drawing transparent strings, the foreground color is not used.  It seems
 the background color is used instead.
 public static void main(String[] args) {
 final Display display = new Display();

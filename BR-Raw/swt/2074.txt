@@ -1,6 +1,5 @@
 Mac: calling TreeItem.setText can cause a SetData callback
-Here is a stack trace of what I'm seeing.
-I don't think calling setText() should generate a callback.
+Here is a stack trace of what I'm seeing. I don't think calling setText() should generate a callback.
 at java.lang.Thread.dumpStack(Thread.java:1176)
 at foo.Snippet172640$ViewContentProvider.updateElement(Snippet172640.java:132)
 at org.eclipse.jface.viewers.TreeViewer.virtualLazyUpdateWidget(TreeViewer.java:917)

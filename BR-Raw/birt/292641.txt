@@ -1,5 +1,2 @@
 Bug 292641 BIDI - in rtl report using V2.5.1 the right and left margins clips report content- export to PDF
-User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727) Build Identifier: Build id: I20080918-0100 RTL report displays different kinds of data (tables,text,Dynamic HTML).
-When exported to PDF Text is clipped on left and right margins.
-Tested in both V2.3.2 and V2.5.1.Minimzing the margin does not help.
-Reproducible: Always Steps to Reproduce: 1.Create RTL report with much data 2.Export to PDF 3.Text is clipped where margin appears
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727) Build Identifier: Build id: I20080918-0100 RTL report displays different kinds of data (tables,text,Dynamic HTML). When exported to PDF Text is clipped on left and right margins. Tested in both V2.3.2 and V2.5.1. Minimzing the margin does not help. Reproducible: Always Steps to Reproduce: 1.Create RTL report with much data 2. Export to PDF 3. Text is clipped where margin appears

@@ -1,8 +1,8 @@
 Pressing Ctrl+PageUp or PageDown in Search Window crashes JVM
 Build ID: M20060921-0945
 Steps To Reproduce:
-1.Open search (Ctrl+H)
-2.Press Ctrl+PageUp or Ctrl+PageDown
-3.JVM crashes
+1. Open search (Ctrl+H)
+2. Press Ctrl+PageUp or Ctrl+PageDown
+3. JVM crashes
 More information:
 This is on Linux, Fedora Core 6, using JDK 1.6.0 (Java HotSpot(TM) Client VM (build 1.6.0-b105, mixed mode, sharing))

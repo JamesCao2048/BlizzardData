@@ -1,5 +1,2 @@
 Bug 146079 Backwar Compatibility
-Reports created using version 2.01 does not work in 2.1 RC4.Chart doesnot get displayed when I try to preview the report.
-I am getting the following error.
-Failed to prepare the following query for the data set type org.eclipse.birt.report.data.oda.jdbc.SPSelectDataSet.
-[exec spProcedureName ?, ?, ?, ?, ?] Illegal SP Call Database Used: Sybase
+Reports created using version 2.01 does not work in 2.1 RC4. Chart doesnot get displayed when I try to preview the report. I am getting the following error. Failed to prepare the following query for the data set type org.eclipse.birt.report.data.oda.jdbc.SPSelectDataSet. [exec spProcedureName ?, ?, ?, ?, ?] Illegal SP Call Database Used: Sybase

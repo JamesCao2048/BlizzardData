@@ -5,8 +5,7 @@ shell's children.
 The reason is that in Control.hasCursor() this case is excluded (MapWindowPoints
 returns 0).
 Why is this necessary ?
-Is there a workaround except locating the shell f.e.
-at (0,-1) ?
+Is there a workaround except locating the shell f.e. at (0,-1) ?
 To reproduce this behaviour try this piece of code:
 import org.eclipse.swt.*;
 import org.eclipse.swt.custom.*;
@@ -43,10 +42,8 @@ public void widgetSelected(SelectionEvent e)
 {
 Point locationAbsolute = shell.getLocation();
 Point clientAreaAbsolute = shell.toDisplay(0,0);
-int x = locationAbsolute.x
-- clientAreaAbsolute.x;
-int y = locationAbsolute.y
-- clientAreaAbsolute.y;
+int x = locationAbsolute.x - clientAreaAbsolute.x;
+int y = locationAbsolute.y - clientAreaAbsolute.y;
 
 shell.setLocation(x, y);
 }

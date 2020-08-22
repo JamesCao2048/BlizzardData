@@ -1,37 +1,3 @@
 Bug 161826 problem on extracting data in XML data source using predicates
-While extracting data from an XML data source, there seems to be a problem on using a predicate in the column mapping for a table.
-In the following example XML file (also attached to the bug), books.xml, I was trying to get the book titles with "en" as their "lang" attribute, so specified Table Mapping: /library/book Column Mapping: /title[@lang="en"] However, instead of getting the book titles in the column, I had the "en" strings in the entire column.
-This seems to be a bug to me.
-If not, I would like to find out how to specify the Table/Column Mappings properly.
-File: books.xml
----------------------------------------------
-<?xml version="1.0"?>
-<library>
-<book category="COOKING">
-<title lang="en">Everyday Italian</title>
-<author name="Giada De Laurentiis" country="it"></author>
-<year>2005</year>
-</book>
-<book category="CHILDREN">
-<title lang="en">Harry Potter</title>
-<author name="J K.
-Rowling" country="uk"></author>
-<year>2005</year>
-</book>
-<book category="WEB">
-<title lang="en">XQuery Kick Start</title>
-<author name="James McGovern" country="us"></author>
-<author name="Per Bothner" country="us"></author>
-</book>
-<book category="WEB">
-<title lang="en">Learning XML</title>
-<author name="Erik T.
-Ray" country="us"></author>
-<year>2003</year>
-</book>
-<audio format="CD" category="MUSIC">
-<title lang="en">Feels Like Home</title>
-<artist name="Norah Jones" country="us"></artist>
-<year>2005</year>
-</audio>
-</library>
+While extracting data from an XML data source, there seems to be a problem on using a predicate in the column mapping for a table. In the following example XML file (also attached to the bug), books.xml, I was trying to get the book titles with "en" as their "lang" attribute, so specified Table Mapping: /library/book Column Mapping: /title[@lang="en"] However, instead of getting the book titles in the column, I had the "en" strings in the entire column. This seems to be a bug to me. If not, I would like to find out how to specify the Table/Column Mappings properly. File: books.xml --------------------------------------------- <?xml version="1.0"?> <library> <book category="COOKING"> <title lang="en">Everyday Italian</title> <author name="Giada De Laurentiis" country="it"></author> <year>2005</year> </book> <book category="CHILDREN"> <title lang="en">Harry Potter</title> <author name="J K. Rowling" country="uk"></author> <year>2005</year> </book> <book category="WEB"> <title lang="en">X
+Query Kick Start</title> <author name="James McGovern" country="us"></author> <author name="Per Bothner" country="us"></author> </book> <book category="WEB"> <title lang="en">Learning XML</title> <author name="Erik T. Ray" country="us"></author> <year>2003</year> </book> <audio format="CD" category="MUSIC"> <title lang="en">Feels Like Home</title> <artist name="Norah Jones" country="us"></artist> <year>2005</year> </audio> </library>

@@ -1,10 +1,2 @@
 Bug 192344 Refresh library issue in library file[01]
-Description: Refresh library issue in library file Build number:2.2.0.v20070613 Steps to reproduce: 1.New a library, liba.
-2.Insert a table in liba.
-3.New a library libc.
-4.Drag table from liba to libc.
-5.Remove table in liba and save.
-6.In outline of libc, refresh library.
-Expected result: Red words in table item to indicate the error.
-Actual result: No error indication.
-Error log:N/A
+Description: Refresh library issue in library file Build number:2.2.0.v20070613 Steps to reproduce: 1. New a library, liba. 2. Insert a table in liba. 3. New a library libc. 4. Drag table from liba to libc. 5. Remove table in liba and save. 6. In outline of libc, refresh library. Expected result: Red words in table item to indicate the error. Actual result: No error indication. Error log:N/A

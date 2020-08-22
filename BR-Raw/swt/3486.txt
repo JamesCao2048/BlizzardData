@@ -1,7 +1,5 @@
 SWT.RIGHT does not work in Text
-RUn th efollowing snippet.
-The text is not Right aligned.
-Same is true if
+RUn th efollowing snippet.  The text is not Right aligned.  Same is true if
 the style SWT.SINGLE is added.
 public static void main(String[] args) {
 Display display = new Display();

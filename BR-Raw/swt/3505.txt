@@ -1,11 +1,8 @@
 setEditable() method for Combo or CCombo
 At present it is not possible to change a Combo or CCombo from being editable to
-non-editable or vica-versa once it has been created.
-This can only be set when
+non-editable or vica-versa once it has been created. This can only be set when
 the Combo/CCombo is created by using the SWT.READ_ONLY constant.
 I have an application where I would like to change the editability of a CCombo
-depending on the selection in other widgets.
-It seems that I will have to create
-a new CCombo each time and copy the content across.
-It would be much more
+depending on the selection in other widgets. It seems that I will have to create
+a new CCombo each time and copy the content across. It would be much more
 convenient to have a setEditable() method.

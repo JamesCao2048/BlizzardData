@@ -1,6 +1,3 @@
 Browser does not honor IE version setting on first navigate
-During testing it was found that the fix for  bug 328609  is not being applied by IE on a Browser's first navigate (subsequent navigates are fine).
-This happens specifically on the first navigate because the Browser necessarily does an initial auto-navigate to about:blank before going to the first requested url, and this causes its WebSite implementation to answer an incorrect security value.
-The security value being answered by WebSite should only be answered for about:blank navigates that are triggered by a Browser.setText() invocations.
-The attached patch for 3.7RC3 specifically ensures that this incorrect security value is not answered for the Browser's initial navigate to about:blank.
-There is a "proper" fix for this issue, but it is planned to apply it post-3.7 as it has increased potential for side-effects.
+During testing it was found that the fix for  bug 328609  is not being applied by IE on a Browser's first navigate (subsequent navigates are fine).  This happens specifically on the first navigate because the Browser necessarily does an initial auto-navigate to about:blank before going to the first requested url, and this causes its WebSite implementation to answer an incorrect security value.  The security value being answered by WebSite should only be answered for about:blank navigates that are triggered by a Browser.setText() invocations.
+The attached patch for 3.7RC3 specifically ensures that this incorrect security value is not answered for the Browser's initial navigate to about:blank. There is a "proper" fix for this issue, but it is planned to apply it post-3.7 as it has increased potential for side-effects.

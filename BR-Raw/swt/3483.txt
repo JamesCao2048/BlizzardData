@@ -1,7 +1,6 @@
 NPE in StyledText.getSelectionRange (line 4275)
 I200401130800
-Found many of these in the log file.
-General stability seems to be affected
+Found many of these in the log file.  General stability seems to be affected
 while in use.
 !ENTRY org.eclipse.ui 4 0 Jan 13, 2004 15:11:53.105
 !MESSAGE java.lang.NullPointerException

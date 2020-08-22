@@ -1,13 +1,8 @@
 ExpandBar does not scroll properly
 Build ID:  I20070625-1500
 Steps To Reproduce:
-1.Create an ExpandBar, with more items than what can fit the screen.
-A scroll bar should automatically appear.
-2.Suppose you have a disability and cannot use the mouse.
-Use the arrows keys to adjust focus to each ExpandBar item.
-3.The item you want is currently not on screen.
-Notice that as you move focus beyond the last viewable ExpandBar item, the scroll bar does not adjust.
-This is a bug.
+1. Create an ExpandBar, with more items than what can fit the screen. A scroll bar should automatically appear.
+2. Suppose you have a disability and cannot use the mouse. Use the arrows keys to adjust focus to each ExpandBar item.
+3. The item you want is currently not on screen. Notice that as you move focus beyond the last viewable ExpandBar item, the scroll bar does not adjust. This is a bug.
 More information:
-Certain people with disabilities cannot use the mouse to access ExpandBars scrolling functionality.
-Currently, there is no way for them to access items beyond the initial viewable set.
+Certain people with disabilities cannot use the mouse to access ExpandBars scrolling functionality. Currently, there is no way for them to access items beyond the initial viewable set.

@@ -1,10 +1,2 @@
 Bug 102511 Enhance Highlighting to support Banding
-Using the highlight feature to create a banded report results in a messy report.
-To recreate, create a simple tabular report.
-In the designer, select the detail row, go to the Highlights tab on the Property Editor view.
-Add a new highlight, set its condition to be "row[0] % 2" "Equals" "0".
-Set the formatting for the highlight to have a gray background color.
-When the report is previewed, alternating rows have a background color for each cell.
-The issue is that the backgrounds for the cells are not contiguous, there are spaces between each cell's background, and if a cell has a null value there is no background color.
-In this situation the highlight should apply to the row, instead it is being applied to each cell.
-If I manually set the background of a detail row to be gray I get the effect I want.
+Using the highlight feature to create a banded report results in a messy report. To recreate, create a simple tabular report. In the designer, select the detail row, go to the Highlights tab on the Property Editor view. Add a new highlight, set its condition to be "row[0] % 2" "Equals" "0". Set the formatting for the highlight to have a gray background color. When the report is previewed, alternating rows have a background color for each cell. The issue is that the backgrounds for the cells are not contiguous, there are spaces between each cell's background, and if a cell has a null value there is no background color. In this situation the highlight should apply to the row, instead it is being applied to each cell. If I manually set the background of a detail row to be gray I get the effect I want.

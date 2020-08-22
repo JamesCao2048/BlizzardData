@@ -1,8 +1,2 @@
 Bug 165677 folder is not opened by double click
-Data explorer pane contains following tree: + Data Sources
-- Postgres + Data Sets
-- Header DS
-- Chart DS + Report Parameters
-- Id It is common then if you double click on menu item, that is folder for other menu items (submenu), that it is opened.
-But in BIRT I can click to Data Sources (Data Sets, Report Params) as many times as I want but it never opens the submenu.
-In other words, when I doubleclick Data Sets, I want to open it and see which data sets are defined.
+Data explorer pane contains following tree: + Data Sources - Postgres + Data Sets - Header DS - Chart DS + Report Parameters - Id It is common then if you double click on menu item, that is folder for other menu items (submenu), that it is opened. But in BIRT I can click to Data Sources (Data Sets, Report Params) as many times as I want but it never opens the submenu. In other words, when I doubleclick Data Sets, I want to open it and see which data sets are defined.

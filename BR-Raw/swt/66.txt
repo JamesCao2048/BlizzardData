@@ -1,14 +1,9 @@
 [Win32] Screen turns black when moving tabs
 Created  attachment 221026   [details]
-A screenshot of the bug.
-Please view in fullscreen.
-Sometimes, when I move a tab (no matter from what window), the whole screen turns black
-- the only things that are still visible are the windows taskbar and the green "tab location" indicator.
-Sometimes it can happen that only part of the screen turns black (only witnessed one time, when filing this bug; will post screenshot as  attachment 2   [details] ).
-Sometimes it also can cover the whole screen, including the windows taskbar (also witnessed only one time, when filing this bug).
-The black screen happens not always, but fairly often.
-It always disappears as soon as you "drop" the tab (release the mouse button), after which the window looks normal again.
-I am running Windows 8 Release Preview (Build 8400) on a PC with an AMD Phenom (II) X4 970 Processor, 8 GB RAM, and a NVIDIA GeForce GTX 560.This graphics card is already known to cause problems with Firefox ( https://bugzilla.mozilla.org/show_bug.cgi?id=686782 ), so it might be another problem of the NVIDIA driver and Windows 8.
+A screenshot of the bug. Please view in fullscreen.
+Sometimes, when I move a tab (no matter from what window), the whole screen turns black - the only things that are still visible are the windows taskbar and the green "tab location" indicator. Sometimes it can happen that only part of the screen turns black (only witnessed one time, when filing this bug; will post screenshot as  attachment 2   [details] ). Sometimes it also can cover the whole screen, including the windows taskbar (also witnessed only one time, when filing this bug).
+The black screen happens not always, but fairly often. It always disappears as soon as you "drop" the tab (release the mouse button), after which the window looks normal again.
+I am running Windows 8 Release Preview (Build 8400) on a PC with an AMD Phenom (II) X4 970 Processor, 8 GB RAM, and a NVIDIA GeForce GTX 560. This graphics card is already known to cause problems with Firefox ( https://bugzilla.mozilla.org/show_bug.cgi?id=686782 ), so it might be another problem of the NVIDIA driver and Windows 8.
 My Java is:
 java version "1.7.0_04"
 Java(TM) SE Runtime Environment (build 1.7.0_04-b22)

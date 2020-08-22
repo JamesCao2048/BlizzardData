@@ -1,10 +1,8 @@
 cursors of size 16 look wrong
 the OS call seems to expect a scanline pad of 2 instead of the scanline pad 4
-we give him.
-This causes the cursor to look bad.
+we give him. This causes the cursor to look bad.
 /*
-* Copyright (c) 2000, 2003 IBM Corp.
-All rights reserved.
+* Copyright (c) 2000, 2003 IBM Corp.  All rights reserved.
 * This file is made available under the terms of the Common Public License v1.0
 * which accompanies this distribution, and is available at
 *  http://www.eclipse.org/legal/cpl-v10.html
@@ -13,8 +11,7 @@ All rights reserved.
 * Cursor example snippet: create a cursor from a source and a mask
 *
 * For a list of all SWT example snippets see
-*  http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt
--
+*  http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt -
 home/dev.html#snippets
 */
 import org.eclipse.swt.*;
@@ -31,10 +28,8 @@ Color black = display.getSystemColor (SWT.COLOR_BLACK);
 PaletteData palette = new PaletteData (new RGB [] {white.getRGB
 (), black.getRGB(),});
 ImageData sourceData = new ImageData (16, 16, 1, palette);
-for (int i = 0; i
-< 8; i ++) {
-for (int j = 0; j
-< 16; j++) {
+for (int i = 0; i < 8; i ++) {
+for (int j = 0; j < 16; j++) {
 sourceData.setPixel(i, j, 1);
 }
 }
@@ -43,10 +38,8 @@ sourceData.setPixel(i, j, 1);
 palette = new PaletteData (new RGB [] {white.getRGB(),
 black.getRGB(),});
 ImageData maskData = new ImageData (16, 16, 1, palette);
-for (int i = 0; i
-< 16; i ++) {
-for (int j = 0; j
-< 8; j++) {
+for (int i = 0; i < 16; i ++) {
+for (int j = 0; j < 8; j++) {
 maskData.setPixel(i, j, 1);
 }
 }

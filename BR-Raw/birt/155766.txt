@@ -1,6 +1,2 @@
 Bug 155766 [Regression]Preview will not refresh the modify in design report
-Details: Preview will not refresh the modify in design report Step: 1.New a report design.
-2.New a label and input label1.3.Preview.
-4.Switch to Layout and modify the content of label as label2.5.Preview.
-Actual result: It preview as "label1" twice.
-Exception result: Preview "label2" at the second time
+Details: Preview will not refresh the modify in design report Step: 1.New a report design. 2.New a label and input label1. 3.Preview. 4.Switch to Layout and modify the content of label as label2. 5.Preview. Actual result: It preview as "label1" twice. Exception result: Preview "label2" at the second time

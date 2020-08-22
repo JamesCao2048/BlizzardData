@@ -1,7 +1,5 @@
 [Browser] JavaDoc Hover/Browser-Widget doesn`t show Text
-In Version 3.1.2 the JavaDocHover works, but if I press F2 I see an empty white page.
-Now I swiched to 3.2RC4 an the JavadocHover shows an empty white page, too (without pressing F2).
-I use the same Workspace, Project and JDK 1.5.0_06.
+In Version 3.1.2 the JavaDocHover works, but if I press F2 I see an empty white page. Now I swiched to 3.2RC4 an the JavadocHover shows an empty white page, too (without pressing F2). I use the same Workspace, Project and JDK 1.5.0_06.
 After some research, I notice that the Browser-Widget is the problem.
 I changed the methode JavadocHover.getHoverControlCreator():
 ...
@@ -14,9 +12,6 @@ So, now I have the same behavior as in 3.1.2.
 
 I try Snippet136 (render HTML from memory) from the SWT-Snippet page to figure out whats wrong.
 The result from the Snippet was the same, an empty page (<HTML></HTML>)
-I change the default browser setting from WinXP to my Firefox-Browser, but this does not work.
-The Browser-Widget use the IE.
-Maybe its a SecuritySeeting thing from IE.
-I use the IE with the newest Patches.
-Any idea?
-How can I change the default Browser to FireFox?
+I change the default browser setting from WinXP to my Firefox-Browser, but this does not work. The Browser-Widget use the IE.
+Maybe its a SecuritySeeting thing from IE. I use the IE with the newest Patches.
+Any idea? How can I change the default Browser to FireFox?

@@ -1,12 +1,8 @@
 [Image Saving] o.e.swt.internal.image.PngEncoder is very slow on writing large images
 Build ID: I20090611-1540
 Steps To Reproduce:
-1.ImageLoader.load() a large (e.g.
-3000x3000) 24/32 bit image
-2.ImageLoader.save() it as IMAGE_PNG
-3.Watch the PNG encoder struggling for good 20 seconds on it
+1. ImageLoader.load() a large (e.g. 3000x3000) 24/32 bit image
+2. ImageLoader.save() it as IMAGE_PNG
+3. Watch the PNG encoder struggling for good 20 seconds on it
 More information:
-The main slowdown factor is that PngEncoder.writeImageData() is making 3-4(with alpha) writes to the output stream for each pixel.
-So with 10M pixel image it's 30M write() calls.
-The write() call overhead is pretty big, and by simply moving it out of the inner loop I managed to increase the encoder performance tenfold.
-Please see the patch.
+The main slowdown factor is that PngEncoder.writeImageData() is making 3-4(with alpha) writes to the output stream for each pixel. So with 10M pixel image it's 30M write() calls. The write() call overhead is pretty big, and by simply moving it out of the inner loop I managed to increase the encoder performance tenfold. Please see the patch.

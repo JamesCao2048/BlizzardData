@@ -2,7 +2,6 @@ setting Table column alignment does not visually update
 3.2M1
 - run the snippet below
 - push the button, which sets the second column's alignment to SWT.RIGHT
-
 -> no visual update is shown until the item's second column area is
 damaged/exposed
 public static void main(String[] args) {

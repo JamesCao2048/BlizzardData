@@ -3,19 +3,15 @@ Created  attachment 113179   [details]
 Snippet to reproduce problem
 Build ID: 3.4
 Steps To Reproduce:
-1.compile snippet (javac
--cp .;swt.jar PDFTest.java)
-2.Ensure Adobe Reader 9.0 installed
-3.run snippet (java
--cp .;swt.jar PDFTest)
-4.view document
-5.close window
-6.get stack trace
+1. compile snippet (javac -cp .;swt.jar PDFTest.java)
+2. Ensure Adobe Reader 9.0 installed
+3. run snippet (java -cp .;swt.jar PDFTest)
+4. view document
+5. close window
+6. get stack trace
 More information:
-Some of our users have been recently experiencing crashes in our SWT based product.
-They occurs when we are attempting to display a PDF document via the browser (in this case (IE 7).
-We have isolated this crash down to those who have updated to Adobe 9.0. Adobe 8 (8.1.2) works fine on both XP and Vista.
-I have tested and reproduced this problem in house with both SWT 3.3.1.1 (our release version) and SWT 3.4. The actual PDF document that is displayed appears not to matter, so the example I'm using is an extremely simple and small one.
+Some of our users have been recently experiencing crashes in our SWT based product.  They occurs when we are attempting to display a PDF document via the browser (in this case (IE 7).
+We have isolated this crash down to those who have updated to Adobe 9.0.  Adobe 8 (8.1.2) works fine on both XP and Vista.   I have tested and reproduced this problem in house with both SWT 3.3.1.1 (our release version) and SWT 3.4.  The actual PDF document that is displayed appears not to matter, so the example I'm using is an extremely simple and small one.
 
 The snippet to reproduce this problem is below
 import org.eclipse.swt.SWT;
@@ -51,9 +47,7 @@ e.printStackTrace();
 }
 }
 When run (on Windows XP SP2, in this case) with the following command, the document displays correctly.
-
-java
--cp .;swt.jar PDFTest
+java -cp .;swt.jar PDFTest
 When I close the window, however, I get the following stack trace
 java.lang.NullPointerException
 at org.eclipse.swt.ole.win32.OleClientSite.onPaint(Unknown Source)
@@ -68,4 +62,4 @@ at org.eclipse.swt.widgets.Control.windowProc(Unknown Source)
 at org.eclipse.swt.widgets.Display.windowProc(Unknown Source)
 at org.eclipse.swt.internal.ole.win32.COM.CoFreeUnusedLibraries(Native Method)
 at org.eclipse.swt.ole.win32.OleClientSite.releaseObjectInterfaces(Unknown Source)
-at org.eclipse.swt.ole.win32.OleControlSite.releaseObjectInterfaces(Unkno
+at org.eclipse.swt.ole.win32.OleControlSite.releaseObjectInterfaces(

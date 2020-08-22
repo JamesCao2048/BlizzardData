@@ -1,5 +1,2 @@
 Bug 163919 Set all border on row has totally different preview result between PDF and webviewer [0300]
-Description: Set all the direction of border to the table detail row and the preview result in the PDF is not correct.
-Build number: 2.2.0.v20061109-0630 Step to reproduce: 1.Use attached report design file.
-2.preview it in PDF 3.preview it in webviewer Actual result: There are no border between two rows when preview in PDF.
-Excepted result: The preview result should same as the webviewer's
+Description: Set all the direction of border to the table detail row and the preview result in the PDF is not correct. Build number: 2.2.0.v20061109-0630 Step to reproduce: 1. Use attached report design file. 2. preview it in PDF 3. preview it in webviewer Actual result: There are no border between two rows when preview in PDF. Excepted result: The preview result should same as the webviewer's

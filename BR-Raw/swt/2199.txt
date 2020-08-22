@@ -1,10 +1,8 @@
 Accessible.get_accSelection(int pvarChildren) has error when multiple items are selected
 Build ID: 3.2
 Steps To Reproduce:
-1.add AccessibleControlListener to a custom control, and implement getSelection(AccessibleControlEvent e) method
-2.Return CHILDID_MULTIPLE when multiple children are selected, and return an array of childIDs in the children field.
-3.In inspect32, selection has error as below.
-It can not display the multiple selection
-Selection:	[Error IEnumVARIANT::Clone(): hr=0x80004001
-- Not Implement]
+1. add AccessibleControlListener to a custom control, and implement getSelection(AccessibleControlEvent e) method
+2. Return CHILDID_MULTIPLE when multiple children are selected, and return an array of childIDs in the children field.
+3. In inspect32, selection has error as below. It can not display the multiple selection
+Selection:	[Error IEnumVARIANT::Clone(): hr=0x80004001 - Not Implement]
 More information:

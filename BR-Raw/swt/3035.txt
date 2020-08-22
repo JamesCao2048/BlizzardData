@@ -1,7 +1,5 @@
 GTK-BIDI: RTL support in Table
 Sequence of columns in the table and sequence of the renderers in the column
-should be reversed.
-Additional space should be added to first visible column
-and not to last, as in case of ltr-oriented Table.
-Initial scroll position
+should be reversed. Additional space should be added to first visible column
+and not to last, as in case of ltr-oriented Table. Initial scroll position
 should be from the right.

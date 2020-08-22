@@ -1,6 +1,5 @@
 Disabled button stops events
-Run the following code.
-Setting button 2 to be disabled stops events from being
+Run the following code.  Setting button 2 to be disabled stops events from being
 sent to button 3, even though it is above.
 public static void main(String [] args) {
 Display display = new Display();

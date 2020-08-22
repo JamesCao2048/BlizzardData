@@ -1,8 +1,2 @@
 Bug 162830 Bookmark with single quote doesn't work in Web Viewer
-Description: Bookmark with single quote doesn't work in Web Viewer Steps to reproduce: 1.Insert two labels, set page break between them.
-2.Set bookmark "b'k" to the second label.
-3.Define internal bookmark link in the first label.
-4.Preview with web viewer/html/pdf, click the link.
-5.preview with /preview servlet Expected result: Link works, can link to the second label.
-Actual result: pdf and /preview servlet can link to target label.
-Web Viewer(frameset and run servlet) cannot link to target label.
+Description: Bookmark with single quote doesn't work in Web Viewer Steps to reproduce: 1. Insert two labels, set page break between them. 2. Set bookmark "b'k" to the second label. 3. Define internal bookmark link in the first label. 4. Preview with web viewer/html/pdf, click the link. 5. preview with /preview servlet Expected result: Link works, can link to the second label. Actual result: pdf and /preview servlet can link to target label. Web Viewer(frameset and run servlet) cannot link to target label.

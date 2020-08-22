@@ -1,7 +1,2 @@
 Bug 271856 Support multiple states for PropertyVisibility setting in Model extension schema
-Currently the PropertyVisibility setting in Model extension schema only support one exclusive value: "readonly" or "hide".
-For some properties, user may want them to have both states, e.g "readonly" and "hide".
-One example is the "drop" property for Crosstab cell, currently we have no way to set it as both "readonly" and "hide".
-The solution could be supporting a comma separated syntax for PropertyVisibility value, e.g.
-"readonly, hide", which can describe multiple state in an "and" relationship.
-This will also keep the compatibility with old values.
+Currently the PropertyVisibility setting in Model extension schema only support one exclusive value: "readonly" or "hide". For some properties, user may want them to have both states, e.g "readonly" and "hide". One example is the "drop" property for Crosstab cell, currently we have no way to set it as both "readonly" and "hide". The solution could be supporting a comma separated syntax for PropertyVisibility value, e.g. "readonly, hide", which can describe multiple state in an "and" relationship. This will also keep the compatibility with old values.

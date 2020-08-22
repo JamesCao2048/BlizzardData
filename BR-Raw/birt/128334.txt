@@ -1,9 +1,2 @@
 Bug 128334 List item missing two menu options
-steps to reproduce:
-- create a report
-- add a list item
-- right click on the list item, and select Create Template Report Item ...
-- right click on the list item, and select Revert To Report Item
-- right click on the list item, and look at the context menu expected behavior:
-- Revert To Report Item and Revert To Template Item appears actual behavior:
-- these two options were missing
+steps to reproduce: - create a report - add a list item - right click on the list item, and select Create Template Report Item ... - right click on the list item, and select Revert To Report Item - right click on the list item, and look at the context menu expected behavior: - Revert To Report Item and Revert To Template Item appears actual behavior: - these two options were missing

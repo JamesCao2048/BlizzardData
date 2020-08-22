@@ -1,10 +1,2 @@
 Bug 232907 Crosstab measure can not be edited after refreshing library.
-description: Crosstab measure can not be edited after refreshing library.
-build id: 2.3.0 v20080520-0630 steps to reproduce: 1.New a library with a cube.
-2.New a report design, using the cube from library.
-3.New a crosstab in the report design with the cube.
-Now you can double click the data item in measure cell to edit.
-4.Refresh library in the outline of report design.
-5.Double click the data item in measure cell to edit it.
-Expected result: The measure cell can still be edited.
-Actual result: The measure cell can no longer be edited unless you restart birt.
+description: Crosstab measure can not be edited after refreshing library. build id: 2.3.0 v20080520-0630 steps to reproduce: 1. New a library with a cube. 2. New a report design, using the cube from library. 3. New a crosstab in the report design with the cube. Now you can double click the data item in measure cell to edit. 4. Refresh library in the outline of report design. 5. Double click the data item in measure cell to edit it. Expected result: The measure cell can still be edited. Actual result: The measure cell can no longer be edited unless you restart birt.

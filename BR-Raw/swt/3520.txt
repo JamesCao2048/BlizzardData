@@ -1,7 +1,6 @@
 GTK: Combo.setForeground() and Combo.setFont() dont change the drop-down list
 In this test the foreground color and the Font for the Combo is only changed for
-the selected item and not for the rest of the items in the drop-down list.
-This
+the selected item and not for the rest of the items in the drop-down list. This
 test works fine on Windows.
 The test:
 ----------------test case starts here--------------------------------

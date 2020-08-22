@@ -1,9 +1,7 @@
 [About] Eclipse logo not rendered correctly in about dialog and start-up progress window
 Build id: I20050527-1300
 The Eclipse logo is not drawn properly in the "About Eclipse Platform" dialog
-(one region looks corrupted).
-See the attached screenshot.
-On the left, the
+(one region looks corrupted). See the attached screenshot. On the left, the
 expected look has been inserted for comparison purposes.
 The new "Eclipse Platform Starting" progress window that is shown at start-up time
 (after the splash screen) has a similar problem though for some reason I was not

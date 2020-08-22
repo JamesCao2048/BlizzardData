@@ -1,8 +1,7 @@
 [Viewers] ITreeViewerListener.treeExpanded() is called twice
 I am using TreeViewer, and my ContentProvider class also listens to tree
 collapse and tree expansions in the viewer by registering itself as a
-ITreeViewerListener with the TreeViewer.
-It has the required methods to implement:
+ITreeViewerListener with the TreeViewer. It has the required methods to implement:
 public void treeExpanded(TreeExpansionEvent event), and
 public void treeCollapsed(TreeExpansionEvent event).
 The problem is that when an item in the tree is expanded for the first time

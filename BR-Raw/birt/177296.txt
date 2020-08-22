@@ -1,7 +1,2 @@
 Bug 177296 Redundant Values are added to parameter list in preview mode.[0705]
-Description: Redundant Values are added to parameter list in preview mode.
-Build number:2.2.0.v20070312 Steps to reproduce: 1.Open attached report.
-2.Preview.
-3.Select datetime value and click OK.
-4.Click Show Report Parameters button, check values Expected result: Values are unchanged and only one datetime value in list.
-Actual result: Two same datetime values in list.
+Description: Redundant Values are added to parameter list in preview mode. Build number:2.2.0.v20070312 Steps to reproduce: 1. Open attached report. 2. Preview. 3. Select datetime value and click OK. 4. Click Show Report Parameters button, check values Expected result: Values are unchanged and only one datetime value in list. Actual result: Two same datetime values in list.

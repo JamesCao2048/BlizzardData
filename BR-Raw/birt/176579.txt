@@ -1,5 +1,2 @@
 Bug 176579 Expose setGroupLevel() on IGroupContent interface
-Currently IGroupContent interface doesn't expose setGroupLevel() method, this is required for custom IReportItemExecutor to construct the group content.
-following is the suggested code change: public int getGroupLevel( ) { if ( groupLevel !=
--1 ) { return groupLevel; } if ( generateBy instanceof GroupDesign ) { GroupDesign design = (GroupDesign) generateBy; return design.getGroupLevel( ); } return
--1; } public void setGroupLevel( int level ) { this.groupLevel = level; }
+Currently IGroupContent interface doesn't expose setGroupLevel() method, this is required for custom IReportItemExecutor to construct the group content. following is the suggested code change: public int getGroupLevel( ) { if ( groupLevel != -1 ) { return groupLevel; } if ( generateBy instanceof GroupDesign ) { GroupDesign design = (GroupDesign) generateBy; return design.getGroupLevel( ); } return -1; } public void setGroupLevel( int level ) { this.groupLevel = level; }

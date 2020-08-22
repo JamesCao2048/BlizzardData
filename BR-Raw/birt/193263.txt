@@ -1,5 +1,2 @@
 Bug 193263 Inconsistent result of average function between Chart and Table[0001]
-Description: Set average function on Chart and Table, get the different result.
-Chart engine takes the null value as 0, but in DTE null will be discarded.
-I have checked the behavior of excel, the null value is discarded in it.
-Build version:2.2.0v20070619-0630 Steps to reproduce: 1.Get the attached report design file and preview.
+Description: Set average function on Chart and Table, get the different result. Chart engine takes the null value as 0, but in DTE null will be discarded. I have checked the behavior of excel, the null value is discarded in it. Build version:2.2.0v20070619-0630 Steps to reproduce: 1. Get the attached report design file and preview.

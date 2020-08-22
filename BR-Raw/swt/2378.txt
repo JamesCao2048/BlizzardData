@@ -1,12 +1,10 @@
 gc.setTransform() makes fonts scale strangely when printing
 The use of transformations seems to have strange influcence on the scaling of
-fonts.
-When I add the following two code lines before writing out text using
+fonts. When I add the following two code lines before writing out text using
 gc.drawString(), fonts get scaled about 4 times as large as it should.
 Transform transform = new Transform(device);
 gc.setTransform(transform);
-As far as I understand, these two operations should be a no-op.
-If look at the
+As far as I understand, these two operations should be a no-op. If look at the
 values in transform, these are
 Transform {1.0,0.0,0.0,1.0,0.0,0.0}
 I tried calling "gc.getTransform(transform)" as well, but this call returns an

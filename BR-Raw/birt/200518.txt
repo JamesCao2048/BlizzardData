@@ -1,8 +1,2 @@
 Bug 200518 "Edit base URL..." button does not take effect in STANDALONE Chart Builder [13]
-Description: "Edit base URL..." button does not take effect in STANDALONE Chart Builder.
-Build number: 2.2.1.v200708020-0630 Steps to reproduce: 1.Run ChartWizardLauncher.java.
-2.In "Format Chart" tab, select "Value (Y) Series" node, click "interactivity" button, select "Mouse Click" for Event, and "Hyperlink" for Action.
-3.Click "Edit base URL..." button.
-Expected result: The dialogue can be invoke.
-Actual result: Exception is thrown out.
-Error log: N/A
+Description: "Edit base URL..." button does not take effect in STANDALONE Chart Builder. Build number: 2.2.1.v200708020-0630 Steps to reproduce: 1. Run ChartWizardLauncher.java. 2. In "Format Chart" tab, select "Value (Y) Series" node, click "interactivity" button, select "Mouse Click" for Event, and "Hyperlink" for Action. 3. Click "Edit base URL..." button. Expected result: The dialogue can be invoke. Actual result: Exception is thrown out. Error log: N/A

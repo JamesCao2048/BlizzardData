@@ -1,10 +1,4 @@
 Canvas#scroll forces an update - any way around this besides setRedraw(false)
-In  bug 117507  and  bug 121049  we have explored ways to gain performance by not so much using Control#setRedraw(on/off) brackets around operations in editors.
-In many places, we have successfully gotten rid of setRedraw calls, however, in others we still need it to avoid flickering.
-One problem is that sometimes an operation will trigger the styled text to scroll, which in turn flushes the paint queue by calling update().
-While I understand this is needed for how Canvas#scroll() works, I would like to know if there is any other way besides calling setRedraw() to avoid having the paintQueue "prematurely" flushed.
-An example of this is the "Organize Imports" action in the Java editor: it inserts some text out-of-context (i.e.
-not where the caret is).
-Since we want to keep the caret line visually stable, we call StyledText#setTopPixel() after the operation.
-If we wrap this into a setRedraw() bracket, everything is fine (besides some scrollbar flashing on GTK).
-If we leave out the setRedraw, we first see the text changes come in and then the content is scrolled to keep the caret line stable.
+In  bug 117507  and  bug 121049  we have explored ways to gain performance by not so much using Control#setRedraw(on/off) brackets around operations in editors. In many places, we have successfully gotten rid of setRedraw calls, however, in others we still need it to avoid flickering.
+One problem is that sometimes an operation will trigger the styled text to scroll, which in turn flushes the paint queue by calling update(). While I understand this is needed for how Canvas#scroll() works, I would like to know if there is any other way besides calling setRedraw() to avoid having the paintQueue "prematurely" flushed.
+An example of this is the "Organize Imports" action in the Java editor: it inserts some text out-of-context (i.e. not where the caret is). Since we want to keep the caret line visually stable, we call StyledText#setTopPixel() after the operation. If we wrap this into a setRedraw() bracket, everything is fine (besides some scrollbar flashing on GTK). If we leave out the setRedraw, we first see the text changes come in and then the content is scrolled to keep the caret line stable.

@@ -1,18 +1,14 @@
 Typeahead broken for Table and Tree
 I20050215-2300
 The native GTK+ typeahead feature is not working on Table and Tree, but is
-working for List.
-It seems that either the order of the columns in our model,
+working for List.  It seems that either the order of the columns in our model,
 or the number of columns, is causing GTK+ to be unable to tell which is the
 correct column to use.
 The fix is to use gtk_tree_view_set_search_column() ourselves to indicate which
-column should be searched.
-The attached patch works but there are some open issues:
-1.Will the column number I am using always be correct?
-Could this constant
+column should be searched.  The attached patch works but there are some open issues:
+1. Will the column number I am using always be correct?  Could this constant
 be stored somewhere better?
-2.The documentation indicates that this function has been there forever,
-but that it "turns on interactive searching".
-Should we not set this value
+2. The documentation indicates that this function has been there forever,
+but that it "turns on interactive searching".  Should we not set this value
 for GTK+ versions before 2.6, where interactive searching was not on by
 default?

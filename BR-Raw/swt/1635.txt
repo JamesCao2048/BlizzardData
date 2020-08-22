@@ -1,11 +1,7 @@
 need more parent.indexOf() == -1 checks in TableItem
-There's only one place in TableItem that checks the results of parent.indexOf(..) to see whether it's valid before using it, and that's setImage(..).
-The three other calls to the method do not check if it's valid.
-These methods are:
+There's only one place in TableItem that checks the results of parent.indexOf(..) to see whether it's valid before using it, and that's setImage(..).  The three other calls to the method do not check if it's valid.  These methods are:
 getBounds(int)
 getImageBounds(int)
 redraw(int)
-This is bad because, in theory, indexOf could return
--1. These functions increment the index returned by one and use it to call the OS.
-I've had getBounds(int) return bounds of the column header on OSX on occasion and have guessed it's due to this (I don't have OSX to test on, only reports from users)
+This is bad because, in theory, indexOf could return -1.  These functions increment the index returned by one and use it to call the OS.  I've had getBounds(int) return bounds of the column header on OSX on occasion and have guessed it's due to this (I don't have OSX to test on, only reports from users)
 Using SWT Build 3221

@@ -3,10 +3,8 @@ Created  attachment 93220   [details]
 Shows several bugs, including the browser.print(gc) outside ancestor's clip.
 Build ID: 3.4M5
 Steps To Reproduce:
-1.Place a Browser partially outside of its parent bounds.
-2.browser.print(gc);
-3.Only the visible area gets printed.
-This is critical for us, as we need a way to print the component, and gc.copyArea() is not an option.
-We have components floating on top of the browser, and that browser has bounds that do not match the parent's bounds.
-Note: I believe if someone applies a region (setRegion(x)) on an ancestor, it should print the component entirely.
-If a setRegion(x) is done on the component itself, it is arguable which approach to take, except that if printing entirely, we can then apply the region on the resulting image, but not the other way round.
+1. Place a Browser partially outside of its parent bounds.
+2. browser.print(gc);
+3. Only the visible area gets printed.
+This is critical for us, as we need a way to print the component, and gc.copyArea() is not an option. We have components floating on top of the browser, and that browser has bounds that do not match the parent's bounds.
+Note: I believe if someone applies a region (setRegion(x)) on an ancestor, it should print the component entirely. If a setRegion(x) is done on the component itself, it is arguable which approach to take, except that if printing entirely, we can then apply the region on the resulting image, but not the other way round.

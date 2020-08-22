@@ -1,11 +1,10 @@
 [Cocoa] problem creating image
 Build id: I20090113-0918
 This seems to have crept up on my last platform update.
-1.Take enclosed image.
-2.In new plugin project use it as icon somewhere in UI.
-For example, in a new Perspective.
-3.Launch self-hosting runtime.
-4.Image doesn't appear and get following error:
+1. Take enclosed image.
+2. In new plugin project use it as icon somewhere in UI. For example, in a new Perspective.
+3. Launch self-hosting runtime.
+4. Image doesn't appear and get following error:
 java.lang.IllegalArgumentException: Argument not valid
 at org.eclipse.swt.SWT.error(SWT.java:3810)
 at org.eclipse.swt.SWT.error(SWT.java:3744)
@@ -43,4 +42,4 @@ at org.eclipse.swt.widgets.Display.applicationProc(Display.java:3665)
 at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
 at org.eclipse.swt.internal.cocoa.NSApplication.nextEventMatchingMask(NSApplication.java:63)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2663)
-at org.e
+at o

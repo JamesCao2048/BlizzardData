@@ -1,8 +1,2 @@
 Bug 211015 The XTab can be preview after remove its measure's binding[1102]
-Description: I created a crosstab and for my mistaken step I remove the measure's binding.
-But preview is ok.
-At this time I don't know my measure's binding is gone.
-After that I want specify a filter on measure.
-But I can not found the measure in the selecting list.
-Build number: 2.3.0.v20071127-1036 Steps to reproduce: 1, New a Crosstab with levels and measures 2, Delete all the bindings of measure 3, Preview the crosstab Expected result: The preview should be failed.
-Actual result: The preview is ok, and all the measures are in the results
+Description: I created a crosstab and for my mistaken step I remove the measure's binding. But preview is ok. At this time I don't know my measure's binding is gone. After that I want specify a filter on measure. But I can not found the measure in the selecting list. Build number: 2.3.0.v20071127-1036 Steps to reproduce: 1, New a Crosstab with levels and measures 2, Delete all the bindings of measure 3, Preview the crosstab Expected result: The preview should be failed. Actual result: The preview is ok, and all the measures are in the results

@@ -1,7 +1,4 @@
 Regression in SWT.Label
-If a label lives in a composite that has a background image, and the label has the same background image, then the label has always been painted with "transparent" backgroun, so that the parent's background shines through.
-This is not the case in I20060322_1335 (which our project uses as target).
-Instead, the label maps the background's (0,0) to its own (0,0).
-This is bad.
+If a label lives in a composite that has a background image, and the label has the same background image, then the label has always been painted with "transparent" backgroun, so that the parent's background shines through. This is not the case in I20060322_1335 (which our project uses as target). Instead, the label maps the background's (0,0) to its own (0,0). This is bad.
 Furthermore, if you change the label text the old text is not cleaned first and you get a complete mess.
 Please find attached a zipped MFP (minimal faulty program) and screen dumps using the M5A and I20060322_1335 builds as targets.

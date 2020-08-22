@@ -1,8 +1,6 @@
 StyledText - investigate necessary state changes between handleTextChanging and handleTextChanged
 According to the article, one should send handleTextChanging event, update
-styles, then send handleTextChanged event.
-If during the update styles step,
+styles, then send handleTextChanged event.  If during the update styles step,
 one calls style range API (e.g., setStyleRange, replaceStyleRanges), the
-caretOffset could get out of sync.
-Also need to consider other state that
+caretOffset could get out of sync.  Also need to consider other state that
 could be out of sync.

@@ -1,10 +1,2 @@
 Bug 156157 data item width change cannot be seen in layout
-steps to reproduce:
-- create a report
-- add a data item
-- bring up properties
-- set its width to 1cm or 50%, etc
-- set its background color to blue
-- preview in html expected behavior:
-- data item width change can be seen in both layout and preview actual behavior:
-- it cannot be seen in layout
+steps to reproduce: - create a report - add a data item - bring up properties - set its width to 1cm or 50%, etc - set its background color to blue - preview in html expected behavior: - data item width change can be seen in both layout and preview actual behavior: - it cannot be seen in layout

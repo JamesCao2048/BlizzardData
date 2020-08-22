@@ -1,24 +1,18 @@
 Radio group gets traversed (gets focus) when not visible
 When you traverse controls with TAB, controls that are not visible do not get
-focus.
-This is great because I use custom controls that can collapse and I
-don't want their children to be traversed then.
-Unfortunately, this doesn't
+focus. This is great because I use custom controls that can collapse and I
+don't want their children to be traversed then. Unfortunately, this doesn't
 work for radio groups, which still get focus.
-Below is a snippet that shows the problem.
-Use the toggle button to show / hide
-some of the controls by collapsing their parent composite.
-When all the
+Below is a snippet that shows the problem. Use the toggle button to show / hide
+some of the controls by collapsing their parent composite. When all the
 controls are visible, they're traversed in the following order: Button 1, Radio
-1, Button 2, Button 3.However, when only Button 1 and Button 3 are visible,
+1, Button 2, Button 3. However, when only Button 1 and Button 3 are visible,
 the order is: Button 1, Radio 1, Button 3 (Radio 1 shouldn't be traversed,
 Button 2 is not).
 I've found out that this is the Control.isShowing() method that checks whether
-the control is visible.
-This however is referenced only in
+the control is visible. This however is referenced only in
 Control.setTabItemFocus(), and that is always called from
-Control.setTabGroupFocus() BUT not always from Composite.setTabGroupFocus().
-So
+Control.setTabGroupFocus() BUT not always from Composite.setTabGroupFocus(). So
 maybe Button.setRadioFocus() should call Control.isShowing().
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.*;
@@ -74,4 +68,4 @@ public void focusGained(FocusEvent e) {
 System.out.println("Button 2 gains focus");
 }
 });
-final Button radio2 = new Bu
+final Button radio2 = new B

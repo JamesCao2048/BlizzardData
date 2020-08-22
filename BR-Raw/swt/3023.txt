@@ -9,8 +9,7 @@ at org.eclipse.swt.widgets.Tree.updateColumnWidth(Tree.java:2293)
 at org.eclipse.swt.widgets.TreeColumn.setWidth(TreeColumn.java:301)
 at
 org.eclipse.ui.views.properties.PropertySheetViewer$1.controlResized(PropertySheetViewer.java:227)
-<-- snip!
--->
+<-- snip! -->
 The second one ends at:
 at
 org.eclipse.ui.views.properties.PropertySheetViewer.updateChildrenOf(PropertySheetViewer.java:1117)
@@ -24,6 +23,5 @@ at
 org.eclipse.ui.internal.AbstractSelectionService$3.run(AbstractSelectionService.java:160)
 at
 org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1015)
-<-- snip!
--->
+<-- snip! -->
 This does not occur on either of the M5a gtk builds.

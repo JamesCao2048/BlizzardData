@@ -1,10 +1,6 @@
 [KeyBindings] interactions: Ctrl+Shift+I does not arrive at display KeyDown filter
-When, I press Ctrl+Shift+I, I get the following trace.
-There are two things that are odd.
-First of all, the modified "I" KeyDown event never arrives.
-Secondly, when I press the "I", it triggers a selection change to null, and then back to the previous selection.
-This happens in both the Outline view, Console view and a Java editor ...
-so it doesn't seem to widget specific.
+When, I press Ctrl+Shift+I, I get the following trace.  There are two things that are odd.  First of all, the modified "I" KeyDown event never arrives.  Secondly, when I press the "I", it triggers a selection change to null, and then back to the previous selection.
+This happens in both the Outline view, Console view and a Java editor ... so it doesn't seem to widget specific.
 KEYS >>> Listener.handleEvent(type = KeyDown, stateMask = 0x0, keyCode = 0x40000, time = 8684128, character = 0x0)
 KEYS >>> Listener.handleEvent(type = KeyDown, stateMask = 0x40000, keyCode = 0x20000, time = 8685673, character = 0x0)
 SOURCES >> Selection changed to null

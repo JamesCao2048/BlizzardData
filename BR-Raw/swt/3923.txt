@@ -5,10 +5,8 @@ Display display = new Display();
 Shell shell = new Shell(display, SWT.CLOSE);
 ImageData data = new ImageData(30,30, 32,
 new PaletteData(0xff, 0xff00, 0xff0000));
-for (int y = 0; y
-< data.height; y++) {
-for (int x = 0; x
-< data.width; x++) {
+for (int y = 0; y < data.height; y++) {
+for (int x = 0; x < data.width; x++) {
 data.setPixel(x,y,0xff);
 }
 }

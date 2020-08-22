@@ -1,4 +1,2 @@
 Bug 265403 Change in Script API
-In 2.5 IReportElementInstance, the signature of the getParent() and getRowData() method have changed to throw an BirtException.
-There is a strong chance that this will break a lot of peoples event handler code.
-If throwing the error is absolutely necessary, I would recommend throwing a ScriptException to match the other Script API classes.
+In 2.5 IReportElementInstance, the signature of the getParent() and getRowData() method have changed to throw an BirtException. There is a strong chance that this will break a lot of peoples event handler code. If throwing the error is absolutely necessary, I would recommend throwing a ScriptException to match the other Script API classes.

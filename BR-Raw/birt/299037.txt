@@ -1,6 +1,2 @@
 Bug 299037 Column Width of HTML Tables not passed correctly to PDF/Word
-Build Identifier: 3.4.0 When having static / Dynamic HTML code in the report Text/Dynamic Text Of a table with certian column widths upon export to PDF/Word the width isn't passed one and table appears with equal width for all cells.
-In HTML view it appears OK.
-Reproducible: Always Steps to Reproduce: 1.Create a static report table in HTML.
-2.Assign widths to each column 3.export report to PDF/WORD 4.Report appears with all columns in the same width 5.Also if you don't specify the width attribute (and width is decided by column data)
-- the result is the same upon export.
+Build Identifier: 3.4.0 When having static / Dynamic HTML code in the report Text/Dynamic Text Of a table with certian column widths upon export to PDF/Word the width isn't passed one and table appears with equal width for all cells. In HTML view it appears OK. Reproducible: Always Steps to Reproduce: 1.Create a static report table in HTML. 2. Assign widths to each column 3.export report to PDF/WORD 4. Report appears with all columns in the same width 5. Also if you don't specify the width attribute (and width is decided by column data) - the result is the same upon export.

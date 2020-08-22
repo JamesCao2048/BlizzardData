@@ -3,7 +3,7 @@ Build Identifier: 3.6M6
 TwoPaneElementSelector is no longer usable in 3.6M6.
 Reproducible: Always
 Steps to Reproduce:
-The attached project works fine in 3.6M5.It is OK in 3.6M6 on Windows, but fails on Linux (and I suspect it will fail on Solaris as well).
+The attached project works fine in 3.6M5. It is OK in 3.6M6 on Windows, but fails on Linux (and I suspect it will fail on Solaris as well).
 Thread [main] (Suspended (exception NullPointerException))
 FilteredList.getAccessible() line: 777
 Label.addRelation(Control) line: 112

@@ -1,5 +1,2 @@
 Bug 110620 Can Chart dialogs be made available ?
-Standalone Development We are trying to develop a standalone application which will output a BIRT '.rptdesign' file.
-As creating charts in particular requires the user to choose or set a large number of parameters, would it be possible to add the chart creation dialog to the API so that other plugins or applications may use it and thus avoid re-inventing the wheel ?
-In truth all of the various dialogs, data source, data set etc would be useful additions to the API or pluggin set for anyone embedding BIRT into their own project.
-Regards, Brian Compston
+Standalone Development We are trying to develop a standalone application which will output a BIRT '.rptdesign' file. As creating charts in particular requires the user to choose or set a large number of parameters, would it be possible to add the chart creation dialog to the API so that other plugins or applications may use it and thus avoid re-inventing the wheel ? In truth all of the various dialogs, data source, data set etc would be useful additions to the API or pluggin set for anyone embedding BIRT into their own project. Regards, Brian Compston

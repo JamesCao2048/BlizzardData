@@ -1,5 +1,2 @@
 Bug 121852 Drag theme in library1 to library2 will cause BirtException.
-Description: Drag theme in library1 to library2 will cause BirtException.
-Steps to reproduce: 1.New a library lib1, add a theme theme1.2.New a library lib2, use lib1 in lib2 then theme1 appeared in lib2's theme directory.
-3.Modify lib1 to add another theme2.4.Refresh lib1 then drag theme2 from lib1 to lib2 Result: A BIRT exception occurred.
-Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.0.0 Error Code:Error.ExtendsException.NOT_FOUND Error Message:The parent element "NewTheme1" does not exist.
+Description: Drag theme in library1 to library2 will cause BirtException. Steps to reproduce: 1. New a library lib1, add a theme theme1. 2. New a library lib2, use lib1 in lib2 then theme1 appeared in lib2's theme directory. 3. Modify lib1 to add another theme2. 4. Refresh lib1 then drag theme2 from lib1 to lib2 Result: A BIRT exception occurred. Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.0.0 Error Code:Error.ExtendsException.NOT_FOUND Error Message:The parent element "NewTheme1" does not exist.

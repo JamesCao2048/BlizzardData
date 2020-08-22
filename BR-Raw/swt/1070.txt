@@ -1,4 +1,3 @@
 [cocoa] Display loads hardcoded english nib file
-On Cocoa, Display.applicationDelegateProv loads the default nib file from the java vm.
-This is hardcoded to english which is likely a problem for translation
+On Cocoa, Display.applicationDelegateProv loads the default nib file from the java vm.  This is hardcoded to english which is likely a problem for translation
 See also  bug 242037 comment #25

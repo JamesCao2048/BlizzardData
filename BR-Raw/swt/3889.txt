@@ -1,9 +1,7 @@
 StyledText - print pages causes walkback
 Build 20021114.
 Open a Java file.
-Print.
-Select the Pages option.
-The following walkback occurs:
+Print.  Select the Pages option.  The following walkback occurs:
 java.lang.IllegalArgumentException: Argument not valid
 at org.eclipse.swt.SWT.error(SWT.java:2166)
 at org.eclipse.swt.SWT.error(SWT.java:2110)
@@ -11,6 +9,4 @@ at org.eclipse.swt.custom.WrappedContent.getLine(WrappedContent.java:95)
 at org.eclipse.swt.custom.StyledText$Printing.print(StyledText.java:444)
 at org.eclipse.swt.custom.StyledText$Printing.run(StyledText.java:569)
 at org.eclipse.jface.text.TextViewer$4.run(TextViewer.java:3102)
-For some reason startPage is getting initialize to
--130 (i.e.,
--2 * 65).
+For some reason startPage is getting initialize to -130 (i.e., -2 * 65).

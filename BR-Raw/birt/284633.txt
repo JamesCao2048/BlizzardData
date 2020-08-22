@@ -1,16 +1,3 @@
 Bug 284633 TVT35:TCT275: TRK: Unlocalizable strings &Undo {0} and &Redo {0}
-<response_by> Albatros at 2009.07.24.06.12.39
-</response_by> NLS Build Label: 20090720-1600-nls2 Language: Turkish.
-Must-Fix: Yes Steps To Recreate Problem: 1) Expand BIRTproject in the Navigator, right click on Test_Report_1.rptdesign and select Open.
-2) Open the Context Menu by right clicking anywhere on the test report.
-3) Verify the red circled areas on the panel below are correctly displayed.
-Problem Description: The menu itmes "Undo" and "Redo" have variables at the end in the souce files.
-But in this syntax it is impossible to translate them in Turkish as they have different translations with and without a variable.
-For example, in the attached screenshot, the translation appears incorrect as the variables are null.
-I think we need different strings for Undo and Redo menu items with and without variables.
-Could you please help to solve this problem.
-Thanks, Nilgun.
-<response_by> Matthew McClintock at 2009.07.24.15.00.37
-</response_by> BIRT team, In the java editor, they use a label without the variable when the undo/redo command is empty: eclipse/plugins/org.eclipse.ui.workbench/org/eclipse/ui/internal/messages.properties Workbench_undo = &Undo We reccomend that the BIRT editor do the same.
-<response_by> Matthew McClintock at 2009.07.24.15.00.51
-</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.
+<response_by> Albatros at 2009.07.24.06.12.39 </response_by> NLS Build Label: 20090720-1600-nls2 Language: Turkish. Must-Fix: Yes Steps To Recreate Problem: 1) Expand BIRTproject in the Navigator, right click on Test_Report_1.rptdesign and select Open. 2) Open the Context Menu by right clicking anywhere on the test report. 3) Verify the red circled areas on the panel below are correctly displayed. Problem Description: The menu itmes "Undo" and "Redo" have variables at the end in the souce files. But in this syntax it is impossible to translate them in Turkish as they have different translations with and without a variable. For example, in the attached screenshot, the translation appears incorrect as the variables are null. I think we need different strings for Undo and Redo menu items with and without variables. Could you please help to solve this problem. Thanks, Nilgun. <response_by> Matthew McClintock at 2009.07.24.15.00.37 </response_by> BIRT team, In the java editor, they use a la
+bel without the variable when the undo/redo command is empty: eclipse/plugins/org.eclipse.ui.workbench/org/eclipse/ui/internal/messages.properties Workbench_undo = &Undo We reccomend that the BIRT editor do the same. <response_by> Matthew McClintock at 2009.07.24.15.00.51 </response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

@@ -3,12 +3,11 @@ Created  attachment 231220   [details]
 ControlExample bug in GTK 3.8 screenshot
 I use: F19a 64bit, GTK 3.8, Eclipse Juno
 How to reproduce:
-1.Open ControlExample
-2.Switch Tab
+1. Open ControlExample
+2. Switch Tab
 You will see:
 SWT:5325): Gtk-CRITICAL **: gtk_widget_get_preferred_height_for_width: assertion `width >= 0' failed
 (SWT:5325): Gtk-CRITICAL **: gtk_widget_get_preferred_height_for_width: assertion `width >= 0' failed
-(SWT:5325): Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget with width
--5 and height 32670
+(SWT:5325): Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget with width -5 and height 32670
 in the console.
 In attached screenshot you can see how it looks graphically.

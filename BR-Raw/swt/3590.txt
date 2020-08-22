@@ -4,8 +4,7 @@ wrapped label on Linux-Motif.
 STEPS
 1) Run the example below and the top and bottom of the text is cut off
 2) Change the code so that the label is created with an SWT.BORDER
-3) Run it again
-- the label is sized correctly
+3) Run it again - the label is sized correctly
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;

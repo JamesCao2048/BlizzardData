@@ -1,7 +1,5 @@
 CLabel should allow setting of hIndent and vIndent
-CLable defines hIndent and vIndent to a fixed value (3).
-This prevents the
+CLable defines hIndent and vIndent to a fixed value (3). This prevents the
 widget from fitting into the Forms UI because it is displayed with margin and
-not in-line with other widgets (eg.
-"Label").
+not in-line with other widgets (eg. "Label").
 CLabel should have setters and getters for both values.

@@ -1,11 +1,10 @@
 Views keep resizing after mouse up
 3.0-RC3
-Bug 67458  makes fast view resizing fast on Linux-GTK+.
-However, if you open a
+Bug 67458  makes fast view resizing fast on Linux-GTK+.  However, if you open a
 fast view and resize it big and small really quickly, mouse up sometimes fails
 to stop the drag.
-1.Open a fast view.
-2.Resize it big and small really quickly.
-3.Let go of the mouse, keep going back and forth to keep generating motion events.
-4.Notice that the fast view keeps resizing.
+1. Open a fast view.
+2. Resize it big and small really quickly.
+3. Let go of the mouse, keep going back and forth to keep generating motion events.
+4. Notice that the fast view keeps resizing.
 I think this is a bug in Sash, or in the code to handle the motion hints.

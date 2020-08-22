@@ -1,18 +1,10 @@
 Improve error message when load library fails.
 Build ID: 3.4.2
 Steps To Reproduce:
-(Sorry for not having the build ID, for some reason the 'About Eclipse SDK' dialog doesn't show.
-I am using Eclipse 3.4.2 release for Linux 64).
-1.On a Linux-64 machine, with GTK installed but not the GTK java bindings, install Eclipse 3.4.2
-2.Run Eclipse.
-It will exit without displaying any error messages
+(Sorry for not having the build ID, for some reason the 'About Eclipse SDK' dialog doesn't show. I am using Eclipse 3.4.2 release for Linux 64).
+1. On a Linux-64 machine, with GTK installed but not the GTK java bindings, install Eclipse 3.4.2
+2. Run Eclipse. It will exit without displaying any error messages
 More information:
-Of course Eclipse won't work without the GTK+ java bindings.
-Running eclipse as './eclipse
--debug
--console
--consolelog > out.txt' and reading the out.txt produced I find the line: java.lang.UnsatisfiedLinkError: no swt-pi-lib-3454 or swt-pit-lib in ....
+Of course Eclipse won't work without the GTK+ java bindings.  Running eclipse as './eclipse -debug -console -consolelog > out.txt' and reading the out.txt produced I find the line: java.lang.UnsatisfiedLinkError: no swt-pi-lib-3454 or swt-pit-lib in ....
 (I can't remember the exact error message, but you get the idea).
-The problem is that I don't think that Eclipse should exit without producing any error message to stdout.
-If this were to happen to a customer, as it might, using our Eclipse-based IDE they would not think that this was acceptable behaviour (our testing department has already had this problem).
-Eclipse should check that the libraries are present before trying to load them, and exit gracefully with a clear error message if not.
+The problem is that I don't think that Eclipse should exit without producing any error message to stdout. If this were to happen to a customer, as it might, using our Eclipse-based IDE they would not think that this was acceptable behaviour (our testing department has already had this problem). Eclipse should check that the libraries are present before trying to load them, and exit gracefully with a clear error message if not.

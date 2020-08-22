@@ -1,7 +1,5 @@
 org.eclipse.swt.widgets.Text is not editable and set a _foreground_ color, the background color changes to default.
 Build ID: S-3.3M6-200703231616
 Steps To Reproduce:
-1.text.setEditable(false);
--> background will turn gray
-2.text.setForeground(display.getSystemColor(SWT.COLOR_YELLOW));
--> background will be default
+1. text.setEditable(false); -> background will turn gray
+2. text.setForeground(display.getSystemColor(SWT.COLOR_YELLOW)); -> background will be default

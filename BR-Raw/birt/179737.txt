@@ -1,5 +1,2 @@
 Bug 179737 The MeasureHandle should be able to provide data type info
-We are now allow user input expression as measure expression.
-However this brings difficulties in determine the data type of a measure expression evaluation result.
-We need MeasureHandle to be enhanced to include the data type info.
-Please note that data type "any" is not accepted.
+We are now allow user input expression as measure expression. However this brings difficulties in determine the data type of a measure expression evaluation result. We need MeasureHandle to be enhanced to include the data type info. Please note that data type "any" is not accepted.

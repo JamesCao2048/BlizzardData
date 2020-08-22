@@ -3,18 +3,14 @@ Eclipse build: F1, F2 and F3
 Platform: Windows 2000 (professional)
 If an SWT Combo widget is added as a contribution to a view's toolbar, updating
 the associated toolbar manager leaves an unpainted background region displayed
-in the view.
-This region happens to correspond to the size of the Combo drop-
-down list.
-It appears that the view's content control is not being refreshed.
+in the view. This region happens to correspond to the size of the Combo drop-
+down list. It appears that the view's content control is not being refreshed.
 This problem did not occur in the M5 (or any earlier) drop but is present in
 builds F1, F2 and F3.
 I tracked down the Windows messages being sent to the control when the toolbar
-manager is updated.
-The logic in ViewForm.layout(boolean) attempts to calculate
+manager is updated. The logic in ViewForm.layout(boolean) attempts to calculate
 the size of the container (center toolbar) and then calls setBounds() on the
-toolbar to update its position and size.
-Eventually, OS.SetWindowPos() is
+toolbar to update its position and size. Eventually, OS.SetWindowPos() is
 called for the combo control and the following messages were received by
 Display.widowProc():
 WM_WINDOWPOSCHANGING
@@ -26,13 +22,12 @@ WM_SIZE
 WM_PAINT
 I will attach a ZIP file with a simple plugin that demonstrates the problem.
 The steps required to show the problem are:
-1.Window->Show View->Other 鈥
-2.In the "Other" category, select the view "Test Combo View" and open it.
-3.Move the view to the right side of the workbench window (beside the tasks
+1. Window->Show View->Other 鈥
+2. In the "Other" category, select the view "Test Combo View" and open it.
+3. Move the view to the right side of the workbench window (beside the tasks
 view) and alternate activating the Tasks view and the combo view.
-4.The values in the combobox are used to determine how often the combo is
-actually visible.
-Thus, setting the value to every third time means that the
+4. The values in the combobox are used to determine how often the combo is
+actually visible. Thus, setting the value to every third time means that the
 view can be activated twice without having the combo visible but on the third
 activation, the combo appears.
 Ensure the view is wide enough so that the combo will be located between the

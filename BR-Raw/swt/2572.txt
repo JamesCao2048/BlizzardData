@@ -1,10 +1,4 @@
 font leading (line spacing) excessive for small fonts
-The line spacing for small fonts in text editors is much larger in 3.2 builds than in 3.1.Lines are nearly twice as tall for a 9 point font in all builds of 3.2 I've tried; the extra space is blank.
-This is  a definite productivity killer and gives the editors an awkward look.
-I've only seen this on OS X (doesn't happen under Linux x86/GTK using the same font).
-It happens with all the fixed width fonts I've tried (Courier, Monaco, various ProFont versions).
-This occurs in plain text editors and the Java editor.
-This happens regardless of Mac OS X's settings for the minimum size of antialiased text.
-The line spacing looks much more reasonable for fonts size 10 and above.
-I've attached two screenshots comparing the 3.2M4 appearance and the 3.1 apperance.
-In the 3.2M4 capture, you can see that line 7 is the current line, and the line highlight extends well above the ascenders in the text and well below the descenders.
+The line spacing for small fonts in text editors is much larger in 3.2 builds than in 3.1. Lines are nearly twice as tall for a 9 point font in all builds of 3.2 I've tried; the extra space is blank. This is  a definite productivity killer and gives the editors an awkward look.
+I've only seen this on OS X (doesn't happen under Linux x86/GTK using the same font). It happens with all the fixed width fonts I've tried (Courier, Monaco, various ProFont versions). This occurs in plain text editors and the Java editor. This happens regardless of Mac OS X's settings for the minimum size of antialiased text. The line spacing looks much more reasonable for fonts size 10 and above.
+I've attached two screenshots comparing the 3.2M4 appearance and the 3.1 apperance. In the 3.2M4 capture, you can see that line 7 is the current line, and the line highlight extends well above the ascenders in the text and well below the descenders.

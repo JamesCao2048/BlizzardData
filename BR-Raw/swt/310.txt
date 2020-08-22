@@ -2,17 +2,14 @@ Drag in Webkit Browser is disabled.
 Build Identifier:  I20110613-1736; I20110805-1200
 Drag in Webkit Browser is disabled in WebKit.java due to a bug of WebKitGTK:
 /*
-* Bug in WebKitGTK.
-Dragging an image quickly and repeatedly can cause
+* Bug in WebKitGTK.  Dragging an image quickly and repeatedly can cause
 * WebKitGTK to take the mouse grab indefinitely and lock up the display,
-* see  https://bugs.webkit.org/show_bug.cgi?id=32840 .
-The workaround is
+* see  https://bugs.webkit.org/show_bug.cgi?id=32840 .  The workaround is
 * to veto all drag attempts.
 */
-But it seems that the bug is fixed.
-So we might re-enable the drag in browser.
+But it seems that the bug is fixed. So we might re-enable the drag in browser.
 Reproducible: Always
 Steps to Reproduce:
-1.create a Browser using new Browser(shell, SWT.WEBKIT);
-2.run, open a page and try to drag something in the browser
-3.The drag is disabled.
+1. create a Browser using new Browser(shell, SWT.WEBKIT);
+2. run, open a page and try to drag something in the browser
+3. The drag is disabled.

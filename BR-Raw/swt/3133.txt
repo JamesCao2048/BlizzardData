@@ -1,8 +1,7 @@
 Strange NullPE in Widget.sendEvent(int eventType, Event event, boolean send)
 Hi,
 from my users I am sometimes getting logs about a crash that I am not able to
-reproduce or interpret.
-The stack looks like:
+reproduce or interpret. The stack looks like:
 java.lang.NullPointerException
 at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:809)
 at org.eclipse.swt.widgets.Widget.postEvent(Widget.java:621)
@@ -25,12 +24,10 @@ at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2445)
 at net.sourceforge.rssowl.controller.RSSOwlLoader.<init>(Unknown Source)
 at net.sourceforge.rssowl.controller.RSSOwlLoader.main(Unknown Source)
 I browsed into the Widget.java to line 809 and the only part that could result
-in a NullPE is "display.filters (eventType)".
-But that would mean that display
+in a NullPE is "display.filters (eventType)". But that would mean that display
 is NULL at that time, which is not clear to me.
 Users told me they clicked into the Newstable (a simple Table widget) with the
-left-mouse button.
-They are using WindowsXP.
+left-mouse button. They are using WindowsXP.
 Any explanation why display could be NULL after that action?
 Thanks,
 Ben

@@ -1,9 +1,7 @@
 update needed in javadoc for constructor Image(Device , ImageData)
 The constructor for Image(Device , ImageData) can also throw
-org.eclipse.swt.SWTException: Unsupported color depth.
-This should be added to
-the javadoc.
-Steps to recreate (note that the ImageData is successfully
+org.eclipse.swt.SWTException: Unsupported color depth. This should be added to
+the javadoc. Steps to recreate (note that the ImageData is successfully
 created, it is Image that is throwing the exception):
 import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.widgets.*;

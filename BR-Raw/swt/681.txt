@@ -1,9 +1,7 @@
 Display.post(Event) - problem with ALT+SHIFT+INSERT
 Build ID: I20080617-2000
 Steps To Reproduce:
-The following snippets displays nothing on the system console.
-My platform is Windows XP Prof.
-version 2002 SP2.
+The following snippets displays nothing on the system console. My platform is Windows XP Prof. version 2002 SP2.
 public class Snippet304 {
 static Display display = null;
 public static void main(String[] args) {
@@ -43,8 +41,6 @@ display.post(event);
 }
 More information:
 The strange things are:
-a) The snippet worked at my friend's computer with same OS version (Windows XP Prof.
-version 2002 SP2).
-I tried to eliminate from my OS all running system processes that I could, but it did not help.
+a) The snippet worked at my friend's computer with same OS version (Windows XP Prof. version 2002 SP2). I tried to eliminate from my OS all running system processes that I could, but it did not help.
 b) When I press ALT+SHIFT+INSERT the text is still printed on the console.
 c) The snippet works fine with ALT+SHIFT+CR and ALT+CONTROL+INSERT combinations.

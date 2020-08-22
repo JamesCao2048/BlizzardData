@@ -1,5 +1,2 @@
 Bug 144077 Throw exception when generate SVG chart which has inteactive
-There is a program mistake in "org.eclipse.birt.chart.device.svg" project.
-In "SVGInteractiveRenderer" class, "findCategorySeries" method, "getSeries( ).get( 1 )" should be changed to "getSeries( ).get( 0 )".
-It will throw exception when generate SVG chart which has inteactive.
-And i find this in 2.1RC3a.
+There is a program mistake in "org.eclipse.birt.chart.device.svg" project. In "SVGInteractiveRenderer" class, "findCategorySeries" method, "getSeries( ).get( 1 )" should be changed to "getSeries( ).get( 0 )". It will throw exception when generate SVG chart which has inteactive. And i find this in 2.1RC3a.

@@ -1,14 +1,12 @@
 SWT Cocoa crash in 3.7M6
-I just captured the following crash with 3.7M6. The crash happened shortly after I saved an editor and not in direct response to an action.
+I just captured the following crash with 3.7M6.  The crash happened shortly after I saved an editor and not in direct response to an action.
 Process:         eclipse [65988]
 Path:            /Users/bhunt/Applications/Eclipse/3.7 M6/Eclipse.app/Contents/MacOS/eclipse
 Identifier:      org.eclipse.eclipse
 Version:         3.6 (3.6)
 Code Type:       X86-64 (Native)
-Parent Process:  ???
-[1]
-Date/Time:       2011-03-30 12:35:12.370
--0500
+Parent Process:  ??? [1]
+Date/Time:       2011-03-30 12:35:12.370 -0500
 OS Version:      Mac OS X 10.6.7 (10J869)
 Report Version:  6
 Interval Since Last Report:          444333 sec

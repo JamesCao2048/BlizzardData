@@ -1,4 +1,2 @@
 Bug 191597 [launcher] launcher no longer brings up an exit dialog on Windows
-Eclipse 3.3 RC3 Setting the osgi.requiredJavaVersion no longer works like it used Normally, when this property is set and a VM with a version to low to run is being used a dialog is presented to the user indicating why eclipse can't start.
-With eclipse 3.3, the splash screen appears and immediately disappears without showing the dialog and without logging any error, or what.
-This constitutes a regression.
+Eclipse 3.3 RC3 Setting the osgi.requiredJavaVersion no longer works like it used Normally, when this property is set and a VM with a version to low to run is being used a dialog is presented to the user indicating why eclipse can't start. With eclipse 3.3, the splash screen appears and immediately disappears without showing the dialog and without logging any error, or what. This constitutes a regression.

@@ -1,12 +1,3 @@
 Bug 121974 Can't evaluate global expressions when ResultIterator is not in the iteration loop
-For global expressions, such as {params["p1"]},{new DateTime()}, it should always be available and evaluatable within the birt scripting environment.
-Currently, Dte scriptExpresson has three types: BEFORE_FIRST_ROW, AFTER_LAST_ROW, ON_EACH_ROW.
-But in fact BEFORE_FIRST_ROW only works when the cursor is just to enter the first row, and AFTER_LAST_ROW only works when cursor is just to leave the last row.
-Once the iteration is finished, both type won't work anymore.
-A "QueryResults or its iterator has been closed" DataException will be thrown out if you try to evaluate these expressions.
-But actually, these global expressions is nothing to do with the data row iteration.
-It should return a correct result value whenever be evaluated within the birt scripting environment.
-So a new GLOBAL expreesion type is required to mark this need.
-Also, current BEFORE_FIRST_ROW/AFTER_LAST_ROW name is misleading, better change to ON_START_ROW, ON_END_ROW or others which are more clarified.
-This bug currently blocks chart to evaluate those non-datarow expressions(i.e.
-expressions from title url action) which are not within a datarow iteration(Chart need to evaluate these expreesions from action after data binding).
+For global expressions, such as {params["p1"]},{new DateTime()}, it should always be available and evaluatable within the birt scripting environment. Currently, Dte scriptExpresson has three types: BEFORE_FIRST_ROW, AFTER_LAST_ROW, ON_EACH_ROW. But in fact BEFORE_FIRST_ROW only works when the cursor is just to enter the first row, and AFTER_LAST_ROW only works when cursor is just to leave the last row. Once the iteration is finished, both type won't work anymore. A "QueryResults or its iterator has been closed" DataException will be thrown out if you try to evaluate these expressions. But actually, these global expressions is nothing to do with the data row iteration. It should return a correct result value whenever be evaluated within the birt scripting environment. So a new GLOBAL expreesion type is required to mark this need. Also, current BEFORE_FIRST_ROW/AFTER_LAST_ROW name is misleading, better change to ON_START_ROW, ON_END_ROW or others which are more clarified. This bug curren
+tly blocks chart to evaluate those non-datarow expressions(i.e. expressions from title url action) which are not within a datarow iteration(Chart need to evaluate these expreesions from action after data binding).

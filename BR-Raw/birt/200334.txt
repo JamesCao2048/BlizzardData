@@ -1,10 +1,2 @@
 Bug 200334 Line Height does not work in the same way with Height if the number is larger than page size [03]
-Description: Line Height does not work in the same way with Height if the number is larger than page size.
-Build number: 2.2.1.v20070814-0934 Steps to reproduce: 1.New a report with two labels, both set page break before to always.
-2.Set Line Height for the first label to 12 in.
-3.Set Height for the second label to 12 in.
-4.Preview in PDF.
-Expected result: Line Height works in the same way with Height.
-Actual result: Height larger than page height is omitted.
-Line Height larger than page height will take page height.
-Error log: N/A
+Description: Line Height does not work in the same way with Height if the number is larger than page size. Build number: 2.2.1.v20070814-0934 Steps to reproduce: 1. New a report with two labels, both set page break before to always. 2. Set Line Height for the first label to 12 in. 3. Set Height for the second label to 12 in. 4. Preview in PDF. Expected result: Line Height works in the same way with Height. Actual result: Height larger than page height is omitted. Line Height larger than page height will take page height. Error log: N/A

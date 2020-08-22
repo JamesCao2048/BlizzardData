@@ -1,3 +1,2 @@
 Bug 117675 Format Specifier has no text data type
-Format Specifier has no text data type Steps: 1.Create a Bar chart 2.Bind data set, X Series column type: text 3.Go to "Format chart" tab, select "X Axis" 4.Click "Axis Data" button,View "Type" 5.Click "0.0#" button, View "Data Type" Actual Results: 1.Type: Text
-<---> Data Type: Number/Data/Time 2.has not text data type Expected Results: 1.Can set text data format
+Format Specifier has no text data type Steps: 1.Create a Bar chart 2.Bind data set, X Series column type: text 3.Go to "Format chart" tab, select "X Axis" 4.Click "Axis Data" button,View "Type" 5.Click "0.0#" button, View "Data Type" Actual Results: 1.Type: Text <---> Data Type: Number/Data/Time 2.has not text data type Expected Results: 1.Can set text data format

@@ -1,3 +1,2 @@
 Bug 121524 Border is still displayed in the layout after delete the style
-Description: Border is still displayed in the layout after delete the style Steps to reproduce: 1.New a style with background color: yellow, border{solid,red,10pixels} 2.Add a table and apply the style to the table (see the attachement) 3.Delete the style Expected result: All style disappear Actual result: Border is still displayed in the layout,while other style disappear.
-In preview, border is not there.
+Description: Border is still displayed in the layout after delete the style Steps to reproduce: 1.New a style with background color: yellow, border{solid,red,10pixels} 2.Add a table and apply the style to the table (see the attachement) 3.Delete the style Expected result: All style disappear Actual result: Border is still displayed in the layout,while other style disappear. In preview, border is not there.

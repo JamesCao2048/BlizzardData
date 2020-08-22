@@ -1,5 +1,2 @@
 Bug 350763 User-defined Sort Hints in a data set got overwritten in a SQB design session
-When editing a data set in the Data Set Editor, an user may add own user-defined Sort Hints.
-But each time an user activates the SQB designer page in DSE, those sort hints always got overwritten and replaced by the sort keys defined in the query's OrderBy clause.
-This is expected behavior if the OrderBy clause gets changed, as it is not clear how a revised OrderBy clause relates to those user-defined sort hints.
-However, if the OrderBy clause did not get changed, the previously defined sort hints should be preserved.
+When editing a data set in the Data Set Editor, an user may add own user-defined Sort Hints. But each time an user activates the SQB designer page in DSE, those sort hints always got overwritten and replaced by the sort keys defined in the query's OrderBy clause. This is expected behavior if the OrderBy clause gets changed, as it is not clear how a revised OrderBy clause relates to those user-defined sort hints. However, if the OrderBy clause did not get changed, the previously defined sort hints should be preserved.

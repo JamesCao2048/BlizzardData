@@ -1,8 +1,7 @@
 Decorations.setImage() could do a better job with masked images
 The current win32 code for setImage in the SWT.BITMAP case does a crude job of
 synthesising an icon from the bitmap, when in many cases it could do much better
-if it made use of the mask from the bitmap.
-The current code uses a blank mask,
+if it made use of the mask from the bitmap. The current code uses a blank mask,
 genererated like:
 int hMask = OS.CreateBitmap (bm.bmWidth, bm.bmHeight, 1, 1, lpvBits);
 But a simple, higher level transformation can yield a nice icon from a .gif

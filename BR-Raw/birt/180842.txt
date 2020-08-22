@@ -1,4 +1,2 @@
 Bug 180842 Config memory buffer size in data engine execution.
-To tuning the performance, it is necessary for DtE to expose API for clients to config the size of memory it used to store the final result set.
-A new AppContext string, "org.eclipse.birt.data.cache.memory.size" is proposed.
-The new appcontext entry only accept positive integer as input, the unit of which would be MB.
+To tuning the performance, it is necessary for DtE to expose API for clients to config the size of memory it used to store the final result set. A new AppContext string, "org.eclipse.birt.data.cache.memory.size" is proposed. The new appcontext entry only accept positive integer as input, the unit of which would be MB.

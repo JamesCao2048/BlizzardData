@@ -1,18 +1,9 @@
 [OpenGL] GLCanvas.isCurrent() always returns false on Windows
-On Windows, the following bit of code is an infinite loop.
-On Linux, it is not.
+On Windows, the following bit of code is an infinite loop.  On Linux, it is not.
 while (!myGLCanvas.isCurrent())
 myGLCanvas.setCurrent();
-In other words, GLCanvas.isCurrent() always returns false on Windows, even if GLCanvas.setCurrent() has just been called.
-This is a big problem for us because GLCanvas.setCurrent() does some time consuming things and we need to minimize the number of times we have to call it.
+In other words, GLCanvas.isCurrent() always returns false on Windows, even if GLCanvas.setCurrent() has just been called.  This is a big problem for us because GLCanvas.setCurrent() does some time consuming things and we need to minimize the number of times we have to call it.
 Poking into isCurrent and setCurrent, I see that both actually perform the same check:
 WGL.wglGetCurrentContext () == handle
-It is this native method that doesn't seem to work on Windows.
-For what it's worth, calling wglGetCurrentContext() on Windows returns 65536 (yes, precisely 2^16) when the GLCanvas that is created first is active.
-It returns 65537 when the GLCanvas that is created second is active, and so on.
-These are certainly suspicious looking numbers.
-Meanwhile, the values of handle are more random looking things like 1771094, 1901578, 657418. On Linux, wlGetCurrentContext() returns random looking values that match the value of handle.
-
-Again, just to be abundantly clear
-- this problem exists on Windows but not on Linux.
-We haven't checked yet, but I suspect that it also does not exist on Mac since the symptom that alerted us to this issue is relatively poor GL performance on Windows compared to Linux and Mac.
+It is this native method that doesn't seem to work on Windows.  For what it's worth, calling wglGetCurrentContext() on Windows returns 65536 (yes, precisely 2^16) when the GLCanvas that is created first is active.  It returns 65537 when the GLCanvas that is created second is active, and so on.  These are certainly suspicious looking numbers.  Meanwhile, the values of handle are more random looking things like 1771094, 1901578, 657418.  On Linux, wlGetCurrentContext() returns random looking values that match the value of handle.
+Again, just to be abundantly clear - this problem exists on Windows but not on Linux.  We haven't checked yet, but I suspect that it also does not exist on Mac since the symptom that alerted us to this issue is relatively poor GL performance on Windows compared to Linux and Mac.

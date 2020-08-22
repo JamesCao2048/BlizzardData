@@ -7,5 +7,4 @@ new FontData( "Times", 12, SWT.BOLD | SWT.ITALIC ).hashCode();
 This can be fixed by changing FontData hashCode from:
 return name.hashCode() ^ getHeight() ^ style;
 to:
-return name.hashCode() ^ getHeight()
-<< 2 ^ style;
+return name.hashCode() ^ getHeight() << 2 ^ style;

@@ -1,5 +1,2 @@
 Bug 164764 Joint data set does not work properly using attached flatfile
-The data set preview keep empty in joint data set.
-Step to reproduce: 1.Create two data sets based on attached flat file 2.Make an inner join using joint data set with key "A".
-3.Preview data set in data set editor.
-Expect result: The data set preview correctly Actual result: The data set preview is empty.
+The data set preview keep empty in joint data set. Step to reproduce: 1.Create two data sets based on attached flat file 2.Make an inner join using joint data set with key "A". 3.Preview data set in data set editor. Expect result: The data set preview correctly Actual result: The data set preview is empty.

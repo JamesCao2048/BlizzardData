@@ -1,7 +1,2 @@
 Bug 259776 "Hyperlink Options" dialog shows only part of this dialog when eclipse is not full-screen display.
-Description: "Hyperlink Options" dialog shows only part of this dialog when eclipse is not full-screen display.
-Build number: 2.3.2.v20081230-0630 Steps to reproduce: 1.Set Eclipse main window as semi-screen display.
-2.New a report, insert a label 3.Select the label, select Property Editor->Hyperlink->button(open hyperlink options) 4."Hyperlink Options" dialog pops up, but only shows part of this dialog.
-(Please refer to the screenshot) Expected result: "Hyperlink Options" dialog should be fully displayed no matter eclipse's main window is full-screen display or semi-screen display.
-Actual result: "Hyperlink Options" dialog shows only part of this dialog when eclipse is not full-screen display.
-Error logs: N/A
+Description: "Hyperlink Options" dialog shows only part of this dialog when eclipse is not full-screen display. Build number: 2.3.2.v20081230-0630 Steps to reproduce: 1.Set Eclipse main window as semi-screen display. 2.New a report, insert a label 3.Select the label, select Property Editor->Hyperlink->button(open hyperlink options) 4."Hyperlink Options" dialog pops up, but only shows part of this dialog. (Please refer to the screenshot) Expected result: "Hyperlink Options" dialog should be fully displayed no matter eclipse's main window is full-screen display or semi-screen display. Actual result: "Hyperlink Options" dialog shows only part of this dialog when eclipse is not full-screen display. Error logs: N/A

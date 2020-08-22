@@ -8,8 +8,7 @@ button is pressed
 public static void main(String[] args) {
 Display display = new Display();
 final Shell shell = new Shell(display, SWT.DIALOG_TRIM);
-//	final Shell shell = new Shell(display, SWT.MODELESS);	//
-<-- also won't resize
+//	final Shell shell = new Shell(display, SWT.MODELESS);	// <-- also won't resize
 shell.setBounds(10,10,100,100);
 shell.addListener(SWT.MouseDown, new Listener() {
 public void handleEvent(Event event) {

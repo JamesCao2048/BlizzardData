@@ -1,5 +1,2 @@
 Bug 123035 Serialize primitive types, hashmaps and other Java classes not using Java serialization method
-If you take a look at the serialized engine output, we frequently see java classes appearing.
-I see String class; I see PageHint class; I see Hashmap classes.
-All of these should be gone so that BIRT document is independent of any Java-based class serialization.
-DtE team will move primitive type serialization to BIRT.CORE, see 123034.Engine can use that.
+If you take a look at the serialized engine output, we frequently see java classes appearing. I see String class; I see PageHint class; I see Hashmap classes. All of these should be gone so that BIRT document is independent of any Java-based class serialization. DtE team will move primitive type serialization to BIRT.CORE, see 123034. Engine can use that.

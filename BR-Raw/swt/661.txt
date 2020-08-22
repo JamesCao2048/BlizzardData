@@ -4,8 +4,7 @@ Happens in 3.6 HEAD Cocoa
 2) Traverse to the toolitem with a dropdown menu.
 3) Now, use the arrow-down or arrow-up key to open the drop-down menu.
 result: the focus traverses to the next toolitem.
-expected: The drop-down menu opens in windows and gtk.
-Same behavior can be seen in the eclipse toolbar which has toolItems with dropdown menu.
+expected: The drop-down menu opens in windows and gtk. Same behavior can be seen in the eclipse toolbar which has toolItems with dropdown menu.
 testcase: (modified snippet47)
 public class Snippet47 {
 public static void main (String [] args) {

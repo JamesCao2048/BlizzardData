@@ -1,12 +1,2 @@
 Bug 203642 Javascript functions in datasets are not recognized
-Define a javascript function foo(x) in a script aaa.js Include the script through
-<list-property name="includeScripts">
-<property>aaa.js</property>
-</list-property> In your dataset, create a computed column on a row X using foo(x) For example,
-<list-property name="computedColumns">
-<structure>
-<property name="name">X_computed</property>
-<expression name="expression">foo(row["X"])</expression>
-<property name="dataType">Any</property>
-</structure>
-</list-property> Now try to bind a chart to this dataset, errors pop up in the dataset editor: An error occurred during population of data.
+Define a javascript function foo(x) in a script aaa.js Include the script through <list-property name="includeScripts"> <property>aaa.js</property> </list-property> In your dataset, create a computed column on a row X using foo(x) For example, <list-property name="computedColumns"> <structure> <property name="name">X_computed</property> <expression name="expression">foo(row["X"])</expression> <property name="dataType">Any</property> </structure> </list-property> Now try to bind a chart to this dataset, errors pop up in the dataset editor: An error occurred during population of data.

@@ -1,7 +1,2 @@
 Bug 416105 Docx output: leading and trailing whitespaces of a label are removed
-I have two simple labels in my report.
-The first label has my given name as value with a space at the end "Martin ".
-The second labels value is my lastname "Burgler".
-If I generate the report as docx output the whitespace is removed.
-I get as result "MartinBurgler".
-If I use pdf or doc as output format the result is as expected "Martin Burgler".
+I have two simple labels in my report. The first label has my given name as value with a space at the end "Martin ". The second labels value is my lastname "Burgler". If I generate the report as docx output the whitespace is removed. I get as result "MartinBurgler". If I use pdf or doc as output format the result is as expected "Martin Burgler".

@@ -1,7 +1,2 @@
 Bug 212711 A temp1AggFactory_xxx floder is not created in temp folder when runAndrender a report design including Aggregation
-I use Engine RunAndRender task run a report which is including Aggregation.
-I have set both java.io.tmpdir and EngineConfig temp folder.
-When I run the task I found there is a folder like temp1AggFactory_20035600 created in superior folder of EngineConfig temp folder.
-And the folder is empty.
-I think if we created this folder we should created in the temp folder but not the superior folder right?
-Build number: 2.3.0.v20071212-0800
+I use Engine RunAndRender task run a report which is including Aggregation. I have set both java.io.tmpdir and EngineConfig temp folder. When I run the task I found there is a folder like temp1AggFactory_20035600 created in superior folder of EngineConfig temp folder. And the folder is empty. I think if we created this folder we should created in the temp folder but not the superior folder right? Build number: 2.3.0.v20071212-0800

@@ -1,13 +1,2 @@
 Bug 286603 TVT35:TCT566: FRA - BIRT - All strings in drop down menu of the Property Editor are in English
-<response_by> martine marin at 2009.08.13.05.11.34
-</response_by> Build: 20090812 Language: French Must fix: YES Steps to reproduce: 1) Expand BIRTproject in the Navigator, right click on Test_Report_1.rptdesign and select Open.
-2) In the report, click on the cell with [CUSTOMNAME] in it.
-3) In the Property Editor, select Format String under the Properties tab.
-In the dropDown List all items are in English now.
-They used to be localized before.
-This happens for all dropdown boxes in the Property Editor And sometimes we have a mix, English French (for DateTime) This is a must fix Please investigate, Thanks, Martine
-<response_by> Kit Lo at 2009.08.14.02.05.10
-</response_by> The reported strings were translated before.
-Anything changed?
-<response_by> Kit Lo at 2009.08.14.02.05.21
-</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.
+<response_by> martine marin at 2009.08.13.05.11.34 </response_by> Build: 20090812 Language: French Must fix: YES Steps to reproduce: 1) Expand BIRTproject in the Navigator, right click on Test_Report_1.rptdesign and select Open. 2) In the report, click on the cell with [CUSTOMNAME] in it. 3) In the Property Editor, select Format String under the Properties tab. In the dropDown List all items are in English now. They used to be localized before. This happens for all dropdown boxes in the Property Editor And sometimes we have a mix, English French (for DateTime) This is a must fix Please investigate, Thanks, Martine <response_by> Kit Lo at 2009.08.14.02.05.10 </response_by> The reported strings were translated before. Anything changed? <response_by> Kit Lo at 2009.08.14.02.05.21 </response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

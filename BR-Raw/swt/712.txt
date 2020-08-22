@@ -1,8 +1,7 @@
 Mac/Carbon DnD: DragSourceListener.dragSetData fired when File drag started.
 Build Identifier: SWT v3635
 This is a performance problem in DragSource class in SWT Carbon only.
-The problem is SWT Carbon fires  DragSourceListener.dragSetData  when drag started, as a result, the application code starts to create  DnD files  when drag started.
-If the file is big, this causes DnD performanuce issue.
+The problem is SWT Carbon fires  DragSourceListener.dragSetData  when drag started, as a result, the application code starts to create  DnD files  when drag started.  If the file is big, this causes DnD performanuce issue.
 According to the Eclipse CVS history,
 Rev1.29, 1.30 change for DragSource.java caused this issue.
 Reproducible: Always

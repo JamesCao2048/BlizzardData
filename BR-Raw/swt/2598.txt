@@ -1,24 +1,20 @@
 JDT Text test don't run anymore (out of handles) - works with SWT 3.2 M1
 I20051123-1200
 I have the following setup:
-1.install I20051123-1200
-2.start fresh workspace
-3.load org.eclipse.jdt.text.tests checked out from HEAD
-4.load all its required test projects from HEAD
-5.load org.eclipse.jface.text from HEAD
-6.*** only needed to run against SWT from 3.2 M1
-- see later step ***
-
+1. install I20051123-1200
+2. start fresh workspace
+3. load org.eclipse.jdt.text.tests checked out from HEAD
+4. load all its required test projects from HEAD
+5. load org.eclipse.jface.text from HEAD
+6. *** only needed to run against SWT from 3.2 M1 - see later step ***
 - replace "gc.getDevice()" with "" in all *.java files
-
 - in AnnotationPainter.java replace "getLineHeight(offset)" with
 "getLineHeight()"
-7.run JdtTextTestSuite as JUnit Plug-in Test (ignore the error in jdt.ui.tests)
+7. run JdtTextTestSuite as JUnit Plug-in Test (ignore the error in jdt.ui.tests)
 ==> no more handles occurrs (at different places on each run)
 ==> several tests fail as consequence
 Works on Linux and also on releng WinXP machine but fails on several of our machines here in the lab.
-Integrated SWT's sleak tool code into the test runner to dump object info for each test.
-Before the error the figures are about the following:
+Integrated SWT's sleak tool code into the test runner to dump object info for each test. Before the error the figures are about the following:
 221 Color(s)
 8 Cursor(s)
 10 Font(s)
@@ -54,4 +50,4 @@ at org.eclipse.jface.window.Window.open(Window.java:775)
 at org.eclipse.ui.internal.progress.BlockedJobsDialog$1.runInUIThread(BlockedJobsDialog.java:224)
 at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:93)
 at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-at org.eclipse.swt.widgets.Synch
+at org.eclipse.swt.widgets.S

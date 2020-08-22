@@ -37,11 +37,4 @@ at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$after$org_aspectj_ajdt
 at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:805)
 at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:468)
 at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:1028)
-at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performBuild(AjBuildManager.java:272)
-at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:185)
-at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
-at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
-at org.aspectj.tools.ajc.Main.run(Main.java:371)
-at org.aspectj.tools.ajc.Main.runMain(Main.java:248)
-...
-Sample Maven project attached. It fails on test-compile phase, and assertions should be enabled: "MAVEN_OPTS=-ea mvn test-compile".
+at org.aspectj.ajdt.intern

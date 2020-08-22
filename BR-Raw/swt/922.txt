@@ -1,15 +1,11 @@
 Tooltip problems handling escaped &s, and Workbench title inconsistency
 Build ID: IES 35I20090525
 Steps To Reproduce:
-This is a two fold problem.
-First I'd like to suggest that tooltip labels simply ignore mnemonics and interpret &s directly.
-I don't believe mnemonics make sense for tooltips...
+This is a two fold problem.  First I'd like to suggest that tooltip labels simply ignore mnemonics and interpret &s directly.  I don't believe mnemonics make sense for tooltips...
 The problems are:
 1) Escaping the &s is not resulting in correct result in a tooltip
 2) The escaped &s are not supported in the Eclipse Title bar.
-The problem is most obvious when considering IEditorPart tooltips.
-We have a tooltip for editing a UML operation in C++ context (i.e.
-'&' indicates a reference to a variable).
+The problem is most obvious when considering IEditorPart tooltips.  We have a tooltip for editing a UML operation in C++ context (i.e. '&' indicates a reference to a variable).
 Lets consider a C++ function:
 int &&& op && ( int & test );
 Our tooltip raw text for the 'UML' version is:
@@ -23,7 +19,6 @@ Compared to our expected:
 CPPModel::Class1::op && ( CPPModel::Class1::op &&::test : int & ) : int &&&
 Furthermore, the Eclipse Workbench window title is showing the escaped text:
 CPPModel::Class1::op &&&& ( CPPModel::Class1::op &&&&::test : int && ) : int &&&&&&
-Expected behavior is that the Workbench title bar will be the same as the tooltip.
-And the tooltip either properly handles escaped &s, or it updated to not support mnemonics and thus will not require escaping of &s.
+Expected behavior is that the Workbench title bar will be the same as the tooltip.  And the tooltip either properly handles escaped &s, or it updated to not support mnemonics and thus will not require escaping of &s.
 More information:
 This is found on Window XP Pro

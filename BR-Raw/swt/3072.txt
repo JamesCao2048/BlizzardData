@@ -5,6 +5,5 @@ Run the control example.
 - Alignment: Right
 - Horizontal Fill
 - Preferred
-Button does not return to its preferred size.
-The problem is that we have set
+Button does not return to its preferred size.  The problem is that we have set
 the usize on the child, but not reset it when we ask for its preferred size.

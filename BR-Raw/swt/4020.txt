@@ -1,8 +1,7 @@
 StyledText - getTopIndex semantics undefined when no line fully visible
 build 20020430
 getTopIndex has undefined semantics when no line is fully visible (e.g.,
-because the client area is not high enough).
-It is spec'd to return the topmost
+because the client area is not high enough). It is spec'd to return the topmost
 fully visible line which leaves open this boundary condition.
 The current behavior in this case is unexpected from a visual point of view
 (i.e., from the users perspective).
@@ -11,6 +10,5 @@ at index 2 is not visible at all (or also only partially visible) getTopIndex
 returns 2 because that is the index of the line that would be fully visible if
 there was enough vertical space.
 This causes similar problems as reported in  bug 8648  when moving the cursor
-down.
-When the cursor is moved from index 1 down the line at index 2 is not
+down. When the cursor is moved from index 1 down the line at index 2 is not
 revealed unless cursor down is pressed again.

@@ -1,15 +1,8 @@
 [Widgets] Black screen in windows 7 aero mode using Tracker
 Hi,
-I didn't want to open a ticket with a Major severity, but this one is pretty bad.
-I'm not sure if this is happening on Vista aero mode as well, but it is definitely happening consistently on Windows 7 aero mode.
-We have an SWT app (currently running SWT 3.4 on windows 7. SWT 3.5 has the same problem).
-The application is kind of like a graphical editor.
-I'm using a Tracker object to place an object on the screen after selecting the object they want to place.
-So, after they hit OK on a dialog, I create the tracker on the composite, and have it draw a rectangle a certain size as they move the mouse.
-When they click on the composite, the tracker ends, and I place the object on the screen at that location.
-When the code calls tracker.open(), the whole screen turns black.
-I can still see the mouse cursor, but the screen is entirely black.
-Once I click on the composite, and the tracker.open() returns, the screen returns to its normal view.
+I didn't want to open a ticket with a Major severity, but this one is pretty bad.  I'm not sure if this is happening on Vista aero mode as well, but it is definitely happening consistently on Windows 7 aero mode.
+We have an SWT app (currently running SWT 3.4 on windows 7.  SWT 3.5 has the same problem).  The application is kind of like a graphical editor.  I'm using a Tracker object to place an object on the screen after selecting the object they want to place.  So, after they hit OK on a dialog, I create the tracker on the composite, and have it draw a rectangle a certain size as they move the mouse.  When they click on the composite, the tracker ends, and I place the object on the screen at that location.
+When the code calls tracker.open(), the whole screen turns black.  I can still see the mouse cursor, but the screen is entirely black.  Once I click on the composite, and the tracker.open() returns, the screen returns to its normal view.
 My code is pretty simple...
 Tracker tracker = new Tracker(compositeClientArea, SWT.NONE);
 tracker.setStippled(true);
@@ -32,10 +25,7 @@ if (!tracker.open())
 ....
 
 When I switch to windows 7 basic mode, everything works fine.
-Also of note, I have 2 monitors on my development machine.
-This is kind of the wierd part.
-If I move the app to the second monitor, and initiate the tracker, the main primary monitor still turns black, but the second monitor shows the app fine, and I can see the whole operation.
-Not sure if this is related to two monitors or not...
+Also of note, I have 2 monitors on my development machine.  This is kind of the wierd part.  If I move the app to the second monitor, and initiate the tracker, the main primary monitor still turns black, but the second monitor shows the app fine, and I can see the whole operation.  Not sure if this is related to two monitors or not...
 Any ideas what's going on?
 Thanks,
 Joe

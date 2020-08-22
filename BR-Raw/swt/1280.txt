@@ -1,8 +1,5 @@
 Unprecise Javadoc for ImageData constructor
-* @exception IllegalArgumentException
-<ul>
-*
-<li>ERROR_INVALID_ARGUMENT
-- if the width or height is negative, or if the depth is not
+* @exception IllegalArgumentException <ul>
+*    <li>ERROR_INVALID_ARGUMENT - if the width or height is negative, or if the depth is not
 *        	one of 1, 2, 4, 8, 16, 24 or 32</li>
 should read "if the width or height is *zero or negative*"

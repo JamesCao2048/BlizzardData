@@ -26,10 +26,8 @@ lpwndpl.right = x + width;
 lpwndpl.bottom = y + height;
 }
 The problem with the current code occurs when the 1st test is false (ie.
-NO_MOVE is true) and the 2nd test is true (ie NOSIZE is false).
-Consider what
+NO_MOVE is true) and the 2nd test is true (ie NOSIZE is false). Consider what
 happens if setPlacement is called with the values (0, 0, 400, 400), where the
-current window placement is (50, 50, 500, 500).
-The current code sets the
+current window placement is (50, 50, 500, 500). The current code sets the
 window placement to (50, 50, 400, 400), which violates the requested width and
 height.

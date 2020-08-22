@@ -8,10 +8,8 @@ AB
 2) Change the orientation to 'Right to left'
 3) Enable Block Selection
 4) Block select the (complete) text
-5) Application (Text Editor) crash due to the below exception
--
-Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range:
--3
+5) Application (Text Editor) crash due to the below exception -
+Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: -3
 at java.lang.String.<init>(Unknown Source)
 at org.eclipse.swt.custom.DefaultContent.getTextRange(DefaultContent.java:709)
 at org.eclipse.swt.custom.StyledText.getBlockSelectionText(StyledText.java:3549)

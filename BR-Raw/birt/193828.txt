@@ -1,5 +1,2 @@
 Bug 193828 message should not be popped when adding group level to cross tab
-In a cross tab click on an aggregation type data cell and select 'show/hide Group Levels'.
-If I want to add a level, A message dialog pops up.
-Expected: No message dialog should pop up when adding a level.
-The dialog should appear only when a level in unchecked.
+In a cross tab click on an aggregation type data cell and select 'show/hide Group Levels'. If I want to add a level, A message dialog pops up. Expected: No message dialog should pop up when adding a level. The dialog should appear only when a level in unchecked.

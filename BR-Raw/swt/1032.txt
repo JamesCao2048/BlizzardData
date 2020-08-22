@@ -3,7 +3,6 @@ Build ID: I20080617-2000
 Steps To Reproduce:
 1.Launch Eclipse.
 2.Open a model dialog, such as open preference dialog from File | Preferences; or file open dialog from File | Open File.
-3.Drag a simple text file, such as 1.txt, and drop to Eclipse Editor area.
-Problem is 1.txt is opened.
+3.Drag a simple text file, such as 1.txt, and drop to Eclipse Editor area. Problem is 1.txt is opened.
 We expect perference dialog and file open dialog are model dialogs, and when model dialog appears, the parent window should not response to drop event, so dropped document could not be opened in Eclipse.
 More information:

@@ -1,8 +1,7 @@
 [FastView] Unhandled event loop exception: NPE in ToolBarManager.update
 After working for some time the Eclipse views get all mixed up and unresponsive ( I will attach a screenshot shortly).
 OpenSUSE 11.0/KDE 4.0.4
--- Error Details
---
+-- Error Details --
 Date: Tue Jul 29 16:52:46 EEST 2008
 Message: Unhandled event loop exception
 Severity: Error
@@ -12,10 +11,7 @@ eclipse.buildId=I20080617-2000
 java.version=1.6.0_06
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
-Command-line arguments:
--os linux
--ws gtk
--arch x86
+Command-line arguments:  -os linux -ws gtk -arch x86
 This is a continuation of log file /home/robert/workspace/.metadata/.bak_5.log
 Created Time: 2008-07-29 16:45:47.803
 Exception Stack Trace:
@@ -49,4 +45,4 @@ at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.j
 at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
 at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
 at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-at org.eclipse.core.runtime.adap
+at org.eclipse.core.runtime.adaptor.

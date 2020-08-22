@@ -1,5 +1,2 @@
 Bug 177704 Chart that inherits data from container can't use parameter binding
-In chart builder, choose "inherit data from container" and set parameter bindings for chart(change the default value in the parameter dialog), and find it's invalid.
-The real reason is SubQueryDefinition doesn't support setting parameter bindings just as QueryDefinition.
-However, chart builder allows user to set it.
-Need to fix this issue either by UI change or by adding data support.
+In chart builder, choose "inherit data from container" and set parameter bindings for chart(change the default value in the parameter dialog), and find it's invalid. The real reason is SubQueryDefinition doesn't support setting parameter bindings just as QueryDefinition. However, chart builder allows user to set it. Need to fix this issue either by UI change or by adding data support.

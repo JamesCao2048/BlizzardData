@@ -1,10 +1,2 @@
 Bug 226647 Chart title can not be set as "value = 0".
-description: Chart title can not be set as "value = 0".
-build id: 2.3.0 v20080411-0630 steps to reproduce: 1.New a chart.
-2.Set the title as "value = 0" (without the double quotation marks) 3.Double click the chart builder.
-4.Preview the chart.
-Expected result: in step 3, the chart title text box shows "value = 0".
-in step 4, the chart title is previewed as "value = 0".
-Actual result: in step 3, the chart title text box shows "value".
-The live preview also shows "value".
-in step 4, the chart title is previewed as "0".
+description: Chart title can not be set as "value = 0". build id: 2.3.0 v20080411-0630 steps to reproduce: 1. New a chart. 2. Set the title as "value = 0" (without the double quotation marks) 3. Double click the chart builder. 4. Preview the chart. Expected result: in step 3, the chart title text box shows "value = 0". in step 4, the chart title is previewed as "value = 0". Actual result: in step 3, the chart title text box shows "value". The live preview also shows "value". in step 4, the chart title is previewed as "0".

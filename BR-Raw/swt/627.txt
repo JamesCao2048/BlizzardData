@@ -20,8 +20,7 @@ event.gc.setAntialias(SWT.ON);
 event.gc.setFont(font);
 event.gc.drawText(text, 10, 10);
 Point pt = event.gc.textExtent(text);
-event.gc.setClipping(10, 10 + pt.y, pt.x
-- 1, pt.y);
+event.gc.setClipping(10, 10 + pt.y, pt.x - 1, pt.y);
 event.gc.drawText(text, 10, 10 + pt.y);
 }
 });
@@ -36,7 +35,5 @@ display.dispose();
 }
 Launch it as "Java Application" and get ArrayIndexOutOfBoundsException
 If you remove 'r' from the text, no exception
-If you don't set anti-alias (i.e.
-advanced flag
-- GDI+ support) it will also work.
+If you don't set anti-alias (i.e. advanced flag - GDI+ support) it will also work.
 Think it's a typo, hence priority == critical just to make sure this gets fixed asap.

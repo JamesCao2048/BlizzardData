@@ -3,7 +3,5 @@
 - run the ControlExample, Table tab
 - turn on the KeyDown and Selection listeners
 - select an item in the example Table, then press Enter
-
 -> on win32 and motif the following are fired: DefaultSelection, KeyDown
-
 -> everywhere else it's: KeyDown, DefaultSelection

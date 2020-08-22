@@ -1,8 +1,7 @@
 [implementation] Java editor disposes default StyledText caret's image
 Build id: 200403040800
 Java editor, according to the insert mode, sets a special Caret in the
-StyledText.
-I've two problem with that:
+StyledText. I've two problem with that:
 1- This caret is not bidi aware
 2- At some point they dispose the image of the StyledText default Caret
 We (SWT Team) have some major changes (still to be release) in StyledText that

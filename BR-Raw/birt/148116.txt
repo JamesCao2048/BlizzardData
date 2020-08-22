@@ -1,4 +1,2 @@
 Bug 148116 Use Data Type information in XSD file when creating XML data set
-When you specify a XML Schema (XSD) file for a XML data source, then create a XML data set based on that data source, the data type information from the XSD is not used.
-I.e., if the user selects an element or attribute the data type of the node is not read from the XSD file.
-We should enhance the XML driver so that it automatically fill in the data type information from XSD.
+When you specify a XML Schema (XSD) file for a XML data source, then create a XML data set based on that data source, the data type information from the XSD is not used. I.e., if the user selects an element or attribute the data type of the node is not read from the XSD file. We should enhance the XML driver so that it automatically fill in the data type information from XSD.

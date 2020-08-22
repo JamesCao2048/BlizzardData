@@ -1,15 +1,13 @@
 [Browser] Intermittent crash on OS X in embedded browser when cancelling a download.
 Build ID: I20070625-1500
 Steps To Reproduce:
-1.Open internal Web Browser View
-2.Browse to a website that has a link to a file to download
-3.Click the file link, save dialog should come up
-4.Hit cancel
-5.Repeat until crash occurs
+1. Open internal Web Browser View
+2. Browse to a website that has a link to a file to download
+3. Click the file link, save dialog should come up
+4. Hit cancel
+5. Repeat until crash occurs
 More information:
-The problem is in org.eclipse.swt.carbon.macosx.Safari in the method decideDestinationWithSuggestedFilename().
-In the code where it says if (path == null) (cancel case), it should be sending Cocoa.S_cancel instead of S.release.
-This is during a delegate callback handler for the NSURLDownload, releasing the object during this callback can cause bad memory access exceptions.
+The problem is in org.eclipse.swt.carbon.macosx.Safari in the method decideDestinationWithSuggestedFilename(). In the code where it says if (path == null) (cancel case), it should be sending Cocoa.S_cancel instead of S.release. This is during a delegate callback handler for the NSURLDownload, releasing the object during this callback can cause bad memory access exceptions.
 Here is a piece of the crash log:
 Command: eclipse
 Path:    /Users/gcomnino/Desktop/eclipse3.4M1/Eclipse.app/Contents/MacOS/eclipse
@@ -21,16 +19,11 @@ Exception:  EXC_BAD_ACCESS (0x0001)
 Codes:      KERN_INVALID_ADDRESS (0x0001) at 0xa1a78a48
 Thread 0 Crashed:
 0   libobjc.A.dylib                	0x90a59391 objc_msgSend + 33
-1   com.apple.Foundation           	0x9293607c
--[NSURLDownload _writeDataForkData:resourceForkData:] + 44
-2   com.apple.Foundation           	0x92935bc0
--[NSURLDownload _decodeDownloadData:] + 161
-3   com.apple.Foundation           	0x92935108
--[NSURLDownload connection:didReceiveData:lengthReceived:] + 164
-4   com.apple.Foundation           	0x9285aafa
--[NSURLConnection(NSURLConnectionInternal) _sendDidReceiveDataCallback] + 641
-5   com.apple.Foundation           	0x92858ddb
--[NSURLConnection(NSURLConnectionInternal) _sendCallbacks] + 686
+1   com.apple.Foundation           	0x9293607c -[NSURLDownload _writeDataForkData:resourceForkData:] + 44
+2   com.apple.Foundation           	0x92935bc0 -[NSURLDownload _decodeDownloadData:] + 161
+3   com.apple.Foundation           	0x92935108 -[NSURLDownload connection:didReceiveData:lengthReceived:] + 164
+4   com.apple.Foundation           	0x9285aafa -[NSURLConnection(NSURLConnectionInternal) _sendDidReceiveDataCallback] + 641
+5   com.apple.Foundation           	0x92858ddb -[NSURLConnection(NSURLConnectionInternal) _sendCallbacks] + 686
 6   com.apple.Foundation           	0x92858ab5 _sendCallbacks + 201
 7   com.apple.CoreFoundation       	0x9082cf92 CFRunLoopRunSpecific + 1213
 8   com.apple.CoreFoundation       	0x9082cace CFRunLoopRunInMode + 61

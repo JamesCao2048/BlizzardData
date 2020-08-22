@@ -2,9 +2,7 @@ Closing context menu programmatically does not work on the Mac
 I20071120-1300, Mac OS X 10.4.11 carbon
 Run snippet from  bug 204289
 (  https://bugs.eclipse.org/bugs/attachment.cgi?id=78992  ) on the Mac.
-The snippet stops at step "3 done".
-When you click somewhere then, the snippet proceeds and hangs at step 6 again.
-This shows that "menu.setVisible(false);" was executed, but the menu never becomes invisible while the event loop is running.
+The snippet stops at step "3 done". When you click somewhere then, the snippet proceeds and hangs at step 6 again. This shows that "menu.setVisible(false);" was executed, but the menu never becomes invisible while the event loop is running.
 Unlike the Windows  bug 204289 , this happens always on the Mac (even if the Shell has focus).
 This caused time outs in JDT/UI's leak test org.eclipse.jdt.ui.tests.leaks.JavaLeakTest.testJavaEditorContextMenu().
 I will disable this test on Carbon for now.

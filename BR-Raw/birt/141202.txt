@@ -1,14 +1,3 @@
 Bug 141202 Enh: Invoke Binding editor from Expression Builder
-After switching to the data binding scheme in 2.1, one of the common issues for a BIRT designer is that he might find out that additional binding need to be added when he is creating an expression.
-In the current UI he must then cancel out of the expression builder, go back to the table to create the new binding, and invoke the expression builder again.
-This is rather inconvenient.
-It is desirable that we provide a shortcut within the Expression Builder to directly add bindings to the table.
-One example of the sequence that demonstrate this UI deficiency: create a table that uses a data set with CITY, COUNTRY columns.
-Drag the data set column CITY into the table (which auto creates binding for the CITY column).
-Now the user wants to create a group by COUNTRY column.
-He inserts a group and sees the New Group dialog.
-In the Group On field he clicks on the (...) button to bring up the Expression Builder.
-He then realizes that the COUNTRY column has not been bound (since it's not available in the Availble Column Bindings list).
-He then has to cancel out of the expression builder and the new group dialog entirely, go to the table to add the binding for COUNTRY, and then re-do the Insert Group operation.
-The attached screenshot proposes an enhancement that will help improve usability.
-The new "Add New Binding..." option will bring out the Binding Editor for the current table, thereby enabling the user to create new bindings to be used for the expression, without having to first exit the expression builder.
+After switching to the data binding scheme in 2.1, one of the common issues for a BIRT designer is that he might find out that additional binding need to be added when he is creating an expression. In the current UI he must then cancel out of the expression builder, go back to the table to create the new binding, and invoke the expression builder again. This is rather inconvenient. It is desirable that we provide a shortcut within the Expression Builder to directly add bindings to the table. One example of the sequence that demonstrate this UI deficiency: create a table that uses a data set with CITY, COUNTRY columns. Drag the data set column CITY into the table (which auto creates binding for the CITY column). Now the user wants to create a group by COUNTRY column. He inserts a group and sees the New Group dialog. In the Group On field he clicks on the (...) button to bring up the Expression Builder. He then realizes that the COUNTRY column has not been bound (since it's not available
+in the Availble Column Bindings list). He then has to cancel out of the expression builder and the new group dialog entirely, go to the table to add the binding for COUNTRY, and then re-do the Insert Group operation. The attached screenshot proposes an enhancement that will help improve usability. The new "Add New Binding..." option will bring out the Binding Editor for the current table, thereby enabling the user to create new bindings to be used for the expression, without having to first exit the expression builder.

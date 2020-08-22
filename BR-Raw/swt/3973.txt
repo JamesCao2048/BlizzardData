@@ -1,8 +1,6 @@
 2104: Converter contains references to Converter.class
 in 2104 (and in HEAD), in Motif, the class org.eclipse.swt.internal.Converter
-contains 3 references to Converter.class.
-This doesn't work on CLDC 1.0, which
-does not contain the class NoClassDefFoundError.
-This NoClassDefFoundError
+contains 3 references to Converter.class.  This doesn't work on CLDC 1.0, which
+does not contain the class NoClassDefFoundError.  This NoClassDefFoundError
 class is referenced in the expansion of the compiler construct XXX.class.
 See  bug 21706  for another example of this.

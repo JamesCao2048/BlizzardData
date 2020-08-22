@@ -1,4 +1,2 @@
 Bug 231498 [Automation][Regression]Alignment of crosstab header row should set to center
-Description: The default alignment value of crosstab header row is center, but it set to right in build v20080512-1101.Test Date: 20080512 Test Build: BIRT2.3.0 v20080512-1101 Step to reproduce: 1.Create a new report 2.Create a crosstab 3.Preview it.
-Expect result: Header alignment should be center.
-Actual result: Header alignment is right.
+Description: The default alignment value of crosstab header row is center, but it set to right in build v20080512-1101. Test Date: 20080512 Test Build: BIRT2.3.0 v20080512-1101 Step to reproduce: 1. Create a new report 2. Create a crosstab 3. Preview it. Expect result: Header alignment should be center. Actual result: Header alignment is right.

@@ -1,7 +1,6 @@
 ToolBar.getItem(Point point) always returns first item.
 Running on Eclipse 3.0 Linux-GTK, when ToolBar.getItem(Point point) is called,
-it always returns the first item in the toolbar.
-This works fine on Eclipse
+it always returns the first item in the toolbar.  This works fine on Eclipse
 3.0 Windows.
 public class TestClass {
 ToolBar myTB;

@@ -1,4 +1,3 @@
 ToolTip still visible after calling dispose
-If I create a tooltip on Gtk and then dispose it it is still visible if I hover anywhere over the Shell.
-I have attached an example that demonstrates that.
+If I create a tooltip on Gtk and then dispose it it is still visible if I hover anywhere over the Shell. I have attached an example that demonstrates that.
 If I use the SWT.Ballon style the tooltip does not re-appear after calling dispose().

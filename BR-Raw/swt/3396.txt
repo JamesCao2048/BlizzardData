@@ -1,6 +1,5 @@
 Item.setText() impl. doesn't follow JavaDoc
 According to the JavaDoc on Item.setText(String), the method should throw an
-IllegalArgumentException if the incomming text is null.
-Looking at the code
+IllegalArgumentException if the incomming text is null.  Looking at the code
 from 04/20/2004 there doesn't seem to be a check in place to throw the proper
 exception.

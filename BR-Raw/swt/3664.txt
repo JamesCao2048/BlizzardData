@@ -37,8 +37,7 @@ at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1483)
 at A.main(A.java:97)
 Exception in thread "main"
 /*
-* Copyright (c) 2000, 2003 IBM Corp.
-All rights reserved.
+* Copyright (c) 2000, 2003 IBM Corp.  All rights reserved.
 * This file is made available under the terms of the Common Public License v1.0
 * which accompanies this distribution, and is available at
 *  http://www.eclipse.org/legal/cpl-v10.html
@@ -61,6 +60,5 @@ item.setText ("Item " + i);
 }
 */
 /* [A] set children so we can expand */
-for (int i = 0; i
-< 12; i++) {
-TreeItem treeItem = new TreeItem(t
+for (int i = 0; i < 12; i++) {
+TreeItem treeItem = new TreeItem(tr

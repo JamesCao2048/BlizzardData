@@ -1,8 +1,7 @@
 accelerator labels: Ctrl-Shift-A, Shift-Ctrl-A or Shift-Ctl-A?
 F1 on linux-gtk:
 I see the modifier keys of accelerator labels are reversed on gtk:
-Shift-Ctrl- instead of Ctrl-Shift- .
-Looking at some gtk (1.x) programs,
+Shift-Ctrl- instead of Ctrl-Shift- . Looking at some gtk (1.x) programs,
 they actually use Shift-Ctl- .
 Either we should be platform compliant (Shift-Ctl-) or use the unified way
 (Ctrl-Shift-).

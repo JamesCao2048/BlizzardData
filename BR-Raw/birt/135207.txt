@@ -1,12 +1,2 @@
 Bug 135207 parameter dialog is not displayed when drill through to a PDF report that contains parameter with no default value
-steps to reproduce:
-- create 1st report
-- add a report parameter (no default value)
-- create 2nd report
-- add a label "link"
-- edit hyperlink property (type: drill-through, target report format: PDF)
-- preview 1st report
-- click on "link" expected behavior:
-- parameter dialog should be displayed
-- target report is rendered in PDF format actual behavior:
-- "Some required parameter values are not set or set to incompatible data type." was displayed instead.
+steps to reproduce: - create 1st report - add a report parameter (no default value) - create 2nd report - add a label "link" - edit hyperlink property (type: drill-through, target report format: PDF) - preview 1st report - click on "link" expected behavior: - parameter dialog should be displayed - target report is rendered in PDF format actual behavior: - "Some required parameter values are not set or set to incompatible data type." was displayed instead.

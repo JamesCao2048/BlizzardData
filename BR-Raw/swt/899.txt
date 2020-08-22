@@ -44,9 +44,7 @@ p.endJob();
 p.dispose();
 }
 }
-As in the original bug size matters.
-Changing image size has an influence and changing the size parameters in gc.drawImage also.
-For large sizes the JVM crashes, for moderate sizes the app just quits quietly (without having printed) and for small sizes the app prints ok.
+As in the original bug size matters. Changing image size has an influence and changing the size parameters in gc.drawImage also. For large sizes the JVM crashes, for moderate sizes the app just quits quietly (without having printed) and for small sizes the app prints ok.
 The definite workaround seems to be to dispose the image only after the call to printer.endPage().
-This happens on Eclipse 3.4, carbon, x86.but does not happen on 3.5 cocoa, x86_64.
+This happens on Eclipse 3.4, carbon, x86. but does not happen on 3.5 cocoa, x86_64.
 More information:

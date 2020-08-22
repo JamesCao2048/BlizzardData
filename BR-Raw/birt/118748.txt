@@ -1,5 +1,2 @@
 Bug 118748 Smoke: Publish template failed in chinese locale
-Description: When publish a template in chinese locale, the default directory is:"d:/buildtesting/Eclipse3.1-1201/plugins/org.eclipse.birt.report.designer.ui_1.0.1/IA/".
-The template could not be publish to that directory.
-When user change the default directory to custom directory, it seems that the template will still be published to the default directory.
-This problem occurs in english and other language locale.
+Description: When publish a template in chinese locale, the default directory is:"d:/buildtesting/Eclipse3.1-1201/plugins/org.eclipse.birt.report.designer.ui_1.0.1/IA/". The template could not be publish to that directory. When user change the default directory to custom directory, it seems that the template will still be published to the default directory. This problem occurs in english and other language locale.

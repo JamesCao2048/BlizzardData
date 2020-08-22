@@ -2,16 +2,12 @@ Cocoa: (specific) Dialog text doesn't wrap
 Build ID: Cocoa 3.5M2
 Steps To Reproduce:
 - Install Eclipse Cocoa PDT 3.5M2
-- go to software updates
--> Available Software
--> Ganymede
--> Wen and Java EE development
+- go to software updates -> Available Software -> Ganymede -> Wen and Java EE development
 - choose XML Editors, JavaScript, Web Developer Tools, Web Page Editor
 - Click on install
 -> a message comes up
 On carbon, the message reads:
-The software items you selected may not be valid with your current installation.
-do
+The software items you selected may not be valid with your current installation. do
 you want to open the wizard anyway to reviw the selections?
 On Cocoa, the second line is missing
 More information:

@@ -1,11 +1,10 @@
 IAE in TextLayout._getOffset()
-Got this reported with 3.3.1 and 3.3.2 (stacktrace is from 3.3.1).
-Couldn't reproduce myself, steps to reproduce we received:
-1.Type line 1 to almost fill an entire line
-2.CR to new line, type something
-3.Cursor up (and to the end) of line 1, and type until word wrap occurs.
+Got this reported with 3.3.1 and 3.3.2 (stacktrace is from 3.3.1). Couldn't reproduce myself, steps to reproduce we received:
+1. Type line 1 to almost fill an entire line
+2. CR to new line, type something
+3. Cursor up (and to the end) of line 1, and type until word wrap occurs.
 -> You should now only have a few characters on the newly visible line 2 with your cursor at the end of it (that's really wrap of line 1)
-4.Backspace until it should revert back to one line.
+4. Backspace until it should revert back to one line.
 java.lang.IllegalArgumentException: Index out of bounds
 at org.eclipse.swt.SWT.error(SWT.java:3547)
 at org.eclipse.swt.SWT.error(SWT.java:3481)
@@ -43,4 +42,4 @@ at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
 at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
 at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
 at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:153)
-at org.eclipse.core.runtime.i
+at org.eclipse.core.runti

@@ -1,7 +1,6 @@
 g_object_get() emits console warnings in ToolItem#gtk_create_menu_proxy
 Build Identifier: I20120502-1800
-Need to fix the console warnings being emitted by g_object_get() while trying to retrieve the value of property setting "gtk-menu-images" in ToolItem#gtk_create_menu_proxy().
-The warning message that appears is:
+Need to fix the console warnings being emitted by g_object_get() while trying to retrieve the value of property setting "gtk-menu-images" in ToolItem#gtk_create_menu_proxy(). The warning message that appears is:
 (SWT:17023): GLib-GObject-WARNING **: g_object_get_valist: object class
 `GtkSettings' has no property named `gtk-menu-images'
 Reproducible: Always

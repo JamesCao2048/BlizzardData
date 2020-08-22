@@ -6,8 +6,7 @@ I used ComboBoxCellEditor in a table, and sometimes it doesn't work.
 In the table, click the cell, sometimes the triangle at right is shown, and sometimes is hidden.
 When the triangle is shown, I select an item in the list, it works.
 But if the triangle is hidden, I select one, it can't be selected.
-After studying the code, I find that in the condition the triangle is hidden, if I select an item, CellModifier.CanModify() won't be invoked, and none of method in CellModifier will be called.
-Obviously, it's a bug.
+After studying the code, I find that in the condition the triangle is hidden, if I select an item, CellModifier.CanModify() won't be invoked, and none of method in CellModifier will be called. Obviously, it's a bug.
 To simplify the question, you can see this file
 org.eclipse.jface.snippets/Eclipse JFace Snippets/org/eclipse/jface/snippets/viewers/Snippet027ComboBoxCellEditors.java,
 and change

@@ -1,19 +1,12 @@
 Removing the last item from a read-only combo does not clear the selection
 This problem happens on Linux-GTK, Linux-motif and Solaris-motif
-I have a read-only combo on a dialog.
-The combo is created in the following
+I have a read-only combo on a dialog. The combo is created in the following
 way:
 Combo combo = new Combo(composite, SWT.SINGLE | SWT.READ_ONLY | SWT.DROP_DOWN);
-An action is related to the combo.
-The action removes the currently selected
-item from the combo.
-When the user triggers that action, I call combo.remove
-(int index) to remove the item.
-If the item is the only item left, then after
-it has been removed, the combo does not clear the selection.
-I tried calling
-combo.clearSelection() and combo.redraw(), but nothing worked.
-The combo does
-not get repainted.
-The item which has been removed is still the current
+An action is related to the combo. The action removes the currently selected
+item from the combo. When the user triggers that action, I call combo.remove
+(int index) to remove the item. If the item is the only item left, then after
+it has been removed, the combo does not clear the selection. I tried calling
+combo.clearSelection() and combo.redraw(), but nothing worked. The combo does
+not get repainted. The item which has been removed is still the current
 selection.

@@ -1,5 +1,2 @@
 Bug 123219 Export data in attached file which has a table covers multiple page will throw exception.
-Description: Export data in attached file which has a table covers multiple page will throw exception.
-Steps to reproduce: 1.Preview attached design file in viewer.
-2.Select the table and click Export Data Expected result: No errors.
-Actual result: Exception Exception in: ReportEngineService.getMetaData( )
+Description: Export data in attached file which has a table covers multiple page will throw exception. Steps to reproduce: 1. Preview attached design file in viewer. 2. Select the table and click Export Data Expected result: No errors. Actual result: Exception Exception in: ReportEngineService.getMetaData( )

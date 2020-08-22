@@ -8,8 +8,7 @@ final Text text = new Text(shell, SWT.MULTI);
 shell.open();
 display.timerExec(3000, new Runnable() {
 public void run() {
-text.setEnabled(false); //
-<----
+text.setEnabled(false); // <----
 }
 });
 while (!shell.isDisposed()) {

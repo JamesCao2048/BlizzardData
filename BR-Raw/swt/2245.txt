@@ -3,13 +3,9 @@ The error occured while starting eclipse3.3M1 on a Gentoo based linux x86_64 sys
 I have downloaded eclipse3.3M1 from:
 http://download.eclipse.org/eclipse/downloads/drops/S-3.3M1-200608101230/download.php?dropFile=eclipse-SDK-3.3M1-linux-gtk-x86_64.tar.gz
 I executed the following commands:
-#>tar
--xzvf eclipse-SDK-3.3M1-linux-gtk-x86_64.tar.gz
+#>tar -xzvf eclipse-SDK-3.3M1-linux-gtk-x86_64.tar.gz
 #>cd eclipse
 #>./eclipse &
-
-- and the the error occures.
-A dialog is open showing the java and eclipse arguments.
-I have previous installations of eclipse( eclipse3.2RC1, eclipse3.2, eclipse3.2M6).
-When starting them everything works fine.
+- and the the error occures. A dialog is open showing the java and eclipse arguments.
+I have previous installations of eclipse( eclipse3.2RC1, eclipse3.2, eclipse3.2M6). When starting them everything works fine.
 I will attache the hs_err_pig1228.log file.

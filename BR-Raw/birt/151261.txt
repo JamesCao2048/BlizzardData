@@ -1,5 +1,2 @@
 Bug 151261 New parameter default value not set in dialog
-BIRT Report Designer Version: 2.1.0.N20060628-1351 Build id: 200606281537 Create a new report parameter and set a default value.
-Select Preview and the parameter dialog pops up and the default value is not selected.
-This happens with Decimal/Text Box and with String/Radio Button with a list of valid values.
-Note, Allow null values is not selected or is grayed out, respectively, so the default value should be set if it is missing from the .rptconfig file (which it is).
+BIRT Report Designer Version: 2.1.0.N20060628-1351 Build id: 200606281537 Create a new report parameter and set a default value. Select Preview and the parameter dialog pops up and the default value is not selected. This happens with Decimal/Text Box and with String/Radio Button with a list of valid values. Note, Allow null values is not selected or is grayed out, respectively, so the default value should be set if it is missing from the .rptconfig file (which it is).

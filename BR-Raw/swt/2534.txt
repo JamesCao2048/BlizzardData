@@ -2,10 +2,10 @@
 I20060110-1026
 I can no longer click some elements in the Packages view and suddenly the label gets corrupted into: "org.ec...".
 Test Case:
-1.start attached workspace
-2.select project 'Foo' in the Package Explorer
-3.select 'org.eclipse.jface.text' in the Packages view
-3.expand 'Foo' in the Package Explorer
-4.select 'src'
+1. start attached workspace
+2. select project 'Foo' in the Package Explorer
+3. select 'org.eclipse.jface.text' in the Packages view
+3. expand 'Foo' in the Package Explorer
+4. select 'src'
 ==> strange label "org.ec...".
 This works with I200605-0800 plus JDT's build input for I20060110-1026

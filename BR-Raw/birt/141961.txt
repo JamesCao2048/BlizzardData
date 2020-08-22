@@ -1,4 +1,2 @@
 Bug 141961 All default column binding names for data are the same
-Steps to reproduce: 1.Add a data.
-In the pops up window, add a column binding, "[result_set_col_name]" is given as the default column binding name 2.Add another column binding Expected result: Another different column binding name is given Actual result: The same column binding name is given An exception occurred.
-Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.1.0.N20060516-1213 Error Code:Error.PropertyValueException.VALUE_EXISTS Error Message:The value "[result_set_col_name]" already exists.
+Steps to reproduce: 1.Add a data. In the pops up window, add a column binding, "[result_set_col_name]" is given as the default column binding name 2.Add another column binding Expected result: Another different column binding name is given Actual result: The same column binding name is given An exception occurred. Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.1.0.N20060516-1213 Error Code:Error.PropertyValueException.VALUE_EXISTS Error Message:The value "[result_set_col_name]" already exists.

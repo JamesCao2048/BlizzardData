@@ -5,20 +5,17 @@ Identifier:      org.eclipse.eclipse
 Version:         3.4 (3.4)
 Code Type:       X86 (Native)
 Parent Process:  launchd [103]
-Date/Time:       2008-09-30 16:16:42.179
--0400
+Date/Time:       2008-09-30 16:16:42.179 -0400
 OS Version:      Mac OS X 10.5.5 (9F33)
 Report Version:  6
-I get this occasionally while debugging.
-Usually happens when I terminate a launch, but I don't have a reproducible test case yet.
+I get this occasionally while debugging. Usually happens when I terminate a launch, but I don't have a reproducible test case yet.
 Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
 Exception Codes: KERN_INVALID_ADDRESS at 0x00000000c0000023
 Crashed Thread:  0
 Application Specific Information:
 Java information:
 Version: Java HotSpot(TM) Client VM (1.5.0_13-119 mixed mode)
-Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_13-119) for macosx-x86, built on Sep 28 2007 23:59:21 by root with gcc 4.0.1 (Apple Inc.
-build 5465)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_13-119) for macosx-x86, built on Sep 28 2007 23:59:21 by root with gcc 4.0.1 (Apple Inc. build 5465)
 Exception type: Bus Error (0xa) at pc=0x90889688
 Current thread (0x09a01500):  JavaThread "main" [_thread_in_native, id=-1602011232]
 Stack: [0xbf800000,0xc0000000)
@@ -45,4 +42,4 @@ j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench
 j  org.eclipse.ui.internal.Workbench$5.run()V+23
 j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
 j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
-j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(L

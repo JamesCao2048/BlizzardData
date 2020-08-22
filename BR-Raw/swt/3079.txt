@@ -1,6 +1,5 @@
 Table.pack() extends last column to include scroll bar
-The following code causes a shell to grow without bounds.
-The problem is that
+The following code causes a shell to grow without bounds.  The problem is that
 Windows expands the last column to include the scroll bar when Column.pack()
 is called.
 import org.eclipse.swt.SWT;

@@ -1,16 +1,12 @@
 console hijacks SWT event thread when selecting binary content
 I20050426-1700
 When selecting the console contents with the mouse, eclipse got into a eternal
-(or extremely long running) loop.
-The dump below reveals that the console's
-StyledText is busy handling selection events that were posted
-- presumably from
+(or extremely long running) loop. The dump below reveals that the console's
+StyledText is busy handling selection events that were posted - presumably from
 the console.
-filing against debug because I suspect the selection handling is done there
--
+filing against debug because I suspect the selection handling is done there -
 please move to SWT if you think the problem is there.
------- main threads in vm dump (1)
-----------
+------ main threads in vm dump (1) ----------
 "main" prio=1 tid=0x0805bed0 nid=0x3105 runnable [0xbfffc000..0xbfffd438]
 at org.eclipse.swt.internal.gtk.OS.strlen(Native Method)
 at org.eclipse.swt.graphics.TextLayout.getBounds(TextLayout.java:431)
@@ -43,10 +39,9 @@ at org.eclipse.core.launcher.Main.invokeFramework(Main.java:319)
 at org.eclipse.core.launcher.Main.basicRun(Main.java:272)
 at org.eclipse.core.launcher.Main.run(Main.java:951)
 at org.eclipse.core.launcher.Main.main(Main.java:935)
------- main threads in vm dump (2)
-----------
+------ main threads in vm dump (2) ----------
 "main" prio=1 tid=0x0805bed0 nid=0x3105 runnable [0xbfffc000..0xbfffd438]
 at org.eclipse.swt.internal.gtk.OS.pango_layout_iter_next_line(OS.java:8011)
 at org.eclipse.swt.graphics.TextLayout.getBounds(TextLayout.java:428)
 at org.eclipse.swt.custom.StyledText.redrawLines(StyledText.java:6041)
-at org.eclipse.swt.custom.StyledText.internalRedrawRange
+at org.eclipse.swt.custom.StyledText.internalRedrawRange(Sty

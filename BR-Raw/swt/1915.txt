@@ -1,10 +1,9 @@
 StyledText.getLocationAtOffset is slow for long lines was: Long lines take too long to display when "Show Whitespace Characters" is enabled.
 Build ID: I20070625-1500
 Steps To Reproduce:
-1.Enable the "Show Whitespace Characters" feature.
-2.Open a file containing a long line of data (>100 kB works well) in a text-based editor (text editor, or XML editor in Source mode).
-3.Observe that Eclipse becomes unresponsive for 30+ seconds with 100% CPU utilization in Eclipse.exe.
-Turning off the "Show Whitespace Characters" feature reduces this to about
-< 3 seconds.
+1. Enable the "Show Whitespace Characters" feature.
+2. Open a file containing a long line of data (>100 kB works well) in a text-based editor (text editor, or XML editor in Source mode).
+3. Observe that Eclipse becomes unresponsive for 30+ seconds with 100% CPU utilization in Eclipse.exe.
+Turning off the "Show Whitespace Characters" feature reduces this to about < 3 seconds.
 More information:
 Test machine is 2 GHz with 2 GB RAM, running Win2k.

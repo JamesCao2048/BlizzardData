@@ -1,15 +1,12 @@
 MouseEnter should be fired even when the mouse is down (BBAWT)
-1.Run the following testcase
-2.Click on the label on the left side, and hold the button down
-3.Move the button over the label on the right, without releasing the button
-4.After a few seconds, release the button over the right label
-Notice that the mouseEnter event isn't fired until the button is released.
-I
-believe it should be fired regardless of whether the button is down (i.e.
-the
+1. Run the following testcase
+2. Click on the label on the left side, and hold the button down
+3. Move the button over the label on the right, without releasing the button
+4. After a few seconds, release the button over the right label
+Notice that the mouseEnter event isn't fired until the button is released.  I
+believe it should be fired regardless of whether the button is down (i.e. the
 second you cross over to the right label in step 3).
---- testcase
----
+--- testcase ---
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseMoveListener;

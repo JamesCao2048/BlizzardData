@@ -2,9 +2,8 @@ Lots of stuff leaked when closing and reopening views
 M20120909-2000.
 Lots of objects are leaked in a simple close/open part scenario.
 Simple test case:
-1.prepare a perspective with only the Navigator view open
-2.reset the instance counter of your profiler
-3.close the Navigator
-4.reopen the Navigator
-==> see many instance being leaked, e.g.
-3 ToolItem(s) and 2 ToolBar(s)
+1. prepare a perspective with only the Navigator view open
+2. reset the instance counter of your profiler
+3. close the Navigator
+4. reopen the Navigator
+==> see many instance being leaked, e.g. 3 ToolItem(s) and 2 ToolBar(s)

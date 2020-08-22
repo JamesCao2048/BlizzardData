@@ -1,11 +1,8 @@
 CLabel does not save alignment in style bits
 RC2
-Run this snippet.
-Note that the CLabel is right-aligned, but the getStyle()
-says it is left-aligned.
-The problem is that RIGHT and CENTER style bits are
-thrown away in checkStyle().
-Is there a reason for this?
+Run this snippet. Note that the CLabel is right-aligned, but the getStyle()
+says it is left-aligned. The problem is that RIGHT and CENTER style bits are
+thrown away in checkStyle(). Is there a reason for this?
 import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.widgets.*;
@@ -27,13 +24,10 @@ label = new CLabel(shell, SWT.RIGHT);
 label.setText("CLabel");
 int style = label.getStyle();
 System.out.println("CLabel alignment=" +
-((style & SWT.LEFT) != 0 ?
-"LEFT" :
-(style & SWT.RIGHT) != 0 ?
-"RIGHT" :
+((style & SWT.LEFT) != 0 ? "LEFT" :
+(style & SWT.RIGHT) != 0 ? "RIGHT" :
 (style & SWT.CENTER) !=
-0 ?
-"CENTER" : "UNKNOWN"));
+0 ? "CENTER" : "UNKNOWN"));
 shell.pack();
 shell.open();
 while (!shell.isDisposed()) {

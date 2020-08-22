@@ -1,9 +1,7 @@
 Malformed Javadoc comments
 http://download.eclipse.org/eclipse/downloads/drops/N20120308-2000/compilelogs/platform.doc.isv.javadoc.txt  says:
-/builds/N201203082000/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse SWT Browser/common/org/eclipse/swt/browser/BrowserFunction.java:83: warning
-- Tag @see: missing '#': "BrowserFunction(Browser, String, boolean, String[])"
-/builds/N201203082000/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse SWT Browser/common/org/eclipse/swt/browser/BrowserFunction.java:124: warning
-- Tag @see: missing '#': "BrowserFunction(Browser, String)"
+/builds/N201203082000/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse SWT Browser/common/org/eclipse/swt/browser/BrowserFunction.java:83: warning - Tag @see: missing '#': "BrowserFunction(Browser, String, boolean, String[])"
+/builds/N201203082000/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse SWT Browser/common/org/eclipse/swt/browser/BrowserFunction.java:124: warning - Tag @see: missing '#': "BrowserFunction(Browser, String)"
 => Please open project properties for the SWT project, go to Java Compiler > Javadoc, enable project-specific settings, and make sure
 - "Malformed Javadoc comments" is set to Warning
 - "Only consider members as visible as" is set to at least Protected

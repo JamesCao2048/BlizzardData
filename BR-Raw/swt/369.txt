@@ -2,12 +2,10 @@ Key input not working after using expose
 Created  attachment 195721   [details]
 snippet to reproduce bug
 build: I20110514-0800 Cocoa x86_64
-Noticed this problem in the IDE with the "Create New Project Wizard".
-Attached a SWT snippet to reproduce the problem.
+Noticed this problem in the IDE with the "Create New Project Wizard". Attached a SWT snippet to reproduce the problem.
 Steps:
 1) Run the attached snippet.
 2) Open the child shell.
 3) Using Expose select the child shell with mouse.
-5) Try to type in the text box or select the button using keyboard, no key input works.
-But, mouse input seems to work.
+5) Try to type in the text box or select the button using keyboard, no key input works. But, mouse input seems to work.
 6) close the child shell, parent shell is not activated.

@@ -1,11 +1,2 @@
 Bug 129561 HCG_BIDI: Undesirable generation of SQL query elements
-This is not even NLS specific defect.
-It happens with English as well.
-The problem is that on the Query screen in the Edit Data Set dialog the drag/drop of columns into the Query screen must enclose every entity name including blank in the quotation marks.
-Otherwise the query will fail.
-1.Create DB2 database 2.Create table with name including blank in this database.
-Make sure it has column with name including blank as well.
-3.Create Data Source based on the DB from step 1 4.Create Data Set based on the table from Step 2 5.On the Query screen drag and drop the column name from step 2 into select portion of the clause.
-You should get something like
-- select USER.Table Name.Column Name 6.Select "Preview Results" Result: Exception is fired.
-7.Change manualy the SQL query as follows: select USER."Table Name"."Column Name" 8.Select "Preview Results" Result: No exception is issued.
+This is not even NLS specific defect. It happens with English as well. The problem is that on the Query screen in the Edit Data Set dialog the drag/drop of columns into the Query screen must enclose every entity name including blank in the quotation marks. Otherwise the query will fail. 1. Create DB2 database 2. Create table with name including blank in this database. Make sure it has column with name including blank as well. 3. Create Data Source based on the DB from step 1 4. Create Data Set based on the table from Step 2 5. On the Query screen drag and drop the column name from step 2 into select portion of the clause. You should get something like - select USER.Table Name.Column Name 6. Select "Preview Results" Result: Exception is fired. 7. Change manualy the SQL query as follows: select USER."Table Name"."Column Name" 8. Select "Preview Results" Result: No exception is issued.

@@ -1,10 +1,8 @@
 ON_TOP shell - can't setFocus to content
 I20040527
 Run the following example and press the button.
-Shell pops up.
-On all platforms except Mac OS X, the list has focus and you
-can arrow around in the list.
-On Mac OS X, you need to tab into the list.
+Shell pops up.  On all platforms except Mac OS X, the list has focus and you
+can arrow around in the list.  On Mac OS X, you need to tab into the list.
 public static void main (String [] args) {
 final Display display = new Display ();
 Shell shell = new Shell (display);

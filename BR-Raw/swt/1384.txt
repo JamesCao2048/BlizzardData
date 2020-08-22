@@ -1,7 +1,4 @@
 Display.readAndDispatch() and sleep() should not try/catch and call printStackTrace()
 When Scott committed the first code for accessitiblity, he said:
-"One (potentially controversial) change I made to Display was to put try/catch blocks in readAndDispatch() and sleep() so that an exception doesn鈥檛 silently exit the program.
-The semantics of these methods didn鈥檛 change, but dumping a backtrace is more useful than exiting."
-I agree that it is useful, definitely during development but as an underlying toolkit, we can't catch, print and swallow exceptions.
-This is a policy decision that is decided by the application.
-I think we need to take it out.
+"One (potentially controversial) change I made to Display was to put try/catch blocks in readAndDispatch() and sleep() so that an exception doesn鈥檛 silently exit the program. The semantics of these methods didn鈥檛 change, but dumping a backtrace is more useful than exiting."
+I agree that it is useful, definitely during development but as an underlying toolkit, we can't catch, print and swallow exceptions.  This is a policy decision that is decided by the application.  I think we need to take it out.

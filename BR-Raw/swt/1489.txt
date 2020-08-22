@@ -3,9 +3,9 @@ Created  attachment 106956   [details]
 Windows screenshot
 Build ID: I20080617-2000 (3.3 and 3.4 confirmed)
 Steps To Reproduce:
-1.Create TabFolder
-2.Create 3 x TabItems, using setImage before and after setControl/setText
-3.On OS X, only the version that calls setImage last has an image.
+1. Create TabFolder
+2. Create 3 x TabItems, using setImage before and after setControl/setText
+3. On OS X, only the version that calls setImage last has an image.
 More information:
 Example code to reproduce
 import org.eclipse.jface.window.ApplicationWindow;
@@ -64,10 +64,8 @@ PaletteData paletteData = new PaletteData(new RGB[]
 
 ImageData imageData = new ImageData(8, 8, 1, paletteData);
 
-for (int x = 1; x
-< 7; x++)
-for (int y = 1; y
-< 7; y++)
+for (int x = 1; x < 7; x++)
+for (int y = 1; y < 7; y++)
 imageData.setPixel(x, y, 1);
 return new Image(display, imageData);
 }

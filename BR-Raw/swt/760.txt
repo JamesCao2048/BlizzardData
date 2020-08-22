@@ -1,8 +1,6 @@
 Cannot Uppercase text CCombo in VerifyListener
 Build Identifier: 20090920-1017
-When a user types characters in a CCombo, I would like those characters to be forced into upper case.
-In a Text field this is accomplished by adding a VerifyListener.
-The event handling code for CCombo does not allow the listener to override the text in the verify event.
+When a user types characters in a CCombo, I would like those characters to be forced into upper case. In a Text field this is accomplished by adding a VerifyListener. The event handling code for CCombo does not allow the listener to override the text in the verify event.
 This is a simple fix, the method "CCombo.textEvents()" needed to be modified for the VerifiedEvent to add "event.text = e.text" after the listeners have been notified as follows:
 case SWT.Verify: {
 Event e = new Event ();
@@ -19,6 +17,6 @@ break;
 }
 Reproducible: Always
 Steps to Reproduce:
-1.Add a VerifyListener to a CCombo that is editable.
-2.Uppercase the event text in the verify Listener.
-3.Text in the Combo box is not uppercased.
+1. Add a VerifyListener to a CCombo that is editable.
+2. Uppercase the event text in the verify Listener.
+3. Text in the Combo box is not uppercased.

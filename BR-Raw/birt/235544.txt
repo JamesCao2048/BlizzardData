@@ -1,4 +1,2 @@
 Bug 235544 Chart generate the same aggregation operation in the crosstab
-step to reproduce: 1)New a crosstab 2)Show as chart in measure field 3)Run the report.
-At this moment, chart will add the same binding twice(one for chart, one for axis) in queryDefinition, which will cause unneccessary execution in Data engine side.
-To improve the performance, it'd better share the same binding result both in chart and axis.
+step to reproduce: 1)New a crosstab 2)Show as chart in measure field 3)Run the report. At this moment, chart will add the same binding twice(one for chart, one for axis) in queryDefinition, which will cause unneccessary execution in Data engine side. To improve the performance, it'd better share the same binding result both in chart and axis.

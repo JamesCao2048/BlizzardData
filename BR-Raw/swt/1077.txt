@@ -2,10 +2,10 @@
 Build N20090329-2000, but has been happening for a while.
 The Quick Type Hierarchy window flashes briefly and then disappears.
 Steps:
-1.Check out an SWT tree.
-2.Go to Widget.java
-3.In the editor pane, click on something that you know has been overridden (windowDidMove, for example)
-4.Hit cmd-T
+1. Check out an SWT tree.
+2. Go to Widget.java
+3. In the editor pane, click on something that you know has been overridden (windowDidMove, for example)
+4. Hit cmd-T
 ===> The IDE works for a bit and then the type hierarchy window appears and then immediately hides.
 Expected:
 The type hierarchy window opens and stays open.

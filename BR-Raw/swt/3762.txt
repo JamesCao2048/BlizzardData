@@ -1,7 +1,6 @@
 [Motif] GC.getFontMetrics() causes VM to crash when font is really small.
 In Motif, with a very small font (height ~= 2), GC.getFontMetrics() causes the
-VM to crash (stack trace below).
-I debugged this method and found that
+VM to crash (stack trace below).  I debugged this method and found that
 OS.memmove() is being called with src = 0 because the XFontStruct.per_char = 0.
 GTK and Windows don't seem to be affected.
 An unexpected exception has been detected in native code outside the VM.
@@ -29,8 +28,7 @@ at org.eclipse.draw2d.Figure.paint(Figure.java:923)
 at org.eclipse.draw2d.parts.Thumbnail$ThumbnailUpdater.run(Thumbnail.java:157)
 at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:98)
-- locked
-<0x44405e28> (a org.eclipse.swt.widgets.RunnableLock)
+- locked <0x44405e28> (a org.eclipse.swt.widgets.RunnableLock)
 at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:1940)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1731)
 at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1402)

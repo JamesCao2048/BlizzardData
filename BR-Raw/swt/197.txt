@@ -1,7 +1,7 @@
 A combo in a toolbar gets shrunk
 The combo boxes placed in the editor toolbar for the ecorediag editor get set to 1 pixel wide.
 Walked through it with Bogdan, but a SWT.SEPARATOR toolitem called with toolItem.setWidth(223) seems to get its width reset on the parent (ToolBar) relayout().
-The ToolItem.getBounds() returns a width of 1. Something similar to this can be seen in Snippet58 if the combo/toolitem code sets the control first and the width second.
+The ToolItem.getBounds() returns a width of 1.  Something similar to this can be seen in Snippet58 if the combo/toolitem code sets the control first and the width second.
 combo.select(1);
 combo.pack ();
 sep.setControl (combo);

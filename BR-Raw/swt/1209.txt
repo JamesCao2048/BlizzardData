@@ -7,18 +7,13 @@ Unlike for Carbon, in a number of controls, a right-click on the control opens a
 In response to a right-click on the control...
 
 For Cocoa:
--- Combo control: application context menu appears, both when popups are disabled and when enabled.
-(Oddly, when the control itself is disabled, the sample popup menu appears.)
--- CoolBar control: as expected, except for application context menu that appears in the text area, irrespective of whether popups are enabled or disabled.
-(This does not happen for Carbon.)
+-- Combo control: application context menu appears, both when popups are disabled and when enabled. (Oddly, when the control itself is disabled, the sample popup menu appears.)
+-- CoolBar control: as expected, except for application context menu that appears in the text area, irrespective of whether popups are enabled or disabled. (This does not happen for Carbon.)
 -- Link control: application context menu appears when popups are disabled.
--- Sash control: application context menu appears in the text area, both when popups are disabled and when enabled.
-(Aside from this context menu in the text area, popup menus do not seem to be working.
-For Carbon, popups do not seem to be working at all.)
+-- Sash control: application context menu appears in the text area, both when popups are disabled and when enabled. (Aside from this context menu in the text area, popup menus do not seem to be working. For Carbon, popups do not seem to be working at all.)
 -- Spinner control: application context menu appears, both when popups are disabled and when enabled.
 -- Text control: application context menu appears when popups are disabled.
--- Browser control: browser context menu appears when popups are disabled.
-(This also happens for Carbon, and may be correct).
+-- Browser control: browser context menu appears when popups are disabled. (This also happens for Carbon, and may be correct).
 
 For Carbon:
 -- When popup menus are disabled, popups never seem to appear, except in the Browser control (see above).

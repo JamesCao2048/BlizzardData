@@ -3,10 +3,8 @@ MessageDialog does not accept null shell
 The Javadoc for MessageDialog's constructors states:
 Note: Currently, null can be passed in for the parent.
 ...
-However, this is no longer the case.
-In 2.1, trying this results in an NPE.
+However, this is no longer the case.  In 2.1, trying this results in an NPE.
 I actually wanted this since I need to bring up a dialog on startup to notify
-the user of a workspace version incompatibility.
-There are no other shells
+the user of a workspace version incompatibility.  There are no other shells
 around at this point (or even a display).
 Now I have to create a bogus shell just to avoid the NPE.

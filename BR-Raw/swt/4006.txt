@@ -1,24 +1,17 @@
 Window manipulations block other threads from executing
 On Win32 platforms (such as Win2k and WinNT), operations such as moving a
-scrollbar arm and resizing a window block other threads from executing.
-This
-is not the case on QNX.
-In case this is unclear, I have a testcase.
-Also, it
+scrollbar arm and resizing a window block other threads from executing.  This
+is not the case on QNX.  In case this is unclear, I have a testcase.  Also, it
 should be noted that despite the trivial nature of the test, it represents the
 kind of issue we have with java.awt.ScrollPane, where we try to repaint a view
 as it is scrolling, from the AWT main thread.
-1.After the window opens, observe the background color changing between black
+1. After the window opens, observe the background color changing between black
 and white
-2.Try to move the scrollbar's arm up and down
-- observe that the color
-changing thread no longer changes the colors.
-That thread will also be blocked
-if you grab the shell's corner and do some frequent resizing.
-On Photon, the
+2. Try to move the scrollbar's arm up and down - observe that the color
+changing thread no longer changes the colors.  That thread will also be blocked
+if you grab the shell's corner and do some frequent resizing.  On Photon, the
 color changes continue to occur.
------ testcase follows
----------
+----- testcase follows ---------
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FillLayout;
@@ -64,8 +57,7 @@ Color background = black;
 public void run() {
 while(!shell.isDisposed()) {
 // set the background color of the
-canvas.
-This must
+canvas.  This must
 // be done on the ui thread
 display.syncExec(new Runnable() {
 public void run() {

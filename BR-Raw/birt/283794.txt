@@ -1,7 +1,2 @@
 Bug 283794 Provide None in aggregation for Gantt chart no matter Category grouping is enable or not
-Description: Provide None in aggregation for Gantt chart no matter Category grouping is enable or not Build number: 2.5.1.v20090717-0630 Steps to reproduce: 1, New a gantt chart 2, Enable Category grouping 3, Check the aggregation list for Value Y series Expected result: No matter Category grouping is enable or not, we should provide None selection in the list.
-When user enable Category Grouping, I suggest to set None as default aggregation rather than setting SUM and it is a little complex for user to fix this by reselect None.
-And We need to check that when render the chart.
-Actual result: When Category grouping is enable, error said Gantt chart doesn't allow Sum...
-and in the aggregation list, the default aggregation is SUM and I can not select None to fix this error.
-Error log:
+Description: Provide None in aggregation for Gantt chart no matter Category grouping is enable or not Build number: 2.5.1.v20090717-0630 Steps to reproduce: 1, New a gantt chart 2, Enable Category grouping 3, Check the aggregation list for Value Y series Expected result: No matter Category grouping is enable or not, we should provide None selection in the list. When user enable Category Grouping, I suggest to set None as default aggregation rather than setting SUM and it is a little complex for user to fix this by reselect None. And We need to check that when render the chart. Actual result: When Category grouping is enable, error said Gantt chart doesn't allow Sum... and in the aggregation list, the default aggregation is SUM and I can not select None to fix this error. Error log:

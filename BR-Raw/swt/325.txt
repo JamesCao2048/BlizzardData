@@ -1,6 +1,5 @@
 Shell.setVisible is extremely slow on Linux
-The following snippet takes 5 seconds on windows but about 140 seconds on Linux (RHEL).
-Found this while working on  bug 343242 .
+The following snippet takes 5 seconds on windows but about 140 seconds on Linux (RHEL). Found this while working on  bug 343242 .
 -----------------------------------------------------------------------------
 package org.eclipse.swt.snippets;
 import java.util.Date;
@@ -14,8 +13,7 @@ shell.setText("Shell"); //$NON-NLS-1$
 shell.setSize(200, 200);
 shell.open();
 System.out.println(new Date());
-for (int i = 0; i
-< 1000; i++) {
+for (int i = 0; i < 1000; i++) {
 shell.setVisible(false);
 //shell.setText("shell" + i); //$NON-NLS-1$
 shell.setVisible(true);

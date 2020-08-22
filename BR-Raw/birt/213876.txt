@@ -1,7 +1,2 @@
 Bug 213876 Wrong Reference Found warning while delete Summary Field[1101]
-Description: Wrong Reference Found warning while delete Summary Field Build number:2.3.0.v200712260800 Steps to reproduce: 1.New data source and dataset.
-2.New a data cube.
-3.Add a Summary Field.
-4.Delete the Summary Field Expected result: The Summary Field is deleted without any warning.
-Actual result: Reference Found warning dialog pops up to say that Summary Field has Data Cube client.
-Error log:n/a
+Description: Wrong Reference Found warning while delete Summary Field Build number:2.3.0.v200712260800 Steps to reproduce: 1. New data source and dataset. 2. New a data cube. 3. Add a Summary Field. 4. Delete the Summary Field Expected result: The Summary Field is deleted without any warning. Actual result: Reference Found warning dialog pops up to say that Summary Field has Data Cube client. Error log:n/a

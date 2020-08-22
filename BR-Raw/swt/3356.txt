@@ -1,15 +1,11 @@
 Photon: Tree.java references java.util.Stack (not in JDK 1.1)
 In the past, the SWT team has been careful to avoid the collection classes,
-especially those introduced after JDK 1.1.x.
-However, in recompiling the
+especially those introduced after JDK 1.1.x.  However, in recompiling the
 latest SWT source on several platforms against an older JCL implementation, I
-noticed that Tree.java is making use of java.util.Stack.
-No other SWT class on
-this or any other platform is using one of the newer collection classes.
-Can
+noticed that Tree.java is making use of java.util.Stack.  No other SWT class on
+this or any other platform is using one of the newer collection classes.  Can
 this be rewritten to use arrays or a Vector, or is it no longer considered
 taboo to use these types of collection classes in SWT source code?
 Here's where I find a Stack being used:
 orgeclipseswtwidgetsTree.java (at line 18)
-orgeclipseswtwidgetsTree.java (at line 1446)
-- 2 occurrences
+orgeclipseswtwidgetsTree.java (at line 1446) - 2 occurrences

@@ -4,14 +4,11 @@ StyledTextRenderer.drawText
 the code says:
 String tabSegment = text.substring(i, tabIndex);
 if (bidi != null) {
-bidi.drawBidiText(i, tabIndex
-- i, leftMargin
--
+bidi.drawBidiText(i, tabIndex - i, leftMargin -
 horizontalScrollOffset, paintY);
 }
 else {
-gc.drawString(tabSegment, paintX
--
+gc.drawString(tabSegment, paintX -
 horizontalScrollOffset + leftMargin, paintY, true);
 paintX += gc.stringExtent(tabSegment).x;
 if (tabIndex != endOffset && tabWidth > 0) {

@@ -1,11 +1,9 @@
 [KeyBindings] NullPointerException while running UiTestSuite
-I saw this exception while preparing the submission for I200409140800. The
+I saw this exception while preparing the submission for I200409140800.  The
 exception occurs in  Bug66182 Test.testWindow(), but is set in motion by
-Bug43610 Test.testShiftAlt().
-Basically, there appears to be an unnecessary
+Bug43610 Test.testShiftAlt().  Basically, there appears to be an unnecessary
 "ESC" key press, but I'm not sure why it causes a problem.
 
 At the point that the multi-key assist shell is made visible, the display is
-null.
-This display is provided in the constructor, and should also be the
+null.  This display is provided in the constructor, and should also be the
 display on which the timerExec was started.

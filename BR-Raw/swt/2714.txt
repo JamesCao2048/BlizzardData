@@ -4,6 +4,5 @@ In a Text widget with text "abc", the behavior of #setSelection(int, int)
 depends on whether the flag SWT.SINGLE is set.
 - with SWT.SINGLE, setSelection(3,1) sets the caret to position 3
 - without SWT.SINGLE, setSelection(3,1) sets the caret to position 1
-The second behavior should also apply for the SWT.SINGLE case.
-This would also
+The second behavior should also apply for the SWT.SINGLE case. This would also
 match the documented behavior of StyledText#setSelection(int, int).

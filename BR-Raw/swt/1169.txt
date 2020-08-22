@@ -1,18 +1,10 @@
 Text throws exceptions and doesn't display bullets in Mylyn task repository setup
 This is with top-of-tree as of 2/23/09, about noon.
-If you try to set up a Mylyn task repository for Eclipse.org you will get a dialog prompting you for your bugzilla settings.
-Attempting to set a password throws exceptions and the field doesn't display bullets.
-1.Install Mylyn.
-I did this with Help
--> Install New Software, and then opened up the Collaboration tree item and selected all of the Mylyn-related stuff
-2.Then, from the menu, Window
--> Show View
--> Other.
-From the dialog, choose Mylyn
--> Task Repositories.
-3.You should see Eclipse.org as a choice.
-Double-click it.
-4.Uncheck 'Anonymous Access' and fill in your Bugzilla ID and password.
+If you try to set up a Mylyn task repository for Eclipse.org you will get a dialog prompting you for your bugzilla settings. Attempting to set a password throws exceptions and the field doesn't display bullets.
+1. Install Mylyn. I did this with Help -> Install New Software, and then opened up the Collaboration tree item and selected all of the Mylyn-related stuff
+2. Then, from the menu, Window -> Show View -> Other. From the dialog, choose Mylyn -> Task Repositories.
+3. You should see Eclipse.org as a choice. Double-click it.
+4. Uncheck 'Anonymous Access' and fill in your Bugzilla ID and password.
 --> The password appears in clear text.
 --> If you tab out of the field and then back into it you'll get an ArrayIndexOutOfBoundsException.
 --> Unchecking the anonymous field warns you that the repository username and password must not be blank, but even if you enter a username and password they warning doesn't go away and the Finish button doesn't enable.

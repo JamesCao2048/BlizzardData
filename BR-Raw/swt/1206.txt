@@ -3,7 +3,6 @@ Tree.showItem() may not reveal children of non-expanded items
 - expand each of the descendent items in the Tree all the way to the bottom
 - collapse the top item only
 - double-click anywhere in the Tree's whitespace
-
 -> the bottom item is not successfully revealed but it should be
 public static void main(String[] args) {
 final Display display = new Display();

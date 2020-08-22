@@ -1,8 +1,2 @@
 Bug 236380 1. In the HTML content, we have table,tr,td tags.BIRT doesnt support the attributes of the below mentioned tags.
-Build ID: BIRT 2.2.1 Steps To Reproduce: 1.Use html content for generating the PDF More information: Ex:
-<table>
-<tr row span=2 border =1> The row is getting spanned, but the border attribute is not being recognized.
-2.BIRT doesnt support some of the style attributes like valign,char,frames,header..etc 3.In report PDF,the spacing between the lines are more while using html content as data.Since the html content has
-<P>,<li> tags.
-4.Page n of m spacing issue.The spacing between the word Page & n.The same problem between the word of & m.
-5.Performance is very very slow.Please let us know the memory consumption.
+Build ID: BIRT 2.2.1 Steps To Reproduce: 1.Use html content for generating the PDF More information: Ex: <table> <tr row span=2 border =1> The row is getting spanned, but the border attribute is not being recognized. 2.BIRT doesnt support some of the style attributes like valign,char,frames,header..etc 3.In report PDF,the spacing between the lines are more while using html content as data.Since the html content has <P>,<li> tags. 4.Page n of m spacing issue.The spacing between the word Page & n.The same problem between the word of & m. 5.Performance is very very slow.Please let us know the memory consumption.

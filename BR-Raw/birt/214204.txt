@@ -1,8 +1,2 @@
 Bug 214204 Only document content in document folder should be removed.[0601]
-Description: Only document related content in document folder should be removed.
-Build number:2.3.0.v20080103 Steps to reproduce: 1.Deploy BIRT.
-2.Edit web.xml to set BIRT_VIEWER_DOCUMENT_FOLDER to your local path and there are content inside the path.
-3.Start server and click View Example to preview sample report.
-Expected result: Only content created by viewer should be removed in specified document folder.
-Actual result: All contents are deleted despite whether they are related with BIRT.
-Error log:n/a
+Description: Only document related content in document folder should be removed. Build number:2.3.0.v20080103 Steps to reproduce: 1. Deploy BIRT. 2. Edit web.xml to set BIRT_VIEWER_DOCUMENT_FOLDER to your local path and there are content inside the path. 3. Start server and click View Example to preview sample report. Expected result: Only content created by viewer should be removed in specified document folder. Actual result: All contents are deleted despite whether they are related with BIRT. Error log:n/a

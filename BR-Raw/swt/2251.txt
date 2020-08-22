@@ -11,17 +11,13 @@ Internal browser is not available: No more handles [Unknown Mozilla path (MOZILL
 - Back in the preferences, if I click on the
 "Default system Web browser" to show me it's settings I get a NPE(see bottom)
 - Links from the welcome page into the web work just fine,
-i.e.
-they open firefox as browser and walk it to the link.
+i.e. they open firefox as browser and walk it to the link.
 Now, my system, Red Hat Enterprise Workstation 4, Update 3, is special,
-there is no mozilla installed.
-Firefox is also installed in a custom way,
-by linking the executable, firefox, into /usr/bin.
-It points to /opt/firefox/firefox.
+there is no mozilla installed. Firefox is also installed in a custom way,
+by linking the executable, firefox, into /usr/bin. It points to /opt/firefox/firefox.
 Now, I tried to set MOZILLA_FIVE_HOME to /opt/firefox to help Eclipse a
 bit, that's when the following error happened:
-Internal browser is not available: No more handles [NS_InitEmbedding /opt/firefox/ error
--2147221164]
+Internal browser is not available: No more handles [NS_InitEmbedding /opt/firefox/ error -2147221164]
 Eclipse should:
 1.) handle the error situation in a better way(more descriptive error msgs),
 2.) use the /usr/bin/firefox link as external browser

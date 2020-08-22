@@ -4,8 +4,8 @@ The code in CTabFolder line 2166 is broken:
 if (item.isDisposed()) {
 Display display = getDisplay();
 Test Case:
-1.open an editor
-2.close the editor by clicking on the X
+1. open an editor
+2. close the editor by clicking on the X
 ==>
 !ENTRY org.eclipse.ui 4 0 2007-08-06 12:38:16.375
 !MESSAGE Unhandled event loop exception

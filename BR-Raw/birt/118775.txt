@@ -1,7 +1,2 @@
 Bug 118775 [Regression]Cell alignment is not consistent in layout view and preview.
-Description: Cell alignment is not consistent in layout view and preview.
-Steps to reproduce: 1.Add a grid, insert a chart in the grid cell.
-Set row text alignment "center", column text alignment "right".
-Select cell, its text alignment is "center".
-Preview it, it is displayed in right.
-Please reference to scr 78082 in tracker
+Description: Cell alignment is not consistent in layout view and preview. Steps to reproduce: 1.Add a grid, insert a chart in the grid cell. Set row text alignment "center", column text alignment "right". Select cell, its text alignment is "center". Preview it, it is displayed in right. Please reference to scr 78082 in tracker

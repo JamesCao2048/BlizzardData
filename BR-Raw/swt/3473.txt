@@ -1,8 +1,7 @@
 Clipboard of GTK on KDE : Eclipse crash
 When Clipboard.getAvailableTypeNames() is called
 on GTK/Linux with KDE system ( not GNOME ), it causes
-Eclipse platform to get crashed.
-Looks like in this
+Eclipse platform to get crashed. Looks like in this
 function, somehow OS.gdk_atom_name(atoms[i]) returns 0
 and passing 0 to OS.strlen() causes segv.
 Here is how to:
@@ -10,6 +9,5 @@ Here is how to:
 KDE.
 2) Run eclipse
 3) If "Try me" is not in the menu, Window > Customize
-Perspective ...
-> Other > Try me needs to be checked.
+Perspective ... > Other > Try me needs to be checked.
 4) Try me > Clipboard

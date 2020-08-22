@@ -1,6 +1,5 @@
 [Browser] setText() fails when current content came from setText()
-The snippet below does not work because DocumentComplete is not received for the second about:blank navigation.
-Not sure if the asyncExec() should be needed or not.
+The snippet below does not work because DocumentComplete is not received for the second about:blank navigation.  Not sure if the asyncExec() should be needed or not.
 static int counter = 0;
 public static void main(String[] args) {
 final Display display = new Display();

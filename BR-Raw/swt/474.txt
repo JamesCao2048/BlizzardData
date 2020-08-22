@@ -1,11 +1,9 @@
 [GTK/Linux] Validation error dialog from launch configuration cannot be clicked on
 Build ID: I20071120-0800
-1.Open an 'Eclipse Application' launch configuration.
-2.Unselect some plug-ins that are needed to launch what you are going to launch.
-3.Click on 'Validate Plug-ins'.
-4.Notice that the popped up dialog will not capture mouse click events.
-You cannot expand the tree, you cannot click the 'OK' button.
-5.To get rid of it, you need to alt+tab to the 'Run' dialog, then press the ESC key to close them.
-This is on Linux/GTK+.
-I am on Gentoo Linux running gtk+ version 2.10.14.
-I cannot reproduce this on 3.3.1.1.Benny has reproduced this on 1108's N build but could not reproduce it on 1018's or 1024's.
+1. Open an 'Eclipse Application' launch configuration.
+2. Unselect some plug-ins that are needed to launch what you are going to launch.
+3. Click on 'Validate Plug-ins'.
+4. Notice that the popped up dialog will not capture mouse click events. You cannot expand the tree, you cannot click the 'OK' button.
+5. To get rid of it, you need to alt+tab to the 'Run' dialog, then press the ESC key to close them.
+This is on Linux/GTK+. I am on Gentoo Linux running gtk+ version 2.10.14.
+I cannot reproduce this on 3.3.1.1. Benny has reproduced this on 1108's N build but could not reproduce it on 1018's or 1024's.

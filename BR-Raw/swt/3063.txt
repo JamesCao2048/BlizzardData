@@ -2,7 +2,6 @@ Clarify Javadoc of Display.postEvent
 I20050202-0800
 The return value of Display.postEvent's Javadoc says:
 * @return true if the event was generated or false otherwise
-It is not clear whether this means that it's not supported i.e.
-will always
+It is not clear whether this means that it's not supported i.e. will always
 return false for that event (type) or whether it means it did not work this time
 and I can try it again until I get true.

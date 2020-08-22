@@ -1,6 +1,2 @@
 Bug 134032 Page break after always doesn't break page between last group and table footer.
-Description: Page break after always doesn't break page between last group and table footer.
-Steps to reproduce: 1.New a table with a group.
-2.set pageBreakAfter to always to the group.
-3.Preview.
-Result: Table footer was in the same page as last group.
+Description: Page break after always doesn't break page between last group and table footer. Steps to reproduce: 1. New a table with a group. 2. set pageBreakAfter to always to the group. 3. Preview. Result: Table footer was in the same page as last group.

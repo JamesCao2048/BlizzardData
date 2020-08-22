@@ -1,9 +1,6 @@
 Calling TableItem#setText(int,String) with sortDirection set to SWT.DOWN extermley slow
 Build ID: 3.3
-I've set up a table viewer with a custom comparator.
-When I click the column to sort the first time, nothing happens as expected since the data is created sorted.
-When I click the column the second time to reverse the sort, it happens almost instantly.
-When I click the column the third time, the app hangs and pegs the cpu at 100%.
+I've set up a table viewer with a custom comparator.  When I click the column to sort the first time, nothing happens as expected since the data is created sorted.  When I click the column the second time to reverse the sort, it happens almost instantly.  When I click the column the third time, the app hangs and pegs the cpu at 100%.
 Here's the sample code:
 package test.sort;
 import org.eclipse.jface.viewers.Viewer;
@@ -27,14 +24,12 @@ if(o1 == null && o2 == null)
 return 0;
 
 if(o1 == null && o2 != null)
-return
--1;
+return -1;
 
 if(o1 != null && o2 == null)
 return 1;
 
-return up ?
-o1.compareTo(o2) : o2.compareTo(o1);
+return up ? o1.compareTo(o2) : o2.compareTo(o1);
 }
 private int column;
 private boolean up;
@@ -93,4 +88,4 @@ table.setHeaderVisible(true);
 final TableColumn col0 = new TableColumn(table, SWT.NONE);
 col0.setWidth(100);
 col0.setText("Column 0");
-col0.addS
+col0.addSe

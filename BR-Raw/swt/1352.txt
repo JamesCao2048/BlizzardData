@@ -1,7 +1,7 @@
 StyledText #setLineSpacing(int) not working in GTK
 Build ID:  I20080917-0800
 Steps To Reproduce:
-1.enter a paragraph that has multiple lines
-2.increase the spacing by calling StyledText#setLineSpacing(int)
+1. enter a paragraph that has multiple lines
+2. increase the spacing by calling StyledText#setLineSpacing(int)
 More information:
 Spacing does not work in GTK, but it seems once you have certain # of line, the spacing starts to work.

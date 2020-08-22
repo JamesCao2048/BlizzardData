@@ -2,10 +2,8 @@ Activate event not fired when ON_TOP window hidden
 This was found as part of  bug 93091 .
 The specific problem is that Activate for the Shell is not being fired because
 CompletionProposalPopup hides the java assist shell by first setting its
-visibility to false before disposing it.
-If I change it to just do the dispose
-then the case in  comment 3  works.
-Snippet is below.
+visibility to false before disposing it.  If I change it to just do the dispose
+then the case in  comment 3  works.  Snippet is below.
 public static void main(String[] args) {
 final Display display = new Display();
 Shell shell = new Shell(display);
@@ -24,8 +22,7 @@ final Shell child = new Shell(shell, SWT.ON_TOP);
 child.setBounds(100,100,100,100);
 child.addListener(SWT.MouseDown, new Listener() {
 public void handleEvent(Event event) {
-child.setVisible(false);  //
-<-- prevents Activate
+child.setVisible(false);  // <-- prevents Activate
 child.dispose();
 }
 });

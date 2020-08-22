@@ -1,25 +1,18 @@
 [Accessibility] Scrollviews ignored in accessibility hierarchy
-In SWT apps, scroll views are being ignored in an accessibility hierarchy.
-Other Cocoa apps do not ignore the scroll view.
-1.Launch Accessibility Inspector.
-2.Launch Text Edit.
-3.Move the mouse over the editor window.
-4.Look at the hierarchy in the Accessibility Inspector.
+In SWT apps, scroll views are being ignored in an accessibility hierarchy. Other Cocoa apps do not ignore the scroll view.
+1. Launch Accessibility Inspector.
+2. Launch Text Edit.
+3. Move the mouse over the editor window.
+4. Look at the hierarchy in the Accessibility Inspector.
 <AXApplication: "TextEdit">
-
 <AXWindow: "Untitled">
-
 <AXScrollArea>
-
 <AXTextArea: "...">
-5.Now, launch Eclipse and open a text editor.
-6.Mouse over editor area.
-7.Look at the hierarchy in the Accessibility Inspector.
+5. Now, launch Eclipse and open a text editor.
+6. Mouse over editor area.
+7. Look at the hierarchy in the Accessibility Inspector.
 <AXApplication: "Eclipse">
-
-<AXWindow: "Java
-- org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets...">
-
+<AXWindow: "Java - org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets...">
 <AXTextArea: " * Copyright (c) 2000, 2009 IBM Corporation and others.
 package ...">
 We jump over the AXScrollArea and go right to the AXWindow.

@@ -1,6 +1,2 @@
 Bug 278163 ChartUIExtensionsImpl.java has bug that prevents chart types being implemented in separate plugin
-The initUIChartTypeExtensions and initSeriesUIComponents methods will only accept values from the chart core code.
-Extensions provided by separate plugins are found but not used.
-Attached is a modified source file to fix it.
-The only thing the fix lacks is that new chart types from separate plugins are listed first, then the core birt charts.
-To fix this the cChartTypes vector should be sorted.
+The initUIChartTypeExtensions and initSeriesUIComponents methods will only accept values from the chart core code. Extensions provided by separate plugins are found but not used. Attached is a modified source file to fix it. The only thing the fix lacks is that new chart types from separate plugins are listed first, then the core birt charts. To fix this the cChartTypes vector should be sorted.

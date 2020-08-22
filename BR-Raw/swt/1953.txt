@@ -1,8 +1,6 @@
 Text without delimeters is not wrapped on linux. Works fine on windows.
-Run the example on windows.
-See that text is wrapped in few lines.
-Run on Linux.
-Text is displayed in one line.
+Run the example on windows. See that text is wrapped in few lines.
+Run on Linux. Text is displayed in one line.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.*;
 public class MultiText

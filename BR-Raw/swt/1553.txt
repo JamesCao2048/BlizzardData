@@ -1,6 +1,5 @@
 TVT34:TCT301: The Update Preferences link is not active in Linux
-<response_by> Mostafa Ali at 2008.05.15.10.30.05
-</response_by>
+<response_by> Mostafa Ali at 2008.05.15.10.30.05 </response_by>
 OS: Linux
 Build date: 0514
 Component/Function name: BASE MANAGE CONFIGURATION
@@ -11,8 +10,7 @@ Steps to recreate the problem:
 Start Eclipse.
 Click on Help
 Click on Software Updates
-Click on the Chck for updates..
-button
+Click on the Chck for updates..  button
 Click on the Revert Configuration button
 Clck on the Available Software tab
 Click on the Add Site buton
@@ -20,20 +18,13 @@ Click on the Update Preferences link
 Verify the panel below is correctly displayed
 Problem description:
 The "Update Preferences" link is inactive in Linux OS, but it is active in Windows OS.
-<response_by> Matthew Mazaika at 2008.05.16.16.18.02
-</response_by>
+<response_by> Matthew Mazaika at 2008.05.16.16.18.02 </response_by>
 This is a problem with "right to left" running on linux.
-running "eclipse
--dir rtl" in english on windows works properly
-running "eclipse
--dir rtl" in english on linux does not create clickable links
+running "eclipse -dir rtl" in english on windows works properly
+running "eclipse -dir rtl" in english on linux does not create clickable links
 on linux, when clicking the ANY links, they are brought into focus, but they do not go to the destination page.
 but, if you press the space bar the proper page will be opened.
 to easily see this problem go to:
-window
--> preferences
--> general
--> editors
-<response_by> Matthew Mazaika at 2008.05.16.16.18.21
-</response_by>
+window -> preferences -> general -> editors
+<response_by> Matthew Mazaika at 2008.05.16.16.18.21 </response_by>
 This article was reassigned from Category:''TVT/Testing,Inbox''.

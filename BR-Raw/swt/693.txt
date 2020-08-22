@@ -1,8 +1,7 @@
 VoiceOver broken when an Accessible object is set
 If you turn on VoiceOver in 10.6 and move the mouse over a widget with an Accessible object set for it, VoiceOver can't see the control and therefore can't read its contents.
 To reproduce:
-1.In Eclipse 3.6m6, run org.eclipse.swt.examples.accessibility.ControlsWithAccessibleNamesExample
-2.Turn on VoiceOver (cmd-F5)
-3.Move the mouse over the controls in the window.
----> Nothing happens.
-The VoiceOver focus is on the close button of the window.
+1. In Eclipse 3.6m6, run org.eclipse.swt.examples.accessibility.ControlsWithAccessibleNamesExample
+2. Turn on VoiceOver (cmd-F5)
+3. Move the mouse over the controls in the window.
+---> Nothing happens. The VoiceOver focus is on the close button of the window.

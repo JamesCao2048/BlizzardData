@@ -3,11 +3,8 @@ Build: Eclipse 3.1 I20050627-1435
 Platform: Solaris GTK
 Steps:
 - Install Eclipse 3.1 with SWT Examples
-- From Eclipse workbench, go to Window
--> Show View
--> Other ...
-- Expand SWT Examples and select SWT Example Launcher.
-Click OK.
+- From Eclipse workbench, go to Window -> Show View -> Other ...
+- Expand SWT Examples and select SWT Example Launcher. Click OK.
 - From the SWT Example Launcher view, double-click the "Standalone" folder
 (under Examples) to open it.
 The following error log is created:

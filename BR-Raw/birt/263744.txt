@@ -1,7 +1,2 @@
 Bug 263744 The same library is opened twice if you open it in Resource Explorer and in Navigator.
-description: The same library is opened twice if you open it in Resource Explorer and in Navigator.
-build id: 2.3.2.v20090205-0730 steps to reproduce: 1.New a library.
-2.Double click it in Resource Explorer.
-3.Double click it in Navigator.
-Expected result: The library will be opened only once.
-Actual result: The library is opened twice.
+description: The same library is opened twice if you open it in Resource Explorer and in Navigator. build id: 2.3.2.v20090205-0730 steps to reproduce: 1. New a library. 2. Double click it in Resource Explorer. 3. Double click it in Navigator. Expected result: The library will be opened only once. Actual result: The library is opened twice.

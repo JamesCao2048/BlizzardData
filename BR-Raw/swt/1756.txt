@@ -1,7 +1,6 @@
 [Browser] execute("window.print()") not working
 It seems that Browser.execute("window.print()") does not show the Print Dialog
-when called out of an SWT application.
-Typing "javascript:window.print()" into
+when called out of an SWT application. Typing "javascript:window.print()" into
 Safari's URL Field however is working.
 The user that reported this issue is running Safari 1.2.4.
 Ben

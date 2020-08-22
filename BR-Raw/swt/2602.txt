@@ -9,8 +9,7 @@ final Display display = new Display();
 Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 Table table = new Table(shell, SWT.NONE);
-new TableColumn(table, SWT.NONE);  //
-<---
+new TableColumn(table, SWT.NONE);  // <---
 shell.pack();
 shell.open();
 while (!shell.isDisposed()) {

@@ -1,12 +1,9 @@
 Opening a PRIMARY_MODAL dialog on top on another PRIMARY_MODAL dialog shoud not enable the parent of the first.
 When you open a PRIMARY_MODAL dialog the parent becomes inactive until the
-dialog is closed.
-However if you open another PRIMARY_MODAL dialog on top of
+dialog is closed.  However if you open another PRIMARY_MODAL dialog on top of
 the first PRIMARY_MODAL dialog the parent of the first PRIMARY_MODAL dialog
-becomes enabled.
-PRIMARY_MODAL dialogs should disable the entire ancestry of
-modal shells not just the immediate parent shell.
-This can be accomplished by
+becomes enabled.  PRIMARY_MODAL dialogs should disable the entire ancestry of
+modal shells not just the immediate parent shell.  This can be accomplished by
 changing the isActive method of Control.java to this:
 boolean isActive () {
 Shell modal = display.getModalShell ();

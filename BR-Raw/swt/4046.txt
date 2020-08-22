@@ -22,8 +22,7 @@ TableColumn column1 = new TableColumn(table, SWT.NONE);
 //column1.setText("Column 1");
 TableColumn column2 = new TableColumn(table, SWT.NONE);
 //column2.setText("Column 2");
-for (int i = 0; i
-< 100; i++) {
+for (int i = 0; i < 100; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
 item.setText(new String[] {"item 0 " + i, "item 1 " + i});
 }

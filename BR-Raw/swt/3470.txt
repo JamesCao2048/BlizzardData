@@ -1,7 +1,6 @@
 SWT_AWT:The color depth of the display changed cause NullPointerException
 The code snippet is:
-http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt
--
+http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt -
 home/snippits/snippet135.html
 when I changed the color depth, the application throw following exception:
 java.lang.NullPointerException

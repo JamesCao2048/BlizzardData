@@ -1,10 +1,7 @@
 [DND] drag/drop onto empty table generates exception in SWT
 Created  attachment 145186   [details]
 Program to demonstrate the bug
-Dropping onto an SWT Table that contains no items causes an IllegalArgument(index out of bounds) exception to be thrown.
-If the table contains one or more items then there is no exception.
-This occurs only on Mac, Windows and Linux don't have the problem.
-The exception thrown is as follows:
+Dropping onto an SWT Table that contains no items causes an IllegalArgument(index out of bounds) exception to be thrown. If the table contains one or more items then there is no exception. This occurs only on Mac, Windows and Linux don't have the problem. The exception thrown is as follows:
 Exception in thread "main" java.lang.IllegalArgumentException: Index out of bounds
 at org.eclipse.swt.SWT.error(SWT.java:3865)
 at org.eclipse.swt.SWT.error(SWT.java:3799)
@@ -29,8 +26,7 @@ at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1076)
 at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3440)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3099)
 at DNDExample.main(DNDExample.java:65)
-I've attached a small test program.
-It needs only the standard SWT and appropriate platform SWT jars to work.
+I've attached a small test program. It needs only the standard SWT and appropriate platform SWT jars to work.
 My Mac environment is
 System Version:	Mac OS X 10.5.8 (9L30)
 Kernel Version:	Darwin 9.8.0

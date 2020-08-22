@@ -3,8 +3,7 @@ If advanced graphics (GC.setAdvanced(true)) is enabled on a graphics context
 then calling GC.drawImage(Image image, int srcX, int srcY, int srcWidth, int
 srcHeight, int destX, int destY, int destWidth, int destHeight) where the
 destination width and/or height is greater than that of the source image will
-draw an image with an alpha gradient.
-Specially, the drawn image will be the
+draw an image with an alpha gradient.  Specially, the drawn image will be the
 desired color at its center but have an alpha graient applied towards its edges
 (as if the act of stretching implies an alpha shift).
 An example can be quickly cooked up using SWT image snippet #112:
@@ -47,8 +46,7 @@ display.sleep ();
 image.dispose ();
 display.dispose ();
 }
-This gradient occurs regardless of the source of the source image (e.g.
-a loaded
+This gradient occurs regardless of the source of the source image (e.g. a loaded
 image or a created image as in the snippet above).
 (This bug becomes more severe with the use of GEF as there is no way to disable
 the use of advanced graphics on a Graphics object after it has been enabled.

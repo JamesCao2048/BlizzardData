@@ -1,8 +1,2 @@
 Bug 147669 Allow editing of a report design that contains reference to non-existing ODA extension
-I occasionally need to open BIRT report designs received from the customers which contains data sources that reference proprietary ODA data sources.
-As it is right now, such report designs would fail to open in BIRT(since I don't have the ODA extension), which displays the following error message: Unable to create this part due to an internal error.
-Reason for the failure: The extension with ID 'xxxx' is not found.
-Further editting of the design with BIRT report designer is not possible.
-I would then have to open the design in a text editor and remove the offending data source/data sets before I can open them in BIRT to look at the report structure.
-You can reproduce this with the attached report design.
-It will be desirable for BIRT to be able to open such a report design to allow the user to fix the data source/data set problems within the editor.
+I occasionally need to open BIRT report designs received from the customers which contains data sources that reference proprietary ODA data sources. As it is right now, such report designs would fail to open in BIRT(since I don't have the ODA extension), which displays the following error message: Unable to create this part due to an internal error. Reason for the failure: The extension with ID 'xxxx' is not found. Further editting of the design with BIRT report designer is not possible. I would then have to open the design in a text editor and remove the offending data source/data sets before I can open them in BIRT to look at the report structure. You can reproduce this with the attached report design. It will be desirable for BIRT to be able to open such a report design to allow the user to fix the data source/data set problems within the editor.

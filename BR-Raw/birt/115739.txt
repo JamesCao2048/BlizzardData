@@ -1,4 +1,2 @@
 Bug 115739 Incorrect Data Type Getter Method may be used in retrieivng ODA output parameter value
-The ODA consumer may have incorrect ODA data type mapped to a custom ODA driver's query output parameter.
-This in turn triggers calling the wrong data type getter method (IAdvancedQuery.get<Type>).
-This bug occurs only if a custom ODA run-time driver supports * IParameterMetaData, * an executed query has output parameters, and * no BIRT data type is specified for the output parameter in a ROM DataSet definition
+The ODA consumer may have incorrect ODA data type mapped to a custom ODA driver's query output parameter. This in turn triggers calling the wrong data type getter method (IAdvancedQuery.get<Type>). This bug occurs only if a custom ODA run-time driver supports * IParameterMetaData, * an executed query has output parameters, and * no BIRT data type is specified for the output parameter in a ROM DataSet definition

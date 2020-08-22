@@ -17,8 +17,7 @@ Tree tree = new Tree(shell, SWT.BORDER);
 tree.setLinesVisible(true);
 TreeColumn column = new TreeColumn(tree, SWT.NONE);
 column.setWidth(200);
-for (int i = 0; i
-< 20; i++)
+for (int i = 0; i < 20; i++)
 {
 TreeItem item = new TreeItem(tree, SWT.NONE);
 item.setText("item " + i);
@@ -42,8 +41,6 @@ display.dispose();
 }
 }
 To reproduce the bug, execute the example and scroll the tree using the mouse
-wheel.
-All items are scrolling, but the editor (on item 6) rest in place.
-When
+wheel. All items are scrolling, but the editor (on item 6) rest in place. When
 using directly the scroll bar, it works.
 I'm using Eclipse 3.1M5a.

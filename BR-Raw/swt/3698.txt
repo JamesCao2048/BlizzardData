@@ -14,8 +14,7 @@ The problem is that the default for Windows is to use Microsoft Windows
 Picture and Fax Viewer when opening GIF files from the filesystem.
 This viewer does not support compressed GIF files.
 As a workaround for our users, you can right click on the GIF file and do Open
-With.
-If you open with Microsoft Photo Editor or Microsoft Internet Explorer,
+With. If you open with Microsoft Photo Editor or Microsoft Internet Explorer,
 the GIF file is fine.
 However, we would rather have the option added to image loader to produce an
 image in non compressed format.

@@ -1,6 +1,2 @@
 Bug 261979 Error when sorting on aggregation
-Description: When trying to sort a table using an aggregation column, the following error is returned: The following items have errors: Table (id = 1179): + Fail to compute value from sort, group or filter expression.
-A BIRT exception occurred: There are errors evaluating script "row["Aggregation"]": Target Aggregation Name does not exist (<inline>#1)..
-See next exception for more information.
-There are errors evaluating script "row["Aggregation"]": Target Aggregation Name does not exist (<inline>#1).
-Attached is a report recreating the issue.
+Description: When trying to sort a table using an aggregation column, the following error is returned: The following items have errors: Table (id = 1179): + Fail to compute value from sort, group or filter expression. A BIRT exception occurred: There are errors evaluating script "row["Aggregation"]": Target Aggregation Name does not exist (<inline>#1).. See next exception for more information. There are errors evaluating script "row["Aggregation"]": Target Aggregation Name does not exist (<inline>#1). Attached is a report recreating the issue.

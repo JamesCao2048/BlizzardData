@@ -1,15 +1,7 @@
 [Mac Cocoa] org.eclipse.swt.accessibility.Accessible.getChildrenAttribute may throw java.lang.ArrayIndexOutOfBoundsException
-The Cocoa getChildrenAttribute implementation firstly retrieves the child count via AccessibleControlListener.getChildCount, then retrieves the children via AccessibleControlListener.getChildren.
-Then it loops over the children (i.e.
-event.children) with the bound returned by AccessibleControlListener.getChildCount (i.e.
-event.detail), refer line 2058.The problem is that certain controls may return different count from getChildCount & getChildren.
-Thus the loop will throw java.lang.ArrayIndexOutOfBoundsException.
-This is a Cocoa specific issue since it's not a problem with Carbon & other platforms.
-The fix is to use the actual array length of event.children, instead of event.detail.
-i.e.:
+The Cocoa getChildrenAttribute implementation firstly retrieves the child count via AccessibleControlListener.getChildCount, then retrieves the children via AccessibleControlListener.getChildren. Then it loops over the children (i.e. event.children) with the bound returned by AccessibleControlListener.getChildCount (i.e. event.detail), refer line 2058. The problem is that certain controls may return different count from getChildCount & getChildren. Thus the loop will throw java.lang.ArrayIndexOutOfBoundsException.
+This is a Cocoa specific issue since it's not a problem with Carbon & other platforms. The fix is to use the actual array length of event.children, instead of event.detail. i.e.:
 from:
-for (int i = 0; i
-< childCount; i++)
+for (int i = 0; i < childCount; i++)
 to:
-for (int i = 0; i
-< children.length; i++)
+for (int i = 0; i < children.length; i++)

@@ -1,4 +1,2 @@
 Bug 203069 3D pie chart: cut side not displayed correctly
-In my report, i use a 3d pie chart to show how symptoms with different priority values are distributed.
-sometimes, there will be a slice represents the value of 0.if the 0 slice is on the left hand side, its cut side will be hidden by the next slice.
-However if it happens to be on the right hand side of the chart, its cut side will become visible, not hidden by the previous slice.
+In my report, i use a 3d pie chart to show how symptoms with different priority values are distributed. sometimes, there will be a slice represents the value of 0. if the 0 slice is on the left hand side, its cut side will be hidden by the next slice. However if it happens to be on the right hand side of the chart, its cut side will become visible, not hidden by the previous slice.

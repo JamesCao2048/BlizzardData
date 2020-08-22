@@ -9,9 +9,7 @@ Function=_XmDSIGetChildPosition+0x1A2
 Library=./libXm.so.2
 Current Java thread:
 at org.eclipse.swt.internal.motif.OS.XtDestroyWidget(Native Method)
-
-- locked
-<0x48554350> (a java.lang.Class)
+- locked <0x48554350> (a java.lang.Class)
 at org.eclipse.swt.widgets.Widget.destroyWidget(Widget.java:296)
 at org.eclipse.swt.widgets.Widget.dispose(Widget.java:331)
 at org.eclipse.ui.internal.PartPane.dispose(PartPane.java:205)
@@ -53,4 +51,4 @@ org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent(ActionContribu
 at
 org.eclipse.jface.action.ActionContributionItem.access$0(ActionContributionItem.java:397)
 at
-org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent(ActionContribu
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent(ActionContributi

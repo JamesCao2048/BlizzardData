@@ -1,15 +1,13 @@
 FileDialog crashes VM on invalid drive
 The FileDialog widget crashes the VM on Windows XP when the SWT.MULTI style is
 used and you type in a drive and path that is not accessible.
-The crash does not occur the first time the dialog is displayed.
-Most of the
+The crash does not occur the first time the dialog is displayed. Most of the
 time it happens on the second, third, or fourth time the dialog is displayed.
 To reproduce:
 1) Run the program below
 2) Click on the "Press me" button
 3) Type in d:temp (where d: is my DVD drive with no DVD in it)
-4) Get "Insert Disk" prompt.
-Press "Cancel" button
+4) Get "Insert Disk" prompt. Press "Cancel" button
 5) Repeat steps 1-4 several times until crash occurs
 If the style is specified only as SWT.OPEN (MULTI is left off), I cannot
 reproduce the problem.
@@ -59,33 +57,18 @@ at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:1838)
 at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1545)
 at Bogus.main(Bogus.java:40)
 Dynamic libraries:
-0x00400000
-- 0x00407000 	C:j2sdk1.4.2binjavaw.exe
-0x77F50000
-- 0x77FF7000 	C:WINDOWSSystem32ntdll.dll
-0x77E60000
-- 0x77F46000 	C:WINDOWSsystem32kernel32.dll
-0x77DD0000
-- 0x77E5D000 	C:WINDOWSsystem32ADVAPI32.dll
-0x78000000
-- 0x78086000 	C:WINDOWSsystem32RPCRT4.dll
-0x77D40000
-- 0x77DC6000 	C:WINDOWSsystem32USER32.dll
-0x77C70000
-- 0x77CB0000 	C:WINDOWSsystem32GDI32.dll
-0x77C10000
-- 0x77C63000 	C:WINDOWSsystem32MSVCRT.dll
-0x08000000
-- 0x08136000 	C:j2sdk1.4.2jrebinclientjvm.dll
-0x76B40000
-- 0x76B6C000 	C:WINDOWSSystem32WINMM.dll
-0x10000000
-- 0x10007000 	C:j2sdk1.4.2jrebinhpi.dll
-0x00830000
-- 0x0083E000 	C:j2sdk1.4.2jrebinverify.dll
-0x00840000
-- 0x00858000 	C:j2sdk1.4.2jrebinjava.dll
-0x00860000
-- 0x0086D000 	C:j2sdk1.4.2jrebinzip.dll
-0x03250000
-- 0x03297000 	C
+0x00400000 - 0x00407000 	C:j2sdk1.4.2binjavaw.exe
+0x77F50000 - 0x77FF7000 	C:WINDOWSSystem32ntdll.dll
+0x77E60000 - 0x77F46000 	C:WINDOWSsystem32kernel32.dll
+0x77DD0000 - 0x77E5D000 	C:WINDOWSsystem32ADVAPI32.dll
+0x78000000 - 0x78086000 	C:WINDOWSsystem32RPCRT4.dll
+0x77D40000 - 0x77DC6000 	C:WINDOWSsystem32USER32.dll
+0x77C70000 - 0x77CB0000 	C:WINDOWSsystem32GDI32.dll
+0x77C10000 - 0x77C63000 	C:WINDOWSsystem32MSVCRT.dll
+0x08000000 - 0x08136000 	C:j2sdk1.4.2jrebinclientjvm.dll
+0x76B40000 - 0x76B6C000 	C:WINDOWSSystem32WINMM.dll
+0x10000000 - 0x10007000 	C:j2sdk1.4.2jrebinhpi.dll
+0x00830000 - 0x0083E000 	C:j2sdk1.4.2jrebinverify.dll
+0x00840000 - 0x00858000 	C:j2sdk1.4.2jrebinjava.dll
+0x00860000 - 0x0086D000 	C:j2sdk1.4.2jrebinzip.dll
+0x03250000 - 0x03297000 	C:developmentdog

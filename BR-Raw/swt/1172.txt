@@ -5,8 +5,7 @@ Build ID: 3.5.0.v3525
 Steps To Reproduce:
 Run automated test on a SWT application on linux GTK
 They should contain posting click events.
-On every  x events 10
-< x 300 the test would hang.
+On every  x events 10 < x 300 the test would hang.
 More information:
 OS: Ubuntu 8.10
 Architecture: x86_64
@@ -15,17 +14,14 @@ Related bugs:
 https://bugs.eclipse.org/bugs/show_bug.cgi?id=259371  : Fixed
 https://bugs.eclipse.org/bugs/show_bug.cgi?id=247069  : Fixed
 The problem happens much less frequently then the problem described in bugs above.
-I am the author of the first (259371) bug.
-The problem there is fixed however now there is very similar but slightly different deadlock problem.
+I am the author of the first (259371) bug. The problem there is fixed however now there is very similar but slightly different deadlock problem.
 Previously the event loop was hanging and now Dispaly.post() method is hanging.
 The symptom:
-During the test run sometimes the test will hang.
-If mouse is moved a bit it will go on.
+During the test run sometimes the test will hang. If mouse is moved a bit it will go on.
 The problem:
 Deadlock between org.eclipse.swt.widgets.Display.post() and org.eclipse.swt.internal.gtk.OS.g_main_context_iteration() methods.
 The deadlock is on OS.lcok object.
-I attached two thread dumps that illustrates the problem.
-They are identical and are made with interval of few seconds.
+I attached two thread dumps that illustrates the problem. They are identical and are made with interval of few seconds.
 Lets look on these thread dump fragments:
 --------cut--------
 "main" prio=10 tid=0x000000004011ec00 nid=0x488a waiting on condition [0x00000000427ea000..0x00000000427edee0]
@@ -50,12 +46,8 @@ and
 "Thread-63" daemon prio=10 tid=0x00007f3db98be800 nid=0x4a10 in Object.wait() [0x000000004b7fe000..0x000000004b7ffca0]
 java.lang.Thread.State: WAITING (on object monitor)
 at java.lang.Object.wait(Native Method)
-
-- waiting on
-<0x00007f3ddcd82970> (a org.eclipse.swt.internal.Lock)
+- waiting on <0x00007f3ddcd82970> (a org.eclipse.swt.internal.Lock)
 at java.lang.Object.wait(Object.java:485)
 at org.eclipse.swt.internal.Lock.lock(Lock.java:34)
-
-- locked
-<0x00007f3ddcd82970> (a org.eclipse.swt.internal.Lock)
-at org.eclipse.swt.widgets.D
+- locked <0x00007f3ddcd82970> (a org.eclipse.swt.internal.Lock)
+at org.eclipse.swt.widgets.Displa

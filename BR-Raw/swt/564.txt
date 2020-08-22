@@ -1,13 +1,11 @@
 Checkboxes in disabled tables rendered incorrectly on Windows
 Build Identifier: 3.6.RC2
-The checkboxes in disabled tables are not rendered like normal disabled checkboxes in all Windows platforms.
-The checkboxes are functionally disabled (no checked state change possible) but they are displayed like active checkboxes.
-However, normal checkboxes that are not part of a table are rendered differently when disabled.
+The checkboxes in disabled tables are not rendered like normal disabled checkboxes in all Windows platforms. The checkboxes are functionally disabled (no checked state change possible) but they are displayed like active checkboxes. However, normal checkboxes that are not part of a table are rendered differently when disabled.
 Linux/GTK and OSX/Cocoa are ok.
 Based on the mail template app, I created a showcase app to display the differences (see attachment).
 Please see attached screen shots.
 Reproducible: Always
 Steps to Reproduce:
-1.download and import the attached project
-2.run it on windows xp/vista/7 (classic or aero mode make no difference)
-3.compare the rendering of the disabled checkboxes out and inside the table
+1. download and import the attached project
+2. run it on windows xp/vista/7 (classic or aero mode make no difference)
+3. compare the rendering of the disabled checkboxes out and inside the table

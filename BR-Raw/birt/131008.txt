@@ -1,27 +1,4 @@
 Bug 131008 Support Result Set Column Binding in Data Engine
-We will expand the concept of Data Binding to include binding of columns/expression.
-When a data set is bound to a table or data item, the user must define a set of Bound Data Columns.
-Each bound column has a name which must be unique within the binding set, a data type, and an expression which is defined based on the data sets columns and output parameters (using the familiar row and outputParams JS objects).
-In the simplest (and most common) case, a bound column is defined to map to a data set column, and has the same name as the data set column.
-The designer may also created compound bound columns with any Javascript expression, in effect creating a table-specific computed column.
-Bound Data Columns act as a bridge between report elements and data set data.
-Report elements (including all report element scripts) only have access to bound data columns.
-They can no longer directly access data set columns/output params like they do today.
-Bound Data Columns are referenced in report element expressions using the row Javascript variable.
-Its important to note that the row variable now has two different meanings depending on the context.
-When used in a report element expression (including filter expression and sort/group keys for a table), row[X] refers to the value of a bound expression named X.
-When used in a data sets expression (such as data set filter expression, data set computed column, data set event scripts), row[X] refers to a data set column named X.
-row[X] also refers to a data set column when it is used to define Bound Data Columns expressions.
-When editing an expression for a report element, the Expression Builder no longer shows available data set columns.
-Instead it shows all available bound data columns.
-Example: A data set with 4 columns LASTNAME, FIRSTNAME and ADDRESS and an output parameter EMP_COUNT is bound to a table.
-The designer wants a table that lists the full names of all employees with a header listing the total count.
-He decides that the table only needs access to the LASTNAME and FIRSTNAME columns and the EMP_COUNT parameter.
-He will then create the following column binding definition for the table.
-Note that the 4th column, FULLNAME is a computed column.
-ColumnName Expression Data Type LASTNAME row[LASTNAME] String FIRSTNAME row[FIRSTNAME] String EMP_COUNT outputParams[EMP_COUNT] Integer FULLNAME row[FIRSTNAME] + + row[LASTNAME] String When the designer then goes into the table to edit expressions for data items, the Expression Builder will show 4 available columns: LASTNAME, FIRSTNAME, EMP_COUNT and FULLNAME.
-It will not show ADDRESS.
-Computed bound expressions may use aggregates; their aggregate level however is limited to the entire list.
-Implications Using an index to access a column value (e.g., row[2]) will be deprecated (its use has always been discouraged anyway).
-For backward compatibility, row[n] will be interpreted to mean getting the nth column in the binding.
-This should work nicely for old report design (
+We will expand the concept of Data Binding to include binding of columns/expression. When a data set is bound to a table or data item, the user must define a set of Bound Data Columns. Each bound column has a name which must be unique within the binding set, a data type, and an expression which is defined based on the data sets columns and output parameters (using the familiar row and outputParams JS objects). In the simplest (and most common) case, a bound column is defined to map to a data set column, and has the same name as the data set column. The designer may also created compound bound columns with any Javascript expression, in effect creating a table-specific computed column. Bound Data Columns act as a bridge between report elements and data set data. Report elements (including all report element scripts) only have access to bound data columns. They can no longer directly access data set columns/output params like they do today. Bound Data Columns are referenced in report elem
+ent expressions using the row Javascript variable. Its important to note that the row variable now has two different meanings depending on the context. When used in a report element expression (including filter expression and sort/group keys for a table), row[X] refers to the value of a bound expression named X. When used in a data sets expression (such as data set filter expression, data set computed column, data set event scripts), row[X] refers to a data set column named X. row[X] also refers to a data set column when it is used to define Bound Data Columns expressions. When editing an expression for a report element, the Expression Builder no longer shows available data set columns. Instead it shows all available bound data columns. Example: A data set with 4 columns LASTNAME, FIRSTNAME and ADDRESS and an output parameter EMP_COUNT is bound to a table. The designer wants a table that lists the full names of all employees with a header listing the total count. He decides that the ta
+ble only needs access to the LASTNAME and FIRSTNAME columns and the EMP_COUNT parameter. He will then create the following column binding definition for the table. Note that the 4th column, FULLNAME is a computed column. ColumnName Expression Data Type LASTNAME row[LASTNAME] String FIRSTNAME row[FIRSTNAME] String EMP_COUNT outputParams[EMP_COUNT] Integer FULLNAME row[FIRSTNAME] + + row[LASTNAME] String When the designer then goes into the table to edit expressions for data items, the Expression Builder will show 4 available columns: LASTNAME, FIRSTNAME, EMP_COUNT and FULLNAME. It will not show ADDRESS. Computed bound expressions may use aggregates; their aggregate level however is limited to the entire list. Implications Using an index to access a column value (e.g., row[2]) will be deprecated (its use has always been discouraged anyway). For backward compatibility, row[n] will be interpreted to mean getting the nth column in the binding. This should work nicely for old report design

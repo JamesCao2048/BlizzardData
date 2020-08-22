@@ -1,6 +1,2 @@
 Bug 123840 Incorrect use of static fields in NEvaluator and FilterPassController
-Data Engine classes org.eclipse.birt.data.engine.script.NEvaluator and FilterPassController (used for top-n and bottom-n filter process) use static class fields to store proessing data.
-This is not multi-thread safe.
-If there are concurrent requests running in the same JVM (even if they use different instances of DataEngine), data corruption will occur since multiple requests may get/set the static fields at the same time.
-These classes should keep all per-request data in instance fields.
-Each report query need to have its own instance.
+Data Engine classes org.eclipse.birt.data.engine.script.NEvaluator and FilterPassController (used for top-n and bottom-n filter process) use static class fields to store proessing data. This is not multi-thread safe. If there are concurrent requests running in the same JVM (even if they use different instances of DataEngine), data corruption will occur since multiple requests may get/set the static fields at the same time. These classes should keep all per-request data in instance fields. Each report query need to have its own instance.

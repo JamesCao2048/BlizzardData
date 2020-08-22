@@ -1,7 +1,6 @@
 NPE in Link traversal code
 Nightly Build: N20100505-2000 was broken (I suspect) by
-Bug 291749
-- [Widgets] Links in Link widget not selectable via keyboard (no focus ring)
+Bug 291749  - [Widgets] Links in Link widget not selectable via keyboard (no focus ring)
 The fix access the offset array without checking if it is null,
 the array can be null when no text is set in the link.
 java.lang.NullPointerException

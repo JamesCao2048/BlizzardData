@@ -1,8 +1,5 @@
 Issue with background images and CLabels
-CLabels (and potentially other controls) have adverse effects on the painting of background images.
-When a control with a background image and a CLabel as a child is partially obscured by another shell huge amounts of cheese is generated wherever the shell travels.
-If the CLabel is changed to a label then this is not observed.
-Simple test case:
+CLabels (and potentially other controls) have adverse effects on the painting of background images.  When a control with a background image and a CLabel as a child is partially obscured by another shell huge amounts of cheese is generated wherever the shell travels.  If the CLabel is changed to a label then this is not observed.  Simple test case:
 package foo;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;

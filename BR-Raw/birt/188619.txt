@@ -1,7 +1,2 @@
 Bug 188619 GUIException when change parameter from radio to text box[0705]
-Description: GUIException when change parameter from radio to text box Build number:2.2.0.v20070523 Steps to reproduce: 1.New a report parameter, integer, radio button, add value 1 and set it as default value.
-2.Save the report.
-3.Edit the parameter, change display type from radio button to text box.
-4.click OK.
-Expected result: No exception and change is accepted.
-Actual result: Widget is disposed Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.2.0.v20070523-0630 Error Code:Error.GUIException.invokedBySWTException Error Message:Widget is disposed
+Description: GUIException when change parameter from radio to text box Build number:2.2.0.v20070523 Steps to reproduce: 1. New a report parameter, integer, radio button, add value 1 and set it as default value. 2. Save the report. 3. Edit the parameter, change display type from radio button to text box. 4. click OK. Expected result: No exception and change is accepted. Actual result: Widget is disposed Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.2.0.v20070523-0630 Error Code:Error.GUIException.invokedBySWTException Error Message:Widget is disposed

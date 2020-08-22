@@ -1,3 +1,2 @@
 Bug 101810 "between" and "not between" filter operator on date time can't work well
-description: "between" and "not between" operator on date time can't work well.
-steps to reproduce: 1.new a JDBC data set 2.set filter on date time with operator "between" or "not between" actual result: 1.with "between" operator on date time, no data returned in preview page 2.with "not between" operator on date time, wrong data returned expected result: "between" and "not between" operator on date time can work well
+description: "between" and "not between" operator on date time can't work well. steps to reproduce: 1. new a JDBC data set 2. set filter on date time with operator "between" or "not between" actual result: 1. with "between" operator on date time, no data returned in preview page 2. with "not between" operator on date time, wrong data returned expected result: "between" and "not between" operator on date time can work well

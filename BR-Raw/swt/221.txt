@@ -4,10 +4,9 @@ Java: IBM JRE 7
 OS: Windows 7 Japanese, SJIS, AIX 7.1 Japanese SJIS
 Reproducible: Always
 Steps to Reproduce:
-1.Create a new Java class.
-2.Create a String variable, eg.
-String example="";
-3.Copy the following text into the quotes, c:銇枫倣銇愩倝銈program
+1. Create a new Java class.
+2. Create a String variable, eg. String example="";
+3. Copy the following text into the quotes, c:銇枫倣銇愩倝銈program
 Expected results,
 The result should look like the one in correctbackslash37.png (Eclipse 3.7)
 Actual result,

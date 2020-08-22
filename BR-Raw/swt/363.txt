@@ -10,8 +10,7 @@ Steps to Reproduce:
 Since item G and item F are not a descendant of item C, they should stay selected
 - Actual result:
 Item F is deselected
---- Code Snippet
----
+--- Code Snippet ---
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Display;

@@ -1,9 +1,2 @@
 Bug 187775 Dataset parameter binding is lost after adding new column to query
-Build ID: I20070323-1616 Steps To Reproduce: 1.Create new report with query "select customername from customers where customer like ?" and create a database parameter.
-2.Create report parameter.
-3.Bind database parameter to report parameter.
-4.Run report.
-Ok.
-5.Add new column "customernumber" to select clause of query.
-6.Check dataset parameter binding: database parameter has no binding anymore.
-BIRT 2.2M6
+Build ID: I20070323-1616 Steps To Reproduce: 1. Create new report with query "select customername from customers where customer like ?" and create a database parameter. 2. Create report parameter. 3. Bind database parameter to report parameter. 4. Run report. Ok. 5. Add new column "customernumber" to select clause of query. 6. Check dataset parameter binding: database parameter has no binding anymore. BIRT 2.2M6

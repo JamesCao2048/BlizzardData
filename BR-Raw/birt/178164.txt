@@ -1,5 +1,2 @@
 Bug 178164 Use IEngineTask.status constants and remove unnecessary status variables in EngineTask.
-1)Remove following redundant variables in EngineTask used for status info.
-protected final int RUNNING_STATUS_START = 0; protected final int RUNNING_STATUS_RUNNING = 1; protected final int RUNNING_STATUS_STOP = 2; EngineTask already has access to constants declared in IEngineTask.
-Use those instead.
-2)Remove the unused errorHandlingOption in EngineTask.
+1)Remove following redundant variables in EngineTask used for status info. protected final int RUNNING_STATUS_START = 0; protected final int RUNNING_STATUS_RUNNING = 1; protected final int RUNNING_STATUS_STOP = 2; EngineTask already has access to constants declared in IEngineTask. Use those instead. 2)Remove the unused errorHandlingOption in EngineTask.

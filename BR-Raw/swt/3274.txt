@@ -2,5 +2,4 @@ TreeViewer's Tree gets two selectionChanged events when it gets focus
 This is similar to bugs 13171 and 13498.
 Make a TreeViewer on a dialog in Linux GTK and give any widget except the Tree
 widget the initial focus.
-Change the focus to the Tree widget.
-I get two selectionChanged events.
+Change the focus to the Tree widget.  I get two selectionChanged events.

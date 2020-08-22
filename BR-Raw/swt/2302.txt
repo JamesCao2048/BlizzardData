@@ -1,7 +1,5 @@
 Quick-Typehierarchy's treeviewer cannot be collapsed with mouse
-When opening a quick typehierarchy (Ctrl-T) on a type with several levels (e.g.
-java.awt.Window), the embedded treeviewer shows the usual handles for closing and opening subtrees.
-Clicking on such a handle opens the class next to the handle instead of opening/closing the subtree.
+When opening a quick typehierarchy (Ctrl-T) on a type with several levels (e.g. java.awt.Window), the embedded treeviewer shows the usual handles for closing and opening subtrees. Clicking on such a handle opens the class next to the handle instead of opening/closing the subtree.
 Steps to reproduce:
 - open java.awt.Window in an editor
 - select 'Window' class name

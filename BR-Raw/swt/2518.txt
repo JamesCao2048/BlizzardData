@@ -1,7 +1,6 @@
 Tree.clearAll flashes (redraws whole tree) while Table.clearAll doesn't.
 3.2M5 WinXP
-The Tree flashes at each clearAll call, but the Table doesn't.
-Is there any way to fix the full redraw flashing on the virtual Tree?
+The Tree flashes at each clearAll call, but the Table doesn't.  Is there any way to fix the full redraw flashing on the virtual Tree?
 public static void main(String[] args) {
 final Display display = new Display();
 final Shell shell = new Shell(display);
@@ -36,8 +35,7 @@ String text = null;
 if (parentItem == null) {
 text = "node " + tree.indexOf(item);
 } else {
-text = parentItem.getText() + "
-- " + parentItem.indexOf(item);
+text = parentItem.getText() + " - " + parentItem.indexOf(item);
 }
 item.setText(text);
 }
@@ -52,8 +50,7 @@ System.err.println("clear");
 table.clearAll();
 tree.clearAll(true);
 /*tableItem[] items = table.getItems();
-for (int i =0; i
-< items.length; ++i)
+for (int i =0; i < items.length; ++i)
 items[i].setExpanded(true);
 System.err.println("SELECTED: " + tree.getSelectionCount());
 */

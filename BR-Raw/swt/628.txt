@@ -1,11 +1,9 @@
 Need command-line option to turn off IA2
 Created  attachment 168760   [details]
 patch to add command-line argument to turn off IA2 support
-I have discovered several situations where an older version of a screen reader was coded to an older (or even temporary) version of the IA2 spec.
-This causes the older screen reader to crash, or to crash Eclipse.
+I have discovered several situations where an older version of a screen reader was coded to an older (or even temporary) version of the IA2 spec. This causes the older screen reader to crash, or to crash Eclipse.
 In one case, I was able to fix the crash with a work-around, only to discover that the older screen reader doesn't read StyledText any more (it used to)because for some reason it is turning off its OSM, and its incomplete IA2 implementation doesn't work with StyledText.
 In another case, I am not even able to work around the crash.
 In all cases, if I pretend that we do not support IA2, the older screen readers work happily and well, just like they used to.
 The attached patch looks at a command-line argument that can be set as follows if a user needs to use an older screen reader that seems to be crashing or having IA2 incompatibility problems:
-
 -Dorg.eclipse.swt.accessibility.UseIA2=false

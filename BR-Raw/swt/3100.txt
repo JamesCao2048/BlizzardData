@@ -1,7 +1,6 @@
 Control.redraw() invalidates children on Linux-GTK
 The code for redraw() on Linux-GTK calls redrawWidget (..., true) which causes
-the children to be repainted as well.
-This behaviour is not consistent with
+the children to be repainted as well.  This behaviour is not consistent with
 Windows, and seems to be in error:
 public void redraw () {
 checkWidget();

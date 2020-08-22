@@ -1,6 +1,3 @@
 [Linux] DateTime does not render correctly values < 10.
-[Linux] DateTime does not render correctly values
-< 10.
-For example, typically hours/minutes/seconds less than 10 are rendered as two digits (e.g.
-10:01 AM), which is the way they are rendered on Windows.
-However, on Linux, they are rendered as single numbers (see screen capture).
+[Linux] DateTime does not render correctly values < 10.
+For example, typically hours/minutes/seconds less than 10 are rendered as two digits (e.g. 10:01 AM), which is the way they are rendered on Windows.  However, on Linux, they are rendered as single numbers (see screen capture).

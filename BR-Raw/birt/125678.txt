@@ -1,5 +1,2 @@
 Bug 125678 The original chart instance in report design handle is not modified after running the report.
-The original chart instance in report design handle is not modified after running the report.
-In my application, I get the design time instance of chart, and then I call method which runs the report.
-I expect chart bound with data after running the report.
-The same functionality was working fine (I mean: BIRT was returning chart bound with data after running report) till BIRT2.0M3.It's not working as expected in BIRT RC and 2.0 version.
+The original chart instance in report design handle is not modified after running the report. In my application, I get the design time instance of chart, and then I call method which runs the report. I expect chart bound with data after running the report. The same functionality was working fine (I mean: BIRT was returning chart bound with data after running report) till BIRT2.0M3. It's not working as expected in BIRT RC and 2.0 version.

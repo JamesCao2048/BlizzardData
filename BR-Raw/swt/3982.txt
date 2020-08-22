@@ -1,6 +1,5 @@
 SWT_AWT does not compile under JDK 1.4
 It has a reference to sun.awt.DrawingSurface among other things that does not
-compile under JDK 1.4 because the class has been removed.
-The work around for
+compile under JDK 1.4 because the class has been removed.  The work around for
 people attempting to do a source build of Eclipse is to delete the source file
 SWT_AWT.java.

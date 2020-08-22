@@ -1,6 +1,2 @@
 Bug 201235 Display text from multi-select parameter is wrong.[0705][0002]
-Description: Display text from multi-select parameter is wrong.
-Build number:2.2.1.v20070827 Steps to reproduce: 1.1.New a report parameter p1, listbox.
-2.Add values like DisplayText/Value v1/1 v2/2.3.Insert a data item to Layout, Input expression as params["p1"].displayText[0] 4.Preview and select one value, click OK.
-Expected result: For multi-select parameter, return null for display text or some correct value.
-Actual result: Display "v" Error log:n/a
+Description: Display text from multi-select parameter is wrong. Build number:2.2.1.v20070827 Steps to reproduce: 1. 1. New a report parameter p1, listbox. 2. Add values like DisplayText/Value v1/1 v2/2. 3. Insert a data item to Layout, Input expression as params["p1"].displayText[0] 4. Preview and select one value, click OK. Expected result: For multi-select parameter, return null for display text or some correct value. Actual result: Display "v" Error log:n/a

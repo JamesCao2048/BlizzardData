@@ -1,8 +1,2 @@
 Bug 227271 The layout sequence is reversed when drag and drop a cube to report layout
-Description: There is a cube, with group1 and group2 dimension, and field1 and field2 measures.
-Pull the cube to the layout, the sequence is reversed.
-See the layout display:
---------------------------- group2|group1|field2|field1
---------------------------- User wants to get the sequence as it displays on data explorer
---------------------------- group1|group2|field1|field2
----------------------------
+Description: There is a cube, with group1 and group2 dimension, and field1 and field2 measures. Pull the cube to the layout, the sequence is reversed. See the layout display: --------------------------- group2|group1|field2|field1 --------------------------- User wants to get the sequence as it displays on data explorer --------------------------- group1|group2|field1|field2 ---------------------------

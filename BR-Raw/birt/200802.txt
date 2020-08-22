@@ -1,6 +1,2 @@
 Bug 200802 Warning in log when preview a correct report in xls.[1203]
-Description: Warning in log when preview a correct report in xls.
-Build number:2.2.1.v200708220927 Steps to reproduce: 1.Preview attached report in xls.
-2.See report engine log file.
-Expected result: No errors and warnings.
-Actual result: Aug 22, 2007 7:15:56 PM org.eclipse.birt.report.engine.emitter.excel.DataCache getData WARNING: Row is not correct Error log:n/a
+Description: Warning in log when preview a correct report in xls. Build number:2.2.1.v200708220927 Steps to reproduce: 1. Preview attached report in xls. 2. See report engine log file. Expected result: No errors and warnings. Actual result: Aug 22, 2007 7:15:56 PM org.eclipse.birt.report.engine.emitter.excel.DataCache getData WARNING: Row is not correct Error log:n/a

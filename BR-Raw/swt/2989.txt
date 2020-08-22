@@ -13,8 +13,7 @@ System.out.println(event);
 });
 Thread thread = new Thread() {
 public void run() {
-for (int a = 0; a
-< 100; a++) {
+for (int a = 0; a < 100; a++) {
 try {
 sleep(100);
 } catch (InterruptedException e) {

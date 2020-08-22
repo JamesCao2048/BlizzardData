@@ -1,22 +1,21 @@
 Loss of the modal context
 When a thread is suspended and the debug view is refreshed, Eclipse is no more
 modal.
-1.create the following compilation unit :
+1. create the following compilation unit :
 public class TestLineBreakpoint {
 public static void main(String[] args) {
 int i= 0;
 while (1 == 1) {
-i++;  //
-<-- conditionnal breakpoint here
+i++;  // <-- conditionnal breakpoint here
 }
 }
 public static void foo() {
 System.out.println("test");
 }
 }
-2.Set "foo; return i == 100" as condition for the breakpoint.
-3.Launch the program in debug mode.
-4.While the program is running, open the property page for the breakpoint.
+2. Set "foo; return i == 100" as condition for the breakpoint.
+3. Launch the program in debug mode.
+4. While the program is running, open the property page for the breakpoint.
 Wait for the thread to stop.
 When the thread stop, Eclipse is no more modal, the breakpoint property page is
 still open, but the main window is also enable, all action can be performed,

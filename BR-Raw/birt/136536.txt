@@ -1,7 +1,2 @@
 Bug 136536 Warning message should be provided before converting old report design
-Currently if you open the old report design in designer, it will be converted and saved silently without any warning message.
-Since the conversion is not reversible, user will not be able to open that design again in old designer.
-This may be unexpected if user isn't aware of this behavior in advance.
-Normally, in designer a warning message should pop up to ask user if he want to upgrade the design, if not, designer will refuse to open it.
-Or at least not save the design until user chooses "save" explicitly.
-For engine at runtime, it can supress the warning message and upgrade automatically since it wont' change the persistent data.
+Currently if you open the old report design in designer, it will be converted and saved silently without any warning message. Since the conversion is not reversible, user will not be able to open that design again in old designer. This may be unexpected if user isn't aware of this behavior in advance. Normally, in designer a warning message should pop up to ask user if he want to upgrade the design, if not, designer will refuse to open it. Or at least not save the design until user chooses "save" explicitly. For engine at runtime, it can supress the warning message and upgrade automatically since it wont' change the persistent data.

@@ -7,16 +7,14 @@ In a StyledText widget with SWT.WRAP style, this does not work.
 When handling mouse move events, the StyledText discards all
 cases in which the horizontal mouse position lies outside its
 client area while the vertical coordinate translates to the
-same line the caret is currently on.
-This means that if the
+same line the caret is currently on. This means that if the
 mouse movement is too quick (resulting in not receiving enough
 mouse move events to cover all the caret positions up to the
 left(right)most one), the selection will remain incomplete.
 See the attached screenshot for some visual clarification.
 Ignoring events outside the client area is apparently done in
 order not to confuse the (horizontal) auto-scroll mechanism
-that may also kick in on mouse movements.
-However, when the
+that may also kick in on mouse movements. However, when the
 SWT.WRAP style is set, there is no horizontal auto-scrolling.
 Therefore, the fix is to introduce a check to see if the
 word-wrap option is turned on and allow extending the selection

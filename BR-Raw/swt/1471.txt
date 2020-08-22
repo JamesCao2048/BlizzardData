@@ -1,5 +1,4 @@
 SWT.getPlatform() should list all valid values
 3.4.
-Currently SWT.getPlatform() only gives examples of possible values.
-As a client I should know all possible values.
+Currently SWT.getPlatform() only gives examples of possible values. As a client I should know all possible values.
 Look for example at  bug 242742  which suggests to add a check for "cocoa" but I have no clue that such a value is indeed valid or that it even existed.

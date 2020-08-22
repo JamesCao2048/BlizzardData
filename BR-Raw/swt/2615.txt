@@ -1,13 +1,9 @@
 disappearing checkbox with Windows XP look and feel
 I have enabled the Windows XP look and feel with the instructions at
-http://www.eclipse.org/swt/faq.php#xpthemes .
-I am using jdk 1.4.2_09. Whenever
+http://www.eclipse.org/swt/faq.php#xpthemes .  I am using jdk 1.4.2_09.  Whenever
 I have a checkbox in a list, the checkbox disappears when selected (and
-reappears when deselected).
-The checkbox text is always displayed correctly.
-The checkbox can be toggled on/off while it is invisible.
-I do not see this
+reappears when deselected).  The checkbox text is always displayed correctly.
+The checkbox can be toggled on/off while it is invisible.  I do not see this
 behavior in the absence of a manifest file.
-I see this behavior in the standard eclipse code in several places.
-The most
+I see this behavior in the standard eclipse code in several places.  The most
 obvious is the ProjectProperties->Java Build Path->Order and Export tab.

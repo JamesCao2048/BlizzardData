@@ -1,15 +1,12 @@
 CDDS_POSTPAINT event in org.eclipse.swt.widgets.Tree hangs Eclipse because of a loop inside.
 Build Identifier: M20100120-0800
-Test case is very specific.
-It's reproducible under next configuration:
+Test case is very specific. It's reproducible under next configuration:
 1) WinXP 64, Windows Server 64.
 2) eclipse.buildId=M20100120-0800
 eclipse.commands=-os
 win32
-
 -ws
 win32
-
 -arch
 x86
 3) dtp-1.7.2RC2-201001290500
@@ -19,15 +16,12 @@ x86
 7) xsd-runtime-2.5.0
 Reproducible: Always
 Steps to Reproduce:
-1.Run Eclipse with configuration described in details.
-2.Extract attach archive and import 4 plug-ins from there to Eclipse workspace
-3.Run new Eclipse configuration
-4.Create web project and open jsp, html, xhtml page with "Visual Editor" ("Visual Editor" is editor from attached plug-ins.
-It's only initialize SWT Mozilla Browser with xulrunner specified in org.mozilla.xulrunner.win32.win32.x86)
-5.Open properties view
-6.Select any file file from Project Explorer but do not open it.
-7.Select any property of this file in properties view
-8.Set focus to source/visual part of opened editor
-P.
-S.
-See attached flash video for clarification.
+1. Run Eclipse with configuration described in details.
+2. Extract attach archive and import 4 plug-ins from there to Eclipse workspace
+3. Run new Eclipse configuration
+4. Create web project and open jsp, html, xhtml page with "Visual Editor" ("Visual Editor" is editor from attached plug-ins. It's only initialize SWT Mozilla Browser with xulrunner specified in org.mozilla.xulrunner.win32.win32.x86)
+5. Open properties view
+6. Select any file file from Project Explorer but do not open it.
+7. Select any property of this file in properties view
+8. Set focus to source/visual part of opened editor
+P. S. See attached flash video for clarification.

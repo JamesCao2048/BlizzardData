@@ -1,7 +1,6 @@
 Gtk Label widget has focus decoration drawn too big
 Under Gtk, GC.drawFocus() draws a decoration that is one pixel
-too wide and one pixel too high on Linux Gtk.
-This is particularly noticeable
+too wide and one pixel too high on Linux Gtk. This is particularly noticeable
 for the Label widget, since the bottom and right edge of the decoration are
 not visible.
 

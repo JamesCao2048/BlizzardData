@@ -27,7 +27,5 @@ display.sleep();
 display.dispose();
 }
 }
-It seems if parent's backgroundImage and mode are set after label's setForeground, things will be ok.
-But this approach is unreliable when UI is complex, i.e.
-in some cases, a control inherit an image not from it's own parent.
+It seems if parent's backgroundImage and mode are set after label's setForeground, things will be ok. But this approach is unreliable when UI is complex, i.e. in some cases, a control inherit an image not from it's own parent.
 In windows, setBackgroundImage and setBackgroundMode work fine when children setForeground.

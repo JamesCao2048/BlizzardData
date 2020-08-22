@@ -1,11 +1,9 @@
 Useless default size for Text on Cocoa
 Build Identifier: M20090917-0800
-Text.computeSize(SWT.DEFAULT, SWT.DEFAULT) doesn't return a reasonable value on Cocoa.
-On Windows and Linux I get a width of 64+ pixels.
-On Cocoa I get 4 pixels.
+Text.computeSize(SWT.DEFAULT, SWT.DEFAULT) doesn't return a reasonable value on Cocoa. On Windows and Linux I get a width of 64+ pixels. On Cocoa I get 4 pixels.
 I'm on a MacBook4,1 with Mac OS X 10.5.8.
 Same behavior with current 3.6 HEAD
 Reproducible: Always
 Steps to Reproduce:
-1.run test case
-2.text field is only a few pixels wide
+1. run test case
+2. text field is only a few pixels wide

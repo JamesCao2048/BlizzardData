@@ -1,8 +1,2 @@
 Bug 117380 SVG Graphic Context does not support drawString
-The SVG Graphics2D class does not support the drawString method.
-This is necessary to render charts.
-A renderer exception is thrown when trying to render the test case stock chart.
-I will attach the test case that causes this problem.
-I have a fix in hand and tested the fix and it works.
-I want to know if I should check this fix in 2.0.0 M3 or for the 2.0.0 Final driver.
-I think we should check this in the M3 driver since it won't cause any regression problems.
+The SVG Graphics2D class does not support the drawString method. This is necessary to render charts. A renderer exception is thrown when trying to render the test case stock chart. I will attach the test case that causes this problem. I have a fix in hand and tested the fix and it works. I want to know if I should check this fix in 2.0.0 M3 or for the 2.0.0 Final driver. I think we should check this in the M3 driver since it won't cause any regression problems.

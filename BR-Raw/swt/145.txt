@@ -1,7 +1,5 @@
 Displaying of dialogs slow when XML editors were opened
-On Linux GTK/64bit, opening of the "Find" dialog (Ctrl+F) sometimes is very slow, i.e.
-multiple seconds, with delay increasing over time of running the same Eclipse process.
-When taking threaddumps meanwhile, the following shows up:
+On Linux GTK/64bit, opening of the "Find" dialog (Ctrl+F) sometimes is very slow, i.e. multiple seconds, with delay increasing over time of running the same Eclipse process. When taking threaddumps meanwhile, the following shows up:
 "main" prio=10 tid=0x00007f6d78009800 nid=0x50e0 runnable [0x00007f6d7fab2000]
 java.lang.Thread.State: RUNNABLE
 at org.eclipse.swt.internal.gtk.OS._gdk_window_at_pointer(Native Method)

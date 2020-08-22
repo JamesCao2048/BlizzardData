@@ -1,4 +1,2 @@
 Bug 222925 Grandtotal modification will delete axis chart in xtab
-There is a xtab with chart in measure detail cell, and with grand total in the same direction.
-When you remove grand total, it will delete axis chart.
-In this case, updateView won't be invoked, so chart can't add the axis chart back as other cases.
+There is a xtab with chart in measure detail cell, and with grand total in the same direction. When you remove grand total, it will delete axis chart. In this case, updateView won't be invoked, so chart can't add the axis chart back as other cases.

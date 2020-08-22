@@ -1,6 +1,5 @@
 StyledText - Scrollwheel event interferes with last caret placement
-Styled text remembers the last horizontal offset of the caret in a line.
-If
+Styled text remembers the last horizontal offset of the caret in a line.  If
 you are at the end of a really long line, and you press DOWN to a short line,
 then UP, the caret's placement is recalled and it is at the end of the line
 again.

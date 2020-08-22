@@ -1,13 +1,10 @@
 [browser]browser.execute() fails when Acrobat Reader v7 is displayed in browser
-I have a pdf document which I am displaying in the browser.
-Then, to print the
+I have a pdf document which I am displaying in the browser. Then, to print the
 contents of the browser I do
 browser.execute("window.print()");
 The above works fine for Acrobat Reader v5, but throws a NullPointerException
-for Acrobat Reader v7.After debugging, I found that it cannot find the value
-of "parentWindow" for some reason.
-Therefore, not only printing, but ANY
+for Acrobat Reader v7. After debugging, I found that it cannot find the value
+of "parentWindow" for some reason. Therefore, not only printing, but ANY
 javascript passed in to execute method will throw a NullPointerException.
 Thanx,
-
 - Kalman

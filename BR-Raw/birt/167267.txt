@@ -1,4 +1,2 @@
 Bug 167267 getParameterDisplayText does not work on MasterPage in PDF
-getParameterDisplayText does not seem to work when used on MasterPage.
-This problem seems to be limited to ReportViewer and PDF format.
-Table from my testing Deployed to Tomcat View Report in Web Viewer View Report as PDF Format HTML OK OK N/A PDF FAIL FAIL OK Incidentally getParameterDisplayText works fine in all of the above cases if used in footer of table in the report body.
+getParameterDisplayText does not seem to work when used on MasterPage. This problem seems to be limited to ReportViewer and PDF format. Table from my testing Deployed to Tomcat View Report in Web Viewer View Report as PDF Format HTML OK OK N/A PDF FAIL FAIL OK Incidentally getParameterDisplayText works fine in all of the above cases if used in footer of table in the report body.

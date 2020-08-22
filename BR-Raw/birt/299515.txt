@@ -1,13 +1,3 @@
 Bug 299515 org.mozilla.javascript.Context class does not get initialized if BIRT is the first to load it
-Build Identifier: BIRT Runtime 2.5.1 (don't know where build ID is accessible) We are getting an issue with mozilla rhino classes not getting initialized properly with BIRT.
-If BIRT is started before any other code accesses Rhino classes then the problem occurs.
-If code other than BIRT accesses Rhino classes first, then the problem does not occur.
-The Context class is not fully resolved.
-Accessing static members that should have values return null.
-OSGILauncher.java has a workaround for classpath issues in Weblogic.
-This workaround is contributing to the issue, but doesn't appear to be the cause.
-If the workaround is removed or changed to initialize the classes in addition to loading them, then the issue doesn't occur.
-JVM: Java(TM) SE Runtime Environment (build 1.6.0_14-b08) server / client I'll attach a newsgroup conversation with Jason Weathersby that has additional information.
-This can be worked around by initializing the three Rhino classes that BIRT loads in OSGILauncher before BIRT is started by the webapp.
-Reproducible: Always Steps to Reproduce: 1.Start BIRT via org.eclipse.birt.core.framework.Platform.startup(config); 2.System.out.println("Context.emptyArgs
--> " + org.mozilla.javascript.Context.emptyArgs); 3.Expected to print an object array, instead it prints null for "emtptyArgs"
+Build Identifier: BIRT Runtime 2.5.1 (don't know where build ID is accessible) We are getting an issue with mozilla rhino classes not getting initialized properly with BIRT. If BIRT is started before any other code accesses Rhino classes then the problem occurs. If code other than BIRT accesses Rhino classes first, then the problem does not occur. The Context class is not fully resolved. Accessing static members that should have values return null. OSGILauncher.java has a workaround for classpath issues in Weblogic. This workaround is contributing to the issue, but doesn't appear to be the cause. If the workaround is removed or changed to initialize the classes in addition to loading them, then the issue doesn't occur. JVM: Java(TM) SE Runtime Environment (build 1.6.0_14-b08) server / client I'll attach a newsgroup conversation with Jason Weathersby that has additional information. This can be worked around by initializing the three Rhino classes that BIRT loads in OSGILauncher before
+BIRT is started by the webapp. Reproducible: Always Steps to Reproduce: 1. Start BIRT via org.eclipse.birt.core.framework.Platform.startup(config); 2. System.out.println("Context.emptyArgs -> " + org.mozilla.javascript.Context.emptyArgs); 3. Expected to print an object array, instead it prints null for "emtptyArgs"

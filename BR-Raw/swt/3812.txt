@@ -9,21 +9,20 @@ Summary: DBCS: Perspective change caused core dump after adding DBCS project
 to the workspace
 Description:
 Steps to recreate problem:
-1.Create a project using DBCS characters (銇傘亜銇嗐亪銇(u3042u3044u3046u3048
+1. Create a project using DBCS characters (銇傘亜銇嗐亪銇(u3042u3044u3046u3048
 u304A))
-2.Right-click the project and select Team
--> Share project...
-3.Select the CVS repository
-4.Select the "Use project name as module name" and Finish
-5.Select the project at the Synchonize view
-6.Right-click on the project and select "Add Version Control"
-7.Right-click on the project and select "Commit"
-8.Right-click on the project and select "Delete" (Select "also delete
+2. Right-click the project and select Team -> Share project...
+3. Select the CVS repository
+4. Select the "Use project name as module name" and Finish
+5. Select the project at the Synchonize view
+6. Right-click on the project and select "Add Version Control"
+7. Right-click on the project and select "Commit"
+8. Right-click on the project and select "Delete" (Select "also delete
 contents under /workspace folder name")
-9.Change the perspective to CVS perspective
-10.Expand the repository and HEAD
-11.Right-click on the DBCS project and Select "Check Out As Project"
-12.Click "Resource Perspective" icon at the shortcut bar.
+9. Change the perspective to CVS perspective
+10. Expand the repository and HEAD
+11. Right-click on the DBCS project and Select "Check Out As Project"
+12. Click "Resource Perspective" icon at the shortcut bar.
 <<Error>>
 After step 12, the workbench core dump.
 Please refer the attachment (cvs_defect.zip)

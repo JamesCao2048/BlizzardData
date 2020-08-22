@@ -1,11 +1,7 @@
 Embedded SWT in Swing (in SWT) breaks between 3.6.x and 3.7
 Created  attachment 198556   [details]
 Snippet to reproduce the issue
-I know it's a strange combination.
-I have an RCP application that uses Swing components for its editors.
-The Swing component now requires a web browser to be embedded in it.
-This means that we have an SWT shell with an AWT frame inside of it and a different SWT shell inside of the AWT frame.
-This all works fine (better than expected) in SWT 3.6.x.
+I know it's a strange combination.  I have an RCP application that uses Swing components for its editors.  The Swing component now requires a web browser to be embedded in it.  This means that we have an SWT shell with an AWT frame inside of it and a different SWT shell inside of the AWT frame.  This all works fine (better than expected) in SWT 3.6.x.
 I migrated my code to 3.7 and now get non-stop StackOverlowErrors when I try to run this project.
 StackTrace:
 Exception in thread "main" java.lang.StackOverflowError
@@ -20,10 +16,7 @@ at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:2092)
 at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:2255)
 at org.eclipse.swt.widgets.Display.windowProc(Display.java:5532)
 at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
-I have created a snippet that reproduces this issue.
-The code runs in SWT 3.6.2 (you launch the shell, resize it, and press the button to create the SWT components).
-If you press the button in 3.7, you will get a stack overflow.
-If you press the button in 3.6 and resize the shell, you'll see an embedded SWT component with a red background.
+I have created a snippet that reproduces this issue.  The code runs in SWT 3.6.2 (you launch the shell, resize it, and press the button to create the SWT components).  If you press the button in 3.7, you will get a stack overflow.  If you press the button in 3.6 and resize the shell, you'll see an embedded SWT component with a red background.
 java version "1.6.0_24"
 Java(TM) SE Runtime Environment (build 1.6.0_24-b07-334-10M3326)
 Java HotSpot(TM) 64-Bit Server VM (build 19.1-b02-334, mixed mode)

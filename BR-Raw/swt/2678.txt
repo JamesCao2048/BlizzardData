@@ -10,13 +10,10 @@ The following code generates an run-time error as below:
 #    http://java.sun.com/webapps/bugreport/crash.jsp
 #
 
-Action to do: expand/collapse root-item 0.This happens only if you use the
-branch indicator (left).
-This cause the TreeSelection Events will be fired.
-
+Action to do: expand/collapse root-item 0. This happens only if you use the
+branch indicator (left). This cause the TreeSelection Events will be fired.
 ===== Here starts the code ================
-// based on an example from "the def.
-guide to swt and jface"
+// based on an example from "the def. guide to swt and jface"
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;

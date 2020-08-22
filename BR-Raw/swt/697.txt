@@ -1,12 +1,8 @@
 Mouse cursor disappears when Combo.setListVisible(true) is called
-When I call Combo.setListVisible(true), the mouse disappears.
-This makes it difficult to select something in the drop down list.
+When I call Combo.setListVisible(true), the mouse disappears. This makes it difficult to select something in the drop down list.
 STEPS:
-
 - run attached code
-
 - select the text area in the Combo and type
-
 - the mouse disappears when the drop down list is visible
 Expect: The mouse to be visible so that we select the items in the drop down.
 I use the code below to show the difference in behaviour between Combo and CCombo.
@@ -24,8 +20,7 @@ GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 shell.setLayoutData(data);
 
 final CCombo cCombo = new CCombo(shell, SWT.DROP_DOWN | SWT.BORDER);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 cCombo.add("CCombo " + i);
 }
 cCombo.select(0);
@@ -36,8 +31,7 @@ cCombo.setListVisible(true);
 }
 });
 final Combo combo = new Combo(shell, SWT.DROP_DOWN | SWT.BORDER);
-for (int i = 0; i
-< 10; i++) {
+for (int i = 0; i < 10; i++) {
 combo.add("Combo " + i);
 }
 combo.select(0);

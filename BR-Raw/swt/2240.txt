@@ -4,8 +4,7 @@ Hat/1.0.5-0.1.el4 SeaMonkey/1.0.5
 Red Hat Enterprise Linux WS release 4 (Nahant Update 4)
 Linux 2.6.9-42.0.2.EL #1 Thu Aug 17 17:36:53 EDT 2006 i686 i686
 i386 GNU/Linux
-The SWT browser freezes when data is appended (AppendToStream) in the Bowser.setText() method.
-Here is the code to reproduce it (notice that attached file is need to run this test-code):
+The SWT browser freezes when data is appended (AppendToStream) in the Bowser.setText() method.  Here is the code to reproduce it (notice that attached file is need to run this test-code):
 import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.graphics.*;

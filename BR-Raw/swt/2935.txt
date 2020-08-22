@@ -1,9 +1,7 @@
 Text in table not updated on clear
 I can reproduce this on GTK+ 2.4.10 and 2.4.13, but not with 2.2.4 or 2.6.4.
 However, I have been unable to reproduce it in a simple GTK+ application.
-Run the following example.
-Click the button.
-The text does not update until
+Run the following example.  Click the button.  The text does not update until
 the mouse hovers over the table items.
 public static boolean newText = false;
 public static void main(String[] args) {
@@ -19,8 +17,7 @@ table.addListener(SWT.SetData, new Listener() {
 public void handleEvent(Event event) {
 TableItem titem = (TableItem) event.item;
 int index = table.indexOf(titem);
-titem.setText((newText ?
-"New Text " : "Old Text ") + index);
+titem.setText((newText ? "New Text " : "Old Text ") + index);
 }
 });
 table.setItemCount(50);

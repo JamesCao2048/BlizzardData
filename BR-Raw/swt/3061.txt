@@ -1,11 +1,8 @@
 TitleAreaDialog doesn't dismiss on <ENTER> if contains Combo(SWT.SIMPLE)
 A TitleAreaDialog that contains a Combo in SWT.SIMPLE mode no longer responds
 to pressing ENTER by activating the default OK button and closing the dialog.
-When the test code below is run, click the button "Press Me".
-On the dialog
-invoked, press
-<ENTER>.
-The dialog should close, but doesn't.
+When the test code below is run, click the button "Press Me". On the dialog
+invoked, press <ENTER>. The dialog should close, but doesn't.
 Using 3.1M4.
 -------8<------
 package com.yoogalu.priceservice.client.ui;

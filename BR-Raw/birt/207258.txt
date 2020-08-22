@@ -1,4 +1,2 @@
 Bug 207258 Error exception message in type validation of multi-value parameters
-If there is any exception in type validation of multi-value parameter, we will always get following error message: The type of parameter "NewParameter" is expected as "Object[]", not "Array"..
-This message is incorrect.
-Please replace the "Array" with the correct value type.
+If there is any exception in type validation of multi-value parameter, we will always get following error message: The type of parameter "NewParameter" is expected as "Object[]", not "Array".. This message is incorrect. Please replace the "Array" with the correct value type.

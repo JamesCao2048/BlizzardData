@@ -1,8 +1,7 @@
 Pixel corruption involving SWT.DOUBLE_BUFFERED, GC.setAdvanced() and TextLayout
 SWT-win32, v3232 with GDI+ DLL
 - Run the test case below
-- Drag the shell off the screen, then back
--> pixel corruption occurs
+- Drag the shell off the screen, then back -> pixel corruption occurs
 ---
 import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.*;
@@ -29,9 +28,7 @@ Point size = cnv.getSize();
 e.gc.setAdvanced(true);
 
 e.gc.setBackground(display.getSystemColor(SWT.COLOR_RED));
-e.gc.fillRectangle(10, 10, size.x
-- 20, size.y
-- 20);
+e.gc.fillRectangle(10, 10, size.x - 20, size.y - 20);
 
 layout.draw(e.gc, 10, 10);
 }

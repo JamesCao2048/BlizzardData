@@ -1,8 +1,6 @@
 [Leopard] errors logged to console by CGPathGetCurrentPoint
-Leopard is logging an error to the console when CGPathGetCurrentPoint is called on an empty path.
-This does not happen on Tiger.
-Error logged:
-<Error>: CGPathGetCurrentPoint: path 0x866600: no current point.
+Leopard is logging an error to the console when CGPathGetCurrentPoint is called on an empty path. This does not happen on Tiger.
+Error logged: <Error>: CGPathGetCurrentPoint: path 0x866600: no current point.
 Test Case:
 shell.addListener(SWT.Paint, new Listener() {
 public void handleEvent(Event event) {

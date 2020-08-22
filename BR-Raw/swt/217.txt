@@ -3,8 +3,8 @@ Created  attachment 215860   [details]
 screenshot showing the bug
 4.2 Build id: I20120517-1915
 Steps to reproduce:
-1.Open Run configuration dialog
-2.Create a new configuration under eclipse application
-3.In the "Launch with:" combo box select "plugins selected below only".
+1. Open Run configuration dialog
+2. Create a new configuration under eclipse application
+3. In the "Launch with:" combo box select "plugins selected below only".
 The plugin list is not shown in the table below.
 Same problem happens if I select "features selected below".

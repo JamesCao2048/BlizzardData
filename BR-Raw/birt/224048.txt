@@ -1,6 +1,2 @@
 Bug 224048 Support to get measure filter
-Description: This is a enhancement.
-Currently, the crosstab has two kinds of filter: Level filter and measure filter.
-We can only get the level filter by using iLevel.getFilterConditions().
-But if a user wants to define a measure filter or get and modify a measure filter in some processes, he cannot do that.
-I suggest to add this kind of functions in IMeasure.
+Description: This is a enhancement. Currently, the crosstab has two kinds of filter: Level filter and measure filter. We can only get the level filter by using iLevel.getFilterConditions(). But if a user wants to define a measure filter or get and modify a measure filter in some processes, he cannot do that. I suggest to add this kind of functions in IMeasure.

@@ -1,14 +1,11 @@
 TableColumn.pack() doesn't decrease column's width on GTK
 When the text of the TableItem is changed, I call TableColumn.pack() to resize
-the column to contain whole text of all items.
-On GTK, when text is larger then
-the previous one, column is extended (with both pack() and without pack()).
-This
+the column to contain whole text of all items. On GTK, when text is larger then
+the previous one, column is extended (with both pack() and without pack()). This
 is OK.
 When I set the text to the smaller one again and call to pack(), the columns
 width remains unchanged (should be decreased I thing, because on MS Windows it
-works).
-I can solve it by computing the string sizes and then call to column's
+works). I can solve it by computing the string sizes and then call to column's
 setWidth() method, but I thing it's not clear.
 Try this:
 import org.eclipse.swt.*;
@@ -56,16 +53,12 @@ shell.setDefaultButton(b);
 FormData fd1 = new FormData();
 fd1.top = new FormAttachment(0, 5);
 fd1.left = new FormAttachment(0, 5);
-fd1.right = new FormAttachment(100,
--5);
-fd1.bottom = new FormAttachment(b,
--5);
+fd1.right = new FormAttachment(100, -5);
+fd1.bottom = new FormAttachment(b, -5);
 table.setLayoutData(fd1);
 FormData fd2 = new FormData();
-fd2.bottom = new FormAttachment(100,
--5);
-fd2.right = new FormAttachment(100,
--5);
+fd2.bottom = new FormAttachment(100, -5);
+fd2.right = new FormAttachment(100, -5);
 b.setLayoutData(fd2);
 shell.setSize(400, 400);
 shell.open();

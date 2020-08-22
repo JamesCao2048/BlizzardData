@@ -73,30 +73,3 @@ Aspect.aspectOf().ajc$before$Aspect$1$36f01b1c(ajc$tjp_1);
 $i0 = 13;
 try
 {
-Aspect.aspectOf().ajc$before$Aspect$1$36f01b1c(ajc$tjp_0);
-x = $i0;
-}
-catch (Throwable $r30)
-{
-/*** LJH insert here *****/
-if ($r30 instanceof ExceptionInIntializerError) //***
-throw($r30); //***
-/***********/
-r31 = $r30;
-Aspect.aspectOf().ajc$after$Aspect$2$36f01b1c(ajc$tjp_0);
-throw r31;
-}
-Aspect.aspectOf().ajc$after$Aspect$2$36f01b1c(ajc$tjp_0);
-}
-catch (Throwable $r36)
-{
-/*** LJH insert here *****/
-if ($r36 instanceof ExceptionInIntializerError) //***
-throw($r36); //***
-/***********/
-r2 = $r36;
-Aspect.aspectOf().ajc$after$Aspect$2$36f01b1c(ajc$tjp_1);
-throw r2;
-}
-Aspect.aspectOf().ajc$after$Aspect$2$36f01b1c(ajc$tjp_1);
-}

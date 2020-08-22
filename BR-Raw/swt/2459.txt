@@ -1,4 +1,2 @@
 Some font names on OS X have null (0) characters between every character
-The names of some fonts returned by the call Display.getFontList(null, true) have a null (0) character between every character.
-Most fonts are correct, and I cannot find any pattern in the incorrect fonts.
-The problem fonts are standard ones installed on OS X 10.4.3.
+The names of some fonts returned by the call Display.getFontList(null, true) have a null (0) character between every character.  Most fonts are correct, and I cannot find any pattern in the incorrect fonts.  The problem fonts are standard ones installed on OS X 10.4.3.

@@ -6,8 +6,7 @@ Text text1 = new Text(shell, SWT.BORDER);
 text1.setFocus();
 text1.setBounds(10, 10, 64, 16);
 Test case is attached.
-Run the test case and click on "Click here!" label.
-See the sysout.
+Run the test case and click on "Click here!" label. See the sysout.
 Expected:
 "Text1: focus gained."
 Actual:

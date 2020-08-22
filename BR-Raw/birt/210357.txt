@@ -1,4 +1,2 @@
 Bug 210357 Can not get sorting key if xtab has a count aggregation binding[1102]
-Description: Can not get sorting key if xtab has a count aggregation binding.
-The filter got the same issue.
-Build number: 2.3.0.v20071120-0800 Steps to reproduce: 1, New a Cube 2, New a crosstab using the cube 3, Add a aggregation binding on crosstab and select the function to COUNT, leave the datafield empty 4, after step3, goto sort page and add a sorting Expected result: User can get the sorting keys Actual result: The sorting key list is empty and the filter has the same issue
+Description: Can not get sorting key if xtab has a count aggregation binding. The filter got the same issue. Build number: 2.3.0.v20071120-0800 Steps to reproduce: 1, New a Cube 2, New a crosstab using the cube 3, Add a aggregation binding on crosstab and select the function to COUNT, leave the datafield empty 4, after step3, goto sort page and add a sorting Expected result: User can get the sorting keys Actual result: The sorting key list is empty and the filter has the same issue

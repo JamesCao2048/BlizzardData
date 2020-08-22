@@ -1,6 +1,2 @@
 Bug 183591 ResultSets opened during querying metadata are not closed - it can cause exception on Oracle
-Build ID: 2.2.0.v20070329 Steps To Reproduce: 1.Create report with multiple stored procedures and oracle connection.
-2.Generate report and check number of opened cursors on Oracle side.
-3.If number of opened cursor exceeds Oracle limit, exception is thrown.
-More information: ResultSets opened in org.eclipse.birt.report.data.oda.jdbc.CallStatement
-- methods createSchemaList and getCallableParamMetaData are not closed.
+Build ID: 2.2.0.v20070329 Steps To Reproduce: 1.Create report with multiple stored procedures and oracle connection. 2.Generate report and check number of opened cursors on Oracle side. 3.If number of opened cursor exceeds Oracle limit, exception is thrown. More information: ResultSets opened in org.eclipse.birt.report.data.oda.jdbc.CallStatement - methods createSchemaList and getCallableParamMetaData are not closed.

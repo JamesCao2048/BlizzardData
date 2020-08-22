@@ -1,10 +1,5 @@
 (Mac) FontDialog does not return color
-The FontDialog has a panel to choose a color.
-The chosen color is not returned via getRGB().
-Looking at the source code, the rgb-field is never touched besides the setter.
-Nevertheless the color is somehow set by platform-means.
-That's why the snippet below works using text-widget.
-It does not work using StyledText.
+The FontDialog has a panel to choose a color. The chosen color is not returned via getRGB(). Looking at the source code, the rgb-field is never touched besides the setter. Nevertheless the color is somehow set by platform-means. That's why the snippet below works using text-widget. It does not work using StyledText.
 (snippet from  http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/FontDialogExample.htm )
 public class FontDialogExample {
 Display d;

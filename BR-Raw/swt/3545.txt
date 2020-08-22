@@ -1,11 +1,9 @@
 StyledText - StringIndexOutOfBoundsException in StyledTextRenderer
 200308281813
-When hovering over the quick diff ruler to display the diff hover.
-Not
+When hovering over the quick diff ruler to display the diff hover. Not
 reproducable, but consistently failing for a certain hover (I suspect an empty
 hover message, but not sure).
-java.lang.StringIndexOutOfBoundsException: String index out of range:
--1
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
 at java.lang.Throwable.<init>(Throwable.java)
 at java.lang.Throwable.<init>(Throwable.java)
 at
@@ -49,4 +47,4 @@ at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2036)
 at org.eclipse.ui.internal.Workbench.run(Workbench.java:2019)
 at
 org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858)
-at org.eclipse.core.boot.BootLoader.run(Bo
+at org.eclipse.core.boot.BootLoader.run(Boo

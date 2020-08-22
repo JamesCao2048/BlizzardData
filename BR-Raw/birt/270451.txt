@@ -1,7 +1,2 @@
 Bug 270451 Error accessing decimal field using JDBC and Sqlbase database
-Hi.
-I'm tryng to read data from a Sqlbase database (Unify) using JDBC.
-I experienced a problem when any field in a table is decimal.
-The following message appears: + Cannot get the decimal value from column: 3.Cannot get BigDecimal value in the result set.
-SQL error #1: Unsupported method I run the same SQL istruction within a simple Java program using the same JDBC driver and the same database and it works.
-Can anybody help me?
+Hi. I'm tryng to read data from a Sqlbase database (Unify) using JDBC. I experienced a problem when any field in a table is decimal. The following message appears: + Cannot get the decimal value from column: 3. Cannot get BigDecimal value in the result set. SQL error #1: Unsupported method I run the same SQL istruction within a simple Java program using the same JDBC driver and the same database and it works. Can anybody help me?

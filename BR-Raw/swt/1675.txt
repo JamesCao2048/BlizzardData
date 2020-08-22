@@ -3,6 +3,6 @@ Created  attachment 93221   [details]
 Shows several bugs, including the button.print(gc) that does not work
 Build ID: 3.4M5
 Steps To Reproduce:
-1.Create a button.
-2.Call button.print(gc).
-3.It returns true, but nothing is printed.
+1. Create a button.
+2. Call button.print(gc).
+3. It returns true, but nothing is printed.

@@ -8,14 +8,12 @@ I found in OleClientSite.doVerb(int):
 int result = objIOleObject.DoVerb(verb, null, iOleClientSite.getAddress(),
 0, handle, null);
 the last parameter lprcPosRect is null, but on MSDN
-( http://msdn.microsoft.com/library/default.asp?url=/library/en
--
+( http://msdn.microsoft.com/library/default.asp?url=/library/en -
 us/com/html/fabd6a0a-7b0c-4c99-af22-8b117addd5f7.asp):
 Containers MUST pass valid hwndParent and lprcPosRect parameters to
 IOleObject::DoVerb.
 lprcPosRect
 [in] Pointer to the RECT structure containing the coordinates, in pixels, that
-define an object's bounding rectangle in hwndParent.
-This and hwndParent
+define an object's bounding rectangle in hwndParent. This and hwndParent
 together enable opening multimedia objects for playback but not for editing.
 If I change the code and pass a vaild RECT, all works fine.

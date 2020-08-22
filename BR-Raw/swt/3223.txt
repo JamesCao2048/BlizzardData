@@ -3,12 +3,9 @@ I tried the following line of code and was expecting a null value to be
 returned, but it returned a program named "invalid_extension" instead:
 Program.findProgram(".invalid_extension")
 This only happens on the Mac.
-I looked at the Mac implementation of the "Program#getProgram" static method.
-It
+I looked at the Mac implementation of the "Program#getProgram" static method. It
 is designed to return null only if the extension passed is null or if it is an
 empty string, but not if the extension is not valid (does not have a program
-associated with it).
-Is that intentional?
-The API for "findProgram" states that
+associated with it). Is that intentional? The API for "findProgram" states that
 it will return the program or null, so I would expect null to also be returned
 for an extension that does not have a program associated with it.

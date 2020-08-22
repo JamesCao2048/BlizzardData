@@ -3,20 +3,14 @@
 - observed on 64-bit Vista, does not happen on same machine with 32-bit eclipse
 - have not tried it on 64-bit Windows 7 or XP
 - open any file in eclipse
-- invoke File
--> Print...
+- invoke File -> Print...
 - check "Print to File", press Print
-- enter any name, OK
---> file is written, fine
-- invoke File
--> Print...
-again
+- enter any name, OK --> file is written, fine
+- invoke File -> Print... again
 - "Print to File" is already checked, so just press Print
 - crash usually happens here
-
 -> occasionally it can take a third round for the crash to occur
-I've repeated this several times but only one hs_* file was written out, I'm not sure why.
-Its content is:
+I've repeated this several times but only one hs_* file was written out, I'm not sure why.  Its content is:
 #
 # An unexpected error has been detected by HotSpot Virtual Machine:
 #
@@ -26,8 +20,7 @@ Its content is:
 # Problematic frame:
 # C  [WINSPOOL.DRV+0x23eee]
 #
----------------  T H R E A D
----------------
+---------------  T H R E A D  ---------------
 Current thread (0x0000000006cde6a0):  JavaThread "Printing" [_thread_in_native, id=3268]
 siginfo: ExceptionCode=0xc0000005, reading address 0x000000000e2605a8
 Registers:
@@ -63,6 +56,5 @@ j  org.eclipse.swt.printing.Printer.destroy()V+13
 j  org.eclipse.swt.graphics.Device.dispose()V+54
 j  org.eclipse.jface.text.TextViewer$11.run()V+13
 v  ~StubRoutines::call_stub
----------------  P R O C E S S
----------------
-Java Threads: (
+---------------  P R O C E S S  ---------------
+Java Threads: ( => cu

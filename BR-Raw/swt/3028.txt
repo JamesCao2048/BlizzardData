@@ -4,30 +4,20 @@ When I was going through the Eclipse 3.1M5a examples (eclipse-examples-
 SWT.ABORT, or SWT.IGNORE individually for MessageBox always create the OK
 button on the dialog box.
 Steps to reproduce:
-1.Install Eclipse 3.1M5a on Solaris 9.
-2.Download Eclipse 3.1M5a Examples and install them.
-3.Launch Eclipse
-4.Select 鈥淲indow
--> Show View
--> Other鈥︹.
-This will launch the 鈥淪how View鈥
+1. Install Eclipse 3.1M5a on Solaris 9.
+2. Download Eclipse 3.1M5a Examples and install them.
+3. Launch Eclipse
+4. Select 鈥淲indow -> Show View -> Other鈥︹. This will launch the 鈥淪how View鈥
 Dialog.
-5.From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples
--> SWT Controls鈥.
-This
+5. From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples -> SWT Controls鈥. This
 will display 鈥淪WT Controls鈥 View.
-6.Double click the SWT Controls tab and expand the view.
-7.From SWT Controls View, select 鈥淒ialog鈥 tab.
-and select the MessageBox.
-8.Select either SWT.RETRY, SWT.ABORT, or SWT.IGNORE option and click
-the "Create Dialog" button.
-The "Title" dialog box comes up with an OK button.
+6. Double click the SWT Controls tab and expand the view.
+7. From SWT Controls View, select 鈥淒ialog鈥 tab. and select the MessageBox.
+8. Select either SWT.RETRY, SWT.ABORT, or SWT.IGNORE option and click
+the "Create Dialog" button. The "Title" dialog box comes up with an OK button.
 It should have the button according to the SWT option (RETRY, ABORT, or IGNORE).
-9.Select 2 options from SWT.RETRY, SWT.ABORT, or SWT.IGNORE.
-Again, the dialog
-box comes up with only 1 OK button.
-In this case, I think 2 buttons should come
+9. Select 2 options from SWT.RETRY, SWT.ABORT, or SWT.IGNORE. Again, the dialog
+box comes up with only 1 OK button. In this case, I think 2 buttons should come
 up.
-10.Select all 3 options from SWT.RETRY, SWT.ABORT, and SWT.IGNORE.
-The dialog
+10. Select all 3 options from SWT.RETRY, SWT.ABORT, and SWT.IGNORE. The dialog
 box comes up correctly with all 3 buttons (RETRY, ABORT, and IGNORE).

@@ -23,11 +23,7 @@ import org.eclipse.swt.widgets.TreeItem;
 * Created on 14.03.2007
 *
 * To change the template for this generated file go to
-* Window
-- Preferences
-- Java
-- Code Generation
-- Code and Comments
+* Window - Preferences - Java - Code Generation - Code and Comments
 */
 public class Main {
 public static void main(String[] args) {
@@ -59,8 +55,7 @@ col4.setWidth(100);
 TreeColumn col5 = new TreeColumn(t, SWT.NONE);
 col5.setText("");
 col5.setWidth(20);
-for (int i = 0; i
-< 100; i++) {
+for (int i = 0; i < 100; i++) {
 TreeItem treeItem = new TreeItem(t, SWT.NONE);
 treeItem.setText(0, "Hello World");
 treeItem.setData(new Integer(i));
@@ -80,4 +75,4 @@ GC gc = event.gc;
 Integer data = (Integer) event.item.getData();
 if (data.intValue() == 0) {
 Rectangle area = scrollable.getClientArea();
-Rectangle re
+Rectangle rect =

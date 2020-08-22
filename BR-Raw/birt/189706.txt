@@ -1,3 +1,2 @@
 Bug 189706 Enhance computed column aggregation function handling in UI.
-Due to the issue discussed in 189705, current computed column aggregation builder in data set editor has bugs to extend: 1.When new a computed column, the aggregation argument field cannot be correctly set.
-2.The argument field cannot be correct grayed out when user select a aggregation function without arguments 3.The available aggregation function list is incomprehensive 4.Some aggregation function cannot be set to model(say, weightedAve).
+Due to the issue discussed in 189705, current computed column aggregation builder in data set editor has bugs to extend: 1.When new a computed column, the aggregation argument field cannot be correctly set. 2.The argument field cannot be correct grayed out when user select a aggregation function without arguments 3.The available aggregation function list is incomprehensive 4.Some aggregation function cannot be set to model(say, weightedAve).

@@ -3,14 +3,12 @@ Created  attachment 202568   [details]
 Screenshot of blank data in virtual tree produced by snippet.
 Build id: I20110613-1736 (Linux 32 bit, libgtk2.0-0: 2.20.1-0ubuntu2)
 It seems that when tree elements are collapsed in a virtual tree and the scroll position is reset in the viewport, the items that became visible do not trigger an update, leaving them blank.
-
 To reproduce the problem:
 1) Run the snippet below.
 2) Scroll to bottom of tree.
 3) Press refresh button
 4) Press the collapse button.
-This snippet is a modified version of the virtual tree swt snippet.
-The refresh and collapse buttons perform the equivalent operations as the jface TreeViewer ones.
+This snippet is a modified version of the virtual tree swt snippet.  The refresh and collapse buttons perform the equivalent operations as the jface TreeViewer ones.
 public static void main(String[] args) {
 Display display = new Display();
 final Shell shell = new Shell(display);
@@ -25,8 +23,7 @@ String text = null;
 if (parentItem == null) {
 text = "node "+tree.indexOf(item);
 } else {
-text = parentItem.getText()+"
-- "+parentItem.indexOf(item);
+text = parentItem.getText()+" - "+parentItem.indexOf(item);
 }
 item.setText(text);
 item.setItemCount(10);
@@ -74,8 +71,7 @@ setExpanded(tree, item, false);
 }
 Item[] children = getChildren(widget);
 if (children != null) {
-for (int i = 0; i
-< children.length; i++) {
+for (int i = 0; i < children.length; i++) {
 collapse(tree, children[i]);
 }
 }

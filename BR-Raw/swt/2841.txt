@@ -1,12 +1,9 @@
 Table not shown when there are no rows initially
 I am using eclipse 3.1m7 on several platforms (linux, windows and aix) and it
-only has this problem when I run on AIX ( AIX 5.1, with Motif, java 1.4.2).
-The
+only has this problem when I run on AIX ( AIX 5.1, with Motif, java 1.4.2).  The
 problem was not there on 3.1m6 or 3.0.1
 If I start running with no TableItems, the table does not show the column header
-text (even though they were set to be visible.
-Also, later when TableItems are
+text (even though they were set to be visible.  Also, later when TableItems are
 added, they do not show up in the table.
-
 I have a work-around by making sure that at least 1 TableItem exists, Even if
 the text in the cells are just empty Strings)

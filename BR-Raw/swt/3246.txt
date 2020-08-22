@@ -1,7 +1,6 @@
 Inspect32 does not show name for CCombo
 Accessibility problem.
-CCombo widget does not return accessible "Name" property.
-The Inspect32
+CCombo widget does not return accessible "Name" property.  The Inspect32
 shows "none".
 Here is a sample code;
 private static int STYLE = SWT.FLAT;
@@ -36,10 +35,8 @@ display.dispose();
 }
 How to reproduce;
 1, Start Inspect32.exe.
-2, Run above example.
-A shell with Label and CCombo is shown.
+2, Run above example.  A shell with Label and CCombo is shown.
 3, Click the CCombo.
-The Inspect32 shows "none" for "Name" property.
-<<< ERROR
+The Inspect32 shows "none" for "Name" property. <<< ERROR
 Expected result;
 The Inspect32 shows "Combobox test" for "Name" property.

@@ -1,10 +1,2 @@
 Bug 172622 Library and folder display order issue in Library Explorer.[01]
-Description Library and folder display order issue in Library Explorer.
-Build number:2.2.0.v20070130 Steps to reproduce: 1.New a.rptlibrary, c.rptlibrary.
-2.Create a folder "b".
-3.Set Resource Folder in Preferences as default.
-4.Check Library Explorer.
-Expected result: Folder and file should be ordered alphabetically separatelly.
-Actual result: Display order is a.rptlibrary, c, and then b.rptlibrary.
-Folder displays between library files.
-Error log:N/A
+Description Library and folder display order issue in Library Explorer. Build number:2.2.0.v20070130 Steps to reproduce: 1. New a.rptlibrary, c.rptlibrary. 2. Create a folder "b". 3. Set Resource Folder in Preferences as default. 4. Check Library Explorer. Expected result: Folder and file should be ordered alphabetically separatelly. Actual result: Display order is a.rptlibrary, c, and then b.rptlibrary. Folder displays between library files. Error log:N/A

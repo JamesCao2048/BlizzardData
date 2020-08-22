@@ -3,6 +3,5 @@ Created  attachment 188048   [details]
 Solution-patch
 When i use ScrollBar.getVisible() under gtk, it returns true even if the scroll bar is not visible.
 This happens cause getVisible() doesn't check if the scroll bar is visible, getVisible() check if the policy is not GTK_POLICY_NEVER.
-The problem is that the policy can be GTK_POLICY_AUTOMATIC and the scroll bar can be hidden.
-In this reason, it returns true instead of false.
+The problem is that the policy can be GTK_POLICY_AUTOMATIC and the scroll bar can be hidden. In this reason, it returns true instead of false.
 Please see my patch which solves the problem.

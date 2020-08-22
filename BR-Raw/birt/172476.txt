@@ -1,4 +1,2 @@
 Bug 172476 <VALUE-OF format=html> doesn't check the format="html" if there is no quotes
-Description:
-<VALUE-OF format html> doesn't check the format="html" if there is no quotes Build number: 2.2.0.v20070131-0700 Steps to reproduce: 1, New a text(html/dynamic)in layout 2, Input
-<VALUE-OF format=html>"aaa"</VALUE-OF> 3, Preview the results Expected result: invalid html format message pops up Actual result: aaatm Error log:
+Description: <VALUE-OF format html> doesn't check the format="html" if there is no quotes Build number: 2.2.0.v20070131-0700 Steps to reproduce: 1, New a text(html/dynamic)in layout 2, Input <VALUE-OF format=html>"aaa"</VALUE-OF> 3, Preview the results Expected result: invalid html format message pops up Actual result: aaatm Error log:

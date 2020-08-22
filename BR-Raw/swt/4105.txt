@@ -4,8 +4,7 @@ Redhat 7.2, GTK2, KDE 2.2-10
 (GTK only)
 See the SWT example ControlExample under the "Sash" tab.
 If you click on the sash and drag the mouse then release, it doesn't do anything
-except draw another sash (well, a gray bar) where you released.
-But then if you
+except draw another sash (well, a gray bar) where you released. But then if you
 click on that new sash then it resizes and refreshes everything properly.
 I couldn't find any sashes in eclipse to confirm this so it's possible that the
 problem is the example itself.

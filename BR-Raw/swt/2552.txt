@@ -10,8 +10,7 @@ In an app that uses SWT, which works fine on all other platforms, the x86_64 ver
 # Problematic frame:
 # C  [libc.so.6+0x740f5]  memmove+0x35
 #
----------------  T H R E A D
----------------
+---------------  T H R E A D  ---------------
 Current thread (0x00000000401156e0):  JavaThread "main" [_thread_in_native, id=8352]
 siginfo:si_signo=11, si_errno=0, si_code=1, si_addr=0x00000000fff90f54
 Registers:

@@ -1,5 +1,4 @@
 Context menu position in StyledText should be below caret
-The context menu in StyledText should be opened below the caret.
-The current solution overlaps the text after the caret in most cases (when the menu opens downwards).
+The context menu in StyledText should be opened below the caret. The current solution overlaps the text after the caret in most cases (when the menu opens downwards).
 org.eclipse.ui.actions.QuickMenuCreator#computeMenuLocation(StyledText) fixes this via:
 result.y += text.getLineHeight(text.getCaretOffset());

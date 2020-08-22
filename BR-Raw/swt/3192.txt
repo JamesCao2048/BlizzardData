@@ -6,13 +6,10 @@ image of biggest item in column==null
 columwidth>headerwidth
 and some other item in this column has an image
 Reasoning: If the columnwidth is bigger than the header width, then the column
-width is used as result.
-Only if the column header has an image, then the width
-for the image is added to the column width.
-But this addition must also be done
+width is used as result. Only if the column header has an image, then the width
+for the image is added to the column width. But this addition must also be done
 if at least one of the items in the column has an image.
-The attached screenshot shows the first table column of a table tree.
-The upper
+The attached screenshot shows the first table column of a table tree. The upper
 part was taken after calling pack() for the column, the lower part was taken
 after packing and incrementing the column width by the width of the image in the
 first row.

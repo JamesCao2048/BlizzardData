@@ -1,10 +1,8 @@
 Textlayout does not render multiline text correctly
 When I run code with the following snippet, the first time when Chinese
-characters appears, TextLayout renders that line very well.
-However for the
+characters appears, TextLayout renders that line very well. However for the
 subsequent lines, Textlayout just shows boxes.
-It is not a font problem, Textlayout can show the first line perfectly.
-All
+It is not a font problem, Textlayout can show the first line perfectly. All
 the characters in the subsequent lines are just repition of the first line.
 ////////////////////// The code /////////////////////////
 TextLayout layout = new TextLayout(Display.getCurrent());

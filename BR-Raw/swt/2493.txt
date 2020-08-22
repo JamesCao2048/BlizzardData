@@ -1,8 +1,7 @@
 Table: Disposing sort column should update background
 SWT-win32, v3227
 When the sort column is disposed of, the "selected column" needs to be
-cleared in the OS.
-Currently, the next column to appear at the index
+cleared in the OS. Currently, the next column to appear at the index
 of the disposed column just inherits the internal selection status.
 For this reason the background is not updated.
 ---

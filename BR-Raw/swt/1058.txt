@@ -1,8 +1,6 @@
 SWT error when initializing GC
 Cocoa I20090416
-When opening an RTC iteration plan, you get an endless loop of exception dialogs.
-This problem does not occur on the Carbon build.
-Here is the stack trace from the error log:
+When opening an RTC iteration plan, you get an endless loop of exception dialogs.  This problem does not occur on the Carbon build.  Here is the stack trace from the error log:
 org.eclipse.swt.SWTError: Unspecified error
 at org.eclipse.swt.SWT.error(SWT.java:3890)
 at org.eclipse.swt.SWT.error(SWT.java:3779)

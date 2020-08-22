@@ -1,5 +1,2 @@
 Bug 165897 [Salesforce Project]Table column lost its data when insert a new column to the right
-Reproduce steps: 1.Get and install BIRT Salesforce ODA driver.
-2.Download the attached BIRT report design.
-3.Insert a new column to the right of Negotiation/Review.
-4.Input name as "Month Grand Total" and expression as following: row["Prospecting"]+row["Qualification"]+row["NeedsAnalysis"]+row["ValueProposition"]+row["IdDecisionMakers"]+row["PerceptionAnalysis"]+row["ProposalPriceQuote"]+row["NegotiationReview"] 5.Run the report and Negotiation/Review column lost its data.
+Reproduce steps: 1. Get and install BIRT Salesforce ODA driver. 2. Download the attached BIRT report design. 3. Insert a new column to the right of Negotiation/Review. 4. Input name as "Month Grand Total" and expression as following: row["Prospecting"]+row["Qualification"]+row["NeedsAnalysis"]+row["ValueProposition"]+row["IdDecisionMakers"]+row["PerceptionAnalysis"]+row["ProposalPriceQuote"]+row["NegotiationReview"] 5. Run the report and Negotiation/Review column lost its data.

@@ -1,7 +1,6 @@
 Unable to open external Safari browser
 I20060919-0010
-Help isn't working on this build because it can't seem to launch an external Safari.
-On the mac, Help only exists in an external browser, it doesn't encase an embedded browser in a Shell like on windows and linux.
+Help isn't working on this build because it can't seem to launch an external Safari. On the mac, Help only exists in an external browser, it doesn't encase an embedded browser in a Shell like on windows and linux.
 The following SWT app runs on 3.3 M1 but not on the M2 candidate.
 -------------
 import org.eclipse.swt.program.Program;
@@ -13,5 +12,4 @@ program.execute(" http://www.google.com ");
 }
 --------------
 It does find Safari, just can't seem to open it.
-Critical because help doesn't work on the mac because of this.
-Please let me know if I'm doing something wrong.
+Critical because help doesn't work on the mac because of this. Please let me know if I'm doing something wrong.

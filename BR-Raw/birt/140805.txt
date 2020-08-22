@@ -1,13 +1,3 @@
 Bug 140805 Bidi3.2: Unable to display HTML files when clicking on chart title in the report preview window
-OS: RHEL 4.0 Build id: I20060428-1315 Description: Unable to display HTML files when clicking on the chart title in the report preview window.
-Steps to recreate the problem: 1.Create a report project.
-2.Create a new report, and insert a chart inside this report.
-3.Open Edit Chart->Format Chart tab, select Chart Area, and click Title Interactivity button.
-On the Interaction Editor, click Edit Base URL button and edit the location field to select any HTML file.
-4.Click Add button and click OK to close the dialog.
-Then, click Finish button on Edit Chart dialog and preview the report.
-5.On the report preview, click the Chart Title.
-Expected output: When clicking on the chart title, the HTML file specified above should be displayed.
-Actual output: When clicking on the chart title, the HTML file specified above isn't displayed.
-An error message is displayed indicating that either the link to the document is broken or the corresponding feature is not available, see the attached figure for more illustration.
-N.B: This is a non bidi defect, however it blocks bidi testing activities.
+OS: RHEL 4.0 Build id: I20060428-1315 Description: Unable to display HTML files when clicking on the chart title in the report preview window. Steps to recreate the problem: 1. Create a report project. 2. Create a new report, and insert a chart inside this report. 3. Open Edit Chart->Format Chart tab, select Chart Area, and click Title Interactivity button. On the Interaction Editor, click Edit Base URL button and edit the location field to select any HTML file. 4. Click Add button and click OK to close the dialog. Then, click Finish button on Edit Chart dialog and preview the report. 5. On the report preview, click the Chart Title. Expected output: When clicking on the chart title, the HTML file specified above should be displayed. Actual output: When clicking on the chart title, the HTML file specified above isn't displayed. An error message is displayed indicating that either the link to the document is broken or the corresponding feature is not available, see the attached figure fo
+r more illustration. N.B: This is a non bidi defect, however it blocks bidi testing activities.

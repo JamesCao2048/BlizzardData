@@ -48,7 +48,4 @@ throw new RuntimeException(e);
 @Aspect
 static class Concrete extends Base<Element> {}
 public static void main(String[] args) {
-new Main().getElements();
-}
-
-}
+new

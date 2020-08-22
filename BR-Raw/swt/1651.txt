@@ -1,11 +1,11 @@
 [carbon SWT] ON_TOP shell can not be hidden when parent shell is minimized
 Build ID: Eclipse 3.3.1, Mac OS X 10.5,  No test on Eclipse 3.4.
 Steps To Reproduce:
-1.Run the snippet code from Eclipse PDE;
-2.Click the green shell, be sure the focus on the "ON_TOP" shell (green background color);
-3.Mouse hovering onto the minimized button of bottom shell (this is parent shell);
-4.Click the minimize button, The parent shell is minimized to Dock bar;
-5.But the "ON_TOP" shell is still stay on the screen.
+1. Run the snippet code from Eclipse PDE;
+2. Click the green shell, be sure the focus on the "ON_TOP" shell (green background color);
+3. Mouse hovering onto the minimized button of bottom shell (this is parent shell);
+4. Click the minimize button, The parent shell is minimized to Dock bar;
+5. But the "ON_TOP" shell is still stay on the screen.
 Run this code on Windows, the "ON_TOP" shell will be hidden following the parent shell if it's minimized.
 If remove the ON_TOP style while create  the topShell in the below code, this shell will be hidden since  parent is minimized.
 More information:

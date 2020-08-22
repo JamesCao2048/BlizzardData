@@ -1,8 +1,7 @@
 Gripper icon on Mac status bar should be transparent
 User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5 (.NET CLR 3.5.30729)
 Build Identifier: M20090211-1700
-The gripper icon on the right hand side of the status bar, used for resizing windows on the Mac, is not transparent like the native one is.
-This looks bad, especially if your shell background color is not grey.
+The gripper icon on the right hand side of the status bar, used for resizing windows on the Mac, is not transparent like the native one is. This looks bad, especially if your shell background color is not grey.
 Reproducible: Always
 Steps to Reproduce:
 1.Create a shell with a status bar

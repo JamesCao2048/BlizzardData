@@ -4,19 +4,11 @@ which was created with style SWT.CHECK, every second click is ignored if it is
 made within the double click timeout.
 This can be tested, for example, with Snippet113.
 Some native Table controls (or at least controls used by Windows) show the same
-behaviour (e.g.
-Control Panel
--> Add or Remove Programs
--> Add/Remove Windows
-Components), others do not (e.g.
-in Tweak UI).
-The only (seemingly) native Tree
-control that I could find (in Windows Explorer: Tools
--> Folder Options
--> View)
+behaviour (e.g. Control Panel -> Add or Remove Programs -> Add/Remove Windows
+Components), others do not (e.g. in Tweak UI). The only (seemingly) native Tree
+control that I could find (in Windows Explorer: Tools -> Folder Options -> View)
 does not ignore the second click.
 IMHO ignoring the second click in Table controls is a bug in Windows (at least
-in some parts of it; TweakUI gets it right) and SWT should work around it.
-The
+in some parts of it; TweakUI gets it right) and SWT should work around it. The
 same goes for Tree controls (if it's really a bug in Windows; The only Tree
 control that I could find didn't have that bug).

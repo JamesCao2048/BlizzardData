@@ -1,7 +1,5 @@
 StackOverflowError in SWT widgets on Mac OS
-When trying to display the UML Class diagram during profiling using Execution analysis, we repeatedly get StockOverflowError in SWT widget causing the workbench to crash.
-This problem only shows up in Mac OS, not on Linux or Windows.
-Here's the stack trace (repeated many times over and over again):
+When trying to display the UML Class diagram during profiling using Execution analysis, we repeatedly get StockOverflowError in SWT widget causing the workbench to crash.  This problem only shows up in Mac OS, not on Linux or Windows.  Here's the stack trace (repeated many times over and over again):
 java.lang.StackOverflowError
 at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
 at org.eclipse.swt.internal.cocoa.NSView.displayIfNeeded(NSView.java:142)

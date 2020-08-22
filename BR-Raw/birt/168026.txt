@@ -1,4 +1,2 @@
 Bug 168026 Still use the existing data binding even though the aggregate is different
-I had a table in which a data binding which aggregates on a group.
-When I insert a new data item in the report, although the expressions are same, it aggregates on All, then it refered to the existing data binding.
-The expected behavior would be a new data binding is created with different aggregates.
+I had a table in which a data binding which aggregates on a group. When I insert a new data item in the report, although the expressions are same, it aggregates on All, then it refered to the existing data binding. The expected behavior would be a new data binding is created with different aggregates.

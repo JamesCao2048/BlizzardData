@@ -1,11 +1,7 @@
 [GK3][Cairo] Images created with external image handle (GdkPixmap* or cairo_surface_t*) can't be drawn using GC.drawImage()
 In WindowBuilder project I have to create an Image instance using external GdkPixmap* value.
-I used Image.gtk_new() method to create such Image.
-Then I need to draw this image on some GC.
-This works fine with Cairo disabled.
-When Cairo is enabled, the image is not drawn.
-The workaround is to invoke Image.getImageData() method.
-After this invocation it works fine.
+I used Image.gtk_new() method to create such Image. Then I need to draw this image on some GC. This works fine with Cairo disabled. When Cairo is enabled, the image is not drawn.
+The workaround is to invoke Image.getImageData() method. After this invocation it works fine.
 Sample code:
 Image image = Image.gtk_new(null, SWT.BITMAP, pixmapHandle, 0);
 

@@ -1,4 +1,2 @@
 Bug 228344 Element->Insert in top menu is not consistent
-Description: Element->Insert in top menu is not consistent with insert menu when right cliking on a table.
-Build number: 2.3.0.v20080423-0630 Steps to reproduce: 1, New a table 2, Select the table and right cilck 3, Check the insert menu 4, Select the table and go to Element->Insert Expected result: In step4, the Insert menu should be header, detail and footer.
-Actual result: In step4, the Insert menu is not consistent with insert menu when righ clicking on a table.
+Description: Element->Insert in top menu is not consistent with insert menu when right cliking on a table. Build number: 2.3.0.v20080423-0630 Steps to reproduce: 1, New a table 2, Select the table and right cilck 3, Check the insert menu 4, Select the table and go to Element->Insert Expected result: In step4, the Insert menu should be header, detail and footer. Actual result: In step4, the Insert menu is not consistent with insert menu when righ clicking on a table.

@@ -1,23 +1,13 @@
 NPE in Mozilla create
-I am using last night's nightly build and I received an NPE.
-I had just un-maximized the editor area and had my cursor over a java file.
+I am using last night's nightly build and I received an NPE.  I had just un-maximized the editor area and had my cursor over a java file.
 eclipse.buildId=N20070301-0010
 java.fullversion=J2RE 1.5.0 IBM J9 2.3 Linux x86-32 j9vmxi3223-20061001 (JIT enabled)
-J9VM
-- 20060915_08260_lHdSMR
-JIT
-- 20060908_1811_r8
-GC
-- 20060906_AA
+J9VM - 20060915_08260_lHdSMR
+JIT  - 20060908_1811_r8
+GC   - 20060906_AA
 BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
-Framework arguments:
--startup /opt/local/eclipse/N0301/eclipse/plugins/org.eclipse.equinox.launcher_1.0.0.N20070301-0010.jar
-Command-line arguments:
--os linux
--ws gtk
--arch x86
--startup /opt/local/eclipse/N0301/eclipse/plugins/org.eclipse.equinox.launcher_1.0.0.N20070301-0010.jar
--data /opt/pwebster/workspaces/general330
+Framework arguments:  -startup /opt/local/eclipse/N0301/eclipse/plugins/org.eclipse.equinox.launcher_1.0.0.N20070301-0010.jar
+Command-line arguments:  -os linux -ws gtk -arch x86 -startup /opt/local/eclipse/N0301/eclipse/plugins/org.eclipse.equinox.launcher_1.0.0.N20070301-0010.jar -data /opt/pwebster/workspaces/general330
 Error
 Thu Mar 01 10:13:55 EST 2007
 Unhandled event loop exception
@@ -52,3 +42,4 @@ at org.eclipse.swt.internal.Converter.wcsToMbcs(Converter.java:51)
 at org.eclipse.swt.browser.MozillaDelegate.wcsToMbcs(MozillaDelegate.java:65)
 at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:218)
 at org.eclipse.swt.browser.Browser.<init>(Browser.java:109)
+at org.e

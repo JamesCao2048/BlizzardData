@@ -4,12 +4,10 @@ Typing Arabic text when running Eclipse in RTL orientation
 Build ID: I20080401-1005
 Steps To Reproduce:
 1.In a RHEL terminal , set the variables LANG and LC_ALL to "ar_EG.utf8"
-2.Start eclipse using the command ./eclipse
--nl ar_EG
+2.Start eclipse using the command ./eclipse -nl ar_EG
 3.Create a new text file and type some Arabic characters in it
 4.During typing, the last two characters are not shaped correctly, the former (typed first) of them is shaped as final character while the later (typed last) is shaped as isolated, so if the user press enter after Typing an Arabic word (ABCD where upper case characters represent Arabic letters, A is typed first and D is typed last, C and D should be shaped as middle and final respectively) , C will be shaped as Final and D will be shaped as isolated
-5.If the same scenario is repeated when launching eclipse without the "-nl ar_EG" option, i.e.
-./eclipse so it runs in LTR mode, the same behavior will happen ,
+5.If the same scenario is repeated when launching eclipse without the "-nl ar_EG" option, i.e. ./eclipse so it runs in LTR mode, the same behavior will happen ,
 6.When launching Eclipse in RTL orientation, when typing a space after the Arabic text ABCD as in step 4, all the characters are shaped correctly
 7.when launching Eclipse in LTR orientation, typing a space after the Arabic text ABCD will not affect the shaping of the last two characters C and D.
 More information:

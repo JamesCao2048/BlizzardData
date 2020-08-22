@@ -1,10 +1,8 @@
 setSelection(allItems) not working on GTK
 Eclipse 20030129
 GTK 2.0.2
-Open two or more editors, then open the editor dropdown (ctrl-shift-w).
-Now
-right click on the dropdown and select 'select all'.
-Note only the first file
+Open two or more editors, then open the editor dropdown (ctrl-shift-w).  Now
+right click on the dropdown and select 'select all'.  Note only the first file
 is selected.
 Verified using stable M4 build that this functionality worked, and the code
 calling setSelection(allItems) (org.eclipse.ui.workbench

@@ -1,6 +1,4 @@
 DirectoryDialog's setFilterPath() has no effect
-The DirectoryDialog's setFilterPath() has no effect on the Mac (Eclipse 3.1.1 and 3.2).
-Instead of showing the specified directory, the dialog presents the previously chosen directory.
-An SWT newsgroup poster reported the same situation on Linux.
-However, things seem fine on Windows.
+The DirectoryDialog's setFilterPath() has no effect on the Mac (Eclipse 3.1.1 and 3.2).  Instead of showing the specified directory, the dialog presents the previously chosen directory.
+An SWT newsgroup poster reported the same situation on Linux.  However, things seem fine on Windows.
 Steve Northover replied on the newsgroup saying that it looked like the method was never implemented on the Mac.

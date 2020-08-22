@@ -2,7 +2,5 @@ EXCEPTION_ACCESS_VIOLATION SHELL32.dll TaskBar#getDirectory
 Created  attachment 186151   [details]
 JVM crash log
 3.7M4, 32bit Win7
-This is weired.
-I have a new workspace with a new plug-in created from the empty RCP template with branding.
-When starting the thing I get a JVM crash.
+This is weired. I have a new workspace with a new plug-in created from the empty RCP template with branding. When starting the thing I get a JVM crash.
 I have Mylyn in my target platform and it looks like that Mylyn is also triggered in the RCP app and wants to access something in the TaskBar.

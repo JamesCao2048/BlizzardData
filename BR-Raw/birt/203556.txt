@@ -1,10 +1,2 @@
 Bug 203556 Multiple value filter condition for chart in property editor is different with "Filter" in chart builder[13]
-Description: Set filter condition (IN values list) for chart in property editor, but open the chart builder, in filter on "Select Data" tab, the condition is different with the one in property editor.
-Build version:2.2.0.v20070917-0630 Steps to reproduce: 1.Create a sample datasource and dataset, "select * from orders".
-2.Create a report parameter "NewParameter", keep default setting.
-3.Create a chart in the report, y series=row["ORDERNUMBER"], x series=row["STATUS"].
-4.In the property editor of chart, set filter on it.
-row["ORDERNUMBER"] in (params["NewParameter"], 10100,10101).
-5.Open the chart builder, in the "Select Data" tab, click filter.
-You will find the filter condition is changed, static value is missing.
-Expected result: The chart build filter is the same as the property editor filter.
+Description: Set filter condition (IN values list) for chart in property editor, but open the chart builder, in filter on "Select Data" tab, the condition is different with the one in property editor. Build version:2.2.0.v20070917-0630 Steps to reproduce: 1.Create a sample datasource and dataset, "select * from orders". 2.Create a report parameter "NewParameter", keep default setting. 3.Create a chart in the report, y series=row["ORDERNUMBER"], x series=row["STATUS"]. 4.In the property editor of chart, set filter on it. row["ORDERNUMBER"] in (params["NewParameter"], 10100,10101). 5.Open the chart builder, in the "Select Data" tab, click filter. You will find the filter condition is changed, static value is missing. Expected result: The chart build filter is the same as the property editor filter.

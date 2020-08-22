@@ -1,4 +1,2 @@
 Bug 139346 Using isTopN in table inside list group header doesn't work.
-Description: Using isTopN in table inside list group header doesn't work.
-Steps to reproduce: 1.Insert a list with a group 2.Insert a table to list group header 3.Using Total.isTopN(row[],2,null,0) as filter expression in table item.
-4.Preview Result: Only the first group displayed top 2 records, other groups kept display all records.
+Description: Using isTopN in table inside list group header doesn't work. Steps to reproduce: 1.Insert a list with a group 2.Insert a table to list group header 3.Using Total.isTopN(row[],2,null,0) as filter expression in table item. 4.Preview Result: Only the first group displayed top 2 records, other groups kept display all records.

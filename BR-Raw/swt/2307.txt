@@ -1,39 +1,30 @@
 Table throws ArrayOutOfBounds Exception upon TableColumn.dispose()
-If you haven't noted already, this is specific to the GTK version of SWT.
-I am running against GTK 2.2.4 on an x86 Linux system.
-I think there's an off-by-one issue in the Table class for gtk swt that occurs when you dispose of the last column in a table and you've set the fonts.
-Run the snippet below and click on the "Delete Last Col" button.
-
+If you haven't noted already, this is specific to the GTK version of SWT.  I am running against GTK 2.2.4 on an x86 Linux system. I think there's an off-by-one issue in the Table class for gtk swt that occurs when you dispose of the last column in a table and you've set the fonts.  Run the snippet below and click on the "Delete Last Col" button.
 public class RemoveTableColumn {
 public static void main(String[] args) {
 final Display display = new Display();
 Shell shell = new Shell(display);
 FontData[] fontData = shell.getFont().getFontData();
-for (int i = 0; i
-< fontData.length; i++) {
+for (int i = 0; i < fontData.length; i++) {
 fontData[i].setStyle(SWT.BOLD);
 }
 final Font boldFont = new Font(display, fontData);
 shell.setLayout(new RowLayout(SWT.VERTICAL));
 final Table table = new Table(shell, SWT.BORDER | SWT.MULTI);
 table.setHeaderVisible(true);
-for (int i = 0; i
-< 4; i++) {
+for (int i = 0; i < 4; i++) {
 TableColumn column = new TableColumn(table, SWT.NONE);
 column.setText("Column " + i);
 }
 final TableColumn[] columns = table.getColumns();
-for (int i = 0; i
-< 12; i++) {
+for (int i = 0; i < 12; i++) {
 TableItem item = new TableItem(table, SWT.NONE);
-for (int j = 0; j
-< columns.length; j++) {
+for (int j = 0; j < columns.length; j++) {
 item.setText(j, "Item " + i);
 item.setFont(boldFont);
 }
 }
-for (int i = 0; i
-< columns.length; i++)
+for (int i = 0; i < columns.length; i++)
 columns[i].pack();
 Button button = new Button(shell, SWT.PUSH);
 final int index = 1;
@@ -43,8 +34,7 @@ public void handleEvent(Event e) {
 TableColumn column = new TableColumn(table, SWT.NONE, index);
 column.setText("Column " + index + "a");
 TableItem[] items = table.getItems();
-for (int i = 0; i
-< items.length; i++) {
+for (int i = 0; i < items.length; i++) {
 items[i].setText(index, "Item " + i + "a");
 items[i].setFont(index, boldFont);
 }
@@ -69,8 +59,7 @@ button.setText("Delete Last Col");
 button.addListener(SWT.Selection, new Listener() {
 public void handleEvent(Event e) {
 TableColumn column = table
-.getColumn(table.getColumnCount()
-- 1);
+.getColumn(table.getColumnCount() - 1);
 try {
 column.dispose();
 table.pack();
@@ -90,5 +79,4 @@ display.dispose();
 }
 }
 It looks to me like the Font array allocation code in Table#destroyItem isn't allocating enough elements.
-I'm not sure I set fonts appropriately.
-I discovered ths problem using a TableViewer and was trying to simulate the font settings it does for me.
+I'm not sure I set fonts appropriately.  I discovered ths problem using a TableViewer and was trying to simulate the font settings it does for me.

@@ -3,8 +3,7 @@ When a few Combo boxes using SWT.SIMPLE style are visible, a series of manual
 resizes of the containing composite leaves areas of the Combo littered with
 buffer noise.
 The first two attached screen-dumps show the result of running the test code
-below, both before and after resizing of the window.
-The third one shows a
+below, both before and after resizing of the window. The third one shows a
 portion of a commercial interface I am attempting to build at the moment,
 where the same problem is evident.
 -----------------8<---------------------

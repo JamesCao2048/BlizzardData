@@ -1,10 +1,8 @@
 [GTK] Cannot enable/disable breakpoint by clicking checkbox
 +++ This bug was initially created as a clone of  Bug #344642  +++
-Same problem on Linux GTK 3.7 M7
-- works on 3.6.
-1.Open a Java file and add a breakpoint
-2.Switch to the Debug perspective
-3.Try to disable the breakpoint by slowly clicking the checkbox
-in the Breakpoints view
---> not possible
+Same problem on Linux GTK 3.7 M7 - works on 3.6.
+1. Open a Java file and add a breakpoint
+2. Switch to the Debug perspective
+3. Try to disable the breakpoint by slowly clicking the checkbox
+in the Breakpoints view --> not possible
 Or use ControlExample steps as given in  bug 344642 comment 3 .

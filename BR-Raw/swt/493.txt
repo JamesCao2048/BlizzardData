@@ -1,23 +1,22 @@
 Compiler warnings in N20101108-2000 build
-1.WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/image/JPEGDecoder.java
+1. WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/image/JPEGDecoder.java
 (at line 2303)
 int ci, access_rows;
 The value of the local variable access_rows is not used
-2.WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/image/JPEGDecoder.java
+2. WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/image/JPEGDecoder.java
 (at line 3824)
 int ci, block_row, block_rows, access_rows;
 The value of the local variable access_rows is not used
-1.WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/theme/ComboDrawData.java
+1. WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/theme/ComboDrawData.java
 (at line 50)
 int y_border = ythickness + focus_padding;
 The value of the local variable y_border is not used
-2.WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/theme/ComboDrawData.java
+2. WARNING in /temp.folder/@dot.src/org/eclipse/swt/internal/theme/ComboDrawData.java
 (at line 112)
 int y_border = ythickness + focus_padding;
 The value of the local variable y_border is not used
-1.WARNING in _64/temp.folder/@dot.src/org/eclipse/swt/graphics/Cursor.java
+1. WARNING in _64/temp.folder/@dot.src/org/eclipse/swt/graphics/Cursor.java
 (at line 378)
-for (int i = 3, ap=0; i
-< srcData.length; i+=4, ap++) {
+for (int i = 3, ap=0; i < srcData.length; i+=4, ap++) {
 The value of the local variable ap is not used
 All platforms should be validated.

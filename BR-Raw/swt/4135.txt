@@ -1,10 +1,8 @@
 Problem with Label.computeSize.
 Here is an example showing that computeSize is not returning a size big enough
-to fit the text.
-If SWT.DEFAULT is used it shows the text but if 450 is used
+to fit the text. If SWT.DEFAULT is used it shows the text but if 450 is used
 instead of SWT.DEFAUT then part of the text is cut out.
-** Run the example.
-All 5 lines show appear.
+** Run the example. All 5 lines show appear.
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.*;

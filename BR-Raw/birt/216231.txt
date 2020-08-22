@@ -1,8 +1,2 @@
 Bug 216231 Support chart in empty crosstab dimension/measure cell[1302]
-Description: Pull a chart into crosstab dimension cell, and open the chart build, there is exception listed on the top of "Select Data" tab.
-Build version: 2.3.0.v20080123-1050 Steps to reproduce: 1.Get the attahed report design file.
-There is a chart in the crosstab dimension cell, and set filter on the chart builder.
-2.Open the chart builder, the exception is listed on the top of "Select Data" view.
-Expected result: This chart is correct and no exception throws out.
-Preview the report, the chart in crosstab works fine.
-Actual result: Preview the report, the output is incorrect.
+Description: Pull a chart into crosstab dimension cell, and open the chart build, there is exception listed on the top of "Select Data" tab. Build version: 2.3.0.v20080123-1050 Steps to reproduce: 1.Get the attahed report design file. There is a chart in the crosstab dimension cell, and set filter on the chart builder. 2.Open the chart builder, the exception is listed on the top of "Select Data" view. Expected result: This chart is correct and no exception throws out. Preview the report, the chart in crosstab works fine. Actual result: Preview the report, the output is incorrect.

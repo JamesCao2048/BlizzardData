@@ -1,4 +1,2 @@
 Bug 213126 Add support for DataEngine-leve dataset cache
-In many cases the DataEngine-leve dataset cache is useful which ensure that a dataset is executed one time during rendering one report.
-To support this feature a new dataset property should be added.
-The Birt customer can choose whether this dataset need to be cached or not by setting the property in deisgn time.
+In many cases the DataEngine-leve dataset cache is useful which ensure that a dataset is executed one time during rendering one report. To support this feature a new dataset property should be added. The Birt customer can choose whether this dataset need to be cached or not by setting the property in deisgn time.

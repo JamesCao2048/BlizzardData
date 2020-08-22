@@ -1,7 +1,5 @@
 StyledText getTextAttributes should always return font & colors
-Screen readers don't want to assume (or figure out) what the default font & colors of an IAccessibleText are.
-So we need to return something for them, even if there are no styles.
-Something like this (did not test):
+Screen readers don't want to assume (or figure out) what the default font & colors of an IAccessibleText are. So we need to return something for them, even if there are no styles. Something like this (did not test):
 if (!isListening(LineGetStyle) && st.renderer.styleCount == 0) {
 e.textStyle = new TextStyle(st.getFont(), st.foreground, st.background);
 e.start = 0;

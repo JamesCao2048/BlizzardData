@@ -1,5 +1,2 @@
 Bug 119580 Page break in table header row doesn't work.
-Description: Page break in table header row doesn't work.
-Steps to reproduce: 1.Set pageBreakAfter to always in table' header row, see attached design file 2.See generated html file.
-Expected result: Page break happens after the table header row.
-Actual result: No page breaks happened.
+Description: Page break in table header row doesn't work. Steps to reproduce: 1. Set pageBreakAfter to always in table' header row, see attached design file 2. See generated html file. Expected result: Page break happens after the table header row. Actual result: No page breaks happened.

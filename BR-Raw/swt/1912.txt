@@ -9,8 +9,7 @@ Report Version: 4
 Command: java
 Path:    /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
 Parent:  eclipse [285]
-Version: ???
-(???)
+Version: ??? (???)
 PID:    432
 Thread: 0
 Exception:  EXC_BAD_ACCESS (0x0001)
@@ -22,8 +21,6 @@ Thread 0 Crashed:
 3   com.apple.HIToolbox          	0x932dadbc PotentiallyAdjustActivationOnOrderIn(WindowData*, WindowData*) + 124
 4   com.apple.HIToolbox          	0x932daabc ShowWindow + 68
 5   libswt-pi-carbon-3406.jnilib 	0x06752ca4 Java_org_eclipse_swt_internal_carbon_OS_ShowWindow + 44
-6
-<<00000000>> 	0x04586264 0 + 72901220
-7
-<<00000000>> 	0x0457fab0 0 + 72874672
+6   <<00000000>> 	0x04586264 0 + 72901220
+7   <<00000000>> 	0x0457fab0 0 + 72874672
 ...

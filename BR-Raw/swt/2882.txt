@@ -1,13 +1,10 @@
 [browser] Intro view loses content on perspective switch
 3.1M7
-- start a brand new eclipse
--> the purple Intro screen comes up first
+- start a brand new eclipse -> the purple Intro screen comes up first
 - double-click its "Welcome" tab so that it reduces to a view on the right side
 of the workbench
 - switch to the Java perspective
-
 -> the Welcome view is there as well (I'm guessing this is by design?)
-
 -> but more importantly, it's blank
 - if you switch back to the Resource perspective the browser is blank there too
 - the Browser will not gets its contents back by typical resizing, but it will

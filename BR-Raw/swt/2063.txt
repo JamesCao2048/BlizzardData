@@ -1,7 +1,5 @@
 [Presentations] DBCS3.3: tab label "..." isn't added in 3.0 presentation
-It look like a local ecommon issue.
-The new look simply truncation tab label string if it's too small.
-But 3.0 presentation has the same behavior.
+It look like a local ecommon issue. The new look simply truncation tab label string if it's too small. But 3.0 presentation has the same behavior.
 Driver: M6
 Platform: WindowsXP Japanese, IBM JVM 5.0 SR4 ifix
 steps to recreate.

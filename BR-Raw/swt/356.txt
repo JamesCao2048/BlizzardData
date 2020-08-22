@@ -1,6 +1,5 @@
 text boxes in server overview for times are too small on Cocoa / Mac
-When using Cocoa / Carbon,  The textboxes that display the "publish interval" and the "start and stop timeouts" are too small.
-They only display a single digit even though the value being saved represents seconds and are usually at least 2 digits if not 3.
+When using Cocoa / Carbon,  The textboxes that display the "publish interval" and the "start and stop timeouts" are too small. They only display a single digit even though the value being saved represents seconds and are usually at least 2 digits if not 3.
 Suggest making the boxes 4 digits wide.
 On Linux, the size appears proper and not broken.
 Code is found in OverviewEditorPart.

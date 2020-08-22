@@ -1,8 +1,5 @@
 Holding mouse down on Table blocks Display.asyncExec and syncExec
-Hold the mouse down on a table so that a MouseDown event isn't triggered (don't move the mouse or release the button).
-All runnables submitted with Display.asyncExec and/or Display.syncExec pile up in the queue until the MouseDown is triggered.
-This only appears to be an issue with Table.
-Here's a sample:
+Hold the mouse down on a table so that a MouseDown event isn't triggered (don't move the mouse or release the button).  All runnables submitted with Display.asyncExec and/or Display.syncExec pile up in the queue until the MouseDown is triggered.  This only appears to be an issue with Table.  Here's a sample:
 ----------------------------
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;

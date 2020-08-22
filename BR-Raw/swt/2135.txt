@@ -1,6 +1,4 @@
 [DND] DropTargetEffect API
 Build ID: I20070209-1006
-In the DropTargetEffect class method Item #getItem(int x, int y) has package level access.
-Can the access modifier be changed to either protected or public level access so extending class may override the behavior and provide their own handling.
-#getItem() is called by the framework to populate the item field of a DropTargetEvent.
-As a result custom widgets with DND will always have NULL for the item field of a DropTargetEvent.
+In the DropTargetEffect class method Item #getItem(int x, int y) has package level access. Can the access modifier be changed to either protected or public level access so extending class may override the behavior and provide their own handling.
+#getItem() is called by the framework to populate the item field of a DropTargetEvent. As a result custom widgets with DND will always have NULL for the item field of a DropTargetEvent.

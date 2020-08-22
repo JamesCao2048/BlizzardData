@@ -1,7 +1,5 @@
 [Table] TableColumn#pack() no longer respects TableItem's Font
-The following snippet puts an "..." next to the TableItem's content.
-It uses bold Font which requires a bit more space than normal Font, but a pack on the TableColumn does not respect that.
-The snippet works with M4 and before:
+The following snippet puts an "..." next to the TableItem's content. It uses bold Font which requires a bit more space than normal Font, but a pack on the TableColumn does not respect that. The snippet works with M4 and before:
 public class Main {
 public static void main(String[] args) {
 Display display = new Display();
@@ -24,7 +22,5 @@ display.sleep();
 }
 }
 }
-This currently blocks my next release unfortunately.
-I hoped being able to run with M5.A workaround is to set the bold Font on the entire Table.
-However, that would show any TableColumn in Bold as well.
+This currently blocks my next release unfortunately. I hoped being able to run with M5. A workaround is to set the bold Font on the entire Table. However, that would show any TableColumn in Bold as well.
 Ben

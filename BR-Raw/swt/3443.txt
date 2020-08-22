@@ -1,11 +1,11 @@
 ArrayIndexOutOfBoundsException in ColorDialog
 I20040226
-1.Go to preferences, Workbench->Appearance
-2.Deselect "Use platform colors" and press the button for the view foreground color
+1. Go to preferences, Workbench->Appearance
+2. Deselect "Use platform colors" and press the button for the view foreground color
 -> the color chooser dialog appears
-3.Hover over the color chooser area with the mouse, keep the left mouse button
+3. Hover over the color chooser area with the mouse, keep the left mouse button
 pressed.
-4.While keeping the mouse button pressed, leave the dialog with the cursor and
+4. While keeping the mouse button pressed, leave the dialog with the cursor and
 move the cursor around the screen.
 -> I get tons of these (various out of bounds indices):
 !ENTRY org.eclipse.ui 4 4 Mar 01, 2004 16:01:43.99
@@ -13,11 +13,9 @@ move the cursor around the screen.
 Unhandled event loop exception
 Reason:
 !ENTRY org.eclipse.ui 4 0 Mar 01, 2004 16:01:43.100
-!MESSAGE
--1
+!MESSAGE -1
 !STACK 0
-java.lang.ArrayIndexOutOfBoundsException:
--1
+java.lang.ArrayIndexOutOfBoundsException: -1
 at org.eclipse.swt.widgets.ColorDialog.mouseMove(ColorDialog.java:333)
 at org.eclipse.swt.widgets.ColorDialog.handleEvents(ColorDialog.java:217)
 at org.eclipse.swt.widgets.ColorDialog$1.handleEvent(ColorDialog.java:314)
@@ -54,4 +52,4 @@ at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at
 sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 at
-sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:2

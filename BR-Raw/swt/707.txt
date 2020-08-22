@@ -1,7 +1,6 @@
 Browser should specify encoding of LocationEvent#location and align implementations
 I20100309-0100 Cocoa
-Links to other types in Javadoc hovers don't work any more on Cocoa.
-That's because I get a URISyntaxException in:
+Links to other types in Javadoc hovers don't work any more on Cocoa. That's because I get a URISyntaxException in:
 org.eclipse.jdt.internal.ui.viewsupport.JavaElementLinks$1.changing(JavaElementLinks.java:199)
 On other platforms (IE on WinXP, Mozilla on GTK), the URI in LocationEvent#location is URI-encoded, but on Cocoa/Safari, the location is coming in its raw (unencoded) form.
 LocationEvent#location should specify that the string is an encoded URI.

@@ -1,12 +1,9 @@
 Text.ComputeSize(0) returning 0 on GTK (BBAWT)
-Linux
-- RH8
+Linux - RH8
 SWT 3009
-The following test case creates a Text and then calls computeSize(0,0).
-On
+The following test case creates a Text and then calls computeSize(0,0). On
 Motif, Windows 2000, and QNX, a positive value is returned {(14,15), (13,7),
-and (5,5), respectively}.
-But GTK returns (0,0).
+and (5,5), respectively}. But GTK returns (0,0).
 It looks like computeSize(x,y) on GTK always returns (x,y), while all other
 platforms tested seem to add the noted values to x and y.
 import org.eclipse.swt.SWT;

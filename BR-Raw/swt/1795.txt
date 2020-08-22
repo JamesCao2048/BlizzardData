@@ -1,17 +1,13 @@
 WinXP: Shell draws focus on setVisible(true)
 Build ID: I20070811-1447
 Steps To Reproduce:
-If a shell got focus once in her lifetime and is hidden using setVisible(false) then calling setVisible(true) will cause it to immediately draw focus.
-I couldn't find a way to prevent this behavior.
+If a shell got focus once in her lifetime and is hidden using setVisible(false) then calling setVisible(true) will cause it to immediately draw focus. I couldn't find a way to prevent this behavior.
 Note: On Linux, this works perfectly.
 Steps to reproduce:
-1.Run the snippet below
-2.Click on the 'click me' button
---> a second shell opens without drawing focus
-3.Click on the 'close me' button
---> the second shell gains focus and is closed
-4.Click again on 'click me'
---> the second shell opens again and immediately draws focus
+1. Run the snippet below
+2. Click on the 'click me' button --> a second shell opens without drawing focus
+3. Click on the 'close me' button --> the second shell gains focus and is closed
+4. Click again on 'click me' --> the second shell opens again and immediately draws focus
 More information:
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;

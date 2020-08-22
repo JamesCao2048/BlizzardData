@@ -1,9 +1,7 @@
 Expanding a TreeItem on Mac OS X fires MouseUp-MouseDown in the wrong order
 Run the snippet below.
-Click somewhere in the Tree NOT on an expansion handle.
-Notice the events come in the expected order of MouseDown, MouseUp.
-Now expand the root node of the tree.
-Notice the events come in the reverse order of MouseUp, MouseDown.
+Click somewhere in the Tree NOT on an expansion handle.  Notice the events come in the expected order of MouseDown, MouseUp.
+Now expand the root node of the tree.  Notice the events come in the reverse order of MouseUp, MouseDown.
 public class SimpleTreeTest {
 public static void main(String args[]) {
 Display display = new Display();

@@ -3,16 +3,10 @@ Created  attachment 106470   [details]
 Runnable snippet to reproduce bug
 (I wasn't sure if this was purely SWT or JFace or both, so I filed it under SWT)
 Description of bug:
-We use the TableViewer in SWT.VIRTUAL mode and enable dragging from the table to other widgets (but no dropping).
-In Eclipse 3.3.1.1 this worked just fine.
-Yesterday we upgraded to 3.4 where all of a sudden any drag operation freezes the entire UI for a long time for every drag operation.
-We use this in an RCP view, but the problem persists standalone as well as shown in the snippet.
-I factored out a snippet that is runnable.
-Run it under 3.3.1.1 and under 3.4 to see the rather obvious difference.
-On 3.3.1.1 the cursor goes directly to the "blocked" cursor (as the table does not accept drop), whereas under 3.4 the entire application will freeze for up to 30 seconds before it comes back to normal.
-I tried debugging this some but ended up somewhere in native libraries which I don't have the source for.
-To see a working 3.4, reduce the item created to just 1 in the loop and do a drag operation, then increase it to 300 and see the quite significant slowdown, and increase again and so on.
-It doesn't take much before it's a complete freeze.
+We use the TableViewer in SWT.VIRTUAL mode and enable dragging from the table to other widgets (but no dropping). In Eclipse 3.3.1.1 this worked just fine.
+Yesterday we upgraded to 3.4 where all of a sudden any drag operation freezes the entire UI for a long time for every drag operation. We use this in an RCP view, but the problem persists standalone as well as shown in the snippet.
+I factored out a snippet that is runnable. Run it under 3.3.1.1 and under 3.4 to see the rather obvious difference. On 3.3.1.1 the cursor goes directly to the "blocked" cursor (as the table does not accept drop), whereas under 3.4 the entire application will freeze for up to 30 seconds before it comes back to normal. I tried debugging this some but ended up somewhere in native libraries which I don't have the source for.
+To see a working 3.4, reduce the item created to just 1 in the loop and do a drag operation, then increase it to 300 and see the quite significant slowdown, and increase again and so on. It doesn't take much before it's a complete freeze.
 I have tested the attached snippet on two different computers under both Eclipse 3.3.1.1 and 3.4 and the problem only applies to 3.4 and seems consistant/
 Unless something fundamentally changed in how DND is done under 3.4 (and I missed it) this is a showstopper.
 From my debugging it seems it could have something to do with the image created for the drag, but that's purely speculation, I tested setting event.image to null and the results were the same.

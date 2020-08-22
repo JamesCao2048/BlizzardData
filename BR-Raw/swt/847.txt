@@ -1,5 +1,5 @@
 Cocoa: click and hold to scroll up scrolls down
-1.Open a long file and scroll somewhere near the middle of the file.
-2.Click and hold in the area of the scrollbar above the slider.
+1. Open a long file and scroll somewhere near the middle of the file.
+2. Click and hold in the area of the scrollbar above the slider.
 Expected: page-wise scrolling up
 Actual: page-wise scrolling up once, then down as long as you hold the mouse button down.

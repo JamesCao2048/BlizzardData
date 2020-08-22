@@ -6,5 +6,4 @@ Run the attached test snippet which shows a StyledText with 2 embedded controls.
 Run AccProbe, and hover over the text in the StyledText.
 Expand IAccessibleHypertext, and double-click on "hyperlink" to bring up the "getHyperlink" dialog.
 Enter 0 or 1 for the hyperlink index, and click "Invoke Method".
-NULL is returned.
-The expected return value is an accessible.
+NULL is returned. The expected return value is an accessible.

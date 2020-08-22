@@ -1,5 +1,2 @@
 Random crashes attributable to Safari
-Whenever I use the internal browser I often end up getting crashes at random moments.
-Most of the time these crashes occur after I have stopped using the browser and I've closed it, so I suspect there's some cleanup that's not happening properly.
-The stack traces are always similiar,  WebDocumentLoaderMac::setDataSource is always the final native call in these crashes.
-I'm attaching a stack trace below...
+Whenever I use the internal browser I often end up getting crashes at random moments. Most of the time these crashes occur after I have stopped using the browser and I've closed it, so I suspect there's some cleanup that's not happening properly. The stack traces are always similiar,  WebDocumentLoaderMac::setDataSource is always the final native call in these crashes. I'm attaching a stack trace below...

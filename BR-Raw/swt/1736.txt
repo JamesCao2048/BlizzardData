@@ -1,28 +1,22 @@
 Performance Improvement for JPEGFileFormat class initializer
-In profiling startup of one of the applications I support I saw the class initializer for org.eclipse.swt.internal.image.JPEGFileFormat accounted for >2% of instructions executed in the scenario.
-This seemed excessive
--- upon investigation discovered code of the form:
+In profiling startup of one of the applications I support I saw the class initializer for org.eclipse.swt.internal.image.JPEGFileFormat accounted for >2% of instructions executed in the scenario.  This seemed excessive -- upon investigation discovered code of the form:
 static int[] someClassTable;
 static {
 someClassTable = new int[2048];
-for ( int i = 0; i
-< someClassTable.length; i++ ) {
+for ( int i = 0; i < someClassTable.length; i++ ) {
 someClassTable[i] = some computation;
 }
 }
-It turns out the access to the class variable from within the class initializer is quite expensive
--- changing the code to store thru a local:
+It turns out the access to the class variable from within the class initializer is quite expensive -- changing the code to store thru a local:
 static {
 int[] local_ClassTable = new int[2048];
 // someClassTable = new int[2048];
-for ( int i = 0; i
-< someClassTable.length; i++ ) {
+for ( int i = 0; i < someClassTable.length; i++ ) {
 local_ClassTable[i] = some computation;
 }
 someClassTable = local_ClassTable;
 }
 Applying this change to initializeBitCountTable(), initializeRGBYCbCrTables()
 initializeYCbCrRGBTables() results in an instruction count of approx 0.7 million
-for the JPEGFileFormat class initializer.
-Without the change the instruction count is in excess of 120 million.
+for the JPEGFileFormat class initializer.  Without the change the instruction count is in excess of 120 million.
 I can provide the changed code via email.

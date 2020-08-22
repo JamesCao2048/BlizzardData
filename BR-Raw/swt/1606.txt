@@ -1,11 +1,7 @@
 setRegion on Canvas not working on linux
 using org.eclipse.swt_3.4.0.v3436a.jar and org.eclipse.swt.gtk.linux.x86_3.4.0.v3436.jar on a fedora core 5 machine
 The following snippet causes two canvases to be drawn whose bounds overlap, but their regions do not.
-
-The entire canvas is drawn, rather than just the regions.
-When I try the same snippet with Buttons instead of Canvases, the Buttons are drawn (and are selection sensitive) based on the regions.
-I also tested this on OSX and a Windows XP machine.
-The test behaved the same on OSX (separate bug filed) and on the windows box the canvases were drawn based on the regions.
+The entire canvas is drawn, rather than just the regions.  When I try the same snippet with Buttons instead of Canvases, the Buttons are drawn (and are selection sensitive) based on the regions.  I also tested this on OSX and a Windows XP machine.  The test behaved the same on OSX (separate bug filed) and on the windows box the canvases were drawn based on the regions.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Region;
 import org.eclipse.swt.widgets.Button;

@@ -1,8 +1,7 @@
 Incorrect GC colors on Table's PaintItem event when row selected + no EraseItem
 Build Identifier: SWT3647
 When a table has a PaintItem listener but no EraseItem listener, the PaintItem's event.GC will not have the correct Foreground and Background color.
-Run the snippet below and select the first row of each table.
-When in focus, the table without the EraseItem will have wrong colors.
+Run the snippet below and select the first row of each table.  When in focus, the table without the EraseItem will have wrong colors.
 Reproducible: Always
 Steps to Reproduce:
 Snippet:

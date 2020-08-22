@@ -1,6 +1,5 @@
 [64] JUnit test crashes: Image constructor(Device,String)
-The following PI snippet used to reproduce the crash as well, but it no longer seems to since I've replaced swt with HEAD.
-The junit case still fails though.
+The following PI snippet used to reproduce the crash as well, but it no longer seems to since I've replaced swt with HEAD.  The junit case still fails though.
 public static void main(String[] args) {
 Display display = new Display ();
 String filename="C:\workspace33RC3\org.eclipse.swt.tests\bin\folder.gif";

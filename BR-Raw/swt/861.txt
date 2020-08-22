@@ -1,10 +1,10 @@
 onbeforeunload dialog is not displayed
 Build ID: I20080207-1530
 Steps To Reproduce:
-1. Open  http://www.gmail.com  within SWT browser/Eclispe integrated browser address bar
-2. Login to a gmail account
-3. Compose a new gmail message
-4. Enter an address and type a subject
-5. Click close button to close browser
+1.  Open  http://www.gmail.com  within SWT browser/Eclispe integrated browser address bar
+2.  Login to a gmail account
+3.  Compose a new gmail message
+4.  Enter an address and type a subject
+5.  Click close button to close browser
 PROBLEM:  Browser disappears  without displaying onbeforeunload dialog which is expected behavior.
 More information:

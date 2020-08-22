@@ -1,7 +1,2 @@
 Bug 134488 Set page break for table inside list group header will cause data display error.
-Description: Set page break for table inside list group header will cause data display error.
-Steps to reproduce: 1.Insert a list with a group 2.Insert a table to list group header 3.Set page-break-before to always to table.
-4.Preview in web viewer/html/pdf.
-See attached report.
-Expected result: Data display correctly Actual result: In Web Viewer, data in table kept display the first data row in each page.
-In html/pdf, it's ok.
+Description: Set page break for table inside list group header will cause data display error. Steps to reproduce: 1. Insert a list with a group 2. Insert a table to list group header 3. Set page-break-before to always to table. 4. Preview in web viewer/html/pdf. See attached report. Expected result: Data display correctly Actual result: In Web Viewer, data in table kept display the first data row in each page. In html/pdf, it's ok.

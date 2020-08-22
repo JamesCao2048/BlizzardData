@@ -1,8 +1,5 @@
 TextLayout ignores TextStyle rise if GC's antialias is different from SWT.DEFAULT
 Build Identifier: Eclipse 3.5 and higher
-TextLayout ignores rise when drawing on a GC with antialias set to ON or OFF.
-It works with antialias set to SWT.DEFAULT.
-This happens only on Windows and from my tests it still works with Eclipse 3.4 but is broken from 3.5 and higher.
-I didn't test with Indigo but I am pretty sure it's broken there too.
+TextLayout ignores rise when drawing on a GC with antialias set to ON or OFF. It works with antialias set to SWT.DEFAULT. This happens only on Windows and from my tests it still works with Eclipse 3.4 but is broken from 3.5 and higher. I didn't test with Indigo but I am pretty sure it's broken there too.
 I am attaching the snippet and screenshots that show the difference in results.
 Reproducible: Always

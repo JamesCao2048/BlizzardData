@@ -1,3 +1,2 @@
 Bug 172286 Make IColumn extend IContent in engine api
-Currently IColumn interface doesn't extend IContent, but has similar functions as those in IContent, generally it behaves much the same as a IContent object.
-So better change it to extend IContent to standardize the engine content api.
+Currently IColumn interface doesn't extend IContent, but has similar functions as those in IContent, generally it behaves much the same as a IContent object. So better change it to extend IContent to standardize the engine content api.

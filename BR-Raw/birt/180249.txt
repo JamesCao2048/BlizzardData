@@ -1,4 +1,2 @@
 Bug 180249 BPS39 - Centralized Chart Engine API
-Centralized and clearer Engine API
--Create one single entry point class ChartEngine in an api package so it's easy to find (with access to IGenerator, Serializer, Device Renderers)
--Create a new IGenerator interface instead of exposing the Generator class.
+Centralized and clearer Engine API -Create one single entry point class ChartEngine in an api package so it's easy to find (with access to IGenerator, Serializer, Device Renderers) -Create a new IGenerator interface instead of exposing the Generator class.

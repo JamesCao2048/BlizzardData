@@ -1,13 +1,10 @@
 SWT Link Widget throws Array Out of Bounds Exception
 Using Eclipse 3.1m5a creating a Link Widget and setting the text property to a
-string less than 4 characters causes an Array Out of Bounds Exception.
-This is
+string less than 4 characters causes an Array Out of Bounds Exception.  This is
 because in the parse(String s) method called by setText(String s) there is a
 divide by 4 without first checking to see if the string is at least 4 characters
 long.
 The JavaDocs are not overly clear on the intention of a Link Widget, but it
 would seem that any string (including one without any anchored links) is allowed
-to be set as the text.
-Therefore the setText method should allow 1-3 letter
-strings (i.e.
-foo).
+to be set as the text.  Therefore the setText method should allow 1-3 letter
+strings (i.e. foo).

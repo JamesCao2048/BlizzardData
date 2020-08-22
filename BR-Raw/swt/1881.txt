@@ -2,8 +2,7 @@ getItemCount() incorrect in Vista for VIRTUAL trees
 When you ask an item's parent for it's count on Vista it will give you the count of the number of items that have had the SetData callback called, not the item count set by setItemCount().
 In the snipped below when we change from a flat list to a tree we will get incorrect parent item counts when it is queried.
 This is a serious issue for the tree viewer which relies on the parent's item count to determine reuse of widgets.
-Note that this does not happen the first time to bring this up
-- you have to switch from tree with a node expanded to flat and back again.
+Note that this does not happen the first time to bring this up - you have to switch from tree with a node expanded to flat and back again.
 package virtualtest;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -34,8 +33,7 @@ public void handleEvent(Event event) {
 TreeItem item = (TreeItem) event.item;
 int index = event.index;
 if (item.getParentItem() == null) {
-item.setItemCount(showingTree ?
-10 : 0);
+item.setItemCount(showingTree ? 10 : 0);
 item.setText(" ITEM " + String.valueOf(index)
 + " count =  "
 + String.valueOf(item.getItemCount()));
@@ -51,8 +49,7 @@ item.setText(" ITEM "
 button.addSelectionListener(new SelectionAdapter() {
 @Override
 public void widgetSelected(SelectionEvent e) {
-button.setText(showingTree ?
-FLAT_LABEL : TREE_LABEL);
+button.setText(showingTree ? FLAT_LABEL : TREE_LABEL);
 showingTree = !showingTree;
 tree.clearAll(true);
 }

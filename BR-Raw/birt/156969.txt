@@ -1,7 +1,2 @@
 Bug 156969 [regression]Group header repeat doesn't work in Web Viewer.
-Description: Group header repeat doesn't work in Web Viewer.
-Steps to reproduce: 1.New a data source and dataset, drag the dataset to Layout.
-2.Add a group.
-3.Set page break in the first data item in table detail row.
-4.Preview in web viewer&#12290; Expected result: Group header is repeated in each page.
-Actual result: No group header repeat effect.
+Description: Group header repeat doesn't work in Web Viewer. Steps to reproduce: 1. New a data source and dataset, drag the dataset to Layout. 2. Add a group. 3. Set page break in the first data item in table detail row. 4. Preview in web viewer&#12290; Expected result: Group header is repeated in each page. Actual result: No group header repeat effect.

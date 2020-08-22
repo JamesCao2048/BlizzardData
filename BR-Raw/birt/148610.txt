@@ -1,6 +1,2 @@
 Bug 148610 [regression] Java based scripting -> table repeat header does not work properly in web viewer
-steps to reproduce:
-- use attached reports and Java classes
-- preview in web viewer expected behavior:
-- table headers will not be repeated actual behavior:
-- table headers were repeated
+steps to reproduce: - use attached reports and Java classes - preview in web viewer expected behavior: - table headers will not be repeated actual behavior: - table headers were repeated

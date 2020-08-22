@@ -1,14 +1,11 @@
 [interop] swt SWT_AWT & ui ViewPart
 Hi all,
 I try to use SWT_AWT in a ViewPart but I can't get my plugin working, the
-workbench tells me there was an error creating view.
-Here it is, taken from
+workbench tells me there was an error creating view. Here it is, taken from
 platform .log :
-!ENTRY org.eclipse.ui 4 4 janv.
-23, 2004 12:04:50.246
+!ENTRY org.eclipse.ui 4 4 janv. 23, 2004 12:04:50.246
 !MESSAGE Unhandled event loop exception
-!ENTRY org.eclipse.ui 4 0 janv.
-23, 2004 12:04:50.246
+!ENTRY org.eclipse.ui 4 0 janv. 23, 2004 12:04:50.246
 !MESSAGE java.lang.NullPointerException
 !STACK 0
 java.lang.NullPointerException
@@ -32,11 +29,9 @@ at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
 at org.eclipse.core.launcher.Main.run(Main.java:742)
 at org.eclipse.core.launcher.Main.main(Main.java:581)
 This error happens on the following line in the given snippet :
-SWT_AWT.newFrame(...) in the following snippet.
-When I execute the same outside
+SWT_AWT.newFrame(...) in the following snippet. When I execute the same outside
 a eclipse (in a shell), this works fine.
-Does somebody know how to solve this problem?
-Is it a bug?
+Does somebody know how to solve this problem? Is it a bug?
 Thanks for help.
 Mathieu Fougeray.
 import org.eclipse.jface.viewers.IStructuredContentProvider;

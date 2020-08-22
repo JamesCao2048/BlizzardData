@@ -1,8 +1,7 @@
 No way to center tool items on a vertical toolbar
 The following code brings up a window containing a single vertical toolbar.
 The toolbar contains two ToolItem's with different length labels but the same
-icon.
-The toolbar buttons are left-aligned within the toolbar, but having them
+icon. The toolbar buttons are left-aligned within the toolbar, but having them
 centered about the vertical center axis of the toolbar would be desirable
 (think of the alignment of items in the Outlook bar, or in the panel at the
 side of the standard Windows file chooser dialog.
@@ -17,8 +16,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 public class ToolBarAlignmentBugDemo {
-// "home.gif" is attached to this bug report.
-Place it in the root
+// "home.gif" is attached to this bug report. Place it in the root
 // directory of your C: drive before running this code.
 private static final String ICON_FILE = "C:/home.gif";
 public static void main(String[] args) {

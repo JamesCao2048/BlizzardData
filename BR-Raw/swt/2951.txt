@@ -1,18 +1,12 @@
 linux copy-paste chinese to StyledText problem
 I'm having a weird problem when I try to run my RCP app on Linux (gentoo)
-which doesn't occur on the windows version.
-When I try to copy and paste
+which doesn't occur on the windows version.  When I try to copy and paste
 chinese characters from my web browser to a StyledText widget in my app,
-it pastes the character as its unicode string.
-ie.
-(u4f60)
+it pastes the character as its unicode string. ie. (u4f60)
 However typing chinese into the StyledText and copy-pasting into
-another StyledText works fine.
-As does pasting from browser to a Text
+another StyledText works fine.  As does pasting from browser to a Text
 widget.
-Easiest way to reproduce my problem.
-Use the RcpMail template and change
-the Text widget in View.java to a StyledText.
-Then go to a chinese site like
+Easiest way to reproduce my problem.  Use the RcpMail template and change
+the Text widget in View.java to a StyledText.  Then go to a chinese site like
 BBC chinese  http://news.bbc.co.uk/chinese/simp/hi/default.stm  and try to paste
 some chinese characters in.

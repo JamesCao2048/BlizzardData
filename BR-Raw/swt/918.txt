@@ -3,6 +3,6 @@ Build ID: 3.4.2 M20090211-1700
 Steps To Reproduce:
 1.add an event listener to a combo widget
 2.click anywhere on the widget but the arrow down button, a SWT.MouseDown event is fired (and caught in the listener)
-3.click on the arrow down button, nothing happens.
-4.same thing works fine on windows and HPUX motif
+3. click on the arrow down button, nothing happens.
+4. same thing works fine on windows and HPUX motif
 More information:

@@ -1,7 +1,2 @@
 Bug 135439 JDBC database drivers are placed under both JDBC and Viewer plugin folder
-steps to reproduce:
-- create a report
-- import JDBC database driver
-- check both JDBC and Viewer plugin folder expected behavior:
-- drivers are copied to JDBC plugin folder actual behavior:
-- drivers were copyied to both JDBC and Viewer plugin folders
+steps to reproduce: - create a report - import JDBC database driver - check both JDBC and Viewer plugin folder expected behavior: - drivers are copied to JDBC plugin folder actual behavior: - drivers were copyied to both JDBC and Viewer plugin folders

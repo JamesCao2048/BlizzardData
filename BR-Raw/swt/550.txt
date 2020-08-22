@@ -1,5 +1,2 @@
 DROP_DOWN ToolItems need accessible name
-The JFace ToolBarManager adds an accessible listener to automatically use a graphic ToolItem's tooltip text as its accessible name.
-This does not work for split buttons (aka ToolItems with DROP_DOWN style).
-To see this, run inspect32.exe and tab or arrow through the Eclipse tool bar.
-The tool items with a drop down menu will have role "split button" but they will not have a name.
+The JFace ToolBarManager adds an accessible listener to automatically use a graphic ToolItem's tooltip text as its accessible name. This does not work for split buttons (aka ToolItems with DROP_DOWN style). To see this, run inspect32.exe and tab or arrow through the Eclipse tool bar. The tool items with a drop down menu will have role "split button" but they will not have a name.

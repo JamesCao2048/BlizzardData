@@ -4,13 +4,10 @@ Start VoiceOver (command+F5).
 Tab into the Table, and type down arrow to select the first row.
 VoiceOver says "sort button" before saying the contents of every cell.
 This would be pretty annoying and confusing to a VoiceOver user.
-To see what is happening, select "Column Headers".
-Now, the column headers each have a name.
+To see what is happening, select "Column Headers". Now, the column headers each have a name.
 Type down arrow to select the next row.
 Now, VoiceOver says each table header before it says the cell contents, and it sounds correct.
-So the problem must be that the column headers exist
-- with no text
-- even when the columns are not visible, and VoiceOver says their description (sort button) because they have no name.
+So the problem must be that the column headers exist - with no text - even when the columns are not visible, and VoiceOver says their description (sort button) because they have no name.
 Hide the column headers by deselecting "Column Headers" and type down arrow one more time.
 Now, the column header names that were visible are being spoken, instead of "sort button".
 Verified that this is a problem even in a minimal snippet.
@@ -28,17 +25,14 @@ shell.setText("Table");
 Table table = new Table(shell, SWT.MULTI | SWT.FULL_SELECTION);
 table.setLayoutData(new GridData(GridData.FILL_BOTH));
 //		table.setHeaderVisible(true);
-for (int col = 0; col
-< 3; col++) {
+for (int col = 0; col < 3; col++) {
 TableColumn column = new TableColumn(table, SWT.NONE);
 //			column.setText("Column " + col);
 column.setWidth(100);
 }
-for (int row = 0; row
-< 5; row++) {
+for (int row = 0; row < 5; row++) {
 TableItem item = new TableItem(table, SWT.NONE);
-for (int col = 0; col
-< 3; col++) {
+for (int col = 0; col < 3; col++) {
 item.setText(col, "item" + col + row);
 }
 }

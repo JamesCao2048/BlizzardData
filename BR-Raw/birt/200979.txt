@@ -1,8 +1,2 @@
 Bug 200979 BIRT Cross tab - Better error messages
-In general the error messages are very generic
-- either "Cube does not exist" followed by stack trace or
-- stack trace.
-From the error message it is difficult to fix the problem in the report design.
-I have attached a couple of report design, in which case the error messages are so difficult to follow.
-We need to show user friendly error messages.
-( This bug applies to data engine errors and engine errors ).
+In general the error messages are very generic - either "Cube does not exist" followed by stack trace or - stack trace. From the error message it is difficult to fix the problem in the report design. I have attached a couple of report design, in which case the error messages are so difficult to follow. We need to show user friendly error messages. ( This bug applies to data engine errors and engine errors ).

@@ -1,14 +1,8 @@
 Combo default size too small with certain fonts
 I'm using some non-editable Combos with a list of pre-set strings to select
 from, and I want it to stretch to accomodate the longest string inside the
-list.
-This works fine except when I switch to a certain font in Japanese
-- MS
-UI Gothic.
-And it doesn't seem to be a Japanese thing, if I use another font,
-it works.
-It seems to be computing the size incorrectly.
-I've noticed this in
+list. This works fine except when I switch to a certain font in Japanese - MS
+UI Gothic. And it doesn't seem to be a Japanese thing, if I use another font,
+it works. It seems to be computing the size incorrectly. I've noticed this in
 our UI, and I can also find some instances in some preference pages where they
-do the same thing.
-See screenshots to follow.
+do the same thing. See screenshots to follow.

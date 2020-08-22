@@ -1,6 +1,2 @@
 Bug 135490 Error occurs when Preview Results of Inner Join datasets
-Description: Create a sample datasource and dataset, and then create a Joint dataset.
-Error occurs when preview results in the data set dialog.
-Steps to reproduce: 1.Create a sample datasource, and a dataset with sql statement "select * from CLASSICMODELS.CUSTOMERS".
-2.Create a Joint dataset, the left and right dataset is the same.
-3.Preview result in the dataset dialog, error pops up continuely.
+Description: Create a sample datasource and dataset, and then create a Joint dataset. Error occurs when preview results in the data set dialog. Steps to reproduce: 1.Create a sample datasource, and a dataset with sql statement "select * from CLASSICMODELS.CUSTOMERS". 2.Create a Joint dataset, the left and right dataset is the same. 3.Preview result in the dataset dialog, error pops up continuely.

@@ -1,3 +1,2 @@
 Bug 156335 Blank value is not accepted without display text
-Steps to reproduce: 1.New a list parameter, add a seletion choice: value->blank, display text->a 2.Drag the parameter to the layout 3.Preview, choose "a" in select list, blank value is accepted.
-It's expected result 4.Back to the layout, clean the display text for the parameter 5.Preview, choose the blank value in select list Expected result: Blank value is accepted Actual result: "Parameter should have a value"
+Steps to reproduce: 1.New a list parameter, add a seletion choice: value->blank, display text->a 2.Drag the parameter to the layout 3.Preview, choose "a" in select list, blank value is accepted. It's expected result 4.Back to the layout, clean the display text for the parameter 5.Preview, choose the blank value in select list Expected result: Blank value is accepted Actual result: "Parameter should have a value"

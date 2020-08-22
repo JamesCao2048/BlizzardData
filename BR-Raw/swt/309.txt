@@ -1,11 +1,9 @@
 SWTGraphics#scale is broken when used with Printer on Eclipse 3.7 / GTK
 Build Identifier: M20110909-1335
-Due to a fix in Printer made in Eclipse 3.7 as part of  Bug 150870  the scaling of SWTGraphics is now broken.
-This is due to the fact that now some pre-scaling is being done in Printer#internal_new_GC:
+Due to a fix in Printer made in Eclipse 3.7 as part of  Bug 150870  the scaling of SWTGraphics is now broken. This is due to the fact that now some pre-scaling is being done in Printer#internal_new_GC:
 Cairo.cairo_translate(cairo, printX, printY);
 Cairo.cairo_scale(cairo, screenDPI.x / (float)dpi.x, screenDPI.y / (float)dpi.y);
-Doing SWTGraphics#scale will initialize a new Transform which is not multiplied with the one already set in the above method.
-So for example doing SWTGraphics#scale(1) changes the scale although the method should have no effect.
+Doing SWTGraphics#scale will initialize a new Transform which is not multiplied with the one already set in the above method. So for example doing SWTGraphics#scale(1) changes the scale although the method should have no effect.
 There also a translate that I am sure is being lost too.
 I don't know if the fix should be in SWT for Draw2d but I though you should know about this issue.
 Currently I am doing transform multiplication manually to fix the bug in Eclipse 3.7.

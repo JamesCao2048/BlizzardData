@@ -1,11 +1,9 @@
 ComputeSize on Link gives different results when calling two times in a row
 RC1
-I have a Link widgets embeeded in the new Jaba class wizard.
-The JDT class is
+I have a Link widgets embeeded in the new Jaba class wizard. The JDT class is
 NewClassWizardPage
 The text of the link widget is
-"Do you want to add comments as configured in the
-<a>properties</a> of the
+"Do you want to add comments as configured in the <a>properties</a> of the
 current project?"
 When I call computeSize of the link using the following code
 System.out.println(29 + " " +

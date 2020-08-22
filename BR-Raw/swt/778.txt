@@ -1,13 +1,11 @@
 ProgressBar selection and state are not shown correctly
 User-Agent:       Opera/9.80 (Windows NT 6.1; U; de) Presto/2.2.15 Version/10.01
 Build Identifier: I20090611-1540
-The update of the ProgressBar (including state and selection) is not working properly.
-If you set the state of the ProgressBar to SWT.ERROR, the selection is not displayed correctly.
-If the state is SWT.NORMAL, everthing seems to work fine.
+The update of the ProgressBar (including state and selection) is not working properly. If you set the state of the ProgressBar to SWT.ERROR, the selection is not displayed correctly. If the state is SWT.NORMAL, everthing seems to work fine.
 Reproducible: Always
 Steps to Reproduce:
-1.Run the attached snippet, everthing should work fine
-2.Replace the initial state SWT.NORMAL by SWT.ERROR and run the snippet again
+1. Run the attached snippet, everthing should work fine
+2. Replace the initial state SWT.NORMAL by SWT.ERROR and run the snippet again
 => The error state is sometimes not displayed immediately and finally the selection is not shown corretly, the last segment is still not shown as selected.
 public class TestClass {
 public static void main(String[] args) throws Exception {

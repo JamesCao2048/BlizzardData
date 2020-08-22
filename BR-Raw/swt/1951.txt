@@ -1,13 +1,8 @@
 [TableCursor] moves cursor to first column unexpectedly
-My table has 3 columns.
-If I click in the table outside of the columns, the table cursor will be moved to the first column.
-
+My table has 3 columns.  If I click in the table outside of the columns, the table cursor will be moved to the first column.
 In TableCursor#TableMouseDown, if a column cannot be found from the mouse down event, the code positions the cursor to the first column.
 if (newColumn == null) {
 newColumn = table.getColumn(0);
 }
-The TableCursor should not move the cursor if the mouse event cannot be mapped to any cell inside the table.
-Otherwise, user's selection will be changed unexpectedly.
-(e.g.
-If use right mouse click to bring up the context menu outside of the column area, the selection in the table gets changed unexpectedly.)
+The TableCursor should not move the cursor if the mouse event cannot be mapped to any cell inside the table.  Otherwise, user's selection will be changed unexpectedly.  (e.g.  If use right mouse click to bring up the context menu outside of the column area, the selection in the table gets changed unexpectedly.)
 I will attach a testcase to demonstrate problem.

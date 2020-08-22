@@ -1,13 +1,9 @@
 BIDI: Some custom widgets can't be created with explicitly assigned orientation.
 Each of custom widgets from following list: CCombo,CLabel,CTabFolder,SashForm,
-ScrolledComposite and ViewForm
-- filter styles, which are assigned to it, using
-it's own method checkStyle().
-Only some current widget's specific styles remain
-after this filtering.
-One more widget, TableTree, doesn't work with assigned
-styles (only send them to Table, which is internaly used).
-In all
+ScrolledComposite and ViewForm - filter styles, which are assigned to it, using
+it's own method checkStyle(). Only some current widget's specific styles remain
+after this filtering. One more widget, TableTree, doesn't work with assigned
+styles (only send them to Table, which is internaly used). In all
 cases "orientation" styles are removed before creating handle of widget,
 therefore these widgets can't be created with explicitly assigned orientation
 and only can inherit orientation from their parents.

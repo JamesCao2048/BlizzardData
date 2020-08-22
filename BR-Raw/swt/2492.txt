@@ -1,7 +1,5 @@
 Background Image not inherited running w/o manifest
-Tested with 3.2 M5a and latest IBuild.
-The following snippet is problematic running it without the manifest.
-The buttons dont inherit the background image:
+Tested with 3.2 M5a and latest IBuild. The following snippet is problematic running it without the manifest. The buttons dont inherit the background image:
 public class Main {
 static Image oldImage;
 public static void main(String[] args) {
@@ -16,8 +14,7 @@ group.setText("Group ");
 RowLayout layout2 = new RowLayout(SWT.VERTICAL);
 layout2.marginWidth = layout2.marginHeight = layout2.spacing = 10;
 group.setLayout(layout2);
-for (int i = 0; i
-< 8; i++) {
+for (int i = 0; i < 8; i++) {
 Button button = new Button(group, SWT.RADIO);
 button.setText("Button " + i);
 }

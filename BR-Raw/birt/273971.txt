@@ -1,5 +1,2 @@
 Bug 273971 Refactor AutoScale to reduce inner fields
-Currently there are more than 40 inner fields in AutoScale class.
-It's hard to maintain and likely to produce bugs, especially during clone.
-It's better to add some context classes which include related fields, just like ScaleContext.
-AutoScale includes these context classes, so that inner fields can be reduced.
+Currently there are more than 40 inner fields in AutoScale class. It's hard to maintain and likely to produce bugs, especially during clone. It's better to add some context classes which include related fields, just like ScaleContext. AutoScale includes these context classes, so that inner fields can be reduced.

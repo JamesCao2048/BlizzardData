@@ -1,7 +1,2 @@
 Bug 164430 [regression]Dynamic parameter without display text display no values[0705]
-Description: Dynamic parameter without display text display no values in parameter dialog when preview the report.
-Build number: 2.2.0.v20061114-1013 Steps to reproduce: 1.New a data source and dataset.
-2.New a dynamic report parameter, keep display text none.
-3.Preview Expected result: Values from dataset are listed in paramter dialog.
-Actual result: empty list.
-Error log: N/A
+Description: Dynamic parameter without display text display no values in parameter dialog when preview the report. Build number: 2.2.0.v20061114-1013 Steps to reproduce: 1. New a data source and dataset. 2. New a dynamic report parameter, keep display text none. 3. Preview Expected result: Values from dataset are listed in paramter dialog. Actual result: empty list. Error log: N/A

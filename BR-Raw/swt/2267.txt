@@ -1,9 +1,5 @@
 Web services wizard scale and graph all weird
 Driver:  wtp-sdk-M-1.5.1-200609150551.zip
 When I bring up the Web service wizard with this driver, the client scale is all red and the graphic for the service and client scale is partiall grey.
-
-Andrew said he saw similar problem with the 0914 driver on SLES 9.0 yesterday but the problem went away with a different JDK.
-I'm using "J2RE 1.4.2 IBM Windows 32 build cn142ifx-20060209 (SR4-1)" when I saw that problem on Windows XP.
-I had been using the same JRE before on WTP drivers and did not see this problem.
-We'll do a bit more problem isolation to see which JDK seems to be causing the problem and which one don't.
-We did not make any change in this area in recent weeks.
+Andrew said he saw similar problem with the 0914 driver on SLES 9.0 yesterday but the problem went away with a different JDK.  I'm using "J2RE 1.4.2 IBM Windows 32 build cn142ifx-20060209 (SR4-1)" when I saw that problem on Windows XP.  I had been using the same JRE before on WTP drivers and did not see this problem.
+We'll do a bit more problem isolation to see which JDK seems to be causing the problem and which one don't.  We did not make any change in this area in recent weeks.

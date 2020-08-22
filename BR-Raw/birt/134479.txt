@@ -1,6 +1,2 @@
 Bug 134479 Edit in XML Source cannot be reflected in Layout.
-Description: Edit in XML Source cannot be reflected in Layout.
-Steps to reproduce: 1.New a report parameter with default value "value1" and save 2.Click XML Source, delete
-<property name="defaultValue">value1</property> and save.
-3.Back to Layout, open parameter edit dialog Expected result: Default value is empty.
-Actual result: Default vlaue was still "value1", tried to change it to other values but Layout didn't detected the change.
+Description: Edit in XML Source cannot be reflected in Layout. Steps to reproduce: 1. New a report parameter with default value "value1" and save 2. Click XML Source, delete <property name="defaultValue">value1</property> and save. 3. Back to Layout, open parameter edit dialog Expected result: Default value is empty. Actual result: Default vlaue was still "value1", tried to change it to other values but Layout didn't detected the change.

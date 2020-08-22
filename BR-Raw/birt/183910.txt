@@ -1,8 +1,2 @@
 Bug 183910 Cross tab can not be reverted to template item after it is reverted to report item [1102]
-Description: Cross tab can not be reverted to template item after it is reverted to report item.
-Build number: 2.2.0.v20070425-0630 Steps to reproduce: 1.New a cross tab.
-2.Right click to select the cross tab, choose "Create Template Report Item" to create template item, then revert the cross tab to report item.
-3.Right click to select the cross tab.
-Expected result: The cross tab cna be revert to report item and template item both.
-Actual result: In the context menu, "Revert To Report Item" and "Revert To Template Item" are grayed out.
-Error log: N/A
+Description: Cross tab can not be reverted to template item after it is reverted to report item. Build number: 2.2.0.v20070425-0630 Steps to reproduce: 1. New a cross tab. 2. Right click to select the cross tab, choose "Create Template Report Item" to create template item, then revert the cross tab to report item. 3. Right click to select the cross tab. Expected result: The cross tab cna be revert to report item and template item both. Actual result: In the context menu, "Revert To Report Item" and "Revert To Template Item" are grayed out. Error log: N/A

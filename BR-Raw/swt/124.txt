@@ -1,14 +1,9 @@
 User can do nothing when both a normal dialog pop up and FileDialog are there
 Created  attachment 222221   [details]
 sample project
-After opened a FileDialog or DirectoryDialog, another normal dialog pops up.
-All buttons in the two dialogs cannot work.
-However, you cannot close either dialog except killing it.
-This issue happens with the cocoa SWT libraries (e.g.
-org.eclipse.swt.cocoa.macosx_3.7.2.v3740f-RCP20120928-1700.jar).
-I reproduced this issue on Mac 10.8.2 and Mac 10.7.4.
-This issue doesn't happen with the carbon SWT libraries(e.g.
-org.eclipse.swt.carbon.macosx_3.6.2.v3659b-RCP20120727-1500.jar) in another product
+After opened a FileDialog or DirectoryDialog, another normal dialog pops up. All buttons in the two dialogs cannot work. However, you cannot close either dialog except killing it.
+This issue happens with the cocoa SWT libraries (e.g. org.eclipse.swt.cocoa.macosx_3.7.2.v3740f-RCP20120928-1700.jar). I reproduced this issue on Mac 10.8.2 and Mac 10.7.4.
+This issue doesn't happen with the carbon SWT libraries(e.g. org.eclipse.swt.carbon.macosx_3.6.2.v3659b-RCP20120727-1500.jar) in another product
 I attached the sample code to reproduce this issue.
 resource project: test.swt.rcpapp.zip
 exported product: testSWT.zip

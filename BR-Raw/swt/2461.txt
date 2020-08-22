@@ -1,5 +1,3 @@
 Hyperlinks covered by a table widget receives a linkActivated event when double click on the table
 A hyperlink widget is getting activated wrongly when one double click on a table (SelectionDialog) wich covers the hyperlink.
-This behaviour can be easily reproduced at the plugin.xml editor page.
-Choose the "Browse..." button and move the upcomming dialog over a hyperlink widget and double click onto an element within the dialogs table.
-The underlying hyperlink will get activated.
+This behaviour can be easily reproduced at the plugin.xml editor page. Choose the "Browse..." button and move the upcomming dialog over a hyperlink widget and double click onto an element within the dialogs table. The underlying hyperlink will get activated.

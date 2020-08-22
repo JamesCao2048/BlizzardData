@@ -1,16 +1,13 @@
 Screen cheese in breadcrumb when using Windows classic style
 I20080430-0100.
-This is more a "seeking for advice" than official bug: when switching between Java editors I see screen cheese in the breadcrumb when using Windows classic style.
-XP style and also Vista are fine.
-Also, this only happens when there are several other views in the window, e.g.
-when working in the Browsing perspective.
+This is more a "seeking for advice" than official bug: when switching between Java editors I see screen cheese in the breadcrumb when using Windows classic style. XP style and also Vista are fine. Also, this only happens when there are several other views in the window, e.g. when working in the Browsing perspective.
 It looks like XP style it is drawing the breadcrumb in one go but with Classic style it first clears, then does something else and then draws the new content.
 Is therAnything we can do to debug/fix this?
 Steps:
-1.switch to Windows Classic style
-2.start Eclipse
-3.open 'Java Browsing' perspective
-4.open java.util.regex.Pattern
-5.enable breadcrumb (Alt+Shift+B)
-6.open java.util.HashMap
-7.switch between the two and observe the cheese
+1. switch to Windows Classic style
+2. start Eclipse
+3. open 'Java Browsing' perspective
+4. open java.util.regex.Pattern
+5. enable breadcrumb (Alt+Shift+B)
+6. open java.util.HashMap
+7. switch between the two and observe the cheese

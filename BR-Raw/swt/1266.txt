@@ -6,5 +6,4 @@ gc.setTransform(t);
 gc.drawOval(1, 10, 20, 20);
 // this oval will be antialias
 If I setAntialias(SWT.OFF) after calling setTransform(t) it all works fine.
-SSQ said to check setClipping can have the same problem.
-And maybe it loses alpha too.
+SSQ said to check setClipping can have the same problem. And maybe it loses alpha too.

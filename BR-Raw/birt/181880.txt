@@ -1,4 +1,2 @@
 Bug 181880 Output column generated from Flat file is wrong
-If I define a csv file, including a column which is Date type and has no value, after creating a dataset from this csv, output column of that column is wrong.
-Expected result is Date.
-Actual result is Any.
+If I define a csv file, including a column which is Date type and has no value, after creating a dataset from this csv, output column of that column is wrong. Expected result is Date. Actual result is Any.

@@ -1,13 +1,10 @@
 TextTransfer generates incorrect UTF16 in pasteboard when copying strings from SWT application
 Build Identifier: 3.5.2
-If we copy a string from SWT based application and then paste it to a native Carbon application, the native Carbon application could not get the correct data if inFlavorType is set to kUTTypeUTF16PlainText.
-This works with 3.4.2.If we roll back the changes in TextTransfer.java to 3.4.2, the copy/paste works.
+If we copy a string from SWT based application and then paste it to a native Carbon application, the native Carbon application could not get the correct data if inFlavorType is set to kUTTypeUTF16PlainText. This works with 3.4.2. If we roll back the changes in TextTransfer.java to 3.4.2, the copy/paste works.
 Reproducible: Always
 Steps to Reproduce:
-1.Run the CopyPasteTest.java application
-2.Build and run the CHZO858ABV project
-3.Copy a string from the CopyPasteTest application, this can be done either from Apple + C or clicking the buttons
-4.Click "Edit"
--> "myPaste" menu item to paste the data into the native CHZO858ABV application.
-Do NOT use Apple + V to paste.
-5.The paste fails.
+1. Run the CopyPasteTest.java application
+2. Build and run the CHZO858ABV project
+3. Copy a string from the CopyPasteTest application, this can be done either from Apple + C or clicking the buttons
+4. Click "Edit" -> "myPaste" menu item to paste the data into the native CHZO858ABV application. Do NOT use Apple + V to paste.
+5. The paste fails.

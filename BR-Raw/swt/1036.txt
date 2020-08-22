@@ -1,11 +1,10 @@
 Second call to fillRectangle/fillOval uses black background instead of the declared one
 Created  attachment 133163   [details]
 Modified version of Snippet34 to show the problem
-This seems to be a problem only with "swt-3.5M6-cocoa-macosx-x86_64".
-I cannot reproduce this in the carbon version of 3.5M6 or the windows version of 3.5M6.I have not tried the 32bit version of cocoa.
+This seems to be a problem only with "swt-3.5M6-cocoa-macosx-x86_64". I cannot reproduce this in the carbon version of 3.5M6 or the windows version of 3.5M6. I have not tried the 32bit version of cocoa.
 Steps:
-1.Set the background and foreground colors for GC.
-2.Call fillRectangle/fillOval and it looks fine.
-3.Call fillRectangle/fillOval a second time to draw an adjacent object without calling GC.setBackground or GC.setForeground.
-4.The second object is filled with black instead of using the previously set background color.
+1. Set the background and foreground colors for GC.
+2. Call fillRectangle/fillOval and it looks fine.
+3. Call fillRectangle/fillOval a second time to draw an adjacent object without calling GC.setBackground or GC.setForeground.
+4. The second object is filled with black instead of using the previously set background color.
 Please see attached file which is a modification of snippet34.

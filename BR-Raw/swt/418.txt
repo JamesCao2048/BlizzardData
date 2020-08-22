@@ -7,8 +7,7 @@ Reproducible: Always
 Steps to Reproduce:
 A test application is attached, reproduce this issue with below steps:
 1) Import XULRunnerTest.zip into Eclipse
-2) Run xulrunnertest.Snippet267 with VM argument:
--Dorg.eclipse.swt.browser.XULRunnerPath="your_xulrunner_path", I'm using XULRunner 1.9.2
+2) Run xulrunnertest.Snippet267 with VM argument: -Dorg.eclipse.swt.browser.XULRunnerPath="your_xulrunner_path", I'm using XULRunner 1.9.2
 3) The Yahoo home page will be refreshed every 5 seconds automatically.
 4) Open Task Manager in XP to mornitor the memory usage of the RCP application.
 5) Keeping moving the mouse over the Yahoo page.

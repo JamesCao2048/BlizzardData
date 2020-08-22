@@ -1,6 +1,2 @@
 Bug 117620 Parameter defined in a library doesn't work in a report design.
-Description: Parameter defined in a library doesn't work in a report design.
-Steps to reproduce: 1.Add a static parameter and set default value in a library file.
-2.Include this library in a report design.
-3.Drag this parameter from library explorer view into layout editor.
-4.Preview and error message appears, said that "Error0 : Failed to evaluate params["NewParameter"] ( 1 time(s) ) detail : Failed to evaluate params["NewParameter"] NewParameter not found"
+Description: Parameter defined in a library doesn't work in a report design. Steps to reproduce: 1. Add a static parameter and set default value in a library file. 2. Include this library in a report design. 3. Drag this parameter from library explorer view into layout editor. 4. Preview and error message appears, said that "Error0 : Failed to evaluate params["NewParameter"] ( 1 time(s) ) detail : Failed to evaluate params["NewParameter"] NewParameter not found"

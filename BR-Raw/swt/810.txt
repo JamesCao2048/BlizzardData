@@ -2,21 +2,17 @@
 Created  attachment 148887   [details]
 hs_err_pid7672.log
 3.5, same in 3.4.2 and I20090929-0800
-I was too brave and tried to reproduce  bug 291483  in a Javadoc hover.
-This
+I was too brave and tried to reproduce  bug 291483  in a Javadoc hover. This
 eventually crashed my VM.
 Steps:
 - open a Java editor
 - show a Javadoc hover
 - click into the popup to give it focus
 - press Ctrl+L
-=> Hover popup disappears.
-Everything looks well, but the StyledText in the
-editor does not consume mouse clicks any more (but e.g.
-arrow keys still work).
+=> Hover popup disappears. Everything looks well, but the StyledText in the
+editor does not consume mouse clicks any more (but e.g. arrow keys still work).
 - press Ctrl+W
-=> VM crash.
-Log:
+=> VM crash. Log:
 #
 # A fatal error has been detected by the Java Runtime Environment:
 #

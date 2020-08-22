@@ -1,9 +1,7 @@
 Shell Title bar displayed when only SWT.REZISE.
 When I create a shell with only SWT-RESIZE and on other styles I get a
-menu/title bar at the top.
-But if I resize the window the menu/title bar
-disappears.
-If seem sthe bar should not appear in the first place.
+menu/title bar at the top.   But if I resize the window the menu/title bar
+disappears.  If seem sthe bar should not appear in the first place.
 public static void main(String[] args) {
 Shell shell = new Shell(SWT.RESIZE);
 shell.open();

@@ -1,10 +1,8 @@
 Receiving duplicate key events per non-printable key [BBAWT]
-Run the attached testcase on PocketPC.
-Place focus on the Text widget, then
+Run the attached testcase on PocketPC. Place focus on the Text widget, then
 bring up the soft keyboard and press the Enter and Tab key.
 What you get are 2 KeyDown events plus 1 KeyUp for the Enter key and only a
-single KeyUp event (no KeyDown) for the Tab key.
-For comparison, on win32, you
+single KeyUp event (no KeyDown) for the Tab key. For comparison, on win32, you
 get a single down and up for the Enter key and nothing at all for the Tab key.
 I tested this using the Windows CE (ARM PocketPC) download from eclipse.org
 which more specifically is swt-3.0RC1-win32-ce-arm-ppc.zip (which is based on

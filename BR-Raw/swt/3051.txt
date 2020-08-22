@@ -1,7 +1,5 @@
 GC.copyArea() slow on images
 I20050215-2300
-The test test_copyAreaIIIIII is slower on Linux compared to Windows.
-The
-offender seems to be the calls to gdk_gc_set_exposures().
-Since we're doing a
+The test test_copyAreaIIIIII is slower on Linux compared to Windows.  The
+offender seems to be the calls to gdk_gc_set_exposures().  Since we're doing a
 copyArea on an image, we do not need to make these calls.

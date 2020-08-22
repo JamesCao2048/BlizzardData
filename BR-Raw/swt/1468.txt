@@ -1,4 +1,2 @@
 [consistency] Font#getFontData() not safe from non-ui thread on MacOS
-This seems to have worked before in 3.3 and changed in 3.4.A call to Font#getFontData() from a non-ui thread results in a SWT exception.
-For one, the JavaDoc is not speced to throw this exception and second, it works fine on Windows and Linux.
-The call to Device#getDPI() from getFontData() calls checkDevice() and causes this issue.
+This seems to have worked before in 3.3 and changed in 3.4. A call to Font#getFontData() from a non-ui thread results in a SWT exception. For one, the JavaDoc is not speced to throw this exception and second, it works fine on Windows and Linux. The call to Device#getDPI() from getFontData() calls checkDevice() and causes this issue.

@@ -1,12 +1,11 @@
 Checkbox takes too much space to the right
 Build ID: I20090313-0100
 Steps To Reproduce:
-1.Create checkbox with colored background
-2.Set layout data so that it doesn't take excess horizontal and vertical space
-3.Open Interface builder and create cocoa application
-4.Drag a checkbox from the library to application window
-5.Delete checkbox text
-6.Select checkbox and in the menu, select  Layout
--> Size to fit
-7.Compare space taken by both checkboxes
-8.Notice, that swt checkbox takes significantly more space to the right then native checkbox created in IB
+1. Create checkbox with colored background
+2. Set layout data so that it doesn't take excess horizontal and vertical space
+3. Open Interface builder and create cocoa application
+4. Drag a checkbox from the library to application window
+5. Delete checkbox text
+6. Select checkbox and in the menu, select  Layout -> Size to fit
+7. Compare space taken by both checkboxes
+8. Notice, that swt checkbox takes significantly more space to the right then native checkbox created in IB

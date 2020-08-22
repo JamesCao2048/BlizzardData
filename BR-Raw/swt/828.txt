@@ -1,11 +1,8 @@
 possible leak in FileDialog
 From the newsgroup, should be investigated:
 I'm debugging my mixed Java/C++ application and trying to eliminate
-memory leaks.
-I'm using the leaks(1) tool in Mac OS X, and I can see a
-growing number of leaked NSCFArray and AEListImpl objects.
-The stack
+memory leaks. I'm using the leaks(1) tool in Mac OS X, and I can see a
+growing number of leaked NSCFArray and AEListImpl objects. The stack
 traces show they were all created in the
-Java_org_eclipse_swt_internal_carbon_OS_NavDialogRun function call.
-I'm
+Java_org_eclipse_swt_internal_carbon_OS_NavDialogRun function call. I'm
 using Carbon SWT (3.4.1.v3452b); is this problem known/spurious/benign?

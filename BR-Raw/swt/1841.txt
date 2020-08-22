@@ -1,9 +1,5 @@
 WM_MOUSEWHEEL can send fractional deltas
 The currently handlers for WM_MOUSEWHEEL in both Scrollable and Widget assume that the delta value for the scroll event will always be a multiple of OS.WHEEL_DELTA, or 120.
-Windows Vista changes this behavior, making WM_MOUSEWHEEL send "fractional" wheel deltas, which are slightly smaller than that.
-Watching the WM_MOUSEWHEEL events demonstrates that Vista frequently sends more WM_MOUSEWHEEL events with smaller deltas
-- for example, a delta of 90 followed by a delta of 60.
+Windows Vista changes this behavior, making WM_MOUSEWHEEL send "fractional" wheel deltas, which are slightly smaller than that. Watching the WM_MOUSEWHEEL events demonstrates that Vista frequently sends more WM_MOUSEWHEEL events with smaller deltas - for example, a delta of 90 followed by a delta of 60.
 SWT needs to handle these smaller fractional scroll events.
-Note that not all mice will cause this effect
-- it's only been observed in "smooth scroll" mice.
-Generic mice with the traditional "click"-style wheel that effectively send button presses for scrolling up and down will continue to send OS.WHEEL_DELTA increments.
+Note that not all mice will cause this effect - it's only been observed in "smooth scroll" mice. Generic mice with the traditional "click"-style wheel that effectively send button presses for scrolling up and down will continue to send OS.WHEEL_DELTA increments.

@@ -1,6 +1,2 @@
 Bug 156923 Group page break auto behavior
-Current behabvior
-- When page break property is set to auto.
-By default BIRT engine creates page breaks for the outermost group.
-Expected behavior
-- Group level page break, auto should not create page breaks for the any group ( including outermost )
+Current behabvior - When page break property is set to auto. By default BIRT engine creates page breaks for the outermost group. Expected behavior - Group level page break, auto should not create page breaks for the any group ( including outermost )

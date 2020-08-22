@@ -1,11 +1,9 @@
 Selection jumps in tree
 +++ This bug was initially created as a clone of  Bug #276531  +++
-Bug 276531  is back in RC1 (I20110512-2000).
-Was OK in I20110428-0848.
+Bug 276531  is back in RC1 (I20110512-2000). Was OK in I20110428-0848.
 Steps:
-1.Open Preferences dialog
-2.Make sure it comes up all collapsed, with the first item (General) selected.
-If not, select the first item, close the dialog, and open again.
-3.Click on "Ant"
+1. Open Preferences dialog
+2. Make sure it comes up all collapsed, with the first item (General) selected. If not, select the first item, close the dialog, and open again.
+3. Click on "Ant"
 Expected: "Ant" gets selected
 Actual: "Plug-in Development" gets selected.

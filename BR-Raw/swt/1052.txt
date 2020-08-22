@@ -1,7 +1,6 @@
 wrong event order in StyledText on Cocoa kills Incremental Find
 N20090419-2000 and HEAD, Cocoa
-In text editors, the Incremental Find Next (Command+J) action does not work any more.
-It correctly updates the status line, but when I begin to type, the characters end up in the StyledText, and not in the status line.
+In text editors, the Incremental Find Next (Command+J) action does not work any more. It correctly updates the status line, but when I begin to type, the characters end up in the StyledText, and not in the status line.
 I'm pretty sure this is due to the wrong event order I see in the CustomControlExample:
 - TextChangeListener.textChanging: TextChangingEvent{null time=0 data=null}
 - TextChangeListener.textChanged: TextChangedEvent{null time=0 data=null}

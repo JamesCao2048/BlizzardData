@@ -1,9 +1,7 @@
 OutOfMemory Exception from corrupted clipboard?
 While trying to debug/test a new plugin, I started seeing some odd behavior on
-the startup of a new Eclipse instance.
-Typically, this would correspond to
-seemingly random 'OutOfMemory' errors from the main instance as well.
-I set a
+the startup of a new Eclipse instance.  Typically, this would correspond to
+seemingly random 'OutOfMemory' errors from the main instance as well.  I set a
 breakpoint on the OutOfMemory exception, and managed to get the following
 stack trace
 

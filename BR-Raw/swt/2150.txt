@@ -1,18 +1,13 @@
 [Browser] Excessive memory from Browser widget on GTK
 Build ID: I20070209-1006 (3.3M5)
 Steps To Reproduce:
-1.Open a system monitor application (I used System Monitor on Gnome).
-2.Open a Task editor from the Task List (the Bug tracker is Bugzilla).
-3.Notice that resident memory usage increases by 100+ MB.
-4.Repeat 2 and 3 a few times.
-Each added Task editor increases memory usage by 100MB.
-5.Close all task editors.
-No memory is reclaimed.
-6.Open a few more and the same memory increase happens.
+1. Open a system monitor application (I used System Monitor on Gnome).
+2. Open a Task editor from the Task List (the Bug tracker is Bugzilla).
+3. Notice that resident memory usage increases by 100+ MB.
+4. Repeat 2 and 3 a few times. Each added Task editor increases memory usage by 100MB.
+5. Close all task editors. No memory is reclaimed.
+6. Open a few more and the same memory increase happens.
 More information:
-Using Mylar 1.0.1, JDK 6, GTK 2.10.8, Fedora Core 6.Tested with firefox 2.0.0.1 and xulrunner 1.8.0.9.I intend to test with the M5 Mylar build once that's out, but I thought I'd mention the problem before because it seems quite severe.
-I think this only happens on GTK, but I haven't tested on Windows.
-I think this may be related to the browser as I see some similar behaviour in an eclipse RCP app that uses a browser.
-So, it's possible that this is a SWT issue, but without knowing enough about how Mylar uses the browser, it's difficult to know for sure.
-If there's any other information I can provide, just let me know.
-Thanks.
+Using Mylar 1.0.1, JDK 6, GTK 2.10.8, Fedora Core 6. Tested with firefox 2.0.0.1 and xulrunner 1.8.0.9. I intend to test with the M5 Mylar build once that's out, but I thought I'd mention the problem before because it seems quite severe.
+I think this only happens on GTK, but I haven't tested on Windows. I think this may be related to the browser as I see some similar behaviour in an eclipse RCP app that uses a browser. So, it's possible that this is a SWT issue, but without knowing enough about how Mylar uses the browser, it's difficult to know for sure.
+If there's any other information I can provide, just let me know. Thanks.

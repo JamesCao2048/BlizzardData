@@ -1,10 +1,8 @@
 gradient fill does not print its color properly
 When I try to print gradient foreground color as yellow, it
-prints out turquoise.
-If you change the fillGradient() call
+prints out turquoise.  If you change the fillGradient() call
 ti fillRectangle() the right color prints out.
 I have seen this happen with other colors too.
-
 I altered the print example to demonstrate the problem.
 package printing.tests;
 import org.eclipse.swt.*;

@@ -1,8 +1,6 @@
 Crash on open of any java source
-System crashes when trying to open a java source file.
-Here's the dump:
-Date/Time:  2003-11-14 23:36:20
--0500
+System crashes when trying to open a java source file. Here's the dump:
+Date/Time:  2003-11-14 23:36:20 -0500
 OS Version: 10.3.1 (Build 7C107)
 Command:    java_swt (/Applications/eclipse/I20031114/eclipse/Eclipse.app/Contents/MacOS/
 java_swt)
@@ -88,4 +86,4 @@ Thread 0 Crashed:
 #73  0x9487b234 in __floatdisf (__floatdisf + 3828)
 #74  0x948a9150 in JVM_InvokeMethod (JVM_InvokeMethod + 496)
 #75  0x03d9e580 in 0x3d9e580
-#76  0x03d97ec0
+#76  0x03d97ec0 i

@@ -1,14 +1,10 @@
 cannot programmatically collapse item whose parent is collapsed
 N20090315-2000
-I recently saw a blank item in the Package Explorer while retrieving content from CVS.
-This has been reported before but has never been reproducable.
-I still cannot get a reproducable case of it, but I suspect that it's caused by the problem below.
+I recently saw a blank item in the Package Explorer while retrieving content from CVS.  This has been reported before but has never been reproducable.  I still cannot get a reproducable case of it, but I suspect that it's caused by the problem below.
 - run the snippet below and expand the item down to its bottom descendent
 - note that if you collapse-then-expand the root item that the full hierarchy is expanded (correct)
 - collapse the root item, then click anywhere in the shell's open space, which does a setExpanded(false) on the first child item
 - now expand the root item
-
 -> note that the child item is still expanded, but should not be
-
 -> on other platforms this item is correctly collapsed
 I believe that the blank item I saw in the Package Explorer was a place-holder item that jface creates in order to make an expander appear beside a collapsed item whose actual child items are not yet known ( the item was not collapsed but should have been).

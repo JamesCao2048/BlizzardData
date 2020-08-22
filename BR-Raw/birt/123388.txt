@@ -1,16 +1,2 @@
 Bug 123388 Set html text, preivew in pdf, incorrectly.
-Html text, preivew in pdf, incorrectly.
-Steps: 1.Drag a text into layout 2.Edit the text:
-<html>Our records indicate that several invoices are now past due.
-Below is a listing of outstanding invoices tatalling.
-Please let us know when we can expect receipt of these or if you have question or concerns.
-For a direct line call 604-893-6310.
-<br>
-<br>
-<br> Sincerely,
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mark Elroy
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CEO, Xtreme Mountain Bikes
-<html> 3.Preview in pdf Actual Results: 1.Mutli
-<BR> only displyed one line.
-Expected Results: 1.Text can be displyed correctly in pdf.
+Html text, preivew in pdf, incorrectly. Steps: 1.Drag a text into layout 2.Edit the text: <html>Our records indicate that several invoices are now past due. Below is a listing of outstanding invoices tatalling. Please let us know when we can expect receipt of these or if you have question or concerns. For a direct line call 604-893-6310. <br> <br> <br> Sincerely, <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mark Elroy <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CEO, Xtreme Mountain Bikes <html> 3.Preview in pdf Actual Results: 1.Mutli <BR> only displyed one line. Expected Results: 1.Text can be displyed correctly in pdf.

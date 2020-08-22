@@ -1,7 +1,2 @@
 Bug 284130 bad PDF with parallel report
-I have a parallel report with two tables, each in a column of a grid.
-One table detail row has a visibility condition 'row.__rownum % 2 != 0', and the other 'row.__rownum % 2 == 0'.
-It woks fine in the preview.
-But, in the PDF report, the output of the second column starts only at the end of the first column.
-It works fine in 2.3.2 => regression.
-Regards, Christophe Baudin
+I have a parallel report with two tables, each in a column of a grid. One table detail row has a visibility condition 'row.__rownum % 2 != 0', and the other 'row.__rownum % 2 == 0'. It woks fine in the preview. But, in the PDF report, the output of the second column starts only at the end of the first column. It works fine in 2.3.2 => regression. Regards, Christophe Baudin

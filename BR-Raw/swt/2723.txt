@@ -1,18 +1,12 @@
 Closing an editor adds "Widget is disposed" error to the errorlog
-Open a java editor and close it ...
-leads to a Widget is disposed error.
-I'm
+Open a java editor and close it ... leads to a Widget is disposed error.  I'm
 investigating it to see if it's related to the patch for  bug 96129
-!SESSION 2005-08-16 08:58:10.925
------------------------------------------------
+!SESSION 2005-08-16 08:58:10.925 -----------------------------------------------
 eclipse.buildId=N20050816-0010
 java.version=1.4.2_08
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
-Command-line arguments:
--os linux
--ws gtk
--arch x86
+Command-line arguments:  -os linux -ws gtk -arch x86
 !ENTRY org.eclipse.ui.workbench 4 0 2005-08-16 09:27:07.843
 !MESSAGE Widget is disposed
 !STACK 0
@@ -59,4 +53,4 @@ org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractT
 at
 org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.access$1(DefaultTabFolder.java:1)
 at
-org.eclipse.ui.internal.presentations.defaultprese
+org.eclipse.ui.internal.presentations.defaultpresentat

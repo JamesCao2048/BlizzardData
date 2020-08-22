@@ -1,6 +1,2 @@
 Bug 143104 TVT3.2:TCT639: AR: BIRT: Expression builder should be unmirrored.
-OS: Windows XP Must Fix: No.
-Build Date: 0522 Component: BIRT Blocking: No Language: AR Tester name: Omar Bahy Scenario: 1- Import a report Design, i.e, Test_Report_1.rptdesign 2- Double click on Column_1.3- Click on row ["CUSTOMERNUMBER"] 4- Click ont he empty box that apears next to it to open the expression builder.
-Problem:
-- expression builder text window should be unmirrored to maintain expression readability.
-This article was reassigned from Category:''TVT/Testing''.
+OS: Windows XP Must Fix: No. Build Date: 0522 Component: BIRT Blocking: No Language: AR Tester name: Omar Bahy Scenario: 1- Import a report Design, i.e, Test_Report_1.rptdesign 2- Double click on Column_1. 3- Click on row ["CUSTOMERNUMBER"] 4- Click ont he empty box that apears next to it to open the expression builder. Problem: - expression builder text window should be unmirrored to maintain expression readability. This article was reassigned from Category:''TVT/Testing''.

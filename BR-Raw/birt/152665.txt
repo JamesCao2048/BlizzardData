@@ -1,5 +1,2 @@
 Bug 152665 Supports ODA Data Type - Timestamp and Time
-Supports mapping of ODA scalar data types, Timestamp and Time, to ROM data types.
-* Adds mapping of ODA "Timestamp" from/to "Date" type in DtE API to bridge the mapping of ODA "Timestamp" to a ROM "DateTime".
-* Adds mapping of ODA "Time" from/to a DtE API type to bridge the mapping of ODA "Time" to a ROM scalarParameter data type.
-(Specific mapping data type TBD)
+Supports mapping of ODA scalar data types, Timestamp and Time, to ROM data types. * Adds mapping of ODA "Timestamp" from/to "Date" type in DtE API to bridge the mapping of ODA "Timestamp" to a ROM "DateTime". * Adds mapping of ODA "Time" from/to a DtE API type to bridge the mapping of ODA "Time" to a ROM scalarParameter data type. (Specific mapping data type TBD)

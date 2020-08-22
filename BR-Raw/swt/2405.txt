@@ -1,18 +1,13 @@
 [StyledText] caret does not move correctly when inserted text wraps
-Run the following example and hit the Escape key.
-Notice that the caret is somewhere past the end of the first line but it should really be between "by" and "abcdefghij" on the second line.
-The inserted text has caused the line to wrap but the caret has not followed.
-If you arrow left or arrow right, the caret fixes itself.
+Run the following example and hit the Escape key.  Notice that the caret is somewhere past the end of the first line but it should really be between "by" and "abcdefghij" on the second line.  The inserted text has caused the line to wrap but the caret has not followed.  If you arrow left or arrow right, the caret fixes itself.
 public static void main (String [] args) {
 Display display = new Display ();
 Shell shell = new Shell (display);
 shell.setLayout(new FillLayout());
 final StyledText text = new StyledText(shell, SWT.BORDER | SWT.WRAP);
-text.setText("A drop target receives data in a Drag and Drop operation.
-The data received byn"+
+text.setText("A drop target receives data in a Drag and Drop operation. The data received byn"+
 "the drop target may have come from the same widget, from a different widget within n"+
-"the same application, or from a different application altogether.
-For example, you n"+
+"the same application, or from a different application altogether. For example, you n"+
 "can drag text from an email application and drop it on your application, or you could n"+
 "drag an item in a tree and drop it below a different node in the same tree.");
 text.addListener(SWT.KeyDown, new Listener() {

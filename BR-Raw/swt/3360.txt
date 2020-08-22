@@ -1,9 +1,7 @@
 GC.drawLine and GC.drawPolyline aren't consistent [portability]
 On Windows, gc.drawLine(10,10,20,20) and gc.drawPolyLine(new int[]
-{10,10,20,20}) do not do the same thing.
-drawPolyline is omitting the last
-pixel.
-The effect of this is that when drawing "connections" between boxes,
+{10,10,20,20}) do not do the same thing.  drawPolyline is omitting the last
+pixel.  The effect of this is that when drawing "connections" between boxes,
 the connection meets the box at one end, but has a 1-pixel gap at the other end.
 Also, when drawing a hollow arrow tip that looks like "<", one side of the
 arrow is smaller than the other because one side is missing a pixel.

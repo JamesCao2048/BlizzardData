@@ -1,6 +1,2 @@
 Bug 107189 error message show up when preview chart after set display None
-description: error message show up when preview chart after set display None details to reproduce: 1.new a chart 2.set display None 3.preview actual result: "------------------------------------------------------------------------------
--- iO3EI OU iIo:
-- There are error(s) in Chart:null Error0 : Error.ExtendedItemRenderingError(1 time)detail: 3EIO Chart AO1Ii E3o i$NO-RB$ Width (0) and height (0) cannot be
-<= 0Width (0) and height (0) cannot be
-<= 0" display when preview expected result: no error message show when preview
+description: error message show up when preview chart after set display None details to reproduce: 1. new a chart 2. set display None 3. preview actual result: "------------------------------------------------------------------------------ -- iO3EI OU iIo: - There are error(s) in Chart:null Error0 : Error.ExtendedItemRenderingError(1 time)detail: 3EIO Chart AO1Ii E3o i$NO-RB$ Width (0) and height (0) cannot be <= 0Width (0) and height (0) cannot be <= 0" display when preview expected result: no error message show when preview

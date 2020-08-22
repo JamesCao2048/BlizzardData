@@ -4,10 +4,8 @@ Steps To Reproduce:
 1.Run attached program
 2.Press Reload
 3.Press Refresh
-4.Scroll down
+4. Scroll down
 More information:
-Using custom drawing listeners produces display artifacts when used with a TreeViewer with a lazy content provider.
-The initial display has the labels shown as two overlapping copies.
-Pressing refresh fixes the problem for the items already shown, but scrolling down produces the same problem with the newly displayed items.
+Using custom drawing listeners produces display artifacts when used with a TreeViewer with a lazy content provider. The initial display has the labels shown as two overlapping copies. Pressing refresh fixes the problem for the items already shown, but scrolling down produces the same problem with the newly displayed items.
 This problem only occurs when using both custom drawing handlers and a virtual tree viewer.
 I have observed the bug in both 3.2.2 and 3.3M7 under Windows XP.

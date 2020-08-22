@@ -1,3 +1,2 @@
 Bug 308388 this.getInstancesByElementName does not work in onPageEnd in BIRT 2.5.2
-var groups = this.getInstancesByElementName("GROUP_STATUS"); returns null if put on the Report Design->onPageEnd event.
-It does work if put on the master page->onPageEnd event.
+var groups = this.getInstancesByElementName("GROUP_STATUS"); returns null if put on the Report Design->onPageEnd event. It does work if put on the master page->onPageEnd event.

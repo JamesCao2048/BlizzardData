@@ -1,3 +1,2 @@
 Consider converting all images to 32 bit ARGB when loaded.
-On other platforms when loading images with the native loaders, we've used to loaded image to create a 32 bit ARGB copy, and used the copy.
-This simplifies the rest of our code in image because we know the format of the image is always the same.
+On other platforms when loading images with the native loaders, we've used to loaded image to create a 32 bit ARGB copy, and used the copy. This simplifies the rest of our code in image because we know the format of the image is always the same.

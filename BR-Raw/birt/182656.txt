@@ -1,4 +1,2 @@
 Bug 182656 The result is incorrect when a level has two parents[07][1101]
-Description: The result is incorrect when a level has two parents[07][1101] Build number: 2.2.0.v20070417-0630 Steps to reproduce:
--If the bottom level has two parents , we will considered that a invalid fact table.
-But now the fact table can get the result, and the result is incorrect.
+Description: The result is incorrect when a level has two parents[07][1101] Build number: 2.2.0.v20070417-0630 Steps to reproduce: -If the bottom level has two parents , we will considered that a invalid fact table. But now the fact table can get the result, and the result is incorrect.

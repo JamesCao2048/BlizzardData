@@ -1,6 +1,2 @@
 Bug 198270 Copying an aggregate does not make a copy, only a reference
-In a table with groups or multiple columns, create an aggregate in a footer or a header.
-Copy the aggregate to another cell in a footer or a header.
-Make changes to the new aggregate appropriate to its new location.
-Expected result: The changes appear in only the new copy of the aggregate.
-Actual result: The changes appear in both aggregates because the new aggregate is not a copy, but a reference to the same aggregate as the original.
+In a table with groups or multiple columns, create an aggregate in a footer or a header. Copy the aggregate to another cell in a footer or a header. Make changes to the new aggregate appropriate to its new location. Expected result: The changes appear in only the new copy of the aggregate. Actual result: The changes appear in both aggregates because the new aggregate is not a copy, but a reference to the same aggregate as the original.

@@ -30,8 +30,7 @@ Function=strcmp+0x238
 Library=/usr/lib/libc.so.1
 Current Java thread:
 at org.eclipse.swt.internal.motif.OS.XtDestroyWidget(Native Method)
-- locked
-<0xf5827e78> (a java.lang.Class)
+- locked <0xf5827e78> (a java.lang.Class)
 at org.eclipse.swt.widgets.Display.destroyDisplay(Display.java:728)
 at org.eclipse.swt.widgets.Display.destroy(Display.java:707)
 at org.eclipse.swt.graphics.Device.dispose(Device.java:232)
@@ -66,4 +65,4 @@ Dynamic libraries:
 0xff0a0000 	/usr/lib/libmp.so.2
 0xff070000 	/usr/j2se/jre/lib/sparc/native_threads/libhpi.so
 0xfe7d0000 	/usr/j2se/jre/lib/sparc/libverify.so
-0
+0x

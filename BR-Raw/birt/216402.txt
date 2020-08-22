@@ -1,7 +1,2 @@
 Bug 216402 Series palette does not work correctly when there're two Y axis.
-description: Series palette does not work correctly when there're two Y axis.
-build version: 2.3.0 v20080124-0800 steps to reproduce: 1.New a bar chart.
-2.On select chart type tab, select second Y axis for Multple Y axis, and select line series for series type.
-3.On format chart tab, select series and click the Series Palette button to open the Series Palette dialog, select one of the color below and click the up arrow button several times.
-Expected result: The selected color should move up and when it arrive the first row, it will take the place of the origin color, then the color of the series will change.
-Actual result: The color does not move up.
+description: Series palette does not work correctly when there're two Y axis. build version: 2.3.0 v20080124-0800 steps to reproduce: 1. New a bar chart. 2. On select chart type tab, select second Y axis for Multple Y axis, and select line series for series type. 3. On format chart tab, select series and click the Series Palette button to open the Series Palette dialog, select one of the color below and click the up arrow button several times. Expected result: The selected color should move up and when it arrive the first row, it will take the place of the origin color, then the color of the series will change. Actual result: The color does not move up.

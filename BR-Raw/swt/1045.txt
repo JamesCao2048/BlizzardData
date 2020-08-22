@@ -7,8 +7,7 @@ Consider the following fragment in a text editor, with the brackets marking the 
 22222[222  ]
 33333[333  ]
 44444444
-This selection cannot be set via API, since the renderer width is only 8 characters wide.
-However, the same selection can be set using keyboard interaction.
+This selection cannot be set via API, since the renderer width is only 8 characters wide. However, the same selection can be set using keyboard interaction.
 The same works if the file has the following contents, since the last line extends the renderer width:
 11111111
 22222[222  ]

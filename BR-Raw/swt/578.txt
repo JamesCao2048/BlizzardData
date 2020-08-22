@@ -1,26 +1,19 @@
 Application crashes when the link widget is invoked through keyboard
 Created  attachment 175206   [details]
 Snippet to reproduce
-The attached snippet can be used to reproduce a crash happening when the link is selected only through Space key.
-I've an application that crashes due to invoking a wizard through the selection of link using keyboard.
-Steps to reproduce
--
+The attached snippet can be used to reproduce a crash happening when the link is selected only through Space key. I've an application that crashes due to invoking a wizard through the selection of link using keyboard.
+Steps to reproduce -
 1) After launching the snippet, select the focused link using Space key.
-2) Press Space twice
-- to make sure wizard is moved to and fro between the pages (mouse can also be used to move between the pages)
-3) Press Cancel button
-- It results in a crash (crash will definitely happen after one or two attempts).
-If the link is selected either using mouse or through Enter key, then the crash does not happen.
-Here is the excerpt of the function stack for further reference
--
+2) Press Space twice - to make sure wizard is moved to and fro between the pages (mouse can also be used to move between the pages)
+3) Press Cancel button - It results in a crash (crash will definitely happen after one or two attempts).
+If the link is selected either using mouse or through Enter key, then the crash does not happen. Here is the excerpt of the function stack for further reference -
 Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
 Exception Codes: KERN_INVALID_ADDRESS at 0x00000000a1b1c1f3
 Crashed Thread:  0
 Application Specific Information:
 Java information:
 Version: Java HotSpot(TM) Client VM (1.5.0_22-147 mixed mode, sharing)
-Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_22-147) for macosx-x86, built on Nov  6 2009 10:33:51 by root with gcc 4.0.1 (Apple Inc.
-build 5465)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_22-147) for macosx-x86, built on Nov  6 2009 10:33:51 by root with gcc 4.0.1 (Apple Inc. build 5465)
 Exception type: Bus Error (0xa) at pc=0x92229688
 Stack: [0xbf800000,0xc0000000)
 Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)

@@ -1,27 +1,17 @@
 [browser] Intro issues using Safari version of the browser
 Christophe,
-I tried the browser based intro on the Mac.
-Here are a couple of problems that I came across:
-1. The page doesn't redraw immediately after the window is resized.
-If the window is made smaller,
-the scrollbars don't appear until the redraw occurs.
-If the window is made larger, the newly available
-space remains white until the page is redrawn.
-Hovering over a link seems to trigger a redraw
-2. Resize the window so that scrollbars appear, then use the scrollbars to scroll the content in the
-browser.
-After using the scrollbar, move your mouse over the main part of the page again
-- the hover/
+I tried the browser based intro on the Mac.  Here are a couple of problems that I came across:
+1.  The page doesn't redraw immediately after the window is resized.  If the window is made smaller,
+the scrollbars don't appear until the redraw occurs.  If the window is made larger, the newly available
+space remains white until the page is redrawn.  Hovering over a link seems to trigger a redraw
+2.  Resize the window so that scrollbars appear, then use the scrollbars to scroll the content in the
+browser.  After using the scrollbar, move your mouse over the main part of the page again - the hover/
 rollover images
-don't appear.
-It is almost as though focus is taken away from the page after the scrollbars are used.
-
+don't appear.  It is almost as though focus is taken away from the page after the scrollbars are used.
 You have to click somewhere
 on the page first, and then the rollover images start to work again.
-3. If the intro is in "Standby" mode, and you click the "Return to Introduction" link, there is no content
+3.  If the intro is in "Standby" mode, and you click the "Return to Introduction" link, there is no content
 in the intro (I believe this is also a redraw problem).
-4. Clicking on the links doesn't always cause the page to change.
-You sometimes have to click several
-times for anythiing to happen, or maybe you just have to click in just the right spot..
-(This may be a CSS
+4.  Clicking on the links doesn't always cause the page to change.  You sometimes have to click several
+times for anythiing to happen, or maybe you just have to click in just the right spot.. (This may be a CSS
 problem, not a browser problem)

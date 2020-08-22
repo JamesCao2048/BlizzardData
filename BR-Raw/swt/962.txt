@@ -1,12 +1,11 @@
 Cannot move cursor after cancelling IME input by pressing escape key.
 Build ID: I20090522-1126
 Steps To Reproduce:
-1.Open a text editor and type some texts.
-2.Switch to Japanese hiragana input mode (Kotoeri).
-3.Press 'a' key.
-4.Japanese hiragana character '銇' is displayed.
-5.Press esc key to cancel input.
-The character '銇' is disappeared.
+1. Open a text editor and type some texts.
+2. Switch to Japanese hiragana input mode (Kotoeri).
+3. Press 'a' key.
+4. Japanese hiragana character '銇' is displayed.
+5. Press esc key to cancel input. The character '銇' is disappeared.
 Expected:
 - Pressing 'delete' key should delete previously typed characters.
 - Pressing arrow key should move cursor.

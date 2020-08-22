@@ -1,20 +1,16 @@
 GC.drawImage() inhibits further drawing (on Image for a Button)
 After a call to GC.drawImage() the Image associated with this GC cannot be
-modified any further, e.g.
-GC.drawText() or GC.fillRectangle() will not
+modified any further, e.g. GC.drawText() or GC.fillRectangle() will not
 produce any visible result.
 To create a Button with both an Image and text, I draw an Image at runtime wich
-contains both of them.
-Then I set the combined Image as the Image for the
-Button.
-This worked with SWT 3.1m4.
-With SWT 3.1rc2, this no longer works
-- the image displays nicely, but the text
+contains both of them. Then I set the combined Image as the Image for the
+Button. This worked with SWT 3.1m4.
+With SWT 3.1rc2, this no longer works - the image displays nicely, but the text
 is missing.
 Two guesses as to what the source of the problem might be:
-1.The Button looks beautiful with the new XP style, perhaps there
+1. The Button looks beautiful with the new XP style, perhaps there
 has been introduced a bug along with this new feature?
-2.The image is a PNG with 32 bit alpha channel, perhaps the problem is
+2. The image is a PNG with 32 bit alpha channel, perhaps the problem is
 associated with the handling of this type of image?
 Example (this code worked with 3.1m4):
 

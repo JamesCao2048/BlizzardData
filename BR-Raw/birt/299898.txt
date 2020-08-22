@@ -1,6 +1,2 @@
 Bug 299898 [Regression] Error occurs when create a chart view for cross tab.[1302]
-description: Error occurs when create a chart view for cross tab.
-build id: 2.5.2 v20090118-0630 steps to reproduce: 1.New a cross tab.
-2.Right click the cross tab and create a chart view.
-3.Switch to Select Data page and click Finish.
-Actual result: Exception throws out in error log.
+description: Error occurs when create a chart view for cross tab. build id: 2.5.2 v20090118-0630 steps to reproduce: 1. New a cross tab. 2. Right click the cross tab and create a chart view. 3. Switch to Select Data page and click Finish. Actual result: Exception throws out in error log.

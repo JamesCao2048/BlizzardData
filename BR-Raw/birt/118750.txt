@@ -1,5 +1,2 @@
 Bug 118750 Insert group for table from library, system throws exception.
-Insert group for table from library, system throws exception.
-Steps: 1.Insert a tabel from library 2.Insert group Actual Results: 1.System throws exception A Birt exception occurred.
-Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:1.0.1 Error Code:Error.ContentException.STRUCTURE_CHANGE_FORBIDDEN Error Message:Element "report.Body[1]" is child element or a virtual element( inside the child ), can not change its structure.
-Expected Results: 1.Can be inserted group
+Insert group for table from library, system throws exception. Steps: 1.Insert a tabel from library 2.Insert group Actual Results: 1.System throws exception A Birt exception occurred. Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:1.0.1 Error Code:Error.ContentException.STRUCTURE_CHANGE_FORBIDDEN Error Message:Element "report.Body[1]" is child element or a virtual element( inside the child ), can not change its structure. Expected Results: 1.Can be inserted group

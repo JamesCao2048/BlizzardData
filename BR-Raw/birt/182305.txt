@@ -1,16 +1,3 @@
 Bug 182305 log does not contain SQL parameter values
-I have SQL query with computed parameter and the query returns no results.
-I dont understand why so I turned on BIRT logging.
-I can see the query but it contains ?, not real value.
-This is useless for me, I need to find out, what exactly is sent to database machine.
-E.g.
-Parameters : org.eclipse.birt.data.engine.api.querydefn.ParameterDefinition@2ec7f1 InputParamBindings : InputParameterBinding(Name : param1, Position :
--1, Expression : ScriptExpression(Text:new Date().getTime()
-- params[" days"] * 24 * 3600000)) ResultSetHints : org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@148d3a0, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@3db223, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@7a1e1c, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@14ed400, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@405a01, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@d522dd ExtensionID : org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet QueryText : select * from table where start_time
-< ?
-order by id desc PrivateProperties : {} FINE: Statement.prepare( "select * from table where start_time
-< ?
-order by id desc" ) 13.4.2007 13:31:59 org.eclipse.birt.report.data.oda.jdbc.Statement getMetaData FINE: Statement.getMetaData( ) I want to see either: FINE: Statement.prepare( "select * from table where start_time
-< 12345 order by id desc" ) or: FINE: Statement.prepare( "select * from table where start_time
-< ?
-order by id desc" ); param 1 = 1234 Thanks
+I have SQL query with computed parameter and the query returns no results. I dont understand why so I turned on BIRT logging. I can see the query but it contains ?, not real value. This is useless for me, I need to find out, what exactly is sent to database machine. E.g. Parameters : org.eclipse.birt.data.engine.api.querydefn.ParameterDefinition@2ec7f1 InputParamBindings : InputParameterBinding(Name : param1, Position : -1, Expression : ScriptExpression(Text:new Date().getTime() - params[" days"] * 24 * 3600000)) ResultSetHints : org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@148d3a0, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@3db223, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@7a1e1c, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@14ed400, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@405a01, org.eclipse.birt.data.engine.api.querydefn.ColumnDefinition@d522dd ExtensionID : org.eclipse.birt.report.data.oda.jdbc.Jdb
+cSelectDataSet QueryText : select * from table where start_time < ? order by id desc PrivateProperties : {} FINE: Statement.prepare( "select * from table where start_time < ? order by id desc" ) 13.4.2007 13:31:59 org.eclipse.birt.report.data.oda.jdbc.Statement getMetaData FINE: Statement.getMetaData( ) I want to see either: FINE: Statement.prepare( "select * from table where start_time < 12345 order by id desc" ) or: FINE: Statement.prepare( "select * from table where start_time < ? order by id desc" ); param 1 = 1234 Thanks

@@ -1,15 +1,11 @@
 No default contextual menu item on Mac
 Mac OS X 10.3.7
 https://sourceforge.net/tracker/?func=detail&atid=580505&aid=1162172&group_id=86683
-When control-clicking, a contextual menu appears.
-The first menu item is selected.
-If I release the
+When control-clicking, a contextual menu appears. The first menu item is selected. If I release the
 mouse button without moving the mouse, the first item of the contextual menu is chosen.
-No item of the contextual menu should be selected.
-No item should be chosen.
+No item of the contextual menu should be selected. No item should be chosen.
 According to the Apple Human Interface Guidelines,
-"Don鈥檛 set a default item.
-If the user opens the menu and closes it without selecting anything, no action
+"Don鈥檛 set a default item. If the user opens the menu and closes it without selecting anything, no action
 should occur."
 http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/XHIGMenus/
 chapter_7_section_5.html

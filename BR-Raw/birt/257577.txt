@@ -1,4 +1,2 @@
 Bug 257577 Hyperlink to slow site
-It appears that when you use a Data control and you hyperlink to a slow web site, the URL is evaluated when rendering the report for each control.
-This creates a huge performance hit.
-The report should be able to render the URL as strings and only eval at view time.
+It appears that when you use a Data control and you hyperlink to a slow web site, the URL is evaluated when rendering the report for each control. This creates a huge performance hit. The report should be able to render the URL as strings and only eval at view time.

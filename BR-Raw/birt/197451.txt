@@ -1,9 +1,2 @@
 Bug 197451 Export report current page to pdf will cause a redundant first page.[1200]
-Description: Export report current page to pdf will cause a redundant first page.
-Build number:2.2.1.v20070723 Steps to reproduce: 1.Open attached report.
-2.Preview in Web Viewer, navigate to second page.
-3.Click Export Report->PDF, select current page and click OK.
-Expected result: Display data rows in second page, total two pages.
-Actual result: First page display table header without data.
-Second and third pages display the expected result.
-Error log:n/a
+Description: Export report current page to pdf will cause a redundant first page. Build number:2.2.1.v20070723 Steps to reproduce: 1. Open attached report. 2. Preview in Web Viewer, navigate to second page. 3. Click Export Report->PDF, select current page and click OK. Expected result: Display data rows in second page, total two pages. Actual result: First page display table header without data. Second and third pages display the expected result. Error log:n/a

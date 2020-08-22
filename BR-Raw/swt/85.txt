@@ -1,3 +1,2 @@
 TreeViewers throw NPE's on collapsed multi-selections
-If you select multiple elements in the Package Explorer and then collapse the tree using the *toolbar button* (not the + on the tree itself) then you will start seeing multiple NPEs reported.
-Changing the selection in the tree causes the problem to go away.
+If you select multiple elements in the Package Explorer and then collapse the tree using the *toolbar button* (not the + on the tree itself) then you will start seeing multiple NPEs reported. Changing the selection in the tree causes the problem to go away.

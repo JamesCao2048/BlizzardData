@@ -1,8 +1,7 @@
 VM Crash when running remotely via cygwin/X
 Using Cygwin 1.5.12 (0.116/4/2) and forwarding X from a Solaris 3.0.1 eclipse,
 the system fails to start with the following error:
-ssh
--X eclipse.sun.box
+ssh -X eclipse.sun.box
 bash-2.05$ ./eclipse
 An unexpected exception has been detected in native code outside the VM.
 Unexpected Signal : 11 occurred at PC=0xFF38058C
@@ -60,4 +59,4 @@ Dynamic libraries:
 0xfeb90000      /usr/j2se/jre/lib/sparc/libjava.so
 0xff030000      /usr/j2se/jre/lib/sparc/libzip.so
 0xfe1d0000      /usr/j2se/jre/lib/sparc/libnet.so
-0xfc6e0000      /usr/
+0xfc6e0000      /usr/j

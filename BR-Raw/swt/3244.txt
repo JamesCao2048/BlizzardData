@@ -1,25 +1,19 @@
 Shell.open() blocks until the window is mapped
 In both the Motif and GTK+ implementations, Shell.open() will block until the
-toplevel window is mapped.
-In X, the window manager controls how the window is
-mapped.
-The 'metacity' window manager (RH9/2.4.34) tries to ensure that dialogs
-remain logically connected to the window which created them.
-Specifically:
-1.Windows spawned on one virtual desktop will have dialogs open on the
+toplevel window is mapped.  In X, the window manager controls how the window is
+mapped.  The 'metacity' window manager (RH9/2.4.34) tries to ensure that dialogs
+remain logically connected to the window which created them.  Specifically:
+1. Windows spawned on one virtual desktop will have dialogs open on the
 parent's desktop
-2.Windows which are minimized will have dialogs open minimized and
+2. Windows which are minimized will have dialogs open minimized and
 will not appear until their parent becomes visible
 The behaviour for an SWT application is that when a minimized application or
 application currently on another desktop opens a dialog, the open() call will
 block until the user returns to that desktop or unminimizes the application.
 This seems dangerous, and causes bugs like  bug 15452 .
-The following SWT application helps demonstrate the problem.
-Click on the
-button and then minimize the application or switch desktops.
-After a timeout,
-the application will open a Shell.
-Timestamps show that the open() call blocks
+The following SWT application helps demonstrate the problem.  Click on the
+button and then minimize the application or switch desktops.  After a timeout,
+the application will open a Shell.  Timestamps show that the open() call blocks
 until the window is actually visible.
 Why does Shell.open() need to wait for the window to be mapped?
 -----

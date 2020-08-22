@@ -7,8 +7,7 @@ final Shell shell = new Shell(SWT.TOOL | SWT.ON_TOP);
 shell.setSize(100, 100);
 System.out.println(shell.computeTrim(0,0,0,0));
 shell.open();
-for (int i = 0; i
-< 5; i++)
+for (int i = 0; i < 5; i++)
 if (!d.readAndDispatch())
 d.sleep();
 shell.dispose();

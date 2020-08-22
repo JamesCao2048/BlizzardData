@@ -1,7 +1,6 @@
 Poor Canvas scrolling performance
 Scrolling Canvas scrollbars redraw the whole client area, instead of drawing
-just the part which has to be redrawn.
-This terribly slows down the performance
+just the part which has to be redrawn. This terribly slows down the performance
 on Mac.
 Is there a way to do the scrolling like on Windows, where the part of the
 client area which stays visible is copied to a new location, and the part of

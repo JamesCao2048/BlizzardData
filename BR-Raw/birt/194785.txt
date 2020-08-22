@@ -1,3 +1,2 @@
 Bug 194785 Stacked bars are drawn incompletely when window is minimed
-If I have a stacked bar chart, and i minimize window or bring another window in front so that the view is blocked by the new window, when the window is minimized, all the drawing in the charts is erased, and the view has to be closed and re-opened before the charts appear correctly again.
-I think this problem is because of the fix for 182279.I will attach the sample test case
+If I have a stacked bar chart, and i minimize window or bring another window in front so that the view is blocked by the new window, when the window is minimized, all the drawing in the charts is erased, and the view has to be closed and re-opened before the charts appear correctly again. I think this problem is because of the fix for 182279. I will attach the sample test case

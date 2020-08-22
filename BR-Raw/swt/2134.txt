@@ -1,13 +1,6 @@
 Display.getActiveShell() returns different results on Windows compared to Linux
 Build ID: M20060921-0945
 Steps To Reproduce:
-I'm using a combo box control and have implemented the modifyText() method of a ModifyListener.
-In that method I get the active shell by calling PlatformUI.getWorkbench().getDisplay().getActiveShell().
-On Windows XP this returns a Shell, but on Linux gtk it returns null.
-Shouldn't it return a Shell on Linux too?
-I've attached a small plug-in based on the Hello World template that shows the issue.
-It adds a button to the main toolbar.
-Press the button, make a change in the combo box and then look at the console.
-On windows it reports that the shell is not null.
-On Linux the console shows that it was null.
+I'm using a combo box control and have implemented the modifyText() method of a ModifyListener. In that method I get the active shell by calling PlatformUI.getWorkbench().getDisplay().getActiveShell(). On Windows XP this returns a Shell, but on Linux gtk it returns null. Shouldn't it return a Shell on Linux too?
+I've attached a small plug-in based on the Hello World template that shows the issue. It adds a button to the main toolbar. Press the button, make a change in the combo box and then look at the console. On windows it reports that the shell is not null. On Linux the console shows that it was null.
 More information:

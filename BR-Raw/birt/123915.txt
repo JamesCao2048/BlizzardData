@@ -1,4 +1,2 @@
 Bug 123915 Add table-fetch limitation when DataSet Editor is populating table names.
-When fetch table names from database of large volume of data, there lies a possibility that the editor window will be frozen because of the population of huge number of table names.
-This should be enhanced.
-A handy solution might be limiting the number of table names being fetched each schema.
+When fetch table names from database of large volume of data, there lies a possibility that the editor window will be frozen because of the population of huge number of table names. This should be enhanced. A handy solution might be limiting the number of table names being fetched each schema.

@@ -1,29 +1,3 @@
 Bug 100319 Inconsistency between Coverage Statistics and other profile views
-I'm profiling with all profile sets on and with filter sun.security.action.LoadLibraryAction * INCLUDE I obtain some results for the java.lang and sun.security.action packages in the execution statistics and memory statistics views, but not in the code coverage view (only the default package in code coverage).
-Driver: Hyades 330_20050613_1417 Uses HeapJniCarTest from org.eclipse.hyades.use.cases > src > pkg OSs checked: AIX, HPUX, Solaris Steps: 1.Ensure RAC is running on the remote platform.
-a.
-cd
-<RASERVER_HOME>/bin b.
-./RAStart.sh 2.Set profile types and filter a.
-Ensure current perspective is Profiling & Logging b.
-Workbench menu > Run > Profile...
-c.
-External Java Application > New d.
-Host tab > Enter remote host name e.
-Details tab > Enter class name HeapJniCarTest and path to .class file f.
-Profiling tab > Add New Profiling Set g.
-Next > Profiling types dialog > tick all 3 profiling types on h.
-Next > Filter set dialog > Add new filter set > Add new filter property i.
-sun.security.action.LoadLibraryAction * INCLUDE j.
-Ensure new filter property is on top of set k.
-Finish > Apply > Profile 3.Symptom: different packages in coverage stats adn other views a.
-Press enter in console until HeapJniCarTest terminates b.
-Right click monitor in Profiling Monitor view c.
-Open with > Coverage Statistics d.
-SYMPTOM: (default package) is the only package in Coverage view e.
-Right click monitor in Profiling Monitor view f.
-Open with > Execution Statistics g.
-Notice package sun.security.action in Execution Statistics view e.
-Right click monitor in Profiling Monitor view f.
-Open with > Memory Statistics g.
-Notice package sun.security.action in Memory Statistics view
+I'm profiling with all profile sets on and with filter sun.security.action.LoadLibraryAction * INCLUDE I obtain some results for the java.lang and sun.security.action packages in the execution statistics and memory statistics views, but not in the code coverage view (only the default package in code coverage). Driver: Hyades 330_20050613_1417 Uses HeapJniCarTest from org.eclipse.hyades.use.cases > src > pkg OSs checked: AIX, HPUX, Solaris Steps: 1. Ensure RAC is running on the remote platform. a. cd <RASERVER_HOME>/bin b. ./RAStart.sh 2. Set profile types and filter a. Ensure current perspective is Profiling & Logging b. Workbench menu > Run > Profile... c. External Java Application > New d. Host tab > Enter remote host name e. Details tab > Enter class name HeapJniCarTest and path to .class file f. Profiling tab > Add New Profiling Set g. Next > Profiling types dialog > tick all 3 profiling types on h. Next > Filter set dialog > Add new filter set > Add new filter property i. sun.secu
+rity.action.LoadLibraryAction * INCLUDE j. Ensure new filter property is on top of set k. Finish > Apply > Profile 3. Symptom: different packages in coverage stats adn other views a. Press enter in console until HeapJniCarTest terminates b. Right click monitor in Profiling Monitor view c. Open with > Coverage Statistics d. SYMPTOM: (default package) is the only package in Coverage view e. Right click monitor in Profiling Monitor view f. Open with > Execution Statistics g. Notice package sun.security.action in Execution Statistics view e. Right click monitor in Profiling Monitor view f. Open with > Memory Statistics g. Notice package sun.security.action in Memory Statistics view

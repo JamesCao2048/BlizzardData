@@ -17,13 +17,10 @@ data.data = srcData;
 ....
 }
 new ImageData(width, height, bpp, palette) {
-...
-ImageData(...)
-....
-setAllFields(
+... ImageData(...)
+.... setAllFields(
 .....
-data != null ?
-data : new byte[bytesPerLine * height],
+data != null ? data : new byte[bytesPerLine * height],
 .....
 );
 }

@@ -1,9 +1,5 @@
 [consistency] Left Mouse Down is Not recieved on TabFolder on Linux.Works fine on Windows
-Run the example on Windows.
-Click on tab items "aaa" & "bbb" .
-See MouseDown events received correctly.
-Now run on Linux
-- see that Mouse Down events are skipped.
+Run the example on Windows. Click on tab items "aaa" & "bbb" . See MouseDown events received correctly. Now run on Linux - see that Mouse Down events are skipped.
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;

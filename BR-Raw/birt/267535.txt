@@ -1,6 +1,2 @@
 Bug 267535 Using aggregated column of dataset in computed column of the same dataset
-Build ID: v20090218-0730 Steps To Reproduce: Bug is new in BIRT 2.3.2.In 2.3.1 all is ok.
-1.Create empty report with example database 2.Create dataset using query "select CLASSICMODELS.CUSTOMERS.CREDITLIMIT from CLASSICMODELS.CUSTOMERS" 3.Create computed column named "Running sum" with aggregation "RUNNING SUM" on row CREDITLIMIT 4.Create computed column using only row["Running sum"] as expression.
-5.Now have a look at preview or create table of this dataset in your report and look at the viewer.
-The last column is empty.
-More information: See also example report in attachement
+Build ID: v20090218-0730 Steps To Reproduce: Bug is new in BIRT 2.3.2. In 2.3.1 all is ok. 1. Create empty report with example database 2. Create dataset using query "select CLASSICMODELS.CUSTOMERS.CREDITLIMIT from CLASSICMODELS.CUSTOMERS" 3. Create computed column named "Running sum" with aggregation "RUNNING SUM" on row CREDITLIMIT 4. Create computed column using only row["Running sum"] as expression. 5. Now have a look at preview or create table of this dataset in your report and look at the viewer. The last column is empty. More information: See also example report in attachement

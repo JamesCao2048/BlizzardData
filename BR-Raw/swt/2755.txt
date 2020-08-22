@@ -4,16 +4,13 @@ SWT-win32, v3138 (3.1-final)
 In the testcase below, there is a double-buffered canvas whose
 background colour is set to red but which also has a paint listener
 attached to it that, when called, fills the entire region of the
-widget with cyan.
-In other words, you should never see any red areas.
+widget with cyan. In other words, you should never see any red areas.
 In practice, these red areas do occur in form of screen artifacts
-under certain repainting conditions.
-Not sure if you will be able
+under certain repainting conditions. Not sure if you will be able
 to reproduce this easily (or at all), but here are the steps:
 - Run the testcase
 - Put a shell belonging to another application on top of the test shell
-and move it around to cause the canvas to be redrawn.
-You may need
+and move it around to cause the canvas to be redrawn. You may need
 to do this for a minute or two to see the effects; if it does not
 work, try introducing a short delay in the paint process or
 using an irregularly-shaped window (-> media player) on top

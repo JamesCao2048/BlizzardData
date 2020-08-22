@@ -1,9 +1,7 @@
 Display.post(Event) with SWT.MouseMove moves to wrong location
 Build ID: M20060921-0945
 Steps To Reproduce:
-Create a simple SWT application (one is attached) that uses Display.post(Event) with Event type SWT.MouseMove to move the mouse to each x and/or y display coordinate.
-After each move, use Display.getCursorLocation() to find out where the cursor actually ended up.
-You will find that in some cases, especially for the lowest values of x or y, the cursor location ends up being different than it should have been.
+Create a simple SWT application (one is attached) that uses Display.post(Event) with Event type SWT.MouseMove to move the mouse to each x and/or y display coordinate.  After each move, use Display.getCursorLocation() to find out where the cursor actually ended up.  You will find that in some cases, especially for the lowest values of x or y, the cursor location ends up being different than it should have been.
 More information:
 When I run the attached SWT application on my system (Windows XP SP2 with a 1600x1200 screen) I get the following:
 Checking x dimension.
@@ -46,21 +44,13 @@ Error: expected 800,12, got 800,11
 Error: expected 800,15, got 800,14
 Error: expected 800,18, got 800,17
 Found 12 errors
-The problem seems to be that the conversion from screen to "normalized" coordinates (for x or y) that is done by Display.post(Event) is such that it sometimes ends up below the bottom of the range of normalized values that map to that screen coordinate.
-So, the cursor location sometimes ends up 1 off in one dimension or the other.
-Specifically, it is these two calculations (on Windows, at least) that aren't quite adequate:
-inputs.dx = event.x * 65535 / (OS.GetSystemMetrics (OS.SM_CXSCREEN)
-- 1);
-inputs.dy = event.y * 65535 / (OS.GetSystemMetrics (OS.SM_CYSCREEN)
-- 1);
+The problem seems to be that the conversion from screen to "normalized" coordinates (for x or y) that is done by Display.post(Event) is such that it sometimes ends up below the bottom of the range of normalized values that map to that screen coordinate.  So, the cursor location sometimes ends up 1 off in one dimension or the other.  Specifically, it is these two calculations (on Windows, at least) that aren't quite adequate:
+inputs.dx = event.x * 65535 / (OS.GetSystemMetrics (OS.SM_CXSCREEN) - 1);
+inputs.dy = event.y * 65535 / (OS.GetSystemMetrics (OS.SM_CYSCREEN) - 1);
 I have found that something like the following calculation will result in normalized values in the middle of each range and works correctly (again, on Windows, at least):
 int width = OS.GetSystemMetrics(OS.SM_CXSCREEN);
 int height = OS.GetSystemMetrics(OS.SM_CYSCREEN);
 int rx = 65536 / width;
 int ry = 65536 / height;
-int inputs.dx = ((event.x * (65536
-- rx)) / (width
-- 1)) + (rx / 2);
-int inputs.dy = ((event.y * (65536
-- ry)) / (height
-- 1)) + (ry / 2);
+int inputs.dx = ((event.x * (65536 - rx)) / (width - 1)) + (rx / 2);
+int inputs.dy = ((event.y * (65536 - ry)) / (height - 1)) + (ry / 2);

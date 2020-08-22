@@ -1,6 +1,6 @@
 Widget.setKeyState reads from memory which has been freed
 Here is what happens:
-1.Have a StyledText widget to type into:
+1. Have a StyledText widget to type into:
 public static void main(String[] args) {
 final Display display = new Display();
 final Shell shell = new Shell(display);
@@ -13,15 +13,13 @@ if(!display.readAndDispatch()) display.sleep();
 }
 display.dispose();
 }
-2.Press a key.
-Entry is gtk_commit in Control.
-3.gtk_commit does:
+2. Press a key.  Entry is gtk_commit in Control.
+3. gtk_commit does:
 sendIMKeyEvent (SWT.KeyDown, null, chars);
-4.When the second argument is null, sendIMKeyEvent makes a copy of the event,
+4. When the second argument is null, sendIMKeyEvent makes a copy of the event,
 memmoves it into a GdkEventKey Java object, and calls gdk_event_free() on
 the original event.
-5.Widget.setKeyState (Event event, GdkEventKey keyEvent) is called.
-6.This calls: OS.g_utf8_strlen (keyEvent.string, keyEvent.length) > 1)
-Unfortunately, keyEvent.string is an OS pointer to a string.
-This point is no
+5. Widget.setKeyState (Event event, GdkEventKey keyEvent) is called.
+6. This calls: OS.g_utf8_strlen (keyEvent.string, keyEvent.length) > 1)
+Unfortunately, keyEvent.string is an OS pointer to a string.  This point is no
 longer valid, as we have freed the event already in step 4.

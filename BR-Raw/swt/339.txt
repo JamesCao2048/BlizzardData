@@ -1,28 +1,17 @@
 Workbench window rendering very slow when restored from minimized state if previously maximized
 Build Identifier: I20110620-1631
-I have noticed that the workbench window is very slow to re-render when the windows is restored from a minimized state if the window was previously maximized.
-It is much faster to re-render if the window was NOT maximized before it was minimized.
-I will be attaching a screencast that demonstrates the issue with the Eclipse 4.1 IDE.
-The same behavior is exhibited with prior versions of the IDE (such as 3.6 or 3.7).
-The behavior can even be seen with the very simple RCP mail demo application.
-It's not quite as bad there but definitely noticeable.
-I am logging this issue primarily because it also affects an RCP application I am working on and it affect that application to a greater degree than the Elipse IDE.
-It looks pretty bad.
-I suspect other RCP applications must be experiencing the same issue.
-In the attached screencast I first minimize and restore the application several times from a maximized state.
-Then, I switch the app to be non-maximized and minimize/restore a few more times.
-Finally, I maximize again and minimize/restore a couple more times.
-You should see how the minimize/restore when the application is NOT maximized is much quicker.
-I've done a little searching to see if someone else has already logged this issue but I didn't find a bug that quite matched.
-I am sort of surprised at this so maybe I just didn't find the right one.
-I apologize if I am logging a duplicate.
+I have noticed that the workbench window is very slow to re-render when the windows is restored from a minimized state if the window was previously maximized.  It is much faster to re-render if the window was NOT maximized before it was minimized.
+I will be attaching a screencast that demonstrates the issue with the Eclipse 4.1 IDE.  The same behavior is exhibited with prior versions of the IDE (such as 3.6 or 3.7).
+The behavior can even be seen with the very simple RCP mail demo application.  It's not quite as bad there but definitely noticeable.
+I am logging this issue primarily because it also affects an RCP application I am working on and it affect that application to a greater degree than the Elipse IDE.  It looks pretty bad.  I suspect other RCP applications must be experiencing the same issue.
+In the attached screencast I first minimize and restore the application several times from a maximized state.  Then, I switch the app to be non-maximized and minimize/restore a few more times.  Finally, I maximize again and minimize/restore a couple more times.  You should see how the minimize/restore when the application is NOT maximized is much quicker.
+I've done a little searching to see if someone else has already logged this issue but I didn't find a bug that quite matched.  I am sort of surprised at this so maybe I just didn't find the right one.  I apologize if I am logging a duplicate.
 Reproducible: Always
 Steps to Reproduce:
-1.Open Eclipse IDE
-2.Maximize workbench window
-3.Minimize workbench window
-4.Restore workbench window and observe issue
-5.Repeat steps 3,4. Isssue always occurs
-6.Slightly decrease size of window such that it is not maximized, but nearly the size it would be if it were maximized
-7.Repeat steps 3, 4. Rendering is much quicker.
-I would expect restore from a minimized state if the window was maximized to be as quick or at least nearly as quick.
+1. Open Eclipse IDE
+2. Maximize workbench window
+3. Minimize workbench window
+4. Restore workbench window and observe issue
+5. Repeat steps 3,4.  Isssue always occurs
+6. Slightly decrease size of window such that it is not maximized, but nearly the size it would be if it were maximized
+7. Repeat steps 3, 4.  Rendering is much quicker.  I would expect restore from a minimized state if the window was maximized to be as quick or at least nearly as quick.

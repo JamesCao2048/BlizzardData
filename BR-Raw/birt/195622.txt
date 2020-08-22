@@ -1,7 +1,2 @@
 Bug 195622 Toggle DataPoint Visibility should only list in Value (Y) Series interactivity [13]
-Description: Toggle DataPoint Visibility should only list in Value (Y) Series interactivity.
-Build number: 2.2.0.v20070706-0959 Steps to reproduce: 1.New a chart, in Format Specifier add interactivity for Title, Chart Area...
-Expected result: Action "Toggle DataPoint Visibility" should only list for Value (Y) Series.
-Actual result: Action "Toggle DataPoint Visibility" also lists for Title, Chart Area...
-but does not work.
-Error log: N/A
+Description: Toggle DataPoint Visibility should only list in Value (Y) Series interactivity. Build number: 2.2.0.v20070706-0959 Steps to reproduce: 1. New a chart, in Format Specifier add interactivity for Title, Chart Area... Expected result: Action "Toggle DataPoint Visibility" should only list for Value (Y) Series. Actual result: Action "Toggle DataPoint Visibility" also lists for Title, Chart Area... but does not work. Error log: N/A

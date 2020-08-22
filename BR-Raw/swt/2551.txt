@@ -3,27 +3,19 @@ I use a raw main shell that I hand position items on for my main pgm screen.
 (Visual therapists program and I need that level of control rather than
 use a layout manager.)  Pgm creates very large 'Labels' of constrasting
 color and uses them as 'bars' where needed to pull a stroke victim's
-eyes in the direction they would otherwise tend not to see (e.g.
-bar/Label
-full height of screen and an inch wide not uncommon).
-This used to work
-on OSX and has always worked Win/Linux-gtk.
-It no longer works
+eyes in the direction they would otherwise tend not to see (e.g. bar/Label
+full height of screen and an inch wide not uncommon).  This used to work
+on OSX and has always worked Win/Linux-gtk.  It no longer works
 in 3.2M3 on OSX (just downloaded and tested) though same code works
-Win/Lin-gtk works fine Win/Lin-gtk w/ 3.2M3. Problem behavior is
-the Label "Bar" does not show at all ...
-I just see the background
+Win/Lin-gtk works fine Win/Lin-gtk w/ 3.2M3.  Problem behavior is
+the Label "Bar" does not show at all ... I just see the background
 color of the main window.
 Providing the code snippet used to place a vertical bar on the left edge of the
-screen.
-If someone wants to email me I'll provide more code.
+screen. If someone wants to email me I'll provide more code.
 ___
 Label barLeft = new Label(shell, SWT.NONE);
 barVerticalSize = new Point(barVerticalWidthPixels,
-shellSize.y
-- buttonSize.y
-- buttonBorder.y
-- 5);
+shellSize.y - buttonSize.y - buttonBorder.y - 5);
 barLeft.setLocation(new Point(0, 0));
 barLeft.setSize(barVerticalSize);
 barLeft.setBackground(settings.barBackground);

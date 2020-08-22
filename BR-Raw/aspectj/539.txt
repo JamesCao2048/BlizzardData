@@ -53,27 +53,4 @@ at org.eclipse.swt.widgets.Control.windowProc(Control.java:2816)
 at org.eclipse.swt.widgets.Display.windowProc(Display.java:2361)
 at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
 at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1236)
-at org.eclipse.swt.widgets.Tree.callWindowProc(Tree.java:156)
-at org.eclipse.swt.widgets.Tree.WM_LBUTTONDOWN(Tree.java:1517)
-at org.eclipse.swt.widgets.Control.windowProc(Control.java:2799)
-at org.eclipse.swt.widgets.Display.windowProc(Display.java:2361)
-at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
-at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1303)
-at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1543)
-at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1402)
-at org.eclipse.ui.internal.Workbench.run(Workbench.java:1385)
-at org.eclipse.core.internal.boot.InternalBootLoader.run
-(InternalBootLoader.java:858)
-at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
-at org.eclipse.core.launcher.Main.run(Main.java:747)
-at org.eclipse.core.launcher.Main.main(Main.java:583)
-
-2) The enhancement request: the concrete aspect that applies the advice should
-also show what is affected in the project. Of course, it would also be nice to
-see how a given concrete library aspect in the aspect path affects your
-project too.
+at org.eclipse.swt.widgets.Tree.callWindowProc(Tree.

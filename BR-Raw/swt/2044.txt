@@ -1,12 +1,9 @@
 [Presentations] AIOBE on CTabFolder setSelectionBackground
 I20070503-1400
-We get an AIOBE when starting Eclipse of a platform where the display has a bit depth of 8 (specifically AIX in our case).
-The problem seems to stem from the following lines in CTabFolder.setSelectionBackground :
-if (getDisplay().getDepth()
-< 15) {
+We get an AIOBE when starting Eclipse of a platform where the display has a bit depth of 8 (specifically AIX in our case). The problem seems to stem from the following lines in CTabFolder.setSelectionBackground :
+if (getDisplay().getDepth() < 15) {
 // Don't use gradients on low color displays
-colors = new Color[] {colors[colorsLength
-- 1]};
+colors = new Color[] {colors[colorsLength - 1]};
 percents = new int[] {};
 }
 Causing this to be true, will trigger the exception every time.
@@ -41,4 +38,4 @@ at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
 at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:101)
 at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:153)
 at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
-at org.eclipse.core.runtim
+at org.eclipse.core.runtime.

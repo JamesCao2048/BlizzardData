@@ -1,9 +1,6 @@
 Tooltip is not shown all the time
-I have two text controls (Text1 and Text2) in a shell, and I call setToolTipText on both the text controls.
-When the shell is first launched, Text1 gets the focus by default.
-Tooltip shows up when I move the cursor to Text1.If I now click on Text1, tooltip does not show up on Text1 anymore until I click on Text2 and bring the cursor back to Text1.
-I am only using text controls here as an example.
-I can see the same problem on other types of controls.
+I have two text controls (Text1 and Text2) in a shell, and I call setToolTipText on both the text controls. When the shell is first launched, Text1 gets the focus by default. Tooltip shows up when I move the cursor to Text1. If I now click on Text1, tooltip does not show up on Text1 anymore until I click on Text2 and bring the cursor back to Text1.
+I am only using text controls here as an example. I can see the same problem on other types of controls.
 The following snippet shows the problem:
 public static void main(String[] args) {
 Display display = new Display();

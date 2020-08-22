@@ -2,48 +2,33 @@
 User-Agent:       Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.3) Gecko/20090915 Ubuntu/9.10 (karmic) Firefox/3.5.3
 Build Identifier: Linux karmic64 2.6.31-10-generic #35-Ubuntu SMP Tue Sep 22 17:33:14 UTC 2009 x86_64 GNU/Linux
 Hello,
-I am installing the Google's Android plugin in the Eclipse IDE.
-The Help
--> "Install new Software" dialog does not update the values correctly.
-I have to resize the dialog or adjust the pane divider, then it updates and shows the values for the installed plugin.
-Here is a link to a video that demonstrates this bug.
+I am installing the Google's Android plugin in the Eclipse IDE. The Help -> "Install new Software" dialog does not update the values correctly. I have to resize the dialog or adjust the pane divider, then it updates and shows the values for the installed plugin. Here is a link to a video that demonstrates this bug.
 Video:  http://www.edbl.no/tmp/linux-install-new-software-in-eclipse.ogv
-Notice that this happens with the latest Eclipse IDE (Galileo Eclipse 3.5) on Ubuntu Linux 9.10 (aka: Karmic Koala).
-But it works right on Ubuntu 9.04 stable.
+Notice that this happens with the latest Eclipse IDE (Galileo Eclipse 3.5) on Ubuntu Linux 9.10 (aka: Karmic Koala). But it works right on Ubuntu 9.04 stable.
 System details are:
-$ uname
--a
+$ uname -a
 Linux karmic64 2.6.31-10-generic #35-Ubuntu SMP Tue Sep 22 17:33:14 UTC 2009
 x86_64 GNU/Linux
-$ lsb_release
--a
+$ lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu karmic (development branch)
 Release:	9.10
 Codename:	karmic
-$ java
--version
+$ java -version
 java version "1.6.0_15"
 Java(TM) SE Runtime Environment (build 1.6.0_15-b03)
 Java HotSpot(TM) 64-Bit Server VM (build 14.1-b02, mixed mode)
 ----
-Here is a complete installation guide for Android-development on Ubuntu Linux.
-It's valid for both Ubuntu 9.04 and 9.10.
+Here is a complete installation guide for Android-development on Ubuntu Linux. It's valid for both Ubuntu 9.04 and 9.10.
 http://www.futuredesktop.org/developing_android_apps_on_ubuntu.html
 Android is Google's Linux + Java-based mobile phone framework and Eclipse is its preferred IDE.
 Reproducible: Always
 Steps to Reproduce:
-1.Install Ubuntu 9.10 (karmic Koala).
-This is the development version of Ubuntu to be released in the end of october 2009.Afraid this bug will stay there.
-2.Download and install the latest Eclipse IDE.
-Do not use the Ubuntu's Eclipse package, but download "Eclipse IDE for Java EE Developers (188 MB)" from  http://.eclipse.org .
-This bug appears on both 32 and 64 bits Ubuntu 9.10.
-3.Install Google's Android-plugin via the Eclipse's Help
--> "Install New Software" menu.
-
+1. Install Ubuntu 9.10 (karmic Koala). This is the development version of Ubuntu to be released in the end of october 2009. Afraid this bug will stay there.
+2. Download and install the latest Eclipse IDE. Do not use the Ubuntu's Eclipse package, but download "Eclipse IDE for Java EE Developers (188 MB)" from  http://.eclipse.org . This bug appears on both 32 and 64 bits Ubuntu 9.10.
+3. Install Google's Android-plugin via the Eclipse's Help -> "Install New Software" menu.
 The location should be:  https://dl-ssl.google.com/android/eclipse/
-Follow this guide, steps 1
-- 7.
+Follow this guide, steps 1 - 7.
 http://www.futuredesktop.org/developing_android_apps_on_ubuntu.html
-Note that this guide was written for Ubuntu 9.04, but it is equally valid for Ubuntu 9.10.AFAIK, this bug is the only difference.
+Note that this guide was written for Ubuntu 9.04, but it is equally valid for Ubuntu 9.10. AFAIK, this bug is the only difference.

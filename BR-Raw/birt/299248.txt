@@ -1,6 +1,2 @@
 Bug 299248 Packing of tree in Outline view during changing of mode
-Build Identifier: 20090920-1017 As default mode I use Layout.
-I have selected item of report.
-When I switch to "XML Source" mode I loose selected item and menu is packed in Outline view.
-Is it possible to have item selected in "XML Source" mode?
-Reproducible: Always Steps to Reproduce: 1.Right click in report 2.Choose from menu "insert/label" 3.Check label that label is selected in Outline view 4.Click on tab "XML Source" 5.Check that menu is packed in Outline view and cursor is in the start of file
+Build Identifier: 20090920-1017 As default mode I use Layout. I have selected item of report. When I switch to "XML Source" mode I loose selected item and menu is packed in Outline view. Is it possible to have item selected in "XML Source" mode? Reproducible: Always Steps to Reproduce: 1.Right click in report 2.Choose from menu "insert/label" 3.Check label that label is selected in Outline view 4.Click on tab "XML Source" 5.Check that menu is packed in Outline view and cursor is in the start of file

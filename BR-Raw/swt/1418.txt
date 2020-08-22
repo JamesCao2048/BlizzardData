@@ -3,9 +3,7 @@ Created  attachment 113975   [details]
 Snapshot of the snippet output (with and without MeasureItem listener added)
 Build ID: 3.4
 Steps To Reproduce:
-Check the snippet.
-It sets the topIndex to 120, but another row is on top (18, on my computer).
-If you remove the MeasureItem listener from the snippet, it works.
+Check the snippet. It sets the topIndex to 120, but another row is on top (18, on my computer). If you remove the MeasureItem listener from the snippet, it works.
 public static void main(String[] args) {
 Display display = new Display();
 Shell shell = new Shell(display);

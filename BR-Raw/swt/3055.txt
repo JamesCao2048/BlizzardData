@@ -3,19 +3,14 @@ This PR is to request a way to not have to manually close a system dialog on W2K
 when GDI+ is not installed.
 Start snippet10 on W2K
 http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet10.java?rev=HEAD&content-type=text/vnd.viewcvs-markup
-You get the system error dialog attached below.
-Only after you click ok, then
-the 'expected' SWT.ERROR_NO_GRAPHICS_LIBRARY comes up.
-This prevents programs
+You get the system error dialog attached below. Only after you click ok, then
+the 'expected' SWT.ERROR_NO_GRAPHICS_LIBRARY comes up. This prevents programs
 from checking whether the functionality is supported or not since user must
 manually close this dialog.
-This sounds similar to the Browser on Linux.
-There we try hard to detect if the
+This sounds similar to the Browser on Linux. There we try hard to detect if the
 functionality is there even before loading the shared library with the
-dependency on Mozilla since it could cause a crash.
-And even try to give a
-useful message (bad GTK1.2, Mozilla not located, etc.).
-Maybe GDI+ can be
+dependency on Mozilla since it could cause a crash. And even try to give a
+useful message (bad GTK1.2, Mozilla not located, etc.). Maybe GDI+ can be
 detected before loading the native SWT/gdi library?
 Here is the stack trace after the dialog is closed.
 org.eclipse.swt.SWTException: Unable to load graphics library
@@ -52,5 +47,4 @@ at java.lang.System.loadLibrary(System.java:834)
 at org.eclipse.swt.internal.Library.loadLibrary(Library.java:123)
 at org.eclipse.swt.internal.gdip.Gdip.<clinit>(Gdip.java:17)
 at org.eclipse.swt.graphics.Device.checkGDIP(Device.java:149)
-...
-16 more
+... 16 more

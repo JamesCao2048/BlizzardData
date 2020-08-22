@@ -2,8 +2,7 @@
 From Juergen Kreileder :
 I've tried a few simple tests with N20040228 and our current J2SE 1.4.2&1.5.0
 builds for AMD64: The tests crashed right at startup in about 50% of all tries.
-Ie.
-it looks like there are still some pointers stored in (or truncated to)
+Ie. it looks like there are still some pointers stored in (or truncated to)
 32-bit ints and SWT only works if the real pointer happens to point into the
 first 2G of mem.
 All crashes seem to happen in OS.g_signal_lookup() with broken pointers like

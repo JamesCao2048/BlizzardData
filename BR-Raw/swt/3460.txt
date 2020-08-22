@@ -4,21 +4,17 @@ for GUI update events (executed asynchronously or synchronously on a non-gui
 thread) to run within the same "time horizon" as GUI events.
 The mechanism for this synchronization involves posting a "wake message" to the
 windows event queue and subsequently dispatching it to an invisible special
-purpose window with a handle hwndEvent.
-However the mechanism is not
+purpose window with a handle hwndEvent.  However the mechanism is not
 functioning properly because of 2 implementation defects:
 1) The isWakeMessage() function incorrectly returns false for wake messages
 generated in Windows 2000/XP/NT (it works correctly in Windows CE).
 2) The readAndDispatch() function does not properly dispatch the wake messages,
 causing them to be unnecessarily lost, and therefore not invoking the
-hwndEvent's windows function.
-This function handles the wake messages by
-invoking runAsyncEvents().
-However due to the mentioned defects this never
+hwndEvent's windows function.  This function handles the wake messages by
+invoking runAsyncEvents().  However due to the mentioned defects this never
 actually happens.
 All of the above leads to the unhelpful behavior of the async messages executing
-only when the windows queue is entirely empty.
-Since this is at the mercy of
+only when the windows queue is entirely empty.  Since this is at the mercy of
 the OS, it leads to unpredictability of GUI updates executed from non-GUI
 threads in a real-time async application, such as our bond trading application,
 where it can lead to stale price data being displayed in the market windows.
@@ -28,15 +24,10 @@ Index: Display.java
 ===================================================================
 RCS file: /appl/cvs/MAIN/Source/org/eclipse/swt/widgets/Attic/Display.java,v
 retrieving revision 1.1.2.3
-diff
--u
--r1.1.2.3 Display.java
---- Display.java	5 Feb 2004 17:07:40
--0000	1.1.2.3
-+++ Display.java	5 Feb 2004 17:09:24
--0000
-@@
--11,6 +11,9 @@
+diff -u -r1.1.2.3 Display.java
+--- Display.java	5 Feb 2004 17:07:40 -0000	1.1.2.3
++++ Display.java	5 Feb 2004 17:09:24 -0000
+@@ -11,6 +11,9 @@
 package org.eclipse.swt.widgets;
 
 
@@ -46,16 +37,14 @@ package org.eclipse.swt.widgets;
 import org.eclipse.swt.internal.*;
 import org.eclipse.swt.internal.win32.*;
 import org.eclipse.swt.*;
-@@
--93,6 +96,24 @@
+@@ -93,6 +96,24 @@
 */
 
 public class Display extends Device {
 +
 +
 +
-+    // start display debugging support block
-- CBID
++    // start display debugging support block - CBID
 +    static Category s_log = Category.getInstance(Display.class);
 +    static boolean s_logOn = false;
 +    int wakeReceived = 0;
@@ -69,13 +58,11 @@ public class Display extends Device {
 +    {
 +        return s_logOn;
 +    }
-+    //end display debugging support block
-- CBID
++    //end display debugging support block - CBID
 
 /**
 * the handle to the OS message queue
-@@
--1390,7 +1411,18 @@
+@@ -1390,7 +1411,18 @@
 }
 
 boolean isWakeMessage (MSG msg) {
@@ -84,10 +71,7 @@ boolean isWakeMessage (MSG msg) {
 +// The wake message is generated with hwnd of 0 in Windows NT/2000/XP
 +// see documentation on PostThreadMessage()
 +
-+//------ ORIGINAL LINE
----- commented out
++//------ ORIGINAL LINE ---- commented out
 +//  return msg.hwnd == hwndMessage && msg.message == OS.WM_NULL;
-+//------ END ORIGINAL
----
-+//
-----
++//------ END ORIGINAL ---
++// ---- REPLACEMENT

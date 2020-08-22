@@ -1,5 +1,2 @@
 Bug 144590 [Accessibility] BIRT custom controls should support active accessibility
-Description: BIRT custom controls should support active accessibility.
-There are some custom controls in BIRT GUI.
-In Eclipse, when implementing a custom control you should also implement some or all of (as they apply to your control) org.eclipse.swt.accessibility.AccessibleListener, org.eclipse.swt.accessibility.AccessibleControlListener and org.eclipse.swt.accessibility.AccessibleTextListener.
-Also, the custom control can notify Active Accessibility of changes within the control using org.eclipse.swt.accessibility.Accessible methods such as setFocus(), selectionChanged(), textCaretMoved(), textChanged() and textSelectionChanged().
+Description: BIRT custom controls should support active accessibility. There are some custom controls in BIRT GUI. In Eclipse, when implementing a custom control you should also implement some or all of (as they apply to your control) org.eclipse.swt.accessibility.AccessibleListener, org.eclipse.swt.accessibility.AccessibleControlListener and org.eclipse.swt.accessibility.AccessibleTextListener. Also, the custom control can notify Active Accessibility of changes within the control using org.eclipse.swt.accessibility.Accessible methods such as setFocus(), selectionChanged(), textCaretMoved(), textChanged() and textSelectionChanged().

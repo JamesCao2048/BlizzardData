@@ -1,6 +1,5 @@
 CTabFolder with a disposed top right control cannot be rendered
-When a composite's child gets disposed there aren't any layout problems.
-Shouldn't the same apply to CTabFolder?
+When a composite's child gets disposed there aren't any layout problems. Shouldn't the same apply to CTabFolder?
 Display display = new Display();
 Shell shell = new Shell(display, SWT.SHELL_TRIM);
 shell.setLayout(new FillLayout());

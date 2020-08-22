@@ -1,8 +1,6 @@
 Function key events are often lost
 Build 20020820 (and some earlier)
-SWT-GTK seems to lose a lot of function key events.
-This problem is very obvious
+SWT-GTK seems to lose a lot of function key events. This problem is very obvious
 in the debugger where it often takes two key strokes to perform actions like
-stepping (F5, F6, F7) and resuming (F8).
-The same problem exists in the editor
+stepping (F5, F6, F7) and resuming (F8). The same problem exists in the editor
 with F3.

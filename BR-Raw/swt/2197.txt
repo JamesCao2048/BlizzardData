@@ -3,9 +3,7 @@ Build ID: I20061214-1445
 Steps To Reproduce:
 1.Modify Snippet38 to have count = 5000
 2.Run it
-3.On Linux, for example, it takes about 5 seconds for the initial window to come up, which is acceptable, but on Mac OS X it takes 9 full minutes.
-Tests performed on reasonably recent hardware.
+3.On Linux, for example, it takes about 5 seconds for the initial window to come up, which is acceptable, but on Mac OS X it takes 9 full minutes.  Tests performed on reasonably recent hardware.
 Tested using SWT drops: I20061214-1445 and M20060921-0945 on intel hardware.
 More information:
-I understand that virtual tables have better performance, but we have a large working app using normal tables (and many of them) that runs fine on all platforms except Mac OS X, due to this issue.
-Thanks in advance for your help.
+I understand that virtual tables have better performance, but we have a large working app using normal tables (and many of them) that runs fine on all platforms except Mac OS X, due to this issue.  Thanks in advance for your help.

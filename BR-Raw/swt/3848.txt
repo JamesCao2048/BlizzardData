@@ -14,17 +14,16 @@ Summary: DBCS: Can't input DBCS characters in Search dialog.
 Description:
 
 Steps to recreate problem:
-1.Launch workbench with motif build
-2.Create a Java project step by step
-3.Create a file in the project step by step
-4.Enter some DBCS text in the file
-5.Click Search button on the toolbar to launch the Search dialog
-6.Press the File Search tab
-7.In the "Containing Text" field, input some DBCS characters
+1. Launch workbench with motif build
+2. Create a Java project step by step
+3. Create a file in the project step by step
+4. Enter some DBCS text in the file
+5. Click Search button on the toolbar to launch the Search dialog
+6. Press the File Search tab
+7. In the "Containing Text" field, input some DBCS characters
 <<Error>>
 At step 7, can't input any DBCS characters in
 the "Containing Text" field
-
 
 <<Expected Result>>
 DBCS characters can be inputed in the "Containing Text"

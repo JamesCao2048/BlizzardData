@@ -1,5 +1,4 @@
 Editor/View switcher: 1 key press forwards by 3 items
 I20090217-2200
-On Cocoa, when you press and hold Command and the press F6, the editor switcher popup table appears with the second item selected (good).
-When you press F6 a second time, the selection jumps to the fifth row (expected: jump to third).
+On Cocoa, when you press and hold Command and the press F6, the editor switcher popup table appears with the second item selected (good). When you press F6 a second time, the selection jumps to the fifth row (expected: jump to third).
 When you release Command, something similar to  bug 265393  happens: The editor switcher popup opens again (and stays open)

@@ -1,5 +1,3 @@
 Regression in right-mouse button behavior
-In 3.2M6 and earlier, a right-mouse button click brought up the menu for the item under the cursor.
-In Eclipse 3.2RC1, it no longer does this
-- instead it brings up the menu for the previously selected item, or the menu for an unselected item in the current window if nothing was previously selected.
+In 3.2M6 and earlier, a right-mouse button click brought up the menu for the item under the cursor.  In Eclipse 3.2RC1, it no longer does this - instead it brings up the menu for the previously selected item, or the menu for an unselected item in the current window if nothing was previously selected.
 If you first select an item, then right-click, the correct menu is brought up.

@@ -4,11 +4,9 @@ In Cocoa, when the refactoring preview dialog shows a tree and changes underneat
 This is not the case in windows and it may not be immediately apparent to the user as to what happened.
 Reproducible: Always
 Steps to Reproduce:
-1.Keep the cursor over a method name in a Java file.
-2.Choose Source
--> Change Method Signature.
-3.Click on Add.
-4.Click on Preview.
-5.Click the white area under "Changes to be performed".
-Notice that selection of the tree went away and "No preview available" is shown.
-This is unexpected and confusing.
+1. Keep the cursor over a method name in a Java file.
+2. Choose Source -> Change Method Signature.
+3. Click on Add.
+4. Click on Preview.
+5. Click the white area under "Changes to be performed".
+Notice that selection of the tree went away and "No preview available" is shown. This is unexpected and confusing.

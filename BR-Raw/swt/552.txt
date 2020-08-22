@@ -19,6 +19,5 @@ SWT.error (SWT.ERROR_NO_HANDLES);
 }
 }
 
-This design makes it unbearable hard for new platforms to add their implementation (and its a pretty bad design anyway).
-Also using strings and reflection to find a class is the second bad idea that I see here.
+This design makes it unbearable hard for new platforms to add their implementation (and its a pretty bad design anyway). Also using strings and reflection to find a class is the second bad idea that I see here.
 I propose to use a class BrowserFactory with a single static method createBrowser() which returns an instance of of WebBrowser and then every platform can easily implement its own version of BrowserFactory to retrieve the implementation.

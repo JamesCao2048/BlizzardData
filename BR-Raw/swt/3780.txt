@@ -1,11 +1,9 @@
 Widget "default" styles should be reflected in style bits
 RC2
 There are various cases, easily shown in the ControlExample, of widgets taking
-on a "default" style even though an explicit style bit is not provided.
-For
+on a "default" style even though an explicit style bit is not provided.  For
 example, a Label of type SWT.SEPARATOR defaults to be vertical unless
-SWT.HORIZONTAL is explicitly specified.
-This is fine, but consequently
+SWT.HORIZONTAL is explicitly specified.  This is fine, but consequently
 invoking Label.getStyle() answers a style that does not contain the
 SWT.VERTICAL bit since it was not explicitly specified at creation time.
 The checkStyle() methods on a few widgets need to be extended to ensure

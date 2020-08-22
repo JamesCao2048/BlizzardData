@@ -1,9 +1,7 @@
 GC.drawString ignores transparency boolean when alpha is used
 The transparency flag indicates whether the text should be back-filled with
-the background color before being painted (using FG color).
-If alpha blending
-is turned on, this flag is ignored.
-The result should be a yellow blended
+the background color before being painted (using FG color).  If alpha blending
+is turned on, this flag is ignored.  The result should be a yellow blended
 background with black text:
 public static void main(String[] args) {
 final Display display = new Display();

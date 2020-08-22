@@ -1,8 +1,2 @@
 Bug 162029 English (Australia) locale - date time problem in report preview
-Date time Parameter has been defined with a default set to '3/26/2006' (American format, as required by the edit paramater window).
-When a report is previewed in eclipse, no data is returned.
-If the date is reviewed via the 'show report parameters' button the date is converted to '3/2/2008'.
-This strange behaviour occurs for any dates entered for the English (Australia) locale.
-This behaviour does not occur for the French and English (United Kingdom) locales.
-This issue does not occur with report viewer.
-The platform on which the reports are being developed is AMD64, Linux Gentoo.
+Date time Parameter has been defined with a default set to '3/26/2006' (American format, as required by the edit paramater window). When a report is previewed in eclipse, no data is returned. If the date is reviewed via the 'show report parameters' button the date is converted to '3/2/2008'. This strange behaviour occurs for any dates entered for the English (Australia) locale. This behaviour does not occur for the French and English (United Kingdom) locales. This issue does not occur with report viewer. The platform on which the reports are being developed is AMD64, Linux Gentoo.

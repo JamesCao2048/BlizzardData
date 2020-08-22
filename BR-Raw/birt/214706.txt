@@ -1,3 +1,2 @@
 Bug 214706 Script UID doens't work for Chart
-Use chart "onRender" property handle and call ModuleUtil.getScriptUID(), it generates the id.
-But later use this id to get back the PropertyHandle or Script content, it fails.
+Use chart "onRender" property handle and call ModuleUtil.getScriptUID(), it generates the id. But later use this id to get back the PropertyHandle or Script content, it fails.

@@ -1,7 +1,5 @@
 GTK- contents of check and radio buttons can't be aligned to center and to the trailing edge of widget.
 GTK container, which contains label of check and radio button, always remains
-with it's default width.
-Therefore text of label visually is always aligned to
-leading edge of corresponding SWT Button.
-We propose to resize this
+with it's default width. Therefore text of label visually is always aligned to
+leading edge of corresponding SWT Button. We propose to resize this
 container "manually".

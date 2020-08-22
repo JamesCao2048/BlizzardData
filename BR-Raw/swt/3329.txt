@@ -6,17 +6,13 @@ Instead Tree.setRedraw(true) would be called once all steps had been
 completed.
 In recent builds (3.0M9), this does not work reliably anymore,
 probably due to a fix made for  bug 53034 .
-In the testcase below, a tree is created.
-Pushing the button
+In the testcase below, a tree is created. Pushing the button
 to the right causes the tree contents to be disposed and then
-recreated.
-Since this is surrounded by setRedraw(false) and
+recreated. Since this is surrounded by setRedraw(false) and
 setRedraw(true), the next visible redraw should show a tree
 that looks identical to the previous one, in other words, the
-change should be barely noticeable.
-In SWT 3.0.4.8, this is
-what happens.
-In SWT 3.0.5.2, the tree is redrawn in between,
+change should be barely noticeable. In SWT 3.0.4.8, this is
+what happens. In SWT 3.0.5.2, the tree is redrawn in between,
 revealing the first tree item in a not-yet-expanded stage.
 Note: In order to simulate a real-world application in which
 there is more complex stuff going on than in this simple testcase,
@@ -64,8 +60,7 @@ display.dispose();
 private void createTreeContents() {
 TreeItem[] items = tree.getItems();
 
-for (int idx = 0; idx
-< items.length; idx++) {
+for (int idx = 0; idx < items.length; idx++) {
 items[idx].dispose();
 }
 

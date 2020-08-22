@@ -10,9 +10,6 @@ fField= 1;
 }
 - Set caret into reference to fField
 - Press F3
-=> Focus is lost.
-Caret does not blink any more.
-Pressing the Tab key about 11 times puts the focus back into the editor area.
-Same problem occurs after refactorings (e.g.
-extract local variable).
+=> Focus is lost. Caret does not blink any more. Pressing the Tab key about 11 times puts the focus back into the editor area.
+Same problem occurs after refactorings (e.g. extract local variable).
 Tried in I20090923-1538, and there it's working fine.

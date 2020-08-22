@@ -1,3 +1,2 @@
 Bug 104616 A sql statement with parameter can not be changed if you go out of "Edit DataSet"->"Query
-1.Creat a data source and a data set 2.input query "select * from dbo.Account where dbo.Account.account_id<?" 3.select "Parametes" tab , and the parametes is created.
-4.Try to delete the parametes and change Query, but failed to return to "Query" tab.
+1.Creat a data source and a data set 2.input query "select * from dbo.Account where dbo.Account.account_id<?" 3.select "Parametes" tab , and the parametes is created. 4.Try to delete the parametes and change Query, but failed to return to "Query" tab.

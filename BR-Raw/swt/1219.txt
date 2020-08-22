@@ -1,4 +1,3 @@
 SetThemeCursor() sometimes checks PTR_SIZEOF, sometimes doesn't
-It checks in DropTarget.draggingEntered() and not in other places in the code.
-The code should be consistent, that's all.
+It checks in DropTarget.draggingEntered() and not in other places in the code.  The code should be consistent, that's all.
 if (OS.PTR_SIZEOF == 4) OS.SetThemeCursor(OS.kThemeNotAllowedCursor);

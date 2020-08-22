@@ -1,7 +1,5 @@
 TextLayout renders underlines badly when antialias is on
 User-Agent:       Mozilla/5.0 (X11; U; Linux x86_64; fr; rv:1.9.0.13) Gecko/2009080315 Ubuntu/9.04 (jaunty) Firefox/3.0.13
 Build Identifier: I20090611-1540
-When using antialias and rendering underlines, the line instead of being crisp is washed instead of being crisp.
-This does not happen on earlier versions neither it doesn't happen on Linux or Mac OS X for the same version.
-See this screenshot and the snippet for more details.
+When using antialias and rendering underlines, the line instead of being crisp is washed instead of being crisp. This does not happen on earlier versions neither it doesn't happen on Linux or Mac OS X for the same version. See this screenshot and the snippet for more details.
 Reproducible: Always

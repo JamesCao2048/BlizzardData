@@ -1,6 +1,3 @@
 Provide a flag to disable tree twistie animation and hiding
-The Windows 7/Vista default tree expando animation and hiding has issues.
-For one, its reducing usability of trees because you can not easily see if a tree node has child elements or not without giving focus to the tree.
-And I also see performance issues.
-In once case, the UI thread was busy doing things until the twistie animation has finished until async runnables on the display thread would allow to execute (up to 1 second delays).
+The Windows 7/Vista default tree expando animation and hiding has issues. For one, its reducing usability of trees because you can not easily see if a tree node has child elements or not without giving focus to the tree. And I also see performance issues. In once case, the UI thread was busy doing things until the twistie animation has finished until async runnables on the display thread would allow to execute (up to 1 second delays).
 Attached is a patch to introduce a new system property to control this.

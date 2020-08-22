@@ -1,8 +1,8 @@
 [cocoa] Incorrect file paths when opening .html files in an external browser
 I tried running this on carbon, and this is reproducible only on cocoa.
 Steps:
-0.Set default browser to use external browser (safari/webkit in my case)
-1.Create a project
-2.add a .html file in the project
-3.Open the .html file using external browser, the generated URL that I see in the *external* browser is the file path appended with the eclipse binary path appended with the actual file path:
+0. Set default browser to use external browser (safari/webkit in my case)
+1. Create a project
+2. add a .html file in the project
+3. Open the .html file using external browser, the generated URL that I see in the *external* browser is the file path appended with the eclipse binary path appended with the actual file path:
 file:///Volumes/data/eclipse-installs/eclipse-3.5M5-cocoa/Eclipse.app/Contents/MacOS/file:/private/tmp/e/foo/tests/org.eclipse.swtbot.generator.test/junit/html/index.html

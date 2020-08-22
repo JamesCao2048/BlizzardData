@@ -1,12 +1,9 @@
 All platforms should clear mouse capture when modal dialog is opened
 On Windows, when you open a modal dialog, SWT has code that goes around and
-clears mouse capture.
-This functionality apparently isn't present on
-Linux/Motif.
-All platforms should be made the same as Windows.
+clears mouse capture.  This functionality apparently isn't present on
+Linux/Motif.  All platforms should be made the same as Windows.
 We had a case where a DragTracker called setCapture(true) then we created a
-modal dialog box before the setCapture(false) was called.
-SWT overlooked our
+modal dialog box before the setCapture(false) was called.  SWT overlooked our
 bogosity on Windows, but on Linux/Motif the UI stopped responding to mouse
 events...
 SN knows about this problem.

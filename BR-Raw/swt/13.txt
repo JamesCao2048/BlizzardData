@@ -2,18 +2,14 @@ Adding/Removing SWT.MeasureEvent listener will show tree without horizontal scro
 Issue:
 ------
 Adding and then removing listener for SWT.MeasureEvent type from tree results in horizontal scrollbar getting removed.
-Because of adding/removing of listener as mentioned above, it is not able to trigger sendMeasureItemEvent() from the Tree widget code as the hook check for the event returns false.
-Below is code from SWT org.eclipse.swt.widgets.Tree.java for the same,
+Because of adding/removing of listener as mentioned above, it is not able to trigger sendMeasureItemEvent() from the Tree widget code as the hook check for the event returns false. Below is code from SWT org.eclipse.swt.widgets.Tree.java for the same,
 if (hooks (SWT.MeasureItem)) {
-measureEvent = sendMeasureItemEvent (item, index, hDC, selected ?
-SWT.SELECTED : 0);
+measureEvent = sendMeasureItemEvent (item, index, hDC, selected ? SWT.SELECTED : 0);
 if (isDisposed () || item.isDisposed ()) return null;
 }
 Scenario:
 ---------
-This behavior creates problem when using org.eclipse.ui.navigator.CommonViewer.java with custom label provider.
-As while creating the instance of CommonViewer, it will use default label provider for it and listener is attached for SWT.MeasureEven in this flow.
-Below is the call trace of the method which adds listener while creating CommonViewer instance,
+This behavior creates problem when using org.eclipse.ui.navigator.CommonViewer.java with custom label provider. As while creating the instance of CommonViewer, it will use default label provider for it and listener is attached for SWT.MeasureEven in this flow. Below is the call trace of the method which adds listener while creating CommonViewer instance,
 OwnerDrawLabelProvider.getOrCreateOwnerDrawListener(ColumnViewer) line: 93
 NavigatorDecoratingLabelProvider(OwnerDrawLabelProvider).setOwnerDrawEnabled(ColumnViewer, ViewerColumn, boolean) line: 250
 NavigatorDecoratingLabelProvider(OwnerDrawLabelProvider).initialize(ColumnViewer, ViewerColumn, boolean) line: 156
@@ -40,8 +36,7 @@ final Shell shell = new Shell(display);
 shell.setLayout (new FillLayout());
 
 final Tree tree= new Tree(shell, SWT.NONE);
-for (int i= 0; i
-< 25; i++) {
+for (int i= 0; i < 25; i++) {
 TreeItem item= new TreeItem(tree, SWT.NONE);
 item.setText("Tree Item at index " + i);
 }

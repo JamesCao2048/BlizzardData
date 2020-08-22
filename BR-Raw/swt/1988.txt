@@ -13,8 +13,7 @@ public void focusGained(FocusEvent e) {
 System.out.println("in");
 }
 };
-Shell shell = new Shell(display, SWT.APPLICATION_MODAL); //
-<--
+Shell shell = new Shell(display, SWT.APPLICATION_MODAL); // <--
 shell.setLayout(new GridLayout());
 shell.layout();
 shell.pack();

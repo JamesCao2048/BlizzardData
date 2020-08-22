@@ -1,7 +1,5 @@
 problems with toolitem setHotImage and setDisabledImage on cocoa
 1) run snippet 47
-It sets image, hot image and disabled image for toolitem.
-But on cocoa, hot image is always shown.
-Also, the disabled hot image is shown as the disabled image for the toolitem.
+It sets image, hot image and disabled image for toolitem. But on cocoa, hot image is always shown. Also, the disabled hot image is shown as the disabled image for the toolitem.
 Snippet works fine on Windows.
 Reproducible with 3.6 HEAD.

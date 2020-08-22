@@ -7,9 +7,7 @@ SWT.ALPHA (int value 4),
 SWT.NATIVE (int value 8), if set, IME is on
 SWT.PHONETIC (int value 16),
 SWT.ROMAN (int value 32),
-When chinese IME is on and half shape, Shell.getImeInputMode() returns "8".
-Calling setImeInputMode(8) then calling Shell.getImeInputMode() on the same Shell, it will return "10" instead of expected value "8".
-10 means IME is on and FullShape is set.
+When chinese IME is on and half shape, Shell.getImeInputMode() returns "8". Calling setImeInputMode(8) then calling Shell.getImeInputMode() on the same Shell, it will return "10" instead of expected value "8". 10 means IME is on and FullShape is set.
 This problem reproduces in Eclipse 3.4.0 through Eclipse 3.6.0.
 Code snippet to reproduce it:
 -----------------------
@@ -30,8 +28,7 @@ text1.addKeyListener(new KeyListener() {
 @Override
 public void keyPressed(KeyEvent e) {
 // TODO Auto-generated method stub
-System.out.println("- Watch the character width (double or single space).
-Current imeInputMode is: " + shell.getImeInputMode());
+System.out.println("- Watch the character width (double or single space). Current imeInputMode is: " + shell.getImeInputMode());
 }
 @Override
 public void keyReleased(KeyEvent e) {
@@ -72,5 +69,5 @@ display.dispose();
 }
 Reproducible: Always
 Steps to Reproduce:
-1.With IME off a shell's getImeInputMode() returns 0.
-2.Manually change IME to Chines
+1. With IME off a shell's getImeInputMode() returns 0.
+2. Manually change IME to Chin

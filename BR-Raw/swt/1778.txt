@@ -1,10 +1,8 @@
 [Combo] Incorrect initial focus in Generate constructor using fields
 Build ID: I20070608-1718
 Steps To Reproduce:
-1.Invoke the "Generate constructor using fields" dialog in a class that has a few fields.
-2.Press the enter key
-3.The superclass constructor combo opens, instead of the OK button being pressed
+1. Invoke the "Generate constructor using fields" dialog in a class that has a few fields.
+2. Press the enter key
+3. The superclass constructor combo opens, instead of the OK button being pressed
 More information:
-In previous Eclipse version, when invoking the "Generate constructor using fields" dialog the OK button had the focus, which permitted to immediately and easily validate the dialog in case the default settings are accepted (a common situation for me).
-With Eclipse 3.3, the dialog's initial focus is on the superclass constructor combo.
-I think the previous behavior was better.
+In previous Eclipse version, when invoking the "Generate constructor using fields" dialog the OK button had the focus, which permitted to immediately and easily validate the dialog in case the default settings are accepted (a common situation for me). With Eclipse 3.3, the dialog's initial focus is on the superclass constructor combo. I think the previous behavior was better.

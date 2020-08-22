@@ -1,10 +1,7 @@
 Link Widget: hyperlink parsing mangles certain input strings
-The Link widget parses its text for embedded hyperlinks.
-The parser code mangles certain input strings.
+The Link widget parses its text for embedded hyperlinks. The parser code mangles certain input strings.
 Code to reproduce:
 Link link = new Link( parent, SWT.NONE );
 link.setText( ">test<" );
 displays as ">test>test<" in GTK (not reproducible with Windows, the win32 code doesn't use the parser output).
-Expected: The link should show as ">test<" without any hyperlinks.
-I agree that this is a rare use case, I only found it while unit-testing RAP.
-However, it's a valid input string and should render as expected.
+Expected: The link should show as ">test<" without any hyperlinks. I agree that this is a rare use case, I only found it while unit-testing RAP. However, it's a valid input string and should render as expected.

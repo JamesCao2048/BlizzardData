@@ -1,10 +1,7 @@
 Spacing between Table rows grows with number of rows
 The spacing between rows in a Table widget appears to grow relative to the
-number of rows in the table.
-The spacing seems normal with a few rows.
-With
-may rows (ex.
-100), the spacing can grow to be so large that you cannot even
+number of rows in the table.  The spacing seems normal with a few rows.  With
+may rows (ex. 100), the spacing can grow to be so large that you cannot even
 scroll to see all of the rows.
 Here's a snippet of our code:
 ----beginning of snippet 1

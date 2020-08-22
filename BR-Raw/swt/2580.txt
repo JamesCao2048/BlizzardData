@@ -1,10 +1,7 @@
 Background of Control with SWT.INHERIT_FORCE doesn't show through with ToolItems with transparent images
-Since 20051212 it is possible to set the background mode of a Control to SWT.INHERIT_FORCE which forces the background for all children.
-See:
+Since 20051212 it is possible to set the background mode of a Control to SWT.INHERIT_FORCE which forces the background for all children. See:
 https://bugs.eclipse.org/bugs/show_bug.cgi?id=29994
 There seems to be a bug with transparent images on ToolItems, if I didn't miss
-something.
-The background image doesn't show.
-I've attached a variant of Snippet214 and a transparent image.
+something. The background image doesn't show. I've attached a variant of Snippet214 and a transparent image.
 If you set a background color on the parent Control instead of the background image, everything behaves as expected and the background color shows through the transparent part of the image.
 I use WinXP and swt-I20051214.

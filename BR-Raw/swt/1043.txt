@@ -2,9 +2,7 @@ Link widget does not handle single quote (') for href attribute
 I20090421-0930
 The Link widget does not handle single quotes (') for href attributes.
 In the ControlExample, when I set this text:
-Visit the
-<A HREF='www.eclipse.org'>Eclipse.org</A> project
+Visit the <A HREF='www.eclipse.org'>Eclipse.org</A> project
 , the widget only shows:
-Visit the
-<A
+Visit the <A
 Since HTML attributes can be surrounded by ' or ", either the widget should should support both, or the Javadoc of setText(..) should tell that only " is supported.

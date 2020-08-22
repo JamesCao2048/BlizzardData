@@ -3,6 +3,5 @@ build 20020426
 There are a number of unexpected errors and failures when running
 org.eclipse.swt.tests.junit.EmulatedWidgetTests.
 One is related to Table.remove(int[]) and another to TableItem.getImageBounds
-().
-The rest are in inherited tests of Widget and Control.
+(). The rest are in inherited tests of Widget and Control.
 I did not try running AllTests.

@@ -9,8 +9,7 @@ Tree tree = new Tree(shell, SWT.MULTI);
 TreeColumn column = new TreeColumn (tree, SWT.NONE);
 column.setText("Column0");
 column.setWidth(150);
-for (int i = 0; i
-< 60; i++) {
+for (int i = 0; i < 60; i++) {
 TreeItem item = new TreeItem (tree, SWT.NONE);
 item.setText("Item " + i);
 

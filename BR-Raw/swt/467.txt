@@ -1,18 +1,18 @@
 Multiple compiler warnings in I20101221-1019
 These errors show up on multiple platforms.
-1.WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/SashForm.java
+1. WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/SashForm.java
 (at line 112)
 public int getOrientation() {
 The method SashForm.getOrientation() does not override the inherited method from Control since it is private to a different package
-2.WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/SashForm.java
+2. WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/SashForm.java
 (at line 297)
 public void setOrientation(int orientation) {
 The method SashForm.setOrientation(int) does not override the inherited method from Control since it is private to a different package
-1.WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/StyledText.java
+1. WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/StyledText.java
 (at line 4472)
 public int getOrientation () {
 The method StyledText.getOrientation() does not override the inherited method from Control since it is private to a different package
-2.WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/StyledText.java
+2. WARNING in /temp.folder/@dot.src/org/eclipse/swt/custom/StyledText.java
 (at line 9238)
 public void setOrientation(int orientation) {
 The method StyledText.setOrientation(int) does not override the inherited method from Control since it is private to a different package

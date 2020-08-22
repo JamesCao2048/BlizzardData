@@ -1,19 +1,14 @@
 Program.getProgram() Does Not Get Default Command
 On Windows XP:
 When a Program object for a certain extension is fetched with findProgram(), the
-private getProgram() method is called to load the Program instance.
-When it
+private getProgram() method is called to load the Program instance.  When it
 gets the command from the registry it gets the "open" command, which is located
 at shellopencommand for a specific program.
-The problem is that open may not be the default command for that program.
-The
-default command seems to be specified in shell.
-So when you use execute() for
+The problem is that open may not be the default command for that program.  The
+default command seems to be specified in shell.  So when you use execute() for
 a file, the "open" command occurs instead of the default command like in Windows
-Explorer.
-In Windows Explorer, if you right click on a file the default command
+Explorer.  In Windows Explorer, if you right click on a file the default command
 is in bold.
-I'll attach a screenshot of the registry entry for Winamp.File.
-There are three
+I'll attach a screenshot of the registry entry for Winamp.File.  There are three
 commands besides "open", Enqueue being the default command (set as shell's
 default value) on my machine.

@@ -1,19 +1,15 @@
 Tree.select() sets selection instead of adding to selection
-Run the snippet.
-On windows, all items are selected.
-On Cocoa, only the last item created.
+Run the snippet. On windows, all items are selected. On Cocoa, only the last item created.
 public static void main(String[] args) {
 Display display = new Display();
 Shell shell = new Shell(display);
 shell.setLayout(new FillLayout());
 final Tree tree = new Tree(shell, SWT.MULTI);
-for (int i = 0; i
-< 16; i++) {
+for (int i = 0; i < 16; i++) {
 TreeItem item = new TreeItem(tree, SWT.NONE);
 tree.select(item);
 item.setText("Item" + i);
-for (int j = 0; j
-< 16; j++) {
+for (int j = 0; j < 16; j++) {
 TreeItem item1 = new TreeItem(item, SWT.NONE);
 item1.setText("Item" + i + " " + j);
 tree.select(item1);

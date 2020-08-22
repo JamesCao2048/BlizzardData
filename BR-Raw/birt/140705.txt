@@ -1,7 +1,2 @@
 Bug 140705 Insert group does not work properly when cache preference is set
-When cache preference is set, insert group does not work properly.
-Steps to reproduce problem: In Birt report designer: New a report design, data source, data set; Insert a table, drag several columns into table; Set cache preference for data set: check checkbox "Cache dataset data for report view"; Select "Cache and use first [] rows"; Enter '100' as row count.
-PREVIEW report; Insert group, Preview report again
----> problem happens: only header line will show up.
-All details are missing.
-Sample report is also attached.
+When cache preference is set, insert group does not work properly. Steps to reproduce problem: In Birt report designer: New a report design, data source, data set; Insert a table, drag several columns into table; Set cache preference for data set: check checkbox "Cache dataset data for report view"; Select "Cache and use first [] rows"; Enter '100' as row count. PREVIEW report; Insert group, Preview report again ---> problem happens: only header line will show up. All details are missing. Sample report is also attached.

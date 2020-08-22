@@ -1,10 +1,8 @@
 Regression: Image on disabled button no longer greyed out
 SWT-win32 v3218, Windows XP, Classic Theme, Manifest
-Run the testcase below.
-Even though the button is disabled, the icon
+Run the testcase below. Even though the button is disabled, the icon
 is unchanged from its "enabled" look, giving no indication that you
-cannot press the button.
-In 3.1-final, the icon was greyed out.
+cannot press the button. In 3.1-final, the icon was greyed out.
 Not a problem when using the Luna Theme or running without the manifest file.
 ---
 import org.eclipse.swt.*;

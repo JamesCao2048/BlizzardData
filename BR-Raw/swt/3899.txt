@@ -1,18 +1,15 @@
 GTK: Selection Index not preserved after Combo item removal
 When I select an item programatically in a read-only Combo widget, and then
 remove an item above it, the selection index should not automatically be moved
-to the first item in the list (index=0).
-In the following test, I expect that
-"item 3" will remain selected even after "item 1" is removed.
-The expected
+to the first item in the list (index=0).  In the following test, I expect that
+"item 3" will remain selected even after "item 1" is removed.  The expected
 output is:
 2
 1
 But currently with SWT 2.111, GTK 2.0.5, on RH 7.2, it prints:
 2
 0
-//
------------ begin testcase
+// ----------- begin testcase
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Combo;

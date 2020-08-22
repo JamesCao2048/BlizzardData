@@ -1,8 +1,5 @@
 StyledRange causes final Arabic character to have medial form
 Created  attachment 75272   [details]
 Source that shows incorrect characters.
-Arabic characters have different forms if they are in the beginning, middle, or end of a word.
-When a word has a StyledRange applied to it and punctuation follows the word and is not included in the StyledRange, then the final character of the word is in the medial form instead of in the final form.
-Attached is source code to show this.
-There are three words and each word is shown in three different ways.
-One without the StyledRange (correct case), one with the StyledRange that includes the punctuation (correct case), and one with the StyledRange ending before the punctuation (incorrect case).
+Arabic characters have different forms if they are in the beginning, middle, or end of a word.  When a word has a StyledRange applied to it and punctuation follows the word and is not included in the StyledRange, then the final character of the word is in the medial form instead of in the final form.
+Attached is source code to show this. There are three words and each word is shown in three different ways.  One without the StyledRange (correct case), one with the StyledRange that includes the punctuation (correct case), and one with the StyledRange ending before the punctuation (incorrect case).
