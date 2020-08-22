@@ -1,4 +1,13 @@
 thisEnclosingJoinPointStaticPart cannot be resolved
-The ajc v1.1.1 doesn't seem to regognize the thisEnclosingJoinPointStaticPart keyword.
-With J2SE's (build 1.3.1_04-b02) and (build 1.4.1-b21) I get compilation errors from Ant and from Eclipse.
-Ant (v1.5) says: " aj:comp: [iajc] C:projectsaspectJTestsrcaspectsmypkgDebugLog.aj:146 thisEnclosingJoinPointStaticPart cannot be resolved [iajc] stream.println("Entering from " + thisEnclosingJoinPointStaticPart.getSignature()); [iajc] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ "
+The ajc v1.1.1 doesn't seem to regognize the thisEnclosingJoinPointStaticPart
+keyword.
+With J2SE's (build 1.3.1_04-b02) and (build 1.4.1-b21) I get compilation errors
+from Ant and from Eclipse. Ant (v1.5) says:
+"
+aj:comp:
+[iajc] C:projectsaspectJTestsrcaspectsmypkgDebugLog.aj:146
+thisEnclosingJoinPointStaticPart cannot be resolved
+[iajc] stream.println("Entering from " +
+thisEnclosingJoinPointStaticPart.getSignature());
+[iajc]                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"

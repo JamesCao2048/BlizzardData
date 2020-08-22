@@ -1,4 +1,55 @@
 [EditorMgmt] Memory leak in Java editors
 The following failure was detected in the integration build.
-TestCase LeakTestSuite testJavaEditor Failure JavaEditor: instance count is not the same: (0 / 1 ) junit.framework.AssertionFailedError: JavaEditor: instance count is not the same: (0 / 1 ) at org.eclipse.jdt.ui.leaktest.LeakTestCase.assertEqualCount(LeakTestCase.java:75) at org.eclipse.jdt.ui.tests
-.leaks.JavaLeakTest.testJavaEditor(JavaLeakTest.java:117) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.Na
+
+
+TestCase LeakTestSuite
+
+testJavaEditor
+Failure
+JavaEditor: instance count is not the same: (0 / 1 )
+
+junit.framework.AssertionFailedError: JavaEditor: instance count is not the
+same: (0 / 1 )
+at
+org.eclipse.jdt.ui.leaktest.LeakTestCase.assertEqualCount(LeakTestCase.java:75)
+at
+org.eclipse.jdt.ui.tests.leaks.JavaLeakTest.testJavaEditor(JavaLeakTest.java:117)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
+at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
+at junit.extensions.TestSetup.run(TestSetup.java:23)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:320)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:199)
+at org.eclipse.test.EclipseTestRunner.main(EclipseTestRunner.java:134)
+at org.eclipse.test.UITestApplication$3.run(UITestApplication.java:180)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at
+org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:106)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2401)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2106)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1448)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1419)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:257)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:90)
+at
+org.eclipse.test.UITestApplication.runApplication(UITestApplication.java:123)
+at org.eclipse.test.UITestApplication.run(UITestApplication.java:55)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:260)
+at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:173)
+at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:305)
+at org.eclipse.core.launcher.Main.run(Main.java:729)
+at org.eclipse.core.launcher.Main.main(Main.java:713)

@@ -1,6 +1,11 @@
 [PropertiesView] Property Sheet "Misc" category not always expanded correctly
-When the property sheet view is set to show categories the "Misc" category is not always expanded correctly.
-1.Select an object that only has properties in the "Misc." category (so that the viewer will not show the "Misc" category explicitly).
-2.Change selection to an object with properties in the "Misc" category and some other category (so that the viewer will show "Misc" and other categories explicitly).
+When the property sheet view is set to show categories the "Misc" category is
+not always expanded correctly.
+1.  Select an object that only has properties in the "Misc." category (so that
+the viewer will not show the "Misc" category explicitly).
+2.  Change selection to an object with properties in the "Misc" category and
+some other category (so that the viewer will show "Misc" and other categories
+explicitly).
 Note that the "Misc" category is not expanded.
-NOTE: You may have to do these steps twice 
+NOTE:  You may have to do these steps twice to reproduce the problem.  The
+problem does not appear to occur on the first selection change.

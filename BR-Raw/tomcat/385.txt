@@ -1,6 +1,7 @@
 TrimLayout margins inconsistent with other layouts
 Trimlayout has a margin width and height of 0 initially.
 This is inconsistant with other layout classes currently existing.
-While this is a non-typical layout and likely not going to be used outside the workbench, but it might.
-And I think it is better to be consistant in these cases than different.
-It will likely just cause frustration for anyone new to this layout.
+While this is a non-typical layout and likely not going to be used outside the
+workbench, but it might.  And I think it is better to be consistant in these
+cases than different.  It will likely just cause frustration for anyone new to
+this layout.

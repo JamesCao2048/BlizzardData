@@ -1,8 +1,9 @@
 [Contexts] Renamed EnabledSubmission to ContextSubmission
-The type EnabledSubmission would be better named ContextSubmission.
-Clients browsing for context-related APIs generally look for types named *context*.
-Since the name has no relation to contexts, it's difficult to remember.
-And lastly, the name is almost oxymoronic.
-While the API may say "add" and "remove" EnabledSubmissions, clients logically think of this as enabling and disabling the submissions.
-Just saying "then we disable our EnabledSubmission" makes my head hurt.
-:) I think it's cleaner t
+The type EnabledSubmission would be better named ContextSubmission. Clients browsing for
+context-related APIs generally look for types named *context*. Since the name has no relation to
+contexts, it's difficult to remember. And lastly, the name is almost oxymoronic. While the API may
+say "add" and "remove" EnabledSubmissions, clients logically think of this as enabling and
+disabling the submissions. Just saying "then we disable our EnabledSubmission" makes my head
+hurt. :)
+I think it's cleaner to call them ContextSubmissions, because that's what clients are really doing -
+submitting a context.

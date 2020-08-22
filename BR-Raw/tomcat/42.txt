@@ -1,3 +1,95 @@
 [Intro] NPE in ContextHelpPart.createContextHelp
-I20040323 Started fresh workspace and added a new Jave project java.lang.NullPointerException at org.eclipse.ui.intro.internal.parts.ContextHelpPart.createContextHelp(ContextHelpPart.java:241) at org.eclipse.ui.intro.internal.parts.ContextHelpPart.handlePartActivation(ContextHelpPart.java:225) at or
-g.eclipse.ui.intro.internal.parts.ContextHelpPart.access$0(ContextHelpPart.java:210) at org.eclipse.ui.intro.internal.parts.ContextHelpPart$PartListener.partActivated(ContextHelpPart.java:53) at org.
+I20040323
+Started fresh workspace and added a new Jave project
+java.lang.NullPointerException
+at
+org.eclipse.ui.intro.internal.parts.ContextHelpPart.createContextHelp(ContextHelpPart.java:241)
+at
+org.eclipse.ui.intro.internal.parts.ContextHelpPart.handlePartActivation(ContextHelpPart.java:225)
+at
+org.eclipse.ui.intro.internal.parts.ContextHelpPart.access$0(ContextHelpPart.java:210)
+at
+org.eclipse.ui.intro.internal.parts.ContextHelpPart$PartListener.partActivated(ContextHelpPart.java:53)
+at org.eclipse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45)
+at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:610)
+at org.eclipse.core.runtime.Platform.run(Platform.java:521)
+at
+org.eclipse.ui.internal.PartListenerList2.firePartActivated(PartListenerList2.java:43)
+at org.eclipse.ui.internal.WWinPartService$1.partActivated(WWinPartService.java:30)
+at org.eclipse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45)
+at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:610)
+at org.eclipse.core.runtime.Platform.run(Platform.java:521)
+at
+org.eclipse.ui.internal.PartListenerList2.firePartActivated(PartListenerList2.java:43)
+at org.eclipse.ui.internal.WorkbenchPage.firePartActivated(WorkbenchPage.java:1296)
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:2594)
+at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:455)
+at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:2721)
+at org.eclipse.ui.internal.WorkbenchPage.busySetPerspective(WorkbenchPage.java:694)
+at org.eclipse.ui.internal.WorkbenchPage.access$8(WorkbenchPage.java:679)
+at org.eclipse.ui.internal.WorkbenchPage$12.run(WorkbenchPage.java:2804)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84)
+at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:2802)
+at
+org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard.replaceCurrentPerspective(BasicNewProjectResourceWizard.java:333)
+at
+org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard.updatePerspective(BasicNewProjectResourceWizard.java:452)
+at
+org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.finishPage(JavaProjectWizard.java:58)
+at
+org.eclipse.jdt.internal.ui.wizards.NewElementWizard$2.run(NewElementWizard.java:100)
+at
+org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:34)
+at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:700)
+at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1559)
+at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:3196)
+at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:3153)
+at
+org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:50)
+at
+org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:302)
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252)
+at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:756)
+at
+org.eclipse.jdt.internal.ui.wizards.NewElementWizard.performFinish(NewElementWizard.java:107)
+at org.eclipse.jface.wizard.WizardDialog.finishPressed(WizardDialog.java:606)
+at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:319)
+at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:413)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:769)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2584)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2262)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:670)
+at org.eclipse.jface.window.Window.open(Window.java:650)
+at org.eclipse.ui.actions.NewWizardAction.run(NewWizardAction.java:164)
+at
+org.eclipse.ui.internal.ide.NewWizardDropDownAction.run(NewWizardDropDownAction.java:129)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:550)
+at
+org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:502)
+at
+org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:474)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:769)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2584)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2262)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1488)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1462)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:259)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:90)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:288)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:214)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:115)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:315)
+at org.eclipse.core.launcher.Main.run(Main.java:740)
+at org.eclipse.core.launcher.Main.main(Main.java:724)

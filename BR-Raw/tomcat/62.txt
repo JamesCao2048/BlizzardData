@@ -1,4 +1,10 @@
 ClassCastException in LaunchViewEventHandler
-The following code throws ClassCastException if 'element' is an instance of 'IStackFrame': protected void doHandleSuspendEvent(Object element, DebugEvent event) { IThread thread= getThread(element); if (thread != null) { fThreadTimer.stopTimer((IThread)element); } According to the documentation on '
-DebugEvent' "no events are specified for stack frames".
-But I think it would be better to cleanup this code.
+The following code throws ClassCastException if 'element' is an instance
+of 'IStackFrame':
+protected void doHandleSuspendEvent(Object element, DebugEvent event) {
+IThread thread= getThread(element);
+if (thread != null) {
+fThreadTimer.stopTimer((IThread)element);
+}
+According to the documentation on 'DebugEvent' "no events are specified for
+stack frames". But I think it would be better to cleanup this code.

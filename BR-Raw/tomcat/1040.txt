@@ -1,6 +1,8 @@
 "Content assist" action definition ID should be in the platform
-The "Content Assist" action is defined in JDT UI's plugin.xml.
-This action is presented to the user as being generic 
-- the name doesn't imply that it's specific to Java and the scope is Global 
-- but other editors can't make use of this ID when JDT UI isn't around.
-This action ID should either be moved into the Platform so that other editors can tie into the key binding or the action should be renamed so that the user knows it won't affect all editors.
+The "Content Assist" action is defined in JDT UI's plugin.xml. This action
+is presented to the user as being generic - the name doesn't imply that it's
+specific to Java and the scope is Global - but other editors can't make use
+of this ID when JDT UI isn't around.
+This action ID should either be moved into the Platform so that other editors
+can tie into the key binding or the action should be renamed so that the user
+knows it won't affect all editors.

@@ -1,4 +1,6 @@
 OSGI os alias returned instead of name.
-org.osgi.framework.BundleContext.getProperty( org.osgi.framework.Constants.FRAMEWORK_OS_NAME ) should return canonical OS name rather than alias.
+org.osgi.framework.BundleContext.getProperty(
+org.osgi.framework.Constants.FRAMEWORK_OS_NAME )
+should return canonical OS name rather than alias.
 So on Windows XP it should return "WindowsXP" rather than "Windows XP".
 Am using M7 btw.

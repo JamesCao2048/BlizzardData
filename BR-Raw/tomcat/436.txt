@@ -1,4 +1,9 @@
 can't find java.awt.* packages using IBMs 1.4.1 VM on linux
-1.get swt and swt.gtk from head 2.rename appropriate swt classpath file 3.build you get lots of errors that various java.awt files cannot be found.
-for this vm and this platform (at least), the java.awt.* files are in 'graphics.jar'.
-it seems like the contents of this file isn't being considered when looking for imports?
+1. get swt and swt.gtk from head
+2. rename appropriate swt classpath file
+3. build
+you get lots of errors that various java.awt files cannot be found.
+for this vm and this platform (at least), the java.awt.* files are in
+'graphics.jar'.
+it seems like the contents of this file isn't being considered when looking for
+imports?

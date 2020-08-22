@@ -1,3 +1,23 @@
 NPE during shutdown in indexer
-java.lang.NullPointerException at org.eclipse.jdt.internal.core.search.indexing.IndexManager.rebuildIndex (IndexManager.java:335) at org.eclipse.jdt.internal.core.search.indexing.IndexManager.getIndex (IndexManager.java:145) at org.eclipse.jdt.internal.core.search.IndexSelector.getIndexes (IndexSele
-ctor.java:162) at org.eclipse.jdt.internal.core.search.PatternSearchJob.execute (PatternSearchJob.java:67) at org.eclipse.jdt.internal.core.search.processing.JobManager.performConcurrentJob (JobManag
+java.lang.NullPointerException
+at
+org.eclipse.jdt.internal.core.search.indexing.IndexManager.rebuildIndex
+(IndexManager.java:335)
+at org.eclipse.jdt.internal.core.search.indexing.IndexManager.getIndex
+(IndexManager.java:145)
+at org.eclipse.jdt.internal.core.search.IndexSelector.getIndexes
+(IndexSelector.java:162)
+at org.eclipse.jdt.internal.core.search.PatternSearchJob.execute
+(PatternSearchJob.java:67)
+at
+org.eclipse.jdt.internal.core.search.processing.JobManager.performConcurrentJob
+(JobManager.java:261)
+at org.eclipse.jdt.core.search.SearchEngine.searchAllTypeNames
+(SearchEngine.java:734)
+at org.eclipse.jdt.internal.corext.util.AllTypesCache.search
+(AllTypesCache.java:438)
+at
+org.eclipse.jdt.internal.corext.util.AllTypesCache$TypeCacher.doSearchTypes
+(AllTypesCache.java:135)
+at org.eclipse.jdt.internal.corext.util.AllTypesCache$TypeCacher.run
+(AllTypesCache.java:98)

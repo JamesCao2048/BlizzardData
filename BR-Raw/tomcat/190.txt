@@ -1,12 +1,60 @@
 [Navigator] Provide ability for users to add filters to base UI Navigator view interface
-Problem/Feature Request: In the base Navigator view (e.g.
-as in Resources perspective) there is no way for the casual user to add their own filters.
-Workaround/Warning: As an unofficial "workaround", you can edit {WebSphere Studio Install Dir}eclipsepluginsorg.eclipse.ui_2.1.1plugin.xml ...
-
-<extension point="org.eclipse.ui.resourceFilters"> 
-<filter selected="false" pattern=".*"> 
-</filter> 
-<filter selected="false" pattern="EJS*"> 
-</filter> 
-</extension> ...
-to add a filter in the base workbe
+Problem/Feature Request:
+In the base Navigator view (e.g. as in Resources
+perspective) there is no way for the casual user to add their own filters.
+Workaround/Warning:
+As an unofficial "workaround", you can edit {WebSphere
+Studio Install
+Dir}eclipsepluginsorg.eclipse.ui_2.1.1plugin.xml
+...
+<extension
+point="org.eclipse.ui.resourceFilters">
+<filter
+selected="false"
+pattern=".*">
+</filter>
+<filter
+selected="false"
+pattern="EJS*">
+</filter>
+</extension>
+...
+to add a filter in the base workbench/eclipse Navigator
+View. In this case I added the "EJS*" filter. It works, but
+is not officially supported. You can use this at you own
+discretion. However any core workbench problems reported
+with any such change present are not be supported.
+At the current time, the only sanctioned way to add a
+filter to the Navigator view, is  to create separate plugin
+and contribute the filters instead of modifying an existing
+product plugin. The UI is a separate plug-in in core
+Eclipse which happens to own this base Navigator view.
+WebSphere Studio Workbench or Eclipse development does not
+support any modification to the base. The UI plug-in is
+part of that base.
+Example:
+In WSAD v5.x there is a large set of filters in the base
+Navigator view. The various plug-ins added these through a
+plug-in api()...etc. The good news is that apart from this
+sanctioned mechanism to add
+filters to the base Navigator view, adding a filter to the
+plugi-in.xml file of the UI file will ony affect the
+Navigator view. This change does not carry over to say the
+Explorer Package view of the Java perspective or the
+Project Navigator of the J2EE Perspective. Similarly any
+change to filters in a custom Navigator, such as adding a
+filter in the J2EE Project Navigator, will not show up in
+the base Navigator view. There is  a clean and logical
+separation of concerns in the design.
+Clearly, writing a plug-in is not an option for many users
+or an activity they may wish to invest time in to just a
+filter(s). Our customers raised the need to be
+able to add filters to the base Navigator for general use
+across all perspectives. This basic add filter capability
+is present in base Navigators of other IDE technologies.
+I have create this eclipse bugzilla defect/feature request
+to provide a add/remove user filters
+capabilty in the UI Navigator GUI (e.g. an add filter
+button at minimum,and maybe a remove button restricted to
+filters not associated with a plug-in).
+Thanks, Bob D

@@ -1,20 +1,16 @@
-[Compiler] x && false evaluates to "true
+[Compiler] x && false evaluates to "true"
 Build 3.0M5+ JDTCore HEAD from 20031202
-
-When running the following program, it will print FAILED, though it should have 
+When running the following program, it will print FAILED, though it should have
 succeeded.
-
 public class X  {
-
-    public static void main(String args[]) {
-		boolean b = true;
-		b = b && false;                 
-		if (b) {
-			System.out.println("FAILED");
-		} else {
-			System.out.println("SUCCESS");
-		}
-    }
+public static void main(String args[]) {
+boolean b = true;
+b = b && false;
+if (b) {
+System.out.println("FAILED");
+} else {
+System.out.println("SUCCESS");
 }
-
+}
+}
 Problem is due to compiler misoptimizing expression 'b && false'

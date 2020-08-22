@@ -1,3 +1,13 @@
 No statistics collected when heap option is OPTIONS_NO_INSTANCE_INFORMATION
-I am running a profile configuration where heap information is not selected, exec flow and method coverage are selected This map to the following RAC options configuration: TRACE_MODE = noObjectCorrelation ALLOCATION_INFORMATION = none STACK_INFORMATION = boundary TICKET = true BOUNDARY_DEPTH = 4 ME
-THOD_COUNTS = true UNREFERENCED_SYMBOLS = true When I run the app, I get exec flow information at the class object level but the statistics at the package , class, etc are all 0
+I am running a profile configuration where heap information is not selected,
+exec flow and method coverage are selected
+This map to the following RAC options configuration:
+TRACE_MODE = noObjectCorrelation
+ALLOCATION_INFORMATION = none
+STACK_INFORMATION = boundary
+TICKET = true
+BOUNDARY_DEPTH = 4
+METHOD_COUNTS = true
+UNREFERENCED_SYMBOLS = true
+When I run the app, I get exec flow information at the class object level but
+the statistics at the package , class, etc are all 0

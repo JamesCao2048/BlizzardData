@@ -1,21 +1,16 @@
 CVS metafiles always have unix EOL
-(Third time -- at least I copied the Description pane text this time! Thank you 
+(Third time -- at least I copied the Description pane text this time! Thank you
 bugzilla.)
-
-Ok, second time typing this in because I got an error submitting it the first 
-time and Bugzilla told me to hit the Back button and fix it and lost all the 
+Ok, second time typing this in because I got an error submitting it the first
+time and Bugzilla told me to hit the Back button and fix it and lost all the
 data on the form when I did (nice). This will be shorter due to my RSI.
-
 Our CVS server is running on an OS X Machine (10.2.6)
-
-When checking out a project from CVS on Windows, it is checked out as a Unix 
-project. If you try to perform any CVS actions on the checked out project using 
-Tortoise CVS, you are shown an error message that tells you did. I had typed in 
-the whole message last time but cannot this time (you cannot copy/paste the 
-error message in the dialog -- nice -- they really think of us folk with RSI 
-when designing apps). 
-
-Problems due to this: Cannot diff (compare) files in Eclipse. Cannot use 
+When checking out a project from CVS on Windows, it is checked out as a Unix
+project. If you try to perform any CVS actions on the checked out project using
+Tortoise CVS, you are shown an error message that tells you did. I had typed in
+the whole message last time but cannot this time (you cannot copy/paste the
+error message in the dialog -- nice -- they really think of us folk with RSI
+when designing apps).
+Problems due to this: Cannot diff (compare) files in Eclipse. Cannot use
 checked out project with TortoiseCVS.
-
 Seen on WinXP and Windows 2000.

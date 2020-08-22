@@ -1,6 +1,132 @@
 Assertion failed in quick diff
-I20030910 
+I20030910
 - first got an IllegalArgumentException in SWT.
-java.lang.IllegalArgumentException: Argument not valid at org.eclipse.swt.SWT.error(SWT.java:2355) at org.eclipse.swt.SWT.error(SWT.java:2299) at org.eclipse.jface.text.DocumentAdapter.getLine (DocumentAdapter.java:122) at org.eclipse.swt.custom.StyledText$ContentWidthCache.calculate (StyledText.jav
-a:1220) at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:6187) 
-- after closing the editor and trying to reopen I now get an asse
+java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:2355)
+at org.eclipse.swt.SWT.error(SWT.java:2299)
+at org.eclipse.jface.text.DocumentAdapter.getLine
+(DocumentAdapter.java:122)
+at org.eclipse.swt.custom.StyledText$ContentWidthCache.calculate
+(StyledText.java:1220)
+at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:6187)
+- after closing the editor and trying to reopen I now get an assertion failed.
+org.eclipse.jface.util.Assert$AssertionFailedException: Assertion failed:
+Invariant violated (lines: 186 size: 185)
+at org.eclipse.jface.util.Assert.isTrue(Assert.java:168)
+at
+org.eclipse.ui.internal.texteditor.quickdiff.DocumentLineDiffer.invariant
+(DocumentLineDiffer.java:984)
+at
+org.eclipse.ui.internal.texteditor.quickdiff.DocumentLineDiffer.connect
+(DocumentLineDiffer.java:1007)
+at org.eclipse.jface.text.source.AnnotationModel.connect
+(AnnotationModel.java:155)
+at org.eclipse.jface.text.source.VisualAnnotationModel.connect
+(VisualAnnotationModel.java:77)
+at org.eclipse.jface.text.source.SourceViewer.setDocument
+(SourceViewer.java:390)
+at org.eclipse.jface.text.source.SourceViewer.setDocument
+(SourceViewer.java:368)
+at org.eclipse.ui.texteditor.AbstractTextEditor.initializeSourceViewer
+(AbstractTextEditor.java:2403)
+at org.eclipse.ui.texteditor.AbstractTextEditor.createPartControl
+(AbstractTextEditor.java:2196)
+at org.eclipse.ui.texteditor.StatusTextEditor.createPartControl
+(StatusTextEditor.java:53)
+at org.eclipse.ui.texteditor.ExtendedTextEditor.createPartControl
+(ExtendedTextEditor.java:259)
+at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.createPartControl
+(JavaEditor.java:2331)
+at
+org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.createPartControl
+(CompilationUnitEditor.java:1053)
+at org.eclipse.ui.internal.PartPane$4.run(PartPane.java:141)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:1016)
+at org.eclipse.core.runtime.Platform.run(Platform.java:420)
+at org.eclipse.ui.internal.PartPane.createChildControl
+(PartPane.java:137)
+at org.eclipse.ui.internal.PartPane.createControl(PartPane.java:186)
+at org.eclipse.ui.internal.EditorWorkbook.createPage
+(EditorWorkbook.java:404)
+at org.eclipse.ui.internal.EditorWorkbook.add(EditorWorkbook.java:123)
+at org.eclipse.ui.internal.EditorArea.addEditor(EditorArea.java:55)
+at org.eclipse.ui.internal.EditorPresentation.openEditor
+(EditorPresentation.java:351)
+at org.eclipse.ui.internal.EditorManager$2.run(EditorManager.java:585)
+at org.eclipse.swt.custom.BusyIndicator.showWhile
+(BusyIndicator.java:84)
+at org.eclipse.ui.internal.EditorManager.createEditorTab
+(EditorManager.java:574)
+at org.eclipse.ui.internal.EditorManager.openInternalEditor
+(EditorManager.java:668)
+at org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor
+(EditorManager.java:459)
+at org.eclipse.ui.internal.EditorManager.openEditorFromInput
+(EditorManager.java:333)
+at org.eclipse.ui.internal.EditorManager.openEditor
+(EditorManager.java:424)
+at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor
+(WorkbenchPage.java:2081)
+at org.eclipse.ui.internal.WorkbenchPage.access$6
+(WorkbenchPage.java:2029)
+at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2016)
+at org.eclipse.swt.custom.BusyIndicator.showWhile
+(BusyIndicator.java:84)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor
+(WorkbenchPage.java:2011)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor
+(WorkbenchPage.java:1912)
+at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor
+(EditorUtility.java:133)
+at org.eclipse.jdt.internal.ui.javaeditor.EditorUtility.openInEditor
+(EditorUtility.java:111)
+at org.eclipse.jdt.internal.ui.search.GotoMarkerAction.showWithoutReuse
+(GotoMarkerAction.java:88)
+at org.eclipse.jdt.internal.ui.search.GotoMarkerAction.show
+(GotoMarkerAction.java:78)
+at org.eclipse.jdt.internal.ui.search.GotoMarkerAction.run
+(GotoMarkerAction.java:61)
+at
+org.eclipse.search.internal.ui.SearchResultViewer.openCurrentSelection
+(SearchResultViewer.java:548)
+at org.eclipse.search.internal.ui.SearchResultViewer.showResult
+(SearchResultViewer.java:453)
+at org.eclipse.search.internal.ui.SearchResultViewer$2.open
+(SearchResultViewer.java:153)
+at org.eclipse.jface.viewers.StructuredViewer$2.run
+(StructuredViewer.java:392)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:1016)
+at org.eclipse.core.runtime.Platform.run(Platform.java:420)
+at org.eclipse.jface.viewers.StructuredViewer.fireOpen
+(StructuredViewer.java:390)
+at org.eclipse.jface.viewers.StructuredViewer.handleOpen
+(StructuredViewer.java:600)
+at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen
+(StructuredViewer.java:689)
+at org.eclipse.jface.util.OpenStrategy.fireOpenEvent
+(OpenStrategy.java:209)
+at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:204)
+at org.eclipse.jface.util.OpenStrategy$1.mouseSelectItem
+(OpenStrategy.java:344)
+at org.eclipse.jface.util.OpenStrategy$1.handleEvent
+(OpenStrategy.java:289)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2188)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1878)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2037)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:2020)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:858)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:295)
+at org.eclipse.core.launcher.Main.run(Main.java:751)
+at org.eclipse.core.launcher.Main.main(Main.java:587)

@@ -1,10 +1,13 @@
 Source control folders should not be visible in package view
-When using folder based source control e.g.
-CVS and Subversion, the CVS folders appear in the package view of the application.
-I'll try and do a simple ACSII drawing of this Assuming your source is in src you get + src + CVS 
-- empty + foo.CVS 
-- empty + foo.myPackage 
-- has content + foo.myPackage.CVS 
-- empty All the CVS entries should not be present, they should be ignored as they're not valid packages.
-Same applies to .SVN folders if your using subversion.
-You probably should be able to conf
+When using folder based source control e.g. CVS and Subversion, the CVS
+folders appear in the package view of the application. I'll try and do a
+simple ACSII drawing of this
+Assuming your source is in src you get
++ src
++ CVS                - empty
++ foo.CVS            - empty
++ foo.myPackage      - has content
++ foo.myPackage.CVS  - empty
+All the CVS entries should not be present, they should be ignored as they're
+not valid packages. Same applies to .SVN folders if your using subversion. You
+probably should be able to configure eclipse to tell it what files to ignore.

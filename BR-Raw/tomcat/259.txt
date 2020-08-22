@@ -3,12 +3,9 @@ I would like to be able to specify a commandline option (say, "-concurrentOk")
 or some other mechanism that would allow running multiple instances using the
 same workspace simultaneously.  Without this ability, RCP applications will
 often need to be wrappered with some cumbersome launch mechanism that either
-
 o creates a new workspace for each instance (probably losing any chance of
-  persisting state), or
-
+persisting state), or
 o implements some mechanism for rendezvousing with an already-running instance
-  of the app.
-
+of the app.
 If such an option were supported, I believe it would be acceptable to follow
 a "last writer wins" policy when it comes time to save the application state.

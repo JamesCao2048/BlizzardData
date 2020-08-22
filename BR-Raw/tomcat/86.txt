@@ -1,4 +1,10 @@
 Merge does not see files/dirs deleted in stream where changes come from
-I'm using build I200403171300.I want to merge a specific stream (branch JDK_1_5) of a project starting from the version where the branch was created (Root_JDK_1_5) with changes made in HEAD stream.
-After the merge is done, I can see all created and modified files displayed in synchronize view but not files (or dirs) which were deleted in HEAD...
-Set severity to major as it's really painful to identify each time I merge (every 2 days) all files deleted in HEAD stream and delete them manually in m
+I'm using build I200403171300.
+I want to merge a specific stream (branch JDK_1_5) of a project starting from
+the version where the branch was created (Root_JDK_1_5) with changes made in
+HEAD stream.
+After the merge is done, I can see all created and modified files displayed in
+synchronize view but not files (or dirs) which were deleted in HEAD...
+Set severity to major as it's really painful to identify each time I merge
+(every 2 days) all files deleted in HEAD stream and delete them manually in my
+JDK_1_5 workspace after the merge...

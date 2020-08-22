@@ -1,6 +1,11 @@
 [RCP] [ViewMgmt] want to have the possibility to dynamically change the tab name of the view for multiple view instances
-on Eclipse RCP V3.0M7, it is possible to open dynamically multiple instances of a view : showView ( String view Id, String secondary Id, int mode) the text shown in the tab of the view is tne name of the view defined in plugin.xml ( 
-<view name=".." ).
-When you open several instances of a view, all of the tabs show this text.
+on Eclipse RCP V3.0M7, it is possible to open dynamically multiple instances of
+a view :
+showView ( String view Id, String secondary Id, int mode)
+the text shown in the tab of the view is tne name of the view defined in
+plugin.xml ( <view name=".." ). When you open several instances of a view, all
+of the tabs show this text.
 The problem is that it is not possible to modify programmatically this text.
-It is possible to see it but not to change it : IViewpart.getViewSite().getRegisteredName() giv
+It is possible to see it but not to change it :
+IViewpart.getViewSite().getRegisteredName() gives the name of the view
+Is it possible to have the setRegisteredName (String name) function ??

@@ -1,3 +1,15 @@
 'Install Location' wizard page not working
-I200403040800 Linux-GTK 1.help>software updates>find and install 2.'Search for new features to install'>next 3.add update site...> name:CDT URL: http://update.eclipse.org/tools/cdt/updates/builds/2.0M7 > OK select CDT>next 4.'select all'>next 5.select 'I accept ...'>next 6.add site...>select a folde
-r (~/tmp)>type the name of the folder you would like to get created as an install site (eclipseSite) in the bottom text field >OK nothing new appears in the 'install location' page It's a real proble
+I200403040800
+Linux-GTK
+1. help>software updates>find and install
+2. 'Search for new features to install'>next
+3. add update site...> name:CDT
+URL: http://update.eclipse.org/tools/cdt/updates/builds/2.0M7  > OK
+select CDT>next
+4. 'select all'>next
+5. select 'I accept ...'>next
+6. add site...>select a folder (~/tmp)>type the name of the folder you would
+like to get created as an install site (eclipseSite) in the bottom text field >OK
+nothing new appears in the 'install location' page
+It's a real problem because CDT2.0 is now only available through install/update,
+and people using a shared install of Eclipse have to create a new install location.

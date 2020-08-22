@@ -1,3 +1,30 @@
 Custom Perspective action is causing a NPE
-I20030930 The Window->Customize Perspective action is causing a NPE: WorkbenchActionBuilder.fillStatusLine(IStatusLineManager) line: 360 WorkbenchActionBuilder.fillActionBars(WWinActionBars) line: 287 WorkbenchWindow.fillActionBars(WWinActionBars) line: 965 CustomizePerspectiveDialog.<init>(Shell, P
-erspective) line: 567 WorkbenchPage.editActionSets() line: 1155 EditActionSetsAction.run() line: 46 EditActionSetsAction(Action).runWithEvent(Event) line: 842 ActionContributionItem.handleWidgetSelec
+I20030930
+The Window->Customize Perspective action is causing a NPE:
+WorkbenchActionBuilder.fillStatusLine(IStatusLineManager) line: 360
+WorkbenchActionBuilder.fillActionBars(WWinActionBars) line: 287
+WorkbenchWindow.fillActionBars(WWinActionBars) line: 965
+CustomizePerspectiveDialog.<init>(Shell, Perspective) line: 567
+WorkbenchPage.editActionSets() line: 1155
+EditActionSetsAction.run() line: 46
+EditActionSetsAction(Action).runWithEvent(Event) line: 842
+ActionContributionItem.handleWidgetSelection(Event, boolean) line: 543
+ActionContributionItem.access$4(ActionContributionItem, Event, boolean) line: 496
+ActionContributionItem$6.handleEvent(Event) line: 468
+EventTable.sendEvent(Event) line: 82
+MenuItem(Widget).sendEvent(Event) line: 847
+Display.runDeferredEvents() line: 2188
+Display.readAndDispatch() line: 1878
+Workbench.runEventLoop(Window$IExceptionHandler) line: 2108
+Workbench.run(Object) line: 2091
+InternalBootLoader.run(String, URL, String, String[], Runnable) line: 858
+BootLoader.run(String, URL, String, String[], Runnable) line: 461
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available
+[native method]
+NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39
+DelegatingMethodAccessorImpl.invoke(Object, Object[]) line: 25
+Method.invoke(Object, Object[]) line: 324
+Main.basicRun(String[]) line: 295
+Main.run(String[]) line: 751
+Main.main(String[]) line: 587
+null is being passed as the argument for fillStatusLine

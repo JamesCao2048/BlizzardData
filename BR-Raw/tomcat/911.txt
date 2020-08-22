@@ -1,6 +1,10 @@
 Regression - Incorrect Shell highlighted in Windows Taskbar
-When a breakpoint is hit, the correct WorkbenchWindow containing the Debug perspective used to flash/blink in the windows taskbar.
-Also, the windows taskbar would slide out if set to "auto-hide".
-In 3.0 M4, the incorrect workbenchWindow is flashed instead.
-For me, it is the "first" shell, which happens to contain the Java perspective.
-If I ALT+TAB to the WorkbenchWindow containing the Debug perspective, windows is not happy, and refuses to hide the Taskbar until I make the other workbenchwindow 
+When a breakpoint is hit, the correct WorkbenchWindow containing the Debug
+perspective used to flash/blink in the windows taskbar.  Also, the windows
+taskbar would slide out if set to "auto-hide".
+In 3.0 M4, the incorrect workbenchWindow is flashed instead.  For me, it is
+the "first" shell, which happens to contain the Java perspective.  If I ALT+TAB
+to the WorkbenchWindow containing the Debug perspective, windows is not happy,
+and refuses to hide the Taskbar until I make the other workbenchwindow be the
+active shell.  Of course I must do this, because the taskbar (Left side of
+Desktop) is covering most of the Variables View.

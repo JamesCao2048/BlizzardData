@@ -1,16 +1,14 @@
 workspace location is not always fully qualified
 Quoting John:
-The recently released changes in runtime are causing many resources plugin 
-tests to fail.  There were two lines in the old code 
+The recently released changes in runtime are causing many resources plugin
+tests to fail.  There were two lines in the old code
 (InternalPlatform.setupMetaArea) that did this:
-
 //try infer the device if there isn't one (windows)
 if (location.getDevice()==null)
-	location = new Path(location.toFile().getAbsolutePath());
-
-It looks like this code was lost in the refactoring to support platforms 
-without a data area.  If you don't do this, and you specify a "-data" area 
-without a device, then there are many places where location comparisons fail to 
-match because sometimes there is a device and sometimes there isn't. This 
-sequence needs to be added back, in some central place when the location is 
+location = new Path(location.toFile().getAbsolutePath());
+It looks like this code was lost in the refactoring to support platforms
+without a data area.  If you don't do this, and you specify a "-data" area
+without a device, then there are many places where location comparisons fail to
+match because sometimes there is a device and sometimes there isn't. This
+sequence needs to be added back, in some central place when the location is
 being initialized, to be sure that it always has a device.

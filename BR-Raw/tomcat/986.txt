@@ -1,16 +1,10 @@
 [Editor Mgmt] Need extension to intercept editor opening
-An extension that allowed a plugin to intercept an IEditorInput before the 
+An extension that allowed a plugin to intercept an IEditorInput before the
 editor opens would be nice.
-
 something like:
-
 public IEditorInput checkInput(IEditorInput)
-
-The use I see would be valuable in the case of a MultiEditor. A plugin could 
+The use I see would be valuable in the case of a MultiEditor. A plugin could
 intercept an input, and potenially return a MultiEditorInput to take its place.
-
 So the interception would need to occur before the  editor is created.
-
-this bug is releated:  https://bugs.eclipse.org/bugs/show_bug.cgi?id=42641 
-
+this bug is releated:  https://bugs.eclipse.org/bugs/show_bug.cgi?id=42641
 Geoff

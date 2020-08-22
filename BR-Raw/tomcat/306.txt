@@ -1,5 +1,95 @@
 NPE in launch dialog when creating a new config
-In the launch dialog, deselect the selection in the tree viewer.
-Press "New".
-Boom: Thread [main] (Suspended (exception java.lang.NullPointerException)) org.eclipse.debug.internal.ui.launchConfigurations.CreateLaunchConfigur ationAction.performAction() line: 63 org.eclipse.debug.internal.ui.launchConfigurations.AbstractLaunchConfig urationAction$1.run() line: 103 org.eclipse.
-swt.custom.BusyIndicator.showWhile (org.eclipse.swt.widgets.Display, java.lang.Runnable) line: 84 org.eclipse.debug.inter
+In the launch dialog, deselect the selection in the tree viewer. Press "New".
+Boom:
+Thread [main] (Suspended (exception java.lang.NullPointerException))
+org.eclipse.debug.internal.ui.launchConfigurations.CreateLaunchConfigur
+ationAction.performAction() line: 63
+org.eclipse.debug.internal.ui.launchConfigurations.AbstractLaunchConfig
+urationAction$1.run() line: 103
+org.eclipse.swt.custom.BusyIndicator.showWhile
+(org.eclipse.swt.widgets.Display, java.lang.Runnable) line: 84
+org.eclipse.debug.internal.ui.launchConfigurations.CreateLaunchConfigur
+ationAction
+(org.eclipse.debug.internal.ui.launchConfigurations.AbstractLaunchConfiguration
+Action).run() line: 106
+org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurations
+Dialog$ButtonActionNew.run() line: 1610
+org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurations
+Dialog$1.widgetSelected(org.eclipse.swt.events.SelectionEvent) line: 1579
+org.eclipse.swt.widgets.TypedListener.handleEvent
+(org.eclipse.swt.widgets.Event) line: 89
+org.eclipse.swt.widgets.EventTable.sendEvent
+(org.eclipse.swt.widgets.Event) line: 82
+org.eclipse.swt.widgets.Button
+(org.eclipse.swt.widgets.Widget).sendEvent(org.eclipse.swt.widgets.Event)
+line: 833
+org.eclipse.swt.widgets.Display.runDeferredEvents() line: 2352
+org.eclipse.swt.widgets.Display.readAndDispatch() line: 2033
+org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurations
+Dialog(org.eclipse.jface.window.Window).runEventLoop
+(org.eclipse.swt.widgets.Shell) line: 647
+org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurations
+Dialog(org.eclipse.jface.window.Window).open() line: 627
+org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurations
+Dialog.open() line: 440
+org.eclipse.debug.ui.DebugUITools$1.run() line: 393
+org.eclipse.swt.custom.BusyIndicator.showWhile
+(org.eclipse.swt.widgets.Display, java.lang.Runnable) line: 84
+org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup
+(org.eclipse.swt.widgets.Shell,
+org.eclipse.jface.viewers.IStructuredSelection, java.lang.String,
+org.eclipse.core.runtime.IStatus) line: 397
+org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup
+(org.eclipse.swt.widgets.Shell,
+org.eclipse.jface.viewers.IStructuredSelection, java.lang.String) line: 339
+org.eclipse.debug.internal.ui.actions.OpenDebugConfigurations
+(org.eclipse.debug.ui.actions.OpenLaunchDialogAction).run() line: 79
+org.eclipse.debug.internal.ui.actions.OpenDebugConfigurations
+(org.eclipse.debug.ui.actions.OpenLaunchDialogAction).run
+(org.eclipse.jface.action.IAction) line: 97
+org.eclipse.ui.internal.WWinPluginAction
+(org.eclipse.ui.internal.PluginAction).runWithEvent
+(org.eclipse.swt.widgets.Event) line: 273
+org.eclipse.ui.internal.WWinPluginAction.runWithEvent
+(org.eclipse.swt.widgets.Event) line: 207
+org.eclipse.ui.internal.PluginActionContributionItem
+(org.eclipse.jface.action.ActionContributionItem).handleWidgetSelection
+(org.eclipse.swt.widgets.Event, boolean) line: 538
+org.eclipse.jface.action.ActionContributionItem.access$2
+(org.eclipse.jface.action.ActionContributionItem,
+org.eclipse.swt.widgets.Event, boolean) line: 490
+org.eclipse.jface.action.ActionContributionItem$5.handleEvent
+(org.eclipse.swt.widgets.Event) line: 423
+org.eclipse.swt.widgets.EventTable.sendEvent
+(org.eclipse.swt.widgets.Event) line: 82
+org.eclipse.swt.widgets.MenuItem
+(org.eclipse.swt.widgets.Widget).sendEvent(org.eclipse.swt.widgets.Event)
+line: 833
+org.eclipse.swt.widgets.Display.runDeferredEvents() line: 2352
+org.eclipse.swt.widgets.Display.readAndDispatch() line: 2033
+org.eclipse.ui.internal.Workbench.runEventLoop
+(org.eclipse.jface.window.Window$IExceptionHandler,
+org.eclipse.swt.widgets.Display) line: 1543
+org.eclipse.ui.internal.Workbench.runUI() line: 1519
+org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(org.eclipse.swt.widgets.Display, org.eclipse.ui.application.WorkbenchAdvisor)
+line: 258
+org.eclipse.ui.PlatformUI.createAndRunWorkbench
+(org.eclipse.swt.widgets.Display, org.eclipse.ui.application.WorkbenchAdvisor)
+line: 139
+org.eclipse.ui.internal.ide.IDEApplication.run(java.lang.Object) line:
+47
+org.eclipse.core.internal.runtime.PlatformActivator$1.run() line: 257
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(java.lang.String
+[], java.lang.Runnable) line: 106
+sun.reflect.NativeMethodAccessorImpl.invoke0(java.lang.reflect.Method,
+java.lang.Object, java.lang.Object[]) line: not available [native method]
+sun.reflect.NativeMethodAccessorImpl.invoke(java.lang.Object,
+java.lang.Object[]) line: 39
+sun.reflect.DelegatingMethodAccessorImpl.invoke(java.lang.Object,
+java.lang.Object[]) line: 25
+java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])
+line: 324
+org.eclipse.core.launcher.Main.basicRun(java.lang.String[]) line: 279
+org.eclipse.core.launcher.Main.run(java.lang.String[]) line: 742
+org.eclipse.core.launcher.Main.main(java.lang.String[]) line: 581

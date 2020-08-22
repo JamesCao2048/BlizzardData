@@ -1,8 +1,7 @@
 Runtime Launch config shows splash screen/ignores -nosplash
-I20040127 I use 
--nosplash but it insists on showing the splash screen.
-Note that same command line argument works when used along with eclipse.exe.
-Looking at what gets launched I see: 
--nl de_CH 
--showsplash "c:eclipsedropsI20040127eclipse 
--showsplash 600" It should honor my command line argument.
+I20040127
+I use -nosplash but it insists on showing the splash screen. Note that same
+command line argument works when used along with eclipse.exe.
+Looking at what gets launched I see:
+-nl de_CH -showsplash "c:eclipsedropsI20040127eclipse -showsplash 600"
+It should honor my command line argument.

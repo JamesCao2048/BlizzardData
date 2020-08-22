@@ -1,10 +1,11 @@
 Reverting file messes up breakpoint
-Build 20040226 1.Place a breakpoint on a line.
-2.Edit the file in some way (I added a blank line below the breakpoint.
-3.File->Revert.
-4.The breakpoint marker in the editor ruler disappears.
-(first problem) The breakpoint is still visible in the Breakpoints View, however.
-5.Double-click on the line where the breakpoint used to show.
-6.A new breakpoint appears in the Breakpoints View, but it's label is shorter than the "zombie" breakpoint's.
-It doesn't include the method name.
-(second problem)
+Build 20040226
+1. Place a breakpoint on a line.
+2. Edit the file in some way (I added a blank line below the breakpoint.
+3. File->Revert.
+4. The breakpoint marker in the editor ruler disappears. (first problem) The
+breakpoint is still visible in the Breakpoints View, however.
+5. Double-click on the line where the breakpoint used to show.
+6. A new breakpoint appears in the Breakpoints View, but it's label is shorter
+than the "zombie" breakpoint's. It doesn't include the method name. (second
+problem)

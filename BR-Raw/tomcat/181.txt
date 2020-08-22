@@ -1,5 +1,8 @@
 [KeyBindings] User needs access to multiple configurations
 The workbench should support multiple, orthogonal keybinding configurations.
-For example, for a WYSIWYG HTML editor (or any other non-source editor), "emacs" configuration makes no sense.
-They would instead want to define configurations for other HTML keybindings, such as "FrontPage", "DreamWeaver", etc.
-The user should be able to activate simultaneously the "emacs" mode for the Java editor, and the "frontpage" mode for the html editor.
+For example, for a WYSIWYG HTML editor (or any other non-source
+editor), "emacs" configuration makes no sense.  They would instead want to
+define configurations for other HTML keybindings, such
+as "FrontPage", "DreamWeaver", etc.  The user should be able to activate
+simultaneously the "emacs" mode for the Java editor, and the "frontpage" mode
+for the html editor.

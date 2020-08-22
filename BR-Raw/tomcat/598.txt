@@ -1,3 +1,6 @@
 [source lookup] Call stack editor annotation ambiguous
-Build: 3.0 M6 If I have two threads suspended with the same method somewhere in their call stack, I cannot distinguish between the two because both are highlighted in the same way in the editor.
-I would expect only the call stack of the selected thread to be displayed in the editor (not the stacks of all threads).
+Build: 3.0 M6
+If I have two threads suspended with the same method somewhere in their call
+stack, I cannot distinguish between the two because both are highlighted in the
+same way in the editor. I would expect only the call stack of the selected
+thread to be displayed in the editor (not the stacks of all threads).

@@ -1,6 +1,9 @@
 [assist] task tag completion in comments
-I have several tast tags defined in my work space: //TODO 
-<-- has to be done before release! //PERFORMANCE 
-<-- if looking for performance improvement, come look here first //REDESIGN 
-<-- look for refactoring here first etc.
-I'd like the editor to help me complete these tags when I type them after the comment: //T<ctrl+space> should propose me TODO
+I have several tast tags defined in my work space:
+//TODO <-- has to be done before release!
+//PERFORMANCE <-- if looking for performance improvement, come look here first
+//REDESIGN <-- look for refactoring here first
+etc.
+I'd like the editor to help me complete these tags when I type them after the
+comment:
+//T<ctrl+space> should propose me TODO

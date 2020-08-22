@@ -1,9 +1,27 @@
 can not launch "runtime workbench"
-Using M7 as a development environment, I can not run "Run ...
-runtime workbench" with last weeks integration build (I20040226) as the target.
-I get the following message in log.
-I marked as "blocker" since I'd think this would be a common way of doing development on Eclipse (that is, use milestone build as development platform, and latest integration build as target).
-I would be surprised if not already found, but I couldn't find existing bugzilla.
-A workaround would be appreciated.
-BTW ...
-usin
+Using M7 as a development environment, I can not run "Run ... runtime workbench"
+with last weeks integration build (I20040226) as the target. I get the following
+message in log. I marked as "blocker" since I'd think this would be a common way
+of doing development on Eclipse (that is, use milestone build as development
+platform, and latest integration build as target). I would be surprised if not
+already found, but I couldn't find existing bugzilla. A workaround would be
+appreciated. BTW ... using just the integration build, and launching runtime
+workbench seems to work fine.
+!SESSION ----------------------------------------------------------------------
+!ENTRY org.eclipse.core.launcher 4 0 Feb 28, 2004 21:17:37.924
+!MESSAGE Exception launching the Eclipse Platform:
+!STACK
+java.lang.IllegalStateException: Bundle reference:file:D:
+/builds/Daily/eclipse-SDK-3.0M7-win32/eclipse/workspace/org.eclipse.osgi.util/
+[2] is not active
+at org.eclipse.core.runtime.adaptor.EclipseStarter.
+ensureBundlesActive(EclipseStarter.java:123)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:
+93)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+at org.eclipse.core.launcher.Main.run(Main.java:742)
+at org.eclipse.core.launcher.Main.main(Main.java:581)

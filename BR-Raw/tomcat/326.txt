@@ -1,4 +1,21 @@
 Problem launching M7
-After successfully launching a couple of times, I now get the following exception followed by a dialog telling me to consult the log, followed by nothing.
-java.lang.ClassCastException at org.eclipse.osgi.framework.internal.core.PackageAdmin.getExportedBundles(PackageAdmin.java:116) at org.eclipse.osgi.framework.internal.core.PackageAdmin.initialize(PackageAdmin.java:78) at org.eclipse.osgi.framework.internal.core.Framework.initialize(Framework.java:20
-0) at org.eclipse.osgi.framework.internal.co
+After successfully launching a couple of times, I now get the following
+exception followed by a dialog telling me to consult the log, followed by nothing.
+java.lang.ClassCastException
+at
+org.eclipse.osgi.framework.internal.core.PackageAdmin.getExportedBundles(PackageAdmin.java:116)
+at
+org.eclipse.osgi.framework.internal.core.PackageAdmin.initialize(PackageAdmin.java:78)
+at
+org.eclipse.osgi.framework.internal.core.Framework.initialize(Framework.java:200)
+at org.eclipse.osgi.framework.internal.core.Framework.<init>(Framework.java:97)
+at org.eclipse.osgi.framework.internal.core.OSGi.createFramework(OSGi.java:90)
+at org.eclipse.osgi.framework.internal.core.OSGi.<init>(OSGi.java:31)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:86)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+at org.eclipse.core.launcher.Main.run(Main.java:742)
+at org.eclipse.core.launcher.Main.main(Main.java:581)

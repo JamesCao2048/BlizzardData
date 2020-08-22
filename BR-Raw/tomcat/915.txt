@@ -1,4 +1,50 @@
 pocketpc - Pop-Up menus do not work on Tables
-Pop-Up menus do not work on tables per the following code: import org.eclipse.swt.*; import org.eclipse.swt.widgets.*; public class Main { public static void main(String[] args) { Display display = new Display(); Shell shell = new Shell(display); Table table = new Table(shell, SWT.MULTI | SWT.BORDER
- | SWT.FULL_SELECTION); table.setLinesVisible(true); table.setHeaderVisible(true); String[] titles = { " ", "C", "!", "Description", "Resource", "In Folder", "Location" }; for (int i = 0; i 
-< titles
+Pop-Up menus do not work on tables per the following code:
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+Table table = new Table(shell, SWT.MULTI | SWT.BORDER |
+SWT.FULL_SELECTION);
+table.setLinesVisible(true);
+table.setHeaderVisible(true);
+String[] titles =
+{ " ", "C", "!", "Description", "Resource", "In Folder", "Location" };
+for (int i = 0; i < titles.length; i++) {
+TableColumn column = new TableColumn(table, SWT.NULL);
+column.setText(titles[i]);
+}
+int count = 128;
+for (int i = 0; i < count; i++) {
+TableItem item = new TableItem(table, SWT.NULL);
+item.setText(0, "x");
+item.setText(1, "y");
+item.setText(2, "!");
+item.setText(3, "this stuff behaves the way I expect");
+item.setText(4, "almost everywhere");
+item.setText(5, "some.folder");
+item.setText(6, "line " + i + " in nowhere");
+}
+for (int i = 0; i < titles.length; i++) {
+table.getColumn(i).pack();
+}
+table.setSize(table.computeSize(SWT.DEFAULT, 200));
+Menu menu = new Menu(table);
+MenuItem item = new MenuItem(menu, SWT.CASCADE);
+item.setText("item 1");
+MenuItem item2 = new MenuItem(menu, SWT.CASCADE);
+item2.setText("item 2");
+table.setMenu(menu);
+
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

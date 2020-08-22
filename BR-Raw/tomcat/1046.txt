@@ -1,4 +1,7 @@
 Subclasses of TextEditor can no longer create custom SourceViewers
-In 2.1M5, org.eclipse.ui.editors.text.TextEditor initializes a private field called fSourceViewerDecorationSupport inside of createSourceViewer.
-We're substituting a custom subclass of SourceViewer by overriding that method in our subclass of TextEditor.
-Unfortunately, this gives us a NPE when createPartControl is called later since TextEditor references that field in numerous places.
+In 2.1M5, org.eclipse.ui.editors.text.TextEditor initializes a private field
+called fSourceViewerDecorationSupport inside of createSourceViewer.  We're
+substituting a custom subclass of SourceViewer by overriding that method in our
+subclass of TextEditor.  Unfortunately, this gives us a NPE when
+createPartControl is called later since TextEditor references that field in
+numerous places.

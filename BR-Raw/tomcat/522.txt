@@ -1,7 +1,7 @@
 In M6 cannot get Plugin for a given class
-We have used some code for a couple of years now.
-This code will take a class and get its ClassLoader.
-It checks if the class is a PluginClassLoader and, if so, it gets the Plugin for this PluginClassLoader.
-Now, when we move to M6, the ClassLoader for the class is an EclipseClassLoader.
-I don't see a way to get back to the plugin that loaded this class.
-Am I missing something or is this not possible anymore when using osgi?
+We have used some code for a couple of years now.  This code will take a class
+and get its ClassLoader.  It checks if the class is a PluginClassLoader and,
+if so, it gets the Plugin for this PluginClassLoader.  Now, when we move to
+M6, the ClassLoader for the class is an EclipseClassLoader.  I don't see a way
+to get back to the plugin that loaded this class.  Am I missing something or
+is this not possible anymore when using osgi?

@@ -1,7 +1,12 @@
 DCR: API to determine files that will be 'cleaned' when changing a classpath
-20040129 We have several bug reports that jdt deletes files when changing the class path.
-The build path wizard should warn about this, but to do this correctly, we need support from core.
-The request is to get an API that tells me if and which files would be scrupped after changing the build path.
-Releated to that is to get information which files and folders get obsolete after a class path change (e.g.
-old class files).
-Here we have the same problem that we are very unprecice as analysing the 
+20040129
+We have several bug reports that jdt deletes files when changing the class path.
+The build path wizard should warn about this, but to do this correctly, we need
+support from core.
+The request is to get an API that tells me if and which files would be scrupped
+after changing the build path.
+Releated to that is to get information which files and folders get obsolete
+after a class path change (e.g. old class files). Here we have the same problem
+that we are very unprecice as analysing the classpath settings (output location
+/ source folder combinations, source folder specific output locations) is difficult.
+see related  bug 50717 ,  bug 20042 ,  bug 34843

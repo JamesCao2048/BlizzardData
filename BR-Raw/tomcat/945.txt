@@ -1,3 +1,6 @@
 Formatting
-Can a new Formatting option be added to allow for statements to occur on the same line as a control statement if not enclosed in braces?
-for instance: if (Constants.DEBUG) logger.debug("returning success"); It seems like a previous version of Eclipse allowed for this, but it now splits.
+Can a new Formatting option be added to allow for statements to occur on the
+same line as a control statement if not enclosed in braces?  for instance:
+if (Constants.DEBUG) logger.debug("returning success");
+It seems like a previous version of Eclipse allowed for this, but
+it now splits.

@@ -1,5 +1,8 @@
 Emacs key bindings do not work with C editor
-When using the C editor with CDT 2.0M7, the key bindings for text editing are not used.
-It appears that the C editor uses the "In General" key bindings instead of the text editing key bindings, as enabling the Emacs key bindings set has no effect.
-For instance, typing CTRL+A should normally take you to the start of the line, instead it selects the entire document (windows style).
-Admittedly this is minor but is an annoyance if you're used to using the emacs key bindings with Java :)
+When using the C editor with CDT 2.0M7, the key bindings for text editing are
+not used. It appears that the C editor uses the "In General" key bindings
+instead of the text editing key bindings, as enabling the Emacs key bindings set
+has no effect. For instance, typing CTRL+A should normally take you to the start
+of the line, instead it selects the entire document (windows style).
+Admittedly this is minor but is an annoyance if you're used to using the emacs
+key bindings with Java :)

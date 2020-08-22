@@ -1,5 +1,7 @@
 Ctrl-Backspace performs wrong function
 I'm using 3.0 M3 with JDK 1.4.2 on Windows XP.
-The Ctrl-Backspace key sequence is bound to "Delete Previous Word" but when typed it actually performs "Delete Next Word" (which is correctly bound to Ctrl- Delete).
-There appears to be no way to get the "Delete Previous Word" action to actually do the right thing.
+The Ctrl-Backspace key sequence is bound to "Delete Previous Word" but when
+typed it actually performs "Delete Next Word" (which is correctly bound to Ctrl-
+Delete). There appears to be no way to get the "Delete Previous Word" action to
+actually do the right thing.
 This is a regression from 3.0 M2, which worked fine.

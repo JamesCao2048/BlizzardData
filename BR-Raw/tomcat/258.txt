@@ -1,5 +1,6 @@
 No need for "plugin.xml" strings in platform.xml
-When generating list of plug-ins in platform.xml, PDE currently writes paths pointing to plugin.xml, for example, "plugins/org.apache.ant/plugin.xml".
-It should instead write plugin location like: "plugins/org.apache.ant/" 
-- for plugins running from a directory, "plugins/org.apache.ant_1.0.0.jar" 
-- for plugins running directly from a jar.
+When generating list of plug-ins in platform.xml, PDE currently writes paths
+pointing to plugin.xml, for example, "plugins/org.apache.ant/plugin.xml".
+It should instead write plugin location like:
+"plugins/org.apache.ant/" - for plugins running from a directory,
+"plugins/org.apache.ant_1.0.0.jar" - for plugins running directly from a jar.

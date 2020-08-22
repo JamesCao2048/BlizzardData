@@ -1,5 +1,42 @@
 progress, background operations, and novice users
-Build I20030304 There has been much discussion elsewhere about insufficiently visible progress indications for builds.
-I'd like to raise a more general issue about the kind of feedback that will help novice users of Eclipse.
-If it helps, think of my mom as the user (you can imagine that she's not too comfortable with computers<g>).
-The problem is that when the user performs any command that will complete sometime later in the background, whether it be build, synchronize, or whatever, she needs t
+Build I20030304
+There has been much discussion elsewhere about insufficiently visible progress
+indications for builds. I'd like to raise a more general issue about the kind
+of feedback that will help novice users of Eclipse. If it helps, think of my
+mom as the user (you can imagine that she's not too comfortable with
+computers<g>).
+The problem is that when the user performs any command that will complete
+sometime later in the background, whether it be build, synchronize, or
+whatever, she needs to know this immediately. I mean "in your face"
+immediately. A smoldering cigarette in the lower right corner of the screen
+does signal this to the novice user, even when accompanied by a slightly
+larger hover. Something as unmistakable as a 2.1 modal progress dialog is what
+we're talking about. The reason why its so important for the novice is that
+they expect the commands they give to happen in the background (a more
+sophisticated notion). Novice users are more familiar with simple turn-taking
+UIs. The other nice thing about the old progress dialogs is that they
+automatically went away when the operation was done, and that told the user
+that it was again their turn.
+Here's one way I could see addressing this problem:
+- Workbench preference "Progress dialogs for background operations" vs. "No
+Progress dialogs for background operations". Default value: Yes.
+- Background operations initiated by the user's direct command (as opposed to
+periodically scheduled operations like bg refreshes or indirectly triggers
+operations like table tree widget population) are covered by a progress dialog
+of the familiar size unless suppressed by that users preference.
+- The progress dialog is non-modal, and will close automatically when the
+operation is finished. The dialog reports progress on the user's direct
+command, and has a Cancel button. The fine print at the bottom of dialog could
+inform the user that they are free to wait or to do other things as they
+choose (i.e., it hints that it's non-modal).
+- If the clicks on the workbench window, the progress dialog disappears behind
+it, and the user can go ahead and explore.
+- When the operation completes, the progress dialog closes automatically
+whether or not it is visible.
+- If the operation fails, the user needs an in-you-face notification.
+- If the user issues another long-running command that runs in the background,
+an additional progress dialog should open for that operation, and disappear
+when it's done.
+If you combine this with the other progress mechanisms added in 3.0, I think
+we end up with something that will satisfy the needs of novices and gearheads
+alike.

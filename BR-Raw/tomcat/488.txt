@@ -1,12 +1,209 @@
 NullPointerException in Search
-20020602 (F2) I don't think I can repeat this, but I will try.
+20020602 (F2)
+I don't think I can repeat this, but I will try.
 For now, here's what I did, and here's the stack trace(s) from the log.
-
 - Did a Java Search in an SWT working set for a field called SWT.ON_TOP.
-
-- Looked at a few results (which opened a few editors) 
-- Closed the editors 
-- Decided to do a File Search for the string ON_TOP in the same working set (to do this, I simply clicked on search again and clicked on the File Search tab 
-- the search field was already filled in for me).
-
-- I
+- Looked at a few results (which opened a few editors)
+- Closed the editors
+- Decided to do a File Search for the string ON_TOP in the same working set (to
+do this, I simply clicked on search again and clicked on the File Search tab -
+the search field was already filled in for me).
+- I got the following walkbacks in my .log:
+!SESSION Jun 05, 2002 21:55:25.304 ---------------------------------------------
+java.fullversion=J2RE 1.3.1 IBM Windows 32 build cn131-20020403 (JIT enabled:
+jitc)
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments: -os win32 -ws win32 -arch x86 -data
+D:Eclipseworkspace -install file:D:/Eclipse/sdk/eclipse/
+!ENTRY org.eclipse.ui 4 4 Jun 05, 2002 21:55:25.304
+!MESSAGE Unhandled exception caught in event loop.
+!ENTRY org.eclipse.ui 4 0 Jun 05, 2002 21:55:25.394
+!MESSAGE Failed to execute runnable (java.lang.NullPointerException)
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable
+(java.lang.NullPointerException)
+at org.eclipse.swt.SWT.error(SWT.java:1887)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages
+(Synchronizer.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block
+(ModalContext.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block
+(ModalContext.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block
+(ModalContext.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:258)
+at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.run
+(ExtendedDialogWindow.java:179)
+at org.eclipse.search.internal.ui.text.TextSearchPage.performAction
+(TextSearchPage.java:151)
+at org.eclipse.search.internal.ui.SearchDialog.performAction
+(SearchDialog.java:310)
+at
+org.eclipse.search.internal.ui.util.ExtendedDialogWindow.buttonPressed
+(ExtendedDialogWindow.java:136)
+at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:398)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java
+(Compiled Code))
+at org.eclipse.jface.window.Window.runEventLoop(Window.java(Compiled
+Code))
+at org.eclipse.jface.window.Window.open(Window.java:538)
+at org.eclipse.search.internal.ui.OpenSearchDialogAction.run
+(OpenSearchDialogAction.java:54)
+at org.eclipse.search.internal.ui.OpenSearchDialogAction.run
+(OpenSearchDialogAction.java:40)
+at org.eclipse.ui.internal.PluginAction.runWithEvent
+(PluginAction.java:210)
+at org.eclipse.ui.internal.WWinPluginAction.runWithEvent
+(WWinPluginAction.java:172)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:407)
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent
+(ActionContributionItem.java(Compiled Code))
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent
+(ActionContributionItem.java(Compiled Code))
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent
+(ActionContributionItem.java(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java
+(Compiled Code))
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java
+(Compiled Code))
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1160)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:739)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:462)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:244)
+at org.eclipse.core.launcher.Main.run(Main.java:693)
+at org.eclipse.core.launcher.Main.main(Main.java:526)
+!ENTRY org.eclipse.ui 4 4 Jun 05, 2002 21:55:25.665
+!MESSAGE
+*** Stack trace of contained exception ***
+!ENTRY org.eclipse.ui 4 0 Jun 05, 2002 21:55:25.675
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+at
+at org.eclipse.jdt.internal.ui.search.SearchUtil.getJavaElement
+(SearchUtil.java:71)
+at org.eclipse.jdt.ui.actions.FindAction.getJavaElement(FindAction.java
+(Compiled Code))
+at org.eclipse.jdt.ui.actions.FindAction.getJavaElement(FindAction.java
+(Compiled Code))
+at org.eclipse.jdt.ui.actions.FindAction.getJavaElement(FindAction.java
+(Compiled Code))
+at org.eclipse.jdt.ui.actions.FindAction.selectionChanged
+(FindAction.java(Compiled Code))
+at org.eclipse.jdt.ui.actions.FindAction.selectionChanged
+(FindAction.java(Compiled Code))
+at org.eclipse.jdt.ui.actions.FindAction.selectionChanged
+(FindAction.java(Compiled Code))
+at org.eclipse.jdt.ui.actions.SelectionDispatchAction.selectionChanged
+(SelectionDispatchAction.java(Compiled Code))
+at org.eclipse.jdt.ui.actions.SelectionDispatchAction.selectionChanged
+(SelectionDispatchAction.java(Compiled Code))
+at org.eclipse.jface.viewers.Viewer.fireSelectionChanged(Viewer.java
+(Compiled Code))
+at org.eclipse.jface.viewers.StructuredViewer.updateSelection
+(StructuredViewer.java:1153)
+at org.eclipse.jface.viewers.StructuredViewer.setSelection
+(StructuredViewer.java:903)
+at org.eclipse.search.internal.ui.SearchResultViewer.selectResult
+(SearchResultViewer.java:474)
+at org.eclipse.search.internal.ui.SearchResultViewer.inputChanged
+(SearchResultViewer.java:239)
+at org.eclipse.jface.viewers.ContentViewer.setInput
+(ContentViewer.java:234)
+at org.eclipse.jface.viewers.StructuredViewer.setInput
+(StructuredViewer.java:875)
+at org.eclipse.search.internal.ui.SearchManager.handleNewSearchResult
+(SearchManager.java:404)
+at
+org.eclipse.search.internal.ui.SearchManager.handleSearchMarkersChanged
+(SearchManager.java:343)
+at org.eclipse.search.internal.ui.SearchManager.access$2
+(SearchManager.java:340)
+at org.eclipse.search.internal.ui.SearchManager$7.run
+(SearchManager.java:476)
+at org.eclipse.ui.internal.UIWorkspaceLock.doPendingWork
+(UIWorkspaceLock.java(Compiled Code))
+at org.eclipse.ui.internal.UISynchronizer$1.run(UISynchronizer.java:23)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages
+(Synchronizer.java(Compiled Code))
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages
+(Synchronizer.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block
+(ModalContext.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block
+(ModalContext.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block
+(ModalContext.java(Compiled Code))
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:258)
+at org.eclipse.search.internal.ui.util.ExtendedDialogWindow.run
+(ExtendedDialogWindow.java:179)
+at org.eclipse.search.internal.ui.text.TextSearchPage.performAction
+(TextSearchPage.java:151)
+at org.eclipse.search.internal.ui.SearchDialog.performAction
+(SearchDialog.java:310)
+at
+org.eclipse.search.internal.ui.util.ExtendedDialogWindow.buttonPressed
+(ExtendedDialogWindow.java:136)
+at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:398)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java
+(Compiled Code))
+at org.eclipse.jface.window.Window.runEventLoop(Window.java(Compiled
+Code))
+at org.eclipse.jface.window.Window.open(Window.java:538)
+at org.eclipse.search.internal.ui.OpenSearchDialogAction.run
+(OpenSearchDialogAction.java:54)
+at org.eclipse.search.internal.ui.OpenSearchDialogAction.run
+(OpenSearchDialogAction.java:40)
+at org.eclipse.ui.internal.PluginAction.runWithEvent
+(PluginAction.java:210)
+at org.eclipse.ui.internal.WWinPluginAction.runWithEvent
+(WWinPluginAction.java:172)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:407)
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent
+(ActionContributionItem.java(Compiled Code))
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent
+(ActionContributionItem.java(Compiled Code))
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent
+(ActionContributionItem.java(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java
+(Compiled Code))
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java
+(Compiled Code))
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1160)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:739)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:462)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:244)
+at org.eclipse.core.launcher.Main.run(Main.java:693)
+at org.eclipse.core.launcher.Main.main(Main.java:526)

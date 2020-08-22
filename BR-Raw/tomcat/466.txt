@@ -1,2 +1,4 @@
 [find/replace] Regular expression replace does not handle groups
-If I find a group like "(w+)" and try to use the group in a replacement string like "found: 1" the group data is not inserted, and the group number is echoed instead.
+If I find a group like "(w+)" and try to use the group in a replacement string
+like "found: 1" the group data is not inserted, and the group number is echoed
+instead.

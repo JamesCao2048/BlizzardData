@@ -1,17 +1,17 @@
 Clicking on the x for error correction hangs
-I am using eclipse to write a plug in project. I write a method that does not 
-exist in a class. I get an error and the x appears on the file's border. I 
-click on it, and it suggests either replacing that method name with another 
-one, or creating that method in the class. I chose to create that method. 5 
-minute later, the method has not been created, eclipse freezes, and shows me 
-the "Application Not Responding" in the eclipse title. I kill the job, and 
+I am using eclipse to write a plug in project. I write a method that does not
+exist in a class. I get an error and the x appears on the file's border. I
+click on it, and it suggests either replacing that method name with another
+one, or creating that method in the class. I chose to create that method. 5
+minute later, the method has not been created, eclipse freezes, and shows me
+the "Application Not Responding" in the eclipse title. I kill the job, and
 launch eclipse again. Go back to the x, chose create method, and it works fine.
-Then I decide to create another method, and same problem happens. I had to 
+Then I decide to create another method, and same problem happens. I had to
 kill eclipse and start it over. Then it works fine.
 And I use the x to create a method for a 3 rd time. Same problem.
 No error log was created.
-It also seems that the Problems table is not updated until I actually open a 
-project file. It only shows me 1 warning, and then populates all the errors 
+It also seems that the Problems table is not updated until I actually open a
+project file. It only shows me 1 warning, and then populates all the errors
 and other warnings as I open one of my project's java files.
 I am using:
 Eclipse Platform

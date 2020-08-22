@@ -1,6 +1,10 @@
 ExtendedDataElement name should be unique
-For the 'name' property of the ExtendedDataElement the CBE spec says "This name MUST be unique with respect to all other fields at the same level of extendedDataElement hierarchy".
-This is not being enforced by event validation.
-In other words, I am able to create two EDEs with the same name.
-Related to this problem are the 'getExtendedDataElements(String)' and the 'getChildren(String)' methods.
-These methods should not return a List but rather a single element, also they should probably be rena
+For the 'name' property of the ExtendedDataElement the CBE spec says "This name
+MUST be unique with respect to all other fields at the same level of
+extendedDataElement hierarchy".
+This is not being enforced by event validation.  In other words, I am able to
+create two EDEs with the same name.
+Related to this problem are the 'getExtendedDataElements(String)' and
+the 'getChildren(String)' methods.  These methods should not return a List but
+rather a single element, also they should probably be renamed to
+getExtendedDataElement(String) and getChild(String).

@@ -1,9 +1,9 @@
 [Tasks] Problem with task list when deleting an element and description field is being edited
-- Create a bunch of tasks 
-- Click on the description field of one of the tasks.
-You are now editing a task description.
-
-- Click the delete button.
-The task list has now one element less, but the description test of the deleted task remains in the field, and the task above is invisible.
-As soon as the description field loses focus the list is back to normal and the invisible task is visible again.
+- Create a bunch of tasks
+- Click on the description field of one of the tasks. You are now editing a
+task description.
+- Click the delete button. The task list has now one element less, but the
+description test of the deleted task remains in the field, and the task above
+is invisible. As soon as the description field loses focus the list is back to
+normal and the invisible task is visible again.
 This does not happen if the whole task line is selected.

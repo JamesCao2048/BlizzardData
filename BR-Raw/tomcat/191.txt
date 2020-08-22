@@ -1,10 +1,12 @@
 Home/End keys do nothing in UML2SD Object Interaction view
-Steps to reproduce: 
-------------------- 1.Launch a java process and profile it.
-2.Right click on an agent and select "Open with 
--> UML2SD Object Interactions" from the context menu.
-3.In the resulting view, click on a call line that does not fit the screen.
-4.Hit the Home/End keys.
-What should happen is that it should cause the screen to scroll to visualize the end/beginning of the call.
-It didn't do that when I tried to do it...
-=( This may be a simple matter of user error, but opening this b
+Steps to reproduce:
+-------------------
+1. Launch a java process and profile it.
+2. Right click on an agent and select "Open with -> UML2SD Object Interactions"
+from the context menu.
+3. In the resulting view, click on a call line that does not fit the screen.
+4. Hit the Home/End keys.
+What should happen is that it should cause the screen to scroll to visualize
+the end/beginning of the call. It didn't do that when I tried to do it... =(
+This may be a simple matter of user error, but opening this bugzilla just in
+case it's not...

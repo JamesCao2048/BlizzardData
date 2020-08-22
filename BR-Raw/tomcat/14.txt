@@ -1,7 +1,9 @@
 Introduction page wizard not properly installing SWT examples
-I20040324 
-- start Eclipse with a fresh workspace 
-- On the introduction page, download the SWT samples 
-- Select Stand-alone SWT launcher The wizard imports the org.eclipse.swt.examples and org.eclipse.swt.examples.launcher projects.
-Problem: these projects are marked as depending on the org.eclipse.swt project which is missing.
-The projects don't compile and can't be used.
+I20040324
+- start Eclipse with a fresh workspace
+- On the introduction page, download the SWT samples
+- Select Stand-alone SWT launcher
+The wizard imports the org.eclipse.swt.examples and
+org.eclipse.swt.examples.launcher projects.
+Problem: these projects are marked as depending on the org.eclipse.swt project
+which is missing. The projects don't compile and can't be used.

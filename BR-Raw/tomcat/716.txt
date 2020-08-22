@@ -1,57 +1,55 @@
 NPE in StyledText.performPaint (line 6084)
 Multiple occurrences of the following the in the log.  This occurs on build
 I20031211.
-
-
 !MESSAGE Unhandled event loop exception
 !ENTRY org.eclipse.ui 4 0 Dec 12, 2003 11:23:09.901
 !MESSAGE java.lang.NullPointerException
 !STACK 0
 java.lang.NullPointerException
-        at org.eclipse.swt.custom.StyledText.performPaint(StyledText.java:6084)
-        at org.eclipse.swt.custom.StyledText.handlePaint(StyledText.java:5396)
-        at org.eclipse.swt.custom.StyledText$13.handleEvent(StyledText.java:5095)
-        at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
-        at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:967)
-        at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:991)
-        at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:976)
-        at org.eclipse.swt.widgets.Control.gtk_expose_event(Control.java:1697)
-        at org.eclipse.swt.widgets.Composite.gtk_expose_event(Composite.java:404)
-        at org.eclipse.swt.widgets.Canvas.gtk_expose_event(Canvas.java:105)
-        at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1224)
-        at org.eclipse.swt.widgets.Display.windowProc(Display.java:2317)
-        at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(Native Method)
-        at org.eclipse.swt.widgets.Display.eventProc(Display.java:710)
-        at org.eclipse.swt.internal.gtk.OS.gtk_main_iteration(Native Method)
-        at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1618)
-        at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1506)
-        at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1482)
-        at
+at org.eclipse.swt.custom.StyledText.performPaint(StyledText.java:6084)
+at org.eclipse.swt.custom.StyledText.handlePaint(StyledText.java:5396)
+at org.eclipse.swt.custom.StyledText$13.handleEvent(StyledText.java:5095)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:967)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:991)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:976)
+at org.eclipse.swt.widgets.Control.gtk_expose_event(Control.java:1697)
+at org.eclipse.swt.widgets.Composite.gtk_expose_event(Composite.java:404)
+at org.eclipse.swt.widgets.Canvas.gtk_expose_event(Canvas.java:105)
+at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1224)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2317)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(Native Method)
+at org.eclipse.swt.widgets.Display.eventProc(Display.java:710)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_iteration(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1618)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1506)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1482)
+at
 org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:246)
-        at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
-        at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47)
-        at
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47)
+at
 org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:242)
-        at
+at
 org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:84)
-        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-        at
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at
 sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-        at
+at
 sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:324)
-        at
+at java.lang.reflect.Method.invoke(Method.java:324)
+at
 org.eclipse.core.internal.boot.OSGiBootLoader.basicRun(OSGiBootLoader.java:239)
-        at
+at
 org.eclipse.core.internal.boot.OSGiBootLoader.run(OSGiBootLoader.java:665)
-        at
+at
 org.eclipse.core.internal.boot.OSGiBootLoader.run(OSGiBootLoader.java:652)
-        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-        at
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at
 sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-        at
+at
 sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:324)
-        at org.eclipse.core.launcher.Main.basicRun(Main.java:299)
-        at org.eclipse.core.launcher.Main.run(Main.java:767)
-        at org.eclipse.core.launcher.Main.main(Main.java:601)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:299)
+at org.eclipse.core.launcher.Main.run(Main.java:767)
+at org.eclipse.core.launcher.Main.main(Main.java:601)

@@ -1,9 +1,12 @@
 $ws$ etc not processed for classpath entries
-It appears that the current code does not handle $ws$ entries on the classpath of bundles.
-I thought that we did this work.
-It works for native libs etc.
+It appears that the current code does not handle $ws$ entries on the classpath
+of bundles.  I thought that we did this work.  It works for native libs etc.
 This is needed for SWT scenarios.
-In the SWT case it is possible to have several SWTs installed at the same time.
-Of course, when you run, only one should be selected.
-The SWT plugin in Eclipse classic has $ws$/swt.jar on the classpath.
-The plugin itself never contains that jar, it always comes from fragments by processing the $ws$ directive wh
+In the SWT case it is possible to have several SWTs installed at the same
+time.  Of course, when you run, only one should be selected.  The SWT plugin in
+Eclipse classic has $ws$/swt.jar on the classpath.  The plugin itself never
+contains that jar, it always comes from fragments by processing the $ws$
+directive while searching for the jar.
+Without this capability the swt.jars from Motif and GTK will both get added to
+SWT's classpath (or just the first one found).  Both situations are less than
+optimal.

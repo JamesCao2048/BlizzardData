@@ -1,5 +1,6 @@
 wrong tasks shows as result of compilation.
-when compiling a project, 1st four tasks appear in task bar which are not related to any compilation error.
-for example, the 4th task has description : [from Tb5DataSource.cpp] , which is simply a part of the raw gcc compilation message.
-
-- in short, it seems parsing of compilation messages is wrong.
+when compiling a project, 1st four tasks appear in task bar which are not
+related to any compilation error.
+for example, the 4th task has description : [from Tb5DataSource.cpp] , which is
+simply a part of the raw gcc compilation message. - in short, it seems parsing
+of compilation messages is wrong.

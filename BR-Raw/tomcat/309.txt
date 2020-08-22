@@ -1,8 +1,18 @@
 [KeyBindings] Keybinding Service consumes keystrokes for unregistered commands
 My editor has no "Content Assist" action handler.
 My editor's canvas does not receive CTRL+SPACE KeyPressed event.
-From mailing list: > I'm pretty sure Nick said that if the action bound to a keybinding is > disabled (or bound to NULL), then the keybinding service would stop > consuming that key.
-But this is not the behavior we are seeing.
-For We check whether the command has a handler (i.e., action) associated with it.
-If it doesn't, then we don't eat the key.
-We eat all keys that: (1) have a k
+From mailing list:
+> I'm pretty sure Nick said that if the action bound to a keybinding is
+> disabled (or bound to NULL), then the keybinding service would stop
+> consuming that key.  But this is not the behavior we are seeing.  For
+We check whether the command has a handler (i.e., action) associated with it.
+If it doesn't, then we don't eat the key.  We eat all keys that: (1) have a
+key binding currently in context; and (2) have a handler currently active.
+> example, we also need to receive CTRL+SPACE, which has universal meaning
+> of "toggle selection" of item with focus. But the keybinding for Content
+> Assist is getting in the way. Why do native Trees and Tables receive
+> CTRL+SPACE, but our Canvas does not?
+Likely because a handler is registered for your part.  I'm just guessing, as
+I'm not sure of the details of your set-up.
+Nope, we are not registering a handler
+-Randy

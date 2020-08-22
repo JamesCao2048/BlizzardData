@@ -1,6 +1,10 @@
 [Progress] "Pending" TreeItem causes unexpected shifting (usability)
-When population of children treeitems is done using a background job, a "Pending" TreeItem is places as child 0 of the container treeitem.
-When the job completes, this treeitem is disposed.
-So, when the user places the mouse over an item and tries to select it, the item often moves up one position because of the above disposal.
-To avoid the sifting, the "Pending" item could be the last child instead of the first, since that is where the pending children show up.
-Or, the parent treeitem could be 
+When population of children treeitems is done using a background job,
+a "Pending" TreeItem is places as child 0 of the container treeitem.  When the
+job completes, this treeitem is disposed.  So, when the user places the mouse
+over an item and tries to select it, the item often moves up one position
+because of the above disposal.
+To avoid the sifting, the "Pending" item could be the last child instead of
+the first, since that is where the pending children show up.  Or, the parent
+treeitem could be decorated in its string to show something like:
+"cdt-home (pending)"

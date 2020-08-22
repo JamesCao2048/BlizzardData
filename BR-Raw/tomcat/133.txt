@@ -1,4 +1,6 @@
 New Search: text search reports incorrect number of matches
-Smoke for I20040316 
-- load JUnit 
-- search for TestCase (test search) observe: the UI claims that textui.TestRunner has 1 match, but if you open the editor you see 3 matches.
+Smoke for I20040316
+- load JUnit
+- search for TestCase (test search)
+observe: the UI claims that textui.TestRunner has 1 match, but if you open the
+editor you see 3 matches.

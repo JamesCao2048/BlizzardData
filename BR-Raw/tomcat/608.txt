@@ -1,4 +1,5 @@
 Drawing directly to GC "flickers"
-On Linux-GTK, if you draw images directly to the GC (using GC.drawImage()) the image flickers on each re-draw, even if it's exactly the same as before.
+On Linux-GTK, if you draw images directly to the GC (using GC.drawImage()) the
+image flickers on each re-draw, even if it's exactly the same as before.
 This is testable on GC created from tables or canvas.
 If you can't reproduce it, I'll post a snippet

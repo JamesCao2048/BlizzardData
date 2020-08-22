@@ -1,9 +1,196 @@
 cannot create a visual class under Eclipse M07
-Hi, i installed Eclipse M07 and this plug in emf-runtime-I200403081633.zip, GEF-runtime-I20040316.zip and VE-runtime-I20040311a.zip.
-But when i try to create a new visual class i get un error and the visual editor seems be frozen in "LOADING".
+Hi,
+i installed Eclipse M07 and this plug in emf-runtime-I200403081633.zip,
+GEF-runtime-I20040316.zip and VE-runtime-I20040311a.zip.
+But when i try to create a new visual class i get un error and
+the visual editor seems be frozen in "LOADING".
 Who can help me?
 error view.
-!SESSION mar 19, 2004 09:19:42.906 
--------------------------------------------- 
-- java.version=1.4.2_04 java.vendor=Sun Microsystems Inc.
-BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=it_IT !ENTRY org.eclipse.jdt.ui 
+
+!SESSION mar 19, 2004 09:19:42.906 --------------------------------------------
+-
+java.version=1.4.2_04
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=it_IT
+!ENTRY org.eclipse.jdt.ui 4 10001 mar 19, 2004 09:19:42.906
+!MESSAGE Internal Error
+!STACK 0
+java.lang.reflect.InvocationTargetException
+at org.eclipse.jface.operation.ModalContext.runInCurrentThread
+(ModalContext.java:315)
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252)
+at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:758)
+at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.performFinish
+(NewElementWizard.java:100)
+at org.eclipse.jface.wizard.WizardDialog.finishPressed
+(WizardDialog.java:608)
+at org.eclipse.jface.wizard.WizardDialog.buttonPressed
+(WizardDialog.java:321)
+at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2029)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:647)
+at org.eclipse.jface.window.Window.open(Window.java:627)
+at org.eclipse.jdt.internal.ui.wizards.AbstractOpenWizardAction.run
+(AbstractOpenWizardAction.java:158)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:536)
+at org.eclipse.jface.action.ActionContributionItem.access$2
+(ActionContributionItem.java:488)
+at org.eclipse.jface.action.ActionContributionItem$5.handleEvent
+(ActionContributionItem.java:420)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2029)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1526)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:265)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:47)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:257)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:104)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+at org.eclipse.core.launcher.Main.run(Main.java:742)
+at org.eclipse.core.launcher.Main.main(Main.java:581)
+Caused by: java.lang.NoSuchMethodError:
+org.eclipse.core.runtime.Platform.getFragments(Lorg/osgi/framework/Bundle;)
+[Lorg/osgi/framework/Bundle;
+at
+org.eclipse.jem.internal.proxy.core.ProxyPlugin.urlLocalizeFromPluginDescriptor
+AndFragments(ProxyPlugin.java:169)
+at
+org.eclipse.jem.internal.proxy.core.ProxyPlugin.localizeFromPluginDescriptorAnd
+Fragments(ProxyPlugin.java:152)
+at
+org.eclipse.ve.internal.java.vce.templates.TemplateUtil.getPluginJarPath
+(TemplateUtil.java:78)
+at
+org.eclipse.ve.internal.java.vce.templates.TemplateUtil.getPluginAndPreReqJarPa
+th(TemplateUtil.java:112)
+at
+org.eclipse.ve.internal.java.codegen.wizards.NewVisualClassCreationWizard.getGe
+neratorInstance(NewVisualClassCreationWizard.java:97)
+at
+org.eclipse.ve.internal.java.codegen.wizards.NewVisualClassCreationWizard.apply
+Contributor(NewVisualClassCreationWizard.java:293)
+at
+org.eclipse.ve.internal.java.codegen.wizards.NewVisualClassCreationWizard.finis
+hPage(NewVisualClassCreationWizard.java:341)
+at org.eclipse.jdt.internal.ui.wizards.NewElementWizard$2.run
+(NewElementWizard.java:93)
+at org.eclipse.jdt.internal.core.BatchOperation.executeOperation
+(BatchOperation.java:34)
+at org.eclipse.jdt.internal.core.JavaModelOperation.run
+(JavaModelOperation.java:700)
+at org.eclipse.core.internal.resources.Workspace.run
+(Workspace.java:1567)
+at org.eclipse.core.internal.resources.Workspace.run
+(Workspace.java:1586)
+at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:3164)
+at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run
+(WorkbenchRunnableAdapter.java:42)
+at org.eclipse.jface.operation.ModalContext.runInCurrentThread
+(ModalContext.java:302)
+... 36 more
+!ENTRY org.eclipse.jdt.ui 4 10001 mar 19, 2004 09:20:04.875
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [/prova/demo.java already exists in
+target.]
+at
+org.eclipse.jdt.internal.core.CreateCompilationUnitOperation.executeOperation
+(CreateCompilationUnitOperation.java:104)
+at org.eclipse.jdt.internal.core.JavaModelOperation.run
+(JavaModelOperation.java:700)
+at org.eclipse.core.internal.resources.Workspace.run
+(Workspace.java:1567)
+at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation
+(JavaModelOperation.java:744)
+at org.eclipse.jdt.internal.core.PackageFragment.createCompilationUnit
+(PackageFragment.java:145)
+at org.eclipse.jdt.ui.wizards.NewTypeWizardPage.createType
+(NewTypeWizardPage.java:1411)
+at
+org.eclipse.ve.internal.java.codegen.wizards.NewVisualClassCreationWizard.finis
+hPage(NewVisualClassCreationWizard.java:328)
+at org.eclipse.jdt.internal.ui.wizards.NewElementWizard$2.run
+(NewElementWizard.java:93)
+at org.eclipse.jdt.internal.core.BatchOperation.executeOperation
+(BatchOperation.java:34)
+at org.eclipse.jdt.internal.core.JavaModelOperation.run
+(JavaModelOperation.java:700)
+at org.eclipse.core.internal.resources.Workspace.run
+(Workspace.java:1567)
+at org.eclipse.core.internal.resources.Workspace.run
+(Workspace.java:1586)
+at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:3164)
+at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run
+(WorkbenchRunnableAdapter.java:42)
+at org.eclipse.jface.operation.ModalContext.runInCurrentThread
+(ModalContext.java:302)
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252)
+at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:758)
+at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.performFinish
+(NewElementWizard.java:100)
+at org.eclipse.jface.wizard.WizardDialog.finishPressed
+(WizardDialog.java:608)
+at org.eclipse.jface.wizard.WizardDialog.buttonPressed
+(WizardDialog.java:321)
+at org.eclipse.jface.dialogs.Dialog$1.widgetSelected(Dialog.java:402)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2029)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:647)
+at org.eclipse.jface.window.Window.open(Window.java:627)
+at org.eclipse.jdt.internal.ui.wizards.AbstractOpenWizardAction.run
+(AbstractOpenWizardAction.java:158)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:536)
+at org.eclipse.jface.action.ActionContributionItem.access$2
+(ActionContributionItem.java:488)
+at org.eclipse.jface.action.ActionContributionItem$5.handleEvent
+(ActionContributionItem.java:420)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2348)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2029)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1550)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1526)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:265)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:47)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:257)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:104)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+at org.eclipse.core.launcher.Main.run(Main.java:742)
+at org.eclipse.core.launcher.Main.main(Main.java:581)
+!ENTRY org.eclipse.jdt.core 4 977 mar 19, 2004 09:20:04.890
+!MESSAGE /prova/demo.java already exists in target.

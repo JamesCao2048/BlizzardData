@@ -3,7 +3,6 @@ Currently all standard SWT layout managers always lay out all children of the
 composite they are managing. This includes children which are not visible. While
 this may be desired in some cases, it makes it difficult to manage dynamic
 layouts where the layout should change when a control is made visible or invisible.
-
 The SWT layout managers should allow the programmer to specify a subset of the
 managed controls for which a layout will be computed. I initially thought of
 having a "hideInvisibleControls" flag on all layout managers but that would not
@@ -13,7 +12,6 @@ layout to make room for the control and then make the control visible after the
 layout has changed. If you were restricted to computing a layout for visible
 controls, you would first have to make the control visible, thus showing it with
 a wrong position and size, and then recompute the layout.
-
 So instead of such a flag I am proposing a "public Control[] controls" field for
 all layout managers where you can explicitly set the controls which will be
 considered for computing the layout. If this field is set to null (which should
@@ -21,7 +19,6 @@ be the default), the composite will be queried for all children (the current
 behaviour). Simply replacing all calls to "composite.getChildren()" by "controls
 == null ? composite.getChildren() : controls" in all layout managers should do
 the trick.
-
 I have done these modifications to my own copies of the SWT layout managers
 (where I simply copied the original code; this cannot be done through
 inheritance because the calls to composite.getChildren() are not encapsulated in

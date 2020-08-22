@@ -1,13 +1,13 @@
 [SSH2] JSchException: channel is not open
 Thanks for a great plug-in it works just fine under Windows,
 but on Linux I experience a problem:
-It works when Eclipse is started, but when I have not used the cvs 
+It works when Eclipse is started, but when I have not used the cvs
 connection for a while (10-20 minutes maybe?). I get the following error:
 Authentication error: com.jcraft.jsch.JSchException: channel is not opened
 Seems I have to restart Eclipse to make it work again.
- 
- > I have not been able to reproduce this problem by myself yet,
+
+> I have not been able to reproduce this problem by myself yet,
 > but I found a defect in the code.  I guess this problem will happen
 > in the session down by IP routers, NAT, etc., and not by the remote sshd.
-> Now, I have rewritten the code and he has written me that his problem has 
+> Now, I have rewritten the code and he has written me that his problem has
 > disappeared.

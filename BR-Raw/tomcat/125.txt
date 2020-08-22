@@ -1,4 +1,5 @@
 IDEApplication.checkInstanceLocation is throwing up an error dialog
-There seems to be a problem with instanceLoc.lock() in this method in a runtime workbench (perhaps otherwise too?).
-The .lock() method is returning false and then the checkInstanceLocation method drops to the error dialog and then fails.
+There seems to be a problem with instanceLoc.lock() in this method in a runtime
+workbench (perhaps otherwise too?).  The .lock() method is returning false and
+then the checkInstanceLocation method drops to the error dialog and then fails.
 The workbench cannot be started.

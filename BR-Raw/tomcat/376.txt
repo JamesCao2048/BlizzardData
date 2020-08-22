@@ -1,6 +1,11 @@
 NPE in SettingsBlock of Standard Make project properties
-Scenario: 1.Open Standard Make project's properties, C/C++ Make Project page, Make Builder tab.
-2.Uncheck Use default build command checkbox.
-3.Press Apply or Ok.
-4.Go to step 1.5.There is an error message: Could not accept changes: The currently displayed page contains invalid values.
+Scenario:
+1. Open Standard Make project's properties, C/C++ Make Project page, Make
+Builder tab.
+2. Uncheck Use default build command checkbox.
+3. Press Apply or Ok.
+4. Go to step 1.
+5. There is an error message:
+Could not accept changes: The currently displayed page contains invalid
+values.
 caused by NPE in SettingsBlock.java.

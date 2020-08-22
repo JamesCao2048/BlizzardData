@@ -1,9 +1,16 @@
 [misc] Annotation roll-over action for Mark Occurrences removes sticky occurrences
-200402101600: When clicking into the annotation roll-over icon for marked occurrence, the other occurrences lose their marking even when occurrences should be sticky.
-Steps: 
-- Enable Annotation roll-overs 
-- Enable Mark occurrences in file (also enable sticky) 
-- In this code fragment: new ArrayList().size(); new ArrayList().size(); 
-- set caret into "size" 
-- set caret to end of line (occurrences of "size" stay marked) 
-- hover over vertical ruler icon and click onto the arrow (tooltip: "size"
+200402101600:
+When clicking into the annotation roll-over icon for marked occurrence, the
+other occurrences lose their marking even when occurrences should be sticky.
+Steps:
+- Enable Annotation roll-overs
+- Enable Mark occurrences in file (also enable sticky)
+- In this code fragment:
+new ArrayList().size();
+new ArrayList().size();
+- set caret into "size"
+- set caret to end of line (occurrences of "size" stay marked)
+- hover over vertical ruler icon and click onto the arrow (tooltip: "size")
+=> expected: occurrences stay marked and (selection is "size" or unchanged)
+=> was: occurrence on current line is still highlighted, all other occurrence
+marks disappear, selection unchanged

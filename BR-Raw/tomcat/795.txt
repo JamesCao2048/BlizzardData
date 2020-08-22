@@ -1,10 +1,16 @@
 [Examples] Readme Example no longer contributes marker resolutions
-I20031203 (likely in previous 3.0 releases as well) 
-- self-hosting 
-- build a simple project with a *.readme file in it as described in the documentation for the readme example 
-- in the readme file editor, right click 
--> Add 
--> Readme Marker Example 
-<n> (where n is 1 
-- 7) 
-- this will add a marker which shows up in the Tasks view (you may have to explicitly open the Tasks view to see it) According to the documentation in Platform Plug-in Developer Guide- >Programmer's Guide->Advanced workb
+I20031203 (likely in previous 3.0 releases as well)
+- self-hosting
+- build a simple project with a *.readme file in it as described in the
+documentation for the readme example
+- in the readme file editor, right click -> Add -> Readme Marker Example <n>
+(where n is 1 - 7)
+- this will add a marker which shows up in the Tasks view (you may have to
+explicitly open the Tasks view to see it)
+According to the documentation in Platform Plug-in Developer Guide-
+>Programmer's Guide->Advanced workbench concepts->Marker help and resolution-
+>Contributing marker resolution  you should be able to right click on this
+task and then select Quick Fix to run a resolution.  But QuickFix is no longer
+offered on the Tasks view (see  bug 40637 )
+Perhaps we should change the readme example so it creates 'problems' instead
+of 'tasks' so this example is still valid.

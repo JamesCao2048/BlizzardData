@@ -1,2 +1,3 @@
 should unregister URL handlers when they are removed
-PlatformURLPluginHandlerFactory listens to registry events to add URL handlers dynamically as they appear, but the opposite is not being done when they go away.
+PlatformURLPluginHandlerFactory listens to registry events to add URL handlers
+dynamically as they appear, but the opposite is not being done when they go away.

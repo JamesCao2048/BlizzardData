@@ -1,13 +1,17 @@
 dynamically importet package problems when uninstalling bundle
 From Martin Lippert on the newsgroup...
-I tried to following: 
+I tried to following:
 - bundle A exports a package via Export-Package.
-
 - bundle B dynamically imports that package via DynamicImport-Package.
-
 - a method of bundle B is called that creates an Object from the mentioned package.
-Everything works fine until I uninstall bundle A (via the console).
-As a result of uninstalling bundle A (and a refresh) nothing happens to bundle B...
+Everything works fine until I uninstall bundle A (via the console). As a result
+of uninstalling bundle A (and a refresh) nothing happens to bundle B...
 From Jeff McAffer on the newsgroup...
-Hmmm, this seems like a bug.
-As Pascal me
+Hmmm, this seems like a bug.  As Pascal mentioned, dynamically importing
+from A does not affect B's ability to resolve but once B is actually running
+and loading classes from A, it is dependent on A.  Uninstalling A (and
+refreshing) should cause B to stop and restart.  It can restart even with A
+gone because it did not explicilty rely on A, it just dynamically imported
+stuff that happened to come from A.
+If I have characterized this correctly, could you enter a bug report against
+Equinox/OSGi with details?  Simple test case would also be cool.

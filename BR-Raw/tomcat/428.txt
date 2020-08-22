@@ -1,4 +1,5 @@
 TODO marker coloring: Update to new jdt.core behaviour
-20040210 jdt.core now allows the '_' in tag names (so that tag names are now similar to java identifiers).
-See bug 49259 .
+20040210
+jdt.core now allows the '_' in tag names (so that tag names are now similar to
+java identifiers). See  bug 49259 .
 The colorer in the Java editor needs to be updated too.

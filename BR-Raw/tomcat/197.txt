@@ -1,6 +1,23 @@
 [Scalability] Search fails to give all declarations of a medium large project
-Build 040304 RAM 512 (could only use 330) In Search, part of the scalability requirement, as a P1, is to search for all declarations named * of any type.
-The workspace would have a large number of tokens in the scope.
-I took a project that had a total 738 .c, .cpp, .hpp and .h files.
-Please see me for the project.
-Steps: 1) Load the project in Eclipse/CDT 2) Bring up the Search C/C++ Dialog 3) Credentials: Search For: Any element Limit To: Declarations Scope: Workspace 4) Click on Search It coul
+Build 040304  RAM 512 (could only use 330)
+In Search, part of the scalability requirement, as a P1, is to search for all
+declarations named * of any type.   The workspace would have a large number of
+tokens in the scope.
+I took a project that had a total 738 .c, .cpp, .hpp and .h files. Please see
+me for the project.
+Steps:
+1) Load the project in Eclipse/CDT
+2) Bring up the Search C/C++ Dialog
+3) Credentials:
+Search For: Any element
+Limit To: Declarations
+Scope: Workspace
+4) Click on Search
+It could never finish it.  It seemed that after 30 minutes, Eclipse did not
+have enough memory to perform the operation.  It started at a reasonable pace
+believing it will finish in 7 minutes or so. But the search slowed down
+exponentially. It was at about 85% that CDT looked stuck. By cancelling the
+Search, Eclipse/CDT took 10 to do it.
+I am just reporting the fact that CDT can not handle such a search even though
+an experience developer will not do this as he will do a more specific search.
+Should we discourage the use of * with a message or other UI indicators?

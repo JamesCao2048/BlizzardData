@@ -1,6 +1,8 @@
 [Progress] showBusyCursorWhile doesn't reset cursor
 There are two issues with the implementation of this method that could be fixed.
-First, the way the it's currently implemented the busy cursor will only return to be un-busy after a predetermined 5 seconds.
-Even if the runnable finishes quickly the cursor has this weird delay.
-I suggest adding a hook so that the busy loop terminates when the runnable completes.
-Also, if an exception occurs in #scheduleProgressMonitorJob() the busy flag is not reset and the loop in busycursorWhile won't complete.
+First, the way the it's currently implemented the busy cursor will only return
+to  be un-busy after a predetermined 5 seconds. Even if the runnable finishes
+quickly the cursor has this weird delay. I suggest adding a hook so that the
+busy loop terminates when the runnable completes.
+Also, if an exception occurs in #scheduleProgressMonitorJob() the busy flag is
+not reset and the loop in busycursorWhile won't complete.

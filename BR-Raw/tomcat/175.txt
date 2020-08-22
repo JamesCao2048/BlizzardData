@@ -1,10 +1,17 @@
 Possible mislabelled title in Profiling preferences page
 Found in WSWB 3.0 M8 + Hyades 3.0 20040309_1448 driver.
-Steps to reproduce: 
-------------------- 1.Start Eclipse.
-2.Profile a java process for a while, then terminate it.
-If you look at the Profiling Monitor view, you should see (by default) only three types of "things": Processes, Logging agents, and Profiling agents.
-Now, if you go to the Preferences 
--> Profiling and Logging 
--> Appearance, you will see a section labelled "Show these resources in the Profiling Monitor view:".
-If you look in t
+Steps to reproduce:
+-------------------
+1. Start Eclipse.
+2. Profile a java process for a while, then terminate it.
+If you look at the Profiling Monitor view, you should see (by default) only
+three types of "things": Processes, Logging agents, and Profiling agents.
+Now, if you go to the Preferences -> Profiling and Logging -> Appearance, you
+will see a section labelled "Show these resources in the Profiling Monitor
+view:". If you look in the contents of that section, you'll find that the
+Processes, Logging agents, and Profiling agents checkboxes are NOT checked,
+while Folders, Monitors, and Hosts ARE checked. If you uncheck everything,
+you'll notice that *everything* is shown in the Profiling Monitor view
+(contrary to what the label indicates).
+I think the section's label should actually say: "Hide these resources in the
+Profiling Monitor view:".

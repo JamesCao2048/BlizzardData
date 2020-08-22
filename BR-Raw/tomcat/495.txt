@@ -1,3 +1,5 @@
 need a cheaper way of accessing the system state
-There is need for clients to make simple queries to the system state that would not require a working copy as returned by PlatformAdmin#getState.
-The proposal is to have a #getState(boolean mutable) operation that allow clients to get cheap read only access to the system state.
+There is need for clients to make simple queries to the system state that would
+not require a working copy as returned by PlatformAdmin#getState.
+The proposal is to have a #getState(boolean mutable) operation that allow
+clients to get cheap read only access to the system state.

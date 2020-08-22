@@ -1,8 +1,77 @@
 [implementation] IllegalArgumentException: Argument not valid
-i20040303 Selected a type in the "Open Type" dialog, and pressed ok.
-The type was not opened in an editor.
-Got an error dialog.
-Title is "Error Executing Command", message is "The command for the key you pressed failed", reason is "Argument not valid".
-After that, the editor did not redraw anymore, keeping the contents of any window that was in front of it before.
-After closing the editor, everything seemed to work properly.
-Found the following entries in my log (dozens of occurrences): !ENTRY o
+i20040303
+Selected a type in the "Open Type" dialog, and pressed ok. The type was not
+opened in an editor. Got an error dialog.
+Title is "Error Executing Command", message is "The command for the key you
+pressed failed", reason is "Argument not valid".
+After that, the editor did not redraw anymore, keeping the contents of any
+window that was in front of it before. After closing the editor, everything
+seemed to work properly.
+Found the following entries in my log (dozens of occurrences):
+!ENTRY org.eclipse.ui 4 4 Mar 03, 2004 11:32:12.843
+!MESSAGE Unhandled event loop exception
+!ENTRY org.eclipse.ui 4 0 Mar 03, 2004 11:32:12.859
+!MESSAGE Argument not valid
+!STACK 0
+java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:2611)
+at org.eclipse.swt.SWT.error(SWT.java:2555)
+at org.eclipse.swt.graphics.GC.setBackground(GC.java:2183)
+at org.eclipse.swt.custom.StyledText.performPaint(StyledText.java:6090)
+at org.eclipse.swt.custom.StyledText.handlePaint(StyledText.java:5400)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:5075)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:842)
+at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:781)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2990)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2880)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1376)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2031)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:638)
+at org.eclipse.jface.window.Window.open(Window.java:618)
+at org.eclipse.jface.dialogs.ErrorDialog.open(ErrorDialog.java:307)
+at org.eclipse.jface.dialogs.ErrorDialog.openError(ErrorDialog.java:370)
+at org.eclipse.jface.dialogs.ErrorDialog.openError(ErrorDialog.java:333)
+at
+org.eclipse.ui.internal.keys.WorkbenchKeyboard.logException(WorkbenchKeyboard.java:677)
+at
+org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:933)
+at
+org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:568)
+at
+org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$2(WorkbenchKeyboard.java:500)
+at
+org.eclipse.ui.internal.keys.WorkbenchKeyboard$1.handleEvent(WorkbenchKeyboard.java:256)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Display.filterEvent(Display.java:699)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:832)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:857)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:842)
+at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716)
+at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1712)
+at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:3037)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2940)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2880)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1376)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2031)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1509)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1480)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:257)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:48)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:260)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:173)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:305)
+at org.eclipse.core.launcher.Main.run(Main.java:745)
+at org.eclipse.core.launcher.Main.main(Main.java:713)

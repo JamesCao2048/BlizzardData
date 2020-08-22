@@ -1,4 +1,6 @@
 [RCP] Move icons from IDE to workbench
-GEF would like to require only RCP.
-The UP and DOWN Icons are available, internally only, in the IDEInternalWorkbenchImages class.
-Can you consider: a) making icons public so as to avoid duplication or internal API b) moving appropriate icons from IDE to non-IDE.
+GEF would like to require only RCP.  The UP and DOWN Icons are available,
+internally only, in the IDEInternalWorkbenchImages class.
+Can you consider:
+a) making icons public so as to avoid duplication or internal API
+b) moving appropriate icons from IDE to non-IDE.

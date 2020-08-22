@@ -1,4 +1,14 @@
 Attached source file is opened instead of .class
-build I20040303 1) create a fresh workspace 2) show line number in java editor (Preferences>Java>Editor>Show line numbers 3) import all plugin as Binary projects with linked content 4) open CompletionEngine.class 5) add a breakpoint in CompletionEngine constructor 6) launch a Run-time Workbench in d
-ebug mode 7) create a class X 8) do ctrl+space inside this class A breakpoint is hit A CompletionEngine file is open but it's not the .class but the .java of the attached source.
-The is not breakpoin
+build I20040303
+1) create a fresh workspace
+2) show line number in java editor (Preferences>Java>Editor>Show line numbers
+3) import all plugin as Binary projects with linked content
+4) open CompletionEngine.class
+5) add a breakpoint in CompletionEngine constructor
+6) launch a Run-time Workbench in debug mode
+7) create a class X
+8) do ctrl+space inside this class
+A breakpoint is hit
+A CompletionEngine file is open but it's not the .class but the .java of the
+attached source.
+The is not breakpoint in the left part of the editor and no line numbers.

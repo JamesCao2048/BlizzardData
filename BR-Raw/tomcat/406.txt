@@ -1,4 +1,7 @@
 [navigation] Quick Outline: Expand inherited members if initial type has no children
-20040211 In the following code, open the quick outline and press 'ctrl + o' again.
+20040211
+In the following code, open the quick outline and press 'ctrl + o' again.
 The inhgerited methods are not visible (expanded).
-package org.eclipse.jdt.core; public class IClassFile { }
+package org.eclipse.jdt.core;
+public class IClassFile {
+}

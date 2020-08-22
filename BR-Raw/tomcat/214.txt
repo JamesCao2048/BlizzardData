@@ -1,11 +1,15 @@
 Hungry code assist (is eating characters)
-I200303040800 & HEAD Using [backspace] when typing to select a code assist proposal deletes characters after validation.
-in the following ant file: 
-<project default="test"> 
-<tar 
-</project> put the carret after '<tar', hit 'g' [backspace] 'g' [enter], the result is 
-<project default="test"> 
-<target name=""></target>/project> should be 
-<project default="test"> 
-<target name=""></target> 
+I200303040800 & HEAD
+Using [backspace] when typing to select a code assist proposal deletes
+characters after validation.
+in the following ant file:
+<project default="test">
+<tar
+</project>
+put the carret after '<tar', hit 'g' [backspace] 'g' [enter], the result is
+<project default="test">
+<target name=""></target>/project>
+should be
+<project default="test">
+<target name=""></target>
 </project>

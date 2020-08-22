@@ -1,5 +1,8 @@
 CVS Annotation could use diff-colours and tooltips
-I think the current CVS annotation functionality is a bit cumbersome since it is from the list of lines to the code, and not from the code to the author.
-I therefore suggest that the current approach for quick diffs (namely to use different colours in the left sidebar) could be extended to show a colour for each "cvs annotation block" (two which alternates would be fine), with a tool tip saying the name of the changer, and 
-- if clicked 
-- synchronized with the current list of changes in the CVS
+I think the current CVS annotation functionality is a bit cumbersome since it is
+from the list of lines to the code, and not from the code to the author.
+I therefore suggest that the current approach for quick diffs (namely to use
+different colours in the left sidebar) could be extended to show a colour for
+each "cvs annotation block" (two which alternates would be fine), with a tool
+tip saying the name of the changer, and - if clicked - synchronized with the
+current list of changes in the CVS Annotation view.

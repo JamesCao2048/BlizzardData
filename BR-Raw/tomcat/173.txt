@@ -1,7 +1,10 @@
 Hide local types does not hide local types in field initializers
-build I20040303 
-- opened org.eclipse.ui.internal.skins.newlook.BasicStackPresentation (new in head) 
-- the outline showed lots of local types 
-- selected Hide Local Types 
-- still had many local types showing 
-- took me a while to realize that these were just the ones in field initializers I would expect all local types to be suppressed, whether within a method or field or static initializers.
+build I20040303
+- opened org.eclipse.ui.internal.skins.newlook.BasicStackPresentation (new in
+head)
+- the outline showed lots of local types
+- selected Hide Local Types
+- still had many local types showing
+- took me a while to realize that these were just the ones in field initializers
+I would expect all local types to be suppressed, whether within a method or
+field or static initializers.

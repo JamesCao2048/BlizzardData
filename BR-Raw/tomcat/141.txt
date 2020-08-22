@@ -1,7 +1,14 @@
 Symptom DB editor's overall presentation could be improved
-Here are 3 fairly simple suggestions for improving the overall presentation of the symptom DB editor: 1.Display a title at the top of the editor.
-If you look at other editors of this style (e.g.
-plugin.xml, build.properties, extension point schemas), there is always a title, except for the source tab.
-2.Do we really need the "Overview" tab?
-It doesn't give the user an overview of the symptom database, but shows the file details from the properties.
-If you look at the PDE's plugin.xml editor's ov
+Here are 3 fairly simple suggestions for improving the overall presentation of
+the symptom DB editor:
+1. Display a title at the top of the editor. If you look at other editors of
+this style (e.g. plugin.xml, build.properties, extension point schemas), there
+is always a title, except for the source tab.
+2. Do we really need the "Overview" tab? It doesn't give the user an overview
+of the symptom database, but shows the file details from the properties. If you
+look at the PDE's plugin.xml editor's overview, it gives an overview of what's
+in the other tabs, in a condensed form.
+3. When initially opening the editor, there is nothing selected and the right
+side of the editor is blank. Perhaps it would be better to initially select the
+symptom database (root item), to display the database's values, like name,
+description, etc. This way, the right side will never be blank.

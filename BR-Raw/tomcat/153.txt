@@ -1,3 +1,4 @@
 Exception when opening a log in the log interactions view
-If we try to open a log agent in the log interactions view a dialog will pop up requesting us to select a correlation schema.
-If we cancel the dialog an exception is raised in the log interactions loader.
+If we try to open a log agent in the log interactions view a dialog will pop up
+requesting us to select a correlation schema. If we cancel the dialog an
+exception is raised in the log interactions loader.

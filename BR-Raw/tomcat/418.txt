@@ -1,9 +1,10 @@
 Sharing a project - Module exists reported when it doesn't
 I'm using WebSphere 5.1.0 and I am trying to Share a project with CVS.
-It is a brand new project and when I try to share it I get the error that the specified module already exists when it doesn't.
-It is like it is not even trying to do the cvs import.
-I am running a cvs server on a Solaris 8 machine.
-I can connect and work with the cvs server using other cvs clients and the import happens fine.
+It is a brand new project and when I try to share it I get the error that the
+specified module already exists when it doesn't. It is like it is not even
+trying to do the cvs import.
+I am running a cvs server on a Solaris 8 machine. I can connect and work with
+the cvs server using other cvs clients and the import happens fine.
 Let me know if there are more details that you require.
 Sorry if this is a duplicate.
 Mike Slywka

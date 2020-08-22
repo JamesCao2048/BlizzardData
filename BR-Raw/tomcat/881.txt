@@ -1,4 +1,16 @@
 overspecified directory path by "eclipse" when exporting a feature
-Hi Eclipse Team Eclipse : Version: 2.1.1 Build id: 200306271545 Java : version "1.4.1_02" Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.1_02-b06) Java HotSpot(TM) Client VM (build 1.4.1_02-b06, mixed mode) When exporting a feature to a zip file, the generated path includes the "eclipse
-" prefix.
-While it is ok for a feature added to the Eclipse IDE, it precludes to unzip the zipped feature in the "right" features & plugins directories when used with an IDE based on Eclipse but whos
+Hi Eclipse Team
+Eclipse : Version: 2.1.1 Build id: 200306271545
+Java    : version "1.4.1_02"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.1_02-b06)
+Java HotSpot(TM) Client VM (build 1.4.1_02-b06, mixed mode)
+When exporting a feature to a zip file, the generated path includes
+the "eclipse" prefix. While it is ok for a feature added to the Eclipse IDE, it
+precludes to unzip the zipped feature in the "right" features & plugins
+directories when used with an IDE based on Eclipse but whose name and master
+directory is not "eclipse" but "foobar" with sub directories:
+foobar/features
+foobar/plugins
+Thus, in my opinion, one should remove the "eclipse" prefix for  an easier way
+of use and an a greater generality of the export process.
+Regards

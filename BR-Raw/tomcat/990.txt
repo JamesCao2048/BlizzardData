@@ -1,6 +1,32 @@
 problems with projects having recursive links on linux
-Overview Description: Eclipse has various problems with projects having recursive links on linux (e.g.
-"ln 
--s .
-core" created in the base directory of the project); sometimes resulting in system crashes caused by java.lang.OutOfMemoryErrors Steps to Reproduce: 1) create a project with the following structure: projectdir/src/Test.java with projectdir as the base directory of the project and Test.java as a simp
-le java file without having a package delaration 2) in projectdir create a recursive l
+Overview Description: Eclipse has various problems with projects having
+recursive links on linux (e.g. "ln -s . core" created in the base directory of
+the project); sometimes resulting in system crashes caused by
+java.lang.OutOfMemoryErrors
+Steps to Reproduce:
+1) create a project with the following structure:
+projectdir/src/Test.java
+with projectdir as the base directory of the project and Test.java as a
+simple java file without having a package delaration
+2) in projectdir create a recursive link, e.g. using
+cd projectdir
+ln -s . core
+3) import the project to eclipse with the following steps:
+- File --> New --> Project
+- Select "Java Project"
+- Choose projectdir as the Project contents, enter a project name and press
+the "Finish" button
+Actual Results:
+* 41 errors (The declared package doesn't match the expected package ...)!
+* try Search --> File Search with
+- Containing Text: Test
+- File name patterns: *
+which results in 41 search results
+* trying the same things in bigger projects multiplies the problems: a project
+having only about 100 source files tries to find search results in about 45.000
+files; opening, closing, and deleting these projects sometimes results in system
+crashes caused by java.lang.OutOfMemoryErrors
+Expected Results:
+* recursive links should be ignored or handled somehow
+Build Date & Platform: SuSE Linux 8.1, Eclipse 3.0 M3 GTK (28 Aug 2003)
+System configuration: Athlon 2GHz, 512MB RAM,

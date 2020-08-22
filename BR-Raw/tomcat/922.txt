@@ -1,5 +1,9 @@
 [Tasks] Stale marker in problems view
-In build I20031021, my Problems view contains a Java problem marker (compile error) that no longer exists.
-Clicking on the marker results in the following message appearing in the log.
-!ENTRY org.eclipse.ui 4 4 Oct 21, 2003 10:55:51.113 !MESSAGE Error accessing marker type !ENTRY org.eclipse.core.resources 4 376 Oct 21, 2003 10:55:51.114 !MESSAGE Marker id: 21682 not found.
+In build I20031021, my Problems view contains a Java problem marker (compile
+error) that no longer exists. Clicking on the marker results in the following
+message appearing in the log.
+!ENTRY org.eclipse.ui 4 4 Oct 21, 2003 10:55:51.113
+!MESSAGE Error accessing marker type
+!ENTRY org.eclipse.core.resources 4 376 Oct 21, 2003 10:55:51.114
+!MESSAGE Marker id: 21682 not found.
 The view could catch this error and remove the stale marker.

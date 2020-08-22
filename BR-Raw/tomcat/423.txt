@@ -1,58 +1,50 @@
 Stop on disabled exception breakpoint
-Eclispe (id: 200310101454) or the JRE stops for a disabled 
+Eclispe (id: 200310101454) or the JRE stops for a disabled
 exception breakpoint:
-
 Thread [main] (Suspended (exception FileNotFoundException))
-	FileInputStream.open(String) line: not available [native method]
-	FileInputStream.<init>(File) line: 106
-	ZoneInfoFile$1.run() line: 910
-	AccessController.doPrivileged(PrivilegedExceptionAction) line: not 
-                       ailable [native method]
-	ZoneInfoFile.readZoneInfoFile(String) line: 904
-	ZoneInfoFile.createZoneInfo(String) line: 520
-	ZoneInfoFile.getZoneInfo(String) line: 499
-	ZoneInfo.getTimeZone(String) line: 524
-	TimeZone.getTimeZone(String, boolean) line: 448
-	TimeZone.getDefault() line: 522
-	SimpleDateFormat.initialize(Locale) line: 500
-	SimpleDateFormat.<init>(String, Locale) line: 443
-	Date.toString() line: 981
-	BUtil.appendSystemData(StringBuffer, int) line: 789
-	NezeBootClassLoader.mainPrologMessage() line: 789
-	NezeBootClassLoader.main0(String[], boolean, boolean, boolean) line: 817
-	NezeBootClassLoader.main(String[]) line: 798
-	Main.main(String[]) line: 27
-
+FileInputStream.open(String) line: not available [native method]
+FileInputStream.<init>(File) line: 106
+ZoneInfoFile$1.run() line: 910
+AccessController.doPrivileged(PrivilegedExceptionAction) line: not
+ailable [native method]
+ZoneInfoFile.readZoneInfoFile(String) line: 904
+ZoneInfoFile.createZoneInfo(String) line: 520
+ZoneInfoFile.getZoneInfo(String) line: 499
+ZoneInfo.getTimeZone(String) line: 524
+TimeZone.getTimeZone(String, boolean) line: 448
+TimeZone.getDefault() line: 522
+SimpleDateFormat.initialize(Locale) line: 500
+SimpleDateFormat.<init>(String, Locale) line: 443
+Date.toString() line: 981
+BUtil.appendSystemData(StringBuffer, int) line: 789
+NezeBootClassLoader.mainPrologMessage() line: 789
+NezeBootClassLoader.main0(String[], boolean, boolean, boolean) line: 817
+NezeBootClassLoader.main(String[]) line: 798
+Main.main(String[]) line: 27
 The missing file seams to be:
 val$fname=
 "F:\WWW-APACHE\2N\2R1141\JDK\WINDOWS_I586.SUN_J2SE_1_4_200.NEZE.DE\INST\JRE\lib\zi\GMT+01:00"
-
 If I step over then I get the stacktrace:
-
 Thread [main] (Suspended)
-	ZoneInfoFile.readZoneInfoFile(String) line: 921 [local variables unavailable]
-	ZoneInfoFile.createZoneInfo(String) line: 520
-	ZoneInfoFile.getZoneInfo(String) line: 499
-	ZoneInfo.getTimeZone(String) line: 524
-	TimeZone.getTimeZone(String, boolean) line: 448
-	TimeZone.getDefault() line: 522
-	SimpleDateFormat.initialize(Locale) line: 500
-	SimpleDateFormat.<init>(String, Locale) line: 443
-	Date.toString() line: 981
-	BUtil.appendSystemData(StringBuffer, int) line: 789
-	NezeBootClassLoader.mainPrologMessage() line: 789
-	NezeBootClassLoader.main0(String[], boolean, boolean, boolean) line: 817
-	NezeBootClassLoader.main(String[]) line: 798
-	Main.main(String[]) line: 27
-
+ZoneInfoFile.readZoneInfoFile(String) line: 921 [local variables unavailable]
+ZoneInfoFile.createZoneInfo(String) line: 520
+ZoneInfoFile.getZoneInfo(String) line: 499
+ZoneInfo.getTimeZone(String) line: 524
+TimeZone.getTimeZone(String, boolean) line: 448
+TimeZone.getDefault() line: 522
+SimpleDateFormat.initialize(Locale) line: 500
+SimpleDateFormat.<init>(String, Locale) line: 443
+Date.toString() line: 981
+BUtil.appendSystemData(StringBuffer, int) line: 789
+NezeBootClassLoader.mainPrologMessage() line: 789
+NezeBootClassLoader.main0(String[], boolean, boolean, boolean) line: 817
+NezeBootClassLoader.main(String[]) line: 798
+Main.main(String[]) line: 27
 So I think the first stop is no stop on "uncaught exception",
 which is enabled in the JAva->Debug preferences.
-
 This bug is annoying becuase it happens 2 times during startup
 for JDK WINDOWS_I586.SUN_J2SE_1_4_200.NEZE.DE on Windows 98.
 Btw: This happens not for Windows NT (perhaps because there
 is no file missing). This is possibly an bug of the JVM ... .
-
 Kind Regards
-
 mle

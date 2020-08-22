@@ -1,4 +1,8 @@
 [ViewMgmt] can not programmatically move a view in a perspective
-on Eclipse RCP, you must create a perspective with views and positions of theses views.
-But there is no API to move programmatically a view in the perspective at another place.
-in the perspective , we have : IFolderLayout bottomRight = layout.createFolder("brID",IPageLayout.LEFT, 0.5f, layout.getEditorArea()); bottomRight.addView("RCPview4.OC1View");
+on Eclipse RCP, you must create a perspective with views and positions of
+theses views. But there is no API to move programmatically a view in the
+perspective at another place.
+in the perspective , we have :
+IFolderLayout bottomRight = layout.createFolder("brID",IPageLayout.LEFT, 0.5f,
+layout.getEditorArea());
+bottomRight.addView("RCPview4.OC1View");

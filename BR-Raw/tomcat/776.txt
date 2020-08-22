@@ -1,8 +1,22 @@
 Plugin import - wizard does not consider target platform refresh
-Build 20031202 I am developping for Eclipse 2.1 using a self-hosting 2.1 workspace on top of Eclipse SDK 3.0.I wanted to launch Eclipse 2.1 as a runtime workbench so as to run some test suites (due to bug 48125 ); and thus remembered I needed to import an extra plug-in: org.eclipse.pde.junit.
-In order to do so, I did the following: 
-- open the file import plug-in wizard 
-- configured the target platform there to point at a 2.1.2 SDK install 
-- select import as binary 
-- press NEXT 
-- in the list
+Build 20031202
+I am developping for Eclipse 2.1 using a self-hosting 2.1 workspace on top of
+Eclipse SDK 3.0. I wanted to launch Eclipse 2.1 as a runtime workbench so as to
+run some test suites (due to  bug 48125 ); and thus remembered I needed to import
+an extra plug-in: org.eclipse.pde.junit.
+In order to do so, I did the following:
+- open the file import plug-in wizard
+- configured the target platform there to point at a 2.1.2 SDK install
+- select import as binary
+- press NEXT
+- in the list of available plug-ins, org.eclipse.pde.junit isn't available
+(ok as it is not part of the 2.1 delivery)
+- hit BACK, keep import wizard up,
+- outside Eclipse, expand the missing plug-in into the 2.1.2 install
+- back inside Eclipse, import wizard is still up, click on target platform
+button
+- in target platform wizard, press RELOAD
+- observe that org.eclipse.pde.junit is listed, press OK
+- back into import wizard, press NEXT
+- observe that org.eclipse.pde.junit is NOT listed
+(you have to close and reopen the wizard so as to see it)

@@ -1,7 +1,8 @@
 Opening a very large sequence diagram hangs the UI
-The vast majority of the time is spent loading the model, not drawing the diagram.
-There is a progress monitor dialog, but it is frozen and the user cannot cancel, even though the cancel button is enabled.
-All the work is still being done in the UI thread.
-The solution involves forking a new thread to perform all the work except UI work.
-As far as displaying progress, displaying a dialog may be too intrusive.
+The vast majority of the time is spent loading the model, not drawing the
+diagram. There is a progress monitor dialog, but it is frozen and the user
+cannot cancel, even though the cancel button is enabled. All the work is still
+being done in the UI thread.
+The solution involves forking a new thread to perform all the work except UI
+work. As far as displaying progress, displaying a dialog may be too intrusive.
 I will consider alternatives.

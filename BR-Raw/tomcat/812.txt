@@ -1,6 +1,13 @@
 Eclipse deadlocks when switching from Java to CVS perspective
-Linux/Motif 3.0M4 on RedHat 9 I started running a long job in Eclipse over night, which ran to completion.
-This morning when I tried switching from Java to CVS perspective, Eclipse appears to have deadlocked.
-The hourglass cursor is spinning, but only the backgrounds of the widgets in the window are redrawing.
-(From the size and positioning of the view outlines, it looks like I'm actually in the CVS perspective.) CPU activity in Eclipse's JVM process is 0.0, and there is nothing in the log.
-I co
+Linux/Motif 3.0M4 on RedHat 9
+I started running a long job in Eclipse over night, which ran to completion.
+This morning when I tried switching from Java to CVS perspective, Eclipse
+appears to have deadlocked. The hourglass cursor is spinning, but only the
+backgrounds of the  widgets in the window are redrawing. (From the size and
+positioning of the view outlines, it looks like I'm actually in the CVS
+perspective.) CPU activity in Eclipse's JVM process is 0.0, and there is nothing
+in the log. I could kill the process, no problem, but wanted to log a bug here
+first and ask for advice if I can somehow coax Eclipse to at least throw me a
+stack dump so I can include a report here on where it got deadlocked. This has
+happened once or twice in the past, although I still haven't figured out how to
+reliably reproduce it.

@@ -1,6 +1,10 @@
 checkbox tree behavior in refactoring not consistent
-In at least the rename-refactor wizard, after the changes have been identified, the "changes to be performed" tree's checkboxes exhibit the following behavior: Clear a task, and expand its sub-tasks.
-check one of the sub-tasks.
-This causes the super-task to be a grey 'partial-type' checkbox (expected) immediately clear that sub-task.
-This leaves no sub-tasks selected, but the super-task is still grey, indicating it is partially selected.
-This may relate to a checkbox-tree SWT widget, rather than
+In at least the rename-refactor wizard, after the changes have been identified,
+the "changes to be performed" tree's checkboxes exhibit the following behavior:
+Clear a task, and expand its sub-tasks.
+check one of the sub-tasks.  This causes the super-task to be a grey
+'partial-type' checkbox (expected)
+immediately clear that sub-task.  This leaves no sub-tasks selected, but the
+super-task is still grey, indicating it is partially selected.
+This may relate to a checkbox-tree SWT widget, rather than this dialog in
+particular.

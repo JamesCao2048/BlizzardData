@@ -1,6 +1,10 @@
 allow ordering in "Run As >" context menu
-I find it confusing to the user that the launch shortcuts shown on the "Run >" context menu do not match those that appear in the "Run As" on the toolbar button.
-One is selection based, where the other is perspective based, which means you get different lists in each perspective.
-I'd like to see the two lists always match, and preferrably using what is currently in the "Run >" context menu.
-Since the menu is dynamic, it is "correct" much more often and is based on the selection.
-The two options 
+I find it confusing to the user that the launch shortcuts shown on the "Run >"
+context menu do not match those that appear in the "Run As" on the toolbar
+button. One is selection based, where the other is perspective based, which
+means you get different lists in each perspective.
+I'd like to see the two lists always match, and preferrably using what is
+currently in the "Run >" context menu. Since the menu is dynamic, it
+is "correct" much more often and is based on the selection. The two options
+can share the selection context, so it should not require additional
+computation to (e.g.) show the Run As after using the context menu.

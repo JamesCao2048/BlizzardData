@@ -1,11 +1,24 @@
 Eclipse allows setting a source folder's parent as output folder, which wipes out source code
-It's possible to select a source folder's parent as the output folder, as described below.
-This has the majorly annoying side-effect of wiping out your source code.
-Viz: Suppose you have a project named MyProject.
-
-- Create a source folder MyDir/src as a source folder.
-This will set the new default output directory to MyProject/bin.
-
+It's possible to select a source folder's parent as the output folder, as
+described below. This has the majorly annoying side-effect of wiping out your
+source code. Viz:
+Suppose you have a project named MyProject.
+- Create a source folder MyDir/src as a source folder. This will set the new
+default output directory to MyProject/bin.
 - Create a class, package com.abs.stc, name Hello, in this directory.
-Now change the source folder to /MyDir/src and the output folder to /MyDir as follows: 
-- Righ
+Now change the source folder to /MyDir/src and the output folder to /MyDir as
+follows:
+- Right click on the project and select Properties->Java Build Path->Source.
+- click on Allow output folders for source folders. Click on Output folder,
+(expand the source folder MyProject/MyDir/src if necessary), press Edit, click
+on "Specific Output Folder" and change it to MyDir. Click OK.
+- You'll get a message about not being able to nest MyProject/MyDir/src inside
+MyProject/MyDir. Make this message go away by changing the Default output folder
+at the bottom of the dialog box from MyProject/bin to MyProject. (This is
+probably where this bug should get fixed; it shouldn't let you do this.)
+- Click OK. You'll get a message box asking if it's OK to remove the old
+generated sources from the old output folder; click Yes. BOOM! If you're using
+Eclipse 3.0 or 2.1.1, this will immediately wipe out your source directory.
+(If you're using 2.1, you get a reprieve; your source directory won't get wiped
+until try to run Hello.java when you get an error about the main class not being
+found.)

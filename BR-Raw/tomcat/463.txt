@@ -1,5 +1,8 @@
 Apache/IHS access/error parser rules do not capture CGI debug output.
-Apache/IHS access/error parser rules do not capture CGI debug output.
-For example: [Wed May 28 16:29:41 2003] [notice] Instance name is Apache 388 Apache server shutdown initiated...
-[Wed May 28 16:29:41 2003] [info] setup_inherited_listeners: Skipping the call to WSASocket for the AFPA port.
+Apache/IHS access/error parser rules do not capture CGI debug output.  For
+example:
+[Wed May 28 16:29:41 2003] [notice] Instance name is Apache 388
+Apache server shutdown initiated...
+[Wed May 28 16:29:41 2003] [info] setup_inherited_listeners: Skipping the call
+to WSASocket for the AFPA port.
 Only two records are generated from the above error log file.

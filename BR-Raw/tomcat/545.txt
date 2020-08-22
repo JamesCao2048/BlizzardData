@@ -1,7 +1,18 @@
 [Decorators] Decorator mechanism does not allow for optimizations
-At present our decorators show up piecemeal because we do them in a background thread and thus the order they appear is 'random'.
-The way we decorator mechanism works does not allow us to optimize in some areas.
-Specificly: 1.The icon and text are asked for separately.
-This requires us to go to our sync info twice, which is on disk and expensive to get.
-2.The decorators are asked individually.
-In the case of CVS, all the sync info for sibling resources is in the same file, so its faster for us t
+At present our decorators show up piecemeal because we do them in a background
+thread and thus the order they appear is 'random'.
+The way we decorator mechanism works does not allow us to optimize in some
+areas.  Specificly:
+1. The icon and text are asked for separately. This requires us to go to our
+sync info twice, which is on disk and expensive to get.
+2. The decorators are asked individually.  In the case of CVS, all the sync
+info for sibling resources is in the same file, so its faster for us to
+determine all their decorators at once.
+3. In order to avoid doing work in the UI thread, we create a background thread
+to generate the decorators.  When then need to tell the UI via an event that we
+now have decorators, and then they ask us for them.  It would be better if we
+could just give the UI the decorators we know about all at once.
+Note: to be a good citizen we should be computing the decorators in a thread
+different than the UI context.
+The combination of #2 and #3 could result in the decorators appearing in parent
+child ordering, with all siblings appearing at once.

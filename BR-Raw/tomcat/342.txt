@@ -1,4 +1,6 @@
 export plugin requires boot to be present
-To export a plugin you seem to have to have boot loaded/available otherwise you get a dialog saying the system cannot find org.eclipse.core.boot.
-I am running M7, targetting M7 and have org.eclipse.osgi* and org.eclipse.core.runtime* as source in my workspace.
-I try to export any of these and get the above result.
+To export a plugin you seem to have to have boot loaded/available otherwise you
+get a dialog saying the system cannot find org.eclipse.core.boot.
+I am running M7, targetting M7 and have org.eclipse.osgi* and
+org.eclipse.core.runtime* as source in my workspace.  I try to export any of
+these and get the above result.

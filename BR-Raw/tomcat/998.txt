@@ -1,5 +1,12 @@
 JDT package explorer doesn't trigger decoration for java files
-This is with build 200308261317 and earlier I have a plugin which provides a custom lightweight decorator.
-In plain old navigator view, if I expand a directory with a bunch of files, the decorations appear as they are calculated if the resources don't already have decoration.
-However, in the package explorer, if I expand a package to display source files, my decorator does not get triggered (breakpoint in decorate() never gets hit) to update the resources that don't currently have decorations.
-A
+This is with build 200308261317 and earlier
+I have a plugin which provides a custom lightweight decorator.
+In plain old navigator view, if I expand a directory with a bunch of files, the
+decorations appear as they are calculated if the resources don't already have
+decoration.
+However, in the package explorer, if I expand a package to display source files,
+my decorator does not get triggered (breakpoint in decorate() never gets hit) to
+update the resources that don't currently have decorations.  Actually - it is
+only java files that don't get decorated, other things like gifs/html/etc do get
+decorated.  Also, for directories that are not packages, the package explorer
+does do the right thing and updates the decorators.

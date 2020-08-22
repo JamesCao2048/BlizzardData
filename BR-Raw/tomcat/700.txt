@@ -1,7 +1,12 @@
 JTabbedPane - tabText should appear on JavaBeans viewer + feedback on drop should be more explicit
-JTabbedPane.
-The JavaBeans viewer should show the tabText for the page on the JavaBeans viewer so the user knows which entry corresponds to which page Also 
-- on graph viewer drop the feedback for new pages is not that clear.
-There is no visual feedback such as a rectangle or otherwise cue that a new page is being created.
-One thing I like is the use of hover help in other feedbacks, so maybe we need to think about things like "Create a new tab page" appearing.
-We could use this in other places 
+JTabbedPane.  The JavaBeans viewer should show the tabText for the page on the
+JavaBeans viewer so the user knows which entry corresponds to which page
+Also - on graph viewer drop the feedback for new pages is not that clear.
+There is no visual feedback such as a rectangle or otherwise cue that a new
+page is being created.  One thing I like is the use of hover help in other
+feedbacks, so maybe we need to think about things like "Create a new tab page"
+appearing.  We could use this in other places as well in the JVE and just have
+more feedback to the user about what is going to occur after a drop rather
+than just drawing lines or highlighting GUI areas - sort of similar to what we
+already do for GridBagLayout and works well with row/column feedback but we
+could extend this to other areas

@@ -1,6 +1,17 @@
 Support of implicit properties
-Right now we have to create a content pane for JFrame.
-This requires us constructing it, when we should use the existing one.
-This causes problems if people subclass JFrame and put their own.
-We need to code gen this the call to the owning JavaBean (for implicit properties), e.g.
-getContentPane(){ if(contentPane == null){ contentPane = getJFrame().getContentPane(); contentPane.setLayout(new GridBagLayout()); } return contentPane(); } Also, for the property sheet if the user expands a property th
+Right now we have to create a content pane for JFrame.  This requires us
+constructing it, when we should use the existing one.  This causes problems if
+people subclass JFrame and put their own. We need to code gen this the call to
+the owning JavaBean (for implicit properties), e.g.
+getContentPane(){
+if(contentPane == null){
+contentPane = getJFrame().getContentPane();
+contentPane.setLayout(new GridBagLayout());
+}
+return contentPane();
+}
+Also, for the property sheet if the user expands a property that is not set
+(i.e. implicit) and sets a sub-property we don't cope with this properly - we
+null construct the property to be able to apply the subproperty as right now
+we code generate bad code if there isn't a default constructor available for
+the intermediate property.

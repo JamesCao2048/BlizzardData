@@ -1,4 +1,8 @@
 [Commands] [Services] HandlerSubmission with IPageSite doesn't work
-Build ID: I20040310.GEF's palette page, which due to the lack of a KeyBindingService, creates and registers its own HandlerSubmissions to enable actions.
-When a HandlerSubmission is created with a null argument for the IWorkbenchSite (first parameter in the constructor), the actions work on the page.
-When getSite() is specified instead, which returns the IPageSite for the page, the actions do not work on the page.
+Build ID: I20040310.
+GEF's palette page, which due to the lack of a KeyBindingService, creates and
+registers its own HandlerSubmissions to enable actions. When a
+HandlerSubmission is created with a null argument for the IWorkbenchSite (first
+parameter in the constructor), the actions work on the page. When getSite() is
+specified instead, which returns the IPageSite for the page, the actions do not
+work on the page.

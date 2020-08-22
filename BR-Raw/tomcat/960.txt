@@ -1,4 +1,105 @@
 Can't save & code assist not working
-Code assist no longer works & I can't save any files.
-This exception was taken from the PDE error log: java.lang.NullPointerException at java.lang.String.<init>(String.java(Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Sco
-pe.java (Compiled Code)) at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java (Compiled Code)) at org.eclipse.jdt.intern
+Code assist no longer works & I can't save any files. This exception was taken
+from the PDE error log:
+java.lang.NullPointerException
+at java.lang.String.<init>(String.java(Compiled Code))
+at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java
+(Compiled Code))
+at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java
+(Compiled Code))
+at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java
+(Compiled Code))
+at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java
+(Compiled Code))
+at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java
+(Compiled Code))
+at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java
+(Compiled Code))
+at org.eclipse.jdt.internal.compiler.lookup.ClassScope.findSupertype
+(ClassScope.java:789)
+at org.eclipse.jdt.internal.compiler.lookup.ClassScope.connectSuperInterfaces
+(ClassScope.java:627)
+at org.eclipse.jdt.internal.compiler.lookup.ClassScope.connectTypeHierarchy
+(ClassScope.java:676)
+at
+org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.connectTypeHierar
+chy(CompilationUnitScope.java:252)
+at
+org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.completeTypeBindings
+(LookupEnvironment.java:221)
+at org.eclipse.jdt.internal.codeassist.impl.Engine.accept(Engine.java:77)
+at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType
+(LookupEnvironment.java:106)
+at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.getTypeOrPackage
+(PackageBinding.java:173)
+at
+org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.findOnDemandImpor
+t(CompilationUnitScope.java:363)
+at
+org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.findSingleTypeImp
+ort(CompilationUnitScope.java:422)
+at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.faultInImports
+(CompilationUnitScope.java:307)
+at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.faultInTypes
+(CompilationUnitScope.java:349)
+at org.eclipse.jdt.internal.codeassist.CompletionEngine.complete
+(CompletionEngine.java:929)
+at org.eclipse.jdt.internal.core.Openable.codeComplete(Openable.java:125)
+at org.eclipse.jdt.internal.core.CompilationUnit.codeComplete
+(CompilationUnit.java:94)
+at
+org.eclipse.jdt.internal.ui.text.java.JavaCompletionProcessor.internalComputeCo
+mpletionProposals(JavaCompletionProcessor.java:341)
+at
+org.eclipse.jdt.internal.ui.text.java.JavaCompletionProcessor.computeCompletion
+Proposals(JavaCompletionProcessor.java:315)
+at
+org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposal
+s(ContentAssistant.java:1291)
+at
+org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals
+(CompletionProposalPopup.java:199)
+at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$7
+(CompletionProposalPopup.java:198)
+at org.eclipse.jface.text.contentassist.CompletionProposalPopup$3.run
+(CompletionProposalPopup.java:161)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java(Compiled
+Code))
+at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals
+(CompletionProposalPopup.java:157)
+at
+org.eclipse.jface.text.contentassist.ContentAssistant.showPossibleCompletions
+(ContentAssistant.java:1211)
+at
+org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor$AdaptedSourceViewe
+r.doOperation(CompilationUnitEditor.java:151)
+at org.eclipse.ui.texteditor.ContentAssistAction$1.run
+(ContentAssistAction.java:83)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java(Compiled
+Code))
+at org.eclipse.ui.texteditor.ContentAssistAction.run
+(ContentAssistAction.java:81)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:842)
+at org.eclipse.ui.internal.WWinKeyBindingService.pressed
+(WWinKeyBindingService.java:214)
+at org.eclipse.ui.internal.WWinKeyBindingService$5.widgetSelected
+(WWinKeyBindingService.java:332)
+at org.eclipse.ui.internal.AcceleratorMenu$2.handleEvent
+(AcceleratorMenu.java:65)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java(Compiled
+Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java(Compiled
+Code))
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java(Compiled
+Code))
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java(Compiled Code))
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java(Compiled
+Code))
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1385)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:845)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
+at org.eclipse.core.launcher.Main.run(Main.java:747)
+at org.eclipse.core.launcher.Main.main(Main.java:583)

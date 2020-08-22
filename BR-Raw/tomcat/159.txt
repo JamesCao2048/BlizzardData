@@ -1,4 +1,12 @@
 Provide a way to block unused imports from being merged in
-If you tailor a generated file in such a way that certain imports are no longer required, and you remove those imports, each subsequent regen will bring them back.
-It sould be nice to have a way to block those imports from showing up.
-We'll add support so that a pattern like this in the emf-merge.xml: noImport="s*//s*nos+imports+([w.*]*)s*;s*n" can be specified and will have the effect that any import comments matching that pattern will block the matching import from being merged, e.g., instead 
+If you tailor a generated file in such a way that certain imports are no longer
+required, and you remove those imports, each subsequent regen will bring them
+back.  It sould be nice to have a way to block those imports from showing up.
+We'll add support so that a pattern like this in the emf-merge.xml:
+noImport="s*//s*nos+imports+([w.*]*)s*;s*n"
+can be specified and will have the effect that any import comments matching that
+pattern will block the matching import from being merged, e.g., instead of
+deleting an import introduced by the generator, you can comment it out like
+this:
+// no import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+And then it won't come back.

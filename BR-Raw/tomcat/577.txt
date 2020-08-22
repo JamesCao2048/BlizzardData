@@ -1,9 +1,8 @@
 [PropertiesView] allow property pages to handle multi select
 The current PropertyPage system is hard wired to only allow a single selection.
-It would be nice if it was similar to the popupmenu system 
-- this allows multiple selections and works out common things between the selection.
-I know this is not a trivial thing to provide 
-- but I thought I put in the suggestion.
-Example of use 
-- select multiple files and set readonly on them all.
+It would be nice if it was similar to the popupmenu system - this allows
+multiple selections and works out common things between the selection.
+I know this is not a trivial thing to provide - but I thought I put in the
+suggestion.
+Example of use - select multiple files and set readonly on them all.
 Very useful in RCP apps (select multple product items and change discount%)

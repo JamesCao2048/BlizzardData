@@ -1,13 +1,11 @@
 NPE from a JDT action
 Build: I-20040304
-
-Not sure exactly when this NPE was thrown, but I think it coincided with me 
+Not sure exactly when this NPE was thrown, but I think it coincided with me
 showing the context menu of an item in the Java outline view.
-
 Error Mar 08, 2004 23:05:54.458 java.lang.NullPointerException
 java.lang.NullPointerException
 at org.eclipse.jdt.core.Signature.toString(Signature.java:1400)
-at 
+at
 org.eclipse.jdt.internal.corext.refactoring.structure.ChangeTypeRefactoring.isA
 vailable(ChangeTypeRefactoring.java:239)
 at org.eclipse.jdt.ui.actions.ChangeTypeAction.canEnable

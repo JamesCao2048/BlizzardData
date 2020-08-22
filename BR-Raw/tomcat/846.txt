@@ -1,6 +1,12 @@
 setHightlightRange() does not work
-Build: I-20031118 1.Open the manifest editor on a plugin.xml file 2.Go to the source page.
-3.In the outline view, select an element.
-You will see that the correct segment of text is selected in the editor; yet, the highlight range was not set correctly.
-In the same piece of code that does the correct selection, we also have the line: setHighlightRange(...) with the correct arguments, yet it is doing nothing.
-The range indicator for the source editor is an instance of DefaultRangeIndicator, which
+Build: I-20031118
+1. Open the manifest editor on a plugin.xml file
+2. Go to the source page.
+3. In the outline view, select an element.
+You will see that the correct segment of text is selected in the editor; yet,
+the highlight range was not set correctly.
+In the same piece of code that does the correct selection, we also have the
+line:  setHighlightRange(...) with the correct arguments, yet it is doing
+nothing.
+The range indicator for the source editor is an instance of
+DefaultRangeIndicator, which, as I understand, is also the default.

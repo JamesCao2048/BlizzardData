@@ -1,14 +1,11 @@
 comparing with local history leaks an Image
 M6
-
 - open a java file
 - make a change to it and save it
 - in the open editor right-click -> Local History > Compare With...
 - Close the subsequent dialog
-
-This leaks the image from the "Java Source Compare" title bar each time it's 
+This leaks the image from the "Java Source Compare" title bar each time it's
 invoked.  Here's the creation trace:
-
 at org.eclipse.swt.graphics.Device.new_Object(Device.java:648)
 at org.eclipse.swt.graphics.Image.<init>(Image.java:629)
 at org.eclipse.jface.resource.ImageDescriptor.createImage

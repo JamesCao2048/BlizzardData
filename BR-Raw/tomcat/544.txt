@@ -1,4 +1,9 @@
 Core dump drag and droppping from inline text
-If you open an inline text and then drag the contents Eclipse will crash with a core when you drop.
-STEPS 1) Open Eclipse 2) Select something in the resource navigator 3) Select Rename 4) The inline editor will pop up 
-- drag it's contents out of the editor 5) When you drop Eclipse will Core dump
+If you open an inline text and then drag the contents Eclipse will crash with a
+core when you drop.
+STEPS
+1) Open Eclipse
+2) Select something in the resource navigator
+3) Select Rename
+4) The inline editor will pop up - drag it's contents out of the editor
+5) When you drop Eclipse will Core dump

@@ -1,6 +1,15 @@
 Tasks View gets corrupted clicking on column header
-I had a Java project with 5-10 classes in it, and about 8-10 //TODO: comments sprinkled throughout.
-When I clicked the Resource column of the Tasks view to sort by that attribute, all data in the view disappeared.
-The Tasks panel itself, including the control widgets/icons in its title bar are still there.
-It just appears as if none of the files in my projects contains any //TODO: comments, which as I stated, is not the case.
+I had a Java project with 5-10 classes in it, and about 8-10 //TODO: comments
+sprinkled throughout.  When I clicked the Resource column of the Tasks view to
+sort by that attribute, all data in the view disappeared.  The Tasks panel
+itself, including the control widgets/icons in its title bar are still there.
+It just appears as if none of the files in my projects contains any //TODO:
+comments, which as I stated, is not the case.
 Most disturbingly, exiting and restarting Eclipse does not resolve the
+problem.  In fact, I get a message upon startup, apparently as Eclipse is
+trying to reload the workspace settings which were saved upon the previous
+exit.
+Once started up, Eclipse gives me the same error every time I click on any
+column header of the Tasks view. The error is:
+ERROR: Searching for markers in Tasks view: An internal error occurred
+during: "Searching for markers in Tasks view".

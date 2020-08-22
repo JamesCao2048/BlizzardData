@@ -1,5 +1,208 @@
 Manifest builder taking a very long time to perform
-Build 20031119 Restarting an existing workspace with this build, autobuild off, I forced an incremental workspace build, and got surprised by the amount of time spent in the manifest builder.
-It took about 20-30 seconds on one project, and pretty much traversed all the Java projects in less time than that afterwards.
+Build 20031119
+Restarting an existing workspace with this build, autobuild off, I forced an
+incremental workspace build, and got surprised by the amount of time spent in
+the manifest builder. It took about 20-30 seconds on one project, and pretty
+much traversed all the Java projects in less time than that afterwards.
 Setup is full source Eclipse workspace.
-Full thread dump Java HotSpot(TM) Client VM (1.4.1_01-b01 mixed mode): "ModalContext" prio=7 tid=0x16EFE3D0 nid=0x888 runnable [1925e000..192
+Full thread dump Java HotSpot(TM) Client VM (1.4.1_01-b01 mixed mode):
+"ModalContext" prio=7 tid=0x16EFE3D0 nid=0x888 runnable [1925e000..1925fd88]
+at java.util.regex.Pattern$SliceA.match(Pattern.java:3246)
+at java.util.regex.Pattern$Start.match(Pattern.java:2699)
+at java.util.regex.Matcher.find(Matcher.java:705)
+at java.util.regex.Matcher.find(Matcher.java:440)
+at org.eclipse.jface.text.FindReplaceDocumentAdapter.findReplace
+(FindReplaceDocumentAdapter.java:204)
+at org.eclipse.jface.text.FindReplaceDocumentAdapter.search
+(FindReplaceDocumentAdapter.java:87)
+at
+org.eclipse.pde.internal.core.plugin.DocumentModelHandler.getStartOffset
+(DocumentModelHandler.java:186)
+at org.eclipse.pde.internal.core.plugin.DocumentModelHandler.createRange
+(DocumentModelHandler.java:77)
+at
+org.eclipse.pde.internal.core.plugin.DocumentModelHandler.startElement
+(DocumentModelHandler.java:62)
+at org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1490)
+at org.apache.crimson.parser.Parser2.content(Parser2.java:1779)
+at org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1507)
+at org.apache.crimson.parser.Parser2.content(Parser2.java:1779)
+at org.apache.crimson.parser.Parser2.maybeElement(Parser2.java:1507)
+at org.apache.crimson.parser.Parser2.parseInternal(Parser2.java:500)
+at org.apache.crimson.parser.Parser2.parse(Parser2.java:305)
+at org.apache.crimson.parser.XMLReaderImpl.parse(XMLReaderImpl.java:442)
+at javax.xml.parsers.SAXParser.parse(SAXParser.java:345)
+at org.eclipse.pde.internal.core.plugin.DocumentModel.reconcile
+(DocumentModel.java:132)
+- locked <030F0080> (a
+org.eclipse.pde.internal.core.plugin.WorkspacePluginModel)
+at org.eclipse.pde.internal.core.plugin.DocumentModel.load
+(DocumentModel.java:102)
+- locked <030F0080> (a
+org.eclipse.pde.internal.core.plugin.WorkspacePluginModel)
+at org.eclipse.pde.internal.core.plugin.DocumentModel.load
+(DocumentModel.java:84)
+- locked <030F0080> (a
+org.eclipse.pde.internal.core.plugin.WorkspacePluginModel)
+at org.eclipse.pde.internal.core.plugin.AbstractPluginModelBase.load
+(AbstractPluginModelBase.java:147)
+- locked <030F0080> (a
+org.eclipse.pde.internal.core.plugin.WorkspacePluginModel)
+at
+org.eclipse.pde.internal.core.WorkspaceModelManager.loadWorkspaceModel
+(WorkspaceModelManager.java:632)
+at
+org.eclipse.pde.internal.core.WorkspaceModelManager.createWorkspacePluginModel
+(WorkspaceModelManager.java:159)
+at
+org.eclipse.pde.internal.core.WorkspaceModelManager.createWorkspacePluginModel
+(WorkspaceModelManager.java:170)
+at
+org.eclipse.pde.internal.core.WorkspaceModelManager.initializeWorkspacePluginMod
+els(WorkspaceModelManager.java:489)
+at org.eclipse.pde.internal.core.WorkspaceModelManager.getWorkspaceModel
+(WorkspaceModelManager.java:311)
+at org.eclipse.pde.internal.builders.ManifestConsistencyChecker.build
+(ManifestConsistencyChecker.java:129)
+at org.eclipse.core.internal.events.BuildManager$2.run
+(BuildManager.java:482)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:1127)
+at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+at org.eclipse.core.internal.events.BuildManager.basicBuild
+(BuildManager.java:130)
+at org.eclipse.core.internal.events.BuildManager.basicBuild
+(BuildManager.java:201)
+at org.eclipse.core.internal.events.BuildManager.basicBuild
+(BuildManager.java:156)
+at org.eclipse.core.internal.events.BuildManager$1.run
+(BuildManager.java:182)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:1127)
+at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+at org.eclipse.core.internal.events.BuildManager.basicBuild
+(BuildManager.java:185)
+at org.eclipse.core.internal.events.BuildManager.basicBuildLoop
+(BuildManager.java:219)
+at org.eclipse.core.internal.events.BuildManager.build
+(BuildManager.java:247)
+at org.eclipse.core.internal.resources.Workspace.build
+(Workspace.java:165)
+at org.eclipse.ui.actions.GlobalBuildAction$1.run
+(GlobalBuildAction.java:184)
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.run
+(ModalContext.java:101)
+"Worker-2" prio=5 tid=0x17D7B018 nid=0x898 in Object.wait() [1921f000..1921fd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <03DC23E8> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:185)
+- locked <03DC23E8> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.startJob
+(WorkerPool.java:211)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+"org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x16E0FAA0
+nid=0x670 in Object.wait() [18f9f000..18f9fd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <05AF57F8> (a
+org.eclipse.jface.text.reconciler.DirtyRegionQueue)
+at
+org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run
+(AbstractReconciler.java:161)
+- locked <05AF57F8> (a
+org.eclipse.jface.text.reconciler.DirtyRegionQueue)
+"org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x171D1F38
+nid=0x88c in Object.wait() [183ff000..183ffd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <0513DFC0> (a
+org.eclipse.jface.text.reconciler.DirtyRegionQueue)
+at
+org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run
+(AbstractReconciler.java:161)
+- locked <0513DFC0> (a
+org.eclipse.jface.text.reconciler.DirtyRegionQueue)
+"Worker-1" prio=5 tid=0x16DD5DB0 nid=0x890 in Object.wait() [17b9f000..17b9fd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <03DC23E8> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:185)
+- locked <03DC23E8> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.startJob
+(WorkerPool.java:211)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+"Java indexing" daemon prio=4 tid=0x0091A6F0 nid=0x64c in Object.wait()
+[17b5f000..17b5fd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <04ECB758> (a
+org.eclipse.jdt.internal.core.search.indexing.IndexManager)
+at java.lang.Object.wait(Object.java:426)
+at org.eclipse.jdt.internal.core.search.processing.JobManager.run
+(JobManager.java:325)
+- locked <04ECB758> (a
+org.eclipse.jdt.internal.core.search.indexing.IndexManager)
+at java.lang.Thread.run(Thread.java:536)
+"Worker-0" prio=5 tid=0x16EE0630 nid=0x5ec in Object.wait() [179ff000..179ffd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <03DC23E8> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:185)
+- locked <03DC23E8> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.startJob
+(WorkerPool.java:211)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+"Signal Dispatcher" daemon prio=10 tid=0x008B4C90 nid=0x6b0 waiting on
+condition [0..0]
+"Finalizer" daemon prio=9 tid=0x008FFCF8 nid=0x810 in Object.wait()
+[16c0f000..16c0fd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <03DA0198> (a java.lang.ref.ReferenceQueue$Lock)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:111)
+- locked <03DA0198> (a java.lang.ref.ReferenceQueue$Lock)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127)
+at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+"Reference Handler" daemon prio=10 tid=0x008FE870 nid=0x874 in Object.wait()
+[16bcf000..16bcfd88]
+at java.lang.Object.wait(Native Method)
+- waiting on <03DA0200> (a java.lang.ref.Reference$Lock)
+at java.lang.Object.wait(Object.java:426)
+at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:113)
+- locked <03DA0200> (a java.lang.ref.Reference$Lock)
+"main" prio=7 tid=0x00234F20 nid=0x778 runnable [6f000..6fc40]
+at org.eclipse.swt.internal.win32.OS.WaitMessage(Native Method)
+at org.eclipse.swt.widgets.Display.sleep(Display.java:2484)
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block
+(ModalContext.java:137)
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:261)
+at org.eclipse.jface.dialogs.ProgressMonitorDialog.run
+(ProgressMonitorDialog.java:393)
+at org.eclipse.ui.actions.GlobalBuildAction.doBuildOperation
+(GlobalBuildAction.java:196)
+at org.eclipse.ui.actions.GlobalBuildAction.run
+(GlobalBuildAction.java:254)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:842)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:542)
+at org.eclipse.jface.action.ActionContributionItem.access$4
+(ActionContributionItem.java:494)
+at org.eclipse.jface.action.ActionContributionItem$6.handleEvent
+(ActionContributionItem.java:466)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2187)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1877)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1405)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1381)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:237)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:47)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:858)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:299)
+at org.eclipse.core.launcher.Main.run(Main.java:767)
+at org.eclipse.core.launcher.Main.main(Main.java:601)

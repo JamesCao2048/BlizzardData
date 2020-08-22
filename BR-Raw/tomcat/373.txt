@@ -1,5 +1,8 @@
 [ActivityMgmt] Show all option should move to a radio button
-The Show all option should be a radio button at the bottom of the relevant dialogs.
-Selecting it will replace the contents of the tree with the new entries.
-We should attempt to keep selection and expansion state as much as possible.
-This button will not be shown if 1) There are no activities 2) The application has the "do not show all" option set.
+The Show all option should be a radio button at the bottom of the relevant
+dialogs.
+Selecting it will replace the contents of the tree with the new entries. We
+should attempt to keep selection and expansion state as much as possible.
+This button will not be shown if
+1) There are no activities
+2) The application has the "do not show all" option set.

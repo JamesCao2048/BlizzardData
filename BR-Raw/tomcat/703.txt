@@ -1,3 +1,5 @@
 // comment at the end of the file
-In the case of // comment at the end of the file, adding a button for example, will duplicate the comment.
-This is because JDOM (local doc) consider the // comment as part of the method
+In the case of // comment at the end of the file,
+adding a button for example, will duplicate the comment.
+This is because JDOM (local doc) consider the // comment as part of
+the method

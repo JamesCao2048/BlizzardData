@@ -1,4 +1,20 @@
 Incorrect result when using refactor to rename interface method.
 The following test case is self-explanatory.
-=================== public class Test { } interface I { // Use refactor to rename this method to m2.void m(B b); void m(C c); } class D implements I { // This method gets renamed to m2 (OK) public void m(B b) {} // This method also gets renamed to m2 (BAD) public void m(C c) {} } class A {} class B 
-extends A {} class C extends A {} ===================
+===================
+public class Test {
+}
+interface I {
+// Use refactor to rename this method to m2.
+void m(B b);
+void m(C c);
+}
+class D implements I {
+// This method gets renamed to m2 (OK)
+public void m(B b) {}
+// This method also gets renamed to m2 (BAD)
+public void m(C c) {}
+}
+class A {}
+class B extends A {}
+class C extends A {}
+===================

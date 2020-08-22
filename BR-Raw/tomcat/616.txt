@@ -1,6 +1,20 @@
 eclipse won't start under Solaris using eclipse 2.1.2.1.
 After installing on Solaris 8 eclipse does not run.
-I believe the problem is because the java command in jre/bin is just a script containing the line: .java_wrapper .java_wrapper looks parses $0 and uses it for progname: progname=`/usr/bin/basename $0` On our system progname was set to .java_wrapper and eclipse failed to run because: prog="$APPHOME/b
-in/${proc}/${ttype}/${progname}" # Run.
-if [[ 
--x "$prog" ]] then # Calling: exec $DEBUG_PROG "$prog" "$@" exec $DEBUG_PROG "$prog" "$@" else echo 
+I believe the problem is because the java command in jre/bin is just a script
+containing the line:
+.java_wrapper
+.java_wrapper looks parses $0 and uses it for progname:
+progname=`/usr/bin/basename $0`
+On our system progname was set to .java_wrapper and eclipse failed to run
+because:
+prog="$APPHOME/bin/${proc}/${ttype}/${progname}"
+# Run.
+if [[ -x "$prog" ]]
+then
+# Calling: exec $DEBUG_PROG "$prog" "$@"
+exec $DEBUG_PROG "$prog" "$@"
+else
+echo >&2 "$progname was not found in ${prog}"
+exit 1
+fi
+Changing java to be a hard link to .java_wrapper solved this problem.

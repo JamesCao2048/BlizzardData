@@ -1,13 +1,11 @@
 Synchronizing RTF files always reports same
-I have some MS Word RTF documents in my project. I have added the documents 
-successfully to the projects CVS module. However, now that I have changed the 
-documents with Word (started from Eclipse), Synchronize believes no commit is 
-necessary. It consistently reports no changes and I am not able to commit the 
-changed version to the repository. Even when I just "commit" without 
+I have some MS Word RTF documents in my project. I have added the documents
+successfully to the projects CVS module. However, now that I have changed the
+documents with Word (started from Eclipse), Synchronize believes no commit is
+necessary. It consistently reports no changes and I am not able to commit the
+changed version to the repository. Even when I just "commit" without
 synchrinizing first, nothing happens.
-
 Things I checked:
-
 - The Eclipse properties for the local file shows the correct, new date.
 - In CVS there is only the initial version, with correct (old) date.
 - The local document is really different from what's in the repository.

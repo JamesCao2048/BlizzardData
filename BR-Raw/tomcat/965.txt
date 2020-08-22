@@ -1,5 +1,7 @@
 No refresh when deleting edited unit
-Build 20030930 in working copy owner mode If the file being edited is deleted from the package explorer, then the view doesn't update.
-If the file isn't updated, then it correctly disappears.
-The difference is that an edited file is in primary working mode for which no delta is broadcasted (virtual file system notion).
-However, the editor closes itself and discard the working copy which should then notify a removal delta.
+Build 20030930 in working copy owner mode
+If the file being edited is deleted from the package explorer, then the view
+doesn't update. If the file isn't updated, then it correctly disappears.
+The difference is that an edited file is in primary working mode for which no
+delta is broadcasted (virtual file system notion). However, the editor closes
+itself and discard the working copy which should then notify a removal delta.

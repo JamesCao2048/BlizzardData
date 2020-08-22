@@ -2,11 +2,9 @@ Method view miscounting calls with compressed data option
 Choosing "Show execution view statistics" causes the number of calls of some
 methods to be miscounted.  On the other hand, if one chooses "Show execution
 flow graphical details", the number of calls gets counted properly.
-
 I have checked the XML file produced by the RAC, and the files were identical
 except for the timestamps.  Thus, I concluded that this is a UI problem.  Here
 is a sample trace:
-
 <?xml version="1.0"?>
 <TRACE>
 <node nodeId="0dddd09d-f965-418e-858f-264bfffdcf96" hostname="avon"

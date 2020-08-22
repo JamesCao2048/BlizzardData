@@ -1,5 +1,6 @@
 [osgi] Align EclipseStarter and Launcher
 Sure a minor issue, but I didn't want to end up fogetting this...
-It looks like EclipseStarter should not be in the org.eclipse.core.runtime.adaptor.
-As far as I could see, it is completely independent on the framework adaptor in use.
-The current situation suggests the contrary.
+It looks like EclipseStarter should not be in the
+org.eclipse.core.runtime.adaptor. As far as I could see, it is completely
+independent on the framework adaptor in use. The current situation suggests the
+contrary.

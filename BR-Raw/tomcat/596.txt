@@ -1,3 +1,86 @@
 [TableEdtior] Several wierd behaviors in TableEditor
-Given the following snippet, I've noticed the following unwelcome behaviors: import org.eclipse.swt.SWT; import org.eclipse.swt.custom.CCombo; import org.eclipse.swt.custom.TableEditor; import org.eclipse.swt.events.SelectionEvent; import org.eclipse.swt.events.SelectionListener; import org.eclipse.
-swt.layout.FillLayout; import org.eclipse.swt.layout.RowLayout; import org.eclipse.swt.widgets.Button; import org.eclipse.swt.widgets.Composite; import org.eclipse.swt.widgets.Display; import org.ecl
+Given the following snippet, I've noticed the following unwelcome behaviors:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
+import org.eclipse.swt.custom.TableEditor;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
+import org.eclipse.swt.widgets.Text;
+public class StockTestTable {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setLayout (new FillLayout());
+final Table table = new Table (shell, SWT.BORDER | SWT.MULTI);
+table.setLinesVisible (true);
+table.setHeaderVisible(true);
+for (int i=0; i<3; i++) {
+TableColumn column = new TableColumn(table, SWT.NONE);
+column.setWidth (100);
+}
+for (int i=0; i<95; i++) {
+TableItem item = new TableItem (table, SWT.NONE);
+}
+TableItem [] items = table.getItems ();
+for (int i=0; i<items.length; i++) {
+TableEditor editor = new TableEditor (table);
+CCombo combo = new CCombo (table, SWT.NONE);
+editor.grabHorizontal = true;
+editor.setEditor(combo, items[i], 0);
+editor = new TableEditor (table);
+Text text = new Text (table, SWT.NONE);
+if (i == 25) text25a = text;
+editor.grabHorizontal = true;
+editor.setEditor(text, items[i], 1);
+editor = new TableEditor (table);
+Button button = new Button (table, SWT.CHECK);
+button.setText("text");
+button.pack ();
+editor.minimumWidth = button.getSize ().x;
+editor.horizontalAlignment = SWT.LEFT;
+editor.setEditor (button, items[i], 2);
+}
+Composite buttonHolder = new Composite(shell, SWT.NULL);
+buttonHolder.setLayout(new RowLayout());
+Button early = new Button(buttonHolder, SWT.NULL);
+early.setText("3");
+early.addSelectionListener(new SelectionListener() {
+public void widgetSelected(SelectionEvent e) {
+table.setTopIndex(3);
+}
+public void widgetDefaultSelected(SelectionEvent e) {
+}
+});
+Button late = new Button (buttonHolder, SWT.NULL);
+late.setText("50");
+late.addSelectionListener(new SelectionListener() {
+public void widgetSelected(SelectionEvent e) {
+table.setTopIndex(50);
+}
+public void widgetDefaultSelected(SelectionEvent e) {
+}
+});
+shell.setSize(600,600);
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}
+1) Clicking on the "3" or "50" should scroll the top index to the 3rd or 50th
+line respectively.  On my machine, the scroll bar moves, but the controls in the
+Table do not.
+2) Tabbing all the way to the end of the visible table and beyond does not
+scroll the table as expected.  Instead, the cursor goes off into la la land.
+Pressing shift-tab repeatedly brings it back eventually.  However, the cursor
+never should disappear when it is being manipulated through the keyboard.

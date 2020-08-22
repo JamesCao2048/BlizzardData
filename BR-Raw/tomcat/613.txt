@@ -1,9 +1,11 @@
 error logged showing annotation for non-shared resource
-M6 
-- in the Navigator expand a java project's bin directory 
-- drill down if needed until you reach a contained .class file 
-- select it, right-click and invoke popup item Team 
--> Show Annotation 
-- an error dialog is shown saying that this can't be done Two problems: 1.There's a real exception occurring here; a stack trace is written to .log and the error dialog is an actual Error Dialog.
-This should be handled better.
-2.The error message that's shown says "Cannot display...an remote revision
+M6
+- in the Navigator expand a java project's bin directory
+- drill down if needed until you reach a contained .class file
+- select it, right-click and invoke popup item Team -> Show Annotation
+- an error dialog is shown saying that this can't be done
+Two problems:
+1. There's a real exception occurring here; a stack trace is written to .log
+and the error dialog is an actual Error Dialog.  This should be handled better.
+2. The error message that's shown says "Cannot display...an remote revision",
+where "an" should be "a"

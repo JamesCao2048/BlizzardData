@@ -1,2 +1,8 @@
 Add option to generate lazy get method.
-The "Generate Getters and Setters" dialog could have a check box called "Getter lazy initialization" which would generate code like: public Foo getFoo() { if (this.foo == null) { } return this.foo; }
+The "Generate Getters and Setters" dialog could have a check box called "Getter
+lazy initialization" which would generate code like:
+public Foo getFoo() {
+if (this.foo == null) {
+}
+return this.foo;
+}

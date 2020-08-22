@@ -1,6 +1,34 @@
 multiple beginCompoundChange in LinkedUIKeyListener
-build used: eclipse-SDK-I20040210-win32 I noticed some strange undo/redo behavior in the JDT Editor.
-I don't have a simple testcase to demonstrate the problem in the JDT Editor.
-But, I noticed if I set a breakpoint at the implementation of IRewriteTarget.beginCompoundChange, it's called multiple times while I'm in the linked edit mode of Local Rename (one time for each keystroke).
-But, endCompoundChange was only called one time at the end.
-I traced and noticed the origin of the multiple beginCom
+build used: eclipse-SDK-I20040210-win32
+I noticed some strange undo/redo behavior in the JDT Editor. I don't have a
+simple testcase to demonstrate the problem in the JDT Editor. But, I noticed if
+I set a breakpoint at the implementation of IRewriteTarget.beginCompoundChange,
+it's called multiple times while I'm in the linked edit mode of Local Rename
+(one time for each keystroke). But, endCompoundChange was only called one time
+at the end.
+I traced and noticed the origin of the multiple beginCompoundChange calls came
+from the LinkedUIKeyListener#controlUndoBehavior(int, int). LinkedUIKeyListener
+is an inner class in LinkedUIControl. I understand
+org.eclipse.jdt.internal.ui.text.link is an internal package. But, I hope the
+developer may agree that it's a simple problem to fix. That may avoid some hard-
+to-explain problems in the future because of this unmatching
+beginCompoundChange/endCompoundChange calls.
+Here is a copy of LinkedUIKeyListener#controlUndoBehavior(int, int). You may
+notice that target.beginCompoundChange() is called everytime position is not
+null.
+private boolean controlUndoBehavior(int offset, int length) {
+LinkedPosition position=
+fEnvironment.findPosition(new LinkedPosition(
+fCurrentTarget.getViewer().getDocument(), offset, length,
+LinkedPositionGroup.NO_STOP));
+if (position != null) {
+ITextViewerExtension extension=
+(ITextViewerExtension) fCurrentTarget.getViewer();
+IRewriteTarget target= extension.getRewriteTarget();
+if (fPreviousPosition != null && !fPreviousPosition.equals(position))
+target.endCompoundChange();
+target.beginCompoundChange();
+}
+fPreviousPosition= position;
+return fPreviousPosition != null;
+}

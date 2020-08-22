@@ -1,5 +1,14 @@
 Extract interface from org.eclipse.swt.widgets.Layout
-Is there a reason, why org.eclipse.swt.widgets.Layout became a class instead of an interface?
-If one has to create an own layout imlpementation, having such an interface would often make that job easier.
-My refactoring request: org.eclipse.swt.widgets.Layout implements org.eclipse.swt.widgets.ILayout { // everything else is the same } Thus you still could add methods and fields to them in the future.
-The name of that new interface is up to you ;) br Saibel
+Is there a reason, why org.eclipse.swt.widgets.Layout became a class instead of
+an interface?
+If one has to create an own layout imlpementation, having such an interface
+would often make that job easier.
+My refactoring request:
+org.eclipse.swt.widgets.Layout implements org.eclipse.swt.widgets.ILayout
+{
+// everything else is the same
+}
+Thus you still could add methods and fields to them in the future.
+The name of that new interface is up to you ;)
+br
+Saibel

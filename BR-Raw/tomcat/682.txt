@@ -1,9 +1,8 @@
 Cannot create log correlation in other perspective and cannot cancel wizard
 Test cases: (log_Navigator_4)
 Driver: hyades.runtime_1.2.0_20031217_1814.zip
-
 To repoduce:
- >Import one or more log file
+>Import one or more log file
 >switch to perspective other than profiling perspective, eg resouce perspective.
 >File->New->Other->Profiling and Logging->Log Correlation
 > NO available Logs is shown

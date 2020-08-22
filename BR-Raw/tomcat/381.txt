@@ -1,4 +1,7 @@
 two session headers for the same log
-i20040212 If something bad happens during startup, that may cause entries to be written to the log.
-Since there are situations were the Eclipse Starter may throw an exception to the launcher (org.eclipse.core.launcher.Main), that exception will be logged as well, causing a new SESSION header to be written to the log.
-That may cause a lot of confusion.
+i20040212
+If something bad happens during startup, that may cause entries to be written to
+the log. Since there are situations were the Eclipse Starter may throw an
+exception to the launcher (org.eclipse.core.launcher.Main), that exception will
+be logged as well, causing a new SESSION header to be written to the log. That
+may cause a lot of confusion.

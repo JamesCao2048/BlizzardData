@@ -1,9 +1,205 @@
 [OLE] hang opening Ant file from Ant View/Navigator
-I20031216 (20:00), Win XP * Selected a target in the Ant view, and "Open With 
--> In Place Editor".
-The editor never competed opening.
-Busy cursor remained, and Eclipse stopped responding.
-Had to kill Eclipse.
-Thread dump: Full thread dump Java HotSpot(TM) Client VM (1.4.2_01-b06 mixed mode): "Worker-16" prio=5 tid=0x0314b478 nid=0x754 in Object.wait() [3c1f000..3c1fd94] at java.lang.Object.wait(Native Method) 
-- waiting on 
-<0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool) at org.eclip
+I20031216 (20:00), Win XP
+* Selected a target in the Ant view, and "Open With -> In Place Editor". The
+editor never competed opening. Busy cursor remained, and Eclipse stopped
+responding. Had to kill Eclipse.
+Thread dump:
+Full thread dump Java HotSpot(TM) Client VM (1.4.2_01-b06 mixed mode):
+"Worker-16" prio=5 tid=0x0314b478 nid=0x754 in Object.wait() [3c1f000..3c1fd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184)
+- locked <0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.startJob
+(WorkerPool.java:21
+0)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+"Worker-15" prio=5 tid=0x0325f738 nid=0xf4c in Object.wait() [3bdf000..3bdfd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184)
+- locked <0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.startJob
+(WorkerPool.java:21
+0)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+"Worker-12" prio=5 tid=0x032b9e00 nid=0xc24 in Object.wait() [3acf000..3acfd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.sleep(WorkerPool.java:184)
+- locked <0x105bbf80> (a org.eclipse.core.internal.jobs.WorkerPool)
+at org.eclipse.core.internal.jobs.WorkerPool.startJob
+(WorkerPool.java:21
+0)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+"Java indexing" daemon prio=4 tid=0x02c97d98 nid=0xe74 in Object.wait()
+[3d9f000
+..3d9fd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x108c4ab8> (a
+org.eclipse.jdt.internal.core.search.indexi
+ng.IndexManager)
+at java.lang.Object.wait(Object.java:429)
+at org.eclipse.jdt.internal.core.search.processing.JobManager.run
+(JobMan
+ager.java:327)
+- locked <0x108c4ab8> (a
+org.eclipse.jdt.internal.core.search.indexing.I
+ndexManager)
+at java.lang.Thread.run(Thread.java:534)
+"Start Level Event Dispatcher" daemon prio=5 tid=0x00a4a600 nid=0x614 in
+Object.
+wait() [2f2f000..2f2fd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x1057aa20> (a
+org.eclipse.osgi.framework.eventmgr.EventTh
+read)
+at java.lang.Object.wait(Object.java:429)
+at org.eclipse.osgi.framework.eventmgr.EventThread.getNextEvent
+(EventThr
+ead.java:169)
+- locked <0x1057aa20> (a
+org.eclipse.osgi.framework.eventmgr.EventThread
+)
+at org.eclipse.osgi.framework.eventmgr.EventThread.run
+(EventThread.java:
+120)
+"Framework Event Dispatcher" daemon prio=5 tid=0x00a3ca80 nid=0xe90 in
+Object.wa
+it() [2eef000..2eefd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x10567118> (a
+org.eclipse.osgi.framework.eventmgr.EventTh
+read)
+at java.lang.Object.wait(Object.java:429)
+at org.eclipse.osgi.framework.eventmgr.EventThread.getNextEvent
+(EventThr
+ead.java:169)
+- locked <0x10567118> (a
+org.eclipse.osgi.framework.eventmgr.EventThread
+)
+at org.eclipse.osgi.framework.eventmgr.EventThread.run
+(EventThread.java:
+120)
+"Signal Dispatcher" daemon prio=10 tid=0x009f9020 nid=0xe04 waiting on
+condition
+[0..0]
+"Finalizer" daemon prio=9 tid=0x009c0e18 nid=0xa3c in Object.wait()
+[2b5f000..2b
+5fd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x104faa30> (a java.lang.ref.ReferenceQueue$Lock)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:111)
+- locked <0x104faa30> (a java.lang.ref.ReferenceQueue$Lock)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127)
+at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+"Reference Handler" daemon prio=10 tid=0x009bf9e8 nid=0x88c in Object.wait()
+[2b
+1f000..2b1fd94]
+at java.lang.Object.wait(Native Method)
+- waiting on <0x104faa98> (a java.lang.ref.Reference$Lock)
+at java.lang.Object.wait(Object.java:429)
+at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:115)
+- locked <0x104faa98> (a java.lang.ref.Reference$Lock)
+"main" prio=7 tid=0x00034ed0 nid=0xa7c runnable [7e000..7fc3c]
+at org.eclipse.swt.internal.ole.win32.COM.OleCreateFromFile(Native
+Metho
+d)
+at org.eclipse.swt.ole.win32.OleClientSite.<init>
+(OleClientSite.java:188
+)
+at
+org.eclipse.ui.internal.editorsupport.win32.OleEditor.createClientSit
+e(OleEditor.java:227)
+at
+org.eclipse.ui.internal.editorsupport.win32.OleEditor.createPartContr
+ol(OleEditor.java:215)
+at org.eclipse.ui.internal.PartPane$4.run(PartPane.java:161)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatfo
+rm.java:813)
+at org.eclipse.core.runtime.Platform.run(Platform.java:447)
+at org.eclipse.ui.internal.PartPane.createChildControl
+(PartPane.java:157
+)
+at org.eclipse.ui.internal.PartPane.createControl(PartPane.java:206)
+at org.eclipse.ui.internal.EditorWorkbook.createPage
+(EditorWorkbook.java
+:157)
+at org.eclipse.ui.internal.EditorWorkbook.add(EditorWorkbook.java:98)
+at org.eclipse.ui.internal.EditorArea.addEditor(EditorArea.java:57)
+at org.eclipse.ui.internal.EditorPresentation.openEditor
+(EditorPresentat
+ion.java:351)
+at org.eclipse.ui.internal.EditorManager$2.run(EditorManager.java:545)
+at org.eclipse.swt.custom.BusyIndicator.showWhile
+(BusyIndicator.java:84)
+at org.eclipse.ui.internal.EditorManager.createEditorTab
+(EditorManager.j
+ava:534)
+at org.eclipse.ui.internal.EditorManager.openSystemInPlaceEditor
+(EditorM
+anager.java:684)
+at org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor
+(Editor
+Manager.java:436)
+at org.eclipse.ui.internal.EditorManager.openEditor
+(EditorManager.java:4
+21)
+at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor
+(WorkbenchPage.ja
+va:2047)
+at org.eclipse.ui.internal.WorkbenchPage.access$6
+(WorkbenchPage.java:199
+0)
+at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:1977)
+at org.eclipse.swt.custom.BusyIndicator.showWhile
+(BusyIndicator.java:84)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor
+(WorkbenchPage.java:1
+972)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor
+(WorkbenchPage.java:1
+955)
+at org.eclipse.ant.internal.ui.views.actions.AntOpenWithMenu.openEditor
+(
+AntOpenWithMenu.java:263)
+at org.eclipse.ant.internal.ui.views.actions.AntOpenWithMenu.access$0
+(An
+tOpenWithMenu.java:257)
+at
+org.eclipse.ant.internal.ui.views.actions.AntOpenWithMenu$1.handleEve
+nt(AntOpenWithMenu.java:158)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2311)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1992)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1506)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1482)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.jav
+a:246)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:47
+)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformAct
+ivator.java:233)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.ja
+va:85)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.
+java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAcces
+sorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:281)
+at org.eclipse.core.launcher.Main.run(Main.java:744)
+at org.eclipse.core.launcher.Main.main(Main.java:583)
+"VM Thread" prio=5 tid=0x009f76f8 nid=0x318 runnable
+"VM Periodic Task Thread" prio=10 tid=0x009fb838 nid=0x808 waiting on condition
+"Suspend Checker Thread" prio=10 tid=0x009f86d8 nid=0xa54 runnable

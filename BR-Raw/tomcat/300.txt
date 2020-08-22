@@ -1,4 +1,29 @@
 Changing the style of a Label from SWT.SHADOW_IN to SWT.SHADOW_NONE does not make a difference in the appearance of the Label
-When I was going through the Eclipse 3.0 M7 examples (eclipse-examples- 3.0M7.zip) which I downloaded from http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse 
-- examples-3.0M7.zip, I realized that changing the style of a Label from SWT.SHADOW_IN to SWT.SHADOW_NONE did not make a difference in the appearance of the Label.
-Here are the steps to follow in order to regenerate this scenario: 1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.2.Download Eclipse 3.0 M7 Exampl
+When I was going through the Eclipse 3.0 M7 examples (eclipse-examples-
+3.0M7.zip) which I downloaded from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
+examples-3.0M7.zip, I realized that changing the style of a Label from
+SWT.SHADOW_IN to SWT.SHADOW_NONE did not make a difference in the appearance
+of the Label.
+Here are the steps to follow in order to regenerate this scenario:
+1. Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
+2. Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse -
+examples-3.0M7.zip and install them.
+3. Launch Eclipse
+4. Select “Window -> Show View -> Other…”. This will launch the “Show View”
+Dialog.
+5. From the “Show View” Dialog, select “SWT Examples -> SWT Controls”. This
+will display “SWT Controls” View.
+6. From SWT Controls View, select “Label” tab.
+7. In the “Styles” group, make sure SWT.SEPARATOR, SWT.VERTICAL and
+SWT.SHADOW_IN options are checked and the rest are unchecked.
+8. In the “Other” group, make sure both “Enabled” and “Visible” options are
+checked.
+9. In the “Size” group, make sure “100 X 100” is selected.
+10. From the “Styles” group, select SWT.SHADOW_NONE option. This will uncheck
+the SWT.SHADOW_IN option.
+Expected Behavior: The appearance of the Labels should change
+Actual Behavior: The appearance of the Labels remains unchanged
+Important: When I ran the same tests on Eclipse 2.1.2, the outcome was the
+same as it was on Eclipse 3.0M7.

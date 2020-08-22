@@ -1,8 +1,20 @@
 CDT failes to install: plugin and it's features unreachable
-Only with gtk version on linux (motif): unzip eclipse 3.0M5 gtk version and after it cdt 2.0 gtk version, start eclipse.
-The initial eclipse logo appears, disappears and appears again, eclipse creates the workspace and starts.
-After this I can't reach any CDT functionality eg: new project, preferences, perspectives.
-Motif version works fine, on the same machine.
-Also eclipse 2.1.2 with CDT 1.2 works fine In the .metadata/.log: !SESSION dec.
-01, 2003 16:25:58.831 
---------------------------------
+Only with gtk version on linux (motif): unzip eclipse 3.0M5 gtk version and
+after it cdt 2.0 gtk version, start eclipse. The initial eclipse logo appears,
+disappears and appears again, eclipse creates the workspace and starts. After
+this I can't reach any CDT functionality eg: new project, preferences,
+perspectives. Motif version works fine, on the same machine. Also eclipse 2.1.2
+with CDT 1.2 works fine
+In the .metadata/.log:
+!SESSION dec. 01, 2003 16:25:58.831 --------------------------------------------
+java.version=1.4.1
+java.vendor=Blackdown Java-Linux Team
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=hu_HU
+Command-line arguments: -os linux -ws gtk -arch x86 -data
+/home/zvadasz/.eclipse-3.0-workspace/ -install
+file:/home/zvadasz/Programs/eclipse/eclipse-SDK-3.0M5-linux-gtk/
+!ENTRY org.eclipse.core.runtime 2 1 dec. 01, 2003 16:25:58.833
+!MESSAGE Problems encountered loading the plug-in registry.
+!SUBENTRY 1 org.eclipse.core.runtime 2 1 dec. 01, 2003 16:25:58.833
+!MESSAGE Plug-in descriptor "org.eclipse.cdt.core" not found for fragment
+"org.eclipse.cdt.core.linux".  Fragment ignored.

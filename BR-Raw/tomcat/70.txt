@@ -1,3 +1,12 @@
 Property not saved on Run-time Workbench's Tracing page
-I20040318 1.open an existing Run-time workbench launch config 2.switch to "Tracing" tab 3.select and check org.eclipse.jdt.ui plug-in 4.change one of the properties to false 5.press Apply 6.press Close 7.repeat step 1 and 2 ==> changes are lost I know I could change the file.
-If that's the intention then the page should be read-only.
+I20040318
+1. open an existing Run-time workbench launch config
+2. switch to "Tracing" tab
+3. select and check org.eclipse.jdt.ui plug-in
+4. change one of the properties to false
+5. press Apply
+6. press Close
+7. repeat step 1 and 2
+==> changes are lost
+I know I could change the file. If that's the intention then the page should be
+read-only.

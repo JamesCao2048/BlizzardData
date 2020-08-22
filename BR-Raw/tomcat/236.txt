@@ -1,5 +1,6 @@
 [EditorMgmt] Pressing 'Esc' while editor drop-down list is open kills the list
-I pressed 'Esc' key while editor area drop-down list was opened.
-I managed to kill (close & dispose) the list shell and I could not open it again.
-I had to restart Eclipse to restore it.
-Expected behaviour: the list shell should be hidden but not closed and disposed completely.
+I pressed 'Esc' key while editor area drop-down list was opened. I managed to
+kill (close & dispose) the list shell and I could not open it again. I had to
+restart Eclipse to restore it.
+Expected behaviour: the list shell should be hidden but not closed and
+disposed completely.

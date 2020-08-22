@@ -1,9 +1,82 @@
 can't open fragment manifest editor
-i20040219 (See also bug 49494 ) For the first few times I try to open a PDE editor for a fragment manifest, it will fail with an internal error (stacktrace below).
-!SESSION Feb 19, 2004 11:39:17.432 
---------------------------------------------- java.version=1.4.2_01 java.vendor=Sun Microsystems Inc.
-BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CA Command-line arguments: 
--console 
--showlocation 
--data d:target_instancesreleasingplugins 
--keyring d:target_instancesreleasingplugins.m
+i20040219
+(See also  bug 49494 )
+For the first few times I try to open a PDE editor for a fragment manifest, it
+will fail with an internal error (stacktrace below).
+!SESSION Feb 19, 2004 11:39:17.432 ---------------------------------------------
+java.version=1.4.2_01
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CA
+Command-line arguments: -console -showlocation -data
+d:target_instancesreleasingplugins -keyring
+d:target_instancesreleasingplugins.metadata.keyring
+!ENTRY org.eclipse.core.runtime 4 2 Feb 19, 2004 11:39:17.432
+!MESSAGE Problems occurred when invoking code from plug-in:
+"org.eclipse.core.runtime".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.editor
+at
+org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:113)
+at
+org.eclipse.jface.action.ContributionManager.prependToGroup(ContributionManager.java:337)
+at
+org.eclipse.ui.internal.EditorActionBars.getToolBarManager(EditorActionBars.java:254)
+at
+org.eclipse.ui.part.EditorActionBarContributor.init(EditorActionBarContributor.java:154)
+at
+org.eclipse.ui.part.EditorActionBarContributor.init(EditorActionBarContributor.java:133)
+at
+org.eclipse.ui.internal.EditorManager.createEditorActionBars(EditorManager.java:228)
+at org.eclipse.ui.internal.EditorManager.createSite(EditorManager.java:579)
+at org.eclipse.ui.internal.EditorManager.openInternalEditor(EditorManager.java:633)
+at
+org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor(EditorManager.java:438)
+at org.eclipse.ui.internal.EditorManager.openEditor(EditorManager.java:426)
+at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2118)
+at org.eclipse.ui.internal.WorkbenchPage.access$6(WorkbenchPage.java:2061)
+at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2048)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2043)
+at org.eclipse.ui.ide.IDE.openEditor(IDE.java:265)
+at org.eclipse.ui.actions.OpenFileAction.openFile(OpenFileAction.java:96)
+at
+org.eclipse.ui.actions.OpenSystemEditorAction.run(OpenSystemEditorAction.java:94)
+at
+org.eclipse.ui.views.navigator.OpenActionGroup.runDefaultAction(OpenActionGroup.java:111)
+at
+org.eclipse.ui.views.navigator.MainActionGroup.runDefaultAction(MainActionGroup.java:300)
+at
+org.eclipse.ui.views.navigator.ResourceNavigator.handleOpen(ResourceNavigator.java:624)
+at
+org.eclipse.ui.views.navigator.ResourceNavigator$6.open(ResourceNavigator.java:388)
+at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:406)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:819)
+at org.eclipse.core.runtime.Platform.run(Platform.java:493)
+at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:404)
+at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:614)
+at
+org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:703)
+at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:209)
+at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:204)
+at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:233)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2352)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2033)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1543)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1519)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:258)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:257)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+at org.eclipse.core.launcher.Main.run(Main.java:742)
+at org.eclipse.core.launcher.Main.main(Main.java:581)

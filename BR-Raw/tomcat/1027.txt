@@ -1,4 +1,6 @@
 [Live Sync View] crash in Eclipse causes remote tree to be wrong.
-M2 Eclipse crashed and when it restarted there were several conflicts and incoming changes that were invalid changes.
-In one cases, the remote was 1.14 and the local 1.15 and the sync view showed as an incoming change.
-after closing/re-opening the view the sync states shown were valid.
+M2
+Eclipse crashed and when it restarted there were several conflicts and incoming
+changes that were invalid changes. In one cases, the remote was 1.14 and the
+local 1.15 and the sync view showed as an incoming change. after
+closing/re-opening the view the sync states shown were valid.
