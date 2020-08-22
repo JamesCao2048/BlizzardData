@@ -1,0 +1,15 @@
+Infinite loop in Tree.clearCustomWidths()
+Created  attachment 121659   [details]
+Patch to fix the bug
+Build ID: I20081211-1908
+Steps To Reproduce:
+1.Have a TreeViewer with some input and a single column by default
+2.Dispose all its columns
+3.create a new column
+4.it leads to an infinite loop
+java.lang.StackOverflowError
+at org.eclipse.swt.widgets.Tree.clearCustomWidths(Tree.java:347)
+at org.eclipse.swt.widgets.Tree.clearCustomWidths(Tree.java:347)
+at org.eclipse.swt.widgets.Tree.clearCustomWidths(Tree.java:347)
+More information:
+Eclipse 3.5M4-cocoa

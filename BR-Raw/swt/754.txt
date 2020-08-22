@@ -1,0 +1,16 @@
+Control.print results in "unlockFocus called too many time
+Hi,
+I'm not sure whether this is an SWT bug, or a Coca problem, or simply a bug in my code.
+I've attached a simple test case that should hopefully enable you to reproduce the problem.
+I'm writing a visual designer that renders a series of widgets onto a Canvas.
+Some widgets are fully owner-drawn, while others should reflect native controls (buttons, check boxes, etc).
+For these "native-control-look-alike" widgets, my approach is to dynamically create SWT controls on demand, capture them into an SWT image by means of the Control.print() API, and use the captured image for rendering the widget's visual representation onto a canvas.
+Now, as soon as a widget uses the Control.print() approach, I start getting "unlockFocus called too many time" errors on Eclipse's console, and the images fail to render.
+The attached test case exhibits the same behavior.
+OS: MacOS 10.6.2
+Eclipse version: eclipse-rcp-galileo-SR1-macosx-cocoa-x86_64, Build id: 20090920-1017
+Java: java version "1.6.0_17"
+Java(TM) SE Runtime Environment (build 1.6.0_17-b04-248-10M3025)
+Java HotSpot(TM) 64-Bit Server VM (build 14.3-b01-101, mixed mode)
+thanks for your time,
+Karl

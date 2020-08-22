@@ -1,0 +1,44 @@
+Height of MenuItems differs when using Icons and Text compared to just use Text
+When having a Menu with MenuItems, some having an Image of 16x16px set and some
+not, you can see that the Items having an Image set have a bigger gap to the
+next Item, compared to the ones without an Image.
+Check this Snippet to reproduce:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Menu menu = new Menu(shell, SWT.BAR);
+MenuItem subMenu = new MenuItem(menu, SWT.CASCADE);
+subMenu.setText("File");
+Menu sub = new Menu(subMenu);
+subMenu.setMenu(sub);
+MenuItem imgItem1 = new MenuItem(sub, SWT.NONE);
+imgItem1.setText("Hello World");
+imgItem1.setImage(new Image(display, 16, 16));
+imgItem1 = new MenuItem(sub, SWT.NONE);
+imgItem1.setText("Hello World");
+imgItem1.setImage(new Image(display, 16, 16));
+imgItem1 = new MenuItem(sub, SWT.NONE);
+imgItem1.setText("Hello World");
+imgItem1.setImage(new Image(display, 16, 16));
+imgItem1 = new MenuItem(sub, SWT.NONE);
+imgItem1.setText("Hello World");
+imgItem1 = new MenuItem(sub, SWT.NONE);
+imgItem1.setText("Hello World");
+imgItem1 = new MenuItem(sub, SWT.NONE);
+imgItem1.setText("Hello World");
+shell.setMenuBar(menu);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+First of all I have checked how the Explorer is handling a Menu that uses Images
+for some Items.
+It seems that it sets the same height, even for the Items that
+have no Image set.
+Ben

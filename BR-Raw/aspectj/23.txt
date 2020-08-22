@@ -1,0 +1,46 @@
+Inconsistent classfile encountered: The undefined type parameter xxx is referenced from within yyy
+With the declare parents pattern below, I'm getting this **runtime** error (compiler completes ok):
+Inconsistent classfile encountered: The undefined type parameter ID is referenced from within PersistableAspect
+If I remove the generics part of the interface declaration, the error goes away.  Here's the pattern:
+interface:
+==========
+package example.trait;
+// imports...
+public interface Persistable<ID extends Serializable> {
+Object getOid();
+ID getId();
+String getIdString();
+long getVersion();
+}
+annotation:
+===========
+package example.anno;
+// imports...
+@Target(TYPE)
+@Retention(RUNTIME)
+@Trait
+public @interface Persistable {
+String in() default "MONGO";
+StoreType inAsEnum() default StoreType.MONGO;
+String id() default "STRING";
+IdType idAsEnum() default IdType.STRING;
+}
+aspect:
+=======
+package example.aspect;
+// imports...
+public privileged aspect PersistableAspect {
+public interface I<ID extends Serializable> extends example.trait.Persistable<ID> {
+}
+public interface L extends I<Long> {
+}
+public interface S extends I<String> {
+}
+declare parents :
+(@Persistable(id="LONG") *)
+implements L;
+declare parents :
+(@Persistable(id="STRING") *)
+implements S;
+// remaining code is ITDs introducing vars & methods...
+}

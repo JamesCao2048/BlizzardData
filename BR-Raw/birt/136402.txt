@@ -1,0 +1,16 @@
+Bug 136402 Data binding feature - Expression builder bug
+In the following 2 scenarios the expression builder does not behave as expected.
+1) Invoked from data binding tab
+- Create a table report item, bind it to a dataset.
+- Go to the binding tab
+- Add a new data binding column
+- Invoke the expression builder to enter the expression.
+Current behavior
+- The expresssion builder does not show Available Datasets and Available Binding Columns Expected behaivor
+- The expression builder list the Available Datasets and Available Binding Columns 2) Invoke expression builder from Group dialog
+- Add a group to the above scenario
+- Go to binding tab on group dialog
+- Click on add to add a column binding
+- Invoke the expression builder Current behavior
+- Does not show Available Datasets and Available Binding Columns Expected behavior
+- Shows Available Datasets and Available Binding Columns

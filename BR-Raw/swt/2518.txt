@@ -1,0 +1,75 @@
+Tree.clearAll flashes (redraws whole tree) while Table.clearAll doesn't.
+3.2M5 WinXP
+The Tree flashes at each clearAll call, but the Table doesn't.
+Is there any way to fix the full redraw flashing on the virtual Tree?
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.VIRTUAL | SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
+new TableColumn(table, SWT.LEFT).setWidth(150);
+new TableColumn(table, SWT.LEFT).setWidth(150);
+table.setLinesVisible(true);
+table.setHeaderVisible(true);
+
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem) event.item;
+String text = null;
+text = "node " + table.indexOf(item);
+item.setText(text);
+}
+});
+table.setItemCount(60);
+
+final Tree tree = new Tree(shell, SWT.VIRTUAL | SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
+new TreeColumn(tree, SWT.LEFT).setWidth(150);
+new TreeColumn(tree, SWT.LEFT).setWidth(150);
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+TreeItem parentItem = item.getParentItem();
+String text = null;
+if (parentItem == null) {
+text = "node " + tree.indexOf(item);
+} else {
+text = parentItem.getText() + "
+- " + parentItem.indexOf(item);
+}
+item.setText(text);
+}
+});
+tree.setItemCount(60);
+
+final int timerDelay = 250;
+
+final Runnable r = new Runnable() {
+public void run() {
+System.err.println("clear");
+table.clearAll();
+tree.clearAll(true);
+/*tableItem[] items = table.getItems();
+for (int i =0; i
+< items.length; ++i)
+items[i].setExpanded(true);
+System.err.println("SELECTED: " + tree.getSelectionCount());
+*/
+display.timerExec(timerDelay, this);
+}
+
+};
+
+display.timerExec(timerDelay, r);
+
+shell.setSize(400, 300);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

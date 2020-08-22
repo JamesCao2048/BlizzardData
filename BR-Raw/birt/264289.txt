@@ -1,0 +1,5 @@
+Bug 264289 View Report button is gray if the suffix of report name is not .rptdesign
+Description: View Report button is gray if the suffix of report name is not .rptdesign Build number: 2.3.2.v20090210-0730 & 2.5.0 v20090210-0630 Steps to reproduce: 1, rename the report design, change the suffix to .xml or remove the suffix 2, Check the status of View report button Expected result: We can get the report type by a handle or something else rather than the suffix of the report name.
+Actual result: The View Report button is gray if the suffix of report name is not .rptdesign.
+Actually that file is a report design.
+Error log:

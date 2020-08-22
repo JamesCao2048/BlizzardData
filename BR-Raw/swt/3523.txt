@@ -1,0 +1,9 @@
+Mouse events delivered to wrong Control
+I20030604
+MacOS 10.2.6
+- open Java editor
+- press Control-O to open the outliner
+- click on a method in the tree and keep the mouse button pressed;
+drag the mouse outside of the outliner window without releasing the mouse button
+Observe: the mouse events are delivered to the underlying StyledText and perform a
+selection change

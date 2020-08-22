@@ -1,0 +1,93 @@
+Window manipulations block other threads from executing
+On Win32 platforms (such as Win2k and WinNT), operations such as moving a
+scrollbar arm and resizing a window block other threads from executing.
+This
+is not the case on QNX.
+In case this is unclear, I have a testcase.
+Also, it
+should be noted that despite the trivial nature of the test, it represents the
+kind of issue we have with java.awt.ScrollPane, where we try to repaint a view
+as it is scrolling, from the AWT main thread.
+1.After the window opens, observe the background color changing between black
+and white
+2.Try to move the scrollbar's arm up and down
+- observe that the color
+changing thread no longer changes the colors.
+That thread will also be blocked
+if you grab the shell's corner and do some frequent resizing.
+On Photon, the
+color changes continue to occur.
+----- testcase follows
+---------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TestSwtScrollEvents {
+Display display;
+Shell shell;
+Canvas canvas;
+public static void main(String[] args) {
+TestSwtScrollEvents test = new TestSwtScrollEvents();
+test.createWidgets();
+test.open();
+}
+void createWidgets() {
+display = new Display();
+shell = new Shell(display);
+shell.setLayout(new FillLayout());
+canvas = new Canvas(shell, SWT.BORDER | SWT.H_SCROLL |
+SWT.V_SCROLL);
+}
+
+void open() {
+shell.pack();
+shell.open();
+createBackgroundThread();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}
+/*
+* on a background thread change the color of the canvas.
+* you should see the canvas switch between black and white
+* as long as the ui is responsive.
+*/
+void createBackgroundThread() {
+// create something to run
+Runnable runnable = new Runnable() {
+Color black = display.getSystemColor(SWT.COLOR_BLACK);
+Color white = display.getSystemColor(SWT.COLOR_WHITE);
+Color background = black;
+public void run() {
+while(!shell.isDisposed()) {
+// set the background color of the
+canvas.
+This must
+// be done on the ui thread
+display.syncExec(new Runnable() {
+public void run() {
+canvas.setBackground
+(background);
+}
+});
+// wait .5 second before changing the
+background color
+try {
+Thread.sleep(500);
+} catch (InterruptedException e) {}
+// toggle color
+if (background == black)
+background = white;
+else
+background = black;
+}
+}
+};
+// create a new thread for changing the background color and
+start it
+new Thread(runnable).start();
+}
+}

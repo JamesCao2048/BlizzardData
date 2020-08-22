@@ -1,0 +1,17 @@
+Table Header stays depressed.
+Create an SWT application with a Table and a push Button, the Table must have a
+column header.
+1.Make the push Button receive keyboard focus.
+This can be achieved by
+pressing the mouse button inside of the push Button, dragging it outside of the
+push Button and then releasing the mouse button.
+2.Press the mouse button over the Table header.
+Do not release the mouse
+button.
+3.Press and hold the space bar.
+This will cause the push Button to depress.
+4.Move the mouse outside of the Table header and release the mouse button.
+
+This causes the Table header to remain depressed.
+5.Release the space bar.
+This is repeatable for the headers of all the Table's Columns.

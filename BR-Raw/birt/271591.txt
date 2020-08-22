@@ -1,0 +1,6 @@
+Bug 271591 Aggregation binding modification behavior should be consistent
+Description: Aggregation binding modification behavior should be consistent Build number: 2.5.0.v20090408-0630 Steps to reproduce: 1, New a crosstab with measures 2, Go to Binding page in Property Editor 3, Edit the Aggregation binding of measure and modify the measure expression and click OK 4, New a Aggregation binding and do the same operation and click OK Expected result: After step3, the modification of expression take no effect.
+After step4, modification worked.
+The modification behavior in step3 and step4 should be consistent.
+Actual result: Currently, the modification of expression in both aggregation builder are not consistent, modification of aggregation binding of measure can not be saved, but new added aggregation binding's expression can be modified.
+Error log:

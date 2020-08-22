@@ -1,0 +1,8 @@
+allow use of an environment variable to set compiler arguments
+I'm trying to create a special jsp compilation servlet in Tomcat 4.x that uses
+the aspectj compiler. I can plug in the compiler adapter, but I don't have
+control of the ant code they use to invoke the compiler, so I'd like to use
+an environment variable to do this (apparently the only mechanism they do
+support).
+I'm doing this so I can pass an aspectpath in to weave aspects into the
+compiled jsp servlet.

@@ -1,0 +1,2 @@
+Bug 275793 Exception occurred when finish XML Dataset in such scenario
+Description: Exception occurred when finish XML Dataset in such scenario Build number: 2.5.0.v20090512-0630 Steps to reproduce: 1, New a xml data set 2, Select columns and finish dataset 3, Reopen data set to remove all columns and finish data set 4, Reopen data set and restore all columns and finish data set Expected result: After step4, no exception happened Actual result: After step4, exception was thrown out

@@ -1,0 +1,27 @@
+removing MeasureItem listener and clearing items inverts table
+- run the snippet below and push the button
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10, 10, 220, 290);
+shell.setLayout(new GridLayout());
+final Table table = new Table(shell, SWT.NONE);
+table.setLinesVisible(true);
+final Listener listener = new Listener() {
+public void handleEvent(Event event) {} // I do nothing
+};
+table.addListener(SWT.MeasureItem, listener);
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Push");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+table.removeListener(SWT.MeasureItem, listener);
+table.removeAll();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

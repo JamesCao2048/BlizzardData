@@ -1,0 +1,4 @@
+Bug 282641 Diagonal thickness does not work when set as thick/thin/medium
+Description: Diagonal thickness does not work when set as thick/thin.medium Build: Build
+<2.5.1.v20090706-0630> Steps to reproduce: 1.New a grid 1*1 2.Add diagonal in advance and set thickness as thick/thin/medium 3.Preview Actual result: Diagonal thickness in all emitters are the same size.
+Expect result: thick/thin/medium should be different.

@@ -1,0 +1,12 @@
+[Viewers] ILazyTreeContentProvider: NPE when refreshing viewer while an inner node is selected and using OwnerDrawLabelProvider
+Created  attachment 220635   [details]
+Code reproducing the problem
+When using an ILazyTreeContentProvider with an OwnerDrawLabelProvider: if the model changes while an inner node is selected, so that it is no longer there, NullPointerException is thrown during viewer refresh from line:
+org.eclipse.jface.viewers.AbstractTreeViewer.getSelection(AbstractTreeViewer.java:2956)
+To reproduce the problem with the attached code:
+
+- expand /root/1
+
+- select /root/1/0
+
+- click the button on the right to change the model and refresh

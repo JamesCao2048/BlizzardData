@@ -1,0 +1,7 @@
+Bug 209450 [regression]Duplicate values display in Cascading parameter list[0705]
+Descripption: Duplicate values display in Cascading parameter list Build number:2.3.0.v20071112 Steps to reproduce: 1.New sample data source and dataset from CUSTOMERS.
+2.New a cascading parameter from COUNTRY, STATE AND CITY fields.
+3.Preview.
+Expected result: Values in three parameter list aren't duplicated.
+Actual result: Duplicate values show in parameter list.
+Error log:n/a

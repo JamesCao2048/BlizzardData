@@ -1,0 +1,15 @@
+Invalid thread access in Snippet133
+Running SWT Snippet 133 (print text to printer) throws this exception:
+Exception in thread "Printing" org.eclipse.swt.SWTException: Invalid thread access
+at org.eclipse.swt.SWT.error(SWT.java:3374)
+at org.eclipse.swt.SWT.error(SWT.java:3297)
+at org.eclipse.swt.SWT.error(SWT.java:3268)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:435)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:331)
+at org.eclipse.swt.widgets.Control.getFont(Control.java:939)
+at org.eclipse.swt.snippets.Snippet133.print(Snippet133.java:230)
+at org.eclipse.swt.snippets.Snippet133$7.run(Snippet133.java:204)
+It works if you patch the line:
+printingThread.start();
+with this:
+display.syncExec(printingThread);

@@ -1,0 +1,15 @@
+AJDT Error: Can't find type
+In Eclipse 3.1, using the latest AspectJ build (1.5.0_M3a compiler and 1.3.0
+plugin) I get an error "can't find type test.T" , using the following code:
+===============
+package test;
+public class CantFindType {
+public <T> T[] method(T[] array) {
+return null;
+}
+}
+================
+The error occurs, if the return type, or the parameter is an array of a generic
+type.
+The code compiles fine, but Eclipse shows the error, but doesn't show the folder
+or the location for the error.

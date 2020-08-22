@@ -1,0 +1,3 @@
+Bug 212094 BirtComp.match doesn't work
+The BirtComp.match() function is supposed to test if a value matches a JavaScript regular expression.
+However, the following expression always returns false when there are product codes that contain the string S24.BirtComp.match(dataSetRow["PRODUCTCODE"], /S24/)

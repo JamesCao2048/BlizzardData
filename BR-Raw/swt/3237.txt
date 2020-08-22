@@ -1,0 +1,25 @@
+StyleText displays StyleRanges incorrect depending on order of StyleRange in array
+I've been fighting with a bug which I believe was in my code, but now I feel it
+is in the StyleText code.
+Basically if I create a array of StyleRange and use setStyleRanges() then the
+styles are not applied correctly if the start position of each style is not in
+numerical order.
+A easy example is this:
+StyleRange[] ranges = new StyleRange[3];
+//This works fine
+ranges[0] = new StyleRange(0, 2, black, red);
+ranges[1] = new StyleRange(3, 2, black, blue);
+ranges[2] = new StyleRange(6, 2, black, red);
+//This doesn't, the 2nd red isn't applied
+ranges[0] = new StyleRange(0, 2, black, red);
+ranges[1] = new StyleRange(6, 2, black, red);
+ranges[2] = new StyleRange(3, 2, black, blue);
+I've attached source code for a small sample program showing the problem...
+I've made sure the above sample doesn't have overlapping region (with each
+style being one character apart).
+I have no fixed my code by making sure the StyleRanges are in start order
+before I setStyleRanges.
+I have only tested this on Windows XP, SWT 3.0 (build 3062)
+If you need any more information please contact me.
+Thanks
+Andrew

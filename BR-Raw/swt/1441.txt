@@ -1,0 +1,13 @@
+Crash creating new display after disposing previous one
+This snippet crashes.
+public static void main (String [] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+new Display().dispose();
+}

@@ -1,0 +1,7 @@
+[Browser] String "View Certificate" ha not been externalized
+Build Identifier: Eclipse 3.5.1
+The string "View Certificate" in invalidCert() of promptdialog.java is not externalized.
+Reproducible: Always
+Steps to Reproduce:
+Can't find "View Certificate" from SWT properties file.
+viewCertButton.setText(Compatibility.getMessage("View Certificate")); //$NON-NLS-1$

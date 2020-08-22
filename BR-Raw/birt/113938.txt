@@ -1,0 +1,2 @@
+Bug 113938 Report is marked dirty when open/close cascading parameter dialog without doing any operation on it
+description: Report is marked dirty when open/close cascading parameter dialog without doing any operation on it steps to reproduce: 1.new a cascading parameter group 2.save the reprot 3.double click the cascading parameter to bring out edit box 4.click OK to close edit box actual result: Report has been marked dirty expected result: No dirty marked for that no operations done in edit parameter dialog

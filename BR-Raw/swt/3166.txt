@@ -1,0 +1,53 @@
+CR Key down arrives twice
+I200410190941, GTK+ 2.4.9, KDE 3.3.0, Linux 2.6.8.1
+
+On KDE, go into the package explorer and select an HTML file.
+Then press
+enter.
+The HTML file should open in an external browser.
+However, it either
+opens two browsers or two tabs in a single browser.
+This appears to happen
+because the CR key down event is arriving twice.
+
+Below is some debugging output.
+It shows the CR traversal event arriving at
+the key binding architecture, but nothing happening.
+Then the CR key down
+arrives at the key binding architecture
+-- again nothing happens.
+Then two CR
+key down events arrive at OpenStrategy$1. This causes two editor open events
+to happen.
+This is not a (big) problem for Java editors, because a second open
+event is effectively ignored.
+
+
+
+KEYS >>> Listener.handleEvent(type = Traverse, stateMask = 0x0, keyCode = 0xd,
+character = 0xd)
+KEYS >>> WorkbenchKeyboard.press(potentialKeyStrokes = [CR])
+KEYS >>> Listener.handleEvent(type = Traverse, stateMask = 0x0, keyCode = 0xd,
+character = 0xd)
+KEYS >>> WorkbenchKeyboard.press(potentialKeyStrokes = [CR])
+KEYS >>> Listener.handleEvent(type = Traverse, stateMask = 0x0, keyCode = 0xd,
+character = 0xd)
+KEYS >>> WorkbenchKeyboard.press(potentialKeyStrokes = [CR])
+KEYS >>> Listener.handleEvent(type = Traverse, stateMask = 0x0, keyCode = 0xd,
+character = 0xd)
+KEYS >>> WorkbenchKeyboard.press(potentialKeyStrokes = [CR])
+KEYS >>> Listener.handleEvent(type = Traverse, stateMask = 0x0, keyCode = 0xd,
+character = 0xd)
+KEYS >>> WorkbenchKeyboard.press(potentialKeyStrokes = [CR])
+KEYS >>> Listener.handleEvent(type = Traverse, stateMask = 0x0, keyCode = 0xd,
+character = 0xd)
+KEYS >>> WorkbenchKeyboard.press(potentialKeyStrokes = [CR])
+KEYS >>> Listener.handleEvent(type = KeyDown, stateMask = 0x0, keyCode = 0xd,
+character = 0xd)
+KEYS >>> WorkbenchKeyboard.press(potentialKeyStrokes = [CR])
+Event arrive: hashCode=1670407056, type=14
+WorkbenchPage.openEditor(input=org.eclipse.ui.part.FileEditorInput@6867ab71,
+editorID=org.eclipse.ui.systemExternalEditor, activate=true
+Event arrive: hashCode=1675977701, type=14
+WorkbenchPage.openEditor(input=org.eclipse.ui.part.FileEditorInput@6867ab71,
+editorID=org.eclipse.ui.systemExternalEditor, activate=true

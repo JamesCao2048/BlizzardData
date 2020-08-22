@@ -1,0 +1,2 @@
+Bug 122666 Performance enhancement for RandomAccessFile
+The readInt method for RandomAccessFile makes 4 calls to system, and the calls are not buffered.

@@ -1,0 +1,6 @@
+BIDI: ToolTiptext do not have Right to left Reading order
+Using Win2k with Arabic locale set as default locale, Using build eclipse-SDK-
+I20030115-win32.zip.
+Using SWT components, create a button with SWT.RIGHT_TO_LEFT extended style,
+put a tool tip text that contains mixed Arabic with English text, The tool tip
+text do not have a rigth to left reading order.

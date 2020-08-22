@@ -1,0 +1,5 @@
+Bug 198749 Horizontal page break support
+Build ID: I20070625-1500 The PDF emitter tries to put all columns on the same page which will cause too slim columns and line wrapping when there are too many columns for one page, even with landscape orientation.
+The PDF emitter should therefore support horizontal page breaks.
+The user should be able to provide hints to the emitter by selecting columns where a horizontal page break may occur.
+Of course this will also bring up the requirement to be able to select one or more columns that should be repeated on every page.

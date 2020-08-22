@@ -1,0 +1,5 @@
+Bug 212124 Summary Field should be allowed to drag into measure area of Crosstab[1102]
+Description: Summary Field should be allowed to drag into measure area of Crosstab[1102] Build number: 2.3.0.v20071206-0800 Steps to reproduce: 1, New a cube with measures in one summary field 2, New a crosstab 3, DND the summary field to measure area of crosstab Expected result: In former build, this operation is allowed and all the measures in that summary field is dragged into crosstab.
+Like drag dimension.
+Actual result: The operation is not allowed now.
+Error log:

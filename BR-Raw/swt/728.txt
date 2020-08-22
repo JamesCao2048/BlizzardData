@@ -1,0 +1,69 @@
+[Contributions] menuAboutToShow is inadvertently(?) called when using a shortcut while a Browser has focus
+Build ID: M20080911-1700
+Steps To Reproduce:
+I have prepared a simple snippet to illustrate the bug and included it below.
+Run it, move focus to the browser and click Ctrl+D (the shortcut that is associated with the single dummy menu action that prints "text" at the console).
+You will see that the text "menuAboutToShow called" is shown in the console, indicating that the method menuAboutToShow of the menu listener that I add to the menu is called.
+I expect this is a bug.
+The reason why I submit this bug report is that I have some logic that relies on menuAboutToHide/menuAboutToShow in my real application, and this behavior screws it up.
+In addition, the browser widget does not send focus events, which makes it impossible to write a workaround based on that.
+More information:
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IMenuListener2;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.window.ApplicationWindow;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.browser.Browser;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Shell;
+public class BugReport extends ApplicationWindow {
+public BugReport() {
+super(null);
+addMenuBar();
+}
+@Override
+protected Control createContents(Composite parent) {
+final Browser browser = new Browser(parent, SWT.NONE);
+browser.setUrl(" http://www.google.com/ ");
+return browser;
+}
+@Override
+protected MenuManager createMenuManager() {
+MenuManager menuManager = new MenuManager();
+Action action = new Action("Do something") {
+@Override
+public void run() {
+System.out.println("text");
+}
+};
+action.setAccelerator(SWT.CTRL | 'D');
+MenuManager file = new MenuManager("&File");
+file.add(action);
+menuManager.add(file);
+file.addMenuListener(new IMenuListener2() {
+@Override
+public void menuAboutToHide(IMenuManager manager) {
+System.out.println("menuAboutToHide called");
+}
+@Override
+public void menuAboutToShow(IMenuManager manager) {
+System.out.println("menuAboutToShow called");
+}
+});
+return menuManager;
+}
+@Override
+protected void configureShell(Shell shell) {
+super.configureShell(shell);
+shell.setText("Bug Report");
+shell.setBounds(500, 300, 300, 300);
+getMenuBarManager().updateAll(true);
+}
+public static void main(String[] args) {
+BugReport window = new BugReport();
+window.setBlockOnOpen(true);
+window.open();
+}
+}

@@ -1,0 +1,5 @@
+Bug 124250 Preview attached file in pdf, the left border color is incorrect.
+Description: Preview attached file in pdf, the left border color is incorrect.
+Steps to reproduce: 1.Preview attached file in pdf.
+Expected result: In testStyle, the left border is set as double, auto,auto.
+So, the color should be black Actual result: The left border show fuchsia color

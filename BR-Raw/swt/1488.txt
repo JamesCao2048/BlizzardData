@@ -1,0 +1,35 @@
+GC.setAlpha() / GC.getAlpha() does not work properly on Linux
++++ This bug was initially created as a clone of  Bug #193067  +++
+GC.setAlpha behaves differently to the other platforms (Windows and Mac).
+The following code snippet has a different behavior on Linux:
+GC gc = ...;
+gc.setAlpha(100);
+gc.setAdvanced(false);
+gc.getAlpha() will return the following values on the following platforms:
+Windows 255
+OS X    255
+Linux   100 (WHOOPS!)
+This is beacuse GC.setAdvanced(false) only ever resets the data.alpha value iff data.style & SWT.MIRRORED != 0.
+The simplest solution is to add 'data.alpha = 0xff' to GC.setAdvanced:
+public void setAdvanced(boolean advanced) {
+if (handle) ...
+if (data.style & SWT.MIRRORED !=0) ...
+if advanced && data.cairo !0 =) return;
+if (advanced) {
+try {
+initCairo();
+} catch (SWTException e) {}
+} else {
+if (!data.disposeCairo) return;
+int /*long*/ cairo = data.cairo;
+if (cairo != 0) Cairo.cairo_destroy(cairo);
+data.cairo = 0;
+>>>     data.alpha = 0xff;
+<<<
+data.interpolation = SWT.DEFAULT;
+data.backgroundPattern = data.foregroundPatter = null;
+data.state = 0;
+setClipping(0);
+}
+}
+Note, this fix isn't tested yet, but if someone has can do this, they can use the testcase in  Bug 193067  ( https://bugs.eclipse.org/bugs/attachment.cgi?id=107410 ) to verify the fix; and as noted in the testcase, don't forget to set the conditional breakpoint.

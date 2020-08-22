@@ -1,0 +1,3 @@
+Bug 124742 Disable/change fixed base value for string and date data
+The Use fixed base value for interval option in the Edit Group dialog should be disabled for string and date data because it has no effect on these types of values.
+For date data, for example, if I specify a grouping interval of 1 week, and I specify a base value of 01/01/2006 (a Sunday), the dates are still grouped by weeks that start on Monday.

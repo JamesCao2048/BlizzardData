@@ -1,0 +1,43 @@
+[Table] No SWT.Resize when Scrollbars become visible
+See this Snippet:
+public class Main {
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+table.addListener(SWT.Resize, new Listener() {
+public void handleEvent(Event event) {
+System.out.println(event);
+}
+});
+Thread thread = new Thread() {
+public void run() {
+for (int a = 0; a
+< 100; a++) {
+try {
+sleep(100);
+} catch (InterruptedException e) {
+return;
+}
+display.syncExec(new Runnable() {
+public void run() {
+new TableItem(table, SWT.NONE).setText("FOO");
+}
+});
+}
+}
+};
+thread.setDaemon(true);
+thread.start();
+shell.setSize(640, 480);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+There is no SWT.Resize event fired, although the Scrollbar becomes visible.
+Ben

@@ -1,0 +1,9 @@
+declare @field allowed for non existent fields
+///// in this code
+@interface anInterface{}
+aspect B {
+declare @field : int B.noSuchField : @anInterface; // should be an error
+}
+//////////////////
+I don't get an error, even though B.noSuchField doesn't exist.
+If I try declare @field on NoSuchCLass.noSuchField I do get an error though.

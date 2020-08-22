@@ -1,0 +1,19 @@
+DBCS4.1: Cannot input Japanese characters in Mac OS X using default IME.
+Build Identifier: I20110412-2200
+OS: Mac OS X
+Java environment:1.6.0_24-b07-334
+Locale:ja_JP.UTF-8
+When you enter japanese as hiragana you press space key to turn it into kanjis.
+After that
+you can press enter and start typing more hiraganas.
+But in case of eclipse 4.1 if you press enter
+and start typing new characters, the previously typed characters disappear, never to be seen
+again.
+Reproducible: Always
+Steps to Reproduce:
+1.Click file->New->Java Project
+2.Under project name try typing some Japanese characters using default MAC IME.
+3.Convert those characters to Kanji using space key and press enter.
+Try typing more
+characters, the previously typed characters will all disappear and the new characters
+appear at the beginning of the line.

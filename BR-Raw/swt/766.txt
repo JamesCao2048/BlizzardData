@@ -1,0 +1,15 @@
+[Browser] No Invalid Certificate dialog prompt when sec_error_ca_cert_invalid
+User-Agent:       Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)
+Build Identifier: Eclipse 3.5.1
+If the site certificate is sec_error_ca_cert_invalid, the invalid certificate dialog box does not display
+Reproducible: Always
+Steps to Reproduce:
+1.Lauch SWT browser with xulrunner 1.9.x
+2.Navigate to url  https://jazzop05.rtp.raleigh.ibm.com:9943/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/11108
+3.sec_error_ca_cert_invalid dialog box prompt.
+Expect result:
+Invalid Certificate Dialog box
+Adding
+textLabel.indexOf ("sec_error_ca_cert_invalid") !=
+-1 ||
+to PromptService2.java Alert method could trigger the prompt

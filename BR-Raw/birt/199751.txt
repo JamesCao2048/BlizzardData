@@ -1,0 +1,13 @@
+Bug 199751 getProperty(...) returns null
+I created report with user property called "version".
+Later i need to access that property using BIRT Runtime.
+I access it using getProperty() method: Report:
+<list-property name="userProperties">
+<structure>
+<property name="name">version</property>
+<property name="type">string</property>
+<property name="isVisible">true</property>
+</structure>
+</list-property>
+<property name="version">1.0</property> Accesing using BIRT Runtime: ReportRunnable reportDesign = engine.openReportDesign("Report.rptdesign"); String version = reportDesign.getProperty("version"); When there's a library linked to Report.rptdesign, version is null.
+When i remove the library from report design, getProperty() returns correct value.

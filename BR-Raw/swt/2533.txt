@@ -1,0 +1,42 @@
+NPE in Tree.callPaintEventHandler
+While doing an inspect in the debugger I got the following exception.
+Note that the inspect popup contains a VariablesView (and therefore a VIRTUAL Tree)
+eclipse.buildId=I20060214-0800
+java.version=1.4.2_09
+java.vendor=Apple Computer, Inc.
+BootLoader constants: OS=macosx, ARCH=ppc, WS=carbon, NL=en_US
+Framework arguments:
+-keyring /Users/kevinbarnes/.eclipse_keyring
+-showlocation
+Command-line arguments:
+-os macosx
+-ws carbon
+-arch ppc
+-keyring /Users/kevinbarnes/.eclipse_keyring
+-consoleLog
+-showlocation
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Tree.callPaintEventHandler(Tree.java:318)
+at org.eclipse.swt.widgets.Widget.kEventControlDraw(Widget.java:971)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:349)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+at org.eclipse.swt.internal.carbon.OS.ReceiveNextEvent(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2861)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1899)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1863)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:417)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:106)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:99)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:374)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:169)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:338)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:282)
+at org.eclipse.core.launcher.Main.run(Main.java:977)
+at org.eclipse.core.launcher.Main.main(Main.java:952)

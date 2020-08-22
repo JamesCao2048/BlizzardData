@@ -1,0 +1,6 @@
+Bug 100413 Refactoring: renaming a package suppresses comments at the end of import lines
+Build Test case is:
+- create packages p1a and p2;
+- create class X in p2: package p2; import p1a.*; // comment public class X { }
+- launch a rename refactoring action on p1a, renaming it to p1b;
+- result is: package p2; import p1b.*; public class X { } The comment at the end of the line misses.

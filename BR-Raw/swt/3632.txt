@@ -1,0 +1,56 @@
+GPs on exit
+Start eclipse (platform only) with a new workspace
+1) open all perspectives
+2) open preference pages
+exit eclipse
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0x4CAB791A
+Function=_XmDSIGetChildPosition+0x1A2
+Library=./libXm.so.2
+Current Java thread:
+at org.eclipse.swt.internal.motif.OS.XtDestroyWidget(Native Method)
+
+- locked
+<0x48554350> (a java.lang.Class)
+at org.eclipse.swt.widgets.Widget.destroyWidget(Widget.java:296)
+at org.eclipse.swt.widgets.Widget.dispose(Widget.java:331)
+at org.eclipse.ui.internal.PartPane.dispose(PartPane.java:205)
+at
+org.eclipse.ui.internal.EditorPresentation.closeAllEditors(EditorPresentation.java:51)
+at org.eclipse.ui.internal.EditorManager.closeAll(EditorManager.java:81)
+at
+org.eclipse.ui.internal.WorkbenchPage.closeAllEditors(WorkbenchPage.java:760)
+at org.eclipse.ui.internal.WorkbenchPage.dispose(WorkbenchPage.java:1038)
+at
+org.eclipse.ui.internal.WorkbenchWindow.closeAllPages(WorkbenchWindow.java:513)
+at
+org.eclipse.ui.internal.WorkbenchWindow.hardClose(WorkbenchWindow.java:1127)
+at
+org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:384)
+at
+org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:367)
+at org.eclipse.ui.internal.WorkbenchWindow$2.run(WorkbenchWindow.java:479)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:477)
+at org.eclipse.jface.window.WindowManager.close(WindowManager.java:108)
+at org.eclipse.ui.internal.Workbench$6.run(Workbench.java:339)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:889)
+at org.eclipse.core.runtime.Platform.run(Platform.java:413)
+at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:336)
+at org.eclipse.ui.internal.Workbench.access$8(Workbench.java:292)
+at org.eclipse.ui.internal.Workbench$8.run(Workbench.java:455)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.ui.internal.Workbench.close(Workbench.java:453)
+at org.eclipse.ui.internal.Workbench.close(Workbench.java:445)
+at org.eclipse.ui.internal.Workbench.close(Workbench.java:439)
+at org.eclipse.ui.internal.QuitAction.run(QuitAction.java:37)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:842)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:456)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent(ActionContributionItem.java:403)
+at
+org.eclipse.jface.action.ActionContributionItem.access$0(ActionContributionItem.java:397)
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent(ActionContribu

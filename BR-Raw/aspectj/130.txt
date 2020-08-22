@@ -1,0 +1,12 @@
+[migration] Unexpected problem loading an aspect built with 1.5.4
+We always support processing of old aspects.  It doesn't matter what level of AspectJ was used to build an aspect, as long as you use that version or a later version of the weaver, we can unpack it and don't require it to be rebuilt from source.  However, I've just encountered a .class apparently built with 1.5.4 that 1.6.1 cannot load.  It crashes deserializing a PointcutDeclaration.
+In the data stream we have just read the numbers 1 and 3 indicating 'kinded pointcut' and then 'method-execution' and the next digit is a 0 when it should be 1-9.  We crash with a:
+org.aspectj.weaver.BCException: weird kind 0
+when batch building BuildConfig[null] #Files=43
+at org.aspectj.weaver.MemberKind.read(MemberKind.java:35)
+at org.aspectj.weaver.patterns.SignaturePattern.read(SignaturePattern.java:682)
+The memberkind is a typesafeenum and so can never be other than 1-9.  It is the first part of a signaturepattern so hard to see how it got written out 'wrong' right now.
+I've been told 1.5.4 can load this, so about to try that. Wow....1.5.4 did load it back in, how the hell.
+I suspect we aren't consuming enough in 1.6.1 which then leaves us some extra that we interpret as a rogue pointcut.
+Ok, in a comparison we consume one extra byte from the stream when reading it with 1.6.1 that we do not consume with 1.6.0 - at position 260.
+As I got closer to it, I knew what it would be - especially when I knew it was just one byte difference.  The version check for whether the byte for 'annotation pattern relates to a parameter match' was wrong (urgh).

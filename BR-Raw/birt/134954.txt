@@ -1,0 +1,2 @@
+Bug 134954 Library can't be removed
+Steps to reproduce: 1.New a report "a.rptdesign" 2.New a library which is not in the same fold with report, saying "../test/lib.rptlibrary" 3.Report includes the library 4.Remove the library Expected result: The library is removed Actual result: Open XMLSource, the included library structure is still there.

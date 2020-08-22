@@ -1,0 +1,7 @@
+Bug 176582 "Show Lines as Curves" does not work correctly for Area Chart [0001]
+Description: "Show Lines as Curves" does not work correctly for Area Chart.
+Build number: 2.2.0.v20070307-1128 Steps to reproduce: 1.New a Area Chart.
+2.In "Format Chart" tab, select Series->Value (Y) Series, tick and untick "Show Lines as Curves" checkbox.
+Expected result: Null value point e is treated the same when tick and untick "Show Lines as Curves" checkbox.
+Actual result: Null value point e is treated differently (see the screenshot).
+Error log: N/A

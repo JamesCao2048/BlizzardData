@@ -1,0 +1,60 @@
+controlMoved event fired by Control.setBounds() on Windows, but not on Photon (BBAWT)
+The following test case, when run on Windows, prints the notification that a
+controlMoved event was produced.
+But this does not happen when run on Photon.
+This is significant to us because in our AWT implementation, we need to create
+the moved event if it is not given to us by SWT, so we need consistent behavior.
+Right now, our code assumes that the event is produced by SWT (we prefer the
+behavior that Windows exhibits).
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class SWTImageTest {
+Display display;
+Shell shell;
+Image image;
+public void run() {
+display = new Display();
+shell = new Shell(display);
+shell.setSize(300, 300);
+shell.open();
+int depth = 24;
+image = new Image(display, 200, 200);
+ImageData myData = image.getImageData();
+System.out.println("Depth = " + myData.depth);
+GC gc = new GC(image);
+Color[] colors = new Color[8];
+colors[0] = new Color(display, 255, 0, 0);
+colors[1] = new Color(display, 0, 255, 0);
+colors[2] = new Color(display, 0, 0, 255);
+colors[3] = new Color(display, 255, 255, 0);
+colors[4] = new Color(display, 255, 0, 255);
+colors[5] = new Color(display, 0, 255, 255);
+colors[6] = new Color(display, 255, 255, 255);
+colors[7] = new Color(display, 0, 0, 0);
+GC shellGC = new GC(shell);
+for (int j = 0; j
+< 8; j++) {
+gc.setBackground(colors[j]);
+gc.fillArc(0, 0, 200, 200, 0, 360);
+ImageData retrievedData = image.getImageData();
+int mainPixel = retrievedData.getPixel(100, 100);
+int red = mainPixel & 0xff;
+int blue = (mainPixel & 0xff0000) >> 16;
+int green = (mainPixel & 0xff00) >> 8;
+Color finalColor = new Color(display, red, green, blue);
+System.out.println("red = " + finalColor.getRed() + "  green = "
++ finalColor.getGreen() + "  blue = "
++ finalColor.getBlue());
+//shellGC.drawImage(image, 0, 0);  //this is the critical line
+}
+while (!shell.isDisposed()) {
+display.readAndDispatch();
+display.sleep();
+}
+display.dispose();
+}
+public static void main(String[] args) {
+new SWTImageTest().run();
+}
+}

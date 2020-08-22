@@ -1,0 +1,13 @@
+[LayoutExample] Toolbar replacing another widget causes cheese
+Version: 3.1.0
+Build id: I20050920-0010
+- Download SWT examples.
+- Run LayoutExample as an SWT application.
+- On the 'control' column, click on one of the of the controls, a drop down
+list should appear.
+Choose 'ToolBar' from the list and press 'enter'.
+Note that the button that was there before is still there and the toolbar
+items show on top.
+- Minimize the application and maximize.
+Note that only on that Toolbar area
+the background is reflected from the screen before.

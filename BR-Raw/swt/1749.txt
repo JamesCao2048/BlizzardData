@@ -1,0 +1,3 @@
+Fix Iconify/DeIconify events on Shell
+We currently send out SWT iconify and deiconify events everytime we make a shell visible.
+We should only send these out when a shell is actually iconified/deiconified.

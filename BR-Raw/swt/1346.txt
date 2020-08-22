@@ -1,0 +1,111 @@
+Setting clipping causes printing to be flipped
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageLoader;
+import org.eclipse.swt.graphics.TextLayout;
+import org.eclipse.swt.graphics.TextStyle;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.printing.PrintDialog;
+import org.eclipse.swt.printing.Printer;
+import org.eclipse.swt.printing.PrinterData;
+import org.eclipse.swt.widgets.*;
+public class PR190793 {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+
+Control control = shell;
+//	shell.setLayout(new FillLayout());
+//	Button control = new Button(shell, SWT.TOGGLE | SWT.FLAT);
+//	System.out.println(control.view.isFlipped());
+//	Table table = new Table(shell, SWT.BORDER);
+//	System.out.println(table.view.isFlipped());
+
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+PrintDialog dialog = new PrintDialog(shell);
+final PrinterData data = dialog.open();
+if (data == null) return;
+new Thread() {
+public void run() {
+
+Printer printer = new Printer(data);
+printer.startJob("");
+GC gc = new GC(printer);
+System.out.println(gc.getClipping());
+
+
+for (int i = 0; i
+< 2; i++) {
+printer.startPage();
+
+
+//COMMENT TO SEE IT WORKING
+gc.setClipping(0, 0, 500, 500);
+
+
+String str = "HelloWorldnLine2";
+TextStyle style = new TextStyle(null, null, printer.getSystemColor(SWT.COLOR_RED));
+
+gc.drawText(str, 0, 0);
+TextLayout layout = new TextLayout(printer);
+layout.setText(str);
+layout.setStyle(style, 2, 4);
+layout.draw(gc, 100, 0);
+layout.dispose();
+
+Image img = new Image(printer, "worker.png");
+gc.drawImage(img, 160, 0);
+img.dispose();
+
+
+gc.drawLine(0, 0, 100, 0);
+
+printer.endPage();
+
+}
+gc.dispose();
+printer.endJob();
+printer.dispose();
+System.out.println("done");
+}
+}.run();
+}
+});
+
+control.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+GC gc = event.gc;
+//gc.setAdvanced(true);
+
+String str = "HelloWorldnLine2";
+TextStyle style = new TextStyle(null, null, display.getSystemColor(SWT.COLOR_RED));
+
+Image img = new Image(display, "worker.png");
+
+{
+gc.drawLine(0,0, 30, 30);
+gc.drawText(str, 0, 0, true);
+TextLayout layout = new TextLayout(display);
+layout.setText(str);
+layout.setStyle(style, 2, 4);
+layout.draw(gc, 100, 0);
+layout.dispose();
+gc.drawImage(img, 160, 0);
+}
+
+{
+GC g = new GC(shell);
+g.drawLine(0, 50, 30, 80);
+g.drawText(str, 0, 50, true);
+
+TextLayout layout = new TextLayout(display);
+layout.setText(str);
+layout.setStyle(style, 2, 4);
+layout.draw(g, 100, 50);
+layout.dispose();
+
+g.drawImage(img, 160, 50);
+
+g.dispos

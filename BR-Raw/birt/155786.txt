@@ -1,0 +1,5 @@
+Bug 155786 [Deploy] Total page number is wrong when render a multipage report design
+When render a multipage report on BIRT deployed on web servers, total page number is not correct.
+It show only 1 page in all, which actually should be 123 pages.
+When I refresh the web pages manually, the total page number became 50, but still not the correct count.
+And refreshing again, it becomes 123, the correct one.

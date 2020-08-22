@@ -1,0 +1,10 @@
+All Fonts appear the same
+When using fonts in the GraphicsExample application, there does not seem to be any difference in appearance among different fonts names.
+Steps for reproducing:
+- Check out org.eclipse.swt.examples from CVS
+- Put the attached file in your workspace under
+org.eclipse.swt.examples.graphics
+- Run the graphics example
+- In the tree, expand "Font" and select "Custom Font"
+- Select different fonts in the drop-down and pay attention to their appearance.
+- Problem: they all look the same

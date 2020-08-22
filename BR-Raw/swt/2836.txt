@@ -1,0 +1,26 @@
+Custom Table font is not applied to first column header
+If a Table has a visible header, a custom font, and multiple columns, then the
+first column's header uses the default system font rather than the custom font.
+
+I've reproduced this both in my own application and in a simple test case I
+created (which I can attach if it would be helpful).
+
+
+Steps to reproduce:
+1. Create a custom Font.
+
+2. Create a Table.
+
+3. Make the Table's header visible and set its font to the custom font.
+
+4. Add multiple columns to the Table.
+
+
+Actual results: The first column in the header uses the default system font,
+and all the others use the custom font.
+
+Expected results: All columns in the header use the custom font.
+
+
+I'm using SWT/GTK 3.1M7. I think this is platform-specific, since I don't
+remember this bug occurring in Windows; but I'll have to check to make sure.

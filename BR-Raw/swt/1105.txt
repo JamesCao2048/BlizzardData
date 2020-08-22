@@ -1,0 +1,15 @@
+[SWT_AWT] Browser.print(GC) flickers
+Created  attachment 127887   [details]
+Browser flickering in action
+Build ID: SWT-N20090305-2000
+Steps To Reproduce:
+1.Embed the browser in a Canvas.
+2.Launch the application with sun.awt.noerasebackground set to true.
+3.Print the control now and then: it flickers.
+More information:
+It seems that Control.printWidget(in, int, GC), line 2067 causes the flickering:
+SetWindowPos (hwnd, hwndInsertAfter, rect1.left, ...
+If I replace it with this line, the flickering goes away:
+setRedraw(false);
+SetWindowPos (hwnd, hwndInsertAfter, rect1.left, ...
+setRedraw(true);

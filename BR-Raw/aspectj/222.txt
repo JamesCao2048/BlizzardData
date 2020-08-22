@@ -1,0 +1,28 @@
+poincut references in percflow instantiation model aspects can not be resolved
+Take these two aspects and this litte class:
+// source1
+package test1;
+import test.Test;
+public aspect PointcutProvider {
+public pointcut test(): execution(* Test.*(..));
+}
+// source2
+package test;
+import test1.PointcutProvider;
+public aspect PointcutConsumer percflow(flow()) {
+// compiler issues the following line with
+// can not find pointcut test on test.PointcutConsumer
+pointcut mytest(): PointcutProvider.test();
+// this also does not work with the same error message
+pointcut mytest(): test1.PointcutProvider.test();
+
+pointcut flow(): mytest();
+}
+// source3
+package test;
+public class Test {
+public void foo() {
+
+}
+}
+Changing the consumer aspect to singleton instantiation model works.

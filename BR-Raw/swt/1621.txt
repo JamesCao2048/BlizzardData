@@ -1,0 +1,11 @@
+[CCombo] dropdown does not move when window is dragged
+Created  attachment 93151   [details]
+screenshot: ccombo after window drag
+Build ID: I20080207-1530
+Steps To Reproduce:
+1.Open ControlExample with Carbon
+2.Click the CCombo drop-down arrow
+3.Click/drag and move the ControlExample window
+Notice the dropdown menu stays in a constant position, and does not move along with the window.
+It also does not disappear when you change tabs in the ControlExample.
+Screenshots attached.

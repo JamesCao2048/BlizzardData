@@ -1,0 +1,2 @@
+Bug 120061 data type boolean in dbms can not show in data set
+i use postgresql 8.1 and jdbc driver in create data set from table with boolean field it have error data set try to make it a integer and show can not convert 't', 'f' to integer

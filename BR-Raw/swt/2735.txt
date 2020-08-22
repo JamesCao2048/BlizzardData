@@ -1,0 +1,9 @@
+mouse wheel scrolling in editor moves scrollbar thumb but not content
+N20050726-0010
+When using the mouse wheel inside an editor in eclipse, the scrollbar's thumb is
+moved, but not the StyledText content.
+The following works as expected:
+- Scrolling in other views (outline...)
+- Scrolling the editor by moving the scrollbar thumb directly
+- Scrolling the editor by using the mouse wheel on the scrollbar
+- Scrolling the editor using keys (PgDown, Ctrl+Down etc)

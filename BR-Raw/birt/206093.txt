@@ -1,0 +1,3 @@
+Bug 206093 bar chart: title of y axis is not aligned according to the y axe.
+Build ID: v20070924-0630 Steps To Reproduce: 1.Create a bar chart 2.For y axis enter a Title and set the alignment to center 3.See the chart, the y axis title is not aligned according to the y axe; it is center aligned with the height of the chart.
+More information: see attached chart image example: the first image at the top is how Birt aligned the y axis label and the second image at the bottom is the proposition of aligment according to the y axe

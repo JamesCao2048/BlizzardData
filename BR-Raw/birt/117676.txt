@@ -1,0 +1,5 @@
+Bug 117676 Error message pops up when I want to transfer a label in a table cell to a template item which is defined in a library.
+Description: Error message pops up when I want to transfer a label in a table cell to a template item which is defined in a library.
+Steps to reproduce: 1.Drag a table defined in a library into a report design.
+2.Select a label in the table cell and transfer it to a template item.
+3.Error message pops up "The TemplateReportItem" is not allowed directly or indirectly inside the cell's slot(content)." 4.But if I transfer an element in a table cell which is created in a report design to a template item, it is allowed.

@@ -1,0 +1,66 @@
+[Browser] Eclipse causes JVM crash in libxul when editing Java
+Created  attachment 104545   [details]
+JVM crash log, hs_err_pid15103.log.
+Build ID: M20080221-1800
+Steps To Reproduce:
+1.Run Eclipse from terminal/command line
+2.In the package explorer view, navigate to the source file I want to edit.
+The project is a Java project and it is already open when Eclipse starts.
+Double-click to open the Java file for editing.
+3.Click on the name of the class (e.g.
+to prepare to press F4 or use context menu).
+At this point, Eclipse crashes predictably.
+I was having some trouble with Eclipse/JVM crashing in libxul before, but it was not easily reproducible.
+I made a new install today to see if that would sort things out, and now it is reproducible every time.
+I will not change anything regarding Eclipse until people are satisfied there is enough information in this bug.
+The JVM will crash at the same point each time, but the exit data as shown in the crash dialog is variable.
+I don't know what this means.
+More information:
+Machine:
+RHEL 5
+Linux panther 2.6.18-92.el5 #1 SMP Tue Apr 29 13:16:15 EDT 2008 x86_64 GNU/Linux
+Java:
+java version "1.6.0_06"
+Java(TM) SE Runtime Environment (build 1.6.0_06-b02)
+Java HotSpot(TM) Server VM (build 10.0-b22, mixed mode)
+Contents of displayed error dialog:
+JVM terminated.
+Exit code=1
+/usr/bin/java
+-Xms40m
+-Xmx256m
+-jar /ua/barnard/opt/eclipse-3.3.2-linux-gtk/plugins/org.eclipse.equinox.launcher_1.0.1.R33x_v20080118.jar
+-os linux
+-ws gtk
+-arch x86
+-showsplash
+-launcher /ua/barnard/opt/eclipse-3.3.2-linux-gtk/eclipse
+-name Eclipse
+--launcher.library /ua/barnard/opt/eclipse-3.3.2-linux-gtk/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_1.0.3.R33x_v20080118/eclipse_1023.so
+-startup /ua/barnard/opt/eclipse-3.3.2-linux-gtk/plugins/org.eclipse.equinox.launcher_1.0.1.R33x_v20080118.jar
+-exitdata f4000e
+-vm /usr/bin/java
+-vmargs
+-Xms40m
+-Xmx256m
+-jar /ua/barnard/opt/eclipse-3.3.2-linux-gtk/plugins/org.eclipse.equinox.launcher_1.0.1.R33x_v20080118.jar
+Crash message printed on terminal:
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x02c9cfec, pid=15103, tid=4160150416
+#
+# Java VM: Java HotSpot(TM) Server VM (10.0-b22 mixed mode linux-x86)
+# Problematic frame:
+# C  [libxul.so+0xc9cfec]
+#
+# An error report file with more information is saved as:
+# /ua/barnard/hs_err_pid15103.log
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+I will attach hs_err_pid15103.log.
+I am also happy to provide any other information within my abilities, which is why I'm not going to touch anything regarding Eclipse until there is enough information recorded.

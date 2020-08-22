@@ -1,0 +1,7 @@
+Bug 195961 Toggle Visibility does not work for Marker Line/Range and Chart Area [13]
+Description: Toggle Visibility does not work for Marker Line/Range and Chart Area.
+Build number: 2.2.0.v20070710-1223 Steps to reproduce: 1.New a Chart, in "Format Chart" tab, add interactivity for Chart Area or Marker Line/Range, Event: Mouse Click, Action: Toggle Visibility.
+2.Preview, click the Chart Area or Marker Line/Range.
+Expected result: Interactivity works.
+Actual result: It does not work.
+Error log: N/A

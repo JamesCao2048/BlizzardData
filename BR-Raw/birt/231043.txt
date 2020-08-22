@@ -1,0 +1,2 @@
+Bug 231043 Warning dialog pops up twice for invalid JDBC URL
+Description: Warning dialog pops up twice for invalid JDBC URL Build number: 2.3.0.v20080508-1254 Steps to reproduce: 1, New a sampleDB datasource 2, Modify the JDBC URL to be invalid 3, New a dataset based on the datasource 4, Click next button Expected result: The warning dialog pops up once should be ok Actual result: The same warning pops up twice and then go on the next page.

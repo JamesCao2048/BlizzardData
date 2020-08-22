@@ -1,0 +1,2 @@
+Bug 287656 Focus issue after delete hyperlink in chart interactivity[13]
+Description: Focus lost from hyperlink list after delete hyperlink in chart interactivity Build number:2.5.1.v20090826 Steps to reproduce: 1.Insert a chart, add several hyperlinks in interactivity mouseclick action 2.Select one hyperlink in Hyperlinks list, press delete Expected result: Focus still in hyperlinks list and I can press delete to remove next Actual result: lost focus and I have to select next one and then press delete Error log:n/a

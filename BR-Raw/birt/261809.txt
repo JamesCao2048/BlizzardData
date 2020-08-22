@@ -1,0 +1,5 @@
+Bug 261809 Last word in Label and Text items with long Content is wrapped in PPT
+If a label, text or dynamic text item contains long content, such as 'aaa bbb ccc ddd eee fff ggg hhh iii jjj kkk lll', then the last word 'lll' will be wrapped to the next line in PPT output, even if the label item is long enough to contain the text.
+If the last word is removed, so that the new last word is 'kkk', then 'kkk' will be wrapped to the next line, and so on...
+The last word of the content should not be wrapped if the label or text item is long enough to display the complete text without wrapping.
+This problem is also seen in 2_5_0-N20090113.The attached report demonstrates the problem when converted to PPT via BRD Run | View Report | As PPT If this is a defect, could we please also fix it in BIRT 2.3.2 release?

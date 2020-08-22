@@ -1,0 +1,11 @@
+[SWT_AWT] NPE when disposing the embedded Shell
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3
+Build Identifier: N20090923-2100-cocoa-macosx-x86_64
+Disposing the embedded Shell works fine on other platforms.
+With the new Mac OSX Cocoa port, a null pointer exception is thrown when this Shell is disposed.
+In the context of our application, this effectively makes it crash.
+Reproducible: Always
+Steps to Reproduce:
+1.Embed an SWT control in a Swing/AWT application.
+2.Dispose the embedded Shell based on a user action.
+=> get the NPE.

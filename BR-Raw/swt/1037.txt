@@ -1,0 +1,31 @@
+Toolbar: tooltip shows at 0,0 when hot item moved by key with mouse over item
+testcase:
+public static void main (String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+ToolBar toolBar = new ToolBar(shell, SWT.FLAT);
+ToolItem toolItem;
+toolItem = new ToolItem(toolBar, SWT.None);
+toolItem.setText("Item 2 A");
+toolItem.setToolTipText("Tooltip 1");
+toolItem = new ToolItem(toolBar, SWT.None);
+toolItem.setText("Item 2 B");
+toolItem.setToolTipText("Tooltip 2");
+toolItem = new ToolItem(toolBar, SWT.None);
+toolItem.setText("Item 2 C");
+toolItem.setToolTipText("Tooltip 3");
+shell.setSize(400, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+1.Run the testcase
+2.stop the mouse over a toolitem (which becomes hot)
+3.stop the keyboard (tab or arrows) to move the hot item around
+--> the toolbar fights you back and change the hot to item under the mouse
+--> the tooltip tops at 0,0 of the screen
+Happens on Eclipse.

@@ -1,0 +1,7 @@
+Reduce matching complexity of the SWT flat toolbar RC style
+The documentation for GtkRC indicates that "*" characters in GTK+ RC files slow down widget creation.
+Currently we match against:
+"*swt-toolbar-flat*"
+This can be reduced to:
+"*.swt-toolbar-flat"
+and still work, but with reduced complexity.

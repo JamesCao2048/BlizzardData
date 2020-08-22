@@ -1,0 +1,14 @@
+Scrollables incorrectly redrawn within non rectangular shaped shell.
+User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3
+Build Identifier: 20090920-1017
+I have an application with an irregular shaped window created by setting a Region on the shell.
+I found that an embedded CheckboxTreeViewer does not draw properly when scrolled.
+It seems to incorrectly inherit the region of the shell which then gets scrolled around with the contents of the scrolled tree, preventing areas outside the region from being redrawn properly.
+I have modified Snippet285, adding a scrollable List which demonstrates this problem.
+I am running 64 bit cocoa, eclipse build id: 20090920-1017. I have also tried an earlier version of 32 bit cocoa which does the same.
+It draws fine on carbon.
+Is this a bug or am I missing something?
+Thanks.
+Reproducible: Always
+Steps to Reproduce:
+1.Run code snippet which I will attach.

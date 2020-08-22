@@ -1,0 +1,12 @@
+StyledText: text selection with key 'arrow down' does not include last line
+How to reproduce:
+Start Eclipse.
+Open a java file.
+Set the cursor somewhere in the file (not at the end).
+While keeping 'Shift' down, press the 'arrow down' repeatedly until the cursor
+goes to the bottom of the file.
+>> the last line is not selected.
+The selection stops at the line just before.
+Other IDE's would move the cursor to the last character of the last line, and
+the selection would include everything to the end of the file.
+('Select All' and Mouse selection work ok)

@@ -1,0 +1,32 @@
+ClassFormatError during LTW using annotation approach
+The following exception is obtained when using the annotation approach and load-time weaving:
+[AppClassLoader@1f12c4e] info AspectJ Weaver Version 1.5.4 built on Thursday Dec 20, 2007 at 13:44:10 GMT
+[AppClassLoader@1f12c4e] info register classloader sun.misc.Launcher$AppClassLoader@1f12c4e
+[AppClassLoader@1f12c4e] info using configuration /H:/temp/aspectj_bug/scratch/classes/scratch/aop/annotationbug/aspect/aop-bug.xml
+[AppClassLoader@1f12c4e] info register aspect scratch.aop.annotationbug.aspect.BugAspect
+doSomething()
+Exception in thread "main" java.lang.ClassFormatError: Code attribute in native or abstract methods in class file scratch/aop/annotationbug/extra/SubClass
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:620)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:124)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:260)
+at java.net.URLClassLoader.access$000(URLClassLoader.java:56)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:195)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:276)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:251)
+at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:319)
+at scratch.aop.annotationbug.extra.BugOther.getSubClass(BugOther.java:22)
+at scratch.aop.annotationbug.main.BugMain.somethingElse(BugMain.java:36)
+at scratch.aop.annotationbug.main.BugMain.doSomething(BugMain.java:30)
+at scratch.aop.annotationbug.main.BugMain.execute(BugMain.java:24)
+at scratch.aop.annotationbug.main.BugDriver.doExecute(BugDriver.java:27)
+at scratch.aop.annotationbug.main.BugDriver.main(BugDriver.java:21)
+The same advice logic does not result in a ClassFormatError when using the Aspect approach, it only appears using the annotation approach.
+Unfortunately we have not been able to track down exactly why the above Error occurs but have attached a test case that manifests it.
+To run simply use the runtime configuration on the BugDriver main():
+-Dorg.aspectj.weaver.loadtime.configuration="scratch/aop/annotationbug/aspect/aop-bug.xml"
+Along with the AspectJ Load-Time Weaver Agent.
+The above occurs with both AspectJ 1.5.4 and AspectJ 1.6.0. Interestingly when using the aspectj 1.6.0 weaver, the AppClassLoader log still indicates "1.5.4".

@@ -1,0 +1,72 @@
+Reflection API not detecting ITD method correctly in all circumstances
+As reported on the aspectj mailing list:
+Hi,
+I'm using the 'getDeclaredITDMethods' method (available in the
+reflection api) to find all ITD methods in the Billing aspect (from
+the aspectj examples).
+The Billing aspect contains 4 ITD methods (Connection.callRate,
+LongDistance.callRate, Local.callRate and Customer.addCharge), but I
+got only 3 of them using this method.
+The 'Connection.callRate' is not returned by the
+'getDeclaredITDMethods' method (maybe because it is abstract). In the
+implementation of method 'getDeclaredITDMethods' in
+'org.aspectj.internal.lang.reflect.AjTypeImpl' there is the following
+condition:
+if (!m.getName().contains("ajc$interMethod$")) continue;
+Looking the names in the debbuger, I could not find a:
+public static long
+telecom.Billing.ajc$interMethod$telecom_Billing$telecom_Connection$callRate(telecom.Connection)
+But only:
+public static long
+telecom.Billing.ajc$interMethodDispatch1$telecom_Billing$telecom_Connection$callRate
+(telecom.Connection)
+if a take a concrete method, I get two objects, named:
+public static long
+telecom.Billing.ajc$interMethod$telecom_Billing$telecom_LongDistance$callRate(telecom.LongDistance)
+public static long
+telecom.Billing.ajc$interMethodDispatch1$telecom_Billing$telecom_LongDistance$callRate
+(telecom.LongDistance)
+One of them satisfies the predicate !m.getName().contains("ajc$interMethod$").
+Is this behavior correct?
+ps.: I'm using the example bellow.
+----------------------------------------------------------------
+public aspect Billing {
+...
+public abstract long Connection.callRate();
+public long LongDistance.callRate() { return LONG_DISTANCE_RATE; }
+public long Local.callRate() { return LOCAL_RATE; }
+public void Customer.addCharge(long charge){
+totalCharge += charge;
+}
+...
+}
+---------------------------------------------------------------------------------------
+-
+import org.aspectj.lang.reflect.AjType;
+import org.aspectj.lang.reflect.AjTypeSystem;
+import org.aspectj.lang.reflect.InterTypeMethodDeclaration;
+import telecom.Billing;
+public class Test {
+public static void main(String args[]) throws ClassNotFoundException{
+AjType c = AjTypeSystem.getAjType(Billing.class);
+InterTypeMethodDeclaration[] itdmethods = c.getDeclaredITDMethods();
+for (int i = 0; i < itdmethods.length; i++) {
+System.out.println("ITD Method:" +
+itdmethods[i].getTargetType().getName()+"."+itdmethods[i].getName());
+}
+}
+}
+----------------------------------------------------------------
+Output:
+ITD Method:telecom.LongDistance.callRate
+ITD Method:telecom.Local.callRate
+ITD Method:telecom.Customer.addCharge
+Expected Output:
+ITD Method:telecom.Connection.callRate
+ITD Method:telecom.LongDistance.callRate
+ITD Method:telecom.Local.callRate
+ITD Method:telecom.Customer.addCharge
+I'm using ajde 1.5.0.20051014142856.
+Regards,
+Eduardo Piveta
+http://www.inf.ufrgs.br/~epiveta

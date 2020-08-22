@@ -1,0 +1,7 @@
+Bug 205621 Parameter weirdness in crosstab creation
+Build ID: I20070621-1340 Steps To Reproduce: The parameters given are not used correctly in a crosstab.
+The table shows report corresponding to parameters; the crosstab seems to show old data.
+Usecase: * run report with states CA,NSW * run report with states CA,NSW,BC,NY Look if the data in the regular table matches the data in the crosstab.
+* Remove comment for one line in the beforeOpen script of the Sample DS and run the report * Remove comment for one line in the beforeOpen script of the Sample DS, comment the previous line and run the report Notice the differences.
+In the last two cases, the data is being refreshed...
+Reports are view using ReportViewer

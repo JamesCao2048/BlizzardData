@@ -1,0 +1,12 @@
+Mouse pointer not update
+Build 20020521
+There are several case on Photon where the mouse pointer is not update for the
+correct indicator ( resize indicator, dragging indicator, etc).
+One case always reproducible is:
+1) Mouse over the gripper of a CoolItem, the pointer is replace by a `move
+indicator`.
+Correct.
+2) Switch the editor, when the paint operations is taking place try to mouse
+over the Coolitem gripper, the cursor will not be update.
+3) Even when the paint is done and the pointer remain stop over gripper the
+pointer will not be update.

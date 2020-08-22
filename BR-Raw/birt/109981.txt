@@ -1,0 +1,7 @@
+Bug 109981 No table in db2 but return a error.
+details: Add a dataset by db2 datasource which has not table, and return a error dialog.
+steps to reproduce: 1.Add a db2 datasource which has not table in it.
+2.Add a dataset depend on db2 datasource.
+actual result: An error dialog pop-up said: "An error has occurred.
+See error log for more details." And then, the Available Items and Sql wirte area disappear.
+expected result: It can write in sql language and can not show the table in Available Items.

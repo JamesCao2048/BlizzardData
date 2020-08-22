@@ -1,0 +1,5 @@
+Bug 116829 Label height doesn't change with label font modification.
+Description: Label font size doesn't change right away it is modified.
+Steps to reproduce: 1.Add a label and edit its font size as "18 points".
+2.Label height is not changed right after setting in UI.
+3.Change label content, its height can be justified with the font size.

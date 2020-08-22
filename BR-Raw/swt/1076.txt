@@ -1,0 +1,6 @@
+CTabFolder.setBackground(Image) should be deleted
+It looks like CTabFolder.setBackground(Image) was being considered for API in the Eclipse 3.0 time frame (at present, it is still private).
+Since that time, Control.setBackgroundImage(Image) was added in Eclipse 3.2, so CTabFolder.setBackground(Image) and bgImage should probably just be deleted because they are obsolete.
+Currently, the code looks to see if bgImage is null (of course, it will always be null because nobody can set it).
+Should we use Control.getBackgroundImage() instead?
+Steve, do you have the history on CTabFolder.setBackground(Image), and why it never became API?

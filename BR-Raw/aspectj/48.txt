@@ -1,0 +1,8 @@
+Need to demote "warning ignoring duplicate definition" from warning to debug
+Build Identifier: 1.6.11
+This kind of 鈥減roblem鈥 can occur for complex class loader hierarchies, and since it is not really a problem, we should make it debug level message so as not to write log messages un-necessarily.
+Reproducible: Always
+Steps to Reproduce:
+1. Create an application that has some weaved class loaders hierarchy - recommend some URLClassLoader derived ones
+2. Add the same(!) JAR with only an aop.xml file to more than one loader along the hierarchy
+3. Make the loader the default context thread loader and start running some code.

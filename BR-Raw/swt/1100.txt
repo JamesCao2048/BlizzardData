@@ -1,0 +1,4 @@
+Combo.setText does nothing in read-only mode
+I20090317-1745.
+Combo.setText does nothing in read-only mode, but the Javdoc specifies it sets the text and does not mention any special case when in read-only mode, hence it is considered a bug to ignore setText(...) when in read-only mode.
+If this is a WONTFIX then at least the Javadoc should be clarified.

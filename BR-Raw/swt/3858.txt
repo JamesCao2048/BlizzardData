@@ -1,0 +1,7 @@
+Eclipse no longer responds to 'Quit' AppleEvent
+M4
+(regression from M3)
+Eclipse no longer responds to 'Quit' AppleEvents, as a consequence you cannot
+shutdown Mac OS X if Eclipse is running.
+To try without halting MacOSX: in dock open context menu on Eclipse app and select
+'Quit'

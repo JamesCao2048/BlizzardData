@@ -1,0 +1,8 @@
+GTK Printing getClipping returns [0,0,1,1]
+getClipping() returns always [0,0,1,1] on GTK for a GC of a Printer
+Bug 81467  for OSX seems to be similar but on differen Platform.
+printer.startJob("bugzilla 81467");
+GC gc = new GC(printer);
+System.out.println(gc.getClipping());
+printer.endJob();
+printer.dispose();

@@ -1,0 +1,12 @@
+[SWT Mac OS X] path.addString does not appear to handle unicode properly
+Build Identifier: Version: 4.2.0 Build id: I20111209-2100
+In an attempt to render Japanese Kanji characters (which are essentially Chinese Han characters) using SWT's Path#addString, I discovered that none of them were rendering properly.
+As an example, the kanji for the number 5 instead renders as what appears to be "<".
+Note that this only applies to Path#addString and not to GC#drawString, which renders kanji characters properly.
+I will attach a screen shot and the code to reproduce it.
+Note that I have attempted to run the code I will attach to this bug on a different platform (Linux x86_64, Version: 3.7.0 Build id: I20110613-1736), and it works properly; that is, both lines show the kanji character, none show the "<".
+This is therefore almost certainly a platform-specific issue.
+Reproducible: Always
+Steps to Reproduce:
+1.Execute the code I will attach with the SWT library.
+2.Observe that the two lines output on the shell which appears do not output the same character; one of them is incorrectly what appears to be "<".

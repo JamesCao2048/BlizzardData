@@ -1,0 +1,21 @@
+Table.computeSize wrong when table has no columns
+computeSize is wrong when it's called before the table is visible.
+test case:
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+final Table table = new Table (shell, SWT.NONE);
+TableItem item = new TableItem (table, SWT.NONE);
+item.setText("plate");
+Point size = table.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+System.out.println(size);
+table.setSize(size);
+shell.open ();
+size = table.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+System.out.println(size);
+//		table.setSize(size);
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose();
+}

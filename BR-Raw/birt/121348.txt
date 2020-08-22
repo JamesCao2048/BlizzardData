@@ -1,0 +1,2 @@
+Bug 121348 When some labels write in Japanese and Chinese, the lables don't display int the pdf emitter
+Description: When some labels write in Japanese and Chinese, the lables don't display int the pdf emitter Steps to reproduce: 1.create a new report 2.drag some labels to the layout, and input the Japanese and Chinese charaters in the labels 3.save and preview in the PDF emitter Actual Results: the labels with the Japanese and Chinese characters don't show up Expected Results: the labels with the Japanese and Chinese characters show up correctly

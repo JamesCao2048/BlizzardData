@@ -1,0 +1,46 @@
+[Cocoa] problem creating image
+Build id: I20090113-0918
+This seems to have crept up on my last platform update.
+1.Take enclosed image.
+2.In new plugin project use it as icon somewhere in UI.
+For example, in a new Perspective.
+3.Launch self-hosting runtime.
+4.Image doesn't appear and get following error:
+java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:3810)
+at org.eclipse.swt.SWT.error(SWT.java:3744)
+at org.eclipse.swt.SWT.error(SWT.java:3715)
+at org.eclipse.swt.graphics.ImageData.<init>(ImageData.java:422)
+at org.eclipse.swt.graphics.ImageData.<init>(ImageData.java:284)
+at org.eclipse.swt.graphics.Image.initNative(Image.java:1067)
+at org.eclipse.swt.graphics.Image.<init>(Image.java:525)
+at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:162)
+at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:165)
+at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:88)
+at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:82)
+at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:88)
+at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:192)
+at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:1117)
+at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:942)
+at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:291)
+at org.eclipse.ui.actions.PerspectiveMenu.fill(PerspectiveMenu.java:165)
+at org.eclipse.jface.action.MenuManager.doItemFill(MenuManager.java:734)
+at org.eclipse.jface.action.MenuManager.update(MenuManager.java:815)
+at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:467)
+at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:462)
+at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:488)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:235)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1120)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1144)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1125)
+at org.eclipse.swt.widgets.Menu.menuWillOpen(Menu.java:654)
+at org.eclipse.swt.widgets.Display.windowDelegateProc(Display.java:3880)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(Display.java:3516)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:3665)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.nextEventMatchingMask(NSApplication.java:63)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2663)
+at org.e

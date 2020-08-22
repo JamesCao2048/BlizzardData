@@ -1,0 +1,8 @@
+[SWT_AWT] SWT_AWT.new_Shell(display, Canvas) crashes the application with "Invalid memory access"
+Build Identifier: SWT N20101016-2000
+When a window of a web browser is opening, we create a new Swing JFrame and add a Canvas which will contain the new web browser.
+Calling new_Shell(xx) crashes the application.
+This means that all window opening causes the issue, so this impacts web browsing, HTML editors relying on popup windows, etc.
+Reproducible: Always
+Steps to Reproduce:
+1.See attached test case

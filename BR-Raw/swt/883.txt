@@ -1,0 +1,5 @@
+[browser] xulrunner 1.9 has changed invalid certificate behaviour
+go to  https://verisign.com
+- in previous versions a dialog would be shown that said "invalid certificate, do you want to view it and proceed anyways?"
+- now it just displays an "invalid certificate" dialog with no opportunity to proceed
+- is there a new hook for handling this case before the invalid certificate dialog is shown?

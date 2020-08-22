@@ -1,0 +1,6 @@
+BIDI: The C/ C++ editor doesn't preserve the keyboard language after pressing sapce bar
+Tested using Win 2003 Arabic locale, build M8.
+1) Create a new C++ project
+2) Insert a new C++ class
+3) Change the keyboard language to Arabic and write an Arabic word, then a space
+The keyboard language switched back to English

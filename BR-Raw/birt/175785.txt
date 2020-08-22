@@ -1,0 +1,7 @@
+Bug 175785 Issue about visibility property pane in Property Editor.[00]
+Description: Issue about visibility property pane in Property Editor.
+Build number:2.2.0.v200702280630 Steps to reproduce: 1.Insert a Label item.
+2.Select Property Editor view->Visibility, tick on Hide Element->For specific outputs...
+Expected result: Display all supported output format for choose.
+Actual result: Cannot scroll down to see all output formats, only doc and html can be seen, see attached.
+Error log:N/A

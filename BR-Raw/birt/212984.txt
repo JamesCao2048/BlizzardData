@@ -1,0 +1,4 @@
+Bug 212984 Disable Dimension or Level drag into outline
+Description: The levels are not auto-outspread when drag the dimension from Data explorer to Outline Build number: 2.3.0.v20071214 Steps to reproduce: 1, New a cube with multiple levels in one dimension 2, New a crosstab 3, Drag the dimension from cube to crosstab's column area in Outline Expected result: The levels are auto-outspread.
+Actual result: The levels are not auto-outspread.
+Error log:

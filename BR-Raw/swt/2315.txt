@@ -1,0 +1,9 @@
+CLabel.shortenText(...) takes almost forever for long text
+I20060114-0800
+CLabel.shortenText(...) takes almost forever for long text
+To test:
+1.open the Java Editor
+2.add the following long line into it
+==> should get red squiggles
+3.select the line and move the caret left or right
+==> this causes the status line to be updated with a long text

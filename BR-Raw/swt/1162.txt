@@ -1,0 +1,48 @@
+IME broken on cocoa
+The current key implementation has the IME broken.
+Steps.
+1 switch to hiragana
+2 type a
+3 type arrow down
+4 hit enter
+java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:3841)
+at org.eclipse.swt.SWT.error(SWT.java:3775)
+at org.eclipse.swt.SWT.error(SWT.java:3746)
+at org.eclipse.swt.graphics.TextLayout.getStyle(TextLayout.java:1344)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:910)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:702)
+at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:202)
+at org.eclipse.swt.custom.StyledTextRenderer.calculateClientArea(StyledTextRenderer.java:220)
+at org.eclipse.swt.custom.StyledText.resetCache(StyledText.java:7095)
+at org.eclipse.swt.custom.StyledText.handleTextChanged(StyledText.java:5921)
+at org.eclipse.swt.custom.StyledText$6.textChanged(StyledText.java:5380)
+at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:67)
+at org.eclipse.swt.custom.DefaultContent.sendTextEvent(DefaultContent.java:795)
+at org.eclipse.swt.custom.DefaultContent.replaceTextRange(DefaultContent.java:788)
+at org.eclipse.swt.custom.StyledText.modifyContent(StyledText.java:6485)
+at org.eclipse.swt.custom.StyledText.sendKeyEvent(StyledText.java:7281)
+at org.eclipse.swt.custom.StyledText.doContent(StyledText.java:2427)
+at org.eclipse.swt.custom.StyledText.handleKey(StyledText.java:5672)
+at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:5697)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:5400)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1167)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1191)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1176)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1205)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1201)
+at org.eclipse.swt.widgets.Canvas.sendKeyEvent(Canvas.java:403)
+at org.eclipse.swt.widgets.Composite.keyDown(Composite.java:537)
+at org.eclipse.swt.widgets.Display.windowDelegateProc(Display.java:4155)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:205)
+at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:1636)
+at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:1679)
+at org.eclipse.swt.widgets.Display.windowDelegateProc(Display.java:4213)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:3864)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:3885)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:89)
+at org.eclipse.swt.widgets.Display.readAndDispa

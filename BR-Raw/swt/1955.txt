@@ -1,0 +1,12 @@
+public Image (Device device, String filename) fails on WinCe
+public Image (Device device, String filename)
+has a try catch like this
+try {
+device.checkGDIP();
+...
+} catch  (SWTException e) {
+}
+The problem is that in checkGDI we have a:
+if (OS.IsWinCE) SWT.error(SWT.ERROR_NOT_IMPLEMENTED);
+That throws a SWTError that is not catch in clause 'catch  (SWTException e)'
+SSQ, do you want me to replace 'catch  (SWTException e)' by 'catch  (SWTError e)' ?

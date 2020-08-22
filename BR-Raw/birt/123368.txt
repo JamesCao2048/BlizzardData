@@ -1,0 +1,5 @@
+Bug 123368 [SPM-Linux WS]Height of item area can't revert
+Details: Height of item area can't revert Setp: 1.Insert a label and input some words.
+2.Modify the label size to 10cm.
+3.Undo that or set it to 10point.
+Actual result: 10cm is bigger than 10point, when I undo it, words is revert to 10point, but the area of the label can't revert.

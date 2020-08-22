@@ -1,0 +1,30 @@
+Double clicking the left upper corner of the nested Decoration closes the parent Shell
+When I double click on the window's icon (the one that is in the upper left
+corner) of the Decorations window, the top level Shell window closes instead of
+that Decorations window.
+I have confirmed that behaviour on Windows XP, Windows 2000 and Windows 2003
+with version 3.024 of SWT.
+This does not happen when I use version 2.135.
+Here is the snippet, that reproduces the error:
+package net.infogenia.gcoll2.client.tests;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Decorations;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setLayout(new FillLayout());
+Decorations dec = new Decorations(shell, SWT.TITLE|SWT.CLOSE);
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}

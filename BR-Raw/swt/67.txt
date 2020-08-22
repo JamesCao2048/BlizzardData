@@ -1,0 +1,4 @@
+Browser no longer working on Solaris
+- 4.3RC1 test pass, happens with Solaris on SPARC and x86 architectures
+- Mozilla-based browsers still seem to work fine on other platforms
+- problem was likely introduced during merge of XULRunner 17 work

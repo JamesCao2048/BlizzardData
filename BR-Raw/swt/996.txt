@@ -1,0 +1,16 @@
+[OLE] [EditorMgmt] Strange behavior while opening default gif editor
+Build ID: Eclipse3.3M6
+Steps To Reproduce:
+1.Double click to any gif file, say abc.gif.
+I expect that default editor comes up.
+2.Indeed, IE7 starts.
+Close it.
+You see that text editor for abc.gif is opened.
+It has just on line: "abc.gif"
+3.Close this editor.
+Immediately new instance of IE7 comes up.
+4.Close it and you see a message: "abc.gif has been modified.
+Save changes?".
+Why user have to see and manipulate with this text editor?
+Why IE7 was launched twice?
+More information:

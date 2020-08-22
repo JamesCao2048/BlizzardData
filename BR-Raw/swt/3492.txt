@@ -1,0 +1,5 @@
+[EditorMgmt] Special chars in filenames and funny filename tabs behaviour
+It is not a big deal, but filename tabs seem to interpret names of the files.
+For example, if one of the opened files  happens to have name "D&W" it is not
+possible to access "Window" menu using Alt-W shortcut.
+Win2k, SP4, Sun JDK 1.4.2_03, Eclipse 200312110800

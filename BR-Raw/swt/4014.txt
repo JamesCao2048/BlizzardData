@@ -1,0 +1,20 @@
+ScrolledComposite with LayoutManager is VERY slow in iPAQ
+I've tried the examples for the ScrolledComposite from
+the javadoc on the iPAQ an it is very slow.
+After touching
+the slider it took 2 sec to move the slider to the new position
+and another 6 sec to scroll the content of the widget.
+I've tried the old examples (displaying 10 buttons) and the
+new one (two ScrolledComposite and one button to add buttons
+to these widgets).
+Then I modified the old examples (deleting the LayoutManager)
+and placed the buttons by myself (setLocation).
+This helps.
+Now I can move the slider while the content is repainted.
+Seems that the LayoutManager is too slow for the iPAQ.
+I'm using:
+iPAQ with pocketPC2002
+swt-win32-2040.dll
+j9
+You can find the examples in the old and the new javadoc of
+ScrolledComposite.

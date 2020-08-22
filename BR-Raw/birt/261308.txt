@@ -1,0 +1,4 @@
+Bug 261308 If reopen the Resource Explorer View and edit the path of resource folder, it will not refresh immediately
+Description: If reopen the Resource Explorer View and edit the path of resource folder, it will not refresh immediately Build number: 2.5.0.v20090116-0630 Steps to reproduce: 1, Close the Resource Explorer View 2, Go to preferences and edit the path of resource folder 3, Reopen the Resource Explorer View again 4, Go to preferences and change the path of resource folder Expected result: After step4, the Resource Explorer View should refresh immediately.
+Actual result: After step4, the Resource Explorer View didn't refresh immediately.
+Error log:

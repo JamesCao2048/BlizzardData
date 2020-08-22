@@ -1,0 +1,22 @@
+BUG for ajdt_1.3_for_eclipse_3.1.zip
+Hi !!
+I use ajdt_1.3_for_eclipse_3.1.zip with eclipse 3.1.1 and fick this error when the eclipse try to make the workbrench:
+java.lang.IllegalStateException
+at org.aspectj.weaver.TypeFactory.createParameterizedType(TypeFactory.java:42)
+at org.aspectj.weaver.bcel.BcelGenericSignatureToTypeXConverter.classTypeSignature2TypeX(BcelGenericSignatureToTypeXConverter.java:82)
+at org.aspectj.weaver.bcel.BcelGenericSignatureToTypeXConverter.classTypeSignature2TypeX(BcelGenericSignatureToTypeXConverter.java:42)
+at org.aspectj.weaver.bcel.BcelObjectType.unpackGenericSignature(BcelObjectType.java:657)
+at org.aspectj.weaver.bcel.BcelObjectType.getSuperclass(BcelObjectType.java:181)
+at org.aspectj.weaver.ReferenceType.getSuperclass(ReferenceType.java:514)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveParentsFor(BcelWeaver.java:1192)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1047)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompilerAdapter.java:300)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(AjCompilerAdapter.java:178)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org_aspectj_ajdt_internal_compiler_CompilerAdapter$2$f9cc9ca0(CompilerAdapter.aj:70)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:367)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:811)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:230)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:156)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
+IllegalStateException thrown: Expecting raw type

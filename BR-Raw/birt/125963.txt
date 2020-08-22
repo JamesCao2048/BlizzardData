@@ -1,0 +1,3 @@
+Bug 125963 reportContext.getConfigVariableValue() always returns null
+The getConfigVariableValue() method of reportContext always returns null.
+At least it does with the variables I tried, "BIRT_HOME" and "java.version", and "user.name".

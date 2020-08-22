@@ -1,0 +1,63 @@
+TextLayout implementation on linux platform doesn't provide suitable line offsets in specific scenarios
+Build ID: M20070212-1330
+Steps To Reproduce:
+1.Create a shell
+2.Define a text including both English characters and arabian characters
+3.Use TextLayout to draw the text on the shell
+4.Print the offset of each line
+5.Find that the offsets on linux platform are weird
+More information:
+Here is the code snippet:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.TextLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TestTextLayout {
+private static final String TEXT= "&#1610;&#1608;&#1605;.
+&#1610;&#1605;&#1576;&#1579; &#1575;&#1604;&#1602;&#1606;&#1575;&#1577; &#1605;&#1606; &#1582;&#1604;&#1575;&#1604;nabcn&#1610;&#1608;&#1579; &#1575;&#1604;&#1602;&#1606;&#1575;&#1577; &#1605;&#1606; &#1582;&#1604;&#1575;&#1604;";
+
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+final Font font = new Font(display, "Times New Roman", 10, SWT.NORMAL);
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent event) {
+GC gc = event.gc;
+TextLayout tl = new TextLayout(display);
+
+tl.setFont(font);
+tl.setText(TEXT);
+tl.setWidth(200);
+tl.draw(gc, 10, 10);
+
+int[] offsets = tl.getLineOffsets();
+for (int i = 0; i
+< offsets.length; i++) {
+System.out.println(" line" + i + "'s offset: " + offsets[i]);
+}
+}
+});
+shell.setBounds(10, 10, 200, 200);
+shell.open ();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+font.dispose();
+display.dispose();
+}
+}
+On windows platform, I got the following console output:
+line0's offset: 0
+line1's offset: 25
+line2's offset: 29
+line3's offset: 47
+while on linux platform, the output is :
+line0's offset: 23
+line1's offset: 25
+line2's offset: 46
+line3's offset: 47
+As a result, I cannot get every line's string correctly on linux platform while on windows platform, I could get each line's tring using TEXT.substring(0, 25), TEXT.substring(25, 46), TEXT.substring(46);

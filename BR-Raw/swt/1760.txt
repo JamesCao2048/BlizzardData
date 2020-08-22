@@ -1,0 +1,9 @@
+[Browser] shutting down XPCOM glue can lead to crash with sun 1.6 jre
+Created  attachment 88042   [details]
+dump
+- happens in the 3.3.2 stream and HEAD
+- observed on RHEL4 and RHEL5
+- does not crash on SLED10
+- run Snippet128
+- close the main shell
+- this will usually trigger a crash dump is attached but does not contain anything obviously interesting)

@@ -1,0 +1,4 @@
+Bug 128166 the xml data can be displayed incorrectly
+Description: the xml data can be displayed incorrectly Steps to reproduce: 1.import the attached report design file.
+2.set a table mapping as '//Book' 3.add a column mapping '../@location' 4.save and preview.
+Actual result: the 'Sunderland' is displayed Expect result: the 'Paris' is displayed

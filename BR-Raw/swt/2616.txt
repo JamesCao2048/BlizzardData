@@ -1,0 +1,26 @@
+Control.update() method is too expensive
+Our product intensively uses SWT to represent results to user.
+It may create
+hundred widgets.
+Sometimes it uses Control.update() method with "all" set to
+false.
+This method takes about 20% of entire time taken by SWT.
+I profiled the use case and noticed that Display.checkIfEvent() is called about
+8 200 times however Control.update() was called only 16 times.
+I also noticed
+that Display.checkIfEvent() modifies event in the queue (Do not know whether
+this is a good practice).
+This is due to each event in the X queue is checked each time Control.update()
+is called.
+As far as I understand the goal of this function is to collect all pending
+Expose events for given widget and optionally for all its children and then
+process all updates at once.
+I tried to modify Control.update() method to use XCheckWindowEvent() and got
+good results.
+This method is slightly faster if "all" argument is true and
+takes almost no time if "all" is false.
+VisibilityNotify events are removed
+from the queue so they are not processed again by GTK.
+Could you please review the patch and give your opinion.
+Is it possible to
+replace current SWT implementation with proposed one?

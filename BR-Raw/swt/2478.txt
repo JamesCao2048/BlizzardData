@@ -1,0 +1,36 @@
+Tree: Empty tree does not show selected column background colour, unlike Table
+SWT win32 CVS
+The empty tree has a selected column, but even when no background colour is set, the column is not drawn with the selected column.
+The table does have the selected column colour.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final int columns = 5;
+final Tree tree = new Tree(shell, SWT.BORDER | SWT.VIRTUAL | SWT.FULL_SELECTION | SWT.MULTI);
+// tree.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
+for (int i = 0; i
+< columns; i++)
+new TreeColumn(tree, SWT.LEFT).setWidth(75);
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+tree.setSortDirection(SWT.DOWN);
+tree.setSortColumn(tree.getColumn(0));
+final Table table = new Table(shell, SWT.VIRTUAL | SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
+// table.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
+for (int i = 0; i
+< columns; i++)
+new TableColumn(table, SWT.LEFT).setWidth(75);
+table.setLinesVisible(true);
+table.setHeaderVisible(true);
+table.setSortDirection(SWT.DOWN);
+table.setSortColumn(table.getColumn(0));
+
+shell.setSize(800, 600);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

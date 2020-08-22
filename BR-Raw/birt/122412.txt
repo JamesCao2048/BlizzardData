@@ -1,0 +1,2 @@
+Bug 122412 Need a scroll bar to display the full description in expression builder
+Description: Need a scroll bar to display the full description in expression builder Step to reproduce: 1.Open the expression builder, choose BIRT JS Object->Total Expected result: All the methods and description could be displayed.Since we can't resize the dialog of expression builder, a scroll bar is needed Actual result: The methods and description are truncated due to the limited space (see the sreenshot in attachment)

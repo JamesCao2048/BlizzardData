@@ -1,0 +1,14 @@
+[Browser] Some characters cannot be entered in forms
+Build ID: 3.4M7
+Steps To Reproduce:
+1.Open a Shell with a Browser.
+2.Go to a page with forms or text fields (like Google home page).
+3.Try to type the character &#324; (AltGr+n) which does not work.
+AltGr is the right Alt key, usually equivalent to Ctrl+Alt.
+More information:
+This bug was reported by a user and after investigation here is all the information we have.
+- The user is Polish and cannot enter 1 out of 9 national characters: &#261; (AltGr+a), &#281; (AltGr+e), &#347; (AltGr+s), &#263; (AltGr+c), &#380; (AltGr+z), &#378; (AltGr+x), 贸 (AltGr+o) and &#322;  (AltGr+l) work but &#324; (AltGr+n) does not.
+- It is a regression: replacing the SWT JAR from 3.4M7 to 3.3.2 seems to solve that particular issue.
+- This issue seems to affect the Browser only as this character can be entered in a Text widget.
+- This character can be entered in Firefox or Internet Explorer (when it is not in an SWT application).
+This is a major issue as 3.3.2 cannot be used due to other functionalities and bug fixes.

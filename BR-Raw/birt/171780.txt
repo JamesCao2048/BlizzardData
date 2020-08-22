@@ -1,0 +1,12 @@
+Bug 171780 Drill-through problem with symbolic filesystem links when DOCUMENT_FOLDER_ACCESS_ONLY is true
+I have two rptdesigns in a viewer application: list_report.rptdesign and detail_report.rptdesign, both in the root of the web viewer application.
+list_report has drill-through links to detail_report.
+Furthermore, I've set DOCUMENT_FOLDER_ACCESS_ONLY to true.
+Both reports can be executed correctly, when they are accessed directly.
+But the drill-down link from list_report to detail_report does not work.
+The error message is: "Cannot access the report file : /opt/WAS/[...]/detail_report.rptdesign." Reason: On my Solaris / WebSphere test environment, the report viewer application is deployed to a directory beneath /opt/WAS/, but there's also a symbolic link to the same directory at /export/WAS/.
+While the document folder is expanded to the /export/WAS/[...] directory by ParameterAccessor.initParameters, the drill-through link is expanded to /opt/WAS/[...] within ViewerHTMLActionHandler.getReportName.
+Both methods use different strategies to determine physical pathnames, which can lead to different results.
+As DOCUMENT_FOLDER_ACCESS_ONLY is set to true, and the base paths differ, ParameterAccessor.isValidFilePath returns false.
+ViewerHTMLActionHandler.getReportName shouldn't try to expand the report name to a physical path name at all, but instead consider the report name of the linked report to be relative to the location of the currently displayed report.
+So if the report "reports/a.rptdesign" is displayed and contains a link to "b.rptdesign", the generated link should be "reports/b.rptdesign", instead of the full absolute path "/opt/WAS/[...]/reports/b.rptdesign".

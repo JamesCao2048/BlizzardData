@@ -1,0 +1,25 @@
+setting font height should update font width
+The first FontData returned from line:
+FontData[] fontData = display.getFontList("Courier New",true);
+...has height 24 and width (in its data) of 19. Subsequently calling setHeight(8) on the FontData leaves the width as 19, which makes the font render quite badly.
+Example snippet follows:
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setBounds (10,10,200,200);
+shell.setLayout (new FillLayout());
+Text text = new Text (shell, SWT.NONE);
+FontData[] fontData = display.getFontList ("Courier New",true);
+for (FontData fd: fontData) {
+fd.setHeight (8);
+}
+Font font = new Font (display, fontData);
+text.setFont (font);
+text.setText ("asdf");
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+font.dispose ();
+display.dispose ();
+}

@@ -1,0 +1,32 @@
+Memory Leak in EventTable listener array
+The EventTable arrays will grow infinitely in the presence of just a pair of
+listeners.
+Put a breakpoint in hook with a hit count of 20 and start typing.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+final Text text = new Text(shell, SWT.NONE);
+text.setBounds(10, 10, 90, 30);
+text.setText("blah");
+
+class Hooked implements ModifyListener, VerifyListener {
+public void modifyText(ModifyEvent e) {
+text.removeModifyListener(this);
+text.addVerifyListener(this);
+}
+public void verifyText(VerifyEvent e) {
+text.removeVerifyListener(this);
+text.addModifyListener(this);
+}
+
+};
+
+text.addModifyListener(new Hooked());
+text.addModifyListener(new Hooked());
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}

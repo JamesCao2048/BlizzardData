@@ -1,0 +1,8 @@
+StyledText is still misbehaving
+As followup to the breakage in yesterdays I-build, StyledText is still doing the jitterbug but it's no longer
+resulting in crashes.
+The cursor will occasionally dance around, particularly when backspacing.
+Despite
+being visibly placed in one spot, the deletion occurs at what I expect to be the correct position.
+Hitting
+enter seems to reset the cursor to the correct position.

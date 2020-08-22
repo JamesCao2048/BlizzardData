@@ -1,0 +1,30 @@
+Nullpointer-Exception while parsing definition file (aop.xml) in DocumentParser
+Build Identifier: 20100617-1415
+With an activated NullpointerException-Breakpoint i recently stumpled upon a thrown NPE in the DocumentParser.parse()-method (Line 106):
+public static Definition parse(final URL url) throws Exception {
+InputStream in = null;
+try {
+if (CACHE && parsedFiles.containsKey(url.toString())) {
+return parsedFiles.get(url.toString());
+}
+Definition def=null;
+
+if(LIGHTPARSER){
+def = SimpleAOPParser.parse(url);
+}else{
+def = saxParsing(url);
+}
+
+if (CACHE && def.getAspectClassNames().size() > 0) {
+parsedFiles.put(url.toString(), def);
+}
+return def;
+} finally {
+try {
+in.close();
+} catch (Throwable t) {
+}
+}
+}
+... The parsing of the configuration file works fine, merely the InputStream seems not to be used anymore.
+Reproducible: Always

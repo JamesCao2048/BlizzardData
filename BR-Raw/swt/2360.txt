@@ -1,0 +1,36 @@
+CTRL+F crashes JVM in Search panel.
+** Detail **
+Using Eclipse 3.2 RC7, on JVM 1.5.0_04, on Linux 2.6.12-1 (Fedora Core 3)
+I'm editing a Java/Swing project using CVS.
+I know for a fact this has been happening since at least RC4; probably much earlier.
+** Description **
+After performing a Search on the project, focus the search panel which appears and try CTRL+f to find.
+Guessing it's to do with loading the little pop-up find box which appears in the search pane; work ok before you perform a search, but not after.
+This happens every time without fail for me, over several fresh eclipse releases.
+** Steps to reproduce **
+1.open your workspace, open a project.
+2.perform a Search (not a find) of _any_ kind (using CTRL+H, the menus, whatever).
+The search needn't turn up any results, but it must be performed.
+3.focus the search panel which pops up by clicking on it
+4.press CTRL+F
+5.kaboom!
+** Error Message **
+JVM packs in with the following error (in a little dialog):
+"JVM terminated.
+Exit code=1
+/usr/bin/java
+-Xms40m
+-Xmx256m
+-jar /disk/scratch/eclipse/startup.jar
+-os linux
+-ws gtk
+-arch x86
+-launcher /disk/scratch/eclipse/eclipse
+-name Eclipse
+-showsplash 600
+-exitdata 3d58800f
+-vm /usr/bin/java
+-vmargs
+-Xms40m
+-Xmx256m
+-jar /disk/scratch/eclipse/startup.jar"

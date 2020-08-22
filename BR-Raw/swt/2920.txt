@@ -1,0 +1,16 @@
+TableItem.computeDisplayText does not check to see if index is greater than string
+The following code in TableItem.computeDisplayText can case an IndexOutofBounds
+exception:
+int index = availableWidth / gc.getFontMetrics ().getAverageCharWidth ();
+textWidth = gc.stringExtent (text.substring (0, index)).x;
+It does stand to reason that if the availableWidth is less than the textWidth
+then the resulting index from the calculation above should be less than
+text.length().
+The problem is that you can end up with a string that thows it
+off.
+In the case I am seeing, availableWidth is 159 and the textWidth is 179.
+The length of the string is 25. This would mean that the average char width is
+7 ( 7.16 ).
+However, getAverageCharWidth() returns 6 so therefore 159/6 = 26 (
+26.5 ).
+This results in the second line generating the IndexOutofBounds exception.

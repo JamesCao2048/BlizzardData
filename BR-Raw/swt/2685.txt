@@ -1,0 +1,26 @@
+java.lang.NoSuchMethodError: XErrorProc when setting Display into debug mode on Linux/GTK x86-64-bit
+The code:
+DeviceData data = new DeviceData();
+data.debug = true;
+Display display = new Display(data);
+Generates:
+Exception in thread "main" java.lang.NoSuchMethodError: XErrorProc
+at org.eclipse.swt.internal.Callback.bind(Native Method)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:123)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:78)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:60)
+at org.eclipse.swt.graphics.Device.init(Device.java:540)
+at org.eclipse.swt.widgets.Display.init(Display.java:2027)
+at org.eclipse.swt.graphics.Device.<init>(Device.java:142)
+at org.eclipse.swt.widgets.Display.<init>(Display.java:429)
+at SVGBadMatchTester.run(SVGBadMatchTester.java:63)
+at SVGBadMatchTester.main(SVGBadMatchTester.java:56)
+When I look at the swt jar itself, I see:
+static int XErrorProc(int xDisplay, int xErrorEvent)
+But when I look closer at the code in org.eclipse.swt.internal.Callback, it
+looks like these 2 parameters are intended to be pointers.
+So I think the
+reason it is getting the error, is that it is looking for XErrorProc(long
+xDisplay, long xErrorEvent), which would be appropriate for 64-bit, and not
+finding it.
+The error does not occur in the 32-bit version

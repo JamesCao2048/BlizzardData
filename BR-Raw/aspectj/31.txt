@@ -1,0 +1,13 @@
+NPE in BcelTypeMunger.createBridgeMethod
+Build Identifier:
+Since I updated to version
+AspectJ Development Tools	2.2.0.e37x-20120529-0900
+I get during compile:
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelTypeMunger.createBridgeMethod(BcelTypeMunger.java:1325)
+at org.aspectj.weaver.bcel.BcelTypeMunger.createAnyBridgeMethodsForCovariance(BcelTypeMunger.java:1272)
+at org.aspectj.weaver.bcel.BcelTypeMunger.mungeNewMethod(BcelTypeMunger.java:971)
+at org.aspectj.weaver.bcel.BcelTypeMunger.munge(BcelTypeMunger.java:108)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeave ... )
+Before, I had     AspectJ Development Tools	2.2.0.e37x-20120507-1400 and the same project compiled without that exception.
+Reproducible: Always

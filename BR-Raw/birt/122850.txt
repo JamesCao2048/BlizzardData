@@ -1,0 +1,6 @@
+Bug 122850 Table/list should not be able to be inserted in Master Page mode.
+Description: Table/list should not be able to be inserted in Master Page mode.
+Steps to reproduce: 1.New a report and transfer to Master Page mode.
+2.New a datasource and dataset 3.Drag a list/table to page header/footer, bind it to dataset and drag some columns inside.
+4.Save and preview Expected result: Insert list/table item in master page should be forbidden.
+Actual result: They are allowed and preview showed "undefine" in page

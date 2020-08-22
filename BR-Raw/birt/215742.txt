@@ -1,0 +1,2 @@
+Bug 215742 Data set preview shows more rows than the max display count setted in Data Set Editor Peference
+Build ID: I20071213-1700 Steps To Reproduce: 1.define a data set 2.add a filter to the data set, such as top10 3.set max display count with 8 in Data Set Editor Peference 4.preview results of that data set More information:

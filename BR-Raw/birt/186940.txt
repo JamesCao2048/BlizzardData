@@ -1,0 +1,3 @@
+Bug 186940 Style name in theme cannot be identify by auto when reopen the library[01]
+Description: Style name in theme cannot be identify by auto when reopen the library[01] Step: 1.Open a library and add a theme 2.New a style on the theme and use the default name that is "NewStyle" 3.Save the library, close it and reopen it again.
+4.New another style on the same theme Actual result: The default style name on second times is also "NewStyle" Exception result: The default style name on second times is "NewStyle1"

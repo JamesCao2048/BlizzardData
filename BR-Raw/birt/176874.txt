@@ -1,0 +1,4 @@
+Bug 176874 Remove the call to setupRenderOption method from RunTask flow
+While going through the report engine code, I noticed that the method setupRenderOption is being called in RunTask.doRun method.
+setupRenderOption method is used to intialize the render options used to render the report.
+I understand this is not needed in RunTask flow as we are only running the report.

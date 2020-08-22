@@ -1,0 +1,43 @@
+SWT Mouse Enter comes before Mouse Exit [portability]
+If I have two controls, A and B, and move the mouse from one to the other,
+control B will get entered, and then control A exited.
+These events are out of
+order.
+The exit should happen first, followed by the enter.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseMoveListener;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.*;
+public class ExitEnterTest {
+public static void main(String args[]){
+Display display = new Display();
+final Shell shell = new Shell(display);
+
+shell.setSize(600, 600);
+shell.setLocation(100,100);
+Canvas canvas2 = new Canvas(shell, 0);
+Canvas canvas1 = new Canvas(shell, 0);
+canvas1.setBackground(new Color(null, 20,200,100));
+canvas1.setBounds(50, 50, 200, 200);
+canvas1.addMouseTrackListener(new MouseTrackAdapter() {
+public void mouseExit(MouseEvent e) {
+System.out.println("canvas1 exited");
+}
+});
+canvas2.setBounds(100, 100, 200, 200);
+canvas2.setBackground(new Color(null,200,20,200));
+canvas2.addMouseTrackListener(new MouseTrackAdapter() {
+public void mouseEnter(MouseEvent e) {
+System.out.println("canvas2 entered");
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

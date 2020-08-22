@@ -1,0 +1,33 @@
+Expanding a TreeItem on Mac OS X fires MouseUp-MouseDown in the wrong order
+Run the snippet below.
+Click somewhere in the Tree NOT on an expansion handle.
+Notice the events come in the expected order of MouseDown, MouseUp.
+Now expand the root node of the tree.
+Notice the events come in the reverse order of MouseUp, MouseDown.
+public class SimpleTreeTest {
+public static void main(String args[]) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Tree tree = new Tree(shell, SWT.BORDER);
+TreeItem root = new TreeItem(tree, SWT.NONE);
+root.setText("Root");
+TreeItem child = new TreeItem(root, SWT.NONE);
+child.setText("Child");
+tree.addMouseListener(new MouseAdapter() {
+public void mouseDown(MouseEvent event) {
+System.out.println("mouseDown " + event);
+}
+public void mouseUp(MouseEvent event) {
+System.out.println("mouseUp " + event);
+}
+});
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}

@@ -1,0 +1,9 @@
+StyledText - showSelection when selection RtoL problem
+Build I20021008
+If I have a selection where the cursor is on the left side then showSelection
+does not work with long lines.
+Test Case:
+1.Open an editor
+2.Add lots of characters (so that you need to scroll horizontally)
+3.Go to the end of the line (End)
+4.Press Shift+Home

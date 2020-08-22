@@ -1,0 +1,14 @@
+varargs doesn't work for ITD'd constructors
+The following program doesn't compile:
+class MyClass {
+public static void main(String []argv) {
+new MyClass(new Object[]{"a","b","c"});
+new MyClass("a","b","c");
+}
+}
+aspect A {
+public MyClass.new(Object... names) {
+System.out.println(names[0]);
+}
+}
+(this is similar to  bug 110906 )

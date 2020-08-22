@@ -1,0 +1,40 @@
+parent with background color results in "box" around widget
+Eclipse 2.1
+RC3a
+Set the parent's background to some color and there appears to be a box around the
+child widget:
+public static void main(String[] args) {
+Display d = Display.getDefault();
+Shell shell = new Shell(d);
+shell.setLayout(new GridLayout());
+shell.setBackground(d.getSystemColor(SWT.COLOR_RED));
+Button b = new Button(shell, SWT.PUSH);
+//b.setBackground(d.getSystemColor(SWT.COLOR_RED));
+b.setText("Hello");
+final Combo c = new Combo(shell, SWT.READ_ONLY);
+//c.setBackground(d.getSystemColor(SWT.COLOR_RED));
+c.setItems(new String[] {"a", "b", "c"});
+shell.open();
+while (!shell.isDisposed()) {
+while (!d.readAndDispatch()) {
+d.sleep();
+}
+}
+}
+Possible fix, look for a prent widget with a background color in Control.colorProc:
+case OS.kControlMsgSetUpBackground: {
+float [] background = null;
+Shell shell = getShell ();
+Control temp = this;
+while (temp != null && background == null) {
+background = temp.background;
+temp = temp.parent;
+}
+if (background != null) {
+OS.RGBBackColor (toRGBColor (background));
+} else {
+OS.SetThemeBackground ((short) OS.kThemeBrushDialogBackgroundActive,
+(short) inDrawDepth, inDrawInColor != 0);
+}
+return OS.noErr;
+}

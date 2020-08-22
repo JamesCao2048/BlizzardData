@@ -1,0 +1,6 @@
+Bug 200187 Deprecated HTMLServerImageHandler methods are not marked as deprecated
+Build ID: 3.3.0 Steps To Reproduce: 1.Open IHTMLServerImageHandler and look at e.g.
+"public abstract String onDesignImage(IImage image, Object context)", which is marked as "deprecated" 2.Open HTMLImageHandler and look at e.g.
+"public String onDesignImage( IImage image, Object context )" which is not marked as deprecated The implementation class HTMLImageHandler which implements IHTMLImageHandler should mark the deprecated methods of IHTMLImageHandler as deprecated.
+E.g.
+public String onDesignImage( IImage image, Object context ) { return null; } to /** * @deprecated */ public String onDesignImage( IImage image, Object context ) { return null; } Reason: If someone (like me) extends the HTMLServerImageHandler class, he gets the following warning in the console (not in Eclipse): MyHTMLServerImageHandler.java:18: warning: [deprecation] onDesignImage((org.eclipse.birt.report.engine.api.IImage,java.lang.Object) in org.eclipse.birt.report.engine.api.IHTMLImageHandler has been deprecated I have to overwrite every in IHTMLServerImageHandler as deprecated marked method, to "remove" this warnings, like that: /** * @deprecated */ public String onDesignImage( IImage image, Object context ) { super.onDesignImage(image, context); } Would be nice, if this would be fixed.

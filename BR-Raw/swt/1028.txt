@@ -1,0 +1,58 @@
+hard crash upon opening internal browser on mac
+Console ViewOutput (from launching workspace):
+Invalid memory access of location 00000020 eip=9342f688
+System Configuration:
+Model: MacBookPro5,1, BootROM MBP51.0074.B01, 2 processors, Intel Core 2 Duo, 2.53 GHz, 4 GB
+Graphics: kHW_NVidiaGeForce9600MGTItem, NVIDIA GeForce 9600M GT, spdisplays_pcie_device, 512 MB
+Graphics: kHW_NVidiaGeForce9400MItem, NVIDIA GeForce 9400M, sppci_pci_device, 256 MB
+Memory Module: BANK 0/DIMM0, 2 GB, DDR3, 1067 MHz
+Memory Module: BANK 0/DIMM1, 2 GB, DDR3, 1067 MHz
+AirPort: spairport_wireless_card_type_airport_extreme (0x14E4, 0x8D), Broadcom BCM43xx 1.0 (5.10.38.24)
+Bluetooth: Version 2.1.3f8, 2 service, 0 devices, 1 incoming serial ports
+Network Service: AirPort, AirPort, en1
+Serial ATA Device: Hitachi HTS543232L9SA02, 298.09 GB
+Serial ATA Device: MATSHITADVD-R   UJ-868
+USB Device: Built-in iSight, (null) mA
+USB Device: Microsoft 3-Button Mouse with IntelliEye(TM), (null) mA
+USB Device: BCM2045B2, (null) mA
+USB Device: Bluetooth USB Host Controller, (null) mA
+USB Device: Apple Internal Keyboard / Trackpad, (null) mA
+USB Device: IR Receiver, (null) mA
+Mac Error Report:
+Process:         java [8015]
+Path:            /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
+Identifier:      java
+Version:         ???
+(???)
+Code Type:       X86 (Native)
+Parent Process:  eclipse [198]
+Date/Time:       2009-02-11 09:52:04.688
+-0800
+OS Version:      Mac OS X 10.5.6 (9G55)
+Report Version:  6
+Exception Type:  EXC_BAD_ACCESS (SIGBUS)
+Exception Codes: KERN_PROTECTION_FAILURE at 0x0000000000000020
+Crashed Thread:  0
+Application Specific Information:
+Java information:
+Version: Java HotSpot(TM) Client VM (1.5.0_16-133 mixed mode)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_16-133) for macosx-x86, built on Aug 27 2008 11:00:20 by root with gcc 4.0.1 (Apple Inc.
+build 5465)
+Exception type: Bus Error (0xa) at pc=0x9342f688
+Current thread (0x0100c320):  JavaThread "Thread-0" daemon [_thread_in_native, id=-1609767136]
+Stack: [0xbf800000,0xc0000000)
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.cocoa.Cocoa.objc_msgSend(II)I+0
+j  org.eclipse.swt.browser.Safari.decideDestinationWithSuggestedFilename(II)V+97
+J  org.eclipse.swt.browser.Safari.handleCallback(IIIII)I
+J  org.eclipse.swt.browser.Safari.eventProc7(IIIIIII)I
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+v  ~StubRoutines::call_stub
+J  org.eclipse.swt.internal.carbon.OS.ReceiveNextEvent(I[IDZ[I)I
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V
+v  ~OSRAdapter
+j  org.eclipse.ui.internal.Workbench.runUI()I+393
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$5.run()V+23
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Re

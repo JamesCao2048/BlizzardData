@@ -1,0 +1,7 @@
+Bug 258633 org.eclipse.birt.chart.render.BaseRenderer does not dispose TextMetrics
+Build ID: 2_3_2-N20081212 Steps To Reproduce: Leak of 1 Font Handle happens each time a chart (with a title) is re-rendered under SWT/Windows.
+Location of the missing dispose() is:
+- method renderTitle
+- part "if ( container instanceof Block )"
+- The variable "final ITextMetrics itm = xs.getTextMetrics( b.getLabel( ) );" is never disposed.
+More information:

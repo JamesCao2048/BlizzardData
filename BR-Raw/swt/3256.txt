@@ -1,0 +1,9 @@
+[Import/Export] Import/Export dialogs confused by "Select Types...
+The checkboxes beside the items in the directory tree (left hand pane) are not updated properly when
+"Select Types..." is used to filter out some of the files to export.
+To see this, select a project, bring up
+the Export dialog, use "Select Types..." to filter out some of the files being exported.
+At this point, the
+checkmark at the root of the directory hierarchy should be marked "grayed" to indicate partial selection.
+Instead it is still showing as "checked" to indicate full selection.
+Same for Import.

@@ -1,0 +1,14 @@
+[Contributions] Menuitem has incorrect letter underlined
+I put the & in the properties files.
+But when I select f10, the underlined letter is off by one character.
+I can use the correct letter (not the one underlined) just fine.
+And when I arrow over to the menuitem, the underline changes to the correct one...
+<preference name="label.en">
+<base:value value="Screen &Lock" readOnly="false" xsi:type="base:String" required="false"/>
+</preference>
+<preference name="label.en">
+<base:value value="Log &off system" readOnly="false" xsi:type="base:String" required="false"/>
+</preference>
+<preference name="label.en">
+<base:value value="&Shutdown system" readOnly="false" xsi:type="base:String" required="false"/>
+</preference>

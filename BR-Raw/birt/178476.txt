@@ -1,0 +1,2 @@
+Bug 178476 Clear cache dosen't take effact[07]
+Description: Clear cache dosen't take effact[07] Build number: 2.2.0.v20070321-0630 Steps to reproduce: 1, New a dataset 2, Set the Cache preference to: 20 rows 3, Drag the dataset into layout and preview the results 4, Go back to dataset, clear the cache and change the preference to 30 rows 5, Save the report and preview the report Expected result: After step5: 30rows of data in preview results Actual result: only 20 rows of data in preview results Error log:

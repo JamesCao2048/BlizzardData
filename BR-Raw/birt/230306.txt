@@ -1,0 +1,6 @@
+Bug 230306 ArrayIndexOutOfBoundsException for stored procedure has the output value
+If the stored procudure has the output value, then ArrayIndexOutOfBoundsException will be thrown.
+Here is one example of the queries: { ?
+= CALL "eiiTest"."SP_ACRND1_DOUBLE1_GT" (?) } We bind null to the input parameter and bind output parameter for the output value.
+Here is the call stack: SPParameterMetaData.getParameterType(int) line: 127 CallStatement.setNull(int) line: 947 OdaAdvancedQuery(OdaQuery).setNull(int) line: 1093 PreparedStatement.doSetNull(int) line: 835 PreparedStatement.setNull(String, int) line: 529 PreparedStatement.setParameterValue(String, int, Object, boolean) line: 464 PreparedStatement.setParameterValue(int, Object, boolean) line: 443 PreparedStatement.addParameterHints(List) line: 365 DataSourceQuery.addParameterDefns() line: 138 DataSourceQuery.execute() line: 159 DataExecutionAgent.execute() line: 247 DataExecutionAgent.run() line: 317 Thread.run() line: 595 [local variables unavailable] Based on my investigation, this is due to the number of parameters are not set correctly in the getParameterDefinitionChars() of SPParameterPositionUtil.
+It returned paramTxt: "?" which means it only has one parameter instead of two.

@@ -1,0 +1,5 @@
+org.eclipse.swt.tools causes 242 warnings in latest I-build
+I20080909-1121.
+The org.eclipse.swt.tools plug-in causes 242 warnings in latest I-build.
+Mostly because it is setup to use Java5 but doesn't parameterize generic types.
+http://download.eclipse.org/eclipse/downloads/drops/I20080909-1121/compilelogs/plugins/org.eclipse.swt.tools_3.5.0.v3507/@dot.bin.html

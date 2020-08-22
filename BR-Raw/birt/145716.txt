@@ -1,0 +1,2 @@
+Bug 145716 [deploy]WORKING_FOLDER_ACCESS_ONLY doesn't work for reports inside WebViewerExample folder
+Description: WORKING_FOLDER_ACCESS_ONLY doesn't restrict report inside WebViewerExample folder Steps to reproduce: 1.Deploy birt 2.Set BIRT_VIEWER_WORKING_FOLDER to local folder using absolute path 3.Set WORKING_FOLDER_ACCESS_ONLY to true 4.Preview report inside WebViewerExample folder using relative path Expected result: Preview fails because the report isn't under working folder Actual result: Preview is ok

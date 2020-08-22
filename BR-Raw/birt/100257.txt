@@ -1,0 +1,4 @@
+Bug 100257 [Operations] "Add To Version Control" should be recursive
+Right clicking an IContainer should provide a Team->Add To Version Control (recursive) menu item that adds all child resources and/or containers to version control that are not already in the repository.
+Command-line SVN and CVS provide this functionality, as do TortoiseCVS and TortoiseSVN.
+A very useful feature when multiple new files are to be added from multiple packages, helps to avoid forgetting to add a new file.

@@ -1,0 +1,8 @@
+Bug 141950 Selection of select value in data set filter is error
+Details: Selection of select value in data set filter is error Step: 1.New a report design.
+2.Create a sample datasource and dataset.
+3.Switch to filter.
+4.Select a value in expression.
+5.Drop the list of the value1 and select
+<select value...> Actual result: No value is appear and pop up an error.
+It said that "An expression has not been set

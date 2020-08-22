@@ -1,0 +1,34 @@
+uneccessary casts
+JPEGFileFormat
+void emit(int huffCode, int nBits) {
+if (nBits == 0) {
+SWT.error(SWT.ERROR_INVALID_IMAGE);
+}
+int[] power2m1 = new int[] {
+1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191,
+16383, 32767, 65535, 131125
+};
+int code = (huffCode & power2m1[nBits
+- 1])
+<< (24
+- nBits
+- currentBitCount);
+byte[] codeBuffer = new byte[4];
+codeBuffer[0] = (byte)(code % 256);
+codeBuffer[1] = (byte)((code / 256) % 256);
+codeBuffer[2] = (byte)((code / 65536) % 256);
+codeBuffer[3] = (byte)((code / 16777216) % 256);
+int abs = nBits
+- (8
+- currentBitCount);
+if (abs
+< 0) abs =
+-abs;
+if ((abs / 8) > 0) {
+currentByte += codeBuffer[2];
+emitByte((byte)currentByte);
+***>>>>		emitByte((byte)codeBuffer[1]);
+Compatibility
+public static int round(int p, int q) {
+***>>>>>	return (int)Math.round((float)p / q);
+}

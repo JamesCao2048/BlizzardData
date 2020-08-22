@@ -1,0 +1,63 @@
+[leopard] crash when finishing any snippet
+Mac OS X 10.5 (9A527) installed from scratch
+- run the snippet below, and after closing the shell you'll get the error at the bottom
+- this happens for any SWT app that I run
+- this has always worked on OSX; has something changed in 10.5 that swt needs to adjust to?
+Or is this a bug in 10.5? Scott are you able to try this?
+public class Snippet1 {
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell(display);
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}
+Process:         java [1860]
+Path:            /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
+Identifier:      java
+Version:         ???
+(???)
+Code Type:       X86 (Native)
+Parent Process:  eclipse [1510]
+Date/Time:       2007-09-07 13:53:18.329
+-0400
+OS Version:      Mac OS X 10.5 (9A527)
+Report Version:  6
+Exception Type:  EXC_BAD_ACCESS (SIGBUS)
+Exception Codes: KERN_PROTECTION_FAILURE at 0x0000000000000000
+Crashed Thread:  0
+Application Specific Information:
+Java information:
+Version: Java HotSpot(TM) Client VM (1.5.0_12-115 mixed mode, sharing)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_12-115) for macosx-x86, built on Aug 10 2007 19:51:24 by root with gcc 4.0.1 (Apple Inc.
+build 5465)
+Exception type: Bus Error (0xa) at pc=0x0045c6cb
+Current thread (0x0100b210):  JavaThread "Thread-0" daemon [_thread_in_vm, id=-1606996192]
+Stack: [0xbf800000,0xc0000000)
+Java Threads: ( => current thread )
+0x01001480 JavaThread "DestroyJavaVM" [_thread_blocked, id=-1333784576]
+=>0x0100b210 JavaThread "Thread-0" daemon [_thread_in_vm, id=-1606996192]
+0x010090d0 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=8411136]
+0x01008600 JavaThread "CompilerThread0" daemon [_thread_blocked, id=8500224]
+0x010081a0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8496640]
+0x010079d0 JavaThread "Finalizer" daemon [_thread_blocked, id=8485376]
+0x010075f0 JavaThread "Reference Handler" daemon [_thread_blocked, id=8479232]
+Other Threads:
+0x01006d40 VMThread [id=8475648]
+0x01009c30 WatcherThread [id=8414720]
+VM state:not at safepoint (normal execution)
+VM Mutex/Monitor currently owned by a thread: None
+Heap
+def new generation   total 576K, used 361K [0x25580000, 0x25620000, 0x25a60000)
+eden space 512K,  58% used [0x25580000, 0x255ca920, 0x25600000)
+from space 64K,  99% used [0x25600000, 0x2560fdc8, 0x25610000)
+to   space 64K,   0% used [0x25610000, 0x25610000, 0x25620000)
+tenured generation   total 1408K, used 183K [0x25a60000, 0x25bc0000, 0x29580000)
+the space 1408K,  13% used [0x25a60000, 0x25a8dec0, 0x25a8e000, 0x25bc0000)
+compacting perm gen  total 8192K, used 697K [0x29580000, 0x29d80000, 0x2d580000)
+the space 8192K,   8% used [0x29580000, 0x2962e610, 0x2962e800, 0x29d80000)
+ro space 8192K,  63% used [0x2d580000, 0x2da95ed8, 0x2da96000, 0x2dd80000)
+rw space 12288K,  43% used

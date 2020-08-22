@@ -1,0 +1,7 @@
+Bug 230338 After remove crosstab style the data is not aligned in crosstab with measure chart view[1302]
+Description: The style "crosstab" and "crosstab-cell" is used by default if create a crosstab in layout.
+There is crosstab bind with cube in the layout, and the measure show as chart.
+Remove "crosstab" style, the data is not aligned with the axis.
+build version:2.3.0.v20080506-0630 Steps to reproduce: 1.Get the attached report design file.
+2.In the birt designer, click crosstab and remove "crosstab" style.
+3.Preview the report, you will find the last data is not aligned properly.

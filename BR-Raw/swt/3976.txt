@@ -1,0 +1,45 @@
+Mouse Capture on Motif causes Context Menu not to work
+Right click on Tree.
+Notice that the cursor does not change, and the menu is
+not functioning.
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSource;
+import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.layout.*;
+public class PR_22xxx{
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+final Tree tree = new Tree(shell, SWT.BORDER);
+for (int i = 0; i
+< 16; i++) {
+TreeItem item = new TreeItem(tree, SWT.NONE);
+item.setText("Item " + i);
+}
+Menu menu = new Menu (shell, SWT.POP_UP);
+for (int i=0; i<16; i++) {
+MenuItem item = new MenuItem (menu, SWT.NONE);
+item.setText ("Item " + i);
+}
+tree.setMenu (menu);
+tree.addMouseListener(new MouseAdapter() {
+public void mouseDown(MouseEvent arg0) {
+tree.setCapture(true);
+}
+});
+shell.setLayout(new FillLayout());
+tree.pack();
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

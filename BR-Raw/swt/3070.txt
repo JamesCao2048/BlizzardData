@@ -1,0 +1,8 @@
+resizing TreeColumn leaves cheese
+- run the ControlExample, go to the Tree tab
+- turn on the Multiple Columns, Header Visible and Lines Visible checkboxes
+- in the first example Tree on the page, resize the Name column by dragging its
+right column line to span most of the available tree width (ie.- to roughly
+where the Modified column ends by default)
+- resize the Name column back to its original size, and the table contents will
+not redraw properly, as shown in the attached image

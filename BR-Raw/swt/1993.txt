@@ -1,0 +1,29 @@
+[browser] executing window.print() does not print
+3.3RC2
+- run the snippet below
+- press the Print button
+- the Print dialog comes up, press its Print button
+
+-> the dialog is dismissed, but the document never prints
+- if you press the Print button again you get error dialog "The document cannot change while Printing or in Print Preview"
+public static void main(String [] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,300,300);
+final Browser browser = new Browser(shell, SWT.NONE);
+browser.setBounds(10,10,250,200);
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(10,220,100,30);
+button.setText("Print");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+browser.execute("window.print()");
+}
+});
+shell.open();
+browser.setUrl(" http://www.google.ca ");
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

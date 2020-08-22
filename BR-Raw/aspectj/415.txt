@@ -1,0 +1,106 @@
+Null Pointer Exception thrown by ajc compiler
+Hi,
+I wrote my first aspect using aspect J as follows to enable logging:
+package com.apple.ist.espresso.aspects;
+import com.apple.ist.espresso.util.EspressoLogger;
+public class EspressoTrace {
+private static EspressoLogger logger = null;
+public static void initLogger(EspressoLogger l) {
+logger = l;
+}
+public static void TraceEntry(String message) {
+logger.debug("Entering : " + message);
+}
+public static void TraceExit(String message) {
+logger.debug("Exiting : " + message);
+}
+}
+My aspect is in the file EspressoTraceAspect.java as follows:
+package com.apple.ist.espresso.aspects;
+aspect EspressoTraceAspect {
+pointcut traceCall() : execution(public * com.apple.ist.espresso..*.*(..));
+before() : traceCall {
+Trace.traceEntry("" + thisJointPointStaticPart.getSignature());
+}
+after() : traceCall {
+Trace.traceExit("" + thisJointPointStaticPart.getSignature());
+
+public static void main(String[] args) {
+Trace.initStream(EspressoLogger.getLogger(TraceAspect.class));
+}
+}
+When i compiled it using the following target: (init target that sets the required variables are done as
+shown in the example build.xml file and are NOT shown here)
+<target name="Ajx" depends="init">
+<iajc destdir="${build.dir}/classes" fork="true" forkclasspath="${aspectjtools.jar}"
+argfiles="${list}">
+<src path="${src.dir}"/>
+<src path="${sharedsrc.dir}"/>
+<src path="${gensrc.dir}"/>
+<classpath>
+<path refid="classpath"/>
+<path refid="aspectj.lib"/>
+</classpath>
+</iajc>
+</target>
+i'm getting the following exception.
+[error] Internal compiler error
+[iajc] java.lang.NullPointerException
+[iajc]     at org.aspectj.weaver.bcel.UnwovenClassFile.deleteRealFile(UnwovenClassFile.java:170)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjState.deleteClassFile(AjState.java:413)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjState.noteResult(AjState.java:450)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager$3.acceptResult(AjBuildManager.java:
+704)
+[iajc]     at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterProcessing(AjCompilerAdapter.java:144)
+[iajc]     at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:373)
+[iajc]     at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:683)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:168)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:102)
+[iajc]     at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:109)
+[iajc]     at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+[iajc]     at org.aspectj.tools.ajc.Main.run(Main.java:291)
+[iajc]     at org.aspectj.tools.ajc.Main.runMain(Main.java:227)
+[iajc]     at org.aspectj.tools.ajc.Main.main(Main.java:80)
+[iajc] (no source information available)
+[iajc] /Users/manjulajayaraman/projects/JADE/jadecvs/NewEspresso/ServerDevelopment/Phase1/
+src/com/apple/ist/espresso/aspects/EspressoTrace.java:6 [error] The type EspressoTrace is already
+defined
+[iajc] public class EspressoTrace {
+[iajc]              ^^^^^^^^^^^^
+[iajc] ABORT
+[iajc]
+[iajc] Exception thrown from AspectJ 1.5.0M2
+[iajc] This might be logged as a bug already -- find current bugs at
+[iajc]    http://bugs.eclipse.org/bugs/buglist.cgi?product=AspectJ&component=Compiler
+[iajc] Bugs for exceptions thrown have titles File:line from the top stack,
+[iajc] e.g., "SomeFile.java:243"
+[iajc] If you don't find the exception below in a bug, please add a new bug
+[iajc] at  http://bugs.eclipse.org/bugs/enter_bug.cgi?product=AspectJ
+[iajc] To make the bug a priority, please include a test program
+[iajc] that can reproduce this exception.
+[iajc] null
+[iajc] java.lang.NullPointerException
+[iajc]     at org.aspectj.weaver.bcel.UnwovenClassFile.deleteRealFile(UnwovenClassFile.java:170)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjState.deleteClassFile(AjState.java:413)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjState.noteResult(AjState.java:450)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager$3.acceptResult(AjBuildManager.java:
+704)
+[iajc]     at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterProcessing(AjCompilerAdapter.java:144)
+[iajc]     at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:373)
+[iajc]     at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:683)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:168)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:102)
+[iajc]     at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:109)
+[iajc]     at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+[iajc]     at org.aspectj.tools.ajc.Main.run(Main.java:291)
+[iajc]     at org.aspectj.tools.ajc.Main.runMain(Main.java:227)
+[iajc]     at org.aspectj.tools.ajc.Main.main(Main.java:80)
+[iajc] 1 fail|abort, 2 errors
+BUILD FAILED
+Could someone please let me know  what's the problem and how do i proceed now?
+Thanks,
+Manjula

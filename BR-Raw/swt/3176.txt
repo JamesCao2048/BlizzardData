@@ -1,0 +1,3 @@
+Combo.removeAll() behaviour does not match API documentation
+The doc says that removeAll() should clear all items of the receiver's list.
+However, it also clears the receiver's text field, which it should not.

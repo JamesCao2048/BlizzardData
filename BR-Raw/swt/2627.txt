@@ -1,0 +1,52 @@
+Regression: Disabling tool bar makes separator items disappear
+SWT-win32, 3.2M3
+When calling setEnabled(false) on a tool bar, items with SWT.SEPARATOR style
+disappear.
+This did not happen in 3.2M2 and earlier versions.
+Snippet to reproduce:
+===
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class ToolBarTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+
+Image icon = new Image(display, 16, 16);
+GC gc = new GC(icon);
+gc.drawRectangle(0, 0, 15, 15);
+gc.dispose();
+
+final ToolBar bar = new ToolBar(shell, SWT.HORIZONTAL | SWT.FLAT);
+
+new ToolItem(bar, SWT.PUSH).setImage(icon);
+new ToolItem(bar, SWT.SEPARATOR);
+new ToolItem(bar, SWT.PUSH).setImage(icon);
+new ToolItem(bar, SWT.SEPARATOR);
+new ToolItem(bar, SWT.PUSH).setImage(icon);
+
+Button btn = new Button(shell, SWT.PUSH);
+btn.setText("Click me");
+btn.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+bar.setEnabled(!bar.getEnabled());
+}
+});
+
+shell.setSize(200, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+icon.dispose();
+display.dispose();
+}
+}

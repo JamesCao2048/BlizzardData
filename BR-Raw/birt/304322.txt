@@ -1,0 +1,16 @@
+Bug 304322 Excel Output differs from ReportViewer
+The error occurs by defining a data field using other column bindings as source.
+The other column bindings are also calculated based on column bindings.
+Viewing the result in the webviewer shows the expected (correct) result.
+But creating an Excel report leads to a wrong result.
+The values seem to be multiplied by a large factor.
+Example:
+--- row1 = dataSetRow['1'] = 5 row 2 = dataSetRow['2'] = 15 sum1 = row['row1'] + row['row'] = 20 row10 = dataSetRow['10'] = 2 row11 = dataSetRow['11'] = 8 sum2 = row['row10'] + row['row11'] = 10 ratio = row['sum2'] / row['sum1'] = 0.5
+--- In Excel the value is something like 5,000,000,000.The same effect occurs if calculating the ratio using aggregates as source.
+If I change the ratio calculation in the given example to the following, it works.
+Example:
+--- ratio = (row['row10'] + row['row11']) / (row['row1'] + row['row2']) = 0.5
+--- But this won't help me with the aggregates.
+I also found a workaround to get the ratio for the aggregates.
+I've created a Java Script function to calculate the ratio and pass the aggregates as arguments.
+This worked.

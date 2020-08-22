@@ -1,0 +1,21 @@
+[Widgets] file search history and regexp code assistance scroll BOTH using cursor up/down keys (page up/down resp.)
+User-Agent:       Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.1.3) Gecko/20090909 SUSE/3.5.3-1.2 Firefox/3.5.3
+Build Identifier: I20080617-2000
+The file search provides a search history.
+Using the cursor up/down keys you can scroll through the history.
+After activating the "Regular expression" checkbox, you can use the "Content Assist", e.g.
+by pressing
+<ctrl>-<space>.
+Now, using the the cursor up/down keys, you can scroll through the completion proposals.
+But, this also scrolls through the search history.
+Your new search query gets messed up ...
+Same happens with page up/down, but not with the
+<end> or
+<pos1> keys or with the mouse.
+Reproducible: Always
+Steps to Reproduce:
+1.fill the file search history with some (different) search strings
+2.activate the "Regular Expression" checkbox
+3.activate the "code assist" using
+<ctrl>-<space>
+4.use the cursor up or down key to scroll through the different proposals

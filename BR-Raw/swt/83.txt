@@ -1,0 +1,5 @@
+[GTK3] CoolBar item handles only shown when CoolBar style includes SWT.FLAT
+- 4.3M5 test build, observed on Ubuntu 12.04LTS
+- run ControlExample, go to the CoolBar tab
+- note that handles for dragging CoolItems are only shown when the Control's style includes SWT.FLAT
+- dragging the items still works in such cases, one just has to know where to begin dragging

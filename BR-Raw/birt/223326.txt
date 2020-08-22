@@ -1,0 +1,3 @@
+Bug 223326 Reselect the function will clear the expression of measure[1102]
+Description: Reselect the function will clear the expression of measure[1102] Build number: 2.3.0.v20080320-0800 Steps to reproduce: 1, New a crosstab with measure 2, Modify the measure's function to MAX 3, Save the report 4, Remodify the measure's function to SUM Expected result: After step4, the expression of measure is kept Actual result: After step4, the expresion is cleared.
+Error log:

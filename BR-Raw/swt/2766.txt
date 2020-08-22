@@ -1,0 +1,10 @@
+TrayItem obscures KDE's gradient
+If you have an image with a transparency mask in a TrayItem, the background
+around the image is composited onto gray (the default GTK+ widget background
+colour).
+KDE uses a gradient as the background of their panel by default.
+This
+causes the SWT TrayItem to stand out, as it appears in a gray box rather than
+honour KDE's gradient.
+One possible fix is to use the X SHAPE extension and define a shape mask for the
+window.

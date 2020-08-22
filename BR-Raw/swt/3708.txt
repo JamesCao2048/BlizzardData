@@ -1,0 +1,35 @@
+Bug in Decorations.setPlacement method
+The setPlacement method in Decorations contains the following code:
+if ((flags & OS.SWP_NOMOVE) == 0) {
+lpwndpl.left = x;
+lpwndpl.top = y;
+}
+if ((flags & OS.SWP_NOSIZE) == 0)
+{
+lpwndpl.right = x + width;
+lpwndpl.bottom = x + height;
+}
+I believe this should be changed to:
+if ((flags & OS.SWP_NOMOVE) == 0)
+{
+lpwndpl.left = x;
+lpwndpl.top = y;
+}
+else
+{
+x = lpwndpl.left;
+y = lpwndpl.top;
+}
+if ((flags & OS.SWP_NOSIZE) == 0)
+{
+lpwndpl.right = x + width;
+lpwndpl.bottom = y + height;
+}
+The problem with the current code occurs when the 1st test is false (ie.
+NO_MOVE is true) and the 2nd test is true (ie NOSIZE is false).
+Consider what
+happens if setPlacement is called with the values (0, 0, 400, 400), where the
+current window placement is (50, 50, 500, 500).
+The current code sets the
+window placement to (50, 50, 400, 400), which violates the requested width and
+height.

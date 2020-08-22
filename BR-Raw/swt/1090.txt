@@ -1,0 +1,4 @@
+MouseHover event always has empty stateMask
+I20090325-1135
+On cocoa, MouseHover events always have an empty stateMask (0x0).
+In the Java editor, different hovers should show up depending on the modifiers held down (configurable in preferences).

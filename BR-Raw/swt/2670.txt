@@ -1,0 +1,32 @@
+Can't listen Excel events
+use the following code,I can't listen Excel events.But The same way use
+to "word.document",it's successful.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+OleFrame frame = new OleFrame(shell,SWT.NONE);
+shell.setLayout(new GridLayout());
+frame.setLayoutData(new GridData(GridData.FILL_HORIZONTAL |
+GridData.FILL_VERTICAL));
+OleControlSite site = new OleControlSite(frame,SWT.NONE,"Excel.Sheet");
+OleAutomation doc = new OleAutomation(site);
+int [] dispInfo = doc.getIDsOfNames(new String[] {"Application"});
+System.out.println(dispInfo[0]);
+Variant variant = doc.getProperty(dispInfo[0]);
+OleAutomation app = variant.getAutomation();
+variant.dispose();
+int WorkbookBeforeSave= 0x00000623;
+site.addEventListener(app,WorkbookBeforeSave,new OleListener() {
+public void handleEvent(OleEvent event) {
+System.out.println("event");
+}
+});
+site.doVerb(OLE.OLEIVERB_OPEN);
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch())
+display.sleep();
+}
+app.dispose();
+}
+}

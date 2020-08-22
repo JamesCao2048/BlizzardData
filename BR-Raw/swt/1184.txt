@@ -1,0 +1,5 @@
+Table, Tree, List send DefaultSelection when double-click in header
+- run the snippet below and observe that DefaultSelection events are incorrectly received if you double-click in the header or in the Table's whitespace
+- Tree and List have the same problem
+- this creates some strange behaviours in eclipse
+- also note that the DefaultSelection event never has its item field set (it should for Table and Tree)

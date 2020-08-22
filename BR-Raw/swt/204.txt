@@ -1,0 +1,55 @@
+CTabFolder with a disposed top right control cannot be rendered
+When a composite's child gets disposed there aren't any layout problems.
+Shouldn't the same apply to CTabFolder?
+Display display = new Display();
+Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setLayout(new FillLayout());
+CTabFolder folder = new CTabFolder(shell, SWT.CLOSE);
+Composite c = new Composite(folder, SWT.NONE);
+folder.setTopRight(c);
+c.dispose();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+Exception in thread "main" org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:4270)
+at org.eclipse.swt.SWT.error(SWT.java:4185)
+at org.eclipse.swt.SWT.error(SWT.java:4156)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:468)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:340)
+at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:226)
+at org.eclipse.swt.custom.CTabFolder.setButtonBounds(CTabFolder.java:2169)
+at org.eclipse.swt.custom.CTabFolder.updateItems(CTabFolder.java:3348)
+at org.eclipse.swt.custom.CTabFolder.updateItems(CTabFolder.java:3281)
+at org.eclipse.swt.custom.CTabFolder.onResize(CTabFolder.java:1744)
+at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:263)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+at org.eclipse.swt.widgets.Control.WM_SIZE(Control.java:5156)
+at org.eclipse.swt.widgets.Scrollable.WM_SIZE(Scrollable.java:291)
+at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1662)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:4586)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4957)
+at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2520)
+at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:80)
+at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5391)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:4599)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4957)
+at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+at org.eclipse.swt.widgets.Widget.SetWindowPos(Widget.java:1457)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:3111)
+at org.eclipse.swt.widgets.Composite.setBounds(Composite.java:1019)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:3072)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:3068)
+at org.eclipse.swt.layout.FillLayout.layout(FillLayout.java:201)
+at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1263)
+at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1673)
+at org.eclipse.swt.widgets.Canvas.WM_SIZE(Canvas.java:454)
+at org.eclipse.swt.widgets.Decorations.WM_SIZE(Decorations.java:1790)
+at o

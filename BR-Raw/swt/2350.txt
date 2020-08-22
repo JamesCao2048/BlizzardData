@@ -1,0 +1,8 @@
+DnD doesn't support special characters
+DropTargetEvent.data returns wrong path for filenames containing special characters.
+Tested with german umlauten (盲枚眉脽...)
+e.g:
+/../Ka脙脿pitel_8.pdf for /../K盲pitel_8.pdf
+/../Ku脙脿pitel_8.pdf for /../K眉pitel_8.pdf
+/../Ko脙脿pitel_8.pdf for /../K枚pitel_8.pdf
+/../K&#8730;眉pitel_8.pdf  for /../K脽pitel_8.pdf

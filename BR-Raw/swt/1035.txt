@@ -1,0 +1,5 @@
+getOffset(int,int,int[]) fails for empty lines ("n")
+from the newsgroup:
+"Under Windows single 'n' works ok, but it has one disappointing feature: empty lines terminated with 'n' has zero width and cannot be detected by coordinate hit testing: offset = textLayout.getOffset(x, y, trailing); For such lines offset is returned as for start of next non-empty line.
+Empty lines terminated with 'r' can be detected, but I'm in doubt if this is  cross-platform compatible.
+Empty lines terminated with "rn" also can be detected, but it is difficult when moving caret through text."

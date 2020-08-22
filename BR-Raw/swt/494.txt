@@ -1,0 +1,2 @@
+TableItem drawSelection
+TableItem drawSelection calculates the proper starting x coord for drawing a focus rectangle but doesn't end up using the computed value.

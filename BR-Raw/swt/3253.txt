@@ -1,0 +1,34 @@
+when the toolBar is wrapped only by a few pixels, removing and adding items causes wrapping to fail
+Following  comment 12  for  bug 15239 , I am filing a new bug report for this
+problem:
+"Your example actually shows a bug in ToolBar wrap feature: when the toolBar
+is
+wrapped only by a few pixels (in the example 8 is the magic number) removing
+and adding a new item causes wrapping to fail, here the example:
+Display display = new Display();
+Shell shell = new Shell(display);
+final ToolBar toolBar = new ToolBar (shell, SWT.BORDER | SWT.WRAP);
+for (int i= 0; i
+< 4; i++) {
+ToolItem item = new ToolItem(toolBar, SWT.RIGHT);
+item.setText("String " + i);
+}
+Point size = toolBar.computeSize (SWT.DEFAULT, SWT.DEFAULT);
+Rectangle rect = shell.getClientArea();
+toolBar.setBounds (rect.x, rect.y, size.x
+- 8, rect.height);
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+toolBar.getItem(3).dispose();
+ToolItem item = new ToolItem(toolBar, SWT.RIGHT);
+item.setText("String 4");
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+Note: In different machines (different windows version), maybe it is need to
+decrease the width by less than 8 pixels."

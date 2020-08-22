@@ -1,0 +1,35 @@
+[JUNIT]Label.setAlignment not implemented
+I20030221
+Failed in
+Test_org_eclipse_swt_widgets_Label.test_setAlignmentI
+junit.framework.AssertionFailedError: expected:<16384> but was:<131072>
+at junit.framework.Assert.fail(Assert.java:47)
+at junit.framework.Assert.failNotEquals(Assert.java:282)
+at junit.framework.Assert.assertEquals(Assert.java:64)
+at junit.framework.Assert.assertEquals(Assert.java:201)
+at junit.framework.Assert.assertEquals(Assert.java:207)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Label.test_setAlignmentI(Test_
+org_eclipse_swt_widgets_Label.java:138)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Label.runTest(Test_org_eclips
+e_swt_widgets_Label.java:201)
+at junit.framework.TestCase.runBare(TestCase.java:127)
+at junit.framework.TestResult$1.protect(TestResult.java:106)
+at junit.framework.TestResult.runProtected(TestResult.java:124)
+at junit.framework.TestResult.run(TestResult.java:109)
+at junit.framework.TestCase.run(TestCase.java:118)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.jav
+a:377)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:261)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:15
+2)
+at java.lang.reflect.Method.invoke(Native Method)
+at com.apple.buckyball.app.LaunchRunner.run(LaunchRunner.java:82)
+at com.apple.buckyball.app.LaunchRunner.callMain(LaunchRunner.java:44)
+at com.apple.buckyball.app.CarbonLibApp.launch(CarbonLibApp.java:67)

@@ -1,0 +1,38 @@
+Exception in org.eclipse.swt.graphics.Image.getImageData()
+I have a large diagram in GEF/Draw2d: 7000x7000 px.
+I want export this diagram to a jpeg/png.
+Normally I do this with the following steps:
+Image image = new Image(display, 7000, 7000);
+// ...
+paint figures from GEF diagram in image
+ImageData imageData = image.getImageData();
+ImageLoader loader = new ImageLoader();
+loader.data = new ImageData[] { imageData };
+loader.save("c:/temp/newImage.png", SWT.IMAGE_PNG);
+With this large diagram I've got the following exception:
+org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(SWT.java:4308)
+at org.eclipse.swt.SWT.error(SWT.java:4197)
+at org.eclipse.swt.SWT.error(SWT.java:4168)
+at org.eclipse.swt.graphics.Image.getImageData(Image.java:1463)
+In the Image class I've found this:
+int /*long*/ lpvBits = OS.HeapAlloc(hHeap, OS.HEAP_ZERO_MEMORY, imageSize);
+if (lpvBits == 0) SWT.error(SWT.ERROR_NO_HANDLES);
+It seems there is a problem with the memory allocation.
+But I've checked it and there is enough heap memory available.
+I need ~186 MB for the image model and on the heap there are more then 500 MB available.
+If I take smaller images this method works fine:
+Image image = new Image(display, 5000, 5000);
+// ...
+paint figures from GEF diagram in image
+ImageData imageData[]=new ImageData[4];
+for (int i = 0; i
+< imageData.length; i++) {
+imageData[i] = image.getImageData();
+}
+In this case I've allocated 380 MB (95 MB for each of these 4 image models) without any problem.
+Please can you improve the implementation of the method org.eclipse.swt.graphics.Image.getImageData() so it can handle also larger images?
+10K*10K px should be enough for us.
+Or do you have another idea how we can export diagrams without using ImageData/ImageLoader?
+BR,
+Matthias

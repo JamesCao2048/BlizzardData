@@ -1,0 +1,6 @@
+JS evaluating asynchronously with XULRunner 10
+The default code path in Mozilla.execute() is failing with XULRunner 10, which is causing it to fall back to the "pre-1.9" approach.
+For some JS evaluations this is fine but not for all, so getting the main part of Mozilla.execute() to work with XULRunner 10 is important.
+I believe it's caused by native interfaces that have changed between XULRunner 3.6.x and 10.0.
+Note that SWT includes two header files, nsIScriptContext.h and nsIScriptGlobalObject.h, that make it possible to compile the natives that are used here with XULRunner 1.8.x.
+It's possible that these hacked header files may need to change if these natives have changed in XULRunner 10.

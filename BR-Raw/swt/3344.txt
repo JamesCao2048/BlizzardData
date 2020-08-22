@@ -1,0 +1,49 @@
+GTK: Text.setCursor() does not function.
+In this test selecting an item from the list would set the Cursor of the Text
+widget by calling Text.setCursor().
+But it is seen that the Cursor of the Text
+widget is not set .
+This test  works fine on Windows.
+The test case :
+---------test case starts here
+----------------------------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Cursor;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSWTCursor {
+public static void main(String[] args) {
+final Display disp = Display.getDefault();
+Shell shell = new Shell(disp);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+final List list = new List(shell, SWT.BORDER | SWT.HORIZONTAL | SWT.VERTICAL |
+SWT.MULTI | SWT.CLIP_CHILDREN | SWT.CLIP_SIBLINGS);
+final Text text = new Text(shell ,SWT.BORDER | SWT.CLIP_CHILDREN |
+SWT.CLIP_SIBLINGS|SWT.NULL);
+list.add("Default");
+list.add("Wait");
+list.add("Cross Hair");
+list.add("App Starting");
+list.add("Help");
+list.addSelectionListener(new SelectionAdapter(){
+public void widgetSelected(SelectionEvent e){
+text.setCursor(new Cursor(disp,list.getSelectionIndex()));
+}
+});
+shell.setText("Test Cursor");
+shell.setSize(200,200);
+shell.setLocation(0,0);
+shell.open();
+
+
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}
+-------------test case ends here
+-----------------------------------------

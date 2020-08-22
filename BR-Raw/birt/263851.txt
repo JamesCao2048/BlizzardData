@@ -1,0 +1,2 @@
+Bug 263851 Supplying more than two numbers to BirtMath.add() throws an exception
+An expression, such as BirtMath.add(1,1,1) throws the following exception: org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report In the expression builder, the validate option said no syntax errors were found.

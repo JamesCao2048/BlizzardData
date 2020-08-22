@@ -1,0 +1,7 @@
+Bug 122045 Template should show blank preview when there is no image
+Create a template but do not associate an image with it.
+Place the template in the templates directory.
+Now, create a new report design.
+On the second page of the New Report dialog, select the template that has no image.
+Actual result: The preview appears as a white rectangle with a small red square in the top left.
+Expected result: The preview appears as a gray background in the preview image area.

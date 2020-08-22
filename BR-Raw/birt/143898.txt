@@ -1,0 +1,5 @@
+Bug 143898 [smoke][regression]Chart cannot be extended from library file
+Description: Chart cannot be extended from library file Step to reproduce: 1.New a library and insert chart, publish it.
+2.New a report, drag data source, dataset and chart to Layout from library 3.Save the report.
+Result: GUIException: caused by java.lang.reflect.
+invocation targetexception

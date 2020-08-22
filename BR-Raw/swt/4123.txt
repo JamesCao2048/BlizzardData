@@ -1,0 +1,52 @@
+Cheese in Table when setting column image
+Eclipse 20020508
+Linux Motif
+Run the folloiwng example.
+When you add an image to the header you get
+cheese.
+(Note: You have to supply your own image, use one that is bigger than
+the column heaer size.) And similarly when you remove the image.
+public static void main(String[] args) {
+Display display = new Display();
+final Image image = new Image(display,
+_Scrapbook.class.getResourceAsStream ("image3.bmp"));
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.BORDER);
+table.setHeaderVisible(true);
+final TableColumn column1 = new TableColumn(table, SWT.NONE);
+column1.setText("Column 1");
+final TableColumn column2 = new TableColumn(table, SWT.NONE);
+column2.setText("Column 2");
+final TableColumn column3 = new TableColumn(table, SWT.NONE);
+column3.setText("Column 3");
+for (int i = 0; i
+< 100; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText("item " + i);
+}
+column1.pack();
+column2.pack();
+column3.pack();
+
+Button b = new Button(shell, SWT.PUSH);
+b.setText("Change Image");
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+Image image2 = column2.getImage();
+if (image2 == null) {
+column2.setImage(image);
+} else {
+column2.setImage(null);
+}
+}
+});
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+image.dispose();
+display.dispose();
+}

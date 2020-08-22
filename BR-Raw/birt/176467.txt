@@ -1,0 +1,3 @@
+Bug 176467 Wrong page break effect for spanned cell
+When page break occurs on spanned cell, this cell on next page is lost, which cause incorrect page layout.
+Report design to reproduce the error is attached.

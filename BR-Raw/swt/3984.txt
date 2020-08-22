@@ -1,0 +1,12 @@
+StyledText does not support setting selection with caret on the left
+Build 2.0 release
+The public API for StyledText does not allow the selection to be changed so that
+the caret is on the left side of the selection.
+The setSelection methods do not
+allow any way to specify a cursor on the left side (start > end, pass in a
+direction, length
+< 0) and setCaretOffset clears the selection.
+StyledText does support selections with the caret on the left side (see
+doSelection).
+However, the API necessary to use the support does not appear to
+be public.

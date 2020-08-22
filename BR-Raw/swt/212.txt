@@ -1,0 +1,15 @@
+CTabFolder should throw IllegalArgumentException when a disposed control is set as its top right control
+The setDefaultButton(Button) method from Decorations will throw an IllegalArgumentException when a disposed button is set, why doesn't CTabFolder's setTopRight(Control) method do the same?
+Display display = new Display();
+Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setLayout(new FillLayout());
+CTabFolder folder = new CTabFolder(shell, SWT.CLOSE);
+Composite c = new Composite(folder, SWT.NONE);
+c.dispose();
+folder.setTopRight(c);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();

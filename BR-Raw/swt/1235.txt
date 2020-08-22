@@ -1,0 +1,43 @@
+[Viewers] Arithmetic exception when typing show types dialog
+Build ID: M20080911-1700
+Steps To Reproduce:
+This bug isn't 100% reproducible, but when running eclipse on AIX via Exceed, when I open the show types dialog (using CTRL+SHIFT+T) and start typing  the error dialog informs me of an Arithmetic exception.
+Sometimes, every letter typed after that causes the same exception to show up.
+Stack trace is below.
+More information:
+java.lang.ArithmeticException: divide by zero
+at org.eclipse.ui.dialogs.FilteredItemsSelectionDialog$ItemsListLabelProvider.getSeparatorLabel(FilteredItemsSelectionDialog.java:1720)
+at org.eclipse.ui.dialogs.FilteredItemsSelectionDialog$ItemsListLabelProvider.getText(FilteredItemsSelectionDialog.java:1653)
+at org.eclipse.ui.dialogs.FilteredItemsSelectionDialog$ItemsListLabelProvider.update(FilteredItemsSelectionDialog.java:1691)
+at org.eclipse.jface.viewers.ViewerColumn.refresh(ViewerColumn.java:145)
+at org.eclipse.jface.viewers.AbstractTableViewer.doUpdateItem(AbstractTableViewer.java:386)
+at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:466)
+at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+at org.eclipse.core.runtime.Platform.run(Platform.java:880)
+at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:48)
+at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+at org.eclipse.jface.viewers.StructuredViewer.refreshItem(StructuredViewer.java:1476)
+at org.eclipse.jface.viewers.AbstractTableViewer.replace(AbstractTableViewer.java:1043)
+at org.eclipse.ui.dialogs.FilteredItemsSelectionDialog$ContentProvider.updateElement(FilteredItemsSelectionDialog.java:2898)
+at org.eclipse.jface.viewers.AbstractTableViewer$1.handleEvent(AbstractTableViewer.java:78)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:822)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:843)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:829)
+at org.eclipse.swt.widgets.Table.checkData(Table.java:257)
+at org.eclipse.swt.widgets.TableItem.paint(TableItem.java:1066)
+at org.eclipse.swt.widgets.Table.onPaint(Table.java:2707)
+at org.eclipse.swt.widgets.Table.handleEvents(Table.java:1282)
+at org.eclipse.swt.widgets.Table$1.handleEvent(Table.java:163)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:822)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:843)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:829)
+at org.eclipse.swt.widgets.Composite.XExposure(Composite.java:1403)
+at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1104)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3751)
+at org.eclipse.swt.internal.motif.OS._XtDispatchEvent(Native Method)
+at org.eclipse.swt.internal.motif.OS.XtDispatchEvent(OS.java:3906)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2809)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+at org.ec

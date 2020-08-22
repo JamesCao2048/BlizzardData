@@ -1,0 +1,10 @@
+TitleAreaDialog's banner image has extraneous white borders
+Created  attachment 79046   [details]
+Image to display the extra border padding.
+Reproduced on I20070920-0936 in 32-bit Vista Business and 32-bit XP SP2.
+1.Click the 'New Java Class' icon in the toolbar.
+2.The 'New Java Class' wizard appears.
+3.Notice that there is a white border that's maybe five pixels wide surrounding the banner image.
+See attachment for further clarification.
+This does not appear on the regular win32 build reproduced.
+It can also be seen in the 'About Dialog' which subclasses ProductInfoDialog which subclasses TrayDialog.

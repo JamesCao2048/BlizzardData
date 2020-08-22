@@ -1,0 +1,7 @@
+TableEditors shifted to the right when table has image
+I20041214-2000
+TableEditors are shifted to the right when the table has an image.
+Happens when
+editing cells in Tasks view, Refactor > PullUp dialog, Externalize Strings, etc.
+Seems to be the same issue that has been fixed several times before (see e.g.
+bug 42145 ,  bug 63105 ,  bug 62552 , and dups).

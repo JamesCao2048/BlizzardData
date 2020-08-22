@@ -1,0 +1,31 @@
+CCombo not dismissing popups
+Run the following code.
+Open the last CCombo, then the second last third last...
+You shouldn't be able to have more than one popup open at once.
+public static void main(String[] args) {
+try {
+Display.setAppName("Kevin");
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Parent Shell");
+shell.setLayout(new RowLayout(SWT.VERTICAL));
+CCombo combo = new CCombo(shell, SWT.NONE);
+combo.setItems(new String[] {"one", "two", "three", "four"});
+combo = new CCombo(shell, SWT.NONE);
+combo.setItems(new String[] {"one", "two", "three", "four"});
+combo = new CCombo(shell, SWT.NONE);
+combo.setItems(new String[] {"one", "two", "three", "four"});
+combo = new CCombo(shell, SWT.NONE);
+combo.setItems(new String[] {"one", "two", "three", "four"});
+combo = new CCombo(shell, SWT.NONE);
+combo.setItems(new String[] {"one", "two", "three", "four"});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+} catch (Throwable t) {
+t.printStackTrace();
+}
+}

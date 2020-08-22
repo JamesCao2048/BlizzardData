@@ -1,0 +1,96 @@
+[browser] crash on IE when using javascript to close more than 2 windows
+Following HTML crash when used from the snippet below.
+Mozilla is fine.
+<html>
+<script type="text/javascript">
+var win;
+function testOpen() {
+win = window.open('javascript:"<h1>Simple New
+Window</h2>"', "", "left=10,top=200,height=100,width=300");
+}
+function testResizeTo() {
+win.resizeTo(600,800);
+}
+function testMoveTo() {
+win.moveTo(200,100);
+}
+function testMoveBy() {
+win.moveBy(2,2);
+}
+function testScrollBy() {
+win.scrollBy(1,20);
+}
+function testResizeBy() {
+win.resizeBy(2,3);
+}
+function testClose() {
+win.close();
+}
+win1 = window.open('javascript:"<h1>Simple New Window 1</h2><p>bounds:
+left=10,top=200,height=100,width=300<p>"', "", "left=10,top=200,height=100,widt
+h=300");
+win2 = window.open('javascript:"<h1>Simple New Window 2</h2><p>bounds:
+left=10,top=200<p>"', "", "left=10,top=200");
+win3 = window.open('javascript:"<h1>Simple New Window 3</h2><p>bounds:
+height=100,width=300<p>"', "", "height=100,width=300");
+win4 = window.open('javascript:"<h1>Simple New Window 4</h2><p>bounds:
+not specified<p>"', "", "");
+
+setTimeout("win1.close();win2.close();win3.close();win4.close()",
+5000);
+// this 'fixes' the crash
+//	setTimeout("win1.close();win2.close();", 5000);
+//	setTimeout("win3.close();win4.close();", 10000);
+
+</script>
+<form>
+<input type="button" VALUE="window.open" onClick="testOpen()">
+<input type="button" VALUE="resizeTo" onClick="testResizeTo()">
+<input type="button" VALUE="moveTo" onClick="testMoveTo()">
+<input type="button" VALUE="moveBy" onClick="testMoveBy()">
+<input type="button" VALUE="scrollBy" onClick="testScrollBy()">
+<input type="button" VALUE="resizeBy" onClick="testResizeBy()">
+<input type="button" VALUE="close" onClick="testClose()">
+</FORM>
+<body>
+<p>This test uses javascript.
+<p>It opens a new window.
+Sets a timer.
+Then close the new window when the
+timer expires.
+</body>
+</html>
+/******************************************************************************
+*
+* Copyright (c) 2000, 2003 IBM Corporation and others.
+* All rights reserved.
+This program and the accompanying materials
+* are made available under the terms of the Common Public License v1.0
+* which accompanies this distribution, and is available at
+*  http://www.eclipse.org/legal/cpl-v10.html
+*
+* Contributors:
+*     IBM Corporation
+- initial API and implementation
+
+*******************************************************************************
+/
+package org.eclipse.swt.tests.junit.browser;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.browser.*;
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+public class Crash {
+public static boolean passed = false;
+static Point[][] regressionBounds = {
+{new Point(10,200), new Point(300,100)},
+{new Point(10,200), null},
+{null, new Point(300,100)},
+{null, null}
+};
+static int index = 0;
+static int cntPassed = 0;
+
+public static boolean test1(String url) {
+System.out.println("javascript

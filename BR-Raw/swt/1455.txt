@@ -1,0 +1,45 @@
+Table.getVerticalBar() returns null
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class PR176510 {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+//	final Tree tree = new Tree(shell, SWT.NONE);
+//	for (int i = 0; i
+< 100; i++) {
+//		TreeItem item = new TreeItem(tree, SWT.NONE);
+//		item.setText("Item xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + i);
+//	}
+//	final Table tree = new Table(shell, SWT.NONE);
+//	for (int i = 0; i
+< 100; i++) {
+//		TableItem item = new TableItem(tree, SWT.NONE);
+//		item.setText("Item xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + i);
+//	}
+final List tree = new List(shell, SWT.H_SCROLL | SWT.V_SCROLL);
+for (int i = 0; i
+< 100; i++) {
+tree.add("Item" + i);
+}
+
+tree.getVerticalBar().addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("ver selection=" + tree.getVerticalBar().getSelection() + " " + event.detail);
+}
+});
+tree.getHorizontalBar().addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("hor selection=" + tree.getHorizontalBar().getSelection() + " " + event.detail);
+}
+});
+
+
+shell.setSize(200, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}

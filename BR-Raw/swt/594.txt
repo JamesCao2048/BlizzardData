@@ -1,0 +1,10 @@
+[printing] Print selection prints whole file
+Build Identifier:  I20100520-1744
+If you open a xmxl file, select some lines , press
+<CTRL>+P and select "Selected Text" at the printer dialog, the hole xml file will be printed.
+This is especially annoying if you print at a network printer (in separate room) and the xml file has a size of about 2MB.
+Reproducible: Always
+Steps to Reproduce:
+1.open a xml file
+2.select several lines
+3.goto print and select "Selection"

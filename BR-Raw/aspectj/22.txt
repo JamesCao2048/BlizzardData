@@ -1,0 +1,56 @@
+declare parents & @type not matching on annotation properties of enum types
+NOTE:  real project private git repo demonstrating bug has been shared with Andy Clement privately.  I'm reporting bug as Andy requested with as much info as I feel I can.
+I have a case where 'declare parents' and 'declare @type' instructions are not being applied because their type patterns, which use annotations whose properties are of enumerated types, are not matching.
+Below find the relevant artifacts and their shapes.  The lines in the aspect PersistableJpaAspect that are not matching as they should are the 'declare parents' and 'declare @type'.  If I change the annotation properties to be of type String and change the type patterns to use string literals (see "matches" comments in annotation:  StoreType.JPA => "JPA" and IdType.LONG => "LONG"), the matching works properly.
+enums:
+======
+public enum StoreType {
+MONGO, JDO, JPA;
+}
+=====
+public enum IdType {
+LONG, STRING;
+}
+annotation:
+===========
+public @interface Persistable {
+StoreType in() default StoreType.MONGO; // doesn't match
+// matches: String in() default "MONGO";
+IdType id() default IdType.STRING; // doesn't match
+// matches: String id() default "STRING";
+}
+aspect:
+=======
+public abstract privileged aspect PersistableAspect {
+public interface I extends ....trait.interfaces.persistence.Persistable {
+long version();
+void version(long version);
+}
+public interface L extends I {
+Long idLong();
+void idLong(Long id);
+}
+public interface S extends I {
+String idString();
+void idString(String id);
+}
+
+declare @type : I+ : @Configurable;
+// ...
+}
+=====
+public privileged aspect PersistableJpaAspect extends PersistableAspect {
+public interface JL extends L {
+}
+public interface JS extends S {
+}
+declare parents :
+(@Persistable(id = IdType.LONG, in = StoreType.JPA) *)
+implements JL;
+declare parents :
+(@Persistable(id = IdType.STRING, in = StoreType.JPA) *)
+implements JS;
+declare @type : @Persistable(in="JPA") JL+ : @Entity;
+declare @type : @Persistable(in="JPA") JS+ : @Entity;
+// ...
+}

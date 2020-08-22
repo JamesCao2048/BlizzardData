@@ -1,0 +1,68 @@
+[64] printing to file twice crashes
+3.6M7 test build
+- observed on 64-bit Vista, does not happen on same machine with 32-bit eclipse
+- have not tried it on 64-bit Windows 7 or XP
+- open any file in eclipse
+- invoke File
+-> Print...
+- check "Print to File", press Print
+- enter any name, OK
+--> file is written, fine
+- invoke File
+-> Print...
+again
+- "Print to File" is already checked, so just press Print
+- crash usually happens here
+
+-> occasionally it can take a third round for the crash to occur
+I've repeated this several times but only one hs_* file was written out, I'm not sure why.
+Its content is:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fef91a3eee, pid=3544, tid=3268
+#
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (1.5.0_22-b03 mixed mode)
+# Problematic frame:
+# C  [WINSPOOL.DRV+0x23eee]
+#
+---------------  T H R E A D
+---------------
+Current thread (0x0000000006cde6a0):  JavaThread "Printing" [_thread_in_native, id=3268]
+siginfo: ExceptionCode=0xc0000005, reading address 0x000000000e2605a8
+Registers:
+EAX=0x0000000000000001, EBX=0x000000000038cee0, ECX=0x000000000038cee8, EDX=0x000000000de36900
+ESP=0x000000000ecef450, EBP=0x000000000de16d68, ESI=0x0000000000000001, EDI=0x000000000de16d68
+EIP=0x000007fef91a3eee, EFLAGS=0x0000000000010206
+Top of Stack: (sp=0x000000000ecef450)
+0x000000000ecef450:   000000000de36910 000000000de36910
+0x000000000ecef460:   0000000000000001 000000000ecef5f0
+0x000000000ecef470:   000000000de16d68 000007fef91a64e7
+0x000000000ecef480:   0000000000000000 0000000000000000
+0x000000000ecef490:   000000000de36250 000000000de16d68
+0x000000000ecef4a0:   0000000000000001 000007fef91a6315
+0x000000000ecef4b0:   000000000de16d68 000000000de16d68
+0x000000000ecef4c0:   0000000000000001 00000000771ef9da
+0x000000000ecef4d0:   ffffffffe7211227 000007fef91a624a
+0x000000000ecef4e0:   000000000de16d68 0000000000000001
+0x000000000ecef4f0:   000000000de16d68 0000000000000001
+0x000000000ecef500:   000000000ddfe860 000007fefeef687a
+0x000000000ecef510:   000000000ddfe860 00000000e4851327
+0x000000000ecef520:   0000000000000000 ffffffffe7211227
+0x000000000ecef530:   0000000000000000 0000000000000000
+0x000000000ecef540:   0000000000000000 0000000000000000
+Instructions: (pc=0x000007fef91a3eee)
+0x000007fef91a3ede:   48 83 ec 20 48 85 c9 74 2b 48 8d 59 f8 4c 8b 03
+0x000007fef91a3eee:   41 81 3c 08 ef be ad de 74 04 33 c0 eb 1b ba 65
+Stack: [0x000000000ebf0000,0x000000000ecf0000),  sp=0x000000000ecef450,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [WINSPOOL.DRV+0x23eee]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.win32.OS.DeleteDC(J)Z+0
+j  org.eclipse.swt.printing.Printer.destroy()V+13
+j  org.eclipse.swt.graphics.Device.dispose()V+54
+j  org.eclipse.jface.text.TextViewer$11.run()V+13
+v  ~StubRoutines::call_stub
+---------------  P R O C E S S
+---------------
+Java Threads: (

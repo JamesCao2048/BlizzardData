@@ -1,0 +1,9 @@
+org.eclipse.swt.browser.IE.createSafeArray() does not work for cross process
+Build Identifier: SWT 3.6.1
+Due to a wrong flag in safeArrary was set, the safeArrary is not passed cross process successfully.
+safeArray.fFeatures = OS.FADF_FIXEDSIZE | OS.FADF_HAVEVARTYPE
+Actually the safeArray contain VT_UI1 but not VT_VARIANT, so the flag OS.FADF_HAVEVARTYPE should not be set up.
+Without the flag, the function work well for in-process and out-of-process COM communication.
+Reproducible: Always
+Steps to Reproduce:
+Run Snippet330 with SWT IE browser (in-process), and IBM XPD browser (support both in-process and out-of-process)

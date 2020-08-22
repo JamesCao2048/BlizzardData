@@ -1,0 +1,8 @@
+Bug 180654 Cannot add column binding for Time type in Property Editor.[0001]
+Description: Cannot add column binding for Time type in Property Editor.
+Build number:2.2.0.v200704031345 Steps to reproduce: 1.New sample data source and data set.
+2.Drag one column to layout.
+3.In Binding of Property Editor, Edit binding to set Type to Time, click OK.
+Expected result: Type is changed to Time.
+Actual result: Type is changed to Date Time.
+Error log:N/A

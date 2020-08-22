@@ -1,0 +1,58 @@
+Eclipse crashes and throws exception when starting up in Chinese locales
+Overview Description:
+For any Chinese locale on Sun Solaris 9, Eclipse will crash and throw a null
+pointer exception when the user attempts to start Eclipse in that environment.
+Steps to Reproduce:
+1) Log into Solaris using any Chinese locale (e.g., zh_TW.BIG5, zh_CN.GB18030, zh).
+2) Open a terminal session and start Eclipse.
+Actual Results:
+Eclipse crashed and threw the following exception:
+java.lang.ExceptionInInitializerError: java.lang.NullPointerException
+at
+org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:75)
+at
+org.eclipse.ui.internal.WorkbenchPlugin.initializeDefaultPreferences(WorkbenchPlugin.java:441)
+at
+org.eclipse.ui.plugin.AbstractUIPlugin.initializeDefaultPluginPreferences(AbstractUIPlugin.java:631)
+at org.eclipse.core.runtime.Plugin.getPluginPreferences(Plugin.java:347)
+at
+org.eclipse.ui.plugin.AbstractUIPlugin$CompatibilityPreferenceStore.initialize(AbstractUIPlugin.java:176)
+at
+org.eclipse.ui.plugin.AbstractUIPlugin.getPreferenceStore(AbstractUIPlugin.java:568)
+at org.eclipse.ui.internal.Workbench.getPreferenceStore(Workbench.java:701)
+at org.eclipse.ui.internal.Workbench.init(Workbench.java:844)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1373)
+at
+org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:845)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
+at org.eclipse.core.launcher.Main.run(Main.java:747)
+at org.eclipse.core.launcher.Main.main(Main.java:583)
+Expected Results:
+Eclipse should start normally.
+I have tested this with a Japanese locale
+(ja_JP.eucJP), and Eclipse started normally.
+Note that no Eclipse language packs
+were installed, as my intention was only to test the functionality of an English
+version of Eclipse in a different locale.
+Build Date & Platform:
+Build 200303202147 (RC3a) on Sun Solaris 9
+Additional Builds and Platforms:
+- Also Occurs On
+Build 200211071448 (2.0.2) on Sun Solaris 9
+However, on Eclipse 2.0.2, a different exception is thrown, and instead of
+crashing, Eclipse hangs.
+Here is the exception:
+java.lang.NullPointerException
+at org.eclipse.swt.graphics.Device.<init>(Device.java:121)
+at org.eclipse.swt.widgets.Display.<init>(Display.java:319)
+at org.eclipse.swt.widgets.Display.<init>(Display.java:316)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1308)
+at
+org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:831)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:462)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:247)
+at org.eclipse.core.launcher.Main.run(Main.java:703)
+at org.eclipse.core.launcher.Main.

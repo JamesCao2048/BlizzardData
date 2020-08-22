@@ -1,0 +1,12 @@
+lame error message: "negation doesn't allow binding
+AspectJ Compiler 1.1beta4
+This program:
+public aspect Foo {
+pointcut p(int i): call(void f(i));
+}
+produces these error messages:
+negation doesn't allow binding
+formal unbound in pointcut
+2 errors
+It should say something like "binding is only allowed in state-based pointcuts", and it should print the file and line number.
+--Doug

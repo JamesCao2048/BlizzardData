@@ -1,0 +1,7 @@
+Bug 137142 Type in chart interactivity doesn't work.
+Description: Type in chart interactivity doesn't work.
+Steps to reproduce 1.Insert a chart.
+2.Set Title interactivity or other interactivity, set type to Mouse click, set Action Show Tooltip.
+3.Preview.
+Expected result: When click mouse, tooltip shows.
+Actual result: When mouse moved over, tooltip showed.

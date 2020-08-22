@@ -1,0 +1,25 @@
+Form's BusyIndicator hangs workbench on GTK
+3.3M5
+Using the form editor's BusyIndicator hangs the workbench on GTK.
+Not using busy indication made the problem go away, the following was in the log:
+Xlib: unexpected async reply (sequence 0x83d9)!
+Xlib: unexpected async reply (sequence 0x83da)!
+Xlib: unexpected async reply (sequence 0x8e58)!
+Xlib: unexpected async reply (sequence 0x901d)!
+Xlib: unexpected async reply (sequence 0x9819)!
+Xlib: unexpected async reply (sequence 0x98dd)!
+Xlib: unexpected async reply (sequence 0x98de)!
+Xlib: unexpected async reply (sequence 0x98df)!
+Xlib: unexpected async reply (sequence 0x98e0)!
+Xlib: unexpected async reply (sequence 0x9911)!
+The program 'Eclipse' received an X Window System error.
+This probably reflects a bug in the program.
+The error was 'BadWindow (invalid Window parameter)'.
+(Details: serial 39186 error_code 3 request_code 38 minor_code 0)
+(Note to programmers: normally, X errors are reported asynchronously;
+that is, you will receive the error a while after causing it.
+To debug your program, run it with the
+--sync command line
+option to change this behavior.
+You can then get a meaningful
+backtrace from your debugger if you break on the gdk_x_error() function.)

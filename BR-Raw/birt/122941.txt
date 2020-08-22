@@ -1,0 +1,6 @@
+Bug 122941 Group interval range resets to 1
+1.Create a group based on orders.orderNumber.
+2.Specify an interval range of 100.3.Do not check "Use fixed base value for interval" 4.Preview the report.
+Report groups on every order number.
+5.Open the group editor.
+The interval range is set to 1.

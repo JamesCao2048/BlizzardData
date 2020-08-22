@@ -1,0 +1,5 @@
+Bug 153523 OK button in parameter dialog is enabled without default value in combo-box
+Description: OK button in parameter dialog is enabled without default value in combo-box Steps to reproduce: 1.New a report parameter, combo-box.
+2.Click New button, input abc as value, click OK 3.Set abc as default value and close Edit Parameter dialog.
+4.New a data source and dataset 5.Edit the parameter, remove abc value and import values from dataset Expected result: OK button is disabled for there is no default value.
+Actual result: OK button is enabled.

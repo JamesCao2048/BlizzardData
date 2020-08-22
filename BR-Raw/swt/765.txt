@@ -1,0 +1,5 @@
+Shell#setDefaultButton() does not save the default button under certain circumstances
+When a button is focused, it is set to the default button temporarily (at least in Windows, Decorations#setDefaultButton( Button, boolean ) is called from Button#WM_SETFOCUS with the second parameter set to false).
+When this very same button is then set as the default button, this new default button is not saved.
+As an effect, the previous default button is reinstalled when the focus changes.
+The reason for this is that the statement "saveDefault = defaultButton" is never reached if "button == defaultButton" is true in Decorations#setDefaultButton( Button, boolean ).

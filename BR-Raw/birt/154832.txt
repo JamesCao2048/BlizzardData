@@ -1,0 +1,3 @@
+Bug 154832 Wrong node is added to Report Parameters for cascading parameter in Palette view
+Description: Wrong node is added to Report Parameters for cascading parameter in Palette view.
+Steps to reproduce: 1.New a report, add a cascading parameter 2.Switch to Script tab in Editor view, and then switch to Palette view 3.Expand Report Parameters node Expected result: A cascading parameter group is added to Report Parameters node Actual result: Expect a cascading parameter group is added to Report Parameters node, the children of the cascading parameter group are added as scalar parameters

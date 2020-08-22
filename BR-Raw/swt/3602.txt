@@ -1,0 +1,6 @@
+StyledText - ignore WRAP when SINGLE style is specified
+build 20030611
+The WRAP style should be ignored when both it and the SINGLE style bit is
+specified in the StyledText constructor.
+Also, setWordWrap should do nothing
+when SINGLE is specified.

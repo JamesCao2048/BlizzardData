@@ -1,0 +1,6 @@
+Bug 148771 Bottom margin is invalid in PDF & HTML
+Details: Bottom margin is invalid Step: 1.New a label.
+2.New a data item.
+3.New a label again.
+4.Set bottom margin as
+-20 point Actual result: See the attach image

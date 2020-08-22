@@ -1,0 +1,6 @@
+Inconsistent shutdown
+build I20031119
+Steve asked me to file a PR about inconsistent shutdown issues mentioned in  bug
+46624 .
+I believe the specific issue is that the Display Close event can be vetoed on
+most platforms, but not on the Mac.

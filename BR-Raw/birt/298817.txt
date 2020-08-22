@@ -1,0 +1,7 @@
+Bug 298817 Exception is thrown out when trying to add tool tip interactivity to chart axes.[13]
+description: Exception is thrown out when trying to add tool tip interactivity to chart axes.
+build id: 2.5.2 v20100104-0630 steps to reproduce: 1.New a chart.
+2.On Format Chart page, select X or Y axis, click interactivity button.
+3.Select Action as Show Tooltip and close the dialog.
+Actual result: Exception is thrown out in error log.
+If you reopen the dialog, the interactivity is not saved.

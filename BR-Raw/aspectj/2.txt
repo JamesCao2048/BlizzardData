@@ -1,0 +1,8 @@
+ajc option to change -Xlint level per-message without Xlintfile
+The -Xlintfile option is not a great fit for controlling message across multiple build projects, specifically in my case from the pluginManagement section of a maven parent pom. The problem is that you need a local file to configure the per-message output levels (ignore/warning/error) when you really want to specify it in the build script or in a shared file.
+As an alternative to -Xlintfile, it would be handy to be able to change an Xlint warning level per message using command line options.
+For example:
+ajc -Xlint:adviceDidNotMatch=ignore
+would override the XlintDefault.properties file for the adviceDidNotMatch message.
+With Regards
+Rob

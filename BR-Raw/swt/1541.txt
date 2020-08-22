@@ -1,0 +1,56 @@
+CCombo#setVisible() doesn't check if the popup shell is disposed
+Before call CCombo#setVisible(false) we are checking if the CCombo is not already disposed.
+I guess
+CCombo Line 1539:
+-------8<-------
+if (!visible) popup.setVisible(false);
+-------8<-------
+Should have a check like this:
+-------8<-------
+if (!visible && popup != null && !popup.isDisposed()) popup.setVisible(false);
+-------8<-------
+The Exception:
+--------------
+Exception in thread "main" org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:3775)
+at org.eclipse.swt.SWT.error(SWT.java:3693)
+at org.eclipse.swt.SWT.error(SWT.java:3664)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:462)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:335)
+at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:1712)
+at org.eclipse.swt.custom.CCombo.setVisible(CCombo.java:1539)
+at org.eclipse.jface.viewers.CellEditor.deactivate(CellEditor.java:274)
+at org.eclipse.jface.viewers.CellEditor.deactivate(CellEditor.java:922)
+at
+org.eclipse.jface.viewers.ColumnViewerEditor.cancelEditing(ColumnViewerEditor.java:402)
+at
+org.eclipse.jface.viewers.ColumnViewerEditor$1.widgetDisposed(ColumnViewerEditor.java:133)
+at
+org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:116)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1002)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1026)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1007)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:803)
+at org.eclipse.swt.widgets.Table.releaseChildren(Table.java:2831)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:806)
+at
+org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:755)
+at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:171)
+at
+org.eclipse.swt.widgets.Decorations.releaseChildren(Decorations.java:770)
+at org.eclipse.swt.widgets.Shell.releaseChildren(Shell.java:1207)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:806)
+at org.eclipse.swt.widgets.Widget.dispose(Widget.java:440)
+at org.eclipse.swt.widgets.Decorations.dispose(Decorations.java:445)
+at org.eclipse.swt.widgets.Shell.dispose(Shell.java:671)
+at
+org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:307)
+at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1631)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3784)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:334)
+at
+org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1564)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1932)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4506)
+at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native

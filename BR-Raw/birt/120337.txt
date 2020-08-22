@@ -1,0 +1,4 @@
+Bug 120337 In the style list, style name is not alphabetic.
+In the style list, style name is not alphabetic.
+Steps: 1.Create some style: PageBreak, FormatNumber, FormatString, Border, Box, TextBlock (style Name) 2.Drag a label into the layout 3.Open the Property Editor View 4.Select "General" tab, click Style drop list Actual Resutls: 1.style name is not alphabetic.
+Expected Results: 1.style name is alphabetic.

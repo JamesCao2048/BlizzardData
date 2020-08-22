@@ -1,0 +1,6 @@
+Display.post() logs out current session if no mouse button specified only on 10.6.5(?)
+Discovered during a JUnit test run: this piece of code
+event = new Event();
+event.type = SWT.MouseDown;
+display.post(event);  // missing button
+will kill all processes and restart the Finder on 10.6.5!

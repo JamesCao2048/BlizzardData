@@ -1,0 +1,98 @@
+background color problems in tree with columns
+I20060309-1000
+The background color in tree columns gets corrupted when a window is moved to the background and then brought back to the foreground.
+The background color is extended to the "non-existant n+1" column in the tree (i.e.
+if a tree has 2 columns, the 3rd column takes on the background color of the 2nd column).
+Example code:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.ShellAdapter;
+import org.eclipse.swt.events.ShellEvent;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeColumn;
+import org.eclipse.swt.widgets.TreeItem;
+public class TreeExample implements Listener {
+
+private static boolean done = false;
+int counter = 0;
+public Color red;
+
+public static void main(String[] args) {
+TreeExample example = new TreeExample();
+Shell shell = example.openShell();
+shell.addShellListener(new ShellAdapter() {
+public void shellClosed(ShellEvent e) {
+done = true;
+super.shellClosed(e);
+}
+
+});
+example.createTree(shell);
+example.waitForClose();
+}
+
+public Shell openShell() {
+Shell shell = new Shell(Display.getCurrent(), SWT.CLOSE | SWT.RESIZE | SWT.TITLE);
+shell.open();
+return shell;
+}
+
+public void waitForClose() {
+while (!done) {
+Display.getCurrent().readAndDispatch();
+}
+}
+
+public void createTree(Shell shell) {
+GridLayout layout = new GridLayout(1, true);
+shell.setLayout(layout);
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Next");
+final Tree tree = new Tree(shell, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER | SWT.VIRTUAL);
+GridData gd = new GridData(GridData.FILL_BOTH);
+tree.setLayoutData(gd);
+tree.addListener(SWT.SetData, this);
+TreeColumn column = new TreeColumn(tree, SWT.NONE);
+column.setText("ONE");
+column = new TreeColumn(tree, SWT.NONE);
+column.setText("TWO");
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+tree.setItemCount(10);
+red = new Color(tree.getDisplay(), new RGB(255, 0, 0));
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+TreeItem[] items = tree.getItems();
+if (counter > items.length) {
+counter = 0;
+}
+for (int i = 0; i
+< items.length; i++) {
+TreeItem item = items[i];
+if (counter == i) {
+for (int j = 0; j
+< tree.getColumnCount(); j++) {
+item.setBackground(j, red);
+}
+} else {
+for (int j = 0; j
+< tree.getColumnCount(); j++) {
+item.setBackground(j, null);
+}
+}
+}
+counter++;
+}
+});
+}
+/* (non-J

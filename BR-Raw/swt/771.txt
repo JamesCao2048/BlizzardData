@@ -1,0 +1,62 @@
+[Browser] Refresh of PDF in SWT browser leads to jvm crash
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.32 Safari/532.0
+Build Identifier: I20080207-1530
+Its a customer defect raised on lotus Expeditor 6.2 which would be IES 3.4 .
+Steps to recreation is repeated refresh/loading of a pdf in SWT browser.
+Epeditor JVM crashes after the refresh/reload hit exceed 40 with a java dump as
+following:
+(native thread ID:0x220C, native priority:0x6, native policy:UNKNOWN)
+4XESTACKTRACE          at
+org/eclipse/swt/internal/win32/OS.DestroyWindow(Native Method)
+4XESTACKTRACE          at
+org/eclipse/swt/widgets/Control.destroyWidget(Control.java:663)
+4XESTACKTRACE          at
+org/eclipse/swt/widgets/Shell.destroyWidget(Shell.java:657)
+4XESTACKTRACE          at
+org/eclipse/swt/widgets/Widget.release(Widget.java:814)
+4XESTACKTRACE          at
+org/eclipse/swt/widgets/Widget.dispose(Widget.java:441)
+4XESTACKTRACE          at
+org/eclipse/swt/widgets/Decorations.dispose(Decorations.java:446)
+4XESTACKTRACE          at org/eclipse/swt/widgets/Shell.dispose(Shell.java:674)
+4XESTACKTRACE          at
+org/eclipse/jface/window/Window.close(Window.java:335)
+4XESTACKTRACE          at
+org/eclipse/jface/window/ApplicationWindow.close(ApplicationWindow.java:306)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow.hardClose(WorkbenchWindow.java:1665)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow.busyClose(WorkbenchWindow.java:725)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow.access$1(WorkbenchWindow.java:701)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow$3.run(WorkbenchWindow.java:817)
+4XESTACKTRACE          at
+org/eclipse/swt/custom/BusyIndicator.showWhile(BusyIndicator.java:70)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow.close(WorkbenchWindow.java:815)
+4XESTACKTRACE          at
+org/eclipse/jface/window/WindowManager.close(WindowManager.java:109)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/Workbench$16.run(Workbench.java:912)
+4XESTACKTRACE          at
+org/eclipse/core/runtime/SafeRunner.run(SafeRunner.java:37)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/Workbench.busyClose(Workbench.java:909)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/Workbench.access$15(Workbench.java:838)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/Workbench$23.run(Workbench.java:1082)
+4XESTACKTRACE          at
+org/eclipse/swt/custom/BusyIndicator.showWhile(BusyIndicator.java:70)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/Workbench.close(Workbench.java:1080)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/Workbench.close(Workbench.java:1052)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow.busyClose(WorkbenchWindow.java:722)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow.access$1(WorkbenchWindow.java:701)
+4XESTACKTRACE          at
+org/eclipse/ui/internal/WorkbenchWindow$3.run(WorkbenchWindow.java:817)
+4XESTACKTRACE          at

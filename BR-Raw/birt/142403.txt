@@ -1,0 +1,3 @@
+Bug 142403 3D line chart, set marker shape to special shape, interactivity can not take effect.
+3D line chart, set marker shape to special shape, interactivity can not take effect.
+Steps: 1.Create a 3D line chart 2.Open chart builder, go to "Format chart" tab, select Value(Y) series, add a interactivity, click "Markers", select the last one 3.Preview Actual Results: 1.Interactivity can not be take effect Expected Results: 1.Interactivity can be take effect correctly.

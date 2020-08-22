@@ -1,0 +1,2 @@
+Bug 216378 The row area dimension will be longer after show measure as text[1101]
+Description: The row area dimension will be longer after show measure as text[1101] Build number: 2.3.0.v20081024-0800 Steps to reproduce: 1, New a crosstab has row dimension, column dimension and a measure 2, Select the measure and show as Chart 3, Reselect the measure and show as text 4, Check the length of row area dimension cell Expected result: After show as Text the length should be consistent with crosstab in step1 Actual result: The length of cell will become larger Error log:

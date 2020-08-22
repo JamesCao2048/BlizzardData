@@ -1,0 +1,2 @@
+Bug 113329 Cascading Parameter Error
+details: Cascading Parameter Group can not run steps to reproduce: 1.New Cascading Parameter 2.Set the Data set to "jdbc:jtds:sqlserver://spmdb:1433/test" and "select * from Account" 3.Select Value to "account_id" and Display Text to "account_id" 4.Select Display type to "List Box" 5.Set List Limit to "100" 6.Press OK and Preview 7.Select the parmeter and press OK actual result: It is error and said "Some required parameter values are not set or set to incompatible data type." expected result: The Parameter is previewed.

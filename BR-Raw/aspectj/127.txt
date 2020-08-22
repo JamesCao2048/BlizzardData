@@ -1,0 +1,15 @@
+Typo in point example
+Build ID: 3.3.1.1
+Steps To Reproduce:
+1. Install AspectJ
+2. Navigate to the examples/introduction directory
+3. Method in Point.java
+More information:
+protected void makeRectangular(){
+if (!rectangular) {
+x = rho * Math.sin(theta);
+y = rho * Math.cos(theta);
+rectangular = true;
+}
+}
+x and y should be interchanged in the method above, mathetimatical definition. For reference:  http://en.wikipedia.org/wiki/Trigonometric_function  .. please look at Right Triangle Definitions.

@@ -1,0 +1,5 @@
+Different table behaviour after SWT.MeasureItem/SWT.PaintItem event under Windows XP and Vista
+Created  attachment 87787   [details]
+XP snippet231 is working correctly
+After creating a custom drawn table (with sample snippet 231, see attached) the table behaves different under Windows XP and Windows Vista.
+Under Windows XP all works fine, but under Windows Vista it is not possible to see the selection of a TableItem anymore.

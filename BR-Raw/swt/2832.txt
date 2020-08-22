@@ -1,0 +1,36 @@
+Antialiasing chops off edges of rectangles
+Antialiasing chops off some of the boundaries of rectangles.
+The included
+snippet will display a thin black line when antialiasing is turned on, but not
+when it is off.
+Antialiasing should have no effect on rectangles.
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet13 {
+public static void main (String [] args) {
+final Display display = new Display ();
+Shell shell = new Shell (display);
+Canvas canvas = new Canvas(shell, SWT.NONE);
+canvas.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+gc.setAntialias(SWT.ON);
+gc.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
+gc.fillRectangle(0, 0, 200, 100);
+gc.fillRectangle(0, 100, 200, 100);
+}
+});
+canvas.setBounds(0,0,200,200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

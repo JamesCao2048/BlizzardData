@@ -1,0 +1,46 @@
+annotated ITD fields on interfaces have no annotation
+As stated in the notebook it is allowed to annotate field ITDs.
+This seems not to work properly with interfaces.
+public interface TestInterface {
+}
+@Retention(RetentionPolicy.RUNTIME)
+public @interface SampleAnnotation {
+}
+public aspect Declaration {
+declare parents: (@SampleAnnotation *) implements TestInterface;
+
+// this is fine
+@SampleAnnotation
+public transient String Test.firstProperty;
+
+/ this does not work
+@SampleAnnotation
+public transient String TestInterface.secondProperty;
+
+// this also does not work
+declare @field: * TestInterface+.*: @SampleAnnotation;
+}
+secondProperty has no Annotation as one can see with:
+public class Test implements TestInterface {
+public static void main(String[] args) {
+for (Field field: Test.class.getFields()) {
+System.err.println(field.toString().concat(" ").concat
+(String.valueOf(field.isAnnotationPresent(SampleAnnotation.class))));
+}
+}
+}
+I did not try whether this is also the case for method ITS on interfaces.
+Secondly the field name is
+ajc$interField$test_Declaration$test_TestInterface$secondProperty instead of
+simply secondProperty. Is this what is meant with  bug 73507 ?
+What is with private and package protected ITD of fields and runtime
+reflection? Because the field name is mangled (Test.class.getField
+("firstProperty") raises a NoSuchFieldException when declared private or
+package protected). Also "declare @field: * Test+.*: @SampleAnnotation;" is
+not applied for private or package protected declarations. So should one only
+annotate public field IDTs (supported by compiler warnings) to have useful
+runtime behaviour (with runtime RetentionPolicy annotations)?
+So it is strange that the introductory example on annotations shows annotated
+private field ITDs on interfaces :-)
+Thank you very much for your help,
+Vincenz

@@ -1,0 +1,33 @@
+ClassCast exception when drop target is List
+Happens on Cocoa with 3.7 HEAD
+Run the DNDExample.
+Drag and drop to a the List as drop target.
+We get class cast exception.
+Exception in thread "main" java.lang.ClassCastException: org.eclipse.swt.widgets.List cannot be cast to org.eclipse.swt.widgets.Table
+at org.eclipse.swt.dnd.DropTarget.tableView_validateDrop_proposedRow_proposedDropOperation(DropTarget.java:965)
+at org.eclipse.swt.dnd.DropTarget.dropTargetProc(DropTarget.java:475)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.dnd.DropTarget.dndCallSuper(DropTarget.java:208)
+at org.eclipse.swt.dnd.DropTarget.draggingEntered(DropTarget.java:270)
+at org.eclipse.swt.dnd.DropTarget.dropTargetProc(DropTarget.java:448)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:220)
+at org.eclipse.swt.widgets.Widget.mouseDownSuper(Widget.java:1081)
+at org.eclipse.swt.widgets.Table.mouseDownSuper(Table.java:1979)
+at org.eclipse.swt.widgets.Widget.mouseDown(Widget.java:1073)
+at org.eclipse.swt.widgets.Control.mouseDown(Control.java:2494)
+at org.eclipse.swt.widgets.Table.mouseDown(Table.java:1951)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5453)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:220)
+at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:2082)
+at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:2243)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5517)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:4971)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5120)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:128)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3596)
+at org.eclipse.swt.examples.dnd.DNDExample.open(DNDExample.java:1352)
+at org.eclipse.swt.examples.dnd.DNDExample.main(DNDExample.java:71)

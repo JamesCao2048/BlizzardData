@@ -1,0 +1,9 @@
+NPE when using aop.xml for compile time config
+Reported on the list:
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelWorld.isAspectIncluded(BcelWorld.java:942)
+at org.aspectj.weaver.ShadowMunger.match(ShadowMunger.java:80)
+at org.aspectj.weaver.Advice.match(Advice.java:106)
+at org.aspectj.weaver.bcel.BcelAdvice.match(BcelAdvice.java:149)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:3108)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:2562)

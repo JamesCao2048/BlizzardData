@@ -1,0 +1,28 @@
+StyledText - RTF transfer codepage encoding
+build 20020716
+The SWT RTFTransfer class currently uses the system default codepage to encode
+Unicode text in a multibyte character set.
+This breaks RTF transfer if the system codepage is not set correctly (data is
+lost during conversion).
+Text in more than one local codepage (e.g., mixed Japanese and Hebrew) can
+never be transfered correctly because RTFTransfer converts to a single local
+codepage.
+Data represented in a different codepage would be lost.
+In addition, the RTF spec mandates escaping non 7-bit characters using 'hh
+where hh is the hex value.
+Even if the codepage is set correctly and the text
+is in a single locale it should still be written in the espaced form.
+Note
+however that all Windows applications we tested seemed to tolerate the non
+escaped 8 bit form for transfering Hebrew text.
+In order to support text in more than one locale we would need to encode the
+text using RTF unicode escapes (ud..d where d is the decimal value of the
+unicode character).
+Since some applications don't support the Unicode encoded
+RTF transfer (e.g., Lotus Notes) we need to use the mixed Unicode/ANSI text
+encoding which is backward compatible for non Unicode aware applications.
+Open questions:
+-performance impact of escaping 8-bit characters
+-do any non Microsoft applications support pasting the Unicode encoded RTF
+-performance impact of encoding using Unicode escapes mixed in with the ANSI
+escapes

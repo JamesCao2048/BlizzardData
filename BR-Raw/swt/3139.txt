@@ -1,0 +1,26 @@
+Label does not Wrap correctly
+eclipse.buildId=I200411050810
+java.version=1.4.2_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:
+-showlocation
+If the bounds of a Label are set twice to the same thing, the wrapping stops
+working.
+Run the example below:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+Label label = new Label(shell, SWT.BORDER | SWT.WRAP);
+label.setText("a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5
+6 7 8 9");
+label.setBounds(5, 5, 100, 100);
+label.setBounds(5, 5, 100, 100); // without this line the label wraps
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,10 @@
+JRE popup menu in Run configuration dialog not reliable
+RC1
+- open "Run" dialog
+- select any Java Application
+- switch to JRE tab
+- in JRE popup select a different JRE
+Observe: "Apply" button doesn't get enabled; if  "Run" is pressed, application doesn't
+launch with selected JRE.
+Workaround: select JRE in the popup menu again; in most cases this enabled the
+"Apply" button

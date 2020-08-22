@@ -1,0 +1,2 @@
+Bug 146761 All structure properties change can't be restore
+Steps to reproduce: 1.New a report, extends lib.table 2.Add a structure property(such as filter, column binding...) on table 3.Choose the table, click "Restore Property" Expected result: Local propery is removed Actual result: Local property can't be removed so that "Restore Property" is always enabled

@@ -1,0 +1,2 @@
+Bug 135254 "Test connection" should be disabled after cancelling "Manage Drivers" window
+Steps to reproduce: 1.New a JDBC data source 2.Before enter Driver class/URL, notice that "Test Connection" is disabled 3.Click "Manage Drivers", and then cancel it Expected result: "Test Connection" is disabled Actual result: "Test Connection" is enabled

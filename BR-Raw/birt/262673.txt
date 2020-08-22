@@ -1,0 +1,3 @@
+Bug 262673 Change the name of arguments in BirtDateTime functions
+In the expression builder, the BirtDateTime.diff<time> functions display the following syntax: diff<time>(source, target) : Integer The argument names, source and target, are not descriptive.
+I suggest changing them to date1 and date2.

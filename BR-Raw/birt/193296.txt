@@ -1,0 +1,17 @@
+Bug 193296 Subquery does not return value for chart
+I've tried 2.1.x and 2.2RC but I get always an error.
+org.eclipse.birt.report.engine.data.dte.DataGenerationEngine doExecuteQuery SEVERE: Data engine operation failed due to an unexpected exception.
+Error evaluating Javascript expression.
+Script engine error: TypeError: Cannot read property "ISO_LAND" from null Script source: source, line: 0, text: row._outer["ISO_LAND"] + Result iterator has no current row.
+It either has not started or has ended.
+I would like to build a report based on a query that returns a list of countries eg.: report_query=select country_id from ...
+where sales>100 for each country I'd like to have a line chart with sales vs.
+budget eg.: sub_query= select month,bud,sales from ...
+where country = ?
+If I drag the subquery into the "main" table, connect parameter to row[].
+no problem.
+I get bud vs.
+sales values for each country.
+If I place a chart based on sub_query in the "main" table.
+I get the error shown above.
+In this case I have to connect the parameter to row._outer[] and for some reason I don't see any values in the chart preview?!?

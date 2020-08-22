@@ -1,0 +1,7 @@
+StyledText should render tabs exactly 4 spaces wide
+I20060223-1656
+StyledText should render tabs exactly 4 spaces wide.
+In latest builds, indents of 4 spaces don't align with indents of 1 tab in some fonts (e.g.
+Lucida Console Regular 8).
+See screenshot.
+This works as expected in 3.1.2 as well as in notepad.

@@ -1,0 +1,12 @@
+[Browser] Cookies cannot be set before the first Browser instance
+Created  attachment 140011   [details]
+A simple test case that navigates to a site that can show cookies
+Build ID: 3.5RC1
+Steps To Reproduce:
+1.Set some cookies with Browser.setCookie(xx, url)
+2.Create the first instance of a browser
+3.Navigate to the URL and see that the cookie is not set.
+More information:
+I tried with IE and XULRunner on Windows as well as XULRunner on Linux and they all fail.
+It is important to be able to set cookies, because some applications may predefine a set of cookies for known domains and be unable to access them.
+They would have to hack to get them set once the first instance gets created.

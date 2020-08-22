@@ -1,0 +1,3 @@
+Bug 117695 Format specifier has problem.
+The first series set format, add the second series, the format also can be applied to it.
+Steps: Data source:jdbc:jtds:sqlserver://qadb/gui Data set: select * from dbo.CityTemp 1.Create a pie chart,bind the data set 2.Go to "Select Data" tab: Category Definition: row["name"] Series 1: row["temperture"] click "0.0#", set Prefix: ( Suffix: ) 3.Click "+", add a series 4.View Chart preivew Actual Results: 1.The second pie chart also dispay () Expected Results: 1.The second pie chart should not apply the format

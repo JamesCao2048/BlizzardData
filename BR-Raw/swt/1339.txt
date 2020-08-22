@@ -1,0 +1,55 @@
+Window -> Show View -> Other ... is broken
+eclipse.buildId=I20081030-1917
+java.version=1.5.0_16
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:
+-keyring /Users/bhunt/.eclipse_keyring
+-showlocation
+Command-line arguments:
+-os macosx
+-ws cocoa
+-arch x86
+-keyring /Users/bhunt/.eclipse_keyring
+-consoleLog
+-showlocation
+Error
+Sat Nov 01 11:29:11 CDT 2008
+Unhandled event loop exception
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Display.cascadeWindow(Display.java:491)
+at org.eclipse.swt.widgets.Shell.createHandle(Shell.java:525)
+at org.eclipse.swt.widgets.Widget.createWidget(Widget.java:446)
+at org.eclipse.swt.widgets.Control.createWidget(Control.java:749)
+at org.eclipse.swt.widgets.Scrollable.createWidget(Scrollable.java:162)
+at org.eclipse.swt.widgets.Shell.<init>(Shell.java:274)
+at org.eclipse.swt.widgets.Shell.<init>(Shell.java:351)
+at org.eclipse.jface.window.Window.createShell(Window.java:487)
+at org.eclipse.jface.window.Window.create(Window.java:430)
+at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+at org.eclipse.jface.window.Window.open(Window.java:790)
+at org.eclipse.ui.handlers.ShowViewHandler.openOther(ShowViewHandler.java:100)
+at org.eclipse.ui.handlers.ShowViewHandler.execute(ShowViewHandler.java:77)
+at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:281)
+at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:247)
+at org.eclipse.ui.internal.ShowViewMenu$3.run(ShowViewMenu.java:134)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:412)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1088)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1112)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1097)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:924)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2922)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2655)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:333)
+at org.eclipse.ui.internal.Workbench

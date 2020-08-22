@@ -1,0 +1,7 @@
+Bug 227269 HTTP 404 when link the hyperlink to a file[04]
+Description: HTTP 404 when link the hyperlink to a file[04] Step: 1.Add a label.
+2.Open the hyperlink dialog.
+3.Select URI and click Browse For File.
+4.Select a file.
+5.Preview and click on the link.
+Actual result: Pop up the http error 404

@@ -1,0 +1,6 @@
+Bug 198486 One cell is lost when preview the attached design file in PDF [1200]
+Description: One cell is lost when preview the attached design file in PDF.
+Build number: 2.2.1.v20070801-0630 Steps to reproduce: 1.Open the attached design file and preview in PDF.
+Expected result: The second cell in the first page is shown as when preview in Web Viewer.
+Actual result: The second cell in the first page is not shown when preview in PDF.
+Error log: N/A

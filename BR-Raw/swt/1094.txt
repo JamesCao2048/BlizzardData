@@ -1,0 +1,52 @@
+[FastView] Unhandled event loop exception: NPE in ToolBarManager.update
+After working for some time the Eclipse views get all mixed up and unresponsive ( I will attach a screenshot shortly).
+OpenSUSE 11.0/KDE 4.0.4
+-- Error Details
+--
+Date: Tue Jul 29 16:52:46 EEST 2008
+Message: Unhandled event loop exception
+Severity: Error
+Plugin: org.eclipse.ui
+Session Data:
+eclipse.buildId=I20080617-2000
+java.version=1.6.0_06
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:
+-os linux
+-ws gtk
+-arch x86
+This is a continuation of log file /home/robert/workspace/.metadata/.bak_5.log
+Created Time: 2008-07-29 16:45:47.803
+Exception Stack Trace:
+java.lang.NullPointerException
+at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:284)
+at org.eclipse.ui.internal.layout.TrimToolBarBase.update(TrimToolBarBase.java:265)
+at org.eclipse.ui.internal.FastViewManager.setTrimStackVisibility(FastViewManager.java:729)
+at org.eclipse.ui.internal.FastViewManager.activate(FastViewManager.java:665)
+at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:967)
+at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:3568)
+at org.eclipse.ui.internal.WorkbenchPage.busySetPerspective(WorkbenchPage.java:1032)
+at org.eclipse.ui.internal.WorkbenchPage.access$16(WorkbenchPage.java:1016)
+at org.eclipse.ui.internal.WorkbenchPage$18.run(WorkbenchPage.java:3667)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:3665)
+at org.eclipse.ui.internal.PerspectiveBarContributionItem.select(PerspectiveBarContributionItem.java:124)
+at org.eclipse.ui.internal.PerspectiveBarManager$1.widgetSelected(PerspectiveBarManager.java:129)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1158)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3401)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3033)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adap

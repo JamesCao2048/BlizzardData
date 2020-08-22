@@ -1,0 +1,6 @@
+Bug 182519 [SVG] SVG Chart Title Alignment does not work correctly when preview [0001]
+Description: SVG Chart Title Alignment does not work correctly when preview.
+Build number: 2.2.0.v20070416-1013 Steps to reproduce: 1.New a Bar Chart, Output Format is SVG.
+2.In "Format Chart" tab, select "Title" node, set Chart Title as "Bar Chart Title Bar Chart Title Bar Chart Title" and set Title Alignment as TopLeft.
+Expected result: Chart Title when preview is: "Bar Chart Title Bar Chart Title Bar Chart Title" Actual result: Chart Title when preview is: "Bar Chart Title Bar Chart Title Bar Chart Title".
+Error log: N/A

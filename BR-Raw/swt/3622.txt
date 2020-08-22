@@ -1,0 +1,57 @@
+Eclipse 2.1.1 does not come up on HP when remotely attaching from a linux box
+When starting Eclipse,  tjchiass@ca.ibm.com  gets this stack trace as reported
+By Kevin H.
+!SESSION
+----------------------------------------------------------------------
+!ENTRY org.eclipse.core.launcher 4 0 Jul 29, 2003 10:33:23.402
+!MESSAGE Exception launching the Eclipse Platform:
+!STACK
+java.lang.reflect.InvocationTargetException:
+java.lang.reflect.InvocationTargetE
+xception: org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(SWT.java:2358)
+at org.eclipse.swt.SWT.error(SWT.java:2262)
+at org.eclipse.swt.graphics.GC.createRenderTable(GC.java:961)
+at org.eclipse.swt.graphics.GC.textExtent(GC.java:2474)
+at org.eclipse.swt.graphics.GC.textExtent(GC.java:2437)
+at org.eclipse.swt.custom.CLabel.getTotalSize(CLabel.java:199)
+at org.eclipse.swt.custom.CLabel.computeSize(CLabel.java:141)
+at org.eclipse.swt.layout.GridLayout.calculateGridDimensions
+(GridLayout.
+java:248)
+at org.eclipse.swt.layout.GridLayout.computeLayoutSize
+(GridLayout.java:3
+30)
+at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:377)
+at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:131)
+at org.eclipse.swt.layout.GridLayout.calculateGridDimensions
+(GridLayout.
+java:248)
+at org.eclipse.swt.layout.GridLayout.computeLayoutSize
+(GridLayout.java:3
+30)
+at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:377)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:509)
+at org.eclipse.swt.widgets.Composite.setBounds(Composite.java:546)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:1831)
+at org.eclipse.swt.layout.FillLayout.layout(FillLayout.java:101)
+at org.eclipse.swt.widgets.Composite.setBounds(Composite.java:546)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:1831)
+at org.eclipse.swt.custom.ViewForm.layout(ViewForm.java:341)
+at org.eclipse.swt.widgets.Composite.layout(Composite.java:342)
+at org.eclipse.swt.custom.ViewForm.onResize(ViewForm.java:419)
+at org.eclipse.swt.custom.ViewForm.access$1(ViewForm.java:418)
+at org.eclipse.swt.custom.ViewForm$2.controlResized(ViewForm.java:135)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:
+144)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:810)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:832)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:814)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:1780)
+at org.eclipse.swt.widgets.Composite.setBounds(Composite.java:539)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:1854)
+at org.eclipse.ui.internal.LayoutPart.setBounds(LayoutPart.java:245)
+at org.eclipse.ui.internal.EditorWorkbook.setControlSize
+(Edito

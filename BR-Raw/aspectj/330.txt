@@ -1,0 +1,47 @@
+[generics] field-get problems when generic field is used.
+Hi,
+When i'm compiling the following example, i'm getting this errors:
+TestAspect.aj:21 [error] incompatible return type applying to field-get
+(java.util.Set com.mprv.secsph.Test.intsSet)
+Test.java:18 [error] incompatible return type applying to field-get
+(java.util.Set com.mprv.secsph.Test.intsSet)
+Here is the example
+-------------------
+Java Code:
+package com;
+public class Test {
+Set<Integer> intsSet;
+public Set<Integer> foo() {
+18:         return intsSet;
+}
+}
+Aspect:
+public privileged aspect TestAspect {
+pointcut gettingMember(Test t) :
+target(t) &&
+get(!public Set<Integer> com.*.*) &&
+!within(TestAspect);
+21: Set<Integer> around(Test t) : gettingMemberCollection(t)  {
+Set s =  proceed(t);
+return s;
+}
+}
+I've tried many kinds of workarounds, and the only thing which worked, is
+defining the member field without using generics (regular Set) ...
+One more disturbing is, that this fiture worked(!) in M2 release.
+This is an example of the functionality that worked in my project (with M2),
+but now, also reports the same error:
+Java code is the same, Aspect is:
+public privileged aspect TestAspect {
+pointcut gettingMember(Test t) :
+target(t) &&
+get(!public Set com.*.*) &&
+!within(TestAspect);
+Set around(Test t) : gettingMemberCollection(t)  {
+Set s =  proceed(t);
+return s;
+}
+}
+Is it a bug? Or am i doing something wrong?
+Thanks!
+Misha.

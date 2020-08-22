@@ -1,0 +1,13 @@
+[Accessibility] StyledText speaks entire value when asked for "line
+20080514
+Mac OS X Carbon
+Run Eclipse (at least I20080513-2000) and open an editor on any java file.
+Turn on VoiceOver (command+F5).
+Use the down arrow key to move the cursor down to the next line.
+VoiceOver reads the whole file again, every time up or down arrow is typed.
+Also: the ctrl+alt+L VoiceOver command should just read the current line,
+but it reads the whole file.
+I am not sure which attribute VoiceOver wants in order to determine what the current line is, but it is likely one of the following:
+- kAXInsertionPointLineNumberAttribute (not a required attribute)
+- kAXLineForIndexParameterizedAttribute (given a character index, return line#)
+- kAXRangeForLineParameterizedAttribute (given a line#, return range of character indices)

@@ -1,0 +1,8 @@
+Canvas' region not applied to scroll bars
+Canvas c = new Canvas(shell, SWT.V_SCROLL|SWT.H_SCROLL);
+c.setBackground(display.getSystemColor(SWT.COLOR_RED));
+c.setBounds(0, 50, 100, 100);
+Region r3 = new Region();
+r3.add(25, 0, 95, 95);
+c.setRegion(r3);
+Run the code above and notice that the scroll bars aren't clipped by the region, just the content area.

@@ -1,0 +1,13 @@
+Bug 175287 AppContext is empty when filling parameter combo in tomcat BIRT viewer
+1.Execute a report containing a combo box for a parameter.
+The combo box gets its data from a dataset defined in the report.
+2.Set a breakpoint on setAppContext(context) method of the IConnection implementation of the dataset/datasource used to fill the combo box.
+3.Execute the report in the BIRT viewer in Tomcat with debugging enabled.
+4.When the breakpoint is reached, one can see that the appContext is empty (count 0) when viewer is filling the parameter combo.
+Our implementation of org.eclipse.datatools.connectivity.oda.IConnection relies on information from the application context when user within report viewer running on tomcat since we pass credentials uncoded in the URL parameters.
+When using a dataset within the report as usual, this works fine.
+We can get the information from BIRT_VIEWER_HTTPSERVET_REQUEST.
+If a report uses a combo box for a parameter that is filled with data from a dataset, this information is not present.
+When looking at the stack trace, the context gets lost/notpassed on somewhere between ComboBoxParameterFragment.prepareParameterBean() and OdaConnection.setAppContext().
+In BIRT 2.0.x, the appContext passed is NULL, ain BIRT 2.1.1 the passed MAP object is empty.
+The expectation is that the context is alwas the same when running report in tomcat environment.

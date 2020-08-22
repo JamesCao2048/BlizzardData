@@ -1,0 +1,7 @@
+Wrong positioning when going off end-of-line
+When editing a java file and positioning the cursor before the last character
+and then pressing right-cursor twice (making the cursor go to the beginning of
+the next line) and then pressing up-cursor positions the cursor at the end of
+the previous line, while it should position it at the beginning of the
+previous line.
+It doesn't happen on every line, but almost every line.

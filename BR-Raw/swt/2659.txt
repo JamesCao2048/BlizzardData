@@ -1,0 +1,22 @@
+Text with CENTER has too much logical space
+3.1
+- run the snippet below
+- the Text shows a horizontal scrollbar that's scrolled to the end, even though
+the string does not exceed the width of the Text widget
+- there's also a small strip of cheese near the left edge of the horizontal
+scrollbar
+public static void main (String[] args) {
+String string = "The quick brown fox jumped over the lazy dog.nOne two
+three";
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,400,300);
+Text text = new Text(shell, SWT.MULTI | SWT.CENTER | SWT.H_SCROLL);
+text.setBounds(10,10,380,100);
+text.setText(string);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

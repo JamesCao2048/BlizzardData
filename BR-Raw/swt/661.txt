@@ -1,0 +1,54 @@
+Allow arrow up/down keys to open dropdown-menu in toolitem
+Happens in 3.6 HEAD Cocoa
+1) Run the snippet given below.
+2) Traverse to the toolitem with a dropdown menu.
+3) Now, use the arrow-down or arrow-up key to open the drop-down menu.
+result: the focus traverses to the next toolitem.
+expected: The drop-down menu opens in windows and gtk.
+Same behavior can be seen in the eclipse toolbar which has toolItems with dropdown menu.
+testcase: (modified snippet47)
+public class Snippet47 {
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+Image image = new Image (display, 20, 20);
+Color color = display.getSystemColor (SWT.COLOR_BLUE);
+GC gc = new GC (image);
+gc.setBackground (color);
+gc.fillRectangle (image.getBounds ());
+gc.dispose ();
+
+final ToolBar bar = new ToolBar (shell, SWT.BORDER | SWT.FLAT);
+bar.setSize (200, 32);
+for (int i=0; i<4; i++) {
+ToolItem item = new ToolItem (bar, 0);
+item.setImage (image);
+}
+
+final Menu menu = new Menu (shell, SWT.POP_UP);
+for (int i=0; i<8; i++) {
+MenuItem item = new MenuItem (menu, SWT.PUSH);
+item.setText ("Item " + i);
+}
+final ToolItem item = new ToolItem (bar, SWT.DROP_DOWN);
+item.setImage(image);
+item.addListener (SWT.Selection, new Listener () {
+public void handleEvent (Event event) {
+if (event.detail == SWT.ARROW) {
+Rectangle rect = item.getBounds ();
+Point pt = new Point (rect.x, rect.y + rect.height);
+pt = bar.toDisplay (pt);
+menu.setLocation (pt.x, pt.y);
+menu.setVisible (true);
+}
+}
+});
+
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+image.dispose ();
+display.dispose ();
+}
+}

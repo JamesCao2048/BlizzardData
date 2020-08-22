@@ -1,0 +1,12 @@
+NullPointerException at AspectJElementHierarchy.java:677
+Build Identifier: 20100617-1415
+After removing a "throws" clause from the constructor of a class and then saving I got the following error:
+java.lang.NullPointerException
+at org.aspectj.asm.internal.AspectJElementHierarchy.getCanonicalFilePath(AspectJElementHierarchy.java:677)
+at org.aspectj.asm.internal.AspectJElementHierarchy.updateHandleMap(AspectJElementHierarchy.java:641)
+at org.aspectj.asm.AsmManager.removeStructureModelForFiles(AsmManager.java:572)
+at org.aspectj.asm.AsmManager.processDelta(AsmManager.java:604)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager ... oBuildJob.run(AutoBuildJob.java:242)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Compile error: NullPointerException thrown: null
+Reproducible: Didn't try

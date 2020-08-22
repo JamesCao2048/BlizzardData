@@ -1,0 +1,6 @@
+Bug 287931 display: inline does not work for <p> tag in pdf.
+description: build id: 2.5.1 v20090828-0630 steps to reproduce: 1.Insert a html text, input content as
+<p style = "display: inline"> inline</p>
+<p style = "display: inline"> inline</p> 2.Preview in pdf.
+Actual result: Text are not displayed in line.
+Expected result: Display in line, just like in html output.

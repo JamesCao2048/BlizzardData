@@ -1,0 +1,65 @@
+GlyphMetrics behaves differently on carbon
+SWT version, as returned by SWT.getVersion(): 3346
+Use the following snippet that is adapted from  http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet211.java?view=co
+The zero width glyphs do not behave as zero width on carbon.
+The offset of the glyph is zero, but it renders over the previous character.
+The interesting bits are styles[8] through [10] in the snippet.
+I've attached the screenshots on carbon and win32.
+package com.thoughtworks.tide.eclipse.ui.tests;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyleRange;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.swt.graphics.GlyphMetrics;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+// adapted from  http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet211.java?view=co
+public class GlyphMetricBehaviourOnWindowsAndMac {
+static String text = "You can set any font you want in a range.
+You can also set a baseline rise and all other old features"
++ " like background and foreground, and mix them any way you want.
+Totally awesome."
++ "The glyph metric does not behave same on Windows and Mac (Carbon).
+->*<- and
+->_<- is a hidden glyph"
++ "And this is a 1 pixed width glyph
+->|<-";
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+StyledText styledText = new StyledText(shell, SWT.WRAP | SWT.BORDER);
+styledText.setText(text);
+FontData data = styledText.getFont().getFontData()[0];
+Font font1 = new Font(display, data.getName(), data.getHeight() * 2, data.getStyle());
+Font font2 = new Font(display, data.getName(), data.getHeight() * 4 / 5, data.getStyle());
+StyleRange[] styles = new StyleRange[11];
+styles[0] = new StyleRange();
+styles[0].font = font1;
+styles[1] = new StyleRange();
+styles[1].rise = data.getHeight() / 3;
+styles[2] = new StyleRange();
+styles[2].background = display.getSystemColor(SWT.COLOR_GREEN);
+styles[3] = new StyleRange();
+styles[3].foreground = display.getSystemColor(SWT.COLOR_MAGENTA);
+styles[4] = new StyleRange();
+styles[4].font = font2;
+styles[4].foreground = display.getSystemColor(SWT.COLOR_BLUE);
+styles[4].underline = true;
+styles[5] = new StyleRange();
+styles[5].rise =
+-data.getHeight() / 3;
+styles[5].strikeout = true;
+styles[5].underline = true;
+styles[6] = new StyleRange();
+styles[6].font = font1;
+styles[6].foreground = display.getSystemColor(SWT.COLOR_YELLOW);
+styles[6].background = display.getSystemColor(SWT.COLOR_BLUE);
+styles[7] = new StyleRange();
+styles[7].rise = data.getHeight() / 3;
+styles[7].underline = true;
+styles[7].fontStyle = SWT.BOLD;
+styles[7].foreground = display.getSystemColor(SWT.COLOR_RED);
+styles[7

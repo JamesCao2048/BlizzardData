@@ -1,0 +1,7 @@
+jdt.text.tests and jdt.ui.tests and others crash on Mac
+jdt.text.tests and jdt.ui.tests crashed on the Mac in N20121015-2000.
+The tests passed in the N-builds before.
+Could be a one-time hiccup, but I thought I'd file it so that we know when it started.
+http://download.eclipse.org/eclipse/downloads/drops4/N20121015-2000/testresults/macosx.cocoa.x86_5.0/org.eclipse.jdt.ui.tests.AutomatedSuite.txt  ends with:
+Invalid memory access of location 0x0 rip=0x7fff86193333
+I didn't find any more information on hudson.

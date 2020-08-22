@@ -1,0 +1,20 @@
+ComputeSize on Link gives different results when calling two times in a row
+RC1
+I have a Link widgets embeeded in the new Jaba class wizard.
+The JDT class is
+NewClassWizardPage
+The text of the link widget is
+"Do you want to add comments as configured in the
+<a>properties</a> of the
+current project?"
+When I call computeSize of the link using the following code
+System.out.println(29 + " " +
+children[29].computeSize(SWT.DEFAULT, SWT.DEFAULT) + " " +
+children[29].computeSize(SWT.DEFAULT, SWT.DEFAULT));
+where the Link is the 29th child of a composite I get the following results:
+29 Point {408, 13} Point {408, 0}
+To reproduce add the following to lines to the end of the createControl in
+NewClassWizardPage
+Control[] children= composite.getChildren();
+System.out.println(29 + " " + children[29].computeSize(SWT.DEFAULT, SWT.DEFAULT)
++ " " + children[29].computeSize(SWT.DEFAULT, SWT.DEFAULT));

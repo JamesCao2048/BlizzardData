@@ -1,0 +1,60 @@
+[implementation] Java editor disposes default StyledText caret's image
+Build id: 200403040800
+Java editor, according to the insert mode, sets a special Caret in the
+StyledText.
+I've two problem with that:
+1- This caret is not bidi aware
+2- At some point they dispose the image of the StyledText default Caret
+We (SWT Team) have some major changes (still to be release) in StyledText that
+will expose this UI bug.
+Here is the stack trace:
+java.lang.Exception: Stack trace
+at java.lang.Thread.dumpStack(Thread.java:1064)
+at org.eclipse.swt.graphics.Image.dispose(Image.java:825)
+at org.eclipse.ui.texteditor.AbstractTextEditor.disposeNonDefaultCaret
+(AbstractTextEditor.java:4378)
+at org.eclipse.ui.texteditor.AbstractTextEditor.updateCaret
+(AbstractTextEditor.java:4359)
+at org.eclipse.ui.texteditor.AbstractTextEditor.handleInsertModeChanged
+(AbstractTextEditor.java:4399)
+at org.eclipse.ui.texteditor.AbstractTextEditor.setInsertMode
+(AbstractTextEditor.java:4234)
+at org.eclipse.ui.texteditor.AbstractTextEditor.switchToNextInsertMode
+(AbstractTextEditor.java:4266)
+at org.eclipse.ui.texteditor.AbstractTextEditor.access$4
+(AbstractTextEditor.java:4253)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor$ToggleInsertModeAction.run
+(AbstractTextEditor.java:808)
+at org.eclipse.ui.texteditor.TextNavigationAction.runWithEvent
+(TextNavigationAction.java:106)
+at org.eclipse.ui.commands.ActionHandler.execute(ActionHandler.java:68)
+at org.eclipse.ui.internal.commands.Command.execute(Command.java:160)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand
+(WorkbenchKeyboard.java:475)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press
+(WorkbenchKeyboard.java:887)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent
+(WorkbenchKeyboard.java:931)
+at
+org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings
+(WorkbenchKeyboard.java:568)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$2
+(WorkbenchKeyboard.java:500)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard$1.handleEvent
+(WorkbenchKeyboard.java:256)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Display.filterEvent(Display.java:705)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:809)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:834)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:819)
+at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1720)
+at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716)
+at org.eclipse.swt.widgets.Control.WM_KEYDOWN(Control.java:3487)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2971)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2962)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1362)
+at org.eclipse.swt.internal.BidiUtil.windowProc(BidiUtil.java:647)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.ja

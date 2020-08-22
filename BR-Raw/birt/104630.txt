@@ -1,0 +1,5 @@
+Bug 104630 Column icons don't show up in connecting derby database
+The Steps of Reproduce: 1.New a project 2.New a report 3.In Data Explorer view, New a Data Source to connect derby database: Driver Class: com.ibm.db2.jcc.DB2Driver Database URL: jdbc:db2://spmdb:1527/gui User Name: root Password: root 4.After set up Data Source, create a dataset 5.In Edit Data Set-Data Set window, select Query.
+6.In Avaiable Items sector, expand Data Source by clicking the related icon.
+Expected Result: table icons and column icons will show up.
+Actual Result: column icons don't show up.

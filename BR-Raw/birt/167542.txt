@@ -1,0 +1,3 @@
+Bug 167542 A parameter group isn't deleted after moving it to another parameter group through DND
+Drag a parameter group and drop it to another one is a "move" operation, which cuts the source and pastes to the destination.
+But the source one isn't deleted in such operation while the parameters in the group are all deleted.

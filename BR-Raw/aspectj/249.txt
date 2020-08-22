@@ -1,0 +1,2 @@
+Contribution: Remove Memory Consuming Declared Signature
+The code for weaver.Member#getDeclaredSignature() is never used in the weaver. My memory analysis showed this can pin several megabytes of memory in a large system. This patch removes it. YAGNI :-)

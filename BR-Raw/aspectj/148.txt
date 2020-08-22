@@ -1,0 +1,5 @@
+mixup in retrieving the right class in Java15AnnotationFinder
+See  http://jira.springframework.org/browse/SPR-4390
+The problem is:
+The method getAnnotations is called in the Java15AnnotationFinder - and the member that is passed is a method that is defined on some class C.  The bcelRepository is then used to load that class.  In the buggy situation there are two versions of the class around - one on the regular classpath and one in the core JVM classes (in this case JAXBContext on Java6).
+The member passed in is from the variant defined as a standard extension or core class.  For some reason the bcelRepository loads the Java5 version and then cannot find the member.  This is worse than a ClassNotFoundException which would case the AnnotationFinder to fall back on reflection.  I think the right thing to do now is recognize this situation and fall back on reflection - which will recover the annotations a different way.

@@ -1,0 +1,53 @@
+Word unexpectedly selected when user types ctrl+arrow in editor and using screen reader
+3.6RC1
+Note that this behavior only happens when a screen reader is running.
+One of the new Accessibility API's we have provided in 3.6 is "what is the word at this offset?" I was surprised to see that when JAWS or AccProbe use this API, a word in the editor becomes selected.
+It happens every time the editor gets focus.
+I looked into it a bit and sent the following email to Felipe:
+"The strange selection behavior in getText(offset, WORD) is something that Eclipse is doing.
+For some reason, it thinks it got a double-click.
+This does not happen in CustomControlExample.
+I can show you the steps to see this using AccProbe inspector or JAWS.
+Here's a stack trace:
+Thread [main] (Suspended (breakpoint at line 9443 in StyledText))
+StyledText.setSelection(int, int, boolean, boolean) line: 9443
+StyledText.setSelectionRange(int, int) line: 9506
+CompilationUnitEditor$AdaptedSourceViewer(TextViewer).setSelectedRange(int, int) line: 2391
+JavadocDoubleClickStrategy(DefaultTextDoubleClickStrategy).doubleClicked(ITextViewer) line: 192
+TextViewer$TextDoubleClickStrategyConnector.getPreviousOffset(MovementEvent) line: 245
+StyledTextListener.handleEvent(Event) line: 90
+EventTable.sendEvent(Event) line: 84
+StyledText(Widget).sendEvent(Event) line: 1052
+StyledText(Widget).sendEvent(int, Event, boolean) line: 1076
+StyledText(Widget).sendEvent(int, Event) line: 1061
+StyledText(Widget).notifyListeners(int, Event) line: 773
+StyledText.sendWordBoundaryEvent(int, int, int, int, String, int) line: 8056
+StyledText.getWordPrevious(int, int) line: 5378
+StyledText$12.getText(AccessibleTextEvent) line: 6588
+Accessible.get_textAtOffset(int, int, int, int, int) line: 4084
+Accessible$9.method13(int[]) line: 459
+COMObject.callback13(int[]) line: 182
+OS.DispatchMessageW(MSG) line: not available [native method]
+OS.DispatchMessage(MSG) line: 2459
+Display.readAndDispatch() line: 3655
+Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 2624
+Workbench.runUI() line: 2588
+Workbench.access$4(Workbench) line: 2422
+Workbench$7.run() line: 670
+Realm.runWithDefault(Realm, Runnable) line: 332
+Workbench.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 663
+PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 149
+IDEApplication.start(IApplicationContext) line: 115
+EclipseAppHandle.run(Object) line: 196
+EclipseAppLauncher.runApplication(Object) line: 110
+EclipseAppLauncher.start(Object) line: 79
+EclipseStarter.run(Object) line: 369
+EclipseStarter.run(String[], Runnable) line: 179
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available [native method]
+NativeMethodAccessorImpl.invoke(Object, Object[]) line: not available
+DelegatingMethodAccessorImpl.invoke(Object, Object[]) line: not available
+Method.invoke(Object, Object...) line: not available
+Main.invokeFramework(String[], URL[]) line: 619
+Main.basicRun(String[]) line: 574
+Main.run(String[]) line: 1407
+Main.main(S

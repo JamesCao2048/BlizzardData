@@ -1,0 +1,12 @@
+Text.getCaretLocation() on GTK with style = SWT.SINGLE
+On GTK, SWT is hardcoded to always return "new Point(0,0)" if the SWT.SINGLE style bit is turned on.
+This requires platform specific code as in the following work-around:
+if(gtk) {
+Point strSize = event.gc.textExtent(text.getText(0,text.getCaretPosition()-1));
+event.gc.drawLine(strSize.x+1, 2, strSize.x+1, strSize.y + 1);
+} else {
+Point strLoc = text.getCaretLocation();
+int height = text.getLineHeight();
+event.gc.drawLine(strLoc.x, strLoc.y, strLoc.x, strLoc.y+height-1);
+}
+if there is a platform specific work-around required, it should be done in the text widget so that application code can remain consistent (like the in the win32 version)

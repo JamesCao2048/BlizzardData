@@ -1,0 +1,2 @@
+Bug 147633 Border with double style didn't show effect in pdf file which was generated
+Border with double style didn't show effect in pdf file which was generated using BIRT PDF emitter Steps to reproduce: 1.insert a grid and choose one cell 2.Properties editor->properties->border choose Style as double line and border of all sides 3.preview in pdf Expected result: Double line effect shows Actual result: Double line only show in two or three sides

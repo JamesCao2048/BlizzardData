@@ -1,0 +1,43 @@
+Some focus events are reported twice
+I20040121
+Run this code:
+public class FocusTest {
+
+static final boolean WITH_LABELS= true;
+
+public static void main(String[] args) {
+Display display= new Display();
+Shell shell= new Shell(display);
+shell.setLayout(new GridLayout(2, false));
+
+FocusListener fl= new FocusListener() {
+public void focusGained(FocusEvent e) {
+System.out.println("focusGained: " + e.widget);
+}
+public void focusLost(FocusEvent e) {
+System.out.println("focusLost: " + e.widget);
+}
+};
+
+if (WITH_LABELS)
+new Label(shell, SWT.NONE).setText("Text:"); //$NON-NLS-1$
+Text t= new Text(shell, SWT.BORDER);
+t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+t.addFocusListener(fl);
+
+if (WITH_LABELS)
+new Label(shell, SWT.NONE).setText("Text:"); //$NON-NLS-1$
+Text tt= new Text(shell, SWT.BORDER);
+tt.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+tt.addFocusListener(fl);
+shell.open();
+
+while (!shell.isDisposed())
+if (!display.readAndDispatch()) display.sleep();
+display.dispose();
+}
+}
+- press the Tab key once (to switch focus from first to second field)
+Observe (on console): you get two lost/gained pairs (instead of one)
+- change WITH_LABELS to false
+Observe (on console): one lost/gained pair (as expected).

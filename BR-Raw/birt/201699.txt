@@ -1,0 +1,3 @@
+Bug 201699 Enhance the execution of the topN of maximum member count of level[1102]
+Description: The TopN filter of maximum member count of level will execute twice, although that will take no effect on the results, the performance is not good.
+So please enhance the execution of the member count of level Regards!

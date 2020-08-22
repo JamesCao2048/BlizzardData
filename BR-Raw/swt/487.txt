@@ -1,0 +1,27 @@
+Failed to create Citrix Client v12
+Build Identifier: eclipse SDK 3.4
+SWT crashes when creating an OLE object of the Citrix client v12.
+Yet the same code works with previous version of the Citrix client.
+I also tried to create this OLE object with Microsoft C++ and it works.
+This defect is probably 50% on the Citrix side but I'd appreciate if an expert could have a look.
+Rather to get a fix I would be satisfied if you could give me a workaround.
+Reproducible: Always
+Steps to Reproduce:
+1.download Citrix online plugin at:  http://www.citrix.com/English/ss/downloads/details.asp?downloadId=2301299&productId=186&c1=sot2755
+2.install the client
+3.try this
+public static void main(String[] args) {
+try {
+Shell ret = new Shell(new Display(), SWT.SHELL_TRIM);
+ret.setVisible(true);
+ret.setLayout(new GridLayout(1, true));
+OleFrame frame = new OleFrame(ret, SWT.NO_BACKGROUND);
+OleControlSite controlSite = new OleControlSite(
+frame,
+SWT.NO_MERGE_PAINTS,
+"{238F6F83-B8B4-11CF-8771-00A024541EE3}");
+Thread.sleep(5000);
+} catch (Exception e) {
+System.out.println(e.getMessage());
+}
+}

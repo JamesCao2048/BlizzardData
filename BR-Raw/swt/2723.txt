@@ -1,0 +1,62 @@
+Closing an editor adds "Widget is disposed" error to the errorlog
+Open a java editor and close it ...
+leads to a Widget is disposed error.
+I'm
+investigating it to see if it's related to the patch for  bug 96129
+!SESSION 2005-08-16 08:58:10.925
+-----------------------------------------------
+eclipse.buildId=N20050816-0010
+java.version=1.4.2_08
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:
+-os linux
+-ws gtk
+-arch x86
+!ENTRY org.eclipse.ui.workbench 4 0 2005-08-16 09:27:07.843
+!MESSAGE Widget is disposed
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:3241)
+at org.eclipse.swt.SWT.error(SWT.java:3164)
+at org.eclipse.swt.SWT.error(SWT.java:3135)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:418)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:356)
+at org.eclipse.swt.widgets.Canvas.getCaret(Canvas.java:92)
+at org.eclipse.swt.widgets.Caret.releaseParent(Caret.java:277)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:933)
+at org.eclipse.swt.widgets.Widget.dispose(Widget.java:414)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor.disposeNonDefaultCaret(AbstractTextEditor.java:5198)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor.dispose(AbstractTextEditor.java:3122)
+at
+org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.dispose(AbstractDecoratedTextEditor.java:250)
+at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.dispose(JavaEditor.java:2301)
+at
+org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.dispose(CompilationUnitEditor.java:1658)
+at
+org.eclipse.ui.internal.WorkbenchPartReference.doDisposePart(WorkbenchPartReference.java:659)
+at org.eclipse.ui.internal.EditorReference.doDisposePart(EditorReference.java:261)
+at
+org.eclipse.ui.internal.WorkbenchPartReference.dispose(WorkbenchPartReference.java:628)
+at org.eclipse.ui.internal.WorkbenchPage.disposePart(WorkbenchPage.java:1439)
+at
+org.eclipse.ui.internal.WorkbenchPage.handleDeferredEvents(WorkbenchPage.java:1266)
+at org.eclipse.ui.internal.WorkbenchPage.deferUpdates(WorkbenchPage.java:1250)
+at org.eclipse.ui.internal.WorkbenchPage.closeEditors(WorkbenchPage.java:1224)
+at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1279)
+at org.eclipse.ui.internal.EditorPane.doHide(EditorPane.java:54)
+at org.eclipse.ui.internal.PartStack.close(PartStack.java:493)
+at org.eclipse.ui.internal.EditorStack.close(EditorStack.java:201)
+at org.eclipse.ui.internal.PartStack$1.close(PartStack.java:105)
+at
+org.eclipse.ui.internal.presentations.util.TabbedStackPresentation$1.handleEvent(TabbedStackPresentation.java:81)
+at
+org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:267)
+at
+org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:276)
+at
+org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.access$1(DefaultTabFolder.java:1)
+at
+org.eclipse.ui.internal.presentations.defaultprese

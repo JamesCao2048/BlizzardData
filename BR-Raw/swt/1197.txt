@@ -1,0 +1,12 @@
+Resizing columns on virtual tables does not always update horizontal scroll bar
+Created  attachment 122077   [details]
+Demonstrates the issue (see bug report)
+Build ID: I20080617-2000
+Steps To Reproduce:
+1.Run the attached snippet (modified snippet 151)
+2.Scroll completely right
+3.Make (for example) column21 larger so that it pushes column22 onwards out of the view
+4.The horizontal scroll bar is not updated
+More information:
+Note that updating the contents of the table forces the scroll bar to be correct.
+Also clicking on the scrollbar causes it to correctly reconfigure itself.

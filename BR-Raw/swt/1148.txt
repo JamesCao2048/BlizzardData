@@ -1,0 +1,14 @@
+[Browser] Provide API to handle authentication challenges properly
+Currently, whenever you set an URL to the browser that requires BASIC [1] or FORM [2] based authentication, either a dialog will popup asking for username and password (BASIC), or a website will ask for the credentials (FORM) before proceeding to show the contents.
+If the SWT Browser is integrated into an application like RTC, this behavior is unexpected, because the user is already logged into the repository and authentication credentials could be provided upfront to the browser.
+The API to do this could be as simple as setUser() and setPassword() on Browser.
+This would certainly help for BASIC authentication, because this authentication can be responded to by simply encoding username and password with BASE64 and sending it as header on each request.
+So, maybe even better would be an API to define a list of headers to send per request (this in fact could solve other issues where it currently is not possible to define headers for a request).
+However, FORM based authentication is more tricky to solve with such an API because its up to the website how this authentication is handled.
+It can be any kind of website with a FORM asking for username and password.
+The values are usually POSTed to another website and finally a cookie is received that the client uses from then on to authenticate to the site.
+Note that there also exist DIGEST authentication which despite the username and password, also asks for a domain.
+See [3].
+[1]  http://en.wikipedia.org/wiki/Basic_authentication
+[2]  http://en.wikipedia.org/wiki/Form_based_authentication
+[3]  http://en.wikipedia.org/wiki/Digest_access_authentication

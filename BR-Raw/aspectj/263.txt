@@ -1,0 +1,47 @@
+NullPointerException from BcelShadow.java:1313
+From within Eclipse 3.0 (RAD 6.0.1) I get an error with the (partial) details listed below.  My aspect looks like this:
+public aspect AAwtEventDispatcherThreadProtection
+{
+pointcut awtComponentMethod(java.awt.Component component):
+target(component) && call(* *.*(..));
+before(java.awt.Component component): awtComponentMethod(component) {
+if (!SwingUtilities.isEventDispatchThread() && component.isDisplayable())
+{
+System.err.println("AWT Component method called from another Thread than the AWT-EventDispatchThread! source: " +
+thisJoinPoint.getSourceLocation() + ", target: " + thisJoinPoint.toLongString());
+}
+}
+}
+----------------
+DETAILS (shortened because the size exceeded the 65k limit):
+java.lang.NullPointerException
+at 	at org.aspectj.weaver.bcel.BcelShadow.ensureTargetTypeIsCorrect(BcelShadow.java:1313)
+at 	at org.aspectj.weaver.bcel.BcelShadow.initializeTargetVar(BcelShadow.java:1274)
+at 	at org.aspectj.weaver.bcel.BcelShadow.getTargetVar(BcelShadow.java:968)
+at 	at org.aspectj.weaver.patterns.ThisOrTargetPointcut.findResidueInternal(ThisOrTargetPointcut.java:185)
+at 	at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:268)
+at 	at org.aspectj.weaver.patterns.AndPointcut.findResidueInternal(AndPointcut.java:97)
+at 	at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:268)
+at 	at org.aspectj.weaver.patterns.AndPointcut.findResidueInternal(AndPointcut.java:97)
+at 	at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:268)
+at 	at org.aspectj.weaver.bcel.BcelAdvice.specializeOn(BcelAdvice.java:132)
+at 	at org.aspectj.weaver.bcel.BcelShadow.prepareForMungers(BcelShadow.java:313)
+at 	at org.aspectj.weaver.Shadow.implement(Shadow.java:404)
+at 	at org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.java:2146)
+at 	at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:467)
+at 	at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:102)
+at 	at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1543)
+at 	at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1494)
+at 	at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1275)
+at 	at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1097)
+at 	at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompilerAdapter.java:300)
+at 	at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(AjCompilerAdapter.java:178)
+at 	at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org_aspectj_ajdt_internal_compiler_CompilerAdapter$2$f9cc9ca0(CompilerAdapter.aj:70)
+at 	at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:367)
+at 	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:811)
+at 	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:230)
+at 	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:156)
+at 	at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
+at 	at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
+trouble in:
+public class com.sun.imageio.plugins.gif.GIFImageMetadata extends javax.imageio.metadata.IIOMetadata:

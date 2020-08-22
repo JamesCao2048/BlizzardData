@@ -1,0 +1,2 @@
+Bug 152303 chart properties refreshing
+Open a library (same with reports ?) which contains a chart ; Select the chart (in my case, under body's branch) ; Open another library and select the chart (same principles) ; When swithing from library one to another (with edition tabs), the PropertyEditor is not refreshed ; change a property (I changed the height) to highlight the pb.

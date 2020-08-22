@@ -1,0 +1,3 @@
+Existing shell window title gets overwritten
+If you have an already created window and use Shell.internal_new to pass the handle in, Shell.createHandle will overwrite any existing title.
+An example of this can be seen in the 3.3 RC3 build where the toolbar item for eclipse switches to "untitled window" after the workspace chooser disappears.

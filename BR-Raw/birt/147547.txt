@@ -1,0 +1,9 @@
+Bug 147547 Eclipse appears to hang for a short period when previewing report
+Open a report design in BIRT report designer.
+Click on "Preview" pane of the report view to preview the report.
+Very often it will take quite a few seconds before the designer actually switch to that pane (on my machine it could take up to 10 seconds).
+During this period the entire Eclipse hangs and does not respond to any keyboard or mouse events.
+This always leaves me wondering if I had missed the tab on the click, and had to click again to make sure.
+This is not user friendly.
+If we can't switch to the Preview pane in a timely manner at least display a busy mouse pointer to let the user know that his click is being processed.
+This issue is most noticeable when you run report for the first time after starting eclipse.

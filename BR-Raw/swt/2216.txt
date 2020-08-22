@@ -1,0 +1,9 @@
+Application does not start maximized if setMaximized called before Shell.open()
+Build ID: 3.3.0 I20061102-1715
+Steps To Reproduce:
+1.Create a SWT application
+2.call setMaximized(true) before shell.open()
+3.Start the application, window does not ge maximized
+More information:
+The maximized state could be set before shell.open() and the application window was shown maximized when shell.open was called in version 3.2.This does not work in version 3.3.This can also be seen on eclipse itself, it does not start maximized anymore.
+Calling setMaximized after shell.open() works but produces flickering of the display.

@@ -1,0 +1,29 @@
+[Browser] setText() fails when current content came from setText()
+The snippet below does not work because DocumentComplete is not received for the second about:blank navigation.
+Not sure if the asyncExec() should be needed or not.
+static int counter = 0;
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+shell.setLayout(new FillLayout());
+final Browser browser = new Browser(shell, SWT.NONE);
+browser.setText(createPage());
+shell.open();
+browser.addLocationListener(new LocationAdapter() {
+public void changing(LocationEvent event) {
+event.doit = false;
+display.asyncExec(new Runnable() {
+public void run() {
+String string = createPage();
+System.out.println("setting page text to: " + string);
+browser.setText(string);
+}
+});
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

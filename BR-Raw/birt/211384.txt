@@ -1,0 +1,2 @@
+Bug 211384 [Regression]Refresh issue of multiple parameters on Stored Procedure Dataset[07]
+Description: [Regression]Refresh issue of multiple parameters on Stored Procedure Dataset[07] Build number: 2.3.0.v20071129-0800 Steps to reproduce: 1, New a stored procedure dataset and make sure the procedure including multiple input or output parameters 2, After specify the query, go to parameters page Expected result: After step2, all the required parameters listed in parameters page Actual result: Refresh the page all the paremeters listed

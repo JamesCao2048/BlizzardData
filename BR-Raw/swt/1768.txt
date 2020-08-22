@@ -1,0 +1,15 @@
+[browser] unavailable Safari events crash Eclipse
+N20080125-0010
+It looks like the API used to fix  bug 133933  is not available in all versions of Mac OS X 10.4.We had test failures on the test machine, which is running 10.4.10:
+java-test:
+[echo] Running org.eclipse.jdt.text.tests.JdtTextTestSuite.
+Result file: /Users/sdimitro/buildtest/N20080125-0010/eclipse-testing/results/macosx.carbon.ppc_5.0/org.eclipse.jdt.text.tests.JdtTextTestSuite.xml.
+[java] 2008-01-25 03:50:35.248 java[18809] ***
+-[DOMHTMLDocument addEventListener:listener:useCapture:]: selector not recognized [self = 0x14e04290]
+[java] 2008-01-25 03:50:35.249 java[18809] An uncaught exception was raised
+[java] 2008-01-25 03:50:35.257 java[18809] ***
+-[DOMHTMLDocument addEventListener:listener:useCapture:]: selector not recognized [self = 0x14e04290]
+[java] 2008-01-25 03:50:35.257 java[18809] *** Uncaught exception:
+<NSInvalidArgumentException> ***
+-[DOMHTMLDocument addEventListener:listener:useCapture:]: selector not recognized [self = 0x14e04290]
+[java] Java Result: 133

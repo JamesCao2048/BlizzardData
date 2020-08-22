@@ -1,0 +1,17 @@
+Table.getItem(Point) uses incorrect calculation on Motif
+In all Motif versions of SWT, the method Table.getItem(Point) does not work
+correctly if the index of the top item of the table is anything other than
+zero.
+Thus it does not work correctly if the table is scrolled down.
+The method
+will almost always return null.
+The bug is in the line:
+int index = (point.y
+- getHeaderHeight ()) / itemHeight
+- topIndex;
+The final minus sign should be a plus sign.
+The line should instead read:
+int index = (point.y
+- getHeaderHeight ()) / itemHeight + topIndex;
+The method works correctly on Windows.
+I have not tried GTK.

@@ -1,0 +1,5 @@
+Javadoc for GC methods requiring advanced graphics
+Build: I20060206
+As seen by  bug 173506 , there can be major problems when a client attempts to use advanced graphics on a platform that does not support it.
+The methods that require advanced graphics should state this in the API to help clients avoid this kind of error.
+I suggest a one liner on each GC.set* method tha requires advanced graphics, "This requires advanced graphics that may not be available on all platforms", and then an @see #setAdvanced.

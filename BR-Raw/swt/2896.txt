@@ -1,0 +1,35 @@
+NPE in file dialog when trying to open a file with a wierd name.
+create a file named :
+GPS_Gil_32搂11'33_ N,34搂52'22_ E to Sapir, Herzliya.log
+try to open it with file dialog.
+an NPE is thrown:
+java.lang.NullPointerException
+at
+org.eclipse.swt.widgets.FileDialog.computeResultChooserDialog(FileDialog.java:140)
+at org.eclipse.swt.widgets.FileDialog.openChooserDialog(FileDialog.java:324)
+at org.eclipse.swt.widgets.FileDialog.open(FileDialog.java:293)
+at
+com.telmap.navtool.gps.views.swt.GPSFileReaderComposite$4.widgetSelected(GPSFileReaderComposite.java:214)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1009)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2728)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2427)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1612)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1578)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:293)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:144)
+at com.telmap.navtool.NavToolApplication.run(NavToolApplication.java:21)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:228)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:333)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:150)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:585)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:268)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:260)
+at org.eclipse.core.launcher.Main.run(Main.java:887)
+at org.eclipse.core.launcher.Main.main(Main.java:871)

@@ -1,0 +1,5 @@
+AST: Type information not exposed on itmd, itfd...
+The Types:
+org/aspectj/org/eclipse/jdt/core/dom/InterTypeFieldDeclaration.java
+org/aspectj/org/eclipse/jdt/core/dom/InterTypeMethodDeclaration.java
+Which can be returned by visiting the AjAST tree do not expose the name of the type on which the method or field is added. I require this information in the project I'm currently working on, and would appreciate if it was added.

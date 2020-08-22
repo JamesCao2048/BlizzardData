@@ -1,0 +1,20 @@
+[misc] Unacceptably poor performance using Replace dialog under SWT/GTK
+This bug report is a fork of bug  https://bugs.eclipse.org/bugs/show_bug.cgi ?
+id=37683
+A test have been done to illustrate the completely unacceptable performance of
+the Java editor using file plugins/org.eclipse.swt/Eclipse SWT
+Custom Widgets/common/org/eclipse/swt/custom/StyledText.java
+A change of "a" to "a1" took about half an hour on a Linux SuSE 8.2 PC with AMD
+2000+ processor with 512 Mb memory.
+Eclipse was choking and used over 90% CPU.
+The same test on a Windows 2000 PC with AMD 1G processor and 256 Mb memory took
+less than 20 seconds.
+<quote from  steve_northover@ca.ibm.com >
+The issue here is that Eclipse is relying on the Windows version of the
+method setRedraw() to throw away all of the individual drawing requests.
+This
+is interesting issue and needs to be followed up with them.
+It may be that
+they will not be able to rely on this behavior or that SWT can provide a
+partial implementation of setRedraw() to fix this particular problem.
+</quote from  steve_northover@ca.ibm.com >

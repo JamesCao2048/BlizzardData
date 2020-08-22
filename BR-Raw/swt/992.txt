@@ -1,0 +1,15 @@
+NPE in DialogTab, it doesn't check for null returned by PrintDialog#open
+SWT 3.5 RC0
+Run control example
+switch to dialog tab
+open a print dialog
+hit escape (or close the dialog by clicking on the cancel button)
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.examples.controlexample.DialogTab.createButtonSelected(DialogTab.java:191)
+at org.eclipse.swt.examples.controlexample.DialogTab$2.widgetSelected(DialogTab.java:384)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3880)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3473)
+at org.eclipse.swt.examples.controlexample.ControlExample.main(ControlExample.java:210)

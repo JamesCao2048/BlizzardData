@@ -1,0 +1,12 @@
+unnecessary cast causing problems
+class: org.aspectj.weaver.ResolvedTypeX$Name
+method: isCoerceableFrom(..)
+I am having trouble with the line:
+ResolvedMember[] b = ((Name)other).getDeclaredMethods(); //??? is this cast
+always safe
+As the comment suggests this cast is NOT always safe. In my case the cast is not
+safe because I have some additional implementations for ResolvedTypeX (some
+optimizations).
+Solution: just remove the cast since the method "getDeclaredMethods" is already
+defined abstract in the type of "other" (ResolvedTypeX). So the cast seems to be
+obsolete anyway.

@@ -1,0 +1,6 @@
+SWT crashes with KERN_PROTECTION_FAILURE on mac
+I wrote a small SWT stand alone program which crashes every time on MacOS X.
+The same program work flawlessly on Microsoft Windows platforms.
+To recreate,
+run the test program, resize the window that appears, wait a few seconds and
+then you will get the fatal exception.

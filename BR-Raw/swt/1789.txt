@@ -1,0 +1,35 @@
+Inconsistent Spinner behaviour across platforms
+On Mac and GTK, when the user enters a Spinner field the text within the text component of the Spinner is automatically selected, as it is for other Text controls.
+On Windows however (Tested on Vista with 3.3.1) the control gains focus but the text is not selected.
+As per Carolyn's note below this should be resolved.
+Original thread from the newsgroup is below.
+http://dev.eclipse.org/mhonarc/newsLists/news.eclipse.platform.swt/msg38689.html
+Hi, Brandon.
+Actually, the behavior is inconsistent between the platforms.
+On Mac and GTK, the Spinner's text *is* selected, but on Windows it isn't.
+This should be fixed.
+Can you please open a bug report?
+https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Platform
+and set the Component: to SWT.
+Thanks!
+Carolyn
+"Brandon Kane"
+<brandontkane@xxxxxxxxx> wrote in message
+news:fm43gp$7o6$1@xxxxxxxxxxxxxxxxxxxx
+> Hi there,
+>
+> When you use the up/down buttons in a Spinner, the control gets focus and
+> the text field has the entire number selected.
+This does not happen when
+> the user uses the tab key to enter the field.
+With a Text control, when
+> the control gains focus, all the text within the control is selected
+> automatically, but I can't figure out how to get this to work with a
+> Spinner.
+>
+> Is this supported or am I on a wild goose chase here?
+>
+> Thanks!
+>
+>
+> Brandon

@@ -1,0 +1,14 @@
+Bug 270230 DataSetEventAdapter: code not called if included from library
+Build ID: M20090211-1700 Steps To Reproduce: 1.Create ReportLibrary: reportLib
+-> ScriptedDataSet: dataSet
+-> Table: table
+-> (Java) DataSetEventAdapter: jdsea
+-> table binds to dataSet
+-> dataSet uses jdsea Create Report and pull the Table from the ReportLibrary into this report.
+If you check the tables binding the reference seems correct
+-> reportLib.dataSet However the jdsea event methods are never called if you run the report.
+---- You can make it running if you pull not only the table but also the dataSet into the report.
+(The binding still points to the reportLib.dataSet but it seems to be fine like that)
+---- I think this is not as it is supposed to work.
+It's fine for us now since we know how to create the reports, but it took quite a while to find out.
+More information: If it was not clear enough i can provide you with an example.

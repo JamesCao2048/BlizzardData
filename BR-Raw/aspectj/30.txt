@@ -1,0 +1,2 @@
+make ajcore file creation optional
+Although cores are useful, there may be situations where you are working around whatever they are reporting and are perhaps unable to pick up a later version of AJ that includes the fix.  In these situations it might be helpful to make the creation of cores optional, through a sys prop.

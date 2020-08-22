@@ -1,0 +1,10 @@
+[DND] Cannot drag and drop files between the Finder (ie. Cocoa and Carbon apps)
+Just entering a bug based on Scott's comments so that it's not lost.
+Comments from Scott:
+At this point I鈥檓 aware of only one known problem.
+Cocoa apps don鈥檛 have a way to provide a list of files to the Finder using HFSFlavors like you have in Carbon.
+Instead, you place an NSArray of file names on the dragging clipboard with a flavor of NSFilenamesPboardType.
+Other Cocoa-based apps can understand that format, and I verified it works, but the Finder and other Carbon apps do not, so they don鈥檛 recognize the drag data.
+I don鈥檛 know what functionality is expected of FileTransfer across platforms, so I don鈥檛 know if the Carbon behavior was accidental or deliberate.
+Cocoa lets you do HFS promise file drags, but I don鈥檛 think that鈥檚 the same thing.
+I鈥檒l do what I can to follow up with folks at Apple.

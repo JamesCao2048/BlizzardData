@@ -1,0 +1,5 @@
+Bug 276196 Boolean parameters passed to a drill through report incorrectly
+Build ID: NA Steps To Reproduce: 1.Create a report with a chart and a boolean parameter 2.Create a drill through from the chart to another report with a boolean parameter of the same name.
+3.Run the report and click on the chart to drill through.
+Value of the boolean parameter is converted from false to 0.0 and causes the drill through report to fail as the parameter is of the wrong type.
+More information:

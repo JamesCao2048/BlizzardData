@@ -1,0 +1,55 @@
+Error "must implement abstract inter-type declaration" even though build is fine
+Build Identifier: Version: 4.2.0 Build id: I20120608-1400
+I have an AspectJ project with Java classes like this (schematically, not the full code):
+public abstract class BasicFilter {
+protected abstract String getLogMessage();
+}
+public class PreJTidyFilter extends BasicFilter
+{
+@Override
+protected String getLogMessage() {
+return "Fixing HTML so as to enable JTidy to parse it";
+}
+}
+public class JTidyFilter extends BasicFilter {
+@Override
+protected String getLogMessage() {
+return "Converting to clean, pretty-printed XHTML";
+}
+}
+public class XOMUnclutterFilter extends BasicFilter {
+@Override
+protected String getLogMessage() {
+return "Removing clutter (header, footer, navigation, ads) and fixing structure";
+}
+}
+###################################
+I also have this aspect:
+privileged aspect LoggingAspect {
+pointcut runFilter() : execution(* BasicFilter.run());
+void around(BasicFilter filter) : runFilter() && this(filter) {
+String message = filter.getLogMessage();
+SimpleLogger.verbose(message, IndentMode.INDENT_AFTER);
+proceed(filter);
+SimpleLogger.dedent();
+}
+}
+###################################
+The aspects compile and run fine, but the Eclipse error view always shows two errors:
+must implement abstract inter-type declaration:
+java.lang.String de.scrum_master.galileo.filter.BasicFilter.getLogMessage()
+(XOMUnclutterFilter.java)
+must implement abstract inter-type declaration:
+java.lang.String de.scrum_master.galileo.filter.BasicFilter.getLogMessage()
+(JTidyFilter.java)
+The errors even re-occur after cleaning and rebuilding the project. But as I said, the code runs just fine.
+Please note: The funny thing is that in those two classes I just need to add and remove whitespace, then save the file, and the error goes away file by file. As soon as I rebuild though, the errors are there again.
+Please also note: The errors always are shown for subclasses XOMUnclutterFilter and JTidyFilter, but strangely *not* for subclass PreJTidyFilter, even though it is affected by the same pointcut and advice as the others and also subclassing the same base class.
+Reproducible: Always
+Steps to Reproduce:
+I do not know if there is a way for you to reproduce this behaviour with the little code snippets I provided above, but here it happens all the time.
+If you would like to clone my project, it is located at  https://github.com/kriegaex/Galileo-Openbook-Cleaner .
+My Eclipse was configured via Yoxos, but AJDT
+Version: 2.2.0.e42x-RELEASE-20120703-2200
+AspectJ version: 1.7.0.20120703164200
+was installed by me manually because right after the Juno release AJDT were not available via Yoxos yet (I do not know if they are now).

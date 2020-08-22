@@ -1,0 +1,24 @@
+Hooking MeasureItemListener to Table with no columns spews warnings
+- I'm running with gtk 2.4.13
+- this may be related to  bug 129972
+- run the snippet below, and preceding the NPE which was already logged in the  bug 129972 , you'll get the gtk warnings shown at the bottom
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,400,400);
+Table table = new Table(shell, SWT.NONE);
+table.setBounds(10,10,300,300);
+new TableItem (table, SWT.NONE).setText("item");
+table.addListener(SWT.MeasureItem, new Listener() {
+public void handleEvent(Event event) {
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+GTK Warnings:
+(SWT:8398): GLib-GObject-WARNING **: unable to set property `pixbuf' of type `GdkPixbuf' from value of type `gchararray'
+(SWT:8398): GLib-GObject-WARNING **: unable to set property `text' of type `gchararray' from value of type `GdkColor'

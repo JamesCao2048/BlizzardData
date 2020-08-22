@@ -1,0 +1,5 @@
+StyledText's AccessibleTextExtendedListener#getText() problems for TEXT_BOUNDARY_WORD
+StyledText is returning some wrong values in AccessibleTextExtendedListener#getText() when the boundary type is
+TEXT_BOUNDARY_WORD.
+For example, "hello world" the word at 6 (count=0) was returning "hello"
+I saw the problem running linux's accerciser tool.

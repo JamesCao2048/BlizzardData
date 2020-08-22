@@ -1,0 +1,29 @@
+GTK warnings when setting item count on VIRTUAL Table before its open
+3.1
+- run the snippet below, which sets the item count to 500
+- the SetData callback is not invoked for the items that should be initially
+visible, so the Table appears blank
+- scroll down and note that it works for item indices > 14
+*** if the Table item count is set after the Shell has been opened then the
+initial 14 items are queried and shown fine
+public static void main (String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,400,300);
+final Table table = new Table(shell, SWT.VIRTUAL);
+table.setBounds(10,10,300,200);
+table.setItemCount(500);
+shell.open();
+//table.setItemCount(500); // this works
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem)event.item;
+int index = table.indexOf(item);
+item.setText("virtual item " + index);
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

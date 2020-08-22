@@ -1,0 +1,47 @@
+StyledText getRages(int start, int length) returns incorrect array
+Build ID:  I20080917-0800
+Steps To Reproduce:
+1.Set 2 different style ranges (different start and length value, no overlapping)
+2.get the range of the first style
+3.notice that an array of size 3 is returned, the size should be just 2
+More information:
+package bugs;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyleRange;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class GetRangeBug {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(1, false));
+StyledText text = new StyledText(shell, SWT.V_SCROLL | SWT.H_SCROLL);
+text.setText("The Eclipse Foundation is currently going through the exercise");
+StyleRange r1 = new StyleRange();
+r1.underline = true;
+StyleRange r2 = new StyleRange();
+r2.strikeout = true;
+
+int[] ranges = {12, 10, 36, 5};
+StyleRange[] styles = {r1, r2};
+text.setStyleRanges(ranges, styles);
+
+System.out.println(text.getRanges(12, 10)[0]);
+System.out.println(text.getRanges(12, 10)[1]);
+System.out.println(text.getRanges(12, 10)[2]);
+
+//output 12, 10, 12
+//should be just 12, 10
+// there should be no 3rd element in the integer array
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

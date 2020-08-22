@@ -1,0 +1,36 @@
+Weaving failure when using injars
+Sample run that fails using injars:
+C:develtestlibraryWeave>ajc ajeetestingExecutionMonitor.aj
+C:develtestlibraryWeave>jar cf ajee.jar ajeetesting*.class
+C:develtestlibraryWeave>ajc -injars ajee.jar modelBusObj.java
+modelMonitorB
+usObj.java
+C:develtestlibraryWeavemodelBusObj.java:3 Class must implement the
+inherite
+d abstract method ExecutionMonitor.MonitoredItem.ajc$interMethodDispatch2
+$ajee_t
+esting_ExecutionMonitor$record(String, String)
+public class BusObj {
+^^^^^^
+1 error
+It works in a single pass compilation:
+C:develtestlibraryWeave>ajc ajeetestingExecutionMonitor.aj
+modelBusObj.jav
+a modelMonitorBusObj.java
+C:develtestlibraryWeave>
+Sample source code:
+package ajee.testing;
+public aspect ExecutionMonitor {
+public interface MonitoredItem {}
+private void MonitoredItem.record(String eventType, String eventName) {}
+}
+---
+package model;
+public class BusObj {
+}
+---
+package model;
+import ajee.testing.ExecutionMonitor;
+public aspect MonitorBusObj {
+declare parents: BusObj implements ExecutionMonitor.MonitoredItem;
+}

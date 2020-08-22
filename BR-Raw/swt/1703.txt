@@ -1,0 +1,5 @@
+Mozilla fires wrong events when executing java script
+(1) Have a browser widget, add a location change listener
+(2) Set html to the browser
+(3) execute js code to replace some elements in the dom tree
+> You'll get an location change event

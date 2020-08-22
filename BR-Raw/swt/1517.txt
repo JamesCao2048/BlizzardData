@@ -1,0 +1,5 @@
+Typing in StyledText is accompanied with the error bell (Cocoa)
+StyledText on Cocoa isn't usable since on every key press the error bell is played.
+After short debugging I had found that keyboard events sent to all Canvas-based controls are forwarded to NSWindow via super.windowSendEvent(id, event) call.
+NSView which is a base for Canvas doesn't handle them so the system plays the error bell.
+The attached patch solves this problem by overriding sendKeyEvent(NSEvent nsEvent, int type) method in the Canvas class and making it return "false", what blocks further processing of the event.

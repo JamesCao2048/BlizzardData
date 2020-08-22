@@ -1,0 +1,3 @@
+Bug 279749 Redundant script node generated if revert to report item by double clicking
+Description: Redundant script node generated if revert to report item by double clicking Build number: 2.5.0.v20090610-0630 Steps to reproduce: 1, New a label and input some script in onPrepara 2, Select label and create template report item 3, Double click label to revert to report item 4, Check the script node in outline Expected result: After label revert to report item, the script has one node named label(element id) without redundant node Actual result: A redundant node generated after double clicking label.
+Error log:

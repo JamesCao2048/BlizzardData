@@ -1,0 +1,45 @@
+Add accessible keyboard shortcut to TabFolder and CTabFolder
+Eclipse does not use the shortcut Ctrl+Tab to change tab pages.
+It uses an alternate documented shortcut Ctrl+PgDn.
+It also uses the Microsoft standard UI navigation for accessing tabs in a tab control.
+Arrow navigates the tabs (active UI elements) when they have focus.
+Microsoft tab control navigation is documented here:  http://msdn.microsoft.com/en-us/library/ms971323.aspx#atg_keyboardshortcuts_accessing_tab_controls
+Response from a JAWS developer:
+We were concerned about announcing ctrl+pgdn and ctrl+PGUP on tab controls that did not support this key combination.
+As a way to handle this, I added code to JAWS that looked at the tab control containing the individual tabs for a shortcut key.
+For example, the individual tab may have a shortcut of alt+g and the control that contains that tab has ctrl+pgdn as a shortcut, JAWS will announce the alt+g, the ctrl+tab, and the ctrl+pgdn when the user navigates to the tab.
+This is a bit verbose, but it avoids the problem of JAWS announcing a keystroke that might not be supported.
+Carolyn sent me this java snippet which I used to test the fix and this fix should now be part of the released JAWS version:
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.accessibility.*;
+public class TabFolderTest {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setText("TabFolder");
+TabFolder tabFolder = new TabFolder(shell, SWT.NONE);
+for (int i = 0; i
+< 5; i++) {
+TabItem tab = new TabItem(tabFolder, SWT.NONE);
+tab.setText("Tab &" + i);
+Canvas tabContent = new Canvas(tabFolder, SWT.NONE);
+tab.setControl(tabContent);
+}
+tabFolder.getAccessible().addAccessibleListener(new AccessibleAdapter() {
+public void getKeyboardShortcut(AccessibleEvent e) {
+if (e.childID == ACC.CHILDID_SELF){
+e.result = "Ctrl+PageDown";
+}
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}
+}
+So now we need to add the appropriate keyboardShortcut string to TabFolder and CTabFolder.

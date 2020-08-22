@@ -1,0 +1,6 @@
+Bug 267120 Support User Defined Exceptions from Event Handlers
+When writing event handlers, the developer may find conditions that can not be resolved from the code.
+It does not seem like there is a way to throw an Exception back to the ReportEngine in the case of an error.
+Ideally, all of the EventHandler methods would have the ability to throw a Java Exception back into the report engine.
+This could either be done by adding the message to the ReportContext (which seem really contrived) or better by throwing an exception class IUserDefinedException extends BirtException{ public IUserDefinedException (ScriptableObject scriptObj, Sting msg, (optional)Throwable cause, (optional)severity) } The biggest difference is that the UserDefinedException does not need to have access to the pluginId or the ResourceBundles as this information is not readily available to most script developers.
+The ReportEngine would obey standard severity rules and would display the message in the report output for HTML reports.

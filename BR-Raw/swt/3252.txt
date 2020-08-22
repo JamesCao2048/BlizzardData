@@ -1,0 +1,8 @@
+Program.execute does not work on Mac (patch available)
+3.0
+The following snippet does not open a Web browser:
+public class FindProgramTest {
+public static void main(String[] args) {
+Program.findProgram("html").execute(" http://www.google.com ");
+}
+}

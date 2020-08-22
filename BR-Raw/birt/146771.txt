@@ -1,0 +1,4 @@
+Bug 146771 [Regression]Preferences-Element Names-OdaDataSet, can not take effect
+[Regression]Preferences-Element Names-OdaDataSet, can not take effect Steps: 1.Open Windows
+- reference
+- Element Names 2.Set the named of OdaDataSet as "odads" 3.New a report design and a odadatasource 4.New dataset apply this datasource Actual Results: 1.Data set default name is Data Set Expected Results: 1.The name of dataset that created is odads

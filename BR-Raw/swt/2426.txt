@@ -1,0 +1,19 @@
+Implement ExpandBar on GTK 2.2.x
+Description:On SuSE Linux Enterprise Sever 9 sp 3, snippet223 fail to run due to SWTError.
+Build date: Eclipse3.2 M5a, IBM JRE 5GA and Sun JRE1.5.0_06
+OS: SLES9 sp3 ja_JP.utf8 and en_US.utf8
+Steps to recreate problem:
+1- load snippet223 and run
+
+following error is displayed at Console view
+Exception in thread "main" org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(SWT.java:3375)
+at org.eclipse.swt.SWT.error(SWT.java:3272)
+at org.eclipse.swt.SWT.error(SWT.java:3243)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:431)
+at org.eclipse.swt.widgets.ExpandBar.createHandle(ExpandBar.java:45)
+at org.eclipse.swt.widgets.Widget.createWidget(Widget.java:378)
+at org.eclipse.swt.widgets.Control.createWidget(Control.java:364)
+at org.eclipse.swt.widgets.Scrollable.createWidget(Scrollable.java:148)
+at org.eclipse.swt.widgets.Control.<init>(Control.java:88)
+at org.eclipse.swt.snippets.Snippet223.main(Snippet223.java:33)

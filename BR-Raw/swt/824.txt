@@ -1,0 +1,15 @@
+Bidi: Ctrl+RightShift/Ctrl+LeftShift doesn't switch the StyledText orientation
+User-Agent:       Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; .NET CLR 2.0.50727)
+Build Identifier: any
+On Windows platform one is able to change System Editor's (and not only) orientation by pressing Ctrl+RightShift/Ctrl+LeftShift.
+SWT Text widget due to being implemented by platform editor, sticks to this behaviour.
+Unfortunately SWT StyledText doesn't respect these (or any other) hot key combination, thus impeding its usability for Arabic/Hebrew customers.
+It worth noting in this context that eclipse Text Editor did respect these feature prior to year 2003 but such behaviour was complained after under defect 165089.
+Eclipse Text Editor is basd on SWT StyledText indeed, however even if the discussed behaviour has been desided to be disoraged for Text Editor, it still highly important to StyledText, on Bidi systems (i.e.
+system having Arabic or Hebrew keyboard installed).
+We are willing to contribute the code backing up discussed functionality.
+Reproducible: Always
+Steps to Reproduce:
+1.Run SWT application having StyledText widget.
+2.Press  Ctrl+RightShift.
+3.Result: Nothing happens in sense that widget's orientation doesn't chagne

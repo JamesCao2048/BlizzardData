@@ -1,0 +1,5 @@
+Bug 193675 Crosstab border doesn't refresh correctly when undo delete predefined style operation
+Add a predefined style "crosstab "in report design, set some border styles, drag a crosstab to layout, it will apply the style automatically.
+Then delete the predefined style, crosstab is refreshed correctly in layout, but if undo this operation, crosstab doens't refesh corrently.
+This is because the border layer for crosstab is not updated correctly when refresh figure.
+The resolution is we trigger a relayout after refresh figure to update border data correctly.

@@ -1,0 +1,22 @@
+wrong event order in StyledText on Cocoa kills Incremental Find
+N20090419-2000 and HEAD, Cocoa
+In text editors, the Incremental Find Next (Command+J) action does not work any more.
+It correctly updates the status line, but when I begin to type, the characters end up in the StyledText, and not in the status line.
+I'm pretty sure this is due to the wrong event order I see in the CustomControlExample:
+- TextChangeListener.textChanging: TextChangingEvent{null time=0 data=null}
+- TextChangeListener.textChanged: TextChangedEvent{null time=0 data=null}
+- VerifyKeyListener: VerifyEvent{StyledText {} time=404542874 data=null character='a' keyCode=97 stateMask=0 doit=true start=0 end=0 text=null}
+- Verify [25]: VerifyEvent{StyledText {} time=404542874 data=null character='0' keyCode=0 stateMask=0 doit=true start=62 end=62 text=a}
+- TextChangeListener.textChanging: TextChangingEvent{null time=0 data=null}
+- TextChangeListener.textChanged: TextChangedEvent{null time=0 data=null}
+- Modify [24]: ModifyEvent{StyledText {} time=404542874 data=null}
+- KeyDown [1]: KeyEvent{StyledText {} time=404542874 data=null character='a' keyCode=97 stateMask=0 doit=true}
+- KeyUp [2]: KeyEvent{StyledText {} time=404542962 data=null character='a' keyCode=97 stateMask=0 doit=true}
+In 3.4.2 and in HEAD on WinXP, the event order is:
+- VerifyKeyListener: VerifyEvent{StyledText {} time=-983948310 data=null character='a' keyCode=97 stateMask=0 doit=true start=0 end=0 text=null}
+- Verify [25]: VerifyEvent{StyledText {} time=-983948310 data=null character='0' keyCode=0 stateMask=0 doit=true start=59 end=59 text=a}
+- TextChangeListener.textChanging: TextChangingEvent{null time=0 data=null}
+- TextChangeListener.textChanged: TextChangedEvent{null time=0 data=null}
+- Modify [24]: ModifyEvent{StyledText {} time=-983948310 data=null}
+- KeyDown [1]: KeyEvent{StyledText {} time=-983948310 data=null character='a' keyCode=97 stateMask=0 doit=true}
+- KeyUp [2]: KeyEvent{StyledText {} time=-983948223 data=null character='a' keyCode=97 stateMask=0 doit=true}

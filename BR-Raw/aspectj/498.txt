@@ -1,0 +1,4 @@
+Restore build cancelling to Swing-based IDEs
+Core compiler implementation changes have resulted in an incompatability with
+AJDE's build cancelling mechanism.  Once the core canceling behavior
+stabilizes this needs to be restored.

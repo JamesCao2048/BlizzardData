@@ -1,0 +1,2 @@
+Stack trace being printed, but want to mute it
+In org.aspectj.ajdt.internal.core.builder.AjState.getDelegate(ReferenceType), there is a call to printStackTrace().  On the AJDT build server, this exception is being printed and causing some noise.  Can you replace that call with a call to the IMessageHandler for the build?

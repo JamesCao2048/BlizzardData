@@ -1,0 +1,12 @@
+Background/Foreground Color style bit not respected without a border/scroll bar
+I20061212-0010
+Seen on both Solaris and Linux GTK
+Run the control example, go to Canvas.
+Click on H_SCROLL and V_SCROLL.
+Set background color and foreground color to something noticeable.
+Turn off H_SCROLL and V_SCROLL
+-> color goes away.
+Turn them back on
+-> color comes back.
+Turn them off and turn on BORDER
+-> color comes back.

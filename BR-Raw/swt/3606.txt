@@ -1,0 +1,7 @@
+StyledText - add getStyleRanges(start, offset) API
+Currently you can get the style range at a particular offset and you can get
+all style ranges, but there is no API for getting the styles for a particular
+range of text.
+While getStyleRanges could be used to ascertain this
+information, this could be inefficient if your text has a lot of text (i.e.,
+this method creates a copy of all style ranges).

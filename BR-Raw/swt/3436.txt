@@ -1,0 +1,12 @@
+Using SWT.RIGHT on a ToolBar leaves blank space
+build I20040113
+- changed the RCP Browser example to create its ToolBar using SWT.FLAT |
+SWT.RIGHT
+- the ToolBar has 4 ToolItems: Back (image only), Forward (image only), Stop
+(text only) and Refresh (text only)
+- when it comes up, the Back and Forward items have a fair bit of blank space
+after the arrow images (see attached screen shot)
+From scanning MSDN, it seems like this is platform behaviour on Windows, but
+it's almost certainly not what an app wants.
+I think that many RCP apps will want this style, with tool items having mixed
+icons and text, with no extra blank spaces (compare with IE).

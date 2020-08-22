@@ -1,0 +1,2 @@
+Bug 173836 NPE was thrown when click "Preview " button quickly twice[00]
+NPE was thrown when click "Preview " button quickly twice[00] Build number: 2.2.0.v20070212-0630 Steps to reproduce: 1.open attached report 2.click "Preview" button quickly twice Expected result: Report can be previewed properly Actual result: NPE was thrown in second preview Error log: see screen shot

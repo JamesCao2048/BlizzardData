@@ -1,0 +1,28 @@
+sorted Table column background overrides TableItem background
+3.2RC5
+- run the snippet below, which sets the first column to be the sort column, and the second item's background to red
+- note that the red background does not appear in the second item's first column, as a result of the column's special "I'm being sorted" background
+- it seems like a custom set background should override a Table-provided one
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+Table table = new Table(shell, SWT.NONE);
+table.setBounds(10,10,150,150);
+table.setHeaderVisible(true);
+TableColumn column2 = new TableColumn(table, SWT.NONE);
+column2.setWidth(50);
+new TableColumn(table, SWT.NONE).setWidth(50);
+new TableItem(table, SWT.NONE).setText(new String[] {"one", "two"});
+TableItem item2 = new TableItem(table, SWT.NONE);
+item2.setText(new String[] {"one", "two"});
+new TableItem(table, SWT.NONE).setText(new String[] {"one", "two"});
+shell.open();
+item2.setBackground(display.getSystemColor(SWT.COLOR_RED));
+table.setSortColumn(column2);
+table.setSortDirection(SWT.DOWN);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

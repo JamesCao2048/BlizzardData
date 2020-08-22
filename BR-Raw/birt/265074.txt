@@ -1,0 +1,3 @@
+Bug 265074 Master page header is disappeared if Footer height unit is %
+Description: Master page header is disappeared if Footer height unit is % Build number: 2.3.2.v20090217-0730 Steps to reproduce: 1, New a master page 2, Set the Header Height to 30% or 50 % Expected result: Header is taking 30% of the height of Master page Actual result: Header is missing.
+Error log:

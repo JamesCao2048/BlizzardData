@@ -1,0 +1,45 @@
+StyledText: horizontal scrollbar doesn't handle indent
+In SWT 3.2 (build M20060629-1905) the horizontal scrollbar of StyledText doesn't take into account the use of 'setIndent(int)' or the use of bullets (via 'setLineBullet(int,int,Bullet)').
+It's annoying when editing the StyledText widget (deleting the last character a the longest line may cause the left margin to grow).
+I used the linux-gtk version of SWT.
+How to reproduce: run the example.
+Result: The end of the line goes out of the bounds of the widget and cannot be reached.
+Expected: Ability to scroll to the end of the line.
+Example:
+-------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.GlyphMetrics;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class Test {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final StyledText text = new StyledText(shell, SWT.H_SCROLL
+| SWT.V_SCROLL | SWT.MULTI);
+text.setText("A long long line");
+StyleRange range = new StyleRange();
+range.metrics = new GlyphMetrics(0, 0, 50);
+Bullet bullet = new Bullet(ST.BULLET_DOT, range);
+text.setLineBullet(0, 1, bullet);
+// these 4 lines can be replaced with 'text.setIndent(50);'
+shell.setSize(100, 100);
+shell.open();
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+display.dispose();
+}
+}
+-------------------
+I think the problem lies in the class 'StyledTextRenderer' method 'calculate(int,int)'.
+Replace the line
+> lineWidth[i] = rect.width + hTrim;
+with
+> lineWidth[i] = layout.getIndent() + rect.width + hTrim;
+to take the indent into account.
+This is maybe not perfect because the caret isn't visible when editing the last character of the longest line, but the StyledText stays useable.
+Thanks

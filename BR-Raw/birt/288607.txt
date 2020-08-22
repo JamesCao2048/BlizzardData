@@ -1,0 +1,9 @@
+Bug 288607 NPE occurred when remove and reuse a library which name is only a space[01]
+Description: I create a library named " .rptlibrary", after using it in report design.
+I found the namespace property is not written in report design:
+<list-property name="libraries">
+<structure>
+<property name="fileName">.rptlibrary</property>
+</structure>
+</list-property> 1, Using this library in report design 2, Remove the library in outline of report design 3, Check the library properties in xml (it wasn't removed) 4, Reuse the library again, NPE occurred.
+Build number: 2.5.1.v20090904-0630

@@ -1,0 +1,2 @@
+Bug 151794 Integer data can't be retrieved in dynamic parameter
+Steps to reproduce: 1.New a sample data source and a data set from table "CUSTOMERS" 2.New a dynamic parameter, choose data type "Integer" Expected result: Those integer data set columns are listed in "Select value column" Actual result: No column available

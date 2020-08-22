@@ -1,0 +1,54 @@
+Snippet124 crashes
+- run Snippet124
+- double-click the second item, which should open an in-place editor, but instead crashes with the following:
+Process:         java [3711]
+Path:            /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
+Identifier:      java
+Version:         ???
+(???)
+Code Type:       PPC (Native)
+Parent Process:  eclipse [2964]
+Date/Time:       2008-10-22 16:42:05.372
+-0400
+OS Version:      Mac OS X 10.5.5 (9F33)
+Report Version:  6
+Exception Type:  EXC_BAD_ACCESS (SIGBUS)
+Exception Codes: KERN_PROTECTION_FAILURE at 0x0000000000000000
+Crashed Thread:  0
+Application Specific Information:
+Java information:
+Version: Java HotSpot(TM) Client VM (1.5.0_16-133 mixed mode, sharing)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_16-133) for macosx-ppc, built on Aug 27 2008 10:57:21 by root with gcc 4.0.1 (Apple Inc.
+build 5465)
+Exception type: Bus Error (0xa) at pc=0x061e4268
+Current thread (0x0100cf00):  JavaThread "Thread-0" daemon [_thread_in_native, id=-1598746508]
+Stack: [0xbf800000,0xc0000000)
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;I)I+0
+j  org.eclipse.swt.widgets.Widget.callSuperBoolean(II)Z+26
+j  org.eclipse.swt.widgets.Widget.becomeFirstResponder(II)Z+3
+j  org.eclipse.swt.widgets.Control.becomeFirstResponder(II)Z+3
+j  org.eclipse.swt.widgets.Text.becomeFirstResponder(II)Z+8
+j  org.eclipse.swt.widgets.Display.windowDelegateProc(II)I+99
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(III)Z+0
+j  org.eclipse.swt.internal.cocoa.NSWindow.makeFirstResponder(Lorg/eclipse/swt/internal/cocoa/NSResponder;)Z+19
+j  org.eclipse.swt.widgets.Control.forceFocus()Z+69
+j  org.eclipse.swt.widgets.Control.setFocus()Z+18
+j  org.eclipse.swt.snippets.Snippet124$1.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+158
+j  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+71
+j  org.eclipse.swt.widgets.Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+25
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;Z)V+73
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;)V+4
+j  org.eclipse.swt.widgets.Widget.notifyListeners(ILorg/eclipse/swt/widgets/Event;)V+19
+j  org.eclipse.swt.widgets.Display.runDeferredEvents()Z+88
+j  org.eclipse.swt.widgets.Display.applicationSendMouseEvent(Lorg/eclipse/swt/internal/cocoa/NSEvent;Z)V+5
+j  org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(IIIIII)I+82
+j  org.eclipse.swt.widgets.Display.applicationProc(IIIIII)I+29
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;II)I+0
+j  org.eclipse.swt.widgets.Widget.callSuper(III)V+31
+j  org.eclipse.swt.widgets.Widget.mouseDown(III)V+4
+j  org.eclipse.swt.widgets.Control.mouseDown(III)V+16
+j  org.eclipse.swt.widgets.Table.mouseDown(III)V+4
+j  org.

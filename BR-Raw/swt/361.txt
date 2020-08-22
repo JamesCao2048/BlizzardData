@@ -1,0 +1,76 @@
+Shell.setImeInputMode(int mode) does not always set IME flags as expected, and causes Chinese IME single space mode changes to double space.
+Build Identifier: Eclipse 3.6.0 I20100608-0911
+Shell.setImeInputMode(int mode) does not always set IME flags as expected, and causes Chinese IME single space mode changes to double space.
+The SWT constant for IME input mode are:
+SWT.DBCS (int value 2), if set, full shape
+SWT.ALPHA (int value 4),
+SWT.NATIVE (int value 8), if set, IME is on
+SWT.PHONETIC (int value 16),
+SWT.ROMAN (int value 32),
+When chinese IME is on and half shape, Shell.getImeInputMode() returns "8".
+Calling setImeInputMode(8) then calling Shell.getImeInputMode() on the same Shell, it will return "10" instead of expected value "8".
+10 means IME is on and FullShape is set.
+This problem reproduces in Eclipse 3.4.0 through Eclipse 3.6.0.
+Code snippet to reproduce it:
+-----------------------
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+public class Snippet1 {
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+
+Text text1 = new Text(shell, SWT.BORDER);
+text1.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+text1.setFocus();
+text1.addKeyListener(new KeyListener() {
+@Override
+public void keyPressed(KeyEvent e) {
+// TODO Auto-generated method stub
+System.out.println("- Watch the character width (double or single space).
+Current imeInputMode is: " + shell.getImeInputMode());
+}
+@Override
+public void keyReleased(KeyEvent e) {
+// TODO Auto-generated method stub
+}
+});
+Button button1 = new Button(shell, SWT.PUSH);
+button1.setText("Change IME");
+button1.addSelectionListener(new SelectionListener() {
+@Override
+public void widgetSelected(SelectionEvent e) {
+// TODO Auto-generated method stub
+shell.setImeInputMode(8);
+System.out.println("(3) After calling setImeInputMode(8), shell.getImeInputMode()=" + shell.getImeInputMode());
+System.out.println("    Notice how the language bar changes to double space characters.");
+System.out.println("    Enter a digit in text input to compare with the previous one (single space digit now changes to double space digit).");
+}
+@Override
+public void widgetDefaultSelected(SelectionEvent e) {
+// TODO Auto-generated method stub
+
+}
+
+});
+shell.setSize(200, 200);
+shell.open();
+
+System.out.println("(1) Initially shell imeInputMode is: " + shell.getImeInputMode());
+System.out.println("(2) With foucs set in the text input area, manually change IME to Chinese IME and half space.");
+System.out.println("    Enter a digit in text input, verify imeInputMode is 8, and verify language bar showing half space character.");
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+Reproducible: Always
+Steps to Reproduce:
+1.With IME off a shell's getImeInputMode() returns 0.
+2.Manually change IME to Chines

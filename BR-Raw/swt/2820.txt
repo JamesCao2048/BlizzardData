@@ -1,0 +1,56 @@
+javadoc warnings in RC1
+Build: 3.1 RC1
+The javadoc builder reported the following warnings for RC1 build:
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:2355: warning
+- Tag @see: missing #:
+"setAdvanced()"
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:2355: warning
+- Tag @see: can't find
+setAdvanced() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setAlpha() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setAntialias() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setBackgroundPattern() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setClipping() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setForegroundPattern() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setInterpolation() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setTextAntialias() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3168: warning
+- Tag @see: can't find
+setTransform() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3206: warning
+- Tag @see: can't find
+setTextAntialias() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.ui.forms/src/org/eclipse/ui/forms/widgets/ExpandableComposite.java:750:
+warning
+- Tag @see: can't find getTitle in
+org.eclipse.ui.forms.widgets.ExpandableComposite
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse.swt/Eclipse
+SWT/win32/org/eclipse/swt/graphics/GC.java:3870: warning
+- Tag @see: can't find
+setAntialias() in org.eclipse.swt.graphics.GC
+/builds/I200505271300/src/plugins/org.eclipse.platform.doc.isv/../org.eclipse

@@ -1,0 +1,5 @@
+Bug 217640 XML driver ISO date format parsing problem.
+In XML driver, when parse date(yyyy-mm-dd) from a string with ISO 8601 format and negative GMT info, problem will occur.
+A sample string could be: 1994-11-05T08:15:30-05:00 This is caused by cleanDate(String) method in DateFormatISO8601 class.
+The last "-" has not been cleaned correctly.
+This problem also exists in flat file driver.

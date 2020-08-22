@@ -1,0 +1,21 @@
+Several LineBackgroundListeners on a StyledText
+Build ID: I20080207-1530
+Steps To Reproduce:
+If you register 2 LineBackgroundListener on a styled text, only the last listener work is taken into account.
+Consequence: In an editor, if the cursorLinePainter is enabled, it is not possible to perform custom decoration using a line background listener.
+More information:
+The problem is that when the LineBackgroundEvent is passed from listener to listener (@see StyledTextListener#handleEvent), the color is always reset to null.
+Actual:
+public LineBackgroundEvent(StyledTextEvent e) {
+super(e);
+lineOffset = e.detail;
+lineText = e.text;
+}
+Expected:
+public LineBackgroundEvent(StyledTextEvent e) {
+super(e);
+lineOffset = e.detail;
+lineText = e.text;
+lineBackground = e.lineBackground;
+}
+If it is possible i can help for the fix ;).

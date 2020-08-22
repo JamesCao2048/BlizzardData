@@ -1,0 +1,5 @@
+Bug 211849 [Regression]Grandtotal's results is incorrect
+Description: The Grandtotal's result is incorrect in report which is created in v20071204-0800 build, first I think it is data's bug.
+But the same report created in former build and preview in this build, the result is correct.
+So may be the crosstab created in today's build is incorrect.
+Build number: 2.3.0.v20071204-0800 Steps to reproduce: 1, New a crosstab with row and column dimensions 2, Define grandtotals on both row and column dimension 3, Preview Expected result: The grandtotal's result should be correct Actual result: The grandtotal's result is incorrect Error log:

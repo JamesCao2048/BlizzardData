@@ -1,0 +1,15 @@
+Accelerators stop working when menu items have been disabled/reenabled
+Created  attachment 229602   [details]
+Sample application to reproduce the problem
+- configure your Windows machine (I'm using Win 7 Pro) to support different keyboard layouts (I'm using DE and RU)
+- launch the Test.java sample application
+- press Ctrl+A
+=> the current time is printed
+- switch to RU keyboard layout
+- press Ctrl+A
+=> the current time is printed
+- use the cursor keys to move the caret around
+=> the menu item is disabled
+- now move the caret at the last line's end position using the cursor keys
+=> the menu item is enabled again
+- press Ctrl+A => it won't print the time any more

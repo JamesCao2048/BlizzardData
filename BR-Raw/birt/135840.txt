@@ -1,0 +1,6 @@
+Bug 135840 "Value of this data item" selection in map and highlight is no effect
+Details: "Value of this data item" selection in map and highlight is no effect Step: 1.New a datasource and dataset 2.Add a table and binding all the column.
+3.Add a data item in detail row.
+4.Add a map of the data item.
+Select the value and open the list.
+Select "Value of this data item" Actual result: No effect when select this selection

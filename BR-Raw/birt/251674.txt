@@ -1,0 +1,11 @@
+Bug 251674 IEngineTask.getErrors() empty after "file in use by another application" exception
+I generated a pdf report using RunAndRenderTask.
+Then I opened the generated pdf with PDF-XChange Viewer Version 1.0 (build 0022).
+Without closing the document in the PDF-XChange, I tried to re-generate the same report.
+On the console I the following expection, but the exception is neither thrown to the caller nor listed by the getErrors() method (which return an empty ArrayList).
+My machine is a Windows Xp Home edition, 2002 versione, Service Pack 3.PS: "Impossibile accedere al file.
+Il file e utilizzato da un altro processo" is the italian for "Impossible to access the file.
+The file is used by another process".
+Exception in the console: java.io.FileNotFoundException: C:TEMPDettagliEntita.pdf (Impossibile accedere al file.
+Il file e utilizzato da un altro processo) at java.io.FileOutputStream.open(Native Method) at java.io.FileOutputStream.<init>(Unknown Source) at java.io.FileOutputStream.<init>(Unknown Source) at org.eclipse.birt.report.engine.emitter.EmitterUtil.getOuputStream(EmitterUtil.java:48) at org.eclipse.birt.report.engine.emitter.pdf.PDFRender.initialize(PDFRender.java:152) at org.eclipse.birt.report.engine.emitter.pdf.PDFRender.<init>(PDFRender.java:54) at org.eclipse.birt.report.engine.emitter.pdf.PDFEmitter.createRender(PDFEmitter.java:23) at org.eclipse.birt.report.engine.layout.emitter.PageEmitter.initialize(PageEmitter.java:41) at org.eclipse.birt.report.engine.layout.pdf.emitter.PDFLayoutEmitter.initialize(PDFLayoutEmitter.java:83) at org.eclipse.birt.report.engine.layout.pdf.emitter.WrappedPDFLayoutEmitter.initialize(WrappedPDFLayoutEmitter.java:54) at org.eclipse.birt.report.engine.layout.pdf.emitter.PDFLayoutEmitterProxy.initialize(PDFLayoutEmitterProxy.java:67) at org.eclipse.birt.
+report.engine.api.impl.EngineTask.initializeContentEmitter(EngineTask.java:1602) at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:104) at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:72)

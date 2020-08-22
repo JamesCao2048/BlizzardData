@@ -1,0 +1,13 @@
+Compiler warning in I20100119-0800
+1.WARNING in _64/temp.folder/@dot.src/org/eclipse/swt/widgets/Display.java
+(at line 3220)
+String id = Integer.toHexString(pid)+"_"+Integer.toHexString(handle);
+The local variable id is never read
+1.WARNING in /temp.folder/@dot.src/org/eclipse/swt/widgets/Display.java
+(at line 3220)
+String id = Integer.toHexString(pid)+"_"+Integer.toHexString(handle);
+The local variable id is never read
+1.WARNING in _ppc.arm/temp.folder/@dot.src/org/eclipse/swt/widgets/Display.java
+(at line 3220)
+String id = Integer.toHexString(pid)+"_"+Integer.toHexString(handle);
+The local variable id is never read

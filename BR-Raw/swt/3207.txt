@@ -1,0 +1,33 @@
+No Popup on Tiger
+Hi,
+I have installed a Pre-Release of Mac OSX 10.4 (Tiger) on my Ibook.
+Popup Menus doesn't work on Eclipse 3.0.There is no text displayed in menu.
+I receive this stacktrace on the Console :
+java.lang.ArrayIndexOutOfBoundsException:
+-2
+at org.eclipse.swt.widgets.Menu.kEventMenuTargetItem(Menu.java:674)
+at org.eclipse.swt.widgets.Widget.menuProc(Widget.java:1018)
+at org.eclipse.swt.widgets.Display.menuProc(Display.java:2399)
+at org.eclipse.swt.internal.carbon.OS.PopUpMenuSelect(Native Method)
+at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:190)
+at org.eclipse.swt.widgets.Display.runPopups(Display.java:2978)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2509)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1377)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1348)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:254)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:141)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:96)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:335)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:273)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:129)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:183)
+at org.eclipse.core.launcher.Main.run(Main.java:644)
+at org.eclipse.core.launcher.Main.main(Main.java:628)
+You made a great Job !
+Nicolas.

@@ -1,0 +1,9 @@
+Bug 189358 The "New Data Binding" dialog is confusing
+Description: In today's build, a "New Data Binding" dialog replaces the old one.
+But it seems very confusing.
+According to the spec attached with #130686, when an "Aggregation" in the palette view is pulled into the table group footer layout, an "Aggregation Builder" is trigged.
+Actually, "New Data Binding" dialog appears instead.
+In this builder, there are two filters setting, they are confused.
+And the naming is not formal.
+Some of name is in lowercase, and other are uppercase.
+Build version: 2.2.0.v20070528-0630

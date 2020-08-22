@@ -1,0 +1,6 @@
+Bug 153506 Strange error message when group key refers to bad binding column name
+Run attached report design.
+The following error is shown: Group key "groupkey" in group 1 cannot depend on column bindings defined in the group lower than itself.
+This is a strange error.
+Since the actual problem is that the table's binding column "groupkey" is defined to refer to another existing binding: row["bad"].
+EXPECTED BEHAVIOR: The error message should clearly indicate that a non-existing binding is the cause of the failure.

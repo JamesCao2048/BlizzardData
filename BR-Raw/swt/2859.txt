@@ -1,0 +1,15 @@
+[OpenModes] click on selected line no longer goes to match
+N20050520-0010
+Clicking on an already selected line in 'Flat Layout' no longer goes to match.
+This is quite a pain.
+Worked in M7.
+0.set open mode to 'Single click'
+1.JUnit setup
+2.search for references to 'Test'
+3.open one of the matches
+4.in the file place the caret somewhere else
+5.click on the same match again
+==> nothing happens
+6.open another file
+7.click on the same match again
+==> nothing happens

@@ -1,0 +1,25 @@
+NullPointerException while creating a pattern
+Steps for reproducing:
+- Check out org.eclipse.swt.examples from CVS
+- Put the attached file in your workspace under
+org.eclipse.swt.examples.graphics
+- Run the graphics example
+- In the tree, expand "Misc" and select "RGB"
+The following stack trace was displayed:
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.graphics.Pattern.createPattern(Pattern.java:187)
+at org.eclipse.swt.graphics.GC.setTransform(GC.java:3151)
+at org.eclipse.swt.examples.graphics.RGBTab.paint(RGBTab.java:82)
+at org.eclipse.swt.examples.graphics.GraphicsExample$2.handleEvent(GraphicsExample.java:127)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1496)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1520)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1505)
+at org.eclipse.swt.widgets.Control.drawWidget(Control.java:662)
+at org.eclipse.swt.widgets.Widget.kEventControlDraw(Widget.java:1001)
+at org.eclipse.swt.widgets.Canvas.kEventControlDraw(Canvas.java:137)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:352)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:838)
+at org.eclipse.swt.internal.carbon.OS.ReceiveNextEvent(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2932)
+at org.eclipse.swt.examples.graphics.GraphicsExample.main(GraphicsExample.java:509)

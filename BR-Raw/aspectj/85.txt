@@ -1,0 +1,16 @@
+Exception was thrown when I saved a file in Eclipse
+Build Identifier: SpringSource STS 2.3.1
+java.util.ConcurrentModificationException
+at java.util.HashMap$HashIterator.nextEntry(HashMap.java:793)
+at java.util.HashMap$KeyIterator.next(HashMap.java:828)
+at org.aspectj.asm.internal.AspectJElementHierarchy.updateHandleMap(AspectJElementHierarchy.java:594)
+at org.aspectj.asm.AsmManager.removeStructureModelForFiles(AsmManager.java:564)
+at org.aspectj.asm.AsmManager.processDelta(AsmManager.java:639)
+at org.aspectj.ajdt.internal.core ... un(AutoBuildJob.java:238)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Compile error: ConcurrentModificationException thrown: null
+Reproducible: Always
+Steps to Reproduce:
+1.Generate an abstract class using Spring roo
+2. Edit that file within Eclipse/STS to add JPA annotations
+3.Click on the save icon to save the file - Exceptions box pops up

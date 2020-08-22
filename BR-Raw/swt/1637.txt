@@ -1,0 +1,17 @@
+Successfully to setFocus to a control while getFocusControl return null
+Created  attachment 95493   [details]
+Source and binary files to demo the limitation
++++ This bug was initially created as a clone of  Bug #216103  +++
+Build ID: 3.4
+Steps To Reproduce:
+1.Import the SWT project into Eclipse
+2.Run it
+3.Don't do anything, just mouse move on the pop-up window(named "SWT Window")
+4.Please look at the console log.
+Problem is: text2.setFocus return true.
+But disp.getFocusControl return null.
+For there is an inconsistency in the implementation of setFocus and GetFocusControl.
+That is, setFocus will not call SetFocusWindow while GetFocusControl will use  GetFocusWindow.
+More information:
+setFocus should call SetFocusWindow when the associated window is not the focus window.
+It will make SWT more robust.

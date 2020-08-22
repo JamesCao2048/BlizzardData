@@ -1,0 +1,14 @@
+DBCS: Candidate Selection Window will be disappeared at DBCS composition
+Driver: M4
+Platform: RedHat 8.0
+locale: ja_JP.eucJP
+IME: kinput2
+- canna
+STEPS
+1) launch SWT Text Editor
+2) go into DBCS input mode by Shift + Space key
+3) input "k", "o", "u",then hit space key twice
+4) Candidate Selection Window will be shown and disappered.
+User cannot select right DBCS words.
+This is serious
+Motif version does not have this problem.

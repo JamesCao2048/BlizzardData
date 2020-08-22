@@ -1,0 +1,8 @@
+Bug 157418 Nest page-break-interval fails in subQuery
+Description: Nest page-break-interval fails in subQuery Steps to reproduce: 1.New sample data source and dataset from table Customers 2.Insert a table, bind it with dataset, add a group on country, insert a data item in detail row to display CUSTOMERNUMBER column.
+3.Insert another table to outer table's group header without binding any dataset, insert data item to inner table's detail row with dataSetRow["CUSTOMERNUMBER"].
+4.Set page-break-interval to 5 for outer table and 3 for inner table 5.Preview in web viewer.
+Expected result: Page break happens after 5 data rows in outer table.
+Page break happens after 3 data rows in inner table.
+Actaul result: Incorrect effect.
+Preview attached report and see page 8, page break happens for outer table after displaying only 3 data rows instead of 5 data rows.

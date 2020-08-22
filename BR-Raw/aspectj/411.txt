@@ -1,0 +1,17 @@
+Generics problem with Set - does not compile with AspectJ 5
+I tried different things to remove compiler warnings about generics which you
+get when you switch to JDK 5 and use collections. At last I fall back to JDK
+1.4. The following code compiles with AspectJ 5 and JDK compliance level 1.4:
+public aspect SubjectAspect {
+
+private Set Subject.observers = new HashSet();
+public void Subject.addObserver(SubjectObserver observer) {
+observers.add(observer);
+}
+...
+}
+After switching to compliance level 5.0 I get an error message
+"The method add(E) in the type Set<E> is not applicable for the arguments
+(SubjectObserver)".
+I don't know if it is a similar problem like #87550 but I means for older
+projects which use collections that they can't switch to JDK 1.5

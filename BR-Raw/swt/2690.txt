@@ -1,0 +1,64 @@
+Spinner: getSelection() during modify event should return new value (enable dynamic behaviour)
+This is a cleaned-up version of  bug 94065 .
+SWT-win32, v3137 (3.1RC2)
+[The basics]
+- The selection of the spinner widget (the numeric value)
+can be queried by calling getSelection()
+- When the text in the spinner changes, a modify event is fired.
+This can happen if
+* The user clicks on the up/down button (or uses the arrow keys)
+* The user types or pastes some digits or clears the text
+[The problem]
+When a modify event occurs, you will want to know the new selection value.
+In order to get it you call getSelection() inside the modifyText handler.
+If the event has occurred because the user has clicked on the up/down
+button or has used the arrow up/down keys, there is no problem;
+getSelection() will return the expected value in this case.
+If, however, the event was issued due to the user typing (or pasting)
+some digits, the situation is different.
+The expectation here is that
+getSelection() would return the number represented by the newly-typed
+text, but this does not happen.
+Instead the old value is returned.
+[An example]
+Let's say the spinner is set to 50.
+The user selects the text "50" and replaces it by typing 123.
+Expected events:
+- modify event, getSelection() = 1
+- modify event, getSelection() = 12
+- modify event, getSelection() = 123
+Actual events:
+- modify event, getSelection() = 50
+- modify event, getSelection() = 50
+- modify event, getSelection() = 50
+As you can see, three notifications that the text has changed are issued
+but there is no way of actually retrieving that text or, more importantly,
+the number it represents.
+In other words, the events are pretty useless.
+Only once/if the user presses Return or the spinner loses focus will
+a modify event with the right selection be fired.
+[Why this is a problem]
+When some property (selection, text, ...) of widget A changes, you may
+want to update other widgets (B, C, ...) to immediately reflect this
+change in some way.
+The spinner widget is no different here.
+For example, if you have A) a spinner that lets the user choose the
+font size and B) a font preview canvas, you will want to update B
+when A changes.
+This means, if the user types "12" into the spinner,
+you will want to show a 12pt sample text in the preview canvas.
+Right now, this is not possible.
+Typing "12" is not enough, the user
+would have to press Return afterwards or move the focus to some
+other widget.
+[Snippet]
+For a demonstration of the above, use the code in  comment #1 .
+Two things to note about the case portrayed by the snippet:
+1.The user may expect the preview pane to be dynamically updated while
+he's typing a new value and may be irritated if this does not happen.
+(I know I was.) Users know that they have to press Return when the
+drop down box of a combo is open but do they know they need to press
+Return in an SWT spinner?
+Or Tab, then Shift+Tab as a workaround?
+2.Most spinner widgets can be found in dialogs, as is the case here.
+Pressing Return in a dialog will activate the defau

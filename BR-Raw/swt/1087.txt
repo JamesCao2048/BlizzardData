@@ -1,0 +1,15 @@
+Crash in ScriptStringOut
+Created  attachment 106469   [details]
+Hotspot's error log file
+Build ID: I20080617-2000
+Steps To Reproduce:
+1.Use Eclipse for some time.
+No particular action is associated with the crash as it happens from time to time.
+2.Eclipse crashes the VM in the method org.eclipse.swt.internal.win32.OS.ScriptStringOut, producing a hs_err_pid file.
+More information:
+This happened most recently for me when updating files from CVS.
+However, given the stack trace is definitely not in the CVS code, I would imagine it's more of an SWT issue.
+I will attach the log file.
+System:  Dual Xeon 5130 2.00GHz, 4GB of RAM
+OS: Windows XP x64 SP2
+JRE:  Sun 1.6.0_02, 32-bit

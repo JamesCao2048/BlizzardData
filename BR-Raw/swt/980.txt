@@ -1,0 +1,12 @@
+Cocoa: Menus completely gray after drag-and-drop to detached view
+Cocoa I20090514-2000
+Steps:
+1.Create a new project and put a "build.properties" file in it.
+Reset Java perspective.
+2.Open "Project Explorer" view.
+3.Tear off the view
+4.Expand the project in the Package Explorer and drag the build.properties file into the Project Explorer, drop it over the same project.
+5.Confirm the dialog that pops up asking for a new name.
+Actual: All menu items are gray except in the Apple, Eclipse, and Help menus.
+In the Help menu, the items don't highlight as you mouse over.
+Expected: Menus work normally

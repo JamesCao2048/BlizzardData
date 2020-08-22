@@ -1,0 +1,54 @@
+IllegalArgumentException from StyledText Widget
+Version: 3.1.0
+Build id: 200412210800
+While playing with Eclipse WTP 1.0M2 I noticed a few exceptions appearing in the
+log about IllegalArgumentWxceptions from styled text.
+There is no mention of
+WTP in the stack trace, so i entered this against SWT.
+It is possible that WTP
+are doing Bad Things, causing this error.
+Test:
+1.Download WTP 1.0M2
+2.Window->Preferences
+3.Web & XML | CSS Files | CSS Styles
+4.Click in the text preview and drag past the bottom of the widget
+5.Exception should appear in the log
+java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:2813)
+at org.eclipse.swt.SWT.error(SWT.java:2752)
+at org.eclipse.swt.SWT.error(SWT.java:2723)
+at org.eclipse.swt.graphics.TextLayout.getLocation(TextLayout.java:994)
+at org.eclipse.swt.custom.StyledText.getXAtOffset(StyledText.java:4674)
+at org.eclipse.swt.custom.StyledText.showCaret(StyledText.java:7648)
+at org.eclipse.swt.custom.StyledText.doSelectionLineDown(StyledText.java:3080)
+at org.eclipse.swt.custom.StyledText$3.run(StyledText.java:2425)
+at org.eclipse.swt.widgets.Display.runTimer(Display.java:2851)
+at org.eclipse.swt.widgets.Display.messageProc(Display.java:2218)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1570)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2452)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:718)
+at org.eclipse.jface.window.Window.open(Window.java:696)
+at org.eclipse.ui.internal.OpenPreferencesAction.run(OpenPreferencesAction.java:64)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:989)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:555)
+at
+org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:505)
+at
+org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:419)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2809)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2454)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1569)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1540)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:285)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:144)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:102)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:220)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:273)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:129)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)

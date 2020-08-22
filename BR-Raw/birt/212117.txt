@@ -1,0 +1,6 @@
+Bug 212117 Fail to display reportlet to another target iframe[0603]
+Description: Fail to display reportlet from run servlet to another target iframe Build number:2.3.0.v20071206 Steps to reproduce: 1.Deploy birt or create BIRT web project.
+2.Preview attached jsp.
+Expected result: Display chart reportlet in target iframe.
+Actual result: Exception to say document instance is missing.
+Error log:see screen shot

@@ -1,0 +1,23 @@
+GC.setClipping fails to overwrite previous clipping after AA turned on
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Shell");
+
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+e.gc.setClipping(20, 20, 100, 100);
+e.gc.setAntialias(SWT.ON);
+e.gc.setClipping(50, 50, 200, 200);
+e.gc.drawLine(50, 200, 200, 50);
+}
+});
+
+shell.setSize(500, 380);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

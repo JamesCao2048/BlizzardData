@@ -1,0 +1,6 @@
+Bug 311669 'Apply' button is not enable when switch to radar chart.[13]
+description: 'Apply' button is not enable when switch to radar chart.
+build id: 2.6.0 v20100505-0630 steps to reproduce: 1.New a bar chart and close chart builder.
+2.Open chart builder, on Select Chart Type page, select Radar chart.
+Actual result: 'Apply' button is not enabled.
+Expected result: 'Apply' button should be enabled if there's change to the chart.

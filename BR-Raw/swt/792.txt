@@ -1,0 +1,7 @@
+Text.getCaretPosition() returns 0 after setting text
+After setting text on a Text, Text.getCaretPosition() always returns 0 even if the caret is really not in the 0 position.
+Looking at the code, here's my analysis:
+* Text.setText() calls Text.setEditText(), which sets selectionRange to null
+* Text.getCaretPosition() always returns 0 when selectionRange is null
+Version: 3.6.0
+Build id: I20091027-0100

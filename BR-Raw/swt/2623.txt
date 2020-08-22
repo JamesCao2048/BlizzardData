@@ -1,0 +1,18 @@
+Handle leak in TextLayout
+3.2 M3
+I am not entirely sure of how handles get managed in SWT, but I think I found a
+leak in TextLayout.draw(TextLayout.java:324).
+I noticed that I get frequent "No
+more handles" SWTErrors in the last couple of weeks.
+Running Sleak reveals that
+after a while of editing, there are thousands of Region objects with the
+following allocation path:
+at org.eclipse.swt.graphics.Device.new_Object(Device.java:658)
+at org.eclipse.swt.graphics.Region.<init>(Region.java:76)
+at org.eclipse.swt.graphics.Region.<init>(Region.java:48)
+at org.eclipse.swt.graphics.TextLayout.draw(TextLayout.java:324)
+at org.eclipse.swt.custom.StyledTextRenderer.drawLine(StyledTextRenderer.java:147)
+at org.eclipse.swt.custom.StyledText.performPaint(StyledText.java:5927)
+at org.eclipse.swt.custom.StyledText.handlePaint(StyledText.java:5242)
+Looking at the code in TextLayout, it seems that the clipping Region is
+allocated but never disposed of.

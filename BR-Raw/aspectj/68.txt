@@ -1,0 +1,27 @@
+Sometimes StackOverflow is got while weaving
+Build Identifier: 1.6.10
+While weaving LifeRay 6.0.5 over tomcat 6.0.26 sometimes the next exceptions appear:
+java.lang.StackOverflowError
+at java.lang.String.indexOf(String.java:1521)
+at org.aspectj.weaver.TypeFactory.createTypeFromSignature(TypeFactory.java:199)
+at org.aspectj.weaver.UnresolvedType.forSignature(UnresolvedType.java:375)
+at org.aspectj.weaver.UnresolvedType.getRawType(UnresolvedType.java:533)
+at org.aspectj.weaver.ResolvedType.getRawType(ResolvedType.java:2400)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:430)
+at org.aspectj.weaver.ReferenceType.isAssignableFrom(ReferenceType.java:399)
+...
+Reproducible: Sometimes

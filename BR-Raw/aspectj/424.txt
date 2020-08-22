@@ -1,0 +1,8 @@
+Allow aspectPath to contain directories
+The -aspectpath option to the compiler only allows jar/zip files, not
+directories. But inpath and classpath allow directories.
+This capability would improve the handling of aspects spanning multiple projects
+in Eclipse. AJDT can currently only support jar/zip files on the aspect path,
+which requires one of the projects to create an outjar instead of writing to the
+bin directory as usual.
+The iajc ant task could then also be enhanced to support aspectpath directories.

@@ -1,0 +1,19 @@
+Tracker does not keep up with mouse movement
+I am using a Tracker with SWT.RIGHT | SWT.LEFT style bits and one Rectangle
+that indicates the location of something.
+I want that Rectangle to maintain
+its vertical location and only move in the horizontal direction.
+The problem
+is that if I move the Tracker using the move, it ignores movement in the
+horizontal direction that coincides with the movement in the vertical
+direction.
+That is, if I move my mouse just to the right, it's fine.
+
+However, if I move it to the right and bottom, then it ignores both those
+movements.
+Hence, the feedback rectangle does not keep up with the mouse.
+
+It's difficult to move the mouse in the horizontal direction without changing
+the vertical location.
+What the tracker should do is ignore just the vertical
+change, but still respect the horizontal change.

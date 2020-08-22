@@ -1,0 +1,14 @@
+ImageLoader.save(filename, format) should close the OutputStream.
+It appear to me that after  bug 102165  was fixed, a error was introduced for saving images using the save(filename, format) method.
+This should now close the outputstream since it created it and doesn't provide access to it.
+From 3.2M5, Looks like the stream should be closed after the save...
+public void save(String filename, int format) {
+if (filename == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+OutputStream stream = null;
+try {
+stream = Compatibility.newFileOutputStream(filename);
+} catch (IOException e) {
+SWT.error(SWT.ERROR_IO, e);
+}
+save(stream, format);
+}

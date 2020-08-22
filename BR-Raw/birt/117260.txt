@@ -1,0 +1,6 @@
+Bug 117260 Set a hyperlink and link to an internal file, it pops up error message.
+Description: Set a hyperlink and link to an internal file, it pops up error message.
+Steps to reproduce: 1.Add a label and set hyperlink.
+2.Select "URI" and select a JPG file from file system.
+3.Preview in html and click on the label.
+4.Error message pops up and said "can't find file".

@@ -1,0 +1,10 @@
+Bug 229554 Problem with preview crosstab with chart measure view from library[01][1102]
+Description: Get the attached report design and report library.
+The report design has two crosstab with chart measure view, the first is from library, and the second is created from cube which from library.
+build version:2.3.0.v20080430-0630 Steps to reproduce: 1.Use library in the report design.
+2.Pull the Crosstab from library to report design, that is the frist crosstab.
+3.Pull the cube from library to report design cube node of data explorer.
+Then pull the cube to the layout, show measure as chart view.
+4.Preview the report design.
+The preview result has problem with the first crosstab.
+Expected result: The two crosstab should generate the same output.

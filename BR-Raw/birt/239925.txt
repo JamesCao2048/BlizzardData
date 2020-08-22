@@ -1,0 +1,5 @@
+Bug 239925 Exception when set dimension filter on crosstab aggregation
+Description:Set dimension filter as "dimension["name"]" on crosstab aggregation, exception throws out.
+build version:2.3.1.v20080708-0630 Steps to reproduce: 1.There is a crosstab with grand total.
+2.Set dimension filter on the aggregation of grand total.
+3.Exception when preview.

@@ -1,0 +1,48 @@
+Purple-icons drawing image with cairo in Solaris-sparc (big-endian)
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.*;
+public class Test {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+GC gc = event.gc;
+Image image = new Image(gc.getDevice(), 100, 100);
+GC imageGC = new GC(image);
+imageGC.setBackground(gc.getDevice().getSystemColor(SWT.COLOR_RED));
+//			imageGC.setBackground(gc.getDevice().getSystemColor(SWT.COLOR_GREEN));
+//			imageGC.setBackground(gc.getDevice().getSystemColor(SWT.COLOR_BLUE));
+imageGC.fillRectangle(image.getBounds());
+imageGC.dispose();
+
+ImageData data = image.getImageData();
+for (int y = 0; y
+< data.height; y++) {
+for (int x = 0; x
+< data.width; x++) {
+data.setAlpha(x, y, 0xFF);
+}
+}
+image.dispose();
+image = new Image(gc.getDevice(), data);
+
+gc.setAdvanced(true);
+System.out.println(gc.getAdvanced());
+gc.drawImage(image, 100, 100);
+
+image.dispose();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

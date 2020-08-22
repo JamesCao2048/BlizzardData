@@ -1,0 +1,2 @@
+Bug 141255 No error for the incompatible parameter value
+Steps to reproduce: 1.New a decimal parameter, set the default value to "aaa" 2.Preview the report by "Preview" tab Expected result: Error to say the incompatible parameter value Actual result: Parameter request page keeps poping up till input the decimal value Note: if preview in Web Viewer, error will be thrown out, but no exception description.

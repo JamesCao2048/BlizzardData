@@ -1,0 +1,26 @@
+MouseEnter not fired when scroll bar released
+1.Run the following example.
+2.Type a load of text in the StyledText so that it gets a vertical scrollbar.
+3.Drag around the scrollbar.
+While dragging, move the mouse above the
+StyledText widget.
+4.Release the mouse.
+No MouseEnter event is fired.
+Reproducable on Linux-GTK and Linux-Motif, works on Carbon and win32.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+StyledText text = new StyledText(shell, SWT.H_SCROLL|SWT.V_SCROLL);
+shell.setSize(320, 240);
+text.addListener(SWT.MouseEnter, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("ENTER x: " + event.x);
+}
+});
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

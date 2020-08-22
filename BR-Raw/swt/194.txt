@@ -1,0 +1,9 @@
+Remove qt from org.eclipse.swt
+The QT port has been moved over to Eclipse Labs:  http://code.google.com/a/eclipselabs.org/p/swtqt/
+For background, see  Bug 318484
+- SWT/Qt code donation discussion.
+We need to delete the qt subfolders that were initially committed to org.eclipse.swt.
+I believe that so far, there are only 3 subfolders:
+org.eclipse.swt/Eclipse SWT/qt
+org.eclipse.swt/Eclipse SWT Drag and Drop/qt
+org.eclipse.swt/Eclipse SWT Browser/qt

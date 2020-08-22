@@ -1,0 +1,36 @@
+Tree.setBackground() does not full span multi-column Tree
+- run the snippet below
+- note that the item background colours do not span from the right of the
+column 0 text to the end of the column
+- I'm assuming this isn't native behaviour (?)
+- creating the Tree with style SWT.FULL_SELECTION makes this work, though its
+expand/collapse images stand out
+public static void main(String[] args) {
+Display display = new Display();
+Color red = display.getSystemColor(SWT.COLOR_RED);
+Color yellow = display.getSystemColor(SWT.COLOR_YELLOW);
+Shell shell = new Shell(display);
+shell.setBounds(10,10,400,200);
+Tree tree = new Tree(shell, SWT.NONE);
+tree.setBounds(10,10,300,100);
+tree.setHeaderVisible(true);
+new TreeColumn(tree, SWT.NONE).setWidth(100);
+new TreeColumn(tree, SWT.NONE).setWidth(100);
+new TreeColumn(tree, SWT.NONE).setWidth(100);
+TreeItem item0 = new TreeItem(tree, SWT.NONE);
+item0.setText(new String[] {"abc","def","ghi"});
+item0.setBackground(yellow);
+TreeItem item1 = new TreeItem(tree, SWT.NONE);
+item1.setText(new String[] {"abc","def","ghi"});
+item1.setBackground(red);
+TreeItem item2 = new TreeItem(item1, SWT.NONE);
+item2.setBackground(yellow);
+item2.setText(new String[] {"abc","def","ghi"});
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+red.dispose();
+yellow.dispose();
+display.dispose();
+}

@@ -1,0 +1,5 @@
+Bug 209617 Method to retrieve "paramType" property from IScalarParameterDefn is not provided.
+Hi, To display parameter "List-box" in User Interface, its required to have value of "paramType" PROPERTY (i.e.
+simple,multi-value or ad-voc).
+There is no such method introduced in IScalarParameterDefn to get this value so that list-box can be rendered in "Drop-down" or "Multiple Select" format in User Interface.
+Thanks Prashant Malshette

@@ -1,0 +1,2 @@
+Bug 211978 [Automation][Acceptance]Exception is thrown out when preview report in PDF
+Description: Exception is thrown out when preview report in PDF Test Date: 20071205 Test Build: BIRT2.3.0 DailyBuildv20071205 0800 Step to reproduce: 1.Use the report attached 2.Preview it in PDF Expect result: Report should be previewed without any exception Actual result: A StringIndexOUtOfBoundsException is thrown out

@@ -1,0 +1,17 @@
+Increasing height of table rows via MeasureItem listener affects row height but not line height (OS X)
+Build ID: M20071115-1247
+Steps To Reproduce:
+1.Add a MeasureItem listener on a table that is drawing grid lines
+2.Increase the event.height in the event handler
+3.Notice that the height of text is increased but the line height has not
+More information:
+Example:  adding this listener to a table causes the lines to be drawn poorly initially.
+They're fixed when the table redraws.
+See attached screenshot and full snippet.
+table.addListener(SWT.MeasureItem, new Listener()
+{
+public void handleEvent(Event event)
+{
+event.height = 30;
+}
+});

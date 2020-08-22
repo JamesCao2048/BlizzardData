@@ -1,0 +1,2 @@
+Bug 153233 Extended data source is localized after creating a data set with it
+Steps to reproduce: 1.New a sample data source in library 2.New a report, includes the library, extends Lib.datasource 3.New a data set with lib.datasource in report Expected result: No local properties for data source in report Actual result: All data source properties are localized

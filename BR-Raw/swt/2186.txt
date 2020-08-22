@@ -1,0 +1,11 @@
+[Program] Error when opening word and excel documents
+To reproduce using Word:
+- Set external editor for .doc files to "Microsoft Word Document" in file association preferences
+- Select a word document in Navigator (file can be linked or directly contained within the project) and open
+- Word will open but displays an error "Word experienced an error trying to open the file" and file file is not loaded
+Looking at Program.execute (String fileName) the above steps result in the following command being executed:
+"C:Program FilesMicrosoft OfficeOFFICE11WINWORD.EXE" /n /ddeC:
+Documents and SettingsRobert ElvesMy Documentsmydocument.doc
+Aside from the missing space which appears to be causing this error, lack of quotes around the file path may also be problematic.
+
+Note that the document does open externally without error if Open With...System Editor is used.

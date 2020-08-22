@@ -1,0 +1,20 @@
+BIDI3.1: Mixed Arabic and English text is viewed incorrectly in Java Editor
+Operating System: Linux
+- RHEL4.0/GTK Enterprise Edition
+Build ID: I20050401-1645
+Locale: ar_EG.UTF-8
+Description:
+When assigning Arabic text to a string variable with Arabic name, the words
+ordering is not correct
+Steps to re-create the problem:
+1-	Create a new java class from menu (File->New->Class)
+2-	In the "Java Class" dialog, set the source folder, package and class
+name and click "Finish"
+3-	Add a String variable to the class with name "ABCD" (where capital
+letters represent Arabic text)
+4-	Create a method, and write a statement to assign Arabic text to the
+variable you created in 3
+Expected Result:
+See attached screen shot (FileName: ExpectedView.jpg)
+Actual Result:
+See attached screen shot (FileName: ActualView.jpg)

@@ -1,0 +1,17 @@
+Bug 139648 BIRT Resouce deployment issue - Wrong relative path generated.
+- Set the BIRT Resource Path using Windows->Preference to E:birtbirtResources
+- Copy base.rptlibrary, testlibrary.rptlibrary files to the above location.
+- Now the library explorer will show all the two libraries.
+- Create a report design and add the report items from the libraries.
+- Open the XMLSource view of the report design.
+The relative paths to the library are not correct.
+<list-property name="libraries">
+<structure>
+<property name="fileName">../../birtResources/base.rptlibrary</property>
+<property name="namespace">base</property>
+</structure>
+<structure>
+<property name="fileName">../../birtResources/testlibrary.rptlibrary</property>
+<property name="namespace">testlibrary</property>
+</structure>
+</list-property>

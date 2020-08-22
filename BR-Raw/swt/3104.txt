@@ -1,0 +1,9 @@
+Can't select tool items when tool bar has a DragDetect listener
+Version: 3.1.0
+Build id: 200412210800
+Clicking on the buttons of the perspective or fast view bar does nothing.
+Instead of opening a view/perspective, it looks like it is attempting to start a
+drag operation.
+The click after pressing the button is ignored and if you click
+and drag after pressing a button you get a "no go" cursor.
+You can work around this by opening the views/perspectives using the menu.

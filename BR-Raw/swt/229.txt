@@ -1,0 +1,5 @@
+[CCombo] Very long text in CCombo causes vertical scroll bar to disappear
+If there are very long text in the CCombo, the vertical scrollbar of dropdown
+listbox disappears beyond the edge of the screen.
+I have seen defects 37329 and
+7946, but this is different, as it is not related to Properties view.

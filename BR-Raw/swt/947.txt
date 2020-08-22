@@ -1,0 +1,5 @@
+Scrollbar incorrectly fires selection events
+Build RC3
+I have a tree in which I'm listing to the vertical scroll bar selection events.
+If the tree contains a horizontal scroll bar, but no vertical scroll bar and you use the mouse wheel to scroll in the vertical direction, you get selection events on the vertical scroll bar.
+If the tree contains no scroll bars, scrolling with the mouse wheel does not fire events as expected.

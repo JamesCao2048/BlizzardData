@@ -1,0 +1,9 @@
+Bug 200919 Add quotation for column containing separator character when export data.[0002]
+Description: Add quotation for column containing separator character when export data.
+Build number:2.2.1.v20070823 Steps to reproduce: 1.New sample data source and dataset.
+2.Add a computed column with name a,b and value "a,b".
+3.Drag the dataset to Layout.
+4.Preview in Web Viewer and Export Data with Comma.
+Expected result: Column name is quoated as values.
+Actual result: Column name a,b isn't quotated so it will be treated as two columns.
+Error log:n/a

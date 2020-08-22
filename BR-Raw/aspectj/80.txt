@@ -1,0 +1,18 @@
+Bug in ProgramElement.getCorrespondingType()
+Here is the code for the method:
+public String getCorrespondingType(boolean getFullyQualifiedType) {
+String returnType = (String) kvpairs.get("returnType");
+if (returnType == null)
+returnType = "";
+if (getFullyQualifiedType) {
+return returnType;
+}
+int index = returnType.lastIndexOf(".");
+if (index != -1) {
+return returnType.substring(index);
+}
+return returnType;
+}
+the line:
+return returnType.substring(index);
+should be using 'index+1'

@@ -1,0 +1,8 @@
+Bug 195507 not support <font size="-2">
+Build ID: 2.2.0 Steps To Reproduce: 1.create a text, input some html code, including
+<font size="-2"> 2.view as PDF result: error occurs Jul 5, 2007 5:38:50 PM org.eclipse.birt.report.engine.layout.pdf.util.HTMLStyleProcessor execute SEVERE: There is a invalid value for property SIZE of element FONT in the HTML.
+As far as I know, BIRT will calculate the font size in html and then convert to its own scale.
+I do not think it is good idea to be smart.
+Maybe I am wrong, I did not get the rationale behind it.
+But this SEVERE error should not be exposed.
+More information:

@@ -1,0 +1,3 @@
+Bug 216731 The Member value list is wrong in target level filter[1102]
+Description: The Member value list is wrong in target level filter[1102] Build number: 2.3.0.v20080128-0800 Steps to reproduce: 1, New a Crosstab with Row, Column dimensions and a measure 2, New a filter and select the target as Group Level 3, Select a measure in Filter condition 4, Check the list of Member Value Expected result: If the target level is column area dimension, the list should only be the Row Member values.
+But not list all the level members in both area.

@@ -1,0 +1,17 @@
+Macintosh only: values in some text fields of launch configuration dialog are slightly shifted, obscuring first character
+On my Mac (OSX 10.4.7), when I bring up the launch configuration dialog via Run>Run...
+or Run>Debug..., some text fields initially show up with the value in the text field shifted just a tiny bit so that all or part of the first character in that text field is hidden.
+When you click in the text field, the contents immediately shift so that the entire text is visible.
+Although the following repro steps involve the JDT, the actual bug is not in the JDT
+-- it is somewhere else.
+Perhaps the Eclipse core, or perhaps SWT or JFace, I don't know.
+Repro steps:
+1.Run any plain Java project, e.g.
+a hello-world app or whatever.
+This will have the side effect of creating a launch configuration for that project, and making it the "default" launch config (the first one that will be shown next time you bring up the launch config dialog).
+2.Bring up the launch config dialog, via Run>Debug...
+or Run>Run...
+Results: Notice that in the "Name:" field at the top of the dialog, the name of the launch configuration is shifted just a bit, so that all or part of the first character is hidden.
+Also, same thing in the "Project:" and "Main class:" fields in the Main tab.
+This bug only seems to reproduce when the dialog first appears.
+If you click over to any other launch config, or to any other tab of the current launch config, then the problem fixes itself.

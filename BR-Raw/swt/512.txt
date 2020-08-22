@@ -1,0 +1,59 @@
+MouseDown not delivered until drag started if a DragDetect listener is attached
+From
+< http://stackoverflow.com/questions/3908290/ > :
+Run this code with 3.7:
+==================================
+package swttest;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSource;
+import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseListener;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class SwtTest {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.addMouseListener(new MouseListener() {
+public void mouseUp(MouseEvent e) {
+System.out.println("mouseUp");
+}
+public void mouseDown(MouseEvent e) {
+System.out.println("mouseDown");
+}
+public void mouseDoubleClick(MouseEvent e) {
+System.out.println("mouseDoubleClick");
+}
+});
+DragSourceListener dragListener = new DragSourceListener() {
+public void dragFinished(DragSourceEvent event) {
+System.out.println("dragFinished");
+}
+public void dragSetData(DragSourceEvent event) {
+System.out.println("dragSetData");
+}
+public void dragStart(DragSourceEvent event) {
+System.out.println("dragStart");
+}
+};
+DragSource dragSource = new DragSource(shell, DND.DROP_COPY | DND.DROP_MOVE);
+dragSource.addDragListener(dragListener);
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+========================
+The mouseDown doesn't arrive until the drag is underway or until you release the mouse.
+At that point you get a mouseDown and an immediate mouseUp afterwards.
+Now, comment out these lines and run again:
+DragSource dragSource = new DragSource(shell, DND.DROP_COPY | DND.DROP_MOVE);
+dragSource.addDragListener(dragListener);
+The mouseDown is delivered immediately, on click.
+This seems to be an issue across all platforms, but I only tested it with Cocoa.

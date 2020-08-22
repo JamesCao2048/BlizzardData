@@ -1,0 +1,8 @@
+constructor inlining can fail for some groovy built code
+The file grails.util.BuildSettings contains bytecode where the constructors are recursive.
+You can't compile this in Java
+A() {
+this();
+}
+but groovy generates some code where it switches on a value in the ctor and if it is a certain value, the recursive ctor call is made.  I imagine this 'never happens' in practice but because it is in the bytecode it trips up the AspectJ code which inlines this() calls before weaving - since it gets into an infinite loop.
+For now, just keep track of ctors making the recursive call and so don't get trapped in the infinite loop.

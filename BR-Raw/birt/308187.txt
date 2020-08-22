@@ -1,0 +1,4 @@
+Bug 308187 Image url calling servlet 4 times and returning one image when rendering in pdf
+Build Identifier: 20090920-1017 When rendering a report in pdf that has image url map to an servlet, the report calls the servlet 4 times but returns one image.
+When rendering in html this does not happen.
+The servlet is running on apache-1.6.2 Reproducible: Always Steps to Reproduce: 1.create an image set url to servlet 2.render the report in pdf 3.

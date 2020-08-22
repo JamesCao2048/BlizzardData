@@ -1,0 +1,7 @@
+Combo boxes ignoring visible item count
+After setting the visible item count , the combo box ignores it and displays
+all items.
+To test pass the method a 0 , and it will still show all items.
+
+If you pass a 0 in the win32 impl.
+nothing shows.

@@ -1,0 +1,10 @@
+Bug 182933 Pattern in birt:paramDef tag doesn't work.[0603]
+Description: Pattern in birt:paramDef tag doesn't work.
+Build number:2.2.0.v200704180630 Steps to reproduce: 1.New a report with a parameter p_flo, float type.
+2.New a jsp file with content:
+<birt:parameterPage id="0" name="customparameterpage" reportDesign="report/customJspTagParamDefPattern.rptdesign" isCustom="true">
+<birt:paramDef id="4" name="p_flo" pattern="$#,00.00" value ="$2,31,45.789456"/>
+<input type="submit" name="OK" value="submit"/>
+</birt:parameterPage> 3.run the jsp file.
+Expected result: Accept the value with the pattern Actual result: The value "$2,31,45.789456" is invalid with the type "float".
+Error log:N/A

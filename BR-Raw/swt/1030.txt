@@ -1,0 +1,13 @@
+DBCS3.5:Selecting korean text and right clicking on eclipse editor results in deletion of those characters.
+Build ID: I20090407-1430
+Steps To Reproduce:
+1.Start Eclipse under solaris korean environment(EUC,UTF-8).
+2.Create a new project and add a new file to the project.
+3.Open the newly added file and input some korean characters in the editor.
+4.Select some korean characters and right click on top of it.
+5.The selected characters will be deleted.
+More information:
+Environment:
+OS: Solaris 10 (EUC or UTF-8 korean environment)
+Eclipse Build: I20090407-1430
+Java: Sun Java 1.5

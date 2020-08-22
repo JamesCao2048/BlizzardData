@@ -1,0 +1,17 @@
+Exception running webstart app
+Tried to run a webstart app with latest code and failed with this exception in Display.java.
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart	Exception in thread "AWT-AppKit"
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart	java.lang.reflect.InvocationTargetException
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at java.lang.reflect.Method.invoke(Method.java:597)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at com.sun.javaws.Launcher.invokeMainMethod(Launcher.java:1557)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart	Caused by: java.lang.NullPointerException
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at org.eclipse.swt.widgets.Display.init(Display.java:2178)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at org.eclipse.swt.graphics.Device.<init>(Device.java:131)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at org.eclipse.swt.widgets.Display.<init>(Display.java:699)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at org.eclipse.swt.widgets.Display.<init>(Display.java:690)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		at org.eclipse.swt.examples.controlexample.ControlExample.main(ControlExample.java:215)
+11-04-11 4:09:36 PM	[0x0-0x71071].com.apple.JavaWebStart		...
+5 more

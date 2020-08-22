@@ -1,0 +1,2 @@
+[incremental] Incremental compilation with aspects on an incoming classpath/aspectpath
+This is something it might now be time to address.  I encountered it in  bug 267794  and it was rather annoying.  With all the improvements to incremental it is annoying to just throw our hands in the air and do a full build if we hit an aspect on the defined classpath/aspectpath for a project.  I'm not looking into inpath here, if that benefits from some of these changes - that's great - but it is not something I'm trying to fix here.

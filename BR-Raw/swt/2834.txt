@@ -1,0 +1,38 @@
+setAntialias breaks background color
+GC.setAntialias(SWT.*) causes the background of the next fillRectangle to become
+permanent for all following rectangles, ignoring subsequent calls to
+setBackground.
+Note this happens on ANY call to setAntialias, even just setting
+it to SWT.OFF.
+I have not tested whether the effect extends beyond fillRectangle.
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet13 {
+public static void main (String [] args) {
+final Display display = new Display ();
+Shell shell = new Shell (display);
+Canvas canvas = new Canvas(shell, SWT.NONE);
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+gc.setAntialias(SWT.OFF);
+gc.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
+gc.fillRectangle(0, 0, 200, 100);
+gc.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
+// This rectange should be black, but is white instead!
+gc.fillRectangle(0, 100, 200, 100);
+}
+});
+canvas.setBounds(0,0,200,200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

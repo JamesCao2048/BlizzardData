@@ -1,0 +1,5 @@
+Disposing a StyledText disposes its menu?
+I pass the same menu into many StyledText controls to get a common context menu.
+When I dispose one of these, it disposes my menu.
+I could easily be confused, but it seems to me that this is contrary to the contract of dispose protocols.
+The StyledText didn't create it, why should it dispose it?

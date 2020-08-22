@@ -1,0 +1,5 @@
+Combo#cut() does not place deleted text to clipboard
+I20070807-0010
+Combo#cut() does not place the deleted text to the clipboard on the Mac.
+In fact, it just deletes the selected text.
+I've just lost a worthy regular expression I wanted to cut&paste from the Find/Replace dialog (Command+X calls cut() in Eclipse).

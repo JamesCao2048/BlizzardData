@@ -1,0 +1,4 @@
+MouseListener on Sash does not receive mouseUp events
+It looks like mouseUp events are not sent by a Sash on OS X.
+This prevents the expand/collapse buttons on VE's custom Sash from working as it does on other platforms.
+See the attached test program.

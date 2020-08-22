@@ -1,0 +1,12 @@
+6 different methods cause pens to be constructed and selected
+There are 6 different methods on GC which result in a call to setPen(), which
+constructs and selects a Pen.
+This does not reflect the behavior of native C
+programs which would construct the proper Pen the first time, without
+intermediate, unused Pens.
+GC should only construct Pens which are actually needed, tracking the
+intermediate state locally until pen creation occurs.
+I haven't benchmarked anything yet, so I'd be willing to run some profiling of
+extpen creation overhead.
+An alternative is to add some setAll() method which
+takes all paremeters at once.

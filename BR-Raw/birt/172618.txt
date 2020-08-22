@@ -1,0 +1,9 @@
+Bug 172618 [smoke]Cascading parameter cannot retrieve correct values.[0705]
+Description: Cascading parameter cannot retrieve correct values.
+Build number:2.1.2.v20070202.2.2.0.v20070131 Steps to reproduce: 1.New sample data source and dataset from OFFICES.
+2.New a cascading group, first parameter from COUNTRY, second from STATE 3.Preview.
+Expected result: Select a country value, then corresponding state value will display.
+e.g.
+select France, then only paris in second list.
+Actual result: Select France, you will see paris, NYC and San Francisco in second list.
+Error log:N/A

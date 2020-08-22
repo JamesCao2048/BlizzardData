@@ -1,0 +1,7 @@
+Bug 196767 "Finish" button does not take effect when first use CSS file then import CSS style in a library [0303]
+Description: "OK" button is disabled when first use CSS file then import CSS style in a library.
+Build number: 2.2.1.v20070717-0630 Steps to reproduce: 1.New a library, in Outline view, right click to select default Theme->Use CSS File..., select one css file, click "OK".
+2.in Outline view, right click to select default Theme->Import CSS Style..., select one css file, click "Select All" button, click "OK".
+Expected result: "OK" button is enabled.
+Actual result: "Ok" button is disabled.
+Error log: N/A

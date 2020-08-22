@@ -1,0 +1,6 @@
+Bug 155478 [regression]Numbers in cascading group displays incorrectly
+Description: Numbers in cascading group displays incorrectly.
+Steps to reproduce: 1.New sample data source and dataset from table ORDERS.
+2.New a cascading group with two sub parameters, the first is from STATUS and the second is from ORDERNUMBER.
+3.Preview 4.Select a status value in poped up parameter dialog, see ordernumber list Expected result: See 10100, 10101, such kind of format.
+Actual result: I saw 10.100, 10.167..., I just listed out the numbers as example

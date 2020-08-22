@@ -1,0 +1,28 @@
+32 bit image fails with a certain mask
+Following displays black instead of red.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display, SWT.CLOSE);
+ImageData data = new ImageData(30,30, 32,
+new PaletteData(0xff, 0xff00, 0xff0000));
+for (int y = 0; y
+< data.height; y++) {
+for (int x = 0; x
+< data.width; x++) {
+data.setPixel(x,y,0xff);
+}
+}
+
+final Image image2 = new Image(display, data);
+
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event e) {
+e.gc.drawImage(image2, 0, 0);
+}
+});
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}

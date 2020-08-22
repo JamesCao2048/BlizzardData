@@ -1,0 +1,3 @@
+Bug 138732 getValue fails
+The following script fails on Data Element OnCreate if( this.getValue()
+< 70000){ this.getStyle().backgroundColor = "Purple"; }

@@ -1,0 +1,30 @@
+Snippet133 - NullPointerException
+Version: 3.2.0
+Build id: I20060412-0847- Run Snippet133
+ps.
+Couldn't reproduce the bug in windows, only motif.
+- Add some text
+- Go to File
+-> Change Foreground, pick any color
+- Go to File
+-> Change Background, pick any color.
+The following exception appears:
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Display.showToolTip(Display.java:3342)
+at org.eclipse.swt.widgets.Control.hoverProc(Control.java:1129)
+at org.eclipse.swt.widgets.Control.hoverProc(Control.java:1126)
+at org.eclipse.swt.widgets.Display.mouseHoverProc(Display.java:2583)
+at org.eclipse.swt.internal.motif.OS._XtAppProcessEvent(Native Method)
+at org.eclipse.swt.internal.motif.OS.XtAppProcessEvent(OS.java:3737)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2735)
+at org.eclipse.swt.widgets.ColorDialog.openModal(ColorDialog.java:421)
+at org.eclipse.swt.widgets.ColorDialog.open(ColorDialog.java:358)
+at org.eclipse.swt.snippets.Snippet133.menuBackgroundColor(Snippet133.java:189)
+at org.eclipse.swt.snippets.Snippet133$4.widgetSelected(Snippet133.java:98)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:90)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:775)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3059)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2748)
+at org.eclipse.swt.snippets.Snippet133.open(Snippet133.java:121)
+at org.eclipse.swt.snippets.Snippet133.main(Snippet133.java:49)

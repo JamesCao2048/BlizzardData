@@ -1,0 +1,45 @@
+Foreground color not used from EraseItem callback
+Using custom owner drawn for a Table or Tree overriding the painting of the selection shows a bug on Linux.
+Consider this snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Table t = new Table(shell, SWT.FULL_SELECTION);
+t.setHeaderVisible(true);
+TableItem item1 = new TableItem(t, SWT.NONE);
+item1.setText("Hello World");
+TableItem item2 = new TableItem(t, SWT.NONE);
+item2.setText("Hello World");
+t.setForeground(display.getSystemColor(SWT.COLOR_RED));
+t.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+Scrollable scrollable = (Scrollable) event.widget;
+GC gc = event.gc;
+if ((event.detail & SWT.SELECTED) != 0) {
+Rectangle clArea = scrollable.getClientArea();
+Rectangle itemRect = event.getBounds();
+/* Draw Rectangle */
+Color oldBackground = gc.getBackground();
+gc.setBackground(scrollable.getDisplay().getSystemColor(SWT.COLOR_RED));
+gc.fillRectangle(0, itemRect.y, clArea.width, itemRect.height);
+gc.setBackground(oldBackground);
+gc.setForeground(scrollable.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+/* Mark as Selected being handled */
+event.detail &= ~SWT.SELECTED;
+}
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+Windows: The selected item shows in white (with red as background)
+Linux: The selected item is entirely filled with red
+Note the explicit setForeground call after the table items have been created!
+Ben

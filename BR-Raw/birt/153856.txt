@@ -1,0 +1,4 @@
+Bug 153856 Viewing a quite big report causes a exception thrown
+I built a report, which uses 4 flat file data sources(.csv file) and contains lots of query in the expression of data item.
+Then when viewing this report causes a exception thrown: "java.lang.ClassException:java.lang.OutOfMemoryError" And the xml of report is attahed.
+Thanks.

@@ -1,0 +1,25 @@
+Shell with style MODELESS or DIALOG_TRIM ignores setSize()
+3.1M6
+- run the snippet below
+- click in the Shell
+- this attempts to enlarge the shell, but no size change occurs
+- this is what's causing the CVS conflicts dialog to not grow when the Details
+button is pressed
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display, SWT.DIALOG_TRIM);
+//	final Shell shell = new Shell(display, SWT.MODELESS);	//
+<-- also won't resize
+shell.setBounds(10,10,100,100);
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("try to resize to 200x200!");
+shell.setSize(200, 200);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

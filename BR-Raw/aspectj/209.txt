@@ -1,0 +1,12 @@
+Generic abstract aspect hierarchies 3 deep or higher can fail when type parameters have bounds
+The program below should compile happily, but fails with:
+[error] Type B does not meet the specification for type parameter 1 (A extends MyBase) in generic type Base
+abstract aspect Middle<B extends MyBase> extends Base<B> {}
+^^^^^
+The test program:
+------------------
+interface MyBase {};
+interface MyMarker extends MyBase {}
+abstract aspect Base<A extends MyBase> {}
+abstract aspect Middle<B extends MyBase> extends Base<B> {}
+aspect Sub extends Middle<MyMarker> {}

@@ -1,0 +1,6 @@
+Bug 153026 [regression]Datetime values cannot be imported to report parameter with datetime type.
+Description: Datetime values cannot be imported to report parameter with datetime type.
+Steps to reproduce: 1.New birt sample data source and dataset from table ORDERS.
+2.New a report paramter, datetime, listBox, static.
+3.Click import button, select all values from ORDERDATE column, click OK Expected result: All values are imported and default value is not set.
+actual result: Only the first value is imported and it's set as default value.

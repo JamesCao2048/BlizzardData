@@ -1,0 +1,27 @@
+Bug 230084 [General designer usability] Can't set BIRT resource folder to <project>/Shared
+Suppose I create a project and use resource files.
+At first, I put resources in my root folder.
+Over time, as the number of files increase, I decide to put them in a folder within my project: "<project>/Shared".
+Now, I've already got a number of reports, and I don't want to change them.
+I just want to tell BIRT to use "<project>/Shared" as my resource folder.
+Open Top Menu
+--> Window
+--> Preferences
+--> Report Design
+--> Resources.
+Change the resource setting to "<Current Project Folder>Shared".
+Let's test this.
+Put an image in "<project>/Shared", call it "test.png." Create a new report.
+Drag an image from the Palette.
+Set it to "Image file in shared resources".
+Notice that the list of available images is blank.
+Evidentially BIRT can't handle the "<Current Project Folder>Shared".
+Yet, BIRT did not complain when I set this in the preferences dialog.
+It just silently failed when attempting to use the folder.
+Expected: 1) If BIRT does not support resource folders relative to the current project, then BIRT should give an error at the time that this syntax is used rather than failing silently later.
+2) Better, BIRT should support the "<Current Project Folder>Shared" notation (or some equivalent).
+Apparently the workaround is to set the Resource path to the absolute location of my project's shared resources: "c:/paul/projects/Example Reports/Shared." However, this is not terribly portable.
+And, it works for only one project.
+That is, if I have more than one project, I need to leave the setting at the default; I can't push resources down one level without explicitly including the path in the resource name.
+Expected to be able to make a statement that "for all projects, resources are in
+<Current Project Folder>Shared."

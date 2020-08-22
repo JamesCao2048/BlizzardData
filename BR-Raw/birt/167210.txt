@@ -1,0 +1,3 @@
+Bug 167210 No change in 'TOC Item Expression' after select a group row[0001]
+Description: No change in 'TOC Item Expression' after select a group row[0001] Build number: 2.2.0.v20061208-1310 Steps to reproduce: 1, Drag a dataset into layout 2, Select the table and insert a group on it.
+3, In New Group, select a row as group row 4, Check the 'TOC Item Expression' Expected result: The row["XXXX"] in 'TOC Item Expression' after selecting 'Group On' Actual result: There is still blank in 'TOC Item Expression' Error log:

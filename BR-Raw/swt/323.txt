@@ -1,0 +1,16 @@
+StyledText - line for underlined text with a 'rise' other than zero is not shifted
+Build Identifier: I20110620-1631
+In StyledText when a range of characters are underlined and in the same time have a 'rise' attribute different than zero, the line is drawn as if 'rise' would be zero.
+The same thing happens for strikeout.
+Reproducible: Always
+Steps to Reproduce:
+StyledText st = new StyledText (parentComposite, SWT.NORMAL);
+st.setText ("ABCDE");
+
+StyleRange sr = new StyleRange ();
+sr.start          = 1;
+sr.length         = 3;
+sr.underlineStyle = SWT.UNDERLINE_SINGLE;
+sr.underline      = true;
+sr.rise           = +20;
+st.setStyleRange (sr);

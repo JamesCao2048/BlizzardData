@@ -1,0 +1,3 @@
+Bug 223034 Two Issues after modified the functions of crosstab measure[1102]
+Description: Issues after modified the functions of crosstab measure[1102] Build number: 2.3.0.v20080318-0800 Steps to reproduce: 1, New a crosstab 2, Drag dimension and measure in proper area 3, Double click the measure and modify the function to MAX Actual result: Issue1: in crosstab, dataitem's name of measure is changed as same as measure binding Issue2: check the measure binding in crosstab's binding page, the expression of measure is disappeared.
+Error log:

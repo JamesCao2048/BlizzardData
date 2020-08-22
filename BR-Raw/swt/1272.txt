@@ -1,0 +1,73 @@
+disposing last TableColumn can cause crash at shutdown
+- run the snippet below, close its shell, and the error at the bottom will be spewed
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,100);
+shell.setLayout(new FillLayout());
+Table table = new Table(shell, SWT.NONE);
+shell.open();
+TableColumn c0 = new TableColumn(table, SWT.NONE);
+TableColumn c1 = new TableColumn(table, SWT.NONE);
+c0.dispose();
+c1.dispose();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+Process:         java [5474]
+Path:            /System/Library/Frameworks/JavaVM.framework/Versions/1.4/Home/bin/java
+Identifier:      java
+Version:         ???
+(???)
+Code Type:       PPC (Native)
+Parent Process:  eclipse [321]
+Date/Time:       2009-01-07 12:02:29.694
+-0500
+OS Version:      Mac OS X 10.5.6 (9G55)
+Report Version:  6
+Exception Type:  EXC_BREAKPOINT (SIGTRAP)
+Exception Codes: 0x0000000000000001, 0x0000000091751af4
+Crashed Thread:  0
+Application Specific Information:
+objc[5474]: FREED(id): message release sent to freed object=0x15dbb0
+Thread 0 Crashed:
+0   libobjc.A.dylib               	0x91751af4 _objc_error + 96
+1   libobjc.A.dylib               	0x91751b4c __objc_error + 84
+2   com.apple.Foundation          	0x90a817bc NSPopAutoreleasePool + 516
+3   libswt-pi-cocoa-3526.jnilib   	0x052cb40c Java_org_eclipse_swt_internal_cocoa_OS_objc_1msgSend__II + 268
+4   ???
+0x0273a5bc 0 + 41133500
+5   ???
+0x02733ecc 0 + 41107148
+6   ???
+0x02733f8c 0 + 41107340
+7   ???
+0x02733e0c 0 + 41106956
+8   ???
+0x02733f8c 0 + 41107340
+9   ???
+0x02733f8c 0 + 41107340
+10  ???
+0x02731168 0 + 41095528
+11  libhotspot.dylib              	0x91528254 pss + 284020
+12  libhotspot.dylib              	0x915282f4 pss + 284180
+13  libhotspot.dylib              	0x9152fc78 JNI_GetCreatedJavaVMs_Impl + 4024
+14  libhotspot.dylib              	0x91544e54 JNI_CreateJavaVM_Impl + 84100
+15  java                          	0x00003aa8 0x1000 + 10920
+16  java                          	0x000041cc 0x1000 + 12748
+17  java                          	0x00001c2c 0x1000 + 3116
+18  ???
+0xbffff8d0 0 + 3221223632
+Thread 1:
+0   libSystem.B.dylib             	0x92aa4158 mach_msg_trap + 8
+1   libSystem.B.dylib             	0x92aa526c malloc_zone_malloc + 112
+2   libhotspot.dylib              	0x915c60f8 JVM_RaiseSignal + 308056
+3   libhotspot.dylib              	0x91616770 JVM_RaiseSignal + 637392
+4   libhotspot.dylib              	0x915c80d0 JVM_RaiseSignal + 316208
+5   libSystem.B.dylib             	0x92b35178 _pthread_body + 36
+Thread 2:
+0   libSystem.B.dylib             	0x92aa4158 mach_msg_trap + 8
+1   libSystem.B.dylib             	0x92aab07c mach_msg + 56
+2   libhot

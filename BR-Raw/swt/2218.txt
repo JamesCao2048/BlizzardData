@@ -1,0 +1,45 @@
+Custom-Drawing Selection-Color not working on col = 0 with sorting
+SWT 3.3 M3
+I noticed that its not possible to override the selection-color for the first column, when this column was set as sorting-column.
+In the following snippet, simply change the setSortColumn() to use the second column and its working as expected.
+Consider this snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Color c = new Color(display, 255, 0, 0);
+final Tree tree = new Tree(shell, SWT.FULL_SELECTION | SWT.BORDER);
+tree.setHeaderVisible(true);
+new TreeColumn(tree, SWT.NONE).setWidth(200);
+new TreeColumn(tree, SWT.NONE).setWidth(200);
+tree.setSortColumn(tree.getColumn(0));
+tree.setSortDirection(SWT.DOWN);
+for (int i = 0; i
+< 20; i++) {
+new TreeItem(tree, SWT.NONE).setText("Hello World");
+}
+tree.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+if ((event.detail & SWT.SELECTED) != 0) {
+GC gc = event.gc;
+Rectangle area = tree.getClientArea();
+Rectangle rect = event.getBounds();
+Color background = gc.getBackground();
+/* Take Label-Color for Selection-Color */
+gc.setBackground(c);
+gc.fillRectangle(0, rect.y, area.width, rect.height);
+/* Restore colors for subsequent drawing */
+gc.setBackground(background);
+event.detail &= ~SWT.SELECTED;
+}
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}

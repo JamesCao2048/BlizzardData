@@ -1,0 +1,10 @@
+MessageBox consumes 100% CPU on Linux/GTK
+Build ID: I20070209-1006
+Steps To Reproduce:
+1.Open a org.eclipse.swt.widgets.MessageBox
+2.The CPU usage is 100% as long as the MessageBox is open
+More information:
+The messagebox was created like this:
+...
+new MessageBox(shell, SWT.ICON_WARNING | SWT.YES | SWT.NO);
+Using SuSe 10, Gnome 2.12.2, GTK 2.8.10-39.22

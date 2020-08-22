@@ -1,0 +1,38 @@
+Solaris crash: symbol gnome_icon_theme_new: referenced symbol not found
+Build ID: 3.4
+Steps To Reproduce:
+1.Fire up Eclipse on Solaris 9
+2.Open preference page "File Associations"
+3.Add new assoc: *.doesnotmatter
+4.Associate the "Text Editor" with that new extension
+5.Push the default button
+6.Push the OK button : crash
+More information:
+In the shell that started Eclipse the following can be found:
+ld.so.1: ./eclipse: fatal: relocation error: file /tmp/helmuth/deleteme/org.eclipse.osgi/bundles/128/1/.cp/libswt-gnome-gtk-3448.so: symbol gnome_icon_theme_new: referenced symbol not found
+[1]    Killed                        ./eclipse
+-configuration /tmp/helmuth/deleteme
+-data /tmp/helmuth/deleteme
+More info:
+gtk version:
+[97 helmuth@szg-anar 3.4/SunOS]# pkginfo
+-l SUNWgnome-base-libs
+PKGINST:  SUNWgnome-base-libs
+NAME:  GNOME base GUI libraries
+- platform dependent files, /usr filesystem
+CATEGORY:  GNOME2,application
+ARCH:  sparc
+VERSION:  2.0.2,REV=9.4.2003.05.14.06.42
+BASEDIR:  /usr
+VENDOR:  Sun Microsystems, Inc.
+DESC:  GNOME base GUI libraries
+- platform dependent files, /usr filesystem
+PSTAMP:  gnome2-20030514
+INSTDATE:  Sep 15 2004 20:42
+HOTLINE:  Please contact your local service provider
+STATUS:  completely installed
+FILES:       87 installed pathnames
+4 shared pathnames
+9 directories
+51 executables
+12109 blocks used (approx)

@@ -1,0 +1,3 @@
+Bug 174202 Pie chart 'minimum slice' label category values don't match legend
+To reproduce: Create a pie chart Use Category Data as label values Set a minimum slice percentage Enable a legend Expected behaviour: Slice label should should match legend Actual behaviour: Slice label uses one of the consolidated categories, and not the minimum slice label.
+This is with 2.2M2 and 2.2M4 Screenshot to follow, as it probably explains better than I do :)

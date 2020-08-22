@@ -1,0 +1,2 @@
+Replace gtk_combo_box_new_text with gtk_combo_box_text_new in Gtk 3.x
+gtk_combo_box_new_text was renamedto gtk_combo_box_text_new in Gtk 3.x and the code needes tobe adapted to it.

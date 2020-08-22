@@ -1,0 +1,9 @@
+Cocoa TabItem.getBounds doesn't not return a correct y position
+Build Identifier: SWT 3.7.2 GM
+TabItem.getBounds in Cocoa doesn't return a correct y position.
+A sample attached.
+In the sample, click the button will print out all the bounds of TabItem in TabFolder.
+Expected result: y position is a correct number such as 2.
+Actually result: y position is not correct such as
+-553.
+Reproducible: Always

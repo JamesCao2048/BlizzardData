@@ -1,0 +1,7 @@
+Bug 115736 Can not return Normal Page
+Details: Cannot return Normal Page after extends a element and goto source page Step: 1.New a library and insert a label.
+2.Open a report and include the library.
+3.Extends the label in library into layout and save.
+4.Goto Source Page and return to Normal Page.
+Actual result: A error pop up:"Source Page has errors.
+Other pages cannot be used unitl these errors are corrected." Expected result: Return to Normal Page

@@ -1,0 +1,3 @@
+Bug 181888 Convert org.eclipse.birt.chart.viewer to a plug-in
+Now the builders of org.eclipse.birt.chart.viewer project only include Java builder and Faceted project validation builder.
+Need to add Plug-in manifest builder to let this project use OSGI framework.

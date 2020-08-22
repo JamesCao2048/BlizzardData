@@ -1,0 +1,59 @@
+[64][Browser] Browser crashes on Snippet307
+Happens on 64-bit gtk only.
+The problem is that nsIMemory's return value is being cast as an int.
+This is correct for most xpcom interfaces, but because nsIMemory is not scriptable, this value represents a pointer, not just a return code, so it is being truncated.
+The dump is:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x0000003f8b67262a, pid=9151, tid=182894172512
+#
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (1.5.0_09-b02 mixed mode)
+# Problematic frame:
+# C  [libc.so.6+0x7262a]
+#
+---------------  T H R E A D
+---------------
+Current thread (0x0000000040115d50):  JavaThread "main" [_thread_in_native, id=9151]
+...<snip>...
+Stack: [0x0000007fbfe00000,0x0000007fc0000000),  sp=0x0000007fbfff8a98,  free space=2018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x7262a]
+[error occurred during error reporting, step 120, id 0xb]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.mozilla.XPCOM.memmove(JLorg/eclipse/swt/internal/mozilla/nsID;I)V+0
+j  org.eclipse.swt.browser.External.getInterfaces(JJ)I+146
+j  org.eclipse.swt.browser.External$2.method3([J)J+10
+j  org.eclipse.swt.internal.mozilla.XPCOMObject.callback3([J)J+52
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(J)V+0
+j  org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(J)V+8
+j  org.eclipse.swt.widgets.Display.eventProc(JJ)J+132
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(JZ)Z+0
+j  org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(JZ)Z+9
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+23
+j  org.eclipse.swt.snippets.Snippet307.main([Ljava/lang/String;)V+126
+v  ~StubRoutines::call_stub
+...<snip>...
+VM Arguments:
+jvm_args:
+-Dfile.encoding=UTF-8
+java_command: org.eclipse.swt.snippets.Snippet307
+Launcher Type: SUN_STANDARD
+Environment Variables:
+PATH=/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin
+LD_LIBRARY_PATH=/bluebird/teamswt/ggayed/jre150-64/jre/lib/amd64/server:/bluebird/teamswt/ggayed/jre150-64/jre/lib/amd64:/bluebird/teamswt/ggayed/jre150-64/jre/../lib/amd64:/usr/lib64/mozilla-seamonkey-1.0.9
+SHELL=/bin/sh
+DISPLAY=wsggayedlnx:0
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x656380], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGBUS: [libjvm.so+0x656380], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGFPE: [libjvm.so+0x55dd50], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00001000, sa_flags=0x14000000
+SIGILL: [libjvm.so+0x55dd50], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x55fc00], sa_mask[0]=0x00000004, sa_flags=0x14000004
+SIGHUP: [libjvm.so+0x55f6d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGINT: [libjvm.so+0x55f6d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x14000004
+SIGQUIT: [libjvm.so+0x55f6d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x140

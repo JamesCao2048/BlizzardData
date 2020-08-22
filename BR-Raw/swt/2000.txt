@@ -1,0 +1,12 @@
+[Browser] browser steal focus on IE7
+Build ID: Eclipse 3.3 M6
+Steps To Reproduce:
+Use eclipse 3.3 M6 on Vista machine
+1.Open "Internet Web Browser" view from eclipse show view menu.
+2.Visit any website, e.g:  http://www.eclipse.org
+3.After it is loaded, click in the web page, make sure the focus is in the web content.
+4.Click back to the URL input bar, the caret disappears, while you can still type char on the url bar.
+5.If you switch to other perspective, or click with other view, and then back to the browser view, the caret is shown in URL bar again.
+6.Repeat 3/4, the caret disappears again after it is out from browser widget.
+More information:
+-This doesn't happen with MS IE7 on WinXP sp2

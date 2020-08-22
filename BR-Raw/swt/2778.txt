@@ -1,0 +1,10 @@
+GC.fillGradientRectangle() with GDI+ causes crash
+(SWT-RC4 and before)
+GC.fillGradientRectangle() lines 2204
+- 2205 deletes the incorrect color causing
+a VM core dump.
+Gdip.Color_delete(fromColor);
+Gdip.Color_delete(toColor);
+must be changed to:
+Gdip.Color_delete(fromGpColor);
+Gdip.Color_delete(toGpColor);

@@ -1,0 +1,3 @@
+[ScrolledComposite] ScrolledComposite page increment should default to size of client area
+Currently when you try to page increment on a ScrolledComposite, it defaults to
+a value much smaller than the size of the client area.

@@ -1,0 +1,16 @@
+CoolBar with SWT.DROP_DOWN style
+Run ControlExample on W2K.
+Also observed on WinXP.
+Go to Coolbar tab
+Set the DROP_DOWN style
+Move a coolitem so that it partially hides another coolitem containing
+the 'red circle' icon.
+The chevron appears normally indicating that the 'red
+circle' is partially obfuscated.
+- If the red circle is more than 80% covered, the chevron correctly expands to
+show the full red circle item.
+- If the red circle is slightly less covered (enough so that the chevron
+appears), the chevron can be clicked but does not expand to the full red
+circle item.
+This sounds like a bug to me.
+Is it the desired native widget behaviour?

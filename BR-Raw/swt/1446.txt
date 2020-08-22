@@ -1,0 +1,16 @@
+SWT_AWT.new_Shell() unimplemented in OS X/Carbon
+Embedding an SWT Browser in Swing on Mac OS X >= 10.4 with 1.5 JVM leads to an error "org.eclipse.swt.SWTError: Not implemented".
+Here's the stack trace:
+Exception in thread "Thread-2" org.eclipse.swt.SWTError: Not implemented
+at org.eclipse.swt.SWT.error(SWT.java:3400)
+at org.eclipse.swt.SWT.error(SWT.java:3297)
+at org.eclipse.swt.SWT.error(SWT.java:3268)
+at org.eclipse.swt.awt.SWT_AWT.new_Shell(SWT_AWT.java:162)
+at SwtBrowserTest$1.run(SwtBrowserTest.java:112)
+at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:152)
+at org.eclipse.swt.widgets.Display.syncExec(Display.java:3825)
+at SwtBrowserTest$2.run(SwtBrowserTest.java:137)
+at SwtBrowserTest.run(SwtBrowserTest.java:155)
+at java.lang.Thread.run(Thread.java:613)
+This bug has some history from a previous thread:
+https://bugs.eclipse.org/bugs/show_bug.cgi?id=67384

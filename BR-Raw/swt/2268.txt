@@ -1,0 +1,15 @@
+drop text in Text widget duplicates text
+gtk 2.8.17 on FC5
+swt HEAD
+Take snippet78, replace the Label by Text(shell, SWT.SINGLE).
+Run the snippet, selected the 'Text' from the first widget, drag and grop on the second widget.
+You will get 'TextText'.
+Now go on the other direction, You will get 'TextTextTextText'.
+I think we have our DropTarget *AND* the native drop target from the gtkentry in action here.
+VI: Correct me if I'm wrong.
+The framework you added to Control#gtk_button_press_event, Text#dragDetect is there specifically to stop the native drag, right ?
+(Isn't here any easy way to do it?
+Like return 1 in the drag_data_get or drag_start?)
+If you need code to stop the native drag.
+Where is the code to stop the native drop ?
+is it not need ?

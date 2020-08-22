@@ -1,0 +1,38 @@
+Text in table not updated on clear
+I can reproduce this on GTK+ 2.4.10 and 2.4.13, but not with 2.2.4 or 2.6.4.
+However, I have been unable to reproduce it in a simple GTK+ application.
+Run the following example.
+Click the button.
+The text does not update until
+the mouse hovers over the table items.
+public static boolean newText = false;
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Button button = new Button(shell, SWT.PUSH);
+final Table table = new Table(shell, SWT.VIRTUAL);
+shell.setSize(320,240);
+shell.open();
+while(display.readAndDispatch());
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TableItem titem = (TableItem) event.item;
+int index = table.indexOf(titem);
+titem.setText((newText ?
+"New Text " : "Old Text ") + index);
+}
+});
+table.setItemCount(50);
+shell.open();
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+newText = !newText;
+table.clearAll();
+}
+});
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

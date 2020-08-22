@@ -1,0 +1,5 @@
+Bug 246904 BIRT: Error occurres when viewing a postscript report by using Adobe Acrobat Distiller 9
+Build ID: 20080617 Steps To Reproduce: 1.Download the report design file from attachment and the data source is the Classic Models Inc sample.
+2.Generate a report in postscript format.
+3.Open the postscript report in Adobe Acrobat Distiller 9.4.An error occurred and the report cannot be viewed.
+(Please refer to the screen shot) Expected behavior: The report should be able to be viewed in Adobe Acrobat Distiller 9.More information:

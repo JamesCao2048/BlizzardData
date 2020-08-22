@@ -1,0 +1,35 @@
+pocketpc - can't show popup menu in Tree
+following does not work.
+Tree does special handling for LBUTTONDOWN and RBUTTONDOWN and does not call
+super.
+As a result the PocketPC popup gesture code in Control is not invoked.
+Probably need to inline the gesture code in Tree.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("PR");
+shell.setLayout(new FillLayout());
+Tree tree = new Tree(shell, SWT.BORDER);
+for (int i = 0; i
+< 30; i++) {
+new TreeItem(tree, SWT.NONE).setText("item "+i);
+}
+Menu menu = new Menu(shell, SWT.POP_UP);
+MenuItem item = new MenuItem(menu, SWT.CASCADE);
+item.setText("item 1");
+MenuItem item2 = new MenuItem(menu, SWT.CASCADE);
+item2.setText("item 2");
+tree.setMenu(menu);
+tree.addListener(SWT.MenuDetect, new Listener() {
+public void handleEvent(Event e) {
+System.out.println("menu event "+e.x+" "+e.y);
+}
+});
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

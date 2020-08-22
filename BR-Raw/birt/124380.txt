@@ -1,0 +1,4 @@
+Bug 124380 SVG format isn't supported by report designer
+This is not charts issue but regular reports containing Image report items that point to SVG files.
+Error message pops up saying: "The image cannot be loaded.
+Reason: unsupported or unrecognized format".

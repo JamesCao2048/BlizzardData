@@ -1,0 +1,45 @@
+[64] Label.setBackground(..) & Label.setForeground(..) doesn't work if parent is Splashscreen on Windows XP 64bit ( win32.win32.x86_64 )
+It seems that the Label.setBackground(..) & Label.setForeground(..) doesn't work if parent is a Splashscreen on a Windows XP 64bit ( win32.win32.x86_64 )
+Assuming we have following small SplashHandler with two Labels:
+-------------
+public class SpashHandler extends AbstractSplashHandler {
+@Override
+public void init(Shell splash) {
+Display display = splash.getDisplay();
+
+Label testBackgroundLabel = new Label(splash, SWT.NONE);
+testBackgroundLabel.setBackground(display.getSystemColor(SWT.COLOR_RED));
+testBackgroundLabel.setText("Background color shall be RED");
+testBackgroundLabel.setLocation(0, 0);
+testBackgroundLabel.pack();
+
+Label testForegroundLabel = new Label(splash, SWT.NONE);
+testForegroundLabel.setForeground(display.getSystemColor(SWT.COLOR_BLUE));
+testForegroundLabel.setText("Foreground color shall be BLUE");
+testForegroundLabel.setLocation(0, 20);
+testForegroundLabel.pack();
+}
+}
+---------------
+registered by:
+--------------
+<extension
+point="org.eclipse.ui.splashHandlers">
+
+<splashHandler
+class="com.versant.tools.rcp.handlers.SpashHandler"
+id="com.versant.tools.rcp.handlers.splashHandler">
+
+</splashHandler>
+
+<splashHandlerProductBinding
+productId="com.versant.tools.rcp.product"
+splashId="com.versant.tools.rcp.handlers.splashHandler">
+
+</splashHandlerProductBinding>
+
+</extension>
+-----------------
+than both Label's are always painted in the default Colors like black on grey.
+This works fine with Windows 32bit (win32.win32.x86), Linux 32bit (linux.gtk.x86) and Linux 64bit ( linux.gtk.x86_64 ) only on a Windows 64bit like Windows XP 64 ( win32.win32.x86_64 ) it seems to be broken.
+( Other platforms we haven't tested )

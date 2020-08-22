@@ -1,0 +1,7 @@
+Bug 120216 Group dialog should be showed even dataset is not set.
+- Add a table report item
+- do not set the data set
+- try creating a new table group.
+- An error is shown Expected behavior
+- As part of the template requirements, we dont want UI to do the validation.
+User should be able to go and define a group, even if the dataset is not defined.

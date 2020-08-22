@@ -1,0 +1,2 @@
+Bug 183919 [Enhancement] add a switch to determine whether to clean viewer image folder when session expires
+in current viewer implementation, file in image folder is deleted when its corresponding session expires, could viewer add a switch to allow users to decide whether this deletion operation should be performed.

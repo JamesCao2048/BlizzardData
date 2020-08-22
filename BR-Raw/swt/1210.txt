@@ -1,0 +1,31 @@
+NPE disabling multi-line Text
+- run the snippet below, wait a few seconds, and the app will close with the NPE at the bottom:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Text text = new Text(shell, SWT.MULTI);
+shell.open();
+display.timerExec(3000, new Runnable() {
+public void run() {
+text.setEnabled(false); //
+<----
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Control.hasFocus(Control.java:1564)
+at org.eclipse.swt.widgets.Control.isFocusControl(Control.java:1722)
+at org.eclipse.swt.widgets.Control.forceFocus(Control.java:1106)
+at org.eclipse.swt.widgets.Control.setFocus(Control.java:2882)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:868)
+at org.eclipse.swt.widgets.Control.fixFocus(Control.java:1044)
+at org.eclipse.swt.widgets.Control.setEnabled(Control.java:2862)
+at win32.Main3$1.run(Main3.java:24)
+at org.eclipse.swt.widgets.Display.runTimers(Display.java:3104)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2758)
+at win32.Main3.main(Main3.java:28)

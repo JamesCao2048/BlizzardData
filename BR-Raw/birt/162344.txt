@@ -1,0 +1,9 @@
+Bug 162344 [Smoke]Exception is thrown out when drag a chart from library to report
+Exception is thrown out when drag a chart from library to report Steps to reproduce: 1.New a library with a chart.
+2.New a report, drag the chart item from Library Explorer to Outline->Body.
+3.Drag the chart item from library Explorer to Layout.
+Expected result: The chart Item can be drag to layout and outline.
+Actual result: In step 2, exception is thrown out: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.2.0.v20061026-0635 Error Code:Error.WrongTypeException.WRONG_TYPE Error Message:The parent Chart("NewChart") is different element type with the target Extended item("NewChart").
+In step 3, exception is thrown out: An unexpected internal exception occurred.Please see log for detail.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.2.0.v20061026-0635 Error Code:Library.DND.messages.outofsync Error Message:The lib used in the report might have been changed, please close and reopen this report to use the updated lib.

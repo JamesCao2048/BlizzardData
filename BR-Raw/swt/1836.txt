@@ -1,0 +1,21 @@
+Modal shell loses focus when a second shell is opened.
+This code hangs the UI since the modal shell does not have focus.
+public static void main(String[] args) {
+Display display = new Display();
+
+final Shell shell = new Shell(display, SWT.SHELL_TRIM|SWT.APPLICATION_MODAL);
+shell.setText("Application Modal");
+shell.setBounds(100, 100, 300, 100);
+shell.open();
+
+Shell s = new Shell(display, SWT.SHELL_TRIM);
+s.setSize(200, 200);
+s.open();
+s.dispose();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

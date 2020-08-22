@@ -1,0 +1,5 @@
+BlockSelection: add get/setBlockSelectionRectangle to StyledText
+Follow-up from splitting  bug 8521 :
+As a counterpart to the StyledText::getSelectionRanges API ( bug 250171 ), clients also need to be able to set the block selection to the widget.
+Therefore, I request the following API:
+void setSelectionRanges(int[])

@@ -1,0 +1,70 @@
+Tree doesn't repaint items properly, and flashes as it updates TreeItem.setItemCount
+SWT Win32 CVS
+1.The Tree doesn't repaint the items at the bottom after 3 iterations of the timer.
+Some cell border lines are there but not all, and you can select the items with the mouse and they will paint, but they are initially missing.
+
+2.Setting the TreeItem.setItemCount to a larger number (15 in this case) is very "flashy" since the user can visually see all the cell lines being drawn as it expands downwards.
+Example:
+----
+public static boolean toggle;
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Tree tree = new Tree(shell, SWT.H_SCROLL | SWT.V_SCROLL | SWT.VIRTUAL | SWT.BORDER | SWT.MULTI
+| SWT.FULL_SELECTION);
+final int columns = 20;
+for (int i = 0; i
+< columns; i++)
+new TreeColumn(tree, SWT.LEFT).setWidth(150);
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+Tree tree = (Tree) event.widget;
+int index = tree.indexOf(item);
+String text = String.valueOf(index);
+for (int i = 0; i
+<= columns; i++) {
+if (!item.getText(i).equals(text))
+item.setText(i, text);
+}
+if (index ==
+-1) {
+Color c = display.getSystemColor(SWT.COLOR_CYAN);
+item.setBackground(c);
+} else if (index == 0) {
+int nc = 2;
+toggle = !toggle;
+if (toggle)
+nc = 25;
+item.setItemCount(nc);
+item.setExpanded(true);
+}
+}
+});
+tree.setItemCount(60);
+final int timerDelay = 2000;
+final Runnable r = new Runnable() {
+public void run() {
+int nc = 15;
+if (toggle)
+nc = 2;
+tree.setItemCount(nc);
+for (int i = 0; i
+< nc; i++) {
+tree.clear(i, true);
+}
+display.timerExec(timerDelay, this);
+}
+};
+display.timerExec(timerDelay, r);
+shell.setSize(600, 800);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

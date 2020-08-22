@@ -1,0 +1,46 @@
+Table.setBackground() fails if TableItem.setBackground() was used
+Build ID: I20070621-1340
+Steps To Reproduce:
+see source code attached
+Works fine if the line item.setBackground() is commented out.
+More information:
+---8<---
+display = new Display();
+Shell shell = new Shell(display);
+table = new Table(shell, SWT.BORDER);
+table.setBackground(new Color(null, 128, 64, 64));
+for (int i=0; i<10; i++) {
+TableItem item = new TableItem(table, SWT.NULL);
+// works as long as the next line is commented out
+//			item.setBackground(new Color(null, 128, 128, 128));
+item.setText("Item " + i);
+}
+table.setSize(100, 200);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+shell.pack();
+shell.open();
+
+new Thread(new Runnable() {
+public void run() {
+try {
+TimeUnit.SECONDS.sleep(3);
+display.asyncExec(new Runnable() {
+public void run() {
+table.setBackground(new Color(null, 255, 0, 0));
+}
+});
+TimeUnit.SECONDS.sleep(3);
+display.asyncExec(new Runnable() {
+public void run() {
+table.setBackground(new Color(null, 0, 255, 0));
+}
+});
+} catch (Exception e) {
+}
+}
+}).start();
+while (!shell.isDisposed())
+if (!display.readAndDispatch()) display.sleep();
+display.dispose();
+---8<---

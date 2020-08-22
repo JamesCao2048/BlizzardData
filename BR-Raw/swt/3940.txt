@@ -1,0 +1,22 @@
+NPE in ControlExample
+swt 20020920
+1.Run the ControlExample
+2.Go to the CoolBar Tab
+3.Check the style SWT.DROP_DOWN
+4.Drag the CoolItem so that you get a chevron
+5.Click two time over the chevron (is not a double-click)
+walkback:
+java.lang.NullPointerException
+at
+org.eclipse.swt.examples.controlexample.CoolBarTab$CoolItemSelectionListener.wid
+getSelected(CoolBarTab.java:416)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:87)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:1622)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1368)
+at org.eclipse.swt.examples.controlexample.ControlExample.main
+(ControlExample.java:103)
+Exception in thread "main"
+The bug is in the example.

@@ -1,0 +1,3 @@
+Bug 136564 Use a parameter from library, format can be inherited.
+Use a parameter from library, format can be inherited.
+Steps: 1.Create a library named lib1, create a parameter named p1, string, default value: "abc", formatted as Uppercase 2.Create a report, use the lib1, drag the p1 from lib1 to the layout 3.Preview Actual Results: 1.P1 can not be formatted as Uppercase Expected Results: 1.P1 can be formatted as uppercase

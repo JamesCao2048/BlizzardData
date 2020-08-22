@@ -1,0 +1,3 @@
+Bug 200483 The fx button of aggregation builder should be also disable if it share bindings from other aggregation[0005]
+Description: The fx button of aggregation builder should be also disable if it share bindings from other aggregation[0005] Build number: 2.2.1.v20070820-0630 Steps to reproduce: 1, New a table1 based on dataset and has a aggregation binding 2, New a table share table1's result set 3, Drag a aggregation to table2's footer row area 4, Try to modify the expression Expected result: The expression button should be disable.
+Actual result: The expression can be edit but can not save, so the button should be disable

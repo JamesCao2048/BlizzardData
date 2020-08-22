@@ -1,0 +1,31 @@
+Computed width of link widget is too large
+Version: 3.1.0
+Build id: I20050315-1100
+XP Manifest Installed
+If you run the snippet below you will see that the calcualted size of the link
+widget is the same as the length of the label widget.
+The link widget should be
+sorted since the anchors element is converted to text.
+This is really visible
+in the JDT editor preferences, there is a large gap after links.
+public static void main(String[] args) {
+Display d = Display.getDefault();
+final Shell s = new Shell(d, SWT.DIALOG_TRIM | SWT.RESIZE);
+s.setLayout(new RowLayout(SWT.HORIZONTAL));
+
+final Link l = new Link(s, SWT.NONE);
+l.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_RED));
+
+l.setText("<a href=""text editor"">Text Editors</a>");
+Label lab = new Label(s, SWT.NONE);
+lab.setText("<a href=""text editor"">Text Editors</a>");
+lab.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_RED));
+
+s.setSize(212,200);
+s.open();
+while (!s.isDisposed()) {
+if (d.readAndDispatch()) {
+d.sleep();
+}
+}
+}

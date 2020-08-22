@@ -1,0 +1,3 @@
+When a GC uses advanced and alphas the clipping is ignored in some cases.
+It appears that when alpha blending is enabled, TextLayout is not honoring the clip rect that I set on the offscreen GC.
+But if I disable the alpha blending or diable the advanced rendering, it seems to work properly.

@@ -1,0 +1,2 @@
+Bug 132644 getAllTocs(), getAllBookMarks() should be in ModuleHandle but not ReportDesignHandle
+Steps to reproduce: 1.New a library, add a label with bookmark "a" 2.New another label, add "Internal Bookmark" hyperlink on it Expected result: "a" will be listed in the bookmark list Actual result: No bookmark will be returned coz getAllBookMarks() can only be used in ReportDesignHandle Note: getAllTocs() has the same problem

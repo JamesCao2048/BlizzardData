@@ -1,0 +1,14 @@
+[Browser] Navigate / Open External Javadoc does not work on method anymore
+Consider the following java source :
+public class Test
+{
+public static void main(String[] args)
+{
+System.out.println("Hello Eclipse");
+}
+}
+If you select 'System' then click on menu Navigate / Open External Javadoc it will lunch Safari on the correct page :
+"file:///System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Resources/Documentation/Reference/doc/api/java/lang/System.html"
+If you select 'println' and do the same action, it will try to open :
+"file:///System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Resources/Documentation/Reference/doc/api/java/io/PrintStream.html%23println(java.lang.String)"
+The problem here is the "%23", if you replace it with a '#' it works.

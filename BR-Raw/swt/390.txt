@@ -1,0 +1,21 @@
+NPE when item from the List is dragged
+Cocoa x86_64 : I20110425-1800
+1) Run the DNDExample.
+2) Select List as the DragSource.
+3) Drag any item from the List.
+NPE occurs.
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Control.createString(Control.java:965)
+at org.eclipse.swt.widgets.List.tableView_objectValueForTableColumn_row(List.java:1448)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5752)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.drawRect(Widget.java:722)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5434)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(Display.java:4864)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5211)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.nextEventMatchingMask(NSApplication.java:94)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3596)
+at org.eclipse.swt.examples.dnd.DNDExample.open(DNDExample.java:1352)
+at org.eclipse.swt.examples.dnd.DNDExample.main(DNDExample.java:71)

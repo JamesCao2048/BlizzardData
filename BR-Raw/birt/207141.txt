@@ -1,0 +1,4 @@
+Bug 207141 [Automation][Regression]There is a faint secondary image in column when preview reportdesign in PDF
+Description: There is a faint secondary image in one column when preview reportdesign in PDF TestDate: 20071023 steps to reproduce:
+- use the attached report design
+- preview it in PDF Expected Result: Report should be preview correctly Actual Result: There is a faint secondary image.

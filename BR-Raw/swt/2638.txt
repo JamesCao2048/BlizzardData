@@ -1,0 +1,60 @@
+Table.computeSize returns bogus Point.y values under Win32 for large tables
+Under win32, for tables with lots of rows (>20000), Table.computeSize seems to
+overrun a native short variable.
+Test snippet:
+public static void main(String[] args) {
+Display display = new Display ();
+final Shell shell = new Shell (display);
+shell.setLayout (new RowLayout (SWT.VERTICAL));
+final Table table = new Table (shell, SWT.VIRTUAL | SWT.BORDER);
+table.addListener (SWT.SetData, new Listener () {
+public void handleEvent (Event event) {
+TableItem item = (TableItem) event.item;
+int index = table.indexOf (item);
+item.setText ("Item " + index);
+}
+});
+shell.pack ();
+shell.open ();
+display.syncExec(new Runnable() {
+public void run() {
+for (int i=0; i<100000; i+=1000) {
+System.out.println(table.computeSize(SWT.DEFAULT,
+SWT.DEFAULT));
+table.setItemCount(i);
+}
+}
+});
+shell.dispose();
+display.dispose ();
+}
+Output:
+Point {31, 23}
+Point {31, 23}
+Point {31, 15023}
+Point {31, 30023}
+Point {31,
+-20513}
+Point {31,
+-5513}
+Point {31, 9487}
+Point {31, 24487}
+Point {31,
+-26049}
+Point {31,
+-11049}
+Point {31, 3951}
+Point {31, 18951}
+Point {31,
+-31585}
+Point {31,
+-16585}
+Point {31,
+-1585}
+Point {31, 13415}
+Point {31, 28415}
+Point {31,
+-22121}
+Point {31,
+-7121}
+Point {31, 7879}

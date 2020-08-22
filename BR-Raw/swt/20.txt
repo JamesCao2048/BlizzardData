@@ -1,0 +1,2 @@
+Make gtk_widget_get[_modifier]_style dynamic.
+The functions are deprecated and not used in GTK3 port at all thus marking them as dynamic prevents useless compiler warnings when compiling the native parts.

@@ -1,0 +1,13 @@
+[Properties dialog] Project Properties -> Info page should not use text fields
+Integration build 09/17. Looks bad on all motif platforms.
+- select a Project, right-click
+-> Properties
+- on the subsequent Info page the read-only fields (the values for Path, Type,
+etc.) are created as read-only Text fields instead of Labels.
+I guess this is
+so that their values can be selected and copied by the user (?)
+- this looks fine on windows, but on motif these text fields all get automatic
+borders, which identify them as user input targets.
+Additionally, on
+Solaris/AIX/HP-UX these fields have different coloured backgrounds which make
+them stand out much worse

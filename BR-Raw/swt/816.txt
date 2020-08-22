@@ -1,0 +1,2 @@
+NSMenuItem does not clear title when attributed Title is cleared
+read only Combo and MenuItem use setAttributedTitle to set their text, but the text is not getting cleared when the attributed title is set to empty string.

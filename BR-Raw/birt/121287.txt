@@ -1,0 +1,3 @@
+Bug 121287 Post BIRT M3 build: Edit Group Dialog does not present expression builder for Group On
+In Edit Group dialog, there is no expression builder for the Group On field.
+In order to support multi-pass aggregation, the expression builder is needed to specify an expression to group on.

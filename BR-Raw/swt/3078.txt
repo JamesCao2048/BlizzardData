@@ -1,0 +1,52 @@
+EXCEPTION_ACCESS_VIOLATION hovering over check in table with SWT.CHECK style
+Version: 3.1.0
+Build id: I20050112-1200
+When i hover over the check mark of a table that was created with the SWT.CHECK
+style bit and have no text in the first column i get an
+EXCEPTION_ACCESS_VIOLATION.
+Will attach a snippet to reproduce.
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at
+PC=0x773D4933
+Function=Ordinal155+0x58
+Library=C:WINDOWSWinSxSX86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9COMCTL32.dll
+Current Java thread:
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1499)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:172)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3103)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3376)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1575)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2452)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:718)
+at org.eclipse.jface.window.Window.open(Window.java:696)
+at
+org.tigris.subversion.subclipse.ui.actions.CommitAction.confirmCommit(CommitAction.java:188)
+at
+org.tigris.subversion.subclipse.ui.actions.CommitAction$1.run(CommitAction.java:82)
+at
+org.tigris.subversion.subclipse.ui.repository.RepositoryManager.run(RepositoryManager.java:366)
+at org.tigris.subversion.subclipse.ui.actions.SVNAction$1.run(SVNAction.java:228)
+at org.tigris.subversion.subclipse.ui.actions.SVNAction$2.run(SVNAction.java:237)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.tigris.subversion.subclipse.ui.actions.SVNAction.run(SVNAction.java:234)
+at
+org.tigris.subversion.subclipse.ui.actions.CommitAction.execute(CommitAction.java:101)
+at org.tigris.subversion.subclipse.ui.actions.SVNAction.run(SVNAction.java:58)
+at org.eclipse.ui.actions.ActionDelegate.runWithEvent(ActionDelegate.java:70)
+at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:234)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:555)
+at
+org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:505)
+at
+org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:419)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2809)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2454)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1577)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1543)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:287)
+at org.eclipse.ui.PlatformUI.createAndRun

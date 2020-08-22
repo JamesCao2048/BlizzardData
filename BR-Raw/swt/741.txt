@@ -1,0 +1,12 @@
+Javadoc of CTabItem#setToolTipText(String) should tell that & is stripped
+I20090605-1444
+Javadoc of CTabItem#setToolTipText(String) should tell that the mnemonic indicator (&) is not rendered.
+Cf.
+blurb in Control#setToolTipText(..) and TabItem#setToolTipText(..):
+*
+<p>
+* The mnemonic indicator (character '&amp;') is not displayed in a tool tip.
+* To display a single '&amp;' in the tool tip, the character '&amp;' can be
+* escaped by doubling it in the string.
+*
+</p>

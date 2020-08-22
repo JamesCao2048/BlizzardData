@@ -1,0 +1,4 @@
+Bug 109573 Focus in outline view can't be synchronized with focus in layout view when multi-select rows in a grid.
+Description: Focus in outline view can't be synchronized with focus in layout view when multi-select rows in a grid.
+Steps to reproduce: 1.Select two rows in a grid in outline view.
+2.Only one row is focused in layout view.

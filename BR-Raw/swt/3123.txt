@@ -1,0 +1,34 @@
+EC: disappearing table column headers
+Note that this seems similar to  bug 67142 , so perhaps it was only partially fixed?
+Run the snippet below and click between the two tabs at the bottom.
+Every few
+clicks the table headers at the top disappear, but can be made to reappear by
+hovering over them.
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+CTabFolder tabFolder = new CTabFolder(shell, SWT.BORDER | SWT.BOTTOM);
+for (int i = 0; i
+< 2; i++) {
+CTabItem tab = new CTabItem(tabFolder, SWT.NONE);
+tab.setText("Tab " + i);
+Table table = new Table(tabFolder, SWT.NONE);
+table.setHeaderVisible(true);
+for (int j = 0; j
+< 3; j++) {
+final TableColumn tableColumn = new TableColumn(table, SWT.NONE);
+tableColumn.setText("Column " + j);
+tableColumn.setWidth(50);
+}
+table.pack();
+tab.setControl(table);
+}
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+}

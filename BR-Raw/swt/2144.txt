@@ -1,0 +1,75 @@
+Crash with an SWT program
+Build ID: I20070222-0951
+Steps To Reproduce:
+The following program causes crash of JVM on Eclipse 3.3m5, but runs safely and correctly on Eclipse 3.2:
+--------------------------------------------------------------
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.widgets.Display;
+import cn.brainy.gef.draw2d.graphics.Path;
+/**
+* @author Frank Shaka
+*/
+public class TestGdipPath {
+/**
+* @param args
+*/
+public static void main( String[] args ) {
+Display display = new Display();
+Path path = new Path( display );
+
+path.moveTo( 200, 100 );
+path.lineTo( 600, 300 );
+
+GC gc = new GC( display );
+
+System.out.println( path.contains( 400, 200, gc, true ) ); // Crash!!!
+
+gc.dispose();
+path.dispose();
+display.dispose();
+}
+}
+--------------------- HERE IS THE LOG
+-----------------------------
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x04473313, pid=2604, tid=864
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0-b105 mixed mode, sharing)
+# Problematic frame:
+# C  [swt-gdip-win32-3325.dll+0x3313]
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#
+---------------  T H R E A D
+---------------
+Current thread (0x003f6400):  JavaThread "main" [_thread_in_native, id=864]
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+Registers:
+EAX=0x04473306, EBX=0x274fdae0, ECX=0x003f64e8, EDX=0x274fe940
+ESP=0x0090e9d4, EBP=0x0090ea18, ESI=0x00000000, EDI=0x003f6400
+EIP=0x04473313, EFLAGS=0x00010287
+Top of Stack: (sp=0x0090e9d4)
+0x0090e9d4:   41200000 274fdae0 0094a430 003f64e8
+0x0090e9e4:   0090ea20 00000000 41200000 6d8eda1d
+0x0090e9f4:   0090eacc 0090e9f8 00000000 0090ea2c
+0x0090ea04:   274fe940 00000000 274fdae0 00000000
+0x0090ea14:   0090ea30 0090ead8 00bcf8a2 274fe8e0
+0x0090ea24:   00948409 41200000 00000000 0000000e
+0x0090ea34:   6d9365fd 00000002 0090ea54 0090ea54
+0x0090ea44:   6d936aea 27c845d0 6d8fe19f 003f5468
+Instructions: (pc=0x04473313)
+0x04473303:   c2 10 00 d9 44 24 10 56 8b 74 24 10 51 d9 1c 24
+0x04473313:   ff 36 e8 1c 18 00 00 85 c0 74 05 89 46 04 eb 02
+Stack: [0x008c0000,0x00910000),  sp=0x0090e9d4,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [swt-gdip-win32-3325.dll+0x3313]
+J  org.eclipse.swt.graphics.GC.checkGC(I)V
+j  org.eclipse.swt.graphics.Path.contains(FFLorg/eclipse/swt/graphics/GC;Z)Z+38
+j  cn.brainy.ui.mindmap.figures.decorations.boundaries.BoundaryShape.containsPoint(II)Z+53
+j  cn.brainy.ui.mindmap.figures.BoundaryFigure.containsPoint(II)Z+20
+j  org.eclipse.draw2d.Figure.containsPoint(Lorg/eclipse/draw2d/geometry/Point;)Z+9
+j  cn.brainy.gef.part.GraphicalPart.containsPoint(Lorg/eclipse/draw2d/geometry/Point;)Z+17
+j  cn.brainy.gef.part.GraphicalPart.findAt(Lorg/eclipse/draw2d/geometry/Point;)Lcn

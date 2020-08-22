@@ -1,0 +1,14 @@
+Avoid clashes in the org.eclipse namespace by renaming our duplicates.
+We have recently renamed our 'copy' of BCEL to use a different package prefix so
+that our version never clashes with another version that might be around on a
+users system.
+This enhancement is to do the same thing for our 'copy' of the org.eclipse.jdt
+code (in the shadows project).  As part of packaging the shadows project to
+create the 'jdtcore' jar files (bin and src) we will rename the packages from:
+org.eclipse.jdt.***
+to
+org.aspectj.org.eclipse.jdt.**
+This has a really nice side effect that we can make our version of the compiler
+accessible in the IDE.  It should now be possible for AJDT to work more closely
+with it and get features like eager parsing to work.
+Care will be taken that we don't accidentally make the merge process a nightmare.

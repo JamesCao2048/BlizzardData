@@ -1,0 +1,7 @@
+CTabFolder accessibility improvements
+Created  attachment 205364   [details]
+Patch to fix 2 accessibility problems in CTabFolder
+The attached patch fixes 2 accessibility problems in the e4 CTabFolder:
+1) The min, max, and chevron buttons now have accessible names.
+2) The keyboard shortcut for switching pages in a CTabFolder (ctrl+PageUp) is now available to screen readers and it can be announced (supported in JAWS 12 and up).
+In addition, the patch removes a few lines of code that were not being used.

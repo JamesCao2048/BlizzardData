@@ -1,0 +1,2 @@
+Contribution: Support -Xset in Load-Time Weaving Configuration
+I needed this to try out a setting in the pipelined compilation (-Xset:runMinimalMemory=true) ... I was able to verify that it parsed and set an option correctly in the debugger. I also have included a test that sets all the currently available options.

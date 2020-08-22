@@ -1,0 +1,13 @@
+Control Example
+Eclipse 200303062359
+RH 8.0
+Combo Tab
+The SWT.BORDER button does not seem accessible.
+The SWT.READ_ONLY button is only valid when SWT.DROP_DOWN is selected, but it
+is not disabled when SWT.SIMPLE is selected
+Dialog Tab
+Dialog type = message box
+Button Styles SWT.CANCEL SWT.YES:  Dialog opens with ok button.
+Button Styles SWT.CANCEL SWT.NO:  Dialog opens with ok button.
+Table Tab
+Select SWT.CHECK: there is a lot of flash when an item is checked

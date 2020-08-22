@@ -1,0 +1,45 @@
+[DND] drag/drop onto empty table generates exception in SWT
+Created  attachment 145186   [details]
+Program to demonstrate the bug
+Dropping onto an SWT Table that contains no items causes an IllegalArgument(index out of bounds) exception to be thrown.
+If the table contains one or more items then there is no exception.
+This occurs only on Mac, Windows and Linux don't have the problem.
+The exception thrown is as follows:
+Exception in thread "main" java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:3865)
+at org.eclipse.swt.SWT.error(SWT.java:3799)
+at org.eclipse.swt.SWT.error(SWT.java:3770)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:616)
+at org.eclipse.swt.widgets.Table.getItem(Table.java:1412)
+at org.eclipse.swt.dnd.DropTargetEffect.getItem(DropTargetEffect.java:107)
+at org.eclipse.swt.dnd.DropTargetEffect.getItem(DropTargetEffect.java:90)
+at org.eclipse.swt.dnd.DropTarget.setEventData(DropTarget.java:873)
+at org.eclipse.swt.dnd.DropTarget.draggingEntered(DropTarget.java:216)
+at org.eclipse.swt.dnd.DropTarget.dropTargetProc(DropTarget.java:428)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSView.dragImage(NSView.java:150)
+at org.eclipse.swt.dnd.DragSource.drag(DragSource.java:394)
+at org.eclipse.swt.dnd.DragSource$1.handleEvent(DragSource.java:215)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Display.sendEvent(Display.java:3542)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1247)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1270)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1255)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1076)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3440)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3099)
+at DNDExample.main(DNDExample.java:65)
+I've attached a small test program.
+It needs only the standard SWT and appropriate platform SWT jars to work.
+My Mac environment is
+System Version:	Mac OS X 10.5.8 (9L30)
+Kernel Version:	Darwin 9.8.0
+Model Name:	iMac
+Model Identifier:	iMac8,1
+Processor Name:	Intel Core 2 Duo
+Processor Speed:	2.66 GHz
+Number Of Processors:	 1
+Total Number Of Cores: 2
+SWT libs are:
+org.eclipse.swt_3.5.0.v3550b.jar
+org.eclipse.swt.cocoa.macosx.x86_64_3.5.0.v3550b.jar

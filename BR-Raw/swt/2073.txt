@@ -1,0 +1,55 @@
+[Browser] SWT Browser crashes Eclipse if page contents set by setText contains a named anchor
+Build ID: I20070222-0951
+Steps To Reproduce:
+1.Populate the SWT Browser using setText(), with content that includes a link to a named anchor (<a name="foo") elsewhere in the page
+2.Run up the app and click on the link
+3.Wait for a few seconds, there will be an invalid memory access reported in the logs and eclipse will crash
+More information:
+This is the crash reporter info:
+Date/Time:      2007-03-04 12:50:06.433 +0000
+OS Version:     10.4.8 (Build 8L2127)
+Report Version: 4
+Command: java
+Path:    /System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/bin/java
+Parent:  eclipse [10484]
+Version: ???
+(???)
+PID:    10510
+Thread: 0
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000000
+Thread 0 Crashed:
+0   com.apple.WebCore            	0x9536422b KWQKHTMLPart::khtmlMouseMoveEvent(khtml::MouseMoveEvent*) + 351
+1   com.apple.WebCore            	0x9550b5f8 KParts::Part::event(QEvent*) + 24
+2   com.apple.WebCore            	0x95361832 KHTMLView::viewportMouseMoveEvent(QMouseEvent*) + 2150
+3   com.apple.WebCore            	0x953dbd76 KWQKHTMLPart::mouseDragged(NSEvent*) + 198
+4   com.apple.WebKit             	0x9517baa6
+-[WebHTMLView mouseDragged:] + 87
+5   com.apple.AppKit             	0x9f6a8be1
+-[NSWindow sendEvent:] + 7377
+6   com.apple.WebKit             	0x951a591a MouseDragged + 173
+7   com.apple.WebKit             	0x951a6606 HIWebViewEventHandler + 1077
+8   com.apple.HIToolbox          	0x92dcc7eb DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1093
+9   com.apple.HIToolbox          	0x92dcbe90 SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 304
+10  com.apple.HIToolbox          	0x92dcbd55 SendEventToEventTargetWithOptions + 55
+11  com.apple.WebKit             	0x951a5cec WindowHandler + 947
+12  com.apple.HIToolbox          	0x92dcc7eb DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1093
+13  com.apple.HIToolbox          	0x92dcbe90 SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 304
+14  com.apple.HIToolbox          	0x92dd30f0 SendEventToEventTarget + 56
+15  com.apple.HIToolbox          	0x92dd3589 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 1169
+16  com.apple.HIToolbox          	0x92dccba2 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 2044
+17  com.apple.HIToolbox          	0x92dcbe90 SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 304
+18  com.apple.HIToolbox          	0x92dd30f0 SendEventToEventTarget + 56
+19  libswt-pi-carbon-3325.jnilib 	0x2629b30c Java_org_eclipse_swt_internal_carbon_OS_SendEventToEventTarget + 31
+20
+<<00000000>> 	0x045851d1 0 + 72896977
+21
+<<00000000>> 	0x046eabc0 0 + 74361792
+22
+<<00000000>> 	0x0457fa6b 0 + 72874603
+23
+<<00000000>> 	0x0457f913 0 + 72874259
+24
+<<00000000>> 	0x0457f9bf 0 + 72874431
+25
+<<0000

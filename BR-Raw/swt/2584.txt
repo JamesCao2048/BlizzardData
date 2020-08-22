@@ -1,0 +1,11 @@
+Warnings suppressed from GtkFileChooser creation
+Currently, warnings are suppressed when creating a GtkFileChooser widget.
+This is to avoid warning spews when the hicolor theme is not installed.
+This practice is harmful for two reasons:
+1.The warnings from GTK+ are intentional, hicolor is a dependency of GTK+,
+and if it is not installed then the file chooser is missing the icons for
+its bookmarks.
+The icons are part of hicolor so they can be themed.
+2.If real warnings are issued during creation, we don't see them.
+This
+seems definitely possible in some cases, see  bug 101790 .

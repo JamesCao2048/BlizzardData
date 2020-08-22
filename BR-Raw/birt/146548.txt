@@ -1,0 +1,6 @@
+Bug 146548 [regression]Data type convert in chart data binding doesn't work.
+Description: Data type convert in chart data binding doesn't work.
+Steps to reproduce: 1.New sample data source and dataset from OFFICES.
+2.Insert a chart, bind it to dataset 3.Edit data binding to change officecode from string type to integer type 4.Drag officecode to y-series Expected result: No errors.
+Actual result: Unable to use a text data to render a numerical/datetime axis.
+org.eclipse.birt.chart.exception.ChartException at: org.eclipse.birt.chart.factory.Generator.build(Generator.java:985) org.eclipse.birt.chart.ui.swt.wizard.internal.ChartPreviewPainter.updateBuffer(ChartPreviewPainter.java:152) org.eclipse.birt.chart.ui.swt.wizard.internal.ChartPreviewPainter.renderModel(ChartPreviewPainter.java:333) org.eclipse.birt.chart.ui.swt.wizard.TaskSelectData.doLivePreview(TaskSelectData.java:1043) org.eclipse.birt.chart.ui.swt.wizard.TaskSelectData.changeTask(TaskSelectData.java:984) org.eclipse.birt.chart.ui.swt.wizard.ChartAdapter.notifyChanged(ChartAdapter.java:68) org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify

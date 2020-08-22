@@ -1,0 +1,2 @@
+Bug 314200 NPE is thrown when canceling overwriting ScriptedDatasourceExampleAfter
+Description: NPE is thrown when canceling overwriting ScriptedDatasourceExampleAfter Build number: 2.6.0.v20100525-0630 Steps to reproduce: 1, Open Report Example View 2, Open ScriptedDatasourceExampleAfter in Scripting->Scripted Data Source 3, Open that again and a dialog popped up to ask whether to overwrite the report 4, Click Cancel button Expected result: No NPE was thrown Actual result: NPE was thrown

@@ -1,0 +1,3 @@
+Bug 193287 Switch to gantt chart and return will pop up error[0602]
+Description: Switch to gantt chart and return will pop up error[0602] Step: 1.New a report, datasource and dataset 2.Add a bar chart.
+3.Drop a string row from dataset into Category (X) Series 4.Input 100 into Value (Y) Series 5.Switch to Select Chart Type 6.Change the type as Gantt and return to Bar chart Actual result: The error will pop up and said that "Unable to use a non-datetime data to render a datetime axis"

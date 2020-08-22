@@ -1,0 +1,49 @@
+Virtual tree setItemCount(0) has no effect
+When setting item count to 0 on windows on a tree item that currently has children, the children are never removed.
+TestCase:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeItem;
+public class TreeTest {
+private static Display display;
+private static Tree tree;
+public static void main(String[] args) {
+display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+tree = new Tree(shell, SWT.VIRTUAL);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+int index = tree.indexOf(item);
+item.setText("item: " + (index + 1));
+}
+});
+tree.setItemCount(10);
+shell.open();
+new Thread(new Runnable() {
+public void run() {
+try {
+Thread.sleep(5000);
+} catch (InterruptedException e) {
+}
+display.asyncExec(new Runnable() {
+public void run() {
+System.out.println("Setting item count to zero");
+tree.setItemCount(0);
+}
+});
+}
+}).start();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

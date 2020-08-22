@@ -1,0 +1,8 @@
+[Browser-Webkit] Mouse events have wrong button values (0,1,2 instead of 1,2,3)
+Build Identifier: SWT 3.6
+When we add a mouse listener to a Browser with Webkit rendering, we receive events with wrong values for the button field.
+Normal values are 1, 2 and 3 but we receive 0, 1 and 2.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a Browser.
+2.Add a mouse listener that prints e.button

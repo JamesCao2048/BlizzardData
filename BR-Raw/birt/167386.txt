@@ -1,0 +1,19 @@
+Bug 167386 border property definition in custom jsp tags isn't correct.[0603]
+Description: border property definition in custom jsp tags isn't correct.
+Build number:2.2.0.v20061211 Steps to reproduce: 1.New a BIRT Web Project.
+2.New a jsp file based on BIRT template.
+3.Input below content in body:
+<birt:viewer id="1" reportDesign="birt_tag_sample.rptdesign" contextRoot="wtp_jsp_tags" border="10">
+</birt:viewer> 4.Run the jsp file.
+Expected result: The description for border in BIRT_JSP_TAG_SPEC_FINAL.doc is "Sets the border of report container in pixels." If border represents border style, it should display border with 10px width.
+If border represents frameBorder for IFrame, it'd better change name to frameBorder.
+Actual result: No border style in IE browser.
+I checked the page source and found that border value was set to frameBorder property of IFrame.
+However, according to css standdard, frameborder = 1|0 This attribute provides the user agent with information about the frame border.
+Possible values: * 1: This value tells the user agent to draw a separator between this frame and every adjoining frame.
+This is the default value.
+* 0: This value tells the user agent not to draw a separator between this frame and every adjoining frame.
+Note that separators may be drawn next to this frame nonetheless if specified by other frames.
+The issue is that: 1."border" name is confusing, and it is very likely to be regarded as border style for element.
+2.Description in BIRT_JSP_TAG_SPEC_FINAL.doc is incorrect.
+Error log:N/A

@@ -1,0 +1,6 @@
+New element not revealed
+When a new element is added to a list, despite this element being highlighted it is not revealed.
+Steps to reproduce:
+- find a method with a lot of paremeters in your code
+- open the "change method signature" refactoring
+- hit the "Add" button to add a new parameter to the method.

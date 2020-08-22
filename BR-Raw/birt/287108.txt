@@ -1,0 +1,12 @@
+Bug 287108 Margins not set correctly for older reports re-saved in daily build 2.5.1.v20090814-1036
+I have reports created in BIRT 2.1.2.v20070205-1728 that use Master Pages defined in a report library called "Momentum".
+The Master Pages define margins of 0.5in on all sides.
+If I open and re-save these reports in BIRT 2.5.1, the margins go back to the BIRT defaults of 1in/1.25in/1in/1.25in.
+I compared the newly saved version of the report to the original and found these differences: The original BIRT 2.1.2 version of the report contains this for the Master Page:
+<simple-master-page name="MomentumMasterPageLandscape" id="525" extends="Momentum.MomentumMasterPageLandscape"/> The re-saved BIRT 2.5.1 version contains this:
+<simple-master-page name="MomentumMasterPageLandscape" id="525" extends="Momentum.MomentumMasterPageLandscape">
+<property name="topMargin">1in</property>
+<property name="leftMargin">1.25in</property>
+<property name="bottomMargin">1in</property>
+<property name="rightMargin">1.25in</property> Those four property lines override the values defined in the report library, so I had to remove them from the XML to see the correct margins in the report.
+My best guess is that BIRT should not add these four lines when re-saving an older report in 2.5.1, at least not when there's a Master Page in use.

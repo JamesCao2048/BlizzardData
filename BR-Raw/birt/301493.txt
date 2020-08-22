@@ -1,0 +1,3 @@
+Bug 301493 Select newly created variable as other elements in Data Explorer do[00]
+Build Identifier: 2.5.2.v20100202 Newly created variable should be selected by default after create it.
+Reproducible: Always Steps to Reproduce: 1.New a report/page variable in Data Explore view Expected result: expand and select the variable automatically as new datasource/dataset/reportparameter/cube do Actual result:Not expand variable node and select the newly created one.

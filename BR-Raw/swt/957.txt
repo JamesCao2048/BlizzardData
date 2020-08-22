@@ -1,0 +1,19 @@
+[regression] created swt-32 and swt-64 directories must be writable by anyone
+3.5RC3 test build
+- retrieve the org.eclipse.swt.snippets project from cvs
+- change its build path to not point at eclipse's swt plugin jar, but instead at a separately-downloaded swt stand-alone jar
+- run any of the snippets
+
+-> creates directory /tmp/swt-32 on the machine and extracts the swt lib there
+- become a different user on the machine
+- set the project's build path to point at a different downloaded swt stand-alone jar (different version)
+- run any of its snippets
+
+-> fails to run because the library extraction fails
+
+-> this happens because only the creator of the /tmp/swt-32 directory has write permission on it
+This is a new problem introduced during 3.5 development by the fix for  bug 236855 .
+Previously these libraries were extracted to /tmp, which is always writable.
+This problem does not affect eclipse in any way because in the context of eclipse the swt libraries are auto-extracted by eclipse, not by swt's Library class.
+However this is a very bad bug for users of the swt stand-alone download because once directory /tmp/swt-32 has been created with the wrong permissions then this bad state will be left forever.
+Even if a fix for this is made for 3.5.1, anyone using 3.5 will have the bad-permission directories created on their machines.

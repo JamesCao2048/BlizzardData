@@ -1,0 +1,5 @@
+GC.drawImage() selects wrong source region
+When the source and destination areas are of differing sizes, the method does not select the source region at srcX, srcY.
+Thus, the wrong source region is placed in the receiver.
+I have created a simple test case to demonstrate this, and will also attach screenshots using SWT.getVersion()=3139 and SWT.getVersion()=3212. The earlier version works properly, so I think we're dealing with a regression bug.
+Interestingly, the same problem occurs in 3212 whether I use GC.setAdvanced(true) GC.or setAdvanced(false).

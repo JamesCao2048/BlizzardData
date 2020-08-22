@@ -1,0 +1,6 @@
+Bug 195970 Two issues when evaluate a query inlcuding a subquery[07]
+Description: Currently, when evaluating a query which includes a subquery, the query will be evaluated twice.
+The binding of query will pass to subquery twice.
+If user write a java script such as new Date() and i++.
+The result of query will be incorrect.
+Another issue: when write the report document, the binding of query will be written twice and the performance is not good to evalulate it twice.

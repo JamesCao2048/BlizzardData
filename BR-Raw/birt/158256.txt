@@ -1,0 +1,2 @@
+Bug 158256 Parameter dialog won't pop up in web viewer with internal browser
+Steps to reproduce: 1.Open Window->Preferences->Preview, untick "Always use external browsers"and choose "Default System Browser" 2.New a parameter without default value 3.Preview in Web Viewer, input "a" as the parameter value 4.Close the browser, and preview in Web Viewer again Expected result: Parameter dialog pops up for value input Actual result: Parameter dialog won't pop up, and its value comes from the generated document

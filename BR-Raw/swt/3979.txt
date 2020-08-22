@@ -1,0 +1,14 @@
+Multiple opened ApplicationWindows with statuslines show incorrect display/event handling
+JFace ApplicationWindow :
+When using a statusline in subclasses of ApplicationWindow AND opening multiple
+instances, the event handling is not correct.
+Example :
+AppWindow A1 (incl.
+addStatusLine() in constructor)
+AppWindow A2 (incl.
+addStatusLine() in constructor)
+Behavior interference occurs when:
+
+- opening muliple instances of A1
+
+- or opening one instance of A1 and one instance of A2

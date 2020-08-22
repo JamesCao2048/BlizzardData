@@ -1,0 +1,11 @@
+Bug 217213 Javascript debug in first report will affect the second[0801]
+Description: Javascript debug in first report will affect the second Build number:2.3.0.v20080131 Steps to reproduce: 1.New a report with event handler and get attached report.
+2.Switch to debug perspective.
+3.New debug configuration "event" under Report node in Debug dialog, select report with event handler and add the java project, tick on javascript in debug type, click Apply and close.
+4.New another debug configuraion "script" under Report node, select attached report, tick on javascript in debug type, click Debug.
+5.Click Cancel in the pararameter dialog.
+6.Debug "event".
+Expected result: Debug in step6 should not pop up parameter dialog since there're no parameters in side.
+Actual result: Debug "event" will pop up parameter dialog which belongs to "script" report debug.
+It seems some information in the first debug process isn't cleaned.
+Error log:n/a

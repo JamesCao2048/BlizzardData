@@ -1,0 +1,3 @@
+Bug 216616 Axis and plot chart should share their height or width
+For charts inside crosstab, the plot and axis chart need to share their height (or width depending on orientation).
+So resizing one of them vertically (or horizontally) should reassign the other one as well, or you end up with inconsistent charts, and the axis height doesn't match the plot height.

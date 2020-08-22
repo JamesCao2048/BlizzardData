@@ -1,0 +1,10 @@
+certain images cause "no more handles" on win7
+Build Identifier: 20110615-0604
+When searching for a certain plugin using the marketplace client the query takes quite a lot of time and then crashes with an Unhandled event loop exception: SWTError: No more handles.
+I can reproduce this with a clean JavaEE-Package install, everytime I switch to the Yoxos marketplace and do search for "Target Management" it crashes this way.
+Searching for other things is fine, searching for Target Management in the Eclipse marketplace, too.
+Reproducible: Always
+Steps to Reproduce:
+1.Open Marketplace Client
+2.Switch to Yoxos marketplace
+3.Type "Target Management" in the find box and press enter

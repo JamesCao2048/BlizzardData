@@ -1,0 +1,37 @@
+Multi Selection Tree only last 2 items are 'really' selected
+swt 3.2 / head 20060719
+windows vista beta 2 build 5384
+Multi Selection Tree only the 2 last items selected are really selected, note that the tree doesn't redraw right away to during selection.
+You will need to redraw the tree (or press F2 in the snippet) after every selection so it shows that items are really selected.
+Weird: the items selected using the shift key work.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+final Tree tree = new Tree(shell, SWT.MULTI);
+for (int i = 0; i
+< 60; i++) {
+TreeItem item = new TreeItem (tree, SWT.NONE);
+item.setText("Item " + i);
+
+}
+display.addFilter(SWT.KeyDown, new Listener() {
+public void handleEvent(Event event) {
+if (event.keyCode == SWT.F2) {
+TreeItem[] items = tree.getSelection();
+for (int i = 0; i
+< items.length; i++) {
+System.out.println(items[i].getText());
+}
+}
+System.out.println("------------");
+tree.redraw();
+}
+});
+shell.setLayout(new FillLayout());
+shell.setSize(400, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

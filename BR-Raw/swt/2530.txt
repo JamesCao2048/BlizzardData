@@ -1,0 +1,10 @@
+JPEGQuantizationTable precision=8 values can be negative
+DQT values should be non-negative, either 0..255 or 0..65535 depending on the sample precision.
+Bug: When precision=8 JPEGQuantizationTable is loaded with signed bytes.
+(When precision=16, unsigned values are loaded as expected.)
+This bug can have dramatic effects, but probably hasn't been noticed because the default Q tables contain only a couple values larger than 127...
+Fix:
+public int[][] getQuantizationTablesValues() {
+qk[i] = reference[ofs + i + 1];
+=>
+qk[i] = reference[ofs + i + 1] & 0xFF;

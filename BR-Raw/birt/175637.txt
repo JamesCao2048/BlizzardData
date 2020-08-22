@@ -1,0 +1,14 @@
+Bug 175637 NPE when input parameter to document in ReportRunner.[0600]
+Description: NPE when input parameter to document in ReportRunner.
+Build number:2.2.0.v200702251739-M5-rebuild Steps to reproduce: 1.Unzip birt runtime package to get ReportEngine folder.
+2.Copy attached report into the folder.
+3.Run command as genReport
+-m run
+-p "sample=sample"
+-p "Cust=200" test1.rptdesign genReport
+-m render
+-p "sample=sample"
+-p "Cust=200" test1.rptdocument Expected result: In the second command, document need no parameters input, so just ignore the input parameter values.
+Actual result: NPE is thrown out.
+Error log: SEVERE: exception in parsing the paramters java.lang.NullPointerException at org.eclipse.birt.report.engine.api.ReportRunner.renderReport(ReportRu nner.java:304) at org.eclipse.birt.report.engine.api.ReportRunner.execute(ReportRunner.
+java:157) at org.eclipse.birt.report.engine.api.ReportRunner.main(ReportRunner.jav a:117)

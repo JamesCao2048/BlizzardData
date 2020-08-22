@@ -1,0 +1,17 @@
+[plan] spaces in file names causes AspectJ weaver to fail
+The WeavingAdaptor requires the aspect path to be composed by URLs. The URL of a file is encoded, for example if it contains spaces they will be represented with %20.
+It then converts these file:// urls to simple string paths, and then tries to access files pointed by those paths.
+This is done inside the FileUtil.makeClasspath(URL[]) . This method uses URL.getPath() to obtain the path. But this method does not decode the string, it returns it as it is in the URL. When later this string is used to create a new File instance, that file contains an invalid path, and the weaver fails as follows :
+Caused by: org.aspectj.bridge.AbortException: bad aspect library: '/home/sym/path%20with%20space/aspect-library.jar'
+at org.aspectj.weaver.tools.WeavingAdaptor$WeavingAdaptorMessageHolder.handleMessage(WeavingAdaptor.java:624)
+at org.aspectj.bridge.MessageUtil.error(MessageUtil.java:80)
+at org.aspectj.weaver.tools.WeavingAdaptor.error(WeavingAdaptor.java:504)
+at org.aspectj.weaver.tools.WeavingAdaptor.addAspectLibrary(WeavingAdaptor.java:472)
+at org.aspectj.weaver.tools.WeavingAdaptor.registerAspectLibraries(WeavingAdaptor.java:447)
+at org.aspectj.weaver.tools.WeavingAdaptor.init(WeavingAdaptor.java:177)
+at org.aspectj.weaver.tools.WeavingAdaptor.<init>(WeavingAdaptor.java:112)
+This issue is quite important, because on older windows "Documents and Settings" is an unfortunately common path, for example Maven stores there its repository.
+Multiple solutions are possible for this simple bug, in order of impact :
+- Decode the string obtained by URL.getPath() using URLEncoder.decode()
+- Use Files instead of Strings and let Java handle the URL, using the File(URI) constructor
+- Don't assume that aspect libraries are files, and hence that urls are file url, and use URLConnection to fetch aspect library contents.

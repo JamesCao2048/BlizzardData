@@ -1,0 +1,45 @@
+Spacing between Table rows grows with number of rows
+The spacing between rows in a Table widget appears to grow relative to the
+number of rows in the table.
+The spacing seems normal with a few rows.
+With
+may rows (ex.
+100), the spacing can grow to be so large that you cannot even
+scroll to see all of the rows.
+Here's a snippet of our code:
+----beginning of snippet 1
+private Table createTable(Composite group) {
+// create the table
+Table table = new Table( group,
+SWT.CHECK|SWT.BORDER|SWT.MULTI|SWT.H_SCROLL|SWT.V_SCROLL);
+GridData gridData = new GridData();
+gridData.horizontalSpan = 4;
+gridData.heightHint = 150;
+gridData.widthHint = 375;
+gridData.horizontalAlignment = GridData.FILL;
+table.setLayoutData( gridData );
+// create the columns
+int[] columnWidths = {135, 120, 120};
+TableColumn tableColumn1 = new TableColumn(table, SWT.NULL);
+tableColumn1.setWidth(columnWidths[0]);
+tableColumn1.setText(ResourceClass.GetResourceString
+("elementSelectionDialog.Logical_Root"));
+TableColumn tableColumn2 = new TableColumn(table, SWT.NULL);
+tableColumn2.setWidth(columnWidths[1]);
+tableColumn2.setText(ResourceClass.GetResourceString
+("elementSelectionDialog.Storage_Path"));
+TableColumn tableColumn3 = new TableColumn(table, SWT.NULL);
+tableColumn3.setWidth(columnWidths[2]);
+tableColumn3.setText(ResourceClass.GetResourceString
+("elementSelectionDialog.CM_Status"));
+return table;
+}
+----end of snippet 1
+Methods used to populate Table:
+----beginning of snippet 2
+item = new TableItem( items, SWT.NULL );
+item.setData( unit );
+strList[0] = logicalName;
+item.setText( strList );
+item.setImage( icoImage );
+----end of snippet 2

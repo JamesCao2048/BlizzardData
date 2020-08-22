@@ -1,0 +1,12 @@
+Switching to a not yet activated perspective doesn't set focus an on any view
+I2002-12-18
+Using Cmd-F8 to switch to a view that has not yet been activated during the session
+doesn't set the input focus on any view.
+This results in keyboard commands not being
+processed (e.g.
+Cmd-F8 again).
+This can be reproduced by
+- Opening two perspectives
+- Restarting Eclipse
+- Pressing Cmd-F8 to switch to next perspective
+- After the perspective is displayed pressing Cmd-F8 has no result

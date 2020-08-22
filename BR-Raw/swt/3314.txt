@@ -1,0 +1,9 @@
+GP when asyncExec runs from DirectoryDialog modal loop (was Crash related to new Progress Viewer)
+with I20040428, on windows XP.
+I'll attach "dump", but was just browsing PDE
+preferences, when crash occurred.
+From the dump, it appears related to new
+Progress Viewer, but ...
+since on OS.winproc, will pass by SWT first?
+Have just
+seen once (after about 30 minutes of using new I-build).

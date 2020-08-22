@@ -1,0 +1,7 @@
+on Mac OS only: RTFTransfer does not support german umlaut
+German umlauts (爪讛锟) are not properly encoded when copied to the clipboard as RTF-text (from StyledText):
+Clipboard rtf:
+{rtf1ansiuc1deff0{fonttbl{f0fnil Lucida Grande;}}
+{colortblred0green0blue0;red255green255blue255;}
+{f0fs26 fi3ql 锟阶斪
+}}

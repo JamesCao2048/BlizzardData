@@ -1,0 +1,10 @@
+[Widgets] Vertical scroll bar appears on Text control if disabled then enabled
+Build ID: I20090611-1540
+Steps To Reproduce:
+Create a Text Control with V_SCROLL attribute.
+Disable it.
+Then enable it.
+The vertical scroll bar appears when not needed.
+Only way to get rid of it is to add text until the scroll bar acts properly and then delete the text.
+Cocoa only.
+More information:

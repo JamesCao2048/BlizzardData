@@ -1,0 +1,3 @@
+CLabel does not specify that "&" introduces mnemonic
+CLabel#setText(String) does not specify that "&" in the text is interpreted as mnemonic.
+Should have a boilerplate like org.eclipse.swt.widgets.Label#setText(String).

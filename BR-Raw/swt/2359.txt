@@ -1,0 +1,18 @@
+Make Objective-C Runtime APIs public in SWT WebKit.java for MacOS X
+Currently there are some methods defined to call Objective-C runtime APIs
+in org.eclipse.swt/Eclipse SWT
+Browser/carbon/org/eclipse/swt/browser/WebKit.java:
+static final native int objc_getClass(byte[] className);
+static final native int objc_msgSend(int object, int selector);
+static final native int objc_msgSend(int object, int selector, int arg0);
+static final native int objc_msgSend(int object, int selector, int arg0, int
+arg1);
+static final native int objc_msgSend(int object, int selector, int arg0, int
+arg1, int arg2);
+static final native int objc_msgSend(int object, int selector, int arg0, int
+arg1, int arg2, int arg3);
+static final native int sel_registerName(byte[] selectorName);
+These APIs are required to call Cocoa Objective-C APIs.
+But the current problem is these APIs are defined as package private only in
+org.eclipse.swt.browser.
+I think these APIs should be public, and move them in OS.java for MacOS X.

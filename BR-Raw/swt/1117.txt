@@ -1,0 +1,23 @@
+Typing text in Spinner does not change value
+Build id: I20090312-0100
+Run ControlExample and go to Spinner tab.
+Use the mouse to click on the little arrows
+- the text increments and decrements as expected.
+(for example, up, up, up goes to 3, then down, down goes to 1).
+Leave the value at 1 and go to to next step...
+Select the text in the text field and type a very different number, say 27.
+Now use the mouse to go up or down...
+note that clicking down goes to 0 and up goes to 2.
+(should be 26 and 28).
+Another test case:
+- use the mouse to change the value to 5
+- select the text and type 33
+- type TAB
+- after the spinner loses focus, the value goes back to 5
+Another test case:
+- use the mouse to change the value to 4
+- select the text and type 22
+- click on the Set/Get API button
+- Note that the value is 4, and not 22...
+but the Spinner still shows 22
+(What is also interesting is that if you type in a new value and then *type* an up or down arrow key, then the typed value does become the real value, and the value is incremented or decremented correctly).

@@ -1,0 +1,34 @@
+[Browser] Browser.addHelpListener does not work on SLED10 Linux when pressed F1 or Ctrl + F1
+Build ID: Eclipse3.3RC1
+Steps To Reproduce:
+public class Test {
+/**
+* @param args
+*/
+public static void main(String[] args) {
+Display d = new Display();
+Shell s = new Shell(d);
+s.setLayout(new FillLayout());
+Browser b = new Browser(s, 0);
+b.setUrl("www.eclipse.org");
+b.addHelpListener(new HelpListener(){
+public void helpRequested(HelpEvent e) {
+System.out.println("hello world");
+}
+
+});
+s.open();
+while(!s.isDisposed()){
+if(!d.readAndDispatch()){
+d.sleep();
+}
+}
+d.dispose();
+}
+}
+More information:
+The same problem happend in view part: Internal Web Browser on   SLED10 Linux.
+On Windows if you pressed F1 or Ctrl + F1, Eclipse help will pop up.
+But on Linux only Ctrl + F1 can pop up help in Eclipse.
+I don't know if it is a bug.
+Because if you open a native gtk app and press F1 the Linux help will pop up.

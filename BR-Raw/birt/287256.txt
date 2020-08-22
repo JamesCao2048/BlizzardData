@@ -1,0 +1,2 @@
+Bug 287256 [Regression]NPE occurred when deleting variable
+Description: NPE occurred when deleting variable Build number: 2.5.1.v20090821-0630 Steps to reproduce: 1, New a variable in data explorer 2, Select it and press delete Expected result: Deleting successfully without exception Actual result: NPE occurred when deleting variable Error log:

@@ -1,0 +1,4 @@
+Bug 259620 [Automation][Regression]Table header does not repeat in PDF
+Description: Export report to PDF format, but in 2nd page, table header disappeared.
+Test Build: BIRT2.5.0 v20081224-0630 Step to reproduce: 1.Use the report attached 2.Preview it in web viewer 3.Export all pages to PDF format Expect result: Table header is repeated in all pages.
+Actual result: Please refer to the pdf file attached.

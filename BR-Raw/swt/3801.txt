@@ -1,0 +1,6 @@
+Character positions differ between selected and unselected text
+I20021216
+- range select text in Java editor
+Observe: characters jump when being redraw
+The problem is rounding errors introduced when converting CG coordinates into SWT's
+integer coordinates while performing an incremental line update.

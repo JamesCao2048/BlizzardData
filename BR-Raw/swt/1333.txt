@@ -1,0 +1,3 @@
+underlineColor, strikeoutColor, borderColor not respected when tex is selected
+We changed the code to use underlineColor, strikeoutColor, borderColor (if set) even when the text is selected.
+Motif is forcing selection color for all cases.

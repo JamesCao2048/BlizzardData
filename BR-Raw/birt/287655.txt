@@ -1,0 +1,9 @@
+Bug 287655 File-read-only message will pop up twice if you select NO.[00]
+description: File-read-only message will pop up twice if you select NO.
+build id: 2.5.1 v20090826-0630 steps to reproduce: 1.New a report.
+2.Right click it in Navigator and select properties.
+Tick Read-only.
+3.Make some change to the report content.
+4.Preview.
+5.When asked whether to make it writable, click NO.
+Actual result: The message will pop up twice.

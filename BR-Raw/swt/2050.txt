@@ -1,0 +1,15 @@
+GTK: crash when calling Table.getItemHeight()
+Using SWT from HEAD, I got a crash.
+It is reproducible by playing around with the latest version of Quick Access (Ctrl-3).
+1XMCURTHDINFO  Current Thread Details
+NULL
+----------------------
+3XMTHREADINFO      "main" (TID:1006B9B8, sys_thread_t:8076848, state:R, native ID:401832A0) prio=6
+4XESTACKTRACE          at org.eclipse.swt.internal.C.memmove(Native Method)
+4XESTACKTRACE          at org.eclipse.swt.widgets.Table.rendererGetSizeProc(Table.java:2397)
+4XESTACKTRACE          at org.eclipse.swt.widgets.Display.rendererGetSizeProc(Display.java:1302)
+4XESTACKTRACE          at org.eclipse.swt.internal.gtk.OS._gtk_tree_view_column_cell_get_size(Native Method)
+4XESTACKTRACE          at org.eclipse.swt.internal.gtk.OS.gtk_tree_view_column_cell_get_size(OS.java:8130)
+4XESTACKTRACE          at org.eclipse.swt.widgets.Table.getItemHeight(Table.java:1438)
+4XESTACKTRACE          at org.eclipse.ui.internal.quickaccess.QuickAccessDialog.computeNumberOfItems(QuickAccessDialog.java:364)
+4XESTACKTRACE          at org.eclipse.ui.internal.quickaccess.QuickAccessDialog.refresh(QuickAccessDialog.java:371)

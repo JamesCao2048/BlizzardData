@@ -1,0 +1,9 @@
+Command+click to deselect one of a multi-selection doesn't work
+To reproduce:
+# with the mouse select more than one project in the Package Explorer view
+# Command-click one of the selected items to deselect it
+# Observe that the previous selection is discarded, and the clicked item becomes selected (bug)
+The expected behaviour is that Command-clicking one of a selection causes it to become deselected
+Discovered on:
+Version: 3.5.0
+Build id: I20090421-0930

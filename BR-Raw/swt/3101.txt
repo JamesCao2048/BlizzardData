@@ -1,0 +1,5 @@
+[Linux GTK] SWT Text displays the wrong characters if call addModifyListener
+SWT Text widget displays the different characters from the typed characters,
+if addModifyListener is called.
+os: RedHat Enterprise Linux 3.0 Update 3.0.
+ws: gtk

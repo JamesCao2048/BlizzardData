@@ -1,0 +1,11 @@
+KEY CTRL+O is passed to IE8
+Build Identifier: M20090211-1700
+When a browser widget has the focus (with IE8 on the machine), the key CTRL+O  is passe to it.
+This does not occur with IE6!
+As we use a key binding von CTRL+O to open an own dialog, now the standard open dialog from IE8 also opens.
+How can we suppress passing CTRL+O to IE8?
+Reproducible: Always
+Steps to Reproduce:
+1.Open a view with a browser widget (IE8 on the machine)
+2.Press CTRL+O
+3.The standard open dialog opens (which does not with IE6)

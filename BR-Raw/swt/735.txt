@@ -1,0 +1,23 @@
+[StyledText] Surrogate -- cannot delete a complete surrogate character in java editor using backspace
+Reporter: Huang Xing Jiang
+Language: Simplfied Chinese
+Build driver: eclipse-sourceBuild-srcIncluded-3.0M9
+JDK Version: IBM JDK 1.41
+Steps to recreate problem:
+1.	Open a text file in the text editor
+2.	Input a surrogate character ud840udc00 in the text file
+2.Try to delete character ud840udc00 using backspace
+<<Error>>
+Only half of the character was deleted.
+Another half appears as blank in the
+text editor, you can select the character using keyboard or mouse, but cannot
+see it
+<<Expected Result>>
+The whole surrogate character 鈥淺ud840udc00鈥 should be deleted
+<<Cause>>
+The text editor supposes that "Backspace" action will only delete "char"
+(16bit) in the editor, while surrogate character uses "two chars" (32 bit).
+<<Solution>>
+Modify "pluginsorg.eclipse.swtEclipse SWT Custom
+WidgetscommonorgeclipseswtcustomStyledText.java" to take 鈥淏ackspace鈥 as
+a 鈥渟tring cluster鈥 delete action

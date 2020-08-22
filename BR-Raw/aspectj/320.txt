@@ -1,0 +1,73 @@
+StackOverflowError on circular pointcut iff aspect parameterized
+The code below overflows when concretizing a circular pointcut from a
+parameterized aspect.  Not true when the aspect is not parameterized.
+---------------------------------------------
+public class SelfPC {
+public static void main(String[] args) {
+new C().foo();
+}
+static class C {
+pointcut doit() : C.doit(); // CE expected
+void foo() {}
+}
+
+// ------------ pertarget<T>
+static abstract aspect PT_PARM<T> pertarget(pc()) {
+abstract protected pointcut pc();
+before() : pc() {}
+}
+static aspect CPT_PARM extends PT_PARM<C> {
+protected pointcut pc() : C.doit();
+}
+
+//	// ------------ issingleton<T>
+//	static abstract aspect IS_PARM<T> {
+//		abstract protected pointcut pc();
+//		before() : pc() {}
+//	}
+//	static aspect CIS_PARM extends IS_PARM<C> {
+//		protected pointcut pc() : C.doit();
+//	}
+//	// ------------ pertarget
+//	static abstract aspect PT pertarget(pc()) {
+//		abstract protected pointcut pc();
+//		before() : pc() {}
+//	}
+//	static aspect CPT extends PT{
+//		protected pointcut pc() : C.doit();
+//	}
+//	// ------------ issingleton
+//	static abstract aspect SIS {
+//		abstract protected pointcut pc();
+//		before() : pc() {}
+//	}
+//	static aspect CSIS extends SIS {
+//		protected pointcut pc() : C.doit();
+//	}
+}
+---------------------------------------------
+java.lang.StackOverflowError
+at java.lang.StringBuffer.append(StringBuffer.java:225)
+at org.aspectj.weaver.UnresolvedType.nameToSignature(UnresolvedType.java:734)
+at org.aspectj.weaver.UnresolvedType.forName(UnresolvedType.java:308)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.fromBinding(EclipseFactory.java:302)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.fromEclipse(EclipseFactory.java:129)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseSourceType.getSuperclass(EclipseSourceType.java:119)
+at org.aspectj.weaver.ReferenceType.getSuperclass(ReferenceType.java:481)
+at org.aspectj.weaver.ResolvedType.getDirectSupertypes(ResolvedType.java:65)
+at org.aspectj.weaver.ResolvedType$6.get(ResolvedType.java:447)
+at org.aspectj.weaver.Iterators$4.next(Iterators.java:148)
+at org.aspectj.weaver.Iterators$3$1.hasNext(Iterators.java:117)
+at org.aspectj.weaver.Iterators$3.hasNext(Iterators.java:128)
+at org.aspectj.weaver.ResolvedType.findPointcut(ResolvedType.java:466)
+at
+org.aspectj.weaver.patterns.ReferencePointcut.concretize1(ReferencePointcut.java:269)
+at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:229)
+at
+org.aspectj.weaver.patterns.ReferencePointcut.concretize1(ReferencePointcut.java:326)
+at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:229)
+...
+---------------------------------------------

@@ -1,0 +1,13 @@
+[browser] fail to launch under RH EL3
+getFile ComsD
+getFile GreComsD
+getFile ComRegF
+getFiles APluginsDL
+getFile XptiRegF
+getFile XCurProcD
+getFile GreComsD
+Exception in thread "main" org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(SWT.java:2651)
+at org.eclipse.swt.SWT.error(SWT.java:2555)
+at org.eclipse.swt.browser.Browser.<init>(Browser.java:142)
+at PR.main(PR.java:14)

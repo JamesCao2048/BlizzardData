@@ -1,0 +1,4 @@
+[CCombo] CCombo#deselectAll() doesn't clear Text
+When calling CCombo#deselectAll() the selection the text shown is not cleared, only the selection in the list.
+This is different than what happens in an Combo where the text is also cleared.
+Snippet attached

@@ -1,0 +1,5 @@
+Mnemonics should not turn on until ALT is pressed
+In normal Windows apps, the focus rectangles are not drawn until the user initiates some keyboard navigation.
+Mnemonics are also not drawn until the user presses ALT (and ALT also turns on focus rects).
+In SWT Shells (and I believe since the work for  bug 118709 ), initiating a keyboard nav will cause not just focus rects to appear but also mnemonics.
+Mnemonics should not turn on until ALT is pressed.

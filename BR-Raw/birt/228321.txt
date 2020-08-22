@@ -1,0 +1,4 @@
+Bug 228321 [Automation][Regression]Space between every char is changed in PDF
+Description: Space between every char is changed in PDF.
+It blocks a lot of automation test cases so set its severity to major.
+Test Date: 20080423 Test Build: BIRT2.3.0 v20080423-0630 Step to reproduce: 1.Use the report attched 2.Preview it as PDF Expect result: Please refer to the golden file attached Actual result: Please refer to the failed screen shot

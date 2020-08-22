@@ -1,0 +1,11 @@
+DragImage looks bad on vista (table+tree)
+Created  attachment 101653   [details]
+patch
+Version: 3.4.0
+Build id: I20080522-0800
+The text of the drag image for table and tree look ugly on vista, this happens cause the keycolor is black (actually we don't set when we create SHDRAGIMAGE, zero=black) that it conflicts with Text anti-aliasing.
+We can improve that by using a colorkey less likely to happen in the image (black is very likely, on vista foreground text selection is black).
+getBackgroundPixel() is also bad cause it is white, and on xp foreground text selection is white.
+In the patch attached I used red.
+We also need to fill the image with the keycolor before drawing anything.
+Tested on vista and xp.

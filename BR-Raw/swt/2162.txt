@@ -1,0 +1,90 @@
+Table/Tree inconsistency with sorted column bg color when adding PaintItem listeners
+The Tree has the sorted column background colour, but the Table does not, when adding PaintItem/MeasureItem/EraseItem listeners.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final int columns = 3;
+final int itemCount = 10;
+final int colWidth = 175;
+//
+--
+final Tree tree = new Tree(shell, SWT.BORDER | SWT.VIRTUAL | SWT.FULL_SELECTION | SWT.MULTI);
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+for (int i = 0; i
+< columns; i++) {
+TreeColumn tc = new TreeColumn(tree, SWT.LEFT);
+tc.setText(i + " " + tc.toString());
+tc.setWidth(colWidth);
+tc.setMoveable(true);
+}
+
+tree.setSortDirection(SWT.DOWN);
+tree.setSortColumn(tree.getColumn(0));
+tree.setItemCount(itemCount);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+System.err.println("SetData:tIndex: " + event.index + " Item: " + event.item + " Event: " + event);
+TreeItem item = (TreeItem) event.item;
+String text = String.valueOf(event.index);
+for (int i = 0; i
+<= columns; i++) {
+item.setText(i, text + " " + item.toString());
+}
+}
+});
+
+//
+--
+final Table table = new Table(shell, SWT.BORDER | SWT.VIRTUAL | SWT.FULL_SELECTION | SWT.MULTI);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+
+for (int i = 0; i
+< columns; i++) {
+TableColumn tc = new TableColumn(table, SWT.LEFT);
+tc.setText(i + " " + tc.toString());
+tc.setWidth(colWidth);
+tc.setMoveable(true);
+}
+
+table.setSortDirection(SWT.DOWN);
+table.setSortColumn(table.getColumn(0));
+table.setItemCount(itemCount);
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+System.err.println("SetData:tIndex: " + event.index + " Item: " + event.item + " Event: " + event);
+TableItem item = (TableItem) event.item;
+String text = String.valueOf(event.index);
+for (int i = 0; i
+<= columns; i++) {
+item.setText(i, text + " " + item.toString());
+}
+}
+});
+//
+--
+Listener l = new Listener() {
+public void handleEvent(Event event) {
+String eventName = "";
+switch (event.type) {
+case SWT.MeasureItem :
+eventName = "MeasureItem";
+break;
+case SWT.EraseItem :
+eventName = "EraseItem";
+break;
+case SWT.PaintItem :
+eventName = "PaintItem";
+break;
+}
+System.err.println(eventName + "tIndex: " + event.index + " Item: " + event.item + " Event: "
++ event);
+}
+};
+tree.addListener(SWT.MeasureItem, l);
+tree.addListener(SWT.EraseItem, l);
+tree.addListener(SWT.PaintItem, l);
+
+table.addListener(SWT.MeasureItem, l);

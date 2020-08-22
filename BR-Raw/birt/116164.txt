@@ -1,0 +1,7 @@
+Bug 116164 Preview paginated html file in external browser(IE) will throw IE system error.
+Description: Preview paginated html file in external browser(IE) will throw IE system error.
+Steps to reproduce: 1.Preview attached file in external browser(IE/Firefox) 2.Select print preview Expected result: Preview correct and no errors.
+Actual result: IE: Internet Explorer has encountered a problem and needs to close.
+We are sorry for the inconvenience.
+Firefox: Only showed the first page and the first item.
+Other contents could not be seen.

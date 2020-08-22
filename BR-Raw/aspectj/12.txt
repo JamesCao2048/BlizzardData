@@ -1,0 +1,15 @@
+WildAnnotationTypePattern.java:231
+OK, I get that this is not supported (and what I *want* here is matching on the existence of the supplied header *among* the headers in the String[]). A feature request might be in order, but a syntax for specifying how you want to match the array would be needed....
+The bug that I'm reporting is that trying to *save* this program gets an error that pops up a dialog. This should just become another error marker.
+It might the compiler that has to change what it throws, but in the end it's the Eclipse IDE that ends up breaking from a user standpoint.
+(RequestMapping.headers() is of type String[]).
+public aspect Fail {
+pointcut testable(): execution(public * @RequestMapping(headers="x-test=test") com.example..*(..));
+}
+java.lang.RuntimeException
+at org.aspectj.weaver.patterns.WildAnnotationTypePattern.resolveAnnotationValues(WildAnnotationTypePattern.java:231)
+at org.aspectj.weaver.patterns.WildAnnotationTypePattern.resolveBindings(WildAnnotationTypePattern.java:325)
+at org.aspectj.weaver.patterns.WildTypePattern.resolveBindings(WildTypePattern.java:657)
+at org.aspectj.weaver.patterns.SignaturePattern.resolveBindings(SignaturePattern.java:81)
+at org.a ... n(Worker.java:53)
+Compile error: RuntimeException thrown: Compiler limitation: annotation value support not implemented for type java.lang.String[]

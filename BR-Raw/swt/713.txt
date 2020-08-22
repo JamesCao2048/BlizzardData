@@ -1,0 +1,6 @@
+Left border of CTabFolder tab is off by one
+Created  attachment 161781   [details]
+Screenshot
+HEAD (was OK in 3.6 M5)
+The left border of CTabFolder tabs is off by one.
+It should move 1px to the left, so that is is flush with the border of the tab folder.

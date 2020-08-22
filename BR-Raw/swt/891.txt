@@ -1,0 +1,9 @@
+Background color of Combo is always gray
+Build ID: M20080911-1700
+Steps To Reproduce:
+1.create a Combo in a FormPage with style of SWT.READ_ONLY.
+2.adapt the combo by FormToolKit, or setBackground to any color other than gray.
+3.The combo's background color is always gray on Linux.
+It is okey on Windows.
+4.If the style of the combo does not have SWT.READ_ONLY, the color is okey.
+More information:

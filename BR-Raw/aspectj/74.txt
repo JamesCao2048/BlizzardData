@@ -1,0 +1,14 @@
+NullPointerException during weaving
+Created  attachment 172090   [details]
+AspectJ compile log
+Using the Maven plugin to compile aspects into my code I get the following exception:
+鈥
+---- Exception Information ---
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelObjectType.ensureGenericSignatureUnpacked(BcelObjectType.java:823)
+at org.aspectj.weaver.bcel.BcelObjectType.getSuperclass(BcelObjectType.java:228)
+at org.aspectj.weaver.ReferenceType.getSuperclass(ReferenceType.java:905)
+at org.aspectj.weaver.bcel.AtAjAttributes.handleAspectAnnotation(AtAjAttributes.java:490)
+at org.aspectj.weaver.bcel.AtAjAttributes.readAj5ClassAttributes(AtAjAttributes.java:234)
+鈥
+I have attached the complete log as attachment.

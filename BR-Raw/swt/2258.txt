@@ -1,0 +1,42 @@
+Regression: Alt+Numpad keystrokes broken (Part 2)
+SWT-win32, v3309
+Seems like  bug 56999  is back.
+- Run the snippet below
+- Type Alt+0227 (using the numpad keys, NumLock=on)
+Output in 3.2:
+KeyDown: stateMask=0, keyCode=65536, character=?
+KeyDown: stateMask=65536, keyCode=16777264, character=0
+KeyDown: stateMask=65536, keyCode=16777266, character=2
+KeyDown: stateMask=65536, keyCode=16777266, character=2
+KeyDown: stateMask=65536, keyCode=16777271, character=7
+KeyDown: stateMask=0, keyCode=0, character=茫
+Output in 3.309:
+KeyDown: stateMask=0, keyCode=65536, character=?
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class NumpadTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.addListener(SWT.KeyDown, new Listener() {
+public void handleEvent(Event e) {
+System.out.println(
+"  KeyDown:"
++ " stateMask="  + e.stateMask
++ ", keyCode="   + e.keyCode
++ ", character=" + e.character);
+}
+});
+
+shell.setSize(200, 100);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

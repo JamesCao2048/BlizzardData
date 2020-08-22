@@ -1,0 +1,32 @@
+NullPointerException in Scrollable when parent=null
+SWT 3230 GTK  (no NPE on win32):
+Move the scrollbar in this snippet:
+public static void main(String[] args) {
+
+Display display = new Display();
+Shell shell = new Shell(SWT.H_SCROLL);
+
+ScrollBar hscroll = shell.getHorizontalBar();
+hscroll.setMinimum(0);
+hscroll.setMaximum(500);
+
+shell.setBounds(50, 50, 300, 200);
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Scrollable.updateScrollBarValue(Scrollable.java:360)
+at org.eclipse.swt.widgets.ScrollBar.gtk_value_changed(ScrollBar.java:370)
+at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1400)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3790)
+at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:5242)
+at org.eclipse.swt.widgets.Display.eventProc(Display.java:1133)
+at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:1424)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2838)
+More information:
+Your bugzilla bug wizard is very annoying.

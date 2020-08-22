@@ -1,0 +1,5 @@
+Bug 160542 Improve Sample Data in Chart Builder
+- Show more points (5 instead of 3)
+- Make sure two identical series have different data values so the output is not identical for both series
+- Create specific sample data for each series type to demo the specificities of the series
+- Scale data according to hard-coded values in the chart model such as Scale Min/Max, or marker lines/ranges positions

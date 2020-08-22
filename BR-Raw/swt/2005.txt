@@ -1,0 +1,9 @@
+Tree Viewer Collapse Extremely Slow on Vista
+Build ID: I20070517-1700
+Steps To Reproduce:
+Launch attached test application
+1.Expand the "Root" item in the tree
+2.Select the first child, "Item 0"
+3.Collapse the "Root" item
+More information:
+The collapse takes ~12 seconds on Vista, but takes negligible time on Windows XP, Linux x86 (Open SUSE 10.2), and MacOS X.

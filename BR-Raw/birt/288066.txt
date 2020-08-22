@@ -1,0 +1,4 @@
+Bug 288066 [Regression] Create new data binding pops up when editing measure binding with no modification [1102]
+Description: Create new data binding pops up when editing measure binding with no modification Build number: 2.5.1.v20090831-0630 Steps to reproduce: 1, New a crosstab has dimensions and measures 2, Select the measure binding and click Edit button in Binding page 3, Do nothing and click OK Expected result: No need to pops up the "Create new data binding" dialog if there is no changing.
+Actual result: After clicking OK button, "Create new data binding" dialog pops up.
+Then click no button and repeat step2,3, after clicking ok button, "Create new data binding" dialog won't pop up.

@@ -1,0 +1,31 @@
+PRIMARY_MODAL Shell can make other Shell lose its menubar
+- run the snippet below
+- note that the main Shell has menubar item "Menu"
+- push its Button to create a PRIMARY_MODAL child Shell
+- click away to some other running app
+- click back on the _original_ Shell (not the child Shell)
+- close the PRIMARY_MODAL child Shell
+- now the original Shell is all that's left, but its menubar item is not shown
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+Button b = new Button(shell, SWT.PUSH);
+b.setText("Open dialog");
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+Shell dialog = new Shell(shell, SWT.PRIMARY_MODAL | SWT.SHELL_TRIM);
+dialog.setSize(100, 50);
+dialog.open();
+}
+});
+Menu bar = new Menu(shell, SWT.BAR);
+shell.setMenuBar(bar);
+new MenuItem(bar, SWT.CASCADE).setText("Menu");
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

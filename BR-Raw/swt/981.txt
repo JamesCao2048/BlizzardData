@@ -1,0 +1,9 @@
+Tree item icons drawn into next column
+Created  attachment 136171   [details]
+Screenshot
+I20090515-1143
+When the first column of a tree has icons, but is too narrow to show the whole icon, then the image leaks into the next column (shows up behind text).
+To reproduce in the ControlExample, I had to select/unselect the tree items to force a redraw.
+In the Problems view, I saw this right on startup.
+Resizing the first column doesn't correct the problem immediately
+-- need to force a redraw again.

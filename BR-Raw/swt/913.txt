@@ -1,0 +1,10 @@
+Label: SWT.CENTER is being ignored when used with SWT.WRAP
+Created  attachment 135592   [details]
+snippet
+I took the SWT integration build I20090512-2000:
+Once I used the carbon library and another time the cocoa.
+The cocoa one ignores the SWT.CENTER stylebit when you use it with the SWT.WRAP on Labels.
+Full snippet is attached.
+Label wrappedLabel = new Label(shell, SWT.CENTER | SWT.WRAP);
+Wraps the label but doesn't center the text.
+Works with the carbon library.

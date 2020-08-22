@@ -1,0 +1,4 @@
+Bug 120503 Cascading Parameter can not drop into layout
+Details: Cascading Parameter can not drop into layout Step: 1.Open a report design and Create a Sample Data Source and data set by "select * from CLASSICMODELS.CUSTOMERS" 2.New a cascading parameter and create CUSTOMERSNUMBER and CUSTOMERSNAME in parameter named number and name.
+Press OK 3.Drop parameter name into layout.
+Actual results: The parameter in Cascading Parameter Group can not drop to layout

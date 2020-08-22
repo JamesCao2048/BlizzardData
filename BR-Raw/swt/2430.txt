@@ -1,0 +1,7 @@
+Can't size columns smaller then title
+When I have a column with a long title but narrow data, I cannot make the column
+smaller than the title.
+You can see this in Eclipse: Open the Problems view and try to make any column
+narrower than the title.
+I would suggest that Eclipse allows to make a column smaller than the title and
+add a tooltip when the title doesn't fit in the available space.

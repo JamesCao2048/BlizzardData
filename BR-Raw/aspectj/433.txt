@@ -1,0 +1,24 @@
+Visibility selector ignored for pointcuts
+Using ajdoc under AJDT 1.1.12 or AspectJ 1.2.1 at the commandline has the
+following aspect has problems.
+public abstract aspect Aspect {
+private pointcut privatePointcut ();
+protected pointcut protectedPointcut ();
+public pointcut publicPointcut ();
+
+private void privateMethod () {
+
+}
+
+public void protectedMethod () {
+
+}
+
+public void publicMethod () {
+
+}
+}
+1. Asking for "protected" gives all pointcuts (public, protected _and_ private)
+2. The Aspect entry is wrong: "public abstract class Aspect"
+3. The "Methods inherited ..." section has a leading comma: ", clone, equals,
+finalize, ..."

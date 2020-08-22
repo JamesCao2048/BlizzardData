@@ -1,0 +1,8 @@
+Cocoa: top-level menus not updated as you switch between editors
+I installed the Eclipse MDT Galileo RC2 build for MacOSX (cocoa).
+The Eclipse toolbar does not switch when I switch between editors.
+For example, if I edit a plugin.xml file and switch to a *.uml file, the toolbar should update and show me the "UML Editor" menu.
+This doesn't happen!
+To force a toolbar refresh, I found that I can invoke the Eclipse Preferences dialog (apple-comma), cancel it (escape) and then the toolbar will be properly updated.
+With a workspace eclipse and a runtime eclipse, this is even worse because there is only one toolbar for both on the mac.
+In that case, switching between the workspace & the runtime does not refresh the toolbar either.

@@ -1,0 +1,62 @@
+StyledText crashes on double-click of whitespace
+Build ID: I20080207-1530
+Steps To Reproduce:
+1.Open CustomControlExample with Cocoa
+2.Go to "StyledText" tab
+3.Double-click on the whitespace area in the text box, but outside the bounds of the actual existing text (e.g.
+double-click a few pixels to the right of the word "Three")
+4.Wait a second or two
+The SWT application crashes.
+Eclipse's terminal output of the error is similar to that of  bug #210894  however the proposed patch in this bug does not resolve the crash issue.
+Eclipse shows this terminal output:
+2008-03-21 14:37:43.110 java[438:80f] *** _NSAutoreleaseNoPool(): Object 0x15afb0 of class NSException autoreleased with no pool in place
+- just leaking
+Stack: (0x9044a12f 0x90356ec2 0x9035e378 0x951c262e 0x951c2d18 0x513e 0x258a)
+2008-03-21 14:37:43.112 java[438:80f] An uncaught exception was raised
+2008-03-21 14:37:43.112 java[438:80f] ***
+-[NSBigMutableString characterAtIndex:]: Range or index out of bounds
+2008-03-21 14:37:43.113 java[438:80f] *** _NSAutoreleaseNoPool(): Object 0x128bf0 of class NSCFString autoreleased with no pool in place
+- just leaking
+Stack: (0x9044a12f 0x90356ec2 0x9036202a 0x9523c1ce 0x92bfb0fb 0x951c2aec 0x951c2d18 0x513e 0x258a)
+2008-03-21 14:37:43.113 java[438:80f] *** _NSAutoreleaseNoPool(): Object 0x153e90 of class NSCFData autoreleased with no pool in place
+- just leaking
+Stack: (0x9044a12f 0x90356ec2 0x9036b2a5 0x9036ae81 0x9523c1e2 0x92bfb0fb 0x951c2aec 0x951c2d18 0x513e 0x258a)
+2008-03-21 14:37:43.113 java[438:80f] *** Terminating app due to uncaught exception 'NSRangeException', reason: '***
+-[NSBigMutableString characterAtIndex:]: Range or index out of bounds'
+2008-03-21 14:37:43.115 java[438:80f] Stack: (
+2502148683,
+2462036219,
+2502148139,
+2502148202,
+2419638347,
+2474404120,
+2474403972,
+120514023,
+56121777,
+56097407
+)
+OS X's error reporting mechanism shows this information:
+Process:         java [438]
+Path:            /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
+Identifier:      java
+Version:         ???
+(???)
+Code Type:       X86 (Native)
+Parent Process:  eclipse [370]
+Date/Time:       2008-03-21 14:37:43.128
+-0300
+OS Version:      Mac OS X 10.5.2 (9C31)
+Report Version:  6
+Exception Type:  EXC_BREAKPOINT (SIGTRAP)
+Exception Codes: 0x0000000000000002, 0x0000000000000000
+Crashed Thread:  0
+Application Specific Information:
+*** Terminating app due to uncaught exception 'NSRangeException', reason: '***
+-[NSBigMutableString characterAtIndex:]: Range or index out of bounds'
+Thread 0 Crashed:
+0   com.apple.CoreFoundation      	0x9523c0f4 ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___ + 4
+1   libobjc.A.dylib               	0x92bfb0fb objc_exception_throw + 40
+2   com.apple.CoreFoundation      	0x951c2aec CFRunLoopRunSpecific + 4380
+3   com.apple.CoreFoundation      	0x951c2d18 CFRunLoopRunInMode + 88
+4   java                          	0x0000513e 0x1000 + 16702
+5   java                          	0x0000258a 0x1000 + 551

@@ -1,0 +1,33 @@
+When VerifyListener is added in org.eclipse.swt.widgets.Text, StringIndexOutOfBoundsException might be occurred by UNDO operation.
+When VerifyListener is added in org.eclipse.swt.widgets.Text, StringIndexOutOfBoundsException might be occurred by UNDO operation.
+java.lang.StringIndexOutOfBoundsException: String index out of range: 10
+at java.lang.String.<init>(String.java:220)
+at org.eclipse.swt.internal.win32.TCHAR.toString(TCHAR.java:115)
+at org.eclipse.swt.widgets.Text.wmClipboard(Text.java:2004)
+at org.eclipse.swt.widgets.Text.windowProc(Text.java:1772)
+When a new text is taken out, it processes it within the range of the selection of the previous state of UNDO.
+
+Therefore, the exception is generated.
+if (length != 0 && start [0] != end [0]) {
+====================
+TCHAR buffer = new TCHAR (getCodePage (), length + 1);
+OS.GetWindowText (handle, buffer, length + 1);
+newText = buffer.toString (start [0], end [0]
+- start [0]);
+==============================
+} else {
+newText = "";
+}
+It is necessary to keep the following.
+int [] newStart = new int [1], newEnd = new int [1];
+OS.SendMessage (handle, OS.EM_GETSEL, newStart, newEnd);
+if (length != 0 && newStart [0] != newEnd [0]) {
+==========================
+TCHAR buffer = new TCHAR (getCodePage (), length + 1);
+OS.GetWindowText (handle, buffer, length + 1);
+newText = buffer.toString (newStart [0], newEnd [0]
+- newStart [0]);
+=======================================
+} else {
+newText = "";
+}

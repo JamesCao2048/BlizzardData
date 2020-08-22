@@ -1,0 +1,38 @@
+SIGSEGV from swt-3.2M4-gtk-linux-x86_64.zip
+SWT 3.2M4   3218
+In an app that uses SWT, which works fine on all other platforms, the x86_64 version crashes the JVM:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x00002aaaaae500f5, pid=8352, tid=46912501819088
+#
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (1.5.0_06-b05 mixed mode)
+# Problematic frame:
+# C  [libc.so.6+0x740f5]  memmove+0x35
+#
+---------------  T H R E A D
+---------------
+Current thread (0x00000000401156e0):  JavaThread "main" [_thread_in_native, id=8352]
+siginfo:si_signo=11, si_errno=0, si_code=1, si_addr=0x00000000fff90f54
+Registers:
+RAX=0x00002aa9f052d1dc, RBX=0x00007ffffff901b8, RCX=0x00002aaaf04be130, RDX=0x00002aaaf04be134
+RSP=0x00007ffffff900b0, RBP=0x00002aaaf04be130, RSI=0x00000000fff90f54, RDI=0x00002aaaf04be130
+R8 =0x00002aaaab868840, R9 =0x0000000040117848, R10=0x00002aaaab86c070, R11=0x00002aaaab5d95c0
+R12=0x00002aaaf04be130, R13=0x0000000000000004, R14=0x00000000fff90f54, R15=0x00000000401156e0
+RIP=0x00002aaaaae500f5, EFL=0x0000000000010202, CSGSFS=0x000000000000fd28, ERR=0x0000000000000004
+TRAPNO=0x000000000000000e
+Instructions: (pc=0x00002aaaaae500f5)
+0x00002aaaaae500e5:   00 00 00 48 85 d2 74 18 48 8d 54 15 00 48 89 e9
+0x00002aaaaae500f5:   0f b6 06 48 ff c6 88 01 48 ff c1 48 39 ca 75 f0
+Stack: [0x00007fffffd95000,0x00007ffffff95000),  sp=0x00007ffffff900b0,  free space=2028k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x740f5]  memmove+0x35
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.gtk.OS.memmove([IJJ)V+0
+j  org.eclipse.swt.widgets.Spinner.gtk_insert_text(JJJJ)J+59
+j  org.eclipse.swt.widgets.Widget.windowProc(JJJJJ)J+65
+j  org.eclipse.swt.widgets.Display.windowProc(JJJJJ)J+24
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.gtk.OS._gtk_spin_button_set_value(JD)V+0
+j  org.eclipse.swt.internal.gtk.OS.gtk_spin_button_set_value(JD)V+9
+j  org.eclipse.swt.widgets.Spinner.setSelection(I)V+60

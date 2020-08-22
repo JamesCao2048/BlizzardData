@@ -1,0 +1,12 @@
+Up and Down keys not always work for Combo
+It occurs only on GTK.
+After creating a read only combo, and add to it several
+values, by pressing the up / down keys, the value of the combo changes.
+This
+works almost fine with two problems, the first value of the combo and the last
+value of the combo.
+When i reach to the first value and press the up key, the
+focus is lost, and pressing either up or down key won't release me from this
+state, only using the mouse will do the work here.
+Same for the last value, but
+with pressing the down key.

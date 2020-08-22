@@ -1,0 +1,2 @@
+Bug 156658 Error occour when previewing a text with a style set word-spacing 20cm in PDF
+Description: Error occour when previewing a text with a style set word-spacing 20cm Steps to reproduce: 1.new a text and input some text like "actuate great" 2.new a style and set word-spacing 20cm then apply it to the text 3.Preview in PDF Expected: No error occour Actual: Error occour Error log: org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report

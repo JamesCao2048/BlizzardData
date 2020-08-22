@@ -1,0 +1,14 @@
+Pressing TAB key creates junk in editor
+1.Create a new build.xml file.
+2.Enter the following contents, indenting the lines with tabs as shown:
+<project default="sleep">
+<target name="sleep">
+<sleep seconds="10"/>
+</target>
+</project>
+3.Place the cursor in front of the
+<target tag and press TAB.
+The editor line will change to display:
+<tar<target name="sleep">
+The junk is just a region that's not getting redrawn correctly.
+The characters aren't really there.

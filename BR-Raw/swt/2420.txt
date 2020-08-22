@@ -1,0 +1,7 @@
+[painting] Ctrl+End brings StyledText into strange state
+In Text Editor or Java Editor typing CTRL+PAGEUP and CTRL+PAGEDOWN creates left
+margin if last line is longer than visible editor width and text is longer
+(vertically) than visible editor area.
+Workaround: Positioning on last character in last line and typing any key but
+ARROW UP removes this extra margin.
+It is reproducable always.

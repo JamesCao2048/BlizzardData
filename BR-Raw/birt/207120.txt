@@ -1,0 +1,6 @@
+Bug 207120 Please model provide an API for data type conversion.
+Currently, there're two data types: column data type and parameter data type.
+But they're inconsistent.
+Could model provide APIs for conversion between the two types.
+Thanks.
+In addition: please check the code into head and 2.2.1 branch, because we have a 2.2.1 bug to fix.

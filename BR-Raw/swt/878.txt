@@ -1,0 +1,10 @@
+spinner widget on Mac always has native border
+The Mylyn task editor embeds a spinner widget on a Forms UI with the following code:
+estimatedTime = new Spinner(composite, SWT.FLAT);
+estimatedTime.setDigits(0);
+estimatedTime.setMaximum(100);
+estimatedTime.setMinimum(0);
+estimatedTime.setIncrement(1);
+estimatedTime.setSelection(getTask().getEstimatedTimeHours());
+estimatedTime.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+On Carbon and Cocoa the spinner gets a double border whereas on other platforms the inner border around the text field is not present (see screenshot).

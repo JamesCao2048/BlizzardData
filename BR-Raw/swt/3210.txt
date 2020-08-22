@@ -1,0 +1,5 @@
+Carbon vertical Scale widget has top/bottom reversed from other platforms
+A Scale widget with SWT.VERTICAL style has larger values at the top and smaller values at the bottom in
+Carbon, but larger values at the bottom and smaller values at the top in GTK+ and Win32.
+This makes it harder to present a consistent interface behavior across platforms, particularly for things
+like volume sliders which have a clear conventional direction.

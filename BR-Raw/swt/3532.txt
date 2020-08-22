@@ -1,0 +1,8 @@
+Toolbar dropdown items don't fire immediately
+I20031010 and later
+Jaguar or Panther
+- in Eclipse's Java perspective select an action from the drop down menu of a toolbar item
+- make sure not to move the mouse after releasing the mouse button
+Observe: nothing happens
+- move the mouse
+Observe: now the action executes

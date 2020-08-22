@@ -1,0 +1,5 @@
+Different callback behavior on Windows and Mac with Combo widget
+I will attach the test class.
+On windows, org.eclipse.swt.widgets.Combo.setText(String) fires a modifyText
+callback to the registered modify listeners.
+The callback does not occur on Mac OSX.

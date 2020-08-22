@@ -1,0 +1,9 @@
+SWT ToolItem loses text when only one item and VERTICAL with image
+Created  attachment 112542   [details]
+Snippet demonstrating bug
+Build ID: M20080703-0800
+Steps To Reproduce:
+Run attached snippet.
+Note text for ToolItem truncated/not shown.
+Uncommenting the second createItem call shows both ToolItems successfully.
+Affects Windows but not Linux/GTK.

@@ -1,0 +1,8 @@
+Bug 222515 Export report to library will lose library reference in report item.[01]
+Description: Export report to library will lose library reference in report item.
+Build number:2.3.0.v20080313 Steps to reproduce: 1.New a library with a label.
+2.Drag the label to a report.
+3.Export the report to another library.
+4.Check label in the second library.
+Expected result: Label keeps the library reference information in the second library.
+Actual result: "Include library" information is kept in second library but label loses library references Error log:n/a

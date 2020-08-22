@@ -1,0 +1,25 @@
+Strange clipping when scaling and rotating drawText
+The text "hello" is getting randomly clipped to some strange polygon.
+This
+problem requires both scaling and rotation to be applied, the translation is
+optional.
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+Transform t = new Transform(display);
+t.translate(40, 40);
+t.rotate(30);
+t.
+scale(5, 5);
+gc.setTransform(t);
+gc.setLineWidth(1);
+//gc.setForeground(ColorConstants.darkBlue);
+gc.drawRectangle(-10,
+-10, 20, 20);
+//			TextLayout tl = new TextLayout(display);
+//			tl.setText("TextLayout");
+//			tl.draw(gc, 0, 0);
+gc.drawText("hello", 0, 5);
+//gc.drawRectangle(0, 5, 40, 12);
+}
+});

@@ -1,0 +1,20 @@
+Native crash in SWT when brower JavaScript closes the window
+1) In Windows XP with SWT 3.2 M4 (and also M3), open a Shell that has a Browser widget.
+2) In the Browser, run some asynchronous JavaScript to close the window.
+Something like the following JavaScript:
+setTimeout("window.close();", 5000);
+The JVM will core dump with:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x635f6fe0, pid=13620, tid=15084
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_06-b05 mixed mode, sharing)
+# Problematic frame:
+# C  [mshtml.dll+0x76fe0]
+#
+# An error report file with more information is saved as hs_err_pid13620.log
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#

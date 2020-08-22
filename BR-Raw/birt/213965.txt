@@ -1,0 +1,8 @@
+Bug 213965 Can only select the first four rows in the Data Preview table in chart builder.
+description: Can only select the first four rows in the Data Preview table in chart builder.
+build version: 2.2.2 v20071228-1951 steps to reproduce: 1.Under preference->Report Design->Chart, set the Max row number of Data Preview larger than 4.2.New a report.
+3.New a datasource with sample DB and new a dataset with table CUSTOMERS.
+4.Insert a chart to the report, bind the dataset, define customername as category and define customernumber as value series.
+On Date Preview table, try to select the rows at the bottom.
+Expected reslut: Rows can be selected and highlighted.
+Actual result: Rows can not be selected and rows at the top are highlighted.

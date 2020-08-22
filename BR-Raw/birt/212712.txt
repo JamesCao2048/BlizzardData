@@ -1,0 +1,6 @@
+Bug 212712 run --config "logdir=xxx" in genReport can not create folder auto[00]
+Descriiption: run
+--config "logdir=xxx" in genReport can not create folder auto[00] Run the genReport, and add the variable of
+--config "logdir=xxx".
+If xxx is not exist, it will pop up the error.
+Expected: It can create the folder auto.

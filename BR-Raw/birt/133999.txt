@@ -1,0 +1,2 @@
+Bug 133999 Background image won't apply to the column
+Steps to reproduce: 1.New a table with some labels 2.Choose one column, apply a style with background image Expected result: Background image will be applied to the column Actual result: Background image didn't apply to the column in layout, but preview is ok

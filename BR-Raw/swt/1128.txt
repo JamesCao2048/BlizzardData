@@ -1,0 +1,40 @@
+Null pointer resizing fast view
+I20090312-0100
+Make the "Problems View" a Fast View.
+Select the "Error Log".
+Show the "Problems View".
+Try to resize it by grabbing the sash over the "Error Log" view.
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Sash.mouseDown(Sash.java:354)
+at org.eclipse.swt.widgets.Display.windowDelegateProc(Display.java:4254)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:205)
+at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:1680)
+at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:1723)
+at org.eclipse.swt.widgets.Display.windowDelegateProc(Display.java:4318)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:3925)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:3946)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:101)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2874)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2393)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2357)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2209)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:499)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:492)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:585)
+at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:556)
+at org.eclipse.equinox.launcher.Main.basicRun(Main.java:511)
+at org.eclipse.equinox.launcher.Main.run(Main.java:1284)

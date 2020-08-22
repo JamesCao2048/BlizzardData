@@ -1,0 +1,2 @@
+Bug 123404 Pre-define style shouldn't be listed in the style list
+Description: Pre-define style shouldn't be listed in the style list Steps to reproduce: 1.Add a label 2.New a pre-define style named "label", set font color to red 3.New a text, select it Expected result: The pre-define style can't apply to the text through any way Actual result: In property editor or properties sheet, the style list lists the pre-define style, and it can be applied to the text Note: In context menu, pre-define style is invisible for the text

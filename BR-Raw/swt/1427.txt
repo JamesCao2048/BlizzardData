@@ -1,0 +1,47 @@
+Keypad Enter and Help keys do not draw in MenuItems
+The following snippet works on Carbon, but the menu items are not drawn on Cocoa.
+SK, any ideas?
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+public class Snippet {
+static Display display;
+
+public static void main(String[] args) {
+display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+Menu menuBar = new Menu(shell, SWT.BAR);
+shell.setMenuBar(menuBar);
+
+MenuItem item = new MenuItem(menuBar, SWT.CASCADE);
+item.setText("Test");
+Menu menu = new Menu(shell, SWT.DROP_DOWN);
+item.setMenu(menu);
+item = new MenuItem(menu, SWT.PUSH);
+item.setText("Fake CTRL+Keypad Entertu2303u2305");
+
+item = new MenuItem(menu, SWT.PUSH);
+item.setText("Fake CTRL+Helptu2303u211C");
+
+display.addFilter(SWT.Selection, new Listener () {
+public void handleEvent (Event e) {
+System.out.println("Selection: " + e);
+}
+});
+display.addFilter(SWT.KeyDown, new Listener() {
+public void handleEvent(Event e) {
+System.out.println("KeyDown: " + new KeyEvent(e));
+}
+});
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

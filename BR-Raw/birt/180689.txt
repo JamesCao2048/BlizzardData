@@ -1,0 +1,2 @@
+Bug 180689 [Regression]Chart with flipped axes doesn't display properly [0001]
+Chart with flipped axes doesn't display properly [0001] Build number: 2.2.0.v20070403-1345 Steps to reproduce: 1.new a sample DB data source and set CUSTOMERS as data set 2.new a bar chart using the data set,set CUSTOMERNAME as X-series,CREDITLIMIT as Y-series,click Ok 3.preview in html 4.double click the chart in layout and check "Flip axes" 5.preview in html Expected result: Chart with flipped axes is displayed in html Actual result: Chart with flipped axes isn't displayed in html Error log: N/A

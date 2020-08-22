@@ -1,0 +1,6 @@
+Bug 140754 Can't turn to the right station when use drill-through
+Details: Can't turn to the right station when use drill-through Step: 1.New a report design named R1.2.Add two label.
+3.Add page break and set the bookmark as "a" on the second label.
+4.New another report design named R2.5.Add a label in R2 and set the hyperlink to R1-"a".
+Actual result: Preview R2 and click the hyperlink.
+I find that it only open R1, but turn to the state of the second label.

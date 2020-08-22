@@ -1,0 +1,8 @@
+SWT.DragDetect should not be sent when left clicking with Ctrl down
+Run eclipse and open a perspective with a stack of views.
+1) Press and hold the control key.
+2) Press left mouse button on a tab and move mouse.
+The contextual menu shows.
+3) Dismiss the contextual menu (press ESC).
+4) Move the mouse.
+The view drag effects (green rectangles) show up.

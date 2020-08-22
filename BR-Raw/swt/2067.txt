@@ -1,0 +1,47 @@
+SEGV in libswt-pi-gtk-3330
+I was opening a context menu in 3.3 with the v04 patch from  bug 174633  when it SEGVed.
+My base target is I20070313-1051
+I have the wide variety of J9 dump files, please let me know if you need them.
+An excerpt:
+1CIJAVAVERSION J2RE 5.0 IBM J9 2.3 Linux x86-32 build j9vmxi3223-20061001
+1CIVMVERSION   VM build 20060915_08260_lHdSMR
+1CIJITVERSION  JIT enabled
+- 20060908_1811_r8
+1CIRUNNINGAS   Running as a standalone JVM
+The native stack from my core dump looks like:
+#10
+<signal handler called>
+#11 0x00b8aa4d in g_type_check_instance_is_a ()
+from /usr/lib/libgobject-2.0.so.0
+#12 0x04acdd77 in gtk_widget_get_display () from /usr/lib/libgtk-x11-2.0.so.0
+#13 0x049e710b in gtk_menu_shell_activate_item ()
+from /usr/lib/libgtk-x11-2.0.so.0
+#14 0x049e742a in gtk_menu_shell_activate_item ()
+from /usr/lib/libgtk-x11-2.0.so.0
+#15 0x049ddb6b in gtk_menu_reorder_child () from /usr/lib/libgtk-x11-2.0.so.0
+#16 0x049d7bf7 in gtk_marshal_VOID__UINT_STRING ()
+from /usr/lib/libgtk-x11-2.0.so.0
+#17 0x00b6a6b2 in g_cclosure_new_swap () from /usr/lib/libgobject-2.0.so.0
+#18 0x00b6a347 in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#19 0x00b80576 in g_signal_has_handler_pending ()
+from /usr/lib/libgobject-2.0.so.0
+#20 0x00b81613 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#21 0x00b81c5a in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#22 0x04acb725 in gtk_widget_activate () from /usr/lib/libgtk-x11-2.0.so.0
+#23 0x049d5ebb in gtk_propagate_event () from /usr/lib/libgtk-x11-2.0.so.0
+#24 0x049d61c0 in gtk_main_do_event () from /usr/lib/libgtk-x11-2.0.so.0
+#25 0x05724b6e in Java_org_eclipse_swt_internal_gtk_OS__1gtk_1main_1do_1event
+Unhandled exception
+Type=Segmentation error vmState=0x00040000
+J9Generic_Signal_Number=00000004 Signal_Number=0000000b Error_Value=00000000 Signal_Code=00000001
+Handler1=00D9B478 Handler2=002193E7 InaccessibleAddress=00002807
+EDI=08AC2838 ESI=00002800 EAX=00002800 EBX=00B9BA5C
+ECX=00000000 EDX=08AC2838
+EIP=00B8AA4D ES=0000007B DS=C031007B ESP=BFF31688
+EFlags=00210206 CS=00000073 SS=0000007B EBP=BFF316B0
+Module=/usr/lib/libgobject-2.0.so.0
+Module_base_address=00B61000 Symbol=g_type_check_instance_is_a
+Symbol_address=00B8A9F3
+Target=2_30_20060915_08260_lHdSMR (Linux 2.6.9-34.0.1.EL)
+CPU=x86 (1 logical CPUs) (0x6e508000 RAM)
+PW

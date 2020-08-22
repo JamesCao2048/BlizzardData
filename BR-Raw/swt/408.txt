@@ -1,0 +1,38 @@
+Debug view should not scroll to right when breakpoint is hit
+I20080807-1402, was OK in 3.3.2 and 3.4.
+Paste the class below to the Package Explorer, set the breakpoint, and then debug as Java application.
+When the breakpoint is hit (in both threads), make sure that the Debug view is so narrow that its toolbar just fits on one row (the view then shows a horizontal scroll bar).
+Press F8.
+=> Was: Tree scrolls to the right
+=> Expected: Tree should not scroll horizontally
+Even when you drag the thumb to the left, pressing F8 always scrolls to the right again.
+package xy;
+public class Try {
+public static void main(String[] args) {
+new Thread("Worker") {
+public void run() {
+goDeep();
+}
+}.start();
+goDeep();
+}
+static void goDeep() {
+for (int i = 0; i
+< 10; i++) {
+deep(50);
+}
+}
+private static void deep(int i) {
+if (i > 0) {
+deep(i
+- 1);
+} else {
+try {
+Thread.sleep(1000);
+} catch (InterruptedException e) {
+e.printStackTrace();
+}
+System.out.println("hi"); // breakpoint
+}
+}
+}

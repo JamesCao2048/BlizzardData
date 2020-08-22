@@ -1,0 +1,15 @@
+VM crash when pressing enter in table cell editor
+RC 1
+
+- JUnit setup
+- select Assert.assertEquals(String message, double expected, double actual,
+double delta)
+- activate cell editor for for row 0, column 0
+- press enter.
+
+java version "1.4.1_01"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.1_01-b01)
+Java HotSpot(TM) Client VM (build 1.4.1_01-b01, mixed mode)
+GTK 2.2.1
+
+No log files generated

@@ -1,0 +1,15 @@
+StringIndexOutOfBoundsException in FontData.getLocale()
+If the lang, country, and variant fields are all null in a FontData, the
+getLocale() method on win32 will throw a StringIndexOutOfBoundsException.
+The
+following program will generate the exception on my WinXP box:
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.graphics.*;
+public class FontDataGetLocaleBug {
+public static void main(String[] args) {
+final Display display = new Display();
+FontData[] fds = display.getFontList(null, true);
+for (int i=0; i<fds.length; ++i)
+fds[i].getLocale();
+display.dispose();
+}}

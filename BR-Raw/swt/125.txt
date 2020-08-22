@@ -1,0 +1,2 @@
+Use gtk_accessible_get_widget on GTK3
+We are supposed to get the widget via the function call and not by reading the struct field (impossible in Gtk3).

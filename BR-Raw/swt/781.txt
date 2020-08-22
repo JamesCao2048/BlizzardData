@@ -1,0 +1,11 @@
+AIOBE in TextLayout
+This was caused by the changes for  Bug 241482 .
+Here is simple case that reproduces the problem:
+TextLayout layout = new TextLayout(display);
+layout.setText("Line");
+layout.setAscent(20);
+layout.setDescent(6);
+layout.setSegments(new int[] {0, layout.getText().length()});
+layout.getBounds();
+I'm afraid N20091117-2000 is useless:
+http://download.eclipse.org/eclipse/downloads/drops/N20091117-2000/testResults.php

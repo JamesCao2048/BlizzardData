@@ -1,0 +1,8 @@
+Use JNI add an window callback function to Shell, function can not be called.
+Build Identifier: IES 3.6.1Carbon      Version:3.6.1         Build id:M20100909-0800
+For some reason,We had added an window callback function to Shell.We had implemented this by jni native c code.We passed Shell.handle to the jni functions and call carbon api HMInstallWindowContentCallback to add an callback function.In swt 3.5.2,the window callback works correctly but in 3.6.1, it won't be called.
+Reproducible: Always
+Steps to Reproduce:
+1.New an Shell.
+2.Use carbon api HMInstallWindowContentCallback to add a window callback function to the Shell.
+3.The window callback function won't be called in carbon 3.6.1

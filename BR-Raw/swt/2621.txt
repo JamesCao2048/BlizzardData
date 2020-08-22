@@ -1,0 +1,9 @@
+Redraw problems on resizing Tree column
+Tree cell contents are not redrawing properly in 3.2M1 where:
+- the tree has visible column headers, and column resizing is enabled
+- only one column exists
+When the right hand edge of the column is dragged leftwards, it draws over the
+cell contents, but the cell is not redrawn.
+Some content is still visible
+outside the cell.
+This is a new bug which does not occur in v3.1.Illustrative screenshots to follow.

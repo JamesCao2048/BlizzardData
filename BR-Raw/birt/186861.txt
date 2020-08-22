@@ -1,0 +1,3 @@
+Bug 186861 BIRT Cross tab - Filter doesnt work
+Filter condition on cross tab does not work.
+Please try to run the attached report, the filter doesnt seem to apply, I tried using row["Product Line"] and data["Product line"] as filter expression.

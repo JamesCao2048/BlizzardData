@@ -1,0 +1,13 @@
+Modify Method Parameters: wrong enablement of buttons
+F1
+
+Suse 8.0, KDE 3.0, GTK 2
+
+- create a method foo(int i)
+- select in outliner
+- execute Modify Method Parameters (Refactor Menu).
+observe: Move Up/Down is disabled
+- press Next
+- press Back
+observe: Move Up/Down is enabled.
+-

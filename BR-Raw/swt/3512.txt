@@ -1,0 +1,9 @@
+Combo API doc/problems
+v3030
+The add(String,int) method should throw an InvalidRange error when int is
+< 0
+as the API states and to be consistent with List.
+The test case for the add
+method includes this particular scenario (the code is currently commented out).
+The documentation for the setItem(String) and setItems(String[]) methods should
+indicate that NullArgument exception thrown.

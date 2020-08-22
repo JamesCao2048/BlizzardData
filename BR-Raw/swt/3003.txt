@@ -1,0 +1,8 @@
+Control in vertical ToolBar doesn't fit
+- observed on win32, solaris-motif and solaris-gtk (kindof), so this should
+probably be tried everywhere
+- run the ControlExample, go to the ToolBar tab
+- turn on the Combo Child checkbox
+- select the SWT.VERTICAL radio
+- you'll end up with something like the attachment (there are supposed to be 7
+full toolitems before the Combo, but only about 6.1 of them are shown)

@@ -1,0 +1,14 @@
+Ctrl-Click in package explorer select the item only on the second click
+I20080304-1113
+WinXP
+- Open the package explorer.
+make sure colored labels are enabled.
+- select an element
+- press and keep pressing 'Ctrl"
+- click on a second element
+> This only sets the focus box, the element is not selected
+- click a second time on a element: Now element is selected
+Disable colored labels (Java > Appearance)
+(all owner draw listeners will be removed):
+- selection behavior normal again
+(or use 'Snippet050DelegatingStyledCellLabelProvider' in org.eclipse.jface.snippets)

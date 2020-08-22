@@ -1,0 +1,4 @@
+Skip gtk_check_version for gtk 3.0+.
+This will effectively allow trying to start against any major version of Gtk bigger than 3.Considering that it would be fairly hard work to compile/link against such version trying to run is not a problem.
+It's done this way because gtk_check_version returns false if the major version is different no matter higher or lower but we need a way to try running against multiple major version from the java side.
+Commit/patch:  http://fedorapeople.org/cgit/akurtakov/public_git/eclipse.platform.swt.git/commit/?h=gtk_check_version&id=ba4b859681ebeff75830fe419edf3d7cb2cbc6b1

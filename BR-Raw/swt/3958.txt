@@ -1,0 +1,25 @@
+Background color of Graphical Editors is always black.
+This bug can be reproduced by the logic example plugin.
+When it is run the
+entire background of the LogicEditor is black, rendering connections invisible
+to the user.
+The background appears correctly in windows, and in motif-eclipse.
+This same bug occurs also in the plug-in we are currently developing.
+Our
+visualization design is similar to the logic example plug-in.
+Unlike the logic
+plug-in, the editor we use does not extend GraphicalEditorWithPalette, but
+rather an implementation of EditorPart very similar to GraphicalEditor.
+Attempts to set the background color from our custom GraphicalEditor fail.
+The
+call we are making to set the background color is:
+protected void configureGraphicalViewer(){
+getGraphicalViewer().getControl().setBackground(ColorConstants.white);
+}
+The same source code works correctly in motif eclipse, but I have not tested
+it with windows eclipse.
+This is with libgtk2.0 version 2.0.5-2 on Debian.
+If
+you have any questions feel free to contact me.
+-Adam Childs
+abc4669@ksu.edu

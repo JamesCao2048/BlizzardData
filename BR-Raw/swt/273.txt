@@ -1,0 +1,5 @@
+Make gtk_tooltips_data_get dynamic.
+All calls to the function were already guarded against execution when
+using GTK versions newer than 2.12.
+Commit/patch:
+http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=94f29bac49f22d5b86328c21a476f3a5a57c94d8

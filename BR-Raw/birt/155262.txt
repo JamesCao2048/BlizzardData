@@ -1,0 +1,3 @@
+Bug 155262 Total.countDistinct() method returns null on empty resultset
+If you use Total.countDistinct(row.aColumn, null, 0) or Total.countDistinct(dataSetRow.aColumn, null, 0) and the resultset for the dataset is empty, the method returns null.
+It should return 0.

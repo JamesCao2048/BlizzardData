@@ -1,0 +1,18 @@
+Bug 237427 Fixed facet stuck on "unchecked" after switching web module on the main project wizard page
+Eclipse Build ID: I20080530-1730 WTP build ID: 3.0RC4-20080611064752 Steps To Reproduce: 1.Install the BIRT wtp integration 2.3RC4 plugin in eclipse.
+It is called org.eclipse.birt.integration.wtp.ui and can be found in the URL specified in the report.
+2.Select New->Project->Web->"Web Project with BIRT Runtime".
+3.Click on "Modify..." and see that the "BIRT Runtime Component" facet is checked and can't be unchecked (fixed facet).
+4.Go back to the main wizard page and switch the web module to "2.3" or "2.5".
+5.The "Configuration/Preset" will automatically switch to "<custom>".
+6.Click on "Modify..." again.
+Now the "BIRT Runtime Component" facet is unselected, even though it is defined as fixed facet in plugin.xml.
+7.Now check out the "BIRT Runtime Component" facet, and try to uncheck it.
+The "BIRT Runtime Component" facet stays checked and can't be unchecked.
+8.Go back to the main wizard page, and go back again in "Modify": "BIRT Runtime Component" is unchecked again.
+Expected behaviour: Since the "BIRT Runtime Component" is a fixed facet, it must stay selected whatever preset or web module is selected on the main page.
+More information: Note that this issue doesn't happen if you don't switch the web module.
+If you keep web module 2.4 and manually select "<custom>", the fixed facets (including BIRT) are properly selected.
+Switching the web module on the facet page instead of main page works fine.
+My interpretation of the problem is that the logic that switches the web module version on the main wizard page may internally untick the "BIRT" fixed facet and then force it to remain unselected.
+I guess that the interpretation of "fixed facet" here would be that the status of the facet can't be changed, even if this status is "unchecked".

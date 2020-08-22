@@ -1,0 +1,33 @@
+can't resolve nested public interfaces
+This may be caused by the bug as 32399
+file TransactionTest.java:
+import sub.ExecutionMonitor;
+public class TransactionTest {
+static Transaction theTransaction;
+private void assertCommitted() {
+theTransaction.getCount("method-execution", "commit");
+}
+static aspect MonitorTest {
+declare parents: Transaction implements ExecutionMonitor.MonitoredItem;
+}
+}
+class Transaction {
+}
+file sub/ExecutionMonitor.aj:
+package sub;
+public aspect ExecutionMonitor {
+public interface MonitoredItem {
+int getCount(String eventType, String eventName);
+}
+public int MonitoredItem.getCount(String eventType, String eventName) {
+return 0;
+}
+}
+sample compilation:
+C:devel>ajc -1.4 TransactionTest.java subExecutionMonitor.aj
+can't bind type name 'ExecutionMonitor$MonitoredItem'
+C:/devel/TransactionTest.java:7: The method getCount(java.lang.String, java.lang
+.String) is undefined for the type Transaction
+theTransaction.getCount("method-execution", "commit");
+^^^^^^^^
+2 errors

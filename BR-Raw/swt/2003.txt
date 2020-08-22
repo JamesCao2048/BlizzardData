@@ -1,0 +1,5 @@
+TreeEditor closes CCombo after 500ms
+M7
+TreeEditor registers a timer that sets the focus on the control (in ControlEditor.layout()) after 500ms.
+This closes an already dropped-down CCombo.
+Snippet follows, wrapping the CCombo in a Composite seems to work around the problem.

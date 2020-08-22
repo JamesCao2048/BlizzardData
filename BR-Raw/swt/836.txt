@@ -1,0 +1,11 @@
+[Browser]Can't visit sharing folder in internal browser if path depth>2
+Build ID: I20080617-2000
+Steps To Reproduce:
+Open internal browser, try to visit a sharing folder in another machine: e.g.
+input url "file://<machine ip>/<folderA>/<folderB>/<folderC>" in browser.
+There will be no authorization dialog prompt up to let user input username and password, and internal browser will tell user "This program cannot display the webpage" after hang a few minutes.
+But if the path depth
+< 2, e.g.
+visit  file://<machine ip> or file://<machine ip>/<folderA>, everything will be ok.
+More information:
+I'm in windows XP Service Pack 3 with Internet Explorer 7.0.5730.11.

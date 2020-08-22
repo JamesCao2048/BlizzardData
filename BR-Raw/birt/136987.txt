@@ -1,0 +1,8 @@
+Bug 136987 Images that span over multiple pages are scaled when generating PDF
+I have a chart and a table in a report.
+The chart and table have a width value of 1900 pixels.
+Therefore the chart and table spans two pages.
+Now I want to convert this report to PDF.
+It seems that the PDF version scales the width.
+I don't want the image to scale.
+I would like the image to span over multiple pages.

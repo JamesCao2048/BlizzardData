@@ -1,0 +1,2 @@
+Bug 162340 NPE thrown when select the report name in outline and press F2 in RCP
+NPE thrown when select the report name in outline and press F2 in RCP Steps to reproduce: 1.new a RCP report and new a report design 2.go to outline and select the report design name 3.press F2 Expected result: No NPE thrown in error log Actual result: NPE thrown in erro log

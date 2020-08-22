@@ -1,0 +1,57 @@
+[Browser] setText can fail with IE6 on XP SP2
+Build ID: I20070625-1500
+Steps To Reproduce:
+1.Unzip eclipse-SDK-3.3-win32.zip to drive D:
+2.Run eclipse.exe
+3.A new file hs_err_pid2728.log was created in eclipse folder
+Whenever I repeat the above steps even using Eclipse 3.3 zip files, I get files of the form hs_err_pid9999.log.
+More information:
+My OS is Windows XP Service Pack 2.My default browser is Firefox 2.0.0.6
+COntents of hs_err_pid2728.log:
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x2082b548, pid=2728, tid=2732
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0_02-b06 mixed mode)
+# Problematic frame:
+# C  0x2082b548
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#
+---------------  T H R E A D
+---------------
+Current thread (0x00935c00):  JavaThread "main" [_thread_in_native, id=2732]
+siginfo: ExceptionCode=0xc0000005, writing address 0x80004005
+Registers:
+EAX=0x80004005, EBX=0x2082b548, ECX=0x0000bb40, EDX=0x77ccfc24
+ESP=0x0012ea3c, EBP=0x0012ea68, ESI=0x00000002, EDI=0x00935c00
+EIP=0x2082b548, EFLAGS=0x00010212
+Top of Stack: (sp=0x0012ea3c)
+0x0012ea3c:   00000002 0012eaa0 000000b2 0012ea48
+0x0012ea4c:   2082b548 0012ea7c 20848338 00000000
+0x0012ea5c:   2082b548 00000000 0012ea78 0012eaa0
+0x0012ea6c:   00972dd5 208463b8 00978429 00000002
+0x0012ea7c:   00000015 0012ea80 21a32598 0012eac8
+0x0012ea8c:   21a4de60 00000000 21a326b0 0012ea78
+0x0012ea9c:   0012eac4 0012eaec 00972edd 00000000
+0x0012eaac:   00000000 00000000 10227e90 10227e40
+Instructions: (pc=0x2082b548)
+0x2082b538:   ff 00 00 00 e0 01 0f 00 ac 01 00 00 00 00 00 00
+0x2082b548:   01 00 00 00 60 0d 02 20 18 b5 82 20 f0 b4 7f 20
+Stack: [0x00030000,0x00130000),  sp=0x0012ea3c,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x2082b548
+j  org.eclipse.swt.browser.IE.setText(Ljava/lang/String;)Z+192
+j  org.eclipse.swt.browser.Browser.setText(Ljava/lang/String;)Z+17
+j  org.eclipse.ui.internal.intro.impl.presentations.BrowserIntroPartImplementation.generateDynamicContentForPage(Lorg/eclipse/ui/internal/intro/impl/model/AbstractIntroPage;)Z+218
+j  org.eclipse.ui.internal.intro.impl.presentations.BrowserIntroPartImplementation.dynamicStandbyStateChanged(ZZ)V+99
+j  org.eclipse.ui.internal.intro.impl.presentations.BrowserIntroPartImplementation.doStandbyStateChanged(ZZ)V+58
+j  org.eclipse.ui.internal.intro.impl.model.AbstractIntroPartImplementation.standbyStateChanged(ZZ)V+73
+j  org.eclipse.ui.internal.intro.impl.model.IntroPartPresentation.standbyStateChanged(ZZ)V+13
+j  org.eclipse.ui.intro.config.CustomizableIntroPart.standbyStateChanged(Z)V+88
+j  org.eclipse.ui.internal.ViewIntroAdapterPart$2.run()V+19
+j  org.eclipse.swt.custom.BusyIndicator.showWhile(Lorg/eclipse/swt/widgets/Display;Ljava/lang/Runnable;)V+116
+j  org.eclipse.ui.internal.ViewIntroAdapterPart.setStandby(Z)V+28
+j  org.eclipse.ui.internal.ViewIntroAdapterPart$

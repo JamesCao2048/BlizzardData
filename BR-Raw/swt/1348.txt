@@ -1,0 +1,3 @@
+remove printlns in Accessibility
+There's a debug println in Accessible.getRangeForLineParameterizedAttribute
+and one in SWTAccessibleDelegate.accessibilitySetValue_forAttributethat should be removed.

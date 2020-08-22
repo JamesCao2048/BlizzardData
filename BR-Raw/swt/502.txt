@@ -1,0 +1,47 @@
+Shell with RESIZE and SHEET style does not pack properly
+Build Identifier: 3.7m2
+On Mac (cocoa) if the shell includes both the SWT.RESIZE and SWT.SHEET styles then calling pack() will leave the window too short.
+If either of these styles is excluded then pack works correctly.
+See example below.
+Reproducible: Always
+Steps to Reproduce:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+public class TestSheet {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+FillLayout layout = new FillLayout();
+layout.marginWidth = 50;
+layout.marginHeight = 50;
+shell.setLayout(layout);
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Push Me");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+Shell popup = new Shell(shell, SWT.DIALOG_TRIM | SWT.SHEET
+| SWT.RESIZE);
+popup.setLayout(new GridLayout());
+for (int i = 1; i
+< 6; i++) {
+new Button(popup, SWT.PUSH).setText("Button " + i);
+}
+popup.pack();
+popup.open();
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

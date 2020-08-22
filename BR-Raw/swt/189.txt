@@ -1,0 +1,3 @@
+Omit use of deprecated GTK_WIDGET_SET_X and GTK_WIDGET_SET_Y for newer GTK+
+This patch omits use of deprecated constants GTK_WIDGET_SET_X and GTK_WIDGET_SET_Y using GtkAllocation instead:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gtk_widget_set_xy

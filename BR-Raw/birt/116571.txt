@@ -1,0 +1,3 @@
+Bug 116571 Report dataset can't refer library datasource
+Description: Report dataset can't refer library datasource Steps to reproduce: 1.New a report and a library with datasource, dataset 2.Report includes the library 3.New a dataset in report which refers library.datasource Expected result: New dataset can be created Actual result: Warning message: "There is no data source available.
+Please add a data source first."

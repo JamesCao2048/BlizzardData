@@ -1,0 +1,5 @@
+Bug 104760 "Ctrl+A/X/C/V" doesn't work for label content in layout view.
+Description: "Ctrl+A/X/C/V" doesn't work for label content in layout view.
+Steps to reproduce: 1.Add a label and fill in content..
+2.Press "Ctrl+A/X/C/V" to edit its content.
+Actual result: it doesn't work.

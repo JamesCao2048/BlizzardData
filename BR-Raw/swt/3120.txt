@@ -1,0 +1,5 @@
+[Layouts] add marginLeft, marginRight, marginTop and marginBottom to GridLayout
+It would be nice to have these fields in GridLayout (note that similar ones
+already exist in RowLayout).
+To not break compatibility, they all could have the
+default value of 0.

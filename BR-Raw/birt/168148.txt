@@ -1,0 +1,6 @@
+Bug 168148 [regression]Table with chart from library fails to preview.[01][0001]
+Description: Table with chart from library fails to preview.
+Build number:2.1.2.v20061215 and 2.2.0.v20061213 Steps to reproduce: 1.Create a library, create a sample DB data source and data set: select * from orders 2.Insert a tabel to the library, bind data set to the table 3.Insert a group for the tabel ,group by "row["OrderDate"]", Interval: Year, Range:1 4.Drag a chart into 3rd cell on group row, bar chart, go to "Select Data" tab , bind data set, X Series:row["OrderDate"], Y Series:row["OrderNumger"]; click "Finish" button 5.Create a new report, use the library 6.Drag the table in the library to the report.
+7.Preview in html.
+Expected Result: Report content displays without errors.
+Actual result: Error happened while running the report.(same for 2.1.2 and 2.2.0) Error log: org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report

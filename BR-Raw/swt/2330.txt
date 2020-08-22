@@ -1,0 +1,16 @@
+BIDI: StyledText does not convert European Number to Arabic Number
+StyledText does not convert European Number(EN) to Arabic Number(AN) on WinXP.
+How to reproduce:
+1.Change the user language to Arabic on "Regional and Language Options" panel
+on Windows.
+(do not specify "-nl" command line arguments.)
+2.Create Shell with SWT.RIGHT_TO_LEFT flag.
+3.add StyledText on the shell.
+4.Set text "012345 abc 012345" in StyledText widget.
+5.Open and run the shell.
+Result:
+All the numbers are still European Number characters on StyledText widget.
+Text widget displays the first "012345" as Arabic Numbers.
+This is reproducible on swt-I20041221-0800-win32.(also, in Eclipse3.0GA)
+Thanks,
+Hiro

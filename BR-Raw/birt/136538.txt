@@ -1,0 +1,8 @@
+Bug 136538 chart cannot inherite table's columns binding when drag into table's group header
+steps to reproduce:
+- create a table
+- define columns binding
+- insert a group
+- drag a chart into table's group header expected behavior:
+- chart can inherite table's columns binding actual behavior:
+- it simply couldn't

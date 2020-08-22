@@ -1,0 +1,18 @@
+[Mac] Right clicking on app in Dock and selecting Quit does nothing if file needs to be saved
+With Eclipse 3.2 on the Mac OSX,
+Steps:
+1.Launch Eclipse
+2.Open some source code for editing.
+3.Make an edit, but dont save it.
+4.Minimize the application to the Dock.
+5.Right click on the application in the Dock and choose Quit
+Note: For us, the problem was reported with our RCP application that we generated through Eclipse.
+However, I made the repro steps similar just with the Eclipse IDE itself.
+Actual:
+Nothing happens, if you right click again you will notice a "save Resource" item
+in the menu.
+You can continue to click on quit
+Expexcted:
+It should behave like other Mac OSX applications.
+Their icons do the 'bouncy icon' thing to alert the user that theres a problem that needs attention.
+The user then left clicks on it in the dock to open the app and see the "Save Resources" dialog.

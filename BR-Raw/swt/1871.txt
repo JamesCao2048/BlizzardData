@@ -1,0 +1,10 @@
+GTK-BIDI: RTL support in MessageBox
+Created  attachment 80657   [details]
+Patch
+Build ID: 3.4M2
+Steps To Reproduce:
+1.Run application, witch creates MessageBox with RTL orientation style.
+Result: dialog has LTR orientation.
+More information:
+RTL orientation isn't set for all tree of GTK widgets.
+Attachment contains patch for latest sources.

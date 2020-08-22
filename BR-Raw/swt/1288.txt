@@ -1,0 +1,7 @@
+Menu createItem leaks NSMenuItem
+In createItem, we do the following:
+NSMenu emptyMenu = item.createEmptyMenu ();
+if (emptyMenu != null) {
+nsItem.setSubmenu (emptyMenu);
+}
+createEmptyMenu alloc the NSMenuItem, but we don't autorelease it and we don't keep a reference so we can't release it later.

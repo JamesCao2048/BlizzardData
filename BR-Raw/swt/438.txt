@@ -1,0 +1,10 @@
+[Widgets] Windows 7 Jump List items impose "standard" on arguments passed to new instance
+Build Identifier: 3.6M6
+Recently implemented Windows 7 Jump List (which is awesome) items impose "standard" on argumants that are passed to new instance with pattern like shown below:
+--launcher.openFile /SWTINTERNAL_ID101
+It's used solely on Eclipse, but for applications that are not using Eclipse exe launcher are confusing and in some cases troublesome.
+I've made quick fix on my local build of SWT, but would like to suggest streamlined version of it, for use in other applications, I can provide patch for it, essentially I've used Widget's data property "argument" that overrides default argument passed to new instance.
+Reproducible: Always
+Steps to Reproduce:
+1.Create Windows 7 Jump List items (TaskItem inside TaskBar)
+2.Use newly created item to launch new instance of application

@@ -1,0 +1,14 @@
+Index out of bounds from Combo.select()
+The Javadoc for the org.eclipse.swt.widgets.Combo.select() methods says that
+indecies that are out of range are ignored by on the Mac platform I get the
+following exception:
+java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:2318)
+at org.eclipse.swt.SWT.error(SWT.java:2262)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:506)
+at org.eclipse.swt.widgets.Combo.select(Combo.java:1155)
+I found the following line in the source code, which I assume is where the
+exception is being thrown:
+if (0 > index || index >= count) error (SWT.ERROR_INVALID_RANGE);
+This causes the Mac platform to behave differently then other platforms and
+from the way the document says it should work.

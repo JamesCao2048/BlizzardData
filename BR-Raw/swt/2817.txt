@@ -1,0 +1,6 @@
+[accessibility, consistency] Make Link and Spinner accessible on GTK
+Need to get the latest GTK, ATK, and Gnopernicus first, because apparently,
+the latest accessibility works much better than before.
+Spinner might just work, because it's native, but it needs to be tested.
+Link is emulated, so it will need to have accessibility added.
+Also need to test all controls, given that accessibility is 'real' on GTK now.

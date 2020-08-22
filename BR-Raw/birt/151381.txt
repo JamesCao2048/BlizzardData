@@ -1,0 +1,3 @@
+Bug 151381 [Smoke]The parameter didn't display in the web viewer
+Description: Preview a parameter in the web viewer, it can't be previewed.
+Step to reproduce: 1.new a report and a parameter 2.drag it to the layout 3.preview it in the web viewer Actual result: the parameter is not displayed

@@ -1,0 +1,5 @@
+[CTabFolder] losing focus problem?
+In the launch configuration dialog if you are in a control on a tab, for example a text field on the arguments tab, and hit the enter key, the configuration will launch instead of giving you a new line in the text field (when the default button is set to the run button).
+If I revert the tabs back to native tabs/tabfolder this is not a problem.
+Also to get around this problem we have removed the run/debug button as the default button, causing a regression in the form of  bug 139562 .
+Any thoughts/ideas?

@@ -1,0 +1,8 @@
+TableItem.getImage periodically throws ArrayOutOfBoundsException
+In the final call to imageList.get (imageIndex), sometimes imageIndex ==
+-1.
+This causes an ArrayIndexOutOfBounds exception in the call to imageList.get.
+This is happening because the index of ptr [0] is not in the table.
+Would it be
+possible to put in a check for this?
+It causes a bunch of other downstream errors.

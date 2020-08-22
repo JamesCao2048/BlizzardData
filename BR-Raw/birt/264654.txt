@@ -1,0 +1,3 @@
+Bug 264654 Can not delete XML source of a new report by pressing Backspace
+Description: Can not delete XML source of a new report by pressing Backspace Build number: 2.5.0.v20090212-0630 Steps to reproduce: 1, New a report 2, Go to XML Source tab 3, Press Ctrl+A 4, Press Backspace Expected result: XML Source is deleted Actual result: The focus is lost and failed to delete XML Source.
+Error log:

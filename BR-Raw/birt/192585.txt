@@ -1,0 +1,6 @@
+Bug 192585 The Tube/Cone/Pyramid Chart Y Axis type will be Date/Time after change type to Gantt then change back [0001]
+Description: The Tube/Cone/Pyramid Chart Y Axis type will be Date/Time after change type to Gantt then change back Build number: 2.2.0.v20070614-0939 Steps to reproduce: 1.Drag a chart from the Palette to the Layout.
+2.Select chart type as Gantt, then change to Tube/Cone/Pyramid.
+Expected result: The Chart in the preview pane is the same as the one when chart builder first opened.
+Actual result: Their Y Axis type change to Date/Time(see the screenshot).
+Error log: N/A

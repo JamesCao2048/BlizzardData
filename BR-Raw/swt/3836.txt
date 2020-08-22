@@ -1,0 +1,27 @@
+THAI: Java Editor can not display u0e33 (Thai character SARA UM)
+Enablement testing: Thai language
+Build driver: eclipse-SDK-M3-win32.zip
+Severity: major
+OS: Windows XP
+Test case #: sniff test
+Summary : Thai: Java Editor can not display u0e33 (Thai character SARA UM)
+Description:
+When I enter u0e33 (Thai character SARA UM) to Java editor or Text editor in
+Eclipse, all characters in the same line are disappeared.
+The editor shows only a
+square character at that line.
+Note: This problem has not been found in Eclipse 2.02
+Steps to create the problem
+1) Create new text file or java file.
+2) Copy the following Thai text (8 lines) to clipboard.
+脿禄莽鹿脕鹿脴脡脗矛脢脴麓禄脙脨脿脢脙脭掳脿脜脭脠陇脴鲁陇猫脪
+隆脟猫脪潞脙脙麓脪陆脵搂脢脩碌脟矛脿麓脙脩篓漏脪鹿
+篓搂陆猫脪驴脩鹿戮脩虏鹿脪脟脭陋脪隆脪脙
+脥脗猫脪脜茅脪搂录脜脪颅脛氓脿垄猫鹿娄猫脪潞脮卤脪茫陇脙
+盲脕猫露脳脥芒路脡芒隆脙赂谩陋猫搂芦脩麓脦脰麓脦脩麓麓猫脪
+脣脩麓脥脌脩脗脿脣脕脳脥鹿隆脮脤脪脥脩陋卢脪脢脩脗
+禄炉脭潞脩碌脭禄脙脨戮脛碌脭隆庐隆脫脣鹿麓茫篓
+戮脵麓篓脪茫脣茅篓锚脨 忙 篓毛脪 忙 鹿猫脪驴脩搂脿脥脗脧
+3) Paste the text to Eclipse's Java editor.
+4) The problem is that the line #7 that includes u0e33 (Thai character SARA UM)
+are displayed as one square character.

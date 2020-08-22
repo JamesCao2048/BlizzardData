@@ -1,0 +1,20 @@
+Negative zoom factor reported from magnification gesture on Mac OS X
+The magnification as reported by SWT in GestureEvent.magnification on OS X can become negative if you pinch (zoom out) sufficiently within a single gesture.
+As this is a zoom factor, it should never be negative.
+(This is an extreme example that the SWT reported magnification factor doesn't correspond to the actual movement of the fingers.
+If you move the fingers from 10 cm apart to 5 cm apart, the magnification factor should be around 0.5.The speed of the gesture shouldn't matter, but in SWT it does.)
+This can easily be viewed in Snippet 353:
+http://git.eclipse.org/c/platform/eclipse.platform.swt.git/tree/examples/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet353.java
+When this happens, the rectangle flips so that it is above and to the left of the fixed corner, instead of below and to the right (unless you've rotated it).
+It can also be seen by adding this line to the handling of SWT.GESTURE_MAGNIFY:
+System.out.println("Magnification: " + ge.magnification);
+The fix is so simple, I won't even create a patch for it.
+Instead, in org.eclipse.swt.widgets.Control.gestureEvent(...) replace
+display.magnification += nsEvent.magnification();
+with
+display.magnification *= (1.0 + nsEvent.magnification());
+It seems the current implementation took the description from
+http://developer.apple.com/library/mac/documentation/cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html#//apple_ref/occ/instm/NSEvent/magnification
+far too literally.
+A better description, including example code, can be found at
+http://developer.apple.com/library/mac/documentation/cocoa/conceptual/EventOverview/HandlingTouchEvents/HandlingTouchEvents.html#//apple_ref/doc/uid/10000060i-CH13-SW17

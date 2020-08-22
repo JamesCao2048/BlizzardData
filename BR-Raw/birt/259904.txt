@@ -1,0 +1,4 @@
+Bug 259904 Script method afterDrawMarker is not invoked after beforeDrawMarker
+Taking a look at this piece of code from AxisRenderer Line 2350: ScriptHandler.callFunction( sh, ScriptHandler.BEFORE_DRAW_MARKER, m, dph, getRunTimeContext( ).getScriptContext( )); getRunTimeContext( ).notifyStructureChange( IStructureDefinitionListener.BEFORE_DRAW_MARKER, m ); if ( dph != null && ( isNaN( dph.getOrthogonalValue( ) ) || dph.isOutside( ) ) ) { return; } When data point hint is null or invalid, only beforeDrawMarker is invoked.
+This is not correct.
+Expected behavior is that neither beforeDrawMarker nor afterDrawMarker is invoked.

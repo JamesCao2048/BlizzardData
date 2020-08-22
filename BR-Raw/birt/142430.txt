@@ -1,0 +1,2 @@
+Bug 142430 Available data set should be invisible for dynamic image
+Steps to reproduce: 1.New a sample data source and data set with table "PRODUCTLINES" 2.Add a dynamic image, binding with data set 3.Click "Expression Builder" Expected result: Available data set is not listed in Category to avoid user choose it Actual result: Available data set is listed in Category but we didn't support such expression like dataSetRow["image"]

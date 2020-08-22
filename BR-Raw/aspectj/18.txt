@@ -1,0 +1,19 @@
+Invalid StackMapTable generated in Java 7
+When compiling for Java 7, AspectJ can compute an invalid StackMapTable. The verifier will throw a ClassNotFoundException when the generated class is loaded.
+Example:
+class Parent<T> {}
+class ChildA<T> extends Parent<T> {}
+class ChildB<T> extends Parent<T> {}
+public Object methodWithBadStackMapTable(boolean value) {
+return value ? new ChildA<String>() : new ChildB<String>();
+}
+javap shows the computed StackMapTable to be:
+StackMapTable: number_of_entries = 2
+frame_type = 15 /* same */
+frame_type = 71 /* same_locals_1_stack_item */
+stack = [ class "Parent<T>" ]
+when it should be:
+StackMapTable: number_of_entries = 2
+frame_type = 15 /* same */
+frame_type = 71 /* same_locals_1_stack_item */
+stack = [ class Parent ]

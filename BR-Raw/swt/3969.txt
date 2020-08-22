@@ -1,0 +1,24 @@
+Table.getItem(Point) throws ArrayIndexOutOfBounds
+Run the following code and you will get the exception.
+Seems like a bug in GTK that we need to work around.
+Even though the point is outside the Table, OS.gtk_clist_get_selection_info
+returns 1 and the value for row[0] is a negative number.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.BORDER);
+for (int i = 0; i
+< 20; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText("item " + i);
+}
+shell.open();
+table.getItem(new Point(-1000,
+-1000));
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

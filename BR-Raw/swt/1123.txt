@@ -1,0 +1,2 @@
+Test_org_eclipse_swt_graphics_Cursor leaks a Cursor
+test_toString creates a Cursor, and does not dispose it.

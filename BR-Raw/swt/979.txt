@@ -1,0 +1,11 @@
+Selection jumps in tree
+[Cocoa I20090514-2000]
+Not sure if this potentially affects all trees, or only filtered ones.
+Steps:
+1.Open Preferences dialog
+2.Make sure it comes up all collapsed, with the first item (General) selected.
+If not, collapse tree and select the first item, close the dialog, and open again.
+3.Expand "General".
+4.Click on "Appearance"
+Expected: "Appearance" gets selected
+Actual: "Editors" gets selected.

@@ -1,0 +1,7 @@
+Bug 124450 manually reorder report parameters will change their names
+steps to reproduce:
+- create three report parameters, use their default parameter names
+- move the third one to the head of the list, its name changes from NewParameter2 to NewParameter21 expected behavior:
+- the list is reordered, and the name of report parameters remains intact.
+actual bahavior:
+- the list was reordered, but the name of report parameters changed.

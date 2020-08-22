@@ -1,0 +1,2 @@
+Bug 108804 drivers won't be added successfully after deleted and then add it
+details: drivers won't be added successfully after deleted and then add it steps to reproduce: 1.Open eclipse which contains jtds driver 2.In manage drivers dialog, delete jtds driver 3.Click Add to add jtds driver 4.Check the driver list in new data source dialog actual result: Jtds driver won't list in new data source dialog expected result: Jtds driver has been added

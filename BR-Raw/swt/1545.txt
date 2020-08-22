@@ -1,0 +1,50 @@
+StyledText should stop blinking caret when losing focus in verify key listener
+I20080526-2000, same in 3.3.2
+StyledText should stop blinking the caret when losing focus in verify key listener.
+Run the snippet below and then press Tab.
+=> Expected: Focus goes to popup shell, caret stops blinking (like when you click into the popup).
+=> Was: Focus goes to popup shell, but caret still blinks.
+When "proposalsShell.setActive()" is executed in an asyncExec, the behavior is as expected.
+public class SnippetTransferFocus {
+public static void main(String[] args) {
+final Display display= new Display();
+final Shell shell= new Shell(display);
+shell.setLayout(new FillLayout());
+StyledText text= new StyledText(shell, SWT.NONE);
+text.setText("Press Tab or click proposals table");
+
+shell.setBounds(100, 100, 320, 100);
+shell.open();
+
+
+final Shell proposalsShell= new Shell(shell, SWT.ON_TOP | SWT.RESIZE);
+proposalsShell.setLayout(new FillLayout());
+Table table= new Table(proposalsShell, SWT.H_SCROLL | SWT.V_SCROLL);
+new TableItem(table, SWT.NONE).setText("Item 1");
+new TableItem(table, SWT.NONE).setText("Item 2");
+table.select(0);
+
+proposalsShell.setBounds(150, 150, 160, 100);
+proposalsShell.setVisible(true);
+
+text.addVerifyKeyListener(new VerifyKeyListener() {
+public void verifyKey(VerifyEvent event) {
+if (event.keyCode == SWT.TAB) {
+event.doit= false;
+proposalsShell.setActive();
+//                    display.asyncExec(new Runnable() {
+//                        public void run() {
+//                            proposalsShell.setActive();
+//                        }
+//                    });
+}
+}
+});
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

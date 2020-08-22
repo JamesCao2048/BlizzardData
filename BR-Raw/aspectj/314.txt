@@ -1,0 +1,15 @@
+PointcutParser is not configurable
+I'm testing the reflection and weaver tools APIs. When I using following code:
+PointcutParser parse = new PointcutParser();
+String expr = "call(public * main.hello(..)";
+PointcutExpression pex = parse.parsePointcutExpression(expr);
+Whenever I use a full qualified class name in pointcut expression, an
+exception is throwed out:
+java.lang.IllegalArgumentException: warning no match for this type name: obj
+[Xlint:invalidAbsoluteTypeName]
+I try to turn off this Lint exception. But it seems I must access to world
+field of PointcutParser. This is inconvenient because world field is not
+exposed by PointcutParser.
+The existing PointcutParser interface implicitly creates a World and does not
+allow any configuration including classpath or lint. But developers may need
+this kind of control.

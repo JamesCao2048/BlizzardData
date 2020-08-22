@@ -1,0 +1,33 @@
+Drag and drop crashes Eclipse
+The new GTK tree seems to support drag and drop, but my VM dies everytime I try to use D&D.
+I'm using JDK 1.4.1 on Mandrake 9.0 (gtk+2.0-2.0.6).
+I'll attach the entire file that's generated, but here's the stack trace:
+Current Java thread:
+at org.eclipse.swt.internal.gtk.OS.gtk_tree_view_get_column(Native Method)
+at org.eclipse.swt.widgets.TreeItem.getBounds(TreeItem.java:223)
+at org.eclipse.jdt.internal.ui.dnd.JdtViewerDropAdapter.getBounds(JdtViewerDropAdapter.java:217)
+at org.eclipse.jdt.internal.ui.dnd.JdtViewerDropAdapter.computeLocation(JdtViewerDropAdapter.java:198)
+at org.eclipse.jdt.internal.ui.dnd.JdtViewerDropAdapter.dragOperationChanged(JdtViewerDropAdapter.java:150)
+at org.eclipse.jdt.internal.ui.dnd.JdtViewerDropAdapter.dragEnter(JdtViewerDropAdapter.java:139)
+at org.eclipse.jdt.internal.ui.packageview.SelectionTransferDropAdapter.dragEnter(SelectionTransferDropAdapter.java:80)
+at org.eclipse.jdt.internal.ui.dnd.DelegatingDropAdapter.dragEnter(DelegatingDropAdapter.java:41)
+at org.eclipse.swt.dnd.DNDListener.handleEvent(DNDListener.java:43)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:851)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:546)
+at org.eclipse.swt.dnd.DropTarget.notifyListeners(DropTarget.java:513)
+at org.eclipse.swt.dnd.DropTarget.dragMotion(DropTarget.java:433)
+at org.eclipse.swt.dnd.DropTarget.DragMotion(DropTarget.java:229)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_iteration(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1252)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1420)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1403)
+at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:775)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:462)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:247)
+at org.eclipse.core.launcher.Main.run(Main.java:703)
+at org.eclipse.core.launcher.Main.main(Main.java:539)

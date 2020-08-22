@@ -1,0 +1,12 @@
+ACC: SWT does not give focus to a context menu from a dialog
+Created  attachment 97453   [details]
+SWT snippet that reproduces the problem
+I create a context menu in a dialog and call setVisible(true);  It shows up, but keyboard focus remains within the dialog (arrow keys do not arm the menu items).
+This works on windows.
+1) Start up the snippet
+2) pop up the context menu
+3) choose Cascade Item>SubItem 1
+4) type 'm' to get the popup menu
+Result: continued typing goes into the text widget, including arrow keys
+Expected: using arrow keys would arm the menu items
+PW

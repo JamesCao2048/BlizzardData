@@ -1,0 +1,7 @@
+potential crash in Printer
+A post on the Eclipse forum (  http://www.eclipse.org/forums/index.php?t=msg&th=208526  ) got me looking at Printer.create() on Windows.
+It appears that a crash can occur at line:
+OS.MoveMemory(devmode, lpInitData, DEVMODE.sizeof);
+because lpInitData can validly be 0 when this line is executed.
+I suspect that this is the problem being seen in the forum post.
+What should be happening in this case?

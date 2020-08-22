@@ -1,0 +1,4 @@
+Bug 160650 IDataExtractionTask.selectColumns() doesn't work.
+Description: IDataExtractionTask.selectColumns() doesn't work.
+Steps to reproduce: Codes: String[] columns={"code","territory"}; task.selectResultSet( "t1" ); task.selectColumns(columns ); IExtractionResults result = task.extract( ); assertEquals(2,result.getResultMetaData( ).getColumnCount( )); Covered in DataExtractionTaskTest.testMethods() case.
+Expected result: Column count is 2.Actual result: Column count is 3.

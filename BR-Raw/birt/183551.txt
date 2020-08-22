@@ -1,0 +1,6 @@
+Bug 183551 [Automation][Regression] table page break inside did not work properly in pdf
+steps to reproduce:
+- use the attached report design
+- preview in pdf expected behavior:
+- page break inside avoid works properly actual behavior:
+- page break inside avoid did not work properly as expected, please refer to rendered page 9 and page 10 of the attached report design

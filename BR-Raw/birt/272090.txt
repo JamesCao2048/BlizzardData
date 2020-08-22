@@ -1,0 +1,8 @@
+Bug 272090 Select Data displays the data cube when a chart uses data from a cross tab
+1.Create a cross tab, and provide a name for it.
+2.Create a chart.
+3.In Select Data, select Use Data from, then select the cross tab.
+The chart builder displays the data cube, and instructs the user to "Right click or drag the levels to Category Series or optional Y Series, Measure to Value Series." These actions, however, are not supported.
+To select data for the chart, you must select a column binding from the Value Series drop-down list.
+The chart builder then fills in the appropriate data for the Category Series and Optional Y Series Grouping.
+Instead of showing the cube data, the chart builder should either: Show the cross tab data and let the user drag items from there or Maintain the current action of selecting a binding from the Value Series list AND change the instructions to the user.

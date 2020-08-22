@@ -1,0 +1,19 @@
+CCombo shouldn't fire defaultSelection on mouse list selection
+If you drop down the combo list using the mouse and then select an entry using
+the mouse, the CCombo fires a defaultSelection.
+It shouldn't do this.
+It should
+fire a selection instead.
+Default selection means something was selected and you should go and do
+something.
+The typical reaction is to process the selection and dismiss the dialog.
+A combo shouldn't fire default selection from just selecting an entry in the
+dropdown.
+A typical user of a combobox would be vert surprised to have the
+dialog be dismissed just because the entry was selected.
+Standard Combos won't
+do this.
+Because of this you can't tell the difference between just selecting an entry
+using the mouse and hitting enter from the text field of the CCombo.
+Hitting
+enter from the text field should be treated as default selection.

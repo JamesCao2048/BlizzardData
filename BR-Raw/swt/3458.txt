@@ -1,0 +1,5 @@
+LZWCodec#maskTable should be a static final field
+3.0M7
+This array is set in two different methods to always the same value.
+It should
+be a static final field.

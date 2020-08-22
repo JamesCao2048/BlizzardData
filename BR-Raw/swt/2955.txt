@@ -1,0 +1,22 @@
+Call to new_Shell results in "No more handles" error
+Using simple test case with swt dll's in the java "bin" directory
+SWT_AWT.newShell fails with the following exception:
+org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(SWT.java:2717)
+at org.eclipse.swt.SWT.error(SWT.java:2616)
+at org.eclipse.swt.SWT.error(SWT.java:2587)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:381)
+at org.eclipse.swt.widgets.Control.createHandle(Control.java:462)
+at org.eclipse.swt.widgets.Composite.createHandle(Composite.java:173)
+at org.eclipse.swt.widgets.Decorations.createHandle
+(Decorations.java:320)
+at org.eclipse.swt.widgets.Shell.createHandle(Shell.java:436)
+at org.eclipse.swt.widgets.Control.createWidget(Control.java:477)
+at org.eclipse.swt.widgets.Scrollable.createWidget(Scrollable.java:129)
+at org.eclipse.swt.widgets.Decorations.createWidget
+(Decorations.java:327)
+at org.eclipse.swt.widgets.Shell.<init>(Shell.java:251)
+at org.eclipse.swt.widgets.Shell.win32_new(Shell.java:341)
+at org.eclipse.swt.awt.SWT_AWT.new_Shell(SWT_AWT.java:269)
+at org.damselfly.jdev.swt.ole.text.EditorTest.main(EditorTest.java:41)
+This is preventing me from embedding SWT content into a Swing application.

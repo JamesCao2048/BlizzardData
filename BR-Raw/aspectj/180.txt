@@ -1,0 +1,35 @@
+[@AspectJ] Incorrect weaving of static initialization join point
+This error occurs if static initialization of one aspect class is woven with an advice from another aspect. It worked fine in version 1.5.0 - see the decompiled code snippet:
+static
+{
+Object obj = new Factory("ItoMonitoringAspect.java", Class.forName("cz.kb.usermanagement.ito.ItoMonitoringAspect"));
+ajc$tjp_0 = ((Factory) (obj)).makeSJP("staticinitialization", ((Factory) (obj)).makeInitializerSig("8", "cz.kb.usermanagement.ito.ItoMonitoringAspect"), 0);
+obj = Factory.makeJP(ajc$tjp_0, null, null);
+
+
+// the static initialization of this aspect class is deliberately woven using
+// advice from another aspect defined elsewhere.
+
+try
+{
+UserManagementLogAspect.aspectOf().beforeClassInit(((org.aspectj.lang.JoinPoint) (obj)));
+}
+catch(Throwable throwable)
+{
+if(throwable instanceof ExceptionInInitializerError)
+{
+throw (ExceptionInInitializerError)throwable;
+} else
+{
+UserManagementLogAspect.aspectOf().afterClassInit();
+throw throwable;
+}
+}
+UserManagementLogAspect.aspectOf().afterClassInit();
+
+// this line below was there when compiling using AspectJ 1.5.0
+// but is missing in when using AJC 1.5.2. (Note: the line is, however, present if the static
+// initialization of this aspect class is NOT woven by advice from the other aspect).
+ajc$postClinit();
+}
+As a result of the missing call to ajc$postClinit() the aspect instance is not created and it's method .aspectOf() throws org.aspectj.lang.NoAspectBoundException.

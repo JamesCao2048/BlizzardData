@@ -1,0 +1,10 @@
+Set text editor background to black, mouse cursor becomes invisible
+Build Identifier: I20110613-1736
+There's this bug about not seeing the text cursor:
+https://bugs.eclipse.org/bugs/show_bug.cgi?id=275589
+I can see the text cursor, but the mouse cursor is pretty much invisible on a black background.
+Reproducible: Always
+Steps to Reproduce:
+1.Run Eclipse 3.7 64-bit on OSX Lion
+2.Change your editor background to pure black
+3.Move mouse cursor to the black editor area, and the mouse cursor will pretty much "blend into the background"

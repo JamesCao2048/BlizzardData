@@ -1,0 +1,11 @@
+Issues with transparent images when advanced graphics is on
+Created  attachment 86027   [details]
+snippet to reproduce
+There seems to be an issue drawing transparent images when advanced graphics is turned on.
+The problem only seems to happen when using ImageDescriptor.createImage() is used and the transparency pixel is set.
+Attached is a snippet and icon to reproduce.
+The issue can be reproduced with other icons as well.
+If you comment out the line gc.setAdvanced(true) you will see that both icons appear.
+This is a regression.
+Icons were displaying fine on diagrams for us until we adopted a new Eclipse version 1
+- 4 months ago.

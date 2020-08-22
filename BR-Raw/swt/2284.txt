@@ -1,0 +1,70 @@
+BDI: Styledetxt setOrientation does not work, on the fly
+I am trying to use the setOrientation function on the styledText widget.
+When using it, it does not show the carret at the correct position, and when changing from RTL
+-> LTR and back it draws the text on both sides (try selecting the text and on the othr side it is hidden , until u highlight it).
+In the example I add 3 styled texts.
+1.initialized as LTR,
+2.initialized as RTL
+3.initialized without the flag
+A listener is put in place so when Ctrl+Shift is pressed, the GO changes.
+in widgets 1,2 the whole widget is disposed and a new one replaces it (this is the workaround).
+widget 3, only sets the setAligment, and setOrientation
+- this does not work ok.
+The workaround (create new widget) works, but is not good enough.
+<code>
+package test;
+import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.ITableLabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.custom.VerifyKeyListener;
+import org.eclipse.swt.events.VerifyEvent;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.part.ViewPart;
+public class View extends ViewPart
+{
+private StyledText styledTextNotWorking;
+private StyledText styledText;
+private StyledText styledTextRTl;
+public static final String ID = "test.view";
+class VeryListener implements VerifyKeyListener
+{
+public void verifyKey(VerifyEvent e)
+{
+if ((e.stateMask & SWT.SHIFT) != 0
+&& e.keyCode == SWT.CTRL
+|| ((e.stateMask & SWT.CTRL) != 0 && e.keyCode == SWT.SHIFT))
+{
+StyledText widget = (StyledText) e.getSource();
+Object ld = widget.getLayoutData();
+String text = widget.getText();
+Composite par = widget.getParent();
+int offset = widget.getCaretOffset();
+int newOrientation = widget.getOrientation() == SWT.RIGHT_TO_LEFT ?
+SWT.LEFT_TO_RIGHT
+: SWT.RIGHT_TO_LEFT;
+widget.removeVerifyKeyListener(listener);
+widget.dispose();
+widget = new StyledText(par, SWT.MULTI | SWT.WRAP | SWT.BORDER
+| SWT.V_SCROLL | newOrientation);
+widget.addVerifyKeyListener(listener);
+widget.setText(text);
+widget.setLayoutData(ld);
+widget.setCaretOffset(offset);
+widget.setFocus();
+par.layout();
+}
+}
+}
+VeryListener listener = new VeryListener();
+/**
+* The content provide

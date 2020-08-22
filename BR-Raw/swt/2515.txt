@@ -1,0 +1,30 @@
+[Table] TableColumn#pack() no longer respects TableItem's Font
+The following snippet puts an "..." next to the TableItem's content.
+It uses bold Font which requires a bit more space than normal Font, but a pack on the TableColumn does not respect that.
+The snippet works with M4 and before:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+FontData def[] = display.getSystemFont().getFontData();
+Table t = new Table(shell, SWT.NONE);
+t.setHeaderVisible(true);
+TableColumn col = new TableColumn(t, SWT.NONE);
+col.setText("Hello");
+TableItem item = new TableItem(t, SWT.NONE);
+item.setText("Hello World");
+item.setFont(new Font(display, def[0].getName(), def[0].getHeight(), SWT.BOLD));
+col.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+This currently blocks my next release unfortunately.
+I hoped being able to run with M5.A workaround is to set the bold Font on the entire Table.
+However, that would show any TableColumn in Bold as well.
+Ben

@@ -1,0 +1,5 @@
+Motif does not send dragFinished event on aborted drags
+Motif will only send a dragFinished event if the drop is successful.
+Windows
+sends dragFinished even if the drop is not successful.
+This bug split from  bug 34983 .

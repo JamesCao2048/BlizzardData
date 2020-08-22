@@ -1,0 +1,3 @@
+Combo Control: Preferred size determined by currently selected item
+In the context of the Controls Example, the Cocoa Combo Control when SWT.READ_ONLY is not selected: the "Preferred" size is determined by the currently selected item in the Combo control, not the longest item in the drop down list (as is the case in Carbon).
+If the currently selected item (when size "Preferred" is chosen) is "Line 4" then the size of the Combo box will be just sufficient to accommodate this value, meaning that if "Longest Line in List" is now selected, then it will be truncated.

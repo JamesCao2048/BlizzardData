@@ -1,0 +1,2 @@
+FindBugs reporting another optimization
+Ben Hale reported that FindBugs was producing a warning about a dead store to a local variable (a variable that is never then read within the method).  This bug is to investigate and hopefully remove the dead store.

@@ -1,0 +1,50 @@
+StringIndexOutOfBoundsException in Program.getImageData(*)
+Right click on a file in package explorer, select "Open with
+-> Other"
+Nothing happens except that a new exception is reported in the log, and cursor changes to the "busy" state.
+It worked in M6, but broken in M7
+eclipse.buildId=I20090430-2300
+java.version=1.6.0_10
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_DE
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86
+Error
+Tue May 05 07:29:55 CEST 2009
+Unhandled event loop exception
+java.lang.StringIndexOutOfBoundsException: String index out of range:
+-1
+at java.lang.String.substring(Unknown Source)
+at org.eclipse.swt.program.Program.getImageData(Program.java:362)
+at org.eclipse.ui.internal.misc.ExternalProgramImageDescriptor.getImageData(ExternalProgramImageDescriptor.java:74)
+at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:273)
+at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:227)
+at org.eclipse.ui.internal.registry.EditorDescriptor.getImageDescriptor(EditorDescriptor.java:303)
+at org.eclipse.ui.dialogs.EditorSelectionDialog.getImages(EditorSelectionDialog.java:327)
+at org.eclipse.ui.dialogs.EditorSelectionDialog.getExternalEditors(EditorSelectionDialog.java:279)
+at org.eclipse.ui.dialogs.EditorSelectionDialog.fillEditorTable(EditorSelectionDialog.java:227)
+at org.eclipse.ui.dialogs.EditorSelectionDialog.createDialogArea(EditorSelectionDialog.java:211)
+at org.eclipse.jface.dialogs.Dialog.createContents(Dialog.java:760)
+at org.eclipse.jface.window.Window.create(Window.java:431)
+at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+at org.eclipse.jface.window.Window.open(Window.java:790)
+at org.eclipse.ui.actions.OpenWithMenu$3.handleEvent(OpenWithMenu.java:225)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3880)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3473)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+at org.ec

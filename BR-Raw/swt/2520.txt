@@ -1,0 +1,11 @@
+Text widget VerifyListener causes characters to be inserted backwards if you change them
+I have a small program with a Text widget whose VerifyListener actually replaces the characters being entered.
+Newer 3.2 milestones on Linux cause it to go backwards.
+Here is a piece of the code so you can see what I'm doing that's triggering this bug, and I'll attach the whole program.
+thoughts.addVerifyListener(new VerifyListener() {
+public void verifyText(VerifyEvent e) {
+if (e.character == 'b')
+e.doit = false;
+else {
+e.text = str.charAt(count.value() % str.length()) + "";
+count.increment();}}});

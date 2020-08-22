@@ -1,0 +1,4 @@
+Bug 287635 [Regression]Can not correct the invalid Crosstab Aggregation binding[1102]
+Description: [Regression]Can not correct the invalid Crosstab Aggregation binding Build number: 2.5.1.v20090826-0630 Steps to reproduce: 1, Drag a cube with measure into layout 2, Modify the measure binding's expression to be invalid for example: measure["CREDITLIMIT"]sss 3, Try to edit the binding again to correct the expressoin Expected result: I can edit to correct the invalid expression.
+Actual result: The binding is disallowed to edit anymore.
+Error log:

@@ -1,0 +1,14 @@
+widget is disposed exception when disposing TableEditor
+Found this from  Bug 178615 .
+When calling TableEditor.dispose, we get the following exception if the parent table is disposed:
+Exception in thread "main" org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:3534)
+at org.eclipse.swt.SWT.error(SWT.java:3457)
+at org.eclipse.swt.SWT.error(SWT.java:3428)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:432)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:325)
+at org.eclipse.swt.widgets.Table.getColumnCount(Table.java:1902)
+at org.eclipse.swt.custom.TableEditor.dispose(TableEditor.java:151)
+at com.abc.sample.testswt.TestTableEditorBug.main(TestTableEditorBug.java:84)
+TableEditor should check if the table is disposed before asking it for the column count.
+I will attach testcase.

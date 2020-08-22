@@ -1,0 +1,6 @@
+Table Redraw freezes the Table Headers on CE
+setRedraw(false) and a later setRedraw(true) freezes the tables headers and
+they don't scroll any longer with the table cell (this works correct).
+To
+reproduce you really only need to call setRedraw with "false" and then
+directly "true" and the freeze is there.

@@ -1,0 +1,2 @@
+Bug 120068 TOC Item Expression is added automatically when adding the group key
+Description: TOC Item Expression is added automatically when adding the group key Steps to reproduce: 1.Add a table binding with the dataset 2.Choose the table, add a group(say goupkey:row["CUSTOMERNUMBER"]) 3.Click "group" to invoke "Edit Group" dialog Expected result: Nothing in TOC Item Expression Actual result: The group key (row["CUSTOMERNUMBER"]) is added to the TOC Item Expression

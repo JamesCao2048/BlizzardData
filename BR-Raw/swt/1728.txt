@@ -1,0 +1,10 @@
+Shell with custom region and SWT.NO_TRIM still has border
+N20080217-0010
+A Shell with a custom region (and therefore SWT.NO_TRIM set) still draws a 1 pixel wide gray border on carbon.
+On win32 and gtk, such shells don't have any border.
+In JDT/UI (RenameInformationPopup: use for Refactor > Rename in the editor) and
+in JFace (ControlDecoration, e.g.
+lightbulb in Find/Replace dialog in regex mode) we have code to draw a custom border around tooltips with irregular form, but this is disabled on the Mac because the borders become too thick on the Mac.
+To get rid of the platform-dependency, we need to know whether a given Shell draws any border or not.
+Just stripping SWT.NO_TRIM in Shell#checkStyle(..) would probably not work, because #setRegion(..) does nothing unless the shell has no trim.
+A fix could be to implement getBorderWidth() on carbon (see  bug 213937 ), and/or to add this border in computeTrim(..).

@@ -1,0 +1,117 @@
+NPE when opening resources from CVS resources history
+NPE when opening resources (double-click) from CVS resources history view.
+java.lang.NullPointerException
+at
+org.eclipse.mylar.java.ui.editor.MylarJavaElementDescriptor.drawCompositeImage(MylarJavaElementDescriptor.java:40)
+at
+org.eclipse.jface.resource.CompositeImageDescriptor.getImageData(CompositeImageDescriptor.java:205)
+at
+org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:279)
+at
+org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:233)
+at
+org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:211)
+at
+org.eclipse.mylar.ui.MylarImages.getImage(MylarImages.java:108)
+at org.eclipse.mylar.java.ui.editor.MylarCompilationUnitEditor.updatedTitleImage(MylarCompilationUnitEditor.java:55)
+at
+org.eclipse.jdt.internal.ui.javaeditor.JavaEditorErrorTickUpdater$1.run(JavaEditorErrorTickUpdater.java:86)
+at
+org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:152)
+at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:28)
+at
+org.eclipse.swt.widgets.Display.syncExec(Display.java:3413)
+at org.eclipse.jdt.internal.ui.javaeditor.JavaEditorErrorTickUpdater.postImageChange(JavaEditorErrorTickUpdater.java:84)
+at
+org.eclipse.jdt.internal.ui.javaeditor.JavaEditorErrorTickUpdater.updateEditorImage(JavaEditorErrorTickUpdater.java:77)
+at
+org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1548)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor$16.run(AbstractTextEditor.java:2360)
+at
+org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:346)
+at
+org.eclipse.jface.operation.ModalContext.run(ModalContext.java:291)
+at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:624)
+at
+org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:621)
+at
+org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2135)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:2378)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:2405)
+at
+org.eclipse.ui.internal.EditorManager.createSite(EditorManager.java:773)
+at
+org.eclipse.ui.internal.EditorReference.createPartHelper(EditorReference.java:572)
+at
+org.eclipse.ui.internal.EditorReference.createPart(EditorReference.java:365)
+at
+org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:552)
+at
+org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:214)
+at
+org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2325)
+at
+org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2258)
+at
+org.eclipse.ui.internal.WorkbenchPage.access$9(WorkbenchPage.java:2250)
+at
+org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2236)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at
+org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2231)
+at
+org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2204)
+at
+org.eclipse.team.internal.ccvs.ui.actions.OpenLogEntryAction$1.run(OpenLogEntryAction.java:85)
+at
+org.eclipse.team.internal.ccvs.ui.repo.RepositoryManager.run(RepositoryManager.java:651)
+at
+org.eclipse.team.internal.ccvs.ui.actions.CVSAction$2.run(CVSAction.java:347)
+at
+org.eclipse.team.internal.ccvs.ui.actions.CVSAction$3.run(CVSAction.java:356)
+at
+org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.team.internal.ccvs.ui.actions.CVSAction.run(CVSAction.java:353)
+at
+org.eclipse.team.internal.ccvs.ui.actions.OpenLogEntryAction.execute(OpenLogEntryAction.java:64)
+at
+org.eclipse.team.internal.ccvs.ui.actions.CVSAction.run(CVSAction.java:117)
+at
+org.eclipse.team.internal.ccvs.ui.HistoryView$6.handleEvent(HistoryView.java:199)
+at
+org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:843)
+at
+org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3080)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2713)
+at
+org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1699)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1663)
+at
+org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:367)
+at
+org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:103)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:226)
+at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:376)
+at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:163)
+at
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at
+java.lang.reflect.Method.invoke(Method.java:585)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:334)
+at
+org.eclipse.core.launcher.Main.basicRun(Main.java:278)
+at org.eclipse.core.launcher.Main.run(Main.java:973)
+at
+org.eclipse.core.launcher.Main.main(Main.java:948)

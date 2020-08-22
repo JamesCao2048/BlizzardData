@@ -1,0 +1,7 @@
+Caret disapears on 'Go to Line...'
+I20070205-0009
+- Open any text editor
+- choose Navigate > Go to Line...
+- enter 1, press Return
+=> caret is lost between the editor and the toolbar; keyboard focus is gone
+The fix for  bug 158746  could have caused this.

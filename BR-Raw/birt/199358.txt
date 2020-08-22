@@ -1,0 +1,6 @@
+Bug 199358 [Automation][Regression] masterpage extends from report library is disappeared when preview in html
+steps to reproduce:
+- use the attached report design and library
+- preview in html expected behavior:
+- masterpage should appear actual behavior:
+- it simply did not do so

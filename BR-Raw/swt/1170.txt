@@ -1,0 +1,10 @@
+[logview] hover (tooltip) from error log view doesn't go away
+to reproduce:
+# display the Error Log view
+# select an item that has a stack trace message and hover over it so that the tooltip is visible
+# *without moving the mouse* use Command-Tab to select another application (I used Safari) that will appear covering the current mouse location
+# move the mouse over the other application so that it is no longer over the screen area where the Error Log view was displayed
+# Command-Tab back to Eclipse
+# notice that the tooltip is still displayed as you work in different editors and views
+# notice that the tooltip will only go away if the Error Log view receives focus again
+This is a major usability issue since the tooltip obscures part of the screen and it's difficult to figure out how to make it go away.

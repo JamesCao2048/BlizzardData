@@ -1,0 +1,18 @@
+"Alt+Space" traversal cannot be blocked
+Using snippet #25 on Windows XP, pressing "Alt+Space" generates the following:
+DOWN: stateMask=0x0, keyCode=0x10000, character=0x0 '0'
+By clicking back on the shell, a subsequent event is triggered (note, if 'Alt'
+is still held, then the stateMask=0x10000):
+DOWN: stateMask=0x0, keyCode=0x20, character=0x20 ' '
+Attaching a listener to SWT.Traverse events on the display registers a
+mnemonic traversal.
+However, setting "event.doit=false" has no effect.
+The
+system menu is still displayed.
+Using snippet #25 on Linux-GTK (GNOME), clicking back on the shell does not
+send a subsequent event.
+DESIRED RESULTS:
+"Alt+Space" should send a SWT.Traverse event that can be cancelled by
+setting "event.doit=false".
+If the event is not cancelled, then the key
+events sent should be consistent across platforms.

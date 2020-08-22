@@ -1,0 +1,9 @@
+UI-Thread blocked while Menu is visible
+SWT: 3.2 Final
+MacOS X 10.4.6 with recent Java update
+Hardware: Mac Intel
+I saw this using RSSOwl.
+While loading some feeds, I clicked on a MenuItem of the main menu to have the entries visible.
+Usually, while loading Feeds, there is a progress-label indicating progress, but while having the Menu visible, nothing happens.
+The application is run from an application bundle (no java_swt bridge!) having the "StartOnMainThread" parameter supplied.
+Ben

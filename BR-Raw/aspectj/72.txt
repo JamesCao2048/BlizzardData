@@ -1,0 +1,2 @@
+Caching in EclipseSourceType is too aggressive
+In fixing a recent Roo related issue (where annotations are resolved too early, before declare parents are done) a cache was introduced into EclipseSourceType (see ensureAnnotationTypesResolved()).  The cache needs to be cleared if the set of annotation declarations changes - this can occur even after parsing because declare annotation can change them.

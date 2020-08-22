@@ -1,0 +1,10 @@
+SWT Text control with SWT.MULTI style appears incorrectly when disabled
+Build Identifier: 3.6 Helios Release
+Using Cocoa ws.
+The multiline text control appears differently from the single line one, when setEnabled is set to false.
+The cocoa multiline text control behaves exactly the same as the single line one, ideally so should the SWT control.
+Reproducible: Always
+Steps to Reproduce:
+1.Run the SWT controls examples
+2.On the SWT Text example tab select SWT.SINGLE and toggle enablement
+3.Select SWT.MULTI and toggle enablement

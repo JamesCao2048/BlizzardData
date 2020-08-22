@@ -1,0 +1,2 @@
+Bug 277430 [Regression]Measure expression can not show completely when open aggregation builder
+Description: Measure expression can not show completely when open aggregation builder Build number: 2.5.0.v20090522-0630 Steps to reproduce: 1, New a crosstab with measure 2, Double click to edit the measure Expected result: Expression of measure can be shown completely Actual result: Only show part of expression Error log:

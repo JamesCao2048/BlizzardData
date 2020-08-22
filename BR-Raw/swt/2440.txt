@@ -1,0 +1,5 @@
+Custom selection does not redraw when resizing window
+This bug can be seen by running Snippet229 and resizing the window using the right side of the shell.
+Resize in and out and the gradient for the custom selection will disappear in some places.
+- It works WITHOUT the manifest but does not work WITH manifest.
+- Tested in motif, Mac and gtk and they seem to not have that problem.

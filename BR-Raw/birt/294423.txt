@@ -1,0 +1,6 @@
+Bug 294423 The "Apply" button is not enabled when change chart type to Pie or Meter
+Description: The "Apply" button is not enabled when change chart type to Pie or Meter.
+Build number: 2.5.2.v20091106-0630 Steps to reproduce: 1.Create a chart, change chart type to Pie or Meter.
+Expected result: The "Apply" button is enabled.
+Actual result: The "Apply" button is not enabled when change chart type to Pie or Meter but it is enabled for other types of charts.
+Error log: N/A

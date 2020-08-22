@@ -1,0 +1,10 @@
+FileDialog should inherit image from parent shell
+Hi,
+I noticed that the FileDialog comes with a default icon instead to inherit
+the icon from the parent shell.
+And as I can see there is no way to change the
+icon.
+So, I think to inherit the icon should be the default behaviour.
+The behaviour occurs with the GTK 3134 build.
+And also occurs in the Eclipse
+IDE 3.1M6(GTK) with "Open external file...".

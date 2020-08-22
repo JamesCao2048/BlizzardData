@@ -1,0 +1,44 @@
+resetting clipping path doesn't work when transforms are involved
+Eclipse 3.1 Release on Mac OS X 10.4.1
+A clipping path set with setClipping(Path) is not reset by setClipping(null) if
+a transform has been used before on the GC.
+This happens on Mac OS X (10.4.1)
+but not on Windows XP.
+See the following code fragment:
+Device device = Display.getDefault();
+
+// create an image 100x100
+Image image = new Image(device,100,100);
+GC gc = new GC(image);
+
+// fill image with solid green
+Color green = new Color(device,0,255,0);
+gc.setBackground(green);
+gc.fillRectangle(0,0,100,100);
+
+// set a transformation and reset it again
+Transform transform = new Transform(device,1.5f,0,0,1.5f,0,0);
+gc.setTransform(transform);
+gc.setTransform(null);
+
+// set a clipping path and reset it again
+Path clipPath = new Path(device);
+clipPath.addRectangle(25,25,50,50);
+gc.setClipping(clipPath);
+// gc.setClipping(25,25,50,50);
+gc.setClipping((Region)null);
+
+// fill image with solid red
+Color red = new Color(device,255,0,0);
+gc.setBackground(red);
+gc.fillRectangle(0,0,100,100);
+
+On Mac OS X the red rectangle is clipped to clipPath despite explicitely
+resetting the clipping path.
+On XP it works as expected (red rectangle fills
+whole image).
+Workaround: if the clipping path has been set via setClipping(x,y,w,h), a
+following reset works (uncomment gc.setClipping(25,25,50,50) in the above code
+fragment).
+Also, if there is never any transformation set, it works without the
+workaround!

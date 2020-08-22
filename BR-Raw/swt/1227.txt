@@ -1,0 +1,6 @@
+Hover help is dismissed without selection
+1) Put a breakpoint in Composite.setLayout()
+2) Run a snippet that opens a shell, sets the shell's layout and creates a button
+3) When the debug perspective comes up by hitting the breakpoint, hover the local "layout" variable
+4) Click the tree in the hover help to select a field.
+The hover help window is dismissed.

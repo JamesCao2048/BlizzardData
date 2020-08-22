@@ -1,0 +1,3 @@
+Bug 155637 Extended report parameter is localized after being referred by a data set parameter
+Steps to reproduce: 1.New a library, add a sample data source and a data set from table "CUSTOMERS" 2.Add a dynamic report parameter "a" referring to data set column "CUSTOMERNUMBER" 3.New a report, includes the library, extends lib.a 4.Add a sample data source in report and a data set with below query: select * from CLASSICMODELS.CUSTOMERS where CLASSICMODELS.CUSTOMERS.CUSTOMERNUMBER = ?
+5.Switch to data set parameters, set linked to report parameter "a" 6.Click "ok" to finish editing data set 7.Switch to "XML Source" Actual result: Extended report parameter is localized with some local properties

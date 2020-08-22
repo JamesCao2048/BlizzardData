@@ -1,0 +1,11 @@
+cannot set enabled state on Vista
+Hi !
+This is error I get with Azureus on Vista Beta 2 (build 5384), which uses SWT (3139).
+Azureus uses "Category" tabs.
+If I run Azureus and I don't create any of this Categories, it works OK (somewhat, but that's another story).
+But when I create one of this Categories (My Cat for example, there should be three tabs displayed (All, Uncategorized, and My Cat.
+Problem is that when I do this, I get SWTError, cannot set enabled state.
+None of tabs is displayed, until I resize Split Windows, and when they are displayed, only All tab is visible.
+I am attaching how tabs should be displayed, how are displayed on Vista, and debug log from Azureus.
+I also tried with SWT from eclipse 3.2, but there was the same problem (and also some others, which is also another story).
+Andy

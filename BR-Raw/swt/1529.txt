@@ -1,0 +1,12 @@
+vertical scroll bar remains in empty tree viewer
+Created  attachment 103301   [details]
+screen shot of debug view
+I20080530-1730
+The scroll bar remains in an empty debug view.
+Steps:
+* Debug a session to a breakpoint that has a stack trace deep enough to make the scroll bar appear
+* terminate the session
+* remove all terminated
+* Repeat
+On the second remove the a vertical scroll bar remains in the viewer.
+Only happens on Mac.

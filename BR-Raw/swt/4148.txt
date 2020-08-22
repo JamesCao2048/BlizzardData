@@ -1,0 +1,10 @@
+'Free' TableViewer column cannot be edited
+When a TableViewer instance is created, one column is created for free if none
+is specified.
+This works well and handles the resizing of the table, but the
+code in 'activateCellEditor' ignores it when there are no explicitly created
+columns.
+Please give me a heads up when the fix is released so that I can test my code
+before the integration build.
+Otherwise, all PDE editors will be broken (cannot
+rename entries in lists).

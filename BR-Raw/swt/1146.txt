@@ -1,0 +1,6 @@
+[mylyn] Open png attachment in browser causes editor tabs to disappear
+using mylyn's bug editor, open  bug 267138 .
+Go to attachments and double click "Picture 4.png" to open it.
+This will open a new browser.
+When the browser opens, all of Eclipse's editor tabs disappear.
+Forcing a repaint (switch apps or resize eclipse) brings the tabs back.

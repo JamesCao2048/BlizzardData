@@ -1,0 +1,13 @@
+ArrayIndexOutOfBoundsException at AjState.java:1767
+Build Identifier: 20100617-1415
+Using AspectJ version: 1.6.10.20100817163700
+I hit the blow exception after saving a edited java file.
+java.lang.ArrayIndexOutOfBoundsException
+at org.aspectj.ajdt.internal.core.builder.AjState.hasStructuralChanges(AjState.java:1767)
+at org.aspectj.ajdt.internal.core.builder.AjState.recordClassFile(AjState.java:1510)
+at org.aspectj.ajdt.internal.core.builder.AjState.noteResult(AjState.java:1322)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager$3.acceptResult(AjBuildManager.java:1049)
+at org.aspectj.ajdt.internal.compiler.AjPipeli ... b.run(AutoBuildJob.java:242)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Compile error: ArrayIndexOutOfBoundsException thrown: 14
+Reproducible: Didn't try

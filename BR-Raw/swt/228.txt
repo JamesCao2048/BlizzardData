@@ -1,0 +1,3 @@
+API Tools report bad @since tag on SegmentListener
+API Tools report a bad @since tag on SegmentListener.
+The @since 3.8 should be on the interface, not on the method.

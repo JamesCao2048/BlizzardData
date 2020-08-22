@@ -1,0 +1,12 @@
+TableEditor background color artifacts on scrolling
+Hi,
+I'd like to report a minor display bug for the SWT 3.2 RC2 and previous versions.
+This is minor only as long as my customers don't get annoyed because of the artifacts ;-)
+If you've got a table containing rows with alternating background colors (e.g.
+3 are grey, 4 are white, another 4 grey again, 2 white and so on) and containing multiple TableEditors after scrolling the background color of the Control in such a TableEditor may be wrong.
+I recognized this with checkboxes with text in multiple rows.
+I set the background of the checkbox to the same as the underlying TableItem (SWT.INHERIT_DEFAULT is of no use in this context).
+Scrolling, the background of a white checkbox may change to grey (but never from grey to white).
+If you need a screenshot or further information, please contact me.
+Kind regards,
+Stefan Schubert

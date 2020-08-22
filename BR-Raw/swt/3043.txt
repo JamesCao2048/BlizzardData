@@ -1,0 +1,13 @@
+Toolitem calling gtk_widget_add_events after it is realized
+Before a GTK+ widget is realized, calling gtk_widget_add_events simply sets some
+private data and does not do any work in the X server.
+However, if the widget
+is already realized, changing the event mask requires querying the current mask
+from the X server and updating its state in X.
+In SWT, hookEvents() is always performed on unrealized widgets, except in
+ToolItem.
+ToolItem is being realized because it is asking for the foreground
+colour of its parent, which causes it to be realized.
+The fix is to either
+avoid realizing the parent (it is not required in this particular case), and
+maybe to defer connecting the tool item to its parent until later.

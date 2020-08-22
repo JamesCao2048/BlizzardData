@@ -1,0 +1,2 @@
+Bug 188835 "1970-01-01" is added before the value when filter key is Time type[00]
+"1970-01-01" is added before the value when filter key is Time type[00] Build number: 2.2.0.v20070524-0630 Steps to reproduce: 1.Open attached report design 2.Open the data set and add a filter: key:row["time"] Operator:Equal Open the "Select value" Expected result: Just Time type values are displayed Actual result: "1970-01-01" is added before the filter value,like:"1970-01-01 00:22:31.0" Error log: N/A

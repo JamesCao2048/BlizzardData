@@ -1,0 +1,24 @@
+Platform differences setting size while shell is maximized
+Here is the some code:
+public static void main (String [] args) {
+Display display = new Display ();
+final Shell shell = new Shell (display);
+shell.setBounds (10, 10, 100, 100);
+shell.open ();
+shell.addListener (SWT.Resize, new Listener () {
+public void handleEvent (Event event) {
+System.out.println ("*** RESIZE: " + shell.getBounds
+());
+shell.setBounds (shell.getBounds ());
+}
+});
+shell.addListener (SWT.MouseDown, new Listener () {
+public void handleEvent (Event event) {
+shell.setBounds (100, 100, 200, 200);
+}
+});
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

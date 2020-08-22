@@ -1,0 +1,7 @@
+Bug 159445 BIRT ignores OSGi system properties
+Configuring the OSGi framework by setting osgi.configuration.area or osgi.instance.area system property has no effect.
+The OSGILauncher in org.eclipse.birt.core overwrites any settings for the above system properties.
+The OSGILauncher should check whether the system properties are already set and use these settings.
+The OSGi system properties are described in the eclipse runtime options as being specific for the OSGi framework.
+These system properties are needed, e.g.
+to create a read-only installation.

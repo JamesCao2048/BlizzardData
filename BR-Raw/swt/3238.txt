@@ -1,0 +1,51 @@
+ToolBar.getItem(Point point) always returns first item.
+Running on Eclipse 3.0 Linux-GTK, when ToolBar.getItem(Point point) is called,
+it always returns the first item in the toolbar.
+This works fine on Eclipse
+3.0 Windows.
+public class TestClass {
+ToolBar myTB;
+
+public TestClass(Shell shell) {
+super();
+myTB = new ToolBar (shell, SWT.FLAT);
+ToolItem item1 = new ToolItem(myTB,SWT.PUSH);
+item1.setText("1");
+item1.setData(new String("Item 1"));
+ToolItem item2 = new ToolItem(myTB,SWT.PUSH);
+item2.setText("2");
+item2.setData(new String("Item 2"));
+ToolItem item3 = new ToolItem(myTB,SWT.PUSH);
+item3.setText("3");
+item3.setData(new String("Item 3"));
+ToolItem item4 = new ToolItem(myTB,SWT.PUSH);
+item4.setText("4");
+item4.setData(new String("Item 4"));
+ToolItem item5 = new ToolItem(myTB,SWT.PUSH);
+item5.setText("5");
+item5.setData(new String("Item 5"));
+myTB.addMouseMoveListener(new MouseMoveListener(){
+public void mouseMove(MouseEvent arg0) {
+int x = arg0.x;
+int y = arg0.y;
+System.out.println("X: "+x+" Y: "+y);
+ToolItem item = myTB.getItem(new Point(x,y));
+System.out.println("MOUSEIN: "+(String)item.getData
+());
+}
+});
+}
+
+public static void main (String [] args) {
+Display d = new Display ();
+Shell s = new Shell(SWT.SHELL_TRIM);
+s.setLayout(new RowLayout());
+TestClass application = new TestClass(s);
+s.open();
+while (! s.isDisposed()) {
+if (! d.readAndDispatch()) d.sleep();
+}
+d.dispose();
+System.exit(0);
+}
+}

@@ -1,0 +1,6 @@
+Improve performance of shell creation on GTK
+We have a benchmark that did "new Shell()" that was slower on GTK than Windows.
+Here is how we fixed it:
+Shell creation on a single monitor system takes longer then it needs to.
+It calls gdk_screen_get_monitor_at_window() when there is only ever one monitor possible.
+We optimized this case.

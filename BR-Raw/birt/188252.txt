@@ -1,0 +1,7 @@
+Bug 188252 [enhancement] remove cube cache when server is shutdown
+steps to reproduce:
+- create a report design using cube and xtab
+- deploy it to tomcat BIRT viewer
+- preview it note that one folder named temp29330913 was created under tomcat home folder, there are three files (Customer Cubedata, Customer CubeOat, Customer Cubeobj) within this folder.
+these won't be removed even after tomcat is shutdown.
+is it appropriate if these are some kind of cache for the cube data?

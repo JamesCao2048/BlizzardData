@@ -1,0 +1,56 @@
+Enabling advanced graphics will cause alpha gradient to be applied
+If advanced graphics (GC.setAdvanced(true)) is enabled on a graphics context
+then calling GC.drawImage(Image image, int srcX, int srcY, int srcWidth, int
+srcHeight, int destX, int destY, int destWidth, int destHeight) where the
+destination width and/or height is greater than that of the source image will
+draw an image with an alpha gradient.
+Specially, the drawn image will be the
+desired color at its center but have an alpha graient applied towards its edges
+(as if the act of stretching implies an alpha shift).
+An example can be quickly cooked up using SWT image snippet #112:
+public static void main (String [] args) {
+Display display = new Display ();
+final Image image = new Image(display, 2, 10);
+final Color color = display.getSystemColor(SWT.COLOR_BLUE);
+final GC gc = new GC (image);
+gc.setBackground(color);
+gc.fillRectangle(image.getBounds());
+gc.dispose ();
+color.dispose ();
+Shell shell = new Shell (display);
+shell.setLayout (new FillLayout ());
+Group group = new Group (shell, SWT.NONE);
+group.setLayout (new FillLayout ());
+group.setText ("a square");
+Canvas canvas = new Canvas (group, SWT.NONE);
+canvas.addPaintListener (new PaintListener () {
+public void paintControl (PaintEvent e) {
+// NOTE: turning on advanced graphics here (regardless of any
+//       alpha value set) will cause the stretched image to have
+//       an alpha gradient applied
+// NOTE: this same effect can be seen by performing any function
+//       that would enabled advanced graphics such as:
+//           e.gc.setAlpha(0xFE);
+//       or:
+//           e.gc.setAntialias(SWT.ON);
+e.gc.setAdvanced(true);
+// NOTE: the image is stretched in both dimensions
+e.gc.drawImage(image, 0, 0, 2, 10, 0, 0, 300, 300);
+}
+});
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ())
+display.sleep ();
+}
+image.dispose ();
+display.dispose ();
+}
+This gradient occurs regardless of the source of the source image (e.g.
+a loaded
+image or a created image as in the snippet above).
+(This bug becomes more severe with the use of GEF as there is no way to disable
+the use of advanced graphics on a Graphics object after it has been enabled.
+(And it hasn't been shown that disabling advanced graphics will even solve the
+problem.))

@@ -1,0 +1,43 @@
+NPE exiting workspace
+build 2002-03-19 on Win98.
+Note that I was running with a special SWT.JAR with the leak tool.
+I started my image.
+Immediately ran a runtime-workbench, closed the runtime-
+workbench, and then closed my image.
+This message was printed to the console
+during shutdown.
+Log: Thu Mar 21 12:16:47 EST 2002
+2 org.eclipse.core.runtime 2 Problems occurred when invoking code from plug-in:
+org.eclipse.core.runtime.
+java.lang.NullPointerException
+at org.eclipse.swt.graphics.Device.dispose_Object(Device.java(Compiled
+Code))
+at org.eclipse.swt.graphics.Color.dispose(Color.java:125)
+at org.eclipse.debug.internal.ui.ColorManager.dispose
+(ColorManager.java:34)
+at org.eclipse.debug.internal.ui.DebugUIPlugin.shutdown
+(DebugUIPlugin.java:392)
+at org.eclipse.core.internal.plugins.PluginRegistry$2.run
+(PluginRegistry.java:268)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:817)
+at org.eclipse.core.internal.plugins.PluginRegistry$1.visit
+(PluginRegistry.java:281)
+at org.eclipse.core.internal.plugins.PluginRegistry.accept
+(PluginRegistry.java:45)
+at org.eclipse.core.internal.plugins.PluginRegistry.shutdownPlugins
+(PluginRegistry.java:284)
+at org.eclipse.core.internal.plugins.PluginRegistry.shutdown
+(PluginRegistry.java:250)
+at org.eclipse.core.internal.runtime.InternalPlatform.loaderShutdown
+(InternalPlatform.java:518)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.internal.boot.InternalBootLoader.shutdown
+(InternalBootLoader.java:859)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:782)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:319)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:196)
+at org.eclipse.core.launcher.Main.run(Main.java:555)
+at org.eclipse.core.launcher.UIMain.main(UIMain.java:52)

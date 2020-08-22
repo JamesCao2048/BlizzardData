@@ -1,0 +1,17 @@
+NPE in CTabFolder.onMouse; onDispose should not set folderListeners to null
+In master, CTabFolder#onDispose(..) sets folderListeners to null.
+This can lead to NPEs if the CTabFolder is disposed while the folderListeners array is being traversed.
+To reproduce, start Eclipse SDK 3.8 with SWT from master, and then close the last editor by clicking the "X" with the mouse:
+java.lang.NullPointerException
+at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1824)
+at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:281)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+I'm pretty sure tabListeners has the same problem.
+Possible fixes:
+1) don't set the *Listeners fields to null
+2) set the *Listeners fields to "new *[0]" instead
+3) protect all usages of the fields

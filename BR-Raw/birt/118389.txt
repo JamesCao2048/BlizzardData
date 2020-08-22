@@ -1,0 +1,6 @@
+Bug 118389 Java based scripting -> ScriptStyle -> getBorderRightWidth
+steps to reproduce,
+- create a label
+- map the label to the Java class attached expected behavior,
+- getBorderRightWidth return "1cm" actual behavior,
+- getBorderRightWidth return null

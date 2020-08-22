@@ -1,0 +1,5 @@
+Bug 193079 Model hierarchy is incorrect after "restore properties
+Drag a crosstab item from library to report design, set some local properties.
+Click "restore properties" buttion on top-right of property editor, this will clean up all local properties on this crosstab.
+Now check the parent hierarchy of the crosstab cell in this crosstab, will find cell handle is changed, and the crosstab parent of this cell handle points to another crosstab instance(maybe the one in library?) But expected the parent of the new cell handle still points to the original one (in report design).
+If you close the report file and reopen it after "restore properties", the parent hierarchy is correct.

@@ -1,0 +1,44 @@
+ON_TOP setVisible(true) focus issues on parent of child shell.
+Create a shell that is a child of a parent shell.
+Use flags SWT.ON_TOP and open
+it via setVisible(true).
+When that shell is clicked or gets focus in some way,
+the parent shell goes inactive.
+Optional way to reproduce: Create a shell and
+add a CCombo box to that shell, drop down the combo box and the parent shell
+goes inactive.
+The desired effect is that the sub-shell gains focus without the parent shell
+going inactive.
+This effect can be seen in various places in the Windows
+operating system (not sure about other OSs).
+For example; the calendar combo box
+in MS Outlook, or even just a normal combo box do the correct things.
+For other places where this happens.
+CCombo has this problem, as does content
+assist in the Eclipse IDE (if the content assist window is clicked or gains
+focus via mouse or any other selection method).
+Test code:
+public static void main(String args []) {
+Display display = new Display();
+final Shell parent = new Shell(display, SWT.SHELL_TRIM);
+parent.setText("Parent");
+parent.setLayout(new FillLayout());
+parent.setSize(150, 150);
+Button b = new Button(parent, SWT.PUSH);
+b.setText("Bug Test");
+b.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+Shell child = new Shell(parent, SWT.ON_TOP);
+child.setLayout(new FillLayout());
+Label helpLabel = new Label(child, SWT.NONE);
+helpLabel.setText("Click me and parent shell goes inactive");
+child.setSize(200, 200);
+child.setVisible(true);
+}
+});
+parent.open();
+while (!parent.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

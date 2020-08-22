@@ -1,0 +1,7 @@
+Bug 158947 the error of the datetime type conversion
+Description: Now we input "Jan 13, 2003 12:00 AM GMT0100" into the parameter as a default value.
+The time is not transformed base on the time zone "GMT0100".
+The time should be transformed.
+And the other form input e.g.
+"SUN Jan 13, 2003 12:00 AM GMT0100" should be identified correctly.
+Step to reproduce: 1.new a report and create a report parameter 2.choose the date type "DateTime" 3.input value "SUN Jan 13, 2003 12:00 AM GMT0100" as default value,ok to finish 4.error message appear 5.input value "SUN Jan 13, 2003 12:00 AM" and click ok Actuate result: the parameter value is still "01/13/2003 12:00:00 AM" Excepted result: the datetime value should be transformed base on the time zone.

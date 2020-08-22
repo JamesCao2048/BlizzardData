@@ -1,0 +1,5 @@
+[Custom Widgets] CCombo setFocus does not work
+Build Identifier: M20100211-1343
+When trying to set initial focus on a CCombo during creation of cotrols, it does not work.
+The reason is IMHO that it does not override forceFocus() method, which is used when restoring saved focus from shell.
+Reproducible: Always

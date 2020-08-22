@@ -1,0 +1,4 @@
+eclipse gtk doesn't set X window name
+In X there is the X attribute "window name", which eclipse gtk doesn't seem to
+set.
+It should set this.

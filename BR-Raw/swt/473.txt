@@ -1,0 +1,4 @@
+Consistently resolve XOR-mode-painting related issues on MacOSX Carbon and Cocoa
+XOR-painting mode is used in various places within GEF to show feedback (drag feedback, marquee selection feedback, guide snap feedback, etc.).
+As this functionality is not supported on MacOSX  Carbon (GC#setXORMode() has been deprecated because of this) and as it does not seem to work "as expected" on MacOSX Cocoa (while I could not find any official information that it is not supported there), there are (and have been) quite a few bugzillas related to this.
+While for some of these workarounds have already been committed, there does not seem to be a consistent policy on how to deal with these issues in general.

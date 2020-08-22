@@ -1,0 +1,38 @@
+Shell in fullscreen has incorrect client area
+Build Identifier: version 3.631
+If you put a shell in fullscreen mode on OSX, a portion of the screen (a band towards the bottom) is actually not part of the client area (but it does cover the screen with the shell background).
+You can see it in action by simply adding a FillLayout to your Shell, adding 1 composite to the shell, and setting the background color to a non standard color.
+You'll see that in fullscreen mode, the composite doesn't scale to the entire shell.
+OSX 10.6.2
+Here's a snippet :
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TestFS {
+
+public static void main(String[] args) {
+Display display = new Display();
+Shell s = new Shell();
+s.setFullScreen(true);
+
+s.setLayout(new FillLayout());
+
+Composite composite = new Composite(s,SWT.NONE);
+composite.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
+
+
+s.open();
+
+while(!s.isDisposed()) {
+if(!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+Reproducible: Always
+Steps to Reproduce:
+1.run the snippet above on 10.6.2

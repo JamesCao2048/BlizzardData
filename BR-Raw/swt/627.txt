@@ -1,0 +1,42 @@
+GC#textExtents(String) throws ArrayIndexOutOfBoundsException with GDI+ and if 'r' is present in the string
+Try the following snippet:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TestSnippet {
+
+private static String text = "Labelrn"; //$NON-NLS-1$
+public static void main(String [] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+final Font font = new Font(display, "Tahoma", 16, SWT.BOLD);  //$NON-NLS-1$
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent event) {
+event.gc.setAntialias(SWT.ON);
+event.gc.setFont(font);
+event.gc.drawText(text, 10, 10);
+Point pt = event.gc.textExtent(text);
+event.gc.setClipping(10, 10 + pt.y, pt.x
+- 1, pt.y);
+event.gc.drawText(text, 10, 10 + pt.y);
+}
+});
+shell.setBounds(10, 10, 200, 200);
+shell.open ();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+font.dispose();
+display.dispose();
+}
+}
+Launch it as "Java Application" and get ArrayIndexOutOfBoundsException
+If you remove 'r' from the text, no exception
+If you don't set anti-alias (i.e.
+advanced flag
+- GDI+ support) it will also work.
+Think it's a typo, hence priority == critical just to make sure this gets fixed asap.

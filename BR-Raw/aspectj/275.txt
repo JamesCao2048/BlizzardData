@@ -1,0 +1,8 @@
+ajdoc should not use the Declaration and SymbolManager classes
+In order to speed up porting porting to the old HTML generation code ajdoc
+continues to use the following classes:
+org.aspectj.tools.ajdoc.Declaration
+org.aspectj.tools.ajdoc.SymbolManager
+These funtion only as a wrapper to the ASM, and are not needed.  The next
+refactoring effort should get rid of them (and all those static methods as
+well!).

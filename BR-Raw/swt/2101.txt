@@ -1,0 +1,50 @@
+Eclipse won't start due to error in System.Windows.FontStretch.FromOpenTypeStretch
+Build: I20070403
+This WPF build fails to start the workbench.
+There are hundreds of errors on stdout/stderr, and a number of errors in the log.
+Here is a sample of the errors that appear on stderr:
+LEAK
+-> 99=#FF5F3F5F type=System.Windows.Media.Color
+java.lang.Exception
+at org.eclipse.swt.internal.wpf.OS.Color_FromArgb(Native Method)
+at org.eclipse.swt.graphics.Color.init(Color.java:234)
+at org.eclipse.swt.graphics.Color.<init>(Color.java:79)
+at org.eclipse.ui.internal.WorkbenchColors.initWorkbenchColors(Workbench
+Colors.java:61)
+at org.eclipse.ui.internal.WorkbenchColors.startup(WorkbenchColors.java:
+101)
+at org.eclipse.ui.internal.Workbench$28.runWithException(Workbench.java:
+1467)
+at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupT
+hreading.java:31)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.ja
+va:123)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2390)
+at org.eclipse.swt.widgets.Display.HandleDispatcherInactive(Display.java
+:1698)
+at org.eclipse.swt.internal.wpf.OS.Dispatcher_PushFrame(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2162)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2284)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2200)
+at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.ja
+va:289)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.jav
+a:461)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEAppli
+cation.java:101)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandl
+e.java:152)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runAppli
+cation(EclipseAppLauncher.java:106)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ec
+lipseAppLauncher.java:76)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.ja
+va:359)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.ja
+va:174)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+java:64)

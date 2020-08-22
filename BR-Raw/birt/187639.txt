@@ -1,0 +1,11 @@
+Bug 187639 Tooltips for invisible series in svg chart still there
+I have a chart with tooltips (onMouseOver) on the data points of a series When I toggle the visibility for the series, the series vanishes But when I hover over the invisible data point, the tooltip appears.
+Steps to reproduce:
+-Create a report with SVG chart with a value series.
+-For interactivity set:
+-"Show tooltip" in the "OnMouseOver" event of the series
+-"Toggle visibility" in "OnClick" of the legend
+-Run the report, keep position of a data point of a series in mind and
+-toggle that series to invisible.
+-Hover mouse over remembered data point position
+--> the tooltip appears

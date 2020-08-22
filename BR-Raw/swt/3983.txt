@@ -1,0 +1,14 @@
+Coolbar - delete item behavior problem
+Build 2.0.1 20020807.
+1.Run the attached test case.
+2.Press the Delete/Add button multiple times.
+This removes the second item,
+then adds it back.
+Notice that the item is not added back in its original spot
+and keeps sliding over as you press the Delete/Add button.
+On Windows, this behavior does not occur.
+On Linux, when the item is deleted
+the space that it occuppied is added to the first item, so adding the item back
+at its original spot doesn't work as expected.
+The emulated behavior should be
+like the Windows behavior.

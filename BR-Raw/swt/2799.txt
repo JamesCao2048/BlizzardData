@@ -1,0 +1,76 @@
+Display.asyncExec() can hang Windows
+The following code demonstrates the hang.
+Try to move the shell or scroll the
+table as it is being filled.
+You won't be able to click on the task bar or
+any other Windows application until the table is completely filled.
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+public class Table8 {
+static final int COLUMNS = 3, ROWS = 100000, PAGE = 100;
+static final String [] [] DATA = new String [ROWS] [COLUMNS];
+static {
+for (int i = 0; i
+< ROWS; i++) {
+for (int j = 0; j
+< COLUMNS; j++) {
+DATA [i][j] = "Item " + i + "-" + j;
+}
+}
+}
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+RowLayout layout = new RowLayout(SWT.VERTICAL);
+layout.fill = true;
+shell.setLayout(layout);
+final Table table = new Table(shell, SWT.BORDER);
+table.setLayoutData(new RowData(400, 400));
+table.setHeaderVisible(true);
+for (int i = 0; i
+< COLUMNS; i++) {
+TableColumn column=new TableColumn(table,SWT.NONE);
+column.setText("Column " + i);
+column.setWidth(128);
+}
+final ProgressBar progress = new ProgressBar(shell, SWT.NONE);
+progress.setMaximum(ROWS
+- 1);
+shell.pack();
+shell.open();
+fillTable(table, progress, PAGE);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+static void fillTable(
+final Table table,
+final ProgressBar progress,
+final int page) {
+final Display display = table.getDisplay();
+Runnable runnable = new Runnable() {
+int index = 0;
+public void run() {
+if (table.isDisposed()) return;
+int end = Math.min(index + page, ROWS);
+while (index
+< end) {
+TableItem item =
+new TableItem(table, SWT.NULL);
+for (int j = 0; j
+< COLUMNS; j++) {
+item.setText(j, DATA[index][j]);
+}
+index++;
+}
+if (end == ROWS) end = 0;
+progress.setSelection(end);
+if (index
+< ROWS) display.asyncExec(this);
+}
+};
+display.asyncExec(runnable);
+}
+}

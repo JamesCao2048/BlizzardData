@@ -1,0 +1,16 @@
+Bug 191064 TVT33:TCT561: da: Checkmark column label not centered in dialog
+<response_by> Denmark TSC at 2007.06.04.08.37.35
+</response_by> Description: Description: Subject: da: Checkmark column label not centered in dialog OS: Windows Build date: 0603 Component name: BIRT Blocking: No Tester Name: Soeren Schmidt Steps to recreate the problem: Import BIRT report test files in new project.
+Open the project.
+In the Navigator view, double click the Test_Report_4.rptdesign to open the chart, and then double click the chart to open the chart editor.
+Click the Format Chart tab.
+The Edit Chart dialog opens.
+Click Axis in the Chart Area.
+This will bring up the Chart Preview where the problem is.
+Also see attached screenshot file.
+Problem Description: The column label "Visible" is not centered above the checkbox it belongs to.
+Soeren, Danish tester.
+<response_by> Bryan Green at 2007.06.05.10.05.09
+</response_by> Problem occurs in English as well.
+<response_by> Bryan Green at 2007.06.05.10.05.18
+</response_by> This article was reassigned from Category:''TVT Testcases''.

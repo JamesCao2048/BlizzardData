@@ -1,0 +1,61 @@
+Dismissing open type dialog with Escape crashes Eclipse
+- Open 'Open Type' dialog.
+- press 'Escape'
+-> Eclipse crashes:
+Current Java thread:
+at org.eclipse.swt.internal.carbon.OS.GetNextEvent(Native Method)
+at org.eclipse.swt.widgets.Display.update(Display.java:1669)
+at org.eclipse.swt.widgets.Control.update(Control.java:2718)
+at org.eclipse.ui.internal.EditorWorkbook.drawGradient(EditorWorkbook.java:339)
+at org.eclipse.ui.internal.EditorPane.shellActivated(EditorPane.java:142)
+at
+org.eclipse.ui.internal.WorkbenchWindow$12.shellActivated(WorkbenchWindow.java:14
+11)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:157)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:485)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:1275)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1123)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:561)
+at org.eclipse.jface.window.Window.open(Window.java:541)
+at
+org.eclipse.ui.dialogs.AbstractElementListSelectionDialog.access$superOpen(AbstractE
+lementListSelectionDialog.java:402)
+at
+org.eclipse.ui.dialogs.AbstractElementListSelectionDialog.access$2(AbstractElementList
+SelectionDialog.java:401)
+at
+org.eclipse.ui.dialogs.AbstractElementListSelectionDialog$4.run(AbstractElementListSel
+ectionDialog.java:395)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:65)
+at
+org.eclipse.ui.dialogs.AbstractElementListSelectionDialog.open(AbstractElementListSel
+ectionDialog.java:393)
+at
+org.eclipse.jdt.internal.ui.dialogs.TypeSelectionDialog.open(TypeSelectionDialog.java:2
+03)
+at org.eclipse.jdt.internal.ui.actions.OpenTypeAction.run(OpenTypeAction.java:53)
+at org.eclipse.jdt.internal.ui.actions.OpenTypeAction.run(OpenTypeAction.java:74)
+at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:211)
+at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:195)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributio
+nItem.java:411)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent(ActionContributionIte
+m.java:365)
+at
+org.eclipse.jface.action.ActionContributionItem.access$0(ActionContributionItem.java:35
+6)
+at
+org.eclipse.jface.action.ActionContributionItem$ActionListener.handleEvent(ActionContri
+butionItem.java:48)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:485)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:1275)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1123)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1370)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1353)
+at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:841)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:432)
+at EclipseRuntimeLauncher.main

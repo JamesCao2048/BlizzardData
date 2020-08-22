@@ -1,0 +1,11 @@
+GTK FileDialog ignores setFileName() for SWT.OPEN dialogs if no filterPath set
+The GTK version of FileDialog only honors setFileName() if setFilterPath() is
+also called before open(), apparently because presetChooserDialog() has its call
+to OS.gtk_file_chooser_set_filename() wrapped in an "if (filterPath.length () >
+0)".
+However, presetClassicDialog() appears to do the right thing.
+Is there
+some issue with the new GTK file chooser where giving it only a relative
+filename won't work?
+If so, can the current working directory be used as a
+default filterPath?

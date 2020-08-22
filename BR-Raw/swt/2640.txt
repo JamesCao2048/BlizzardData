@@ -1,0 +1,7 @@
+Cannot middle-button paste to rxvt from Eclipse
+Some applications can only deal with XA_STRING when reading from the primary
+clipboard.
+Currently, Eclipse only privides UTF8_STRING and COMPOUND_TEXT results.
+A notable broken example is rxvt, another is xclip, and yet another is eterm.
+All of these applications only handle the STRING type for middle-button paste.
+The attached patch addresses this problem.

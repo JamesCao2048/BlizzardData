@@ -1,0 +1,3 @@
+Bug 288209 [Regression]Expression in Joint data set filter condition are invalid to select value
+Description: [Regression]Expression in Joint data set filter condition are invalid to use Build number: 2.5.1.v20090901-0630 Steps to reproduce: 1, New two data sets, CUSTOMERS and ORDERS 2, New Joint data set and join key is CUSTOMERNUMBER 3, New a filter for example: select PHONE as filter condition key expression 4, Try to select value Expected result: Select Value is working Actual result: Error popped up: The expression's value can not be retrieved.
+Invalid Bound column name: PHONE Error log:

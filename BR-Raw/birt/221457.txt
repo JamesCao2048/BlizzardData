@@ -1,0 +1,4 @@
+Bug 221457 Data type checking for concatenated expression is wrong.
+If user inputs an expression like data["year"]+" Q"+data["quarter"], chart builder will treat it as Linear type.
+Although data["year"] and data["quarter"] are both linear type, the concatenated expression should be Text type.
+So, chart builder should check if there's string in the expression, beside of checking data type of bindings.

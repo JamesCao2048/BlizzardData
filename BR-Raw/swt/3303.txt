@@ -1,0 +1,11 @@
+TrayItem not coming back after an explorer crash
+It would be good if there was a way to get the tray icon back after an explorer crash.
+An easy way to test it, is to open the task window, kill explorer task, and restart a new one.
+Some applications manage to re-add themselves (while still avoiding flickering in normal state, and
+moving in the system try, so I guess this is not 'only' a remove / readd).
+Maybe there's a way to be notified when explorer starts?
+Anyway, I've always refused bugs from my users about this saying that this is not SWT's problem if the
+explorer crashed, and that in the first place they should complain to microsoft.
+I refrained from
+reporting this "bug", but if there's an easy fix...
+(and it's easy to test / reproduce).

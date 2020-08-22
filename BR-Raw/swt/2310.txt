@@ -1,0 +1,23 @@
+Tree with TreeColumn loops forever if setWidth not called
+swt 3.2/HEAD
+if the application code forgets to call TreeColumn#setWidth the code fails bad, apparently it loops forever, the scrollbar gone mad.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+Tree tree = new Tree(shell, SWT.MULTI);
+TreeColumn column = new TreeColumn (tree, SWT.NONE);
+column.setText("Column0");
+//	column.setWidth(150);
+for (int i = 0; i
+< 60; i++) {
+TreeItem item = new TreeItem (tree, SWT.NONE);
+item.setText("Item " + i);
+
+}
+shell.setLayout(new FillLayout());
+shell.setSize(400, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}

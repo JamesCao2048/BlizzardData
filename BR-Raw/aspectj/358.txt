@@ -1,0 +1,79 @@
+Compiler failure on @annotation
+I'm using the ajc embedded in the latest dev build of AJDT (build
+20050713163417)
+This small example illustrates the problem:
+public abstract aspect AbstractRequestMonitor {
+public pointcut requestExecution(RequestContext requestContext) :
+execution(* RequestContext.execute(..)) && this(requestContext);
+public abstract class RequestContext {
+public abstract Object execute();
+}
+
+after(RequestContext requestContext) throwing (Throwable t) :
+requestExecution(requestContext) {
+}
+
+}
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+@Retention(RetentionPolicy.RUNTIME)
+public @interface AroundAdvice {
+}
+public aspect ErrorHandling {
+declare soft: Exception: !@annotation(AroundAdvice) && !withincode(* *
+(..));
+
+Object around() : adviceexecution() && !@annotation(AroundAdvice) {
+try {
+return proceed();
+} catch (Exception e) {
+return null;
+}
+}
+}
+Here's the stack trace I get:
+org.aspectj.weaver.BCException: bad
+at org.aspectj.weaver.bcel.BcelRenderer.visit(BcelRenderer.java:228)
+at org.aspectj.weaver.ast.Literal.accept(Literal.java:29)
+at org.aspectj.weaver.bcel.BcelRenderer.recur(BcelRenderer.java:151)
+at org.aspectj.weaver.bcel.BcelRenderer.renderTest
+(BcelRenderer.java:117)
+at org.aspectj.weaver.bcel.BcelAdvice.getTestInstructions
+(BcelAdvice.java:445)
+at org.aspectj.weaver.bcel.BcelShadow.weaveAroundClosure
+(BcelShadow.java:2585)
+at org.aspectj.weaver.bcel.BcelAdvice.implementOn(BcelAdvice.java:182)
+at org.aspectj.weaver.Shadow.implementMungers(Shadow.java:480)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:358)
+at org.aspectj.weaver.bcel.BcelClassWeaver.implement
+(BcelClassWeaver.java:1703)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave
+(BcelClassWeaver.java:389)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave
+(BcelClassWeaver.java:94)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1362)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump
+(BcelWeaver.java:1327)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify
+(BcelWeaver.java:1106)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:981)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave
+(AjCompilerAdapter.java:286)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling
+(AjCompilerAdapter.java:165)
+at
+org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org_aspec
+tj_ajdt_internal_compiler_CompilerAdapter$2$f9cc9ca0(CompilerAdapter.aj:70)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile
+(Compiler.java:368)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation
+(AjBuildManager.java:727)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild
+(AjBuildManager.java:206)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
+(AjBuildManager.java:140)
+at org.aspectj.ajde.internal.CompilerAdapter.compile
+(CompilerAdapter.java:121)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run
+(AspectJBuildManager.java:191)

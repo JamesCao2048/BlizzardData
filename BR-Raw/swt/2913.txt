@@ -1,0 +1,9 @@
+setBackground of text redraw incorrect with xp style
+When using the XP style the Text widget seems to fill a rectangle smaller than
+the allocated area for the Text widget.
+When setting the background color it
+has a small gutter inside the border that the color wasn't applied to.
+It can
+be remedied by mousing over the widget or when the window is redrawn.
+I'll
+attach sample code and screen shots of the behavior.

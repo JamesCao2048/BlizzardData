@@ -1,0 +1,6 @@
+Bug 135192 [Regression] Maximum number of rows in data set preview doesn't work for script data source.
+Description: Maximum number of rows in data set preview doesn't work for script data source.
+Steps to reproduce: 1.Create a script data source and create a related data set.
+2.Set maximum number of rows in preferences.
+Expected result: it works as setting.
+Actual result: maximum number of rows setting doesn't take effect.

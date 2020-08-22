@@ -1,0 +1,33 @@
+[browser] GTK crashes on attachments
+A php script to crash the browser widget snippet128:
+<?php
+header('Content-Disposition: : attachment; filename="eclipse.txt"');
+header('Content-Encoding: deflate');
+header('Content-Length: 27429');
+header('Content-Type: application/x-bittorrent; name="eclipse.txt"');
+?>
+(save as crash.php, and load it through a php enabled server in the browser
+snippet).
+On Mozilla this pops up the "Opening ...
+save to disk" popup.
+The snippet128 browser example crashes.
+SWT 3046 gtk:
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0x428C3355
+Function=Java_org_eclipse_swt_internal_mozilla_XPCOM_VtblCall__II_3I+0xF
+Library=/home/dev/sancho/libswt-mozilla-gtk-3046.so
+Current Java thread:
+at org.eclipse.swt.internal.mozilla.XPCOM.VtblCall(Native Method)
+at org.eclipse.swt.internal.mozilla.nsIWebBrowserChrome.GetWebBrowser
+(nsIWebBrowserChrome.java:55)
+at org.eclipse.swt.browser.WindowCreator.CreateChromeWindow
+(WindowCreator.java:92)
+at org.eclipse.swt.browser.WindowCreator$2.method3
+(WindowCreator.java:42)
+at org.eclipse.swt.internal.mozilla.XPCOMObject.callback3
+(XPCOMObject.java:259)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_iteration(Native Method)
+- locked
+<0x49780df0> (a java.lang.Class)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1725)
+at WB.main(WB.java:107)

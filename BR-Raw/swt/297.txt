@@ -1,0 +1,22 @@
+Some radio button groups not read correctly by JAWS
+Build Identifier: I20100608-0911
+There are some radio button groups still not read correctly by JAWS 12.
+Please refer  bug 282032 .
+Build ID: 3.6.0
+Reproducible: Always
+Steps to Reproduce:
+1.Start JAWS 12
+2.Start ECLIPSE 3.6.0
+1) Select File
+-> New
+-> Java Project
+JRE radios: Use an execution environment JRE:, Use a project specific JRE:, Use
+default JRE
+2) Select File
+-> New
+-> Plug-in Project
+Target Platform radios: Eclipse version:, an OSGi framework
+3) Select File
+-> New
+-> Fragment Project
+Target Platform radios: Eclipse version:, an OSGi framework

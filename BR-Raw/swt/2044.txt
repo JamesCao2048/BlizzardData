@@ -1,0 +1,44 @@
+[Presentations] AIOBE on CTabFolder setSelectionBackground
+I20070503-1400
+We get an AIOBE when starting Eclipse of a platform where the display has a bit depth of 8 (specifically AIX in our case).
+The problem seems to stem from the following lines in CTabFolder.setSelectionBackground :
+if (getDisplay().getDepth()
+< 15) {
+// Don't use gradients on low color displays
+colors = new Color[] {colors[colorsLength
+- 1]};
+percents = new int[] {};
+}
+Causing this to be true, will trigger the exception every time.
+Stack trace:
+java.lang.ArrayIndexOutOfBoundsException: 1
+at org.eclipse.swt.custom.CTabFolder.setSelectionBackground(CTabFolder.java:3369)
+at org.eclipse.ui.internal.presentations.PaneFolder.setSelectionBackground(PaneFolder.java:732)
+at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.updateColors(DefaultTabFolder.java:437)
+at org.eclipse.ui.internal.presentations.defaultpresentation.DefaultTabFolder.setActive(DefaultTabFolder.java:389)
+at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.setActive(TabbedStackPresentation.java:300)
+at org.eclipse.ui.internal.DefaultStackPresentationSite.setPresentation(DefaultStackPresentationSite.java:39)
+at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:640)
+at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:575)
+at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:563)
+at org.eclipse.ui.internal.EditorSashContainer.createControl(EditorSashContainer.java:517)
+at org.eclipse.ui.internal.EditorAreaHelper.<init>(EditorAreaHelper.java:41)
+at org.eclipse.ui.internal.WorkbenchPage.init(WorkbenchPage.java:2274)
+at org.eclipse.ui.internal.WorkbenchPage.<init>(WorkbenchPage.java:551)
+at org.eclipse.ui.internal.WorkbenchWindow.busyOpenPage(WorkbenchWindow.java:713)
+at org.eclipse.ui.internal.Workbench$20.runWithException(Workbench.java:1023)
+at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:123)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3297)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2975)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2288)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2204)
+at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:101)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:153)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+at org.eclipse.core.runtim

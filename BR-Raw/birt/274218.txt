@@ -1,0 +1,2 @@
+Bug 274218 OK and Cancel button are hidden when opening highlight dialog
+Steps: 1, New a data item 2, Add a highlight for data item 3, Check the OK and Cancel button 4, Resize the dialog Build Info 2.5.0 v20090429-0630 After step3, OK and Cancel buttons are hidden, and after step4, they appeared.

@@ -1,0 +1,9 @@
+StyledText - during cut if clipboard copy fails do not delete text
+StyledText.cut() calls copy() which does a clipboard copy and can fail.
+If the
+copy fails, the cut operation should NOT delete the text.
+One can currently
+lose work.
+Resolve later.
+Why copy is failing so often in some cases [ Bug 16011 ] is a
+separate issue.

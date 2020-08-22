@@ -1,0 +1,8 @@
+GC.getClipping( ) difference GTK / Windows
+Build ID: M20060629-1905
+Steps To Reproduce:
+1.Launch snippet48 (image scrolling) on a Windows platform and observe gc.getClipping() value each time a paint event occurs.
+2.Launch snippet48 (image scrolling) on a Linux Gnome platform and observe gc.getClipping() value each time a paint event occurs.
+3.On the Linux, the gc is never clipped.
+More information:
+My SWT version is : 3.2.0v3232m.

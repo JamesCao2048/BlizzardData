@@ -1,0 +1,12 @@
+Omit use of deprecated method gdk_drawable_get_size() for newer GTK+ and make it dynamic
+Work on gdk_drawable_get_size() started here:
+https://bugs.eclipse.org/bugs/show_bug.cgi?id=383842
+As it was GC widget related, I've decided to open separate bug for implementation of new GTK API calls for newer GTK+ in remaining methods.
+What I have done:
+Created 2  helper functions:
+1.Widget.gdk_pixmap_get_size for pixmaps
+2.Widget.gdk_window_get_size for windows
+Replaced OS.gdk_drawable_get_size  with these 2 functions in Widget's scope, implemented version guards outside Widget's scope.
+Made gtk_drawable_get_size dynamic.
+Patch is available here:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gdk_drawable_get_size

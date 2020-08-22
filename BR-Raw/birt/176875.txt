@@ -1,0 +1,10 @@
+Bug 176875 BIRT viewer - WTP integration - web.xml file created has blank values
+When you create a BIRT web project, the web.xml file has lot of blank default values, which is very confusing to understand.
+Some users commented about it during the eclipse conference.
+Suggestions 1) BIRT_VIEWER_WORKING_FOLDER
+- set the default value 2) BIRT_VIEWER_MAX_ROWS
+- Write a comment above, saying by default all rows are shown, also explain the user of this variable.
+3) BIRT_RESOURCE_PATH
+- This should specify the default value or atleast put a comment indicating where is it picked from.
+This is very confusing.
+4) General It would be good to put a onew line comment on all.

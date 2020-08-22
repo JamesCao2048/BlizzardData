@@ -1,0 +1,11 @@
+java.lang.RuntimeException at AsmManager.java:1143
+Build Identifier: Eclipse AspectJ Development Tools  Version: 2.0.3.e35x-20100419-1200 AspectJ version: 1.6.9.20100416110000
+java.lang.RuntimeException
+at org.aspectj.asm.AsmManager.removeSingleNode(AsmManager.java:1143)
+at org.aspectj.asm.AsmManager.removeRelationshipsTargettingThisType(AsmManager.java:798)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1173)
+at org.aspectj.ajdt.internal.compiler.AjPipeliningCompilerAdapter.weaveQueuedEntries(AjPipeliningCompilerAdapter.java:455)
+at org.aspectj.ajdt.internal.compiler.AjPipeliningCompilerAdapter. ...  for handle =xstm/stm<com.argilsoft.xstm.core{TKeyed.java[TKeyed[Visitor?field-set(java.util.ArrayList com.argilsoft.xstm.core.Visitor._continueStack)
+Reproducible: Sometimes
+Steps to Reproduce:
+Random exception popup in Eclipse

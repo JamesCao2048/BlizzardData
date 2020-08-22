@@ -1,0 +1,3 @@
+Bug 113058 error message appears when preview dynamic image
+description: error message appears when preview dynamic image steps to reproduce: 1.new a dynamic image (see attached) 2.preview actual result: image appears with an error message "There are errors on the report page:
+- There are error(s) in Image:null Error0 : data.engine.InvalidJSExpr(1 time)detail: Invalid Javascript expression: nullThe expression cannot be null or emptyThe expression cannot be null or empty" appears expected result: no error message appears when preview dynamic image

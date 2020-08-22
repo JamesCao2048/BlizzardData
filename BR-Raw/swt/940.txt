@@ -1,0 +1,57 @@
+Exception disposing menu in SWT.Hide
+Run test.
+Select "item2" in menu bar.
+This happens:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Menu.menuDidClose(Menu.java:677)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4706)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(Display.java:4187)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:4385)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.nextEventMatchingMask(NSApplication.java:75)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3093)
+at PR270379.main(PR270379.java:50)
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class PR270379 {
+public static void main(String[] args) {
+try {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(1, false));
+final  Menu bar = new Menu(shell, SWT.BAR);
+MenuItem file = new MenuItem(bar, SWT.CASCADE);
+file.setText("File");
+final Menu menu = new Menu(shell, SWT.DROP_DOWN);
+file.setMenu(menu);
+MenuItem item1 = new MenuItem(menu, SWT.PUSH);
+item1.setText("Item1");
+final MenuItem item2 = new MenuItem(menu, SWT.PUSH);
+item2.setText("Item2");
+shell.setMenuBar(bar);
+item2.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("here");
+}
+});
+menu.addListener(SWT.Hide, new Listener() {
+public void handleEvent(Event event) {
+//			item2.dispose();
+menu.dispose();
+}
+});
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+} catch (Throwable e)  {
+e.printStackTrace();
+}
+}
+}

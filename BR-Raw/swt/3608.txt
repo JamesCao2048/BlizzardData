@@ -1,0 +1,15 @@
+[CellEditors] [DBCS] canna input mode fires bogus event from Text Control
+Steps:
+1)Create simple file named foo.usr.
+2)Open the propertysheet example editor on this file.
+3)Select a department (or group or whatever) and go to edit the name of that
+object in the propertysheet
+4) Shift+SPACE to enter canno input mode.
+5) Type "nihongo" and press ENTER
+When you press ENTER, the propertysheet receives either a bogus
+widgetDefaultSelected event, or a bogus focusLost event.
+In either case, the
+entered canna text is lost.
+This affects anyone who displays a popup celleditor and is interested in the
+events mentioned above.
+This bug affects multiple GEF clients in WSAD

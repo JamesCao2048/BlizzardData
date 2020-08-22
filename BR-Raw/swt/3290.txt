@@ -1,0 +1,30 @@
+Bug in emulated TextLayout.setFont(Font)
+I set Platfrom and OS to other because I don't know to which platform/OS
+emulated TextLayout belongs.
+the method issues an SWT.ERROR_GRAPHIC_DISPOSED instead of
+SWT.ERROR_INVALID_ARGUMENT if a disposed font is passed to it.
+The
+documentation clearly states that passing a disposed causes a
+SWT.ERROR_INVALID_ARGUMENT.
+correctly the method should read (copied from win32 version):
+public void setFont (Font font) {
+checkLayout();
+if (font != null && font.isDisposed()) SWT.error
+(SWT.ERROR_INVALID_ARGUMENT);
+if (this.font == font) return;
+if (font != null && font.equals(this.font)) return;
+freeRuns();
+this.font = font;
+}
+but the current method
+( http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt/Eclipse %
+20SWT/emulated/textlayout/org/eclipse/swt/graphics/TextLayout.java) is:
+public void setFont (Font font) {
+checkLayout ();
+if (font != null && font.isDisposed()) SWT.error
+(SWT.ERROR_GRAPHIC_DISPOSED);
+if (this.font == font) return;
+if (font != null && font.equals(this.font)) return;
+freeRuns();
+this.font = font;
+}

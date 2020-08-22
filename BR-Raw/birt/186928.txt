@@ -1,0 +1,12 @@
+Bug 186928 [Regression] Exception is thrown out when preview result for a joint data set [0706]
+Description: Exception is thrown out when preview result for a joint data set.
+Build number: 2.2.0.v20070515-0630 Steps to reproduce: 1.Create a data source dSource_Oracle: oracle.jdbc.OracleDriver, jdbc:oracle:thin:@spmdb:1521:test.
+2.Create a new data set dSet_Oracle, select all columns from 'client'.
+3.New a data source "d1": select "Flat file data source", use the attached csv file.
+4.New a inner join data set: select "FlatFileDataSet" as the left and "dSource_Oracle" as the right.
+row["FlatFileDataSet::Id"] inner join row["dSource_Oracle::Id"].
+5.Click Preview Results.
+Expected result: No exception is thrown out.
+Actual result: Exception is thrown out.
+Error log: org.eclipse.birt.data.engine.core.DataException: Column binding "dSetOracle::row["ID"]" has referred to a data set column "dSetOracle::row["ID"]" which is not exist.
+at org.eclipse.birt.data.engine.impl.ResultIterator.validateManualBindingExpressions(ResultIterator.java:290) at org.eclipse.birt.data.engine.impl.ResultIterator.<init>(ResultIterator.java:144) at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:164) at org.eclipse.birt.report.designer.data.ui.dataset.ResultSetPreviewPage.populateRecords(ResultSetPreviewPage.java:468) at org.eclipse.birt.report.designer.data.ui.dataset.ResultSetPreviewPage.access$2(ResultSetPreviewPage.java:461) at org.eclipse.birt.report.designer.data.ui.dataset.ResultSetPreviewPage$5.run(ResultSetPreviewPage.java:417) at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:113)

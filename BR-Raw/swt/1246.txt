@@ -1,0 +1,4 @@
+Possible leak in DragSource.drag() method
+It creates a color and does not dispose it.
+This is not a big problem since colors are not allocated (just a float array), but it shows up as a leak for users of Sleak.
+It also creates an image "newImageWithAlpha" that does not seem to be disposed.

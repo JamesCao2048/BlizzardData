@@ -1,0 +1,51 @@
+exception in Members panel of java browsing perspective
+I have not yet found the right sequence to reproduce the problem.
+Error Jun 09, 2004 15:38:35.392 Problems occurred when invoking code from
+plug-in: "org.eclipse.core.runtime".
+java.lang.ArrayIndexOutOfBoundsException: 10
+at org.eclipse.swt.widgets.Tree.getFocusItem(Tree.java:374)
+at org.eclipse.swt.widgets.Tree.gtk_changed(Tree.java:631)
+at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1161)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3006)
+at org.eclipse.swt.internal.gtk.OS.gtk_tree_store_clear(Native Method)
+at org.eclipse.swt.widgets.Tree.removeAll(Tree.java:849)
+at org.eclipse.jface.viewers.TreeViewer.removeAll(TreeViewer.java:223)
+at org.eclipse.jface.viewers.AbstractTreeViewer$5.run(AbstractTreeViewer.java:780)
+at
+org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:863)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:772)
+at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:238)
+at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1058)
+at
+org.eclipse.jdt.internal.ui.browsing.JavaBrowsingPart.setViewerInput(JavaBrowsingPart.java:785)
+at
+org.eclipse.jdt.internal.ui.browsing.JavaBrowsingPart.setInput(JavaBrowsingPart.java:771)
+at
+org.eclipse.jdt.internal.ui.browsing.JavaBrowsingPart.adjustInputAndSetSelection(JavaBrowsingPart.java:1001)
+at
+org.eclipse.jdt.internal.ui.browsing.JavaBrowsingPart.setSelectionFromEditor(JavaBrowsingPart.java:1160)
+at
+org.eclipse.jdt.internal.ui.browsing.JavaBrowsingPart.selectionChanged(JavaBrowsingPart.java:709)
+at
+org.eclipse.ui.internal.AbstractSelectionService$4.run(AbstractSelectionService.java:172)
+at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:615)
+at org.eclipse.core.runtime.Platform.run(Platform.java:758)
+at
+org.eclipse.ui.internal.AbstractSelectionService.firePostSelection(AbstractSelectionService.java:170)
+at
+org.eclipse.ui.internal.AbstractSelectionService$2.selectionChanged(AbstractSelectionService.java:76)
+at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2160)
+at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2113)
+at org.eclipse.jface.text.TextViewer$4.run(TextViewer.java:2092)
+at org.eclipse.swt.widgets.Display.timerProc(Display.java:2855)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_iteration(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2222)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1363)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1334)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:253)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:141)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:96)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:334)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Eclip

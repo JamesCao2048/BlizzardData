@@ -1,0 +1,2 @@
+List.getItemHeight can return 0
+results in divide by 0 errors in jface test suite.

@@ -1,0 +1,2 @@
+FillGradientRectangle results in screen cheese on x86_64
+On GTK > 2.18 with certain versions of X (seen on 1.10.1 and 1.9.5 to date), calling fillGradientRectangle will result in screen cheese.

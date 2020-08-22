@@ -1,0 +1,13 @@
+[handles] Cross reference view and markers mix up joinpoints assigned to advice
+Build ID: M20090211-1700
+Steps To Reproduce:
+I have two pieces of after advice in my aspect.
+In the cross reference view I see all of the joinpoints for both after advice selecting one of the after advice statements.  When I select the other after advice statement I see no joinpoints.
+When I select the marker for either piece of after advice, I see all the joinpoints for both pieces of advice.
+1. open and perform a clean compile on the attached project
+2. open the xref view
+3. select line 22 an note that you see 5 joinpoints (should only be 3)
+4. select line 68 and note that you see zero joinpoints (should be 2 here)
+5. right click the marker at line 68 and choose "advises" - note you see all 5 joinpoints
+6. right click the marker at line 22 and choose "advises" - note you see all 5 joinpoints
+More information:

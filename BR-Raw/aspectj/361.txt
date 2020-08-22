@@ -1,0 +1,11 @@
+NullPointerException when building configuration
+The exception below seems to be happening with any .lst file:
+Message: NullPointerException thrown: null
+Stack trace: java.lang.NullPointerException
+at
+org.aspectj.ajde.internal.CompilerAdapter.configureBuildOptions(CompilerAdapter.java:296)
+at
+org.aspectj.ajde.internal.CompilerAdapter.genBuildConfig(CompilerAdapter.java:170)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:95)
+at
+org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)

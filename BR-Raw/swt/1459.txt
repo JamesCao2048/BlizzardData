@@ -1,0 +1,10 @@
+[QuickAccess] PopupDialog stays open even though Eclipse has focus
+Eclipse 3.4
+Steps to reproduce:
+- Ctrl+3
+- From the dropdown select "Move"
+- Move the mouse over "File" of the main menubar
+- Click on "File"
+Actual results:
+- the menu opens
+- the popup dialog is not closing

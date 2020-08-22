@@ -1,0 +1,11 @@
+On Linux in RTL mode Tree.getItem(Point) gives incorrect results
+N20110410-2000
+Unzip the attached plug-in project and import as existing project
+Launch a new runtime workbench with the parameter
+-dir rtl
+Verify that Eclipse is in right to left mode
+Show the view TreeViewCategory/RTL tree view
+In the view click on an expander node
+Expected Result: Tree item.getItem() is null is written to the console
+Actual result: Tree item.getItem() is not null is written to the console
+This works correctly in ltr

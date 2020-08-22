@@ -1,0 +1,54 @@
+TraverseEvent e.doit doesn't turn off on TabFolder
+Build: 20020321
+Description: When hooking a TraverseListener onto a control on a TabFolder,
+setting e.doit = false turns off the default behaviour on Windows, but not on
+Linux.
+This behaviour is found only when there is a TabFolder as a recursive parent of
+the control.
+If the same controls are built on a Composite or directly on a
+shell, setting e.doit = false will turn off the default behaviour.
+To see the behaviour:
+1.Run the following sample code.
+2.Click on the "Add" button.
+"Hit me" will be printed to the console.
+3.Click on the combo.
+4.Hit enter on the keyboard.
+5.On Windows, nothing will happen.
+On Motif, "Hit me" will be printed.
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.events.*;
+public class DoitBug {
+
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+TabFolder tabFolder = new TabFolder (shell, SWT.NULL);
+tabFolder.setLayout (new GridLayout ());
+
+Combo marginRight = new Combo (tabFolder, SWT.NONE);
+marginRight.addTraverseListener (new TraverseListener () {
+public void keyTraversed (TraverseEvent event) {
+if (event.detail == SWT.TRAVERSE_RETURN) {
+event.doit = false;
+}
+}
+});
+Button add = new Button (tabFolder, SWT.PUSH);
+add.setText ("Add");
+add.addSelectionListener(new SelectionAdapter () {
+public void widgetSelected(SelectionEvent e) {
+System.out.println ("Hit me");
+}
+});
+
+shell.setSize (200,200);
+shell.open();
+while (! shell.isDisposed()) {
+if (! display.readAndDispatch()) display.sleep();
+}
+}
+}

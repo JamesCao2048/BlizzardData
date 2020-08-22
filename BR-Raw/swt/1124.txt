@@ -1,0 +1,5 @@
+Content assist shells movable when clicking on scrollbar thumb
+open content assist, click and drag at the very top of the scrollbars thumb which should be at the top of the scroll bar.
+The shell moves.
+I suspect that the mouse down is going through to the title bar of the shell (which we hid by making the content view big).
+The scroll bar should be handling the mouse down.

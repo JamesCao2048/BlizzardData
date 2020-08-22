@@ -1,0 +1,4 @@
+Bug 214086 [Automation]Rule of chart legend title sort is changed
+Description: Legend title is sorted by letters, but in latest BIRT2.3.0 Build, legend title is sorted by ASCII.
+Test Date: 20080102 Test Build: BIRT2.3.0 Daily Build: v20080102-1021 Step to reproduce: 1.Use the report attached 2.Preview it Expect result: Legend title is sorted by letters.
+Actual result: Legend title is sorted by ASCII.

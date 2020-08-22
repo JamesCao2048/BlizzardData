@@ -1,0 +1,4 @@
+Bug 189100 [Regression]X-axis data column issue[0001]
+Description: [Regression]X-axis data column issue[0001] Step: 1.New a sample datasource and dataset from OFFICES 2.New a chart and use the dataset 3.Change the data type of OFFICECODE from string to integer.
+4.Drop the column of OFFICECODE to Value(Y)Series.
+Actual result: Show the error message: Unable to use a text data to render a numerical/datetime axis.

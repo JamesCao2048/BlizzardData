@@ -1,0 +1,54 @@
+[DND] NavigatorDnDService does not update DragSource Transfer if invalid
+Build ID: I20080617-2000
+Steps To Reproduce:
+1. Open the JSP Editor on a JSP File.
+2. Drag Security Editor onto the JSP Editor
+3. 2 Exceptions will occur.
+See below
+More information:
+The problem was discovered in another context within an IBM product.
+The steps to recreate above show the problem in an eclipse only setting.
+This problem causes org.eclipse.gmf.runtime.diagram.ui.internal.parts.ImageFileDropTargetListener to throw an exception that prevents an IBM specific Listener from being called.
+Recently GMF made a change to check that the IResource was not null.
+In this case it is null, and the FileTransfer should not have been attempted.
+The problem is that a FileTransfer is initiated on an object that is not a IResource and does not adapt to IResource.
+The method org.eclipse.ui.internal.navigator.dnd.NavigatorDnDService.findCommonDropAdapterAssistants(Object, TransferData) returns NO_ASSISTANTS, but does not update the DragSource Transfer.
+This causes a transfer to occur on a DragSource that does not support the transfer.
+The exception that occurs is:
+eclipse.buildId=I20080617-2000
+java.version=1.6.0_07
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:
+-product org.eclipse.platform.ide
+Command-line arguments:
+-product org.eclipse.platform.ide
+-data C:adataadevworkspacew7
+-dev file:C:/adata/asecure/workspace/7.5dev/.metadata/.plugins/org.eclipse.pde.core/RAD75StrutsDev/dev.properties
+-os win32
+-ws win32
+-arch x86
+Error
+Tue Sep 16 08:14:01 EDT 2008
+null
+java.lang.reflect.InvocationTargetException
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.wst.sse.ui.internal.TransferBuilder$TransferProxyForDelayLoading.nativeToJava(TransferBuilder.java:254)
+at org.eclipse.swt.dnd.DropTarget.Drop(DropTarget.java:442)
+at org.eclipse.swt.dnd.DropTarget$3.method6(DropTarget.java:257)
+at org.eclipse.swt.internal.ole.win32.COMObject.callback6(COMObject.java:119)
+at org.eclipse.swt.internal.ole.win32.COM.DoDragDrop(Native Method)
+at org.eclipse.swt.dnd.DragSource.drag(DragSource.java:362)
+at org.eclipse.swt.dnd.DragSource.access$0(DragSource.java:288)
+at org.eclipse.swt.dnd.DragSource$1.handleEvent(DragSource.java:171)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3823)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3422)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)

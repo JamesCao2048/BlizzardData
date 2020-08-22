@@ -1,0 +1,20 @@
+[Browser] Opening Applet crashes Eclipse
+1.create an HTML file with contents:
+<html>
+<body>
+<applet code=testpass.MyApplet.class width="200" height="200">
+</applet>
+</body>
+</html>
+2.open with/web browser
+3.Eclipse crashes.
+From console:
+2005-06-17 12:11:00.816 java[1114] GrP not requesting _registerDragTypes because the window is
+dying already
+2005-06-17 12:11:46.057 java[1114] Apple Java Plugin: Java Plugin isn't first to load JVM.
+(src/plugin/
+src/macosx/native/apple/applet/JavaInstance.m
+-
+-[JavaInstance init] : 124)
+2005-06-17 12:11:46.059 java[1114] Apple Applet Plugin: JNI exception (registerNatives, 334)
+Exception in thread "Thread-4" java.lang.NoClassDefFoundError: sun/plugin/javascript/webkit/JSObject

@@ -1,0 +1,11 @@
+DBCS: Can type into read-only Text
+RC1
+- Window
+-> Preferences
+- Workbench
+- Fonts page
+- click in bottom "Description" Text area
+- type typical english text: nothing is shown, good
+- type a 2- or 4-byte chinese character: it's shown, bad
+I can't get a stand-alone example to do this, so perhaps this specific Text has
+some obscure set of style bits that is allowing this to happen.

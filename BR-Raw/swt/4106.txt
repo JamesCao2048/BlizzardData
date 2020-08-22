@@ -1,0 +1,12 @@
+"Color Button" doesn't update
+F1
+
+Suse 8.0, KDE 3.0, GTK 2
+
+- open Preference->Editor
+- resize preference dialog so that the color list at the bottom is
+fully visible.
+- select different entries from the color list
+observe: the buttom to the right doesn't change its icon.
+Works on Motif
+and Windows.

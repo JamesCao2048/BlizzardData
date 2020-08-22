@@ -1,0 +1,94 @@
+Slow rendering with images with transparancy bit set
+I have come across a severe performance issue when dealing with copying lots
+of images with transparency bit set to an Image used in a double buffer type
+painting strategy.
+This code is straight out of "The definitive guide to SWT and JFace" by Robert
+Warner with the addition of the loop to draw my tiles.
+If I use the images t1 and t2 as they are (without setting a transparancy bit)
+then performance is great.
+But if I extract the ImageData and set transparentPixel then performance drops
+off to an unacceptable level.
+Even if I extract the ImageData and create an new image from that without even
+setting transparentPixel performance is notably reduced.
+Here is the main class with the paint event etc.:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class DoubleDoppleGanger {
+private static final int IMAGE_WIDTH = 100;
+// The timer interval in milliseconds
+private static final int TIMER_INTERVAL = 10;
+private ImageManager im;
+
+// The location of the "ball"
+private int x = 0;
+private int y = 0;
+// The direction the "floating image" is moving
+private int directionX = 1;
+private int directionY = 1;
+// We draw everything on this canvas
+private Canvas canvas;
+/**
+* Runs the application
+*/
+public void run() {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("Animator Double Buffer");
+
+im = new ImageManager(display);
+
+createContents(shell);
+shell.open();
+// Set up the timer for the animation
+Runnable runnable = new Runnable() {
+public void run() {
+animate();
+display.timerExec(TIMER_INTERVAL, this);
+}
+};
+// Launch the timer
+display.timerExec(TIMER_INTERVAL, runnable);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+// Kill the timer
+display.timerExec(-1, runnable);
+display.dispose();
+}
+private void createContents(final Shell shell) {
+shell.setLayout(new FillLayout());
+canvas = new Canvas(shell, SWT.NO_BACKGROUND);
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent event) {
+// Create the image to fill the canvas
+Image image = new Image(shell.getDisplay(), canvas.getBounds());
+// Set up the offscreen gc
+GC gcImage = new GC(image);
+// Draw the background
+gcImage.setBackground(event.gc.getBackground());
+
+gcImage.fillRectangle(image.getBounds());
+int lx = 0;
+int ly = 0;
+
+int i;
+int j;
+boolean indent = false;
+
+for (i = 0; i
+< 30; i++) {
+if (indent) {
+lx = 32;
+indent = false;
+} else {
+lx = 0;
+indent = true;
+}
+
+for (j = 0; j
+<

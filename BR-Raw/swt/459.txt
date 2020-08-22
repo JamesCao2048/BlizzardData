@@ -1,0 +1,11 @@
+Application menu is not localized correctly
+Build Identifier: 3.6 Helios Release
+The Cocoa application menu obeys the "-nl" argument only for the "About", "Quit" and "Hide" menu items.
+The rest of the items, as well as the "Help>Search" menu item are shown in the preferred system language.
+Reproducible: Always
+Steps to Reproduce:
+1.Set a language different from English (e.g.
+Greek) as system default from Preferences
+2.Open Eclipse with
+-nl en_US
+3.Notice the application menu

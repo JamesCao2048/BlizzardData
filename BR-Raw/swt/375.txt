@@ -1,0 +1,24 @@
+[Mac] Using expos锟 and selecting Eclipse doesn't bring Eclipse window on top.
+Build Identifier: 20090920-1017
+I'm using MacBook Pro.
+OS: Mac Os X  Version 10.5.8
+Processor: 2.26 GHz Intel Core Duo
+Memory: 4 GB 1067 MHz DDR3
+
+When using Expose on MacBook Pro and select the Eclipse window; It doesn't get the Eclipse window on top, but the upper menu (Where Eclipse
+- File
+- Edit
+- Source...) shows.
+
+Notice that you need to select the other applications window before jumping using expos茅.
+Otherwise it will make you believe that it works normal.
+See screens
+http://i44.tinypic.com/2md1l6u.png
+http://i39.tinypic.com/2uo2b7d.png
+http://i42.tinypic.com/245av6u.png
+Reproducible: Always
+Steps to Reproduce:
+1.Open firefox(or any other application for that matter) and Eclipse.
+2.Have Firefox on top and start expos茅.
+3.Select Eclipse from expos茅.
+4.The eclipse menu shows but firefox is still on top.

@@ -1,0 +1,49 @@
+CTabFolder display bugs
+Some display bugs in CTabFolder:
+1.When resizing this window to be thinner, and then thicker, the upper right pixel (the "rounding-corner-pixel" in CtabFolder #1 in snippet) creates pixel cheese.
+2.There is no "rounding-corner-pixel" in the bottom right corner when the CTabFolder position is set to SWT.BOTTOM which seems inconsistent.
+(CTabFolder #3 in snippet)
+3.When setting TabHeight to 0 to get rid of the tabs completely, there doesn't seem to be a way to get rid of the mysterious white line that serves no purpose in both CTabFolder #2 and #4 in snippet (TOP and BOTTOM).
+Snippet:
+public static void createCTF(Shell shell, int pos, boolean b) {
+Composite c = new Composite(shell, SWT.NONE);
+c.setBackground(shell.getDisplay().getSystemColor(SWT.COLOR_BLUE));
+c.setLayout(new FillLayout());
+
+CTabFolder cf = new CTabFolder(c, SWT.FLAT);
+cf.setBackground(shell.getDisplay().getSystemColor(SWT.COLOR_GREEN));
+cf.setTabPosition(pos);
+cf.setBorderVisible(false);
+if (b) cf.setTabHeight(0);
+
+CTabItem ci = new CTabItem(cf, SWT.NONE);
+ci.setText("XXX");
+
+cf.setSelection(ci);
+Composite o = new Composite(cf, SWT.NONE);
+o.setBackground(shell.getDisplay().getSystemColor(SWT.COLOR_RED));
+ci.setControl(o);
+
+}
+
+public static void main(String[] a) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
+FillLayout f = new FillLayout();
+
+f.marginHeight = 20;
+f.marginWidth = 20;
+f.spacing = 20;
+shell.setLayout(f);
+createCTF(shell, SWT.TOP, false);
+createCTF(shell, SWT.TOP, true);
+createCTF(shell, SWT.BOTTOM, false);
+createCTF(shell, SWT.BOTTOM, true);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

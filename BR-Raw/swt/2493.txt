@@ -1,0 +1,51 @@
+Table: Disposing sort column should update background
+SWT-win32, v3227
+When the sort column is disposed of, the "selected column" needs to be
+cleared in the OS.
+Currently, the next column to appear at the index
+of the disposed column just inherits the internal selection status.
+For this reason the background is not updated.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TableSortDisposeTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+
+final Table tbl = new Table(shell, SWT.NONE);
+tbl.setHeaderVisible(true);
+tbl.setSortDirection(SWT.UP);
+
+final TableColumn col0 = new TableColumn(tbl, SWT.LEFT);
+col0.setText("Column 0");
+col0.setWidth(100);
+tbl.setSortColumn(col0);
+
+TableColumn col1 = new TableColumn(tbl, SWT.LEFT);
+col1.setText("Column 1");
+col1.setWidth(100);
+
+final Button btn = new Button(shell, SWT.PUSH);
+btn.setText("Click me");
+btn.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+col0.dispose();
+System.out.println(tbl.getSortColumn());
+btn.setEnabled(false);
+}
+});
+
+shell.setSize(300, 300);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

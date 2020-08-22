@@ -1,0 +1,63 @@
+Deadlocked Eclipse
+Running the latest from HEAD, I hit this deadlock while a progress dialog was open:
+Full thread dump Java HotSpot(TM) Client VM (1.4.2_03-b02 mixed mode):
+"ModalContext" prio=1 tid=0x08873548 nid=0x1c51 waiting for monitor entry
+[4f106000..4f106854]
+at org.eclipse.swt.widgets.Synchronizer.addLast(Synchronizer.java:47)
+- waiting to lock
+<0x450d1650> (a java.lang.Object)
+at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:148)
+- locked
+<0x45788fb8> (a org.eclipse.swt.widgets.RunnableLock)
+at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:28)
+at org.eclipse.swt.widgets.Display.syncExec(Display.java:3090)
+at
+org.eclipse.jface.operation.AccumulatingProgressMonitor.beginTask(AccumulatingProgressMonitor.java:121)
+at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1665)
+at
+org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:110)
+- locked
+<0x456cb288> (a org.eclipse.ui.actions.CopyFilesAndFoldersOperation$2)
+at
+org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:105)
+"TimeoutOutputStream" daemon prio=1 tid=0x4ea077b8 nid=0x1c51 in Object.wait()
+[4e852000..4e852854]
+at java.lang.Object.wait(Native Method)
+- waiting on
+<0x456c28f0> (a
+org.eclipse.team.internal.core.streams.TimeoutOutputStream)
+at java.lang.Object.wait(Object.java:429)
+at
+org.eclipse.team.internal.core.streams.TimeoutOutputStream.writeUntilDone(TimeoutOutputStream.java:240)
+- locked
+<0x456c28f0> (a
+org.eclipse.team.internal.core.streams.TimeoutOutputStream)
+at
+org.eclipse.team.internal.core.streams.TimeoutOutputStream.runThread(TimeoutOutputStream.java:195)
+at
+org.eclipse.team.internal.core.streams.TimeoutOutputStream.access$0(TimeoutOutputStream.java:193)
+at
+org.eclipse.team.internal.core.streams.TimeoutOutputStream$1.run(TimeoutOutputStream.java:66)
+at java.lang.Thread.run(Thread.java:534)
+"Worker-6" prio=1 tid=0x08611868 nid=0x1c51 waiting for monitor entry
+[4f085000..4f085854]
+at org.eclipse.swt.widgets.Synchronizer.addLast(Synchronizer.java:47)
+- waiting to lock
+<0x450d1650> (a java.lang.Object)
+at org.eclipse.swt.widgets.Synchronizer.asyncExec(Synchronizer.java:74)
+at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:34)
+at org.eclipse.swt.widgets.Display.syncExec(Display.java:3090)
+at
+org.eclipse.ui.model.WorkbenchContentProvider.resourceChanged(WorkbenchContentProvider.java:107)
+at
+org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:283)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:616)
+at org.eclipse.core.runtime.Platform.run(Platform.java:747)
+at
+org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:277)
+at
+org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:151)
+at
+org.eclipse.core.internal.resources.Workspace.broadcastChanges(Workspace.java:172)
+at org.eclipse.core.inter

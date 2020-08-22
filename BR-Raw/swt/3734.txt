@@ -1,0 +1,22 @@
+Tab Event weirdly handled in motif
+This is similar to  bug 33495  except it occurs on motif and the symptoms are
+different.
+The problem is that if the user assigns a command to the Tab key on
+motif, the action is performed, but focus transfers to the buttons in the toolbar.
+To reproduce:
+1) Get Eclipse for Linux/Motif/RC2
+2) Unzip and run it (with a fresh workspace)
+3) Open the Keys preference page
+4) Set (for example) the Line Down action to Global scope, Standard config, and
+Key seq 'Tab'
+5) Open up a new project (call it test) and a new file (call it test.txt)
+6) Press enter, followed by up arrow in the new file
+7) Press the 'Tab' button
+8) Notice how focus transfers to the first button in the toolbar.
+9) Press the 'Tab' button a few more times
+10) Notice how focus transfers along the toolbar and eventually returns to the
+editor
+11) Notice how once focus is transferred back to the editor the cursor is on the
+next line.
+This occurs for me on debian/unstable and was discovered due to a user
+attempting to use the TabNavigator plugin from zclipse.org.

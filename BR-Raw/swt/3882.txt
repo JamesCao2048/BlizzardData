@@ -1,0 +1,10 @@
+JP GP: showing Java-Editor pref. page with editor open
+1016 integration build, only on Japanese aix
+I realize that we don't claim support for this yet, so I'm just logging it as a
+case to test once we think that DBCS Motif is ready.
+- open a java editor on a .java file
+- Window
+-> Preferences
+- go to page Java
+- Editor
+- press OK, will get the attached GP

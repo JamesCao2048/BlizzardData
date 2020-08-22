@@ -1,0 +1,10 @@
+Bug 188058 Bottom arc and top oval of Tube and Cone and Pyramid chart are painted error.
+Build ID: I20070323-1616 Steps To Reproduce: 1.New a Tube chart.
+2.Flip axis.
+3.Preview the chart in viewer.
+Expected behavior:
+- The bottom of each series should be arc.
+- The top of each series should be oval.
+Actual behavior:
+- The bottom and top of each series are direct line, refer to attached output file.
+More information:

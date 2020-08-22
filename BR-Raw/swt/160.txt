@@ -1,0 +1,17 @@
+[Mac OS X 10.8] Text control loses focus upon its movement
+Created  attachment 220621   [details]
+Test case reproducing the issue.
+Text control loses focus upon its movement in Mac OS X 10.8 if created and displayed after Shell is opened.
+Text text1 = new Text(shell, SWT.BORDER);
+text1.setFocus();
+text1.setBounds(10, 10, 64, 16);
+Test case is attached.
+Run the test case and click on "Click here!" label.
+See the sysout.
+Expected:
+"Text1: focus gained."
+Actual:
+"Text1: focus gained.
+Text1: focus lost.
+Text1: focus gained."
+Works as expected on Mac OS X 10.6.7.

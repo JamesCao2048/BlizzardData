@@ -1,0 +1,92 @@
+[browser] setVisible(true) does not work
+taken from the Multipageeditor example , the folllowing code does not display
+the browser widget under Linux as expected: it _ONLY_ shows it when the maximize
+or minimize icon is pressed.
+Under Windows platform there is no problem:
+My settings:
+debian 3.0 sarge
+gnome 2.4
+kernel 2.6.6
+#######code starts##############
+package ss.editors;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.Vector;
+import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.browser.Browser;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.FontDialog;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.IFileEditorInput;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.editors.text.TextEditor;
+import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.part.MultiPageEditorPart;
+/**
+* An example showing how to create a multi-page editor.
+This example has 3
+* pages:
+*
+<ul>
+*
+<li>page 0 contains a nested text editor.
+*
+<li>page 1 allows you to change the font used in page 2
+*
+<li>page 2 shows the words in page 0 in sorted order *
+*
+<li>page 3 contains the html preview
+*
+</ul>
+*/
+public class MultiPageEditor extends MultiPageEditorPart implements
+IResourceChangeListener
+{
+/**
+* Creates page 1 of the multi-page vEditor, which allows you to change the
+* font used in page 2.
+*/
+List               tmpFiles = null;
+public Browser     browser  = null;
+/** The text editor used in page 0.*/
+private TextEditor editor;
+/** The font chosen in page 1.*/
+private Font       font;
+/** The text widget used in page 2.*/
+private StyledText text;
+private String     mytext   = "<html><body>test</body></html>";
+/**
+* Creates a multi-page editor example.
+*/
+public MultiPageEditor()
+{
+super();
+ResourcesPlugin.getWorkspace().addResourceChangeListener(

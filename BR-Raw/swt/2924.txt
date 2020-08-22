@@ -1,0 +1,27 @@
+GC.drawString ignores transparency boolean when alpha is used
+The transparency flag indicates whether the text should be back-filled with
+the background color before being painted (using FG color).
+If alpha blending
+is turned on, this flag is ignored.
+The result should be a yellow blended
+background with black text:
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setFont(new Font(display, "Arial", 18, SWT.BOLD));
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+gc.setBackground(new Color(display, 0, 100, 255));
+gc.fillRectangle(0, 0, 200, 200);
+gc.setBackground(new Color(display, 255, 255, 0));
+gc.setAlpha(200);
+gc.drawString("Test String", 10, 10, false);
+}
+});
+shell.open();
+
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+}

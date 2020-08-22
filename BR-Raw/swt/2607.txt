@@ -1,0 +1,51 @@
+Regression: Shell ignores first mouse-click after dialog closed
+SWT-win32, N20051119-0010
+- Run the snippet below
+- Double-click the list
+- Close the dialog that pops up
+- Try to click the button or one of the minimize/maximize/close buttons
+- Note that the first mouse-click is ignored, it does not do anything
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class DialogMouseTest {
+public static void main(String[] args) {
+final Display display = new Display();
+
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+List list = new List(shell, SWT.NONE);
+list.add("Double-click me");
+
+list.addListener(SWT.MouseDoubleClick, new Listener() {
+public void handleEvent(Event e) {
+Shell dlg = new Shell(shell, SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL);
+dlg.setText("Close me");
+dlg.pack();
+dlg.open();
+
+while (!dlg.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+});
+
+Button btn = new Button(shell, SWT.PUSH);
+btn.setText("I'm a button");
+
+shell.setSize(300, 100);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}

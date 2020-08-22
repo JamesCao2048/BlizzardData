@@ -1,0 +1,8 @@
+[Cocoa] Forms layout oddity
+Build id: I20081030-1917
+1.Create a new plugin project.
+2.Go to "Extensions" tab.
+3.Extensions list appears at bottom of part, with scroll needed to access.
+I'm not sure if this is an oddity with the layout for this particular form
+-- I haven't seen it any other place, but this page looks fine under Carbon.
+It looks as though the preferred size is not calculating correctly and the alignment is being interpreted as bottom.

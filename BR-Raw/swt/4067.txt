@@ -1,0 +1,13 @@
+Preference page does not expand to fit all widgets
+Build 20020607
+Linux-GTK
+The preference page dialog often does not expand enough to fully display
+all the widgets it contains.
+We've only been able to reproduce this problem
+on Linux-GTK, where it happens quite frequently.
+Just opening the
+preference page and clicking through on various pages, you're pretty much
+guaranteed to see the problem.
+Since the platform UI code seems to work as expected on other platforms, it
+looks like either the GTK widget isn't growing as much as the UI is
+requesting or the widgets aren't reporting their true required size.

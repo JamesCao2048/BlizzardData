@@ -1,0 +1,14 @@
+file chooser for OSX returns wrong path
+When choosing a jar file to include in the library, i can select the jar file
+fine but then when i click choose or double click on the file, it returns a
+bogus path back to eclipse.
+it adds a bunch of random directories at the
+begining of the path.
+if i try to select the file again it adds more
+directories at the begining.
+To fix it i edit the .classpath file in the
+project directory and manually put in the correct path.
+Restart eclipse and my
+libraries are there.
+Sweet product!  Can't wait for it to be in full swing for OSX!
+Dave

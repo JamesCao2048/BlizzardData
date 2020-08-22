@@ -1,0 +1,3 @@
+Bug 147700 URL builder -> Drill through, report parameters pane should always gray out when no parameter in target report design
+Description: URL builder
+-> Drill through, report parameters pane should always gray out when no parameter in target report design Steps to reproduce: 1.New a report r1 without parameter 2.New a report r2, drill through r1 3.In URL builder, select r1 as target report design, you can see report parameter pane grays out 4.Select radio button of report document 5.Select radio button of report design again, at this time report parameter pane doesn't gray out

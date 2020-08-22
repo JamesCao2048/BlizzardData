@@ -1,0 +1,18 @@
+[OLE] OleClientSite fails open document if Microsoft Word is not installed
+The OleClientSite constructor which takes a File, in one particular code path, attempts to look up a CLSID for "Word.Document" (the Microsoft Word ProgID).
+It's doing this to determine whether to use the default CONTENTS stream in an OLE storage, or to use "WordDocument", which is where Word puts it's own stuff.
+The code is:
+GUID wordGUID = getClassID(WORDPROGID);
+if (COM.IsEqualGUID(appClsid, wordGUID)) streamName = "WordDocument";
+If the document being opened isn't a Word document, then the code should do nothing, but the getClassID call includes this code:
+if (COM.CLSIDFromProgID(buffer, guid) != COM.S_OK){
+int result = COM.CLSIDFromString(buffer, guid);
+if (result != COM.S_OK)
+OLE.error(OLE.ERROR_INVALID_CLASSID, result);
+}
+If looking up the GUID fails for any reason, an exception is thrown, which aborts the whole operation.
+Looking up the "Word.Document" GUID fails when Microsoft Word isn't installed.
+This code path is used when you're opening a file using an editor other than the default editor that's registered
+- this is a supported operation, and should work.
+The fix should be simple
+- catch and suppress the exception thrown by getClassID(WORDPROGID), since this call can be expected to fail when Word isn't installed.

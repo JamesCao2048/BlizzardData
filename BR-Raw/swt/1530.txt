@@ -1,0 +1,6 @@
+Exception in setItemCount
+calling setItemCount(0) causes this exception.
+java.lang.ArrayIndexOutOfBoundsException: 100
+at org.eclipse.swt.widgets.Tree.setItemCount(Tree.java:3023)
+at org.eclipse.swt.widgets.Tree.setItemCount(Tree.java:2997)
+at Stub.main(Stub.java:19)

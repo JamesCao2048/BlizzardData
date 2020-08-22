@@ -1,0 +1,6 @@
+Bug 282501 getSelectionListType( ) returns wrong value if the selection list is empty [0705]
+Description: getSelectionListType( ) returns wrong value if the selection list is empty.
+Build number: 2.5.1.v20090706-0630 Steps to reproduce: 1.New parameter group with a report parameter "a", set Display type as "List Box".
+2.Call (IScalarParameterDefn) params.getSelectionListType( ); Expected result: 2 is returned.
+Actual result: 0 is returned.
+Error log: N/A

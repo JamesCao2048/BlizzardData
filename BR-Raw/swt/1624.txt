@@ -1,0 +1,6 @@
+MouseEnter always preceded by MouseMove
+- run the ControlExample, go to any tab
+- turn on listeners for MouseEnter, MouseExit and MouseMove
+- move the pointer into an example control on the page
+
+-> the initial event sequence always goes MouseMove then MouseEnter, not vice versa

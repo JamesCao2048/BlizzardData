@@ -1,0 +1,6 @@
+Bug 192104 [Regression] The template table element is left aligned when preview while it is set center aligned [0300]
+Description: The template table element is left aligned when preview while it is set center aligned.
+Regression of #146317 Build number: 2.2.0.v200706011-1025 Steps to reproduce: 1.Preview the attached template in HTML with firefox.
+Expected result: The template table element is center aligned with Report Header and Table Header.
+Actual result: The template table element is left aligned.
+Error log: N/A

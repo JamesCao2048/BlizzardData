@@ -1,0 +1,9 @@
+Bug 307959 Can not use non-numeric data to render value series even if the aggregation is COUNT[13].
+description: Can not use non-numeric data to render value series even if the aggregation is COUNT.
+build id: 2.6.0 v20100402-0630 steps to reproduce: 1.New data set with table payments in sample db.
+2.Insert a pie chart, using the data set.
+3.Select payment data as category.
+4.Select checknumber as value series.See the error message in chart builder.
+5.Change the aggregation from sum to count in Grouping and sorting dialog.
+Actual result: Error message still shows up, this is not expected.
+If you change aggregation through the aggregation expression below the value series expression, the error message will disappear.

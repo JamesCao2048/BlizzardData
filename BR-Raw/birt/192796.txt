@@ -1,0 +1,9 @@
+Bug 192796 In pdf xtab move to next page with a label before it.[1102]
+Description: In pdf xtab move to next page with a label before it.
+Build number:2.2.0.v20070615 Steps to reproduce: 1.Open attached xtab report.
+2.Preview in pdf.
+3.Remove the label item and preview in pdf again.
+Expected result: A label before the xtab will not cause the whole xtab moving to the second page.
+Actual result: In step2, xtab displays in the second page.
+In step3, xtab displays in the first page.
+Error log:n/a

@@ -1,0 +1,31 @@
+[browser] linux motif Browser shows up non embedded if previous instance disposed
+Run this.
+The second Browser shows up in a separate window.
+Problem with the
+GtkPlug.
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.browser.*;
+public class Browser3 {
+public static void main(String [] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Browser b = new Browser(shell, SWT.NONE);
+b.setUrl(" http://www.eclipse.org ");
+b.dispose();
+
+Browser b2 = new Browser(shell, SWT.NONE);
+b2.setUrl(" http://www.cnn.com ");
+
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

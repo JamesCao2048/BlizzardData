@@ -1,0 +1,10 @@
+Bug 179938 [Automation][Regression] Exception is thrown out when preview the data set with parameter [0705]
+Description: Exception is thrown out when preview the data set with parameter.
+Build number: 2.2.0.v20070329-1055 Steps to reproduce: 1.New a data source and a data set with a parameter and binding the parameter to a report parameter.
+2.Preview Results.
+Expected result: No exception is thrown out.
+Actual result: Exception is thrown out.
+Error log: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.2.0.v20070329-1055 Error Code:odaconsumer.CannotExecuteStatement Error Message:Cannot execute the statement.
+SQL statement does not return a ResultSet object.
+SQL error #1: At least one parameter to the current statement is uninitialized.

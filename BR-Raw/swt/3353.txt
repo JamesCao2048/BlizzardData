@@ -1,0 +1,27 @@
+TableItem.getImageBounds() returns incorrect value for Column 0
+I have a Table with two columns.
+The second column contains an image.
+The
+Table also has a TableEditor defined for it.
+When the TableEditor.computeBounds() method attempts to compute the size for
+Column 0, it gets an incorrect value.
+When computeBounds() calls
+TableItem.getImageBounds(), it should get a zero sized rectangle, since there
+is no image for this column.
+But if any column in the Table has an image, it
+gets a non-zero rectangle instead.
+There is a comment in TableItem:
+/*
+* Feature in Windows.
+LVM_GETSUBITEMRECT returns a small width
+* value even when the subitem does not contain an image.
+The
+* fix is to set the width to zero.
+*/
+if (index != 0 && images != null & images [index] == null) {
+width = 0;
+}
+But this patch doesn't work if the column is 0. So the incorrect sized
+rectangle is returned and TableEditor creates a editor widget for the cell with
+an incorrect size.
+The code works fine if the table contains no images.

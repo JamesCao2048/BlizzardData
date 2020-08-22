@@ -1,0 +1,9 @@
+FileDialog setFilterExtensions() does not work with extensions containing more than one point in the extension name
+User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.9 (KHTML, like Gecko) Version/4.0.3 Safari/531.9
+Build Identifier: SWT 3.4.0v3448f and SWT.3.5.1v3555a
+* it is not possible to select files with extensions that contain more than one point, if this extension is set via setFilterExtensions() for the FileDialog
+- therefore files of the desired type cannot be opened
+* works fine on windows
+* see attached screenshot
+- the .profile.xml files are not selectable
+Reproducible: Always

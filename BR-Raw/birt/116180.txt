@@ -1,0 +1,5 @@
+Bug 116180 [SPM]Dataset can not be previewed in report designer on Mac
+Description: Pull a dataset into the layout, preview in designer there is anothing displayed.
+Steps: 1, Create a sample datasource.
+create a dataset with sql statement "select * from CLASSICMODELS.EMPLOYEES" 2, Pull the dataset to the layout of the designer.
+3, Preview, there is nothing displayed.

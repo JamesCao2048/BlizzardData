@@ -1,0 +1,4 @@
+fix doc for SWT.SEARCH
+SWT.SEARCH allows setMessage to work.
+setMessage was made to work on all platforms.
+In some platforms SWT.SEARCH will also change the appearance of the text widget.

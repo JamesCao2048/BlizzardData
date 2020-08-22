@@ -1,0 +1,10 @@
+Bug 231085 [Regression] User have to select the certain axis to specify its series from the context menu [13]
+Description: User have to select the certain axis to specify its series from the context menu.
+Build number: 2.3.0.v20080508-1254 Steps to reproduce: 1.New a data set binding to CUSTOMERS.
+2.New a chart with More Axis.
+3.In "Select Data" tab, binding the chart to the data set, create three Y axis.
+4.Select Axis 1, and right click one column to select Axis 2
+- Series 1 in the context menu.
+Expected result: Series can be specified.
+Actual result: User have to change to Axis 2 first, then the column can be specify for Axis 2
+- Series 1.Error log: N/A

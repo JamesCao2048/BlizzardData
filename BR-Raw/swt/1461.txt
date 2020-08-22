@@ -1,0 +1,21 @@
+Application menu does not share application name
+When self hosting, the application menu in Eclipse reads "java".
+This SHOULD be a simple fix
+- I'll attach a patch that looks like it should work.
+But it doesn't.
+It doesn't work in Cocoa either so there may be some magic required to update the main menu that I'm not aware of...
+I cant update the name of anything that is currently visible.
+For instance, a simple app with an app delegate that looks like this also fails:
+#import "AppDelegate.h"
+@implementation AppDelegate
+-(void)applicationDidFinishLaunching:(NSNotification*)aNotification {
+NSMenu *menu = [[NSApplication sharedApplication] mainMenu];
+NSMenuItem *appMenuItem = [menu itemAtIndex: 0];
+NSString *original = [item title];
+NSLog(@"old title = %@", original);
+[item setTitle: @"Wuggu?"];
+NSString *newTitle = [item title];
+NSLog(@"new title = %@", newTitle);
+}
+@end
+the title method on the item does return the new value but the menu is still rendered with the old title.

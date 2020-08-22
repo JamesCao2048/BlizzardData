@@ -1,0 +1,7 @@
+Bug 116773 In group builder, data set columns are not listed in "sorting" and "filters" expression drop down list.
+Description: In group builder, data set columns are not listed in "sorting" and "filters" expression drop down list.
+Steps to reproduce: 1.Add a table and bind it to a data set, edit it.
+2.Add a group, group builder pops up.
+3.In "sorting" tab, pull down expression list.
+4.Data set columns are not listed.
+5.The same problem occurs in "filters".

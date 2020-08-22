@@ -1,0 +1,11 @@
+Dialogs block the execution of (a)syncExecs
+Hello..
+I surprisingly noticed that opening PrintDialog, FileDialog and DirectoryDialog
+block the execution of Runnables posted by syncExec() and asyncExec().
+On the
+other hand, the ones posted by timerExec() are still executed!
+SWT(3138)..
+what's wrong?
+best regards
+Saibel
+PS: I haven't found any similar postings/bugs, so I think this one is new.

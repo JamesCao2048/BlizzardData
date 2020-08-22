@@ -1,0 +1,10 @@
+double-click after opening brace does not select all block
+Version: 3.3.0
+Build id: I20070410-1043
+J2RE 5.0 IBM J9 2.3 Windows XP x86-32 build j9vmwi3223-2007020
+test scenario:
+- open a Java file
+- at the beginning of a method, or try block, place the cursor after the opening brace {
+- double click
+--> only the current line gets selected, whereas I expect the whole block to be selected.
+this works OK with an M6 build

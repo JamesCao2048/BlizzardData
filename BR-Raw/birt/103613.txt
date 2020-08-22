@@ -1,0 +1,7 @@
+Bug 103613 Linking chart by parameter causes error when a NULL param value is reached
+I have a chart embedded in a group and linked by a single parameter (datatype is string).
+This group is actually a subgroup of one or more groups.
+So there may not always be data for the group, and thus no parameter value for the chart.
+When this happens (when there is no data for the group), I get this error message: There are errors on the report page:
+- There are error(s) in Chart:null Error0 : data.engine.NullDefaultInParamValue(1 time)detail: Default value for input parameter cannot be null.Error1 : Error.ExtendedItemRenderingError(1 time)detail: There are problems(s) rendering Chart extended item .The DataSet bound to the chart returned no rows.
+I think this would be a common/expected occurence that should not raise an error, but rather the query should just be skipped.

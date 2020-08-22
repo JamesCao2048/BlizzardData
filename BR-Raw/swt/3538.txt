@@ -1,0 +1,51 @@
+Strange behaviour in VerifyListener under GTK
+Configuration: RedHat Linux 7.3, GTK 2.0.2, Atk 1.0.1, Pango 1.0.1, Eclipse 2.1
+M2 GTK version.
+The VerifyListener added to a Text widget is behave different than on Windows.
+We notice the following differences:
+- for a BackSpace the character field is 0, and the text field contains the
+character to be deleted; under Windows the character field is SWT.BS and the
+text field is an empty String (I assume that it is the correct behaviour)
+- if there is no text in the widget, in Windows the Backspace key does not fire
+the event, because there is no text modification; under Linux-GTK there is an
+event with an empty text and 0,0 as start-end.
+With the following program the
+behaviour can be simply reproduced.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.VerifyEvent;
+import org.eclipse.swt.events.VerifyListener;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class TextExample
+{
+public static void main(String[] args)
+{
+Display display = new Display();
+Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setLayout(new FillLayout());
+Text text = new Text(shell, SWT.NULL);
+text.setSize(300, text.getSize().y);
+text.addVerifyListener(new VerifyListener()
+{
+public void verifyText(VerifyEvent e)
+{
+System.out.println("e.text:[" + e.text
++ "] e.start:" + e.start +
+" e.end:" + e.end);
+}
+}
+);
+shell.pack();
+shell.open();
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+{
+display.sleep();
+}
+}
+display.dispose();
+}
+}

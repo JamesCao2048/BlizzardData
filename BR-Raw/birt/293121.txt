@@ -1,0 +1,9 @@
+Bug 293121 The page variable can be DND to master page header/footer, but not to cell of grid in master page header/footer [0001]
+Description: The page variable can be DND to master page header/footer, but not to cell of grid in master page header/footer.
+Build number: 2.5.0.v20091023-0630 Steps to reproduce: 1.New a report with a page variable.
+2.DND the page variable from Data Explorer view to master page header.
+3.Add a 1*2 grid in master page footer, DND the page variable from Data Explorer view to one of the grid's cell.
+Expected result: It is enabled.
+Actual result: 1.DND the page variable from Data Explorer view to master page header is enabled.
+2.DND the page variable from Data Explorer view to one of the grid's cell is disabled.
+Error log: N/A

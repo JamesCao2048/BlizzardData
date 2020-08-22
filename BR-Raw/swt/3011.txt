@@ -1,0 +1,20 @@
+Label.computeSize() returning incorrect values when using WRAP
+I20050324-1400
+I am pretty sure this used to work :)
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+Label label = new Label(shell, SWT.WRAP);
+label.setText("This is some text that is so huge it should wrap");
+System.out.println("label computesize default: " +
+label.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+System.out.println("label computesize 40: " + label.computeSize(40, SWT.DEFAULT));
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+For me:
+label computesize default: Point {220, 14}
+label computesize 40: Point {40, 14}

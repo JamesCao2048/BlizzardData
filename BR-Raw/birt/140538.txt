@@ -1,0 +1,6 @@
+Bug 140538 Can't save by auto when it is preview after create the 2nd parameter
+Details: Can't save by auto when it is preview after create the 2nd parameter Step: 1.New a report design.
+2.Create the 1st parameter and preview.
+3.Create the 2nd parameter and preview.
+Actual result: After step 2, it is ok.
+After step 3, if I have not press save button, it will not save by auto.

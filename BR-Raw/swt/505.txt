@@ -1,0 +1,7 @@
+Tooltip on Link shows href
+I20101025-1800 Cocoa
+When you hover over a link in the Link widget, a tooltip shows the href (or redundantly the link text if there's no href).
+I would not expect the tooltip, since it is also not shown on other platforms.
+Such links usually contain an internal id as href, which shouldn't be shown to the user (e.g.
+in Eclipse preference pages).
+If the Link widget ever supports tooltips per link, then they should be configurable ( bug 88866 ).

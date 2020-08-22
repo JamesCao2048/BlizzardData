@@ -1,0 +1,3 @@
+Bug 277439 "dataType" property is required for the variable element/TOC
+If the variable element is a constant/expression, expect to know which kind type is for the value.
+For example, its type can be integer, string, datetime, etc.

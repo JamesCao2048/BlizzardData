@@ -1,0 +1,15 @@
+Bug 169677 Support for context-relative paths settings within web.xml
+The folders in which the rptdesign files are stored, the folders for generated images etc.
+can be configured through web.xml context parameters.
+By default, however, BIRT does not allow to set context-relative paths within these parameters.
+Either you leave the parameters blank, then context-relative defaults are used.
+Or you set the parameters, but then you have to supply an absolute path which is very unconvenient.
+For example, BIRT by defaults takes the report directly out of the context root directory.
+But then everybody has read access to the rptdesign files using HTTP GET.
+Instead, we want to put the rptdesign files into a sub-folder of WEB-INF.
+We do not want to specify absolute paths, however, to be able to deploy the same WAR file to different servers.
+What we would like to have, is support for a notation like this one:
+<context-param>
+<param-name>BIRT_VIEWER_DOCUMENT_FOLDER</param-name>
+<param-value>$CONTEXT/WEB-INF/reports</param-value>
+</context-param> This feature could easily be added to the classes ReportEngineService and ParameterAccessor, where the context parameters BIRT_VIEWER_IMAGE_DIR, BIRT_VIEWER_WORKING_FOLDER, BIRT_VIEWER_DOCUMENT_FOLDER and BIRT_VIEWER_SCRIPTLIB_DIR are retrieved.

@@ -1,0 +1,6 @@
+typo in import org.eclipse.swt.custom.StyledText.setOrientation
+The description of setOrientation mentions LEFT_TO_RIGHT twice and
+RIGHT_TO_LEFT not at all.
+setOrientation(int orientation)
+Sets the orientation of the receiver, which must be one of the
+constants SWT.LEFT_TO_RIGHT or SWT.LEFT_TO_RIGHT.

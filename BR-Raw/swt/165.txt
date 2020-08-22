@@ -1,0 +1,46 @@
+StyledText throws exception "Index out of bounds" when calling setText() after Chinese character input
+Build Identifier: 3.7.2.v3740f-RCP20120529-1500
+I attempt to input some Chinese characters in a StyledText widget.
+I use "PinYin" input method which is the default Chinese IME on Mac.
+I typed some keys and the IME showed me a candidate list.
+I didn't confirm my choice and let the candidate list panel floating.
+This means I didn't really input the text to the widget.
+After that, I clicked other part of the screen so the widget lost the focus and the IME candidate list disappeared.
+In my code, I called StyledText.setText("") to clean up the widget.
+However, this call eventually threw out lots of "Index out of bounds" exception and the application hung.
+The stack is like this:
+Unhandled event loop exception
+java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:4263)
+at org.eclipse.swt.SWT.error(SWT.java:4197)
+at org.eclipse.swt.SWT.error(SWT.java:4168)
+at org.eclipse.swt.graphics.TextLayout.getStyle(TextLayout.java:1456)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:944)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:720)
+at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:211)
+at org.eclipse.swt.custom.StyledTextRenderer.calculateClientArea(StyledTextRenderer.java:229)
+at org.eclipse.swt.custom.StyledText.resetCache(StyledText.java:7791)
+at org.eclipse.swt.custom.StyledText.reset(StyledText.java:7784)
+at org.eclipse.swt.custom.StyledText.handleTextSet(StyledText.java:6271)
+at org.eclipse.swt.custom.StyledText$6.textSet(StyledText.java:5618)
+at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:79)
+at org.eclipse.swt.custom.DefaultContent.sendTextEvent(DefaultContent.java:795)
+at org.eclipse.swt.custom.DefaultContent.setText(DefaultContent.java:814)
+at org.eclipse.swt.custom.StyledText.setText(StyledText.java:9874)
+This is my code snippet in my Eclipse view:
+public void createPartControl(Composite parent) {
+final StyledText st = new StyledText(parent, SWT.NONE);
+st.addFocusListener(new FocusListener() {
+@Override
+public void focusGained(FocusEvent arg0) {
+st.setText("");
+}
+@Override
+public void focusLost(FocusEvent arg0) {
+// TODO Auto-generated method stub
+
+}});
+}
+Reproducible: Always
+Steps to Reproduce:
+The steps should be clearly described in upper section.

@@ -1,0 +1,24 @@
+IE browser zone elevation blocks standard browser UI
+When we use Helios M6 in our office, we see security warnings for every initial use of a browser widget, every time Eclipse is run.
+Maybe our company has somewhat restrictive IE security settings for our intranet?
+
+All of these standard features bring up an IE security warning and completely block the UI:
+-- Help > Welcome (!)
+-- JDT/CDT Hover help
+-- Opening an *.htm file in an editor
+The alert is:  "Security warning:  The current Web page is trying to open a site in your Intranet [[or Trusted sites list]].
+Do you want to allow this?
+// Current site: about:blank  Trusted site:  about:blank"
+I've looked for other bugs mentioning this, but it seems only we are victims to it.
+Everyone in our office sees this.
+It seems perhaps related to
+< https://bugs.eclipse.org/bugs/show_bug.cgi?id=278299 >, which is why I filed it here.
+
+This never happened in Eclipses 3.1 through 3.5, and still doesn't.
+I'm calling this "major" because it blocks the welcome page for new users.
+In a clean workspace, this dialog comes up *behind* the Welcome page, and is invisible for whatever Z-ordering reasons; thus a new user will not be able to click anything on that page at all.
+He can only close the view and *then* he'll see the dialog.
+Further, all the confirmations for these dialogs are zapped on a new launch of Eclipse...
+sigh.
+I tried following the guidelines here:
+< http://msdn.microsoft.com/en-us/library/dd565663%28VS.85%29.aspx > to disable the "zone elevation" warnings for local or intranet sites, and also disabling the network protection in Symantec Endpoint Protection, but it has no effect.

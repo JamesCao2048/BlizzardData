@@ -1,0 +1,53 @@
+StyledText Caused NPE while in word-wrap style
+build 200209230010
+While playing with the ControlExample in org.eclipse.swt.examples a NPE was
+thrown.
+I can not reproduce this and do not remeber what I did exactly.
+Basically I changed the style of a text part to bold and changed the size.
+Perhaps the stacktrace is useful anyway.
+java.lang.ArrayIndexOutOfBoundsException
+at org.eclipse.swt.custom.WrappedContent.getLine(WrappedContent.java:94)
+at org.eclipse.swt.custom.StyledText.wordWrapResize
+(StyledText.java:7666)
+at org.eclipse.swt.custom.StyledText.handleResize(StyledText.java:4946)
+at org.eclipse.swt.custom.StyledText$15.handleEvent
+(StyledText.java:4582)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:849)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:854)
+at org.eclipse.swt.widgets.Control.WM_SIZE(Control.java:3881)
+at org.eclipse.swt.widgets.Scrollable.WM_SIZE(Scrollable.java:300)
+at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:759)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2747)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2104)
+at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:1274)
+at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:73)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2759)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2104)
+at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:1767)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:1739)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:683)
+at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:768)
+at org.eclipse.swt.widgets.Group.WM_SIZE(Group.java:359)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2747)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2104)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1212)
+at org.eclipse.swt.widgets.Group.callWindowProc(Group.java:125)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2759)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2104)
+at org.eclipse.swt.internal.win32.OS.EndDeferWindowPos(Native Method)
+at org.eclipse.swt.widgets.Composite.resizeChildren(Composite.java:355)
+at org.eclipse.swt.widgets.Composite.resizeChildren(Composite.java:321)
+at org.eclipse.swt.widgets.Composite.setResizeChildren
+(Composite.java:441)
+at org.eclipse.swt.widgets.Composite.layout(Composite.java:294)
+at org.eclipse.swt.widgets.Composite.layout(Composite.java:269)
+at org.eclipse.swt.examples.controlexample.Tab.setExampleWidgetSize
+(Tab.java:486)
+at org.eclipse.swt.examples.controlexample.Tab$8.widgetSelected
+(Tab.java:291)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.jav

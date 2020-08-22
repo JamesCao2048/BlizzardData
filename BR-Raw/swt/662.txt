@@ -1,0 +1,6 @@
+[Gtk] unexpected MouseExit event for Shell causes bad interaction with JFace ToolTip on 3.6
+I have noticed that when I click the "i" button the displayed tooltip is often times hidden when I try to navigate to it to scroll or to press the Learn more link.
+Suggestion to improve interaction:
+* Only hide tooltip when moving the mouse over the tooltip and out again.
+Do not hide if the mouse is moved over other controls but has not entered the tooltip, yet.
+* Hide the tooltip on pressing ESC.

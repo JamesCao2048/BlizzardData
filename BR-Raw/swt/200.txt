@@ -1,0 +1,19 @@
+[DBCS4.2] wrong selection by using a mouse toward a character of Unicode surrogate pair at end of line
+Build Identifier: Version: 4.2.0 Build id: I20120608-1400 (I20120713 x86_64)
+OS: Windows 7 SP1 Professional Japanese Edition (64bit)
+JDK: java full version JRE 1.7.0 IBM Windows AMD 64 build
+pwa6470sr1-20120405_01(SR1)
+Locale:Japanese
+When inputting Unicode surrogate pair character at end of line on Text Editor, this character cannot be selected by using a mouse while it is possible to select whole line by double-click on the line or to select it by using keyboard arrow buttons.
+Reproducible: Always
+Steps to Reproduce:
+1.start eclipse
+2.go to Window->Preferences
+3.expand General-> Workspace and set default text encoding to UTF-8.
+4.import the file which will be attached in this bug report later
+5.open the file using Text Editor
+6.select the character at end of the last line by using a mouse (code is U+2A6D6)
+Actual:
+The character at end of the last line cannot be selected by mouse.
+Expected:
+The character at end of the last line is selected by mouse.

@@ -1,0 +1,5 @@
+ToolItem does not need to check for TOGGLE
+20020602
+ToolItem does not need to check for SWT.TOGGLE in setSelection and getSelection.
+Suspect this code was cut/pasted from Button, but since TOGGLE is not a
+ToolItem style, the check for TOGGLE is unnecessary.

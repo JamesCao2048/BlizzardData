@@ -1,0 +1,14 @@
+Bug 164568 [regression]Edit dataset from library cannot work properly[01][07]
+Description: Edit dataset from library cannot work properly Platform: Eclipse3.2.1 Build number&#65306;2.2.0.v20061114-0634 Steps to reproduce: 1.New a library, create sample data source and dataset from OFFICES table.
+2.Use this library in a report design.
+3.Drag the data source and data set to Data Explorer 4.Modify the dataset to point to another table ORDERS in query text, preview result.
+5.Expand dataset node to see columns.
+6.Select the dataset and right click, select refresh.
+Expected result: Step4 display datas from table ORDERS.
+Step5 display columns from ORDERS.
+Step6 display columns from ORDERS.
+Actual result: Step4 is correct.
+Step5 displayed two table columns from ORDERS and OFFICES.
+Step6 display columns from OFFICES.
+Close the report and reopen it will not resolve this issue.
+Error log:N/A

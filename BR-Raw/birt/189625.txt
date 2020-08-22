@@ -1,0 +1,8 @@
+Bug 189625 line-height is not supported in word
+Build ID: RC0-v20070518 Steps To Reproduce: 1.create a report design 2.add a new style
+<style name="NewStyle" id="7">
+<property name="fontSize">xx-large</property>
+<property name="textLineThrough">line-through</property>
+<property name="lineHeight">10in</property>
+</style> 3.add a text "hello world" and apply this style result: view as html is ok view as doc, "lineHeight" is no effective view as pdf, viewer hangs up for quite long time until I kill it.
+my report design is attached.

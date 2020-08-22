@@ -1,0 +1,23 @@
+TextLayout ignores transformations on GC
+M4
+Text layout ignores any transformations set onto the GC.
+For example the following code doesn't work:
+protected void doPaint(PaintEvent e) {
+GC gc= e.gc;
+gc.setAdvanced(true);
+System.out.println("Advanced: " + gc.getAdvanced());
+Transform transform= new Transform(getDisplay());
+transform.translate(0, 0);
+gc.setTransform(transform);
+fTextLayout.setWidth(getClientArea().width);
+for (int i= 0; i
+< 10; i++) {
+fTextLayout.setText("Dirk Baeumer");
+fTextLayout.draw(gc, 0, 0);
+transform.translate(0, 30);
+gc.setTransform(transform);
+}
+transform.dispose();
+gc.setAdvanced(false);
+}
+All texts are drawn at position (0,0)

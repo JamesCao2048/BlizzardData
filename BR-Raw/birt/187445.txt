@@ -1,0 +1,2 @@
+Bug 187445 The joint result of script computed column is incorrect[07]
+Description: 1, Each dataset including a computed column: name: index; type:integer; expression:0 2, Specify the script of datasets to: beforeOpen: index=0; onFetch: row["index"] = index; index++; 3, Join the two datasets Build number: 2.2.0.v20070516-0630 Steps to reproduce: 1, open the attached report design 2, open the joint dataset and preview Actual result: The result of column Data "Set1::index" is all 0 but no value 1.

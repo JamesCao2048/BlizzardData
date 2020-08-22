@@ -1,0 +1,20 @@
+Browser widget: Tab key traps focus when key listener is added
+I20080508-2000
+Focus handling in the Browser widget is screwed as soon as I add a key listener (KeyUp or KeyDown) to the Browser.
+Steps in ControlExample:
+- add key listener
+- click into browser, just before the first link
+- press Tab to focus first link
+- press Shift+Tab
+=> should: put focus to the "Browser" TabItem
+=> does: first puts you into a state where nothing really has focus (Up/DownArrow keys don't scroll the browser any more).
+On second press of Shift+Tab, puts focus the last link in the browser.
+- click into the "Browser" TabItem
+- press Tab
+=> should: put focus to the browser
+=> does: puts focus into a black hole.
+There's no way to get the focus back from this state using the Tab key.
+I think the problem is that Browser is a subclass of Composite, and adding a key listener to the composite makes it take focus.
+Even with a key listener, the Browser widget should behave like e.g.
+a Tree and still correctly implement focus traversal (e.g.
+by passing focus to the contained WebSite control).

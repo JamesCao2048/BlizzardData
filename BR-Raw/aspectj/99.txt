@@ -1,0 +1,70 @@
+NPE determining annotation target kind during weaving
+reported on the list:
+Hi,
+
+I am using aspectj LTW (aspectjweaver-1.6.1) for weaving an aspect available in another jar within my web application code.
+
+While building the jar which contains the aspect, using maven, I have JUnits which run without any problems using LTW.
+
+My aspect code looks as below
+@Around("execution (@com.arisglobal.aglite.annotations.OperationTrail public * *(..)) && this(executor)")
+public Object auditOperation(ProceedingJoinPoint thisJoinPoint,
+Object executor) {
+鈥
+鈥 aspect code
+鈥
+}
+
+However when I deploy the application in tomcat (with javaagent:aspectjweaver-1.6.1.jar option), I get a NPE which I have pasted below.
+
+Jun 4, 2009 12:06:18 PM org.aspectj.weaver.tools.Jdk14Trace error
+SEVERE: com/arisglobal/aglite/services/actiontrail/ActionTrailAspect
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelObjectType.getAnnotationTargetKinds(BcelO
+bjectType.java:612)
+at org.aspectj.weaver.ReferenceType.getAnnotationTargetKinds(ReferenceTy
+pe.java:265)
+at org.aspectj.weaver.patterns.SignaturePattern.checkForIncorrectTargetK
+ind(SignaturePattern.java:112)
+at org.aspectj.weaver.patterns.SignaturePattern.checkForIncorrectTargetK
+ind(SignaturePattern.java:94)
+at org.aspectj.weaver.patterns.SignaturePattern.resolveBindings(Signatur
+ePattern.java:87)
+at org.aspectj.weaver.patterns.KindedPointcut.resolveBindings(KindedPoin
+tcut.java:262)
+at org.aspectj.weaver.patterns.AndPointcut.resolveBindings(AndPointcut.j
+ava:75)
+at org.aspectj.weaver.patterns.Pointcut.resolve(Pointcut.java:196)
+at org.aspectj.weaver.bcel.AtAjAttributes.handleAroundAnnotation(AtAjAtt
+ributes.java:1308)
+at org.aspectj.weaver.bcel.AtAjAttributes.readAj5MethodAttributes(AtAjAt
+tributes.java:403)
+at org.aspectj.weaver.bcel.BcelMethod.unpackAjAttributes(BcelMethod.java
+:189)
+at org.aspectj.weaver.bcel.BcelMethod.<init>(BcelMethod.java:96)
+at org.aspectj.weaver.bcel.BcelObjectType.getDeclaredMethods(BcelObjectT
+ype.java:264)
+at org.aspectj.weaver.bcel.LazyClassGen.<init>(LazyClassGen.java:303)
+at org.aspectj.weaver.bcel.BcelObjectType.getLazyClassGen(BcelObjectType
+.java:524)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1728)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1
+696)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:145
+8)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1244)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.
+java:423)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.jav
+a:286)
+at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:95)
+at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(C
+lassPreProcessorAgentAdapter.java:52)
+at sun.instrument.TransformerManager.transform(TransformerManager.java:1
+22)
+at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java
+:155)
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:620)
+
+I also tried using aspectjweaver-1.6.4 version however got the same error.

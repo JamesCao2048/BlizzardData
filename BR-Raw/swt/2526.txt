@@ -1,0 +1,35 @@
+Regression: Tree with columns does not reset horizontal scroll bar
+SWT-win32, v3224
+When the width of a tree column is first increased, then decreased again
+(either programmatically or by dragging), the horizontal scroll bar of
+the tree will not be adjusted to reflect the change.
+This is a recent regression.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TreeColumnScrollBarTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Tree tree = new Tree(shell, SWT.NONE);
+tree.setHeaderVisible(true);
+
+TreeColumn col = new TreeColumn(tree, SWT.LEFT);
+col.setText("Column");
+col.setWidth(1000);
+col.setWidth(100);
+
+shell.setSize(200, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

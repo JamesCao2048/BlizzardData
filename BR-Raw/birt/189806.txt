@@ -1,0 +1,6 @@
+Bug 189806 Add aggregation data item to a table - Exception is thrown
+- Add a table with dataset to a report design
+- DnD aggregation from palette to the table footer
+- Aggregation builder is shown
+- Choose SUM function on "Quantity orderred" data field Current behavior
+- A exception is thrown which say java.util.EmptyStackException

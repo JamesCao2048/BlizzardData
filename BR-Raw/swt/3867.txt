@@ -1,0 +1,22 @@
+Color selection dialog takes a long time to display in 8-bit mode
+Overview Description:
+The 鈥榗olor selection鈥 dialog takes up to 15 seconds to appear
+on Solaris, whereas, the dialog comes up almost instantaneously
+on HPUX.
+This behavior occurs on the first and subsequent
+color change requests.
+NOTE: It doesn鈥檛 seem to matter where you originate the color
+Selection request, the delay is the same (i.e.
+Color selection from
+The Preferences dialog takes the same amount of time as a color
+Selection request from the SWT Examples software / SWT Controls
+View.
+Steps to reproduce:
+1.	Open the workbench Preferences dialog
+2.	Select the 鈥楯ava鈥 category, and open the 鈥楨ditor鈥 preferences page
+3.	Select the 鈥楢ppearance鈥 tab
+4.	Select the 鈥楥olor鈥 button
+!BUG!  There is a long wait time for the color selection dialog (the amount
+of time is a usability issue!)
+------
+Build 2002-11-07-1448 on Sparc/Solaris

@@ -1,0 +1,6 @@
+Race condition in test suite for incremental
+On faster machines (my linux desktop, andy's home pc) several of the tests in
+ajcTests.xml are failing (suite attached). This appears to be due to a race
+condition between checking directory contents and waiting for the compilation to
+complete. I have an environment in which I can test candidate fixes if you can
+give me a pointer for what to tweak...

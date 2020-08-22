@@ -1,0 +1,7 @@
+[mac] No SWT API to set highlighted image for status item
+Build Identifier: 3.5.1
+A status item has two images, regular one and highlighted one.
+However, the current SWT only supports to set regular image.
+Java application is unable to specify an image for highlighted status.
+(Highlighted image shows when the item is selected)
+Reproducible: Always

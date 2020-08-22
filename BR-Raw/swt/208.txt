@@ -1,0 +1,10 @@
+MouseExit event is not received in shell with style SWT.ON_TOP
+Build Identifier: 3.7.2
+See the steps
+Reproducible: Always
+Steps to Reproduce:
+1.Run the test case with Cocoa SWT
+2.Hover "Hover me" button and another shell does pop up.
+Don't move mouse!
+3.Use CMD+Tab to switch to another app and then move the mouse out of the popped shell.
+The issue is that we didn't receive mouseExit event while in Carbon does.

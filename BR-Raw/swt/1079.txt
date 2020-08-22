@@ -1,0 +1,2 @@
+Failure in JFace test suite related to virtual table
+Apparently caused by a bug in the System.arraycopy call, line 2327 in Table.setItemCount(int)

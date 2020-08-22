@@ -1,0 +1,18 @@
+Group alpha should not be 0.25 if background color set
+This could be a native behaviour, but I don't know why it would be, and don't know of an external case of this to compare with.
+- run the snippet below and note that setting the background to red results in a pinkish colour
+- in you change the group to be a Composite then it shows red as expected
+public static void main(final String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Group group = new Group(shell, SWT.NONE);
+// Composite group = new Composite(shell, SWT.NONE); // works
+group.setBackground(display.getSystemColor(SWT.COLOR_RED));
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

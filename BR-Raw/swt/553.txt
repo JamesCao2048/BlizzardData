@@ -1,0 +1,14 @@
+Spinner.setDigits triggers a SWT.Selection Event on Linux and not on Windows
+Build Identifier: 20100218-1602
+In Windows, calling setDigits() on a spinner does not fire any event.
+This is not the case on Linux.
+The attached JUnit test highlights the bug, this event should not be triggered when calling setDigits().
+This makes our product working differently in Windows and Linux.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a spinner.
+2.Call setDigits(XX)
+3.On Windows, the event is not fired.
+What is fine.
+4.On Linux, the event is fired.
+Here is the bug.

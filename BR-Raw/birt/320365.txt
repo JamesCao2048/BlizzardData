@@ -1,0 +1,17 @@
+Bug 320365 Excel emitter don't use reportContext timezone
+- Create a blank report ;
+- Insert a "Data" Object of type "Date Time" without databinding.
+Write "new Date();" for the javascript expression ;
+- When invoking your report from the web viewer, configure a timezone with "__timezone" parameter.
+For instance, for me, "&__timezone=Europe/Paris" (GMT+2) ;
+- My JVM uses UTC ;
+- When using frameset servlet, in my browser, i have the right date.
+For instance 19/07/2010 18:19 (pattern is dd/MM/yyyy HH:mm).
+;
+- When exporting to excel, I obtain a UTC date.
+For instance : 19/07/2010 16:19 (same pattern) ;
+- All others emitters are good.
+I get this issue only with excel.
+It seems that in jar org.eclipse.birt.report.engine.emitter.prototype.excel.xxx.jar, file org.eclipse.birt.report.engine.emitter.excel.ExcelUtil, method #formatDate, when formatting date as a String with a SimpleDateFormat, you don't use any timezone.
+Maybe the issue is here.
+public static String formatDate( Object data ) { SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH ); Date date = getDate( data ); if(date == null) { return null; } return dateFormat.format( date ); } An ugly solution is to set the default TimeZone in your initialize script : com.ibm.icu.util.TimeZone.setDefault(reportContext.getTimeZone());

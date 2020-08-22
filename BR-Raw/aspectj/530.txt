@@ -1,0 +1,37 @@
+ConfigParser.java:132
+I have a directory structure such that
+D:javaaopbenchmarkstrategyaspectjcaubccasplpatternlibrary
+exists, and contains source files. The command I issued was
+ajc caubccssplpatternslibrary*.java examplesstrategyaspectj*.java
+The difference is the directory is actually called 'pattern', but I mistyped and
+tried to compile in the directory 'patterns'. Here's the output after calling this:
+build config error: can't find D:javaaopBENCHM~1strategyaspectjcaubccss
+plpatternslibrary
+ABORT
+Exception thrown from AspectJ 1.1.1
+This might be logged as a bug already -- find current bugs at
+http://bugs.eclipse.org/bugs/buglist.cgi?product=AspectJ&component=Compiler
+Bugs for exceptions thrown have titles File:line from the top stack,
+e.g., "SomeFile.java:243"
+If you don't find the exception below in a bug, please add a new bug
+at  http://bugs.eclipse.org/bugs/enter_bug.cgi?product=AspectJ
+To make the bug a priority, please include a test program
+that can reproduce this exception.
+null
+java.lang.NullPointerException
+at org.aspectj.util.ConfigParser.addFiles(ConfigParser.java:132)
+at org.aspectj.util.ConfigParser.addFileOrPattern(ConfigParser.java:110)
+at org.aspectj.util.ConfigParser.parseOneArg(ConfigParser.java:194)
+at org.aspectj.util.ConfigParser.parseArgs(ConfigParser.java:157)
+at org.aspectj.util.ConfigParser.parseCommandLine(ConfigParser.java:35)
+at org.aspectj.ajdt.ajc.BuildArgParser.genBuildConfig(BuildArgParser.jav
+a:109)
+at org.aspectj.ajdt.ajc.BuildArgParser.genBuildConfig(BuildArgParser.jav
+a:88)
+at org.aspectj.ajdt.ajc.AjdtCommand.genBuildConfig(AjdtCommand.java:131)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:89)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:53)
+at org.aspectj.tools.ajc.Main.run(Main.java:217)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:155)
+at org.aspectj.tools.ajc.Main.main(Main.java:72)
+1 fail|abort, 1 error

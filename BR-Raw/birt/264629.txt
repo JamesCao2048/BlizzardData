@@ -1,0 +1,5 @@
+Bug 264629 [Automation][Smoke]Only first and last data row can be show in table
+Description: Only first and last data row can be show in table, the row between 1st and last row disappear.
+Test Date: 20090212 Test Build: BIRT2.5.0 v20090212-0630 Step to reproduce: 1.Create a new report 2.Create a table with a dataset which has more than 2 rows.
+3.Preview it Expect result: All the rows can be previewed correctly.
+Actual result: Only 1st and last row show on screen.

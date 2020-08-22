@@ -1,0 +1,34 @@
+AJDT throws a RuntimeException from EclipseResolvedMember.getAnnotations
+Build ID: N/A
+Steps To Reproduce:
+This exception is happening for us in both Eclipse 3.4 and 3.3 when we run an incremental build on one of our projects.
+We are using an aspect to declare an annotation on a class in the project, and we only started seeing this exception after we added it.
+A clean build on the project never throws the exception, only an incremental build.
+More information:
+The Exception Stack Trace:
+java.lang.RuntimeException
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseResolvedMember.getAnnotations(EclipseResolvedMember.java:78)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.doDeclareAnnotations(AjLookupEnvironment.java:794)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.weaveInterTypeDeclarations(AjLookupEnvironment.java:592)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironmen ...
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Compile error: RuntimeException thrown: not yet implemented - please raise an AJ bug
+I was going to include the AJDT Event log for the build but it is very long, and mostly unremarkable,
+so I have included only the section for the project where the exception was thrown.
+11:9:50 Build kind = INCREMENTALBUILD
+11:9:50 Project=ICODES, kind of build requested=Incremental AspectJ compilation
+11:9:50 build: Examined delta - source file changes in required project ICODES
+11:9:51 Found state instance managing output location : C:jnaylorJava_DevworkspaceICDM
+11:9:51 Failed to find a state instance managing output location : C:jnaylorJava_devworkspaceDependenciesMARVELresources
+11:9:51 Failed to find a state instance managing output location : C:jnaylorJava_DevworkspaceGSG
+11:9:52 Failed to find a state instance managing output location : C:jnaylorJava_dev.buildLaunch4J
+11:9:52 Preparing for build: planning to be an incremental build
+11:9:52 Starting incremental compilation loop 1 of possibly 5
+11:9:52 AJDE Callback: finish. Was full build: false
+11:9:52 Timer event: 2172ms: Total time spent in AJDE
+11:9:54 Timer event: 47ms: Create element map (0 rels in project: ICODES)
+11:9:54 Types affected during build = 0
+11:9:54 Timer event: 0ms: Add markers (0 markers)
+11:9:54 Timer event: 3735ms: Total time spent in AJBuilder.build()
+11:9:54 ===========================================================================================
+This is occurring frequently, but not every time so we haven't been able to narrow down a reasonable sized test case.

@@ -1,0 +1,34 @@
+Composite sending incorrect Move events
+Created  attachment 104739   [details]
+patch
+(originally posted on the swt newsgroup by Enrico Zanaga, including the suggested fix)
+- run the snippet below and you'll receive infinite Move events, on win32 only
+- it appears that the MOVE_OCCURRED state bit is not being cleared properly; the suggested fix is attached
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.addControlListener(new ControlListener() {
+private void setFixedBounds() {
+Rectangle r = shell.getMonitor().getClientArea();
+r.height = 100;
+shell.setBounds(r);
+}
+public void controlMoved(ControlEvent e) {
+System.out.println("move");
+shell.getDisplay().asyncExec(new Runnable() {
+public void run() {
+setFixedBounds();
+}
+});
+}
+public void controlResized(ControlEvent e) {
+System.out.println("resize");
+setFixedBounds();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

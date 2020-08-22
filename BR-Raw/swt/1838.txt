@@ -1,0 +1,29 @@
+Call Shell.setFullScreen(true) make the shell invisible
+Build ID:  I20071101-2000
+Steps To Reproduce:
+1.run this snippet
+public class FullScreenSnippet {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+Button btn = new Button(shell, SWT.PUSH);
+btn.setText("make fullscreen but invisible");
+btn.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+shell.setFullScreen(true);
+}
+});
+shell.setMaximized(true);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}
+2.click the button, the shell disappear.
+More information:
+My Operating System is Windows XP Prefessional SP2

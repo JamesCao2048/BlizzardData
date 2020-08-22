@@ -1,0 +1,38 @@
+GTK TableColumn#pack does not work if no header
+Eclipse 0620
+Linux GTK
+Red Hat 7.2 under KDE
+Table.pack only seems to work if the column headers are visible AND they have
+text.
+Table.pack should make the column the wider of the header or the widest entry
+in the column and it should work regardless of whether the header is visible.
+1) Run the example below.
+The second column is visible, the first column is not.
+2) Uncomment the line "table.setHeaderVisible"
+The second column is visible, the first column still is not.
+3) Uncomment the lines "column1.setText" and "column2.setText"
+Now the first column is visible as well as the second column.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.BORDER);
+//table.setHeaderVisible(true);
+TableColumn column1 = new TableColumn(table, SWT.NONE);
+//column1.setText("Column 1");
+TableColumn column2 = new TableColumn(table, SWT.NONE);
+//column2.setText("Column 2");
+for (int i = 0; i
+< 100; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"item 0 " + i, "item 1 " + i});
+}
+column1.pack();
+column2.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,40 @@
+StyledText - NPE when typing text and caret is null
+build R2.0
+To reproduce:
+-run the SwtStyledTextUseCase
+-select Text Area->hide/show caret
+-type a character.
+You get a walkback in StyledText.handleTextChanged
+java.lang.NullPointerException
+Stack trace:
+java/lang/Throwable.<init>()V
+java/lang/Throwable.<init>(Ljava/lang/String;)V
+java/lang/NullPointerException.<init>(Ljava/lang/String;)V
+org/eclipse/swt/custom/StyledText.handleTextChanged
+(Lorg/eclipse/swt/custom/TextChangedEvent;)V
+org/eclipse/swt/custom/StyledText$6.textChanged
+(Lorg/eclipse/swt/custom/TextChangedEvent;)V
+org/eclipse/swt/custom/StyledTextListener.handleEvent
+(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/custom/DefaultContent.sendTextEvent
+(Lorg/eclipse/swt/custom/StyledTextEvent;)V
+org/eclipse/swt/custom/DefaultContent.replaceTextRange(IILjava/lang/String;)V
+org/eclipse/swt/custom/StyledText.modifyContent
+(Lorg/eclipse/swt/widgets/Event;Z)V
+org/eclipse/swt/custom/StyledText.sendKeyEvent
+(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/custom/StyledText.doContent(C)V
+org/eclipse/swt/custom/StyledText.handleKey(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/custom/StyledText.handleKeyDown
+(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/custom/StyledText$8.handleEvent
+(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/widgets/EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)
+V
+org/eclipse/swt/widgets/Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/widgets/Display.runDeferredEvents()Z
+org/eclipse/swt/widgets/Display.readAndDispatch()Z
+org/eclipse/swt/examples/exampleframework/SwtExample.run()
+Lorg/eclipse/swt/examples/exampleframework/SwtExample;
+org/eclipse/swt/examples/tests/SwtStyledTextUseCase.main([Ljava/lang/String;)
+V

@@ -1,0 +1,4 @@
+Bug 124761 When add two filters, one is 'State is equal to CA' and the other is 'EmployeeId is Top 10',the data can be extracted.
+Description: When add two filters, one is 'State is equal to CA' and the other is 'EmployeeId is Top 10',the data can not be extracted.
+Steps to reproduce: 1.import the attached report 2.preview Actual result: the data can not be extracted.
+Expect result: The intersection set of the data 'State is equal to CA' and the data 'EmployeeId is Top 10' should be displayed.

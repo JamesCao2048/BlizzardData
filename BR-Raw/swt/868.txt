@@ -1,0 +1,18 @@
+[Graphics] ArrayIndexOutOfBoundsException scaling PNG
+As reported against Jazz Foundation here:
+https://jazz.net/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/90925
+Attempts to scale the attached image cause an ArrayIndexOutOfBoundsException in ImageData.
+In Jazz, this is coming out as:
+java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 698625
+at org.eclipse.swt.graphics.ImageData.blit(ImageData.java:1901)
+at org.eclipse.swt.graphics.ImageData.scaledTo(ImageData.java:1125)
+at com.ibm.team.process.internal.ide.ui.ImageUtilities.scale(ImageUtilities.java:41)
+I've been able to easily reproduce the problem by creating simply instantiating an ImageData on the image and scaling it like so:
+import org.eclipse.swt.graphics.ImageData;
+public class AIOOB {
+
+public static void main(String[] args) {
+ImageData imageData = new ImageData("/home/jburns/target-foundation/AIOOB/simple_template.png");
+imageData.scaledTo(100, 60);
+}
+}

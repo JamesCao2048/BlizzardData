@@ -1,0 +1,2 @@
+[performance]Contribution: Refactoring to Support LTW World with Reflection Delegates for Bootstrap Types
+This patch adds an IReflectionWorld interface, changes the various places in code where casts are made to ReflectionWorld to use that interface, creates some common methods and creates an LTWWorld that implements this interface, and sets up the ClassLoaderWeavingAdaptor to use it. It's important that the LTWWorld have just one type map for performance and memory efficiency.

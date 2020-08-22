@@ -1,0 +1,4 @@
+[GTK3] shells cannot be sized smaller
+1) Run the Snippet1 on GTK3 (export SWT_GTK3=1)
+2) Try to resize the window smaller
+The window can only grow.

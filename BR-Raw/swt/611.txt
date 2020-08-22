@@ -1,0 +1,3 @@
+[Doc] API doc of Program.launch (String, String) has to be modified
+The API doc of Program.launch (String fileName, String workingDir) incorrectly mentions that it returns exception "ERROR_INVALID_ARGUMENT when workingDir is not valid".
+This is specified on Windows, Photon & Motif platforms, and the remaining platforms has correct documentation.

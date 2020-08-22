@@ -1,0 +1,28 @@
+Combo displays selection range without focus
+Editable Combos display their selection range even when they don't have focus.
+Text does not do this.
+Maybe this is just a bug in windows.
+It is confusing
+because it makes it hard to identify which control has keyboard focus.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+Combo combo = new Combo(shell, SWT.NONE);
+
+combo.setItems(new String[] {"foo","bar"});
+combo.setBounds(10, 10, 90, 30);
+
+combo.setText("blah");
+combo.setSelection(new Point(0, 3));
+
+Tree tree = new Tree(shell, SWT.H_SCROLL | SWT.V_SCROLL | SWT.SINGLE);
+new TreeItem(tree, 0).setText("item1");
+tree.setFocus();
+tree.setBounds(5, 40, 100, 100);
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}

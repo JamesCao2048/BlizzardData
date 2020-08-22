@@ -1,0 +1,4 @@
+Bug 198504 The same name aggregation should be hint in dialog[0001]
+Description: The same name aggregation should be hint in dialog[0001] Step: 1.New a datasource, dataset, table and binding the dataset.
+2.New a aggregation column binding on table named aggr1.3.Drop a aggregation item into table and set the named as aggr1.4.Click OK Actual result: Pop up an error message said that the name is exist.
+Expected result: It can hint in dialog when input the same name, but pop up an error dialog

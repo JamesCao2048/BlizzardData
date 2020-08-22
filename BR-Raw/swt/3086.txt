@@ -1,0 +1,64 @@
+ArrmListener for MenuItem generates submenu with invisible lables
+I have an extension which extends "org.eclipse.ui.actionSets".
+This adds a
+menu in Eclipse main menu called "MyMenu".
+Under "MyMenu", there are a few
+second-level submenu items "submenu1", "submenu2" and "submenu3".
+"submenu2" is a IWorkbenchWindowPulldownDelegate2 object.
+It has a few third-
+level submenu items labelled "subsubmenu1", "subsubmenu2", "subsubmenu3".
+The
+creation of the third-level submenus are shown in the following code:
+
+MenuItem item = new MenuItem(submenu2, SWT.ICON | SWT.CASCADE);
+item.setText("subsubmenu1");
+Menu menu = new Menu(WorkbenchUtils.getDefaultShell(),
+SWT.DROP_DOWN);
+item.setMenu(menu);
+MyDropDownSelectionListener listener = new MyDropDownSelectionListener();
+item.addArmListener(listener);
+public MyDropDownSelectionListener()
+{
+public void widgetArmed(ArmEvent e)
+{
+if (e.getSource() instanceof MenuItem)
+{
+MenuItem menuItem = (MenuItem)e.getSource();
+MenuManager menuManager = new MenuManager();
+menuManager.add(new Action("Action 1")
+{
+});
+menuManager.add(new Action("Action 2")
+{
+});
+Menu cascadeMenu = menuItem.getMenu();
+MenuItem[] oldItems = cascadeMenu.getItems();
+for(int i = 0; i
+< oldItems.length;i++)
+{
+oldItems[i].dispose();
+}
+IContributionItem[] newItems = menuManager.getItems();
+for (int i = 0; i
+< newItems.length; i++)
+{
+newItems[i].fill(cascadeMenu,
+-1);
+}
+}
+}
+}
+The result is that only "Action 2" is visible.
+"Action 1" is not visible.
+The
+following is the structure of the menu:
+MyMenu
+--->
+submenu1
+submenu2
+---> subsubmenu1
+submenu3      subsubmenu2
+---> |_______|  // "Action 1" not visible
+subsubmenu3      Action 2
+
+This problem only happens on Linux/Motif.

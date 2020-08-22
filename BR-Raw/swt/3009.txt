@@ -1,0 +1,26 @@
+Image appears and disappears in Tree
+eclipse.buildId=I200411300800
+java.version=1.4.2_03
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
+Framework arguments:
+-showlocation
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86
+-clean
+-showlocation
+-
+nl en
+1.Open Window
+-> Show View
+-> Other ...
+2.Expand Basic
+3.Click on Performance
+4.Click away from Performance
+5.Click on Performance again
+When Performance is selected it shows some icon (an icon not related to the
+Performance View) and when it is not selected it has no icon.
+I believe the
+Performance view is not setting any image for this tree item.

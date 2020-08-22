@@ -1,0 +1,3 @@
+SWT.VERTICAL ignored in ToolBar
+If you create a ToolBar with the SWT.VERTICAL flga it is ignored unless you
+slam the size of the widget to only fit one entry.

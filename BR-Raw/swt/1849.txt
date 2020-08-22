@@ -1,0 +1,49 @@
+Image cheese when width of TreeColumn = 0
+Run this snippet and hit the Button on the right side.
+Notice the image still showing.
+This is related to the fact that the second column is used as sortcolumn.
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(2, false));
+Tree tree = new Tree(shell, SWT.SINGLE | SWT.FULL_SELECTION);
+tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+tree.setHeaderVisible(true);
+TreeColumn treeColumn = new TreeColumn(tree, SWT.LEAD);
+treeColumn.setText("Col 1");
+final TreeColumn treeColumn2 = new TreeColumn(tree, SWT.LEAD);
+treeColumn2.setText("Col 2");
+tree.setSortColumn(treeColumn2);
+TreeColumn treeColumn3 = new TreeColumn(tree, SWT.LEAD);
+treeColumn3.setText("Col 3");
+TreeItem treeItem = new TreeItem(tree, SWT.NONE);
+treeItem.setText(0, "Hello World");
+Image image = new Image(display, 16, 16);
+GC gc = new GC(image);
+gc.setBackground(display.getSystemColor(SWT.COLOR_RED));
+gc.fillRectangle(image.getBounds());
+gc.dispose();
+treeItem.setImage(1, image);
+treeItem.setText(2, "Hello World");
+Button button = new Button(shell, SWT.PUSH);
+button.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
+button.setText("Push Me");
+button.addSelectionListener(new SelectionAdapter() {
+@Override
+public void widgetSelected(SelectionEvent e) {
+treeColumn2.setWidth(0);
+}
+});
+for (int i = 0; i
+< tree.getColumnCount(); i++) {
+tree.getColumn(i).pack();
+}
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}

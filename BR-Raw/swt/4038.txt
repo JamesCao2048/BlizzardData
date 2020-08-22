@@ -1,0 +1,7 @@
+Coolbar - disposing items not honoring setRedraw = false
+1.Put a breakpoint at the for loop in the button handler.
+2.Run the attached test case with debug.
+Press the delete button.
+3.Step through the for loop.
+Notice that redraws are occurring even though
+setRedraw is set to false.

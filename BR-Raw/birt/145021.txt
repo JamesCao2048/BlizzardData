@@ -1,0 +1,6 @@
+Bug 145021 Enhance the agrregate on option in column binding dialog
+1.Check if the expression is aggregate expression by data utility class.
+2.If yes, the option is ?all?
+and group name list 3.if not, the option disabled (or set to none?) if the column binding is in detail row.
+If the column binding is in group row, the option is ?None?
+and group name list.

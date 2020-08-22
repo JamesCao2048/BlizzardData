@@ -1,0 +1,35 @@
+[SWT Examples] CoolBar Buttons with a dropdown menu do not behave correctly
+When I was going through the Eclipse 3.0 M7 examples (eclipse-examples-
+3.0M7.zip) which I downloaded from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
+-
+examples-3.0M7.zip, I realized that the CoolBar buttons with a dropdown menu
+did not behave correctly.
+
+Here are the steps to follow in order to regenerate this scenario:
+1.Install Eclipse 3.0M7 on Solaris 9 or HP_UX 11.11.
+2.Download Eclipse 3.0 M7 Examples (eclipse-examples-3.0M7.zip) from
+http://fullmoon.torolab.ibm.com/downloads/drops/S-3.0M7-200402122000/eclipse
+-
+examples-3.0M7.zip and install them.
+3.Launch Eclipse
+4.Select 鈥淲indow
+-> Show View
+-> Other鈥︹.
+This will launch the 鈥淪how View鈥
+Dialog.
+5.From the 鈥淪how View鈥 Dialog, select 鈥淪WT Examples
+-> SWT Controls鈥.
+This
+will display 鈥淪WT Controls鈥 View.
+6.From SWT Controls View, select 鈥淐oolBar鈥 tab.
+7.Chose a button with a dropdown menu.
+These buttons have a down arrow (/)
+next to their icons.
+8.Click on the down arrow (/) of the button to extend its dropdown menu.
+Expected Behavior: The drop down menu is extended
+Actual Behavior: The drop down menu is not extended until the down arrow of
+the button 鈥榎/鈥 is clicked for the second time.
+Note: Do not select the items from the dropdown menu of the selected button.
+Important: When I ran the same tests on Eclipse 2.1.2, the outcome was the
+same as it was on Eclipse 3.0M7.

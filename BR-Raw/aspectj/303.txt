@@ -1,0 +1,36 @@
+ajc crashes on common-logging-1.0.4.jar
+--- Dump Properties ---
+Dump file: ajcore.20051122.152749.326.txt
+Dump reason: org.aspectj.weaver.BCException
+Dump on exception: true
+Dump at exit condition: abort
+---- Exception Information ---
+org.aspectj.weaver.BCException: bad resolve of void org.apache.log4j.Category.log(java.lang.String, org.apache.log4j.Level, java.lang.Object, java.lang.Throwable)
+at org.aspectj.weaver.World.getModifiers(World.java:216)
+at org.aspectj.weaver.Member.getModifiers(Member.java:406)
+at org.aspectj.weaver.patterns.KindedPointcut.warnOnConfusingSig(KindedPointcut.java:109)
+at org.aspectj.weaver.patterns.KindedPointcut.match(KindedPointcut.java:69)
+at org.aspectj.weaver.patterns.OrPointcut.match(OrPointcut.java:44)
+at org.aspectj.weaver.patterns.AndPointcut.match(AndPointcut.java:43)
+at org.aspectj.weaver.patterns.AndPointcut.match(AndPointcut.java:43)
+at org.aspectj.weaver.ShadowMunger.match(ShadowMunger.java:62)
+at org.aspectj.weaver.Advice.match(Advice.java:91)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:1126)
+at org.aspectj.weaver.bcel.BcelClassWeaver.matchInvokeInstruction(BcelClassWeaver.java:1115)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:987)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:827)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:348)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:83)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:742)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:707)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:634)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:577)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompilerAdapter.java:243)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(AjCompilerAdapter.java:118)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:383)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:680)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:168)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:102)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:109)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:291)

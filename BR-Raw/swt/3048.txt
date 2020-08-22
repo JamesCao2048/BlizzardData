@@ -1,0 +1,26 @@
+Eclipse crashes when clicking on "View Installation History
+Steps to reproduce:
+1.Click on help
+2.Select Software Updates
+3.Select Manage Configuration
+4.Click on View Installation History
+
+Eclipse then crashes and I get the following error:
+
+JVM terminated.
+Exit code=1
+/usr/bin/java
+-jar /home/ijuma82/bin/eclipse-new/startup.jar
+-os linux
+-ws gtk
+-arch x86
+-launcher /home/ijuma82/bin/eclipse-new/eclipse
+-name Eclipse
+-showsplash 600
+-exitdata 25160013
+-vm /usr/bin/java
+-vmargs
+-jar /home/ijuma82/bin/eclipse-new/startup.jar
+
+I'm using Fedora Core 3 with Sun's JDK 5.0 Update 1 and Eclipse 3.1
+I20050218-1333.This is on a new workspace btw.

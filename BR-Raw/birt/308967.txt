@@ -1,0 +1,2 @@
+Bug 308967 When get the listValue from the variables PropertyHandle, the instance of the VariableElementHandle is different every time
+Need the children is same instance when get the listValue from the variables PropertyHandle of the ReportDesignHandle.

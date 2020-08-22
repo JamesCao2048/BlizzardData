@@ -1,0 +1,12 @@
+ACC: Checkboxes in lists are not real checkboxes
+Options in the list look like checkboxes but the aren't real checkboxes.
+MS
+Inspect identfies the Role as 'list item' instead of checkbox.
+The Filters List page contains a Table component, and one of the
+columns cell editor is a CheckboxCellEditor;
+(this is similar with the Task List view, where the 'completed'
+column cell editor is a CheckboxCellEditor)
+With the current CheckboxCellEditor implementation
+there's no way to add a real checkbox component into the
+table; you have to specify two icons to be used by
+the enable/disable state

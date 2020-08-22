@@ -1,0 +1,28 @@
+[plan] [ltw] [hcr] LTW, Reweaving and Hot Code Replace changes reflected every two saves of files
+Build Identifier: AspectJ 1.6.9.M2 (Eclipse 3.5.1 Build ID: 20090920-1017)
+A full description of the bug is in the AspectJ-Users mail list:
+http://dev.eclipse.org/mhonarc/lists/aspectj-users/msg12114.html
+While debugging if I change the content of a method (ex. the text of a System.out) and save the file, it wouldn't reflected. But if I save the save file again, this time the changes are reflected. And it repeats on cycles of two saves.
+The rare is that when I save and the changes are not reflected, in log appears the next two lines and when I save the file and changes are reflected this lines are not showed:
+[AppClassLoader@2bbd86] info processing reweavable type test.weaved.Test: testweavedTest.java
+[AppClassLoader@2bbd86] info successfully verified type test.aspects.TestAspect exists.  Originates from testaspectsTestAspect.java
+This lines comes from the method processReweavableStateIfPresent(String, BcelObjectType) on the class org.aspectj.weaver.bcel.BcelWeaver
+Setting -Xset:overWeaving=true was worst because every time that I save the file that is aspected I get this message from Eclipse in a popup: "Hot code replace failed - Scheme change not implemented" and the changes are never reflected, neither in the first save nor in the second save.
+My environment is:
+Windows XP SP3 32 bits
+Sun Java 1.6.0 Update 19 JDK
+Eclipse 3.5.1 Build ID: 20090920-1017
+AspectJ 1.6.9 M2 (the same occurs with 1.6.8)
+Project: A clean new basis java project that only has this test and AspectJ
+Weaver options: -Xreweavable -verbose -showWeaveInfo -debug (and also -Xset:overWeaving=true in some tests)
+Using: -javaagent:aspectjweaver-1.6.9.M2.jar
+I will attach the test project that I used to isolate and reproduce this bug.
+Reproducible: Always
+Steps to Reproduce:
+1. Import the attached project into Eclipse
+2. Run the project with the Main.launch that is in the project root.
+3. Modify the method print() in the class test.weaved.Test (ex. uncomment a line)
+4. See the console log. The changes are not reflected in the behavior.
+5. Modify again the method print() in the class test.weaved.Test (ex. uncomment another line)
+6. See the console log. Now the changes are reflected in the behavior.
+7. The same occurs whatever you change (obviously with the limits of the Hot Code Replace imposed by the JDK)

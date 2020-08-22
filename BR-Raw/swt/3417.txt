@@ -1,0 +1,9 @@
+Need to suppress "untitled window" on GTK
+20040210 New Look and HEAD
+Any time that we create another window we get something in the system tray with
+the title "untitled window".
+We need a way to prevent this due to the following
+cases:
+1) The detached windows in New Look
+2) The Progress floating window
+3) Floating toolbars in new look

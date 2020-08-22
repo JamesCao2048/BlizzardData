@@ -1,0 +1,4 @@
+StyledText - Bidi segments Listener is broken
+As build 20040319, when StyledText changes to work with TextLayout were
+released, Bidi segements listener stoped working.
+We need a new implementation.

@@ -1,0 +1,38 @@
+NullPointerException from mouse move
+Version: 3.2.0
+Build id: I20051123-1200
+I found this error in my console.
+No idea what i was doing and nothing bad seemed to happen.
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Widget.wmMouseMove(Widget.java:1919)
+at org.eclipse.swt.widgets.Control.WM_MOUSEMOVE(Control.java:3637)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3187)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3919)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1705)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2859)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1794)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1758)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.jav
+a:381)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:10
+6)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformAct
+ivator.java:109)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runAppli
+cation(EclipseAppLauncher.java:92)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ec
+lipseAppLauncher.java:68)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.ja
+va:369)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.ja
+va:167)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:338)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:282)
+at org.eclipse.core.launcher.Main.run(Main.java:977)
+at org.eclipse.core.launcher.Main.main(Main.java:952)

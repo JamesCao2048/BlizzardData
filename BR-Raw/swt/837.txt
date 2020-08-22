@@ -1,0 +1,30 @@
+Scrolling a table eventually locks up the entire application
+I have a table created with the following attributes:
+SWT.VIRTUAL | SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION
+The table has thousands of rows in it and about a dozen columns.
+The data in the table changes rapidly.
+When I scroll the table by dragging the scroll bar up and down, the scrolling and the entire application will eventually lock up: if you drag the scroll bar up and down repeatedly without letting go the table will eventually stop moving with it and all other processing in the SWT thread will stop.
+If you let go of the scroll bar, the application recovers.
+The SWT thread stack trace always looks very much like this (the top level method is always the same) when the application is stuck in this fashion:
+"SwtThread" prio=5 tid=11 Runnable
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1580)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:197)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:142)
+at org.eclipse.swt.widgets.Composite.WM_SYSCOMMAND(Composite.java:1315)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3110)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3751)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1580)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:197)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:142)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3123)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3751)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1656)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2756)
+at com.hb.gui.api.swt.SwtFactory$SwtRunnable.run(SwtFactory.java:738)
+at java.lang.Thread.run(unknown source)
+When the table is locked up, the scroll bar continues to respond and to move up and down, but the table stops following it altogether.
+It usually takes about a dozen scrolls in rapid fashion to achieve this behavior.
+It always happens eventaully.

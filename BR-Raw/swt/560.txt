@@ -1,0 +1,7 @@
+StyledText.RTFWriter ignores font style
+Eclipse 3.6 RC2
+I'm trying to use StyledText to create a simple Rich Text editor.
+In order to extract RTF from it, I'm using the clipboard workaround.
+I'm running into an issue when the style of the text is defined in the font (as opposed to fontStyle).
+It seems RTFWriter only writes styles if they are in fontStyle but ignores the ones in FontData.getStyle()
+I wonder if this is a bug or I am missing something.

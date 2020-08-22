@@ -1,0 +1,5 @@
+TableColumn widths ignored in Table width calculation
+When a Table widget calculates its size in computeSize() it uses the width of the text in its columns and
+completely ignores the widths of any TableColumns.
+This is very annoying when creating an empty
+table.

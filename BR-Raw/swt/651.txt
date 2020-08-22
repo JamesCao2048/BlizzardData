@@ -1,0 +1,21 @@
+Orca/Eclipse focus problems switching apps
+From the orca mailing list:
+-------------------
+I don't know who is the guilt, orca or eclipse.
+Probably both!
+To reproduce try the following:
+1.lanch eclipse.
+I'm running build i20100504 but the problem can be reproduced with
+previous versions.
+2.choose a workspace.
+3.Open the editor with some content.
+4.Switch to another application pressing alt+tab.
+5.Switch back to eclipse pressing alt+tab.
+6.try to navigate the text by pressing the arrow.
+for me nothing happens, Orca is muted.
+The workaround is to press ctrl + tab and then tab.
+Sometimes the workaround does not work and I use Plan B, press ctrl + f7
+or ctrl+f8.
+When Plan B does not work I use the Plan C, press the right mouse button.
+Thanks!
+------------------------------

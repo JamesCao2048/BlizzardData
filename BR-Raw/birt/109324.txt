@@ -1,0 +1,3 @@
+Bug 109324 DataSet element does not see Packages
+DataSet element does not have Packages in scope.
+It is therefore impossible to reference any Java class from any of the DataSet or ScriptedDataSet methods.

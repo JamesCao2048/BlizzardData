@@ -1,0 +1,43 @@
+setting image in TreeItem column 1 affects its future column 0 image
+HEAD, July 28
+- run the snippet below, which initially puts an image in the item's second
+column
+- press the button, which puts an image into the item's first column
+
+-> but it does not appear
+- resize the first column slightly to make this image appear
+public static void main(String[] args) {
+Display display = new Display ();
+final Image image = new Image(display, 16, 16);
+GC gc = new GC(image);
+gc.drawOval(2,2,12,6);
+gc.dispose();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,300,300);
+final Tree tree = new Tree(shell, SWT.NONE);
+tree.setBounds(10,10,200,200);
+tree.setHeaderVisible(true);
+new TreeColumn(tree, SWT.NONE).setWidth(100);
+new TreeColumn(tree, SWT.NONE).setWidth(100);
+final TreeItem item = new TreeItem(tree, SWT.NONE);
+item.setText(new String[] {"col0","col1"});
+item.setImage(1,image);
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(220,10,60,30);
+button.setText("Push");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+item.setImage(image);
+System.out.println("image was just set into item column
+0");
+System.out.println("if you don't see it try resizing
+column 0");
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+image.dispose();
+display.dispose();
+}

@@ -1,0 +1,30 @@
+Invalid memory access when using the new shell.getToolBar()
+Build Identifier: 3.7M4
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Main {
+public static void main(String[] args) {
+final Display display = Display.getDefault();
+final Shell shell = new Shell(display, SWT.SHELL_TRIM);
+final ToolBar toolBar = shell.getToolBar();
+new ToolItem(toolBar, 0).setText("toolbar item");
+shell.setLayout(new GridLayout());
+final Label label = new Label(shell, 0);
+label.setText("label");
+label.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true));
+shell.pack();
+shell.setMinimumSize(shell.getSize());
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}
+I'm getting the error "Invalid memory access of location 0x0 rip=0x7fff8249b979" (the numbers can be different each time) when I launch the above sample on OS X 10.6.5 using Java 1.6.0_22 and org.eclipse.swt.cocoa.macosx.x86_64_3.7.0.v3716.jar
+Reproducible: Always
+Steps to Reproduce:
+1.launch above sample

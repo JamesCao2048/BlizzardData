@@ -1,0 +1,29 @@
+[Widgets] Spinner.setIncrement() throwing ArithmeticException for divide by zeros
+Created  attachment 145669   [details]
+Testcase for Spinner.setIncrement bug
+I have been attempting to debug a problem with an Eclipse based application we work on and it seems to be down to an issue to do with the Spinner widget and certain values passed to setIncrement.
+I started seeing intermittent problems when using the SWT Spinner class with high values for the increment.
+We are using the Spinner to control a zoom on an image and are trying to scale the increment to the current zoom level.
+Once we get to very high levels of zoom we see frequent ArithmeticExceptions caused by a divide by zero.
+The line in the SWT code that is throwing the exception is working with a value that appears to be obtained via a native call where the value returned is unexpectedly zero.
+For some reason setIncrement appears to need to be called 3 times with the failing value before a failure occurs.
+Once a spinner has been "broken" all calls to setIncrement fail and you need to dispose of the widget.
+The failures appear to get more likely the larger the increment value but not all increments cause the problem.
+By experimenting with my testcase I have found that they also occur more sporadically at lower values.
+The smallest increment I can reproduce this issue with is an increment of 65536 and next is at 92682.The fact that the failing increments are spread out (seemingly) at random makes it quite difficult to guard against them by either avoiding really large increments or skipping certain ranges since I have no idea what a safe increment is.
+I do want to be able to use potentially quite large increment values where currently a failure is quite likely.
+Although large these increments are useful when used on a spinner that has had the digits value set to display fractional values.
+I have tried this with builds of SWT 3.4 and SWT 3.5 on Windows and the testcase fails.
+I tried the same testcase on Linux and saw no issues.
+The test case to reproduce this is attached below.
+Uncommenting the lines with different values on the increment value will change how often the failure is observed.
+A stack trace of the failure is below.
+Stack Trace:
+java.lang.ArithmeticException: divide by zero
+at org.eclipse.swt.widgets.Spinner.setIncrement(Spinner.java:890)
+at SpinnerTest$1$1.run(SpinnerTest.java:45)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3855)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3476)
+at SpinnerTest.main(SpinnerTest.java:73)

@@ -1,0 +1,43 @@
+NPE in PrintDialog
+Windows has code in setPrinterData to ensure that the printerData instanceVariable is never null.
+This code is missing on every other platform.
+missing line is in setPrinterData
+-> if (data == null) data = new PrinterData();
+example of NPE from trying to print on Cocoa.
+java.lang.NullPointerException
+at org.eclipse.swt.printing.PrintDialog.open(PrintDialog.java:157)
+at org.eclipse.jface.text.TextViewer.print(TextViewer.java:4516)
+at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor$11.run(AbstractDecoratedTextEditor.java:1334)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+at org.eclipse.ui.commands.ActionHandler.execute(ActionHandler.java:185)
+at org.eclipse.ui.internal.handlers.LegacyHandlerWrapper.execute(LegacyHandlerWrapper.java:109)
+at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:470)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:824)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:880)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:569)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:510)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:125)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1026)
+at org.eclipse.swt.widgets.Display.sendEvent(Display.java:3705)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1314)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1337)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1322)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1351)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1347)
+at org.eclipse.swt.widgets.Canvas.sendKeyEvent(Canvas.java:440)
+at org.eclipse.swt.widgets.Control.doCommandBySelector(Control.java:914)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4929)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSResponder.interpretKeyEvents(NSResponder.java:56)
+at org.eclipse.swt.widgets.Composite.keyDown(Composite.java:515)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4839)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:209)
+at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:1890)
+at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:1983)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4901)
+at org.eclipse.swt.internal.coco

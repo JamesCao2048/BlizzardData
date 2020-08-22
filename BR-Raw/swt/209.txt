@@ -1,0 +1,57 @@
+Disposing a font still in use by a GC causes crashes
+Snippet to reproduce exception:
+public void paintFigure(Graphics g) {
+FontData[] fd = g.getFont().getFontData();
+for (int i=0 ; i
+< fd.length ; i++) {
+fd[i].setStyle(SWT.BOLD | SWT.ITALIC);
+}
+Font font = new Font(null, fd);
+g.setFont(font);
+super.paintFigure(g);   // Here, some text is drawn
+font.dispose();         // This is were the trouble comes from
+g.setForegroundColor(ColorConstants.black);
+g.setAntialias(SWT.ON); // Here it crashes
+g.drawOval(getBounds().getCopy().shrink(1, 1));
+g.setAntialias(SWT.OFF);
+}
+The problem is the font being disposed before g.setAntialias(SWT.ON) is called.
+Postponing disposing the font to the end of the method fixes the problem.
+However it is not clear from the javadoc that setAntialias() needs some font
+being set
+- and even if,...
+it shouldn't crash this way ;)
+Tested SWT versions: 3.1
+-> CVS
+Thanks a lot!
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0xAA63B019
+Function=Java_org_eclipse_swt_internal_gtk_OS_strlen+0xF
+Library=/home/fabian/workspace/org.eclipse.swt.gtk.linux.x86/libswt-pi-gtk-3210.so
+Current Java thread:
+at org.eclipse.swt.internal.gtk.OS.strlen(Native Method)
+at org.eclipse.swt.graphics.GC.setCairoFont(GC.java:2689)
+at org.eclipse.swt.graphics.GC.initCairo(GC.java:2469)
+at org.eclipse.swt.graphics.GC.setAntialias(GC.java:2631)
+at org.eclipse.draw2d.SWTGraphics.reconcileHints(SWTGraphics.java:795)
+at org.eclipse.draw2d.SWTGraphics.checkGC(SWTGraphics.java:282)
+at org.eclipse.draw2d.SWTGraphics.checkPaint(SWTGraphics.java:292)
+at org.eclipse.draw2d.SWTGraphics.drawOval(SWTGraphics.java:393)
+at org.eclipse.draw2d.Graphics.drawOval(Graphics.java:193)
+at
+de.dd.ferkel.gef.figure.custom.systemprofil.AufgabeFigure.paintFigure(AufgabeFigure.java:123)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1053)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1123)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1118)
+at org.eclipse.draw2d.Viewport.paintClientArea(Viewport.java:156)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1123)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1118)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)

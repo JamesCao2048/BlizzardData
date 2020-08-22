@@ -1,0 +1,68 @@
+widgetIsDisposed for tootip text
+Build 20020606.
+Not sure how to reproduce.
+I got into a state where I had tooltip text hanging
+around when it shouldn't have been.
+I was starting an inner eclipse and I
+think what happened was that the tooltip text from the outer Eclipse appeared
+in my inner Eclipse.
+Pressed the ESC key a couple of times, went back to the
+outer Eclipse, clicked on the hover help text and then press the ESC key again,
+at which point it went away.
+!SESSION Jun 08, 2002 11:56:31.940
+---------------------------------------------
+java.fullversion=J2RE 1.3.0 IBM build cn130-20010502 (JIT enabled: jitc)
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86
+-data c:eclipse-wsui-
+ws
+-install file:C:/eclipse/
+!ENTRY org.eclipse.ui 4 4 Jun 08, 2002 11:56:31.940
+!MESSAGE Unhandled exception caught in event loop.
+!ENTRY org.eclipse.ui 4 0 Jun 08, 2002 11:56:31.990
+!MESSAGE Widget is disposed
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:2058)
+at org.eclipse.swt.SWT.error(SWT.java:1990)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:368)
+at org.eclipse.swt.widgets.Shell.getDisplay(Shell.java(Compiled Code))
+at org.eclipse.swt.widgets.Widget.isValidThread(Widget.java(Compiled
+Code))
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java(Compiled
+Code))
+at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:989)
+at org.eclipse.swt.custom.CTabFolder.showToolTip(CTabFolder.java:1851)
+at org.eclipse.swt.custom.CTabFolder.onMouseMove(CTabFolder.java:1855)
+at org.eclipse.swt.custom.CTabFolder.access$7(CTabFolder.java:1853)
+at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:201)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:825)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java
+(Compiled Code))
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java
+(Compiled Code))
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java
+(Compiled Code))
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1160)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:739)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:462)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:244)
+at org.eclipse.core.launcher.Main.run(Main.java:693)
+at org.eclipse.core.launcher.Main.main(Main.java:526)
+!ENTRY org.eclipse.ui 4 4 Jun 08, 2002 11:56:32.270
+!MESSAGE Unhandled exception caught in event loop.
+!ENTRY org.eclipse.ui 4 0 Jun 08, 2002 11:56:32.270
+!MESSAGE Widget is disposed
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:2058)
+at org.eclipse.swt.SWT.error(SWT.java:1990)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:368)
+at org.eclipse.swt.widgets.Shell.getDisplay(Shell.java

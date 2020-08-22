@@ -1,0 +1,7 @@
+[OpenGL] GLCanvas doesn't work on Vista
+I've observed this on two separate machines running Vista, one with an NVIDIA GeForce 7400 and one without a graphics card at all (using an emulated opengl driver).
+Both machines are able to run OpenGL games just fine, so I'm fairly certain it's an SWT problem.
+For a snippet illustrating the bug I suggest the LWJGLExample.java which is included in your org.eclipse.swt.opengl.examples plugin.
+This is supposed to show an animated rotating and expanding/contracting taurus, but when I run it under Vista, at first a blank window comes up.
+If I resize the window I can get the taurus to appear, but it is frozen.
+Sometimes when I stop dragging it starts animating just fine, but after another drag it's frozen again!

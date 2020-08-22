@@ -1,0 +1,29 @@
+SWT.Settings - no notification on Vista
+1.Hook a listener to SWT.Settings
+2.Vista backdrop->right menu->Personalize->Window Color and Appearance
+3.Change color scheme
+My assumption is that the listener should be notified.
+In the code below, message should be written to system out but never is.
+Following similar steps on XP it is.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+public class RunTest {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell(display);
+shell.open ();
+System.out.println("Adding SWT.Settings listener");
+Display.getCurrent().addListener(SWT.Settings, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("SWT.Settings changed");
+}
+});
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}

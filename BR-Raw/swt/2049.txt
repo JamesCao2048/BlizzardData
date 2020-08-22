@@ -1,0 +1,9 @@
+[Viewers] Tree on Extensions page initially scrolled to the right
+I20070424-0930
+- new workspace
+- import org.eclipse.jdt.ui as binary
+- open plugin.xml
+- go to Extensions tab
+- close editor
+- go back (Alt+Left)
+=> tree is scrolled to the right; icons and '+'es not visible

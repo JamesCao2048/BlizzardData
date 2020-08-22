@@ -1,0 +1,55 @@
+Tree [+] not repainted
+SWT CVS Win32
+The [+] is not redrawn on item[4], but is redrawn on item[10] after the timer and setItemCount call in the SetData handler.
+If you scroll right and left, it is then repainted properly.
+---
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Tree tree = new Tree(shell, SWT.H_SCROLL | SWT.V_SCROLL | SWT.VIRTUAL | SWT.BORDER | SWT.MULTI
+| SWT.FULL_SELECTION);
+final int columns = 20;
+for (int i = 0; i
+< columns; i++)
+new TreeColumn(tree, SWT.LEFT).setWidth(150);
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+Tree tree = (Tree) event.widget;
+String text = "X";
+for (int i = 0; i
+<= columns; i++) {
+if (!item.getText(i).equals(text))
+item.setText(i, text);
+}
+int index = tree.indexOf(item);
+if (index == 1 || index == 10) {
+System.err.println("Set count to 4");
+item.setItemCount(4);
+}
+}
+});
+tree.setItemCount(60);
+final int timerDelay = 2000;
+final Runnable r = new Runnable() {
+public void run() {
+TreeItem[] items = tree.getItems();
+for (int i = 0; i
+< items.length; i++) {
+items[i].setItemCount(0);
+tree.clear(i, true);
+}
+}
+};
+display.timerExec(timerDelay, r);
+shell.setSize(400, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

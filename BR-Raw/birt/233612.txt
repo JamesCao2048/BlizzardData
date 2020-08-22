@@ -1,0 +1,4 @@
+Bug 233612 Focus issue when drag cube to Layout[1101]
+Description: Focus issue when drag cube to Layout Build number:2.3.0.v20080523 Steps to reproduce: 1.Insert a cube.
+2.Drag the cube to Layout 3.Press delete button.
+Expected result: crosstab is deleted Actual result: The reference found dialog indicated that cube will be deleted

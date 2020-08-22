@@ -1,0 +1,3 @@
+Table/Tree check boxes show intermediate state
+when selecting a check box in table or tree, the indeterminate state is quickly shown before the checked state.
+We fixed this in button already by over riding nextState.

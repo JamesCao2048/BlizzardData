@@ -1,0 +1,27 @@
+fillGradientRectangle() in gc doesn't use gDip clipping when foreground and background are the same.
+fillGradientRectangle()tests for foreground and background color being the same and uses OS.PatBlt() when they are.
+However, if a clipping region has been set with anti aliasing turned on OS.PatBlt() won't clip.
+Either fillRectangle() should be called in place of OS.PatBlt() or the foreground == background optimization should be removed.
+Here's an example paint listener:
+addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+gc.setAntialias(SWT.ON);
+
+Rectangle rect = getClientArea();
+
+Region region = new Region();
+region.add(rect);
+
+//	Clip a 5 x 5 rect in the top left corner.
+(Assuming client area is bigger than 5 x 5
+region.subtract(rect.x, rect.y, 5, 5);
+gc.setClipping(region);
+gc.setForeground(getDisplay().getSystemColor(SWT.COLOR_RED));
+gc.setBackground(getDisplay().getSystemColor(SWT.COLOR_RED));
+gc.fillGradientRectangle(rect.x, rect.y, rect.width, rect.height, true);
+
+gc.setClipping((Region)null);
+region.dispose();
+}
+});

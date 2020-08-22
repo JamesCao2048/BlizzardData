@@ -1,0 +1,42 @@
+SWT error when initializing GC
+Cocoa I20090416
+When opening an RTC iteration plan, you get an endless loop of exception dialogs.
+This problem does not occur on the Carbon build.
+Here is the stack trace from the error log:
+org.eclipse.swt.SWTError: Unspecified error
+at org.eclipse.swt.SWT.error(SWT.java:3890)
+at org.eclipse.swt.SWT.error(SWT.java:3779)
+at org.eclipse.swt.SWT.error(SWT.java:3750)
+at org.eclipse.swt.graphics.Image.getRepresentation(Image.java:748)
+at org.eclipse.swt.graphics.Image.internal_new_GC(Image.java:1017)
+at org.eclipse.swt.graphics.GC.<init>(GC.java:161)
+at org.eclipse.swt.graphics.GC.<init>(GC.java:124)
+at com.ibm.team.apt.internal.ide.ui.common.gadgets.GFadeableTreeNodeContent.paint(GFadeableTreeNodeContent.java:45)
+at com.ibm.team.apt.internal.ide.ui.editor.outliner.IterationPlanItemNodeContent.paint(IterationPlanItemNodeContent.java:89)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.CompositeGadget.paint(CompositeGadget.java:84)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.GShell.paint(GShell.java:122)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.GTreeNode.paint(GTreeNode.java:129)
+at com.ibm.team.apt.internal.ide.ui.editor.outliner.PlanElementGadget.paint(PlanElementGadget.java:115)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.ContentOutlineItem.paintContent(ContentOutlineItem.java:222)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.ColumnContentOutlineItem.paintContent(ColumnContentOutlineItem.java:86)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.OutlineItem.paint(OutlineItem.java:610)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.OutlineItem.paint(OutlineItem.java:613)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.OutlineItem.paint(OutlineItem.java:613)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.Outline.doPaint(Outline.java:812)
+at com.ibm.team.apt.internal.ide.ui.widgets.outliner.Outline$9.doPaint(Outline.java:196)
+at com.ibm.team.jface.DoubleBufferPainter$1.paintControl(DoubleBufferPainter.java:50)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:217)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Display.sendEvent(Display.java:3420)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1226)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1249)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1234)
+at org.eclipse.swt.widgets.Control.drawWidget(Control.java:1096)
+at org.eclipse.swt.widgets.Canvas.drawWidget(Canvas.java:152)
+at org.eclipse.swt.widgets.Widget.drawRect(Widget.java:574)
+at org.eclipse.swt.widgets.Display.windowDelegateProc(Display.java:4473)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(Display.java:4030)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:4158)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.

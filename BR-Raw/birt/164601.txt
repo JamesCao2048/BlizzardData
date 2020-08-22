@@ -1,0 +1,5 @@
+Bug 164601 It takes ages to display a report with label of very large font size.
+Description: It takes ages to display a report with label of very large font size.
+Steps to reproduce: 1.Insert two labels 2.Set one font weight to 100 and the other to 900 3.Preview in pdf/html Expected result: Show different weight.
+Actual result: In html, you can see font-weight effect In pdf, the report never displayed.
+PS.If I change the font size to a small number, say 20, the report in pdf is generated immediated.

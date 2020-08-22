@@ -1,0 +1,3 @@
+TableColumn does not fire resize event
+Create a TableColumn, add a control listener, resize the column and you will not get a resize event
+This problem may be OS X specific as it appears to work on Windoze.

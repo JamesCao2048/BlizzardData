@@ -1,0 +1,10 @@
+[Browser] authentication listener not called when navigating directly to site
+- use Snippet317, put a breakpoint in the authentication listener
+- navigate to  https://bugs.eclipse.org/bugs/show_bug.cgi?id=166956  and click on the link in  comment 0
+
+-> the authentication listener is invoked, which is expected
+- now instead, navigate directly to  https://bugs.ottawa.ibm.com/show_bug.cgi?id=123154
+
+-> the authentication listener is not invoked, but it should have been
+
+-> not sure if the invalid certificate at this site is relevant or not

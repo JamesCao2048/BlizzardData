@@ -1,0 +1,3 @@
+buttons in perspective switcher appear too tight
+- the selected button in eclipse's perspective chooser (the right control in its CBanner) does not show any margin between its left edge and its image
+- this is an issue with ToolItems in general: any time a ToolItem contains text and an image, the image is always shown flush against one of the item's edges

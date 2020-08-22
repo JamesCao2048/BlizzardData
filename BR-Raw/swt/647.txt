@@ -1,0 +1,6 @@
+Link does not wrap without vertical fill
+3.5 and I20100504-0800
+The link widget does not properly wrap on Cocoa.
+If you open the ControlExample, select Size > Preferred, Horizontal Fill, and then make the window narrow, the Link wraps on WinXP and GTK, but doesn't wrap on Cocoa.
+When Vertical Fill is also checked, it also works properly on Cocoa.
+This bug can also be seen in the SDK in "Preferences > Java > Editor" and "Preferences > Java > Editor > Syntax Coloring" (links on top don't wrap).

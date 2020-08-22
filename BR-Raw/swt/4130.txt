@@ -1,0 +1,19 @@
+Revert is much slower than close and re-open in java editor.
+1) Start by opening an editor on the file
+org.eclipse.swt.custom.StyledText.java from the source folder "Eclipse SWT
+Custom Widgets" in the project "org.eclipse.swt" in the open source repository.
+2) Now, select the end of the first line, and hit a space character so that
+the file has been marked dirty.
+From this point, on my (fast) machine at home, it takes about 8 seconds to
+perform the following steps:
+
+- click on the close box in the editor tab.
+
+- answer "no" to the "do you want to save changes" dialog
+
+- double click on the file in the navigator to re-open it.
+However, if I repeat steps 1) and 2), and then select "Revert" from the pop up
+menu in the editor it takes > 15 seconds to replace the contents of the window
+with the original.
+This seems odd, since reverting the file contents ought not
+to be more than closing and re-opening the file.

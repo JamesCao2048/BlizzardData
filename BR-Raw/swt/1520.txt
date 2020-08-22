@@ -1,0 +1,2 @@
+setEnabled() does not work for Widgets that are not NSControl
+Group, ToolBar, ProgressBar, Label, Composite and a few other widgets that are not subclasses NSControl need to somehow reimplement Control.enableWidget(boolean).

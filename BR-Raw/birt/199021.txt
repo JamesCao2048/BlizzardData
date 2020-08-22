@@ -1,0 +1,8 @@
+Bug 199021 Error message pops up several times when click an invalid dataset
+Description: There is a sqlserver datasource and dataset, remove the jtds driver to let the dataset invalid.
+Double click on the dataset, the error message will pop up serveral times.
+Build version:2.2.0.v20070807-0630 Steps to reproduce: 1.Create a sqlserver datasource and dataset.
+2.Remove the jtds driver, and the dataset will be invalid.
+3.Double click on the dataset.
+Expect result: Error message pops up once to indicate the problem.
+Actual result: Error message pops up serveral times.

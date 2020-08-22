@@ -1,0 +1,2 @@
+Bug 124260 [regression]Pre-define style "report" won't take effect in PDF
+Steps to reproduce: 1.Add a label in the report 2.New a pre-define style "report", set font color to red, size to large 3.Preview the report in PDF Actual result: The style is not applied to the report Expected result: The style is applied to the report

@@ -1,0 +1,15 @@
+AjLookupEnvironment.java:519
+Build ID: Eclipse SDK
+Version: 3.2.2
+M20070212-1330
+Steps To Reproduce:
+This occured repeatedly when I saved a .aj file or a .java file that was boing advised.  A restart of eclipse made it go away and it has not happen again so I don't know how reproduce it. Sorry.
+AJDT version 1.4.2.200703020612
+More information:
+java.lang.NullPointerException
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.doDeclareAnnotations(AjLookupEnvironment.java:803)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.weaveInterTypeDeclarations(AjLookupEnvironment.java:592)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.weaveInterTypeDeclarations(AjLookupEnvironment.java:519)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupE ... AutoBuildJob.run(AutoBuildJob.java:217)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:58)
+Compile error: NullPointerException thrown: null

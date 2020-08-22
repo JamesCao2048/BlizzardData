@@ -1,0 +1,5 @@
+Shell with SWT.SHEET style doesn't take focus any more
+HEAD Cocoa, not a dup of  bug 330540 .
+A Shell with SWT.SHEET style doesn't take focus any more.
+This can be seen in
+the ControlExample and when you try to close a dirty editor.

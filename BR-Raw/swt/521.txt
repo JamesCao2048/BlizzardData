@@ -1,0 +1,10 @@
+org.eclipse.swt.graphics.TextStyle.hashCode() contains "hash ^= hash;
+Build Identifier: M20090917-0800
+TextStyle.hashCode() contains, among other lines, the following:
+if (underline) hash ^= hash;
+if (strikeout) hash ^= hash;
+which would set hash = 0
+This may have been done on purpose
+Reproducible: Always
+Steps to Reproduce:
+invoke TextStyle.hashCode() for a StyleRange that has field 'underline' set

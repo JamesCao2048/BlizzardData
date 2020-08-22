@@ -1,0 +1,2 @@
+Bug 140542 label can't be displayed without resource file or unmatched key
+Steps to reproduce: 1.New a report, add a lable with text "aaa" 2.Add a resource file for the report, set key to "key1", value to "actuate", apply the value to the label 3.Clear the resource file in Property Editor->General->Resource File (or change the key to "abc") 4.Preview the report Expected result: 1.Display label text "aaa" on preview or 2.Give a warning message to say resource file is not found or unmatched key Actual result: Nothing displays on preview

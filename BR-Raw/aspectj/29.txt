@@ -1,0 +1,5 @@
+Type Mismatch error when using inner classes contained in generic types within ITDs
+Please see attached example project.
+I get the following (strange) compiler error:
+Type mismatch: cannot convert from A<T>.InnerA<> to A.InnerA
+BAspect.aj   /AspectJInnerclassInGenericTypeBug/src/de/example	line 12

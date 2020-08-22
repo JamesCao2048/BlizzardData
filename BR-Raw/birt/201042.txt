@@ -1,0 +1,6 @@
+Bug 201042 [Accessibility]Chart scritp should not add by auto when click the down in keyboard[17]
+Description: Chart scritp should not add by auto when click the down in keyboard[0704] Step: 1.New a chart and switch to script view.
+2.Let the point on the script function selection.
+3.Click the down on keyboard.
+Actual result: A function will add by auto.
+Expected result: Customer can not select the function under the second function by keyboard, and it should not be added by auto.

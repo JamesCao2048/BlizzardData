@@ -1,0 +1,14 @@
+Invalid "indirect static access" warning on EnumSet.noneOf
+When compiling AspectJ enabled projects in Java 5.0 source mode with "Indirect
+access to static modifier" warnings on, the following code incorrectly gives a
+compiler warning (this doesn't occur in non-AspectJ enabled projects):
+public class Test {
+enum Foo {
+Wibble,
+Wobble,
+Woo;
+}
+public static void main(String[] args) {
+EnumSet<Foo> set = EnumSet.noneOf(Foo.class);
+}
+}

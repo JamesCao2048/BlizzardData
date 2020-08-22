@@ -1,0 +1,3 @@
+Bug 135444 The Title of the report cann't be refresh
+Description: The Title of the report cann't be refresh Steps to reproduce: 1.The Title property should appear as the HTML browser title when viewing a report.
+2.set 'Birt Report' in the Title property, preview and it's ok 3.rename the title to 'Report' and save Actual result: The title is still 'Birt Report' Expected result: The title should be 'Report'

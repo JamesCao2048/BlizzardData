@@ -1,0 +1,50 @@
+GTK: Selection Index not preserved after Combo item removal
+When I select an item programatically in a read-only Combo widget, and then
+remove an item above it, the selection index should not automatically be moved
+to the first item in the list (index=0).
+In the following test, I expect that
+"item 3" will remain selected even after "item 1" is removed.
+The expected
+output is:
+2
+1
+But currently with SWT 2.111, GTK 2.0.5, on RH 7.2, it prints:
+2
+0
+//
+----------- begin testcase
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TestSWTChoice {
+public static void main(String[] args) {
+final Display disp = Display.getDefault();
+Shell shell = new Shell(disp);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+final Combo combo =
+new Combo(
+shell,
+SWT.CLIP_CHILDREN
+| SWT.CLIP_SIBLINGS
+| SWT.READ_ONLY
+| SWT.DROP_DOWN);
+shell.setText("Choice Test");
+shell.setSize(200, 200);
+shell.setLocation(0, 0);
+shell.open();
+combo.add("Item 1");
+combo.add("Item 2");
+combo.add("Item 3");
+combo.select(2);
+System.out.println(combo.getSelectionIndex());
+combo.remove(0);
+System.out.println(combo.getSelectionIndex());
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}

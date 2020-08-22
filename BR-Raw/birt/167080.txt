@@ -1,0 +1,5 @@
+Bug 167080 The name suffix when create report document.
+In current DtE implementation, the suffix of created report document are like follows: QsXXX (XXX stands for a number) in query result of each query execution.
+The number will keep increased in a jvm, this is however not expected.
+Ideally, for each report render session(managed by Engine), the number(XXX) should be restarted.
+Otherwise, in real use of Data Engine, the jvm may exists for several days, which will cause the number suffix growing very big.This is not expected.

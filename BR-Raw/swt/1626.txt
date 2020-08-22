@@ -1,0 +1,5 @@
+Compiler warnings in N20080406-0200
+1.WARNING in /builds/N200804062000/src/plugins/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/graphics/TextLayout.java
+(at line 2811)
+public int EnumFontFamExProc(int lpelfe, int lpntme, int FontType, int lParam) {
+The method EnumFontFamExProc(int, int, int, int) from the type new Object(){} is never used locally

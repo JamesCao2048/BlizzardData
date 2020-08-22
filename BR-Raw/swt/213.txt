@@ -1,0 +1,3 @@
+CustomControlExample CTabFolder should have setTopRight
+CTabFolder tab in CustomControlExample should have a means of testing setTopRight (to a toolbar, for example).
+Also, allow the top right style (SWT.RIGHT, SWT.FILL, and SWT.RIGHT | SWT.WRAP) to be selected when calling setTopRight().

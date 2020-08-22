@@ -1,0 +1,12 @@
+Bug 179395 Report viewer fails when installed via Update Manager/Callisto
+The good news: I'm getting consistent behavior between the BIRT designer in the IDE and the BIRT runtime in my application.
+What I'm stuck on now: Background: I got BIRT through the Callisto update site.
+I've used JDBC to produce a simple BIRT report off of one table.
+In the BIRT designer, if I click the "preview" tab (equivalent to calling /run, I think), everything works.
+Similarly, if I choose "view report as HTML" on the toolbar, this works.
+However, choosing "View Report in Web Viewer" on the tool bar results in my report running, but no data appearing.
+I see my title table, the header band, and the date/time the report was run in the footer, but no data in between.
+Also, choosing "View Report as PDF" on the tool bar results in the following error message in the popup browser window: org.eclipse.birt.report.service.api.ReportServiceException: Report engine fails to create extension to handle this request.
+I get exactly the same behavior in my application.
+Hopefully, if I can get BIRT to run properly in the IDE, I can get it to run properly in my application.
+:-)

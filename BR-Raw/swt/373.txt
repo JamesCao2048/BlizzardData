@@ -1,0 +1,21 @@
+Bidi 3.7: Images in disabled ToolBar disappear when orientation changed (setOrientation) used.
+Build Identifier: Build id: 20100617-1415
+When ToolBar is disabled, use (couple of times) of setOrientation makes the images in ToolBar to disappear in original orientation.
+Let say we run in LTR GUI (ControlExamle
+- in org.eclipse.swt.examples.mirroringTest package.), if we disable the toolbar then click couple of times on the "set orientation SWT.LEFT_TO_RIGHT" the images begin to disappear (see steps to Reproduce).
+Reproducible: Always
+Steps to Reproduce:
+attachment 194265   [details]
+Steps to Reproduce:
+1.Apply the attached patch on the "org.eclipse.swt.examples" project (project
+level).
+2.Go to org.eclipse.swt.examples.mirroringTest package.
+3.Run the ControlExamle.
+4.Go to the "Toolbar" Tab.
+5.In "Others..." group the "Enabled..." option should be unchecked.
+6.In "Orientation..." group choose "set orientation SWT.LEFT_TO_RIGHT".
+resulrt
+- some of the icons disappeare.
+Notes:
+1.if you'll keep toggle between   "set orientation SWT.LEFT_TO_RIGHT" to " group choose "SWT.LEFT_TO_RIGHT" the icons eventually will all disapeare in the SWT.LEFT_TO_RIGHT view.
+2.same happens (but oppositely) in the mirrored GUI you can use the ControlExamleRTL to reproduce.

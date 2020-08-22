@@ -1,0 +1,7 @@
+[StyledText] setTopPixel limits argument to logical line count
+build 20021111
+setTopPixel uses the logical line count to limit the maximum range of the
+method argument.
+When StyledText is used in word wrap mode and the number of visual lines is
+greater than the number of logical lines (lines are wrapped) setTopPixel will
+not allow scrolling to the last possible top line.

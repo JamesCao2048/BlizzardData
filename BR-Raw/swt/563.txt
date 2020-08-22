@@ -1,0 +1,38 @@
+[DND] [Mac] Erratic DND behaviour on Mac OS X
+Created  attachment 109485   [details]
+Minimal sample project
+I have added drop support to a viewer using the ResourceTransfer type, so that I can receive dragged resources from the standard workbench views.
+I have done this using ViewerDropAdapter.
+Unfortunately the drop target does not receive the dragged data correctly, depending on the view from which the drag was initiated:
+1) When dragging from Project Explorer, I receive the resource correctly (array of IResource with 1 entry).
+2) When dragging from Package Explorer (JDT) I always receive an empty array of IResource.
+3) When dragging from Navigator, I get the following NPE:
+java.lang.NullPointerException
+at org.eclipse.swt.dnd.DragSource.dragSendDataProc(DragSource.java:393)
+at org.eclipse.swt.dnd.DragSource.DragSendDataProc(DragSource.java:198)
+at org.eclipse.swt.internal.carbon.OS.GetFlavorDataSize(Native Method)
+at org.eclipse.swt.dnd.DropTarget.dragReceiveHandler(DropTarget.java:384)
+at org.eclipse.swt.dnd.DropTarget.DragReceiveHandler(DropTarget.java:240)
+at org.eclipse.swt.internal.carbon.OS.TrackDrag(Native Method)
+at org.eclipse.swt.dnd.DragSource.drag(DragSource.java:351)
+at org.eclipse.swt.dnd.DragSource$1.handleEvent(DragSource.java:166)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1561)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1585)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1570)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1360)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3474)
+at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:3105)
+at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:2104)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:375)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:862)
+at org.eclipse.swt.internal.carbon.OS.CallNextEventHandler(Native Method)
+at org.eclipse.swt.widgets.Tree.kEventMouseDown(Tree.java:2599)
+at org.eclipse.swt.widgets.Widget.mouseProc(Widget.java:1326)
+at org.eclipse.swt.widgets.Display.mouseProc(Display.java:2925)
+at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3047)
+[stack trace truncated]
+Note that with the same code, all three of the above cases work perfectly when running on Windows.
+Attached is a minimal example plugin project that reproduces the problem.
+Open the "Drop Target View" and drop resources into any part of the view.

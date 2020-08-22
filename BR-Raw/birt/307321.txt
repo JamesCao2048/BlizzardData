@@ -1,0 +1,3 @@
+Bug 307321 BIRT Column page breaks do not respect page variables
+When using an onPageEnd event to increment a page variable and a column page break on a table the html viewer recognizes the updated variable but if you export it to pdf the variable is not updated for every other page.
+See attached example.

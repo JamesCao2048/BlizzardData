@@ -1,0 +1,9 @@
+Bug 209456 No null value in value list from Select value...[07]
+Description: No null value in value list from Select value...
+Build number:2.3.0.v20071112 Steps to reproduce: 1.New sample data source and dataset from CUSTOMERS.
+2.Insert dataset to Layout, add a filter on column STATE, click
+<Select value...>, check value list.
+3.New a report parameter, dynamic, tick off isRequired,value column is STATE, want to set default value as Null Value through
+<Select value...> Expected result: The column contains null value so it should be able to be selected in value list.
+Actual result: No null value for selection.
+Error log:n/a

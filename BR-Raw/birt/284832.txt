@@ -1,0 +1,3 @@
+Bug 284832 [Automation] Page break for contents in grid cell does not work correctly in PDF
+Description: [Automation] Page break for contents in grid cell does not work correctly in PDF Build: 2.5.1.v20090727-0630 Steps to repoduce: 1.Download attached report 2.Preview in web view and export to PDF 3.Preview in PDF Actual result: Export PDF: page absent PDF: page redundant refer to the zip file Expect result: 4 pages are generated and there's no illegal page break.
+Attached PDF file.

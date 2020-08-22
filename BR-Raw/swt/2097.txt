@@ -1,0 +1,12 @@
+[Browser] Changing status message in Ubuntu's built-in Firefox browser doesn't work
+Hi,
+I used to use SWT browser on Linux with Mozilla 1.7.3 GTK2, and everything
+was OK, but when I switched to Firefox (the version which is available with Ububtu Dapper 6.06), a problem occurs:
+Either the JavaScript in my page (loaded in the Browser widget), cannot
+change the status text, or SWT does not handle the event.
+I believe that this is the first problem, so changed my Firefox setting to
+allow JavaScript to change status bar message, but the problem still
+remains.
+I don't know where is the default configuration loaded for a SWT browser, but probably this is a security issue for Firefox.
+I used Ubuntu 6.06's default Firefox (1.5.0.5 I think).
+I'll soon make an attachment to reproduce the bug.

@@ -1,0 +1,8 @@
+Bug 180089 BIRT model - TOC predefined styles
+In ROM we need to support predefined styles for TOC too.
+This will allow user to easily create a TOC style, by creating one of two styles.
+Suggestion i have is
+- TOC ( Applies to all TOC nodes )
+- TOC-level1 ( If defined applies to first level toc nodes )
+- TOC-level2 ...........
+- TOC-level5

@@ -1,0 +1,5 @@
+Bug 214322 Enhance BIRT COUNT aggregation function.
+Current BIRT COUNT aggregation function takes no argument, this makes the function a mimic of SQL COUNT(*).
+However it still cannot cover COUNT(columnName) usage of SQL count.
+This enhancement targets to add an optional argument to BIRT COUNT.
+In case that an argument is provided we will have a complete mimic of SQL COUNT(columnName), otherwise we stick to current behavior.

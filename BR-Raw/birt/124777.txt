@@ -1,0 +1,6 @@
+Bug 124777 Set blank tooltip in chart title will cause exception when preview.
+Description: Set blank tooltip in chart title will cause exception when preview.
+Steps to reproduce: 1.New a simple chart 2.Add title interactivity: mouse over/show tooltip, keep tooltip text blank and click Add button.
+3.Preview the chart in viewer and move mouse over the chart title.
+Expected result: Nothing happen.
+Actual result: Unexpected exception dialog poped up.

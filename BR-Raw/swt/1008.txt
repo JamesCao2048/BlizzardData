@@ -1,0 +1,12 @@
+[content assist] Additional info of newly selected proposal not shown
+to reproduce:
+# ensure that Eclipse is configured to have javadoc available for Java runtime classes.
+# open a Java file in the JDT Java source editor
+# in the source declare a stack object as follows: java.lang.Object foo;
+# in the source editor on a new line, type: foo
+# in the editor use the '.' character to cause content assist to appear with suggestions for methods on 'foo'
+# wait for the javadoc to appear for the first content assist entry, the 'equals' method
+# type 'g' to filter the list of content assist proposals to those methods starting with 'g'
+# observe that the list of proposals is filtered and 'getClass()' proposal is now selected
+# observe that the javadoc remains that for the original method displayed, the equals method
+see the attached screenshot

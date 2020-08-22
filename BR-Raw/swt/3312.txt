@@ -1,0 +1,21 @@
+One line of cheese in CTabFolder selected tab
+I20040529
+If the percents in the selection background gradient do not go to 100, there
+is one pixel high line along the bottom of teh tab that is not drawn correctly.
+e.g.
+Color [] bgSelectedGradient = new Color[] {display.getSystemColor
+(SWT.COLOR_WHITE), display.getSystemColor(SWT.COLOR_BLUE)};
+int[] bgSelectedPercents = new int[] {50};
+folder.setSelectionBackground(bgSelectedGradient, bgSelectedPercents, true);
+The fix is to replace this:
+if (pos
+< height) {
+gc.setBackground(defaultBackground);
+gc.fillRectangle(x, pos, width, height-pos);
+}
+with this:
+if (pos
+< height) {
+gc.setBackground(defaultBackground);
+gc.fillRectangle(x, pos, width, height-pos+1);
+}

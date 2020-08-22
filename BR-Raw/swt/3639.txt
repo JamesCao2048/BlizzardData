@@ -1,0 +1,24 @@
+Out of bound exception in ColorDialog
+I was 'playing' with the ControlExample on Linux Motif.
+Tab 'text'.
+Changing the background color many times.
+Got the following stack trace at one point.
+Can't reproduce :-(
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 8
+at org.eclipse.swt.widgets.ColorDialog.mouseDown(ColorDialog.java:324)
+at org.eclipse.swt.widgets.ColorDialog.handleEvents(ColorDialog.java:213)
+at org.eclipse.swt.widgets.ColorDialog$1.handleEvent(ColorDialog.java:314)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:805)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2078)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1864)
+at org.eclipse.swt.widgets.ColorDialog.openModal(ColorDialog.java:412)
+at org.eclipse.swt.widgets.ColorDialog.open(ColorDialog.java:356)
+at org.eclipse.swt.examples.controlexample.Tab$2.widgetSelected(Tab.java:162)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:805)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2078)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1864)
+at
+org.eclipse.swt.examples.controlexample.ControlExample.main(ControlExample.java:310)

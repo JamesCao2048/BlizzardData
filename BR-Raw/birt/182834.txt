@@ -1,0 +1,4 @@
+Bug 182834 Cross Tab: Text used in layout should follow the mockup
+Currently it shows: Row, Column and Measure.
+We need to re-word them according to the mockup for the sake of user friendliness: 1.it's more user friendly with a phrase of "Drop data field(s)..." to direct user what to do.
+2.We tend to avoid addressing Measure/Dimension concept so we don't want to see word "Measure" on the layout.

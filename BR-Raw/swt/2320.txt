@@ -1,0 +1,6 @@
+Intermittent build failures -eclipse-master-${buildId}.zip doesn't exist
+Warning: Could not find file/builds/N200607070010/src/N20060707-0010/eclipse-master-N20060707-0010.zip
+There are intermittent failures on the build machine where the eclipse-master.zip doesn't exist.
+I'll try passing more memory to the vm at this stage of the build.
+It's a difficult problem to reproduce.
+It only seems to happen every 10 builds or so.

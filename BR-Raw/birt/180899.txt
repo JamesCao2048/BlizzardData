@@ -1,0 +1,7 @@
+Bug 180899 Data of "Date", "Time" and "Date Time" type show the same result [0001]
+Description: Data of "Date", "Time" and "Date Time" type show the same result.
+Build number: 2.2.0.v20070404-0630 Steps to reproduce: 1.New a sample data source, new a data set: select * from CLASSICMODELS.ORDERS.
+2.Drag a data item from Palette to Layout, binding to row["ORDERDATE"], select type as Date, Date Time, Time.
+Expected result: Date of Date, Date Time and Time type have different results.
+Actual result: They all show Date Time format.
+Error log: N/A

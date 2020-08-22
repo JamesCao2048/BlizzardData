@@ -1,0 +1,2 @@
+Bug 122306 TOC on group won't be displayed
+Description: TOC on group won't be displayed Steps to reproduce: 1.Add a sample datasource and a data with table "CUSTOMERS" 2.Add a table binding with data set 3.Add a group on the table and set the toc expression to "Group" 4.Preview in HTML Expected result: TOC "Group" will be displayed on the TOC pane Actual result: Nothing in the TOC pane

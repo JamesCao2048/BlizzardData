@@ -1,0 +1,2 @@
+Bug 267570 BirtDuration.month("P1Y2M3DT10H30M") result is incorrect
+Description: BirtDuration.month("P1Y2M3DT10H30M") result is incorrect Build number: 2.5.0.v20090309-0630 Steps to reproduce: 1, New a data item 2, Specify the expression: BirtDuration.month("P1Y2M3DT10H30M") 3, Preview Expected result: Result is 2 Actual result: Result is 30 Error log:

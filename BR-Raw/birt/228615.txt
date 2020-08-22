@@ -1,0 +1,3 @@
+Bug 228615 [Automation][Regression]Label width does not work correctly in PDF
+Description: Label width does not work correctly in PDF.
+Test Date: 20080424 Test Build: BIRT2.3.0 v20080424-0630 Step to reproduce: 1.Use the report attached 2.Preview it as PDF Expect result: The label width should be 15em

@@ -1,0 +1,6 @@
+Bug 148405 Improve usability of Chart Scripting editor
+The Designer should provide a scripting editor for chart, similar as the one for other report items: 1- Auto-color of keywords 2- Auto-completion 3- List methods in dropdown (note that parameters types and name should also be listed there with the method names, for instance: beforeGeneration(Chart chart, RuntimeContext context).
+4- Each implemented method should be shown in bold in the dropdown 5- Each method should have a description to help the user understand it (as a tooltip for instance) 6- The whole script should still be shown at once, the dropdown is only used for navigation Method names should not be hard-coded, so an extension point can be requested by designer to pass such information (method name, parameter types, description), if there isn't any available yet.
+Note that the chart can only pass the whole script to the designer, which needs to parse for functions to make the dropdown navigation work.
+It's ok if the dropdown is ineffective if there are some syntax errors in the script (that prevent parsing).
+Clicking on an empty method in the dropdown will automatically create a signature in the script body with the function name and default parameter names.

@@ -1,0 +1,10 @@
+Bug 213680 [2.2.2]Chart script can not be cleaned completely.
+Description: Reset script or delete all script does not work.
+build version: v20071221-0630 steps to reproduce: 1.New a report.
+2.New a chart.
+3.Enter some script for the chart and save the report.
+4.Click the reset scirpt button or delete all script.
+5.Save the report and switch to layout,then switch back to script page.
+Expected result: Script are cleaned.
+Actual result: Script are not cleaned.
+Note: If you delete part of the script, it works.

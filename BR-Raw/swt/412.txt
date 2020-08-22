@@ -1,0 +1,8 @@
+Selection under cocoa draws wrong in wrapped TextLayout
+Build Identifier: I20100608-0911
+Using SWT cocoa, a TextLayout with wrapped text where the first line is smaller than the others, the selection is drawn as a box with the width of the first line.
+This causes text on the other lines to leak out of the selection background box.
+The attached screen shot shows the result of the attached java code with the selection bug.
+Reproducible: Always
+Steps to Reproduce:
+Run the attached Test.java under mac os x with cocoa window system.

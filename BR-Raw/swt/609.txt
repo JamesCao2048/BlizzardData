@@ -1,0 +1,19 @@
+[hovering] First click on not yet enriched hover closes hover immediately
+3.6 RC2, broken during 3.6 M3 (works in 3.5.2)
+When I click a link in a not yet enriched hover (be fast to make sure it doesn't get enriched before you click), then the hover shell closes immediately and does not give the focus back to the editor.
+Steps to reproduce:
+1.paste this into Package Explorer of new workspace
+public class ClassParent {
+public void foo1() {
+}
+}
+public class ClassChild extends ClassParent{
+/**
+* @see #foo1()
+*/
+public void foo2() {
+foo1();
+}
+}
+2.hover over foo2() and quickly click on foo1()
+NOTE: If you are not fast enough then you have to close and reopen the editor as the bug can only be seen the first time.

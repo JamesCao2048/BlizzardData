@@ -1,0 +1,12 @@
+Spinner setSelection prints X warning
+200511011204
+Spinner setSelection can give the following X warning:
+Warning:
+Name: _TF
+Class: XmTextField
+XmNposition out of range; maximum XmNposition used.
+To replicate:
+- run ControlExample, go to Spinner tab
+- decrease the maximum scale to about half
+- now increase the selection scale
+- you will see X Warnings in the Console

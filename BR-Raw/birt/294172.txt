@@ -1,0 +1,7 @@
+Bug 294172 Use the newly created data set directly in chart builder.[13]
+description: When user choose to new a data set in chart builder, he tends to use it.
+So after the data set is created, it should be selected directly.
+This is also the behavior in dynamic parameter.
+Now we still use
+<None> after a new data set is created.
+Hope this could be improved.

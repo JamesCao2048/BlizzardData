@@ -1,0 +1,26 @@
+cleanup VerifyEvent constructor
+current code:
+public VerifyEvent(Event e) {
+super(e);
+this.character = e.character;
+this.keyCode = e.keyCode;
+this.stateMask = e.stateMask;
+this.start = e.start;
+this.end = e.end;
+this.text = e.text;
+}
+super is:
+public KeyEvent(Event e) {
+super(e);
+this.character = e.character;
+this.keyCode = e.keyCode;
+this.stateMask = e.stateMask;
+this.doit = e.doit;
+}
+if i don't mess it up the constructor of verifyevent could easyly be reduced to:
+public VerifyEvent(Event e) {
+super(e);
+this.start = e.start;
+this.end = e.end;
+this.text = e.text;
+}

@@ -1,0 +1,42 @@
+Inconsistent behavior of Combo#setItems() on MacOSX Cocoa
+Using the following snippet, one may observe that using Combo#setItems to set items on a combo (with an already selected item) will cause a selection event to occor on MacOSX Cocoa.
+This event does not occur on Windows XP; it does also not occur if no item is selected on the combo.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class  Bug300837  {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Combo combo = new Combo(shell, SWT.DROP_DOWN);
+combo.setItems(new String[] { "1", "2", "3" });
+combo.addSelectionListener(new SelectionListener() {
+public void widgetSelected(SelectionEvent e) {
+System.out.println("widget selected " + e);
+};
+public void widgetDefaultSelected(SelectionEvent e) {
+System.out.println("widget default selected " + e);
+}
+});
+combo.select(1); // if not selecting an item here, the selection event,
+// mentioned below, will not occur
+combo.setItems(new String[] { "1", "2", "3" }); // this will cause a
+// selection event on
+// MacOSX Cocoa, while
+// it does not on
+// Windowx XP
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+This is the cause for  bug 300837 , which depends on not receiving a respective selection event, so I think the behavior on other platforms may be that of Windows XP (while not having verified this).

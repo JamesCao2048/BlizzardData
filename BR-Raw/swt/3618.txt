@@ -1,0 +1,3 @@
+GTK-BIDI: RTL support in Label
+For some reason rtl-oriented wrapped Label need the opposite justification to
+be aligned correctly, when LEAD or TRAIL alignment are used.

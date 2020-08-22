@@ -1,0 +1,17 @@
+Eclipse on AIX 4.3.3 hangs
+There is no repsonse to user events like clicks or closing the application.
+I am running the 2.1 version of Eclipse on AIX 4.3.3 with APAR IY27694
+applied.
+I have X11.motif.lib at service level 4.3.3.80, so the release notes
+says not to install IY41939.
+The Eclipse application installed well.
+The splash screen comes out funny
+--
+the two lower GIFs are switched.
+When the application finally displays
+(seemingly correctly) then nothing happens if I click anywhere in the window.
+I am also using this with ViewNow X
+-- a Windows X windows Server.
+This works
+well with other X11 and java applications on AIX, so I have no reason to
+believe it would be the cause of the problems.

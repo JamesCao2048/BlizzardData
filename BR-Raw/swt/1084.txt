@@ -1,0 +1,6 @@
+Combo.select() causes SelectionEvent
+If I recall correctly programatic access to Combo should not cause any events
+-- this was an SWT design choice.
+My application enters an infinite loop on Cocoa where setting the selection causes a SelectionEvent, the event causes code in the listener to be invoked, the listener sets the Combo selection, ad infinitum.
+
+The same issue doesn't occur on Windows or Carbon.

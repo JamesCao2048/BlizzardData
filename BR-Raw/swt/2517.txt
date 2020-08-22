@@ -1,0 +1,12 @@
+GridData/GridLayout is showing abnormal layout
+I20060221-1300
+1.File > new > Other...> Plug-in Development > Target Definition
+2.In the wizard, enter any name.
+Accept Defaults.
+Finish.
+The file will open in a form-based editor.
+3.Go to the second page of the editor.
+Observe how the Environment section are not properly aligned.
+
+Note that if I run the exact same PDE code against SWT v3221 restores good layout.
+so something must have happened to GridLayout/GridData recently to break it.

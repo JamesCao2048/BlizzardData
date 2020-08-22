@@ -1,0 +1,9 @@
+Try to control motif focus reassignments
+The following seem to make motif sometimes reassign focus:
+- XtUnmanageChild
+- XtManageChild
+- XtDestroyWidget
+- XmNtraverseOn
+- "sensitive"
+Also, the line that's commented out of ToolItem that gets it focus (?) can
+probably be reintroduced.

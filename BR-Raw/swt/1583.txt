@@ -1,0 +1,32 @@
+FileDialog does not provide enough information to open multiple files from different directories
+On Mac OSX, opening a FileDialog with SWT.MULTI allows the selection of multiple files from multiple different directories.
+However, after running FileDialog.open(), calling FileDialog.getFileNames() returns only the base names of each of the selected files, and does not provide any means of discovering the directories for the files.
+The return value of FileDialog.open() does indeed return the full path, but only to the first file that is selected.
+This effectively makes it impossible to robustly support opening multiple from different directories on OSX.
+For example, if I run:
+public static void main(String[] args) throws Exception {
+FileDialog fd = new FileDialog(new Shell(), SWT.OPEN | SWT.MULTI);
+String opened = fd.open();
+System.out.println("FileDialog.show: " + opened);
+System.out.println("FileDialog.getFileName: " + fd.getFileName());
+System.out.println("FileDialog.getFilterPath: " + fd.getFilterPath());
+System.out.println("FileDialog.getFileNames(): "
++ Arrays.asList(fd.getFileNames()));
+System.out.println("FileDialog.getFilterExtensions(): "
++ Arrays.asList(fd.getFilterExtensions()));
+System.out.println("FileDialog.getFilterNames(): "
++ Arrays.asList(fd.getFilterNames()));
+}
+and select the two files:
+/tmp/files/foo/baz
+/tmp/files/bar/baz
+The program will output:
+FileDialog.show: /tmp/files/bar/baz
+FileDialog.getFileName: baz
+FileDialog.getFilterPath: /tmp/files/bar
+FileDialog.getFileNames(): [baz, baz]
+FileDialog.getFilterExtensions(): []
+FileDialog.getFilterNames(): []
+Note that the path to "/tmp/files/foo/baz" is not provided by any of the methods in FileDialog.
+The javadoc for FileDialog.getFileNames() says that it "Returns a (possibly empty) array with the paths of all files that were selected in the dialog relative to the filter path." I suppose one way to fix this bug while being consistent with the documented behavior would be to construct relative paths for each of the selected files, so that in the example above, FileDialog.getFileNames() would return {baz,../foo/baz}.
+An alternative solution could be for FileDialog.getFilterPath() to return the lowest common denominator path to the files selected (e.g., in the example above, it would return "/tmp/files"), and then have FileDialog.getFileNames() return the paths relative to that directory (e.g., {bar/baz,foo/baz}).

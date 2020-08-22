@@ -1,0 +1,7 @@
+Text#getCaretPosition() returns wrong value for non-zero selection
+I20050627-1435 (3.1)
+Text#getCaretPosition() returns a wrong value for a non-zero selection.
+Steps:
+- set text "This is some text"
+- set caret to position 0, then press Ctrl+Shift+Right
+-> caret is at position 4 now, but #getCaretPosition() returns 0.

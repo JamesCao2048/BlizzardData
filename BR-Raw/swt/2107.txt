@@ -1,0 +1,16 @@
+Tree with style SWT.VIRTUAL | SWT.CHECK doesn't correctly check nodes without children
+Build ID: M20070212-1330
+Steps To Reproduce:
+1.see attached code sample
+2.run code sample
+3.you should see a tree where every node which ends with "2" has no children.
+4.the nodes without children have no checkmark, even though the code explicitely does item.setChecked(true) for every node
+5.minimize/maximize the window, and suddenly the checkmarks appear
+More information:
+I'm using a tree like this: new Tree(shell, SWT.VIRTUAL | SWT.BORDER | SWT.CHECK).
+I noticed during development a problem where sometimes the Checkmark infront of the nodes is not correctly refreshed, while for example the node Label refreshes correctly.
+
+This problem can occur not only when the node is a leaf node, but I found the bug to be very easy reproduce for nodes without children (see the attached code).
+It obviously is somekind of refresh problem, but I could not find a way to properly refresh a node.
+Then I noticed that when I simply forced every node to always be checked that only nodes without children didn't refresh properly.
+The work-around I use therefore simply sets the TreeItem to have 10 children, and in the next line it sets it to the real amount of children.

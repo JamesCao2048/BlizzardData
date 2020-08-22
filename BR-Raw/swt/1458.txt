@@ -1,0 +1,59 @@
+[CCombo] CCombo, CLabel - Custom widgets are nulling internal slots too soon
+This came up because StyledText is doing the same thing.
+StyledText will
+probably handle this by async'ing the slot nulling.
+If a client hooks a disposeListener to a custom widget then they're able to
+catch the widget in a middle state in which its internal slots have been nulled
+out, but its state hasn't been OR'd with DISPOSED yet (so it still passes
+checkWidget()).
+Two examples that show this:
+1.NPE in CCombo (type anything into the CCombo):
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setBounds(10,10,200,200);
+final CCombo combo = new CCombo(shell, SWT.BORDER);
+combo.setBounds(10,10,100,100);
+combo.addListener(SWT.KeyDown, new Listener() {
+public void handleEvent(Event event) {
+combo.dispose();
+}
+});
+combo.addListener(SWT.Dispose, new Listener() {
+public void handleEvent(Event event) {
+System.out.println(combo.getText());
+}
+});
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+2. Wrong answer in CLabel (hover over it):
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setBounds(10,10,200,200);
+final CLabel label = new CLabel(shell, SWT.BORDER);
+label.setText("hover here");
+label.setToolTipText("tool tip");
+label.setBounds(10,10,100,100);
+final Color red = new Color(display, 255, 0, 0);
+label.addListener(SWT.MouseHover, new Listener() {
+public void handleEvent(Event event) {
+label.dispose();
+}
+});
+label.addListener(SWT.Dispose, new Listener() {
+public void handleEvent(Event event) {
+System.out.println(label.getText());
+}
+});
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+red.dispose();
+display.dispose ();
+}

@@ -1,0 +1,4 @@
+Bug 121269 Allow displaying HTML source for debugging
+With the new AJAX-based viewer, one can no longer see the HTML source of the page.
+This is extremely inconvenient for debugging engine problems, because there is not an easy way to see the HTML source code.
+This might fall into the category an enhancement, but since it significantly reduces other people's work efficiency, I listed its severity as a "major".

@@ -1,0 +1,43 @@
+Table contents disappear when scrolling horizontally (Windows 7 only)
+Created  attachment 224018   [details]
+Sample application based on Eclipse 3.6.2
+If a table has "many" columns (I don't know the threshold), scrolling it horizontally will eventually blank its contents.
+The contents are re-painted as soon as the mouse cursor is moved over each row.
+This behavior is only observed under Windows 7, Windows XP displays the table correctly.
+Also, if the application is started under Windows 7 using the compatibility mode for XP, the table is displayed correctly.
+The attachment contains a zipped Eclipse project with a small RCP application which can be built and run with Eclipse 3.6.2.It uses Eclipse 3.6.2 as the target platform, but Eclipse 3.6, 3.6.1, 3.7.1 and 3.7.2 behave equally.
+If you launch the application and scroll the table to the far right end, you will notice that the table will eventually be blank.
+If you now move the mouse cursor over it, the contents will re-appear.
+The code is basically taken from  Bug 368928  (and enclosed in a RCP application), with two changes: The number of columns is reduced to 100 as the reason for  Bug 368928  seem to be the 400 columns and this is not my point, and the table is filled with 100 rows instead of one, as the effect does not seem to show when there is only one row filled with data.
+A technician from Microsoft has traced the sample application as has come to the conclusion that within SWT (or Java), the OS version is queried.
+Depending on the returned information, different code is being executed.
+When the returned OS version information is tweaked from "Windows 7" to "Windows XP", the table contents do not disappear.
+I cannot judge if the conclusion is correct, but it's at least worth a hint.
+Here are the details of the analysis:
+0:000> lmvmswt_win32_3659
+start    end        module name
+10000000 10063000   swt_win32_3659   (export symbols)       C:Users...Desktoptablebugeclipseconfigurationorg.eclipse.osgibundles221.cpswt-win32-3659.dll
+Loaded symbol image file: C:Users...Desktoptablebugeclipseconfigurationorg.eclipse.osgibundles221.cpswt-win32-3659.dll
+Image path: C:Users...Desktoptablebugeclipseconfigurationorg.eclipse.osgibundles221.cpswt-win32-3659.dll
+Image name: swt-win32-3659.dll
+Timestamp:        Wed Jan 19 00:32:43 2011 (4D36231B)
+CheckSum:         00064D26
+ImageSize:        00063000
+File version:     3.6.5.9
+Product version:  0.0.0.0
+File flags:       0 (Mask 3F)
+File OS:          40000 NT Base
+File type:        2.0 Dll
+File date:        00000000.00000000
+Translations:     0409.04b0
+CompanyName:      Eclipse Foundation
+ProductName:      Standard Widget Toolkit
+InternalName:     SWT
+OriginalFilename: swt-win32-3659.dll
+ProductVersion:   0,0,0,0
+FileVersion:      3.659
+FileDescription:  SWT for Windows native library
+LegalCopyright:   Copyright (c) 2000, 2006 IBM Corp.
+All Rights Reserved.
+CommandLine: C:Users...Desktoptablebugeclipsetablebug.exe
+Symbol search path is: S

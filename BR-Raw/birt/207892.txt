@@ -1,0 +1,5 @@
+Bug 207892 Can not select the value from Blob type column[07]
+Description: Can not select the value from Blob type column[07] Build number: 2.3.0.v20071029-0800 Steps to reproduce: 1, New a dataset from PRODUCTLINE 2, New a filter in Dataset 3, row["IMAGE"] equal to
+<select value> Actual result: Exception occurs: The expression's value can not be retrived.
+An error happen during population of data.
+This might be caused by including data of mixed type in a column "ANY" type.

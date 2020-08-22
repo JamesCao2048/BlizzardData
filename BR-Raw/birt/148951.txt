@@ -1,0 +1,5 @@
+Bug 148951 Wrong error msg when set nonexisted col as group key
+Description: Wrong error msg when set nonexisted col as group key Steps to reproduce: 1.Insert a table, bind it to dataset 2.Add a group, input abc as group key which is invalid.
+3.Preview Expected result: Friendly error msg to tell user the group key is wrong.
+Actual result: + Group key "abc" in group 1 cannot depend on column bindings defined in the group lower than itself.
+data.engine.InvalidGroupKey ( 1 time(s) ) detail : org.eclipse.birt.data.engine.core.DataException: Group key "OUNTR" in group 1 cannot depend on column bindings defined in the group lower than itself.

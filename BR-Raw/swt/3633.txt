@@ -1,0 +1,26 @@
+event firing differences (win32/motif)
+RC1
+This is marked as a linux-motif problem since win32 is generally "right".
+I
+noticed these differences by watching the events console in the ControlExample
+while running on different platforms.
+Drop down a Combo:
+- motif does not fire a MouseUp after the triggering MouseDown
+- win32 does
+Select a combo item that is already selected (ie.- the previous selection)
+- motif fires Selection
+- win32 fires Modify + Selection.
+The following all seem like the same thing (Selection events are fired early by
+the emulated Table and Tree);
+Select a Table item
+- motif fires Selection + MouseDown + MouseUp
+- win32 fires MouseDown + Selection + MouseUp
+Select a TreeItem
+- motif fires Selection + MouseDown + MouseUp
+- win32 fires MouseDown + Selection + MouseUp
+Expand a TreeItem
+- motif fires Selection + MouseDown + MouseUp
+- win32 fires MouseDown + Selection + MouseUp
+Collapse a TreeItem
+- motif fires Selection + Collapse + MouseDown
+- win32 fires Collapse + MouseDown + Selection

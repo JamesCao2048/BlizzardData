@@ -1,0 +1,12 @@
+[OS X - Cocoa] After moving the shell to another space, rich hover opens on wrong space
+Here's the scenario:
+1.Open the workbench on space 1.Have a Java editor open (to demonstrate rich hover).
+2.Activate Spaces (the feature which shows all the spaces on dark background as overview).
+3.Drag the workbench window to space 2.
+4.Hover with the mouse over some text in the Java editor.
+5.Expected result
+- rich hover will be shown.
+Actual result
+- you will be taken back to space 1 (involuntarily).
+The rich hover might be shown on space 1 or 2
+- I didn't find a consistent behavior here.

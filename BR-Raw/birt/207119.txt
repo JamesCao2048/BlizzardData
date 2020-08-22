@@ -1,0 +1,7 @@
+Bug 207119 Newly added binding row._outer["a"] is not shown in the list of group key [0004]
+Description: Newly added binding row._outer["a"] is not shown in the list of group key.
+Build number: 2.2.1.v20071022-0630 Steps to reproduce: 1.New a table table1 binding to CUSTOMERS, insert table2 binding to ORDERS in table1.2.Add a Column Binding to table2, set row._outer["CUSTOMERNUMBER"] as expression.
+3.Add a group to table2, and check the Group On drop-down list.
+Expected result: Column Binding is listed.
+Actual result: No Column Binding is listed.
+Error log: N/A

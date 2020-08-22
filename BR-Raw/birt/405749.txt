@@ -1,0 +1,5 @@
+Bug 405749 Typo in variable name: linkToSalarParameter
+In the class org.eclipse.birt.report.designer.data.ui.dataset.DataSetParametersPage.ParameterInputDialog, the field linkToSalarParameter appears to have a typo in it's name.
+"Salar" isn't a word (AFIAK)
+-- presumably what was meant was "linkToScalarParameter".
+It's a very minor issue, but I thought it worth tossing into a bug report so it won't get forgotten.

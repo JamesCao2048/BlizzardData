@@ -1,0 +1,11 @@
+Bug 160429 Drag the datasource and dataset and produce an error gradation in data explorer
+Details: Drag the datasource and dataset and produce an error gradation in data explorer Step: 1.New 4 datasource named d1, d2, d3, d4.2.Drag the datasource in data explorer to change the gradation.
+(1) Drag d1 between d2 and d3.(2) Drag d2 between d3 and d4.(3) Drag d4 between d2 and d3.(4) Drag d4 to the top.
+(5) Drag d3 between d1 and d2.(6) Drag d3 to the top.
+Actual result: (1) d1 will be move to bottom.
+(2) d2 will be move to bottom.
+(3) d4 will not be move to anywhere.
+(4) d4 will not be move to anywhere.
+(5) d3 will be move to bottom.
+(6) d3 will be move to bottom.
+Excepted result: The datasource will be move to the correct station.

@@ -1,0 +1,25 @@
+Shell.open() does not make window key if it's already visible
+- snippet is below
+- manifests itself in eclipse by failing to give focus to an already-open Find dialog when Ctrl+F is pressed in a java editor
+public static void main (String [] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+shell.setLayout(new FillLayout());
+Text text = new Text(shell, SWT.SINGLE);
+final Shell childShell = new Shell(shell);
+childShell.setBounds(200,200,200,200);
+childShell.setLayout(new FillLayout());
+childShell.setText("child");
+new Text(childShell, SWT.SINGLE);
+text.addListener(SWT.KeyDown, new Listener() {
+public void handleEvent(Event event) {
+childShell.open();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

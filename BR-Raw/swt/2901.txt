@@ -1,0 +1,15 @@
+Program.findProgram("html") returns null when there's no default command
+R3.0
+I used Program.findProgram("html") to find the browser and null was returned
+even though Mozilla is registered to open html documents.
+I debugged the code and my registry and found that I had no default command in
+my registry and hence the following code in
+org.eclipse.swt.program.Program.getProgram(String) fails/returns null:
+1)  String defaultCommand = getKeyValue (key + DEFAULT_COMMAND, true);
+2)  if (defaultCommand == null) defaultCommand = "open"; //$NON-NLS-1$
+Reason: after 1) defaultCommand is "" and not null hence defaultCommand is not
+set to "open" in 2).
+Either getKeyValue(...) should return null or the if should
+read:
+if (defaultCommand == null || defaultCommand.length == 0)
+defaultCommand = "open"; //$NON-NLS-1$

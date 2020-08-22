@@ -1,0 +1,5 @@
+Mac OS X accessibility does not have the standard relations
+On Windows, there are several standard relations under MSAA, for example, a Label preceeding a Text will provide the accessible name for the Text.
+On GTK, these relations were implemented for SWT using ATK relations.
+(see Control.setRelations() and Label.addRelation() in the GTK code)
+Need to implement these on Mac OS X.

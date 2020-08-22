@@ -1,0 +1,12 @@
+Outline "crazy-scrolls" when it gets focus
+build i0110
+Perhaps related to  bug 120556 .
+Steps:
+- find a java or class file that has a lot of entries in the Outline view (gives you a scroll bar)
+- close the editor
+- open the editor
+Note that the editor now has focus
+- hover over the Outline (don't give it focus)
+- use your mouse wheel or laptop scroll button to scroll to the bottom of the Outline
+- try to click on an item in the outline
+Note that the outline scroll bar is reset to be at the top and the wrong item is selected.

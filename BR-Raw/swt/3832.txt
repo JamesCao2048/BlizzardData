@@ -1,0 +1,46 @@
+Project rebuild cannot write over .class files
+I have a classes directory full of files that come pre-shipped to me.
+My own
+class files live in the same tree as additional files.
+To make this work, I
+have to deselect the Project's "Allow to clean output folders" setting.
+
+However now the project does not clean output files, a rebuild cannot be
+performed.
+Steps to reproduce:
+- we'll basically create a new project with one class.
+1) Make a "test" directory, with subdir "classes/otherpackage".
+Put a
+dummy "fred.class" file in the otherpackage directory (it can just be a text
+file in reality, doesn't matter)
+2) In Eclipse, create a new project with project contents being the "test"
+directory from step 1. Browse to the "classes" directory as the default output
+dir.
+You immediately get an error on the project about "Problems encountered while
+deleting resources".
+Seems bogus to me (is this a bug in itself?), but there
+is a workaround.
+3) Go to project properties->Java Compiler.
+Click Use Project Settings, go to
+the Other tab, and deselect "Allow to clean output folders..." (which isn't
+very good English!  "Allow cleaning output folders" perhaps?
+)  Anyway...
+Click Apply, and Yes to rebuild, then OK from the project properties.
+All is
+well!!
+4) Create a new class, Main.java, give it a main method.
+Builds great!
+5) From the menu bar, click Project->Rebuild.
+
+You get an error "Class file not written".
+
+In order to workaround this, one must manually delete the .class file, Refresh
+the project, then rebuild.
+But that's a lot of trouble to go to.
+Be great if it would clean only the .class files relevant to the project's
+source but leave the rest of the classes directory alone.
+Or, at least compile
+if the class file already exists
+- basically fixing the "Allow to clean output
+folders..." checkbox is broken.
+Thanks!

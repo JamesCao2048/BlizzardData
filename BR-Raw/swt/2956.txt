@@ -1,0 +1,42 @@
+[content assist] NPE in CompletionProposalPopup
+Getting a lot of these when using content assist today.
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+at org.eclipse.swt.SWT.error(SWT.java:2931)
+at org.eclipse.swt.SWT.error(SWT.java:2854)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:121)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2834)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2615)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1570)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1534)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:306)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:103)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:228)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:156)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:316)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:269)
+at org.eclipse.core.launcher.Main.run(Main.java:948)
+at org.eclipse.core.launcher.Main.main(Main.java:932)
+Caused by: java.lang.NullPointerException
+at
+org.eclipse.jface.text.contentassist.CompletionProposalPopup.setProposals(CompletionProposalPopup.j
+ava:623)
+at
+org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$13(CompletionProposalPopup.jav
+a:580)
+at org.eclipse.jface.text.contentassist.CompletionProposalPopup$1.run(CompletionProposalPopup.java:
+235)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at
+org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopu
+p.java:211)
+at org.eclipse.jface.text.contentassist.ContentAssistant$2.run(ContentAssistant.java:319)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:118)
+...
+18 more

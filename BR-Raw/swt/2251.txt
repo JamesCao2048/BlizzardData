@@ -1,0 +1,40 @@
+external browser can't be found on Redhat
+Ciao :)
+Following situation:
+- RHEL4, U3: start eclipse
+- SWT style welcome shows up, but the css one should for linux!
+- Window->Preferences->General->Web Browser shows:
+"Default system Web browser" as only option for an external
+browser, internal browser is disabled.
+- An Error Log has been generated in the mean time:
+Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+- Back in the preferences, if I click on the
+"Default system Web browser" to show me it's settings I get a NPE(see bottom)
+- Links from the welcome page into the web work just fine,
+i.e.
+they open firefox as browser and walk it to the link.
+Now, my system, Red Hat Enterprise Workstation 4, Update 3, is special,
+there is no mozilla installed.
+Firefox is also installed in a custom way,
+by linking the executable, firefox, into /usr/bin.
+It points to /opt/firefox/firefox.
+Now, I tried to set MOZILLA_FIVE_HOME to /opt/firefox to help Eclipse a
+bit, that's when the following error happened:
+Internal browser is not available: No more handles [NS_InitEmbedding /opt/firefox/ error
+-2147221164]
+Eclipse should:
+1.) handle the error situation in a better way(more descriptive error msgs),
+2.) use the /usr/bin/firefox link as external browser
+without the need to have firefox installed in /etc/gre.d
+or pointed to by MOZILLA_FIVE_HOME
+3.) use my firefox (1.5.0.7) or tell me why it can't
+Please feel free to ask for more info if you need any..
+NPE:
+java.lang.NullPointerException
+at org.eclipse.ui.internal.browser.BrowserDescriptorDialog.createDialogArea(BrowserDescriptorDialog.java:104)
+at org.eclipse.jface.dialogs.Dialog.createContents(Dialog.java:802)
+at org.eclipse.jface.window.Window.create(Window.java:426)
+at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1124)
+at org.eclipse.jface.window.Window.open(Window.java:785)
+at org.eclipse.ui.internal.browser.WebBrowserPreferencePage$3.doubleClick(WebBrowserPreferencePage.java:276)
+at org.eclipse.jface.viewers.StructuredViewer$1.run(StructuredViewer.java:796)

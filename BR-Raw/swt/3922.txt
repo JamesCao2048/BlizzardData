@@ -1,0 +1,14 @@
+[DND] Navigator DND does not work
+build 20021001
+Dragging items in the resource navigator does not work.
+The drag icon appears,
+but there is no drop location feedback.
+NavigatorDragAdapter.dragStart checks whether the drag source actually has
+focus.
+Display.getFocusControl returns null even though the tree viewer does
+have focus.
+When I comment out this check and dragStart lets the drop operation
+continue the drop adapter still does not get a dragEnter event.
+Package view DND no longer works either.
+Did SWT change anything wrt.
+Motif DND that could have broken this?

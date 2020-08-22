@@ -1,0 +1,4 @@
+Bug 135474 [Smoke]Data in computed columns can't be read
+Details: Data in computed columns can't be read Step: 1.New a datasource and dataset 2.Add a computed columns and input some wore in Expression.
+3.Drop the table into layout and preview.
+Actual result: The column of computed columns only preview undefined.

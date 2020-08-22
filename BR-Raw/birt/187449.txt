@@ -1,0 +1,6 @@
+Bug 187449 [Automation][Smoke][Regression] dynamic text and chart cannot be rendered properly
+steps to reproduc:
+- use the attache report design
+- preview in pdf and viewer expected behavior:
+- all report items should be rendered properly actual behavior:
+- dynamic text and chart were missing in output

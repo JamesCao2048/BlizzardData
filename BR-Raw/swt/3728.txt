@@ -1,0 +1,9 @@
+FontDialog needs FontData[] API
+FontDialog's open() and setFontData() methods are the only way to
+receive/provide FontData for specifying a font.
+But on motif, Fonts are often
+made up of multiple FontDatas.
+Now that there's a Font constructor that takes FontData[], the dialog should
+really be extended to also receive/provide FontData[] when needed.
+This is
+particularly important in locales like chinese and japanese.

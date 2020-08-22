@@ -1,0 +1,4 @@
+Use weaver's ClassLoader not the usingClassLoader in 1.5 factory
+In ReflectionBasedReferenceTypeDelegateFactory this line (44) of code is breaking my use of the weaver for looking up bootstrap classes (where the classloader is null and the AspectJ weaver isn't accessible to the bootstrap loader). The commented out code works just fine for me.
+Is there a real need to resolve the AspectJ runtime from a different classloader than the one that was already used to load this class from the AspectJ runtime?
+Class delegateClass = Class.forName("org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate",false,usingClassLoader);//ReflectionBasedReferenceTypeDelegate.class.getClassLoader());

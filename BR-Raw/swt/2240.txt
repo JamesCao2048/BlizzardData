@@ -1,0 +1,54 @@
+[Browser] Appending to stream hangs the SWT Browser
+Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.7) Gecko/20060911 Red
+Hat/1.0.5-0.1.el4 SeaMonkey/1.0.5
+Red Hat Enterprise Linux WS release 4 (Nahant Update 4)
+Linux 2.6.9-42.0.2.EL #1 Thu Aug 17 17:36:53 EDT 2006 i686 i686
+i386 GNU/Linux
+The SWT browser freezes when data is appended (AppendToStream) in the Bowser.setText() method.
+Here is the code to reproduce it (notice that attached file is need to run this test-code):
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.browser.*;
+public class PBrowser {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("PBrowser");
+shell.setLayout(new FillLayout());
+final Browser browser = new Browser(shell, SWT.NONE);
+browser.setUrl(" http://www.eclipse.org ");
+Button b = new Button(shell, SWT.PUSH);
+b.setText("Press Here");
+b.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+try {
+String userHome = System.getProperty("user.home");
+String tmpDir = userHome + File.separator + "tmp";
+File rupTmpDir = new File(tmpDir);
+if (!rupTmpDir.exists()) {
+rupTmpDir.mkdirs();
+}
+String searchResultFile = tmpDir + File.separator + "searchresult.html";
+StringBuffer sb = new StringBuffer();
+BufferedReader in = new BufferedReader( new FileReader(searchResultFile));
+String s;
+while((s=in.readLine()) != null) {
+sb.append(s);
+}
+in.close();
+browser.setText(sb.toString()); //<-------
+} catch (IOException e) {
+}
+}
+});
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

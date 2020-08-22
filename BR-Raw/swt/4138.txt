@@ -1,0 +1,8 @@
+Can't Ctrl+Tab out of PDE Editor's dependencies page
+Build: 20020319
+Steps:
+1.Open a plugin.xml file (it opens in the Plugin Manifest editor)
+2.Go to the Dependencies page
+3.Set focus on the "Find:" combo box under the heading Dependency Status
+4.Press Tab or Ctrl+Tab
+You can't tab out of the combo box except by backwards-tabbing with Shift+Tab.

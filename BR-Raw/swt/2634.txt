@@ -1,0 +1,6 @@
+Table doesn't send selection change events anymore when selecting elements with the mouse
+Version: 3.2.0
+Build id: I20051031-2000
+In Open Type dialog when Show Status Line is enabled then the status line entry
+does change if one goes through the entries by pressing up/down key but not if
+an entry is selected with the mouse.

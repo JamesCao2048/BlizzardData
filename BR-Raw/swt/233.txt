@@ -1,0 +1,16 @@
+clipboard.getContents(HTMLTransfer.getInstance()) returns gibberish on gtk
+Build Identifier: Version: 3.7.1.r37x_v20110728-7Q7xAEDDePtVvBAYYD3z-il0ox7CoGe6mz-B8FDdVn0YR Build id: M20110909-1335
+When calling the cliboard.getContents(HTMLTransfer...) method we receive kanji(?) characters in the resulting string, whenever we copy html from another gtk application.
+This bug disables basic (and major) functionality for our RCP client (Rational Team Concert).
+Due to this bug, users cannot paste formatted text into our application.
+See image
+Reproducible: Always
+Steps to Reproduce:
+1.Get the clipboard example from  http://git.eclipse.org/c/platform/eclipse.platform.swt.git/plain/examples/org.eclipse.swt.examples/src/org/eclipse/swt/examples/clipboard/ClipboardExample.java
+2.Open up libreoffice and write some text.
+Apply a formatting to it (e.g.
+bold font).
+Copy this text.
+(Note: Same thing happens with copying html from Chrome)
+3.In the example application, hit the paste button.
+Notice how you receive chinese characters.

@@ -1,0 +1,7 @@
+Accessible.getDescription should not return name
+- Load SWT Cocoa and the SWT examples from HEAD.
+- Run org.eclipse.swt.examples.accessibility.AccessibleShapesExample
+- turn on VoiceOver
+- type the TAB key to give focus to the various shapes
+Note that the shapes report their name twice.
+In Accessible.getDescription(), if there isn't any description, then we should just return, instead of asking the application for a name.

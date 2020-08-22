@@ -1,0 +1,6 @@
+[Program] org.eclipse.swt.program.Program.launch() will add prefix "file://" before fileName
+Build Identifier: M20090917-0800
+We have a application on Mac which handles urls like "notes://...", Program.launch("notes://...") used to open this application for us.
+But it stops work after we upgrade to SWT 3.5.1.We found in 3.5.1, Program.launch will add a prefix "file://" before "notes://" and fails when trying to open "file://notes://..."
+Seems it is  a regression caused by  https://bugs.eclipse.org/bugs/show_bug.cgi?id=259929 .
+Reproducible: Always

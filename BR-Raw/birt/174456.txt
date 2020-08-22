@@ -1,0 +1,7 @@
+Bug 174456 Chart label format is not applied to the value string.
+1.Open the attached report template file 2.Modify the xml data source to point to the attache xml file.
+3.Run Preview.
+The pie chart label and tool tips shows "3800%, 97.44%".
+It seems the value is multipled by 100 and a % character is appended.
+I expected to see "38, 97.44%".
+I used build BIRT 2.2.0.v20070212-0630.

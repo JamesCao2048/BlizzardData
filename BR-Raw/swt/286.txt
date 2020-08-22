@@ -1,0 +1,5 @@
+Tooltips follow cursor on old versions of GTK
+For versions of GTK
+< 2.12, tooltips will follow the cursor if you move it around a toolitem while the tooltip is popped up.
+We need to add in some runaway code for versions
+< 2.12

@@ -1,0 +1,2 @@
+AllGtkTests failures on Fedora 18
+There are like ~60 failures caused by setForeground/setBackground/setFont not being properly applied to both visualization and style context which result in the properties retrieved via the respective getters not being correct.

@@ -1,0 +1,3 @@
+[browser] CTRL-N should not run IE action when using Browser.setText
+On IE, CTRL-N opens up a new window.
+This is undesired when rendering html from memory.

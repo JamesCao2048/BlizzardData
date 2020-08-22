@@ -1,0 +1,16 @@
+[DND] Mac Cocoa: Setting Control's cursor other than SWT.CURSOR_ARROW causes drag operation to show incorrect icon
+Created  attachment 233984   [details]
+The sample plug-in
+Our RCP Application on Mac Cocoa platform showed a bug with DND.
+We used a custom cursor and that seemed to be the key for seeing this bug on Mac Cocoa platform.
+We didn't see this when our application was run on Mac Carbon.
+To illustrate the issue, we have created a pure Eclipse sample application.
+Its details are given below.
+We created a TableViewer and added DND Support.
+As long as we live with the default cursor i.e.
+SWT.CURSOR_ARROW, the icons shown for valid/invalid drop targets for DND operation works fine.
+But once we add a custom cursor other than SWT.CURSOR_ARROW e.g.
+SWT.CURSOR_HAND to the table widget, the icon shown while DND operation is incorrect.
+Now, even if it is a valid drop target, the icon shows "drop not allowed" Circle with a slash).
+We did find some old bug reports in bugzilla (259003), but those were supposedly fixed in SWT 3.5M5.But we're using SWT 3.7.2v3740f and are still seeing it.
+This is blocking important use case of DND in our application on Mac Cocoa.

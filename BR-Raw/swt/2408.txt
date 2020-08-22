@@ -1,0 +1,24 @@
+ToolItem is not visible if bounds set before text
+Run the following example.
+The toolbar does not appear.
+Change example to set the bounds after the text was set and toolitem is visible.
+public static void main (String [] args) {
+String string = "This is a stringnwith a new line.";
+Display display = new Display ();
+Shell shell = new Shell (display);
+ToolBar bar = new ToolBar (shell, SWT.BORDER);
+// setting bounds before text
+- toolitem is not displayed
+bar.setBounds (10, 220, 200, 100);
+ToolItem item1 = new ToolItem (bar, SWT.PUSH);
+item1.setText("tool item");
+// setting bounds after text and toolitem appears
+//bar.setBounds (10, 220, 200, 100);
+item1.setToolTipText (string);
+shell.setToolTipText (string);
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

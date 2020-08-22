@@ -1,0 +1,9 @@
+Drawing round rectangles, DND and antialias vows
+I have a funny combination that causes problems in forms.
+It requires the following:
+1) Drag & Drop and the new drag effect support
+2) Dragging of a composite that has children and that paints on its background
+3) Usage of 'GC.fillRoundRectangle()'
+4) Usage of antialiasing
+When all these are combined, the image created as a snapshot for drag effect does not paint children.
+Snippet to follow.

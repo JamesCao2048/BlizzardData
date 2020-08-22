@@ -1,0 +1,7 @@
+"Tab" key invokes TraverseListener on the Shell
+2.1 RC1 motif build.
+org.eclipse.help.ui.internal.ContextHelpDialog registers TraverseListener with
+Shell.
+The listener is called when "Tab" key or "Shift-Tab" key combination is
+pressed.
+It shoud not be invoked for these keys.

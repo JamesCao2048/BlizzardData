@@ -1,0 +1,44 @@
+[Graphics] TextLayout: Incorrect wrapping when text styles are used
+SWT-win32, v3124
+In the following example, the StyledText does not wrap
+its contents correctly (see attached screenshot).
+This only happens when a style range is set.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class StyleRangeWrapTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Font font = new Font(display, "Tahoma", 14, SWT.NORMAL);
+
+StyledText text = new StyledText(shell, SWT.BORDER | SWT.MULTI
+| SWT.WRAP | SWT.V_SCROLL);
+text.setFont(font);
+text.setText("The quick brown fox jumps over the lazy dog.");
+
+StyleRange style = new StyleRange();
+style.start      = 10;
+style.length     = 5;
+style.background = display.getSystemColor(SWT.COLOR_DARK_YELLOW);
+text.setStyleRange(style);
+
+shell.setSize(171, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+font.dispose();
+display.dispose();
+}
+}

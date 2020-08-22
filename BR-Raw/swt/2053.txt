@@ -1,0 +1,3 @@
+"Xlib: unexpected async reply" and deadlock in GLX.glXMakeCurrent(int, int, int)
+Every so often our OpenGL program just locks up under Linux.
+"Xlib: unexpected async reply" is printed to stderr, and if we pause the program in the debugger we find that the main thread is deadlocked in GLCanvas.setCurrent()->GLX.glXMakeCurrent(int, int, int).

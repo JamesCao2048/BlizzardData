@@ -1,0 +1,13 @@
+Bug 182873 JS error when use birt:paramDef with special parameter name.[0603]
+Description: Javascript error when use birt:paramDef tag with special parameter name.
+Build number:2.2.0.v200704180630 Steps to reproduce: Prerequisite: New a report with a report parameter with name ~`!@#$%^&*()-=_+][{}|';:"/,<>?
+1.New a jsp file from BIRT tag template in BIRT Web Project.
+2.Input below content in body:
+<birt:parameterPage id="0" name="customparameterpage" reportDesign="report/customJspTagParamDefName.rptdesign" isCustom="true">
+<birt:paramDef id="1" name="~`!@#$%^&*()-=_+][{}|';:/,?"/>
+<input type="submit" name="OK" value="submit"/>
+</birt:parameterPage> 3.Run the jsp file.
+Expected result: Value can be passed to report.
+Actual result: Javascript error.
+A runtime error has accurred...
+Error log:N/A

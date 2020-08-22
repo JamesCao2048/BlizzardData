@@ -1,0 +1,27 @@
+Upside down table
+Creating a GC on a Table in a SetData handler and calling getFontMetrics on that GC, causes a Transformation to be applied to the current graphics context which flips your table items vertically.
+Test case:
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+final Table table = new Table (shell, SWT.VIRTUAL | SWT.MULTI);
+table.setBounds(5, 5, 250, 250);
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+GC gc = new GC(table);
+gc.getFontMetrics();
+gc.dispose();
+TableItem item = (TableItem) event.item;
+item.setText("SetData " + event.index);
+}
+});
+
+table.setItemCount(20);
+shell.setSize(300, 300);
+shell.open ();
+
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose();
+}

@@ -1,0 +1,28 @@
+Combo shows only 5 items if items are set after first layout
+I20100424-2000
+Combo shows only 5 items if items are set after first layout, see snippet below.
+This is visible in the SDK in the Find/Replace dialog (fields show only 5 items until you resize the dialog).
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class ModifiedSnippet26 {
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+Combo combo = new Combo (shell, SWT.READ_ONLY);
+
+combo.setSize (200, 200);
+
+String[] items = new String [40];
+for (int i = 0; i
+< items.length; i++)
+items[i]= String.valueOf(i);
+combo.setItems (items);
+
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}

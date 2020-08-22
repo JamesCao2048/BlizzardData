@@ -1,0 +1,13 @@
+TVT3.0: mnemonics doesn't work if focus is in a text widget
+OS: Linux (RHEL 3.0)
+Locales: CHT, CHS and possibly other DBCS, SBCS seems to work fine
+Build: 3.0GM with NL Language Packs installed
+1) Begin creating a new java project
+2) Place focus in a text entry widget
+3) Now unable to switch focus to other widgets using shortcut keys
+4) Place focus on another widget and the shortcut keys work
+The problem manifests in other panels as well.
+Bug reproduced in Traditional
+Chinese and Simplified Chinese locales.
+English and German are verified to work
+correctly.

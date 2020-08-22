@@ -1,0 +1,33 @@
+DBCS:Can't sort by clicking "Description" on "Task View
+Tester:Richmond
+Language: (Korean/Simplfied Chinese/Traditional Chinese)
+
+Build driver: M4
+
+Severity: 	  normal
+OS: RedHat8_GTK
+JDK Ver.: IBM JDK1.3.1 + SR3
+
+Test case #:
+
+Summary: DBCS:Can't sort by clicking "Description" on "Task View"
+Description:
+Steps to recreate problem:
+1-From menu bar, click "Windows>Show View>Tasks" to open "Tasks View"
+2-Right click on "Tasks View" and select "New Task"
+3-Panel "New Task" popup and input some DBCS characters in the
+field "Description"
+4-Click "OK"
+5-Repeat step 2-4 about 3-5 times
+6-Click the the title "Description" on the "Tasks View" to sort the
+tasks
+
+<<Error>>
+The tasks are not sorted.
+It is only happened in GTK build
+When clicking the title "Resource", "In Folder" and "Location", the
+tasks are not sorted, either.
+
+
+<<Expected Result>>
+The tasks should be sorted.

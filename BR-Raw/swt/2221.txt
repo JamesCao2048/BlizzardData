@@ -1,0 +1,22 @@
+List returned by Device#getFontList(...) has a lot of repetition
+I am trying to create a Font combo (like in MS Word), and am using getFontList
+(...) to get the font names.
+The first problem is that several FontDatas with
+the same name are returned.
+While most of these FontDatas vary slightly, some
+are identical (the first two in the following list, for instance).
+1|Arial CE|24|0|WINDOWS|1|36|14|0|0|400|0|0|0|-18|3|2|1|34|Arial CE
+1|Arial CE|24|0|WINDOWS|1|36|14|0|0|400|0|0|0|-18|3|2|1|34|Arial CE
+1|Arial CE|24|0|WINDOWS|1|36|14|0|0|400|0|0|0|-52|3|2|1|34|Arial CE
+1|Arial CE|24|0|WINDOWS|1|36|14|0|0|400|0|0|0|-95|3|2|1|34|Arial CE
+1|Arial CE|24|0|WINDOWS|1|36|14|0|0|400|0|0|0|-94|3|2|1|34|Arial CE
+1|Arial CE|24|0|WINDOWS|1|36|14|0|0|400|0|0|0|-70|3|2|1|34|Arial CE
+1|Arial CE|23|1|WINDOWS|1|36|15|0|0|700|0|0|0|-18|3|2|1|34|Arial CE
+1|Arial CE|23|1|WINDOWS|1|36|15|0|0|700|0|0|0|-18|3|2|1|34|Arial CE
+1|Arial CE|23|1|WINDOWS|1|36|15|0|0|700|0|0|0|-52|3|2|1|34|Arial CE
+I am circumventing the above-mentioned problem by sticking the Strings in a
+set, and thus preventing repetition.
+The other problem is that fonts like
+Arial CE, Arial Baltic, Arial CYR, Arial TUR, Arial Greek, etc.
+are returned,
+when all I want is Arial.

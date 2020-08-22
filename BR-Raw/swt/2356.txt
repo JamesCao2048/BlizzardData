@@ -1,0 +1,6 @@
+Draw2d Graphics line style setting not consistent
+Attached is a simple lightweight draw2d app which tries to draw a line with the
+LINE_DASHDOT style, JOIN_ROUND and CAP_ROUND, but it doesn get drawn properly.
+Is there a specific order in which the line styles should be set?
+Similar SWT
+code works fine.

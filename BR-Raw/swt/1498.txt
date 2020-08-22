@@ -1,0 +1,13 @@
+StyledText#setSelection() does not reveal caret with non-zero selection
+HEAD
+A variant of  bug 209468 :
+StyledText#setSelection() does not reveal caret with non-zero selection.
+Steps:
+- CustomControlExample > StyledText
+- Size: 50 X 50
+- Set/Get API
+- setSelection to 16,19
+- give focus to the text area without changing the caret location (e.g.
+click
+to the StyledText tab and then press the Tab key)
+=> caret is not visible (it is just after "fox", but the user does not know how far the selection extends out of the visible area)

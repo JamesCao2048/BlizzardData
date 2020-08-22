@@ -1,0 +1,2 @@
+Bug 181121 Model should provide utility method for cube to get correspond dimension key.
+In model cube handle, the relation of cube data set and dimension data sets are managed by a series of dimension condition handles.We need model to add utility method so that we can easily get corresponding dimension data set column names according to given cube dimension keys.

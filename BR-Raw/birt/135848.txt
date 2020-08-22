@@ -1,0 +1,3 @@
+Bug 135848 Set a row to Y series, then delete the row, error message shoule be pop up.
+Set a row to Y series, then delete the row, error message shoule be pop up.
+Steps: 1.Create a bar chart 2.Open Chart Builder, go to "Select Data" tab, select a data set, click "Data Binding..." button, add a new row["a"] 3.Set row["a"] to Y series 4.Then click "Data Binding..." button, delete row["a"] 5.Click "Finish" button 6.Preview or Double click the chart Actual Results: 1.Have no error message, chart can not be previewed Expected Results: 1.Error message should be pop up.

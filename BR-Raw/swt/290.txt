@@ -1,0 +1,3 @@
+Add gtk_cell_layout_get_cells and use it when gtk >=2.12.0.
+This is a replacement for gtk_tree_view_column_get_cell_renderers function which is dropped from gtk 3.
+Commit/patch  http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=60a614b1a609bc9f3fa33fc6fb3f7956d1c7265d

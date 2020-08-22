@@ -1,0 +1,3 @@
+Bug 288895 Binding list of data set filter should update if computed column is changed[07]
+Description: Binding list of data set filter should update if computed column is changed Build number: 2.5.1.v20090909-0630 Steps to reproduce: 1, New a data set from sampleDB Customers table 2, New a computed column named "Test" 3, Edit the data set and change computed column name to "Name1" 4, Go to Filter page and add a filter 5, Check the binding name in the list Expected result: The binding name should be Name1 in the list but not Test Actual result: Name didn't update in the list and if select this binding a nonexistent invalid expression row["Test"] will be added.
+Error log:

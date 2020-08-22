@@ -1,0 +1,15 @@
+Cheese in Tree with text that spans columns
+Run Snippet240. Resize "Column 1" to be larger.
+Notice that the text in column 2 is incorrect now.
+This is different from what happens in Table (see Snippet239).
+The following works around the problem but has some flash:
+tree.getColumn(1).addListener(SWT.Resize, new Listener() {
+public void handleEvent(Event e) {
+if (tree.getItemCount() > 0) {
+TreeItem item = tree.getItem(0);
+Rectangle bounds = item.getBounds(2);
+Rectangle area = tree.getClientArea();
+tree.redraw(bounds.x, area.y, bounds.width, area.height, false);
+}
+}
+});

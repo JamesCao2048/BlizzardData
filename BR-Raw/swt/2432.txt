@@ -1,0 +1,7 @@
+CBanner draws unwanted gradient line at bottom when it has more height than the default
+3.2 M6
+- in the browser example, I added a custom trim item that appears at top right by default
+- this causes the CBanner to be given more height than its computeSize requests
+- when this happens, the CBanner draws a 1-pixel-high gradient line at the bottom
+- if the trim item is dragged to the bottom (or when there's no trim item), the gradient line is not seen
+In this scenario, the CBanner has a left control (a Composite containing the Coolbar), but no right or bottom control.

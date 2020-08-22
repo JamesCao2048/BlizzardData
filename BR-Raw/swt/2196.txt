@@ -1,0 +1,84 @@
+org.eclipse.swt.widgets.Link does not fire SelectionEvents
+Build ID: I20061214-1445
+Steps To Reproduce:
+http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet183.java?view=co
+Clicking on the links does not produce SelectionEvents on Mac OS/X 10.4.8
+More information:
+*** Date: Sun Jan 07 15:25:16 CET 2007
+*** Platform Details:
+*** System properties:
+awt.nativeDoubleBuffering=true
+awt.toolkit=apple.awt.CToolkit
+eclipse.buildId=I20061214-1445
+eclipse.commands=-os
+macosx
+-ws
+carbon
+-launcher
+/Users/dragonfly/Desktop/eclipse 2/Eclipse.app/Contents/Resources/Splash.app/Contents/MacOS/eclipse
+-name
+Eclipse
+-showsplash
+600
+-exitdata
+a0000
+-keyring
+/Users/dragonfly/.eclipse_keyring
+-consoleLog
+-showlocation
+-vm
+/usr/bin/java
+eclipse.consoleLog=true
+eclipse.ee.install.verify=false
+eclipse.product=org.eclipse.sdk.ide
+eclipse.startTime=1168137663747
+eclipse.vm=/usr/bin/java
+eclipse.vmargs=-Xdock:icon=../Resources/Eclipse.icns
+-XstartOnFirstThread
+-Xbootclasspath/p:../../../plugins/org.eclipse.jdt.debug_3.2.100.v20061211/jdi.jar
+-XX:MaxPermSize=128m
+-Xms128m
+-Xmx512m
+-server
+-Dorg.eclipse.swt.internal.carbon.smallFonts
+-Dorg.eclipse.swt.internal.carbon.noFocusRing
+-jar
+/Users/dragonfly/Desktop/eclipse 2/Eclipse.app/Contents/MacOS/../../../startup.jar
+eof=eof
+file.encoding=MacRoman
+file.encoding.pkg=sun.io
+file.separator=/
+gopherProxySet=false
+java.awt.graphicsenv=apple.awt.CGraphicsEnvironment
+java.awt.printerjob=apple.awt.CPrinterJob
+java.class.path=/Users/dragonfly/Desktop/eclipse 2/Eclipse.app/Contents/MacOS/../../../startup.jar
+java.class.version=50.0
+java.endorsed.dirs=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/lib/endorsed
+java.ext.dirs=/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/lib/ext
+java.home=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
+java.io.tmpdir=/tmp
+java.library.path=.:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+java.runtime.name=Java(TM) SE Runtime Environment
+java.runtime.version=1.6.0-dp-b85-18
+java.specification.name=Java Platform API Specification
+java.specification.vendor=Sun Microsystems Inc.
+java.specification.version=1.6
+java.vendor=Apple Computer, Inc.
+java.vendor.url= http://www.apple.com/
+java.vendor.url.bug= http://bugreport.apple.com/
+java.version=1.6.0-dp
+java.vm.info=mixed mode
+java.vm.name=Java HotSpot(TM) Server VM
+java.vm.specification.name=Java Virtual Machine Specification
+java.vm.specification.vendor=Sun Microsystems Inc.
+java.vm.specification.version=1.0
+java.vm.vendor=Apple Computer, Inc.
+java.vm.version=1.6.0-b85-9-release
+line.separator=
+mrj.version=1040.1.6.0-18
+org.eclipse.jdt.debug.ui.debuggerActive=false
+org.eclipse.jdt.debug.ui.instanceof.IJavaStackFrame=false
+org.eclipse.swt.internal.carbon.noFocusRing=
+org.eclipse.swt.internal.carbon.smallFonts=
+org.eclipse.update.resolution_url=
+org.osgi.framework.executionenvironment=OSGi/Minimum-1.0,OSGi/Minimum-1.1,JRE-1.1,J2SE-1.

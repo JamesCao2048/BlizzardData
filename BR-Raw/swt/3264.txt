@@ -1,0 +1,31 @@
+drawText(text, 0, 0, SWT.DRAW_DELIMITER) is now right-justified
+Given:
+public class DrawText {
+
+private static final String someText = "The quick brown foxnjumped "
++ "overnthe lazyndog.";
+
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+new Canvas(shell, SWT.NULL).addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+e.gc.drawText(someText, 0, 0, SWT.DRAW_DELIMITER);
+}
+});
+
+shell.setSize(200, 200);
+shell.open();
+
+while (display.readAndDispatch())
+display.sleep();
+
+shell.dispose();
+display.dispose();
+}
+}
+with RC3 on Linux/GTK, I get the attached screen shot as a result.
+Since this is a changed behavior (a regression, maybe), I'm expecting that this
+is a bug.

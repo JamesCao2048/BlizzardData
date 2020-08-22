@@ -1,0 +1,27 @@
+textcelleditor text control lost focus after setfocus on cocoa when text is empty
+Build Identifier: I20100921-1024
+Problem exhibited in Eclipse 3.6 and 3.6.1, only under Cocoa builds (32 and 64 bit).
+I tried overriding the TextCellEditor to change doSetFocus to not call setFocus and in this case, the text control appears as normal and does not defocus/dismiss.
+Of course there is no cursor in the text control.
+However, I do note that if "tab" is hit at this point, focus will go to the text control and it does not defocus/dismiss.
+I also tried a variety of other tactics including modifying the enablement of the control, using other select mechanisms instead of setFocus/selectAll.
+I also tried doing the setFocus in an async display runnable, and other actions in the runnable.
+I also tried changing the text content to temporarily not be empty in doSetFocus.
+(and change it back immediately after setFocus, or later in async runnable)
+Only one thing worked to behave "somewhat correctly":
+in doSetFocus, avoid calling setFocus.
+instead, create a timed display runnable to call setFocus later.
+if (later
+<= 550 milliseconds) this doesn't work.
+if (later >= 700 milliseconds) it seems to work reliably.
+if (later == 600 milliseconds) it works sometimes.
+Is this perhaps related to  Bug 313208
+Reproducible: Always
+Steps to Reproduce:
+1.On a Tree, use a TextCellEditor for editing the cell
+2.Click on the cell to activate the editor for a cell which has an empty string as value
+3.The text control appears and has normal behavior
+4.Deselect the editor by clicking in the empty part of the Tree
+5.Click on the same cell again
+6.The text control appears and the cursor flashes
+7.After about 50 milliseconds the text loses focus and disappears

@@ -1,0 +1,4 @@
+Pen leak in TextLayout#draw(...)
+I20050419-1200
+The conditions under which a new pen for drawing underline and strikethrough
+styles is created/disposed are not the same.

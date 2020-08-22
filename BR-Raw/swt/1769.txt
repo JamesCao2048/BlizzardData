@@ -1,0 +1,4 @@
+Display.readAndDispatch() always returns true
+readAndDispatch always returns true.
+sleep() isn't implemented.
+jface test suite relies on a while(readAndDispatch()) loop to clear events so they're not able to run their tests on WPF.

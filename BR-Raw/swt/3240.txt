@@ -1,0 +1,17 @@
+The "Device#getFontList" method does not return an array of size 0 for a bad face name
+I ran into this bug trying to fix a UI test that fails on Mac OS X but passes on
+Windows and Linux.
+It fails because it expects an array of size 0 to be returned
+by the "getFontList" method when it is passed a bad face name.
+I executed the following line of code on Windows XP, Mac OS 10.3.3 and Linux GTK:
+System.out.println(display.getFontList("badData",true).length)
+Linux and Windows XP both print 0.On the Mac, it returns an array of size 144.
+The array contains all null values.
+I noticed that this particular problem occurs in GTK but is corrected at the end
+of the method.
+It is corrected in the "Device#getFontList()" method by copying
+the non null values into a results array and returning it.
+I could not find the "expected" return value for a bad face name in the API
+documentation, but I am guessing the "getFontList" method should behave as it
+does on Windows and Linux, which is to return an array of size 0.
+I am using build id 200408110800.

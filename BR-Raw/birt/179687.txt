@@ -1,0 +1,2 @@
+Bug 179687 Every cube's dimensions can be used by one x-tab[1102]
+Description: Do not allowed other cube's dimension using in the x-tab which is not using that cube[1102] Build number: 2.2.0.v20070328-0630 Steps to reproduce: 1, New two cubes, cube1 and cube2 2, Create a x-tab using cube1 3, Drag the dimension of cube2 to x-tab Expected result: The step3's operation should be forbidden Actual result: All the dimensions can be dragged into the x-tab Error log:

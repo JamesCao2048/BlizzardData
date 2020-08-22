@@ -1,0 +1,6 @@
+DefaultSelection not being sent from Spinner
+In Control Example, add a default selection listener to Spinner, hit return while the spinner has focus.
+No event is sent.
+Other widgets use NSEvent.keyCode(), but Spinner is using NSEvent.charactersIgnoringModifiers().
+We should be consistent if possible.
+Not sure which approach is better.

@@ -1,0 +1,13 @@
+Rollover tooltip for owner-drawn tree should be hidden when tree view changes
+Created  attachment 105644   [details]
+Screenshots for a)
+N20080622-2000
+Rollover tooltips for owner-drawn trees should be hidden when the tree changes (e.g.
+when a parent item is collapsed and the mouse is no longer hovering over the original item, or when using the scroll wheel).
+Steps:
+- prepare an Outline for a Java editor like in the screenshot
+- select and expand a parent item
+- hover over a child that does not fit into the viewport
+- a) press Arrow_Left or
+b) scroll up and down using the mouse wheel
+=> Rollover tooltip stays under the mouse cursor, although the item under the mouse has been replaced or has gone away.

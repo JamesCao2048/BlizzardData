@@ -1,0 +1,60 @@
+NPE in StyledText used by 'Change method signature' refactoring
+20040528
+public interface ITextMeasurement {
+public int computeWidth(String string);
+}
+1.on the previous code open the 'Change method refactoring' wizard on
+'computeWidth'
+2.change the parameter type to 'String1'
+3.press the 'Add' button
+
+-> NPE thrown
+The NPE comes from field StyleItem.analysis being null.
+Thread [main] (Suspended (exception NullPointerException))
+TextLayout.reorder(TextLayout$StyleItem[]) line: 1463
+TextLayout.computeRuns(GC) line: 334
+TextLayout.getLineOffsets() line: 936
+WrappedContent.wrapLineRange(int, int, int, int) line: 448
+WrappedContent.wrapLines(int) line: 476
+WrappedContent.wrapLines() line: 462
+StyledText$WordWrapCache.<init>(StyledText, StyledText, WrappedContent) line: 1452
+StyledText.getLineCache(StyledTextContent) line: 3774
+StyledText.calculateContentWidth() line: 1919
+StyledText.reset() line: 6303
+StyledText.handleTextSet(TextChangedEvent) line: 5239
+StyledText$6.textSet(TextChangedEvent) line: 4714
+DefaultDocumentAdapter.fireTextSet() line: 324
+DefaultDocumentAdapter.documentChanged(DocumentEvent) line: 247
+Document(AbstractDocument).doFireDocumentChanged2(DocumentEvent) line: 663
+Document(AbstractDocument).doFireDocumentChanged(DocumentEvent, boolean,
+IRegion) line: 638
+Document(AbstractDocument).doFireDocumentChanged(DocumentEvent) line: 623
+Document(AbstractDocument).fireDocumentChanged(DocumentEvent) line: 698
+Document(AbstractDocument).set(String) line: 1003
+ChangeSignatureWizard$ChangeSignatureInputPage.updateSignaturePreview() line: 352
+ChangeSignatureWizard$ChangeSignatureInputPage.update(boolean) line: 322
+ChangeSignatureWizard$ChangeSignatureInputPage.access$1(ChangeSignatureWizard$ChangeSignatureInputPage,
+boolean) line: 320
+ChangeSignatureWizard$5.parameterAdded(ParameterInfo) line: 261
+ChangeParametersControl$5.widgetSelected(SelectionEvent) line: 441
+TypedListener.handleEvent(Event) line: 89
+EventTable.sendEvent(Event) line: 82
+Button(Widget).sendEvent(Event) line: 796
+Display.runDeferredEvents() line: 2716
+Display.readAndDispatch() line: 2382
+RefactoringWizardDialog2(Window).runEventLoop(Shell) line: 668
+RefactoringWizardDialog2(Window).open() line: 648
+RefactoringWizardOpenOperation.run(Shell, String) line: 121
+RefactoringStarter.activate(Refactoring, RefactoringWizard, Shell, String,
+boolean) line: 40
+ModifyParametersAction$1(UserInterfaceStarter).activate(Refactoring, Shell,
+boolean) line: 54
+ModifyParametersAction$1.activate(Refactoring, Shell, boolean) line: 249
+ModifyParametersAction.startRefactoring(IMethod) line: 254
+ModifyParametersAction.run(ITextSelection) line: 157
+ModifyParametersAction(SelectionDispatchAction).dispatchRun(ISelection) line: 216
+ModifyParametersAction(SelectionDispatchAction).run() line: 188
+ModifyParametersAction(Action).runWithEvent(Event) line: 881
+ActionContributionItem.handleWidgetSelection(Event, boolean) line: 915
+ActionContributionItem.access$2(ActionContributionItem, Event, boolean) line: 866
+ActionContribut

@@ -1,0 +1,68 @@
+Order sependencies in setting up menus
+In the following code example, reordering the statements "A", "B", "C" produces
+differing results (you'll need to replace the 'icon' with a reference to an
+available icon on your system)
+ABC
+- menu is shown with text and icon, and is enabled
+CAB
+- text is not shown
+BCA
+- text is shown, but menu is disabled
+package swtbuilder.mainwindow;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.Shell;
+public class MenuManagerTest
+{
+public static Menu getMenuBar(Shell shell)
+{
+Menu menuBar = new Menu(shell, SWT.BAR);
+String icon = "c:/win32_CopyDrop32x32.gif";
+Image image = new Image(Display.getDefault(), icon);
+
+// Create the File Menu
+//
+MenuItem fileMenuItem = new MenuItem(menuBar, SWT.CASCADE);
+Menu fileMenu = new Menu(shell, SWT.DROP_DOWN);
+fileMenuItem.setText("File");
+fileMenuItem.setMenu(fileMenu);
+
+// Create the New Menu
+//
+MenuItem fileNewMenuItem = new MenuItem(fileMenu, SWT.CASCADE);
+Menu fileNewMenu = new Menu(shell, SWT.DROP_DOWN);
+/*A*/fileNewMenuItem.setText("New");
+/*B*/fileNewMenuItem.setMenu(fileNewMenu);
+/*C*/fileNewMenuItem.setImage(image);
+// Create the menu items
+//
+MenuItem item = new MenuItem(fileNewMenu, SWT.NONE);
+item.setImage(image);
+item.setText("New Thing");
+
+return menuBar;
+}
+
+public static void main(String[] args) {
+final Display display = Display.getDefault();
+Shell shell = new Shell(
+display,
+SWT.TITLE | SWT.ICON | SWT.CLOSE);
+Menu menuBar = new Menu(shell, SWT.BAR);
+shell.setMenuBar(getMenuBar(shell));
+shell.open();
+
+// start the event loop.
+We stop when the user has done
+// something to dispose our window.
+//
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

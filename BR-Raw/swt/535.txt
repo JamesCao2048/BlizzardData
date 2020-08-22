@@ -1,0 +1,9 @@
+StyledText has problems with layout in the presence of ligatures
+[3.6.0 and 3.6.1]
+Create a mini snippet with just a StyledText in a shell:
+StyledText styledText = new StyledText(shell, SWT.V_SCROLL
+| SWT.H_SCROLL);
+Enter the following characters and observe where the cursor moves after each character:
+abcdeffg
+Note that after entering the second 'f' the cursor is in the wrong position.
+Happens for the ligature 'fi' as well.

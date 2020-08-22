@@ -1,0 +1,12 @@
+Saving a docx file fails silently due to not killing WINWORD process on close
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)
+Build Identifier: M20090901-1530
+Editing a docx in the in-place editor and saving appears to work, but after closing and reopening the file you will not see the changes made.
+If you check running processes, you will see WINWORD still running after closing the editor.
+If you manually kill the process after closing the editor, any changes made will be there when reopening the file.
+Reproducible: Always
+Steps to Reproduce:
+1.Open a docx with in-place editor
+2.Make changes and save
+3.Close editor and reopen [changes will not be there]
+4.Check running processes for WINWORD [still running]

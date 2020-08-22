@@ -1,0 +1,29 @@
+addImageLoadListener should check for null
+the addImageLoaderListener(ImageLoaderListener) method of ImageLoder should
+check for null and throw ERROR_NULL_ARGUMENT
+- if the listener is null.
+This
+follows the pattern of the rest of SWT (see addDropListener(DropTargetListener)
+method of class DropTarget).
+Otherwise, the user's application could get a
+NullPointerException.
+Here is an example to recreate (I will attach the png
+file to this bug).
+import java.io.*;
+import org.eclipse.swt.graphics.*;
+public class TestImageLoader {
+public static void main(String[] args) {
+InputStream stream = null;
+try {
+ImageLoader loader = new ImageLoader();
+loader.addImageLoaderListener(null);
+stream = TestImageLoader.class.getResourceAsStream
+("interlaced_target.png");
+loader.load(stream);
+} finally {
+try {
+stream.close();
+} catch (Exception e) {}
+}
+}
+}

@@ -1,0 +1,40 @@
+GTK: Setting selection index to -1 for a Combo throws an exception.
+When the selection index for a Combo is set to
+-1 an
+ArrayIndexOutofBoundsException is thrown.
+While this case in Windows is ignored
+and no exception is thrown.
+test:
+------test case starts here--------------------------------
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.SWT;
+public class TestSWTChoice {
+public static void main(String[] args) {
+Display disp = Display.getDefault();
+Shell shell = new Shell(disp);
+shell.setLayout(new FillLayout());
+Combo combo = new Combo(shell, SWT.CLIP_CHILDREN | SWT.CLIP_SIBLINGS |
+SWT.READ_ONLY | SWT.DROP_DOWN);
+combo.add("first");
+combo.add("second");
+combo.add("third");
+combo.select(-1);
+System.out.println(combo.getSelectionIndex());
+shell.setBounds(50, 50, 100, 100);
+shell.open();
+combo.add("fourth");
+System.out.println(combo.getSelectionIndex());
+combo.select(2);
+combo.add("fifth");
+System.out.println(combo.getSelectionIndex());
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}
+-----------test ends here
+---------------------------------------

@@ -1,0 +1,19 @@
+org.eclipse.swt.dnd.DragSourceListener javadoc references bogus "operation" field
+Build Identifier: I20091210-2100
+Several of the javadocs for org.eclipse.swt.dnd.DragSourceListener reference a non-existant "operation" field.
+Specifically these are:
+* dragEnter()
+* dragOperationChanged()
+* dragOver()
+For example, dragOver has:
+*
+<p>The
+<code>operation</code> value is determined by the value assigned to
+*
+<code>currentDataType</code> in previous dragEnter and dragOver calls.</p>
+
+But there is no "operation" field, and even if it is "detail", the rest doesn't makes sense anyways.
+I think these are results of copy-n-paste errors.
+I'm pretty sure these errors are still in the source, since the source file in the repository [*] hasn't changed for 6 months since R3.5.
+[*]  http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt/Eclipse%20SWT%20Drag%20and%20Drop/common/org/eclipse/swt/dnd/DragSourceListener.java?view=log
+Reproducible: Always

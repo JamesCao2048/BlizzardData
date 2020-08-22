@@ -1,0 +1,2 @@
+Double Synthetic attributes on some around advice members
+Some of the support members in aspects were getting Synthetic attributes added twice (once when compiled, once when used as an aspect library).  Some JVMs appear to flag this as a verify error.  The fix is simply to check before adding to make sure the attribute isn't added twice.

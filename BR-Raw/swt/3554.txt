@@ -1,0 +1,5 @@
+InvalidThreadAccess when running a subset of JUnit tests
+Probably the easiest way to recreate the InvalidThreadAccess is to change
+AllTests constructor so that it only contains these two lines:
+addTest(Test_org_eclipse_swt_widgets_MenuItem.suite());
+addTest(Test_org_eclipse_swt_widgets_Display.suite());

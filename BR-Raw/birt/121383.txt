@@ -1,0 +1,4 @@
+Bug 121383 Set script for the chart, preview, system throws exception.
+Set script for the chart, preview, system throws exception.
+Steps: 1.Create a line chart 2.Open the script page 3.input "importPackage(Packages.org.eclipse.birt.chart.model.component.impl); function beforeDrawSeries(series, renderer, scriptContext) { series.setCurveFitting(CurveFittingImpl.create()); series.getLabel().getCaption().getColor().set(12, 232, 182); }" Actual Resutls: 1.Preview in html , system throws exception.
+Exception in: ReportEngineService.runReport( ) Error happended while runntine the report Expected Results: 1.System can be previewed correctly.

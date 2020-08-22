@@ -1,0 +1,58 @@
+WinCE: Menu Image Problem
+Hi,
+When l try to add an image to a menu (top-level on the menu bar), the other
+menu items get pushed down, and there is a space between the bottom of the
+screen and the menu with the image (image is pushed up).
+I tested this on a PDA running the Windows Mobile 2003 Second Edition OS, using
+the IBM J9 VM (5.6 version of the WSDD IDE), using SWT 3.1 (R3 release).
+Here is the code that can reproduce this problem:
+------------------------------------------------
+Display display = new Display ();
+Shell shell = new Shell (display);
+Menu bar = new Menu (shell, SWT.BAR);
+shell.setMenuBar (bar);
+/*
+*
+*/
+int size = 15;
+int half = size/2;
+Image imageTick = new Image(display, size, size);
+GC gc = new GC(imageTick);
+gc.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
+gc.setForeground(display.getSystemColor (SWT.COLOR_BLACK));
+gc.fillRectangle(0, 0, size, size);
+gc.drawPolyline(new int[]{1, half, half
+- 1, size
+- 2, size
+- 2, 0});
+gc.setForeground(display.getSystemColor(SWT.COLOR_DARK_GRAY));
+gc.drawRectangle(0, 0, size
+- 1, size
+- 1);
+gc.dispose();
+/*
+*
+*/
+MenuItem fileItem = new MenuItem (bar, SWT.CASCADE);
+fileItem.setText ("File");
+Menu fileMenu = new Menu (shell, SWT.DROP_DOWN);
+fileItem.setMenu (fileMenu);
+MenuItem helpItem = new MenuItem(bar, SWT.CASCADE);
+Menu helpMenu = new Menu(shell, SWT.DROP_DOWN);
+helpItem.setMenu(helpMenu);
+helpItem.setImage(imageTick);
+MenuItem viewItem = new MenuItem (bar, SWT.CASCADE);
+viewItem.setText ("View");
+Menu viewMenu = new Menu (shell, SWT.DROP_DOWN);
+viewItem.setMenu (viewMenu);
+
+/*
+*
+*/
+shell.open ();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+cheers,
+Patrik

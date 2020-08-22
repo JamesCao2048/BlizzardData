@@ -1,0 +1,4 @@
+Bug 232009 [Automation][Regression]Format number alignment does not work in PDF
+Description: Format number alignment does not work in PDF.
+Test Date: 20080514 Test Build: BIRT2.3.0 v20080514-0630 Step to reproduce: 1.Use the report attached 2.Preview it as PDF Expect result: The alignment of table row should be left , center , right.
+Actual result: Alignment does not take any effect.

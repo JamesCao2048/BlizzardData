@@ -1,0 +1,12 @@
+[Program] Program.findProgram does not pick up customized applications for file extensions
+Program.findProgram always seems to use the Open action for a file extension,
+even if the user has selected a different program using "Open With->Choose
+Program" in Windows Explorer and saying "Always use the selected program to
+open this kind of file".
+It isn't obvious to me where this customization is stored in the registry so
+that findProgram could check for it.
+The customization is apparent in Folder Options:File Types accessible from the
+Windows Explorer Tools menu.
+If you look at an extension that has been
+customized, you'll see a "Restore" button rather than the "Advanced" button.
+Is there a workaround?

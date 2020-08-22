@@ -1,0 +1,2 @@
+Bug 276425 IllegalArgumentException occurred when deleting list which is sharing result from Chart with filter
+Description: IllegalArgumentException occurred when deleting list which is sharing result from Chart with filter Build number: 2.5.0.v20090515-1111 Steps to reproduce: 1, New a report 2, New a chart with filter 3, New a list and share result set from Chart 4, Delete the list Expected result: After step4, No exception occurred Actual result: Exception occurred after deleting list Error log:

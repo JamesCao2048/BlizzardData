@@ -1,0 +1,2 @@
+Calling Region.add with only 1 polygon point causes a segfault
+Calling Region.add(int[]) with only 1 point in the array will cause a segfault on GTK 2.8.

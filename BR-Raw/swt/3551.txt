@@ -1,0 +1,4 @@
+SWT.BORDER Text should display thin black border on PocketPC
+SWT.BORDER should probably use WS_BORDER instead of extended style
+EX_CLIENTEDGE for Text on Pocket PC, to get the common thin black border
+instead of the 3d border that is not used on PocketPC.

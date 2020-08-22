@@ -1,0 +1,23 @@
+Ctrl+F1 works only on some fields in the help search
+OS: Linux
+- GTK
+Build: RC2 with IBMJava2-131 JRE
+Steps to reproduce:
+1. Launch eclipse with DBCS locale.
+2. Select from the menu bar Search
+-> Help
+3. When the window pops up, click on the first text field and press ctrl+F1.
+Expected Result:
+A help pop up screen should come up displaying information about the Help
+Search.
+Execution result:
+Nothing Happens
+Comments:
+1. This occurs on all DBCS languages.
+2. This event only happens in the first text field.
+When cycling through all
+the other fields using the tab key, the ctrl+F1 functions properly by
+displaying the correct text.
+3. The attachment will show exactly which field is not responding to the
+ctrl+F1, for it is circled in red.
+The fields circled in green work properly.

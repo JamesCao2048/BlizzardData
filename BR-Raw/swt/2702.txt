@@ -1,0 +1,6 @@
+Scrollbar.setValues silently does nothing
+if one of the 6 values in setValues is not valid, setValues returns without
+doing anything.
+This is not the equivalent of calling the methods separately,
+which is what the javadoc states.
+For example, if "increment" is 0, all values are ignored.

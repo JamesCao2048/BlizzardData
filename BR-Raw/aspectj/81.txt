@@ -1,0 +1,11 @@
+Changes to Main.java
+In order to get the AJDT ant integration working, we need a small change to Main.java.
+We need to be able to pass in a custom org.aspectj.bridge.ICommand object.  Currently, the ICommand object is created via reflection.
+Here is my suggestion:
+1. augment the ICommand local variable to being a field
+2. add a setter for this field
+3. change this:
+ICommand command = ReflectionFactory.makeCommand(commandName, holder);
+to this:
+if (command != null)
+command = ReflectionFactory.makeCommand(commandName, holder);

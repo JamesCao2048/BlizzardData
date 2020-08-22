@@ -1,0 +1,15 @@
+Control+backspace key combination does not work in Text widgets
+In an input box when the control+backspace key combination is pressed the
+behaviour is strange.
+An empty rectangle is drawn.
+Reproducibility: always
+Steps to reproduce:
+1.Find an editor having an Text widget.
+2.Write some content separated by spaces, like "asdf asdf asdf asdf" (without
+the quotes).
+3.Erase words with the control+backspace combination key.
+Actual result:
+Empty rectangles (probably representing the control+backspace key combination)
+are written.
+Expected result:
+A word must be erased each time the control+backspace key combination is pressed.

@@ -1,0 +1,6 @@
+NVDA does not work with Eclipse Java editor
+Created  attachment 167505   [details]
+patch to make IAccessible2 inherit from IAccessible
+The NVDA screen reader does not read StyledText very well at all.
+Through a conversation with one of the NVDA developers, I learned that they rely on IAccessible2 inheriting from IAccessible (which the IA2 spec says they should not rely on).
+The attached patch turns on IAccessible inheritance in an IAccessible2 object, which makes the Eclipse Java editor accessible with NVDA.

@@ -1,0 +1,11 @@
+linux accessibility broken
+Build Identifier:
+Hello.
+I think linux accessibility is broken after transition to at-spi2/gnome3.
+Reasons:
+First, toolbars are not presented properly in the eclipse IDE, and buttons are not labelled while they are labelled properly on windows.
+Second, helpinstall software window is not fully accessible: the tree view displaying items properly reacts to keyboard but screenreaders on both windows and linux don't present it properly, the problem on linux is worse because the orca's flat review mode does not track the tree view and arrow keys do not tell where I am while on windows they tell that i'm in a different place than I really am.
+Also, on linux, it is not possible to check if the plugin is checked or not checked for installation.
+third thing, for the same window: pressing arrow keys on the update site selection combo box changes it properly, but screenreaders don't reflect the change.
+Problems with this window have existed in at-spi1 too.
+Reproducible: Always

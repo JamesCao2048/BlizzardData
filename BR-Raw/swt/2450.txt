@@ -1,0 +1,4 @@
+likely error in ControlEditor
+3.2M5
+The eclipse compiler with additional warnings turned on pointed out that the "editor == null" check in ControlEditor line 247 is not needed because it can never fail.
+However it looks like this was possibly meant to be "this.editor == null", since it is preceded by resize() which can fire a Resize callback and thereby gives the client the opportunity to set a new editor or null editor.

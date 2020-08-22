@@ -1,0 +1,4 @@
+Bug 293006 setParent() should exclude the condition when parent is null
+Description: setParent() should exclude the condition when parent is null.
+Unit test failed.
+if ( parent != null ) { ( (IContent) parent ).setHasChildren( true ); }

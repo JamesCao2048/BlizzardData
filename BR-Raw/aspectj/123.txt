@@ -1,0 +1,9 @@
+[ataspectj] @AspectJ style inter-type declaration causes false compiler error during incremental build
+Build ID: M20070212-1330
+Steps To Reproduce:
+Use @DeclareParents to introduce a default interface implementation to an existing type.
+A full build compiles cleanly and works as expected.  An incremental build causes the following type of compile error: "The type FooImpl must implement the inherited abstract method Test.methodA()".
+In this example FooImpl is the class we are introducing a default implementation of the Test interface which defines the method "methodA".
+More information:
+See attached zip for a complete set of files to reproduce.
+I can repoduce this bug with AJDT 1.4.2.200705221209 for Eclipse 3.2.2 as well as AJDT 1.5RC1 for Eclipse 3.3RC1

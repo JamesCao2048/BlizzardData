@@ -1,0 +1,53 @@
+StyledText without wordWrap is broken with BidiSegmentListener that inserts line breaks
+StyledText without wordWrap is broken with a BidiSegmentListener that inserts line breaks.
+The snippet below shows the problem.
+The user can't put the caret into the last line using just the keyboard.
+Typed characters are not inserted where expected, since the visual and logical caret locations are out of sync.
+Problem analysis from  bug 425847 comment 2 :
+The StyledText implementation skips all support for intra-line wrapping unless the widget is created with SWT.WRAP (or setWordWrap(true) is called).
+But a segment listener that inserts line breaks needs the wrapping support; just not the auto-wrapping at a certain line width.
+----------------------
+import java.util.*;
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet {
+public static void main(String[] args) {
+final Display display= new Display();
+Shell shell= new Shell(display);
+GridLayout layout= new GridLayout();
+layout.marginWidth= layout.marginHeight= 60;
+shell.setLayout(layout);
+final StyledText styledText= new StyledText(shell, SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER);
+styledText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+styledText.setMargins(10, 10, 10, 10);
+styledText.setAlwaysShowScrollBars(false);
+styledText.setText("Hello world.nI have a very long line I want to show here...<br>Problematic line.");
+styledText.addBidiSegmentListener(new BidiSegmentListener() {
+public void lineGetSegments(BidiSegmentEvent event) {
+int[] segments= new int[100];
+String text= event.lineText;
+int i= 0, next= 0;
+while ((next= text.indexOf("<br>", next + 4)) !=
+-1) {
+segments[i++]= next + 4;
+}
+event.segments= new int[i];
+System.arraycopy(segments, 0, event.segments, 0, i);
+event.segmentsChars= new char[i];
+Arrays.fill(event.segmentsChars, 'n');
+}
+});
+shell.pack();
+Point size= shell.getSize();
+shell.setSize(size.x * 3 / 4, size.y + 50);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

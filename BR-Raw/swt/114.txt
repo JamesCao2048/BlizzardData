@@ -1,0 +1,6 @@
+[ GTK+ 3 ] Shell.forceResize() gives Critical error when running with GTK+3
+When trying to run any snippet that includes Shell with GTK+ 3 this error occur:
+(SWT:15686): Gtk-CRITICAL **: gtk_scrollable_get_vscroll_policy: assertion `GTK_IS_SCROLLABLE (scrollable)' failed
+Cause of this error is Shell.forceResize(width,height) line 946:
+OS.gtk_widget_size_allocate (vboxHandle, allocation);
+To reproduce I used Helloworld2.java.

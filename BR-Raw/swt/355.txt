@@ -1,0 +1,6 @@
+NullPointerException when closing using system menu item (SWT.ID_QUIT)
+Build Identifier: 3.7.0.v3735b
+1.Launch the attached test case (OS X 10.6 or 10.7)
+2.Press Cmd+Q
+3.The attached stacktrace occurs
+Reproducible: Always

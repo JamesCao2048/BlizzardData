@@ -1,0 +1,8 @@
+ControlExample's "Select Listeners" has sizing problems
+Created  attachment 86472   [details]
+Fix
+HEAD
+On small screens, the ControlExample's "Select Listeners" has sizing problems:
+- initial size calculation confuses width and height
+- is not resizable
+Patch fixes both problems.

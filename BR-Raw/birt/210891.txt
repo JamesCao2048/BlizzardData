@@ -1,0 +1,4 @@
+Bug 210891 [Automation][Acceptance]Table header is repeated in PDF
+Description: Table header is repeated in PDF.
+Test Date: 20071126 Test Build: BIRT2.3.0 Daily Build: v20071126-0800 Step to reproduce: 1.Use the reportdesign attached 2.Preview it in PDF Expect result: "USA" should not repeat.
+Actual result: "USA" is repeated.

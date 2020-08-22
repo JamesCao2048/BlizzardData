@@ -1,0 +1,16 @@
+Annotation underlines not properly drawn when end of range not visible
+Created  attachment 117535   [details]
+Screenshot
+I20081104-0916
+Annotation underlines are not properly drawn when the end of the annotation range is not visible because the editor is not wide enough.
+Steps:
+- Paste to Package Explorer:
+package xy;
+class Test {
+void m(void first, int looooooooooooooooooooooooooooooooongName) {
+}
+}
+- Make editor area so narrow that name of second parameter is not completely visible when editor is completely scrolled to the left.
+- Close editor
+- Open Test.java from Package Explorer
+=> Problem range is "m(void first, int lo..ongName)", but underlines not visible (only appear when scrolling or setting caret into line 3)

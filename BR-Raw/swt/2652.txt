@@ -1,0 +1,10 @@
+Button size test failures in org.eclipse.ui.tests
+Test failures have appeared in org.eclipse.ui.tests on MacOS X.
+The test
+failures all seem to deal with button sizing issues.
+These failures started
+appearing in I20051018-0800, and have continued into N20051019-0010.
+
+Note that several builds worth of MacOS X tests leading up I20051018-0800
+didn't run.
+There were network issues.

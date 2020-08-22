@@ -1,0 +1,5 @@
+BIDI: level of the first directional run is never detected
+GTK TextLayout#getLevel(int) starts the loop with
+while (OS.pango_layout_iter_next_run(iter))
+- advancing the iter to the 2nd directional run (if any).
+Thus the 1st directional run is omitted.

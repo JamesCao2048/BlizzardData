@@ -1,0 +1,22 @@
+Please make FormAttachment() public
+This is kind of an esoteric use-case, but making FormAttachment public would
+make it possible to write more readable XSWT code.
+For example, due to the package private contructor, we currently must write the
+following:
+<text x:id="secondCol" text="Second column">
+<layoutData x:class="formData">
+<left x:p0="firstColLabel" offset="10"/>
+<top x:p0="firstColLabel" offset="0" alignment="TOP"/>
+<right x:p0="90"/>
+</layoutData>
+</text>
+(the x:p0 is a meta-tag for specifying constructor arguments)
+If a 0-arg constructor were public, we could instead write:
+<text x:id="secondCol" text="Second column">
+<layoutData x:class="formData">
+<left control="firstColLabel" offset="10"/>
+<top control="firstColLabel" offset="0" alignment="TOP"/>
+<right numerator="90"/>
+</layoutData>
+</text>
+which is much more readable/understandable without looking hard at it first.

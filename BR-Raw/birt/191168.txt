@@ -1,0 +1,8 @@
+Bug 191168 [Regression]Exception occurs when resize masterpage in library
+Description: Exception occurs when resize masterpage in library.
+Build number:2.2.0.v20070606-0630 Regression bug:187443 Steps to reproduce: 1.New a library.
+2.Go to Master Page, resize the master page using the ruler.
+Expected result: 1.Layout works correctly.
+2.No exception is thrown out.
+Error log: An unexpected internal exception occurred.Please see log for detail.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.2.0.v20070606-0630 Error Code:Error.GUIException.invokedByUnexpectedException Error Message:org.eclipse.birt.report.designer.internal.lib.lalyout.LibraryReportDesignLayout

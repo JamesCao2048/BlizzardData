@@ -1,0 +1,20 @@
+[GTK 3] Text alignment inside GtkLabel is invalid
+When you pass to the label SWT.RIGHT, SWT.LEFT or SWT.CENTER in GTK2 it aligns Label properly, when you run same code with GTK3, it aligns label incorrectly.
+To test it:
+1.Open HelloWorld2.java
+2.Change label constructor to this:
+Label label = new Label (shell, SWT.RIGHT);
+When you run with GTK2: label/imabe is aligned to the right
+When you run with GTK3: it still aligned  to the left
+My Findings:
+Label.createHandle  line:
+if you change line:
+handle = gtk_box_new (OS.GTK_ORIENTATION_HORIZONTAL, false, 0);
+to
+handle = OS.gtk_hbox_new(false, 0);
+It works with both GTK2 and GTK3.
+If you change orientation to Vertical:
+handle = gtk_box_new (OS.GTK_ORIENTATION_VERTICAL, false, 0);
+it seems to work too.
+Possible causes: sizing of widgets ?
+incorrect packing in gtk_box_new ?

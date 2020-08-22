@@ -1,0 +1,4 @@
+Bug 197589 Need constant for automaic attribute name "DateTime
+Currently when set dateTimeLevelType for cube level, model will automatically create a built-in attribute "DateTime".
+But the name is hard-coded.
+We need a public constant for this name to allow UI to access it.

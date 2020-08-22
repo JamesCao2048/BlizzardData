@@ -1,0 +1,129 @@
+NullPointerException when selecting Save As in top menu
+The Steps of Reproduce:
+1. Open BIRT
+2. New a project
+3. In top menu of File, click New -> Report to create a report
+4. Drag a table element from Palette into the report of Layout view
+5. Save the report
+6. Drag mouse to select two cells in the table
+7. Select the report in Navigator view
+8. In the top menu, select Save As...
+9. In the Save As pop up dialog window, change the file name in the File name
+field, then click OK button
+Expected Result:
+There is no error to click OK button
+Actual Result:
+Error window pops up and the error log as follows:
+java.lang.NullPointerException
+at org.eclipse.gef.editparts.AbstractEditPart.getRoot
+(AbstractEditPart.java:587)
+at org.eclipse.gef.editparts.AbstractEditPart.getRoot
+(AbstractEditPart.java:587)
+at org.eclipse.gef.editparts.AbstractEditPart.getViewer
+(AbstractEditPart.java:637)
+at
+org.eclipse.birt.report.designer.internal.ui.editors.schematic.editparts.TableU
+til.getSelectionCells(TableUtil.java:258)
+at
+org.eclipse.birt.report.designer.internal.ui.editors.schematic.editparts.TableE
+ditPart.canMerge(TableEditPart.java:1244)
+at
+org.eclipse.birt.report.designer.internal.ui.editors.schematic.actions.MergeAct
+ion.calculateEnabled(MergeAction.java:51)
+at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled
+(WorkbenchPartAction.java:111)
+at org.eclipse.ui.actions.RetargetAction.setActionHandler
+(RetargetAction.java:249)
+at org.eclipse.ui.actions.RetargetAction.partActivated
+(RetargetAction.java:144)
+at org.eclipse.ui.internal.PartListenerList$1.run
+(PartListenerList.java:49)
+at org.eclipse.core.internal.runtime.InternalPlatform.run
+(InternalPlatform.java:616)
+at org.eclipse.core.runtime.Platform.run(Platform.java:747)
+at org.eclipse.ui.internal.PartListenerList.firePartActivated
+(PartListenerList.java:47)
+at org.eclipse.ui.internal.WorkbenchPage.firePartActivated
+(WorkbenchPage.java:1370)
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart
+(WorkbenchPage.java:2738)
+at org.eclipse.ui.internal.WorkbenchPage.requestActivation
+(WorkbenchPage.java:2415)
+at org.eclipse.ui.internal.PartPane.requestActivation
+(PartPane.java:304)
+at org.eclipse.ui.internal.EditorPane.requestActivation
+(EditorPane.java:127)
+at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:284)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:796)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:820)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:801)
+at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:935)
+at org.eclipse.swt.widgets.Control.sendFocusEvent(Control.java:1768)
+at org.eclipse.swt.widgets.Control.WM_SETFOCUS(Control.java:4139)
+at org.eclipse.swt.widgets.Canvas.WM_SETFOCUS(Canvas.java:239)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3032)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3338)
+at org.eclipse.swt.internal.win32.OS.SetFocus(Native Method)
+at org.eclipse.swt.widgets.Control.forceFocus(Control.java:607)
+at org.eclipse.swt.widgets.Control.setFocus(Control.java:2054)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:447)
+at org.eclipse.gef.ui.parts.GraphicalEditor.setFocus
+(GraphicalEditor.java:346)
+at org.eclipse.ui.part.MultiPageEditorPart.setFocus
+(MultiPageEditorPart.java:545)
+at org.eclipse.ui.part.MultiPageEditorPart.setFocus
+(MultiPageEditorPart.java:519)
+at org.eclipse.ui.part.MultiPageEditorPart.setFocus
+(MultiPageEditorPart.java:545)
+at org.eclipse.ui.part.MultiPageEditorPart.setFocus
+(MultiPageEditorPart.java:519)
+at org.eclipse.ui.part.MultiPageEditorPart.pageChange
+(MultiPageEditorPart.java:433)
+at org.eclipse.birt.report.designer.ui.editors.ReportEditor.pageChange
+(ReportEditor.java:1179)
+at
+org.eclipse.birt.report.designer.ui.editors.ReportEditor.rebuildReportDesign
+(ReportEditor.java:584)
+at org.eclipse.birt.report.designer.ui.editors.ReportEditor.setInput
+(ReportEditor.java:547)
+at
+org.eclipse.birt.report.designer.ui.editors.ReportEditor.performSaveAs
+(ReportEditor.java:870)
+at org.eclipse.birt.report.designer.ui.editors.ReportEditor.doSaveAs
+(ReportEditor.java:812)
+at org.eclipse.ui.internal.SaveAsAction.run(SaveAsAction.java:64)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:915)
+at org.eclipse.jface.action.ActionContributionItem.access$2
+(ActionContributionItem.java:866)
+at org.eclipse.jface.action.ActionContributionItem$7.handleEvent
+(ActionContributionItem.java:785)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:796)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2772)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2431)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1377)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1348)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:254)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:141)
+at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:96)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:335)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:273)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:129)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:185)
+at org.eclipse.core.launcher.Main.run(Main.java:704)
+at org.eclipse.core.launcher.Main.main(Main.java:688)

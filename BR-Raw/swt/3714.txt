@@ -1,0 +1,6 @@
+BIDI:Caret cheese when resizing RIGHT_TO_LEFT StyledText
+build 20030429 + latest from HEAD
+-run the SwtStyledTextUseCase in org.eclipse.swt.internal (ottcvs1)
+-place the caret somewhere on a line
+-resize the shell horizontally
+->there is caret cheese as shown in the attachment

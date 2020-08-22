@@ -1,0 +1,44 @@
+[Viewers] OwnerDrawLabelProvider Causes NullPointerException on TableColumn.dispose()
+When attempting to dispose of the first column in a TreeViewer that utilizes a OwnerDrawLabelProvider after the first or second column has been resized the below exception is thrown.
+This only happens when you attempt to dispose of the first column and only after the first or second column has been resized by the user.
+A normal LabelProvider does not cause this issue.
+I have modified the JFace Snippet 010OwnerDraw to demonstrate this issue and attached it to this report.
+The exception seems to be thrown from the Widget class getData(String) method where "table" is null.
+One odd thing that I noticed while trying to debug this issue is that when using the Eclipse debugger with break points at the snippet dispose call, checkWidget call in getData(String), and checkWidget call in setData(String) the issue seemed to stop.
+public Object getData (String key) {
+checkWidget();
+if (key == null) error (SWT.ERROR_NULL_ARGUMENT);
+if ((state & KEYED_DATA) != 0) {
+Object [] table = (Object []) data;
+->>>>        for (int i=1; i<table.length; i+=2) {
+if (key.equals (table [i])) return table [i+1];
+}
+}
+return null;
+}
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Widget.getData(Widget.java:554)
+at org.eclipse.jface.viewers.ColumnViewer.getViewerColumn(ColumnViewer.java:186)
+at org.eclipse.jface.viewers.OwnerDrawLabelProvider$OwnerDrawListener.handleEvent(OwnerDrawLabelProvider.java:47)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1027)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1012)
+at org.eclipse.swt.widgets.Table.sendMeasureItemEvent(Table.java:3467)
+at org.eclipse.swt.widgets.Table.CDDS_SUBITEMPREPAINT(Table.java:760)
+at org.eclipse.swt.widgets.Table.wmNotifyChild(Table.java:6402)
+at org.eclipse.swt.widgets.Control.wmNotify(Control.java:4718)
+at org.eclipse.swt.widgets.Composite.wmNotify(Composite.java:1756)
+at org.eclipse.swt.widgets.Control.WM_NOTIFY(Control.java:4348)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3841)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:337)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1576)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1937)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4541)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:2274)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:333)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:199)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3877)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:5476)
+at org.eclipse.swt.widgets.Display.windowProc(Di

@@ -1,0 +1,36 @@
+Disabled button stops events
+Run the following code.
+Setting button 2 to be disabled stops events from being
+sent to button 3, even though it is above.
+public static void main(String [] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+
+Composite c = new Composite(shell, SWT.NONE);
+c.setSize(800,600);
+Button b1 = new Button(c, SWT.PUSH);
+b1.setText("Button 1");
+b1.setSize(400,400);
+Button b2 = new Button(c, SWT.PUSH);
+b2.setText("Button 2");
+b2.setSize(400,400);
+b2.setEnabled(false);
+
+Button b3 = new Button(c, SWT.PUSH);
+b3.setText("Button 3");
+b3.setSize(400,400);
+
+b3.moveAbove(b1);
+c.addListener(SWT.MouseMove, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("cheeze:" + event.x + "," + event.y);
+}
+});
+
+
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

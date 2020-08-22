@@ -1,0 +1,59 @@
+StyledText makes CTabFolder send same KeyDown event multiple times
+Created  attachment 128895   [details]
+Snippet
+HEAD (cocoa)
+StyledText makes CTabFolder send same KeyDown event multiple times.
+- Run the attached snippet
+- Press Alt+PageDown
+=> CTabFolder switches to next tab (good)
+- Now click into the StyledText "Page 1"
+- Press Alt+PageDown
+=> CTabFolder does not switch any more, but you can see on the console, that the KeyDown filter has been called 6 times instead of once.
+As you can see in the stack trace below,
+CTabFolder.setSelection(int) line: 3264
+calls
+StyledText(Control).setVisible(boolean) line: 3570
+, which ends up calling
+StyledText(Composite).nextValidKeyView(int, int) line: 845
+, which sends out the same KeyDown again.
+This is a problem for the Fix 2 from  bug 199499 .
+Steps to reproduce the bug there: Open a plugin.xml editor.
+Alt+PageDown lets you switch between subtabs of the multi page editor.
+But when you get to a source page, the keystroke does not work any more.
+Daemon Thread [Thread-0] (Suspended (breakpoint at line 50 in Snippet76$1))
+Snippet76$1.handleEvent(Event) line: 50
+EventTable.sendEvent(Event) line: 84
+Display.filterEvent(Event) line: 844
+StyledText(Widget).sendEvent(Event) line: 1203
+StyledText(Widget).sendEvent(int, Event, boolean) line: 1228
+StyledText(Widget).sendEvent(int, Event) line: 1213
+StyledText(Widget).sendKeyEvent(int, Event) line: 1242
+StyledText(Widget).sendKeyEvent(NSEvent, int) line: 1238
+StyledText(Canvas).sendKeyEvent(NSEvent, int) line: 399
+StyledText(Control).doCommandBySelector(int, int, int) line: 867
+Display.windowDelegateProc(int, int, int) line: 4383
+OS.objc_msgSend(int, int, int) line: not available [native method]
+SWTCanvasView(NSResponder).interpretKeyEvents(NSArray) line: 56
+StyledText(Composite).keyDown(int, int, int) line: 526
+StyledText(Composite).nextValidKeyView(int, int) line: 845
+Display.windowDelegateProc(int, int) line: 4234
+OS.objc_msgSend(int, int, boolean) line: not available [native method]
+SWTCanvasView(NSView).setHidden(boolean) line: 257
+StyledText(Control).setVisible(boolean) line: 3570
+CTabFolder.setSelection(int) line: 3264
+Snippet76$1.handleEvent(Event) line: 50
+EventTable.sendEvent(Event) line: 84
+Display.filterEvent(Event) line: 844
+StyledText(Widget).sendEvent(Event) line: 1203
+StyledText(Widget).sendEvent(int, Event, boolean) line: 1228
+StyledText(Widget).sendEvent(int, Event) line: 1213
+StyledText(Widget).sendKeyEvent(int, Event) line: 1242
+StyledText(Widget).sendKeyEvent(NSEvent, int) line: 1238
+StyledText(Canvas).sendKeyEvent(NSEvent, int) line: 399
+StyledText(Control).doCommandBySelector(int, int, int) line: 867
+Display.windowDelegateProc(int, int, int) line: 4383
+OS.objc_msgSend(int, int, int) line: not available [native method]
+SWTCanvasView(NSResponder).interpretKeyEvents(NSArray) line: 56
+StyledText(Composite).keyDown(int, int, int) line: 526
+Display.windowDelegateProc(int, int, int) line: 4293
+OS.objc_msgSendSuper(objc_super, int,

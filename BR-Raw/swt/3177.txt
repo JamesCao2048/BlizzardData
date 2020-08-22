@@ -1,0 +1,13 @@
+inconsistent SWT.NO_FOCUS behaviour
+1) w2k:
+the flag is ignored when provided as a style to a Shell instead
+of some widget.
+linux:
+the flag is respected.
+2) linux:
+the flag has effect for the widget and all its children.
+w2k:
+the flag has only effect for the widget itself (except
+if the widget is a Shell)
+3) There should be better documentation about how the flag effects
+focus events.

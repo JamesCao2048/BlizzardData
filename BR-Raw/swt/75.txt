@@ -1,0 +1,4 @@
+[GTK3] pointer image is often wrong when moving from editor to view
+4.3M6 test build
+- open an editor
+- move the mouse pointer into the editor space, then out to one of the views adjacent to it, and the pointer image is often left as a resize (N/S or E/W arrows) image that was adopted when moving over the sash separating the editor and view

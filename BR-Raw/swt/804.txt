@@ -1,0 +1,9 @@
+[ViewForm] View Toolbars should wrap right-aligned
+When view toolbars must wrap to a new line because there are too many items for
+the view's width, the second etc.
+lines of toolbar items should also be aligned
+to the right.
+This follows the alignment of the original top line.
+The right-alignment would also decrase the distance to the buttons' new location
+after wrapping (which can be annoyingly far away when a view like "New Search"
+wraps because the title string becomes wider).

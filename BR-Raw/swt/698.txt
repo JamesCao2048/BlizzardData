@@ -1,0 +1,32 @@
+[Accessibility] NPE creating FilteredList on Linux
+Build Identifier: 3.6M6
+TwoPaneElementSelector is no longer usable in 3.6M6.
+Reproducible: Always
+Steps to Reproduce:
+The attached project works fine in 3.6M5.It is OK in 3.6M6 on Windows, but fails on Linux (and I suspect it will fail on Solaris as well).
+Thread [main] (Suspended (exception NullPointerException))
+FilteredList.getAccessible() line: 777
+Label.addRelation(Control) line: 112
+FilteredList(Control).setRelations() line: 1034
+FilteredList(Control).createWidget(int) line: 549
+FilteredList(Scrollable).createWidget(int) line: 152
+FilteredList(Control).<init>(Composite, int) line: 96
+FilteredList(Scrollable).<init>(Composite, int) line: 74
+FilteredList(Composite).<init>(Composite, int) line: 95
+FilteredList.<init>(Composite, int, ILabelProvider, boolean, boolean, boolean) line: 236
+TwoPaneElementSelector(AbstractElementListSelectionDialog).createFilteredList(Composite) line: 334
+TwoPaneElementSelector.createDialogArea(Composite) line: 138
+TwoPaneElementSelector(Dialog).createContents(Composite) line: 760
+TwoPaneElementSelector(Window).create() line: 431
+TwoPaneElementSelector(Dialog).create() line: 1089
+TwoPaneElementSelector(SelectionStatusDialog).create() line: 153
+TwoPaneElementSelector(AbstractElementListSelectionDialog).access$superCreate() line: 427
+AbstractElementListSelectionDialog.access$2(AbstractElementListSelectionDialog) line: 426
+AbstractElementListSelectionDialog$4.run() line: 438
+BusyIndicator.showWhile(Display, Runnable) line: 70
+TwoPaneElementSelector(AbstractElementListSelectionDialog).create() line: 436
+TwoPaneElementSelector(Window).open() line: 790
+TwoPaneElementSelector(AbstractElementListSelectionDialog).open() line: 422
+TwoPaneElementSelectorBug.twoPainTest(Shell) line: 30
+TwoPaneElementSelectorBug.run(IAction) line: 44
+...

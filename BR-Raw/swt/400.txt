@@ -1,0 +1,32 @@
+PrintDialog crashes on xp if no printers are installed
+Build Identifier: I20100608-0911
+If no printers are installed on xp, rcp application crashes when the following line is executed:
+PrintDialog dialog = new PringDialog(shell, SWT.NONE);
+Stack: [0x00030000,0x00130000],  sp=0x0012ed6c,  free space=3fb0012e8a0k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [swt-win32-3557.dll+0x2c263]
+C  [swt-win32-3557.dll+0xa3b5]
+j  org.eclipse.swt.internal.win32.OS.MoveMemory(Lorg/eclipse/swt/internal/win32/DEVMODEW;II)V+0
+j  org.eclipse.swt.internal.win32.OS.MoveMemory(Lorg/eclipse/swt/internal/win32/DEVMODE;II)V+12
+j  org.eclipse.swt.printing.PrintDialog.open()Lorg/eclipse/swt/printing/PrinterData;+168
+j  com.teamcenter.rac.services.PrintService.printImage(Lcom/teamcenter/rac/print/IGraphicInfo;)V+30
+j  com.teamcenter.rac.handlers.PrintGraphicsHandler.execute(Lorg/eclipse/core/commands/ExecutionEvent;)Ljava/lang/Object;+44
+j  org.eclipse.ui.internal.handlers.HandlerProxy.execute(Lorg/eclipse/core/commands/ExecutionEvent;)Ljava/lang/Object;+33
+j  org.eclipse.core.commands.Command.executeWithChecks(Lorg/eclipse/core/commands/ExecutionEvent;)Ljava/lang/Object;+115
+j  org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+21
+j  org.eclipse.ui.internal.handlers.HandlerService.executeCommand(Lorg/eclipse/core/commands/ParameterizedCommand;Lorg/eclipse/swt/widgets/Event;)Ljava/lang/Object;+6
+j  org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(Lorg/eclipse/core/commands/ParameterizedCommand;Lorg/eclipse/swt/widgets/Event;)Ljava/lang/Object;+6
+j  org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(Lorg/eclipse/core/commands/ParameterizedCommand;Lorg/eclipse/swt/widgets/Event;)Ljava/lang/Object;+6
+j  org.eclipse.ui.menus.CommandContributionItem.handleWidgetSelection(Lorg/eclipse/swt/widgets/Event;)V+79
+j  org.eclipse.ui.menus.CommandContributionItem.access$10(Lorg/eclipse/ui/menus/CommandContributionItem;Lorg/eclipse/swt/widgets/Event;)V+2
+j  org.eclipse.ui.menus.CommandContributionItem$5.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+51
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Display.runDeferredEvents()Z
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+j  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V+9
+j  org.eclipse.ui.internal.Workbench.runUI()I+393
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$5.run()V+55
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/

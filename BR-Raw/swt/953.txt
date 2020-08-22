@@ -1,0 +1,3 @@
+Control's getMonitor() method does not have an @exception tag
+checkWidget() is called in getMonitor()'s implementation so exceptions can be thronw from getMonitor().
+However, the @exception tag is missing from the method's javadoc.

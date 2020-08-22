@@ -1,0 +1,5 @@
+Multi-line Text.setSelection(int) needs to reveal the selection
+Build id: I20090511-2000 on Cocoa
+Run Snippet11, which creates a multi-line text, appends a bunch of lines, and then calls setSelection(30).
+On other platforms, the Text is scrolled to show the new selection.
+On Cocoa, the Text remains scrolled to the end, where it was after appending the lines.

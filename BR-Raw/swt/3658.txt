@@ -1,0 +1,47 @@
+List constructor with SWT.SIMPLE | SWT.MULTI style parameters behaves incorrectly (BBAWT)
+If you create a list using the List(Shell, SWT.MUlTI|SWT.SIMPLE) constructor, it
+will not correctly handle events in Motif.
+In the following example, events on the list are reported to the terminal by GTK
+but NOT by Motif.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.List;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+public class SWTListTest {
+Display display;
+Shell shell;
+List list;
+public void run() {
+display = new Display();
+shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setSize(400,400);
+shell.setLayout(new FillLayout());
+list = new List(shell, SWT.MULTI | SWT.SIMPLE);
+list.add("item 1");
+list.add("item 2");
+list.add("item 3");
+Listener l = new Listener(){
+public void handleEvent(Event event) {
+if(event.type == SWT.Selection){
+int selected = (list.getSelectionIndices()).length;
+System.out.println("selected = " + selected);
+}
+}
+};
+list.addListener(SWT.Selection, l);
+list.addListener(SWT.DefaultSelection, l);
+shell.open();
+
+while (!shell.isDisposed()) {
+display.readAndDispatch();
+display.sleep();
+}
+display.dispose();
+}
+public static void main(String[] args) {
+new SWTListTest().run();
+}
+}

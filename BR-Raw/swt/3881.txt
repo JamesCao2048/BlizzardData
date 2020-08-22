@@ -1,0 +1,25 @@
+StyledTextRenderer: creates too many Strings
+20021119
+StyledTextRenderer.drawText
+the code says:
+String tabSegment = text.substring(i, tabIndex);
+if (bidi != null) {
+bidi.drawBidiText(i, tabIndex
+- i, leftMargin
+-
+horizontalScrollOffset, paintY);
+}
+else {
+gc.drawString(tabSegment, paintX
+-
+horizontalScrollOffset + leftMargin, paintY, true);
+paintX += gc.stringExtent(tabSegment).x;
+if (tabIndex != endOffset && tabWidth > 0) {
+paintX = getTabStop(paintX);
+}
+}
+so it creates 'tabSegment' even if it does not actually use it.
+calling 'substring' allocates new String objects everytime
+moving the declaration of 'tabsegment' inside the 'else' branch will make sure
+we don't create more strings that we want
+(now we create 7-12 Kb of Strings on every keystroke in the editor)

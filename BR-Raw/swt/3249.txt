@@ -1,0 +1,71 @@
+Tooltips are not shown if shell's client area is located at (0,0)
+If you locate a shell with NO_TRIM style at (0,0) or a shell with any other
+style so that the client area is located at (0,0) no tooltips are shown for the
+shell's children.
+The reason is that in Control.hasCursor() this case is excluded (MapWindowPoints
+returns 0).
+Why is this necessary ?
+Is there a workaround except locating the shell f.e.
+at (0,-1) ?
+To reproduce this behaviour try this piece of code:
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class ToolTipTest
+{
+public static void main (String [] args)
+{
+Display display = new Display ();
+// final Shell shell = new Shell (display, SWT.NO_TRIM);
+final Shell shell = new Shell (display, SWT.SHELL_TRIM);
+shell.setLayout (new RowLayout(SWT.VERTICAL));
+
+Button button1 = new Button (shell, SWT.PUSH);
+button1.setText ("To (100/100)");
+button1.setToolTipText("Locates window at (100/100)nAfter pressing this
+button tooltips are (still) shown");
+button1.addSelectionListener(new SelectionAdapter(){
+public void widgetSelected(SelectionEvent e)
+{
+shell.setLocation(100, 100);
+}
+});
+Button button2 = new Button (shell, SWT.PUSH);
+button2.setText ("To (0/0)");
+button2.setToolTipText("Locates window area at (0/0)nAfter pressing
+this button tooltips are NOT shown anymore");
+button2.addSelectionListener(new SelectionAdapter(){
+public void widgetSelected(SelectionEvent e)
+{
+Point locationAbsolute = shell.getLocation();
+Point clientAreaAbsolute = shell.toDisplay(0,0);
+int x = locationAbsolute.x
+- clientAreaAbsolute.x;
+int y = locationAbsolute.y
+- clientAreaAbsolute.y;
+
+shell.setLocation(x, y);
+}
+});
+Button button3 = new Button (shell, SWT.PUSH);
+button3.setText ("Close");
+button3.setToolTipText("Closes the window");
+button3.addSelectionListener(new SelectionAdapter(){
+public void widgetSelected(SelectionEvent e)
+{
+shell.dispose();
+}
+});
+shell.setSize(150,130);
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ())
+display.sleep ();
+}
+display.dispose ();
+}
+}

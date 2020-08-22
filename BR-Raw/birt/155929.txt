@@ -1,0 +1,7 @@
+Bug 155929 [regression]Format doesn't work correctly in dynamic parameter
+Description: Format doesn't work correctly in dynamic parameter Steps to reproduce: 1.New sample data source and dataset from ORDERS.
+2.New a report parameter, integer, list, dynamic, select ORDERNUMBER as value and display column, set format to currency.
+3.New a report paramter, datetime, list, dynamic, select ORDERDATE as value and display column , set format as short time.
+4.Preview Expected result: Show format effect in popped up parameter dialog.
+Actual result: I saw "10100###0.00" in first paramter list and "2003/1/16 ...shorttime".
+The format codes were added to the end of the value.

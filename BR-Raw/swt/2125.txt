@@ -1,0 +1,7 @@
+ControlExample Tree tab forgets "Moveable Columns" attribute
+3.3M6 test build
+- run the control example, go to the Tree tab
+- select all of the checkboxes in the "Other" group
+- change the Tree's style to SWT.MULTI
+- note that all of the checkboxes in the "Other" group except for "Moveable Columns" stay checked
+- on the Table tab this item stays checked with these steps

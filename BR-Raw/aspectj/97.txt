@@ -1,0 +1,5 @@
+Sometimes when load-time weaving there will be two ReferenceType objects for the same type
+Seen by Ramnivas.
+A pointcut uses an exact type name for an annotation
+execution(* (@Controller *..*).*(..))
+Resolving this pointcut causes us to construct a ReferenceType for 'Controller'.  Then we attempt to populate it by loading the class implementation.  This recurses back into the weaver as Controller is loaded and an attempt is made to weave it.  This takes a second route through the weaver to build a referencetype again and this second referencetype is cached in the world.  When we unwind, we continue building the original referencetype and are left with one in the cache and the one resolved for the pointcut.  Due to the use of == for comparison, we fail to match on join points later because they will use the ReferenceType from the cache.

@@ -1,0 +1,8 @@
+BIDI: PopupList can't be created with explicitly assigned orientation.
+Currently it is impossible to create Shell and List widgets of PopupList with
+explicitly assigned orientation.
+As result, PopupList always has orientation of
+top Shell.
+It isn't desirable if, for example, table, which use PopupList for
+editing of it's cells, has orientation, that is differ from orientation of top
+Shell.

@@ -1,0 +1,5 @@
+Bug 151552 Can't change the Data Set of a chart drag from a library
+After creating a library with a chart,you use it and drag the chart to a report design.A error happen when you change the Data Set of the chart.
+1.creat a library,add a chart into it ,then publish the library.
+2.new a report and use the library ,drag the chart into the layout of the report,you can't change the data set of the chart,or a error will occur.
+Actual result:A error occur when you change the data set] Expected result:You can change the data set.

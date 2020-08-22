@@ -1,0 +1,4 @@
+percflow aspects compiled from jars share one instance for all entry points
+When a percflow aspect is woven into source code from a jar using the aspectPath
+compiler option, it produces only one instance of the aspect for each entrypoint
+defined in the source code.

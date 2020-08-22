@@ -1,0 +1,60 @@
+StyledText#addBidiSegmentListener doesn't support multiple chars per offset any more
+Follow-up to  bug 372760
+StyledText#addBidiSegmentListener doesn't support multiple chars per offset any more.
+In 3.7.2, this snippet worked fine, but in master, it throws an IAE.
+Javadocs of BidiSegmentEvent and SegmentEvent explicitly allow this if segmentsChars is not null.
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet332 {
+
+public static void main(String [] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+FillLayout layout = new FillLayout();
+layout.marginHeight = layout.marginWidth = 10;
+shell.setLayout(layout);
+StyledText text = new StyledText(shell, SWT.MULTI | SWT.BORDER);
+final String segment = "Eclipse";
+String string = "Insert numbers around this segment \""+segment+"\".";
+text.setText(string);
+int[] segments = {string.indexOf(segment), segment.length()};
+StyleRange[] ranges = {new StyleRange(0, 0,
+display.getSystemColor(SWT.COLOR_RED), null)};
+text.setStyleRanges(segments, ranges);
+text.setFont(new Font(display, "Tahoma", 16, 0));
+text.addBidiSegmentListener(new BidiSegmentListener() {
+public void lineGetSegments(BidiSegmentEvent event) {
+String string = event.lineText;
+int start = string.indexOf(segment);
+event.segments = new int []{start, start,
+start + segment.length()};
+event.segmentsChars = new char[] {'0', '1', '2'};
+}
+});
+shell.setSize(600, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+}
+Exception in thread "main" java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:4342)
+at org.eclipse.swt.SWT.error(SWT.java:4276)
+at org.eclipse.swt.SWT.error(SWT.java:4247)
+at org.eclipse.swt.custom.StyledText.getBidiSegments(StyledText.java:4788)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:789)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:720)
+at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:211)
+at org.eclipse.swt.custom.StyledTextRenderer.calculateClientArea(StyledTextRenderer.java:229)
+at org.eclipse.swt.custom.StyledText.handleResize(StyledText.java:6150)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:5640)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+at org.eclipse.swt.widgets.Control.WM_SIZE(Control.j

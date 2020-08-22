@@ -1,0 +1,4 @@
+[GTK3] Search box in eclipse is clipped on the right
+1) Run eclipse on GTK3 (export org.eclipse.swt.gtk3=1)
+2) Give focus to the search box (Quick Acess)
+Note that the right edge of the widget is clipped.

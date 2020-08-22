@@ -1,0 +1,4 @@
+Bug 273368 Disable Running aggregation e.g. Rank function in crosstab measure
+Description: In crosstab measure aggregation binding, Running type aggregation e.g.
+Rank function should be disabled in the function list, confirmed with Designer team, Data Team need to provide a api to distinguish running function and designer will based on this api to do further fixing.
+Build number: 2.5.0.v20090423-0630

@@ -1,0 +1,8 @@
+emulated coolbar height is wrong when it has multi rows of different size
+Version: 3.5.0
+Build id: I20080930-0921
+run the new TextEditor example
+drag the coolitems one on its own row
+Notice the bottom of the last row is clipped off
+This happens cause layoutItems() and computeSize() are not following the same rules for row height.
+This happen on all platforms but windows

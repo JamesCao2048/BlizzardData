@@ -1,0 +1,6 @@
+Bug 187481 [Automation][Regression] the attached report designs cannot be previewed properly in viewer
+steps to reproduce:
+- use the attached report designs (custom style applied to grid cell, grid row, and grid column in respective report design)
+- preview in viewer expected behavior:
+- report should be previewed properly actual behavior:
+- it seemed that data in grid cell, row, and column were lost when preview in viewer

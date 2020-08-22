@@ -1,0 +1,7 @@
+Bug 324546 external .js file has no effect in beforeOpen if the data set is used to generate a dynamic parameter selection
+Build Identifier: I define a function "replace_query" in an external .js file, and then include it in the report.
+I then use the function in the beforeOpen script.
+If the data set is not used to generate a dynamic parameter selection, then it works fine.
+Otherwise, when viewing the report, it will give this error: Error evaluating Javascript expression.
+Script engine error: ReferenceError: "replace_query" is not defined.
+Reproducible: Always Steps to Reproduce: 1.Define a function in an external .js file 2.Include the .js file in the report 3.Call the function in the beforeOpen script of a data set that is also used to generate a dynamic parameter selection

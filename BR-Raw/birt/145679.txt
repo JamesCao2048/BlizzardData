@@ -1,0 +1,6 @@
+Bug 145679 [Regression]Failed to preview sqlserver data set with jtds1.1
+Steps to reproduce: 1.Add jtds_1.1.jar to JAR Files, test connection, it's ok 2.New a data set, preview result Expected result: Data can be retrieved Actual result: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.1.0.N20060607-0632 Error Code:odaconsumer.CannotGetParameterMetaData Error Message:Cannot get ODA driver parameter metadata.
+Cannot retrieve the parameter metadata.
+The PreparedStatement.getParameterMetaData method is not implemented.
+Note: If change jtds_1.1 to jtds_0.9, it works.

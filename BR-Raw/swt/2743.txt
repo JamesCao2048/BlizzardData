@@ -1,0 +1,8 @@
+List control bug [cheese when resizing]
+Two list controls on a sashform and I want to show the selected item
+even after the list control is resized.
+I've added a resize listener to both
+list control and called showSelection() method.
+In some situation the list
+items are doubled, see attached image.
+I posted a bug report since I didn't got any answer on the newsgroup.

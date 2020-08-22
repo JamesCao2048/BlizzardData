@@ -1,0 +1,17 @@
+BlockSelection: setBlockSelectionRectangle should not clamp selection width to renderer width if client area allows a larger selection
+HEAD of 20090420:
+The fix for  bug 253056  works fine; I found the following problem, however:
+setBlockSelectionRectangle clamps the selection location to the renderer width; this is normally wanted, but not if the client area allows for a larger selection.
+Consider the following fragment in a text editor, with the brackets marking the selection.
+11111111
+22222[222  ]
+33333[333  ]
+44444444
+This selection cannot be set via API, since the renderer width is only 8 characters wide.
+However, the same selection can be set using keyboard interaction.
+The same works if the file has the following contents, since the last line extends the renderer width:
+11111111
+22222[222  ]
+33333[333  ]
+44444444
+55555555555555555555555555555555555

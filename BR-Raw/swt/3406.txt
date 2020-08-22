@@ -1,0 +1,12 @@
+Constructor for Font has wrong-named argument; doesn't appear to be used
+In the source for 3.0M7 SWT, I came across the following Font constructor:
+public Font(Device display, String name, int height, int style) {
+if (device == null) device = Device.getDevice();
+if (device == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+init(device, name, height, style);
+}
+Firstly, the arg name 'display' corresponds to a 'Device' object (which confused me when I called it,
+since the pop-up control listed the argument as 'display'), and secondly, it doesn't appear to be used in
+the code snippet at all.
+I'm guessing that it should be 'device', as otherwise, it doesn't matter what arg you pass it, it's always
+going to find the instance field 'device' as null, then obtain the default one.

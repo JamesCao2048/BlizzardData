@@ -1,0 +1,26 @@
+[64] Crash when pressing ENTER after having entered value in "Search" form
+SUSE Linux Professional 9.3
+1 GB RAM
+I am starting eclipse with a minimal bash script:
+#!/bin/sh
+EXE=$HOME/local/eclipse/eclipse
+JAVA=/home/kjk/local/jdk-1_5_0_05-linux-amd64/bin/java
+$EXE
+-vm $JAVA
+-showLocation $*
+I am not using an external help browser.
+Recipe:
+- Select "Help Contents" from the "Help" menu
+- Write any word in the "Search" field
+- Press ENTER
+In 100% of the cases, Eclipse crashes with this message:
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x00002aaaaae4ac75, pid=17632, tid=46912501717760
+#
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (1.5.0_05-b05 mixed mode)
+# Problematic frame:
+# C  [libc.so.6+0x6fc75]  memmove+0x85
+(I will soon try to attach the .log file)
+The reason for my not choosing severity "critical" is that the workaround is
+simple: Click the "GO" button instead of pressing ENTER.

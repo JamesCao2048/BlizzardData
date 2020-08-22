@@ -1,0 +1,8 @@
+Bug 192101 Add measure to xtab should add measure label automatically[1102]
+Description: Add measure to xtab should add measure label automatically even no content in column area.
+Build number:2.2.0.v20070612 Steps to reproduce: 1.New a cube.
+2.Insert a xtab, drag group to row area and then drag measure to detail area.
+Expected result: Label for measure is inserted automatically.
+Actual result: Label for measure isn't inserted automatically.
+But if you drag a group to column area, the label will be inserted at this time.
+Error log:N/A

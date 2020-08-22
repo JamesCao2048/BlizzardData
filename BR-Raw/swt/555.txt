@@ -1,0 +1,10 @@
+[Accessibility] get_hyperlink returns incorrect address for accessible
+Created  attachment 176912   [details]
+Test with Snippet217a
+Eclipse 3.6 on Windows.
+Run the attached test snippet which shows a StyledText with 2 embedded controls.
+Run AccProbe, and hover over the text in the StyledText.
+Expand IAccessibleHypertext, and double-click on "hyperlink" to bring up the "getHyperlink" dialog.
+Enter 0 or 1 for the hyperlink index, and click "Invoke Method".
+NULL is returned.
+The expected return value is an accessible.

@@ -1,0 +1,50 @@
+Internal compiler error (ClassParser.java:242)
+Testcase: A.aj containing:
+final abstract aspect A {}
+This causes the compiler to abort with an internal compiler error:
+C:Documents and SettingsmchapmanA.aj [error] Internal compiler error
+org.aspectj.apache.bcel.classfile.ClassFormatException: Class can't be both
+final and abstract
+at org.aspectj.apache.bcel.classfile.ClassParser.readClassInfo(ClassPars
+er.java:242)
+at org.aspectj.apache.bcel.classfile.ClassParser.parse(ClassParser.java:
+165)
+at org.aspectj.weaver.bcel.Utility.makeJavaClass(Utility.java:489)
+at org.aspectj.weaver.bcel.UnwovenClassFile.getJavaClass(UnwovenClassFil
+e.java:63)
+at org.aspectj.weaver.bcel.UnwovenClassFile.getClassName(UnwovenClassFil
+e.java:147)
+at org.aspectj.ajdt.internal.core.builder.AjState.noteResult(AjState.jav
+a:497)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager$3.acceptResult(
+AjBuildManager.java:748)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterProcessing(
+AjCompilerAdapter.java:186)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning
+$org_aspectj_ajdt_internal_compiler_CompilerAdapter$4$6b855184(CompilerAdapter.a
+j:89)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.process(Compil
+er.java:528)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compil
+er.java:329)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilat
+ion(AjBuildManager.java:728)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuild
+Manager.java:206)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBu
+ildManager.java:140)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:324)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:238)
+at org.aspectj.tools.ajc.Main.main(Main.java:82)
+(no source information available)
+C:Documents and SettingsmchapmanA.aj:1 [error] The class A can be either abst
+ract or final, not both
+final abstract aspect A {}
+ABORT
+Exception thrown from AspectJ DEVELOPMENT
+C:Documents and Settingsmchapman>ajc -version
+AspectJ Compiler DEVELOPMENT built on Tuesday Sep 13, 2005 at 22:31:40 GMT
+The expected behaviour is naturally just to get a regular compiler errror saying
+"The aspect A can be either abstract or final, not both".

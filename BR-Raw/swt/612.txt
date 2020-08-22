@@ -1,0 +1,22 @@
+API inconsistencies between dispose() and isDisposed()
+HEAD
+The dispose() and isDisposed() methods of e.g.
+Widget and Resource have inconsistent APIs.
+- isDisposed() says:
+* When a widget/resource has been disposed, it is an error to
+* invoke any other method using the widget/resource.
+- dispose() does not state any restrictions and does not declare that it throws an exception (e.g.
+ERROR_WIDGET_DISPOSED).
+Furthermore, Widget#dispose() contains this comment:
+/*
+* Note:  It is valid to attempt to dispose a widget
+* more than once.
+If this happens, fail silently.
+*/
+If the restriction in isDisposed() really applies, then this must be moved up to the class Javadoc and dispose() must declare the exception.
+You cannot assume that a caller of dispose() reads the Javadocs of all other methods.
+However, the more sensible fix is:
+- in isDisposed(), replace "any other method" with something like:
+"any other method (except {@link #dispose()})"
+- in dispose(), you could add a statement telling that the method does nothing when the widget/resource is already disposed
+This should be done for all declarations of the the two methods in SWT.

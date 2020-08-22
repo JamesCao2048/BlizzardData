@@ -1,0 +1,6 @@
+Bug 258898 Enhance the exception if the aggregation is missing required argument
+Description: Enhance the exception if the aggregation is missing data filed expression Build number: 2.3.2.v20081215-0630 Steps to reproduce: 1, Download attached two reports.
+These two reports has similar cases say, one is SUM Aggregation missing data field another one is MOVINGAVE missing window argument 2, Preview them Expected result: Exception of aggregation missing required argument is good and clear.
+Use can find the invalid aggregation binding immediately.
+I hope the exception of aggregation missing require data field can point the invalid binding directly but not throw out a general exception say, "The expression cannot be null or empty" Actual result: Exception of aggregation missing required data field is to general.
+Error log:

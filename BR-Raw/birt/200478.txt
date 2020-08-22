@@ -1,0 +1,7 @@
+Bug 200478 Name of date/time group level issue[1101]
+Description: Name of date/time group level issue[1101] Step: 1.New a sample datasource and dataset from orders.
+2.New a data cube and binding to the dataset.
+3.Drop the column of "ORDERDATE" to group and select the year type.
+At this time, the name of group level is "year(ORDERDATE: DateTime)" 4.Edit the the group level.
+5.Change the type as month.
+Actual result: The name of group level is "year(ORDERDATE: DateTime, DateTime)" Expected result: The name of group level is "year(ORDERDATE: DateTime)"

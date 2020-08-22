@@ -1,0 +1,13 @@
+Group client Area is wrong
+Created  attachment 214870   [details]
+test case
+In eclipse, open the "Install New Software" dialog.
+Note that the group labeled "Details" has a text area that touches (draws over) the group borders.
+I attached a snippet that reproduces the problem.
+The snippet has code from org.eclipse.equinox.internal.p2.ui.dialogs.IUDetailsGroup, but also has a smaller test case.
+This bug is happening because of the change for  bug#302802 .
+Lakshmi, do you understand what was the problem in  bug#302802 ?
+I do not see anything wrong if I remove the fix:
+widget.setContentViewMargins(new NSSize());
+For me the current behaviour is wrong.
+I believe we should remove that fix.

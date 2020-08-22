@@ -1,0 +1,2 @@
+Bug 143659 [Accessibility] Press Tab key will cause eclipse crash when focus isn't on any report item in Editor view
+Press Tab key will cause eclipse crash when focus isn't on any report item in Editor view Steps to reproduce: 1.New a report 2.Click the blank area in Layout of Editor view 3.Press Tab key Expected result: Something in layout will get focus Actual result: Eclipse crashed

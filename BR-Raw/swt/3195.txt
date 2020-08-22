@@ -1,0 +1,39 @@
+[CTabFolder] Widget Disposed SWTException when closing Application with opened Tab-Chooser
+Hi,
+take this snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+CTabFolder folder = new CTabFolder(shell, SWT.CLOSE);
+for (int i = 0; i
+< 12; i++) {
+CTabItem item = new CTabItem(folder, SWT.NONE);
+item.setText("Item " + i);
+Text text = new Text(folder, SWT.BORDER | SWT.MULTI);
+text.setText("Content for Item " + i);
+item.setControl(text);
+}
+shell.setSize(400, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+Click on the button top-right to popup the small list with Tabs that are
+currently not visible.
+Leave the popup open and close the application.
+A
+SWTException is thrown.
+I am able to reproduce this with latest SWT 3106
+and with earlier 3062.
+Somehow SWT.MouseUp Event is fired when closing the application with opened
+Popup.
+The call to getDisplay() then results in the Exception, since Display
+is disposed in that situation.
+Regards,
+Ben

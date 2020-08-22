@@ -1,0 +1,29 @@
+Substitute GdkColor with GdkRGBA
+GTK+ 3 uses GdkRGBA instead of GdkColor.
+GdkColor is widely used through SWT, some classes have number of getter/setter functions that return GdkColor.
+What is the expected procedure to substitute GdkColor with GdkRGBA?
+Should GdkRGBA has its own getter/setter methods ?
+If yes what is the naming policy of this methods, should this getter/setters be flagged that they are for Gtk+ 3 only ?
+As an example of use of GdkColor here are methods from Control.java:
+GdkColor getForegroundColor () {
+return getFgColor ();
+}
+GdkColor getFgColor () {
+int /*long*/ fontHandle = fontHandle ();
+OS.gtk_widget_realize (fontHandle);
+GdkColor color = new GdkColor ();
+OS.gtk_style_get_fg (OS.gtk_widget_get_style (fontHandle), OS.GTK_STATE_NORMAL, color);
+return color;
+}
+....etc
+Implementation of GdkRGBA is needed because it is used by GtkStyleContext that replaces GtkStyle in Gtk3.Without GdkRGBA we cannot substitute this GtkStyle methods:
+gtk_style_get_bg_gc
+gtk_style_get_black_gc
+gtk_style_get_dark_gc
+gtk_style_get_fg_gc
+gtk_style_get_light_gc
+gtk_style_get_mid_gc
+gtk_style_get_text_aa_gc
+gtk_style_get_text_gc
+gtk_style_get_white_gc
+gtk_style_render_icon

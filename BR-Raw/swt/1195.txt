@@ -1,0 +1,16 @@
+Listeners added to CTabFolder#addTraverseListener(..) cannot block default traversal
+I20090203-1200
+Follow-up to  bug 199499 comment 28 .
+Listeners added to CTabFolder#addTraverseListener(..) cannot block the default traversal.
+Steps:
+- add this traverse listener to a CTabFolder:
+myCTabFolder.addTraverseListener(new TraverseListener() {
+public void keyTraversed(TraverseEvent e) {
+System.out.println(e.toString());
+e.doit = false;
+}
+});
+- with the focus in a widget inside the CTabFolder, press Ctrl+PageDown
+=> CTabFolder *first* switches pages, and only then calls my traverse listener.
+Console output is: TraverseEvent{CTabFolder {} time=262183171 data=null character='0' keyCode=16777222 stateMask=262144 doit=true detail=0}
+=> Expected: Like in native SWT widgets, the client's traverse listeners should be called first, and the CTabFolder's traverse code should only be executed when e.doit == true and e.detail == TRAVERSE_TAB_NEXT/PREVIOUS

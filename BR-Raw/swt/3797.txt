@@ -1,0 +1,27 @@
+Scrollable.WM_MOUSEWHEEL uses wrong variable for horizontal scroll
+In the source code for org.eclipse.swt.widgets.Scrollable.WM_MOUSEWHEEL the
+statement that determines whether the horizontal SWT.PAGE_UP or SWT.PAGE_DOWN
+event is called uses the vertical vPosition rather than the horizontal
+hPosition.
+if (verticalBar != null) {
+int position = verticalBar.getSelection ();
+if (position != vPosition) {
+Event event = new Event ();
+event.detail = position
+< vPosition ?
+SWT.PAGE_UP :
+SWT.PAGE_DOWN;
+verticalBar.sendEvent (SWT.Selection, event);
+}
+}
+if (horizontalBar != null) {
+int position = horizontalBar.getSelection ();
+if (position != hPosition) {
+Event event = new Event ();
+event.detail = position
+< vPosition ?
+SWT.PAGE_UP :
+SWT.PAGE_DOWN;
+horizontalBar.sendEvent (SWT.Selection, event);
+}
+}

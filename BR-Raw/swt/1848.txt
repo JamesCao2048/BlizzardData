@@ -1,0 +1,13 @@
+Table and List test failures
+The tests below are now failing on carbon as a result of the fix for  bug 184507 :
+List
+expected:<1> but was:<2>
+junit.framework.AssertionFailedError: expected:<1> but was:<2>
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_List.test_remove$I(Test_org_eclipse_swt_widgets_List.java:835)
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_List.runTest(Test_org_eclipse_swt_widgets_List.java:2340)
+<snip>
+Table
+expected:<11> but was:<10>
+junit.framework.AssertionFailedError: expected:<11> but was:<10>
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Table.test_removeII(Test_org_eclipse_swt_widgets_Table.java:1008)
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Table.runTest(Test_org_eclipse_swt_widgets_Table.java:1771)

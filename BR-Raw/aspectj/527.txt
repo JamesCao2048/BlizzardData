@@ -1,0 +1,64 @@
+Erroneous exception conversion
+The following code results in an incorrect exception NoClassDefFoundError
+being thrown (and without a stack trace). Here is the output when running
+after compiling with AspectJ from head (and AspectJ 1.1.1):
+C:develtestexcHandlinginterType>java client.Main
+Exception in thread "main" java.lang.NoClassDefFoundError
+at client.Main.main(Main.java:6)
+AspectJ 1.0.6 doesn't exhibit this problem; it produces the following output:
+C:develtestexcHandlinginterType>java client.Main
+Exception in thread "main" java.lang.ExceptionInInitializerError
+at client.Main.main(Main.java;client/ExceptionHandling.java
+[1k];library/
+LogManager.java[2k]:1004)
+Caused by: java.lang.RuntimeException: evil
+at client.ExceptionHandling.doGetLogger_library_LogManager
+(ExceptionHand
+ling.java;library/LogManager.java[1k]:1009)
+at client.ExceptionHandling.<init>
+(ExceptionHandling.java;library/LogMan
+ager.java[1k]:1006)
+at client.ExceptionHandling.<clinit>
+(ExceptionHandling.java;library/LogM
+anager.java[1k]:3)
+... 1 more
+This example is probably related to  bug #44586 .
+If you change the after throwing advice in client/ExceptionHandling.java to
+remove the execution OR initialization part, you get similar the following
+output to the AspectJ 1.0.6 case; the exception isn't swallowed.
+Here is our test code:
+package client;
+public aspect ExceptionHandling {
+after() throwing (Throwable t) : execution(* Main.*(..)) || initialization
+(Main.new(..)) {
+System.err.println("exception thrown at "+thisJoinPointStaticPart);
+t.printStackTrace(System.err);
+}
+}
+---
+package client;
+import library.Loggable;
+public aspect LogManager {
+declare parents: client..* implements Loggable;
+}
+---
+package client;
+public class Main {
+public static void main(String args[]) {
+new Main();
+}
+}
+---
+package library;
+import java.util.logging.Logger;
+public aspect LogManager {
+private Logger Loggable.logger = doGetLogger();
+public Logger Loggable.getLogger() { return logger; }
+private Logger Loggable.doGetLogger() {
+throw new RuntimeException("evil");
+//return Logger.getLogger("main");
+}
+}
+---
+package library;
+public interface Loggable {}

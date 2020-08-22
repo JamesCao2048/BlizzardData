@@ -1,0 +1,41 @@
+SWT.KeyDown event.keyCode reports wrong key number for Marathi & Bengali
+SWT.KeyDown event.keyCode reports wrong key number for Marathi & Bengali
+(1) Run the following simple SWT program.
+(2) Press 1 key on the keyboard and see that the reported key code is 49.
+(3) Change the keyboard language to either Marathi or Bengali.
+(4) Repeat step (2) and notice that for Marathi the key code is 2407 and for Bengali it is 2535.
+(5) Doesn't reproduce with other Hindo languages like Hindi, Malayalam and Punjabi.
+=============================================================
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.*;
+public class TextControlBug
+{
+private static Shell shell = null;
+public static void main(String[] args)
+{
+Display display = new Display();
+createShell();
+shell.open();
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+private static void createShell()
+{
+shell = new Shell();
+Text textCtrl = new Text(shell, SWT.SINGLE);
+textCtrl.setBounds(50, 10, 300, 80);
+
+shell.pack();
+textCtrl.addListener(SWT.KeyDown, new Listener()
+{
+public void handleEvent(Event event)
+{
+System.out.println("eventKeyCode: " + event.keyCode);
+}
+});
+}
+}

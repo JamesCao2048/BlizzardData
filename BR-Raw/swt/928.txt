@@ -1,0 +1,5 @@
+Add ICON_* hinting support for GTK+ SWT.SEARCH Text controls
+It seems they added icon embedding support in GTK+ 2.16 for GtkEntry.
+http://library.gnome.org/misc/release-notes/2.26/#rndevelopers.gtk
+You can use stock icons for the icons so it should look fine (native).
+http://library.gnome.org/devel/gtk/stable/GtkEntry.html#gtk-entry-set-icon-from-stock

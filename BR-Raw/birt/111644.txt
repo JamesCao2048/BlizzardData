@@ -1,0 +1,7 @@
+Bug 111644 'Edit Data Set' dialog takes 10 minutes or longer to render
+When editing a data set (i.e.
+changing or adding a computed column), for databases with many objects, the dialog may take 10 minutes to display.
+This effectively makes the UI impossible to work with because every change to the database query or computed columns is unreasonably expensive.
+I suggest that instead you can (1) only load database objects once per session and give users an option to refresh the display on demand or (2) don't highlight (activate) the Query node on the left hand side so that the user doesn't need to pay the price of loading the database objects every time they bring up the dialog if they just want to edit a computed column or (3) for the Query dialog, don't choose 'All' for the schemas selection
+- default to 'None' and make the user select the schema of choice.
+I am using Oracle 9.2 on a database with about 100 schemas.

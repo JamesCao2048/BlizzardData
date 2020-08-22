@@ -1,0 +1,195 @@
+WildAnnotationTypePattern.java:61 NPE after renaming method-annotation class
+Sorry I don't have a small test case.  It looks like the NPE happens when the
+annotation refered to by a (compiled?) aspect no longer exists because it was
+renamed.  The class being woven is the first one (alphabetically), and the
+method being woven does not have the annotation on it.
+Let me know if you need a test case.
+(And sorry for the late bugs - I'm just now writing the article.)
+------------------------------------------------------------------
+java.lang.NullPointerException
+at
+org.aspectj.weaver.patterns.WildAnnotationTypePattern.matches(WildAnnotationTypePattern.java:61)
+at
+org.aspectj.weaver.patterns.SignaturePattern.matchesAnnotations(SignaturePattern.java:321)
+at
+org.aspectj.weaver.patterns.SignaturePattern.matchesExactly(SignaturePattern.java:169)
+at org.aspectj.weaver.patterns.SignaturePattern.matches(SignaturePattern.java:131)
+at
+org.aspectj.weaver.patterns.WithincodePointcut.matchInternal(WithincodePointcut.java:73)
+at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:143)
+at org.aspectj.weaver.patterns.AndPointcut.matchInternal(AndPointcut.java:55)
+at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:143)
+at org.aspectj.weaver.patterns.AndPointcut.matchInternal(AndPointcut.java:55)
+at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:143)
+at org.aspectj.weaver.ShadowMunger.match(ShadowMunger.java:64)
+at org.aspectj.weaver.Advice.match(Advice.java:109)
+at org.aspectj.weaver.bcel.BcelAdvice.match(BcelAdvice.java:97)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:1749)
+at
+org.aspectj.weaver.bcel.BcelClassWeaver.matchInvokeInstruction(BcelClassWeaver.java:1736)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:1533)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:1359)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:382)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:98)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1478)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1443)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1217)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1021)
+at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompilerAdapter.java:300)
+at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(AjCompilerAdapter.java:178)
+at
+org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org_aspectj_ajdt_internal_compiler_CompilerAdapter$2$f9cc9ca0(CompilerAdapter.aj:70)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:367)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:759)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:225)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:151)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
+at
+org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
+trouble in:
+public class com.isberg.articles.aop7.bean.ABeanTest$APlus extends java.lang.Object:
+TypeMungers: [(BcelTypeMunger ResolvedTypeMunger(Method, java.lang.String
+com.isberg.articles.aop7.bean.ABeanTest$CPlus.propertyName(java.lang.String)))]
+declares: [declare parents: com.isberg.articles.aop7.bean.ABeanTest$CPlus
+extends (com.isberg.articles.aop7.bean.ABean$IBean);]
+private static Throwable ajc$initFailureCause
+public static final com.isberg.articles.aop7.bean.ABeanTest$APlus
+ajc$perSingletonInstance
+static void <clinit>():
+staticinitialization(void
+com.isberg.articles.aop7.bean.ABeanTest$APlus.<clinit>())
+| catch java.lang.Throwable -> E0
+| |             INVOKESTATIC
+com.isberg.articles.aop7.bean.ABeanTest$APlus.ajc$postClinit ()V   (line 125)
+| catch java.lang.Throwable -> E0
+|               GOTO L0
+|           E0: ASTORE_0
+|               ALOAD_0
+|               PUTSTATIC
+com.isberg.articles.aop7.bean.ABeanTest$APlus.ajc$initFailureCause
+Ljava/lang/Throwable;
+|           L0: RETURN
+staticinitialization(void
+com.isberg.articles.aop7.bean.ABeanTest$APlus.<clinit>())
+end static void <clinit>()
+void <init>():
+ALOAD_0     // com.isberg.articles.aop7.bean.ABeanTest$APlus
+this   (line 125)
+INVOKESPECIAL java.lang.Object.<init> ()V
+constructor-execution(void
+com.isberg.articles.aop7.bean.ABeanTest$APlus.<init>())
+|               RETURN
+constructor-execution(void
+com.isberg.articles.aop7.bean.ABeanTest$APlus.<init>())
+end void <init>()
+void ajc$declare_parents_1()
+org.aspectj.weaver.MethodDeclarationLineNumber: 127:3678
+:
+RETURN   (line 127)
+end void ajc$declare_parents_1()
+public static String
+ajc$interMethod$com_isberg_articles_aop7_bean_ABeanTest$APlus$com_isberg_articles_aop7_bean_ABeanTest$CPlus$propertyName(com.isberg.articles.aop7.bean.ABeanTest$CPlus,
+String)    EffectiveSignatureAttribute(java.lang.String
+com.isberg.articles.aop7.bean.ABeanTest$CPlus.propertyName(java.lang.String),
+method-execution)
+:
+method-execution(java.lang.String
+com.isberg.articles.aop7.bean.ABeanTest$CPlus.propertyName(java.lang.String))
+|               ALOAD_0     // com.isberg.articles.aop7.bean.ABeanTest$CPlus
+ajc$this_   (line 132)
+|               ALOAD_1     // java.lang.String methodName
+|               INVOKESTATIC
+com.isberg.articles.aop7.bean.ABean.ajc$interMethod$com_isberg_articles_aop7_bean_ABean$com_isberg_articles_aop7_bean_ABean$IBean$propertyName
+(Lcom/isberg/articles/aop7/bean/ABean$IBean;Ljava/lang/String;)Ljava/lang/String;
+|               ASTORE_2
+|               LDC "something"   (line 133)
+|               ALOAD_2     // java.lang.String result
+| method-call(boolean java.lang.String.equals(java.lang.Object))
+| |             INVOKEVIRTUAL java.lang.String.equals (Ljava/lang/Object;)Z
+| method-call(boolean java.lang.String.equals(java.lang.Object))
+|               IFEQ L0
+|               LDC "a"   (line 134)
+|               ASTORE_2     // java.lang.String result
+|           L0: ALOAD_2     // java.lang.String result   (line 136)
+|               ARETURN
+method-execution(java.lang.String
+com.isberg.articles.aop7.bean.ABeanTest$CPlus.propertyName(java.lang.String))
+end public static String
+ajc$interMethod$com_isberg_articles_aop7_bean_ABeanTest$APlus$com_isberg_articles_aop7_bean_ABeanTest$CPlus$propertyName(com.isberg.articles.aop7.bean.ABeanTest$CPlus,
+String)
+public static String
+ajc$interMethodDispatch1$com_isberg_articles_aop7_bean_ABeanTest$APlus$com_isberg_articles_aop7_bean_ABeanTest$CPlus$propertyName(com.isberg.articles.aop7.bean.ABeanTest$CPlus,
+String)    EffectiveSignatureAttribute(java.lang.String
+com.isberg.articles.aop7.bean.ABeanTest$CPlus.propertyName(java.lang.String),
+method-call)
+:
+ALOAD_0
+ALOAD_1
+INVOKEVIRTUAL
+com.isberg.articles.aop7.bean.ABeanTest$CPlus.propertyName
+(Ljava/lang/String;)Ljava/lang/String;
+ARETURN
+end public static String
+ajc$interMethodDispatch1$com_isberg_articles_aop7_bean_ABeanTest$APlus$com_isberg_articles_aop7_bean_ABeanTest$CPlus$propertyName(com.isberg.articles.aop7.bean.ABeanTest$CPlus,
+String)
+public static com.isberg.articles.aop7.bean.ABeanTest$APlus aspectOf()
+org.aspectj.weaver.AjAttribute$AjSynthetic@591171
+:
+GETSTATIC
+com.isberg.articles.aop7.bean.ABeanTest$APlus.ajc$perSingletonInstance
+Lcom/isberg/articles/aop7/bean/ABeanTest$APlus;
+IFNONNULL L0
+NEW org.aspectj.lang.NoAspectBoundException
+DUP
+LDC "com_isberg_articles_aop7_bean_ABeanTest$APlus"
+GETSTATIC
+com.isberg.articles.aop7.bean.ABeanTest$APlus.ajc$initFailureCause
+Ljava/lang/Throwable;
+INVOKESPECIAL org.aspectj.lang.NoAspectBoundException.<init>
+(Ljava/lang/String;Ljava/lang/Throwable;)V
+ATHROW
+L0: GETSTATIC
+com.isberg.articles.aop7.bean.ABeanTest$APlus.ajc$perSingletonInstance
+Lcom/isberg/articles/aop7/bean/ABeanTest$APlus;
+ARETURN
+end public static com.isberg.articles.aop7.bean.ABeanTest$APlus aspectOf()
+public static boolean hasAspect()
+org.aspectj.weaver.AjAttribute$AjSynthetic@16e3eb3
+:
+GETSTATIC
+com.isberg.articles.aop7.bean.ABeanTest$APlus.ajc$perSingletonInstance
+Lcom/isberg/articles/aop7/bean/ABeanTest$APlus;
+IFNULL L0
+ICONST_1
+IRETURN
+L0: ICONST_0
+IRETURN
+end public static boolean hasAspect()
+private static void ajc$postClinit()
+org.aspectj.weaver.AjAttribute$AjSynthetic@d7cf62
+:
+NEW com.isberg.articles.aop7.bean.ABeanTest$APlus
+DUP
+INVOKESPECIAL
+com.isberg.articles.aop7.bean.ABeanTest$APlus.<init> ()V
+PUTSTATIC
+com.isberg.articles.aop7.bean.ABeanTest$APlus.ajc$perSingletonInstance
+Lcom/isberg/articles/aop7/bean/ABeanTest$APlus;
+RETURN
+end private static void ajc$postClinit()
+end public class com.isberg.articles.aop7.bean.ABeanTest$APlus
+when matching pointcut ((withincode(@(Parallel) * *(..)) && call(void *(..))) &&
+percflow(com.isberg.articles.aop7.concurrent.ParallelMethodImpl on
+execution(@(Parallel) * *(..))))
+when matching shadow method-call(boolean java.lang.String.equals(java.lang.Object))
+when weaving type com.isberg.articles.aop7.bean.ABeanTest$APlus
+when weaving aspects
+when weaving
+when batch building
+BuildConfig[c:homewsmain-31.metadata.pluginsorg.eclipse.ajdt.coredevworks-fall.generated.lst]
+#Files=70

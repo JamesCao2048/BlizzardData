@@ -1,0 +1,55 @@
+IllegalArgumentException when layouting link widget
+When using the Link widget on the Java>Editor preference page, I get the
+following exception when the page is first displayed (due to a zero width
+parameter):
+java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:2823)
+at org.eclipse.swt.SWT.error(SWT.java:2762)
+at org.eclipse.swt.SWT.error(SWT.java:2733)
+at org.eclipse.swt.graphics.TextLayout.setWidth(TextLayout.java:1404)
+at org.eclipse.swt.widgets.Link.computeSize(Link.java:96)
+at org.eclipse.swt.layout.GridData.computeSize(GridData.java:474)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:459)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:186)
+at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1115)
+at org.eclipse.swt.widgets.Composite.layout(Composite.java:741)
+at org.eclipse.swt.widgets.Composite.layout(Composite.java:706)
+at
+org.eclipse.jdt.internal.ui.preferences.JavaEditorPreferencePage.createContents(JavaEditorPreferencePage.java:294)
+at
+org.eclipse.jface.preference.PreferencePage.createControl(PreferencePage.java:425)
+at
+org.eclipse.jface.preference.PreferencePage.createControl(PreferencePage.java:390)
+at
+org.eclipse.jdt.internal.ui.preferences.JavaEditorPreferencePage.createControl(JavaEditorPreferencePage.java:125)
+at
+org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.createPageControl(WorkbenchPreferenceDialog.java:419)
+at org.eclipse.jface.preference.PreferenceDialog$13.run(PreferenceDialog.java:1132)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1018)
+at org.eclipse.core.runtime.Platform.run(Platform.java:757)
+at
+org.eclipse.jface.preference.PreferenceDialog.showPage(PreferenceDialog.java:1126)
+at
+org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.showPage(WorkbenchPreferenceDialog.java:650)
+at
+org.eclipse.jface.preference.PreferenceDialog$9.selectionChanged(PreferenceDialog.java:628)
+at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:681)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1018)
+at org.eclipse.core.runtime.Platform.run(Platform.java:757)
+at
+org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:679)
+at
+org.eclipse.jface.viewers.StructuredViewer.handlePostSelect(StructuredViewer.java:950)
+at
+org.eclipse.jface.viewers.StructuredViewer$5.widgetSelected(StructuredViewer.java:970)
+at
+org.eclipse.jface.util.OpenStrategy.firePostSelectionEvent(OpenStrategy.java:231)
+at org.eclipse.jface.util.OpenStrategy.access$4(OpenStrategy.java:226)
+at org.eclipse.jface.util.OpenStrategy$3.run(OpenStrategy.java:392)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:118)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2705)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2430)
+at org.eclipse.jface.window.Window.runEve

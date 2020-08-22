@@ -1,0 +1,2 @@
+Bug 168042 [regression]Background position doesn't work in pdf generated using BIRT PDF emitter.[0300]
+[regression]Background position doesn't work in pdf generated using BIRT PDF emitter.[0300] Build number: 2.1.2.v20061214 Steps to reproduce: 1.open the attached report and preview in PDF 2.select the style and set the vertical position of background to 50% 3.preview in PDF Expected result: effects in step 1 and 3 are different Actual result: the same effects Error log: N/A

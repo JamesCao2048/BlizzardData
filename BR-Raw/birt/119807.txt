@@ -1,0 +1,7 @@
+Bug 119807 Repeat header doesn't work in birt pdf emitter.
+Description: Repeat header doesn't work in birt pdf emitter.
+Steps to reproduce: 1.New a report and insert a table containing data more than one page.
+2.Preview in pdf through birt pdf emitter.
+3.Change table repeatHeader to false and preview in pdf again.
+Expected result: Repeat header property works.
+Actual result: Table header wasn't repeated no matter repeatHeader was set to true or false.

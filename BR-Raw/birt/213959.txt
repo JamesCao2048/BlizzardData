@@ -1,0 +1,4 @@
+Bug 213959 [Regression]Blob computed column doesn't work
+Description: [Regression]Blob type computed column doesn't work Build number: 2.3.0.v20071228-1005 Steps to reproduce: 1, New a sampleDB from table PRODUCTLINE 2, New a computed column A; type is Blob; expression is row["IMAGE"] 3, Preview in dataset Expected result: The dataset can be preview ok Actual result: Error happened Error log: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.3.0.v20071228-1005 Error Code:data.engine.CompCol.FailRetrieveValueComputedColumn Error Message:Fail to compute value for computed column "AAA".
+Can not convert the value of [B@1a9efcd to Blob type.

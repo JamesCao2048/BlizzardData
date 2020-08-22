@@ -1,0 +1,3 @@
+Bug 127070 SVG small font is always antialiased
+SVG uses glyphs to render fonts, which cause small fonts to be always anti-aliased (making them slightly blurry), and "low quality SVG" (no antialiasing) text to be almost unreadable.
+As a more minor side-effect this also causes the SVG source to be not very readable and large in size.

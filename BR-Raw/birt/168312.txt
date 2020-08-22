@@ -1,0 +1,7 @@
+Bug 168312 Import runtime component should keep original resource folder[0603]
+Description: Import runtime component should keep original resource folder setted in web.xml Build number:2.2.0.v20061216 Steps to reproduce: 1.New a BIRT Web project, set resource folder.
+2.Select the project, right click and select buisiness intelligent and reporting tools->import birt runtime component.
+3.View import window.
+Expected result: Previous setted resource folder path is listed.
+Actual result: It displays resource folder path got from Preference->Report Designer->Resource.
+Error log:N/A

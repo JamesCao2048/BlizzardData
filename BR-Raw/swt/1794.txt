@@ -1,0 +1,9 @@
+DateTime fires spurious SelectionEvents
+Created  attachment 84272   [details]
+A snippet that shows the behaviour.
+Build ID: 3.346
+Steps To Reproduce:
+Execute the attached snipped.
+After 120 seconds, it will send wrong events.
+More information:
+This happens on Windows XP with SWT 3.3 final and SWT 3.4 M3.It doesn't happen on Linux.

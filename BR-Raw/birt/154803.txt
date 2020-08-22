@@ -1,0 +1,4 @@
+Bug 154803 [regression]Cannot render document to user defined path through __document parameter
+Description: Cannot render document to user defined path through __document parameter Steps to reproduce: 1.Preview a report in viewer 2.Modify url to add "__document=c:/tmp.rptdocument", this will generate report document to c disk with name "tmp.rptdocument" 3.Press enter.
+Expected result: Report displays correctly and the document is created.
+Actaul result: The document file : c:/tmp.rptdocument does not exist or contains errors.

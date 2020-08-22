@@ -1,0 +1,64 @@
+[consistency] Left Mouse Down is Not recieved on TabFolder on Linux.Works fine on Windows
+Run the example on Windows.
+Click on tab items "aaa" & "bbb" .
+See MouseDown events received correctly.
+Now run on Linux
+- see that Mouse Down events are skipped.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TabSnippet {
+static final String [] EVENT_NAMES = {
+"None",
+"KeyDown", "KeyUp",
+"MouseDown", "MouseUp", "MouseMove", "MouseEnter", "MouseExit", "MouseDoubleClick",
+"Paint", "Move", "Resize", "Dispose",
+"Selection", "DefaultSelection",
+"FocusIn", "FocusOut",
+"Expand", "Collapse",
+"Iconify", "Deiconify", "Close",
+"Show", "Hide",
+"Modify", "Verify",
+"Activate", "Deactivate",
+"Help", "DragDetect", "Arm", "Traverse", "MouseHover",
+"HardKeyDown", "HardKeyUp",
+"MenuDetect",
+"SetData",
+"MouseWheel","38","Settings", "EraseItem", "MeasureItem","PaintItem"
+};
+
+public static void main(String [] args) {
+
+Listener listener = new Listener()
+{
+public void handleEvent(Event event)
+{
+System.out.println( EVENT_NAMES[event.type] + " ["+event.type+"] " );
+}
+
+};
+final Display display = new Display ();
+final Shell shell = new Shell (display);
+shell.setLayout (new FillLayout (SWT.VERTICAL));
+Text text = new Text(shell, SWT.NONE);
+TabFolder tab = new TabFolder(shell,SWT.NONE);
+TabItem item = new TabItem(tab, 0);
+item.setText("aaa");
+TabItem item1 = new TabItem(tab, 1);
+item1.setText("bbb");
+
+
+tab.addListener(SWT.FocusIn, listener);
+tab.addListener(SWT.FocusOut, listener);
+tab.addListener(SWT.MouseDown, listener);
+tab.addListener(SWT.MouseUp, listener);
+tab.addListener(SWT.Selection, listener);
+
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}

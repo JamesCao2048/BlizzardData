@@ -1,0 +1,6 @@
+Javadocs of get/setAlpha(..) should specify range of value
+HEAD
+The Javadocs of all get/setAlpha(..) APIs (on Shell, GC, ImageData) should better specify the "alpha value":
+- allowed range
+- meaning (is 0 fully opaque and 255 fully transparent or vice versa?)
+ImageData.setAlpha(..) even throws an IAE when alpha is not in [0, 255], but this is not in the Javadoc.

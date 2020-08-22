@@ -1,0 +1,11 @@
+Scale widget freaks out if layout() is called from a selection listener.
+Build ID:  M20070212-1330
+Steps To Reproduce:
+1.Create a Scale widget and attach a selection listener which calls getParent().layout() on the Scale.
+2.When clicking on the designated paging area the Scale now transitions all the values up to the value under the mouse instead of only the page increment as it should.
+3.Removing the layout() call will restore the correct behaviour.
+More information:
+It seems that a call to layout during event processing generates a whole series of selection events, not ending until the value under the mouse has been reached.
+For some strange reason you only get a couple of events (but still too many...) if you debug.
+Probably because the focus of the window is stolen by the IDE once it hits the breakpoint.
+This problem does not occur with, for example, the Slider widget although one might expect them to exhibit similar characteristics.

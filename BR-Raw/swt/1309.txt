@@ -1,0 +1,19 @@
+[TestStyle] border missing in toString()
+Build ID: M20080911-1700
+Steps To Reproduce:
+The Method org.eclipse.swt.graphics.TextStyle.toString() doesn't include the border fields in the output.
+Please add this before "buffer.append("}");":
+if (borderStyle != SWT.NONE) {
+if (buffer.length() > startLength) buffer.append(", ");
+buffer.append("border=");
+switch(borderStyle) {
+case SWT.BORDER_SOLID: buffer.append("BORDER_SOLID"); break;
+case SWT.BORDER_DASH: buffer.append("BORDER_DASH"); break;
+case SWT.BORDER_DOT: buffer.append("BORDER_DOT"); break;
+default: buffer.append("Other("); buffer.append(borderStyle); buffer.append(")"); break;
+}
+if (borderColor != null) {
+buffer.append(", borderColor=");
+buffer.append(borderColor);
+}
+}

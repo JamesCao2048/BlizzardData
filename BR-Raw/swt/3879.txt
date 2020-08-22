@@ -1,0 +1,37 @@
+DCR: StyledText do not activate the default button
+The StyledText, if it's SWT.SINGLE, should activate the default button on a
+dialog.
+test code:
+public static void main(String[] args) {
+Display  display = new Display ();
+final Shell shell = new Shell (display);
+shell.setText("Dialog");
+shell.setLayout(new GridLayout());
+
+final StyledText st = new StyledText   (shell, SWT.SINGLE | SWT.BORDER);
+GridData data = new GridData (); data.widthHint = 300;
+st.setLayoutData(data);
+final Text text = new Text (shell, SWT.SINGLE | SWT.BORDER);
+data = new GridData ();		data.widthHint = 300;
+text.setLayoutData(data);
+
+final Button button = new Button (shell, SWT.PUSH);
+data = new GridData (); data.widthHint = 300;
+button.setLayoutData(data);
+shell.setDefaultButton(button);
+button.setText ("Default Button");
+button.addListener (SWT.Selection, new Listener() {
+public void handleEvent (Event e) {
+button.setText (st.getText());
+}
+});
+
+shell.setSize(350, 120);
+shell.open ();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep ();
+}
+}
+display.dispose ();
+}

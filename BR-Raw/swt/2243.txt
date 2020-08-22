@@ -1,0 +1,7 @@
+Need a way to expand TreeItems without causing scrolling
+For the filtered tree that is showing up in more and more places in the UI (for example, in the preferences dialog, or the show view dialog), we would like to be able to expand the tree once it is filtered so that the user can see all matches.
+On Windows XP, TreeItem.setExpanded(true) scrolls the expanded item into view, which causes problems with what we are trying to do.
+We use redraw(false)/redraw(true) and setTopItem() to hide the scrolling, but the scrollbar can still be seen dancing around.
+Ideally, we would like to be able to expand an item without causing scrolling.
+If this is not possible, could the dancing scrollbar be fixed?
+I'll attach a snippet.

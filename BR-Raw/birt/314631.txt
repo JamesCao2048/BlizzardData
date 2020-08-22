@@ -1,0 +1,4 @@
+Bug 314631 Cann't get correct default values for parameters that with non-constant default value expressions
+Steps to reproduce: 1.create a report with a scalar parameter that has non-constant default value expression such as BirtDateTime.today() 2.setup a project to get the default values of the parameter in BIRT runtime Eg.
+IReportEngine engine = createReportEngine( ); IRunnable runnable = engine.openReportDesign( REPORT_DESIGN ); IGetParamaterDefinitionTask task = engine.createGetParameterDefinitionTask( runnable ); HashMap result = task.getDefaultValues(); Expect result: The result map contains a parameter name and default value pair in which the default value is a Date instance of today.
+Actural result: The default value is null.

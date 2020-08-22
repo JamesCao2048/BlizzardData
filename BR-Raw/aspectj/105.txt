@@ -1,0 +1,13 @@
+NPE in AsmRelationshipProvider.addRelationship
+When doing a clean build of my project, seeing dozens, upwards of 100 of NPEs similar to the following:
+java.lang.NullPointerException
+at org.aspectj.weaver.model.AsmRelationshipProvider.addRelationship(AsmRelationshipProvider.java:168)
+at org.aspectj.weaver.bcel.BcelTypeMunger.munge(BcelTypeMunger.java:124)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:441)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:103)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1732)
+at org.aspectj.weaver.b ...
+FWIW, this is seen for Spring-managed auto-injection of beans with the @Configurable annotation.
+Official AJDT version is: 1.6.4.20090304172355
+Version: 3.4.2
+Build id: M20090211-17

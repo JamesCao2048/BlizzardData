@@ -1,0 +1,2 @@
+Bug 155940 HTTP 500 when preview a cascading parameter group
+Steps to reproduce: 1.New a library, add a joint data set 2.New a cascading parameter group, use the joint data set 3.New a report, extend libraray cascading parameter group 4.Preview Expected result: Data can be retrieved in cascading parameter group Actual result: HTTP 500 error

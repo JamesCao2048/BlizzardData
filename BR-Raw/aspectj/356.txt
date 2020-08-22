@@ -1,0 +1,5 @@
+Complete implemenation of runtime pointcut parsing and matching
+The weaver API for runtime pointcut parsing and matching needs extending for all
+of the new pointcuts we have added in AJ5. Recommended approach is to implement
+JavaLangReflectObjectType as a new ReferenceTypeDelegate, and a
+JavaLangReflectWorld in place of BcelWorld.

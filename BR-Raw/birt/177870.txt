@@ -1,0 +1,11 @@
+Bug 177870 Allow design-time data set cache to be controlled solely by AppContext
+This is to request that BIRT allows data set caches to be controllable solely by runtime parameters/settings, without the application having to update the report design to set data set cache preferences.
+Since BIRT DataEngine already reads request Application Context to determine if data set cache should be disabled, we will expand AppContext to allow the application to enable data set cache and to set max row count.
+The following new application context key will be introduced: org.eclipse.birt.data.cache.RowLimit The value of this app context is expected to be an integer.
+Its value can be: 0: Disable data set cache regardless of report design settings and DataEngineContext settings.
+Positive integer: Enable data set cache.
+This row limit will be used for ALL data sets, regardless of settings on individual data set designs.
+If this key is absent in the appcontext, or if its value is not a non-negative integer (including NULL), we will following current rules to determine cache settings.
+As part of this change, we will also deprecate existing app context key "org.eclipse.birt.data.engine.dataset.cache.option".
+Its declaration in DataEngine class should be marked deprecated.
+We will continue to read and handle its value, but the user is encouraged to use the new key "org.eclipse.birt.data.cache.RowLimit" (by setting its value to 0).

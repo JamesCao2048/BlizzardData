@@ -1,0 +1,8 @@
+Bug 167527 Label text does not display correctly [0302]
+Description: Label text does not display correctly.
+Build number: 2.2.0.v20061211-0630 Steps to reproduce: 1.Insert a label item.
+2.Define highlight rule for it, choose font color red.
+3.Input this.text=this.getHighlightRules()[0].color in onPrepare method of label item.
+4.Preview Expected result: The label should display "red".
+Actual result: The label display "16711680".
+Error log: N/A

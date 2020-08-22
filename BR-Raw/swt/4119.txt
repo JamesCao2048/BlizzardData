@@ -1,0 +1,29 @@
+FileDialog does not return the file selected on PocketPC
+The FileDialog.open() method does not return the path of the selected file on
+PocketPC.
+When I run the following testcase, I type "bob.txt" in the name
+field of the dialog and select some folder from the list.
+After pressing ok,
+the open() method returns a "null" value instead of "bob.txt".
+--- cut here
+---
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSwtFileDialog {
+public static void main(String[] arguments) {
+new TestSwtFileDialog().run();
+}
+public void run() {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText(getClass().getName());
+shell.setLayout(new FillLayout());
+FileDialog dialog = new FileDialog(shell, SWT.SAVE);
+dialog.setText("Save File Title");
+String result = dialog.open();
+System.out.println(result + " chosen");
+}
+}
+---- cut here
+-----

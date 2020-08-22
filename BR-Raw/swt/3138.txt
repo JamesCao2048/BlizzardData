@@ -1,0 +1,8 @@
+[portability] Slider selection event fires before MouseDown
+- run the ControlExample, Slider/Scale tab
+- turn on the MouseDown and Selection listeners
+- click in the Slider's trough (to the right of the thumb)
+
+-> on motif the Selection event fires before the MouseDown
+
+-> everywhere else the MouseDown fires first

@@ -1,0 +1,21 @@
+FileDialog open() returns wrong result
+The snippet at the bottom opens a file dialog, leaves the user to select some
+file, then prints the path of the selected file after the user presses OK.
+It
+gets its result from the return value of the FileDialog.open() invocation.
+On all platforms except hpux this returns a full path (eg.-
+"/opt/eclipse/jre/lib/rt.jar").
+But on hpux only the last portion is answered
+(eg.- "rt.jar").
+This inconsistency is quite bad because it prevents the file
+selection function on the Java
+-> Classpath Variables preference page from
+working properly.
+import org.eclipse.swt.widgets.*;
+public class FileDialogFullPath {
+public static void main(String[] args) {
+FileDialog dialog = new FileDialog(new Shell());
+String result = dialog.open();
+System.out.println("open result: " + result);
+}
+}

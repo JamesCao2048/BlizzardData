@@ -1,0 +1,208 @@
+NullPointerException when running ajc on gij
+When running ajc 1.2.1 on the GNU Interpreter for Java 4.0.1, I received this error:
+java.lang.NullPointerException
+at
+org.aspectj.apache.bcel.generic.InstructionComparator$1.equals(org.aspectj.apache.bcel.generic.Instruction,
+org.aspectj.apache.bcel.g
+eneric.Instruction) (/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at org.aspectj.apache.bcel.generic.Instruction.equals(java.lang.Object)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at java.util.AbstractMap.equals(java.lang.Object, java.lang.Object)
+(/usr/lib/libgcj.so.6.0.0)
+at java.util.HashMap.put(java.lang.Object, java.lang.Object)
+(/usr/lib/libgcj.so.6.0.0)
+at java.util.HashSet.add(java.lang.Object) (/usr/lib/libgcj.so.6.0.0)
+at
+org.aspectj.apache.bcel.generic.InstructionHandle.addTargeter(org.aspectj.apache.bcel.generic.InstructionTargeter)
+(/tmp/cache/local/
+aspectj1.2/lib/aspectjweaver.jar.so)
+at
+org.aspectj.apache.bcel.generic.BranchInstruction.notifyTarget(org.aspectj.apache.bcel.generic.InstructionHandle,
+org.aspectj.apache.
+bcel.generic.InstructionHandle,
+org.aspectj.apache.bcel.generic.InstructionTargeter)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at
+org.aspectj.apache.bcel.generic.BranchInstruction.setTarget(org.aspectj.apache.bcel.generic.InstructionHandle)
+(/tmp/cache/local/aspe
+ctj1.2/lib/aspectjweaver.jar.so)
+at org.aspectj.apache.bcel.generic.BranchInstruction.BranchInstruction(short,
+org.aspectj.apache.bcel.generic.InstructionHandle) (/tmp/c
+ache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at org.aspectj.apache.bcel.generic.Select.Select(short, int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[], org.aspectj.apache.b
+cel.generic.InstructionHandle)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at org.aspectj.apache.bcel.generic.LOOKUPSWITCH.LOOKUPSWITCH(int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[], org.aspectj.apa
+che.bcel.generic.InstructionHandle)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at org.aspectj.apache.bcel.generic.SWITCH.SWITCH(int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[], org.aspectj.apache.bcel.gen
+eric.InstructionHandle, int) (/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at org.aspectj.apache.bcel.generic.SWITCH.SWITCH(int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[], org.aspectj.apache.bcel.gen
+eric.InstructionHandle) (/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at
+org.aspectj.weaver.bcel.Utility.copyInstruction(org.aspectj.apache.bcel.generic.Instruction)
+(/tmp/cache/local/aspectj1.2/lib/aspectj
+weaver.jar.so)
+at
+org.aspectj.weaver.bcel.LazyMethodGen.packBody(org.aspectj.apache.bcel.generic.MethodGen)
+(/tmp/cache/local/aspectj1.2/lib/aspectjwea
+ver.jar.so)
+at org.aspectj.weaver.bcel.LazyMethodGen.pack()
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at org.aspectj.weaver.bcel.LazyMethodGen.getMethod()
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at
+org.aspectj.weaver.bcel.LazyClassGen.writeBack(org.aspectj.weaver.bcel.BcelWorld)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.
+so)
+at
+org.aspectj.weaver.bcel.LazyClassGen.getJavaClass(org.aspectj.weaver.bcel.BcelWorld)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.j
+ar.so)
+at
+org.aspectj.weaver.bcel.BcelWeaver.getClassFilesFor(org.aspectj.weaver.bcel.LazyClassGen)
+(/tmp/cache/local/aspectj1.2/lib/aspectjwea
+ver.jar.so)
+at
+org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(org.aspectj.weaver.bcel.UnwovenClassFile,
+org.aspectj.weaver.bcel.BcelObjectType, o
+rg.aspectj.weaver.IWeaveRequestor)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so)
+at
+org.aspectj.weaver.bcel.BcelWeaver.weave(org.aspectj.weaver.IClassFileProvider)
+(/tmp/cache/local/aspectj1.2/lib/aspectjweaver.jar.so
+)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave() (Unknown Source)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling()
+(Unknown Source)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(org.aspectj.org.eclipse.jdt.internal.compiler.env.ICompilationUnit[])
+(Unknown Source)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(java.util.List)
+(Unknown Source)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(org.aspectj.ajdt.internal.core.builder.AjBuildConfig,
+org.aspectj.bridg
+e.IMessageHandler, boolean) (Unknown Source)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(org.aspectj.ajdt.internal.core.builder.AjBuildConfig,
+org.aspectj.br
+idge.IMessageHandler) (Unknown Source)
+at
+org.aspectj.ajdt.ajc.AjdtCommand.doCommand(org.aspectj.bridge.IMessageHandler,
+boolean) (Unknown Source)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(java.lang.String[],
+org.aspectj.bridge.IMessageHandler) (Unknown Source)
+at org.aspectj.tools.ajc.Main.run(java.lang.String[],
+org.aspectj.bridge.IMessageHolder) (Unknown Source)
+at org.aspectj.tools.ajc.Main.runMain(java.lang.String[], boolean) (Unknown
+Source)
+at org.aspectj.tools.ajc.Main.main(java.lang.String[]) (Unknown Source)
+at gnu.java.lang.MainThread.call_main() (/usr/lib/libgcj.so.6.0.0)
+at gnu.java.lang.MainThread.run() (/usr/lib/libgcj.so.6.0.0)
+Unfortunately, the above stack trace contains no line number information;
+however, by running the program under the gdb debugger, I was able to get a
+backtrace with line numbers for the relevant part of the stack trace:
+(gdb) bt
+#0  0x011a0246 in
+org.aspectj.apache.bcel.generic.InstructionComparator$1.equals(org.aspectj.apache.bcel.generic.Instruction,
+org.aspectj.apache.bcel.generic.Instruction) (this=@5c71ea8, i1=@610fe70,
+i2=@610fc60) at org/aspectj/apache/bcel/generic/InstructionComparator.java:79
+#1  0x011a004e in
+org.aspectj.apache.bcel.generic.Instruction.equals(java.lang.Object)
+(this=@610fe70, that=@610fc60)
+at org/aspectj/apache/bcel/generic/Instruction.java:499
+#2  0x031b5f9b in java.util.AbstractMap.equals(java.lang.Object,
+java.lang.Object) (o1=@610fe70, o2=@610fc60)
+at ../../../libjava/java/util/AbstractMap.java:603
+#3  0x031cc0ae in java.util.HashMap.put(java.lang.Object, java.lang.Object)
+(this=@6483690, key=@610fe70, value=@2dfc0)
+at ../../../libjava/java/util/HashMap.java:349
+#4  0x031cca00 in java.util.HashSet.add(java.lang.Object) (this=null,
+o=@610fe70) at ../../../libjava/java/util/HashSet.java:151
+#5  0x011b30ad in
+org.aspectj.apache.bcel.generic.InstructionHandle.addTargeter(org.aspectj.apache.bcel.generic.InstructionTargeter)
+(
+this=@6949d20, t=@610fe70) at
+org/aspectj/apache/bcel/generic/InstructionHandle.java:208
+#6  0x011861e6 in
+org.aspectj.apache.bcel.generic.BranchInstruction.notifyTarget(org.aspectj.apache.bcel.generic.InstructionHandle,
+org.aspectj.apache.bcel.generic.InstructionHandle,
+org.aspectj.apache.bcel.generic.InstructionTargeter) (old_ih=null, new_ih=@6949d20,
+t=@610fe70) at org/aspectj/apache/bcel/generic/BranchInstruction.java:217
+#7  0x01186133 in
+org.aspectj.apache.bcel.generic.BranchInstruction.setTarget(org.aspectj.apache.bcel.generic.InstructionHandle)
+(
+this=@610fe70, target=@6949d20) at
+org/aspectj/apache/bcel/generic/BranchInstruction.java:205
+#8  0x011857ef in
+org.aspectj.apache.bcel.generic.BranchInstruction.BranchInstruction(short,
+org.aspectj.apache.bcel.generic.InstructionHandle) (this=@610fe70, opcode=171,
+target=@6949d20) at org/aspectj/apache/bcel/generic/BranchInstruction.java:86
+#9  0x011d3489 in org.aspectj.apache.bcel.generic.Select.Select(short, int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[],
+org.aspectj.apache.bcel.generic.InstructionHandle) (this=@610fe70, opcode=171,
+match=@6f63b90, targets=@6eeabe0, target=@6949d20)
+at org/aspectj/apache/bcel/generic/Select.java:106
+#10 0x011c3152 in
+org.aspectj.apache.bcel.generic.LOOKUPSWITCH.LOOKUPSWITCH(int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[],
+org.aspectj.apache.bcel.generic.InstructionHandle) (this=@610fe70,
+match=@6f63b90, targets=@6eeabe0, target=@6949d20)
+at org/aspectj/apache/bcel/generic/LOOKUPSWITCH.java:80
+#11 0x011d4f94 in org.aspectj.apache.bcel.generic.SWITCH.SWITCH(int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[],
+org.aspectj.apache.bcel.generic.InstructionHandle, int) (this=@6a20978,
+match=@5b1ccd0, targets=@6eeac08, target=@6949d20, max_gap=1)
+at org/aspectj/apache/bcel/generic/SWITCH.java:104
+#12 0x011d5002 in org.aspectj.apache.bcel.generic.SWITCH.SWITCH(int[],
+org.aspectj.apache.bcel.generic.InstructionHandle[],
+org.aspectj.apache.bcel.generic.InstructionHandle) (this=@6a20978,
+match=@5b1ccd0, targets=@6eeac08, target=@6949d20)
+at org/aspectj/apache/bcel/generic/SWITCH.java:109
+#13 0x01332eb6 in
+org.aspectj.weaver.bcel.Utility.copyInstruction(org.aspectj.apache.bcel.generic.Instruction)
+(i=@610fc60)
+at org/aspectj/weaver/bcel/Utility.java:474
+#14 0x01326f66 in
+org.aspectj.weaver.bcel.LazyMethodGen.packBody(org.aspectj.apache.bcel.generic.MethodGen)
+(this=@6d98000, gen=@6d983c0)
+at org/aspectj/weaver/bcel/LazyMethodGen.java:813
+#15 0x01326d08 in org.aspectj.weaver.bcel.LazyMethodGen.pack() (this=@6d98000)
+at org/aspectj/weaver/bcel/LazyMethodGen.java:790
+#16 0x01324c81 in org.aspectj.weaver.bcel.LazyMethodGen.getMethod()
+(this=@6d98000) at org/aspectj/weaver/bcel/LazyMethodGen.java:336
+#17 0x0131b502 in
+org.aspectj.weaver.bcel.LazyClassGen.writeBack(org.aspectj.weaver.bcel.BcelWorld)
+(this=@610ff00, world=@5642d20)
+at org/aspectj/weaver/bcel/LazyClassGen.java:418
+#18 0x0131b95e in
+org.aspectj.weaver.bcel.LazyClassGen.getJavaClass(org.aspectj.weaver.bcel.BcelWorld)
+(this=@610ff00, world=@5642d20)
+at org/aspectj/weaver/bcel/LazyClassGen.java:446
+#19 0x01311589 in
+org.aspectj.weaver.bcel.BcelWeaver.getClassFilesFor(org.aspectj.weaver.bcel.LazyClassGen)
+(this=@a33c0, clazz=@610ff00)
+<snip>
+It might be difficult for me to provide a reproducable test case (it might
+depend on the gij version, but I can try if wanted). However, happily, having
+examined the bytecode of the BCEL classes from the first few lines of the stack
+trace, I think I can explain why this exception occurs without needing to
+provide a test case.
+It's very simple. Whoever wrote the BCEL code in question, obviously never ran
+it with a data set and on a virtual machine where a hash collision in the
+HashSet would occur. Because, with this BCEL snapshot, if a hash collision does
+occur, the object being added to the HashSet is *guaranteed* to cause a
+NullPointerException in the Comparator method. This can be seen merely by
+examining the code path described by this stack trace. The field "targets" in
+the LOOKUPSWITCH object has not been initialized when notifyTarget is called, so
+if there is a hash collision in the HashSet, the InstructionComparator will be
+called - and it is guaranteed to call getTargets () and access its array length,
+which will cause a NullPointerException.
+I hope this explanation is sufficiently clear. If not, I will be happy to
+provide further details.

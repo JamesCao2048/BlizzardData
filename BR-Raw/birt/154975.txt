@@ -1,0 +1,3 @@
+Bug 154975 Column width of Table and Grid doesn't support 0% in PDF
+Column width of Table and Grid doesn't support 0% Steps to reproduce: 1.new a table or grid 3*3 2.Set the width of the three columns to 0%,70%,30% and set different colors to them 3.Preview it in PDF Expected result: Column width will be displayed the same with the percentage.
+Actual result: Each column takes up 1/3 of the width

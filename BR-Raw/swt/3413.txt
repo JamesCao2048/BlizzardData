@@ -1,0 +1,53 @@
+NPE opening quick outline/hierarchy
+i20040330
+Quick outline/hierarchy don't work in this build.
+They seem to open but close
+instantly.
+The following log entries are generated:
+!ENTRY org.eclipse.ui 4 4 Mar 30, 2004 13:55:52.22
+!MESSAGE Unhandled event loop exception
+!ENTRY org.eclipse.ui 4 0 Mar 30, 2004 13:55:52.22
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:782)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:774)
+at org.eclipse.swt.widgets.Decorations.setVisible(Decorations.java:1291)
+at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:1166)
+at
+org.eclipse.jdt.internal.ui.text.AbstractInformationControl.setVisible(AbstractInformationControl.java:853)
+at
+org.eclipse.jface.text.AbstractInformationControlManager.hideInformationControl(AbstractInformationControlManager.java:827)
+at
+org.eclipse.jface.text.information.InformationPresenter.hideInformationControl(InformationPresenter.java:448)
+at
+org.eclipse.jface.text.information.InformationPresenter$Closer.stop(InformationPresenter.java:135)
+at
+org.eclipse.jface.text.information.InformationPresenter$Closer.keyPressed(InformationPresenter.java:209)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:121)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:769)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:793)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:778)
+at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1720)
+at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1716)
+at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:3041)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2944)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3154)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1374)
+at org.eclipse.swt.internal.BidiUtil.windowProc(BidiUtil.java:647)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1450)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2262)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1558)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1532)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:257)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:90)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:277)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:241)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:117)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Nati

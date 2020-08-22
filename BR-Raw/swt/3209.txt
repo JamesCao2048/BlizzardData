@@ -1,0 +1,34 @@
+Button.computeSize gives different results on Linux-GTK and Linux-Motif
+The following code gives this result on Linux-GTK:
+Button 1: Point {69, 28}
+Button 2: Point {100, 10}
+But this result on Linux-Motif:
+Button 1: Point {78, 35}
+Button 2: Point {110, 20}
+For button 2, while we set the height hint to 100,10, on Linux-Motif the
+resulting size has added a 10-pixel border for the default-button ring trim,
+while on GTK+ the ring size is not included (under the "Nuvola" theme it is also
+10 pixels, under "Industrial" it is 6 pixels).
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class ButtonSize {
+public static void main(String[] args) {
+Display d = new Display();
+Shell t = new Shell(d);
+Shell s = new Shell(t);
+Button b = new Button(s, SWT.PUSH);
+b.setText("Button 1");
+b.setSize(b.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+System.out.println("Button 1: " + b.getSize());
+b = new Button(s, SWT.PUSH);
+b.setText("Button 2");
+b.setSize(b.computeSize(100,10));
+System.out.println("Button 2: " + b.getSize());
+s.pack();
+s.open();
+while (!s.isDisposed ()) {
+if (!d.readAndDispatch ()) d.sleep ();
+}
+d.dispose ();
+}
+}

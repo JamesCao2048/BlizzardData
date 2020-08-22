@@ -1,0 +1,72 @@
+SWT.NO_BACKGROUND not working on Linux GTK
+I have composed a code snippet (attached) that does essentially what we are
+trying to do.
+For very large images or images that take time to process and
+compute, we render them one tile (sub-image) at a time to deliver better
+rendering performance and to help with memory management.
+We actually use Java
+Advanced Imaging to provide the infrastructure for this, but we have written a
+custom SWT widget that extends Canvas with SWT.NO_BACKGROUND set as a style and
+paints image tiles as they are computed, each in a separate thread.
+The included snippet emulates this process by loading a small (30x30 pixels or
+on that order) and creating 100 threads to tile the image in a 10x10 grid on the
+Canvas.
+The Canvas also has a mouse listener that paints a simple cross-shaped
+cursor when a mouse up event is detected.
+When this happens, the following
+behaviors are noticed when the mouse is clicked repeatedly on the canvas, per
+platform:
+Windows: SWT.NO_BACKGROUND honored, no flicker.
+Linux-Motif: SWT.NO_BACKGROUND honored, no flicker.
+Linux-GTK: flicker nearly every time.
+We are running the Linux tests on a RedHat 9 machine.
+We also note that a
+related  bug 39320  was recently reported to have fixed this for Linux-GTK, but we
+ran our code under 3.1M2 and the problem yet persists.
+Here is the snippet code for ease in reproducing the behavior:
+/*
+* Created on Oct 6, 2004
+*/
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+/*
+* Created on Oct 6, 2004
+*/
+/**
+*/
+public class ImageCanvasSnippet {
+
+public static void main(String arg[]) {
+if (arg.length
+< 1) {
+System.err.println("usage: ImageCanvasSnippet
+<image-file>");
+System.exit(1);
+}
+
+final Display display = new Display();
+final Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setLayout(new FillLayout());
+final Image image = new Image(display, arg[0]);
+final Point p = new Point(0,0);
+
+ScrolledComposite scrolledComposite = new
+ScrolledComposite(shell, SWT.H_SCROLL | SWT.V_SCROLL);
+final Canvas imageCanvas = new Canvas(scrolledComposite,
+SWT.NO_BACKGROUND);
+
+imageCanvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {

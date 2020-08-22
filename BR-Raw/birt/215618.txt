@@ -1,0 +1,9 @@
+Bug 215618 One chart should only show the plot and the other should only show axis when switch a measure to chart view.
+description: Two charts are inserted when switch a measure to chart view.
+build version: 2.3.0 v20080117-0800 steps to reproduce: 1.New a datasource with sample DB and new a dataset with the table customers.
+2.New a cube using the dataset, select country as dimension, select creditlimit as measure.
+3.New a crosstab, drag dimension country to row area, drag measure credilimit ro measure area.
+4.Click on measure, select Show/Hide measure.
+In pop up dialog, select measure creditlimit show as chart and click OK.
+Expected result: Only one chart should be inserted into measure area.
+Actual result: Two charts are inserted.

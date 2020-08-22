@@ -1,0 +1,8 @@
+Bug 120291 Data source and data set extended from library in a report are invalid.
+Description: Data source and data set extended from library in a report are invalid.
+Steps to reproduce: 1.Drag a data source and data set from library explorer view.
+Noticed that their names are different from the names in library.
+2.I want to use the data source extended from library to create a new data set.
+The data source is invalid.
+3.The data set from library is also invalid.
+When editing it, NullPointerException is thrown out.

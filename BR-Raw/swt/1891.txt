@@ -1,0 +1,38 @@
+Creating a button clears mnemonics
+public static void main (String [] args) {
+Display display = new Display ();
+final Shell shell = new Shell (display);
+shell.setLayout (new RowLayout ());
+Table table = new Table (shell, SWT.NONE);
+for (int i=0; i<8; i++) {
+TableItem item = new TableItem (table, SWT.NONE);
+item.setText (i + " Item " + i + " that is really wide!");
+}
+Tree tree = new Tree (shell, SWT.NONE);
+for (int i=0; i<8; i++) {
+TreeItem item = new TreeItem (tree, SWT.NONE);
+item.setText (i + " Item " + i + " that is really wide!");
+}
+Canvas canvas = new Canvas (shell, SWT.BORDER);
+Listener listener = new Listener () {
+public void handleEvent (Event e) {
+GC gc = e.gc;
+gc.drawRectangle(10, 10, 20, 20);
+gc.drawFocus(12, 12, 17, 17);
+}
+};
+canvas.addListener (SWT.Paint, listener);
+Button button = new Button (shell, SWT.PUSH);
+button.setText ("&Create a Control");
+button.addListener (SWT.Selection, new Listener () {
+public void handleEvent (Event e) {
+new Button (shell, SWT.NONE).dispose (); //CLEARS FOCUS DRAWING
+}
+});
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

@@ -1,0 +1,2 @@
+Bug 235518 [Regression]Count Aggregation Computed Column returns 0 in dataset
+Description: [Regression]Count Aggregation Computed Column returns 0 in dataset Build number: 2.3.0.v20080604-0630 Steps to reproduce: 1, New a dataset from CUSTOMERS 2, New a COUNT computed column and do not specify the data field 3, Preview in dataset Expected result: The count should be 122 Actual result: The count is 0 Error log:

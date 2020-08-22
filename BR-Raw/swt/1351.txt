@@ -1,0 +1,2 @@
+replace initWithFrame(new NSRect()) with init()
+Instead of passing in an empty rect we should just call init() and create less garbage.

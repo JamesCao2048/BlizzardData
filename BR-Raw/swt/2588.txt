@@ -1,0 +1,48 @@
+Problems with accents using SWT_AWT
+We have a big application wich uses Swing and SWT.
+In our app we have a big trouble with accents in Swing TextFields.
+When we try to punctuate a bowel, two accents appear in the TextField before the bowel is pressed.
+In this testcase, you can see our problem :
+import java.awt.BorderLayout;
+import java.awt.Panel;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.awt.SWT_AWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class SwingAWTClass {
+public static void main(String[] args) {
+final Display display = new Display( );
+final Shell shell = new Shell(display);
+shell.setText("Using Swing and AWT");
+shell.setLayout(new FillLayout());
+
+Composite c1 = new Composite(shell, SWT.NONE);
+
+Composite composite = new Composite(c1, SWT.EMBEDDED);
+
+java.awt.Frame frame = SWT_AWT.new_Frame(composite);
+Panel panel = new Panel( );
+panel.setLayout(new BorderLayout());
+frame.add(panel);
+final javax.swing.JTextField text = new javax.swing.JTextField(20);
+panel.add(text);
+shell.setSize(350, 280);
+shell.open( );
+
+c1.setBounds(0, 0, 100, 100);
+composite.setBounds(0, 0, 100, 100);
+
+text.requestFocus();
+
+while(!shell.isDisposed( )) {
+if (!display.readAndDispatch( )) display.sleep( );
+}
+display.dispose( );
+}
+
+}
+Eclipse 3.0.2 Build id: 200503110845
+JDK 1.4.2 IBM
+Windows XP and Windows 2000

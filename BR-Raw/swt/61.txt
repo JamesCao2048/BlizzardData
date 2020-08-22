@@ -1,0 +1,9 @@
+[Browser] WebKitGTK 2.0 spews error message on every keystroke
+- 4.3RC2 test build
+As of the WebKitGTK 2.0 release every keystroke results in the following being written to stderr:
+** (SWT:3326): CRITICAL **: gboolean webkit_dom_mouse_event_get_alt_key(WebKitDOMMouseEvent*): assertion `WEBKIT_DOM_IS_MOUSE_EVENT(self)' failed
+** (SWT:3326): CRITICAL **: gboolean webkit_dom_mouse_event_get_ctrl_key(WebKitDOMMouseEvent*): assertion `WEBKIT_DOM_IS_MOUSE_EVENT(self)' failed
+** (SWT:3326): CRITICAL **: gboolean webkit_dom_mouse_event_get_shift_key(WebKitDOMMouseEvent*): assertion `WEBKIT_DOM_IS_MOUSE_EVENT(self)' failed
+WebKitGTK does not provide a full API for key events, so the Browser currently uses WebKitGTK's mouse events API to get at a key event's state info.
+However it looks like the event objects being passed to mouse event API are now having their types checked.
+WebKitGTK bug  https://bugs.webkit.org/show_bug.cgi?id=64888  was logged a while ago requesting that full key event api be provided.

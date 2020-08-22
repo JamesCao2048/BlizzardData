@@ -1,0 +1,92 @@
+Treeviewer doesn't de-select child when parent is closed
+This bugs appears in Windows XP.
+It doesn't seem to occur in Linux.
+In the
+following sample code, do the following:
+1) Open 'parent2' for example.
+
+2) Click on 'child2'.
+It becomes selected (also reflected in the window on the
+right
+3) Close 'parent2'.
+There is currently no selection.
+4) Re-open 'parent2'.
+There is still no selection
+Repeat for 'parent3'
+When you close 'parent3', 'child3' remains selected.
+Re-open 'parent3' and
+'child3' is still selected.
+The problem always happens with the last item in the tree.
+--------
+Sample code follows
+----------
+import java.util.Arrays;
+import java.util.List;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.window.ApplicationWindow;
+import org.eclipse.jface.window.Window;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+public class TreeBug extends ApplicationWindow {
+
+/**
+* @param parentShell
+*/
+public TreeBug(final Shell parentShell) {
+super(parentShell);
+}
+
+@Override
+protected Control createContents(final Composite parent) {
+
+final SashForm sash = new SashForm(parent, SWT.HORIZONTAL | SWT.BORDER);
+
+final TreeViewer myViewer = new TreeViewer(sash);
+myViewer.setContentProvider(new TreeContentProvider());
+
+final Composite main = new Composite(sash, 0);
+main.setLayout(new FillLayout());
+sash.setWeights(new int[]{1, 2});
+final Label label = new Label(main, SWT.CENTER);
+
+myViewer.addSelectionChangedListener(new ISelectionChangedListener(){
+public void selectionChanged(SelectionChangedEvent event) {
+IStructuredSelection selection = (IStructuredSelection)
+event.getSelection();
+
+Object newSelection = selection.getFirstElement();
+label.setText(newSelection == null ?
+"" : newSelection.toString());
+}
+});
+
+myViewer.setInput(Arrays.asList(new String[]{"parent1", "parent2",
+"parent3"}));
+
+return sash;
+}
+
+/**
+* @param args
+*/
+public static void main(String[] args) {
+Window gui = new TreeBug(null);
+gui.setBlockOnOpen(true);
+System.out.printf("Return code from open is %dn", gui.open());
+}
+
+
+public class TreeContentProvider implements ITreeContentProvider {
+
+public Object[] getChildren(Object parentElement) {
+String s = (String) parentElement;

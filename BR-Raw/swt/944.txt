@@ -1,0 +1,17 @@
+[Mozilla] DOM is unavailable in completed event listener after setText()
+Build ID: 3.5M7
+Steps to Reproduce:
+1.Initialize org.mozilla.xpcom.Mozilla with XULRunner-1.8.3.1
+2.Create an instance of
+org.eclipse.swt.browser.Browser(parent, SWT.MOZILLA)
+4.Call setText("html code with a link to a CSS file and an element with id='div-id'") on the instance
+5.Add a ProgressListener to the browser
+6.In the method completed(ProgressEvent) of the ProgressListener try to get the element by id="div-id":
+browser.getWebBrowser().getContentDOMWindow()
+.getDocument().getElementById("div-id")
+ACTUAL RESULT: null is returned
+EXPECTED RESULT: non-null nsIDOMElement is returned
+More information:
+It is reproducible for me on Eclipse 3.5M7 and 3.5RC2, but not reproducible on Eclipse 3.5M6.
+Workaround Exists: instead of calling browser.setText, create a temporary file with needed html code and call browser.setUrl("file:///url_to_the_file")
+Example project is attached.

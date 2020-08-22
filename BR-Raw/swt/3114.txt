@@ -1,0 +1,34 @@
+APPSTARTING cursor has colours reversed
+On Linux, the CURSOR_APPSTARTING cursor is being correctly themed when using a
+cursor theme that supports it, but on systems without it, the cursor is showing
+up "reversed", that is, the body of the arrow is white instead of black.
+Changing the mask itself would break cursor theming.
+The correct fix is to use
+the "reverse" flag when creating the cursor.
+The following patch fixes this:
+Index: Eclipse SWT/gtk/org/eclipse/swt/graphics/Cursor.java
+===================================================================
+RCS file: /home/eclipse/org.eclipse.swt/Eclipse
+SWT/gtk/org/eclipse/swt/graphics/Cursor.java,v
+retrieving revision 1.32
+diff
+-u
+-r1.32 Cursor.java
+--- Eclipse SWT/gtk/org/eclipse/swt/graphics/Cursor.java        23 Nov 2004
+20:09:07
+-0000      1.32
++++ Eclipse SWT/gtk/org/eclipse/swt/graphics/Cursor.java        13 Dec 2004
+20:49:49
+-0000
+@@
+-152,7 +152,7 @@
+SWT.error(SWT.ERROR_INVALID_ARGUMENT);
+}
+if (shape == 0 && style == SWT.CURSOR_APPSTARTING) {
+-               handle = createCursor(APPSTARTING_SRC, APPSTARTING_MASK, 32, 32,
+2, 2, false);
++               handle = createCursor(APPSTARTING_SRC, APPSTARTING_MASK, 32, 32,
+2, 2, true);
+} else {
+handle = OS.gdk_cursor_new(shape);
+}

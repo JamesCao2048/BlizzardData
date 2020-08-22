@@ -1,0 +1,3 @@
+Problem with Fullscreen in SWT.
+On MacOS the fullscreen mode (shell.setFullScreen(true)) only works on the primary monitor, on all the other monitors the window doesn't go fullscreen.
+I tested this on Windows XP too but there it didn't go fullscreen on any monitor.

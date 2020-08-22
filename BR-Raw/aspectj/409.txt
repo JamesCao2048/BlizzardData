@@ -1,0 +1,48 @@
+unresolved joinpoint in cflow causes ClassCastException on BcelWeaver:933
+I'm getting ClassCastException while compiling following code:
+---- Test.java ----
+class AClass {
+//      void method() {}
+}
+aspect AnAspect {
+pointcut annt() : cflow( execution(* *(..)) );
+before() : annt() {
+System.out.println("before annt");
+}
+}
+----
+Here's output of the compiler:
+--- out ---
+java.lang.ClassCastException: org.aspectj.weaver.ResolvedMember
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:933)
+at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompilerAdapter.java:244)
+at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(AjCompilerAdapter.java:119)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:385)
+[cut]
+------
+The problem is caused by cflow on unresolved (not existing) jointpoint.
+When you uncomment the method() in AnClass, the problem disappears.
+I found this bug when I was introducing an aspect (which has
+pointcuts based on annotations) to fresh object-oriented system
+without annotated classes. When I started to annotate the classes
+problem disappeared. Following code illustates (simplified) situation:
+--- Test2.java ---
+import java.lang.annotation.*;
+@Target(ElementType.METHOD)
+@interface Ann {}
+class AClass {
+// @Ann
+void method() {}
+}
+aspect AnAspect {
+pointcut annt() : cflow( execution(@Ann * *(..)) );
+before() : annt() {
+System.out.println("before annt");
+}
+}
+----
+I'm attaching those sources and ajcore files.
+Best regards, Michal

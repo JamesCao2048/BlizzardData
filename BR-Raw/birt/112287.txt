@@ -1,0 +1,6 @@
+Bug 112287 It's better to transfer to "new data source" dialog when creating a new data set without existing data source.
+Description: It's better to transfer to "new data source" dialog automatically when creating a new data set without existing data source.
+Steps to reproduce: 1.There is no existing data source.
+2.Create a new data set.
+3.It pops up hint message, saying that "there is no data source".
+Actual result: it's better to transfer to "new data source" dialog box now and help users create a new data source.

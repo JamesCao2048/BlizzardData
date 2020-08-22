@@ -1,0 +1,15 @@
+Bug 171369 PDF generation / embedded fonts folder resolution does not work on Non-Windows-Platforms
+I've put some ttf files containing custom truetype fonts into the embedded fonts folder (WEB-INF/platform/plugins/org.eclipse.birt.report.engine.fonts_2.1.1.v20060926-0959/fonts) of the BIRT report viewer 2.1.1 application.
+After deploying the viewer app to WebSphere on Windows, and viewing a report using these fonts, everything works fine: The generated PDF has my custom fonts embedded.
+When deployed to Solaris, it does not work: Instead of the custom font, the text is displayed as Times New Roman or something.
+Strange enough: When I explicitly add the absolute path to the WEB-INF/platform/plugins/org.eclipse.birt.report.engine.fonts_2.1.1.v20060926-0959/fonts folder into the fontsConfig.xml, it works.
+It seems that resolving the path of the embedded fonts folder does not work.
+I've tracked the bug down to FontConfigReader.getEmbededFontPath.
+It contains the following code: //truncate the first '/'; return fontPath.substring(1); On Windows, this code makes out of e.g.
+"/D:/some/where" "D:/some/where".
+This is okay.
+But on non-Windows-Platforms it changes an absolute path, e.g.
+"/export/WAS/some/where" to a relative path e.g.
+"export/WAS/some/where".
+Obviously, this cannot work.
+After changing the above-mentioned two lines with the following quick-and-dirty-fixed code, it seems to work both on Windows and Solaris: if (fontPath != null && fontPath.length() >= 3 && fontPath.charAt(2) == ':') { //truncate the first '/'; return fontPath.substring(1); } else { return fontPath; } I would highly appreciate a fix for BIRT 2.1.2.

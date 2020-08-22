@@ -1,0 +1,9 @@
+Bug 162165 Cancel saving the report XML source changes works incorrectly
+Description: Modify report in XML source editor, and then active the preview editor, choose not to saving the XML source changes or choose cancel doesn't work correctly.
+It works correctly when active layout editor after changing XML source.
+Steps to reproduce: 1.Active XML source editor of a report.
+2.Modify the XML source, but doesn't save it.
+3.Active the preview editor, a dialog pops up and shows warning message about the XML source changes.
+4.Choose "no" or "cancel" on the pop up dialog.
+Actual result: Save the XML source changes and active the preview editor and preview the report with the changes.
+Expect result: Doesn't save the XML source changes and stay in XML editor instead of active the preview editor.

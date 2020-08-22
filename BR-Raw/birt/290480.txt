@@ -1,0 +1,6 @@
+Bug 290480 [Regression] Exception is thrown out when preview a crosstab with its measure shown as chart [1302]
+Description: Exception is thrown out when preview a crosstab with its measure shown as chart.
+Build number: 2.5.2.v20090925-1126 Steps to reproduce: 1.New a crosstab binding with a cube.
+2.Show its measure as chart.
+3.Preview Expected result: No exception.
+Actual result: Exception is thrown out.

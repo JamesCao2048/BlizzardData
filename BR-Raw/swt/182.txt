@@ -1,0 +1,26 @@
+Extremely wide combo box causes X11 crash
+Created  attachment 220025   [details]
+screenshot of broken "Main" tab
+Eclipse SDK 4.2 updated to 4.3.0.I20120810-1300
+Using "Classic" theme on Kubuntu.
+One particular tab in PDE's run configuration dialog ("Main") is badly broken since recently (perhaps after updating to M1):
+- the content pane is extremely wide, a horizontal scroll bar with a tiny handle appears.
+- I'm suspecting a combo box to have a finger in the pie because
+
+- it shows a part on the very left and another part on the very right,
+in-between the combo-box is not drawn at all.
+
+- when I click that combo box the application reprocuceably crashes with:
+The program 'Eclipse' received an X Window System error.
+This probably reflects a bug in the program.
+The error was 'BadAlloc (insufficient resources for operation)'.
+(Details: serial 84294 error_code 11 request_code 53 minor_code 0)
+(Note to programmers: normally, X errors are reported asynchronously;
+that is, you will receive the error a while after causing it.
+To debug your program, run it with the
+--sync command line
+option to change this behavior.
+You can then get a meaningful
+backtrace from your debugger if you break on the gdk_x_error() function.)
+Switching to Gtk theme doesn't fix the problem.
+Following the instruction in the error message didn't succeed to stop the debugger at the error, since gdk_x_error() was not resolved by gdb.

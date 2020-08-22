@@ -1,0 +1,5 @@
+Bug 153412 Change parameter type will cause preview fail
+Description: Change parameter type will cause preview fail Steps to reproduce: 1.New a report paramter, string, text-box, default value is abc.
+2.Drag the parameter to Layout and preview.
+3.Change the parameter's type to integer, list-box, add a value 1 4.Preview Expected result: No errors.
+Actual result: The value "abc" is invalid with the type "integer".

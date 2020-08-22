@@ -1,0 +1,57 @@
+ArrayIndexOutOfBoundsException in ColorDialog
+I20040226
+1.Go to preferences, Workbench->Appearance
+2.Deselect "Use platform colors" and press the button for the view foreground color
+-> the color chooser dialog appears
+3.Hover over the color chooser area with the mouse, keep the left mouse button
+pressed.
+4.While keeping the mouse button pressed, leave the dialog with the cursor and
+move the cursor around the screen.
+-> I get tons of these (various out of bounds indices):
+!ENTRY org.eclipse.ui 4 4 Mar 01, 2004 16:01:43.99
+!MESSAGE Unhandled event loop exception
+Unhandled event loop exception
+Reason:
+!ENTRY org.eclipse.ui 4 0 Mar 01, 2004 16:01:43.100
+!MESSAGE
+-1
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException:
+-1
+at org.eclipse.swt.widgets.ColorDialog.mouseMove(ColorDialog.java:333)
+at org.eclipse.swt.widgets.ColorDialog.handleEvents(ColorDialog.java:217)
+at org.eclipse.swt.widgets.ColorDialog$1.handleEvent(ColorDialog.java:314)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:731)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2400)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2157)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:643)
+at org.eclipse.jface.window.Window.open(Window.java:623)
+at
+org.eclipse.ui.internal.OpenPreferencesAction.run(OpenPreferencesAction.java:72)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:550)
+at
+org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:502)
+at
+org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:435)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:731)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2400)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2157)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1566)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1542)
+at
+org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:263)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:256)
+at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:100)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)

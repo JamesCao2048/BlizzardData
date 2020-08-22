@@ -1,0 +1,3 @@
+Bug 214577 Support cube filter in chart
+For chart consuming cube, need to support filtering on categories or series, possibly on values if time allows.
+The UI is similar to the filter dialog for cross tab, but there should be no measure or dimension concepts in chart's dialog.

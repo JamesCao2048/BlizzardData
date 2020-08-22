@@ -1,0 +1,5 @@
+Bug 147020 Template reversion is not correct
+Steps to reproduce: 1.New a table, add a data in table detail, convert it to a template report item 2.Bind the table with data set, double click the template report item Expected result: The template report item is reverted to data item first, "Select data binding" dialog pops up.
+Actual result: "Select data binding" dialog pops up.
+and no available column bindings listed.
+Please make sure the result of "Double click" is the same as context menu.

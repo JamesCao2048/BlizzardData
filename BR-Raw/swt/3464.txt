@@ -1,0 +1,17 @@
+Broken arrows on multi page
+In eclipse-SDK-N20040125-linux-gtk
+(I'm developing a plug-in)
+Run->Debug...
+This opens the window "Create, manage and run configurations"
+Select run-time workbench->run-time workbench.
+This shows a screen with many
+"pages":
+test,arguments,classpath,JRE,...
+If the window is too small to show all the page tabs, two arrows are shown to go
+to the other tabs.
+These arrows do not work!
+The same trick with many pages and arrows has no problems in other places: e.g.
+when editing a lot of files in the "Java Perspective".
+Sorry if I get the component wrong (again): is it debug or UI??
+If someone can point me to some guidelines for determining the failing
+component, I'll try to get the component name right next time :-)

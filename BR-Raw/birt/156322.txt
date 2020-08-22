@@ -1,0 +1,2 @@
+Bug 156322 Properties file without name should be forbidden to add to the resource folder
+Steps to reproduce: 1.New a report, switch to Property Editor->Resources 2.Click "Add", add a properties file named ".properties" Expected result: This name is invalid Actual result: ".properties" is added to the resource folder but it can't be used in the report

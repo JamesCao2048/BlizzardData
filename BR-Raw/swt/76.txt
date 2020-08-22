@@ -1,0 +1,44 @@
+[GTK3] CTabFolder rendering hangs
+Eclipse 4.3M4 run with SWT_GTK3=1
+Fedora 17, Gtk+ 3.4.4
+1.Open Problems view (empty)
+2.Click on Description header for sorting
+3.Eclipse hangs, using 100% CPU
+Stack trace:
+"main" prio=10 tid=0x00007fc8f4008800 nid=0xc79 runnable [0x00007fc8fb1e0000]
+java.lang.Thread.State: RUNNABLE
+at org.eclipse.swt.internal.gtk.OS._gdk_cairo_region_create_from_surface(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gdk_cairo_region_create_from_surface(OS.java:4965)
+at org.eclipse.swt.graphics.Region.gdk_region_polygon(Region.java:120)
+at org.eclipse.swt.graphics.Region.add(Region.java:164)
+at org.eclipse.swt.custom.CTabFolderRenderer.drawBackground(CTabFolderRenderer.java:595)
+at org.eclipse.swt.custom.CTabFolderRenderer.drawSelected(CTabFolderRenderer.java:1343)
+at org.eclipse.swt.custom.CTabFolderRenderer.draw(CTabFolderRenderer.java:547)
+at org.eclipse.swt.custom.CTabFolder.onPaint(CTabFolder.java:1960)
+at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:284)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1392)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1416)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1401)
+at org.eclipse.swt.widgets.Control.gtk_draw(Control.java:3087)
+at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2084)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:5334)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4532)
+at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8549)
+at org.eclipse.swt.widgets.Display.eventProc(Display.java:1241)
+at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2281)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3324)
+at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)
+at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:507)
+at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:275)
+at org.eclipse.ui.internal.progress.ProgressManager$3.run(ProgressManager.java:960)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+at org.eclipse.ui.internal.progress.ProgressManager.busyCursorWhile(ProgressManager.java:995)
+at org.eclipse.ui.internal.progress.ProgressManager.busyCursorWhile(ProgressManager.java:970)
+at org.eclipse.ui.internal.progress.WorkbenchSiteProgressService.busyCursorWhile(WorkbenchSiteProgressService.java:186)
+at org.eclipse.ui.internal.views.markers.CachedMarkerBuilder.refreshContents(CachedMarkerBuilder.java:259)
+at org.eclipse.ui.internal.views.markers.ExtendedMarkersView.setPrimarySortField(ExtendedMarkersView.java:1403)
+at org.eclipse

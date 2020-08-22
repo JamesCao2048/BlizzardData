@@ -1,0 +1,2 @@
+Bug 122203 No refresh when creating a template report item in masterpage header/footer
+Description: No refresh when creating a template report item in masterpage header/footer Steps to reproduce: 1.Switch to masterpage, put a text in the masterpage header 2.Convert the elements in masterpage header/footer to template report item Expected result: Both the elements in masterpage header/footer are converted to template report item Actual result: Both the elements in masterpage header/footer are still report items till reopen the report

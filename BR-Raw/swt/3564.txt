@@ -1,0 +1,15 @@
+Text field throws StackOverflowError when full
+Text text = new Text(parent, SWT.MULTI | SWT.WRAP);
+text.addKeyListener(new KeyAdapter() {
+public void keyPressed(KeyEvent e) {
+if (e.keyCode == SWT.CR)
+text.append("nOK");
+}
+});
+After entering a few lines, we reach the bottom of the text field, and get the
+following message:
+Unhandled exception caught in event loop.
+Reason:
+java.lang.StackOverflowError
+If SWT.V_SCROLL is specified in the Text constructor, this problem does not
+occur.

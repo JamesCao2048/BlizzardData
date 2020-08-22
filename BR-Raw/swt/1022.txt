@@ -1,0 +1,10 @@
+[64] [DND] Snippet282 crashes
+Created  attachment 133797   [details]
+OpenJDK crash log
+The SWT example snippet Snippet282 crashes on my machine.
+I open a png image file and "copy" it.
+When I try to paste into an external application the snippet process crashes.
+I'm on Ubuntu 8.04 64-bit.
+I'll attach the crash logs from OpenJDK and Sun Java 6 VM.
+They contain all the library versions.
+I have tried to paste into GIMP, Inkscape and OpenOffice.

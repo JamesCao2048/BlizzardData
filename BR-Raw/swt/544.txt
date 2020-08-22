@@ -1,0 +1,5 @@
+[Accessibility] StyledText selection incorrect after caret moved event
+Eclipse 3.6.1 RC2.
+One of the JAWS developers sent me an email saying IAccessibleText::selection in StyledText was incorrect after he received a "caret moved" event.
+It turns out that this is because JAWS runs in-process, and StyledText does indeed send "caret moved" before finalizing the selection.
+When testing with AccProbe running out-of-process, this discrepancy went unnoticed, because the selection is finalized before an out-of-process client can ask for it.

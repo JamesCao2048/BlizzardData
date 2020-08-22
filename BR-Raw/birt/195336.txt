@@ -1,0 +1,3 @@
+Bug 195336 [2.1.3]Insert the list group above and the display name has no changed[0004]
+Description: Insert the list group above and the display name has no changed[0004] Step: 1.New a list 2.Insert a group on above 3.Insert another group on above again.
+Actual result: The display name of two group header and footer are the same as GH1 and GF1 Exception result: The display name of second group header and footer is GH2 and GF2

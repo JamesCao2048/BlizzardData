@@ -1,0 +1,18 @@
+Browser class shipped with AIX-Motif checks for Linux ?!?
+I've recently downloaded the AIX-Motif version of the eclipse and tried to run
+my plugin only to see it fail with "no more handles" error.
+Checking the error I've discovered that the Browser class c'tor does:
+public Browser(Composite parent, int style) {
+super(parent,style | SWT.EMBEDDED);
+
+if (!IsLinux) {
+dispose();
+SWT.error(SWT.ERROR_NO_HANDLES);
+}
+....
+Being on AIX this code will always fail.
+If a Browser class exists for AIX the file should be replaced in the packages
+available for download.
+If not, at least change the message to "not supported" at least.
+"no more
+handles" was an extremly puzzling error ...

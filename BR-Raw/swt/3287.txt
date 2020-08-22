@@ -1,0 +1,6 @@
+[browser] browser crashes on jdk 1.5 beta applets
+The SWT Browser (using the sample plugin) seems to crash with
+EXCEPTION_ACCESS_VIOLATION using every Applet demo listed here:
+http://java.sun.com/products/plugin/1.5.0/demos/plugin/applets.html
+Namely, the Clock example, Simple Spreadsheet, Simple Bar Chart, and
+GraphLayout.

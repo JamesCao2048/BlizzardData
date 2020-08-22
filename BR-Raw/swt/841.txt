@@ -1,0 +1,9 @@
+Link.setText doesn't reset the anchor
+(1) call link.setText("<a>some text</a>");
+The link is shown in blue color with the underline
+(2) now  call link.setText("some text");
+The link is still shown the same way although it doesn't have the anchor.
+It works fine if you reverse the order of the calls
+- the link is not displayed first and then displayed after the second call.
+Lakshmi found that it works fine in Windows & Carbon.
+So its a Cocoa only bug.

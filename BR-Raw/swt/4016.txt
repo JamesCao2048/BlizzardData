@@ -1,0 +1,14 @@
+StyledText - caret does not move when widget shell is not open
+build R2.0
+The caret does not move horizontally when the widget has not been made visible
+yet (i.e., its shell has not been opened) and API is called that should move
+the caret.
+To reproduce add the line
+text.invokeAction(ST.COLUMN_NEXT);
+to the SwtStyledTextUseCase.createWorkRegion
+Observe that the caret is still at offset 0 when the user case is started.
+When
+cursor next is pressed the caret is at offset 2.
+The problem is that StyledText.showLocation returns scroll == true when
+horizontal scroll was called even if the horizontal scroll does not actually
+occur because the passed scroll distance is 0.

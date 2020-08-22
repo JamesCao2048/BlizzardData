@@ -1,0 +1,5 @@
+Shell.getBounds() wrong when shell is maximized.
+When you maximize a shell, then call get bounds, the shell returns it's premaximized size and x y coordinates which are less than 0.
+before maximizing: Rectangle {161, 161, 300, 300}
+after maximizing: Rectangle {-7,
+-7, 300, 300}

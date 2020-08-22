@@ -1,0 +1,11 @@
+[DND] Mac: Refresh required after dragging file to desktop
+Build ID: I20090520-2000
+Steps To Reproduce:
+1.In the package explorer view, create a project, create a file inside a project.
+2.Let the file be open in the editor
+3.Drag a file from a project to the desktop.
+Even after the drop, the file is still visible in the package explorer & is open in the editor.
+The user had to refresh the file or project.
+Refresh happens automatically on windows.
+More information:
+Happens on both Carbon and Cocoa

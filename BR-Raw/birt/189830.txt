@@ -1,0 +1,2 @@
+Bug 189830 The filter of cube take no effect on the attribute of level[1101]
+Description: The filter of cube take no effect on the attribute of level[1101] Build number: 2.2.0.v20070530-0630 Steps to reproduce: 1, Set the filter on cube such as: dataSetRow["CUSTOMERNUMBER"] between 103 and 200 2, Set the CUSTOMERNUMBER as a level's attribute 3, Set the attribute binding on crosstab 4, Preview Expected result: The attribute can be also filtered Actual result: The filter take no effect Error log:

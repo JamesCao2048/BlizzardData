@@ -1,0 +1,5 @@
+Bug 101372 Limit the data set to a particular schema for JDBC connection
+When I define a data set on Oracle JDBC data source, I get an error popup that "only 500 items can be viewed in the available list.
+There are more than 500 items in the data source.
+Please specify a filter to search for specific items." The data set Available Items list shows multiple schemas and their associated tables.
+This problem could be avoided if there was a way to limit the data set to a particular schema or set of schemas.

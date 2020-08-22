@@ -1,0 +1,9 @@
+Bug 128586 Change parameter in drill through link doesn't work in pdf.
+Description: Change parameter in drill through link doesn't work in pdf.
+Steps to reproduce: 1.New a report source and a report target.
+2.Insert a report parameter p1 in target.rptdesign, drag it to Layout.
+3.Insert a label in source.rptdesign, define a drill through link to target.rptdesign and set p1 to "first".
+4.Preview source.rptdesign in pdf and click the link.
+5.Revise drill through link to set p1 to "second", then preview in pdf, click the link.
+Expected result: Target show "second" as value.
+Actual result: Target still showed "first"

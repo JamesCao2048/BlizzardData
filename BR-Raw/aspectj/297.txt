@@ -1,0 +1,17 @@
+Not Allowing Access to Private ITD inside Nested Type
+AspectJ is failing to allow access to a private ITD field from a type nested inside the aspect, which is inconsistent with Java's access rules.
+Here is the source. See also the follow up patch to tests that integrates it into the ajc150 test suite.
+public aspect prUnknown {
+private static interface Marker {}
+private class Foo implements Marker {
+public Foo() {
+bar = null; // allowed
+listener = null; // should also be allowed
+this.listener = null; // so should this
+Marker.this.listener = null; // and this
+((Marker)this).listener = null; // and this
+}
+}
+private Object Marker.listener;
+private Object bar;
+}

@@ -1,0 +1,43 @@
+Cocoa: exception gets logged when opening views while a detached view exists
+I am seeing a lot of logged exceptions, and it seems to be caused by the fact that I have a detached (torn off) view.
+I am out of time to boil this down to reproducible steps, but it should be reproducible as follows:
+1.Reset Java perspective.
+2.Tear off Package Explorer.
+3.Open views and editors in various configurations.
+4.Check the error log view regularly.
+Here is an example stack trace:
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.debug.ui.BreakpointView while still in the middle of activating part org.eclipse.team.ui.GenericHistoryView
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3481)
+at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3071)
+at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Display.sendEvent(Display.java:3539)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1246)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1269)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1250)
+at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1228)
+at org.eclipse.swt.widgets.Control.sendFocusEvent(Control.java:2887)
+at org.eclipse.swt.widgets.Display.checkFocus(Display.java:575)
+at org.eclipse.swt.widgets.Shell.becomeKeyWindow(Shell.java:467)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4533)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSWindow.makeKeyAndOrderFront(NSWindow.java:175)
+at org.eclipse.swt.widgets.Shell.makeKeyAndOrderFront(Shell.java:1017)
+at org.eclipse.swt.widgets.Shell.setActive(Shell.java:1193)
+at org.eclipse.swt.widgets.Shell.bringToTop(Shell.java:476)
+at org.eclipse.swt.widgets.Control.forceFocus(Control.java:1249)
+at org.eclipse.swt.widgets.Control.setFocus(Control.java:3232)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:853)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:851)
+at org.eclipse.team.internal.ui.history.LocalHistoryPage.setFocus(LocalHistoryPage.java:531)
+at org.eclipse.team.internal.ui.history.GenericHistoryView.setFocus(GenericHistoryView.java:612)
+at org.eclipse.ui.internal.PartPane.setFocus(PartPane.java:332)
+at org.eclipse.ui.internal.WorkbenchPage$3.run(WorkbenchPage.java:626)
+at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+at org.eclipse.ui.internal.WorkbenchPage.activatePart(WorkbenchPage.java:621)
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3527)
+at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:614)
+at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:1092)
+at org.eclipse.ui.internal.WorkbenchPage.busyShowView(Wo

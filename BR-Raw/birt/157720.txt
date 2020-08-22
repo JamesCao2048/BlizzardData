@@ -1,0 +1,5 @@
+Bug 157720 Chart template instruction isn't in the middle place in Firefox
+Description: Chart template instruction isn't in the middle place in Firefox Steps to reproduce: 1.New a template file.
+2.Insert a chart, input add chart as instruction text.
+3.Preview in IE and Firefox.
+Expected result: add chart is in the center and middle Actual result: In IE, add chart is in the center and middle In Firefox, add chart is in the center and top.

@@ -1,0 +1,5 @@
+Shell.getSize is wrong for non-decorated shells
+N20060411
+Shell.getSize is off by one for shells without decoration.
+May be related to / responsible for  bug 136323 .
+I will attach a snippet showing the problem.

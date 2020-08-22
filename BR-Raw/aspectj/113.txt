@@ -1,0 +1,10 @@
+[handles] Remove trailing '/' from source path handles
+In  bug 262953 , we noticed that when the .classpath has an entry like:
+<classpathentry kind="src" path="src/"/>
+Instead of something like:
+<classpathentry kind="src" path="src"/>
+AspectJ handles will include the extra '/', but JDT handles will not.  On the AJDT side, I fixed things in  Bug 262953  so that this kind of classpath entry will not be created by AJDT.  However, for consistency, it is probably a good idea for AspectJ to handle these kinds of paths the same as JDT.
+For example, the AspectJ handle for the source folder in Spacewar when the .classpath entry contains and extra '/' looks like:
+=Spacewar Example/src/
+but the JDT handle looks like:
+=Spacewar Example/src

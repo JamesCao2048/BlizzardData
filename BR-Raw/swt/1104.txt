@@ -1,0 +1,11 @@
+Compiler warnings in N20090320-2000
+1.WARNING in /src/org/eclipse/swt/examples/texteditor/TextEditor.java
+(at line 760)
+baselineUpItem.setToolTipText(getResourceString(USE_BASELINE ?
+"IncreaseBaseline" : "IncreaseFont")); //$NON-NLS-1$
+Dead code
+2.WARNING in /src/org/eclipse/swt/examples/texteditor/TextEditor.java
+(at line 774)
+baselineDownItem.setToolTipText(getResourceString(USE_BASELINE ?
+"DecreaseBaseline" : "DecreaseFont")); //$NON-NLS-1$
+Dead code

@@ -1,0 +1,4 @@
+Bug 140620 Chart scripting errors are ignored
+Write a chart with an invalid script, the execution simply ignores the script.
+This makes it difficult to debug scripting.
+The error message is also not precise and needs improvements.

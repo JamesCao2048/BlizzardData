@@ -1,0 +1,2 @@
+Bug 146755 Wrong spelling with property name "aggregateOn
+Steps to reproduce: 1.Add column bindings with aggregateOn property 2.Switch to XML Source Expected result: Property name is "aggregateOn" Actual result: Property name is "aggregrateOn

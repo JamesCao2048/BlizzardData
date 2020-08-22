@@ -1,0 +1,41 @@
+Label requires border to draw correctly
+The computeSize() method appears to be calculating the height incorrectly for a
+wrapped label on Linux-Motif.
+STEPS
+1) Run the example below and the top and bottom of the text is cut off
+2) Change the code so that the label is created with an SWT.BORDER
+3) Run it again
+- the label is sized correctly
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class LabelWithBorderWrapTest {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+
+Composite outerComp = new Composite(shell, SWT.NULL);
+outerComp.setLayout(new GridLayout());
+Composite pgComp = new Composite(outerComp, SWT.NULL);
+GridLayout layout = new GridLayout();
+pgComp.setLayout(layout);
+pgComp.setLayoutData(new GridData(GridData.FILL_BOTH));
+
+Label msgLabel = new Label(pgComp, SWT.LEFT | SWT.WRAP);
+msgLabel.setText("Here is a fairly long message that gets wrapped");
+
+GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
+msgLabel.setLayoutData(gridData);
+msgLabel.pack();
+
+pgComp.setVisible(true);
+pgComp.pack();
+outerComp.setBounds (0,0,200,400);
+
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}

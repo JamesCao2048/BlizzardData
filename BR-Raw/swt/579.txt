@@ -1,0 +1,8 @@
+[Widgets] [GTK2.18] JVM crash when call Control.moveAbove(Control control)
+Build Identifier: 20100218-1602
+Under my working environment (Ubuntu 10.04 with JDK 1.5.0_16-b02), call function Control.moveAbove(Control control) to move a control above itself will cause JVM crash.
+Reproducible: Always
+Steps to Reproduce:
+1.write a simple snippet
+2.Call Control.moveAbove(Control control) to move a control above itself.
+3.JVM crash under ubuntu 9.10(GTK+ 2.18.3) and ubuntu 10.04(GTK+ 2.20.1)

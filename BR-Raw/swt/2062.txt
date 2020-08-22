@@ -1,0 +1,17 @@
+[browser] Different behavor of opening a PDF file when setting URL and clicking the URL
+[Env]
+* RedHat EL4 WS Update 4
+* Eclipse 3.3 M4 build.
+* Firefox 1.5.0.8
+[Reproducable steps]
+1.Start Eclipse.
+Open  view "Internet Web Browser".
+2.Use "Internet Web Broser", navigate to a web page contains a PDF link.
+3.Click that PDF link, a file pick dialog pops, and then it starts downloading of you press ok.
+4.While, if you input the whole PDF URL in the URL inputbox, and press "GO", it can open the PDF inside the browser view(pre-req PDF plug-in is installed).
+Result:
+We got different behavior when clicking a PDF link, or directly visit PDF link.
+We cann't open PDF in the browser view when cliking it.
+Expected:
+1.They should be the same behavior.
+2.It should not trigger a download if the browser can handle its content if it has PDF plug-in installed.

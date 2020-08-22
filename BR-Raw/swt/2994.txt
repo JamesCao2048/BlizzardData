@@ -1,0 +1,6 @@
+Link widget does not have a proper CreateHandle method
+The link widget does not have a proper create handle mathod.
+It needs to take
+in an index.
+Currently if you try and create this widget on Photon it crashes
+the application

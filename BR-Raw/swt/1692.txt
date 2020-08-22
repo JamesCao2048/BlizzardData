@@ -1,0 +1,4 @@
+Transform.setIdentity() method is needed
+I suggest to add Transform.setIdentity() method.
+Since all Transform modifiers (multiply, rotate, scale, translate) modify existing transform matrix I think setIdentity() is a necessity.
+I suppose a typical UI developer might not be familiar with transform matrices and would be completely lost as to what arguments to pass to Transform.setElements(float,...) method.

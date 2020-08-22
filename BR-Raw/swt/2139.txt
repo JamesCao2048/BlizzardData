@@ -1,0 +1,27 @@
+custom drawn Table with SWT.Virtual items performs to much paint-events
+Build ID: M20060911-0945
+Steps To Reproduce:
+custom drawn Table with SWT.Virtual items performs to much paint-events
+NOTE: TESTED ONLY ON WIN32 PLATTFORM
+1.Create display
+- shell
+- and a Table widget with SWT.VIRTUAL style
+1.1 add 2 columns and some items to the table
+2.add listeners for customdrawing:
+table.addListener(SWT.EraseItem, ...
+implement the drawing of an alternative background color
+table.addListener(SWT.PaintItem, ...
+implement the drawing of an alternative foreground output that differs from default-drawing
+3.output the paint-events to console
+- print index and cell content
+1.bug :
+when you move with your mouse over the table-widget a paint-event is signaled but curiosly no erase-event.
+All paint events here are dispensable.
+The effect is, that the first cell of the first column becomes repainted but not erased
+-> flicker.
+Note: this happens only if the table has been created with the SWT.VIRTUAL style.
+2.bug :
+when you are changing the selection of the table the whole table content will be drawn.
+this needs a long time.
+Normally only the selected and unselected items should be repainted.
+More information:

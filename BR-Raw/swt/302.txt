@@ -1,0 +1,15 @@
+"Go to the next word (Ctrl+Right)" in text file does not work for certain cases
+Build Identifier: 20110615-0604
+In some cases word-by-word navigation in text files does not work properly: when pressing Ctrl+Right caret freezes at some point instead of moving forward.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a Text file with a single line:
+foo =
+2.Place caret at the end of word "foo":
+foo| =
+3.Now press Ctrl+Right.
+The caret is expected to move to the end of line but it remains at the same position.
+Expected:
+foo = |
+Actual:
+foo| =

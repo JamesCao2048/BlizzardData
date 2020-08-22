@@ -1,0 +1,2 @@
+Bug 180405 The grand total's result is incorrect[1102]
+Description: The grand total's result is incorrect[1102] Build number: 2.2.0.v20070402-0630 Steps to reproduce: 1, Using the attached design file 2, Preview the results and check the grand total of QUANTITY_PRODUCT Expected result: 42, 7, 13, 5 Actual result: Only calculate the latest row of QUANTITY Error log:

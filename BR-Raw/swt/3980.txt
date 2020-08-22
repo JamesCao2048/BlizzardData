@@ -1,0 +1,10 @@
+Unexpected KeyDown event after pressing non existing menu mnemonic
+build 20020426
+Run the test case below.
+-press ALT+M to activate the pull down menu
+-press a key other than s.
+A menu item with that mnemonic does not exist
+-press ESC twice to back out of the menu
+-SWT sends a KeyDown event with the pull down menu mnemonic as the character.
+I
+don't think it should.

@@ -1,0 +1,50 @@
+Display.post(Event) - problem with ALT+SHIFT+INSERT
+Build ID: I20080617-2000
+Steps To Reproduce:
+The following snippets displays nothing on the system console.
+My platform is Windows XP Prof.
+version 2002 SP2.
+public class Snippet304 {
+static Display display = null;
+public static void main(String[] args) {
+display = new Display();
+Shell shell = new Shell(display);
+shell.addKeyListener(new KeyAdapter() {
+public void keyPressed(KeyEvent e) {
+if (e.stateMask == (SWT.ALT | SWT.SHIFT) && e.keyCode == SWT.INSERT) {
+System.out.println("  e.stateMask == (SWT.ALT | SWT.SHIFT) && e.keyCode == SWT.INSERT");
+}
+}
+});
+shell.pack();
+shell.open();
+new Thread(){
+public void run(){
+postEvent(SWT.ALT, SWT.KeyDown);
+postEvent(SWT.SHIFT, SWT.KeyDown);
+postEvent(SWT.INSERT, SWT.KeyDown);
+postEvent(SWT.INSERT, SWT.KeyUp);
+postEvent(SWT.SHIFT, SWT.KeyUp);
+postEvent(SWT.ALT, SWT.KeyUp);
+}
+}.start();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+public static void postEvent(int keyCode, int type) {
+Event event = new Event();
+event.type = type;
+event.keyCode = keyCode;
+display.post(event);
+}
+}
+More information:
+The strange things are:
+a) The snippet worked at my friend's computer with same OS version (Windows XP Prof.
+version 2002 SP2).
+I tried to eliminate from my OS all running system processes that I could, but it did not help.
+b) When I press ALT+SHIFT+INSERT the text is still printed on the console.
+c) The snippet works fine with ALT+SHIFT+CR and ALT+CONTROL+INSERT combinations.

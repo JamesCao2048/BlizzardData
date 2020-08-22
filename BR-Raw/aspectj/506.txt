@@ -1,0 +1,8 @@
+Incremental compilation does not delete weaver-generated class files
+During incremental compilation, AjState records classes generated from source
+files following the initial compile phase, but before weaving. (So that these
+can be passed to the weaver on a subsequent iteration if we need to reweave the
+world). During weaving of a given class file, the weaver may generate additional
+class files (for e.g. around closures) that get written to the output. If the
+orginal source file is deleted, these additional weaver generated classes are
+not deleted from the output since AjState does not know about them.

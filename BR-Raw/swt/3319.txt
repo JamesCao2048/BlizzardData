@@ -1,0 +1,7 @@
+Editor: some tab characters are not rendered missing in field declations
+Eclipse: 20040326
+OSX 10.3.3
+For some field declarations, tabs are missing so that instead of seeing:
+private FormText summaryText; // tab between type and field
+we see:
+private FormTextsummaryText;

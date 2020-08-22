@@ -1,0 +1,5 @@
+[Forms] section header labels are cut off on Gtk
+After updating to 3.5RC1 I noticed that the section header labels in the Mylyn Task Editor where cut off (see screenshot).
+Once I reflow the form, e.g.
+by toggling one of the sections, all labels appear with the full text.
+Not sure if this is a bug in Forms or in SWT.

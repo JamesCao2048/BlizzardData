@@ -1,0 +1,45 @@
+ToolItems on a wrapped ToolBar do not "unwrap" correctly
+I am creating a window with a wrapping ToolBar.
+When I first make the window
+smaller so that some ToolItems wrap and then increase the window's width by one
+pixel after one of the ToolItems has just wrapped, that ToolItem disappears from
+the second (wrapped) line but is not shown on the first line.
+Covering and
+uncovering the window does not help, neither does maximizing and restoring.
+When
+I increase the width some more, the right edge of the ToolItem is shown.
+At this
+point covering and uncovering the window will make the ToolItem render correctly
+again.
+Here's the snippet (a modified version of Snippet58):
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.*;
+public class Snippet {
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setLayout(new GridLayout());
+ToolBar bar = new ToolBar (shell, SWT.BORDER|SWT.WRAP);
+bar.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, true));
+for (int i=0; i<4; i++) {
+ToolItem item = new ToolItem (bar, 0);
+item.setText ("Item " + i);
+}
+int start = bar.getItemCount ();
+for (int i=start; i<start+4; i++) {
+ToolItem item = new ToolItem (bar, 0);
+item.setText ("Item " + i);
+}
+bar.pack ();
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}
+This problem happens with 3.1M3 (haven't tried this with any other version) on
+Win XP Pro SP 1 with Windows Classic theme.

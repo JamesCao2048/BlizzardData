@@ -1,0 +1,18 @@
+Close override redirect while opening another loses focus forever
+I200408241200, GTK+ 2.4.4, KDE 3.2.3, Linux 2.6.7
+
+I tried binding "Open editor drop-down" to "Ctrl+X B".
+If you then press,
+"Ctrl+X" and wait, a key assist dialog opens.
+This dialog is an override
+redirect window.
+Now, if you press "B", it will close the key assist dialog
+and open the editor drop-down.
+The editor drop-down is also an override
+redirect shell.
+
+Focus disappears.
+The second override direct shell never closes.
+You can
+click around, but I haven't managed to find a way to motivate keyboard focus to
+come back again.

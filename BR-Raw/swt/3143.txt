@@ -1,0 +1,18 @@
+[JFace] ImageCache.getImage failing to return an image for ico file (regression)
+Having just installed 3.1 M3, we have discovered that this code
+Image image = null;
+String iconPath = "icons/someicon.ico";
+File f = new File(iconPath);
+ImageDescriptor desc = ImageDescriptor.createFromFile
+(InfrastructurePlugin.class, f.getPath());
+if (desc != null)
+{
+//obtain the cached image corresponding to the descriptor
+image = m_ImageCache.getImage(desc);
+}
+}
+return image;
+works in 3.1 M2 if iconPath references a gif or an ico file.
+But only works in
+3.1 M3 if the iconPath is a gif.
+No longer working for icons.

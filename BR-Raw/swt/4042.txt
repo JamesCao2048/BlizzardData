@@ -1,0 +1,5 @@
+WIN32: 'Combo.indexOf' always returns -1 for empty string
+This is a problem of both the ComboLBox and ListBox control of Windows.
+The implementation of 'List.indexOf' already shows a solution which will also
+work fine for the Combo.
+(Theorem: Every set of bugs has an accumulation point.)

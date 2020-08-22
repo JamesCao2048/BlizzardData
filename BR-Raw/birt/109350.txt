@@ -1,0 +1,4 @@
+Bug 109350 output parameter should display in data set dialog.
+details output parameter should display in edit data set dialog.
+steps to reproduce: when call the stored procedure from Oracle database, the query result has been stored in output parameter as an object.
+While in query result page, there is no data returned actual result: output parameter should display in edit data set dialog.

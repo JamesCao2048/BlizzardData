@@ -1,0 +1,6 @@
+Bug 176786 Issue when use ${env.working.folder} as context path.[0601]
+Description: Issue when use ${env.working.folder} as context path Build number:2.2.0.v20070308 Steps to reproduce: 1.Add environment variable as below: env.working.folder(D:tempworking_folder) env.document.folder (D:tempdocument_folder) env.image.folder(D:tempimage_folder) 2.Deploy WebViewerExample folder in Tomcat5.5.7 2.Set context parameter as attached with form like ${env.working.folder}.
+3.Start Server Expected result: Content inside WebViewerExample folder is untouched.
+Actual result: After server is started, refresh and check the WebViewerExample folder.
+Only webcontent and WEB-INF folders are left, other folders and two sample reports disappear.
+Error log:N/A

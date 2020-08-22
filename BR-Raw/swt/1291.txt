@@ -1,0 +1,12 @@
+[Cocoa] Image radio and check buttons don't display state
+Build id: I20081030-1917
+You may be aware of this one, but Image buttons don't display their selection state.
+They do correctly set state and appear to function properly otherwise.
+1.Show the SWT Examples Control Example view.
+2.Go to button parameters / styles.
+3.Select an image button.
+Toggle button does reflect state (perhaps this needs but it is not so pretty.
+:) Note there is a shimmer when state is selected; assume that has something to do with forcing the buttons to stay selected.
+I'm not sure what the best solution for this is or if Apple even has guidance.
+My feeling is that all of these should not use Aqua style buttons, but should be displayed unadorned when not selected and indented when selected ala the tool bar buttons.
+Ideal would be something like the ITunes view selection or perhaps Inspector Tabs in Apple Apps, but not sure how that fits with JFace API.

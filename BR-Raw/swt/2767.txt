@@ -1,0 +1,10 @@
+Junit test of TableColumn (test_setTextLjava_lang_String) use wrong comparaison operator
+In the junit test test_setTextLjava_lang_String from
+Test_org_eclipse_swt_widgets_TableColumn.java, wrong comparaison operator is
+used to compare 2 strings:
+..
+assertTrue(":a:", tableColumn.getText() == "");
+tableColumn.setText("text");
+assertTrue(":b:", tableColumn.getText() == "text");
+..
+it should be replaced by either a .equals() or an assertEquals(..)

@@ -1,0 +1,16 @@
+EXCEPTION_ACCESS_VIOLATION by Combo with READ_ONLY
+I use a Combo-Widget in my code with the attribute READ_ONLY (combo = new
+Combo(parent, SWT.READ_ONLY);)
+When I select this Combo and close it by selecting another Widget the following
+error occures:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x77d3baf7, pid=5572, tid=3964
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0-b64 mixed mode, sharing)
+# Problematic frame:
+# C  [USER32.dll+0x2baf7]
+#
+# An error report file with more information is saved as hs_err_pid5572.log
+#

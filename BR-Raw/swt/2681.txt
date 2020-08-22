@@ -1,0 +1,4 @@
+link error in GC.setClipping(x, y, w, h) on pocket pc
+Calling GC.setClipping(x, y, w, h) on pocket pc, using dll 3206, throws a link
+error.
+This seriously hobbles one of our custom widgets.

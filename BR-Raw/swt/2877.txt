@@ -1,0 +1,14 @@
+GC.setAntialias breaks stringExtent
+gc.setAntialias(SWT.ON) causes gc.stringExtent(" ").x == 0
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+GC gc = new GC (shell);
+
+// this prints 5
+System.out.println(gc.stringExtent(" ").x);
+gc.setAntialias(SWT.ON);
+
+// this prints 0
+System.out.println(gc.stringExtent(" ").x);
+}

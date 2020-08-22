@@ -1,0 +1,10 @@
+Bug 149945 Maintain reference to an external datasource profile
+i got how to use datasource profile & make it work smoothly.
+now i found another bug.
+pls take the following case: 1.create a new jdbc birt data source named "test" (username as "aaa")in DSE; 2.export this connection to a test profile; 3.create a rpt file using the exported profile from test data source; 4.check the rpt file in editor,that show the datasource username is "aaa"; 5.now back to DES,change the datasource'username to "bbb"; 6.export it again to overwrite the test profile; 7.ok, let's check the rpt file using test profile,value of the datasource's username still is "aaa"; well, when i want to change any property of datasource profile,the datasource of rpt must to be del and using new datasource profile.
+is it right?
+acceptable process is that when datasource profile changed, the rpt using it will converted to new one automaticly.
+i think there is another way to design this.when using the connection profile in desgin rpt file, store the path and filename of profile instead of details of profile.when preview the rpt file, parsing the profile and take the all properties (JDBC,URL,USERNAME,PW) in use.
+wish it is helpful.
+could u pls give me some explain on this desgin?
+thanks!

@@ -1,0 +1,6 @@
+Bug 202885 Sample Data issue of Scatter/Area chart [13]
+Description: Sample Data issue.
+Build number: 2.2.0.v20070911-0630 Steps to reproduce: 1.Drag a chart from Palette to Layout, first setlect type as Gantt, then change to Area/Scatter,check the "Chart Preview" pane.
+Expected result: Y Axis is still of linear type.
+Actual result: Y Axis is of Date/Time type.
+Error log: N/A

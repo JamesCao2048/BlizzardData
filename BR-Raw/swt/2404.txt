@@ -1,0 +1,35 @@
+[Patch] Table check boxes should have shade when selected
+SWT-win32, v3223
+[Windows Classic Theme with manifest]
+Table check boxes should have a shade when the row they are in is selected.
+See  attachment 34240   [details]  (right).
+In order for this to work, the transparency fix from  bug 125255
+needs to be ported to the table widget.
+Test case:
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class CheckTableTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Table tbl = new Table(shell, SWT.BORDER | SWT.CHECK | SWT.FULL_SELECTION);
+for (int idx = 0; idx
+< 10; idx++) {
+new TableItem(tbl, SWT.NONE).setText("Item " + idx);
+}
+
+shell.pack();
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

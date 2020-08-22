@@ -1,0 +1,9 @@
+Control-P crashes Eclipse if Print Spooler not running
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5
+Build Identifier: M20090917-0800
+If the Windows Print Spooler service is not running and the user invokes the Print command the Eclipse executable will shut down suddenly and instantly without offering to save any unsaved work.
+This crash can be triggered either by choosing Print from the File menu or just by accidentally pressing Control-P.
+Reproducible: Always
+Steps to Reproduce:
+1.Stop the Print Spooler service
+2.In Eclipse, press Control-P

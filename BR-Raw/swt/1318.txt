@@ -1,0 +1,49 @@
+SWTException thrown from CCombo
+The ingredients are:
+1.A CCombo widget.
+2.This CCombo widget added to an Eclipse View.
+3.The View has to be detached (this is important as it triggers the exception).
+The steps to reproduce are:
+1.Open the View (detached) containing the CCombo widget.
+2.Activite the CCombo by selecting an item from it.
+3.Close the (detached) View ensuring that the focus is still on the CCombo widget.
+4.Repeat steps 1-2 but this time selecting an item from the CCombo throws an exception:
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:3777)
+at org.eclipse.swt.SWT.error(SWT.java:3695)
+at org.eclipse.swt.SWT.error(SWT.java:3666)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:463)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:336)
+at org.eclipse.swt.widgets.Control.getShell(Control.java:1398)
+at org.eclipse.swt.custom.CCombo$1.handleEvent(CCombo.java:121)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1027)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1008)
+at org.eclipse.swt.widgets.Decorations.WM_ACTIVATE(Decorations.java:1625)
+at org.eclipse.swt.widgets.Shell.WM_ACTIVATE(Shell.java:2013)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3784)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:337)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1576)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1937)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4528)
+at org.eclipse.swt.internal.win32.OS.SetFocus(Native Method)
+at org.eclipse.swt.widgets.Control.forceFocus(Control.java:974)
+at org.eclipse.swt.widgets.Control.setFocus(Control.java:2811)
+at org.eclipse.swt.custom.CCombo.dropDown(CCombo.java:538)
+at org.eclipse.swt.custom.CCombo.arrowEvent(CCombo.java:317)
+at org.eclipse.swt.custom.CCombo$1.handleEvent(CCombo.java:114)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3823)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3422)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.tencompetence.ldauthor.LDAuthorApp.st

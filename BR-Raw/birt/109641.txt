@@ -1,0 +1,5 @@
+Bug 109641 Stacked bar chart fails with missing data point
+To reproduce, create a flat file .csv data source with the following data: Year, City, Population 1980, Chicago,2783726 1980, New York,7322564 1990, Los Angeles,4694820 1990, Chicago,3196016 1990, New York,8008278 2000, Los Angeles,6819951 2000, Chicago,2569121 2000, New York,8085742 This is the data used in the help example, except that the LA population for 1980 has been removed.
+Create a dataset and stacked or side-by-side bar chart using this dataset.
+The following error is generated: Error0 : Error.ExtendedItemRenderingError(1 time)detail: There are problems(s) rendering Chart extended item .$NO-RB$ Mismatch (3!=2) in dataset count found in stacked runtime seriesMismatch (3!=2) in dataset count found in stacked runtime series It is not uncommon to have one or more data points missing from a series
+- the chart should allow missing values.

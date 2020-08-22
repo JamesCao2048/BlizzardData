@@ -1,0 +1,7 @@
+Bug 271865 The error message for "a" field disappears after specify for "b" field [13]
+Description: The error message for "a" field disappears after specify for "b" field.
+Build number: 2.5.0.v20090409-0630 Steps to reproduce: 1.New a bar chart, specify a string type column for the Value Series and error message is shown in Chart Builder.
+2.Specify a column for Optional Y Series Grouping.
+Expected result: The error message is still shown.
+Actual result: The error message disappears.
+Error log: N/A

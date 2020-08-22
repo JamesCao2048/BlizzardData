@@ -1,0 +1,21 @@
+[SWT_AWT] Application freeze
+Build Identifier: SWT I20101025-1800
+I have an application relying on SWT_AWT, with a particular test case that freezes.
+It is 100% reproducible.
+This occurs with SWT I20101025-1800 and N20101021-2000, tested on 2 different Macs.
+Using a Safari or XULRunner runtime and 32 bit or 64 bit lib does not make any difference.
+This is a regression: SWT 3.7M1 does not have the issue.
+Windows and Linux do not have the issue.
+Let me know if I can be of any help.
+Reproducible: Always
+Steps to Reproduce:
+This time, I was not able to create a small test case narrowing down the issue (sorry), but it is relatively easy to set the environment up.
+So:
+1.Get the NativeSwing distribution from here:  https://sourceforge.net/projects/djproject/files/DJ%20Native%20Swing/0.9.9%20preview/
+2.Add DJNativeSwing.jar, DJNativeSwing-SWT.jar, DJNativeSwing-SWTDemo.jar, lib/jna/jna.jar and lib/jna/jna_WindowUtils.jar to your classpath, as well as your SWT lib (sources of DJNativeSwing* are part of the distribution if needed).
+Once it is set up:
+1.Run "chrriis.dj.nativeswing.swtimpl.demo.DemoFrame" (you may need
+-XstartOnFirstThread)
+2.In the tree, click on "JWebBrowser > Simple Example".
+3.In the tree, click on "Introduction > Codewise".
+-> freeze, nothing responds after that.

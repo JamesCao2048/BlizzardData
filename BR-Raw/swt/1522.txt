@@ -1,0 +1,44 @@
+exception when removing TableItem
+3.4RC4
+- brand new eclipse workspace
+- File > Import...
+- Plug-in Development > Plug-ins and Fragments, Next
+- Next
+- select org.eclipse.jface from the left-side list, press the "Add
+-->" button, which moves this item to the right-side list
+- press the "Required Plug-ins
+-->" button, which moves a few other projects over to the right-side list
+
+-> NOTE that the org.eclipse.jface item has disappeared from the right-side list but shouldn't have
+- now press the "<-- Remove All" button, and you'll get the error below, possibly a side-effect of the disappeared org.eclipse.jface item:
+org.eclipse.swt.SWTError: Item not removed
+at org.eclipse.swt.SWT.error(SWT.java:3803)
+at org.eclipse.swt.SWT.error(SWT.java:3695)
+at org.eclipse.swt.SWT.error(SWT.java:3666)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:681)
+at org.eclipse.swt.widgets.Table.remove(Table.java:2506)
+at org.eclipse.jface.viewers.TableViewer.doRemove(TableViewer.java:268)
+at org.eclipse.jface.viewers.AbstractTableViewer.internalRemove(AbstractTableViewer.java:788)
+at org.eclipse.jface.viewers.AbstractTableViewer.access$0(AbstractTableViewer.java:751)
+at org.eclipse.jface.viewers.AbstractTableViewer$3.run(AbstractTableViewer.java:818)
+at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1365)
+at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1328)
+at org.eclipse.jface.viewers.AbstractTableViewer.remove(AbstractTableViewer.java:816)
+at org.eclipse.jface.viewers.AbstractTableViewer.remove(AbstractTableViewer.java:840)
+at org.eclipse.pde.internal.ui.wizards.imports.PluginImportWizardDetailedPage.doRemove(PluginImportWizardDetailedPage.java:543)
+at org.eclipse.pde.internal.ui.wizards.imports.PluginImportWizardDetailedPage.handleRemoveAll(PluginImportWizardDetailedPage.java:566)
+at org.eclipse.pde.internal.ui.wizards.imports.PluginImportWizardDetailedPage.access$13(PluginImportWizardDetailedPage.java:554)
+at org.eclipse.pde.internal.ui.wizards.imports.PluginImportWizardDetailedPage$13.widgetSelected(PluginImportWizardDetailedPage.java:355)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1561)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1585)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1570)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1360)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3474)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3064)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+at org.eclipse.jface.window.Window.open(Window.java:801)
+at org.eclipse.ui.internal.handlers.WizardHandler$Import.executeHandler(WizardHandler.java:146)
+at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:273)
+at org.eclipse.ui.internal.handlers.HandlerProxy.e

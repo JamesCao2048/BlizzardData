@@ -1,0 +1,35 @@
+GTK: Calling Text.setSelection() causes GPF
+When the test is run with the style bit as MULTI a GPF occurs.
+Here is the test
+case:
+------------------start of test case
+---------------------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSWTTextselection {
+public static void main(String[] args) {
+Shell shell = null;
+Display disp = null;
+try {
+disp = Display.getDefault();
+shell = new Shell(disp);
+shell.setLayout(new FillLayout());
+Text mainbox = new Text(shell, SWT.BORDER|SWT.MULTI | SWT.HORIZONTAL | SWT.VERTICAL);
+mainbox.setEnabled(true);
+mainbox.setText("testing");
+mainbox.setSelection(3,3);
+shell.setSize(400, 400);
+shell.open();
+} catch (Exception e) {
+System.out.println("Error!!");
+}
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}
+-------------------------end of test case
+------------------------

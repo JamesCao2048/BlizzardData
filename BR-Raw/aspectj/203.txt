@@ -1,0 +1,31 @@
+NPR compiling Spring
+The Spring 2.0 RC1 project contains two directories with aspects. Since the eclipse project does not compile cleanly with just the java nature, I decided to try adding the aspectj nature and giving the aspectj builder a shot.
+I don't have any idea what might be the trigger to the problem, but simply checking out Spring 2.0 RC1 and adding the aspectj nature should be able to reproduce. If I learn more I will add to this bug.
+----
+java.lang.NullPointerException
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.SingleTypeReference.getTypeBinding(SingleTypeReference.java:39)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:132)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:123)
+at org.aspectj.ajdt.internal.core.builder.AsmElementFormatter.setParameters(AsmElementFormatter.java:311)
+at org.aspectj.ajdt.internal.core.builder.AsmElementFormatter.genLabelAndKind(AsmElementFormatter.java:258)
+at org.aspectj.ajdt.internal.core.builder.AsmHierarchyBuilder.visit(AsmHierarchyBuilder.java:392)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.traverse(MethodDeclaration.java:185)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1250)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression.traverse(QualifiedAllocationExpression.java:392)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.LocalDeclaration.traverse(LocalDeclaration.java:242)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.traverse(MethodDeclaration.java:212)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1195)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:339)
+at org.aspectj.ajdt.internal.core.builder.AsmHierarchyBuilder.internalBuild(AsmHierarchyBuilder.java:145)
+at org.aspectj.ajdt.internal.core.builder.AsmHierarchyBuilder.buildStructureForCompilationUnit(AsmHierarchyBuilder.java:87)
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.finishedCompilationUnit(EclipseFactory.java:941)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterProcessing(AjCompilerAdapter.java:210)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$after$org_aspectj_ajdt_internal_compiler_CompilerAdapter$4$6b855184(CompilerAdapter.aj:91)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:533)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:329)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:887)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:244)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:163)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
+NullPointerException thrown: null

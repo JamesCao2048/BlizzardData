@@ -1,0 +1,7 @@
+Bug 172643 Image in target report cannot display after drill through link.[04]
+Description: Image in target report cannot display after drill through link.
+Build number:2.1.2.v20070202 Steps to reproduce: 1.New a folder inside project "scripting" 2.Copy attached report and image to scripting folder.
+3.Preview the report and click the second image.
+Expected result: Open itself in a new window and display two images.
+Actual result: The first image cannot display.
+Error log:N/A

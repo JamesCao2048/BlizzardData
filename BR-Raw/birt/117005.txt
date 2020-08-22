@@ -1,0 +1,5 @@
+Bug 117005 Property editor view is refreshed for several times after click on report name in outline view.
+Description: Property editor view is refreshed for several times after click on report name in outline view.
+Steps to reproduce: 1.Create a report design "new report1".
+2.Click on "new report1" node in outline view.
+3.Notice that property editor view keeps on refreshing for several times.

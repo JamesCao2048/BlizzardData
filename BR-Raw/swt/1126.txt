@@ -1,0 +1,7 @@
+no KeyDown event for Help key
+- run snippet25, press the Help key
+
+-> a KeyUp is shown but no KeyDown
+
+-> the cursor changes to a '?'
+- also, if you add a SWT.Help listener to the Shell, the Help callback will be received after clicking somewhere in the Shell (usually it accompanies the KeyDown)

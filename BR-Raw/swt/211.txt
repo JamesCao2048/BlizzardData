@@ -1,0 +1,18 @@
+[DBCS4.2] AIX 7, DirectoryDialog returns 'null' if selected path contains DBCS characters
+Build Identifier: I20120321
+OS: AIX 7 64 bit
+Java: JRE 1.7.0 IBM AIX build pap3270-20110827_01
+Locale: Japanese, SJIS
+Description:
+Cannot import projects or files containing DBCS on the file path.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a new project with DBCS name.
+eg.鏃ユ湰瑾
+2.Export the project to your home folder.
+3.Restart eclipse and go to a different workspace.
+4.Go File->Import->Existing projects into workspace.
+5.Point to the previously exported DBCS project and click OK.
+Expected result: The project path should appear on the dialog box.
+Actual result: The field that should contain the project path stays blank.
+Note: This does not happen if you use ASCII.

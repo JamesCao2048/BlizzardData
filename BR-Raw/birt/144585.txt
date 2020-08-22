@@ -1,0 +1,15 @@
+Bug 144585 render a report using ReportRunner, HTML and PDF reports are different
+steps to reproduce:
+- render attached report using ReportRunner from Windows command line genReport
+-m render
+-o Sample(excludelib)50.html
+-f html
+-p 50
+-l "en" Sample(excludelib).rptdocument genReport
+-m render
+-o Sample(excludelib)50.pdf
+-f pdf
+-p 50
+-l "en" Sample(excludelib).rptdocument expected behavior:
+- HTML and PDF reports are same actual behavior:
+- they were different, pdf report had extra table header in 1st page

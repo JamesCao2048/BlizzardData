@@ -1,0 +1,6 @@
+Bug 206285 Rename the report contain parameter will lead to the report cannot be preview[0705]
+Description: Rename the report will lead to the report cannot be preview[0705] Step: 1.New a report contain a parameter named R1.2.Preview it.
+3.Rename the report as R2 4.Preview it again.
+Actual result: Step 2 is ok.
+But the step 4 will pop up an error and said that the report does not exist or contains errors.
+Expected result: The report can be preview when rename it.

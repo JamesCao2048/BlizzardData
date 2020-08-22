@@ -1,0 +1,8 @@
+xlint advice not applied appears twice with cflows
+////////////// in the following code
+aspect A{
+before(): call(* *(..)) && cflow(execution(* *(..))) {}
+}
+////////////////////////////////////
+two "advice not appied" xlint messages are produced, one for the before advice
+and one for the cflow within the before advice.

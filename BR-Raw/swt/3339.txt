@@ -1,0 +1,17 @@
+calling CTabItem.setFont (and setImage) repeatedly with null causes repaints
+I20040527
+If you call setFont with some font Object, and later call it again no repainting
+is undertaken because ther eis a check to ensure that the font objects are not
+equal.
+This doesn't work if you call setFont with null repeatedly, however.
+Each call will result in a repaint.
+A line such as:
+if (font == null && this.font == null) return;
+would prevent this.
+This is having a noticable impact on the Console view, whos
+events cause this operation to be undertaken often.
+It is currently flickering
+excessivly when output is written to it.
+We could check ourselves using
+getFont() but you're already doing half of this work in CTabItem already.
+The same problem also applies to setImage.

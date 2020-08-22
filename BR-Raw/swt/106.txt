@@ -1,0 +1,10 @@
+Consider using pango_layout_get_pixel_size
+Currently we do:
+OS.pango_layout_get_size (layout, w, h);
+int width = OS.PANGO_PIXELS (w [0]) ;
+int height = OS.PANGO_PIXELS (h [0]);
+If we use pango_layout_get_pixel_size we should be able to do just:
+int width, height;
+OS.pango_layout_get_pixel_size(layout, width, height);
+pango_layout_get_pixel_size uses ceil/floor on the values, while PANGO_PIXELS is shifting so we might end up with some rounding differences, though I haven't experienced anything problematic with my tests.
+Silenio, what do you think ?

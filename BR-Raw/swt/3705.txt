@@ -1,0 +1,49 @@
+GC.drawImage throws SWTError with boundary conditions (BBAWT)
+Using Swt v3001 on Linux-GTK ver 2.2.2
+OS: RedHat Linux 8.0
+SWT throws an SWTError: No more handles when
+drawImage(Image, int, int, int, int, int, int, int, int) is called
+with destX and destY parameters as Integer.Min_VALUE and destWidth and
+destHeight as Integer.MAX_VALUE
+--------
+Testcase
+--------
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class SWTImageTest {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+org.eclipse.swt.graphics.Image image = new
+org.eclipse.swt.graphics.Image(display, "\home\bbsmody\balloon.gif");
+
+GC gc = new GC(display);
+gc.drawImage(image, 0, 0, 60, 60, Integer.MIN_VALUE, Integer.MIN_VALUE,
+Integer.MAX_VALUE, Integer.MAX_VALUE);
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+
+image.dispose();
+gc.dispose();
+display.dispose ();
+}
+}
+-----------
+Stack Trace
+-----------
+org.eclipse.swt.SWTError: No more handles
+Stack trace:
+java/lang/Throwable.<init>()V
+java/lang/Throwable.<init>(Ljava/lang/String;)V
+org/eclipse/swt/SWTError.<init>(ILjava/lang/String;)V
+org/eclipse/swt/SWTError.<init>(I)V
+org/eclipse/swt/SWT.error(ILjava/lang/Throwable;)V
+org/eclipse/swt/SWT.error(I)V
+
+org/eclipse/swt/graphics/GC.drawImageMask(Lorg/eclipse/swt/graphics/Image;IIIIIIIIZII)V
+org/eclipse/swt/graphics/GC.drawImage(Lorg/eclipse/swt/graphics/Image;IIIIIIIIZ)V
+org/eclipse/swt/graphics/GC.drawImage(Lorg/eclipse/swt/graphics/Image;IIIIIIII)V
+SWTImageTest.main([Ljava/lang/String;)V
+Please excuse the not-so-well-written testcase.

@@ -1,0 +1,14 @@
+GTK-BIDI: RTL support in MenuItems
+Created  attachment 81859   [details]
+Screenshots
+Build ID: 3.4M2
+Steps To Reproduce:
+1.Run the same applications, which use menus, that have items with accelerators.
+with LTR and RTL orientation.
+2.Compare appearance of these menu items in different orientation.
+Items are displayed differently.
+More information:
+Problem here is in using 't' as part of accelerator's text.
+It is supposed, that some additional spaces will appear between text and accelerator
+- but this doesn't work for RTL orientation.
+Attachments contain screenshots and patch with suggested changes.

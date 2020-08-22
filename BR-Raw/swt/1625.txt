@@ -1,0 +1,2 @@
+[CellEditors] TableViewer Text controls don't scroll text on OSX
+When entering long Strings into a Text control in a Table, the Text control always just shows the first characters instead of scrolling like the Text control does in other contexts (and in the TableViewer on other platforms).

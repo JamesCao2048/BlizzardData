@@ -1,0 +1,3 @@
+Bug 235973 [Automation][Regression]Script on prepare does not work in PDF
+Description: Set this.caption = this.toxExpression in table onprepare script, but it does not work when preview it as PDF.
+Test Date: 20080606 Test Build: BIRT2.3.0 v20080606-0630 Step to reproduce: 1.Use the report attached 2.Preview it as PDF Expect result: Table caption set to table-toc Actual result: Script does not work

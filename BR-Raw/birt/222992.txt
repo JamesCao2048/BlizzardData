@@ -1,0 +1,5 @@
+Bug 222992 Quick jump to script editor via double clicking on scripts in outline view
+In report outline view the "Scripts" subtree lists all the scripts defined in the report.
+Once the user has located a script of interest however, there is no quick way for him to open the editor for the script.
+He must first locate the report item containing the script, switch to Script tab view, and then select the event name from the drop down list.
+I suggest that we make this easier by allowing the user to double click on the script node in the outline view to open the editor for that script.

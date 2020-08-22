@@ -1,0 +1,7 @@
+Bug 200500 Error happens while share result set from item behind it.[0005]
+Description: Error happens while share result set from item behind it.
+Build number:2.2.1.v20070820 Steps to reproduce: 1.New sample data source and dataset.
+2.Drag the dataset to Layout and name it t1.3.Insert a table before t1 and share result set from t1.4.Preview.
+Expected result: If this situation isn't supported by Engine, at least we should provide friendly error message.
+Actual result: Error happened while running the report.
+Error log:n/a

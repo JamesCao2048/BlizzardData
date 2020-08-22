@@ -1,0 +1,20 @@
+DBCS: input special symbol breaks input method on ja_JP
+Trying to input special symbols using kinput2 (default linux input method for
+ja_JP on Linux) breaks the input method on the widget.
+Steps
+1) Focus a Text widget
+2) Start input method (Shift+Space)
+3) Open Auxiliary Control Window (Insert)
+4) Choose a symbol and press enter
+5) Close the input method (Shift+Space)
+
+Bug:
+- The symbol is insert on the widget twice
+- Warning on the console:
+(<unknown>:22311): GLib-GObject-WARNING **: gsignal.c:1972: handler `69' of
+instance `0x81321b8' is not blocked
+- From now on any input (SBCS or DBCS) that goes thru the commit won't be insert
+on the widget.
+For the StyledText inserting symbols does not work but attemping to do so does
+not cause the input method to stop work.
+Works on Motif.

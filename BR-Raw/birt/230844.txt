@@ -1,0 +1,7 @@
+Bug 230844 Issues when create items which share result set to template items[02][0005]
+Description: Error when create template items for items which share result set Build number:2.3.0.v20080607 Steps to reproduce: 1.New one data item binding with dataset, name it.
+2.New another data item, share result set from first data.
+3.Create two data items to template items.
+Expected result: Correct design without errors.
+Actual result: Error in Problem View saying that: The element "Data("d1")" has property "dataBindingRef" that refers an undefined element "d".
+Error log:n/a

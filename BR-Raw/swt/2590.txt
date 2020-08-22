@@ -1,0 +1,9 @@
+Invalid widget used for gtk_widget_get_accessible
+gtk2-2.4.10-4
+An SWT app using 3.2M2 (GTK) spits out a lot of these to console:
+Gtk-CRITICAL **: file gtktreeview.c: line 11861
+(gtk_tree_view_set_search_column): assertion `column >= 0' failed
+3.2M3 adds a few of these:
+Gtk-CRITICAL **: file gtkwidget.c: line 7260 (gtk_widget_get_accessible):
+assertion `GTK_IS_WIDGET (widget)' failed
+Don't know how to track down the cause in a large app using SWT.

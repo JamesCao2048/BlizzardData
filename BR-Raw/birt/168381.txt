@@ -1,0 +1,9 @@
+Bug 168381 Table from library has errors when the report is inside a folder.[01][0001]
+Description: Table from library displays errors when the report is inside a folder.
+Build number:2.1.2.v20061218 and 2.2.0.v20061216 Steps to reproduce: 1.New a library file with datasource, dataset and table.
+2.New a folder under the project, and then new a report inside the folder.
+3.Drag the table from libray to the report, save and close the report.
+4.Reopen the report.
+Expected result: Show table item in Layout.
+Actual result: A red box with error message inside as attached.
+Error log:N/A

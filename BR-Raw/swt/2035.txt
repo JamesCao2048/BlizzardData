@@ -1,0 +1,10 @@
+[OLE] eclipse should handle accelerators before OLE controls
+Build ID: 3.3M6
+Steps To Reproduce:
+1.Import attached plugin in PDE
+2.Run it
+3.You will find a menu, it binds to Ctrl+O.
+4.Show "Internal web browser" view.
+5.If you focus in URL input box, press Ctrl+O, it will pop a dialog.
+6.If you focus on web page, press Ctrl+O, nothing happens.
+More information:

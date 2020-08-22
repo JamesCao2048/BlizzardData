@@ -1,0 +1,6 @@
+Bug 187470 [Automation][Regression] table and list group page break before always did not work properly
+steps to reproduce:
+- use the attached report design
+- preview in web viewer expected behavior:
+- no extra empty page should be output actual behavior:
+- an extra empty page was output after each group page break

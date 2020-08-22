@@ -1,0 +1,83 @@
+Crash while running a JUnit Plug-In test
+I am using build id 200408311100 on Mac OS 10.3.5 (512 MB SDRAM, 667 MHz PowerPC
+G4) running java 1.4.2_05-141.This is reproducible with earlier builds as well.
+I tried running a UI Junit Plug-in test ("IWorkbenchPageTest"), but it crashes
+and does not complete (only on the Mac).
+I had to play around with the Vm's Xmx
+and Xms settings to get all the tests to complete, but some tests still fail
+with out of memory errors.
+Steps:
+- Check out "org.eclipse.ui.tests" and "org.eclipse.test.performance" from CVS.
+- Switch to the Java perspective and open the "IWorkbenchPageTest" class.
+- Run the test as a "Junit Plug-in test".
+- The test does not complete and crashes (around test 30) with the following:
+"Date/Time:      2004-09-01 16:53:46
+-0400
+OS Version:     10.3.5 (Build 7M34)
+Report Version: 2
+Command: java
+Path:    /System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Home/bin/java
+Version: ???
+(???)
+PID:     476
+Thread:  0
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000040
+Thread 0 Crashed:
+0   com.apple.HIToolbox          	0x927e05ac
+_Z23GetMenuSystemAttributesP8MenuDataPm + 0
+1   com.apple.HIToolbox          	0x927de32c
+_Z18FindNextMenuInRootP12IterPositionP8MenuData + 0xb0
+2   com.apple.HIToolbox          	0x927dfef0
+_Z12FindNextMenuP12IterPositionP9RootMenus + 0xe4
+3   com.apple.HIToolbox          	0x927e5ea4
+_Z23_MenuIterGetDataAtIndexP21OpaqueMenuIteratorRefl + 0x5c
+4   com.apple.HIToolbox          	0x927e5790 _Z18UpdateMenuEnablingv + 0x110
+5   com.apple.HIToolbox          	0x928135b4
+_Z12MenuBarTimerP16__EventLoopTimerPv + 0x5c
+6   com.apple.CoreFoundation     	0x901946a8 __CFRunLoopDoTimer + 0xf4
+7   com.apple.CoreFoundation     	0x90191a08 __CFRunLoopRun + 0x5c8
+8   com.apple.CoreFoundation     	0x90195f1c CFRunLoopRunSpecific + 0x148
+9   com.apple.HIToolbox          	0x927d5f88 RunCurrentEventLoopInMode + 0xac
+10  com.apple.HIToolbox          	0x927dc668 ReceiveNextEventCommon + 0xf4
+11  com.apple.HIToolbox          	0x9284d7fc ReceiveNextEventInMode + 0x48
+12  libswt-pi-carbon-3104.jnilib 	0x017b7064
+Java_org_eclipse_swt_internal_carbon_OS_ReceiveNextEvent + 0xd4
+13
+<<00000000>> 	0x03f33580 0 + 0x3f33580
+14
+<<00000000>> 	0x03f2cef0 0 + 0x3f2cef0
+15
+<<00000000>> 	0x03f2ce30 0 + 0x3f2ce30
+16
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+17
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+18
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+19
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+20
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+21
+<<00000000>> 	0x03f2d310 0 + 0x3f2d310
+22
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+23
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+24
+<<00000000>> 	0x03f2d310 0 + 0x3f2d310
+25
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+26
+<<00000000>> 	0x03f2d310 0 + 0x3f2d310
+27
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+28
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+29
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cfb0
+30
+<<00000000>> 	0x03f2d310 0 + 0x3f2d310
+31
+<<00000000>> 	0x03f2cfb0 0 + 0x3f2cf

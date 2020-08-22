@@ -1,0 +1,50 @@
+EraseItem event's gc does not have the item's colours or font set
+- run the snippet below
+- on all other platforms the snippet does not spew any "...didn't match..." messages
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+final Table table = new Table(shell, SWT.NONE);
+table.setBounds(10,10,150,150);
+new TableColumn(table, SWT.NONE).setWidth(100);
+FontData data = table.getFont().getFontData()[0];
+data.setHeight(data.getHeight()
+- 2);
+final Font otherFont = new Font(display, data);
+final Color[] colours = new Color[] {
+display.getSystemColor(SWT.COLOR_BLUE),
+display.getSystemColor(SWT.COLOR_CYAN),
+display.getSystemColor(SWT.COLOR_GRAY),
+};
+for (int i = 0; i
+< 2; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText("item " + i);
+item.setForeground(colours[i]);
+item.setBackground(colours[i+1]);
+item.setFont(otherFont);
+}
+table.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+int index = table.indexOf((TableItem)event.item);
+if (!event.gc.getFont().equals(otherFont)) {
+System.out.println("the font didn't match for item " + index);
+}
+/* custom colurs do not apply if item is selected because selection colours are used */
+if (table.isSelected(index)) return;
+if (!event.gc.getForeground().equals(colours[index])) {
+System.out.println("the foreground didn't match for item " + index);
+}
+if (!event.gc.getBackground().equals(colours[index + 1])) {
+System.out.println("the background didn't match for item " + index);
+}
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+otherFont.dispose();
+display.dispose();
+}

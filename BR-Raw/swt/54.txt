@@ -1,0 +1,12 @@
+Typo in Menu.getBounds()
+The bounds of a Menu return wrong y value due to a typo in the assignment.
+bundle
+org.eclipse.swt.gtk.linux.x86_64_3.102.0.20130530-1603.jar
+class:
+org.eclipse.swt.widgets.Menu
+method:
+getBounds()
+int y = origin_x [0] + allocation.y;
+should certainly:
+int y = origin_y [0] + allocation.y;
+Best Regards

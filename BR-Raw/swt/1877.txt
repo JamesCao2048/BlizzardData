@@ -1,0 +1,14 @@
+"Dancing Scrollbar" in Tree
+For a while I am seeing a weird bug, where the scrollbar thumb of a Tree shows on the bottom, although it should be on top.
+As soon as I move the mouse over the Tree, the thumb moves up to the correct position (see the two screen shots).
+I tried to get this into a snippet, but was unable to reproduce outside of RSSOwl.
+It is reproducable every time in RSSOwl.
+What I have found out so far is:
+- Its unrelated to using Custom Owner Drawn
+- Its related to using Columns
+- Its related to having parent tree items with childs
+And most importantly: Its related to executing a UIJob from inside a Job that sets the input to the Viewer.
+That is, executing a display.asyncExec() from a Thread.
+I was unable to reproduce in RSSOwl 2 as soon as I changed the UIJob to use display.syncExec AND executing it from the UI Thread instead a Job.
+Any ideas where I could look into to find out more?
+Ben

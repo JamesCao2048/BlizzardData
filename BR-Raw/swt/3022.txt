@@ -1,0 +1,13 @@
+TVT3.1 #38 - RUS mnemonics only work in main window
+Note:  assigned to UI but not sure
+Russian mnemonics only work in the main window menu and submenus.
+To reproduce:
+1) Start Eclipse with Russian langpack and switch to Russian keyboard layout.
+Try mnemonics for the main menu (Alt+&#1060;, Alt+&#1055;, Alt+&#1053;, Alt+&#1047;, Alt+&#1054;, Alt+&#1057;).
+Should work fine.
+2) Open any other window like Project creation wizard or Preferences window
+(Window > Preferences).
+Try mnemonics for the window controls.
+Don't work.
+You can find the language pack with Russian here:
+ftp://rtpgsa.raleigh.ibm.com/projects/w/wswb/anonymous/out/Group2_testing/Language_Packs/

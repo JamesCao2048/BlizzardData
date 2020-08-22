@@ -1,0 +1,3 @@
+Bug 182677 Crosstab can not be converted to template item
+The logic in model to check if crosstab can be converted to template report item returns false, but it should be true.
+The related check code is at DesignElementHandle.canTransformToTemplate().

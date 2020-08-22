@@ -1,0 +1,5 @@
+Bug 146352 support cancel execution for "view report ..." tool bar and menu actions.
+Current "view report as HTML" and "view report as PDF" in the menu tool bar uses RunAndRender task to stream back the report output.
+As a result, total page count is not available when the report is being streamed back.
+Please change these two requests to use Run task and then render task to generate HTML or PDF, so that the total page count is calculate.
+preview tab could continue to use RunAndRender task, since it is for preview.

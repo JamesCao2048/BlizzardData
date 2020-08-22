@@ -1,0 +1,24 @@
+[Tree] Expanded state does not get set properly for an expanded/collapsed item in a tree
+I have modified a simple SWT Tree code snippet
+( http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt
+-
+home/dev.html#snippets) to listen to expanded/collapsed items in a tree.
+On expanded/collapsed events, I print out the expanded state of the first item
+in the tree.
+I tested two scenarios:
+1- If I expand/collapse the first item and print out its expanded state, it
+does not get printed out properly.
+It prints out "true" when I collapse that
+particular node and "false" when I expand it.
+Either the node's expansion
+state is not being set properly, or my guess is that it's being set later in
+the series of events.
+In which case setting the enablement of the node in the
+collapse/expand event methods has no effect.
+2- If I expand/collapse any item but the first one, the expanded state of the
+first item is printed out correctly.
+I am attaching the sample Java application that illustrates this behavior.
+I am using:
+Eclipse Platform
+Version: 3.0.0
+Build id: 200403261517

@@ -1,0 +1,6 @@
+[Accessibility] [Regression] - JAWS does not read text from label associated with text field
+The Snippet340 does not work correctly with JAWS when it is run using SWT libraries from eclipse 4.4 M2.The problem is that JAWS does not read the text from the "liveLabel".
+With NVDA it works correctly.
+Moreover the snippet works fine with JAWS when it is run using SWT libraries from eclipse 4.2.
+My environment: Windows 7 x64, JAWS 14.0.6005.
+The snippet code:  https://github.com/eclipse/eclipse.platform.swt/blob/master/examples/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet340.java .

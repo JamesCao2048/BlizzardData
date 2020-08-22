@@ -1,0 +1,30 @@
+GB18030: Part of Uigur characters(4-bytes) cause whole line sinkage to 1/3.
+OS:		SLES9 with SP1
+Language:	Simplified Chinese
+Build level:	20050418
+JDK version:	J2RE 1.4.2 IBM build cxia32142sr1a-20050209 (JIT enabled: jitc)
+Summary: GB18030: Part of Uigur characters(4-bytes) cause whole line sinkage to
+1/3.
+Steps to recreate problem:
+1.Create a simple project.
+2.Create a file.
+3.Enter [unicode (Uigur set) 06B0 and 06BC] in the editor.
+--> Problem: The Uigur characters can't be displayed correctly.
+Expected Result:  Uigur characters(4-bytes) could correctly displayed with
+other characters.
+Remark:
+1.The normal(without Uigur char) and incorrect screen capture is attached.
+(normal_snapshot.JPG & incorrect_snapshot.JPG)
+2.No such problem in Windows & RedHat platform.
+3.Other 4-bytes and DBCS character haven't found this problem.
+4.Uigur character range.
+CharSet		GB18030 Range		Unicode
+--------------------------------------------------------
+Uigur		0x81318132-0x81319934	0x060C-0x06FE
+5.Before executing above steps, all the fonts have been set to GB18030
+character set from menu Windows
+-> Preference
+-> General
+-> Appearance
+->
+Colors & Fonts.

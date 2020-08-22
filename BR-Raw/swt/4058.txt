@@ -1,0 +1,34 @@
+TableItem.getText(int) returns garbage in GTK
+Build F3, Linux/GTK
+Calling TableItem.getText(int) with a multicolumn table sometimes returns
+garbage.
+In the following example, the first item is retrieved correctly but
+the second and third come back mangled.
+This is what I see when I run the code
+below:
+---
+1
+A@A@_eclipse_swt_internal_gtk_OS_g_1malloc
+A@A@
+---
+This bug is causing LayoutExample to die when a user clicks on the Add button
+in the Row Layout tab.
+--8<--------
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class TableTest {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.open();
+Table table = new Table(shell, SWT.NONE);
+TableColumn column = new TableColumn(table, SWT.NONE);
+column = new TableColumn(table, SWT.NONE);
+column = new TableColumn(table, SWT.NONE);
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] { "1", "2", "3" });
+System.out.println(item.getText(0));
+System.out.println(item.getText(1));
+System.out.println(item.getText(2));
+}
+}

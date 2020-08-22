@@ -1,0 +1,19 @@
+StyledText - text change even mechanism poorly documented
+build 20020430
+The TextChangeListener doc is incomplete and misleading.
+The class doc says that "It is not intended for use by users of the StyledText
+widget or implementors of StyledTextContent".
+This is misleading because
+implementors of StyledTextContent need to invoke the apropriate listener
+method.
+So they need to use the TextChangeListener.
+Should change to ...should
+not be implemented by users of StyledText...
+etc.
+The textChanged and textSet methods are not documented at all.
+The doc for StyledTextContent.addTextChangeListener, replaceTextRange and
+setText is incomplete.
+The last two methods should mention which methods the
+text events should be sent to.
+This should be pretty obvious when looking at
+the TextChangeListener but we may just want to mention it explicitly.

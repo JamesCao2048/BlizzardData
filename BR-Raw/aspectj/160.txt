@@ -1,0 +1,80 @@
+NPE in org.aspectj.weaver.MemberImpl.getModifiers(MemberImpl.java:526)
+java.lang.NullPointerException
+at org.aspectj.weaver.MemberImpl.getModifiers(MemberImpl.java:526)
+at org.aspectj.weaver.MemberImpl.getMethodSignatureString(MemberImpl.java:824)
+at org.aspectj.weaver.MemberImpl.getSignatureString(MemberImpl.java:753)
+at org.aspectj.weaver.bcel.LazyClassGen.initializeTjp(LazyClassGen.java:1039)
+at org.aspectj.weaver.bcel.LazyClassGen.initializeAllTjps(LazyClassGen.java:1016)
+at org.aspectj.weaver.bcel.LazyClassGen.addAjcInitializers(LazyClassGen.java:964)
+at org.aspectj.weaver.bcel.LazyClassGen.writeBack(LazyClassGen.java:502)
+at org.aspectj.weaver.bcel.LazyClassGen.getJavaClassBytesIncludingReweavable(LazyClassGen.java:652)
+at org.aspectj.weaver.bcel.BcelWeaver.getClassFilesFor(BcelWeaver.java:1337)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1309)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1127)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:284)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:212)
+at org.aspectj.weaver.loadtime.WeavingURLClassLoader.defineClass(WeavingURLClassLoader.java:125)
+at org.aspectj.weaver.ExtensibleURLClassLoader.defineClass(ExtensibleURLClassLoader.java:80)
+at org.aspectj.weaver.ExtensibleURLClassLoader.findClass(ExtensibleURLClassLoader.java:46)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:251)
+at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:319)
+Exception in thread "main"
+public aspect JoinPointTraceAspect {
+
+private int _callDepth = -1;
+
+pointcut tracePoints() : !within(JoinPointTraceAspect);
+
+before() : tracePoints() {
+_callDepth++; print("Before", thisJoinPoint);
+}
+
+after() : tracePoints() {
+print("After", thisJoinPoint);
+_callDepth--;
+}
+
+private void print(String prefix, Object message) {
+for(int i = 0, spaces = _callDepth * 2; i < spaces; i++) {
+System.out.print(" ");
+}
+
+System.out.println(prefix + ": " + message);
+}
+}
+aspect EdtRuleChecker {
+private boolean isStressChecking = true;
+
+public pointcut anySwingMethods(JComponent c):
+target(c) && call(* *(..));
+public pointcut threadSafeMethods():
+call(* repaint(..)) ||
+call(* revalidate()) ||
+call(* invalidate()) ||
+call(* getListeners(..)) ||
+call(* add*Listener(..)) ||
+call(* remove*Listener(..));
+//calls of any JComponent method, including subclasses
+before(JComponent c): anySwingMethods(c) &&
+!threadSafeMethods() &&
+!within(EdtRuleChecker) {
+if(!SwingUtilities.isEventDispatchThread() &&
+(isStressChecking || c.isShowing()))
+{
+System.err.println(thisJoinPoint.getSourceLocation());
+System.err.println(thisJoinPoint.getSignature());
+System.err.println();
+}
+}
+//calls of any JComponent constructor, including subclasses
+before(): call(JComponent+.new(..)) {
+if (isStressChecking && !SwingUtilities.isEventDispatchThread()) {
+System.err.println(thisJoinPoint.getSourceLocation());
+System.err.println(thisJoinPoint.getSignature() +
+" *constructor*");
+System.err.println();
+}
+}
+}
+Running with SwingSet2.

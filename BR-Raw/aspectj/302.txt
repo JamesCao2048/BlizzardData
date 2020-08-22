@@ -1,0 +1,7 @@
+[View Mgmt] Switching perspectives loses view maximized state
+1. Open the CVS repository view in the Java perspective.
+2. Double click the title bar to maximize it
+3. Switch to the resource perspective.
+4. Come back to the Java perspective. The CVS repository view is no longer
+maximized.
+A view that is maximized should stay maximized.

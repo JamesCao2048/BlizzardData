@@ -1,0 +1,7 @@
+Source hover does not show any source code
+Build Identifier: 20110615-0604
+Shift-Hover does not show any source code as it used to in Eclipse 3.6.I tried all possible settings in the corresponding preference tab, but none of them yielded any source code display.
+I confirmed this does *not* happen with Eclipse on win32, but it does on Mac 64.
+Reproducible: Always
+Steps to Reproduce:
+1.shift-hover over any method call

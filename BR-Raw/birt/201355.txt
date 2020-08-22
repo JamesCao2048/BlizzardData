@@ -1,0 +1,2 @@
+Bug 201355 The aggreagation of computed column should be working after the dataset filter[07]
+Description: The aggreagation of computed column should be working after the dataset filter[07] Build number: 2.2.1.v20070828-0630 Steps to reproduce: 1, New a dataset 2, Add a computed column and specify the aggregate function to count 3, Preview 4, Add a filter in dataset 5, Preview and check the computed column result Expected result: The aggregation should count the value after the filter of dataset Actual result: The result is also the count of all the value.

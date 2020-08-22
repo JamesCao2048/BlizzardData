@@ -1,0 +1,20 @@
+Bug 266447 [Accessibility] Shortcut keys are missing in Chart Builder->Format Chart
+Description: Shortcut keys are missing in Chart Builder->Format Chart.
+Build number: 2.5.0.v20090227-0630 Steps to reproduce: Open the Chart Builder->Format Chart, use the keyboard to operate.
+P1: In Series panel 1.Shortcut keys should be provided for "Value(Y) Series", "Title", "Type", "Visible", "Stacked" and "Translucent".
+P2: In Value(Y) Series panel 1.Shortcut key should be provided for "Show Series Lables".
+2.Shortcut key should be provided for "Cursor" in "Interactivity" dialogue.
+P3: In Chart Area 1.Shortcut keys should be provided for "Background" and "Empty Message".
+2.Shortcut keys should be provided for operation options in "Outline" dialogue.
+P4: In Axis 1.Shortcut keys should be provided for operation options in "Axis".
+2.P5: In X-Axis & Y-Axis 1.Shortcut keys should be provided for "Lables", "Lable Span" and "Fixed".
+2.Shortcut key conflict happens between "Reverse Category" and "Visible" in X-Axis.
+3.Shortcut keys should be provided for operation options in "Title", "Lable" and "Gridlines".
+P6: In Title panel: 1.Shortcut key should be provided for "Font".
+2.Shortcut keys should be provided for operation options in "Text" and "Layout" dialogue.
+P7: In plot: 1.Shortcut key should be provided for "Background".
+2.Shortcut keys should be provided for operation options in "Area Format" dialogue.
+P8: In Legend 1.Shortcut key conflict happens between "Show Value" and "Visible".
+2.Shortcut key conflict happens between "Title" and "Layout".
+3.Shortcut keys should be provided for operation options in "Layout" and "Entries" dialogue.
+Error Log: N/A

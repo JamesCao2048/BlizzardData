@@ -1,0 +1,29 @@
+Null pointer exception in org.eclipse.swt.widgets.TreeItem.computeDisplayText in 3.1M5a
+This also occurs on the motif build for linux...
+With our plugin, when I switch to the PDE perspective, I immediately get the
+following two exceptions:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.TreeItem.computeDisplayText(TreeItem.java:280)
+at org.eclipse.swt.widgets.TreeItem.updateColumnWidth(TreeItem.java:1556)
+at org.eclipse.swt.widgets.Tree.updateColumnWidth(Tree.java:2293)
+at org.eclipse.swt.widgets.TreeColumn.setWidth(TreeColumn.java:301)
+at
+org.eclipse.ui.views.properties.PropertySheetViewer$1.controlResized(PropertySheetViewer.java:227)
+<-- snip!
+-->
+The second one ends at:
+at
+org.eclipse.ui.views.properties.PropertySheetViewer.updateChildrenOf(PropertySheetViewer.java:1117)
+at
+org.eclipse.ui.views.properties.PropertySheetViewer.setInput(PropertySheetViewer.java:850)
+at
+org.eclipse.ui.views.properties.PropertySheetPage.selectionChanged(PropertySheetPage.java:409)
+at
+org.eclipse.ui.views.properties.PropertySheet.selectionChanged(PropertySheet.java:205)
+at
+org.eclipse.ui.internal.AbstractSelectionService$3.run(AbstractSelectionService.java:160)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1015)
+<-- snip!
+-->
+This does not occur on either of the M5a gtk builds.

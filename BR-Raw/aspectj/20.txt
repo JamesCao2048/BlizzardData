@@ -1,0 +1,2 @@
+Weaved aspects mechanism does not take into account modified classes
+The current caching mechanism assumes that if the same class is encountered then its cached weaved version can be used. However, the mechanism uses only the (fully qualified) class name to identify the class and does not take into account the fact that the class bytes may have changed (e.g., the user re-compiled and re-deployed some changes to the same class).

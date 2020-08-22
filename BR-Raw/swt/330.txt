@@ -1,0 +1,10 @@
+WebKit for GTK not detected.
+Build Identifier: M20110210-1200
+Eclipse should check for WebKit for GTK library as "libwebkitgtk.so" as well as current implementation checking as "libwebkit.so".
+Recent changes in distribution of WebKit for GTK have changed the name of the library from libwebkit.so.* to libwebkitgtk.so.*
+Notably, this has been seen in ArchLinux ( https://bbs.archlinux.org/viewtopic.php?id=46887 ).
+This causes eclipse to be unable to use the WebKit internal browser, despite user preference.
+User (with root privileges) may symbolically link libwebkitgtk.so.* to libwebkit.so as a workaround.
+I am reporting this bug as "Normal" rather than "Minor" since eclipse crashes with xulrunner-2.0, which is now a final release.
+Using WebKit may be the fastest fix for users of Firefox 4 and Gnome 3.0.1, and they will be further frustrated to find that also does not work.
+Reproducible: Always

@@ -1,0 +1,34 @@
+Possible Memory Leaks
+One of my users has reported me that my application was leaking some memory, slowly but
+consistently, mainly by chunks of 192 bytes.
+In order to test it, I've set the environement variable MallocStackLogging using :
+export MallocStackLogging=1
+and then I started my application (with java_swt
+-cp ......)
+then, from another window I've run :
+leaks
+-nocontext 555 > leaks.txt
+(555 being the process ID of my application).
+I'll attach the leaks.txt file, but here are some stack trace of calls that create those 192 bytes leaks :
+Leak: 0x088254d0  size=192
+Call stack: [thread 1f2b]: | 0x1000 | start | _start | main | jio_vsnprintf | JVM_UnloadLibrary |
+JVM_GetCPClassNameUTF | JVM_GetCPMethodClassNameUTF | 0x411516c | 0x4117fb0 | 0x4117fb0 |
+0x4117fb0 | 0x4117fb0 | 0x4117e30 | 0x42da964 | 0x411e580 |
+Java_org_eclipse_swt_internal_carbon_OS_SendEventToEventTarget | SendEventToEventTarget |
+SendEventToEventTargetInternal | DispatchEventToHandlers |
+ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) |
+HandleMouseEvent(OpaqueEventRef*) | HandleMouseEventForWindow(OpaqueWindowPtr*,
+OpaqueEventRef*, unsigned short) | HandleTSMMouseDownLogic |
+PromoteMouseToCursorChangeEvent(OpaqueEventRef*, OpaqueWindowPtr*, OpaqueEventRef**) |
+CopyEventAs | CopyEventInternal | malloc_zone_malloc
+Leak: 0x003d3af0  size=192
+Call stack: [thread 1f2b]: | 0x1000 | start | _start | main | jio_vsnprintf | JVM_UnloadLibrary |
+JVM_GetCPClassNameUTF | JVM_GetCPMethodClassNameUTF | 0x411516c | 0x4117fb0 | 0x4117fb0 |
+0x4117fb0 | 0x4117fb0 | 0x4117e30 | 0x4117e30 | 0x4117e30 | 0x4117fb0 | 0x4118310 |
+0x4118310 | 0x4117fb0 | 0x4117fb0 | 0x4117ec0 | 0x4117ec0 | 0x4117ec0 | 0x4117ef0 |
+0x411e580 | Java_org_eclipse_swt_internal_carbon_OS_GetDataBrowserItems | GetDataBrowserItems |
+GetControlData | SendControlDefGetData(HIView*, unsigned long, short, void*, long, long*) |
+CreateControlEvent | CreateEvent | malloc_zone_malloc
+Leaks states that they might miss some carbon leaks, but that all leaks reported should be real...
+Hoping this information will help,
+Olivier Chalouhi.

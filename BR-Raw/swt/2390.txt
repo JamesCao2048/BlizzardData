@@ -1,0 +1,48 @@
+Table/Tree - Text in table/treeItems is chopped making it unreadable
+SWT GTK CVS
+In Table/Tree widgets the text is chopped off making it unreadable.
+The string s gets longer, but the textRenderer doesn't move to fit.
+public static String s = "X";
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.VIRTUAL | SWT.FULL_SELECTION
+| SWT.MULTI);
+final int columns = 2;
+for (int i = 0; i
+< columns; i++) {
+TableColumn tc = new TableColumn(table, SWT.RIGHT);
+tc.setText("COL" + i);
+tc.setWidth(174);
+}
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+table.setItemCount(1);
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem) event.item;
+System.err.println("SETTING " + event.index + ": " + s);
+for (int i = 0; i
+<= columns; i++) {
+item.setText(i, s);
+}
+}
+});
+final int timerDelay = 800;
+final Runnable r = new Runnable() {
+public void run() {
+s += "X";
+table.clearAll();
+display.timerExec(timerDelay, this);
+}
+};
+display.timerExec(timerDelay, r);
+shell.setSize(350, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

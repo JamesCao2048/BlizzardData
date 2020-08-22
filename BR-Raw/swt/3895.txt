@@ -1,0 +1,6 @@
+cannot launch eclipse #2: javacore dump
+I-20021113 linux-gtk (was not in 20021105):
+This sounds like  bug #24815 , but the javacore file points to
+pango_layout_set_font_description()
+I'm using pango-1.0.3-2.
+gdk is still 2.0.2.

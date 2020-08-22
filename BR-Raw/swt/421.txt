@@ -1,0 +1,12 @@
+SWT.Hide not sent properly for menus
+There are cases where SWT.Hide is not sent and other causes where the event is sent but the menu is not hidden.
+1) Run the snippet, show the File menu and press ESC.
+Note that the event is not sent
+2a) Run the snippet, show "File" menu, show "Sub" menu, make sure the mouse is over "Sub Item0" and the item is highlighted.
+2b) Quickly move the mouse over "Sub", "Other", "Sub Item1" and back to "Sub Item0" using a circular motion.
+Note that the event is sent to the "Sub" menu, but it did not really got hidden.
+The problem is happening because Control.WM_MENUSELECT detects that "Other" is highlighted and usually this means that the "Sub" menu would be hidden.
+This was probably true on older versions of Windows (Win98?), but in WinXp there is delay to hide the menu and if the mouse goes back over the sub menu before the timeout expires it is not hidden.
+This problem causes  bug#244316 .
+I am not sure why WM_MENUSELECT is used to send SWT.Hide to menus given that WM_UNINITMENUPOPUP is exactly what we need.
+Maybe WM_UNINITMENUPOPUP was not availble in Win98.I will attach a patch.

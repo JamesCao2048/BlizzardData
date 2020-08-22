@@ -1,0 +1,64 @@
+NPE with a background image in a non-virtual Table
+Run the following example.
+Click on the doit button until the error occurs.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.BORDER);
+final TableColumn column1 = new TableColumn(table, SWT.NONE);
+final TableColumn column2 = new TableColumn(table, SWT.NONE);
+Image image = new Image(display, 1000, 1000);
+table.setBackgroundImage(image);
+Button b = new Button(shell, SWT.PUSH);
+b.setText("doit");
+b.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+for (int i = 0; i
+< 10; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] { "item " + i, "column 1 " + i });
+}
+column1.pack();
+column2.pack();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+The following two null pointer exceptions appear:
+ava.lang.Error
+at org.eclipse.swt.widgets.Table.CDDS_SUBITEMPREPAINT(Table.java:418)
+at org.eclipse.swt.widgets.Table.wmNotifyChild(Table.java:4991)
+at org.eclipse.swt.widgets.Control.WM_NOTIFY(Control.java:3791)
+at org.eclipse.swt.widgets.Composite.WM_NOTIFY(Composite.java:1165)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3295)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1538)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1630)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4017)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1783)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:238)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:162)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3331)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:4273)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4017)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1783)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:238)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:162)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3331)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:4273)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4017)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1783)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:238)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:162)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3331)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:4273)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4017)
+at org.eclipse.swt.internal.win32.OS.SendMessageW(Nati

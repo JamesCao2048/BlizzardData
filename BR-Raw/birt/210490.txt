@@ -1,0 +1,4 @@
+Bug 210490 [Automation][Smoke]All the report chart related are failed of a ChartException in webviewer
+Description: All the report chart related are failed of a ChartException in webviewer Test Date: 20071121 Test Build: BIRT2.3.0 Daily Build: v20071121-0800 Step to reproduce: 1.Use the report attached 2.Preview it in web viewer Expect result: Every chart should be displayed correctly without any exception.
+Actual result: An exception is thrown out.
+Error log: Please see the attachment.

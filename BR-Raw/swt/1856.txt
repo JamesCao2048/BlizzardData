@@ -1,0 +1,14 @@
+Eclipse crashes when trying to print first page of .java file into PDF
+Created  attachment 81592   [details]
+Problem report
+I20071030-0010
+- new workspace
+- import the two *swt plug-ins as binary
+- open type ST
+- Command+P
+- OK
+- select Pages: From 1 to 1
+- PDF > Save as PDF...
+=> Eclipse crashes with console message:
+Invalid memory access of location 0000005c eip=942b7df6
+Bus error

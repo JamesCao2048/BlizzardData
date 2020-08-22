@@ -1,0 +1,8 @@
+VM crash opening browser widget with much html
+Build ID: I20070503-1400
+Steps To Reproduce:
+The attached snippet will crash the VM.
+The html to be shown is over 20000 characters, much will not be displayed immediately but is already present in a javascript section in the head part.
+Opening the same html in firefox works without any problem.
+More information:
+Suse Linux 10, GTK 2.8.10-39.22

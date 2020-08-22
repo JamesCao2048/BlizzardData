@@ -1,0 +1,2 @@
+Bug 157262 Column visibility doesn't work properly in attached report in PDF
+Column visibility doesn't work properly in attached report Steps to reproduce: 1.open the attached file 2.preview it in PDF Expected result: Column visibility works well in PDF Actual result: The column visibility of the second and third column of the inner grid in the cell(1,0) doesn't works

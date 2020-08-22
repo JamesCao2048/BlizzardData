@@ -1,0 +1,29 @@
+VM crashes when closing an ON_TOP shell on MacOS X
+Created  attachment 77256   [details]
+snippet reproducing the crash on mac os
+the attached snippet opens a splash screen shell (ON_TOP) that closes automatically when the main window is shown.
+on macosx this crashes the vm like this:
+Date/Time:      2007-08-29 15:21:39.396 +0200
+OS Version:     10.4.10 (Build 8R218)
+Report Version: 4
+Command: java
+Path:    /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
+Parent:  eclipse [285]
+Version: ???
+(???)
+PID:    432
+Thread: 0
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000004
+Thread 0 Crashed:
+0   com.apple.HIToolbox          	0x932b1214 TestWindowGroupAttributes + 40
+1   com.apple.HIToolbox          	0x932db1ec HiliteAndActivateWindow + 388
+2   com.apple.HIToolbox          	0x932daf8c AdjustToNewWindowActivation(WindowData*, WindowContext*, OpaqueWindowPtr*, WindowData*) + 208
+3   com.apple.HIToolbox          	0x932dadbc PotentiallyAdjustActivationOnOrderIn(WindowData*, WindowData*) + 124
+4   com.apple.HIToolbox          	0x932daabc ShowWindow + 68
+5   libswt-pi-carbon-3406.jnilib 	0x06752ca4 Java_org_eclipse_swt_internal_carbon_OS_ShowWindow + 44
+6
+<<00000000>> 	0x04586264 0 + 72901220
+7
+<<00000000>> 	0x0457fab0 0 + 72874672
+...

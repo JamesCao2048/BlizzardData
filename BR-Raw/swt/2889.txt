@@ -1,0 +1,17 @@
+NPE showing a CoolBar's dropdown
+3.1M7 test build, likely happens on all motifs
+- seems to be a new problem introduced by the fix for  bug 76628
+- happens in eclipse too
+- run the ControlExample, go to the CoolBar tab
+- select the SWT.DROP_DOWN checkbox
+- go to the sample CoolBar on the page and click its chevron to show its popup
+menu
+- you'll get the following NPE:
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:757)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:751)
+at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:147)
+at org.eclipse.swt.widgets.Display.runPopups(Display.java:3094)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2711)
+at
+org.eclipse.swt.examples.controlexample.ControlExample.main(ControlExample.java:192)

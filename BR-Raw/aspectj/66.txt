@@ -1,0 +1,53 @@
+ModifiersPattern.getModifierFlag() is not thread safe
+Build Identifier: org.aspectj.weaver_1.6.0.20080423100000.jar
+ModifiersPattern.getModifierFlag() is a non-synchronized static method using the static Map modifierFlags. This can lead to a ConcurrentModificationException when this code is executed in a multi-threaded environment. A stack trace showing the erroneous behavior is appended at the end of this bug report.
+In our case multithreading is introduced by using Spring DM. This leads to many application contexts being initialized in parallel. Each of them can contain pointcut expression, which are processed in independent threads. Spring AOP enters the "AspectJ world" calling PointcutParser.parsePointcutExpression().
+Since there is no guarantee that a ConcurrentModificationException is thrown it is also possible that concurrent read/write accesses to the modifierFlags map are not recognized and incorrect values are used.
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactoryProxy': Post-processing of the FactoryBean's object failed; nested exception is java.util.ConcurrentModificationException: concurrent access to HashMap attempted by Thread[SpringOsgiExtenderThread-43,5,spring-osgi-extender[6dee6dee]-threads]
+at org.springframework.beans.factory.support.FactoryBeanRegistrySupport$1.run(FactoryBeanRegistrySupport.java:142)
+at java.security.AccessController.doPrivileged(AccessController.java:219)
+at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:116)
+at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:91)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1288)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:217)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:425)
+at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.access$1600(AbstractDelegatedExecutionApplicationContext.java:69)
+at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext$4.run(AbstractDelegatedExecutionApplicationContext.java:355)
+at org.springframework.osgi.util.internal.PrivilegedUtils.executeWithCustomTCCL(PrivilegedUtils.java:85)
+at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.completeRefresh(AbstractDelegatedExecutionApplicationContext.java:320)
+at org.springframework.osgi.extender.internal.dependencies.startup.DependencyWaiterApplicationContextExecutor$CompleteRefreshTask.run(DependencyWaiterApplicationContextExecutor.java:136)
+at java.lang.Thread.run(Thread.java:811)
+Caused by: java.util.ConcurrentModificationException: concurrent access to HashMap attempted by Thread[SpringOsgiExtenderThread-43,5,spring-osgi-extender[6dee6dee]-threads]
+at java.util.HashMap.onEntry(HashMap.java:214)
+at java.util.HashMap.transfer(HashMap.java:686)
+at java.util.HashMap.resize(HashMap.java:676)
+at java.util.HashMap.addEntry(HashMap.java:1049)
+at java.util.HashMap.put(HashMap.java:561)
+at org.aspectj.weaver.patterns.ModifiersPattern.getModifierFlag(ModifiersPattern.java:87)
+at org.aspectj.weaver.patterns.PatternParser.parseModifiersPattern(PatternParser.java:1169)
+at org.aspectj.weaver.patterns.PatternParser.parseMethodOrConstructorSignaturePattern(PatternParser.java:1248)
+at org.aspectj.weaver.patterns.PatternParser.parseKindedPointcut(PatternParser.java:603)
+at org.aspectj.weaver.patterns.PatternParser.parseSinglePointcut(PatternParser.java:317)
+at org.aspectj.weaver.patterns.PatternParser.parseAtomicPointcut(PatternParser.java:295)
+at org.aspectj.weaver.patterns.PatternParser.parsePointcut(PatternParser.java:256)
+at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:328)
+at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:309)
+at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:206)
+at org.springframework.aop.aspectj.AspectJExpressionPointcut.checkReadyToMatch(AspectJExpressionPointcut.java:193)
+at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:174)
+at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:195)
+at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:250)
+at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:284)
+at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:113)
+at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:85)
+at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:66)
+at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:362)
+at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:325)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:361)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.postProcessObjectFromFactoryBean(AbstractAutowireCapableBeanFactory.java:1429)
+at org.springframework.beans.factory.support.FactoryBeanRegistrySupport$1.run(FactoryBeanRegistrySupport.java:139)
+... 15 more
+Reproducible: Sometimes

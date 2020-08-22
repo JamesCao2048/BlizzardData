@@ -1,0 +1,42 @@
+On carbon platform, when scroll the mouse wheel on top of the vertical scroll bar of a canvas, no selection event is generated.
+Build ID: M20070212-1330
+Steps To Reproduce:
+1.Create a shell.
+2.Create a canvas on the shell which has larger height than the shell.
+3.Add a selection listener to the vertical bar of the canvas.
+4.When scrolling the wheel on the vertical scrollbar, no selection event is sent.
+More information:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class ScrollBarSample {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display, SWT.SHELL_TRIM);
+
+shell.setLayout (new FillLayout ());
+shell.setSize(400, 300);
+Canvas canvas = new Canvas(shell, SWT.V_SCROLL);
+canvas.setSize(400, 1200);
+
+if(canvas.getVerticalBar() != null) {
+canvas.getVerticalBar().addSelectionListener(new SelectionListener(){
+public void widgetDefaultSelected(SelectionEvent arg0) {
+}
+public void widgetSelected(SelectionEvent arg0) {
+System.out.println("detail is : "  + arg0.detail);
+}});
+}
+
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}

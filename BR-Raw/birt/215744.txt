@@ -1,0 +1,3 @@
+Bug 215744 [Automation][Regression]Legend disappeared randomly in gantt chart when chart is a given size
+Description: Legend disappeared randomly in gantt chart when chart is a given size.
+Test Date: 20080118 Test Build: BIRT2.3.0 Daily Build: v20080118-1003 Step to reproduce: 1 Use the report attached 2 Preview it Expect result: This chart has a legend Actual result: Legend disappeared

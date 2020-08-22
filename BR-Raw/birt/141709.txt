@@ -1,0 +1,2 @@
+Bug 141709 The Interface "IScalarParameterModel" should provide a "TEXT_ID_PROP" member.
+In order to provide the "Localization" function in Property Editor of Parameter, it requires to implement a "ScalarParameterI18nPage" Class similar to the Class of "LabelI18nPage", and it consequently needs to "IScalarParameterModel" provide a "TEXT_ID_PROP" member for "ScalarParameterHandle" Class.

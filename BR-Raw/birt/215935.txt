@@ -1,0 +1,5 @@
+Bug 215935 [Automation][Regression]Format number does not take effect in XLS
+Description: Format number does not take effect in XLS.
+Test Date: 20080121 Test Build: BIRT2.3.0 Daily Build:v20080121-0800 Step to reproduce: 1.Use the report attached.
+2.Preview it in XLS format.
+Expect result: Please refer to the golden file attached Actual result: Please refer to the failed XLS file attached

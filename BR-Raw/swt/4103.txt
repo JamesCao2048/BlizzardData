@@ -1,0 +1,16 @@
+Tracker leaves cheese
+1.Run the attached test case.
+2.In the text portion of the window, press and hold down mouse button 1. Move
+the mouse some while still keeping mouse button 1 down.
+3.While mouse button 1 is still down, press Alt-Tab.
+Go to a window other
+than Eclipse.
+Let go of the mouse.
+At this point there is cheese in the test case window and perhaps on the window
+selected in Step 3. Similar behavior occurs in Eclipse when a view pane is
+dragged.
+The test case mimics what Eclipse is doing.
+Is this a bug or do we
+need to do something more to get the Tracker to not leave cheese?
+Related PR [ Bug 12810 ] Screen-cheese left on the windows desktop when dragging
+ViewPanes

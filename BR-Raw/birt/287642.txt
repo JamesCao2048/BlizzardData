@@ -1,0 +1,3 @@
+Bug 287642 Items in library can not be extended if library name is end with space[01]
+Description: Items in library can not be extended if library name is end with space Build number: 2.5.1.v20090826-0630 Steps to reproduce: 1, New a library which name is test .rptlibrary (there has a space between test and dot) 2, New some items in library for example, a label, a theme 3, New a library and try to extend the label or the them from library Expected result: Items from library which name is end with space can be used by report design Actual result: When use items in report design, error occurred.
+Error log:

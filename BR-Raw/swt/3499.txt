@@ -1,0 +1,52 @@
+[browser] crash on IE when setting text multiple time with links
+crashes:
+/*
+* Copyright (c) 2000, 2003 IBM Corp.
+All rights reserved.
+* This file is made available under the terms of the Common Public License
+v1.0
+* which accompanies this distribution, and is available at
+*  http://www.eclipse.org/legal/cpl-v10.html
+*/
+
+/*
+* Browser example snippet: render HTML that includes relative links from
+memory
+*
+* For a list of all SWT example snippets see
+*  http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt
+-
+home/dev.html#snippets
+*/
+import org.eclipse.swt.*;
+import org.eclipse.swt.browser.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Main {
+public static void main(String [] args) {
+final String html = "<html><head>"+
+//		"<base href=\" http://dev.eclipse.org/viewcvs/index.cgi/ %
+7Echeckout%7E/platform-swt-home/\" >"+
+"<base href=\" http://www.eclipse.org \" >"+
+"<title>HTML Test</title></head>"+
+"<body><a href=\"dev.html\">local link</a></body></html>";
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Browser browser = new Browser(shell, SWT.NONE);
+//browser.setUrl(" http://www.eclipse.org ");
+browser.setText(html);
+Button b = new Button(shell, SWT.PUSH);
+b.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+browser.setText(html);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

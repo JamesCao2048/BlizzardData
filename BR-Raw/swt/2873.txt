@@ -1,0 +1,43 @@
+Setting GC foreground color does not always clear out fg Pattern
+calling GC.setForeground() should clear the current Pattern being used.
+(should
+that be in javadoc).
+It does not always work.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Shell");
+shell.setFont(new Font(display, "Arial Black", 20, SWT.BOLD));
+
+shell.addPaintListener(new PaintListener() {
+int POLY[] = new int[] {5, 5, 45, 5, 20, 30, 20, 20, 45, 45, 5, 45};
+public void paintControl(PaintEvent e) {
+Pattern gradient = new Pattern(null, 0, 0, 100, 40, new Color(null, 200, 0,
+200), new Color(null, 0, 0, 0));
+Pattern background = new Pattern(null, 0, 40, 120, 0, new Color(null, 200,
+255, 200), new Color(null, 200, 200, 200));
+e.gc.setForegroundPattern(gradient);
+e.gc.setBackgroundPattern(background);
+e.gc.drawString("Foobar", 0, 0, false);
+
+e.gc.setForeground(e.gc.getForeground());
+e.gc.setBackground(e.gc.getBackground());
+Transform t = new Transform(display);
+t.translate(0, 30);
+e.gc.setTransform(t);
+t.dispose();
+e.gc.drawString("Foobar", 0, 0, false);
+
+background.dispose();
+gradient.dispose();
+}
+});
+
+shell.setSize(500, 380);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

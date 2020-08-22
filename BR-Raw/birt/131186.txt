@@ -1,0 +1,11 @@
+Bug 131186 Enhance birt.data.aggregation extension point to support multipass
+The current org.eclipse.birt.data.aggregation extension point ( and associated org.eclipse.birt.data.engine.api.aggregation classes) can only support single-pass aggregates.
+We need to extend this framework to support custom multi-pass aggregates.
+One example: a percentage-to-total aggregate ( x/SUM(x) ) will require two passes over the series.
+A prelimary design of the new extension point: Introduce a new Aggregation abstract class in birt.data.engine.api: public abstract class Aggregation implements IAggregation { /** Returns the number of passes over the data series that the accumulator of this aggregate requires.
+For SUMMARY aggregates, the accumulator returns a value after all passes are complete.
+For RUNNING aggregates, the accumulator returns data in the last pass.
+*/ public int getNumberOfPasses() { return 1; } } The Accumulator class can remain as is.
+However the comment to indicate that for multipass aggregates, start() and finish() will be called at the beginning and end of each pass.
+The aggregation extension point's aggregateClass element should indicate that the class needs to subclass Aggregation.
+Also, this element's kind should be changed to "java" and its "Based On" changed to "org.eclipse.birt.data.engine.api.aggregation.Aggregation".

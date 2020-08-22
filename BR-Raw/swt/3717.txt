@@ -1,0 +1,27 @@
+No focus listener control in SWT combo on Linux platform
+I tried to add addFocusListener() on SWT Combo, but
+it doesn't work
+The following is a simple test code:
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.SWT;
+public class TestComboFocus implements FocusListener
+{
+Public TestComboFocus(Composite parent)
+{
+Combo combo = new Combo(parent, SWT.DROP_DOWN);
+combo.addFocusListener(this);
+}
+public void focusGained(FocusEvent e)
+{
+System.out.println("Combo is in focus");
+}
+public void focusLost(FocusEvent e)
+{
+System.out.println("Combo is lost focus");
+}
+}
+These methods focusGained(), focusLost() never called when the cursor is in
+or out of Combo text box.

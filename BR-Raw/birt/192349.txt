@@ -1,0 +1,6 @@
+Bug 192349 The column selected disappears when you reclick the downward arrow [0001]
+Description: The column selected disappears when you reclick the downward arrow.
+Build number: 2.2.0.v20070613-1211 Steps to reproduce: 1, New a table binding to a data set, add an Aggregation, select one column from the "Data Field" dropdown list, click the downward arrow again.
+Expected result: The column selected is still there.
+Actual result: The column selected disappears.
+Error log: N/A

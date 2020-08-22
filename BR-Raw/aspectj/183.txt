@@ -1,0 +1,13 @@
+Wrong warning is reported
+I used ajdt_1.3.1_for_eclipse_3.1.zip on Eclipse 3.1.2.
+Below is my aspectj code.
+public aspect MyMessages {
+pointcut getResourceString(String key): args(key, ..) &&
+call (* CommonPlugin.getResourceString(String, ..));
+String around(String key):getResourceString(key) {
+return key;
+}
+}
+The warning message is
+The parameter key is never read.
+See my screenshot.

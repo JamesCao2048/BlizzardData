@@ -1,0 +1,2 @@
+Bug 144106 [Regression]Parameter request page pops up twice while running the report with cascading parameter
+Steps to reproduce: 1.Add a cascading parameter group with a parameter 2.Preview Expected result: The parameter request page just pops up once for input value Actual result: The parameter request page pops up twice when inputting parameter value

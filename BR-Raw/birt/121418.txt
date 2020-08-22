@@ -1,0 +1,6 @@
+Bug 121418 Error enlarging a chart in ReportDesigner
+Trying to resize a Chart (no much actually) in the report Designer results in the following behaviour: The chart disappears from the page, but is still visible in the outline.
+There the chart gets assigned a very hugh number in the width/height properties (540625in/18020833333333332in) or (15854166666666666in/3171875in) or various other very big numbers.
+Trying to change this, does not really result in an improvement.
+It is possible to reproduce this and it is never again possible to change the size of the chart.
+Rebuilding the report is the only possibility to get out.

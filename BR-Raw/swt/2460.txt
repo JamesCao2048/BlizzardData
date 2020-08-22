@@ -1,0 +1,12 @@
+Browser.setText() sometimes appends dust characters after html
+In DocumentComplete event handling block,
+Browser allocates memory with size of UTF8BOM and html, but does not care for
+stream size.
+GlobalAlloc rounds its size, so allocated memory size is different from
+required size.
+Without GMEM_ZEROINIT, memory will be rough.
+IStream eats them
+unrequired garbage.
+It should be allocated with GMEM_ZEROINIT.
+Or stream size should be set by IStream.SetSize (this is better but not
+implemented now).

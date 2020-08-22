@@ -1,0 +1,46 @@
+CTabFolder throws exception when closing a tab
+Create a CTabFolder with n CTabItems.
+Select the last item.
+Close the last
+item.
+An ArrayIndexOutOfBoundsException is thrown.
+This can be produces by using the snippet found here:
+http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt
+-
+home/snippits/snippet82.html
+Paste the snippet into a Java file.
+Comment out from "final CTabItem
+special..." to "specialItem.setControl(text);"  Also comment out the code
+inside the itemClosed method (leaving just a stub).
+Run the code.
+First
+select the last item.
+Then attemp to close that item.
+Exception thrown.
+Thanks for the help.
+My stacktrace:
+java.lang.ArrayIndexOutOfBoundsException: 1
+at org.eclipse.swt.custom.CTabFolder.redrawTabArea
+(CTabFolder.java:1236)
+at org.eclipse.swt.custom.CTabFolder.onFocus(CTabFolder.java:572)
+at org.eclipse.swt.custom.CTabFolder.access$8(CTabFolder.java:569)
+at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:205)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:840)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:865)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:845)
+at org.eclipse.swt.widgets.Control.WM_SETFOCUS(Control.java:3956)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2828)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2361)
+at org.eclipse.swt.internal.win32.OS.ShowWindow(Native Method)
+at org.eclipse.swt.widgets.Control.setVisible(Control.java:2258)
+at org.eclipse.swt.custom.CTabFolder.destroyItem(CTabFolder.java:500)
+at org.eclipse.swt.custom.CTabItem.dispose(CTabItem.java:108)
+at org.eclipse.swt.custom.CTabFolder.closeNotify(CTabFolder.java:311)
+at org.eclipse.swt.custom.CTabFolder.access$13(CTabFolder.java:297)
+at org.eclipse.swt.custom.CTabFolder$4.handleEvent(CTabFolder.java:438)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:840)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:1838)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1545)
+...

@@ -1,0 +1,8 @@
+Bug 289180 Support internationalization of report title
+Environment:
+- BIRT 2.5
+- XP
+- JBoss 4.2.2 While BIRT supports internationalization of text in a report the report title does not.
+I found entries in the report designer for the report properties under the advanced section
+- the last entries are "Title" and "Title key" but title key does not have any affect.
+"Title key" does not seem to be used correctly.

@@ -1,0 +1,8 @@
+[Widgets] [preferences] Export from 'Formatter' preference page should add file extension
+I20090803-1800
+Exporting formatter/cleanup settings from the settings page doesn't add the xml file extension to the file.
+* open formatter page
+* have at least one custom formatter
+* click export all
+* enter "test" as filename
+You end up with a file called "test" instead of "test.xml"

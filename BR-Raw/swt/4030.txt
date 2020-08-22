@@ -1,0 +1,14 @@
+Coolbar - can "lose" items when platform widget wraps
+Build 20020611
+1.Size the workbench and Reset Toolbar Layout so that you have two rows of
+items, with only a couple of items on the second row.
+2.Size the workbench smaller and smaller vertically.
+When the items on the
+first row can no longer fit (due to minimum size reached for all), the platform
+widget will start to wrap items from row 1 to row 2.
+Notice that you "lose" the original second row items.
+The WorkbenchWindowLayout is being called during the resize and the size of the
+coolbar recomputed, so this appears to be an SWT bug.
+If you Reset Toolbar
+Layout, the problem will be fixed, but that is because wrap indices are
+explicitly being set.

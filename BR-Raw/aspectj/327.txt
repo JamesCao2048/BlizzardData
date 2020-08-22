@@ -1,0 +1,49 @@
+NPE at CaptureBinding.java on wildcard in intertype field type
+When compiling this program with ajc -1.5
+public aspect Wildcard {
+Class<? extends Wildcard> Wildcard.cl;
+void foo() throws Exception {
+Wildcard ci = cl.newInstance();
+}
+}
+ajc throws this exception
+java.lang.NullPointerException
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.lookup.CaptureBinding.initializeBounds(CaptureBinding.java:75)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding.capture(ParameterizedTypeBinding.java:105)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.SingleNameReference.resolveType(SingleNameReference.java:772)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:293)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.LocalDeclaration.resolve(LocalDeclaration.java:199)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:422)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:178)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:400)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1076)
+at
+org.aspectj.ajdt.internal.compiler.ast.AspectDeclaration.resolve(AspectDeclaration.java:114)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1125)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:305)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:514)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:329)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:759)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:225)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:151)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:326)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:240)
+at org.aspectj.tools.ajc.Main.main(Main.java:83)

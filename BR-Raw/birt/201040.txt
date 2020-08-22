@@ -1,0 +1,8 @@
+Bug 201040 Need to specify engine config params when calling reportrunner on command line
+Build ID: I20070625-1500 Steps To Reproduce: 1.Run genReport.[bat|sh] and try to use non-default options for engine config.
+2.See, couldn't do it, right?
+3.Hopefully (2) is right, otherwise I'm going to look pretty foolish.
+More information: We have a need to be able to specify the resource directory when running reportrunner as part of genReport.bat from the Windows command line.
+We cannot find a way to do this.
+The reportrunner java code instantiates a default engineconfig which uses the environment variable BIRT_HOME to set the engine home but we need to configure other things (specifically resource, log and temp dirs as well as log level).
+I've actually made changes to ReportRunner.java in BIRT 2.2, recompiled and tested but need a more experience body to look over the change and commit it if it's deemed worthy.

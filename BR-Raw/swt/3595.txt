@@ -1,0 +1,12 @@
+Combo - Custom PopUp not displayed properly
+I created a SWT Combo within an Eclipse View and set its popup menu.
+Now, when I right click on the Combo's text field I don't see
+my menu, but the native systems one (Copy/Paste/Cut ...).
+When I try not to click right on the Combo's text field directly, a little
+bit below it but still within the Combo Widget, I see my menu
+popping up.
+cmb_RegExp = new Combo(parent, SWT.DROP_DOWN);
+cmb_RegExp.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+Menu men=new Menu(cmb_RegExp);
+cmb_RegExp.setMenu(men);
+...

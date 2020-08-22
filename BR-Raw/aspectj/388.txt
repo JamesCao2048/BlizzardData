@@ -1,0 +1,21 @@
+expect error when overriding final pointcuts
+I get no compiler error when I "override"/redefine a final pointcut:
+------------
+public class Main {
+static void walk() {}
+static void run() {}
+public static void main(String[] args) {
+walk();
+run();
+}
+}
+abstract aspect AA {
+public final pointcut publicPointcut() : call(void walk());
+before() : publicPointcut() { System.out.print("here: " + thisJoinPoint); }
+}
+aspect AA1 extends AA {
+// expecting error here b/c pointcut is final
+public pointcut publicPointcut() : call(void run());
+}
+------------
+When run, it picks out run() rather than walk().

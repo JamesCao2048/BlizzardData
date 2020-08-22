@@ -1,0 +1,8 @@
+Some SWT Labels draw text in white
+I20030516 (or SWT HEAD)
+MacOS 10.2.6
+- start Eclipse on new workspace
+- open New wizard
+- select Java / New Project
+- press Next
+Observe: two labels on wizard page are not readable since they draw the text in white.

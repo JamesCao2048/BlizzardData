@@ -1,0 +1,7 @@
+Bug 198059 [regression]SVG chart cannot display in html.[13]
+Description: SVG chart cannot display in html.
+Steps to reproduce: 1.New a report with a SVG chart.
+2.Preview in Web Viewer and html.
+Expected result: Display chart.
+Actual result: Fail to display chart in html but pdf is ok.
+png chart can display

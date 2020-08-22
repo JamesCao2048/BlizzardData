@@ -1,0 +1,4 @@
+Bug 166729 [Linux]setImageDirectory() method is no effect[0600]
+Description: [Linux]setImageDirectory() method is no effect[0600] Step: 1.Run the test case by junit.
+You can find out the case on: /cvsroot/org.eclipse.birt.report.tests.engine/src/org/eclipse/birt/report/tests/engine/regression/Regression_142894.java /cvsroot/org.eclipse.birt.report.tests.engine/src/org/eclipse/birt/report/tests/engine/regression/input/regression_142894.rptdesign /cvsroot/org.eclipse.birt.report.tests.engine/src/org/eclipse/birt/report/tests/engine/regression/input/pics/green.bmp 2.In render task, we set that "renderContext.setImageDirectory( "image" );" Actual result: The background image path is "pics/green.bmp" in html code.
+But the image is save at "image/green.bmp"

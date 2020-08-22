@@ -1,0 +1,18 @@
+[interop] swing mouse events not received in RCP plugin
+(m5 & m6) in an RCP plugin
+Mouse events for Swing controls (JTree and JButton) are not received if they
+are placed directly in the Frame created by new_Frame.
+A Panel must be added to
+the Frame and then the Swing controls added to the Panel.
+A plain AWT button works fine.
+public void createPartControl(Composite parent)
+{
+m_frame = SWT_AWT.new_Frame(parent);
+m_frame.setLayout(new BorderLayout());
+m_frame.add(new JButton("hello"), BorderLayout.NORTH);
+m_frame.add(new Button("hello 2"), BorderLayout.SOUTH);
+m_frame.add(new JTree(), BorderLayout.CENTER);
+}
+I have experimented with more complex AWT/Swing componenets.
+Tomsawyer must have the panel
+OpenViz must NOT have a panel!

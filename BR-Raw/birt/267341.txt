@@ -1,0 +1,5 @@
+Bug 267341 'Label Span' does not work for the secondary Y axis.
+description: 'Label Span' does not work for the secondary Y axis.
+build id: 2.5.0 v20090305-0630 steps to reproduce: 1.New a chart with two axis.
+2.Set 'Label Span' on the second axis.
+Actual result: It does not take effect.

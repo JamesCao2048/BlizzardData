@@ -1,0 +1,17 @@
+NullPointerException in AjBuildManager.findOutputDirsForAspects when compiling AspectJ project generated with Maven
+Build Identifier: 20100617-1415
+When I compile my AspectJ project, I get an AspectJ Internal Compiler Error. The stack trace is :
+java.lang.NullPointerException
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.findOutputDirsForAspects(AjBuildManager.java:725)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.writeOutxmlFile(AjBuildManager.java:652)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performBuild(AjBuildManager.java:367)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:181)
+at org.aspectj.a ... on$1.run(GlobalBuildAction.java:179)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+I digged a bit and looked into the classes. It would seem that AjState.getAspectNamesToFileNameMap() can return null in AjBuildManager.findOutputDirsForAspects. It is taken in account when AjBuildConfig.getCompilationResultDestinationManager() returns null or a list with one element, but not when it returns a list with several elements.
+Reproducible: Always
+Steps to Reproduce:
+Always happen in my configuration, but I didn't try to make it happen again in another workspace. Here are the steps I followed.
+1. Generate a AspectJ project with Maven using the pom.xml I'll join
+2. Create an aspect with a few pointcuts and a few advices
+3. Compile (not with maven, the Eclipse compilation)

@@ -1,0 +1,6 @@
+Bug 195931 The color of the Meter Dial can only be set as custom color [13]
+Description: The color of the Meter Dial can only be set as custom color.
+Build number: 2.2.0.v20070709-0630 Steps to reproduce: 1.New a Meter Chart, in "Format Chart" tab, Series->Value Series->Fill.
+Expected result: Gradient color can also be set.
+Actual result: Only custom color can be set.
+Error log: N/A

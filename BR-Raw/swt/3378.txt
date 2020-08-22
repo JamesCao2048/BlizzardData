@@ -1,0 +1,6 @@
+Menu items still grab accelerators when disabled
+If a menu item has an accelerator, it will contine to grab this accelerator
+even when it is disabled.
+We currently have a workaround in EditorMenuManager which removes the
+accelerator when an item is disabled.
+Steve is aware of this issue.

@@ -1,0 +1,6 @@
+[Drag & Drop] DnD auto-scroll support in StyledText is too slow
+3.2 RC2
+The DnD auto-scroll support is scrolling horizontally char by char which is unusable slow, e.g.
+have a line with 200 chars and then try to drop at the end of that line.
+I filed bug for that.
+Vertical scrolling could also be faster.

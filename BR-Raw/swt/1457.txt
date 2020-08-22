@@ -1,0 +1,48 @@
+ProgressBar state can be visually lost by updating selection
+In ProgressBar.setSelection() the bar's state is temporarily set to Normal in order to update its selection value.
+However, reverting the ProgressBar to its non-Normal state afterwards may not be shown visually.
+Run the snippet below and change the state to SWT.PAUSED, and note that the bar may flash yellow temporarily, but will then stay green.
+If you change the INCREMENT to a larger value like 5, or the SLEEP value to a larger value like 2000, then the bar will return to yellow after each increment.
+Is there a way to make Vista redraw the bar immediately after its state has been reverted to its non-Normal value in setSelection()?
+public static void main(String[] args) {
+final int INCREMENT = 2;
+final int SLEEP = 1000;
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10, 10, 500, 200);
+shell.setLayout(new GridLayout());
+final ProgressBar bar = new ProgressBar(shell, SWT.NONE);
+final Button normalButton = new Button(shell, SWT.RADIO);
+normalButton.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(final SelectionEvent e) {
+bar.setState(SWT.NORMAL);
+}
+});
+normalButton.setSelection(true);
+normalButton.setText("Normal");
+final Button pausedButton = new Button(shell, SWT.RADIO);
+pausedButton.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(final SelectionEvent e) {
+display.syncExec(new Runnable() {
+public void run() {
+bar.setState(SWT.PAUSED);
+}
+});
+}
+});
+pausedButton.setText("Paused");
+bar.setSelection(bar.getMaximum() / 4);
+shell.open();
+Runnable runnable = new Runnable() {
+public void run() {
+if (bar.isDisposed()) return;
+bar.setSelection(bar.getSelection() + INCREMENT);
+display.timerExec(SLEEP, this);
+}
+};
+display.timerExec(SLEEP, runnable);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

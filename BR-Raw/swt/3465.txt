@@ -1,0 +1,6 @@
+changing TabFolder foreground colour is not immediately reflected
+M7
+- run control example, go to TabFolder tab
+- change its foreground, note that it doesn't change
+- damage the window, then show it again, and note that the colour is changed
+- alternatively, changing the background does the same thing

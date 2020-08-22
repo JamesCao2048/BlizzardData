@@ -1,0 +1,44 @@
+event loop exception starting mozilla
+Error when using datatools
+- I think it may have been trying to start a browser.
+Duplicate detection on stack trace shows no matches.
+Guessing at SWT component.
+-- Error Log
+--
+Date: Mon Feb 11 14:07:27 GMT 2008
+Message: Unhandled event loop exception
+Severity: Error
+Plugin ID: org.eclipse.ui
+Stack Trace:
+org.eclipse.swt.SWTError: No more handles (java.lang.UnsatisfiedLinkError: no swt-mozilla-gtk-3347 or swt-mozilla-gtk in swt.library.path, java.library.path or the jar file)
+at org.eclipse.swt.SWT.error(SWT.java:3589)
+at org.eclipse.swt.SWT.error(SWT.java:3481)
+at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:324)
+at org.eclipse.swt.browser.Browser.<init>(Browser.java:109)
+at org.eclipse.datatools.sqltools.plan.internal.ui.view.GraphicsPlanControl.createDetailForm(GraphicsPlanControl.java:90)
+at org.eclipse.datatools.sqltools.plan.internal.ui.view.GraphicsPlanControl.init(GraphicsPlanControl.java:72)
+at org.eclipse.datatools.sqltools.plan.internal.ui.view.GraphicsPlanControl.<init>(GraphicsPlanControl.java:53)
+at org.eclipse.datatools.sqltools.plan.internal.ui.view.PlanView.createPartControl(PlanView.java:119)
+at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:370)
+at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:227)
+at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:592)
+at org.eclipse.ui.internal.Perspective.showView(Perspective.java:2086)
+at org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:1027)
+at org.eclipse.ui.internal.WorkbenchPage.access$19(WorkbenchPage.java:1008)
+at org.eclipse.ui.internal.WorkbenchPage$19.run(WorkbenchPage.java:3684)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+at org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:3681)
+at org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:3657)
+at org.eclipse.ui.handlers.ShowViewHandler.openView(ShowViewHandler.java:165)
+at org.eclipse.ui.handlers.ShowViewHandler.openOther(ShowViewHandler.java:109)
+at org.eclipse.ui.handlers.ShowViewHandler.execute(ShowViewHandler.java:77)
+at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:239)
+at org.eclipse.core.commands.Command.executeWithChecks(Command.java:475)
+at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:429)
+at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:165)
+at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:247)
+at org.eclipse.ui.internal.ShowViewMenu$3.run(ShowViewMenu.java:128)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:546)
+at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:490)
+at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContribu

@@ -1,0 +1,6 @@
+Bug 235504 Set subtotal chart view will add other measures automatically[1301]
+Description: Set subtotal chart view will add other measures automatically Build number:2.3.0.v20080604 Steps to reproduce: 1.Open attached report, the report has a crosstab with two measures and only subtotal for one measure(CREDITLIMIT) is ticked on.
+2.Edit column area subtotal to change the subtotal view of CREDITLIMIT to Chart, click OK.
+Expected result: CREDITLIMIT measure'view changes to Chart.
+Actual result: The measure view changed to chart but the other measure SALESEMPLOYEENUMBER is added to subtotal automatically.
+Error log:n/a

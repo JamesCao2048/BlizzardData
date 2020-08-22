@@ -1,0 +1,50 @@
+GDI leak in Label with transparent images (png, gif)
+On win32 (windows xp), Label widget in org.eclipse.swt leaks one GDI object each
+time a transparent image is set with setImage.
+Cause :
+in _setImage the image is set with
+OS.SendMessage (handle, OS.STM_SETIMAGE, fImageType, hImage);
+this message returns the old image handle and CREATES A NEW IMAGE IF hImage has
+pixels with alpha != 0
+( see
+http://msdn.microsoft.com/library/default.asp?url=/library/en-us/shellcc/platform/commctls/staticcontrols/staticcontrolreference/staticcontrolmessages/stm_setimage.asp
+)
+The next time an image is set on the same label, the old (hidden) image is not
+disposed and hence GDI leak.
+Possible solution :
+Before calling _setImage, keep the oldImage :
+public void setImage (Image image) {
+checkWidget ();
+if ((style & SWT.SEPARATOR) != 0) return;
+if (image != null && image.isDisposed()) error(SWT.ERROR_INVALID_ARGUMENT);
+// LIKE THIS
+
+oldImage = this.image;
+_setImage (this.image = image);
+}
+When sending OS.STM_SETIMAGE, keep the old handle and if it's different from
+handle of the oldImage, delete it
+int hOldImage = OS.SendMessage (handle, OS.STM_SETIMAGE, fImageType, hImage);
+// LIKE THIS
+
+// The old image handle could have been a transparent one, created by the
+STM_SETIMAGE
+if (hOldImage != 0)
+if (
+oldImage != null &&
+oldImage.handle != 0 &&
+oldImage.handle != hOldImage
+){
+// We have an image that has been created by a STM_SETIMAGE
+
+OS.DeleteObject(hOldImage);
+}
+
+
+/*
+* When STM_SETIMAGE encounters a bitmap with alpha information,
+* it takes a copy of the bitmap.
+Therefore the bitmap that was
+* created to preserve transparency can be deleted right away.
+*/
+if (hasAlpha && hImage != 0) OS.DeleteObject (hImage);

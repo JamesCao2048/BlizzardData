@@ -1,0 +1,2 @@
+Bug 213947 The user defined aggregation in chart builder's data binding doesn't work[13]
+Description: The user defined aggregation in chart builder's data binding doesn't work[13] Build number: 2.3.0.v20071227-0800 Steps to reproduce: 1, New a chart 2, Select the data binding 3, New a aggregation such as aggregate on one row and COUNT or SUM 4, Check the result in chart builder Expected result: The aggregation binding's result should be correct Actual result: The aggregation doesn't work and only retrieve the value of that row Error log:

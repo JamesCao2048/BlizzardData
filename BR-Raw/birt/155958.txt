@@ -1,0 +1,5 @@
+Bug 155958 Backward compatibility on 'resultset' property
+Before 2.0 build, we always take the 'resultset' property on as resultset hint function.
+But currently, it is different.'resultset' property is to keep the oda resultset metadata,'resultsetHints' replace the function of 'resultset' as the real hints property.
+Currently Model has done backward compatibility on transform between 'resultset' and 'resultsetHints' by copying 'resultset' to 'resultsetHints', but 'resultset''s value still exist, it will break the current impl when fetching this property, because now we have taken this property to save the metadata of Oda resultset not hints info.
+To make old report design working fine, we should clear 'resultset' property, then we can use it as real resultset property.

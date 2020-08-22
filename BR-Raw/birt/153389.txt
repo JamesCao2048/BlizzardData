@@ -1,0 +1,3 @@
+Bug 153389 Can't page breaker by Data sets count
+I want to create a report that implements a table which embeded in a Grid can break page by following js code in onCreate event handlers of table detail rowNum = Number(this.getRowData().getExpressionValue('row["0"]'))+1; if(rowNum %2 ==0){ this.getStyle().pageBreakAfter="always"; }else{ this.getStyle().pageBreakAfter=null; } The example like new_report060810.rptdesign in pagebreak.rar and the Error image 1.jpg also in pagebreak.rar The import thing I want to say is the table must be embeded in a Grid.How can i do?
+thanks

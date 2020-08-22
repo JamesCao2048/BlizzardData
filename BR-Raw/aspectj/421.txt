@@ -1,0 +1,14 @@
+Improvements to incremental compilation
+This bug is to track compiler improvements to incremental compilation.
+There are multiple scenarios to think about but the first focus is changing one
+source file for a class/interface that is affected by an Aspect - it should
+compile/weave almost instantly.  Recently response times have been reported of
+>3seconds (and worse...) and this is not reasonable.
+I've put the following improvements in today:
+- Caching classpath calculations rather than performing them repeatedly.
+- Improved logic to detect weaver completion.
+- Removed unnecessary serialization of the structure model.
+These are available in dev builds right now:  	ajdt_1.2.0.20050215161840
+I'd be interested in user feedback on whether they see noticeable improvements
+in their particular projects.
+more improvements to follow shortly.

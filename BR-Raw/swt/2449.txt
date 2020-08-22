@@ -1,0 +1,37 @@
+Tree horizontal scroll increment too small.
+SWT 3.1
+win32
+swt-N20050721
+Horizontal scrolling (click the horizontal scrollbar arrow, or the bar itself)
+is a much smaller increment on Trees than it is on Tables.
+This is different from the old TableTree implementation which had the same
+increment as a Table.
+public static void main(String[] a) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setLayout(new FillLayout());
+
+Table table = new Table(shell, SWT.H_SCROLL);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+for (int i = 0; i
+< 10; i++) {
+new TableColumn(table, SWT.NONE).setWidth(100);
+}
+
+Tree tree = new Tree(shell, SWT.H_SCROLL);
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+for (int i = 0; i
+< 10; i++) {
+new TreeColumn(tree, SWT.NONE).setWidth(100);
+}
+
+
+shell.setBounds(50, 50, 600, 200);
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

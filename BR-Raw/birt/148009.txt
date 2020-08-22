@@ -1,0 +1,3 @@
+Bug 148009 The result of joint data set is incorrect.
+If the number of rows of secondary data set being joined exceeds 1024 the result of joint data set would be incorrect.
+This is because when populate binary for data set to be joined the boundary information are created incorrectly.

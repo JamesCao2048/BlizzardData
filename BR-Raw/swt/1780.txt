@@ -1,0 +1,2 @@
+TableItem#getBounds(0) incorrect when adding columns in asyncExec
+To reproduce start the snippet and click on the shown item (its column 2) you'll notice in the console that the widths are incorrect for the first column and it doesn't change if you resize the table (the second does!)

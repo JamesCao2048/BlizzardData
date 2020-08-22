@@ -1,0 +1,14 @@
+Up and Down arrow keys don't work in RTL text
+There is an I18N issue regarding RTL text in a text document.
+Here is how to reproduce it:
+1.Open a text editor (for example attached UTF-8 text) and write some LTR and RTL content in it.
+2.go to a line, ending with RTL content and press end button.
+Now press Up/Down button.
+You can see that up/down arrow keys don't work in some locations, when for example you press Up and the upper line (ending with RTL text) has less characters that current line.
+Same happens when pressing Down arrow key and the bottom line has less characters.
+This happens in Eclipse 3.7.0, 3.7.1, and STS 2.7.x
+-- Configuration Details
+--
+Product: Eclipse 1.4.1.20110909-0613 (org.eclipse.epp.package.jee.product)
+Installed Features:
+org.eclipse.platform 3.7.1.r37x_v20110729-9gF7UHOxFtniV7mI3T556iZN9AU8bEZ1lHMcVK

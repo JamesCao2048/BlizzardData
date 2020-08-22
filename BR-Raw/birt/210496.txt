@@ -1,0 +1,3 @@
+Bug 210496 Add hasStyle property in reportItemModel extension point
+When chart gets reportItem's properties by extending ReportItem, style properties are null.
+Hence, model needs to add hasStyle property in reportItemModel extension point

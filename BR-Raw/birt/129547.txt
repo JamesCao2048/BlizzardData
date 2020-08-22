@@ -1,0 +1,10 @@
+Bug 129547 [hashcode/equals] add preference for instanceof [code generation]
+Hibernate can load a POJO from a DB.
+However, it instanciates a proxy class instead of the real POJO class.
+This allows it to lazily load the attributes when a getter is invoked.
+However, if equals() or hashCode() is called before any of these getters is called, then the attribute values are null or 0.If there was an option (yes, I hate these as much as the next person) to use getter methods instead of direct access to the data members, that would be great.
+There is still a problem for these Hibernate/EJB3 pojos.
+The equals() code uses getClass() == other.getClass().
+Because other is a proxy, this always fails.
+I have read all the discussion about this in JavaLobby, and I understand the reasons for doing this, but for my hibernate objects, I must change it to using instanceof.
+Again, I would be happy with an option in the generate dialog.

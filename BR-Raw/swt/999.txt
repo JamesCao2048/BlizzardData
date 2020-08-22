@@ -1,0 +1,10 @@
+StyledText : text selection stops when mouse cursor leaves the x-axis
+When the mouse-left-button is down, and as I drag to make a text selection, I drag off the x-axis of the control.
+Normally the selection would continue to follow the mouse.
+With StyledText, the selection only follows the mouse when the mouse cursor remains within the area of the styledtext control.
+This behaviour is different from other text input's under windows, if you compare to the behaviour in your browser, or a native windows app.
+It also differs from the standard SWT Text control, however that control is too limited for my needs.
+Very easy to reproduce.
+I posted on the swt mailing list to find a solution, and was referred that it's a bug.
+Let me know if you need any more details.
+Thanks.

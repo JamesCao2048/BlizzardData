@@ -1,0 +1,14 @@
+enum is no longer a valid variable name
+I'm guessing that this JDT warning was just recently added to eclipse.
+Users
+with jdk 1.5 will not be able to compile us since enum is now a keyword.
+The
+places where we use enum as a variable name, but no longer should, are:
+Clipboard.java	line 534
+Clipboard.java	line 538
+Clipboard.java	line 539
+Clipboard.java	line 548
+DropTarget.java	line 641
+DropTarget.java	line 647
+DropTarget.java	line 648
+DropTarget.java	line 668

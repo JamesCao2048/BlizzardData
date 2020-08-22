@@ -1,0 +1,10 @@
+reducing VIRTUAL Table's item count can show drawing problem
+3.1
+- run the MassiveTableTest
+- invoke Table2->SetItemCount with a value of 50
+- scroll to the very bottom of the Table
+- invoke Table2->SetItemCount with a value of 45
+- this reduces the item count, but does not paint the result properly
+
+-> this will happen whenever a Table's top index changes as a result of a
+reduced SetItemCount (so when the user is scrolled near the bottom of the Table)

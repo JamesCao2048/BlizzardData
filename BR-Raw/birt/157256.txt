@@ -1,0 +1,10 @@
+Bug 157256 [smoke][regression] fail to locate existing resource file
+steps to reproduce:
+- create a report, select the report
+- go to property editor, choose resources
+- add a resource file, say key.properties under resource folder, click on ok
+- notice /key is displayed in the resource file text box
+- switch to report layout
+- add a label item, edit its localization, click on add expected behavior:
+- key.properties can be located actual behavior:
+- failed to so, however after i removed "/" in front of "key" in resource file text box, it worked out fine.

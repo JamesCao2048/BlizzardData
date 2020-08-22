@@ -1,0 +1,39 @@
+More NPEs in Java15AnnotationFinder
+Reported on the list by Chris Wall and on spring bug  http://jira.springframework.org/browse/SPR-4390
+---
+When my plugin is initiated and during Spring context beans loading,
+we're getting the following:
+Caused by: java.lang.NullPointerException
+at org.aspectj.weaver.reflect.Java15AnnotationFinder.getParameterNamesFromLVT(Java15AnnotationFinder.java:196)
+at org.aspectj.weaver.reflect.Java15AnnotationFinder.getParameterNames(Java15AnnotationFinder.java:187)
+at org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate.tryToDiscoverParameterNames(Java15ReflectionBasedReferenceTypeDelegate.java:297)
+at org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate.getDeclaredPointcuts(Java15ReflectionBasedReferenceTypeDelegate.java:270)
+at org.aspectj.weaver.ReferenceType.getDeclaredPointcuts(ReferenceType.java:535)
+at org.aspectj.weaver.ResolvedType$7.get(ResolvedType.java:477)
+at org.aspectj.weaver.Iterators$3$1.hasNext(Iterators.java:118)
+at org.aspectj.weaver.Iterators$3.hasNext(Iterators.java:128)
+at org.aspectj.weaver.ResolvedType.findPointcut(ResolvedType.java:488)
+at org.aspectj.weaver.patterns.ReferencePointcut.resolveBindings(ReferencePointcut.java:152)
+at org.aspectj.weaver.patterns.Pointcut.resolve(Pointcut.java:196)
+at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:330)
+at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:308)
+at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:197)
+at org.springframework.aop.aspectj.AspectJExpressionPointcut.checkReadyToMatch(AspectJExpressionPointcut.java:184)
+at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:165)
+at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:198)
+at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:253)
+at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:287)
+at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:113)
+at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:85)
+at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:66)
+at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:345)
+at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:309)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:360)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1343)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:470)
+I've tried with with Spring 2.5.2 and 2.5.3 with JDK 1.5. We're using
+"@AspectJ" so <aop:aspectj-autoproxy/> is set, and aspectjweaver.jar
+and aspectjrt.jar are included. The Spring IDE shows that AOP advise
+is applied to expected pointcuts. When compiled and run outside of the
+Spring IDE, the application encounters the NPE.
+Ideas?

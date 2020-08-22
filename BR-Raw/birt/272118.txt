@@ -1,0 +1,7 @@
+Bug 272118 DBCS3.5: Unable to export data in the local encoding if leave the field blank.
+Build ID: I20090401-1325 Steps To Reproduce: 1.Edit the data source file with NLV character(ex.
+U+3042U+3044U+3046) 2.Preview the report in Web Viewer 3.Click Data Export icon and open Data Export dialog.
+4.Check "Others" radio button for "output encoding" and leave the field blank.
+Click OK More information: OS:Windows Vista Ultimate SP1 Japanese version Build ID:I20090401-1325 When leave the field blank, the data was saved in UTF-8.Note: When specifying "Shift_JIS"(also SJIS) in the field, the data was saved in the correct encoding.
+Expected: If leave the field blank, the data is saved in the local encoding.
+(For Japanese windows, Shift_JIS)

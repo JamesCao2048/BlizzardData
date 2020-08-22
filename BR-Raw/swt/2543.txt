@@ -1,0 +1,36 @@
+Regression: Drop target has incorrect DND cursor
+SWT-win32, v3223
+In the example below, there is a somewhat uncooperative drop target
+that does not accept any kind of transfer.
+Expected result when attempting to drag objects over the shell:
+No drop cursors should be visible (except for the "veto sign")
+Actual result:
+Cursors such as COPY or LINK appear, depending on the drag source
+The problem is not limited to an empty transfer list.
+For example, if the drop target accepts only file transfers,
+non-veto cursors will appear even when a piece of text is dragged.
+This bug is not reproducible with v3218 and earlier.
+---
+import org.eclipse.swt.dnd.*;
+import org.eclipse.swt.widgets.*;
+public class DropTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+
+DropTarget target = new DropTarget(
+shell,
+DND.DROP_DEFAULT | DND.DROP_COPY);
+target.setTransfer(new Transfer[] {});
+
+shell.setSize(200, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

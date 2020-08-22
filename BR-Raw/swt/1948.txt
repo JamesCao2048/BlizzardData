@@ -1,0 +1,11 @@
+[DND] FileTransfer disables image feedback
+Custom feedback image does not work with FileTransfer data type.
+In org.eclipse.swt.dnd.DragSource :
+event.image contains the custom image
+line 281 :
+if (transfer instanceof FileTransfer) {
+TransferData transferData = new TransferData();
+transferData.type = types[0];
+event = new DNDEvent();  // Image is lost
+event.widget = this;
+MacOS 1.4.9 / Eclipse 3.3RC1

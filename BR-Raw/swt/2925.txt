@@ -1,0 +1,47 @@
+No way to center tool items on a vertical toolbar
+The following code brings up a window containing a single vertical toolbar.
+The toolbar contains two ToolItem's with different length labels but the same
+icon.
+The toolbar buttons are left-aligned within the toolbar, but having them
+centered about the vertical center axis of the toolbar would be desirable
+(think of the alignment of items in the Outlook bar, or in the panel at the
+side of the standard Windows file chooser dialog.
+Can anyone suggest an interim workaround?
+-----8<------
+package test;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.swt.widgets.ToolItem;
+public class ToolBarAlignmentBugDemo {
+// "home.gif" is attached to this bug report.
+Place it in the root
+// directory of your C: drive before running this code.
+private static final String ICON_FILE = "C:/home.gif";
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBackground(display.getSystemColor(SWT.COLOR_YELLOW));
+Image image = ImageDescriptor.createFromFile(null,
+ICON_FILE).createImage();
+ToolBar toolBar = new ToolBar(shell, SWT.FLAT | SWT.VERTICAL);
+ToolItem item1 = new ToolItem(toolBar, SWT.PUSH | SWT.CENTER);
+item1.setImage(image);
+item1.setText("Open");
+ToolItem item2 = new ToolItem(toolBar, SWT.PUSH | SWT.CENTER);
+item2.setImage(image);
+item2.setText("Show Package Hierarchy");
+toolBar.pack();
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+------8<-----

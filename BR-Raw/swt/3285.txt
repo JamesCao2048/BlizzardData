@@ -1,0 +1,10 @@
+[Browser] Enter path to non-existing file brings NullPE
+Hi,
+using the browser snippet ( http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout %
+7E/platform-swt-home/snippits/snippet128.html) and entering something
+like "C:/skdjskjd" (= non existing file) results in a Nullpointer Exception at
+org.eclipse.swt.browser.Browser.setUrl(Browser.java:1094).
+I am currently simply catching the NullpointerException but that's not very
+good style.
+Regards,
+Ben

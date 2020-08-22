@@ -1,0 +1,4 @@
+Incorrect signature for OS.XGetWindowProperty
+OS.XGetWindowProperty has an incorrect signature, it uses longs in some places that should be ints.
+I will attach a patch.
+This causes problems for file open on solaris.

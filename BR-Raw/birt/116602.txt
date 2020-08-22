@@ -1,0 +1,4 @@
+Bug 116602 [Regression]Underline/overline/linethrough don't work when set in label's onCreate method.
+Description: Underline/overline/linethrough don't work when set in label's onCreate method.
+Steps to reproduce: 1.run attached oncreate-style-label.xml Expected result: Underline/overline/linethrough style work.
+Actual result: They didn't work.

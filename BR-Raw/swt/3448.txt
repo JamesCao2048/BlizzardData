@@ -1,0 +1,34 @@
+TableItem.setImageIndent does not indent items
+Build 2.0, Linux/GTK
+Try running the following under GTK and you'll notice that the TableTreeItems
+are not indented.
+They are indented under Win2k and Linux/Motif, though:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.TableTree;
+import org.eclipse.swt.custom.TableTreeItem;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TableTreeTest {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+TableTree tree = new TableTree(shell, SWT.FULL_SELECTION);
+TableTreeItem item = new TableTreeItem(tree, SWT.NONE);
+item.setText("Foo");
+TableTreeItem item2 = new TableTreeItem(item, SWT.NONE);
+item2.setText("Child 1 of Foo");
+item2 = new TableTreeItem(item, SWT.NONE);
+item2.setText("Child 2 of Foo");
+item = new TableTreeItem(item2, SWT.NONE);
+item.setText("Child 1 of Child 2 of Foo");
+
+shell.open();
+shell.setSize(400, 400);
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+display.dispose();
+}
+}

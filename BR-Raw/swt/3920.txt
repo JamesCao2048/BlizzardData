@@ -1,0 +1,4 @@
+StyledText - double click word select and caret placement
+Double click word select places caret at beginning of word, not the end.
+Looks like this problem has been here for awhile, but went undetected due to
+JFace's override of double click behavior.

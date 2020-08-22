@@ -1,0 +1,11 @@
+Colors returned by Mac Color Dialog get shifted based on calibrated color space
+Build Identifier: I20100608-0911
+The color dialog on Mac takes in an RGB value and generates an NSColor using device colorspace, then the user manipulates the values manually.
+The NSColor is then transformed using the calibrated colorspace and then converted into an RGB object.
+That conversion leads to a shifting of values.
+In cases where the user is using the eyedropper, this is probably the correct way to handle things, but if the user is manually entering HSB/RGB values then we may want to retain the value exactly.
+Reproducible: Always
+Steps to Reproduce:
+1.Open a color dialog
+2.Enter in 190, 0, 19 in HSB
+3.Returned RGB value gets mapped to 190,0,14 for me when passed back into next open of color dialog.

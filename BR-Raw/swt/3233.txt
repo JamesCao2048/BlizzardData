@@ -1,0 +1,10 @@
+investigate making emulated Table and Tree always post selections
+post-3.0
+Compare event ordering to other platforms, as there are some inconsistencies in
+the implementation that probably introduce some problems.
+Senders of Selection
+and DefaultSelection should probably always post these.
+In particular, some
+examples:
+- SelectableItemWidget.deselectNotify currently async's
+- Tree.mouseDoubleClick currently sends (notifyListeners)

@@ -1,0 +1,10 @@
+Using content assist in the new Java class wizard crashes the VM
+To reproduce:
+# Use the *New->Java Class* wizard
+# Start typing a base class name, and press *Command+SPACE* to activate content assist
+# observe that the JVM crashes
+Crash occurs using Java 5 with both of these versions:
+Build id: I20090421-0930 (32-bit)
+Build id: I20090427-0800 (64-bit)
+It may also happen with other versions: these just happen to be the ones that I have installed.
+See the attached crash log

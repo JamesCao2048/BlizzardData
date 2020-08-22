@@ -1,0 +1,6 @@
+JavaViewer example should remember path
+The JavaViewer example does not remember the path of the last
+file opened.
+Every time the user opens a file, he has to walk
+the file system again.
+This can be easily done by keeping the FileDialog around.

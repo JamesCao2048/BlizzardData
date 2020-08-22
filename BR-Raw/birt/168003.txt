@@ -1,0 +1,5 @@
+Bug 168003 [2.1.2][regression]In library,delete item inside grid should not transfer current view.[01]
+Description: [2.1.2][regression]In library,delete item inside grid should not transfer current view.[01] Build: Version 2.1.2.v20061213-0710 steps to reproduce: 1.New a library 2.Insert a grid.
+3.Insert items to grid cell.
+4.Select one item in grid and press delete Expected result: Focus is on grid for next operation.
+Actual result: Grid disppeared, focus changed to whole library.

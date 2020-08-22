@@ -1,0 +1,14 @@
+SWT Label widget trancates the text if it contains a long word
+SWT Label widget trancates  the text  if it contains a long word.
+How to reproduce:
+1.Create SWT Label with SWT.WRAP.
+2.call Label#setLabel and set the text which contains a long word.
+3.call Label#setSize to word wrap the text.
+Fix suggestion:
+In SWT Label widget, specify  SS_EDITCONTROL to avoid trancation when word wrap.
+Actually  MSIE javascript alert uses SS_EDITCONTROL option.
+See the following page in detail.
+http://msdn.microsoft.com/library/default.asp?url=/library/en
+-
+us/shellcc/platform/commctls/staticcontrols/staticcontrolreference/staticcontrol
+styles.asp

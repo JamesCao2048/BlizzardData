@@ -1,0 +1,29 @@
+revise asm and create interfaces
+The org.aspectj.asm API exposes implementation detail, does not have
+interfaces, and has needless generalization and indirection (Association<-
+>Relation<->RelationNode and LinkNode<->StructureNode).  The following is a
+first pass at an improved interface:
+- IProgramElement
+* getName
+* getAccessibility : Accessiblity
+* getModifiers : Modifiers
+* getKind : Kind
+* getFormalComment : String
+* isImplementor
+* isOverrider
+* isRunnable
++ getRelationships
++ getDeclaringType : IAspectJElement
++ getPackage : IAspectJElement
++ getType : IAspectJElement (can be null)
++ getParameters : List /*IAspectJElement*/ (can be null)
++ toString -> name
++ toSignatureString -> full signature
+/**
+* uni-directional 1..* relationships
+*/
+- IRelationship
++ getName
++ getKind
++ getSource
++ getTargets

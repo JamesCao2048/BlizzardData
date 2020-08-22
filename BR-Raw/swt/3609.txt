@@ -1,0 +1,6 @@
+org.eclipse.swt.widgets.Text, method append(), bottom focusing error
+When appending a line (or multiple) to the text-widget with append(), the last
+lines do not get focused.
+Contrary to the win32 version, the GTK version always
+stays at the top of all lines instead of focusing the bottom when an append()
+has been done.

@@ -1,0 +1,7 @@
+Bug 216085 Datetime level like year/month.. should display as integer[1301]
+Description: Datetime level like year/month..
+should display as integer Build number:2.3.0.v20080122 Steps to reproduce: 1.New a cube with one dimension is datetime.
+2.Insert a chart, bind it with the cube 3.Use year as category x series, drag measure as y series.
+4.Preview.
+Expected result: Display year as 2003, 2004 Actual result: Display year as 2003.0, 2004.0.The same issue exists for month, quarter.
+Error log:n/a

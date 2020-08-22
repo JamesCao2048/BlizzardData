@@ -1,0 +1,31 @@
+Owner draw: gc in paint doesn't have foreground color set
+Created  attachment 94532   [details]
+example snippet
+20080402
+Not sure of this is a bug:
+Have a look the attached example that is a SWT-only example of the code that we use in the StyledCellLabelProvider
+- owner draw in a table
+- only paint is implemented, erase is left to the OS
+In main, we set new fore- and background colors on the table widget:
+Background: Yellow, Foreground: Blue
+When running, you see only the background color is red.
+Foreground still black (OS: default)
+When debugging 'paint()' the following can be observed:
+
+- event.item has the new colors set
+
+- event.gc has only the new background set
+The current example code assumes that the gc colors are correct and paints on the gc.
+Alternative is to take the colors from the item (see commented out code).
+This works.
+However it looks strange as we only do this for the non-selected items.
+if (!isSelected) {
+Color foreground= item.getForeground(event.index);
+gc.setForeground(foreground);
+
+Color background= item.getBackground(event.index);
+gc.setBackground(background);
+}
+Question: Is it a bug that the gc has only the background color set?
+Shouldn't we be able to assume that it correctly initialized with fore and background colors.
+Same with the font: The GC doesn't have the font set, the items do.

@@ -1,0 +1,8 @@
+Bug 144153 [regression] drill through to a report with parameter does not work properly
+steps to reproduce:
+- use the attached report design (new_report_2.rptdesign contains a drill through link) (new_report_3.rptdesign contains a parameter without default value)
+- preview new_report_2.rptdesign in HTML and PDF
+- click on Carine expected behavior:
+- drill through to new_report_3.rptdesign
+- parameter dialog should be displayed actual behavior:
+- browser internal error

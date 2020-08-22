@@ -1,0 +1,56 @@
+IAE when leaving IME
+3.4 M7.
+See also  bug 222937 .
+Make sure a Bidi language is installed, e.g.
+Hebrew.
+1.Have this:
+public class Test {
+public static void main(String[] args) {
+}
+}
+2.put caret into 'args'
+3.Ctrl+1
+4.select 'Assign parameter to new field'
+5.switch IME to Japanese,Hiragana input mode
+6.quickly type many random chars
+7.hit 'Return'
+==>
+!ENTRY org.eclipse.ui 4 0 2008-05-07 17:24:37.899
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:3757)
+at org.eclipse.swt.SWT.error(SWT.java:3691)
+at org.eclipse.swt.SWT.error(SWT.java:3662)
+at org.eclipse.jface.text.DefaultDocumentAdapter.getLineAtOffset(DefaultDocumentAdapter.java:201)
+at org.eclipse.swt.custom.StyledText.getBoundsAtOffset(StyledText.java:3160)
+at org.eclipse.swt.custom.StyledText.showCaret(StyledText.java:8213)
+at org.eclipse.swt.custom.StyledText.handleCompositionChanged(StyledText.java:5026)
+at org.eclipse.swt.custom.StyledText$8.handleEvent(StyledText.java:4887)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1002)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1026)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1011)
+at org.eclipse.swt.widgets.IME.WM_IME_COMPOSITION(IME.java:239)
+at org.eclipse.swt.widgets.Canvas.WM_IME_COMPOSITION(Canvas.java:361)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3807)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:334)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4487)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:2260)
+at org.eclipse.swt.internal.BidiUtil.windowProc(BidiUtil.java:657)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2346)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3379)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2394)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2358)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2210)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:494)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:489)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:112)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java

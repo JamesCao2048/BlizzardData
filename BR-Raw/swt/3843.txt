@@ -1,0 +1,9 @@
+DBCS: upper bar character will be padded
+Driver M4
+Platform RedHat 8.0, ja_JP.eucJP locale
+STEPS
+1) set up SWT Examples manually, please refer 29509
+2) copy Japanese property files that I will attache later
+3) run hoverhelp, fileviewer and controlexample
+Some strings upper bar padded, some are not.
+This occurs on Motif only

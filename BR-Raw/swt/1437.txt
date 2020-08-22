@@ -1,0 +1,22 @@
+TabFolder sends Selection events for programmatic selections
+snippet:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setBounds(10,10,300,200);
+final TabFolder folder = new TabFolder(shell, SWT.NONE);
+folder.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("selection: " + folder.indexOf((TabItem)event.item));
+}
+});
+new TabItem(folder, SWT.NONE);
+new TabItem(folder, SWT.NONE);
+shell.open();
+folder.setSelection(1);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,7 @@
+Bug 212701 Fail to render reportlet in birt:report with div container[0603]
+Description: Fail to render reportlet when set container to div in report tab.
+Build number:2.3.0.v20071212 Steps to reproduce: 1.Deploy birt or create new birt web project.
+2.preview attached jsp file.
+Expected result: Display chart reportlet only.
+Actual result: Display all report content out.
+Error log:n/a

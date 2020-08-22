@@ -1,0 +1,5 @@
+Bug 164445 [Regression]Required value's parameter has no "*" [0705]
+Description: Required value's parameter has no "*".
+Build number: 2.2.0.v20061114-1013 Steps to reproduce: 1.Create a paramter: name:p1, default vale: aa; not allow null value 2.Preview in Web Viewer 3.Pop up parameter dialog Expected result: P1 has mark "*".
+Actual result: P1 has no mark "*"(set default value).
+Error log: N/A

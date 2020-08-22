@@ -1,0 +1,6 @@
+Save dialog doesn't remove '&' from title string
+I tried to add JavaDoc documentation to a JAR in the build-path of a project,
+and was prompted with a dialog box to select the JavaDoc location.
+The title of the dialog box was " &Select JavaDoc Location:"
+I'm not sure if the & is an artifact of being on a Mac OS X or whether it's
+a glitch for other OSs as well.

@@ -1,0 +1,73 @@
+Table/Tree: Columns pack on table.clear for no reason with a lot of flashing
+GTK2 2.4.10
+swt-I20060330-2000-gtk-linux-x86
+Resize the column widths with the mouse.
+They pack to min size for no reason on the call to clearAll().
+There is also a great deal of flashing.
+If you don't set images on the tableItem, this problem doesn't seem to happen.
+public static int cnt = 100;
+public static void main(String[] args) {
+final Display display = new Display();
+
+final Shell shell = new Shell(display);
+final ArrayList itemList = new ArrayList();
+shell.setLayout(new FillLayout());
+
+final Table table = new Table(shell, SWT.VIRTUAL
+| SWT.FULL_SELECTION | SWT.MULTI);
+
+final int columns = 15;
+for (int i = 0; i
+< columns; i++) {
+TableColumn tc = new TableColumn(table, SWT.LEFT);
+tc.setText("COL" + i);
+tc.setWidth(174);
+}
+
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+
+table.setSortDirection(SWT.DOWN);
+table.setSortColumn(table.getColumn(0));
+table.setItemCount(cnt);
+
+final Image image = new Image(display, 16, 16);
+
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem) event.item;
+String text = String.valueOf(event.index);
+itemList.add(item);
+
+for (int i = 0; i
+<= columns; i++) {
+item.setText(i, text);
+item.setImage(i, image);
+}
+}
+});
+
+final int timerDelay = 800;
+final Runnable r = new Runnable() {
+public void run() {
+cnt--;
+if (cnt
+< 0) cnt = 25;
+table.setItemCount(cnt);
+table.clearAll();
+
+display.timerExec(timerDelay, this);
+}
+};
+
+display.timerExec(timerDelay, r);
+
+shell.setSize(350, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

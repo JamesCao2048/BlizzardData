@@ -1,0 +1,9 @@
+[EditorMgmt] Editor close button
+I20040309
+The multiple editor tab preference is diabled.
+In this build the editor tab is
+no longer presented as a tab which makes it look a bit nicer.
+Major issue:
+The close button is still a moving target and now even more difficult to spot
+as there is no tab border.
+-> The close button should always be at the same position.

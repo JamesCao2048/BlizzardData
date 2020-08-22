@@ -1,0 +1,5 @@
+Use gtk_orientable_set_orientation if gtk >= 2.16.0.
+Add new dynamic gtk_orientable_set_orientation for usage with newer gtk.
+Make gtk_toolbar_set_orientation a dynamic method in preparation for gtk3.
+Fix ToolBar widget to invoke the newer method if gkt>= 2.16.0.
+Commit/patch  http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=581283c6023507a8a7fa20d49593eff58f343021

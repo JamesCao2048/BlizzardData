@@ -1,0 +1,9 @@
+Bug 132786 Value2 should be cleaned after convert operator from between to equal in highlight rule.
+Description: Value2 should be cleaned after convert operator from between to equal in highlight rule.
+Steps to reproduce: 1.Insert a data.
+2.Set highlight rule in Property Editor.
+2 between 1 and 3, color blue.
+3.Save the report 4.Modify highlight rule, change to 1 equal 1, color blue.
+5.Save the report, see generated xml source.
+Expected result: In xml source, value2 should be cleaned in highlight expression.
+Actual result: In xml source, value1 is 1 and value2 is 3.

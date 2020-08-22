@@ -1,0 +1,5 @@
+Bug 198774 Can not publish to template folder when set the preview image as thnmbnail image[00]
+Description: Can not publish to template folder when set the preview image as thnmbnail image[00] Step: 1.New a template.
+2.Set the Preview as thnmbnail image.
+3.Publish the template to template folder Actual result: It hint that the preview image file does not exist.
+Expected result: The template can be publish to template folder when use the thnmbnail image.

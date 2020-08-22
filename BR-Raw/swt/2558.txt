@@ -1,0 +1,9 @@
+Two full screen redraws creating a GC on Display
+I20030604
+MacOS 10.2.6
+- open some Java source in Java text editor
+- start Quartz Debug and turn on "Flash screen updates"
+- switch back to Eclipse and wait until all yellow flashing has stopped
+- move the mouse pointer over a Java type that has some Java doc
+- wait for the hover window to appear
+Observe: two full screen redraws before hover window opens

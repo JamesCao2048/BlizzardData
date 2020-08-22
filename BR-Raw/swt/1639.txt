@@ -1,0 +1,24 @@
+[Tree] Selection-Rect changes on expanding TreeItem causes pixel corruption
+I am not sure wether this is a Windows Bug.
+When expanding the Root treeitem on this snippet, I can see the Selection-Rectangle expand by some pixels:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Tree tree = new Tree(shell, SWT.BORDER);
+TreeItem root = new TreeItem(tree, SWT.NONE);
+root.setText("Root");
+TreeItem child = new TreeItem(root, SWT.NONE);
+child.setText("Hello World");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+I am running with Manifest.
+Can also reproduce with M4.
+Ben

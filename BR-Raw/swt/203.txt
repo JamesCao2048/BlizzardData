@@ -1,0 +1,10 @@
+[browser] browser can not get focus when current focus is on some SWT control.
+Build Identifier: SWT 3.7.2
+Per the sample(same sample with  bug 365280 ), browser on the left side navigates to google.
+Click the search input text area and we get the focus inside browser.
+Then we click on the shell on the right side and this time, browser search input text area can NOT get the focus again when we try to click on it.
+Workaround.
+In order to get the focus, we can first click on the combo box at right side and then back, and browser search input text area will get the focus again.
+Only happen on Mac cocoa.
+Not in Mac carbon.
+Reproducible: Always

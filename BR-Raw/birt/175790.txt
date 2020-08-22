@@ -1,0 +1,4 @@
+Bug 175790 No data retrived in attached report design file[07]
+Description: No data retrived in attached report design file[07] Build number: 2.2.0.v20070228-0630 Steps to reproduce: 1, Open the attached report design 2, Double Click Dataset and Click OK button 3, Edit the Dataset and preview the results Expected result: All the row["OFFICECODE"] equal to 1 should be retrieved Actual result: No data retrieved when preview the results Another steps: 1, change the filter to row["OFFICECODE"] equal to 2.The data can be retrieved 2, Edit the filter, in value1 click
+<Select values...> and select 1.The value is quoted.
+The data can be retrieved 3, Input 1 and 2 in value1, 2 can retrieve data but 1 can not

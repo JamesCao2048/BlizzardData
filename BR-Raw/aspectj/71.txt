@@ -1,0 +1,27 @@
+No way to exclude Proxool classes although excluded from AOP. Causing Veryfy error.
+Build Identifier: 20100218-1602
+For aspectJ 1.6.7 the setup works, however exactly the same setup but changing the aspectJ version to 1.6.8 or 1.6.9 derive to the same error: a piece of code excluded from the aop.xml is woven causing a Verify Error.
+We are using Proxool, proxy setup which in fact uses CGLIB to create a EnhancerProxy class. In order to avoid VerifyError exceptions the Proxool classes are excluded from aop.xml exactly in the same way the CGLIB workarround is commented in the aspectJ FAQ:
+<exclude within="*..*Proxool*"/>
+This is the error we got when we upgrade our 1.6.7 aspejctweaver.jar to 1.6.8. The same is got when using 1.6.9:
+jvm 3    | 2010/08/03 16:42:53 | java.lang.VerifyError: (class: oracle/jdbc/internal/OracleConnection$$EnhancerByProxool$$7f6320a8, method: getTdoCState signature: (Ljava/lang/String;Ljava/lang/String;)J) Inconsistent stack height 1 != 0
+jvm 3    | 2010/08/03 16:42:53 | 	at java.lang.Class.getDeclaredMethods0(Native Method)
+jvm 3    | 2010/08/03 16:42:53 | 	at java.lang.Class.privateGetDeclaredMethods(Class.java:2427)
+jvm 3    | 2010/08/03 16:42:53 | 	at java.lang.Class.getDeclaredMethod(Class.java:1935)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.proxy.Enhancer.getCallbacksSetter(Enhancer.java:627)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.proxy.Enhancer.setCallbacksHelper(Enhancer.java:615)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.proxy.Enhancer.setThreadCallbacks(Enhancer.java:609)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.proxy.Enhancer.createUsingReflection(Enhancer.java:631)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.proxy.Enhancer.firstInstance(Enhancer.java:538)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:225)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.proxy.Enhancer.createHelper(Enhancer.java:377)
+jvm 3    | 2010/08/03 16:42:53 | 	at org.logicalcobwebs.cglib.proxy.Enhancer.create(Enhancer.java:285)
+....
+As far as the Verify Error is got while deploying one of the applications that run on the serve we are no able to use the new versions of aspectJ because the application is not properly started up.
+Thank you very much in advance,
+Best regards.
+Reproducible: Always
+Steps to Reproduce:
+1.Exclude Proxool classes from aop.xml using aspectj 1.6.7. It works
+2.Upgrade to 1.6.8: it does not work.
+3.Upgrade to 1.6.9: it does not work.

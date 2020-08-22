@@ -1,0 +1,2 @@
+Bug 145698 Name change won't enable "restore property" button
+Steps to reproduce: 1.New a report, extends lib.label 2.Choose the label, switch to property editor, chang its name to "aa" 3.Choose the label again Expected result: "Restore property" button is enabled Actual result: "Restore property" button is grayed out

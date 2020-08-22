@@ -1,0 +1,16 @@
+[browser] AD pop-up doesn't show if flash plug-in not installed.(No OpenWindow listener)
+[env]
+* RedHat EL4 WS Update 4
+* Eclipse 3.3 M4 build.
+* Firefox 1.5.0.8
+[Steps]
+1.Open "Internet Web Browser".
+2.Navigate to a website with pop ups.e.g:( http://news.sohu.com)(http://www.cnn.com ).
+3.The pop up window will be shown if the Flash plug-in is installed.
+4.The pop up window will not be shown if the Flash plug-in is not installed.
+If debug into, the Browser open window listener is not fired.
+[More]
+Firefox-1.5.0.3(xulrunner-1.8.0.3):AD can be popup always(in despite of install or not install the SWF Plugin).
+Firefox-1.5.0.8(xulrunner-1.8.0.8):AD can be popup well when the SWF plugin be installed, otherwise, AD can not be popup when the SWF plugin not be installed, and a HINT is shown to ask for installing the missed Flash plug-in.
+[Problem]
+In SWT.Browser, the AD window is lost, and it doesn't notify user to install the missed plug-in.

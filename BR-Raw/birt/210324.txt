@@ -1,0 +1,15 @@
+Bug 210324 Fail to switch 123.45 to boolean value in dataset.[07]
+Description: Fail to switch 123.45 to boolean value in dataset.
+Build number:2.3.0.v20071120 Steps to reproduce: 1.Open attached report.
+2.Edit the script dataset, click Preview Result.
+Expected result: Display data rows.
+Actual result: Error dialog to indicate that fail to convert value to boolean.
+In Boolean java doc, I saw "representing the value true if the string argument is not null and is equal, ignoring case, to the string "true"".
+So I think it should accept any kind of string values.
+Error log: org.eclipse.birt.data.engine.core.DataException: A BIRT exception occurred: Can not convert the value of 12345.6789 to Boolean type..
+See next exception for more information.
+Can not convert the value of 12345.6789 to Boolean type.
+at org.eclipse.birt.data.engine.core.DataException.wrap(DataException.java:118) at org.eclipse.birt.data.engine.expression.ExprEvaluateUtil.evaluateExpression(ExprEvaluateUtil.java:78) at org.eclipse.birt.data.engine.impl.BindingColumnsEvalUtil.evaluateValue(BindingColumnsEvalUtil.java:217) at org.eclipse.birt.data.engine.impl.BindingColumnsEvalUtil.getColumnsValue(BindingColumnsEvalUtil.java:180) at org.eclipse.birt.data.engine.impl.ResultIterator.prepareCurrentRow(ResultIterator.java:614) at org.eclipse.birt.data.engine.impl.ResultIterator.next(ResultIterator.java:375) at org.eclipse.birt.report.designer.data.ui.dataset.ResultSetPreviewPage.populateRecords(ResultSetPreviewPage.java:489) at org.eclipse.birt.report.designer.data.ui.dataset.ResultSetPreviewPage.access$2(ResultSetPreviewPage.java:479) at org.eclipse.birt.report.designer.data.ui.dataset.ResultSetPreviewPage$5.run(ResultSetPreviewPage.java:435) at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext
+.java:113) Caused by: org.eclipse.birt.core.exception.CoreException: Can not convert the value of 12345.6789 to Boolean type.
+at org.eclipse.birt.core.data.DataTypeUtil.toBoolean(DataTypeUtil.java:378) at org.eclipse.birt.core.data.DataTypeUtil.convert(DataTypeUtil.java:96) at org.eclipse.birt.data.engine.expression.ExprEvaluateUtil.evaluateExpression(ExprEvaluateUtil.java:74) ...
+8 more

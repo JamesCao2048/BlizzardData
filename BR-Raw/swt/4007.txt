@@ -1,0 +1,49 @@
+GTK: Cannot type in Text widget contained in Shell which has style bit as NO_TRIM
+When the Shell has NO_TRIM as its style bit we cannot type in the text widget in
+that Shell.
+Here is the test:
+-------------test case starts here
+----------------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSWTNoTrimtext {
+public static void main(String[] args) {
+Display disp = Display.getDefault();
+final Shell shell = new Shell(disp, SWT.NO_TRIM);
+try {
+shell.setLayout(new RowLayout(SWT.VERTICAL));
+Text mainbox =
+new Text(
+shell,
+SWT.MULTI
+| SWT.HORIZONTAL
+| SWT.VERTICAL
+| SWT.CLIP_CHILDREN
+| SWT.CLIP_SIBLINGS
+| SWT.NULL);
+Button button = new Button(shell, SWT.BORDER);
+button.setText("Close");
+//mainbox.setEnabled(true);
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+shell.dispose();
+}
+});
+mainbox.setText("testing");
+shell.setSize(200, 200);
+shell.open();
+} catch (Exception e) {
+System.out.println("Error!!");
+}
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}
+--------------------------test case ends here
+--------------------------

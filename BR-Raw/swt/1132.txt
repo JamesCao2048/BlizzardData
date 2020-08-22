@@ -1,0 +1,6 @@
+Tree#getItem(Point) should not return item if point is on twistie
+I20090311-1800, cocoa
+Tree#getItem(Point) should not return an item if the given point is on a twistie (the triangle to show/hide children).
+Clicking at that location would not select the item.
+A consequence of this can be seen in the Quick Outline (Ctrl+O) in the Java editor: When you try to expand/collapse an item with the mouse, the dialog is immediately closed and the editor jumps to the element.
+We call Tree#getItem(Point) in the mouseUp listener in org.eclipse.jdt.internal.ui.text.AbstractInformationControl.createDialogArea(Composite)

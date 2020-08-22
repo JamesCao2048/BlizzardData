@@ -1,0 +1,19 @@
+Eclipse crashes when trying to print code with a scale different from 100%.
+Build ID: I20090313-0100
+Steps To Reproduce:
+1.Open a java source file.
+2.Select print.
+3.In the print dialog that comes up, enter 80 in the scale field.
+4.Click print.
+Results:
+Eclipse crashes.
+Reproducible:
+Always.
+More information:
+Probably Mac specific.
+The print dialog that comes up looks more like a 10.4 (Tiger) dialog than a 10.5 (Leopard) dialog.
+Maybe eclipse calls the wrong api function?
+Another curious side remark: When the dialog comes up, the scale is set to '100 %' (with an added %-sign).
+As soon as you try to enter anything, an input validator only lets you enter numbers without the %-sign.
+I cannot tell if this is related or a separate cosmetic issue.
+OS X 10.5.6

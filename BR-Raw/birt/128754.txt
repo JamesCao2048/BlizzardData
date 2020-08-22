@@ -1,0 +1,6 @@
+Bug 128754 If a head of a XML tree have more than two elements and one of them belongs to the complextype.The tree of the complextype element can not be build.
+Description: If a head of a XML tree have more than two elements and one of them belongs to the complextype.The tree of the complextype element can not be build.
+Steps to reproduce: 1.new a datasource and a dataset based on the XML 2.select the "CannotBuild.xsd" as the schema, and the complextype element cann't build the sub element in the XML structure.
+3.new another datasource and another dataset based on the XML 4.select the "CanBuild.xsd" as the schema, and the complextype element can build the sub element in the XML structure.
+Actual result: A head of a XML tree have more than two elements and one of them belongs to the complextype.The tree of the complextype element can not be build.
+Expect result: A head of a XML tree have more than two elements and one of them belongs to the complextype.The tree of the complextype element can be build.

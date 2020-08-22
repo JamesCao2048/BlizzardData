@@ -1,0 +1,6 @@
+Bug 165188 logging per report
+Setting up a dedicated (birt) report server, which serves all our web apps, leads to a logging desaster.
+Birtegine logs all messages to one file.
+There's no info which rptdesign caused the logmessage or who (e.g.
+user) caused the logmessage.
+Retrieving who/which rpt caused some logmessage is not possible! There are two possible solutions: (a) prefixing each logmessage with a userdefineable message (task.setLogprefix("myprefix")) (b) set an outputstream for each task (task.setLoggingOutputStream(outputstream)) to split the huge logfile to many small pieces.

@@ -1,0 +1,9 @@
+Optimization: Reference Use and URL Caching in ClassLoader Repository
+I have found that a lot of memory can get pinned by the BCEL ClassLoaderRepository. For example, on a test configuration of Glassbox with WebLogic over 40 megabytes were pinned in memory due to this loader. (*)
+I also notice that some of the time spent with loading and parsing redundant classes for shared weaving configuration could be reduced by having a global cache of bytes for URL's instead, i.e., the ClassLoaderRepository is local to a loader, so even if the same class on disk is resolved multiple times in different loaders, it isn't read from cache. This latter issue will be reduced if loading types from a parent loader use reflection delegates instead but BCEL still has to be used for aspects on <1.5 VM's...
+The attached patch has some metrics in it to measure what's happening and it also uses SoftReferences to cache without pinning the reference types and uses a two-step look up process to maintain a global URL cache. When I run this on WebLogic 9.2 with Glassbox and view their admin console and some smaller apps I get this output:
+BCEL repository total load time: 7733 ms, in url: 6029 ms for 1427 url cache hits = 1683 missEvicted = 0 missUrlEvicted= 0 all misses = 1427, loader hits = 0
+On Tomcat 5.5 with some different sample apps:
+BCEL repository total load time: 4945 ms, in url: 4319 ms for 636 url cache hits = 548 missEvicted = 0 missUrlEvicted= 190 all misses= 446, loader hits = 3
+So at least in my configuration the URL-based cache is quite effective (with almost a 50% hit rate) whereas the loader-based cache provides little value. From what I've seen, it's worth considering not even using the loader-based BCEL cache at all but others may have configurations where it helps.
+(*) This test was on a development build of AspectJ which I had modified so that the LTWWorld evicts classes after loading

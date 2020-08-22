@@ -1,0 +1,9 @@
+Version the BCEL libraries to allow graceful failure when the wrong version is found.
+We have bugs reported like  bug 59921  and  bug 60389 .  These bugs relate to the
+problem where the compiler locates the wrong version of BCEL libraries -
+because they are a different version, some of the methods AspectJ calls either
+don't exist or have different parameter lists.  The error the user sees is a
+horrible internal compiler error.  if we versioned the BCEL libraries as we
+changed them, we could check the version found on compiler startup and verify
+they are as expected.  if the version doesn't match we can report a nice
+readable error message that tells the user how to fix it.

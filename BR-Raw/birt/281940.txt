@@ -1,0 +1,8 @@
+Bug 281940 Improve the usability of the aggregation function
+Since the category grouping is enabled by default, SUM aggregation is set as default aggregation function.
+However, user may not know the categories are groupied and the Y values are aggregated, especially for constant value.
+Hence, we should improve the usability of the grouping and aggregation function so that it's more apparent to see them enabled or not.
+Following enhancements could be done with little UI change: 1.If aggregation function (such as SUM) is set to the query, the text field or combo should change the tooltip like this: SUM(row["name"]), rather than previous row["name"].
+2.If grouping is disabled, change the icon of grouping and sorting button.
+The icon could be current one appending a red cross.
+If grouping is enabled, the icon is the same with current one.

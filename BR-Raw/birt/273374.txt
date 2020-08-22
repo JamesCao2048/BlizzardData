@@ -1,0 +1,2 @@
+Bug 273374 Duplicate label added in measure header after creating a derived measure
+Description: Duplicate label added in measure header after creating a derived measure Build number: 2.5.0.v20090423-0630 Steps to reproduce: 1, New a crosstab with measure 2, Add a derived measure 3, Check the label in derived measure header Expected result: Only one label is added Actual result: There are two labels added in derived measure header Error log:

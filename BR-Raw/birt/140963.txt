@@ -1,0 +1,8 @@
+Bug 140963 Double quotation should be added to image from resource path automatically.
+Description: Double quotation should be added to image automatically after select it from resource path.
+Steps to reproduce: 1.Insert a image 2.Select image file from BIRT resource path folder and click OK 3.Preview.
+Expected result: After click OK, double quotation should be added to image file automatically.
+Preview is ok without errors.
+Actual result: There are errors on the report page:
+-There are error(s) in Image : 5 Error0 : Error.ScriptEvaluationError ( 1 time(s) ) detail : org.eclipse.birt.report.engine.api.EngineException: There are errors evaluating script "mine.jpg".
+at org.eclipse.birt.report.engine.executor.ExecutionContext.evaluate(ExecutionContext.java:542) at org.eclipse.birt.report.engine.executor.ExecutionContext.evaluate(ExecutionContext.java:504) at org.eclipse.birt.report.engine.executor.ImageItemExecutor.handleURIImage(ImageItemExecutor.java:192) at org.eclipse.birt.report.engine.executor.ImageItemExecutor.handleImage(ImageItemExecutor.java:145)

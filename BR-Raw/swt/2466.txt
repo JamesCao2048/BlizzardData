@@ -1,0 +1,31 @@
+adding PaintItemListener to Table causes NPE
+- run the snippet below and you'll get the NPE shown at the bottom
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,200,250);
+final Table table = new Table(shell, SWT.CHECK);
+table.setBounds(10,10,150,140);
+new TableItem(table, SWT.NONE).setText("item one");
+table.addListener(SWT.PaintItem, new Listener() {
+public void handleEvent(Event event) {
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Table.rendererRenderProc(Table.java:2397)
+at org.eclipse.swt.widgets.Display.rendererRenderProc(Display.java:1221)
+at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:5233)
+at org.eclipse.swt.widgets.Display.eventProc(Display.java:1128)
+at org.eclipse.swt.internal.gtk.OS._gdk_window_process_updates(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gdk_window_process_updates(OS.java:3379)
+at org.eclipse.swt.widgets.Control.update(Control.java:3667)
+at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:1441)
+at org.eclipse.swt.widgets.Shell.open(Shell.java:988)
+at win32.Main.main(Main.java:25

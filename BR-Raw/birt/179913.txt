@@ -1,0 +1,10 @@
+Bug 179913 Meter Chart color by categories with null values does not work correctly [0001]
+Description: Meter Chart color by categories with null values does not work correctly.
+Build number: 2.2.0.v20070329-1055 Steps to reproduce: 1.New a Meter Chart with values as follows: Moto, null; Nokia, 58; null, 66; Benq, null.
+2.In "Format Chart" tab, select "Series" node, choose "Color by Categories".
+3.Preview.
+Expected result: 1.The needle which shows the second value should take the second color.
+2.There should be four in the legend area and the third name is null.
+Actual result: 1.The needle which shows the second value should take the first color.
+2.There should be three in the legend area.
+Error log: N/A

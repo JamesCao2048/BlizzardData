@@ -1,0 +1,7 @@
+Bug 212450 Expose Report Theme for scripting
+Use case: Report library: theme.rptlibrary has 2 themes blue and green based on blue.css and green.css.
+Report design: theme.rptdesign uses theme.rptlibrary.
+there is a report parameter: theme that allows the user to select blue or green for the report theme.
+Using scripting, I want to be able to set the theme of the report based on the report parameter.
+In the script tab, the 'this' variable does not have theme exposed.
+Desired action: please expose theme to the report.

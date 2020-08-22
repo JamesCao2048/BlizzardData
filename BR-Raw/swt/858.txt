@@ -1,0 +1,18 @@
+GDI Handle Resource Leak
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2
+Build Identifier: I20090611-1540
+If you run the attached program and a tool that monitors GDI handles (either taskman with the 'GDI Handles' column added or procexp.exe), you will find that it leaks GDI handles pretty quickly.
+The attachment is a very cut down version of a shipping program that was crashing in the field with a 'No More Handles' error.
+Using Sleak, I found a couple that were mine, but it was still crashing.
+I eventually got down to this, and I can't seem to reduce it any more without 'plugging' the leak.
+In the code, there are lines marked "**X" where X is 1-4. By commenting out all the lines marked either 1, 2, 3 or 4 together, the leak stops.
+
+Reproducible: Always
+Steps to Reproduce:
+1.Compile attachment and use SWT 3.5
+2.run taskman with the GDI Handles column added in the 'processes' tab
+3.run the program
+4.Note increasing number of GDI handles leaked (9-10 for every taskman update
+- appears to be 1 handled leaked per paint call)
+Please note that while advanced graphics is not required for the features of this program, it is required in the original application, and removing it stops the leak.
+It seems to be an interaction of a number of those lines, as you will see when you look at the various combinations of lines that stop the leak when commented.

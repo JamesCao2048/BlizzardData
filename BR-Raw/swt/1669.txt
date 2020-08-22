@@ -1,0 +1,22 @@
+NPE on Font#dispose
+Version: 3.4.0
+Build id: I20080325-0100
+Create and dispose a font:
+public static void main(String[] args) {
+final Display display = new Display();
+Font f = new Font(display, "Tahoma", 12, SWT.NORMAL);
+f.dispose();
+}
+Here is the stack:
+Warning: Missing charsets in String to FontSet conversion
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.graphics.Font.destroy(Font.java:158)
+at org.eclipse.swt.graphics.Resource.dispose(Resource.java:64)
+at PR.main(PR.java:12)
+Here is the code that is broken:
+void destroy() {
+if (handle == device.systemFont.handle) return;
+OS.XmFontListFree (handle);
+handle = 0;
+}
+It doesn't check for device==null,

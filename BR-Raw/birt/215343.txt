@@ -1,0 +1,4 @@
+Bug 215343 Pb with excel emitter : data format is not good for all columns of a data set
+Build ID: M20071023-1652 Steps To Reproduce: 1.export to xls More information: i'm use the last report engine 2.2.1.r22x_v20070919 i have a problem when i'm format a data field wich i have directly drag and drop from a data set !! the result of the excel file is :
+<Data ss:Type="String">[my val]</Data> whereas if i use a computed column or a agregation item or a personnaly data set column the data type is respected :
+<Data ss:Type="Number">[my val]</Data> i think there is a pb with dataSetRow[".."] or row[".."] i've the same thinks with the report designer ! data base : sql server 2005 driver jdbc : sqljdbc_1.2.2828.100

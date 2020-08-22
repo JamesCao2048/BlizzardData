@@ -1,0 +1,29 @@
+StyledText with SWT.H_SCROLL shows horizontal scrollbar after setWordWrap(true)
+A StyledText with SWT.H_SCROLL shows horizontal scrollbar after setAlwaysShowScrollBars(false) and setWordWrap(true) have been called.
+If SWT.WRAP is set in the constructor, then checkStyle(..) always removes the H_SCROLL flag and the horizontal scroll bar is never created.
+When wrapping is disabled dynamically, then we should ensure it's not made visible later.
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet {
+public static void main(String[] args) {
+Display display= new Display();
+Shell shell= new Shell(display);
+GridLayout layout= new GridLayout();
+layout.marginWidth = layout.marginHeight = 60;
+shell.setLayout(layout);
+StyledText styledText= new StyledText(shell, SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER);
+styledText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+styledText.setAlwaysShowScrollBars(false);
+styledText.setWordWrap(true);
+styledText.setText("Hello world.nI have a very long line I want to show here...");
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

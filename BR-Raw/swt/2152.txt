@@ -1,0 +1,27 @@
+infinite loop of repaint events on canvas view in plugin
+setting up a view with a canvas, I get a infinite loop of repaint events,
+if I set the background color of the canvas in the paint adapter.
+The problem
+does not occur on WinXp.
+I created a minimal example plugin, but I dont know how to attach it to the report.
+However, the following lines of code in the paint adapter cause the
+problem:
+public class PaintAdapter implements PaintListener {
+private Canvas canvas;
+public PaintAdapter(Canvas canvas) {
+this.canvas = canvas;
+}
+public void paintControl(PaintEvent e) {
+System.out.println("redraw according to event"+e);
+GC gc = e.gc;
+Display display = e.display;
+Color bgColor = display.getSystemColor(SWT.COLOR_WHITE);
+Color fgColor = display.getSystemColor(SWT.COLOR_DARK_RED);
+// this causes the trouble creating infinite number of
+// repaint events
+canvas.setBackground(bgColor);
+
+gc.setForeground(fgColor);
+gc.drawOval(100, 100, 100, 50);
+}
+}

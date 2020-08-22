@@ -1,0 +1,23 @@
+Table right mouse double click registers as left mouse click
+Using the following code:
+table.addMouseListener(new MouseAdapter() {
+public void mouseDoubleClick(MouseEvent e) {
+}
+
+public void mouseDown(MouseEvent e) {
+}
+});
+The mouseDoubleClick method is called correctly when a double right mouse
+click is performed on a Table.
+However, the given MouseEvent's button always
+== 1, even if the left button was not used.
+However, when using a single mouse click the mouseDown method is also
+correctly called.
+However, it's MouseEvent's button is assigned correctly to
+1,2,3, etc.
+To get around this I use a selection listener instead and use the
+widgetDefaultSelected to capture left double mouse clicks on a Table.
+However, the double click behaviour will not allow a differentiation between
+left and right clicks.
+Is this correct behavior?
+ie platform specific?

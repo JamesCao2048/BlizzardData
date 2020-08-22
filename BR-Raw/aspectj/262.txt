@@ -1,0 +1,2 @@
+AjTypeDeclaration in the dom shouldn't have the properties of it's subtype AspectDeclaration
+The AjTypeDeclaration should not have the properties 'privileged' and 'perClause' which it's subtype AspectDeclaration has. This was shown up whilst building an aspectj for ajdt and a failure in one of the visitor tests.

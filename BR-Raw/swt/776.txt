@@ -1,0 +1,6 @@
+[CTabFolder] antialias should preserve colors
+CTabFolder.antialias allocs colors which it then disposes.
+org.eclipse.swt.custom.CTabFolder.antialias(CTabFolder.java:505)
+org.eclipse.swt.custom.CTabFolder.drawTabArea(CTabFolder.java:1130)
+org.eclipse.swt.custom.CTabFolder.onPaint(CTabFolder.java:2257)
+It would be a better design to preserve (cache) them.

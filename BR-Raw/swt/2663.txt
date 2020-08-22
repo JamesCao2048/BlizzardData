@@ -1,0 +1,29 @@
+Regression: Empty unusable dialogs on Redhat 8+9 / gtk-2.0.6-8
+On Redhat Linux 8 with the default GTK version (gtk2-2.0.6-8 and
+gtk+-1.2.10-22), most dialogs that directly derive from org.eclipse.jface.Dialog
+remain empty (gray on gray).
+For instance, this affects the "Filter Markers"
+dialog which is available from the Problems or Tasks view when pressing the
+filter button and also some dialogs in the Preferences.
+This is a regression since Eclipse-3.1.It worked OK in Eclipse-3.0.1 as well as
+3.0.2.
+By investigation it turned out that when a dialog is marked resizeable, the bug
+does not appear.
+Therefore, a valid workaround is to change the constructor of
+org.eclipse.jface.Dialog such that setShellStyle() includes the SWT.RESIZE flag:
+setShellStyle(SWT.RESIZE | SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL |
+getDefaultOrientation());
+We suspect, however, that a correct fix must be made somewhere else, since with
+Eclipse-3.1 or later on Redhat 8 another problem is that most dialogs are not
+correctly sized on open.
+They always appear in a default size, which is pretty
+large, so that dialogs with only little content look bad.
+This affects the
+startup progress monitor, all other progress monitors, the startup workspace
+selection dialog, and all "simple" dialogs.
+It does not affect wizards,
+Preferences, TitleAreaDialogs and other complex dialogs.
+The same problem with empty dialogs appears on Redhat9 with GTK 2.0.6-8.
+I'm marking severity as "major" since this problem makes Eclipse-3.1 unusable on
+Redhat8 and 9, and there are Eclipse users (Nortel) which cannot upgrade to
+newer gtk due to other software or company restrictions.

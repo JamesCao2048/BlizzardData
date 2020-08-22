@@ -1,0 +1,10 @@
+StyledText - Tab does not tab out of read-only
+Build 20020515
+- Help / About
+- select a portion of the about text (this is a read-only StyledText)
+- hit Tab
+- it does not go to the next control
+Since Tab has no effect on the StyledText content since it is read-only, it
+should do tab traversal.
+Note that we are working around this post 20020515 by using a traverse listener.
+If this is fixed, please let us know so we can remove this workaround.

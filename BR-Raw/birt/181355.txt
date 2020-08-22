@@ -1,0 +1,6 @@
+Bug 181355 Cross tab layout behavior
+- add a cross tab item
+- try to drag and drop a level from the cube( in data explorer ) into the cross tab layout Currently this is not supported.
+User can only drag dimension nodes.
+Expected behavior
+- User should be able to drag level nodes too, this should actually add dimension to the cross tabl row/column area

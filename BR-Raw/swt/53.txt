@@ -1,0 +1,13 @@
+Typo in win32 Menu
+I believe the following two code fragments in win32/org/eclipse/swt/widgets/Menu.java:
+void updateBackground () {
+if (hBrush == 0) OS.DeleteObject (hBrush);
+hBrush = 0;
+...
+void releaseWidget () {
+super.releaseWidget ();
+backgroundImage = null;
+if (hBrush == 0) OS.DeleteObject (hBrush);
+hBrush = 0;
+...
+should be checking for (hBrush != 0) instead of (hBrush == 0).

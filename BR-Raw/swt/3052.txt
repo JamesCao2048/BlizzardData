@@ -1,0 +1,5 @@
+notifyAll() slow in locking code
+Calling notifyAll() unnecessarily is causing a performance regression in the
+test suites for Region.intersect() and other GC calls on Linux-GTK.
+We should
+only call notifyAll() if we actually have someone waiting.

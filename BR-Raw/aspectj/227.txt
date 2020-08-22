@@ -1,0 +1,2 @@
+java.lang.ClassFormatError: Invalid method Code length 83071 in class file org/eclipse/jdt/internal/compiler/impl/Constant
+The weaver generates invalid bytecode when weaving a large method. Instead it should issue an error (or even split the method). The problem has been reported before but for a different reason:  bug 113796 .

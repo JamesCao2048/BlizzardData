@@ -1,0 +1,3 @@
+Bug 158262 OK button should be grayed out when no column is binded
+OK button should be grayed out when no column is binded Steps to reproduce: 1.Add a data source Driver:net.sourceforge.jtds.jdbc.Driver (v0.9) 2.Add a data set.
+Select data set type "SQL Stored Procedure Query" 3.Edit this data set "{call counterInT1(?)} " 4.Add a data set parameter Name: param1 type: integer direction:output" 5.Add a data and bind it to the data set in the layout In the column binding edit page, Name: Param, Data Type: Integer Direction: Output 6.Change the data's binding to none 7.Right click the data and choose "Change Data Column" in the context menu and changeing the data's binding back to data set Expected result: OK button should be grayed out Actual result: OK button is enabled

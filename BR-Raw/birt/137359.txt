@@ -1,0 +1,14 @@
+Bug 137359 Provide run-time capability to use externalized data source connection info
+I don't see a lot of practicality in creating flat file datasets that you can only filter at the report design level.
+In order to make this useful, we need to be able to filter (where clause) by a user selected parameter.
+This is especially problematic because there really isn't any good way to allow for a user to pull database connection information from a file.
+I have very similar databases and tables and it would be very very nice to allow the report at runtime to tell the rptdesign file what database connection url to use.
+Everybody I've spoken to says to do this with a parameter, but that is very insecure.
+Who the heck wants database login information being passed around in visible URLs.
+The better approach would be to have the user select the environment that he wants to query (dev, qa, live) and then I'd map that with a where clause into a flat file to find the database connection information.
+Something like Dev, server, user, password, database.
+"Dev" would be selected by a user parameter and then I'd find out the connection information by finding the correct row in the flat file.
+Without this capability, I cannot deploy this to my client as they'll never accept anything so insecure.
+This is a must fix asap in my opinion.
+I'm submitting this as an enhancement as technically that's the proper thing for me to do, but I'd really prefer to submit this as a blocker.
+Thanks.

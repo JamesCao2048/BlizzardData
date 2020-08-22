@@ -1,0 +1,5 @@
+Mouse scrolling support in Cocoa applications
+Created  attachment 98560   [details]
+Mouse scrolling support for Cocoa
+Currently Cocoa-based widgets don't handle mouse wheel scrolling since they don't respond to scrollWheel: selector.
+The attached patch adds support for mouse scrolling: SWTView now responds to scrollWheel: and the received NSEvent is appropriately handled.

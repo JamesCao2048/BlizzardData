@@ -1,0 +1,9 @@
+Table - EraseItem listener produces cheese when scrolling
+To reproduce:
+1.Launch attached snippet
+2.Scroll horizontally to the right as much as possible
+3.Scroll horizontally to the left (very slowly)
+The selected line has cheese coming in from the left (see screenshot).
+I observed this on Vista SP2, Eclipse Build Id I20100129-1300.
+What I found interesting is that this only happens when an SWT.EraseItem listener is attached to the table.
+However the listener itself does nothing (empty).

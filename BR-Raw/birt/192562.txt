@@ -1,0 +1,2 @@
+Bug 192562 NPE throws out in preview when left one requied column member value empty in sorting of crosstab[1102]
+Description: NPE throws out in preview when left one requied column member value empty in sorting of crosstab[1102] Build number: 2.2.0.v20070614-0630 Steps to reproduce: 1, New a crosstab 2, Specify the sorting on measure 3, Left one group-level-member empty 4, Preview Expected result: No NPE and give out a warning that the group-level-member should not be null like the behavior of filter Actual result: NPE throws out, and the warning message is incorrect

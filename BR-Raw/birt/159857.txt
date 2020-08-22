@@ -1,0 +1,9 @@
+Bug 159857 [Improve Page Aggregate capabilities] Add support for page aggregates / page totals
+At the moment, it is not possible to print page totals (or any other page-related aggregates) in the page header or footer.
+I know that this is hardly possible because neither html nor pdf via FOP can tell anything about the page size or the print margins.
+But I think, page aggregates are very essential for the success of BIRT.
+Without this feature, a lot of projects will be forced to use other reporting engines.
+My current project is one of those and in many european countries page totals in reports are required for almost all financial applications.
+What I'm dreaming of: + page totals (e.g.
+number of employees on this page, and sum of their salary) + accumulated (group) aggregates / continous summation (e.g.
+number of employees so far, and sum of their salaries)

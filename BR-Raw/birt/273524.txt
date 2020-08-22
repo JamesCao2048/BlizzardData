@@ -1,0 +1,6 @@
+Bug 273524 beforeGeneration causing an NPE
+After adopting BIRT 2.3.2, we started seeing NPEs caused by the following javascript in our design file.
+I have attached a simplified version of the report design file.
+Just open it and preview it and the exception will happen.
+If you edit the beforeGeneration method and comment out the line: xAxisPrimary.getScale().setMin(start); then the problem goes away.
+But we need that line to work around another bug where BIRT sometimes leaves big blank gaps atv the begining of a chart.

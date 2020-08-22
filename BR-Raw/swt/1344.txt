@@ -1,0 +1,5 @@
+selection changes must send out selection event notifications
+Follow-up from splitting  bug 8521 :
+Block selections should behave just as normal selections whereever it is possible.
+When the (block) selection changes in a StyledText instance, a corresponding selection event notification must be sent out.
+This is a blocking requirement for  bug 19771 , because there are many dependencies (action enablement, selection preservation across compound modifications, ITextViewer::getSelection) that rely on the selection events to be sent out.

@@ -1,0 +1,3 @@
+Bug 153896 Improve the performance of BIRT datetime-converting
+The current datetime converting algorithm in birt.core, xml&flatfile ODA implementations are not efficient enough.This is because we use java's SimpleDateTimeFormatter to parse ISO8601 compatible date/time values.
+We should write our own datatime string parser for ISO8601 datetime format.

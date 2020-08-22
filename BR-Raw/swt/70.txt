@@ -1,0 +1,10 @@
+Support XULRunner 1.9.2 on Windows x86_64
+Created  attachment 230304   [details]
+fix making SWT in 4.3 work with xulrunner 1.9.2
+This is related to the work on #199660
+In principle SWT would support xulrunner 1.9.2 on Windows x86_64, but there there are two small bugs that prevent it from working.
+xulrunner 1.9.2 is important, because it is the last version with JavaXPCOM support.
+Basically only two very minor changes are needed:
+1) a Bug in Mozilla.initXPCOM() prevents the fallback for "XRE_InitEmbedding".
+In 32 Bit mode it works as the memory malloc'ed for this string is reused from the first position, but in 64 Bit the address is new and so needs to be updated at "ptr"
+2) The define "NO__1Call__JJJJJI" for Windows 64 Bit needs to be reverted, otherwise this necessary function for 1.9.2 is missing.

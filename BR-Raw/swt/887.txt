@@ -1,0 +1,2 @@
+[Graphics][GTK2.18] clipping broken when setting a transform with Gtk 2.17.7
+If I run the attached sample which draws a string on a canvas using a GC that has an identity Transform it looks like the clipping is relative to the origin of the parent shell and not relative to the canvas.

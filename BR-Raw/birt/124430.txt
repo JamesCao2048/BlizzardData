@@ -1,0 +1,7 @@
+Bug 124430 [Smoke][Regression][RCP]Library explorer keep gray even you add library file in Preferences.
+Description: Library explorer keep gray even you add library file in Preferences.
+Steps to reproduce: 1.New several library files and add them through Window-->Preferences menu.
+2.New a report and open Library Explorer view.
+Expected result: Library files display inside it.
+Actual result: It is gray with nothing inside.
+I cannot find add button in Library Explorer to add a library file,either.

@@ -1,0 +1,102 @@
+Regression: Tree.setRedraw(false) not reliable
+In earlier SWT-win32 versions, Tree.setRedraw(false) made it possible
+to carry out a series of structural changes, selections and expansions
+without having unwanted visual feedback after each individual step.
+Instead Tree.setRedraw(true) would be called once all steps had been
+completed.
+In recent builds (3.0M9), this does not work reliably anymore,
+probably due to a fix made for  bug 53034 .
+In the testcase below, a tree is created.
+Pushing the button
+to the right causes the tree contents to be disposed and then
+recreated.
+Since this is surrounded by setRedraw(false) and
+setRedraw(true), the next visible redraw should show a tree
+that looks identical to the previous one, in other words, the
+change should be barely noticeable.
+In SWT 3.0.4.8, this is
+what happens.
+In SWT 3.0.5.2, the tree is redrawn in between,
+revealing the first tree item in a not-yet-expanded stage.
+Note: In order to simulate a real-world application in which
+there is more complex stuff going on than in this simple testcase,
+a small delay (during which the UI thread is frozen) has been
+added so the problem can be seen more clearly.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TreeTest {
+private Tree tree;
+
+public TreeTest() {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+tree = new Tree(shell, SWT.BORDER);
+
+createTreeContents();
+
+Button btn = new Button(shell, SWT.PUSH);
+btn.setText("Refresh Tree");
+
+btn.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+refreshTreeContents();
+}
+});
+
+shell.setSize(250, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+
+private void createTreeContents() {
+TreeItem[] items = tree.getItems();
+
+for (int idx = 0; idx
+< items.length; idx++) {
+items[idx].dispose();
+}
+
+TreeItem item0 = new TreeItem(tree, SWT.NONE);
+item0.setText("Item 0");
+
+TreeItem item00 = new TreeItem(item0, SWT.NONE);
+item00.setText("Item 0,0");
+
+TreeItem item1 = new TreeItem(tree, SWT.NONE);
+item1.setText("Item 1");
+
+tree.setSelection(new TreeItem[] {item0});
+
+item0.setExpanded(true);
+}
+
+private void refreshTreeContents() {
+tree.setRedraw(false);
+
+createTreeContents();
+
+try {
+Thread.sleep(150);
+} catch (InterruptedException ex) {
+}
+
+tree.setRedraw(true);
+}
+
+public static void main(String[] args) {
+new TreeTest();
+}
+}

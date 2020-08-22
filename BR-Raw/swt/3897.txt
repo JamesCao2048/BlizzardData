@@ -1,0 +1,15 @@
+StyledText should use new Font API
+In order to have DBCS working properly in Motif the StyledText should use the
+new API in Font:
+public Font(Device device, FontData[] fds)
+For example, in the StyledTextRenderer constructor the code:
+FontData fontData = regularFont.getFontData()[0];
+fontData.setStyle(fontData.getStyle() | SWT.BOLD);
+boldFont = new Font(device, fontData);
+Should be change to:
+FontData[] fontDatas = regularFont.getFontData();
+for (int i = 0; i
+< fontDatas.length; i++) {
+fontDatas[i].setStyle(fontDatas[i].getStyle() | SWT.BOLD);
+}
+Similar changes may apply in other places, i haven't look it all...

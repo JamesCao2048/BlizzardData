@@ -1,0 +1,32 @@
+Image loses alpha information and crashes on 64 bit
+Here is the testcase:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.*;
+public class PR {
+public static void main(String[] args) {
+try {
+Display display = new Display();
+Shell shell = new Shell(display);
+final Image image = new Image(display, "worker.png");
+GC gc = new GC(image);
+gc.dispose();
+
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+event.gc.drawImage(image, 10, 10);
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+} catch (Throwable e) {
+e.printStackTrace();
+}
+}
+}

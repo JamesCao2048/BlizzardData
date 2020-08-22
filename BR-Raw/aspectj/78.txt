@@ -1,0 +1,10 @@
+AspectJ internal Compiler Error
+Stack Trace:
+java.lang.NullPointerException
+at org.aspectj.weaver.model.AsmRelationshipProvider.createSourceLocation(AsmRelationshipProvider.java:303)
+at org.aspectj.weaver.model.AsmRelationshipProvider.addPointcuts(AsmRelationshipProvider.java:580)
+at org.aspectj.weaver.model.AsmRelationshipProvider.createHierarchyForBinaryAspect(AsmRelationshipProvider.java:562)
+at org.aspectj.weaver.model.AsmRelationshipProvider.addAdvisedRelationship(AsmRelations ...       ARETURN
+end public Object run(Object[])
+end public class com.cerner.isis.biz.services.asclepius.patient.PatientManagerImplTest$AjcClosure3
+Happening when weaving a jar with a aspect jar.

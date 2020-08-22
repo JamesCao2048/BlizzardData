@@ -1,0 +1,5 @@
+[Browser] hook key/mouse event listeners earlier on Safari
+Created  attachment 164228   [details]
+patch
+The key/mouse event listeners are being hooked in both Cocoa and Carbon in webView:didFinishLoadForFrame: , which seems late, particularly for pages with large images or when using a slow connection.
+The attached patch hooks them in webView:didCommitLoadForFrame: , which is likely the earliest that this can be done.

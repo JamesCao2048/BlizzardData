@@ -1,0 +1,6 @@
+[consistency] Combo.setItems(...)
+On OS X when Combo.setItems(...) is invoked the text is not removed.
+On GTK when Combo.setItems(...) is invoked the text is removed.
+I haven't tested ths on XP.
+This was tested on the Eclipse integration build for 20061114.
+Attaching test case...

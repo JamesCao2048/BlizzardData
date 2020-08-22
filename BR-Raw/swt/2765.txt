@@ -1,0 +1,37 @@
+disposing TableColumn can change display order
+3.1
+- run the snippet below, which arranges the columns in the order 0, 2, 1
+- clicking on the Shell will dispose column 0
+- do this and note that when column 0 is disposed that column 1 now appears as
+the first column, but it should be column 2 since this was the case before
+disposing column 0 (ie.- they should have just visually shifted right)
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell (display);
+shell.setBounds(10,10,400,500);
+final Table table = new Table(shell,SWT.CHECK);
+table.setBounds(10,10,300,400);
+TableColumn column = new TableColumn(table, SWT.NONE);
+column.setText("one");
+column.setWidth(100);
+column = new TableColumn(table, SWT.NONE);
+column.setText("two");
+column.setWidth(100);
+column = new TableColumn(table, SWT.NONE);
+column.setText("three");
+column.setWidth(100);
+table.setColumnOrder(new int[] {0,2,1});
+table.setHeaderVisible(true);
+new TableItem(table, SWT.NONE).setText(new String[] {"a","b","c"});
+new TableItem(table, SWT.NONE).setText(new String[] {"a","b","c"});
+shell.open();
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+table.getColumn(0).dispose();
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

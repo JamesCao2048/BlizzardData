@@ -1,0 +1,2 @@
+Bug 187516 NullPointerException when preview as PDF
+Build ID: 2.2 M6 Steps To Reproduce: Create a dynamic text and input some complex HTML More information: org.eclipse.birt.report.engine.layout.pdf.font.FontInfo#getWordWidth( String word ) the value "word" may be null

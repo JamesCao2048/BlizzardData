@@ -1,0 +1,10 @@
+'Gtk CRITICAL' error being roported by SWT in Linux-GTK. (BBAWT)
+I'm running RH9, and whenever I run a JUnit test with SWT on top of GTK, I get
+the following error:
+(<unknown>:2895): Gtk-CRITICAL **: file gtkwidget.c: line 4814
+(gtk_widget_set_size_request): assertion `height >=
+-1' failed
+This comes up in today's (6/10/03) head version of SWT, as well as 3008, 3007,
+and every other one that I've tested back through 2134.
+Unfortunately, I can't seem to come up with a test case because I can't seem to
+get this error apart from using JUnit, and I don't have the source for that.

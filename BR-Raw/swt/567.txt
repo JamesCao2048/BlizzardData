@@ -1,0 +1,4 @@
+user gtk setting should be checked before adding "Input Methods" item to context menus
+The automatic adding of GTK's "Input Methods" menu item to context menus can be disabled as described in  http://dev.eclipse.org/newslists/news.eclipse.newcomer/msg20408.html  .
+SWT inheirits this behaviour in most cases, but one place where it doesn't is StyledText, where the only criteria used is whether KeyDown or KeyUp is hooked.
+Showing a context menu in a StyledText (and possibly other emulated controls) should check this property in addition to the KeyDown/KeyUp-is-hooked check when deciding whether to add this item.

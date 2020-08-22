@@ -1,0 +1,5 @@
+Bug 301396 [Regression] Exception is thrown out when trying to delete optional y grouping.[13]
+description: Exception is thrown out when trying to delete optional y grouping.
+build id: 2.5.2 v20100201-0630 steps to reproduce: 1.New chart.
+2.Define optional y grouping and then delete.
+Actual result: Exception is thrown out in error log.

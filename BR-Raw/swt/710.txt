@@ -1,0 +1,19 @@
+taskitem doesnt work before shell.open()
+public static void main335(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+TaskItem item = display.getSystemTaskBar().getItem(shell);
+item.setOverlayText("hi");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+expected:
+overlay text "hi" to show over the application icon
+result:
+"hi" is not shown
+note:
+it all works if shell.open() is called before item.setOverlayText("hi")

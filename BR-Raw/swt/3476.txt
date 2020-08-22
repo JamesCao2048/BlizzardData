@@ -1,0 +1,6 @@
+Java doc problems
+v3036c
+In trying to generate javadoc for eSWT API, ran across the following two
+problems:
+- List setSelection(int,int) @see tags reference Table, should specify List
+- SWT.java @see SWT.Help should be @see SWT#Help

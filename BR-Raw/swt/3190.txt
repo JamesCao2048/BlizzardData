@@ -1,0 +1,41 @@
+[StyledText] setStyleRanges() shows different result when StyleRanges are sorted differently
+Hi,
+see this Snippet:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+StyledText st = new StyledText(shell, SWT.NONE);
+st.setText("www.heise.dennComments: nnSome comments");
+StyleRange sr1 = new StyleRange();
+sr1.start = 0;
+sr1.length = 12;
+sr1.background = display.getSystemColor(SWT.COLOR_WHITE);
+sr1.foreground = display.getSystemColor(SWT.COLOR_RED);
+sr1.fontStyle = SWT.NORMAL;
+StyleRange sr2 = new StyleRange();
+sr2.start = 14;
+sr2.length = 9;
+sr2.background = display.getSystemColor(SWT.COLOR_WHITE);
+sr2.foreground = display.getSystemColor(SWT.COLOR_BLUE);
+sr2.fontStyle = SWT.NORMAL;
+st.setStyleRanges(new StyleRange[] { sr1, sr2 });
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+Call it once with
+st.setStyleRanges(new StyleRange[] { sr1, sr2 });
+and once with
+st.setStyleRanges(new StyleRange[] { sr2, sr1 });
+See that in case sr2 is first in the StyleRange[] Array,
+the "www.heise.de" is not painted RED.
+If the sort order of StyleRanges in the StyleRange[] argument
+is dependand for the result, it should at least be mentioned in
+the Api.
+Nevertheless, the method should give the same result,
+regardless of the Order of the StyleRage[] array.
+Ben

@@ -1,0 +1,4 @@
+[GTK3] Need to implement Table/TreeDraSourceEffect.getDragSourceImage
+In GTK3, gtk_tree_view_create_row_drag_icon() returns a cairo_surface_t instead of GdkPixmap.
+I have released a VERSION check for now so that I can make the GdkGC and GdkPixmap calls dynamic.
+Need to revisit this later.

@@ -1,0 +1,7 @@
+Bug 213406 [2.2.2]Data preview problem in chart builder
+Description: Create a chart bind with a dataset, then add a computed column in the dataset, the data preview of chart builder could not get the computed column.
+Build version:2.2.2.v20071219-1001 Steps to reproduce: 1.Create sample datasource and dataset.
+2.Create a chart, bind with the dataset.
+3.Add a computed column in the "Edit dataset" dialog, and then check the data preview of chart builder, the computed column could not show in it.
+Even if click "use data set" again, it still does not work.
+Expected result: The data preview of chart builder should refreshed as the dataset changed.

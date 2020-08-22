@@ -1,0 +1,5 @@
+[Widgets] Links in Link widget not selectable via keyboard (no focus ring)
+I20091006-0800, Cocoa, Mac OS X 10.6.1
+Links in the Link widget are not selectable via keyboard (Tab / Ctrl+Tab / etc.).
+On other platforms, they draw a focus ring and send a selection event on Space.
+See also  bug 291722  (link text selectable on coca).

@@ -1,0 +1,10 @@
+TootlTip display error for negative location
+I currently have a Dual monitor display with my main seondary monitor to the left of my main monitor.
+In order to display an error balloon, I determine the location of the balloon by the following code:
+Point textLocation = text.getLocation();
+Point textSize = text.getSize();
+textLocation = new Point(textLocation.x, textLocation.y+textSize.y);
+
+Point tipLocation = Display.getCurrent().map(text.getParent(), null, textLocation);
+The resulting tipLocation is positive when the Eclipse product is running on my main monitor (or on the secondary monitor when it is oriented to the right of my main), but when the Eclipse app is on the secondary monitor (left of main), the balloon does not show up in the proper location.
+instead, it appears on the top of the screen.

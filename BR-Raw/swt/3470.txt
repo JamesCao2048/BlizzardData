@@ -1,0 +1,21 @@
+SWT_AWT:The color depth of the display changed cause NullPointerException
+The code snippet is:
+http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt
+-
+home/snippits/snippet135.html
+when I changed the color depth, the application throw following exception:
+java.lang.NullPointerException
+at sun.awt.windows.WWindowPeer.displayChanged(Unknown Source)
+at sun.awt.SunDisplayChanger.notifyListeners(Unknown Source)
+at sun.awt.Win32GraphicsDevice.displayChanged(Unknown Source)
+at sun.awt.Win32GraphicsEnvironment.displayChanged(Unknown Source)
+at sun.awt.windows.WToolkit$4.run(Unknown Source)
+at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+at java.awt.EventQueue.dispatchEvent(Unknown Source)
+at java.awt.EventDispatchThread.pumpOneEventForHierarchy(Unknown
+Source)
+at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+at java.awt.EventDispatchThread.run(Unknown Source)
+My env: jdk 1.4.2_02, windows xp, and eclipse-SDK-I20040128-win32

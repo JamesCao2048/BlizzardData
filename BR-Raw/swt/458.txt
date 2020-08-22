@@ -1,0 +1,7 @@
+[browser]Avoid invoking _getUrl inside MapUrlToZone callback
+Build Identifier: 3.6.1
+In side WebSite.java, MapUrlToZone callback invokes _getUrl() each time as part of the condition of whether is in setText mode.
+This will lower the performance.
+We can set a flag instead.
+Path provided as a reference.
+Reproducible: Always

@@ -1,0 +1,5 @@
+Permit to have synchronous display to help debugging
+A method calling GdiSetBatchLimit (on Windows) or XSynchronize(on X/gtk/motif)
+would greatly help debugging custom painting on controls.
+Cheers
+-- Steve

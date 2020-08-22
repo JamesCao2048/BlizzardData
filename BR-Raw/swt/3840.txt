@@ -1,0 +1,20 @@
+RowLayout.computeSize provides wrong parameter to layoutVertical
+In the source code for org.eclipse.swt.layout.RowLayout.computeSize in the call
+to layoutVertical the 4th parameter "height" is provided wHint, where it should
+be hHint.
+protected Point computeSize (Composite composite, int wHint, int hHint, boolean
+flushCache) {
+Point extent;
+if (type == SWT.HORIZONTAL) {
+extent = layoutHorizontal (composite, false, (wHint !=
+SWT.DEFAULT) && wrap, wHint, flushCache);
+} else {
+extent = layoutVertical (composite, false, (hHint !=
+SWT.DEFAULT) && wrap, wHint, flushCache);
+}
+if (wHint != SWT.DEFAULT) extent.x = wHint;
+if (hHint != SWT.DEFAULT) extent.y = hHint;
+return extent;
+}
+This is still present in the source of the most recent build:
+N20030117 Fri, 17 Jan 2003

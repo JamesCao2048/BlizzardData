@@ -1,0 +1,5 @@
+Unprotected call to PrintDlg in WebUIDelegate.printFrame
+In WebUIDelegate.printFrame() there is a call to OS.PrintDlg(pd) that should check for a return value of false, which means that there was some error in the printing system (probably related to a failure to properly get info for the default printer).
+I am not sure what you want to do if false is returned at this point, but the bottom line is that you will not be able to print to the default printer, so you probably want to return without doing anything, or throw an error, or something.
+Please see  bug 344591  for background information.
+CC'ing GG for discussion of "correct" failure method, and possible +1 for RC1.

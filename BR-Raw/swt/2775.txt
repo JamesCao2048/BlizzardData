@@ -1,0 +1,24 @@
+[browser] crash when setting html as url
+3.1RC3
+- run the snippet below and click on the shell
+- this does a setUrl() with some html contents (I meant to do setText())
+- this causes a crash because the third line of decidePolicyForNavigationAction
+tries to CFStringGetLength on 0
+public static void main (String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,300,300);
+final Browser browser = new Browser(shell, SWT.NONE);
+browser.setBounds(10,10,250,250);
+shell.open();
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+String string = "<html><body></body></html>";
+browser.setUrl(string);
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

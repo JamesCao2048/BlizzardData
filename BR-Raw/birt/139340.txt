@@ -1,0 +1,4 @@
+Bug 139340 SVG Chart cannot display when deploy birt in Tomcat5.0.28
+Summary: SVG Chart cannot display when deploy birt in Tomcat5.0.28 Steps to reproduce: 1.Deploy birt in Tomcat 5.0.28 2.Preview report containing svg chart Result: Blank page.
+Transfer chart format to jpg, then preview is OK.
+Preview is ok in Tomcat 5.5.7

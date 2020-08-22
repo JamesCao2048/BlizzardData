@@ -1,0 +1,10 @@
+Bug 191644 Dataset don't be cached in Chart Builder.
+Build ID: I20070517-1700 Birt Steps To Reproduce: 1.New a Chart.
+2.Set dataset from remote db.
+3.Switch tabs of Chart Builder, it is OK.
+4.Shut off network.
+5.Switch tabs of Chart Builder again.
+6.Some exception will throw, it shows the db accessing is fail.
+Expected Result: The dataset should be cached.
+Actual Result: It looks like the dataset don't be cached.
+More information:

@@ -1,0 +1,43 @@
+StyledText error in getTextBounds (Does not count last newline)
+A StyledText widget does not correctly calculate newlines in the getTextBounds method.
+If you have add a new line, and recompute getTextBounds, the new line is not calculated in the total size.
+Any characters on this new line, cause getTextBounds to calculate correctly.
+The snippet bellow demonstrates the problem: Launch as SWT app, and press "return" a few times.
+Notice the computed height is 0, for the first three newlines, then it can calculate the first line.
+Typing on any line changes the counts.
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet163 {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+final StyledText text = new StyledText (shell, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
+
+text.setText("");
+text.addModifyListener(new ModifyListener() {
+public void modifyText(ModifyEvent e) {
+if (text.getCharCount() > 0) {
+Rectangle textRect = text.getTextBounds(0, text.getText().length()
+-1);
+System.out.println(textRect.height);
+}
+}
+});
+
+shell.setSize(250,250);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+tested on MacOS & Windows in Eclipse 3.2 RC3

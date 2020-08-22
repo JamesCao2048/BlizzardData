@@ -1,0 +1,9 @@
+GC drawText draws back ground incorrectly
+run this:
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+event.gc.setBackground(display.getSystemColor(SWT.COLOR_YELLOW));
+event.gc.drawText("HellonWorld", 10, 50, 0|SWT.DRAW_DELIMITER);
+}
+});
+notice that the background extends the full width of the shell for the first line of text instead of just being the background of the text itself.

@@ -1,0 +1,79 @@
+Dialog (org.eclipse.swt.widgets.ColorDialog and org.eclipse.swt.widgets.FileDialog) can not close correctly
+I have a view which has a Canvas and a Label, the Label has been added a
+MouseListener to catch the mouseDown event, whenever the mouse is down, it
+will show the ColorDialog to choose the color, based on the returned RGB
+value, the Label will update its background color.
+Everything works fine on WindowsXP and Linux9.0/gtk.
+When I move to MacOSX
+10.2.6/Carbon with the same code, the Label can update the background based
+on the seleceted color, however, after the dialog is closed, the mouse
+click event seems captured by the Label, and each time I click mouse,
+whereever the mouse points, the same ColorDialog pops up and let me choose
+the color.
+The same thing happens for FileDialog.
+The code:
+=========
+The code below is the view code.
+You can also get the full plug-in source code
+from following link:  http://rch01.rch.uky.edu/~cli4/mac/DialogView.tar
+=====================================================
+package DialogView.views;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.ColorDialog;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.part.ViewPart;
+public class SampleView extends ViewPart {
+Canvas canvas;
+Label label;
+RGB rgb = new RGB(0, 0, 0);
+public void createPartControl(Composite parent) {
+GridLayout gridLayout = new GridLayout();
+gridLayout.numColumns = 1;
+parent.setLayout(gridLayout);
+canvas = new Canvas(parent, SWT.NULL);
+GridData gridData = new GridData(GridData.FILL_BOTH);
+canvas.setLayoutData(gridData);
+label = new Label(parent, SWT.BORDER | SWT.SINGLE |
+SWT.READ_ONLY);
+gridData = new
+GridData(GridData.VERTICAL_ALIGN_FILL|GridData.HORIZONTAL_ALIGN_FILL);
+label.setLayoutData(gridData);
+label.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+e.gc.setBackground(new Color(label.getDisplay
+(), rgb));
+Point size = label.getSize();
+e.gc.fillRectangle(0, 0, size.x, size.y);
+}
+});
+label.addMouseListener(new MouseAdapter() {
+public void mouseDown(MouseEvent e) {
+ColorDialog dialog = new ColorDialog
+(label.getShell());
+dialog.setRGB(rgb);
+RGB tempRGB = dialog.open();
+if (tempRGB != null)
+rgb = tempRGB;
+label.redraw();
+}
+});
+}
+/**
+* Called when we must grab focus.
+* @see org.eclipse.ui.part.ViewPart#setFocus
+*/
+public void setFocus() {
+canvas.setFocus();
+}
+}

@@ -1,0 +1,6 @@
+Bug 198054 The width of the page is not the same in PDF and POSTSCRIPT [1201]
+Description: The width of the page is not the same in PDF and POSTSCRIPT.
+Build number: 2.2.1.v20070727-0630 Steps to reproduce: 1.Preview the attached design file in PDF and POSTSCRIPT.
+Expected result: Page width of PDF and POSTSCRIPT are the same.
+Actual result: Page of POSTSCRIPT is wider than PDF(See the screenshot).
+Error log: N/A

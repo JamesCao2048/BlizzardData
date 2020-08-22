@@ -1,0 +1,12 @@
+Opening a modal dialog while an ON_TOP shell is active should activate the dialog
+Created  attachment 93614   [details]
+SnippetOpenDialogFromTooltip.java
+I20080325-0100
+- run the attached snippet
+- click "Show Tooltip"
+=> tooltip shown
+- click "Open Dialog"
+=> expected (works like this on WinXP): Dialog is shown an activated, "tooltip deactivated" is written to stdout
+=> was on carbon: Dialog is shown, but tooltip shell stays active
+This causes  bug 223858 .
+I'll try to put in a workaround that explicitly hides the tooltip to avoid  bug 223858  for M6.

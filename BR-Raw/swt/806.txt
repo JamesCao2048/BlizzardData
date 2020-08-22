@@ -1,0 +1,5 @@
+Rollover tooltips don't appear in first column of owner-drawn Tables
+I20071204-1547
+Rollover tooltips don't appear for owner-drawn Tables.
+This can be seen in JDT table views (e.g.
+Types in the Java Browsing perspective), or in the ControlExample after adding a listener for the PaintItem event.

@@ -1,0 +1,16 @@
+Bug 136141 Prepared statements not properly cleaned up.
+After designing a JDBC query in a report design, I opened the DataSetEditor and choose "Preview Results".
+There are a number of warnings that came up in the Console indicating there are prepared statements not properly managed or cleaned up.
+Apr 11, 2006 8:23:04 AM org.eclipse.birt.data.engine.executor.DataSource close WARNING: 1 statements still active.
+Apr 11, 2006 8:23:05 AM org.eclipse.birt.data.engine.executor.DataSource closeStatement WARNING: statement not found Tracing down the problem a little further, the root cause of the problem is because the DataSourceQuery (in data.engine.executor) is trying to close a dangling reference of a PreparedStatement.
+The PreparedStatement has been previously dropped from the statementMap of the DataSource when the DataSource.close() was called.
+But DataSourceQuery is still holding on to a reference of it.
+The sequence is as follows: 1) DataSourceQuery prepares a statement.
+This in turn makes DataSource prepare a statement, and creates a PreparedStatement object, adds it to the statementMap.
+2) During DataEngineImpl.defineDataSource(), the existing DataSource is closed, replaced by the supplied DataSourceDesign.
+The DataSource still have statements in its map.
+And a warning is logged indicating this is a resource leak.
+It then cleans the statementMap and closes all its open connections.
+3) When DataSourceQuery tries to close the dangling statement, it cannot find it.
+It logs a message "Statement not found".
+Then, it still proceeds to close it.

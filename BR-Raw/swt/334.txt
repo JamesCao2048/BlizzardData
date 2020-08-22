@@ -1,0 +1,4 @@
+setBackground does not work in DateTime with SWT.CALENDAR
+Only the header of the calendar changes, not the content.
+It should be the other way around.
+We need to set the base color (not the bg color) in the handle when used with SWT.CALENDAR.

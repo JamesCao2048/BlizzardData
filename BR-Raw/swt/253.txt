@@ -1,0 +1,6 @@
+Wrong drawing behaviour using SWT and Cairo drawing a TextLayout and then an oval
+Build Identifier:
+This is the same issue as reported in  Bug 215243  only for TextLayout.
+Drawing a TextLayout and then an oval draws an extra line.
+See the attached snippet and screenshot.
+Reproducible: Always

@@ -1,0 +1,9 @@
+Bug 120919 Date value incorrectly displayed as 1/1/2005 when group by day is used with data all from a single day
+Using the 2.0M3 milestone build.
+If you create a bar chart with data/time column data for the x-axis and use the group by feature selecting "day" and an interval of "1", the value displayed will be 1/1/2005 regardless of the actual date/time value in the dataset if all of the data falls within a single group (i.e.
+a single day in this case...
+actually, the same thing happens with any of the other date/time values such as minutes, hours, seconds if all of your data would end up in a single group).
+For example if you have 3 rows of data in a dataset and one of the columns has a date/time value and the values for that column are say: 4/1/2005 10:12 AM 4/1/2005 11:15 AM 4/1/2005 7:15 AM If you use this date/time column for the x-axis and group by "day" with an interval of "1".
+Instead of a single bar on the chart labeled 4/1/2005 you will see 1/1/2005.If you group by hour so that you get 3 bars the dates will display correctly.
+Basically, if you end up with more than 1 group the date is fine.
+If everything falls into a single group the date is incorrect.

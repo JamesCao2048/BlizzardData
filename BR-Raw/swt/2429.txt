@@ -1,0 +1,51 @@
+Disabled image loses transparency
+SWT-win32, v3229
+In the test case below, a new image is created based on an existing image
+using the SWT.IMAGE_DISABLE operation.
+Since the base image had transparency,
+the expectation is that the greyed-out image will be (partially) transparent
+too.
+Currently, however, that does not seem to be the case.
+Note: The native/GDI+ image loading code gets this right.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+import java.io.*;
+public class GreyedImageTest2 {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setBackground(display.getSystemColor(SWT.COLOR_GREEN));
+
+Image img = null;
+try {
+InputStream in = new FileInputStream("<path>\red_swt_icon.png");
+img = new Image(display, in);
+in.close();
+} catch (Exception ex) {
+}
+
+final Image icon         = img;
+final Image disabledIcon = new Image(display, icon, SWT.IMAGE_DISABLE);
+
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event e) {
+e.gc.drawImage(icon,         16, 16);
+e.gc.drawImage(disabledIcon, 56, 16);
+}
+});
+
+shell.setSize(200, 100);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+icon        .dispose();
+disabledIcon.dispose();
+display     .dispose();
+}
+}

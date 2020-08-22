@@ -1,0 +1,10 @@
+StyledText - NPE when using RIGHT_TO_LEFT style with StyledText on Linux
+build 20030520
+Using the RIGHT_TO_LEFT style in StyledText on platforms other than Windows
+results in a NullPointerException in StyledTextBidi.
+The problem is that we are testing for the RIGHT_TO_LEFT style to determine
+whether we should operate in right oriented mode.
+We should be testing for the
+MIRRORED style.
+Testing for MIRRORED will be sufficient as long as it is only
+set on Windows (the only platform we support bidi on).

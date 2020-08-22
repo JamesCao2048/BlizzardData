@@ -1,0 +1,6 @@
+Virtual table: not redrawn when item count drops to zero
+To reproduce:
+- create a virtual table with n entries
+- call setItemCount(0) and cleat(0,0).
+observe: the content will not be redrawn.
+The table still shows the n entries.

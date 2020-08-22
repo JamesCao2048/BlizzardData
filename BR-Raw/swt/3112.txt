@@ -1,0 +1,63 @@
+KERN_PROTECTION_FAILURE due to EXC_BAD_ACCESS on exit
+Hi,
+when quitting RSSOwl on Mac using latest SWT from Integration Build I am getting
+a serious exception.
+There is no difference if running it via java_swt or Java:
+Date/Time:  1970-01-01 01:11:08 +0100
+OS Version: 10.3 (Build 7B85)
+Command:    java_swt (/Volumes/NO NAME/RSSOwl
+Release/MAC_BIN/rssowl_mac_1_0_bin/RSSOwl.app/Contents/MacOS/java_swt)
+PID:        324
+Thread:     0
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000037
+Thread 0 Crashed:
+#0   0x92d59d2c in SetupParamBlockForCIcon (SetupParamBlockForCIcon + 32)
+#1   0x92d41310 in PlotCIconHandle (PlotCIconHandle + 240)
+#2   0x9288c54c in _ZN10HIIconView8DrawSelfEsP15OpaqueRgnHandleP9CGContext
+(_ZN10HIIconView8DrawSelfEsP15OpaqueRgnHandleP9CGContext + 504)
+#3   0x927f5acc in _ZN6HIView15DrawCacheOrSelfEsP15OpaqueRgnHandleP9CGContext
+(_ZN6HIView15DrawCacheOrSelfEsP15OpaqueRgnHandleP9CGContext + 328)
+#4   0x927d5444 in
+_ZN6HIView12EventHandlerEP25OpaqueEventHandlerCallRefP14OpaqueEventRefPv
+(_ZN6HIView12EventHandlerEP25OpaqueEventHandlerCallRefP14OpaqueEventRefPv + 4920)
+#5   0x927d1f94 in DispatchEventToHandlers (DispatchEventToHandlers + 336)
+#6   0x927d2208 in SendEventToEventTargetInternal
+(SendEventToEventTargetInternal + 372)
+#7   0x927d6600 in SendEventToEventTargetWithOptions
+(SendEventToEventTargetWithOptions + 40)
+#8   0x927ddcac in
+_Z18SendControlDefDrawP6HIViewsP13OpaqueGrafPtrP15OpaqueRgnHandleP9CGContext
+(_Z18SendControlDefDrawP6HIViewsP13OpaqueGrafPtrP15OpaqueRgnHandleP9CGContext + 288)
+#9   0x927dbac4 in
+_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext
+(_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext +
+584)
+#10  0x927dbbc0 in
+_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext
+(_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext +
+836)
+#11  0x927dbbc0 in
+_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext
+(_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext +
+836)
+#12  0x927dbbc0 in
+_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext
+(_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext +
+836)
+#13  0x927dbbc0 in
+_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext
+(_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext +
+836)
+#14  0x927dbbc0 in
+_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext
+(_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext +
+836)
+#15  0x927dbbc0 in
+_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext
+(_ZN6HIView12DrawInternalEsP13OpaqueGrafPtrP15OpaqueRgnHandlehhhPS_P9CGContext +
+836)
+#16  0x927dcb68 in
+_ZN6HIView4DrawEsP13OpaqueGrafPtrP15OpaqueRgnHandlemPS_P9CGContext
+(_ZN6HIView4DrawEsP13OpaqueGrafPtrP15OpaqueRgnHandlemPS_P9CGContext + 792)
+#17  0x92882

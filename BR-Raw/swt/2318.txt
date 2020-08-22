@@ -1,0 +1,20 @@
+Previous Word commands are too 'greedy'
++++ This bug was initially created as a clone of  Bug #103254  +++
+Description:
+Previous word navigation & deletion commands do not include punctuation when
+moving/deleting.
+It appears that only spaces & line breaks are considered.
+This
+differs from the Next Word moving/deleting commands, which include punctuation.
+To Reproduce:
+1.Open a new Untitled Text File and enter the text 'This is some text,foo bar baz'.
+2.Place the cursor at the beginning of the word 'bar', and use the Previous
+Word (meta-b in emacs mode) command to navigate to the beginning of the word 'text'.
+3.Note that it only takes one Previous Word command to do so; the comma is not
+included in the word movement calculation.
+4.Use the Next Word (meta-f in emacs mode) command to navigate to the beginning
+of the word 'bar'.
+Note that it requires three Next Word commands to do so; the
+comma is included in the word movement calculation.
+The Next Word command behaves correctly; the Previous Word does not.
+Note that the Delete Previous Word command exhibits similar word calculation errors.

@@ -1,0 +1,4 @@
+Bug 189575 The 2 APIs don't work.
+ICubeQueryUtil.getMemberValueIterator( TabularCubeHandle cubeHandle, String dataBindingExpr, ICubeQueryDefinition queryDefn ) ICubeQueryUtil.getMemberValueIterator( TabularCubeHandle cubeHandle, String targetLevel, ILevelDefinition[] higherLevelDefns, Object[] values ) The 2 APIs don't work.
+Please verify and correct them, or Crosstab sort and filter may throw runtime exception.
+Thanks.

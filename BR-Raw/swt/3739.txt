@@ -1,0 +1,11 @@
+[StyledText] ContentWidthCache initialization
+build R2.1
+bug 35943  documents a problem where apparently the font/line height is 0.This
+causes improper initialization of StyledText, namely of the ContentWidthCache
+during setContent/reset/calculateContentWidth.
+In a normal operating scenario the lineHeight should never be 0.It is
+initialized in the StyledText constructor via initializeRenderer.
+We may want to remove the lineHeight check in calculateContentWidth and always
+initialize the line cache.
+In addition we should consider adding a range check in
+ContentWidthCache.calculate like it already is in ContentWidthCache.reset.

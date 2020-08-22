@@ -1,0 +1,4 @@
+Bug 272904 Problems with two columns of text in PDF
+Build ID: I20090313-0100 Steps To Reproduce: 1.Create a grid with 2 columns and 1 row 2.Put a text element in each column 3.Type some text in the text element so it won't fit on one page (or put a table with data above this grid) 4.When you type the text in the text element in the second column, it won't display next to the first column as it is supposed to but starts on the next page instead 5.Text content type has to be HTML when it is Plain text it works just fine More information: When rendering to HTML or previewing the report it works alright, in PDF it looks like the BIRT is trying to use pagebreak inside avoid for the text in second column.
+I encountered the bug in 2.3.0 (only on one report) in 2.5 M6 it is doing this in every render on every report.
+Attaching sample report for demonstration.

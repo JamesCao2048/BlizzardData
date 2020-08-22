@@ -1,0 +1,63 @@
+VM terminated when switching page in the Plugin manifest editor
+build Version: 3.1.0
+Build id: I20050330-0500
+steps
+- create a plug-in project (use the sample view example)
+- switch to the "Extensions" page
+- crashes
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0x4D9C074D
+Function=(null)+0x4D9C074D
+Library=/usr/lib/libgtk-x11-2.0.so.0
+
+NOTE: We are unable to locate the function name symbol for the error
+just occurred.
+Please refer to release documentation for possible
+reason and solutions.
+
+
+Current Java thread:
+at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:4703)
+at org.eclipse.swt.widgets.Display.eventProc(Display.java:942)
+at org.eclipse.swt.internal.gtk.OS._gtk_tree_view_set_cursor(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_tree_view_set_cursor(OS.java:6711)
+at org.eclipse.swt.widgets.Tree.setSelection(Tree.java:1844)
+at org.eclipse.jface.viewers.TreeViewer.setSelection(TreeViewer.java:566)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.setSelectionToWidget(AbstractTreeViewe
+r.java:1505)
+at
+org.eclipse.jface.viewers.StructuredViewer.setSelectionToWidget(StructuredViewer.ja
+va:1401)
+at
+org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.jav
+a:1115)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:8
+74)
+at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:248)
+at
+org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1324)
+at
+org.eclipse.pde.internal.ui.editor.plugin.ExtensionsSection.refresh(ExtensionsSecti
+on.java:524)
+at org.eclipse.ui.forms.ManagedForm.doRefresh(ManagedForm.java:178)
+at org.eclipse.ui.forms.ManagedForm.refresh(ManagedForm.java:163)
+at org.eclipse.ui.forms.editor.FormPage.setActive(FormPage.java:125)
+at org.eclipse.ui.forms.editor.FormEditor.pageChange(FormEditor.java:391)
+at
+org.eclipse.pde.internal.ui.editor.PDEFormEditor.pageChange(PDEFormEditor.java:230)
+at
+org.eclipse.ui.part.MultiPageEditorPart$2.widgetSelected(MultiPageEditorPart.java:2
+00)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1012)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1036)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1021)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:891)
+at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3141)
+at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1925)
+at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:287)
+at org.eclipse.swt.widgets.EventTab

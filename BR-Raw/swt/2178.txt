@@ -1,0 +1,6 @@
+Vista Tracker incredibly slow
+Using the Vista Aero theme try dragging a view with its own stack (for the best effect use the bottom stack in the Java perspective or anyother one with a few tabs).
+You should see an XOR rect as the insertion feedback.
+On my dual 3Ghz processor / 3GB box it's about 1/2 a sec per rectangle draw.
+This drawing is done by the set.custom.Tracker...
+My best guess is that it's getting hosed by the transparency handling (it works better if you switch to the 'Windows Classic' setup).

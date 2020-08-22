@@ -1,0 +1,14 @@
+[Accessibility] Font attributes are repeated at the beginning of lines
+I20100516-0800
+When voiceover is turned on, font attributes of text will be read out at the start of a line even when the font hasn't changed over a run of text.
+To reproduce:
+1.Make sure text attributes are being read out.
+In VoiceOver Utility, select Verbosity
+-> Text, and make sure 'When text attributes change:" says "Speak Attributes".
+2.Run CustomControlExample.
+3.Select the last word of the first line and the first word of the second line.
+4.Make the text bold.
+5.Click on the word "Two"
+6.Click on the word "The"
+===> You hear the font attribute being read out.
+The font didn't change from the default, so the font attribute shouldn't have been read.

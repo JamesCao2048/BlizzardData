@@ -1,0 +1,3 @@
+GC.drawFocus not implemented on the Mac
+We need to somehow use DrawThemeFocusRect() or find the equivalent Core
+Graphics call.

@@ -1,0 +1,7 @@
+Bug 140860 ResourceLocator does not locate externalized strings stored in .properties files
+I have been investigating the support to add my custom resource locator to find my externalized properties files and I want to make sure that I will have the right support.
+I looked at the BIRT code and found that org.eclipse.birt.report.model.core.BundleHelper does not use the IResourceLocator to find the .properties file.
+Instead it has a "msgFolder" attribute that holds the directory path of the resource files.
+However this is not going to work for me.
+I would like the BundleHelper class to make a call to the IResourceLocator to find the .properties files.
+Could the component owner change this bug to the right component.

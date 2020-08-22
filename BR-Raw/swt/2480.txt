@@ -1,0 +1,4 @@
+Tree does not use the OSs selected column background color
+The Table sets a selected column background color on Win32 using the .manifest file.
+(Hopefully a configurable option in the future)
+An option to use this same color on a Tree's selected columns is not available, nor is this color available from Display.getSystemColor() so that it could be emulated by the app for consistency between Trees and Tables.

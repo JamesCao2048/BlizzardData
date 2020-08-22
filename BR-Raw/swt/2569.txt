@@ -1,0 +1,7 @@
+CLabel not correctly captured by WM_PRINT
+I use WM_PRINT to capture offscreen controls in one of my application.
+I notice
+that all the controls I use are well captured, except CLabel : the font is not
+taken in account (but images, background color and foreground color are).
+See my attached image and have a look at a sample java project I wrote to
+explain the problem.

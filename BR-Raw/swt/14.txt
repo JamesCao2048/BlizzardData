@@ -1,0 +1,30 @@
+NPE in StyledText.getVisualLineIndex
+Created  attachment 237189   [details]
+sample to reproduce
+Please execute the attached sample (tried on Windows 7):
+- select a portion of the text and
+- use Shift + up/down keys to enlarge the selection (even beyond the actual content).
+You will get following exception:
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.custom.StyledText.getVisualLineIndex(StyledText.java:5274)
+at org.eclipse.swt.custom.StyledText.doLineDown(StyledText.java:2598)
+at org.eclipse.swt.custom.StyledText.doSelectionLineDown(StyledText.java:3288)
+at org.eclipse.swt.custom.StyledText.invokeAction(StyledText.java:6949)
+at org.eclipse.swt.custom.StyledText.handleKey(StyledText.java:5932)
+at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:5959)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:5636)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1081)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1108)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1104)
+at org.eclipse.swt.widgets.Widget.wmKeyDown(Widget.java:1827)
+at org.eclipse.swt.widgets.Control.WM_KEYDOWN(Control.java:4975)
+at org.eclipse.swt.widgets.Canvas.WM_KEYDOWN(Canvas.java:429)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:4643)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4977)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3757)

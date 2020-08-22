@@ -1,0 +1,89 @@
+TableItem.getBounds - small inconsistencies
+Eclipse 3.2 I20050808-2000
+1) TableItem.getImageBounds(int)
+- this should return a rectangle that is the
+height of the row.
+Currently, it is returning a rectangle the height of the image.
+2) Tableitem.getBounds(int)
+- this is returning a rectangle that overlaps the
+gridlines.
+It should return a rectangle that is just inside the gridlines.
+I
+used xmag to look closely at the pixels to see this.
+Below is an example that shows these problems:
+public static void main(String[] args) {
+
+int style = SWT .BORDER;
+style |= SWT.FULL_SELECTION;
+
+final Display display = new Display();
+final Color red = display.getSystemColor(SWT.COLOR_RED);
+final Color green = display.getSystemColor(SWT.COLOR_GREEN);
+final Color darkRed = display.getSystemColor(SWT.COLOR_DARK_RED);
+final Color darkGreen = display.getSystemColor(SWT.COLOR_DARK_GREEN);
+int s1 = 20, s2 = 10;
+final Image image1 = new Image (display, s1, s2);
+GC gc1 = new GC (image1);
+gc1.drawRectangle (0, 0, s1
+- 1, s2
+- 1);
+gc1.setBackground (display.getSystemColor (SWT.COLOR_CYAN));
+gc1.fillRectangle (1, 1, s1
+- 2, s2
+- 2);
+gc1.dispose ();
+
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+final Table table = new Table(shell, style);
+table.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, true, true));
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+TableColumn column1 = new TableColumn(table, SWT.NONE);
+column1.setText("column1");
+TableColumn column2 = new TableColumn(table, SWT.NONE);
+column2.setText("column2");
+TableColumn column3 = new TableColumn(table, SWT.NONE);
+column3.setText("column3");
+for (int i = 0; i
+< 20; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] { "item " + i, "column 1 asdad as das da sd asd" +
+i, "asd asd asd as das d asd ad sdasdasdasd"});
+item.setImage(new Image[] {image1, null, null});
+//		item.setImage(new Image[] {null, image1, null});
+//		item.setImage(new Image[] {null, null, image1});
+//		item.setImage(new Image[] {image1, image1, image1});
+//		item.setImage(new Image[] {null, image1, image1});
+}
+column1.pack();
+column2.pack();
+column3.pack();
+
+
+final Canvas c1 = new Canvas(table, SWT.NONE);
+c1.setBackground(red);
+final Canvas c2 = new Canvas(table, SWT.NONE);
+c2.setBackground(green);
+final Canvas c3 = new Canvas(table, SWT.NONE);
+c3.setBackground(red);
+final Canvas c4 = new Canvas(table, SWT.NONE);
+c4.setBackground(green);
+final Canvas c5 = new Canvas(table, SWT.NONE);
+c5.setBackground(darkRed);
+final Canvas c6 = new Canvas(table, SWT.NONE);
+c6.setBackground(darkGreen);
+final Canvas c7 = new Canvas(table, SWT.NONE);
+c7.setBackground(darkRed);
+final Canvas c8 = new Canvas(table, SWT.NONE);
+c8.setBackground(darkGreen);
+
+PaintListener l = new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+Rectangle r1;
+Rectangle r2;
+TableItem item = table.getItem(4);
+r1 = item.getBounds(0);
+c1.setBounds(r1);
+r2 = item.

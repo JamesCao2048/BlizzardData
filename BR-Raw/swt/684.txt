@@ -1,0 +1,16 @@
+DBCS3.6: DragSource and DropTarget can not handle surrogate pairs in Windows 7
+Build Identifier: I20100330-0800
+OS:Windows 7 (64bit)
+JRE:IBM JRE 1.6
+Locale:Japanese
+This bug is not reproduced under SLES11 (Linux-GTK)
+Reproducible: Always
+Steps to Reproduce:
+1.Find Snippet284.java from dev.eclipse.org
+2.Create a Java project that contains Snippet284.java
+3.Change " http://www.eclipse.org/ " into " http://www.ud842udf9f.org/ "
+4.Run the snippet.
+5.Drag " http://www.ud842udf9f.org/ " in the left window
+and drop it in the right.
+6." http://www.ud842udf9f.org/ " is changed into " http://www.???.org ".
+7.This bug is reproduced under Windows only.

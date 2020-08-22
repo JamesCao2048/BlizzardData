@@ -1,0 +1,5 @@
+Bug 104986 Backgound image uses an absolute path
+Currently Chart uses an absolute path to indicate a backgournd image, that may cause the design unusable on other environments.
+Expected the background image can be definded in multiple ways like in report designer.
+e.g.
+URI(absolute path), File(relative path), Embedded Image(Encoded Image Data).

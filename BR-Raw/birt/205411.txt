@@ -1,0 +1,12 @@
+Bug 205411 Cannot Render fontFamily for some cases
+Build ID: I20070621-1340 Steps To Reproduce: If the fontFamily is like this, it works fine.
+<text id="494">
+<property name="fontFamily">"Courier"</property>
+<property name="contentType">auto</property>
+<text-property name="content"><![CDATA[8a8b4a3f138b313d01138b314ad10001]]></text-property>
+</text> If the fontFamily name is like this "Sample 1 Font", it fails to render the fontFamily
+<text id="494">
+<property name="fontFamily">"Sample 1 Font"</property>
+<property name="contentType">auto</property>
+<text-property name="content"><![CDATA[8a8b4a3f138b313d01138b314ad10001]]></text-property>
+</text>

@@ -1,0 +1,35 @@
+[browser] nsIRequest has some incorrect method signatures
+None of these are currently referenced, but they're wrong...
+[from Ron Capelli]
+In particular, look at the following methods in nsIRequest:
+GetStatus
+previous:	public int GetStatus(int[] status)
+current:		public int GetStatus(int /*long*/ aStatus)
+correct:		public int GetStatus(int /*long*/[] aStatus)
+GetLoadGroup
+previous:	public int GetLoadGroup(int[] aLoadGroup)
+current:		public int GetLoadGroup(int /*long*/ aLoadGroup)
+correct:		public int GetLoadGroup(int /*long*/[] aLoadGroup)
+GetLoadFlags
+previous:	public int GetLoadFlags(int[] loadFlags)
+current:		public int GetLoadFlags(int /*long*/ aLoadFlags)
+correct:		public int GetLoadFlags(int /*long*/[] aLoadFlags)
+In each case, the previous version was correct, and the edits to add /*long*/
+lost the array brackets.
+The array element is used for the return parameter.
+If you look at a mozilla build, in mozilla/dist/include/necko/nsIRequest.h, the
+methods in question are defined as:
+NS_IMETHOD GetStatus(nsresult *aStatus) = 0;
+NS_IMETHOD GetLoadGroup(nsILoadGroup * *aLoadGroup) = 0;
+NS_IMETHOD GetLoadFlags(nsLoadFlags *aLoadFlags) = 0;
+Now consider the GetName method.
+In nsIRequest.h, it is defined as:
+NS_IMETHOD GetName(nsACString & aName) = 0;
+using a reference (&) argument rather than a return address (*).
+In
+nsIRequest.java
+previous:	public int GetName(int aName)
+current:		public int GetName(int /*long*/ aName)
+The current version is correct, matching the original.
+In this case, the
+parameter is not an array.

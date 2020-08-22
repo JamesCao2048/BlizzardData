@@ -1,0 +1,24 @@
+Painting a translucent image fails when the GC is mirrored
+Snippet showing the problem:
+Display d = new Display();
+PaletteData pData = new PaletteData(0xFF, 0xFF00, 0xFF0000);
+RGB rgb = d.getSystemColor(SWT.COLOR_LIST_SELECTION).getRGB();
+int fillColor = pData.getPixel(rgb);
+ImageData iData = new ImageData(1, 1, 24, pData);
+iData.setPixel(0, 0, fillColor);
+iData.setAlpha(0, 0, 55);
+final Image image = new Image(d, iData);
+Shell shell = new Shell(d, SWT.RIGHT_TO_LEFT | SWT.SHELL_TRIM);
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+e.gc.drawImage(image, 0, 0, 1, 1, 0, 0, 100, 100);
+}
+});
+shell.setSize(200, 200);
+shell.open();
+while (!shell.isDisposed())
+if (!d.readAndDispatch())
+d.sleep();
+If you change the Shell's orientation to be LTR instead of RTL, the image
+appears as expected.
+I'm using 3.1M7

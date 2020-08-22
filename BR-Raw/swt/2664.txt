@@ -1,0 +1,6 @@
+BIDI: StyledText bug when changing the color of bold text
+In the Text Editor example included in the SWT examples, write the Arabic word
+脷脩脠铆.
+Double click the word to select it.
+Make it bold, then change its color.
+The last letter appears unshaped.

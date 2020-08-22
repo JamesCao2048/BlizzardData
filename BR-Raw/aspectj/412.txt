@@ -1,0 +1,53 @@
+NPE at EclipseFactory.java:143 when using generic methods in aspects
+When I compile any of these two aspects with ajc -1.5, an exception is thrown by
+the compiler:
+import java.util.*;
+public aspect TestBug1 {
+static <T> void addToEnv(Map<String,T> env, String key, T value) {
+env.put(key, value);
+}
+}
+import java.util.*;
+public aspect TestBug2 {
+static <T> T lookupEnv(Map<String,T> env, String key) {
+return env.get(key);
+}
+}
+If the methods are placed into classes instead of aspects, all works fine.
+The exception thrown is the following:
+java.lang.NullPointerException
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.getName(EclipseFactory.java:143)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.fromBinding(EclipseFactory.java:166)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.fromBindings(EclipseFactory.java:176)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeResolvedMember(EclipseFactory.java:254)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeResolvedMember(EclipseFactory.java:249)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseSourceType.fillDeclaredMembers(EclipseSourceType.java:115)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseSourceType.getDeclaredPointcuts(EclipseSourceType.java:146)
+at
+org.aspectj.ajdt.internal.compiler.ast.AspectDeclaration.buildInterTypeAndPerClause(AspectDeclaration.java:977)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.buildInterTypeAndPerClause(AjLookupEnvironment.java:303)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindings(AjLookupEnvironment.java:119)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.beginToCompile(Compiler.java:331)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:348)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:683)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:168)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:102)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:109)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:291)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:227)
+at org.aspectj.tools.ajc.Main.main(Main.java:80)

@@ -1,0 +1,29 @@
+Extra pop up menu on text widget with setMenu
+Eclipse 2.1
+Run the following code.
+Right click in the text widget and you will see a
+native pop up menu as well as the one I have added.
+Also happens with Shift+F10.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+final Text t = new Text(shell, SWT.READ_ONLY | SWT.BORDER |SWT.V_SCROLL |
+SWT.H_SCROLL | SWT.MULTI);
+t.setBounds(10, 10, 250, 250);
+Menu menu = new Menu (shell, SWT.POP_UP);
+MenuItem item = new MenuItem (menu, SWT.PUSH);
+item.setText ("Clear");
+item.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+t.setText("");
+}
+});
+t.setMenu(menu);
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

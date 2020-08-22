@@ -1,0 +1,26 @@
+Cut/Paste does not fire modifyText events in Combo
+I20080226-1155
+Cutting or pasting text in a combo does not take effect until another key is pressed.
+Snippet below.
+final Display display = new Display();
+final Shell shell = new Shell();
+shell.setLayout(new FillLayout());
+
+final Button b = new Button(shell, SWT.PUSH);
+b.setText("Push me");
+b.setEnabled(true);
+final Combo c = new Combo(shell, SWT.NONE);
+c.setText("Monkey");
+c.addModifyListener(new ModifyListener() {
+public void modifyText(ModifyEvent e) {
+b.setEnabled(((Combo)e.widget).getText().length() > 0);
+}});
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();

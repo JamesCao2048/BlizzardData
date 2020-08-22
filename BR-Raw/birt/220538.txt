@@ -1,0 +1,11 @@
+Bug 220538 The container info is error after undo moving element operator.
+The container info is error after undo moving element operator.
+Build number: 2.3.0.v20080221-0800 Steps to reproduce: 1.Call DesignElementHandle.moveTo(...) to move a element to new container.
+2.Undo this operater.
+Expected result: the element's containerInfo is old container.
+Actual result: the element's containerInfo is null.
+The issue is maybe in MoveContentRecord.java v1.10:166 & 167:
+-------------------------------------------------------- from.add( module, content, oldPosn ); to.remove( module, content );
+-------------------------------------------------------- I guess it should be:
+-------------------------------------------------------- to.remove( module, content ); from.add( module, content, oldPosn );
+--------------------------------------------------------

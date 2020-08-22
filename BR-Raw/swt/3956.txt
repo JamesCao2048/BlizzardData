@@ -1,0 +1,49 @@
+FontData.setLocale() crashes workbench
+On Windows98, FontData.setLocale() causes crash of workbench.
+The following is stack.
+java.lang.NegativeArraySizeException:
+at org.eclipse.swt.internal.win32.TCHAR.toString(TCHAR.java:103)
+at org.eclipse.swt.graphics.FontData.EnumLocalesProc(FontData.java:348)
+at org.eclipse.swt.internal.win32.OS.EnumSystemLocalesA(Native Method)
+at org.eclipse.swt.internal.win32.OS.EnumSystemLocales(OS.java:1259)
+at org.eclipse.swt.graphics.FontData.setLocale(FontData.java:509)
+I make a simple sample to reproduce the problem.
+--------------------------------------------------------------------------
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class Win98Test {
+static public void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setSize(200, 200);
+final Canvas canvas = new Canvas(shell, 0);
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+FontData fontdata = new FontData("hoge",
+50, 0);
+fontdata.setLocale("en_US.ISO8859-1");
+Font font = new Font(display, fontdata);
+gc.setFont(font);
+gc.drawString("hello world", 10, 20);
+}
+});
+shell.open();
+shell.setVisible(true);
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+}
+}

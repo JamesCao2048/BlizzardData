@@ -1,0 +1,6 @@
+CCombo.dropdown doesn't handle the screen's right edge
+The 'popup' Shell of a CCombo is allways justified with the left side of the CCombo, regardless of the screen right edge.
+I believe adding
+if (x + width > displayRect.x + displayRect.width) x = displayRect.x + displayRect.width
+- listRect.width;
+at line 382 in CCombo.java would solve it.

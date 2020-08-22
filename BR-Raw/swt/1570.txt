@@ -1,0 +1,13 @@
+BIDI3.4: search results appear shaped improperly
+Created  attachment 95087   [details]
+Search file where matched strings are not shaped correctly
+Build ID: I20080401-1005
+Steps To Reproduce:
+1.In a RHEL terminal , set the variables LANG and LC_ALL to "ar_EG.utf8"
+2.Start eclipse using the command ./eclipse
+-nl ar_EG
+3.Create a text file and type some Arabic text into the file
+4.Go to search->file and choose an Arabic text which is contained in the middle of a word existing in the file (example, if the file contains the word ABCD, search for BC, where upper case letters represent Arabic characters, where B and C are in shapped as middle characters in the word ABCD
+5.Click search, the instances of BC are highlighted as they match the target search pattern but they are not shaped correctly
+6.if same steps are repeated using find and replace, the BC  part will be highlighted but will be shaped correctly
+More information:

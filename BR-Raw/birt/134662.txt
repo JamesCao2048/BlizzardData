@@ -1,0 +1,3 @@
+Bug 134662 An unfriendly message pop up when input a very large number in filter Top N
+Description: May be Top N value should be less than 100000 but the error message to user is not friendly enough.
+Step to reproduce: 1.new a datasource and a dataset 2.in the dataset add a filter with top N 3.enter 3655566 in top n 4.click the "Preview Results" Actual result: An error message tell that "data.engine.InvalidTopBottomN100000" Expected result: It had better tell user the Top N's rage of the input

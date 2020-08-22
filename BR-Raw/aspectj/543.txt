@@ -1,0 +1,91 @@
+declare error fails on pointcuts composed from multiple classes
+This error occurs in both 1.1.0 and in the head of CVS as of 9/8/03. The
+compiler crash output from the CVS head version is at the end. It may be
+related to 42739, but they may be distinct problems.
+Sample source:
+/*
+* Created on Sep 8, 2003
+*
+* Copyright (c) 2003 New Aspects of Security. All Rights Reserved.
+*/
+aspect Library {
+public pointcut executionsThrowingChecked() :
+execution(* *(..) throws (Exception+ && !RuntimeException));
+}
+public aspect SampleExceptionHandling {
+public pointcut scope() : within(org.atrack.model..*);
+
+public pointcut executionsThrowingChecked() :
+Library.executionsThrowingChecked() && scope();
+declare error : executionsThrowingChecked():
+"no checked exceptions";
+}
+sample compile:
+C:eclipseworkspaceatrack>ajc srcSampleExceptionHandling.java
+java.lang.Exception: Stack trace
+at java.lang.Thread.dumpStack(Thread.java:1071)
+at org.aspectj.weaver.patterns.ReferencePointcut.concretize1
+(ReferencePo
+intcut.java:215)
+at org.aspectj.weaver.patterns.AndPointcut.concretize1
+(AndPointcut.java:
+88)
+at org.aspectj.weaver.patterns.ReferencePointcut.concretize1
+(ReferencePo
+intcut.java:272)
+at org.aspectj.weaver.patterns.AndPointcut.concretize1
+(AndPointcut.java:
+88)
+at org.aspectj.weaver.patterns.ReferencePointcut.concretize1
+(ReferencePo
+intcut.java:272)
+at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:127)
+at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:120)
+at org.aspectj.weaver.Checker.concretize(Checker.java:37)
+at org.aspectj.weaver.CrosscuttingMembers.addShadowMunger
+(CrosscuttingMe
+mbers.java:78)
+at org.aspectj.weaver.CrosscuttingMembers.addDeclare
+(CrosscuttingMembers
+.java:102)
+at org.aspectj.weaver.CrosscuttingMembers.addDeclares
+(CrosscuttingMember
+s.java:92)
+at org.aspectj.weaver.ResolvedTypeX.collectCrosscuttingMembers
+(ResolvedT
+ypeX.java:332)
+at org.aspectj.weaver.CrosscuttingMembersSet.addOrReplaceAspect
+(Crosscut
+tingMembersSet.java:50)
+at
+org.aspectj.ajdt.internal.compiler.ast.AspectDeclaration.buildInterTy
+peAndPerClause(AspectDeclaration.java:754)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.buildIn
+terTypeAndPerClause(AjLookupEnvironment.java:124)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.complet
+eTypeBindings(AjLookupEnvironment.java:91)
+at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile
+(Compiler.ja
+va:310)
+at org.eclipse.jdt.internal.compiler.Compiler.compile
+(Compiler.java:324)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilat
+ion(AjBuildManager.java:373)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild
+(AjBuild
+Manager.java:125)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
+(AjBu
+ildManager.java:70)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:99)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:53)
+at org.aspectj.tools.ajc.Main.run(Main.java:217)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:155)
+at org.aspectj.tools.ajc.Main.main(Main.java:72)
+C:eclipseworkspaceatracksrcSampleExceptionHandling.java:15 circular
+pointcu
+t declaration involving: executionsThrowingChecked()
+1 error

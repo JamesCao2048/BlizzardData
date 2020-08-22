@@ -1,0 +1,12 @@
+[DND] Combo/Text on Linux does not fire Drop event.
+Environment:
+- ON: Suse Linux ED 10.
+- Eclipse 3.3 M7 build to
+- run the attached SimpleDnDExample.java
+It has following problems:
+The public void drop(DropTargetEvent event) method in DropTargetListener
+instance will not be invoked when drop some strings into Combo, but it can be
+invoked correctly on Windows.
+The current result is: if you drop some text to combo, it appends text in the current caret position.
+Snippet code in:  https://bugs.eclipse.org/bugs/attachment.cgi?id=66335
+Some earlier talkings here:  https://bugs.eclipse.org/bugs/show_bug.cgi?id=169291

@@ -1,0 +1,55 @@
+Table: setBackground is not deferred by setRedraw(false)
+3.1RC1
+- run the snippet at the bottom
+- click on the shell and Table.setRedraw(false) is invoked
+- click on the shell again and Table.setBackground(green) is invoked.
+This
+clears the entire table, including the header, to green.
+It seems like this
+should do nothing because of the previous setRedraw(false)
+- click on the shell again and Table.setRedraw(true) is invoked: now the header
+and table contents reappear
+public class Main {
+static int counter = 0;
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,300,300);
+final Table table = new Table(shell, SWT.NONE);
+table.setBounds(10,10,200,200);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+new TableItem(table, SWT.NONE).setText("abc");
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+if (counter == 0) {
+System.out.println("setRedraw(false)");
+table.setRedraw(false);
+counter++;
+return;
+}
+if (counter == 1) {
+System.out.println("setBackground(green):
+everything disappears");
+table.setBackground(display.getSystemColor
+(SWT.COLOR_GREEN));
+counter++;
+return;
+}
+if (counter == 2) {
+System.out.println("setRedraw(true), everything
+reappears");
+table.setRedraw(true);
+counter++;
+return;
+}
+System.out.println("nothing left to do");
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+}

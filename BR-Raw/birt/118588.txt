@@ -1,0 +1,9 @@
+Bug 118588 Java Debug -> Inspect and Display
+steps to reproduce:
+- start Java Debug
+- insert some breakpoints in the Java class
+- switch to the runtime workbench, add a label, and map it to the Java class
+- preview in html expected behavior
+- selected variables can be evaluated.
+actual behavior
+- an error message is printed saying that the expression cannot be evaluated.

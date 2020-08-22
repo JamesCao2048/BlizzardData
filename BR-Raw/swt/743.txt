@@ -1,0 +1,9 @@
+[browser] Mozilla browser instances held in memory forever due to dispose listener on display
+Build Identifier: M20090917-0800
+After you create an org.eclipse.swt.browser.Mozilla it will never be garbage collected since it adds a dispose listener to the Display and never removes it.
+The listener is added as shown below...
+1186: display.addListener (SWT.Dispose, new Listener () {
+...etc
+This seems like an obvious memory leak and caused me some confusion whilst debugging.
+AFAICT the org.eclipse.swt.browser.IE browser doesn't hang around like this.
+Reproducible: Always

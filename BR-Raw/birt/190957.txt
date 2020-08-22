@@ -1,0 +1,2 @@
+Bug 190957 The cancel button in group level dialog in cube take no effect[1101]
+Description: The cancel button in group level dialog in cube take no effect[1101] Build number: 2.2.0.v20070605-0630 Steps to reproduce: 1, New a cube 2, New a level 3, Do some operations on the level 4, Click cancel button Expected result: The cancel button can take effect to cancel all the operations Actual result: The cancel button take no effect and all the operations have done

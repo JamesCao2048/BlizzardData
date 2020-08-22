@@ -1,0 +1,10 @@
+Bug 223473 The message "org.eclipse.birt.data.engine.impl.DataEngineImpl <init>" should be removed [00]
+Description: The message "org.eclipse.birt.data.engine.impl.DataEngineImpl
+<init>" should be removed.
+Build number: 2.3.0.v20080321-1139 Steps to reproduce: 1.Start eclipse through command line.
+2.New a data source and a data set.
+Expected result: No "org.eclipse.birt.data.engine.impl.DataEngineImpl
+<init>" message should be print out.
+Actual result: Many "org.eclipse.birt.data.engine.impl.DataEngineImpl
+<init>" messages are print out.
+Error log: N/A.

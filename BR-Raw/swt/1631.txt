@@ -1,0 +1,43 @@
+UML causing stack overflow
+Build ID: n/a
+Steps To Reproduce:
+use the latest UML distro from eclipse website and enable view.
+it will cause eclipse to have a stack overflow.
+a clean launch will not reset eclipse so you will have to uninstall eclipse and reinstall
+More information:
+stack overflow from terminal:
+mbp:~ chris$ Exception in thread "Thread-2" java.lang.StackOverflowError
+at org.eclipse.swt.internal.carbon.OS.HIViewRender(Native Method)
+at org.eclipse.swt.widgets.Control.update(Control.java:3929)
+at org.eclipse.swt.widgets.Control.update(Control.java:3923)
+at org.eclipse.hyades.uml2sd.ui.view.SDWidget.getDrawBuffer(SDWidget.java:1145)
+at org.eclipse.hyades.uml2sd.ui.view.SDWidget.drawContents(SDWidget.java:1242)
+at org.eclipse.hyades.uml2sd.ui.view.ScrollView$7.paintControl(ScrollView.java:143)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+at org.eclipse.swt.widgets.Control.drawWidget(Control.java:825)
+at org.eclipse.swt.widgets.Widget.kEventControlDraw(Widget.java:1029)
+at org.eclipse.swt.widgets.Canvas.kEventControlDraw(Canvas.java:137)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:363)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:835)
+at org.eclipse.swt.internal.carbon.OS.HIViewRender(Native Method)
+at org.eclipse.swt.widgets.Control.update(Control.java:3929)
+at org.eclipse.swt.widgets.Control.update(Control.java:3923)
+at org.eclipse.hyades.uml2sd.ui.view.SDWidget.getDrawBuffer(SDWidget.java:1145)
+at org.eclipse.hyades.uml2sd.ui.view.SDWidget.drawContents(SDWidget.java:1242)
+at org.eclipse.hyades.uml2sd.ui.view.ScrollView$7.paintControl(ScrollView.java:143)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)Invalid memory access of location 0000004d eip=917f4111
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+at org.eclipse.swt.widgets.Control.drawWidget(Control.java:825)
+at org.eclipse.swt.widgets.Widget.kEventControlDraw(Widget.java:1029)
+at org.eclipse.swt.widgets.Canvas.kEventControlDraw(Canvas.java:137)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:363)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:835)
+at org.eclipse.swt.internal.carbon.OS.HIViewRender(Native Method)
+at org.eclipse.swt.widgets.Control.update(Control.java:3929

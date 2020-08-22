@@ -1,0 +1,24 @@
+GC.drawString uses BG color for font when alpha value < 255
+When drawing transparent strings, the foreground color is not used.
+It seems
+the background color is used instead.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setFont(new Font(display, "Arial", 18, SWT.BOLD));
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+GC gc = e.gc;
+gc.setBackground(new Color(display, 0, 100, 255));
+gc.fillRectangle(0, 0, 200, 200);
+gc.setBackground(new Color(display, 255, 255, 0));
+gc.setAlpha(200);
+gc.drawString("Test String", 10, 10, false);
+}
+});
+shell.open();
+
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+}

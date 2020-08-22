@@ -1,0 +1,26 @@
+Shell doesn't maximize
+Calling shell.setMaximized(true) doesn't maximize the shell on Mac OS X 10.3
+(it does so on Windows XP).
+The following snipped demonstrates this:
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class MaximizeBug
+{
+public static void main(String[] args)
+{
+Display display = Display.getDefault();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setSize(100,100);
+shell.open();
+// this method fails
+shell.setMaximized(true);
+
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

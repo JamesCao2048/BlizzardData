@@ -1,0 +1,32 @@
+[StyledText] setBackground() conflicts with LineStyleListener
+Build ID: M20080911-1700
+Steps To Reproduce:
+If you have a LineStyleListener installed and you call setBackground(), the result can look odd if you use getBackground() in the LineStyleListener to make some text background "transparent".
+The cause of the problem is that setBackgrund() doesn't reset the line styles.
+My fix was to move the reset code from addLineStyleListener(LineStyleListener) to a new method:
+public void addLineStyleListener(LineStyleListener listener) {
+checkWidget();
+if (listener == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+if (!isListening(LineGetStyle)) {
+resetLineStyles (); //
+<-- Replaced this code
+}
+addListener(LineGetStyle, new StyledTextListener(listener));
+}
+private void resetLineStyles ()
+{
+setStyleRanges(0, 0, null, null, true);
+renderer.clearLineStyle(0, content.getLineCount());
+}
+And I call this method in setBackground():
+public void setBackground(Color color) {
+checkWidget();
+background = color;
+super.setBackground(color);
+resetLineStyles(); //
+<-- insert call here
+super.redraw();
+}
+I'm not submitting a patch because I couldn't find a way to create one with Eclipse.
+I'll open an extra bug for that.
+That said, the change is trivial to make (one "Extract to method" and one line inserted), so whoever takes on this bug should have no problem to fix it.

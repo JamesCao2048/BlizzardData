@@ -1,0 +1,6 @@
+keyUp not delivered if command key is down
+An SWT.KeyUp will not be delivered if the command key is down while pressing another key.
+This can be seen in ControlExample in the Text tab.
+Turn on the listeners for KeyDown and KeyUp and then type any command key combination that isn't already a menu equivalent.
+You will get a KeyDown for the cmd key, then a KeyDown for the regular key, but no KeyUp.
+Then you get a KeyDown for the command key.

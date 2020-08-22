@@ -1,0 +1,6 @@
+Replace GdkRegion with Cairo methods for GTK + 3.0 and higher
+To avoid dependency issues I decided to put all GdkRegion  methods in one place.
+(I will mark as duplicates all the patches regarding GdkRegion that I opened before this bug)
+To Note: As In Gtk3 there is typedef  cairo_rectaingle_int_t GdkRectangle, I have used GdkRectangle for all the operations that required cairo_rectangle_int_t
+Patch can be found here:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=cairo_region_create_64

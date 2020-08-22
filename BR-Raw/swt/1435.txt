@@ -1,0 +1,31 @@
+setting TabFolder content in Selection callback does not appear
+snippet:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setBounds(10,10,300,200);
+final TabFolder folder = new TabFolder(shell, SWT.NONE);
+TabItem item0 = new TabItem(folder, SWT.NONE);
+item0.setText("item0");
+Label label = new Label(folder, SWT.NONE);
+label.setText("item 0 label");
+item0.setControl(label);
+TabItem item1 = new TabItem(folder, SWT.NONE);
+item1.setText("item1");
+folder.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+TabItem item = (TabItem)event.item;
+if (item.getControl() == null) {
+Label label = new Label(folder, SWT.NONE);
+label.setText("item 1 label");
+item.setControl(label);
+}
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

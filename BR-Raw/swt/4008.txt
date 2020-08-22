@@ -1,0 +1,23 @@
+Problem with Umlauts in Photon
+We've got problems wuth Umlauts in our UI.
+The cause for
+that is, that for the AWT/SWT character conversion the
+Class org.eclipse.swt.internal.Converter is used which
+uses the converters of the String class.
+The converter
+in the String class is the standard converter which is set
+with 'file-converter=utf8'.
+This is showing all Umlauts
+correctly in the UI but all I/O interfaces are using
+this conversion as well.
+Since these are external code
+we're not able to change them and set encoding back to
+Latin1.
+
+The question is:
+The Photon port of the AWT/SWT must use UTF8 for displaying
+Text in Photon.
+Why is the converter that is dependant
+on the 'file-converter' parameter?
+The OTI implementation
+is marked as 'SLOW AND BOGUS' when will that be changed?

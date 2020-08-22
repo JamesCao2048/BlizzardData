@@ -1,0 +1,13 @@
+ajc changes classfile timestamps even if compilation fails (regression)
+It appears that ajc 1.2 updates a classfile timestamps even if the compilation
+fails. This breaks the integration with the Ant build system. E.g. using the
+ant "javac" task with the Ajc11CompilerAdapter interface, the compilation may
+fail on the first attempt and succeed on the second attempt, - because ajc has
+touched the timestamp and Ant hence decides that nothing needs to be recompiled.
+This did not happen in ajc 1.1.
+To reproduce:
+1. In the examples/observer folder, run a build:
+ajc -sourceroots .
+2. Edit the "Demo.java" class and insert the line "DONT COMPILE"
+3. Run the compilation again. The compiler displays the correct error message
+but the Demo.class file has been updated with the compile-time timestamp.

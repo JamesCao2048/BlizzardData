@@ -1,0 +1,3 @@
+Child shells don't stay above their parent
+There is currently no parent-child relationship between shells on SWT-Cocoa.
+Also note that while NSWindow provides an addChild call, it causes children to move when the parent shell moves which is undesirable for SWT.

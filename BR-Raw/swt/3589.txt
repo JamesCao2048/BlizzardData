@@ -1,0 +1,23 @@
+[Key Bindings] DBCS: "F1" funtion key does NOT work on Linux_GTK.
+Reporter: Amanda Lee
+Language: Korean /Simplfied Chinese /Traditional Chinese
+
+Build driver: M4_Linux_GTK
+
+Severity:
+OS: RedHat8
+JDK Ver.: IBM JDK1.3.1 + SR3
+
+Test case #: 11.1
+
+Summary: DBCS: "F1" funtion key does NOT work on Linux_GTK.
+Description:
+Steps to recreate problem:
+1-Open a eclipse.
+2-Press "F1" function key.
+==> [Error] Nothing responded to.
+3-Press "SHIFT+F1".
+==> [Error] The pop-up resources tab and eclipse session are blinking, then
+no 'help' displayed.
+<<Expected Result>>
+The key bindings works correctly.

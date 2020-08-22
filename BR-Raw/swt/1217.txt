@@ -1,0 +1,6 @@
+CTabFolder should not select an item unless the first button has been pressed
+In CTabFolder's onMouse(Event) handling of the SWT.MouseDown event, there is a fair amount of conditional blocks that prevents things from happening unless the first mouse button is the one that was clicked.
+This is not in place for tab selection.
+There are requests against platform to not select a part when the user right-clicks on it ( bug 60833 ) and to close it when it's been middle-clicked ( bug 258511 ).
+This behaviour can be observed on applications like Firefox and IE7.If I invoke Ctrl+H and bring up the search dialog, I can see that right-clicking and middle-clicking doesn't cause the tabs to switch.
+Can the same be implemented for CTabFolder?

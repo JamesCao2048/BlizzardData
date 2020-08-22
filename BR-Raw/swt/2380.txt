@@ -1,0 +1,4 @@
+Tree Column does not respond to DefaultSelection event as it did in 3.1
+Adding a Selection Listener to a TreeColum object and attempting to use default selection on it does not trigger the event.
+This functioned in SWT 3.1.
+See modification of Snippet 170.

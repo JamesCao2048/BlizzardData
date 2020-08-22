@@ -1,0 +1,7 @@
+Bug 270417 The chart script don't delete
+1:New a report, 2:Add a chart in the body.
+3:Select the chart, and switch to the script editor.
+4:Type "abc" , then save the report design.
+5:Watch the outline view, the script node of the chart show.
+6:Delete the "abc", then save the report design.
+The node should disappear in the outline view,but the node show.

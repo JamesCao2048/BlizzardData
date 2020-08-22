@@ -1,0 +1,14 @@
+[Browser] Registered BrowserFunctions cannot be called at anytime
+Created  attachment 136704   [details]
+Trying to call a function during load, and showing that it works after load
+Build ID: 3.5RC1
+Steps To Reproduce:
+1.Register a function to a browser.
+2.Load some HTML content that invokes that function before it is fully loaded: the function call fails.
+More information:
+This bugs exists at least on Windows XP (IE and XULRunner) and Ubuntu (XULRunner).
+When mixing various components, with JS callbacks and such, it is hard to tell whether the current state allows the Java function to be called.
+This makes their use very dangerous for any serious integration.
+For example, if you want some logging of the JS on the Java side, you could replace all alert() calls, but this would not work.
+I originally wanted to switch to BrowserFunctions to replace my hackish window.location/window.status communication channel but I stumbled upon this showstopper.
+If you could describe the exact conditions needed to call the function and if you happen to know of a way to call them at anytime using some prefix or whatever, please let me know.

@@ -1,0 +1,7 @@
+Bug 132942 Create adaptor plugin for Data Engine to support BIRT requests
+BIRT Data Engine is not designed to be dependent on the birt.model plugin (in order to promote reuse of this component).
+This has necessitated the class org.eclipse.birt.report.engine.adaptor.ModelDteApiAdaptor in order for BIRT components to issue BIRT model-based requests.
+This class currently reside in the Engine plugin.
+Going forward we should introduce a new plugin to act as an adaptor of DtE for use with BIRT.
+This plugin will introduce a BIRT data engine adaptor API which will allow BIRT ROM objects to be directly given as parameters for data requests, thereby obsoleting the need for the ModelDteApiAdaptor class.
+Some features of the DataSetManager class (currently in designer.ui) can also be moved into this new adaptor plugin.

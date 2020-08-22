@@ -1,0 +1,27 @@
+Bidi: StyledText - exception in autoscroll in bidi
+build 20030611
+-Enter a blank line in a StyledText widget running in bidi mode
+-Enter a long line of text immediately after the blank line
+-Size the widget so that you can autoscroll horizontally
+-Place the cursor at the beginning of the second line
+-Mouse select to the right to activate auto scrolling and then select up one
+line (to the blank line)
+->An ArrayIndexOutOfBoundsException is thrown in StyledTextBidi.getVisualOffset
+java.lang.ArrayIndexOutOfBoundsException:
+-1
+at org.eclipse.swt.custom.StyledTextBidi.getVisualOffset
+(StyledTextBidi.java:807)
+at org.eclipse.swt.custom.StyledText.doVisualNext(StyledText.java:3351)
+at org.eclipse.swt.custom.StyledText$4.run(StyledText.java:2442)
+at org.eclipse.swt.widgets.Display.runTimer(Display.java:2083)
+at org.eclipse.swt.widgets.Display.messageProc(Display.java:1633)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java(Inlined
+Compiled Code))
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java(Inlined
+Compiled Code))
+at org.eclipse.swt.examples.exampleframework.SwtExample.run
+(SwtExample.java(Compiled Code))
+at org.eclipse.swt.examples.tests.SwtStyledTextUseCase.main
+(SwtStyledTextUseCase.java:767)
+Exception in thread "main"

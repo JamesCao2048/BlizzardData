@@ -1,0 +1,4 @@
+Bug 208373 Auto resize Chart to have a single axis without blank
+When Chart is within Cross tab, chart axis image should have a single axis only, but there may be much blank in other area.
+Chart engine should auto resize the image to have the axis with fit size.
+Meanwhile, report engine should not set size for chart image.

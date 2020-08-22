@@ -1,0 +1,38 @@
+NPE when dispose before shell is opened
+- run the snippet below, and you'll get the error at the bottom
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setBounds(10,10,200,200);
+shell.addListener(SWT.FocusIn, new Listener() {
+public void handleEvent(Event event) {
+shell.dispose();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Decorations.restoreFocus(Decorations.java:806)
+at org.eclipse.swt.widgets.Decorations.WM_SETFOCUS(Decorations.java:1706)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3844)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:334)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1555)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1891)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4460)
+at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2328)
+at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:456)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3866)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:334)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1555)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1891)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4460)
+at org.eclipse.swt.internal.win32.OS.BringWindowToTop(Native Method)
+at org.eclipse.swt.widgets.Decorations.bringToTop(Decorations.java:228)
+at org.eclipse.swt.widgets.Shell.open(Shell.java:1116)
+at win32.Main.main(Main.java:20)

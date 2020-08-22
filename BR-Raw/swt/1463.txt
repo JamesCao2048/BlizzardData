@@ -1,0 +1,14 @@
+[DND] Combo on Linux does not fire DragSourceEvent.
+Build ID: I20080617-2000
+Environment:
+- ON: Suse Linux ED10
+- Eclipse 3.4GM
+Steps To Reproduce:
+1.Run snippet code on SLED10.
+2.Input some text in combo area and highlight the text.
+3.Drag the text to the Text area on the right.
+[Result]:
+"dragStart" and "dragSetData" can not be triggered at all during drag process.
+[Expected]:
+"dragStart" and "dragSetData" should be triggered during drag process.
+More information:

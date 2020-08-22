@@ -1,0 +1,7 @@
+XP Look and Feel - 3D border appearance on some widgets does not match single blue line border on other widgets
+Not sure if this is a bug in the way our bordering works, or in the example,
+etc.
+- click on the Text tab in the control example
+- click on the SWT.BORDER flag
+- notice Text widget is bordered with a flat, light blue rectangle, but
+StyledText widget is highlighted with a 3D border.

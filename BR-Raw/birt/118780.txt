@@ -1,0 +1,7 @@
+Bug 118780 Set alias for columns in data set but in expression builder still shows the old columns name when select the dataset.
+Description: Set alias for columns in data set but in expression builder still shows the old columns name when select the dataset.
+Steps to reproduce: 1.New a datasource and a dataset 2.Set alias of the first column in the dataset to "column1".
+3.Insert a data item and bind it to dataset.
+4.In the expression builder, select the dataset and double click the first column name.
+Expected result: According to scr #78193 in tracker, the first column in expression build should use alias name instead of original name.
+Actual result: The original name of the first column was listed in the below of expression builder but the alias name appeared above as row["column1"] after double click the original name.

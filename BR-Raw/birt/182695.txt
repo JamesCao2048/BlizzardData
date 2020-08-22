@@ -1,0 +1,4 @@
+Bug 182695 Backport RowFetchLimit setting in model to 2.1.3
+In 2.1.3 Model add new methods DataSetHandle.setDataSetRowLimit() and DataSetHandle.getDataSetRowLimit() to let user define the number of rows that returned from database.
+This however duplicate with existing 2.2 model methods DataSetHandle.setRowFetchLimit() and DataSetHandle.getRowFetchLimit().
+Model should backport the changes to 2.1.3.

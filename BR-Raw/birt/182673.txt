@@ -1,0 +1,4 @@
+Bug 182673 No default value error message prompts incorrectly
+Steps to reproduce: 1.New a report parameter; 2.Choose control type as Combo; 3.Choose parameter as dynamic type; Expected result: As the isRequired is false by default, parameter's default value can be null value.
+There should be no error message about no default value prompt.
+Actual result; Error messages prompts

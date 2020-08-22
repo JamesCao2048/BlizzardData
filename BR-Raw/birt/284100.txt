@@ -1,0 +1,2 @@
+Bug 284100 Model does not fire change event when VariableElement properties are changed.
+When VariableElement's properties are changed, Model should fire an element change event of the VariableElement's container.

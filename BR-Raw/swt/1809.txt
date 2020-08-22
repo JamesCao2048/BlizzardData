@@ -1,0 +1,53 @@
+[OLE] ActiveX/OLE Document support not working correctly in 3.4M3
+Hi,
+I use a 3rd party chemical structure drawing ActiveX component in an eclipse RCP application.
+This has worked really well in the past (up to and including version 3.3).
+On trying version 3.4M3 I found that the ActiveX component no longer appears and I get no errors.
+Here is a snippet.
+This runs perfectly under 3.3, but for 3.4M3 this simply opens an empty shell with no errors.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.SWTError;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.ole.win32.OLE;
+import org.eclipse.swt.ole.win32.OleControlSite;
+import org.eclipse.swt.ole.win32.OleFrame;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class ChemicalStructureActiveXTest {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("Chemical Structure ActiveX Example");
+shell.setLayout(new FillLayout());
+try {
+OleFrame frame = new OleFrame(shell, SWT.NO_BACKGROUND);
+OleControlSite site = new OleControlSite(frame, SWT.NONE,
+"{60257C74-D60B-41D6-9296-A08BD51F15B5}");
+int ok = site.doVerb(OLE.OLEIVERB_SHOW);
+if (ok == OLE.S_OK) {
+System.out.println("Was OK apparently");
+} else {
+System.out.println("Was NOT OK apparently");
+}
+} catch (SWTError e) {
+System.out.println("Unable to open activeX control");
+return;
+}
+shell.setSize(800, 600);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+You can download the 3rd part chemical drawing plugin here (click on the free windows download button on the RHS).
+Simply run the installer to install the software.
+http://scistore.cambridgesoft.com/software/product.cfm?pid=4012
+After you have installed this, run the snippet I provided in version 3.3 and 3.4M3.Under 3.3 everything works you should get a white drawing area and popup toolbar should appear.
+Under 3.4M3 it doesn't seem to work.
+Can you replicate the behavior I am seeing?
+Many thanks,
+Paul Watson

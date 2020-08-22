@@ -1,0 +1,5 @@
+-Xreweavable should be the default
+In order to facilitate widespread use of LTW we need to ensure code is
+compiled with 鈥揦reweavable. However we cannot rely on developers to use this
+flag so it must be the default. Unfortunately the current code bloat is
+unacceptable for large projects.

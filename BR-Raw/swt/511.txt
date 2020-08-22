@@ -1,0 +1,9 @@
+GTK+ Printer getDPI returns 72 x 72
+20060717
+Printer.getDPI() currently returns a constant: 72 x 72.
+This is even for printers that can print 300 x 300 or 600 x 600 DPI.
+This may be the reason that fonts print large and lines print 'fat' on GTK+, but I needed to do this because when I return the correct DPI, 'pixel' coordinates passed to draw routines are not correct for printer.
+(And I do not want to change every draw routine in GC at this time).
+There is some kind of 'resolution' problem that needs to be fixed.
+This is partly (but not completely) because of  http://bugzilla.gnome.org/show_bug.cgi?id=346245
+Still need to figure out the problem here.

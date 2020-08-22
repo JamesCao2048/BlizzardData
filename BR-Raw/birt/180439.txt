@@ -1,0 +1,2 @@
+Bug 180439 Style on toc doesn't take effect in PDF[0002]
+Style on toc doesn't take effect in PDF[0002] Build number: 2.2.0.v20070402-1259 Steps to reproduce: 1.new a label and input "test style for toc" 2.new a style:style1,set Font:Arial,Color:red,size:20,style:Italic,weight:Bolder 3.select the label and set toc "toc" ,choose style:style1 4.preview in web viewer and PDF Expected result: Style on web viewer and PDF both take effects Actual result: In web viewer style takes effects In PDF no effects displayed Error log: N/A

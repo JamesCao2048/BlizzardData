@@ -1,0 +1,32 @@
+StyledText#computeSize imposes artificial limit on return value
+SWT N20051127-0010
+Since v3214, StyledText#computeSize has a built-in check that restricts
+the size calculation to an area no taller than the height of the user's
+display.
+I assume that this is done to speed up the computation based
+on the idea that creating a StyledText that is bigger than the screen
+would make no sense.
+That's probably right in most cases but there are situations in which it
+does not work.
+For example, the case outlined in  bug 118164 comment #0
+should, if the text extent requires it, be able to support StyledTexts
+that are taller than the screen height.
+Before this recent change,
+it could do so without problems, now it cannot.
+I tend to think that controls should report their real preferred size
+when computeSize is called, no matter how big the contents.
+As for the
+possible performance problem, I would imagine that the two most common
+cases of using a StyledText in a layout are the following:
+a) Set the size of the StyledText to fill the available space that
+remains after subtracting the sizes of all other controls
+(tool bars, views etc.)
+b) Set the StyledText to a specific, pre-determined size, such as
+100 hDLUs x 50 vDLUs or 8 lines x 40 characters
+In a), there is no need to call computeSize, you just set the size.
+In b), computeSize would only be called to add the trim, wHint and hHint
+would both be != SWT.DEFAULT.
+In both cases there would be no problem.
+If for some reason you /do/ need to call computeSize, it is most likely
+because you must know the exact preferred size, and if that's the case,
+there should be a way to query it.

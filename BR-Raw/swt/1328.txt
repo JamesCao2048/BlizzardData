@@ -1,0 +1,50 @@
+IndexOutOfBoundsException in Image.setBackground
+This was changes release to setBackground as part of native image loading are causing index out of bounds exceptions.
+java.lang.ArrayIndexOutOfBoundsException: 400
+at org.eclipse.swt.graphics.Image.setBackground(Image.java:1231)
+at Stub.main(Stub.java:31)
+public static void main(String[] args) {
+try {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Parent Shell");
+Color red = display.getSystemColor(SWT.COLOR_RED);
+Color blue = display.getSystemColor(SWT.COLOR_BLUE);
+Color yellow = display.getSystemColor(SWT.COLOR_YELLOW);
+Image image = new Image(display, 100, 100);
+GC gc = new GC(image);
+gc.setBackground(blue);
+gc.fillRectangle(0, 0, 100, 100);
+gc.setForeground(red);
+gc.setLineWidth(10);
+gc.drawLine(0, 0, 100, 100);
+gc.drawLine(100, 0, 0, 100);
+gc.dispose();
+ImageData data = image.getImageData();
+data.transparentPixel = data.getPixel(0, 50);
+image.dispose();
+
+final Image img = new Image(display, data);
+img.setBackground(yellow);
+System.out.println(Integer.toHexString(img.getImageData().getPixel(0, 50)));
+ImageData d = img.getImageData();
+d.transparentPixel =
+-1;
+final Image img2 = new Image(display, d);
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+event.gc.drawImage(img, 10, 10);
+event.gc.drawImage(img2, 10, 150);
+}
+});
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+img.dispose();
+display.dispose();
+} catch (Throwable t) {
+t.printStackTrace();
+}

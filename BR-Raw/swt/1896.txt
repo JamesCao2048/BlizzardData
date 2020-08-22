@@ -1,0 +1,74 @@
+StyledText not respecting parent's background mode
+Build ID: I20070625-1500
+Steps To Reproduce:
+Sample code below demonstrates how the StyledText is inheriting its parent's background color when it should not.
+/**
+* StyledTextBackgroundColorIssue.java
+*/
+package tests;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+/**
+* Demonstrates a StyledText issue where StyledText is inheriting its parent's
+* background color even if the parent set its background mode to INHERIT_NONE.
+*/
+public class StyledTextBackgroundColorIssue
+{
+private static Shell shell;
+public static void main(String[] args)
+{
+Display display = new Display();
+shell = new Shell(display);
+createContents(shell);
+shell.setBounds(50, 50, 300, 150);
+shell.open();
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+private static void createContents(Composite parent)
+{
+parent.setLayout(new FillLayout());
+
+//For this set of widgets, 3 nested composites, you'll see them colored in
+//this order: BLUE, BLUE, RED
+Composite c1 = new Composite(parent, SWT.BORDER);
+c1.setLayout(new GridLayout());
+c1.setBackground(c1.getDisplay().getSystemColor(SWT.COLOR_BLUE));
+c1.setBackgroundMode(SWT.INHERIT_FORCE);
+Composite c2 = new Composite(c1, SWT.BORDER);
+c2.setLayout(new GridLayout());
+c2.setLayoutData(new GridData(GridData.FILL_BOTH));
+c2.setBackgroundMode(SWT.INHERIT_NONE);
+Composite c3 = new Composite(c2, SWT.NONE);
+c3.setLayoutData(new GridData(GridData.FILL_BOTH));
+c3.setBackground(c2.getDisplay().getSystemColor(SWT.COLOR_RED));
+
+
+//For this set of widgets, where the innermost one is StyledText, you'll
+//see them colored in this order: BLUE, BLUE, BLUE
+//The behavior should be the same as above (BLUE, BLUE, RED);
+c1 = new Composite(parent, SWT.BORDER);
+c1.setLayout(new GridLayout());
+c1.setBackground(c1.getDisplay().getSystemColor(SWT.COLOR_BLUE));
+c1.setBackgroundMode(SWT.INHERIT_FORCE);
+c2 = new Composite(c1, SWT.BORDER);
+c2.setLayout(new GridLayout());
+c2.setLayoutData(new GridData(GridData.FILL_BOTH));
+c2.setBackgroundMode(SWT.INHERIT_NONE);
+StyledText st1 = new StyledText(c2, SWT.NONE);
+st1.setLayoutData(new GridData(GridData.FILL_BOTH));
+st1.setBackground(c2.getDisplay().getSystemColor(SWT.COLOR_RED));
+st1.setText("Should be RED");
+}
+}
+More information:

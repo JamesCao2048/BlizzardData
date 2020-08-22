@@ -1,0 +1,5 @@
+Bug 289318 Support cube filter of multiple levels even if they are not used in chart
+Currently cube filter only supports for the level which is used in chart binding.
+If the dimension level is not used, it's not allowed to add filter for the level.
+The enhancement is to allow to add filter for multiple levels in the same cube dimension hierarchy.
+For instance, user should be able to bind category as data["quarter"] and add filter data["year"]=2009.

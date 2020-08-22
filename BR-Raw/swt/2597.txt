@@ -1,0 +1,13 @@
+StyledText.getBaseline(StyledText.getCharCount()-1)) causes IAE
+N20051127-0010
+When having something like:
+'xxx
+xxx
+'
+calling StyledText.getBaseline(StyledText.getCharCount()-1)) causes an IAE:
+java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:3246)
+at org.eclipse.swt.SWT.error(SWT.java:3185)
+at org.eclipse.swt.SWT.error(SWT.java:3156)
+at org.eclipse.swt.graphics.TextLayout.getLineIndex(TextLayout.java:1010)
+at org.eclipse.swt.custom.StyledText.getBaseline(StyledText.java:3003)

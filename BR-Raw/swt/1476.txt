@@ -1,0 +1,68 @@
+AntiAlias does not work in TextLayout
+Build ID: M20070921-1145
+Steps To Reproduce:
+1.Run the code snippet below:
+2.Four pieces of text are displayed, the first thre (using TextLayout) are not antiAliased
+More information:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.graphics.TextLayout;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TextLayoutTest_System
+{
+final static String longString = "A string that is too long should be wrapped, but it would be nice to be Anti aliased.";
+public static void main(String[] args)
+{
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Canvas canvas = new Canvas(shell, SWT.NO_BACKGROUND);
+FontData fd = new FontData("Verdana", 12, SWT.NORMAL);
+final Font ourFont = new Font(null, fd);
+final Color itemBackground = new Color(null, 156, 202, 248);
+final Color itemForeground = new Color(null, 56, 104, 152);
+final TextLayout layout = new TextLayout(canvas.getDisplay());
+layout.setText(longString);
+layout.setFont(ourFont);
+canvas.addPaintListener(new PaintListener()
+{
+public void paintControl(PaintEvent e)
+{
+Rectangle client = canvas.getClientArea();
+layout.setWidth(client.width);
+
+// Option A
+- Top Quarter of Screen == Off Screen Bitmap
+Rectangle rectOptionA = new Rectangle(0, 0, client.width, client.height/4);
+
+Image imgOptionA = new Image(canvas.getDisplay(), rectOptionA);
+GC gcOptionA = new GC(imgOptionA);
+gcOptionA.setAdvanced(true);
+gcOptionA.setAdvanced(true);
+gcOptionA.setTextAntialias(SWT.ON);
+gcOptionA.setAntialias(SWT.ON);
+gcOptionA.setInterpolation(SWT.HIGH);
+gcOptionA.setBackground(itemBackground);
+gcOptionA.setForeground(itemForeground);
+gcOptionA.fillRectangle(rectOptionA);
+gcOptionA.setFont(ourFont);
+
+layout.draw(gcOptionA, rectOptionA.x, rectOptionA.y);
+e.gc.drawImage(imgOptionA, rectOptionA.x, rectOptionA.y);
+gcOptionA.dispose();
+
+// Option B
+- Middle (Top) Quarter of Screen == Event GC
+Rectangle rectOptionB = new Rectangle(client.x, client.y + client.height/4, client.width, client.height/4);
+
+GC gcOpti

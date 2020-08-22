@@ -1,0 +1,5 @@
+Bug 191155 Cross table that exoport to library is invalid
+Description: Cross table that exoport to library is invalid Step: 1.New a report, new a datasource, dataset and date cute.
+2.Insert a cross table and binding the data cute.
+3.Drop the dimensions and measures into cross table.
+4.Export the report to library 5.New another report and use the library 6.Drop the cross table from library into layout 7.Preview Actual result: The cross table is invalid and pop up the error

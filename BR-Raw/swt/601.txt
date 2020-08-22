@@ -1,0 +1,24 @@
+Editors hang for several seconds when processing input when Windows On-Screen Keyboard accessory is running
+Build Identifier: 20100218-1602
+When Windows' On-Screen Keyboard accessory is open, Eclipse editors hang for several seconds at a time when I type.
+This happens even when Eclipse is being used from a regular keyboard and the On-Screen Keyboard is minimized.
+Closing the On-Screen Keyboard makes the problem go away.
+Workaround: Close On-Screen Keyboard.
+If you need an on-screen keyboard for accessibility reasons, there are several free ones available on the Internet that work on Windows 7 and don't cause this problem.
+Obviously there are going to be users affected by this can't install software on the systems they use Eclipse on, so a real fix is needed.
+My Eclipse Galileo (3.5) installation claims to be build 20100218-1602.
+I'm using RSE/TM, Mylyn, Subclipse 1.6, and Pydev 1.5.7.Before you ask, I tried uninstalling PyDev and it doesn't fix the problem.
+I'm using 32-bit Sun Java 6 SE runtime 1.6.0_20-b02.
+I'm running on Windows 7 Ultimate 64-bit on a Core 2 Quad with 8GB of RAM.
+I'm using NVIDIA GeForce 9800 GT and GeForce 8800 GS graphics cards.
+Device manager tells me that I'm using driver version 8.16.11.9107 of 27/09/2009.
+Related forum post:  http://www.eclipse.org/forums/index.php?t=msg&goto=541401&#msg_541401
+Reproducible: Always
+Steps to Reproduce:
+1.Launch Eclipse without On-Screen Keyboard running
+2.Open a file in Eclipse
+3.Do some editing in the file.
+Everything works normally.
+4.Launch On-Screen Keyboard (you can use it, or use the regular keyboard and even minimize the On-Screen Keyboard or move it out of the way)
+5.Do some more editing in the file.
+Eclipse will process the first couple of keystrokes, then go to 100% CPU for a few seconds, the Eclipse window will blink and the Eclipse taskbar item will disappear and reappear, Eclipse will process all of the backlog of keystrokes will appear, Eclipse will go to 100% CPU for a few seconds, rinse, repeat.

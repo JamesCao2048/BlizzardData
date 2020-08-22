@@ -1,0 +1,96 @@
+Getting immediately setting back a Region on a GC once setAdvanced is set to true causes the region to change provided the repaint region is offset
+Build ID: I20080617-2000
+Steps To Reproduce:
+1.Run the accompanying code
+2.
+3.
+More information:
+package swtTest;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.graphics.Region;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+public class SimplestSWT3
+{
+public static boolean run1 = true;
+Canvas canvas;
+public void run()
+{
+final int INTERVAL = 5000;
+Shell shell = new Shell();
+shell.setLayout(new FillLayout());
+canvas = new Canvas(shell, SWT.DOUBLE_BUFFERED);
+canvas.addListener(SWT.Paint, new Listener()
+{
+public void handleEvent(Event e)
+{
+paint(e);
+}
+});
+shell.setSize(200, 200);
+shell.open();
+shell.setText("Example");
+final Display display = Display.getDefault();
+display.timerExec(INTERVAL, new Runnable()
+{
+public void run()
+{
+if(canvas.isDisposed())
+return;
+// canvas.redraw (); //
+<-- bad, damages more than is needed
+GC gc = new GC(canvas);
+gc.dispose();
+canvas.redraw(50, 50, 200, 200, false);
+display.timerExec(INTERVAL, this);
+}
+});
+while (!shell.isDisposed())
+{
+if(!display.readAndDispatch())
+display.sleep();
+}
+}
+protected void paint(Event e)
+{
+System.out.println("");
+System.out.println("Event bounds " + e.getBounds());
+GC gc = e.gc;
+//Only happens once we are in advanced mode
+//- but all operations are consistent since carried out in this mode
+gc.setAdvanced(true);
+
+Region aRegion = new Region(gc.getDevice());
+gc.getClipping(aRegion);
+System.out.println("Initial Clip Region.
+" + aRegion.getBounds());
+System.out.println("Initial Clip Rectangle " + gc.getClipping());
+gc.setClipping(aRegion);
+//Region was just immediately set back into GC but when we get it out again
+// it has changed, and is different from gc.getClipping()
+Region afterRegion = new Region(gc.getDevice());
+gc.getClipping(afterRegion);
+System.out.println("Subsequent Clip Region " + afterRegion.getBounds());
+System.out.println("Subsequent Clip Rectangle " + gc.getClipping());
+
+gc.setBackground(new Color(gc.getDevice(), new RGB(0, 200, 100)));
+gc.fillRectangle(canvas.getBounds());
+System.out.println("");
+System.out.flush();
+}
+public static void main(String args[])
+{
+new SimplestSWT3().run();
+}
+}
+I also reproduced (1) the same bug under Windows XP SP3 and a variant under Windows Vista SP1 32bit.
+I have given you the minimum code set for clarity, if you want an example of why it causes me problems then I can send another example
+Aside: I'm investigating it further, but for various reasons (setting up a native Windows dev env) this is going to take a couple of days to set up.
+The main problem I have is that I am getting

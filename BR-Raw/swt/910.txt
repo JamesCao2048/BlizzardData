@@ -1,0 +1,7 @@
+Buttons and text in a table cell editor are not sized small enough on the Mac
+Eclipse 3.0 RC1
+The ColorCellEditor has problems on OS X
+- the button to activate the color dialog box
+does not fit withing the cell, and clicking the button will not activate the color dialog box most of the
+time.
+Pressing return will always activate the color dialog box.

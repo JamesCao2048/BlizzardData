@@ -1,0 +1,9 @@
+Bug 134229 [smoke][regression] fail to export data as csv format
+steps to reproduce:
+- use the attached report
+- preview in web viewer
+- export data
+- select data
+- click on OK expected behavior:
+- data is exported (as csv format) actual behavior:
+- nothing happened

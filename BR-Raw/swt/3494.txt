@@ -1,0 +1,9 @@
+EC: gtk allows TabItem.setControl(...) value to be non-child of TabFolder
+Snippet to try:
+Composite composite = new Composite(shell, SWT.NONE);
+TabFolder tabFolder = new TabFolder(shell, SWT.NONE);
+tabFolder.setBounds(0, 0, 680, 480);
+TabItem tabItemLearn = new TabItem(tabFolder, SWT.NONE);
+tabItemLearn.setText("Lernen");
+tabItemLearn.setControl(composite); //
+<--

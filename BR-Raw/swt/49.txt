@@ -1,0 +1,46 @@
+Widget is disposed using Browser in Section
+Created  attachment 233333   [details]
+Sample to show the exception.
+To duplicate, run the attachment, click "Dispose Browser3" button at the bottom.
+I have a Section and it contains a Browser.
+When I dispose the Section, I get following exception.
+If I use ExpandableComposite instead of Section, I will not get this issue.
+The attached example shows how to duplicate it.
+We have a tree on the left, and upon selecting an object, the corresponding UI will be loaded on the right hand side.
+Some of the UI contains a Browser.
+Before loading the new UI, we need to dispose the old one, that's where the issue is found.
+The issue can be worked around by disposing the Browser first, then dispose the Section.
+However, the UI can be very complex and I don't want to search recursively for the Browser and dispose it.
+Exception in thread "main" org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:4361)
+at org.eclipse.swt.SWT.error(SWT.java:4276)
+at org.eclipse.swt.SWT.error(SWT.java:4247)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:468)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:340)
+at org.eclipse.swt.widgets.Control.getSize(Control.java:1574)
+at org.eclipse.ui.forms.widgets.Section.onPaint(Section.java:366)
+at org.eclipse.ui.forms.widgets.ExpandableComposite$1.paintControl(ExpandableComposite.java:560)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:230)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1564)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:4585)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4989)
+at org.eclipse.swt.internal.win32.OS.VtblCall(Native Method)
+at org.eclipse.swt.internal.ole.win32.IOleInPlaceObject.InPlaceDeactivate(IOleInPlaceObject.java:21)
+at org.eclipse.swt.ole.win32.OleClientSite.deactivateInPlaceClient(OleClientSite.java:559)
+at org.eclipse.swt.ole.win32.OleClientSite.onDispose(OleClientSite.java:908)
+at org.eclipse.swt.ole.win32.OleClientSite.access$1(OleClientSite.java:895)
+at org.eclipse.swt.ole.win32.OleClientSite$1.handleEvent(OleClientSite.java:129)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:808)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:873)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:811)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:873)
+a

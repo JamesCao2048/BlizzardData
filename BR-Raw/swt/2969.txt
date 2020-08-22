@@ -1,0 +1,18 @@
+Pressing backspace in browser widget shows navigation cancelled page
+Version: 3.1.0
+Build id: I20050222-0821
+When you press backspace (or Alt+Left) in a browser that has had its contents
+set using setText an action cancelled page is displayed.
+I would have expected
+nothing to happen since there was no previous URL.
+Calling Browser.back() works
+as expected.
+public static void main(String[] args) {
+Display d = Display.getDefault();
+Shell s = new Shell(d, SWT.SHELL_TRIM);
+s.setLayout(new FillLayout());
+Browser b = new Browser(s, SWT.NONE);
+b.setText("<html><body><p>Press backspace</p></body></html>");
+s.open();
+while (!s.isDisposed()) if (d.readAndDispatch()) d.sleep();
+}

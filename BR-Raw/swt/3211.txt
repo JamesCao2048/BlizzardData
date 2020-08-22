@@ -1,0 +1,32 @@
+Control.isVisible() returns incorrect value for child Shell
+SWT v3102 on Windows2000
+According to the isVisible() Javadoc and the SWT book (p.
+73), isVisible() must
+return false if one of the Control's ancestors is hidden (meaning the visibility
+is set to false).
+However, in the following test case, the child Shell will
+incorrectly return true from isVisible().
+This might be due to the fact that
+Shell has overridden isVisible() to always return the result of getVisible()
+(see Shell revision 1.116 on 6/9/04).
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setVisible(false);
+
+Shell child = new Shell(shell, SWT.NULL);
+child.setVisible(true);
+
+System.out.println("shell.isVisible() = "+shell.isVisible());
+System.out.println("child.isVisible() = "+child.isVisible());
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}

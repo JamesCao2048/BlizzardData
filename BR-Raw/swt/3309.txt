@@ -1,0 +1,24 @@
+Progress bars use deprecated style
+Progress bars are set to be GTK_PROGRESS_DISCRETE unless the calling code uses
+the  SWT.SMOOTH style:
+/*
+* Note: this API is deprecated, but there is no replacement.
+*/
+int barStyle = (this.style & SWT.SMOOTH) == 0 ?
+OS.GTK_PROGRESS_DISCRETE : OS.GTK_PROGRESS_CONTINUOUS;
+OS.gtk_progress_bar_set_bar_style (handle, barStyle);
+The discrete-style progress bars are deprecated in Gtk+ and all progress bars
+should use the continuous style:
+
+<vektor_wrk> owen: progress_bar_set_bar_style is deprecated.
+Does this mean all progress bars should be continuous?
+
+<owen> vektor_wrk: Yep
+
+<vektor_wrk> weird :)
+
+<owen> vektor_wrk: Why weird?
+
+<owen> it's weird that an app could control it ...
+I think we should follow Gtk+ conventions and always use smooth progress bars.
+The fix is to just remove the call completely.

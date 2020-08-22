@@ -1,0 +1,6 @@
+Program.launch doesn't work on OSX
+The code for Program.launch for Mac wraps the file in a "file://" + param.
+The param is not encoded in any way, so it fails on files with spaces.
+The the very least, a replaceAll(" ", "%20") is needed.
+Possibly a URLEncoder.encode() as well.
+SWT 3.3M2

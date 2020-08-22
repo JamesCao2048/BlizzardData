@@ -1,0 +1,27 @@
+[browser] onbeforeunload not sent when browser disposed
+Scenario: browser widget hosted by eclipse, web page loaded.
+If I hook an onbeforeunload js function in a web page that hook does not get
+called if you close the browser view by clicking the x in the tab or by choose
+close from the popup menu.
+If you navigate() to another URL the hooks is called
+just fine.
+Normally, this should not an issue, but IE specifially has problem releasing
+memory when circular references between JS code and DOM objects exist.
+Read more here:
+http://www.bazon.net/mishoo/articles.epl?art_id=824
+http://jibbering.com/faq/faq_notes/closures.html#clMem
+So in some situations, this is absolutely necessary as otherwise big memory
+leaks can happen (for example some top level divs have ciruclar references in
+play
+- in which case the whole DOM may not be freed correctly).
+A work around would be that on close, a browser widget could navigate to an
+empty page (the navigation will trigger the onbeforeunload).
+The empty page has
+nothing of value so closing it without calling the proper hooks should do less harm.
+I have searched the archives and I can't figure out how to do the workaround.
+It
+seems that .dispose() is the right place to hook the code, but at that point,
+it's too late.
+I would need to hook to the close event event and be the first
+listner to be run to correctly solve this ...
+anyway to do this ?

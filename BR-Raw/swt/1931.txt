@@ -1,0 +1,2 @@
+TableItem.getBounds() wrong.
+The no arg getBounds function returns the bounds of the WPF ListViewItem instead of the bounds of the cell in the first column.

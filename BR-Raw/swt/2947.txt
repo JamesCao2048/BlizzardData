@@ -1,0 +1,52 @@
+Table not getting expose events when partially obscured by another window
+I20050215-2300
+The following example creates a table in a wide, but short, window.
+When this
+shell is being partially obscured by another window, moving a third window
+around above it causes the table to miss expose events, making it look blank or
+draw badly.
+This was seen on GTK+ 2.2.4, RHEL3.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Table t = makeTable(shell);
+shell.setSize(800, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+public static Table makeTable(Composite parent) {
+Table table = new Table(parent, SWT.NONE);
+table.setLinesVisible(true);
+table.setHeaderVisible(true);
+String[] titles = { " ", "C", "!", "Description", "Resource",
+"In Folder", "Location" };
+for (int i = 0; i
+< titles.length; i++) {
+TableColumn column = new TableColumn(table, SWT.NULL);
+column.setText(titles[i]);
+}
+makeColumns(table, true);
+table.pack();
+return table;
+}
+public static void makeColumns(Table table, boolean pack) {
+int count = 1024;
+for (int i = 0; i
+< count; i++) {
+TableItem item = new TableItem(table, SWT.NULL);
+item.setText(0, "x");
+item.setText(1, "y");
+item.setText(2, "!");
+item.setText(3, "this stuff behaves the way I expect");
+item.setText(4, "almost everywhere");
+item.setText(5, "some.folder");
+item.setText(6, "line " + i + " in nowhere");
+}
+for (int i = 0; i
+< table.getColumnCount(); i++) table.getColumn(i).pack();
+}

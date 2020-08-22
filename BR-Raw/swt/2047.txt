@@ -1,0 +1,18 @@
+Link widget calculates incorrect width when "&" is part of text
+Build ID: M20060629-1905
+Steps To Reproduce:
+Try this:
+Link link = new Link (parent, SWT.NONE);
+link.setText ("Me && I");
+The calculated width is incorrect and the "I" gets clipped.
+(you can put the
+<a> link brackets around it, but that doesn't matter).
+The text displayed is correctly: "Me & I"
+More information:
+This happens for Windows under the conditions of v6 controls.
+The fix for this case should be quite simple: in Link.computeSize, you need to add "DT_NOPREFIX" as a flag to "OS.DrawText (hDC, buffer, buffer.length (), rect, flags);"
+Alternatively you could let the SysLink control tell you the preferred size.
+See LM_GETIDEALSIZE.
+The problem occurs because parse() is called on "Me && I", which correctly produces "Me & I", the display string.
+However, OS.DrawText will convert the & into a mnemonic, shortening the string to "Me  I" (with an underline).
+Since the SysLink control is being used to render the full text and does the "<a>" and mnemonic parsing anyway, seems like the safest fix would be to use LM_GETIDEALSIZE and let it tell you the size.

@@ -1,0 +1,6 @@
+Bug 188197 compile error occurs in org.eclipse.birt.report.viewer in daily build 20070522
+compile error occurs in org.eclipse.birt.report.viewer in daily build 20070522.The error msg is below: [echo] loading /home/adb/releng/BIRTBuilder/eclipse/buildConfigs/../../build.properties ...
+[javac] /home/adb/releng/src/plugins/org.eclipse.birt.report.viewer/birt_web/WEB-INF/classes/org /eclipse/birt/report/servlet/BirtSoapMessageDispatcherServlet.java:155: cannot resolve symbol [javac] symbol : class StringBuilder [javac] location: class org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet [javac] StringBuilder builder = new StringBuilder( ); [javac] ^ [javac] /home/adb/releng/src/plugins/org.eclipse.birt.report.viewer/birt_web/WEB-INF/classes/org /eclipse/birt/report/servlet/BirtSoapMessageDispatcherServlet.java:155: cannot resolve symbol [javac] symbol : class StringBuilder [javac] location: class org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet [javac] StringBuilder builder = new StringBuilder( ); [javac] ^ [javac] Note: Some input files use or override a deprecated API.
+[javac] Note: Recompile with
+-deprecation for details.
+[javac] 2 errors The JDK used in our daily nbuild is JDK1.4

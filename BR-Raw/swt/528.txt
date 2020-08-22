@@ -1,0 +1,5 @@
+Form Feed (f) and VT make StyledText go crazy
+I20091217-0819 Cocoa
+Follow-up to  bug 273354 , see that bug and attachment in  bug 273354 comment 0  for steps to reproduce.
+The FF no longer makes the following lines right-aligned, but it makes the lines after the FF move upwards by one when the caret is moved to after the FF.
+The effect can more easily be seen when you select characters with Shift+Arrow_Right.

@@ -1,0 +1,22 @@
+Mac cocoa combo draw wrong and spews long error message when input multi-lines
+Build Identifier: SWT 3.7.2
+The Combo.computeSize() work well for single line input, but will return much higher height for multi-lines input.
+This lead to wrong drawing for combo and/or its parent which depend on Combo.computeSize().
+This is similar to previous  bug 251910  ( https://bugs.eclipse.org/bugs/show_bug.cgi?id=251910 )
+As the warning message spews by Apple in console, "Vertically resizable combo boxes are not
+supported...".
+This should be fixed by changing Combo.computeSize()  to always return the height for single line text.
+Reproducible: Always
+Steps to Reproduce:
+Use the similar steps as  bug 251910
+1.open eclipse's Search dialog and select its File Search tab
+2.copy a block of text with multi-lines.
+(e.g.
+this reproduce steps)
+3.resize the dialog
+You may also use the sample SWT application attached to this bug.
+1.Launch the sample application in Mac Cocoa
+2.copy a block of text with multi-lines.
+(e.g.
+this reproduce steps)
+3.resize the dialog

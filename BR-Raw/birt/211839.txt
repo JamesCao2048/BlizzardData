@@ -1,0 +1,4 @@
+Bug 211839 String grouping unit type needs to support interval range.
+Build ID: I20071101-2000 As Chart has supported, the String grouping unit type can be set interval range, the interval range means that the string group will base on row count distinction.
+For instance, let's say we have a,b,c,d,e,f,g , and set interval range to 2, the grouping result should be a,c,e,g.
+Now it is a requirement that DtE support the grouping type.

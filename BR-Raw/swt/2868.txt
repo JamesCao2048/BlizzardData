@@ -1,0 +1,12 @@
+Crash closing dialog when IM is open (IIIM)
+build I20050330-0500 (3.1 M6 canditate)
+New version of RedHat Linux (Fedora Core 3 and Enterprise Linux WS release 4)
+are using a new technology called IIIM (Intranet/Internet Input Method
+Framework) to replace the old XIM (X input method).
+See:
+http://fedora.redhat.com/projects/i18n/
+When running on these new systems eclipse will crash if a dialog is closed by
+pressing the Esc key and an internal widget of this dialog has the IM open when
+the Esc key is pressed.
+Tested on FC3 and EL-WS 4.Tested using Japanese IM and
+Arabic IM.

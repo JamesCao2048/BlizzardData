@@ -1,0 +1,6 @@
+TextLayout font seems not the be the system font
+3.4 M6.
+When custom drawing table items it seems that the font used in the TextLayout isn't the same as originally used by the Table (item).
+This is hard to verify as both, TextLayout.getFont() and Table(Item).getFont() return 'null'.
+However, if a paint listener is added and the item string painted, then a different font is used.
+It works on Windows but not on Linux-GTK.

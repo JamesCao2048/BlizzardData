@@ -1,0 +1,5 @@
+Bug 210745 BIRT does not show SYSTEM tables
+Currenty BIRT does not show the SYSTEM tables from a JDBC connection.
+The class org.eclipse.birt.report.data.oda.jdbc.ui.editors.SQLDataSetEditorPage excludes the SYSTEM TABLES.
+However, we would like to include the SYSTEM TABLES in our environment.
+Therefore we would like to have this in a next release.

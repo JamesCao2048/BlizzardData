@@ -1,0 +1,3 @@
+Bug 311463 [regression]Property Editor doesn't refresh if report is in script view
+Description: Property Editor doesn't refresh if report is in script view Build number: 2.6.0.v20100504-0630 Steps to reproduce: 1, Open two reports A and B 2, Show A in script view and B in normal 3, Set some property in B's Property Editor 4, Switch to A Expected result: The Property Editor should refresh if the focus is changed to A Actual result: The Property Editor is still B's property.
+Focus is still on B regression of #288617

@@ -1,0 +1,33 @@
+Font dialog doesn't return selected Font (when opened after MULTI Text)
+The Font Dialog doesn't return the selected Font.
+public class FontDialogBug {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+
+final Text t = new Text(shell, SWT.MULTI|SWT.BORDER);
+t.setText("Hello");
+
+Button button = new Button(shell, SWT.PUSH);
+button.setText("set font");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+FontDialog d = new FontDialog(shell);
+FontData data = d.open();
+System.out.println(data);
+if (data != null) t.setFont(new Font(display, data));
+}
+});
+shell.pack();
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+Happens when we create the Text with SWT.MULTI style.
+Doesn't happen with SWT.SINGLE.

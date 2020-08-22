@@ -1,0 +1,3 @@
+packed TableColumns are much too wide
+- run the OwnerDrawTableA example with all of the static booleans at the top set to false except for "extraImage" and "enabled"
+- note that only the first column appears to be the right width, and the other columns are much wider than is needed, even though their sizes were set in the example using TableColumn.pack()

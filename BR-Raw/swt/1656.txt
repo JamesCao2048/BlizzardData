@@ -1,0 +1,20 @@
+Scrolled form does not resize child controls when the form is resized
+Build ID: I20070625-1500
+Steps To Reproduce:
+1. Use MultiPageEditorPart
+2. In a form page create a few controls on a composite that
+is parented by the scrolled form.
+3. Resize the editor.
+The controls do not get resized , but rather the editor covers them up as you shrink it.
+4. Would expect the controls to be resized to fit the new size of the scrolled composite.
+More information:
+It seems to be in the ScolledCompositeLayout and ScrolledComposite classes.
+The minHeight gets calculated when the composite gets drawn and gets cached and never gets changed.
+So once the minHeight of the editor becomes
+< the min height composite , scroll bars appear on the editor.
+The layout takes the Math#max() of the minHeight of sc or the actual height.
+If the min height is  > , then the scroll bars appear.
+I think that the composite should resize all of the children appropriately.
+This produces a 508 accessibility problem.
+For example , if you are using a table , and it is being partially covered up by the editor , and scroll down through it via keyboard.
+The focus leaves the viewable area.

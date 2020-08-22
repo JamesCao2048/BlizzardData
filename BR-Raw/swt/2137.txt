@@ -1,0 +1,7 @@
+Custom draw problems with focus item in Tree and Table
+HEAD
+Custom drawn items in Trees and Tables have an incomplete or doubled dotted rectangle drawn around the item with keyboard focus.
+E.g.
+Snippet236 misses the dotted line at the bottom.
+Snippet232 has a doubled dotted line at right and should extend the blue selection background rectangle 1 px to the left and 1 px to the top.
+If clients have to do anything to get the focus rect right, then this should be documented ( bug 81334 ).

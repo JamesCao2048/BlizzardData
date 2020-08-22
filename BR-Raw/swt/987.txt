@@ -1,0 +1,9 @@
+Font loading slow for font that is not there (ie. 'Sans Serif')
+I have an application that renders a BIRT chart in a Canvas with real-time data.
+When I run the application on Carbon, all is well.
+When I run the application on Cocoa, the application grinds to a halt.
+I'm attaching screen shots of the cpu activity when running the application.
+The only difference is that I've changed the launch configuration arguments from
+-ws cocoa to
+-ws carbon.
+I'm not able to make my code available publicly, but can make it available to any of the IBM SWT developers.

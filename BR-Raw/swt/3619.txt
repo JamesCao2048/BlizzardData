@@ -1,0 +1,9 @@
+TableColumn#setWidth(int width) allow width=0 but GTK doesn't like it
+build 20030806
+Linux-GTK (GTK 2.2.2)
+from a chat on IRC:
+the call TableColumn#setWidth(0) generate a GTK error and doesn't hide the
+column in some case (I get the error on my computer, but the column is correctly
+resized).
+(<unknown>:6875): Gtk-CRITICAL **: file ../../gtk/gtktreeviewcolumn.c: line 1723
+(gtk_tree_view_column_set_fixed_width): assertion `fixed_width > 0' failed

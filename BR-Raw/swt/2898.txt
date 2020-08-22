@@ -1,0 +1,25 @@
+Label not wrapping
+The label does not wrap correctly as I resize the shell.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Label label = new Label(shell, SWT.WRAP);
+label.setText("A clap of thunder burst the numbness deep Within my head, " +
+"making me Start like someone roused by force from sleep.
+" +
+"On my feet, I strained intently to see This way and that, seeking " +
+"Clues as to where I might be.
+At last I saw that I was hovering " +
+"On the brink of that abyss of despair Which funnels thunder from " +
+"endless wailing.
+So dark and deep was that valley, and the air " +
+"So misty, that when I looked below Nothing showed itself, " +
+"as much as I might stare.");
+shell.setSize(400, 400);
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

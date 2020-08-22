@@ -1,0 +1,10 @@
+COMObject leakage on OleControlSite
+Both constructors of  OleControlSite and OleClientSite calls the same
+function : "createCOMInterfaces()".
+If you create new instance of
+OleControlSite, its field COMObjects (such as iDispatch, iUnknown) are
+initialized two time but the first ones are never disposed.
+COMObject::ObjectMap manages all instances of COMObject, so this
+problem is java-side memory leakage as well as OLE resource leakage.
+Any referencer of OleControlSite's instances are not garbage collected,
+so this is not tiny problem.

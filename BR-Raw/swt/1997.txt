@@ -1,0 +1,14 @@
+Can't enter paths in Text fields on Red Hat Workstation 5
+Build ID: RC1
+Steps To Reproduce:
+1.Fire up RC1 on linux / rhws5 / x86_64
+2.Create a new project
+3.File
+-> Import
+-> General
+-> File System
+4.Try to enter a path in the "From directory" Text field.
+More information:
+Looks like every character that's entered is immediately selected which leads to the problem that the next character which is entered is not appended but replaces the previous.
+One CAN unselect the character and enter the next one.
+Browsing with the native dialog seems to work.

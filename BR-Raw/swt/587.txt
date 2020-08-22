@@ -1,0 +1,42 @@
+SWT.COLOR_INFO_BACKGROUND is brighter than the OS tooltip bg color
+N20100623-2000 Cocoa, Mac OS X 10.6.4
+SWT.COLOR_INFO_BACKGROUND is brighter than the OS tooltip bg color.
+It should not be hardcoded in Display#getWidgetColorRGB(int).
+Unfortunately, Safari uses yet another color for "background-color: InfoBackground;" than native tooltips.
+Firefox uses the OS tooltip color.
+For my application ( bug 313530 ), it would be best if SWT could use the Safari color (251, 252, 197), not the native Tooltip color (255, 255, 199).
+But I could also work with the latter.
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.browser.Browser;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TooltipColorSnippet {
+public static void main(String[] args) {
+Display display= new Display();
+Shell shell= new Shell(display);
+GridLayout layout= new GridLayout();
+layout.verticalSpacing= 0;
+shell.setLayout(layout);
+Browser browser= new Browser(shell, SWT.NONE);
+browser.setText("<html><body style='" +
+"color:InfoText; background-color:InfoBackground;" +
+"font-family: ""Lucida Grande",sans-serif; font-size: 11px;" +
+"'>" +
+"I want to look like a hover" +
+"</body></html>");
+browser.setToolTipText("I am a hover");
+browser.setLayoutData(new GridData(160, 100));
+Composite c= new Composite(shell, SWT.NONE);
+c.setToolTipText("I am a hover");
+c.setBackground(display.getSystemColor(SWT.COLOR_INFO_BACKGROUND));
+c.setLayoutData(new GridData(160, 100));
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

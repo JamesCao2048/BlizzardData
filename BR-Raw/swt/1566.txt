@@ -1,0 +1,42 @@
+Mozilla Browser doesn't open at the first execution in a Linux RHEL 4.
+Build ID: 120070625-1500
+Steps To Reproduce:
+I'm developing a Plug-in over ATF Plugins.
+So this error ocurrs when I'm running the my plug-in.
+1.Runs a Plug-in Project with the "Clear" button checked in the Workspace Data Goup on the Plug-in Launcher.
+2.Create a HTML Page
+3.Open With
+-> Mozilla Browser
+More information:
+We are working on Linux RedHat Enterprise 4.We install the ATF Plug-in like as said in the ATF's page.
+But in first time we try to run the Mozilla Browser in a new workspace we found a NullPointerException.
+The bug occurs when the ATF Plug-ins requires the SWT  Mozilla Broswer, in the org.eclipse.swt.browser.Mozilla.getWebBrowser(Mozilla.java:1258), in the first time that I tried to open a mozilla for a workspace, this method throw the InvocationTargetException.
+When I restart the Eclipse and try to open a Mozilla browser again everything works fine.
+java.lang.reflect.InvocationTargetException
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.swt.browser.Mozilla.getWebBrowser(Mozilla.java:1258)
+at org.eclipse.swt.browser.Browser.getWebBrowser(Browser.java:446)
+at org.eclipse.atf.mozilla.ide.ui.browser.MozBrowserEditor.getAdapter(Unknown Source)
+at org.eclipse.atf.mozilla.ide.ui.netmon.MozNetworkMonitorAdapter.connect(Unknown Source)
+at org.eclipse.atf.mozilla.ide.ui.browser.MozBrowserEditor.createPartControl(Unknown Source)
+at org.eclipse.ui.internal.EditorReference.createPartHelper(EditorReference.java:661)
+at org.eclipse.ui.internal.EditorReference.createPart(EditorReference.java:426)
+at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:592)
+at org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:263)
+at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2721)
+at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2633)
+at org.eclipse.ui.internal.WorkbenchPage.access$12(WorkbenchPage.java:2625)
+at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2577)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2572)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2556)
+at org.eclipse.ui.actions.OpenWithMenu.openEditor(OpenWithMenu.java:340)
+at org.eclipse.ui.actions.OpenWithMenu.access$0(OpenWithMenu.java:328)
+at org.eclipse.ui.actions.OpenWith Menu$2.handleEvent(OpenWithMenu.java:190)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1101)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3319)
+at org.eclip

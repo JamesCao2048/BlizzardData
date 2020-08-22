@@ -1,0 +1,38 @@
+Problem with Label.computeSize.
+Here is an example showing that computeSize is not returning a size big enough
+to fit the text.
+If SWT.DEFAULT is used it shows the text but if 450 is used
+instead of SWT.DEFAUT then part of the text is cut out.
+** Run the example.
+All 5 lines show appear.
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Point;
+public class Explorer {
+public static void main(String args[]) {
+
+String line2
+= "aHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+HHHHHHHHb";
+Display display = new Display();
+Shell shell = new Shell(display);
+Label label = new Label(shell,SWT.WRAP | SWT.BORDER);
+label.setText("line 1n" + line2 + "nline3nnline5");
+//	Point size = label.computeSize(SWT.DEFAULT,SWT.DEFAULT);
+Point size = label.computeSize(450,SWT.DEFAULT);
+shell.setBounds(100,100,size.x + 20,size.y + 100);
+System.out.println("Shell " + shell.getBounds());
+label.setBounds(10,10,size.x,size.y);
+System.out.println("Label " + label.getBounds());
+shell.open();
+System.out.println("Shell " + shell.getBounds());
+System.out.println("Label " + label.getBounds());
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

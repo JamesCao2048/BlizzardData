@@ -1,0 +1,2 @@
+Bug 100415 [ProblemBinding] on function expecting a pointer when a pointer to pointer is used
+// example.cpp: void free(void *); int foo() { char **x; // no problem binding if this is only char *x; free(x); // invalid ProblemBinding on free }

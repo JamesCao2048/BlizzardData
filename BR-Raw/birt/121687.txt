@@ -1,0 +1,8 @@
+Bug 121687 Exception throws when export data in table which inside a grid cell.
+Description: Exception throws when export data in table which inside a grid cell.
+Steps to reproduce: 1.insert a grid.
+2.insert one table to one grid cell.
+3.insert another table to the other grid cell.
+4.export data in two tables.
+Expected result: Data are exported.
+Actual result: Exception in: ReportEngineService.getMetaData( )

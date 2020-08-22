@@ -1,0 +1,6 @@
+ControlExample: scrolling Canvas leaves screencheese
+N20031114
+- start ControlExample and open the canvas tab
+- scroll the canvas until the number is partially outside the view
+- scroll number number back into the view
+Observe: the number is redrawn incorrectly

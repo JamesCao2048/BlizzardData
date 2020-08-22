@@ -1,0 +1,35 @@
+weird error about unbound formals when mixing generics with annotation style
+From the mailing list:
+I have following problem with following Aspect:
+@Aspect
+public class CounterAspect extends AbstractMoskitoAspect {
+@Around(value = "execution(* *(..)) && (@annotation(method))")
+public Object countMethod(ProceedingJoinPoint pjp, Count method) throws Throwable {
+return count(pjp, method.producerId(), method.subsystem(), method.category());
+}
+@Around(value = "execution(* *(..)) && (@annotation(method))")
+public Object countByParameter(ProceedingJoinPoint pjp, CountByParameter method) throws Throwable {
+return countByParameter(pjp, method.producerId(), method.subsystem(), method.category());
+}
+@Around(value = "execution(* *.*(..)) && (@within(clazz))")
+public Object countClass(ProceedingJoinPoint pjp, Count clazz) throws Throwable {
+return count(pjp, clazz.producerId(), clazz.subsystem(), clazz.category());
+}
+private Object countByParameter(ProceedingJoinPoint pjp, String aProducerId, String aSubsystem, String aCategory) throws Throwable {
+....
+It works. However, since I have two similar aspects that differ only in using some internal classes, I made my super class using generics:
+public class AbstractMoskitoAspect<S extends IStats> {
+@Aspect
+public class CounterAspect extends AbstractMoskitoAspect<CounterStats> {
+this breaks the build instantly with the very unhelpful error message:
+[ERROR] Failed to execute goal org.codehaus.mojo:aspectj-maven-plugin:1.4:compile (default) on project moskito-aop: Compiler errors:
+[ERROR] error at @Around(value = "execution(* *(..)) && (@annotation(method))")
+[ERROR] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ERROR] /Users/another/projects/moskito/moskito-aop/java/net/anotheria/moskito/aop/aspect/CounterAspect.java:24:0::0 the parameter pjp is not bound in [all branches of] pointcut
+[ERROR] error at @Around(value = "execution(* *(..)) && (@annotation(method))")
+[ERROR] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ERROR] /Users/another/projects/moskito/moskito-aop/java/net/anotheria/moskito/aop/aspect/CounterAspect.java:29:0::0 the parameter pjp is not bound in [all branches of] pointcut
+[ERROR] error at @Around(value = "execution(* *.*(..)) && (@within(clazz))")
+[ERROR] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ERROR] /Users/another/projects/moskito/moskito-aop/java/net/anotheria/moskito/aop/aspect/CounterAspect.java:34:0::0 the parameter pjp is not bound in [all branches of] pointcut
+what am i doing wrong here?

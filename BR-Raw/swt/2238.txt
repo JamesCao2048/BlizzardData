@@ -1,0 +1,56 @@
+Java core [WM_BUTTONDOWN] when selecting a tree in Vista
+Windows Vista Beta 2
+Build I20060929
+When I select the Outline View on Vista I periodically get a Java VM exception.
+I can't do this consistently (it happens every 2 hours or so).
+Here is the trace
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at PC=0x750F9B16
+Function=CreateMappedBitmap+0x14A8
+Library=C:WindowsWinSxSx86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.5384.4_none_a8b0bff774788b5eCOMCTL32.dll
+Current Java thread:
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1883)
+at org.eclipse.swt.widgets.Tree.callWindowProc(Tree.java:1321)
+at org.eclipse.swt.widgets.Tree.WM_LBUTTONDOWN(Tree.java:5434)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3285)
+at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:4889)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4072)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1964)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3007)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1914)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1878)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:104)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:74)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:348)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:165)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:341)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:285)
+at org.eclipse.core.launcher.Main.run(Main.java:987)
+at org.eclipse.core.launcher.Main.main(Main.java:962)
+Dynamic libraries:
+0x00400000
+- 0x0040B000 	C:R330921eclipsejrebinjava.exe
+0x77B20000
+- 0x77C2D000 	C:Windowssystem32ntdll.dll
+0x777F0000
+- 0x778BE000 	C:Windowssystem32kernel32.dll
+0x77730000
+- 0x777EA000 	C:Windowssystem32ADVAPI32.dll
+0x77680000
+- 0x77728000 	C:Windowssystem32RPCRT4.dll
+0x76790000
+- 0x76838000 	C:Windowssystem32MSVCRT.dll
+0x08000000
+- 0x08138000 	C:R330921eclipsejrebinclientjvm.dll
+0x775E0000
+- 0x7767C000 	C:Windows

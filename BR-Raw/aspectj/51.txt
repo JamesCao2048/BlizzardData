@@ -1,0 +1,8 @@
+Repeated output of ASPECTJ: aspectj.overweaving=true: overweaving switched ON
+Build Identifier: 1.6.11
+The message is repeated every time a new class loader is being use to load weaving configuration (using  -Dorg.aspectj.tracing.factory=default). Since this value is a system (!) property there is no need to display its value more than once (or even check it more than once - it could be lazily initialized and cached...)
+Reproducible: Always
+Steps to Reproduce:
+1. use -Dorg.aspectj.tracing.factory=default -Daspectj.overweaving=true properties
+2. place some JAR that contains aop.xml with some aspects and weaving options where it can be loaded/visible from several class loaders
+3. runt the application and check the STDOUT output

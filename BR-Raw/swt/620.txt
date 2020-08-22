@@ -1,0 +1,7 @@
+StyledText doesn't report a text style when requesting the end of the line.
+In StyledText's implementation of getTextAttributes() at line 6712 (roughly) it's possible for the method to return without returning a TextStyle object in e.textStyle.
+On the Mac this causes VoiceOver to interpret a line ending as a font change because the character before and character after have font information returned for them.
+Fix is simple
+-- just add
+e.textStyle = new TextStyle(st.getFont(), st.foreground, st.background);
+before the return on line 6715.

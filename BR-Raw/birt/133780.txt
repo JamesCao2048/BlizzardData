@@ -1,0 +1,9 @@
+Bug 133780 Execution sequence of valueExpr(DataItem) and onCreate() is not correct.
+In the attached design.
+There is a DataItem in the table footer that I used to do a sum of the "Amount" column.
+In the test, I write the onCreate() method as: params["amount"]=Total.sum(row["AMOUNT"]); It passes the aggregation value to a parameter.
+In the "valueExpr" I write as: "AMOUNT:" + params["amount"] The expression is expected to export the sum.
+Actual output is: AMOUNT:null Followings are the definitions from Rom Text Spec & Rom Scripting Spec, valueExpr usually should be evalated after the onCreate() method.
+DataItem.valueExpr: The expression is usually evaluated when the report is rendered, not in the Factory, though it may be evaluated in the Factory also.
+onCreate: Executed when the element is created in the Factory.
+Called after the item is created, but before the item is saved to the report document file.

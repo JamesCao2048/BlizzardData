@@ -1,0 +1,57 @@
+Mouse cursor disappears when Combo.setListVisible(true) is called
+When I call Combo.setListVisible(true), the mouse disappears.
+This makes it difficult to select something in the drop down list.
+STEPS:
+
+- run attached code
+
+- select the text area in the Combo and type
+
+- the mouse disappears when the drop down list is visible
+Expect: The mouse to be visible so that we select the items in the drop down.
+I use the code below to show the difference in behaviour between Combo and CCombo.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.*;
+public class CComboDropDownTest {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
+shell.setLayoutData(data);
+
+final CCombo cCombo = new CCombo(shell, SWT.DROP_DOWN | SWT.BORDER);
+for (int i = 0; i
+< 10; i++) {
+cCombo.add("CCombo " + i);
+}
+cCombo.select(0);
+
+cCombo.addListener (SWT.Modify, new Listener () {
+public void handleEvent (Event e) {
+cCombo.setListVisible(true);
+}
+});
+final Combo combo = new Combo(shell, SWT.DROP_DOWN | SWT.BORDER);
+for (int i = 0; i
+< 10; i++) {
+combo.add("Combo " + i);
+}
+combo.select(0);
+combo.addListener (SWT.Modify, new Listener () {
+public void handleEvent (Event e) {
+combo.setListVisible(true);
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

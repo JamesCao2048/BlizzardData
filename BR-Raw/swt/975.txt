@@ -1,0 +1,19 @@
+BlockSelection: Paste should end with long caret
+I20090514-2000
+StyledText in BlockSelection mode: When I copy a block and then paste it multiple times, all copies should be start on the same line.
+=> Paste should end with a long caret that spans all modified lines at the end of the pasted block.
+Example:
+- Have:
+Abcdef
+123456
+- Select:
+Abc
+123
+- Copy, Paste, Paste
+=> Result:
+Abcdef
+123Abc456
+123
+=> Expected:
+AbcAbcdef
+123123456

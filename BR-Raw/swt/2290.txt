@@ -1,0 +1,4 @@
+Classes in org.eclipse.swt.opengl have warning comments in Javadoc
+This package is public however the two classes in it GLCanvas and GLData have Javadoc comments that state the following:
+WARNING API STILL UNDER CONSTRUCTION AND SUBJECT TO CHANGE
+Should these warnings be removed?

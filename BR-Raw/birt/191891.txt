@@ -1,0 +1,9 @@
+Bug 191891 xtab nest in another xtab doesn't display data.[1102]
+Description: xtab nest in another xtab doesn't display data.
+Build number:2.2.0.v200706111025 Steps to reproduce: 1.Insert a xtab.
+2.Insert another xtab to first xtab's row area.
+3.Preview in web viewer and html (attach report).
+Expected result: Display data for two xtabs.
+Actual result: Html display data correctly.
+Web Viewer can only display data for parent xtab.
+Error log:N/A

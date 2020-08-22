@@ -1,0 +1,48 @@
+ImageLoader Save - produces invalid JPEG images
+The ImageLoader Save function appears to be producing bad JPG images.
+I have only verified this with JPEG output.
+Simple test case below loads
+PNG Files and Saves them as JPEG.
+Many files were tested and the majority
+did produced the proper JPG images as expected.
+The attached Zip file contains
+only those files that did not save correctly to JPEG.
+
+
+package com.ibm.test.image;
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+public class ImageLoaderTest {
+
+public static void main(String[] args) {
+ImageLoader loader;
+String dir="c:\image-problems\";
+String files[]={
+"s34i3p04",
+"s34n3p04",
+"s35i3p04",
+"s35n3p04",
+"s36i3p04",
+"s36n3p04",
+"s37i3p04",
+"s37n3p04",
+"s38i3p04",
+"s38n3p04",
+"s39i3p04",
+"s39n3p04"
+};
+
+try {
+for (int i=0; i<files.length; i++) {
+String filein  = dir+files[i]+".png";
+String fileout = dir+files[i]+".jpg";
+
+loader = new ImageLoader();
+loader.load(filein);
+loader.save(fileout,SWT.IMAGE_JPEG);
+}
+} catch (SWTException e) {
+e.printStackTrace();
+}
+}
+}

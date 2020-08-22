@@ -1,0 +1,88 @@
+GC advanced features not supported on CE.NET 4.2 (no GDI dll ?)
+target, os, platform, swt :
+- windows ce.net 4.2 (processor PXA-255 aka ARMv5TE)
+- j9 jvm (wince-arm-ppro-5.7.2-P-20050701-1626) downloaded from IBM trials website
+- swt-3.1-win32-wce_ppc-arm-j2se (official SWT 3.1 release)
+j9 command : j9
+-jcl:ppro10
+-cp "swt.jat;my.jar"
+-Djava.libray.path=.
+Snippet
+for example these following methods don't work in my platform :
+GC.setAntiAlias(SWT.ON|SWT.OFF)
+GC.setTramsform(Transform t)
+...
+more ...
+The following code works on Windows/Linux platform but no on CE.NET platform :
+package com.mail.reader;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Transform;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import java.awt.Point;
+public class SpeedoMeter extends Canvas {
+private static final Color black         =
+Display.getDefault().getSystemColor(SWT.COLOR_BLACK);
+private static final Color white         =
+Display.getDefault().getSystemColor(SWT.COLOR_WHITE);
+private static final Color red           =
+Display.getDefault().getSystemColor(SWT.COLOR_RED);
+private static final Font defaultFont    = new Font(Display.getDefault(),
+"Tahoma", 12, SWT.NORMAL );
+private static final String spedooName    = "Pilz SpeedoMeter";
+
+int spotNumber = 20;
+Point spotSize = new Point(15, 3);
+int minimum;
+int maximum;
+float selection;
+
+public SpeedoMeter(Composite p, int s) {
+super(p, s|SWT.DOUBLE_BUFFERED);
+addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e){
+e.gc.setAntialias(SWT.ON);
+drawControl(e.gc);
+}
+});
+}
+private void drawControl(GC g) {
+// init font
+g.setFont(defaultFont);
+
+// draw disc
+g.setBackground(white);
+g.setForeground(white);
+double w = getSize().x<getSize().y?getSize().x:getSize().y;
+g.fillArc(0, 0, (int)w, (int)w, 0, 360);
+
+// draw spots
+Point spotLocation = new Point((int)(w-spotSize.y)/2, spotSize.y/2);
+Transform tr = new Transform(getDisplay());
+tr.translate((float)w/2, (float)w/2);
+double spotAngle = 360/spotNumber;
+for (int nSpot=0,maxSpots=spotNumber;nSpot<maxSpots;nSpot++) {
+g.setBackground(black);
+g.setForeground(black);
+g.setTransform(tr);
+g.fillRectangle(spotLocation.y, spotLocation.x-spotSize.x, spotSize.y,
+spotSize.x);
+tr.rotate((float)spotAngle);
+}
+
+org.eclipse.swt.graphics.Point extPt = g.textExtent(spedooName);
+
+
+// draw labels
+tr = new Transform(getDisplay());
+tr.translate((float)w/2, (float)w/2);
+g.setTransform(tr);
+g.drawString(spedooName,
+-extPt.x/2, extPt.y*2, true);
+// draw

@@ -1,0 +1,8 @@
+Trees are eager to expand
+RC4
+- run the Control Example, go to the Tree tab
+- press the MULTI radio
+- CTRL-select a few of the root items quickly and note that they expand, I
+suspect because they're interpreting the quick clicks as double clicks even
+though they're on different tree items
+- if this is the problem then this is similar to  bug 63003

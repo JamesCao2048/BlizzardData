@@ -1,0 +1,7 @@
+Tree shows horizontal scrollbar although not required
+Using this snippet:
+http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet8.java?rev=HEAD&content-type=text/vnd.viewcvs-markup
+on my Mac shows a horizontal scrollbar after I expanded some items, even when
+all items fit in the width of the tree and therefor a scrollbar would not be
+required.
+Ben

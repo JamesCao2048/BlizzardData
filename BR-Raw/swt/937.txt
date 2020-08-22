@@ -1,0 +1,6 @@
+SWT/Cocoa TreeItem.getBounds() behaviour differently than on other platforms
+Build ID: I20090430-2300
+Steps To Reproduce:
+More information:
+On SWT/Cocoa TreeItem.getBounds() returns the bounds of the whole column, as opposed to Win32 or GTK where getBounds() returns the bounds of the item itself.
+(we use the win32/gtk behaviour in order to track clicks in the item's icon)

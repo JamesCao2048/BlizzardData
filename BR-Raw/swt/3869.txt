@@ -1,0 +1,17 @@
+[SWT Examples] Progress bar reverts to 'black' color after Selection slider repositioning
+Overview Description:
+In the 'SWT Controls' view of the SWT Examples software,
+under the 鈥楶rogress Bar鈥 tab, the effect of setting the 鈥楤ackground鈥
+color is reset to 鈥榖lack鈥 after the 鈥楽election鈥 slider position is moved.
+NOTE: The background color setting is still set (the color box for
+the background color is still set to the custom color).
+Steps to recreate:
+1.Open the 'SWT Controls' view of the 'SWT Examples' code
+2.Open the 鈥楶rogress Bar鈥 tab in the SWT Controls view
+3.Select the 鈥楤ackground Color鈥 button and change to a non-black
+color
+4.The color of the Progress Bar changes to the selected color
+5.Move the 鈥楽election鈥 slider position
+!BUG!  The progress bar color reverts to 鈥榖lack鈥
+------
+Build 2002-11-07-1448 on Solaris (also occurs on HPUX)

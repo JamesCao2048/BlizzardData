@@ -1,0 +1,29 @@
+[Cocoa] GC#drawText font background issue
+Created  attachment 136784   [details]
+Result on carbon
+Text painted with gc.drawText is badly rendered on Mac Cocoa 3.5RC1.
+See attachements : results on Mac Carbon 3.5RC1 and Mac Cocoa 3.5RC1
+// Linux-GTK  Bug 174932
+if (!SWT.getPlatform().equals("gtk")) {
+gc.setAdvanced(true);
+}
+if (gc.getAdvanced()) {
+gc.setAntialias(SWT.OFF);
+gc.setInterpolation(SWT.LOW);
+}
+gc.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_LIST_SELECTION));
+gc.setAlpha(170);
+gc.fillRoundRectangle(size.x
+- 300, size.y
+- 150, 280, 130, 15, 15);
+FontData fd = new FontData();
+fd.setStyle(SWT.BOLD);
+Font f = new Font(gc.getDevice(), fd);
+gc.setFont(f);
+gc.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_TITLE_FOREGROUND));
+
+gc.drawText("Text", size.x
+- 300 + 10, size.y
+- 150 + 20, SWT.DRAW_TRANSPARENT | SWT.DRAW_DELIMITER);
+gc.setFont(null);
+f.dispose();

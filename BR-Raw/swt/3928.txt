@@ -1,0 +1,6 @@
+DragSourceAdapter incorrect JavaDoc
+build 20020924
+The Javadoc for the methods in DragSourceAdapter refers to non-existing
+DropTargetListener methods.
+I'm guessing this should be refering to
+DragSourceListener instead.

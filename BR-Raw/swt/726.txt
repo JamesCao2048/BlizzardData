@@ -1,0 +1,4 @@
+Quit from "Mac dock Icon" does not detect dirty and save workspace
+Summary says it all: it is possible to exit Eclipse 3.6 M5 64 bit Cocoa from the dock by selecting "Quit" and thereby bypassing the normal checks on exit
+- the IDE is simply killed without checking for dirty files, or saving the workspace.
+Repeatable: always

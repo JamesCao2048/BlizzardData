@@ -1,0 +1,10 @@
+AspectJ depends on Class files having a dot in their source file name attribute
+The following code in ShadowMunger$getBinaryFile() (line 169 ff) fails if a class file does not contain a proper source file name:
+if (binaryFile == null) {
+String s = getDeclaringType().getBinaryPath();
+File f = getDeclaringType().getSourceLocation().getSourceFile();
+int i = f.getPath().lastIndexOf('.');
+String path = f.getPath().substring(0, i) + ".class";
+binaryFile = new File(s + "!" + path);
+}
+(there is no '.' in the file name, thus this gives a string index out of bounds error).

@@ -1,0 +1,7 @@
+Inconsistency with focus on selected action
+20070503
+See the attached screenshot.
+Trees in vistas seem to not show the focus for selected element.
+They do it for tables.
+In my owner drawn tree I get SWT.FOCUSED so I draw the focus.
+Looks like SWT.FOCUSED should not be set.

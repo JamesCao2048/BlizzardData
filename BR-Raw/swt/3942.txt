@@ -1,0 +1,54 @@
+Labels with image only have extra space on GTK
+Build 20020917
+If you create a label on GTK with just an image the vertical axis will have
+extra space.
+This is not an issue on Motif or windows
+STEPS
+1) Run the example below with the attached icon
+2) See that there is a lot of whitespace above and below the icon
+3) Do it again on Motif or Windows
+- no extra space
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+/*
+* (c) Copyright 2001 MyCorporation.
+* All Rights Reserved.
+*/
+/**
+* @version 	1.0
+* @author
+*/
+public class LayoutSpacingTest {
+public static void main(String[] args) {
+Display display = new Display();
+final Image image =
+new Image(
+display,
+LayoutSpacingTest.class.getResourceAsStream("error_tsk.gif"));
+final Shell shell = new Shell(display);
+shell.setLayout(new FormLayout());
+final Label l1 = new Label(shell, SWT.BORDER);
+l1.setImage(image);
+final Label l2 = new Label(shell, SWT.BORDER);
+l2.setText("Label 2");
+FormData imageData = new FormData();
+imageData.left = new FormAttachment(0,0);
+imageData.top = new FormAttachment(0, 0);
+l2.setLayoutData(imageData);
+
+FormData textData = new FormData();
+textData.left = new FormAttachment(l2,0);
+textData.top = new FormAttachment(0, 0);
+l1.setLayoutData(textData);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

@@ -1,0 +1,9 @@
+Make gtk_set_locale dynamic.
+It is not needed on gtk 2.24+ and this patchs is guarding it to be
+execed only on older versions.
+gtk_init_check is calling setlocale
+internally.
+Commit/patch:
+http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=f4b8baaa91fa7ae5393a624c63166031e4121d67
+and
+http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=9ce4840e06b178a1859474fd6af6ae73b7aa0929

@@ -1,0 +1,4 @@
+Tracker seems broken, affects dragging Views, Editors
+I was testing for M2 and noticed that the DnD feedback was broken on my Vista box (works fine elsewhere).
+I think I've tracked it down to a snippet (that I'll attach) indicating that the return value from 'display.getCursorControl()' is returning null on Vista rather than the actual control.
+Note that this seems to be Tracker-related...if you add the same code directly in a mouse move listener it seems to work on both.

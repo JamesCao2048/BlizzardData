@@ -1,0 +1,2 @@
+Bug 210892 [Regression]The arguments of aggregation builder can not be modified
+Description: [Regression]The arguments of aggregation builder can not be modified Build number: 2.3.0.v20071126-0800 Steps to reproduce: 1, New a table 2, Drag a aggregation builder into table 3, Specify the datafield, function to percentile and argument to 0.3 4, Reopen the aggregation and change the argument to 0.4 Expected result: After step4, the artument is changed to 0.4 Actual result: Nothing happened after step4, the argument is still 0.3 Error log:

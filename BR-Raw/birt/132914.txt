@@ -1,0 +1,4 @@
+Bug 132914 "Invalid page number" error message is hard coded.
+"Invalid page number" error message is hard coded in DocumentProcessor.java.
+This must be externalized into *.properties file.
+If there are other hard coded error messages, please also externalize.

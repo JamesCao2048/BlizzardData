@@ -1,0 +1,5 @@
+Twistie in Tree does not give feedback on mouseDown with DragDetect listener
+I20090311-1800, cocoa
+As soon as a DragDetect listener is installed on a Tree, the collapse/expand twisties don't give feedback any more on mouseDown.
+Without the DragDetect listener, the triangle gets darker while the mouse is down inside it.
+Could be related to the problem with Tree#getItem(Point) from  bug 268303  (I don't think a drag should be started on the twistie).

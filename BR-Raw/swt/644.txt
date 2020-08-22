@@ -1,0 +1,8 @@
+Regression on SWT Cocoa Table header between 3.6M4 and 3.6M5
+With SWT Cocoa 3.6M4, the Snippet 311 (show a menu in a table header) works correctly.
+However, with SWT Cocoa 3.6M5 and later, right clicking on the table header brings up the tableMenu rather than the headerMenu.
+Something in the calculation of where the click occurred (header vs table) has regressed in 3.6M5.Right clicking in the first row of the table, brings up the headerMenu, however.
+So my guess is that it has something to do with the Table#getClientArea method.
+Note that both Table and Tree exhibit this problem.
+I ran this using the 64bit cocoa versions.
+Let me know if I can help provide more info.

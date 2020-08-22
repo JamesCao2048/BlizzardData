@@ -1,0 +1,12 @@
+Bug 153507 Bogus error when bad data set column referenced in group key
+Run attached report design.
+Its group key binding column, "groupkey", is defined to refer to a non-existing data set column: dataSetRow["bad"].
+However the actual error seen when previewing the report in BIRT designer: Table (id = 6): + A BIRT exception occurred: Error evaluating Javascript expression.
+Script engine error: TypeError: valueOf is not a function.
+Script source: null, line: 0, text:
+<compiled script>.
+See next exception for more information.
+Error evaluating Javascript expression.
+Script engine error: TypeError: valueOf is not a function.
+Script source: null, line: 0, text:
+<compiled script> This error is completely irrelevant to the actual cause of the problem.

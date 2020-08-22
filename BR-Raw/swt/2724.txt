@@ -1,0 +1,19 @@
+Modify Event is sent twice in case of SWT.MULTI
+in org.eclipse.swt.widgets.Text.setText()
+is this condition
+/*
+* Bug in Windows.
+When the widget is multi line
+* text widget, it does not send a WM_COMMAND with
+* control code EN_CHANGE from SetWindowText () to
+* notify the application that the text has changed.
+* The fix is to send the event.
+*/
+if ((style & SWT.MULTI) != 0) {
+sendEvent (SWT.Modify);
+// widget could be disposed at this point
+}
+Currently there is no such in source code described windows bug.
+So ModifyEvent
+is sent to listeners twice.
+Tested on WindowsXP and Windows2k3.

@@ -1,0 +1,3 @@
+[browser] safari - does not fire location event for inner frame
+need to verify inner frames also fire location event when hyperlink is
+activated, not just for top frame.

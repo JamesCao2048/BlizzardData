@@ -1,0 +1,50 @@
+Text verify event fields different between GTK and every other platform
+- Run the following snippet on GTK
+- Type 1 to overwrite the selected xx
+- See the word "BOGUS" in the Console.
+If you run this on any other platform, "BOGUS" is not printed.
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.events.*;
+public class TextVerifyTest {
+static Shell shell;
+static Text text;
+static boolean ignore = false;
+
+public static void main(String[] args) {
+Display display = new Display();
+shell = new Shell(display);
+shell.setLayout(new GridLayout());
+shell.setText("Single-Line Text Test");
+
+text = new Text(shell, SWT.SINGLE);
+text.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+text.setText("xx
+< type here");
+text.setSelection(0, 2);
+
+text.addVerifyListener(new VerifyListener() {
+public void verifyText(VerifyEvent e) {
+System.out.println(
+"nVerify, e.text=" + e.text +
+" e.start=" + e.start +
+" e.end=" + e.end +
+" ignore=" + ignore +
+(e.start == e.end && ignore == false ?
+" (BOGUS)" : ""));
+if (ignore) return;
+ignore = true;
+text.insert("yy");
+ignore = false;
+text.setSelection(0, 2);
+e.doit = false;
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}
+}

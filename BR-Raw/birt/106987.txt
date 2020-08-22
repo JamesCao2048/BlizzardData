@@ -1,0 +1,2 @@
+Bug 106987 set display value None will cause different effect when preview
+description: set display value None will cause different effect when preview steps tor reproduce: 1.set an image display value "None" 2.preview in HTML, image display well 3.Preview in PDF, no image display actual result: set display value None will cause different effect when preview

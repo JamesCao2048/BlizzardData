@@ -1,0 +1,79 @@
+TableItem.getImageBounds fails on Motif (Emulated Widget)
+build Eclipse 2.0
+The images bounds for a TableItem should not change if the grid line is visible
+or not (only the bounds for the TableItem itself should change according with
+the grid line visibility).
+That's how Windows behaves.
+Run the following test case on Windows and Motif and compare the difference:
+public static void main (String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table control = new Table (shell, SWT.MULTI);
+TableColumn c0 = new TableColumn (control, 0);
+TableColumn c1 = new TableColumn (control, 0);
+TableColumn c2 = new TableColumn (control, 0);
+TableColumn c3 = new TableColumn (control, 0);
+Image image = new Image (display, 16, 16);
+GC gc = new GC (image);
+gc.setBackground (display.getSystemColor(SWT.COLOR_BLUE));
+gc.fillRectangle (0, 0, 16, 16);
+gc.dispose();
+for (int i = 0; i
+< 4; i++){
+TableItem item = new TableItem (control, 0);
+item.setText(new String[] {"Item index 0","Item index 1", "Item index 2", "Item
+index 3"});
+item.setImage(new Image[] {image, image, image, image });
+}
+c0.pack();c1.pack();c2.pack();c3.pack();
+
+Button button = new Button (shell, SWT.PUSH);
+button.setText("Click Here!!");
+button.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+TableItem[] items = control.getItems();
+for (int j = 0; j
+< items.length; j++) {
+for (int k = 0; k
+< 4; k++) {
+System.out.print("Item: " + items[j].getBounds(k));
+System.out.println(" Image: " + items[j].getImageBounds(k));
+}
+}
+control.setLinesVisible(!control.getLinesVisible());
+}
+});
+
+shell.open();
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+display.dispose();
+}
+A fix for this PR is add a check before getImageBounds returns:
+public Rectangle getImageBounds(int index) {
+checkWidget();
+Table parent = getParent();
+int itemIndex = parent.indexOf (this);
+int imageWidth = 0;
+Point imageExtent = parent.getImageExtent();
+Rectangle imageBounds = getBounds(index);
+
+if (itemIndex ==
+-1) {
+imageBounds = new Rectangle(0, 0, 0, 0);
+}
+else
+if (imageExtent != null) {
+if (index == TableColumn.FIRST || getImage(index) != null) {
+imageWidth = imageExtent.x;
+}
+}
+imageBounds.width = imageWidth;
+if (imageBounds.height != 0 && parent.getLinesVisible() == false) {
+imageBounds.height
+-= parent.getGridLineWidth();
+}
+return imageBounds;
+}

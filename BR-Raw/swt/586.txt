@@ -1,0 +1,12 @@
+Dialog popup from a parent shell is covers by another shell which is popup from the parent shell
+Build Identifier: SWT 3.5.2
+On Mac, Dialog popup from a parent shell is covers by another shell which is popup from the parent shell
+Reproducible: Always
+Steps to Reproduce:
+1.Create Shell A.On Shell A, there are two buttons, one (named "open Shell B") 1.Create Shell A.On Shell A, there are two buttons, one (named "open Shell B") can open a child Shell B, one (named "open dialog C") can open child dialog C.
+2.Click "Open Shell B" to open Shell B, click "Open dialog C" to open dialog C
+3.Now dialog C is foremost, drag dialog C to Shell B, now dialog C can covers Shell B
+- dialog C is on Shell B.
+Click Shell B to make it to the foremost, drag dialog C to Shell B, now Shell B is still on the top of dialog C
+- Shell B covers dialog C.
+Click Shell A to bring Shell A to foremost, drag dialog C to Shell B, dialog C can be on the top of Shell B this time.

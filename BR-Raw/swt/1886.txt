@@ -1,0 +1,24 @@
+Exception in Mozilla browser code not caught, leads to crash
+Try the following snippet:
+Browser fBrowser= new Browser(parent, SWT.MOZILLA);
+fBrowser.addProgressListener(new ProgressAdapter() {
+
+public void completed(ProgressEvent event) {
+throw new RuntimeException();
+}
+}
+fBrowser.setUrl(" http://www.ibm.ch ");
+This causes the process to crash inside Mozilla.
+The Java code is called from SWT JNI callback() function (in callback.c:663).
+When the exception is thrown, it comes back into the JNI code.
+At the end of the function, there is code that checks if an exception was thrown.
+However, it never clears the exception.
+So the JNI code returns into Mozilla code, which goes along until the next time it needs to call into Java.
+It calls back into the callback() function, at the top of which is this code:
+/* If an exception has occurred in previous callbacks do not call into the VM.
+*/
+if ((*env)->ExceptionOccurred(env)) {
+goto done;
+}
+It keeps catching the previously thrown exception and never actually calling into Java, as expected by Mozilla.
+So eventually, the Mozilla code crashes when it expects something to be done.

@@ -1,0 +1,11 @@
+Disabling parent Composite doesn't throw FocusOut for the focused child control
+On OS X when disabling the parent of the focus control a FocusOut event doesn't get fired for the control losing focus.
+It looks like the issue is in the Control.forceFocus() and Display.getFocusControl(int).
+When the "oldFocus" control is attempted to be retrieved from the display the display will return null because of the following check in Display.getFocusControl(int)...
+if (widget != null && widget instanceof Control) {
+Control control = (Control) widget;
+>>>return control.isEnabled () ?
+control : null;<<<
+}
+The control is disabled so it's not returned as the focused control.
+Attaching test case...

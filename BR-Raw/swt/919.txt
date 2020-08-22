@@ -1,0 +1,59 @@
+image drawing can interfere with text drawing in classic theme
+Created  attachment 138002   [details]
+external image
+- this is a strange one
+- happens on Vista (and apparently XP though not confirmed) in Classic theme
+- does NOT happen on win2000 (whose theme is always classic) or regular Vista/XP
+- download the attached image
+- run the snippet below (first update the PATH_TO_IMAGE constant if necessary)
+- the snippet does the following:
+
+-> creates an image whose content is composed of some text and an image read from disk
+
+-> creates a Button and sets this image as its image
+
+-> crates a Canvas and draws this image in its Paint callback
+- problem: the image's text is not drawn in the Button
+
+-> but note that it is drawn in the Canvas, so the Image is correct
+- note that the string can be made to draw in the Button by commenting out the line that draws the disk image to the shared image
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+/* create the common image to put into the Button and Canvas */
+String PATH_TO_IMAGE = ".\Image.png";
+String STRING = "String";
+int ARBITRARY_SPACE = 2;
+Image leftSideImage = new Image(display, PATH_TO_IMAGE);
+Rectangle imageBounds = leftSideImage.getBounds();
+GC gc = new GC(shell);
+int stringWidth = gc.stringExtent(STRING).x;
+gc.dispose();
+final Image sharedImage = new Image(display, imageBounds.width + ARBITRARY_SPACE + stringWidth, imageBounds.height);
+gc = new GC(sharedImage);
+gc.setBackground(shell.getBackground());
+gc.fillRectangle(new Rectangle(0,0,imageBounds.width + ARBITRARY_SPACE + stringWidth, imageBounds.height));
+gc.setForeground(display.getSystemColor(SWT.COLOR_RED));
+gc.drawImage(leftSideImage, stringWidth + ARBITRARY_SPACE, 0); // comment out to show string
+gc.drawString(STRING, 0, 0);
+gc.dispose();
+
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(10,10,80,80);
+button.setImage(sharedImage);
+Canvas canvas = new Canvas(shell, SWT.BORDER);
+canvas.setBounds(100,10,80,80);
+canvas.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+event.gc.drawImage(sharedImage, 0, 0);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+sharedImage.dispose();
+leftSideImage.dispose();
+display.dispose();
+}

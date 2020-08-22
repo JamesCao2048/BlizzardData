@@ -1,0 +1,10 @@
+ToolItem names are not being reported to screen reader
+Build id: N20081102-2000
+- Run Eclipse
+- Turn on VoiceOver
+- Use Ctrl+Option+arrow keys to move the VoiceOver cursor (black rectangle) to a tool item in the Eclipse tool bar.
+- VoiceOver should speak the name of the tool item (which is the same as the tooltip).
+This works on Carbon, but I believe I had to just make tool items speak their tooltip (since most applications
+- including Eclipse
+- just use the same string for the tooltip and the tool item's accessible name).
+I don't think I ever got the full SWT accessibility API working for tool items.

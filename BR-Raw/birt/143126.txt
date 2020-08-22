@@ -1,0 +1,3 @@
+Bug 143126 [Regression]Insert chart into table group header, preview, incorrectly.
+Insert chart into table group header, preview, incorrectly.
+Steps: 1.Insert a table 2.Create a group for the table 3.Insert chart into group header, inherit table's data set 4.preivew Actual Results: 1.Chart datas are incorrectly Expected Results: 1.Chart can be previewed correctly.

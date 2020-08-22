@@ -1,0 +1,13 @@
+Quick release upon start of drag hangs eclipse with pointer grab
+Reproducing this may take a few attempts, but for some reason I have to kill
+eclipse several times a day because of this one.
+0) make sure several tree lists are visible
+1) select something in a tree list
+2) start and drag in another tree list and immediately release the mouse button
+3) eclipse hangs on the pointer grab.
+Thankfully it isn't a keyboard grab as well, so I am still able to switch to a
+virtual terminal to kill the sucker.
+NOTE: to diagnose this one you will probably want to start eclipse from a
+debugger running on the console rather than inside X, because of the pointer
+grab!  Starting it in a separate X session from the debugger will do the trick
+as well.

@@ -1,0 +1,3 @@
+Bug 276251 Constant failed to work for data set parameter
+Description: Constant failed to work for data set parameter Build number: 2.5.0.v20090514-0630 Steps to reproduce: 1, New a data set from sampleDB 2, Specify Query: select * from CLASSICMODELS.CUSTOMERS where COUNTRY = ?
+3, Go to parameter page, select value type as constant and specify default value to USA 4, Preview in data set Expected result: All USA show in result Actual result: Preview failed and exception occurred Error log:

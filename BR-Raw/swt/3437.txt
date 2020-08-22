@@ -1,0 +1,69 @@
+JVM crash at eclipse exit
+The JVM crashes when eclipse 3.0M7-motif exits to the shell.
+The crash occured after I changed fonts.
+The crash is reproducible on my machine.
+Steps to reproduce:
+- start eclipse
+- open Window/Preferences/Workbench/Fonts
+- select Banner Font
+- click on Change
+- select a scalable font
+- click OK
+- click Apply
+- click OK
+- exit eclipse by clicking on 'close' button on the window
+- confirm with OK
+- wait for crash report on the terminal
+This is the "User preferences" part of the config:
+*** User Preferences:
+#Wed Feb 25 20:17:59 EST 2004
+org.eclipse.ui.workbench/org.eclipse.jface.dialogfont=1|tahoma|17|0|MOTIF|1|-microsoft-tahoma-medium-r-normal--17-170-72-72-p-76-iso8859-1;
+org.eclipse.ui.ide/INTRO=false
+org.eclipse.ui.workbench=3.0.0
+org.eclipse.ui.workbench/org.eclipse.jface.bannerfont=1|tahoma|14|0|MOTIF|1|-microsoft-tahoma-medium-r-normal--14-140-72-72-p-62-iso8859-1;
+org.eclipse.ui.ide/WELCOME_DIALOG=false
+org.eclipse.ui.ide=3.0.0
+The error message from JVM:
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0xFF232C88
+Function=strcmp+0x238
+Library=/usr/lib/libc.so.1
+Current Java thread:
+at org.eclipse.swt.internal.motif.OS.XtDestroyWidget(Native Method)
+- locked
+<0xf5827e78> (a java.lang.Class)
+at org.eclipse.swt.widgets.Display.destroyDisplay(Display.java:728)
+at org.eclipse.swt.widgets.Display.destroy(Display.java:707)
+at org.eclipse.swt.graphics.Device.dispose(Device.java:232)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1534)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:265)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:257)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:104)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+at org.eclipse.core.launcher.Main.run(Main.java:742)
+at org.eclipse.core.launcher.Main.main(Main.java:581)
+Dynamic libraries:
+0x10000 	/usr/bin/java
+0xff360000 	/usr/lib/libthread.so.1
+0xff3a0000 	/usr/lib/libdl.so.1
+0xff200000 	/usr/lib/libc.so.1
+0xff330000 	/usr/platform/SUNW,Ultra-5_10/lib/libc_psr.so.1
+0xfe000000 	/usr/j2se/jre/lib/sparc/client/libjvm.so
+0xff2e0000 	/usr/lib/libCrun.so.1
+0xff1e0000 	/usr/lib/libsocket.so.1
+0xff100000 	/usr/lib/libnsl.so.1
+0xff0d0000 	/usr/lib/libm.so.1
+0xff1c0000 	/usr/lib/libsched.so.1
+0xff310000 	/usr/lib/libw.so.1
+0xff0a0000 	/usr/lib/libmp.so.2
+0xff070000 	/usr/j2se/jre/lib/sparc/native_threads/libhpi.so
+0xfe7d0000 	/usr/j2se/jre/lib/sparc/libverify.so
+0

@@ -1,0 +1,37 @@
+BeginBufferedPaint does not work in RTL and advanced
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.*;
+public class PR111111 {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.DOUBLE_BUFFERED | SWT.RIGHT_TO_LEFT);
+
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+GC gc = event.gc;
+gc.setAdvanced(true);
+gc.setBackground(display.getSystemColor(SWT.COLOR_RED));
+//			if (true) {
+//				gc.fillRectangle(-100, 0, 100, 100);
+//				gc.drawLine(-100, 0, 0, 100);
+//			} else {
+gc.fillRectangle(0, 0, 100, 100);
+gc.drawLine(0, 0, 100, 100);
+//			}
+}
+});
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+shell.redraw(10, 10, 100, 100, true);
+shell.redraw(120, 10, 100, 100, true);
+}
+});
+
+shell.setSize(300, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}
+}

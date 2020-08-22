@@ -1,0 +1,7 @@
+Bug 195623 Action (Invoke Script&Highlight&Toggle Visibility&Toggle DataPoint Visibility) does not work if the Event is "Mouse Double Click" [13]
+Description: Action (Invoke Script&Highlight&Toggle Visibility&Toggle DataPoint Visibility) does not work if the Event is "Mouse Double Click".
+Build number: 2.2.0.v20070706-0959 Steps to reproduce: 1.New a chart, in "Format Chart" tab add interactivity for Value Series, select Event as "Mouse Double Click", select Action as Invoke Script or Highlight or Toggle Visibility or Toggle DataPoint Visibility.
+2.Preview.
+Expected result: Interactivity works.
+Actual result: Interactivity does not work.
+Error log: N/A

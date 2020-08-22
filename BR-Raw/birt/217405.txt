@@ -1,0 +1,7 @@
+Bug 217405 Chart view definition should reflect level's change dynamically[1302]
+Description: Chart view definition should reflect level's change dynamically Build number:2.3.0.v20080201 Steps to reproduce: 1.New a xtab with row level, column level and measure.
+2.Switch measure to chart view.
+3.Change level in row area, or add a second level.
+4.Preview.
+Expected result Chart definition changed automatically according to level change Actual result: It doesn't.
+Error log:n/a

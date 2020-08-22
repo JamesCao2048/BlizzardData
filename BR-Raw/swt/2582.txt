@@ -1,0 +1,4 @@
+in SWT, javadoc for Table.getColumns does document order
+The javadoc for Table.getColumns() should indicate what order the TableColumns are returned in.
+IE, are they in display order or creation order.
+Its a minor thing, but its a pain in the ass to have to track it down when you need to know.

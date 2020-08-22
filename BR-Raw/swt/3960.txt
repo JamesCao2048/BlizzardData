@@ -1,0 +1,18 @@
+Clipboard copy/paste is cut/paste on Windows 98
+build 20020827
+-Fix the attached test case to point to a test file in the file system
+-Run the test case
+-Go to the Windows explorer and select paste in the context menu to paste the
+file on the clipboard to the selected folder (not the source folder)
+On Windows NT and Windows 2000 the file is copied from the source location.
+On
+Windows 98 the file is moved.
+In Eclipse this results in resources being *moved* from the workspace when the
+user selects copy/paste or Ctrl+C/Ctrl+V to copy a file to the file system.
+The
+workspace is out of sync because it does not know about the move.
+It is
+assuming the clipboard transfer is a copy.
+See  bug 22566 .
+Is there anything Eclipse can do/needs to do to make sure the clipboard
+transfer is a copy on Windows 98?

@@ -1,0 +1,5 @@
+Gtk SWT should set window type hint for SWT.BALLOON tooltips
+Created  attachment 117530   [details]
+Trivial fix
+As the summary says, tooltips which have the SWT.BALLOON style flag set should also have their window type hint set to GDK_WINDOW_TYPE_HINT_TOOLTIP, which allows compositing managers to animate the tooltips properly.
+For tooltips which don't have SWT.BALLOON set this is done implicitly through the Gtk tooltips API, so it's only logical also doing so for the SWT.BALLOON case.

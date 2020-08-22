@@ -1,0 +1,24 @@
+Crash while running JFace test suites
+3.1, GTK+ 2.2.1, Red Hat 9, GNOME
+A segmentation fault occurred while running
+org.eclipse.jface.tests.viewers.AllTests in org.eclipse.ui.tests.
+I'll attach
+the crash log.
+Here is the output on the console just as the crash occurs:
+--- testClearSorted
+Comparisons required by lazy collection: 104
+Comparisons required by reference implementation: 102
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x541c9351, pid=6489, tid=1073983616
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_02-b09 mixed mode)
+# Problematic frame:
+# C  [libgtk-x11-2.0.so.0+0x18b351]  gtk_tree_selection_get_selected_rows+0xc1
+#
+# An error report file with more information is saved as hs_err_pid6489.log
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#

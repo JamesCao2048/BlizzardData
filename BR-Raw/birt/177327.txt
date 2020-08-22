@@ -1,0 +1,9 @@
+Bug 177327 Support more than eight colors in the Palette
+if we use the update(int) method in Palette we only get 8 different colors.
+This is very inconvenient as this implies that we have to manually add more colors if the total number of categories is greater than eight.
+This becomes a bigger issue for the Pie charts.
+If I have a Pie chart and the number of slices (i.e.
+total values in the series) is greater than 8.Then the color pattern repeats every 8th entry.
+This means that: 1.Item 1 and Item 9 appear together and they look like one slice 2.If there are no labels on the pie chart, there is no way to identify which is which.
+Unless we provide the tooltips so that the user may identify which slice represents Item 1 and which represents Item 9.Besides, for SWT rendering, highlighting the slice when on legend hover is not available either.
+Hence the Palette should either support more than eight colors or provide a way to generate new colors if needed.

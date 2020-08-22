@@ -1,0 +1,10 @@
+Bug 157259 In PDF <li> effect is incorrect when page break happens.
+Description: In PDF
+<li> effect is incorrect when page break happens.
+Steps to reproduce: 1.Open attached report and preview in pdf, pay attention to the first
+<li>text in the beginning of second page.
+Expected result: Correct
+<li> effect.
+Actual result: text after
+<li> is displayed at the second line instead of the same line as dot.
+See screenshot.

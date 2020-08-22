@@ -1,0 +1,10 @@
+CTabFolder close box should highlight without needing mouse move
+1.Open several tabs with long enough titles such that they will have same (max) tab width
+2.Close one on the left, using the mouse, and leave the mouse pointer where it is
+Observe 1: the next tab right will replace the deleted one (naturally)
+Observe 2: even though the mouse ptr is directly over the close box, the close box is not visible.
+You need to move the mouse to get it to light up.
+The issue is that, when closing many tabs, its nice to just keep clicking to close.
+You can do this in Firefox 2.0 quite nicely.
+The problem is likely that the close box only lights up via mouse move.
+We also need to check as a result of tab close.

@@ -1,0 +1,48 @@
+[flex-hierarchy] Mac: Using down arrow to quickly move down some tree controls causes them to jump back to top
+Build ID: I20071101-2000
+Steps To Reproduce:
+1.Mac only.
+I have not seen this happen on Windows; I have not tried Linux.
+2.This is a timing-sensitive bug, so you need to set your keyboard repeat rate to the fastest it will go, under Mac's System Preferences > Keyboard & Mouse.
+3.In Eclipse, make a new Java project, and add this sample code:
+public class J {
+public static void main(String[] args) {
+nest(0);
+}
+private static void nest(int i) {
+if (i<200)
+nest(i+1);
+else {
+Integer[] m = new Integer[100];
+for (int j=0; j<100; ++j) {
+m[j] = new Integer(j);
+}
+System.out.println("Breakpoint here");
+}
+}
+}
+4.Set a breakpoint on the "Breakpoint here" line, and debug.
+5.In the Variables view, click on the disclosure triangle to expand array "m"
+6.Click on the first array element.
+7.Press and hold the keyboard's down-arrow to move down the array at full speed.
+Actual result:
+It will scroll correctly for a while
+-- perhaps 20 or 40 elements
+-- and then suddenly the selection will jump all the way back to the top of the Variables view.
+It will then continue down, getting farther than it did the first time, but then eventually will jump to the top again.
+Once you have made it to the bottom of the list, and all the elements have been read in, all navigation within the list will function correctly.
+Expected results:
+Selection continues to move down until it reaches the end of the array.
+8.Try the same thing in the "Debug" view.
+I have had less luck reproducing the problem there, but I have seen it on occasion.
+I don't think this bug has anything to do with the debugger; I suspect it is a JFace or SWT issue.
+More information:
+This does not reproduce every time, but I can get it to happen fairly easily.
+It is similar to  bug 185673 , but is not the same bug.
+That one has been fixed; this one still reproduces.
+(This one also reproduced in 3.3, but I don't think it reproduced in 3.2; I may be wrong about that though.)
+Bug 185673  had to do with preservingSelection() in TreeViewer.replace(); it seems like this one might involve that code as well, because the behavior
+-- jumping to the top of the list
+-- is similar.
+I find that the problem reproduces most easily after restarting Eclipse.
+So if it reproduces for you but then stops reproducing, try restarting.

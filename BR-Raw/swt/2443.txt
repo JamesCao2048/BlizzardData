@@ -1,0 +1,4 @@
+Font.init does not initialise the device of a font
+I20060330
+On MacOS Font.init does not initialise the device of a font.
+As a consequence Font.getDevice() always returns null.

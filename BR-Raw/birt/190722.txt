@@ -1,0 +1,5 @@
+Bug 190722 [Crosstab improvements] Xtab filter should allow filtering on any cube dimension
+In the current (2.2) XTab filter editor, you can only select filter on a level that's placed on an edge in the XTab.
+We should allow the filter condition to refer to any level in the cube, whether or not it is otherwise used in the XTab.
+As an example, a XTab report may place level Time/OrderDate on the column, and level Product/ProduceLine on the row.
+The design may however want to filter the Xtab based on the Geography/Country level (not shown in the xtab), so that the table only shows data for Country == "USA".

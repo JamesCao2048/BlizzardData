@@ -1,0 +1,73 @@
+Table widget does not return table item when #getItem(Point) is called
+I have a table that is created with SWT.FULL_SELECTION turned off.
+I have
+added a mouse track listener for providing hover support in my view.
+When the
+listener gets the event, I tried to locate the table item at which the hover
+event is fired.
+I used the method, Table.getItem(Point) to locate the item.
+
+My table has multiple columns.
+
+If the hover happens at column 0, #getItem(Point) is able to return the correct
+item.
+However, if the hover happens at any other column, #getItem(Point) always
+returns null which is not expected.
+If the table is created with the SWT.FULL_SELECTION flag on, then the table is
+always able to return the correct item.
+
+Expected behaviour:
+The table should be able to return the correct item at any column no matter if
+SWT.FULL_SELECTION is on or not.
+Actual behaviour:
+SWT.FULL_SELECTION off:
+Table is only able to return an item when the hover happens at column 0 when
+#getItem(Point) is called.
+SWT.FULL_SELECTION on:
+Table is able to return an item no matter where the hover happens.
+Testcase:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+
+
+// #getItem(point) returns null for any column other than
+column 0
+// if FULL_SELECTION is off
+final Table table = new Table(shell, SWT.BORDER | SWT.MULTI);
+
+// #geItem(point) returns the correct item if FULL_SELECTION is
+on
+//		final Table table = new Table(shell, SWT.BORDER | SWT.MULTI |
+SWT.FULL_SELECTION);
+
+table.addMouseTrackListener(new MouseTrackAdapter() {
+public void mouseHover(MouseEvent e) {
+Point point = new Point(e.x, e.y);
+TableItem item = table.getItem(point);
+System.out.println(item);
+super.mouseHover(e);
+}});
+
+table.setLayoutData(new GridData(GridData.FILL_BOTH));
+TableColumn column1 = new TableColumn(table, SWT.NONE);
+TableColumn column2 = new TableColumn(table, SWT.NONE);
+TableColumn column3 = new TableColumn(table, SWT.NONE);
+for (int i = 0; i
+< 500; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] { "cell "+i+" 0", "cell "+i+"
+1", "cell "+i+" 2"});
+}
+column1.pack();
+column2.pack();
+column3.pack();
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

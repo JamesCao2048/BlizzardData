@@ -1,0 +1,10 @@
+carriage return inserted twice when using text box in web browser
+Steps to reproduce (with internal browser on Windows):
+1) Open internal browser in Eclipse
+2) Click [edit] on an Eclipsepedia page
+3) Hit the "Enter" key in the edit box, you will see two carriage returns
+Expected behavior (with Internet Explorer on Windows):
+2) as above
+3) as above, only get one carriage return
+Marking as major as this could be perceived as a regression by web developers and anyone else making use of the internal browser.
+Could be related to fixes around  bug 228484 .

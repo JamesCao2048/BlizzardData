@@ -1,0 +1,56 @@
+crash in gtk_editable_delete_selection on GTK 2.2.1/Redhat 7.1
+After compiling, running eclipse and looking around in the environment I got a crash:
+
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0x4D1DD704
+Function=gtk_editable_get_selection_bounds+0x44
+Library=/usr/local/lib/libgtk-x11-2.0.so.0
+
+Current Java thread:
+at org.eclipse.swt.internal.gtk.OS.gtk_editable_delete_selection(Native
+Method)
+
+- locked
+<0x48578df8> (a java.lang.Class)
+at org.eclipse.swt.widgets.Combo.clearSelection(Combo.java:279)
+at org.eclipse.ui.internal.commands.KeyPreferencePage.setActiveKeyConfig
+urationId(KeyPreferencePage.java:1600)
+at org.eclipse.ui.internal.commands.KeyPreferencePage.copyToUI(KeyPrefer
+encePage.java:498)
+at org.eclipse.ui.internal.commands.KeyPreferencePage.setVisible(KeyPref
+erencePage.java:409)
+at org.eclipse.jface.preference.PreferenceDialog.showPage(PreferenceDial
+og.java:1063)
+at org.eclipse.jface.preference.PreferenceDialog$9.run(PreferenceDialog.
+java:495)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.jface.preference.PreferenceDialog$8.widgetSelected(Prefer
+enceDialog.java:489)
+at org.eclipse.jface.util.OpenStrategy.firePostSelectionEvent(OpenStrate
+gy.java:198)
+at org.eclipse.jface.util.OpenStrategy.access$800(OpenStrategy.java:33)
+at org.eclipse.jface.util.OpenStrategy$3.run(OpenStrategy.java:333)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.ja
+va:98)
+
+- locked
+<0x44bedb08> (a org.eclipse.swt.widgets.RunnableLock)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:1614)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1432)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:583)
+at org.eclipse.jface.window.Window.open(Window.java:563)
+at org.eclipse.ui.internal.OpenPreferencesAction.run(OpenPreferencesActi
+on.java:53)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:842)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
+(ActionContributionItem.java:456)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetEvent(Act
+ionContributionItem.java:403)
+at org.eclipse.jface.action.ActionContributionItem.access$000(ActionCont
+ributionItem.java:44)
+at org.eclipse.jface.action.ActionContributionItem$ActionListener.handle
+Event(ActionContributionItem.java:72)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:913)
+.....

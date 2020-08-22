@@ -1,0 +1,20 @@
+transparent images with advanced (cairo) graphics fail sometimes
+Loading a png image with transparency using:
+new Image(display, (new File("myImageName.png)).toUrl().openStream());
+and drawing it on a GC that is using cairo: setAdvanced(true),
+displays the transparent pixel color with an alpha of what looks like 50%.
+
+If the same image is loaded using a String like:
+new Image(display, "myImageName.png")
+it is displayed correctly.
+
+I will attach the actual image I'm using to test.
+I'm using swt.gtk.linux.x86_3.2.0.v3224
+And I'll attach a screen shot when the follow is run:
+Image imageURL = new Image(display, (new File("myImageName.png)).toUrl().openStream());
+Image imageString = new Image(display, "myImageName.png");
+gc.setAdvanced(true);
+gc.setBackground(new org.eclipse.swt.graphics.Color(display, 0,255,0));
+gc.fillRectangle(0,0,100,100);
+gc.drawImage (imageURL, origin.x, origin.y);
+gc.drawImage (imageString, origin.x + 30, origin.y);

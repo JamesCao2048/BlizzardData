@@ -1,0 +1,28 @@
+creating Table/TreeColumn makes existing item disappear
+3.2
+- run the snippet below
+- push the button, which creates a column 0 and pack()s it
+- on mac this makes the item's text disappear, but it should just create a
+column and pack it to the item text's width
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setBounds (10,10,300,200);
+final Table table = new Table (shell, SWT.NONE);
+table.setBounds (10,10,150,100);
+table.setHeaderVisible(true);
+new TableItem (table, SWT.NONE).setText ("item");
+shell.open ();
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(200,10,70,30);
+button.setText("Push");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+new TableColumn(table, SWT.NONE).pack();
+}
+});
+while (!shell.isDisposed ()){
+if (!display.readAndDispatch ())display.sleep ();
+}
+display.dispose ();
+}

@@ -1,0 +1,43 @@
+GTK warnings when using a virtual table
+0517 Red Hat Enterprise 3.0
+When I run the example below I get the following warnings to the console.
+If the
+table does not have the VIRTUAL flag set I get no error.
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed
+(<unknown>:6925): Gtk-CRITICAL **: file gtktreeview.c: line 10200
+(gtk_tree_view_get_cell_area): assertion `GTK_WIDGET_REALIZED (tree_view)' failed

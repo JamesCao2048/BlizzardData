@@ -1,0 +1,10 @@
+Bug 180617 [Regression] Exception is thrown out when create a stored procedure data set [0703]
+Description: Exception is thrown out when create a stored procedure data set Build number: 2.2.0.v20070403-0630 Steps to reproduce: 1.Add a data source, Driver:net.sourceforge.jtds.jdbc.Driver (v0.9) URL:jdbc:jtds:sqlserver://spmdb/gui, User:sa, Password:sa.
+2.Add a data set, select data set type "SQL Stored Procedure Query", edit this data set "{call counterInT1(?)}".
+3.Click "Finish".
+Expected result: No exception is thrown out.
+Actual result: Exception is thrown out.
+Error log: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.2.0.v20070401 Error Code:odaconsumer.CannotGetResultSetMetaData Error Message:Cannot get the result set metadata.
+SQL statement does not return a ResultSet object.
+SQL error #1: Parameter #1 has not been set.

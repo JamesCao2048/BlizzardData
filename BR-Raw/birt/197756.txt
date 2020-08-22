@@ -1,0 +1,5 @@
+Bug 197756 Data Set Row Limit
+Tested with release 2.2 and 2.2.1S20070713 1) create a report 2) add data source & data set (JDBC or Sample Database) 3) Put data source to a table 4) Set Data Set Row Limit to to some value (e.g.
+5) 5) preview ==> 5 rows are displayed 6) Set Data Set Row Limit to to some other value (e.g.
+10) 7) preview ==> 5 (!!) rows are displayed and not 10
+- you must restart eclipse, only then the new value takes effect

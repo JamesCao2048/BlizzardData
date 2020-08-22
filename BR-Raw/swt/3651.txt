@@ -1,0 +1,46 @@
+Text.ComputeSize(0) returning 0 on GTK (BBAWT)
+Linux
+- RH8
+SWT 3009
+The following test case creates a Text and then calls computeSize(0,0).
+On
+Motif, Windows 2000, and QNX, a positive value is returned {(14,15), (13,7),
+and (5,5), respectively}.
+But GTK returns (0,0).
+It looks like computeSize(x,y) on GTK always returns (x,y), while all other
+platforms tested seem to add the noted values to x and y.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class SWTTextFieldTest {
+Display display;
+Shell shell;
+Text text;
+Point insetSize;
+public void run() {
+display = new Display();
+shell = new Shell(display);
+text =
+new Text(
+shell,
+SWT.SINGLE
+| SWT.BORDER
+| SWT.NULL
+| SWT.CLIP_CHILDREN
+| SWT.CLIP_SIBLINGS);
+shell.setSize(300, 300);
+shell.open();
+insetSize = text.computeSize(0, 0);
+System.out.println("InsetSize = " + insetSize);
+while (!shell.isDisposed()) {
+display.readAndDispatch();
+display.sleep();
+}
+display.dispose();
+}
+public static void main(String[] args) {
+new SWTTextFieldTest().run();
+}
+}

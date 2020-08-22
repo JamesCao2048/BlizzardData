@@ -1,0 +1,16 @@
+Bug 195785 Report Drill down fails when using a resource folder other than default
+Build ID: I20070625-1500 Steps To Reproduce: 1.Create a simple report with a drilldown hyperlink to a subreport for each line of the table.
+Sample screenshot attached showing example using sample database, with a drill down for each customer in the sample database.
+2.Define a master page or styles in a library that both the main report and the drill-down report use.
+3.Put the library in a directory / file location other than the default project directory.
+In our case, we create a resource/lib directory in our report project, and then put the library in that directory.
+4.Change the resource directory from the default using the window->preferences->report design Eclipse option.
+In our case, it points to
+<eclipse_project>/resource directory.
+5.Change the report to use the library from the resource/lib directory location.
+In our case, it is relative to the resource directory (lib/ourlibrary.rptlibrary) 6.Run the master report.
+Only the first drill-down hyperlink will work correctly (the first table entry) and use the correct library values, the second and subsequent hyperlinks have invalid values for resource directory and do not get the proper formatting.
+On the second and each additional entry in the table, the _resourceFolder parameter on the viewer/run http request adds an extra %25 around the text characters.
+More information: The first hyperlink will have a %2f in multiple places in our resourceFolder parameter, the second link will have %252f, the third will have %25252f, the fourth will have %2525252f and so on down the table.
+Only the first hyperlink will be correct, all the subsequent ones will fail.
+This code worked correctly on BIRT 2.1.2, but fails when moving up to BIRT 2.2.0.A text file containing the first 4 hyperlink entries will be attached to this bug report to show the complete hyperlink information.

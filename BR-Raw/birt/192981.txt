@@ -1,0 +1,4 @@
+Bug 192981 Leading white space get trimmed in PDF&HTML output.
+Build ID: The Eclipse bundled with BIRT 2.1.3 designer all in one Steps To Reproduce: 1.Create a new blank report.
+2.Setup data source and data set component 3.Insert a List 4.Insert a DataItem into the detail slot of List 5.Set the value expression of DataItem to " " + row["Column1"] 6.Run the report to produce PDF or HTML 7.the leading white space is disappeared in output More information: The leading white space is preserved in BIRT 2.1.1, but get disappeared in BIRT 2.1.3 or later version.
+We want to know whether it's expected behavior or a bug.

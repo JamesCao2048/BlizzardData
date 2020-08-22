@@ -1,0 +1,3 @@
+Bug 156338 [Acceptance]Exception thrown when set prefix interval to 2
+Description:Exception thrown when set prefix interval to 2 Steps to reproduce: preview the attached reports and set prefix interval of group to 2 Expected result: It works properly.
+Actula result: When setting the prefix interval to 2 exception thrown but it worked properly while the prefix interval was 1 Error log: org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report

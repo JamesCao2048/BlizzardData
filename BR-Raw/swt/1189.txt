@@ -1,0 +1,23 @@
+Regression from 3.3.2 behaviour, no SWT.Activate event is sent when setFocus() is called on child controls
+Created  attachment 119263   [details]
+Sample project to show the problem.
+This is a self-contained plug-in to reproduce a problem we have observed on our RCP application for SunOS 5.10, RHEL4, and RHEl5.This plug-in was tested on RHEL5 on gtk2-2.10.4-20.el5 (according to rpm
+-q gtk2).
+1.Import the plug-in into your workspace.
+2.Launch the second Eclipse.
+3.Window > Show View > Other...
+> Sample Category > Sample View
+4.Context menu on 'A', see item, separator, item.
+5.Context menu on 'A2', see only one item.
+6.Context menu on 'A', CommandOne.
+7.The 'Navigator' view is shown and activated.
+8.Keep the mouse in the 'Sample View' and bring up the context menu on 'A'.
+Take note that you should not Alt+Tab around to other applications.
+9.Context menu on 'A', see only one item.
+The contributed handler through the plugin.xml is not present.
+10.Try both left-clicking and right-clicking the different items in the table, 'A' always only shows one item.
+Notice that the view's tab item is not blue.
+The blue outline is actually still on the 'Navigator' view.
+11.Select the view to activate it, granting it the blue outline.
+12.Context menu on 'A', see item, separator, item once again.
+Naturally, if the 'Navigator' view is on the same view stack as the 'Sample View', you would be unable to reproduce this problem.

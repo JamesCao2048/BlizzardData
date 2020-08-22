@@ -1,0 +1,39 @@
+Second call to setFont produces incorrect text
+In this example code, the second call to gc.setFont causes the text to be displayed incorrectly.
+The result looks like a series of odd characters.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+public class Bug {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Path#addString() bug on Win32");
+display.loadFont("C:\Music.ttf");
+final Font font = new Font(display, "Music", 60, SWT.NORMAL);
+final Font arial = new Font(display, "Verdana", 40, SWT.NORMAL);
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+GC gc = event.gc;
+gc.setAntialias(SWT.ON);
+gc.setFont(font);
+gc.drawString("fmps", 0, 0);
+gc.setFont(arial);
+gc.drawString("fmps", 0, 200);
+gc.dispose();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+font.dispose();
+arial.dispose();
+display.dispose();
+}
+}

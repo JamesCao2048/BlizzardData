@@ -1,0 +1,9 @@
+org.eclipse.swt.ole.win32.OleAutomation has a reference leak
+On line 96, objITypeInfo is AddRef'd.
+However, the semantics of GetTypeInfo has the returned ITypeInfo as an out parameter, and thus has already been AddRef'd.
+The additional ref constitutes a reference leak.
+I recommend changing the line to:
+// TypeInfo is an out param, do not AddRef or this will leak.
+Be happy to fix this one myself if I can get CVS access.
+Thanks,
+Scott

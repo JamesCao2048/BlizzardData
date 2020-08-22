@@ -1,0 +1,33 @@
+Displaying of dialogs slow when XML editors were opened
+On Linux GTK/64bit, opening of the "Find" dialog (Ctrl+F) sometimes is very slow, i.e.
+multiple seconds, with delay increasing over time of running the same Eclipse process.
+When taking threaddumps meanwhile, the following shows up:
+"main" prio=10 tid=0x00007f6d78009800 nid=0x50e0 runnable [0x00007f6d7fab2000]
+java.lang.Thread.State: RUNNABLE
+at org.eclipse.swt.internal.gtk.OS._gdk_window_at_pointer(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gdk_window_at_pointer(OS.java:5261)
+at org.eclipse.swt.widgets.Shell.setToolTipText(Shell.java:2421)
+at org.eclipse.swt.widgets.Shell.setToolTipText(Shell.java:2389)
+at org.eclipse.swt.widgets.ToolItem.setToolTipText(ToolItem.java:1193)
+at org.eclipse.swt.widgets.ToolItem.setToolTipText(ToolItem.java:1167)
+at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:810)
+at org.eclipse.jface.action.ActionContributionItem$1.propertyChange(ActionContributionItem.java:113)
+at org.eclipse.jface.action.ExternalActionManager$CommandCallback.bindingManagerChanged(ExternalActionManager.java:281)
+at org.eclipse.jface.bindings.BindingManager.fireBindingManagerChanged(BindingManager.java:900)
+at org.eclipse.jface.bindings.BindingManager.setActiveBindings(BindingManager.java:2176)
+at org.eclipse.jface.bindings.BindingManager.recomputeBindings(BindingManager.java:1742)
+at org.eclipse.jface.bindings.BindingManager.contextManagerChanged(BindingManager.java:689)
+at org.eclipse.core.commands.contexts.ContextManager.fireContextManagerChanged(ContextManager.java:165)
+at org.eclipse.core.commands.contexts.ContextManager.setActiveContextIds(ContextManager.java:295)
+at org.eclipse.e4.ui.internal.services.ContextContextService.getActiveContextIds(ContextContextService.java:83)
+at org.eclipse.ui.internal.contexts.ContextService.getActiveContextIds(ContextService.java:256)
+at org.eclipse.ui.internal.contexts.ActiveContextSourceProvider.getCurrentState(ActiveContextSourceProvider.java:68)
+at org.eclipse.ui.internal.contexts.ActiveContextSourceProvider.contextManagerChanged(ActiveContextSourceProvider.java:50)
+at org.eclipse.core.commands.contexts.ContextManager.fireContextManagerChanged(ContextManager.java:165)
+at org.eclipse.core.commands.contexts.ContextManager.setActiveContextIds(ContextManager.java:295)
+at org.eclipse.e4.ui.bindings.internal.BindingServiceImpl.setContextIds(BindingServiceImpl.java:237)
+at sun.reflect.GeneratedMethodAccessor25.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:601)
+at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+at org.eclipse.e4.core.internal.contexts.ContextObjectSupplier$ContextInjectionListener.update(Cont

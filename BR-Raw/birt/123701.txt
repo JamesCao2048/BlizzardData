@@ -1,0 +1,5 @@
+Bug 123701 Edit JDBC DataSet unresponsive when database has many tables
+I am using a JDBC DataSet to access an Oracle database.
+When I try to edit the JDBC DataSet to edit the query, the interface becomes unresponsive for several minutes, as BIRT is trying to retrieve the names of all the tables, views and stored procedures from all the schemas (and there are many schemas).
+After the dialog finally pops up, I have the option to specify a filter, but the filter does not get saved, so next time I have to go through this again.
+Version: 2.0.0 Build id: 200601060544

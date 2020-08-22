@@ -1,0 +1,3 @@
+StyledText embedded controls can appear incorrectly
+3.2RC4
+In snippet 217 change the Shell's size from 400x400 to 300x300, and note that the embedded Controls initially display at 0,0 in addition to their correct positions within the document.

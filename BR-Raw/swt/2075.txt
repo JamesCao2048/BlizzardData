@@ -1,0 +1,4 @@
+protected methods in wpf version of TextTransfer are public in others
+I notice there are methods in the wpf version of TextTransfer that are protected where they are public in the other versions (i.e.
+javaToNative, nativeToJava).
+Is this intentional?

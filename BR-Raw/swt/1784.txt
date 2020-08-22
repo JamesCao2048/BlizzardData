@@ -1,0 +1,10 @@
+Logitech Revolution mouse doesn't scroll down editor when in "free-spinning" mode
+Build ID: M20060921-0945
+Steps To Reproduce:
+1.Spend too much on a mouse.
+2.Turn scroll acceleration to minimum (or this will somewhat mask the effect)
+3.Scrolling down on free-spinning mode only occurs when spun at high speed, where as scrolling up works normally.
+4.Spinning very fast in either direction causes strangeness and generally odd behavour with free-spinning scrolling all round.
+More information:
+Logitech's new mouse has a scrolling mode where the wheel spins smoothly.
+This works immediately in most applications but eclipse demonstrates odd behaviour when using the mode.

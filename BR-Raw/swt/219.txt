@@ -1,0 +1,51 @@
+NullPointerException in Clipboard
+Build Identifier: Version: 3.738
+Happens rarely on our clients' computers.
+It looks like types is null on the marked line:
+public TransferData[] getAvailableTypes(int clipboards) {
+checkWidget();
+if ((clipboards & DND.CLIPBOARD) == 0) return new TransferData[0];
+NSPasteboard pasteboard = NSPasteboard.generalPasteboard();
+if (pasteboard == null) return new TransferData[0];
+NSArray types = pasteboard.types();
+int count = (int)/*64*/types.count();
+<-------- NPE happens here
+TransferData[] result = new TransferData[count];
+for (int i = 0; i
+< count; i++) {
+result[i] = new TransferData();
+result[i].type = Transfer.registerType(new NSString(types.objectAtIndex(i)).getString());
+}
+return result;
+}
+The stack trace:
+java.lang.NullPointerException
+at org.eclipse.swt.dnd.Clipboard.getAvailableTypes(Clipboard.java:522)
+at org.eclipse.swt.dnd.Clipboard.getAvailableTypes(Clipboard.java:490)
+at com.wuala.facade.browser.actions.edit.EditPasteAction.checkEnabled(Z:218)
+at com.wuala.facade.browser.actions.ActionFacade.isEnabled(Z:225)
+at com.wuala.facade.browser.actions.DynamicActionFacade.notifyListener(Z:41)
+at com.wuala.facade.browser.actions.DynamicActionFacade.notifySelectionStatusUpdated(Z:70)
+at com.wuala.facade.browser.facades.content.SelectionProvider.internalSelection(Z:104)
+at com.wuala.facade.browser.facades.content.SelectionProvider.setActive(Z:174)
+at com.wuala.presentation.browser.detailsview.DetailsView$12.focusGained(Z:1247)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:139)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4128)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1457)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1480)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1461)
+at org.eclipse.swt.widgets.Control.sendFocusEvent(Control.java:3276)
+at org.eclipse.swt.widgets.Display.checkFocus(Display.java:646)
+at org.eclipse.swt.widgets.Shell.becomeKeyWindow(Shell.java:534)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5343)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:4989)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5138)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:128)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3610)
+at com.wuala.presentation.WualaApplication.runGui(Z:545)
+at com.wuala.presentation.WualaApplication.doLaunch(Z:316)
+at com.wuala.presentation.WualaApplication.launch(Z:194)
+at com.wuala.platfo

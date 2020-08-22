@@ -1,0 +1,12 @@
+ExpandBar is not high contrast complient. Cannot manually fix this issue.
+Build ID: I20070625-1500
+Steps To Reproduce:
+1.Go to Control Panel->Accessabilty.
+Click the Display tab, and then click "Use High Contrast" and click OK.
+2.Open a project that contains a ExpandBar, and at least one or two ExpandBar items.
+3.Notice that the header (bar that contains text) is black, and the text is black, therefore you cannot read it's contents.
+More information:
+This problem is actually two problems in one.
+The first issue that arises is that ExpandBar is not high contrast complient.
+The second issue arises in ones inability to fix the first issue by changing the background color or font color of the header.
+Both issues should perferabily be fixed.

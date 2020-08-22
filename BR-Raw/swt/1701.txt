@@ -1,0 +1,11 @@
+[Browser] crash on mouseover
+When starting eclipse from a terminal the following is reported:
+cjp@workstation6l:~> eclipse
+libxcb: WARNING! Program tries to unlock a connection without having acquired
+a lock first, which indicates a programming error.
+There will be no further warnings about this issue.
+libxcb: WARNING! Program tries to lock an already locked connection,
+which indicates a programming error.
+There will be no further warnings about this issue.
+This only happens when eclipse is restarted after having created the AddressBook QT project, open the addressbook.ui and exiting eclipse.
+Platform is openSuSE 10.3, eclipse not installed from distro but eclipse.org download.

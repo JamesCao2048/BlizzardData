@@ -1,0 +1,5 @@
+[browser] xulrunner 1.9-based Browser has no initial background
+- happens on win2000, doesn't happen on linux, haven't tried osx
+- run snippet 128 with the setUrl() line at the bottom commented out
+- the browser has no background drawn for it until a url or text is set
+- the only known way to fix this so far is to set the initial page to about:blank and don't send any resulting events

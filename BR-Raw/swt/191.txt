@@ -1,0 +1,5 @@
+Use gtk_widget_has_focus instead of deprecated GTK_WIDGET_HAS_FOCUS
+Build Identifier: I20120503-1800
+This patch omits use of deprecated method GTK_WIDGET_HAS_FOCUS and uses gtk_widget_has_focus() instead:
+http://fedorapeople.org/gitweb?p=aspektor/public_git/eclipse.platform.swt.git;a=commit;h=9a8e58ef3c28f47b9fa688d8029315e0ae2501d2
+Reproducible: Always

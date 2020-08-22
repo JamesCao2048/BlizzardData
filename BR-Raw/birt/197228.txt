@@ -1,0 +1,6 @@
+Bug 197228 Need updaet createdBy info when serialize the module
+When open module, designer will pass the property map which contains the createdBy info.
+this info should be retained by moduleHandle and then be updated and written when doing serialization.
+Note if this info is null, model should not update it during serialization.
+This could happen for api users or third-party designer.
+For BIRT designer, it will guarantee this value always not null.

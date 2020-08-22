@@ -1,0 +1,11 @@
+[Browser] JS->Java call can crash due to freeing of args
+- use xulrunner 1.9.0.6
+- run the TestExternal test
+- press the button in the third Browser
+- create a JS Function
+- press the button in the third Browser again
+- crash happens, one of the traces indicated that it was happening in Free
+
+-> removing all Frees from Mozilla.convertJStoJava() made the crash stop happening
+
+-> need to investigate whether something(s) should not be freed, or if memory management is not being done properly (eg.- should nsIMemory be used instead?)

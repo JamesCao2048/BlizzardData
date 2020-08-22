@@ -1,0 +1,5 @@
+Change javadoc for Table addSelectionListener
+Current javadoc reads:
+"Adds the listener to the collection of listeners who will be notified when the receiver's selection changes, by sending it one of the messages defined in the SelectionListener  interface."
+This is not true since the receiver's selection can change programatically and an event will not be sent.
+Adding a note about this issue would be very helpful.

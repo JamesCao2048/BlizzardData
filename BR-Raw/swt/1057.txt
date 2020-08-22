@@ -1,0 +1,11 @@
+embedded browser cache does not reset
+Once a local filesystem image is viewed once in an embedded Browser widget, it is cached and never updated
+To reproduce:
+# Open the Mylyn WikiText file editor on the Mylyn WikiText User Guide.textile
+# switch to the preview tab
+# scroll to view a portion of the document that has an image
+# replace the local file that backs the image viewed
+# close the editor
+# reopen the editor, switching to preview again
+# observe that the image displayed is the same one as first observed, not the new image
+In Carbon repeating this scenario would result in the new image being displayed

@@ -1,0 +1,13 @@
+iFrame does not render border when in SWT Browser
+Try this:
+create an html file with the following content:
+<html>
+<body>
+hello
+<iframe src="localPage1.xhtml" frameborder="1" scrolling="auto">
+</body></html>
+open it with IE6.0.You see an iFrame with a border.
+create a HelloWorld SWT browser and do a set text with the same exact snippet
+above.
+You get am iFrame with no border (regarless of what frameborder is set
+to.

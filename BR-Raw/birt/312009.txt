@@ -1,0 +1,2 @@
+Bug 312009 [Regression]No error in problem/outline view for table with blank group key
+Build number:2.6.0.v20100507-0630 Steps to reproduce: 1.Insert a table, bind with dataset 2.Add a group without key expression, click ok and save Expected result: Error icon in outline and error in problem view Actual result: no error.

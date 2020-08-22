@@ -1,0 +1,31 @@
+Bug 124336 Template report items corrupt report design
+Steps: 1-Create a new blank report 2-Drop an element on the report (any element will do: label, chart, ...) 3-Right click and choose create template report item 4-Enter a description and click OK 5-Double click on the element (it reverts to a simple report item) 6- Perform steps 3 to 5 several times 7- The report only shows one item, but if you click on XML Source you will see several entries (as many as you repeated the steps), although there should be only one
+<template-parameter-definition name="NewTemplateParameterDefinition" id="5">
+<property name="allowedType">Label</property>
+<text-property name="description">aa</text-property>
+<default>
+<label id="6">
+<text-property name="text">aaa</text-property>
+</label>
+</default>
+</template-parameter-definition>
+<template-parameter-definition name="NewTemplateParameterDefinition1" id="9">
+<property name="allowedType">Label</property>
+<text-property name="description">ff</text-property>
+<default>
+<label id="10">
+<property name="refTemplateParameter">NewTemplateParameterDefinition</property>
+<text-property name="text">aaa</text-property>
+</label>
+</default>
+</template-parameter-definition>
+<template-parameter-definition name="NewTemplateParameterDefinition2" id="13">
+<property name="allowedType">Label</property>
+<text-property name="description">ii</text-property>
+<default>
+<label id="14">
+<property name="refTemplateParameter">NewTemplateParameterDefinition1</property>
+<text-property name="text">aaa</text-property>
+</label>
+</default>
+</template-parameter-definition>

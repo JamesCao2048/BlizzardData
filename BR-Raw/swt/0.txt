@@ -1,0 +1,5 @@
+[GTK3] Running Snippet294 gives Gdk-CRITICAL with GTK3
+The critical error in quesiont is
+(SWT:24935): Gdk-CRITICAL **: gdk_window_shape_combine_region: assertion 'GDK_IS_WINDOW (window)' failed
+and the window pointer is null.
+On GTK3 it looks like gtk_widget_get_window can not retrieve the window if the widget is not realized.

@@ -1,0 +1,6 @@
+Bug 280573 Error when running SwingInteractivityViewer example.
+description: Error when running SwingInteractivityViewer example.
+steps to reproduce: 1.Run SwingInteractivityViewer.java in pakcage org.eclipse.birt.chart.examples.api.interactivity as Java Application.
+2.Choose Show Tooltip and click Update.
+3.Mouse over the legend area.
+Actual result: Exception in console.

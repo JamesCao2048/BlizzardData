@@ -1,0 +1,36 @@
+Adding MeasureItem listener on Table can lead to divide by 0 in getItem()
+- run the snippet below, which tries to come up but hits a divide by 0 in Table.getItem(Point):
+public static void main (String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout (new FillLayout ());
+final Table table = new Table (shell, SWT.NONE);
+for (int i=0; i<2; i++) {
+new TableColumn (table, SWT.NONE);
+}
+table.setSortColumn (table.getColumns()[1]);
+table.setSortDirection (SWT.DOWN);
+table.setRedraw (false);
+for (int i=0; i<2; i++) {
+new TableItem (table, SWT.NONE).setText ("Long TableItem " + i);
+}
+table.setRedraw (true);
+Listener paintListener = new Listener () {
+public void handleEvent (Event event) {
+}
+};
+table.addListener (SWT.MeasureItem, paintListener);
+for (int i=0; i<2; i++) {
+table.getColumn (i).pack ();
+}
+shell.open ();
+table.getItem (new Point (100, 100));   //
+<---
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at org.eclipse.swt.widgets.Table.getItem(Table.java:1417)
+at steve.OwnerDrawTableA.main(OwnerDrawTableA.java:39)

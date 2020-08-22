@@ -1,0 +1,156 @@
+Weaving into jar fails if some of the referred classes are unavailable
+I am trying to profile JDBC access in a Spring-based application.
+Since all the JDBC interaction is performed through Spring classes,
+I need to weave into spring.jar. However, many of the classes
+referred by spring.jar aren't available to me (I am not using
+the functionality implemented by many of the classes). When I
+try to weave into spring.jar I get errors complaining that it
+can't find types for those classes.
+I expected that ajc would ignore unknown classes unless weaving
+would be affected by content/API of those classes.
+Using jar files that refer to foreign classes that one may
+never have/need is a common scenario. For example, spring.jar
+refers to Velocity, Struts, JDO, Hibernate, Quartz classes;
+I am unlikely to use all of these referred frameworks in an
+application. This bug/limitation prevents using AspectJ with
+such jars.
+To reproduce the bug in a controlled environment, I created
+the following aspect which should make the weaving process
+a pass-thru filter (no join point is matched by the pointcut)
+class TemporaryClass {
+}
+public aspect NoWeaveAspect {
+before() : call(* TemporaryClass.*(..)) && within(org.spring..*) {
+}
+}
+Weaving this aspect with spring.jar should result in logically
+identical jar file. However, when I compile using the following
+command (or equivalent ant task), I get the following errors:
+C:workaopbugsinjar-with-nonexisting-classes>ajc -version
+AspectJ Compiler 1.2.1rc1 built on Friday Oct 22, 2004 at 13:31:47 GMT
+C:workaopbugsinjar-with-nonexisting-classes>ajc -injars spring.jar -outjar s
+pring-woven.jar NoWeaveAspect.java
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.quartz.xml.JobSchedulingDataProcessor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.quartz.StatefulJob
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.quartz.SimpleTrigger
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe freemarker.cache.TemplateLoader
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.quartz.CronTrigger
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.quartz.JobDetail
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.quartz.Job
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.quartz.impl.jdbcjobstore.JobStoreCMT
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.struts.action.PlugIn
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.velocity.tools.generic.NumberTool
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.struts.action.Action
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.struts.tiles.TilesRequestProcessor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.struts.action.RequestProcessor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.velocity.runtime.resource.loader.ResourceLoader
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.velocity.runtime.log.LogSystem
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe javax.faces.el.VariableResolver
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.velocity.tools.generic.DateTool
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.commons.attributes.AttributeRepositoryClass
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.cglib.proxy.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.commons.pool.PoolableObjectFactory
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.cglib.proxy.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.cglib.proxy.Dispatcher
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInvocation
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.cglib.proxy.CallbackFilter
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.cglib.proxy.NoOp
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.hibernate.transaction.TransactionManagerLookup
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.hibernate.connection.ConnectionProvider
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.hibernate.UserType
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.apache.ojb.broker.accesslayer.ConnectionFactoryManagedImpl
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.cglib.proxy.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe net.sf.cglib.proxy.CallbackFilter
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+C:workaopbugsinjar-with-nonexisting-classesspring.jar [error] can't find ty
+pe org.aopalliance.intercept.MethodInterceptor
+(no source information available)
+41 errors

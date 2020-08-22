@@ -1,0 +1,13 @@
+[misc] caret disappears from java editor
+Steps to reproduce:
+1.open a java source file in eclipse
+2.move the cursor to a method call
+3.press F2 to see quick docs
+4.press Esc to make the quick docs window and the cursor from the java editor
+to disappear
+Effect: the cursor can nowhere be seen in the java editor but can be moved, type
+at, etc.
+If I switch virtual workspaces back and forth, the cursor comes back.
+Environment: linux gtk2, gnome2.6 with openbox3 and metacity window manager
+Comment: it happens every time with openbox3.It tend to happen only for the
+second try using metacity.

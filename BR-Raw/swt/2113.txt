@@ -1,0 +1,10 @@
+Japanese monospace/fixed witdth fonts such as Osaka-Mono are not shown properly.
+Environment: Mac OSX 10.4.9/ Eclipse 3.3M6 on Japanse Mac OSX.
+Java editor does not display Japanese fonts properly while scrolling editor window or editing source code text.
+Procedure to reproduce:
+1.Launch Eclipse
+2.Go to Preferences>General>Appearance>Colors and Fonts, and see 'Basic' category in the right pane.
+3.Change 'Text Font' to Osaka regular-mono font
+4.Open a java source file containing Japanese letters (encoded either UTF-8 or Windows-31J)
+5.Scroll up and down the editor window and you can see dot garbages and phantoms.
+I guess this issue is related to the issue #172215 since the phenomenon I saw is similar to the screenshot.

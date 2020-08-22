@@ -1,0 +1,6 @@
+Control.getMonitor does not properly set client area
+3.2 RC7
+See also  bug 33659 .
+Display.getMonitors() works as expected; it returns monitors with the size of the screen and a client area that is smaller (as the client area does not include the panels).
+However, the monitor returned by Control.getMonitor() is flawed: its client area is made the same as its bounds.
+Control.getMonitor should include the same code as Display.getMonitors().

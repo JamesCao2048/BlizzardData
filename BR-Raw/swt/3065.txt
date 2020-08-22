@@ -1,0 +1,6 @@
+ControlExample spews warnings
+observed on Solaris and hpux
+- run the ControlExample with warnings turned on (do this in Device I think)
+- a scrollbar warning is spewed on each page that's shown
+- this is ugly when using the swt-only download since warning messages are not
+supressed in this context

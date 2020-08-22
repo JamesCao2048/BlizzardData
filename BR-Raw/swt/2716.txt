@@ -1,0 +1,31 @@
+setting Table column alignment does not visually update
+3.2M1
+- run the snippet below
+- push the button, which sets the second column's alignment to SWT.RIGHT
+
+-> no visual update is shown until the item's second column area is
+damaged/exposed
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setBounds (10,10,300,200);
+final Table table = new Table (shell, SWT.NONE);
+table.setBounds (10,10,150,100);
+table.setHeaderVisible(true);
+new TableColumn(table, SWT.NONE).setWidth(75);
+new TableColumn(table, SWT.NONE).setWidth(75);
+new TableItem (table, SWT.NONE).setText (new String[] {"c1","c2"});
+shell.open ();
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(200,10,70,30);
+button.setText("Push");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+table.getColumn(1).setAlignment(SWT.RIGHT);
+}
+});
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

@@ -1,0 +1,2 @@
+Bug 163636 "controlType" and "mustMatch" should be matched
+If "controlType" is combo-box, "mustMatch" should be false; else "controlType" is list-box, "mustMatch" should be true.

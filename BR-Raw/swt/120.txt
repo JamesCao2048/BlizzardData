@@ -1,0 +1,4 @@
+Use gtk_entry_im_context_filter_keypress to omit direct ImContext call
+This bug is related to :  https://bugs.eclipse.org/bugs/show_bug.cgi?id=386931
+This patch uses new GTK+ API  gtk_entry_im_context_filter_keypress() method thus avoiding use of gtk_im_context_filter_keypress () that tries to directly access im_context in GtkEntry class:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/log/?h=gtk_im_context_filter_keypress

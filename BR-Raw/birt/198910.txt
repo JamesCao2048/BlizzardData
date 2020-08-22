@@ -1,0 +1,8 @@
+Bug 198910 Date type data should be exported as Date type in Excel[1203]
+Description: Date type data should be exported as Date type in Excel Build number:2.2.1.v20070806 Steps to reproduce: 1.New a report parameter p1, Date type, input value as 03/12/2007.2.Drag it to Layout, set data binding type as Date.
+3.Export the report to excel.
+4.Open the excel, select the cell with the date value.
+5.Select in main menu Format->Cells->Number->Date, select a format, click OK.
+Expected result: Format works.
+Actual result: Format doesn't work, check xls file and find that "<Data ss:Type="String">Mar 12, 2005</Data>".
+Error log:n/a

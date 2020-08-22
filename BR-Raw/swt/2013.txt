@@ -1,0 +1,64 @@
+Text formatting finishes too early when pasted
+3.3M6 I20070323-1616
+SWT StyledText/RTFWriter
+1.In an Eclipse editor enter some syntax-highlighted text plus a line break (CRLF), e.g.
+in the Java editor (under Windows) enter:
+// 12345<ENTER>
+
+2.Copy both lines to the clipboard.
+3.Paste the text into a native application with a rich text editor, e.g.
+Outlook Express email, Microsoft Word.
+The last character isn't formatted like the rest of the text (in the example '5' appears black rather than green like the other characters).
+Below is a snippet which produces the same effect when the clipboard is pasted after running.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyleRange;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class StyledTextFormattingBug {
+/**
+* Run the following code.
+It will copy some rich text to the clipboard.
+* Paste it into an RTF receiver such as a word processor or email composer
+* and notice how the last character isn't formatted like the preceding
+* ones.
+*/
+public static void main(String[] args) {
+Shell shell = new Shell();
+shell.setLayout(new FillLayout());
+Display display = shell.getDisplay();
+StyledText styledText = new StyledText(shell, SWT.BORDER);
+styledText.setText("Paste into a rich text editorrn");
+styledText.selectAll();
+Point selection = styledText.getSelectionRange();
+StyleRange styleRange = new StyleRange();
+styleRange.start = selection.x;
+styleRange.length = selection.y;
+styleRange.fontStyle = SWT.BOLD;
+styleRange.foreground = display.getSystemColor(SWT.COLOR_BLUE);
+styledText.setStyleRange(styleRange);
+styledText.selectAll();
+styledText.copy();
+shell.pack();
+shell.open();
+while (!shell.isDisposed())
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+The RTF generated from the above is:
+{rtf1ansiansicpg1252uc0deff0{fonttbl{f0fnil Tahoma;}}
+{colortblred0green0blue0;red255green255blue255;red0green0blue255;}
+{f0fs16 fi0ql {cf2b Paste into a rich text editob0}r
+par fi0ql
+}}
+Presumably it should be:
+{rtf1ansiansicpg1252uc0deff0{fonttbl{f0fnil Tahoma;}}
+{colortblred0green0blue0;red255green255blue255;red0green0blue255;}
+{f0fs16 fi0ql {cf2b Paste into a rich text editorb0}
+par fi0ql
+}}
+which seems to paste in correctly.

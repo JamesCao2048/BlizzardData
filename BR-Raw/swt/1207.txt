@@ -1,0 +1,5 @@
+Popup Outline Ctrl+O has non-deterministic behavior (chars are lost)
+This is lost (degraded) functionality, starting in 3.4.1, the following keystrokes have non-deterministic behavior:
+In the CU Editor:
+CTRL+O,g,e,t,F,o,o
+Sometimes, the popup outline appears and the prefix "getFoo" is recognized, but often, especially the first time invoking, such as when browsing around classes, any number of characters will be lost, which causes the search to fail (search for "tFoo", for example).

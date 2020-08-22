@@ -1,0 +1,6 @@
+Bug 279899 [regression]Chart title anchor topleft/topright doesn't work
+Description: Chart title anchor topleft/topright doesn't work Build number:2.5.0.v200906110630 Steps to reproduce: 1.New a chart.
+2.Select format chart->title->layout->anchor, select topleft, topright, bottomleft or bottomright Expected result: Title is moved to top left, top right, bottom left or bottom right.
+Actual result: topleft and topright work as top effect.
+Bottomleft and bottomright work as bottom effect.
+It's ok in v20090102

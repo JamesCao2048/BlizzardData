@@ -1,0 +1,70 @@
+Native crash when closing tree nodes
+2.1
+I frequently crash when closing tree nodes in the top left pane of the Sync view.
+I cannot reproduce it, but the typical scenario is:
+- Synchronize with HEAD on SWT project
+- reviewing all incoming changes by opening the nodes in the resource pane
+either manually or with a Expand All
+- after reviewing the changes I close some of expanded TreeNodes
+There is no entry in .log, however the console shows this:
+Date/Time:  2003-04-08 10:56:12 +0200
+OS Version: 10.2.4 (Build 6I32)
+Host:       lipari.zrh.oti.com
+Command:    java
+PID:        1916
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000004
+Thread 0:
+#0   0x90073c48 in mach_msg_trap
+#1   0x90005f90 in mach_msg
+#2   0x03475000 in 0x3475000
+#3   0x90180fe4 in CFRunLoopRunSpecific
+#4   0x000048d4 in 0x48d4
+#5   0x0000237c in 0x237c
+#6   0x000021fc in 0x21fc
+Thread 1 Crashed:
+#0   0x96a25b24 in TContainer::ListItemRef::ItemSelected() const
+#1   0x96a0d66c in TListData::RowIsSelected(unsigned long) const
+#2   0x96bf68fc in ITableData::NextSelection(Cell32&, bool, bool) const
+#3   0x96a2a7f4 in TTableView::GetData(unsigned long, unsigned long, long, char*,
+long*) const
+#4   0x96a3d480 in TListView::GetData(unsigned long, unsigned long, long, char*, long*
+) const
+#5   0x96a18744 in TBrowser::GetData(unsigned long, unsigned long, long, char*, long*
+) const
+#6   0x969d3cb0 in HLTB_CDEF::EntryPoint(short, OpaqueControlRef*, short, long)
+#7   0x969fd138 in DataBrowserCDEF(short, OpaqueControlRef*, short, long)
+#8   0x969af3e8 in DispatchMessage(HIView*, short, long, unsigned char, unsigned
+char)
+#9   0x969ddc9c in GetData(HIView*, OpaqueEventRef*)
+#10  0x969b6760 in ClassicCDEFAdapter::EventHandler(OpaqueEventHandlerCallRef*
+, OpaqueEventRef*, void*)
+#11  0x969a2244 in DispatchEventToHandlers
+#12  0x969a25ac in SendEventToEventTargetInternal
+#13  0x969a59c0 in SendEventToEventTargetWithOptions
+#14  0x969bbde4 in SendControlDefGetData(HIView*, unsigned long, short, void*, long,
+long*)
+#15  0x969ead6c in GetControlData
+#16  0x96af0010 in GetDataBrowserSelectionAnchor
+#17  0x04987fcc in
+Java_org_eclipse_swt_internal_carbon_OS_GetDataBrowserSelectionAnchor
+#18  0x0134a580 in 0x134a580
+#19  0x01781b18 in 0x1781b18
+#20  0x01343ef0 in 0x1343ef0
+#21  0x0134116c in 0x134116c
+#22  0x966a8208 in JVM_Read
+#23  0x966cde94 in JVM_FillInStackTrace
+#24  0x966b8c80 in JVM_GetCPMethodClassNameUTF
+#25  0x9676d788 in JVM_EnableCompiler
+#26  0x049ce274 in callback
+#27  0x049a89ec in fn7_3
+#28  0x96c929a4 in
+CacheSelectionNotifications::ItemNotificationBottleneck(OpaqueControlRef*, unsigned
+long, unsigned long, void*)
+#29  0x96a0fa20 in TBrowser::NotifyItemEvent(unsigned long, unsigned long,
+TItemData*) const
+#30  0x96a44f9c in TContainer::ListItemRef::ItemSelected(BinaryState, IClientProxy
+const&, bool)
+#31  0x96a20534 in TContainer::RemoveItems(IClientProxy const&, TContainerTree*,
+TContainer::ItemRefArray*)
+#32  0x96ab3c04

@@ -1,0 +1,3 @@
+Bug 158662 Image constructor is incomplete
+The Image constructor Image(IImageContent) does not copy the imageMap member of IIMageContent.
+This can lead to bugs whereever the IImage interface is used to retrieve the Chart Image Map.

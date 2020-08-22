@@ -1,0 +1,53 @@
+[Browser] Javascript executes asynchronously with xulrunner 1.9
+Eclipse build id or SWT version: SWT 3.4
+Platform(s) tested on: Windows Vista with XULRunner 1.9.0.4 installed & globally registered.
+When running Snippet 308 with the browser style set to SWT.MOZILLA (using XULRunner as the browser), the following code fails to display a "Node value", because the portion of the javascript "document.getElementById('myid')" returns null.
+I'm not sure if this is a problem with SWT, Javascript, or XULRunner.
+The same problem occurs when using SWT.MOZILLA in Snippet 160, and with SWT version 3.3.These Snippets run fine on my platform when the style is left as "SWT.NONE".
+This is a particular problem when the HTML or XHTML file is best rendered by a mozilla based browser (i.e.
+cannot be done by the native browser).
+In my particular case, I am trying to run javascript on an existing set of XHTML+SVG+MathML2.0 documents, which I.E.
+has problems rendering.
+/*
+* Browser example snippet: query DOM node value (improved implementation for eclipse/swt 3.5 and newer)
+*
+* For a list of all SWT example snippets see
+*  http://www.eclipse.org/swt/snippets/
+*
+* @since 3.5
+*/
+import org.eclipse.swt.*;
+import org.eclipse.swt.browser.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet308 {
+public static void main(String [] args) {
+final String html = "<html><title>Snippet</title><body><p id='myid'>Best Friends</p><p id='myid2'>Cat and Dog</p></body></html>";
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Browser browser;
+try {
+browser = new Browser(shell, SWT.MOZILLA); // instead of SWT.NONE, used in the actual snippet.
+} catch (SWTError e) {
+System.out.println("Could not instantiate Browser: " + e.getMessage());
+return;
+}
+browser.addProgressListener(new ProgressListener() {
+public void changed(ProgressEvent event) {
+}
+public void completed(ProgressEvent event) {
+String value = (String)browser.evaluate("return document.getElementById('myid').childNodes[0].nodeValue;");
+System.out.println("Node value: "+value);
+}
+});
+/* Load an HTML document */
+browser.setText(html);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

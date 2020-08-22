@@ -1,0 +1,14 @@
+[Linux] SWT Deactivate event no longer fired when a Shell is deactivated
+This is blocking TPTP's Automated GUI Recorder form recording on Shells in Linux.
+Eclipse SDK Build ID: I20070323-1616
+Please see attached test case.
+To reproduce:
+1) Import this plugin into Eclipse
+2) Launch an eclipse application (to show example test case)
+3) Select the Run Test Case Menu > Run Example option
+4) You will see an empty shell.
+5) The way this works is the SWT Activate and Deactivate events and their corresponding widgets will be printed to the console in your primary workbench.
+6) Select File > New> Project and notice the activate events produced by the shell.
+Now switch back to the open shell.
+No Deactivate event is fired from the {New Project}shell.
+7) Repeat the above with SDK build ID: I20070209-1006 and notice that Deactivate events are fired.

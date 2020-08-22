@@ -1,0 +1,11 @@
+Bug 219591 report fail to parse and run when html contains CDATA
+Build ID: 2.2 Steps To Reproduce: 1.create a new report 2.add text item 3.copy following code to the text item:
+<script type="text/javascript"> //<![CDATA[ if (window.showTocToggle) { var tocShowText = "Anzeigen"; var tocHideText = "Verbergen"; showTocToggle(); } //]]>
+</script> result: run report fails, because it could not parse this rptdesign file More information: the source of the rptdesign is like this:
+<body>
+<text id="6">
+<property name="contentType">html</property>
+<text-property name="content"><![CDATA[<script type="text/javascript"> //<![CDATA[ if (window.showTocToggle) { var tocShowText = "Anzeigen"; var tocHideText = "Verbergen"; showTocToggle(); } //]]>
+</script>]]></text-property>
+</text>
+</body> BIRT should deal with nested CDATA to parse and run the report correctly.

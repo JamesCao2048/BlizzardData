@@ -1,0 +1,4 @@
+Bug 150151 [Accessibility] BIRT SWT chart is not high contrast compliant
+The BIRT chart presented in the test log viewer is not displayed properly in high contrast mode.
+The background color remains white.
+The labels at the right legend are still using the same font.

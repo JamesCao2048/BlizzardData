@@ -1,0 +1,7 @@
+Text box without 'SWT.V_SCROLL' uneditable
+Run ControlExample
+Go to Text tab
+Click on 'SWT.MULTI'
+Ensure 'SWT.V_SCROLL' is deselected
+-> Text disappears
+-> Unable to show text

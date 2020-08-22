@@ -1,0 +1,2 @@
+Compile Error on GTK 2.2.x: Fields missing from PangoLayoutLine
+We can't compile the GTK libraries on 2.2.x because the PangoLayoutLine struct was changed in GTK 2.4.

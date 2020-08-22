@@ -1,0 +1,11 @@
+Cocoa - Font metrics
+We are using 3.5M6 x64.
+We have a SWT terminal emulator that uses a Courier New Font.
+We are
+using GC.getAdvanceWidth('W') to figure out how much space each
+character takes up and GC.getFontMetrics().getHeight() to figure out
+how high each character is.
+This works fine in GTK,Windows and Carbon.
+With the Cocoa port it
+looks like for a 12 point font the width is 2 pixels too small and the
+height is 4 pixels too small.

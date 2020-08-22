@@ -1,0 +1,77 @@
+Radio group gets traversed (gets focus) when not visible
+When you traverse controls with TAB, controls that are not visible do not get
+focus.
+This is great because I use custom controls that can collapse and I
+don't want their children to be traversed then.
+Unfortunately, this doesn't
+work for radio groups, which still get focus.
+Below is a snippet that shows the problem.
+Use the toggle button to show / hide
+some of the controls by collapsing their parent composite.
+When all the
+controls are visible, they're traversed in the following order: Button 1, Radio
+1, Button 2, Button 3.However, when only Button 1 and Button 3 are visible,
+the order is: Button 1, Radio 1, Button 3 (Radio 1 shouldn't be traversed,
+Button 2 is not).
+I've found out that this is the Control.isShowing() method that checks whether
+the control is visible.
+This however is referenced only in
+Control.setTabItemFocus(), and that is always called from
+Control.setTabGroupFocus() BUT not always from Composite.setTabGroupFocus().
+So
+maybe Button.setRadioFocus() should call Control.isShowing().
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Main {
+private static DisapperingComposite dComposite;
+
+public static void main(String[] args) {
+final Display display = Display.getDefault();
+final Shell shell = new Shell(SWT.DIALOG_TRIM);
+shell.setLayout(new GridLayout(3, false));
+
+GridData gridData = new GridData(GridData.FILL_BOTH);
+gridData.horizontalSpan = 3;
+final Button button = new Button(shell, SWT.TOGGLE);
+button.setLayoutData(gridData);
+button.setSelection(true);
+button.setText("Show / Hide");
+
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+if (((Button) e.widget).getSelection()) {
+dComposite.appear();
+} else {
+dComposite.disappear();
+}
+}
+});
+
+final Button button1 = new Button(shell, SWT.NONE);
+button1.setText("Button 1");
+button1.addFocusListener(new FocusAdapter() {
+public void focusGained(FocusEvent e) {
+System.out.println("Button 1 gains focus");
+}
+});
+dComposite = new DisapperingComposite(shell, SWT.BORDER);
+dComposite.setLayout(new RowLayout());
+final Button radio1 = new Button(dComposite, SWT.RADIO);
+radio1.setText("Radio 1");
+radio1.addFocusListener(new FocusAdapter() {
+public void focusGained(FocusEvent e) {
+System.out.println("Radio 1 gains focus");
+}
+});
+
+final Button button2 = new Button(dComposite, SWT.NONE);
+button2.setText("Button 2");
+button2.addFocusListener(new FocusAdapter() {
+public void focusGained(FocusEvent e) {
+System.out.println("Button 2 gains focus");
+}
+});
+final Button radio2 = new Bu

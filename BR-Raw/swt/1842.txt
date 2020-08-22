@@ -1,0 +1,10 @@
+SWT_AWT bridge on OS X reports incorrect message with failure
+Build ID: M20071023-1652
+Steps To Reproduce:
+When something goes haywire with the SWT_AWT bridge on Mac OS X, the assumption is that the SWT_AWT bridge is not implemented, and the message "need SWT compatibility pack from Apple" is tucked into the exception message.
+All current versions of Java on OS X now contain CHIViewEmbeddedFrame, so this message is no longer valid.
+The exception handling should be more specific about what has happened, and display the appropriate message.
+The impact of this bug is that it leads to FUD-like threads like this one:
+< http://www.instantiations.com/forum/viewtopic.php?t=1630 >.
+We also get questions on Apple's java-dev asking where they can download the compatibility pack.
+More information:

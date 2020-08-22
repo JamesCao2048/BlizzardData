@@ -1,0 +1,2 @@
+Bug 214288 [Regression]Library extended crosstab's result is totally wrong in preview model[1102]
+Description: Library extended crosstab's result is totally wrong in preview model[1102] Build number: 2.3.0.v20080104-0800 Steps to reproduce: 1, New crosstab in library 2, Using it in a report design 3, Preview in layout or HTML Expected result: The result is correct in preview model and as same as the result in frameset model(Web Viewer preview) Actual result: The result is totally wrong in preview model

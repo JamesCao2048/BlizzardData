@@ -1,0 +1,7 @@
+Setting a cursor only needs a flush, not a sync
+When a cursor is set, SWT currently calls gdk_flush(), which does an XSync.
+It
+would be more efficient (and equivalent in this case) to use XFlush().
+This can
+be done by calling XFlush() directly, or with gdk_display_flush(), however the
+GDK call is new in 2.4.

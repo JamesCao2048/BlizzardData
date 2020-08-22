@@ -1,0 +1,8 @@
+Produce a compile warning when default advice precedence is applied
+I propose that the compiler spit out a warning anytime that it has to apply
+the default advice precedence.  Also, it should spit out the recommendation
+that default ordering is not guaranteed from release to release of the
+compiler.
+You can see the thread on aspectj-dev titled "change in runtime execution
+order" and the one on aspectj-users titled "AJDT 1.3 and aspectj" for the
+reasoning behind why this is a good thing.

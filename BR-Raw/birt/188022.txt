@@ -1,0 +1,2 @@
+Bug 188022 The expression builder should generate the data["XXX"] expression when specify highlight and map on dimension[1102]
+Description: The expression builder should generate the data["XXX"] expression when specify highlight and map on dimension[1102] Build number: 2.2.0.v20070521-0630 Steps to reproduce: 1, New a crosstab 2, Select one dimension and specify the highlight or map 3, Go to expression builder and select the available column bindings to generate the expressions Expected result: The expression should be data["XXX"] Actual result: The expression is row["xxx"]

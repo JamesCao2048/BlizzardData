@@ -1,0 +1,13 @@
+[Program] Opening URLs in external browser fails with GLib 2.20
+Steps to reproduce:
+- Use a system that uses GLib >= 2.20, f.e.
+Ubuntu 9.10
+- Configure Eclipse to use the external browser via Preferences > General > Web Browser.
+- Open a http URL (for example by typing it in a JavaDoc document and ctrl + clicking it).
+- For  http://www.example.org/  , it will open file:///home/user/ http:/www.example.org
+Reason:
+- org.eclipse.ui.internal.browser.SystemBrowserInstance#openURL calls Program#execute
+- org.eclipse.swt.program.Program#gio_execute uses g_app_info_launch
+- "As of GLib 2.20, URIs will always be converted to POSIX paths (using g_file_get_path()) when using g_app_info_launch() even if the application requested an URI and not a POSIX path." ( http://library.gnome.org/devel/gio/stable/GAppInfo.html )
+- It seems that for uris g_app_info_launch_uris should be used.
+- As it isn't specified for Program#execute(fileName) that this could be used to execute an Uri, I filed this as Platform bug and not as SWT bug.

@@ -1,0 +1,10 @@
+NPE in Display.runAsyncMessages(..) on quit
+I20090414-0800
+- set a breakpoint for NullPointerException
+- debug ControlExample
+- choose menu SWT > Quit SWT
+=> NPE:
+Daemon Thread [Thread-0] (Suspended (exception NullPointerException))
+Display.runAsyncMessages(boolean) line: 3283
+Display.readAndDispatch() line: 2980
+ControlExample.main(String[]) line: 210

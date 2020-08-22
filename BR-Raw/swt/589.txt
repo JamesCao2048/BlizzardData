@@ -1,0 +1,10 @@
+[accessibility] text-based ToolItems read out their help/tooltip text instead of text
+Build ID: I20100603-1500
+VoiceOver reads back the tooltip help of a ToolItem with text.
+It should read the text if the tool item is just a button.
+1.Launch org.eclipse.swt.examples.accessibility.ControlsWithLabelsExample
+2.Turn on VoiceOver.
+3.Move the VoiceOver cursor to the Toolbar.
+The ToolItems are labelled "Item0", "Item1", "Item2".
+--> VoiceOver reads back "ToolItem ToolTip0", which is the tooltip text for Item0.It should have said Item0 because it's a text button.
+Not a 3.6 regression.

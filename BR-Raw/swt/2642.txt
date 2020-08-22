@@ -1,0 +1,9 @@
+pango_layout_context_changed called too often
+StyledTextRenderer often updates the tab size of the layouts cached by
+DisplayRenderer, even though they usually don't change.
+Each time this is
+called, it now triggers a call to pango_layout_context_changed() which
+invalidates pango's line cache.
+This causes pango to do a lot of work.
+A possible fix is to only update the tab sizes in pango if they have actually
+changed.

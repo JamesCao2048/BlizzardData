@@ -1,0 +1,7 @@
+Bug 106272 Chart Selector dialog incorrectly parented
+Eclipse 3.1, GEF 3.1, EMO-SDO-SDK 2.1.0, BIRT 1.0.1 GTK+ 2.6.8 (Debian Linux) In the report editor, click on "chart" in the palette and click back on the layout to add a chart.
+This opens a "Chart Selector" dialog.
+However, while the dialog is modal, it does not seem to have the Eclipse window as its parent.
+Under Linux, this gives some interesting effects.
+Even though the dialog is modal, you can minimize it and move the Eclipse window in front of it, which can be quite confusing.
+The dialog should be created with a parent.

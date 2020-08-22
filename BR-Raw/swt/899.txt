@@ -1,0 +1,52 @@
+Disposing image during printing crashes SWT on MacOS
+Build ID: I20090611-1540
+Steps To Reproduce:
+This is a similar issue (possibly a duplicate) of  bug 173573 .
+Here's a snippet that reproduces the bug:
+package snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
+import org.eclipse.swt.graphics.PaletteData;
+import org.eclipse.swt.printing.PrintDialog;
+import org.eclipse.swt.printing.Printer;
+import org.eclipse.swt.printing.PrinterData;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class Test {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+PrintDialog printDialog = new PrintDialog(shell, SWT.NULL);
+PrinterData printerData = printDialog.open();
+if (printerData == null) {
+System.out.println("Could not create printer");
+return;
+}
+if (printerData.printToFile) {
+printerData.fileName = "print.out";
+}
+final Printer p = new Printer(printerData);
+p.startJob("foo");
+GC gc = new GC(p);
+p.startPage();
+ImageData data = new ImageData(1000, 1000, 24, new PaletteData(0xFF,
+0xFF00, 0xFF0000));
+Image image = new Image(display, data);
+gc.drawImage(image, 0, 0, 900, 545, 10, 40, 575, 348);
+// Crash: gc.drawImage(image, 0, 0, 50, 50, 0, 0, 50, 50);
+// Works OK: gc.drawImage(image, 10, 10);
+image.dispose();
+p.endPage();
+gc.dispose();
+p.endJob();
+p.dispose();
+}
+}
+As in the original bug size matters.
+Changing image size has an influence and changing the size parameters in gc.drawImage also.
+For large sizes the JVM crashes, for moderate sizes the app just quits quietly (without having printed) and for small sizes the app prints ok.
+The definite workaround seems to be to dispose the image only after the call to printer.endPage().
+This happens on Eclipse 3.4, carbon, x86.but does not happen on 3.5 cocoa, x86_64.
+More information:

@@ -1,0 +1,26 @@
+SPACE gets inserted into styledtext using system menu
+public static void main(String[] args) {
+Display d = Display.getDefault();
+Shell shell = new Shell(d);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+new StyledText(shell, SWT.BORDER).setText("string");
+Display.getCurrent().addFilter(SWT.KeyDown, new Listener() {
+public void handleEvent(Event event) {}
+});
+
+shell.setSize(600,500);
+shell.open();
+while (!shell.isDisposed())
+while (!d.readAndDispatch())
+d.sleep();
+}
+Steps to reproduce:
+1)Place the caret in the middle of a word.
+2) Press ALT+SPACE
+3) Press N (without ALT)
+4) Restore the window and you'll see a space inserted.
+This is very annoying because users are constantly dirtying their text editor
+when they minimize the foreground workbenchwindow.
+Their may be 2 problems, a) ALT+SPACE should not get sent to the focused
+Control, and b) does styled text widget insert SPACE when it receives
+ALT+SPACE?

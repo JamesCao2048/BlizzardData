@@ -1,0 +1,2 @@
+Bug 277271 Expression of aggregation disappeared when changing function
+Description: Expression of aggregation is disappeared when changing function Build number: 2.5.0.v20090521-0630 Steps to reproduce: 1, New a aggregation 2, Change the function to COUNT or others Expected result: The expression doesn't disappear Actual result: Expression of aggregation disappeared Error log:

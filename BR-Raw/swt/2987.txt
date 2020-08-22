@@ -1,0 +1,9 @@
+Race conditions in Device.getDevice() method
+Method org.eclipse.swt.graphics.Device.getDevice() is static and uses static
+variables (CurrentDevice).
+In application with several GUI threads it is
+possible (and it happens) that two or more GUI threads access Device.getDevice()
+method simultaneously.
+This leads to situation when getDevice(), called from one
+thread returns null because getDevice() in another thread set CurrentDevice
+variable to null.

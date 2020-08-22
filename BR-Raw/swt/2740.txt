@@ -1,0 +1,5 @@
+moveBelow(null) does not adjust z order
+R3.1 Linux GTK Red Hat EL 4.0
+When you call Control#moveBelow(null) on GTK the control is not moved to the
+bottom of the list on GTK.
+On Windows this moves to the bottom of the list.

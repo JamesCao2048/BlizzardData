@@ -1,0 +1,55 @@
+Table/TreeColumns don't fire ControlEvents on dispose() [osx]
+3.1RC1
+(there's a separate win32 report for this too:  bug 97659 )
+- run the snippet below
+- each time the button to the right of the Tree is pressed, the Tree's first
+column is disposed
+
+-> this should fire a Move for all other columns as they shift left, but no
+events are fired
+- this works as expected for Table/TableColumn
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10, 10, 300, 300);
+final Tree tree = new Tree(shell, SWT.NONE);
+tree.setBounds(10, 10, 200, 200);
+tree.setLinesVisible(true);
+tree.setHeaderVisible(true);
+ControlListener listener = new ControlListener() {
+public void controlResized(ControlEvent e) {
+System.out.println("column resize: " + e.widget);
+}
+public void controlMoved(ControlEvent e) {
+System.out.println("column move: " + e.widget);
+}
+};
+TreeColumn column = new TreeColumn(tree, SWT.NONE);
+column.setText("1");
+column.setWidth(50);
+column.addControlListener(listener);
+column = new TreeColumn(tree, SWT.NONE);
+column.setText("2");
+column.setWidth(50);
+column.addControlListener(listener);
+column = new TreeColumn(tree, SWT.NONE);
+column.setText("3");
+column.setWidth(50);
+column.addControlListener(listener);
+column = new TreeColumn(tree, SWT.NONE);
+column.setText("4");
+column.setWidth(50);
+column.addControlListener(listener);
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(230,10,30,30);
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+tree.getColumn(0).dispose();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

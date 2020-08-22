@@ -1,0 +1,11 @@
+[Table & Tree] Cocoa moveable columns do not work
+Build ID: I20080207-1530
+Steps To Reproduce:
+1.Open Control example
+2.Choose 'Tree' tab
+3.Enable 'Multiple Columns'
+4.Enable 'Header Visible'
+5.Enable 'Header Images'
+Notice that header images do not appear.
+In addition, columns are moveable regardless even if "Moveable Columns" is deselected.
+Also, enabling 'Sort Indicator' has no effect.

@@ -1,0 +1,5 @@
+Bug 120036 Preview of XML attributes is not working
+The XML attribute values are not working in the current BIRT XML ODA driver.
+Only 'text'-type XML elements' values are displayable in Preview.
+ColumnMapping XPath expressions like "@attributeName" are broken in Preview.
+I'll attach document showing the problem and sample XML/XSD data

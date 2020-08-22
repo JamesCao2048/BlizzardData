@@ -1,0 +1,5 @@
+Bug 122702 Smoke[regression]: Template file can't be published.
+Description: Template file can't be published.
+Steps to reproduce: 1.Create a template file.
+2.Publish it and click on "OK" button in "publish" window.
+3.Error message "PublishTemplateAction.wizard.message" pops up.

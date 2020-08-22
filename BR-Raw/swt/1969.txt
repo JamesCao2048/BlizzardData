@@ -1,0 +1,9 @@
+Drawing Problems
+The drawProc in the Control make use of PtGetsAbsPosition.
+This is not a good
+funtion to use in a drawing procedure because it queries every region in the
+system until it hits the root region to figure out your position.
+Doing this
+every draw operation is extremely expensive.
+I have updated the function as
+well as fixed some little drawing issues within SWT.

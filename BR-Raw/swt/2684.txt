@@ -1,0 +1,5 @@
+visitor pattern
+It would be nice to have a visitor pattern implementation to be able to
+traverse a given schema.
+As in most Abstract Syntax Trees it is very useful to
+be able to traverse them without the need for "instanceof".

@@ -1,0 +1,5 @@
+Snippet 203 doesn't use all texts
+I'd guess that the line
+layout.setText(texts[0]);
+in SWT snippet 203 should be
+layout.setText(texts[i]);

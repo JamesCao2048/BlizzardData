@@ -1,0 +1,80 @@
+Internal compiler error
+Eclipse: 2.1.0, 200302211557
+AspectJ: 1.1.1
+I get the following internal error when using "thisJoinPoint.getStaticPart()"
+in around advice at a call joinpoit (source below). Using just "thisJoinPoint"
+is fine.
+java.lang.NullPointerException
+at org.eclipse.jdt.internal.compiler.ast.MessageSend.analyseCode
+(MessageSend.java:40)
+at org.eclipse.jdt.internal.compiler.ast.MessageSend.analyseCode
+(MessageSend.java:44)
+at
+org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.analyseCode
+(AbstractMethodDeclaration.java:106)
+at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.analyseCode
+(TypeDeclaration.java:445)
+at
+org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.analyseCode
+(CompilationUnitDeclaration.java:76)
+at org.eclipse.jdt.internal.compiler.Compiler.process
+(Compiler.java:539)
+at org.aspectj.ajdt.internal.compiler.AjCompiler.process
+(AjCompiler.java:65)
+at org.eclipse.jdt.internal.compiler.Compiler.compile
+(Compiler.java:340)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:232)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:171)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager$BatchBuilder.run
+(AjBuildManager.java:655)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
+(AjBuildManager.java:139)
+at org.aspectj.ajde.internal.CompilerAdapter.compile
+(CompilerAdapter.java:92)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run
+(AspectJBuildManager.java:213)
+Exceptions.java	AspectJ Bugs/src/compiler
+Source:
+package compiler;
+import java.io.*;
+/**
+* @author websterm
+*
+* To change this generated comment go to
+* Window>Preferences>Java>Code Generation>Code and Comments
+*/
+public class Test {
+public static void main(String[] args) throws Exception{
+FileInputStream in = new FileInputStream("test");
+}
+}
+/*
+* Created on 14-Apr-03
+*
+* To change this generated comment go to
+* Window>Preferences>Java>Code Generation>Code and Comments
+*/
+package compiler;
+import java.io.*;
+import org.aspectj.lang.*;
+/**
+* @author websterm
+*
+* To change this generated comment go to
+* Window>Preferences>Java>Code Generation>Code and Comments
+*/
+public aspect Exceptions {
+
+pointcut exceptionMethods () :
+call(* java.io.*.*(..) throws IOException);
+
+Object around () throws IOException : exceptionMethods() && !within
+(Exceptions) {
+Object obj = proceed();
+System.out.println(thisJoinPoint.getStaticPart());
+return obj;
+}
+}

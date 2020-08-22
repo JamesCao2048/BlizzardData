@@ -1,0 +1,4 @@
+Bug 231058 Invalid xtab when drag cube to another library's layout[01][1102]
+Description: Invalid xtab when drag cube to another library's layout Build number:2.3.0.v20080508 Steps to reproduce: 1.New a library with cube and crosstab.
+2.New a second library, drag cube from first library to layout of second library Expected result: a crosstab is inserted without errors.
+Actual result: an invalid crosstab is inserted and errors in Problem view to indicate that no cube for the crosstab Error log:n/a

@@ -1,0 +1,56 @@
+Execution not matching override in doubly derived method
+The following sample code fails because the compiler isn't matching the
+execution of doPost in MockServlet4. The declare warning for "servlet request"
+doesn't match  in that case, nor does advice on the join point actually run at
+runtime (though this simplified code only shows the problem with declare
+warning). This was working until fairly recently (certainly in M2, even in AJDT
+from August 11).
+public abstract class MockServlet extends HttpServlet {
+
+protected void doPost() {
+}
+private static aspect FindMatches {
+declare warning: execution(* HttpServlet.do*(..)): "servlet request";
+declare warning: execution(* HttpServlet+.do*(..)): "servlet request2";
+}
+}
+class HttpServlet {
+protected void doPost() {
+}
+}
+public class MockDelayingServlet extends MockServlet {
+private static final long serialVersionUID = 1;
+}
+public class MockServlet4 extends MockDelayingServlet
+{
+protected void doPost()
+{
+}
+}
+compiler output (should have 6 warnings, including two for MockServlet4):
+C:develworkspacetestsrcMockServlet.java:16 [warning] servlet request
+protected void doPost() {
+^^^^^^^^^^^^^^^^^^^^^^^^^
+method-execution(void MockServlet.doPost())
+see also: C:develworkspacetestsrcMockServlet.java:20::0
+C:develworkspacetestsrcMockServlet.java:16 [warning] servlet request2
+protected void doPost() {
+^^^^^^^^^^^^^^^^^^^^^^^^^
+method-execution(void MockServlet.doPost())
+see also: C:develworkspacetestsrcMockServlet.java:21::0
+C:develworkspacetestsrcMockServlet.java:26 [warning] servlet request
+protected void doPost() {
+^^^^^^^^^^^^^^^^^^^^^^^^^
+method-execution(void HttpServlet.doPost())
+see also: C:develworkspacetestsrcMockServlet.java:20::0
+C:develworkspacetestsrcMockServlet.java:26 [warning] servlet request2
+protected void doPost() {
+^^^^^^^^^^^^^^^^^^^^^^^^^
+method-execution(void HttpServlet.doPost())
+see also: C:develworkspacetestsrcMockServlet.java:21::0
+C:develworkspacetestsrcMockServlet4.java:9 [warning] servlet request2
+protected void doPost()
+^^^^^^^^^^^^^^^^^^^^^^^
+method-execution(void MockServlet4.doPost())
+see also: C:develworkspacetestsrcMockServlet.java:21::0
+5 warnings

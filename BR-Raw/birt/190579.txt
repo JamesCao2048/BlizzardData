@@ -1,0 +1,12 @@
+Bug 190579 TVT33:TCT538: pt - advanced properties' values are not externalised
+<response_by> Sara Santa Clara at 2007.06.01.09.46.36
+</response_by> OS: Windows Build date: 0531 Component name: BIRT Blocking: no Tester name: Sara Santa Clara Steps to recreate the problem: In the Navigator, double click on the Test_Report_1.retpdesign to open it.
+Click CUSTOMNAME text control on the report and select Advanced in the Property Editor.
+Problem description: The values in the second column are not externalised (e.g.
+Font Colour and Text Alignment).
+See attached screen capture for details.
+Thank you! Sara
+<response_by> Bryan Green at 2007.06.01.09.48.12
+</response_by> This article was reassigned from Category:''TVT Testcases''.
+<response_by> Bryan Green at 2007.06.01.10.49.34
+</response_by> Changing status in TCT.

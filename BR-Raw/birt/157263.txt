@@ -1,0 +1,2 @@
+Bug 157263 "cm" and "mm" of line height doesn't take effects in PDF
+"cm" and "mm" of line height doesn't take effects in PDF Steps to reproduce: 1.new a label and input some text 2.add borders to it 3.set line height in properties window ,but use cm or mm unit 4.Preview it Expected results: Line height take effects Actual results: "cm" and "mm" doesn't take effects

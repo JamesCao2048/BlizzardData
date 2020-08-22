@@ -1,0 +1,43 @@
+Problem with declare parents when using non-public classes
+Non-public classes, when explicitly named, do not get woven.
+The test case below exhibits this problem when the package declaration is
+uncommented.
+If the package declaration is commented out, the class is woven correctly.
+If the package declaration is uncommented, a compilation failure occurs with
+AspectJ 1.2.  According to Andrew Clement, AspectJ 1.2.1 compiles, but does not
+weave.
+If the "MyInnerClass" is changed to be public [regardless of the package
+declaration status], the class is woven correctly.
+Also:
+When the "MyInnerClass" is moved out of "MyClass", but kept in the MyClass.java
+file, then the following behavior is exhibited:
+If the package declaration is commented out, the class is woven correctly.
+If the package declaration is uncommented out, a compilation failure occurs with
+AspectJ 1.2.
+Note, in this case, MyInnerClass cannot be declared as public.
+It also appears that if the RunnableAspect is placed in the same package as
+"MyClass", weaving occurs correctly, regardless of any class access modifiers
+<MyClass.java>
+// package mypackage;
+public class MyClass {
+public MyClass() {
+MyInnerClass mic = new MyInnerClass();
+if (mic instanceof Runnable)
+mic.run();
+}
+class MyInnerClass {
+public void run() {
+System.out.println("In MyInnerClass.run()!!");
+}
+}
+public static void main(String args[]) {
+new MyClass();
+}
+}
+</MyClass.java>
+<RunnableAspect.aj>
+public aspect RunnableAspect {
+declare parents: MyClass$MyInnerClass implements Runnable;
+// declare parents: mypackage.MyClass$MyInnerClass implements Runnable;
+}
+</RunnableAspect.aj>

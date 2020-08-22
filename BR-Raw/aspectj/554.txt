@@ -1,0 +1,49 @@
+Some strange error when compiling the observer example with JBuilder7 integrated AJDE
+When I compiled the observer/subject protocol example with JBuilder7
+integrated AJDE,there was a strange internal error
+C:/JBuilder7/extras/aspectj-110/doc/examples/observer/Observer.java:0:
+Internal compiler error
+java.lang.NullPointerException
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseWorld.makeResolvedMember
+(Unknown Source)
+at org.aspectj.ajdt.internal.core.builder.AsmBuilder.visit(Unknown
+Source)
+at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.traverse
+(Unknown Source)
+at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse
+(Unknown Source)
+at
+org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse
+(Unknown Source)
+at org.aspectj.ajdt.internal.core.builder.AsmBuilder.internalBuild
+(Unknown Source)
+at org.aspectj.ajdt.internal.core.builder.AsmBuilder.build(Unknown
+Source)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseWorld.finishedCompilationUnit
+(Unknown Source)
+at org.aspectj.ajdt.internal.compiler.AjCompiler.process(Unknown
+Source)
+at org.eclipse.jdt.internal.compiler.Compiler.compile(Unknown Source)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(Unknown Source)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(Unknown Source)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager$BatchBuilder.run(Unknown
+Source)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
+(Unknown Source)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(Unknown Source)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run
+(Unknown Source)
+I firstly fix it by changing the interface Subject and Observer like this:
+interface Observer {    void update();}
+interface Subject { Object getData(); }
+then it could compile successfully ,however,I immediately got another
+confusing.The compiler only made Display.java Observer.java Subject.java
+SubjectObserverProtocol.java and SubjectObserverProtocolImpl.java but ignoring
+the others.I don't know why,it seems to be a bug.
+Meanwhile, I use ajc command-line  to compile this example ,it can get through
+without any exceptions.

@@ -1,0 +1,9 @@
+-XhasMember is not processed correctly when passed from AJDT
+To test this in AJDT install the bean example, add a new interface called I
+and then add the following line to BoundPoint.aj:
+declare parents: hasmethod(* set*(..)) implements I;
+Now open the AspectJ Compiler preference page and select "Has Member" on the
+advanced tab.  Click OK, rebuild and if the option was working the project
+would build correctly.  As it stands there is an error:
+the type pattern hasmethod(* set*(..)) can only be used when the -XhasMember
+option is set

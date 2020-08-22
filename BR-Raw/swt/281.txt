@@ -1,0 +1,15 @@
+Table#getSelection() throws an AIOOBE
+In tests in both 3.8 and 4,2 I'm seeing a lot of errors (example stack trace below).
+It appears in UI tests, JDT tests, etc.
+Possibly related to the fix for  bug 367120 .
+java.lang.ArrayIndexOutOfBoundsException:
+-1944105504
+at org.eclipse.swt.widgets.Table._getItem(Table.java:150)
+at org.eclipse.swt.widgets.Table.getSelection(Table.java:1684)
+at org.eclipse.jface.viewers.TableViewer.doGetSelection(TableViewer.java:238)
+at org.eclipse.jface.viewers.AbstractTableViewer.getSelectionFromWidget(AbstractTableViewer.java:483)
+at org.eclipse.jface.viewers.StructuredViewer.getSelection(StructuredViewer.java:1045)
+at org.eclipse.jface.viewers.StructuredViewer.setSelection(StructuredViewer.java:1724)
+at org.eclipse.jface.viewers.TableViewer.setSelection(TableViewer.java:158)
+at org.eclipse.jface.viewers.Viewer.setSelection(Viewer.java:394)
+at org.eclipse.jface.tests.viewers.StructuredViewerTest.testClearSelection(StructuredViewerTest.java:124)

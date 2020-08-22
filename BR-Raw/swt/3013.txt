@@ -1,0 +1,67 @@
+GridData.verticalIndent does not work as expected
+SWT v3127
+The API spec for GridData.verticalIndent says:
+"specifies the number of pixels of indentation
+that will be placed along the top side of the cell"
+As the testcase below demonstrates, this isn't what the current
+implementation of GridLayout does.
+Instead, the control is only
+indented by half the given amount, the other half being placed below it.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class VerticalIndentTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+
+GridLayout layout = new GridLayout();
+layout.verticalSpacing = 10;
+shell.setLayout(layout);
+
+Composite pnl1 = new Composite(shell, SWT.NONE);
+pnl1.setBackground(display.getSystemColor(SWT.COLOR_YELLOW));
+
+GridLayout pnl1Layout = new GridLayout();
+pnl1Layout.marginWidth  = 0;
+pnl1Layout.marginHeight = 0;
+pnl1.setLayout(pnl1Layout);
+
+Label lbl1 = new Label(pnl1, SWT.NONE);
+lbl1.setBackground(display.getSystemColor(SWT.COLOR_RED));
+lbl1.setText("horizontalIndent=10");
+
+GridData lbl1GD = new GridData();
+lbl1GD.horizontalIndent = 10;
+lbl1.setLayoutData(lbl1GD);
+
+Composite pnl2 = new Composite(shell, SWT.NONE);
+pnl2.setBackground(display.getSystemColor(SWT.COLOR_YELLOW));
+
+GridLayout pnl2Layout = new GridLayout();
+pnl2Layout.marginWidth  = 0;
+pnl2Layout.marginHeight = 0;
+pnl2.setLayout(pnl2Layout);
+
+Label lbl2 = new Label(pnl2, SWT.NONE);
+lbl2.setBackground(display.getSystemColor(SWT.COLOR_RED));
+lbl2.setText("verticalIndent=10");
+
+GridData lbl2GD = new GridData();
+lbl2GD.verticalIndent = 10;
+lbl2.setLayoutData(lbl2GD);
+
+shell.pack();
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}

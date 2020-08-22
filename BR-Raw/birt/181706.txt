@@ -1,0 +1,4 @@
+Bug 181706 Sorting Data by X values doesn't work without grouping
+Using the 2.2M5 designer , I simply want to sort the data of the X Series in a Line Chart.
+I go into the Sort and Group pop up in the chart wizard and select ascending, but it doesn't affect the result.
+(style ordered same as the result set) If i define a dummy grouping (no interval) it is then working.

@@ -1,0 +1,3 @@
+gtk_tree_selection_get_selected_rows() invocations are leaking
+According to  http://developer.gnome.org/gtk/2.24/GtkTreeSelection.html#gtk-tree-selection-get-selected-rows  , the list that is returned by gtk_tree_selection_get_selected_rows() should have each of its item data freed with something like "g_list_foreach (list, (GFunc) gtk_tree_path_free, NULL)".
+SWT does not currently do this (there are many cases).

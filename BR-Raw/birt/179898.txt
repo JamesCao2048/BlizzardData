@@ -1,0 +1,5 @@
+Bug 179898 Date/Time type X-Axis labels are not correct when set grouping [0001]
+Description: Date/Time type X-Axis labels are not correct when set grouping.
+Build number: 2.2.0.v20070328-0630 Steps to reproduce: 1.New a Bar Chart with Date/Time type X-Axis with values as 4/1/2005 10:12 AM 4/1/2005 11:15 AM 4/1/2005 7:15 AM 2.Enable X Series Grouping, set Type as "DateTime", Unit as "Day", Interval as 1, and Aggregate Expression as "Sum".
+3.Preview.
+Expected result: X-Axis label should be "4/1/2005" Actual result: X-Axis label is "2005" Error log: N/A

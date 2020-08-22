@@ -1,0 +1,4 @@
+Bug 229551 Crosstab will not be displayed in layout after pull a cube to library[01]
+Description: In report library, pull a valid cube to layout, the crosstab is not shown in the layout.
+While check outline view, the crosstab is created, it is just not refresh to display in the layout.
+build version: 2.3.0.v20080430-0630

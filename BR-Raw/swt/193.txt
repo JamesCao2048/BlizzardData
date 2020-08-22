@@ -1,0 +1,5 @@
+Omit use of deprecated GTK_TOOLTIPS_TIP_WINDOW and gtk_tooltips_new
+Build Identifier: I20120608-1400
+This patch omits use of GTK_TOOLTIPS_TIP_WINDOW and gtk_tooltips_new in the newer GTK versions, thus avoiding errors and warning when building SWT with GTK_DISABLE_DEPRECATED:
+http://fedorapeople.org/gitweb?p=aspektor/public_git/eclipse.platform.swt.git;a=commit;h=d2a46cfbc7487aceddf63ffa5bc46f74e581958b
+Reproducible: Always

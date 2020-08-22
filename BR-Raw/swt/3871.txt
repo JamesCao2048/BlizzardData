@@ -1,0 +1,14 @@
+[SWT Examples] Arrow buttons won't resize for 10x10,50x50,100x100
+Overview Description:
+In the 'SWT Controls' view of the SWT Examples software,
+the SWT.ARROW type buttons (in the 'Button' tab) will not
+resize to the 10x10, 50x50, and 100x100 sizes.
+Steps to recreate:
+1.Open the 'SWT Controls' view of the 'SWT Examples' code
+2.Open the 'Button' tab in the SWT Controls view
+3.Try the 'Preferred' and 'Horizontal Fill' sizes, note that the
+arrow buttons resize
+4.Select the SWT.ARROW style, and try sizes 10x10, 50x50, and 100x100
+!BUG! The arrow buttons will not resize
+------
+Build 2002-11-07-1448 on Solaris (also occurs on HPUX)

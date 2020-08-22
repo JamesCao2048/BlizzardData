@@ -1,0 +1,12 @@
+Bug 120922 "Dirty Page" behavior in XML Report Designer editor needs improved
+If you edit the XML in the "source" view of the Layout Editor, and then try to switch back to the Layout view, you will get an error message indicating that you need to save your changes.
+This problem is the user has to figure out what he needs to do to save the changes (or discard them, which is even harder), and the error message is not very good.
+The error message is "Source page is dirty.
+Other pages cannot be used until the source is saved." (including the quotes).
+And then the user needs figure out how to save or discard their changes.
+A better and more typical approach would be: XML Report Design has been changed.
+Do you want to save the changes?
+<Yes>
+<No>
+<Cancel> Yes would save the changes No would discard the changes Cancel would do nothing and remain on the Source page In addition, the dialog is titled "Error" (including the quotes).
+The dialog needs to use a better title (and certainly should not have the quotes).

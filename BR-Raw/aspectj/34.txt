@@ -1,0 +1,37 @@
+attribute problems with Java 7 compilation
+From the mailing list, this goes wrong:
+***R.java***
+public class R{
+public static void main(String[] args) {System.out.println(new R().getClass().getName());}
+}
+***R1.java***
+public class R1 extends R {}
+***RAj.aj***
+public aspect RAj
+{
+private ThreadLocal<Object> inAspect = new ThreadLocal<Object>();
+
+pointcut createR() : execution(R.new());
+Object around() : createR()
+{
+System.out.println("aspect:" + inAspect.get() + ":" + this);
+if (inAspect.get() != null)
+{
+return proceed();
+}
+else
+{
+inAspect.set(this);
+return new R1();
+}
+}
+}
+compile command:
+/cygdrive/c/Program Files/Java/aspectj-1.6.12/bin/ajc.bat -source 1.7 -outxml -outjar araj.jar -classpath "aspectjrt.jar;." RAj.aj
+run:
+/cygdrive/c/Program Files/Java/aspectj-1.6.12/bin/aj5.bat  -classpath ".;./araj.jar" R
+errors:
+Apr 06, 2012 1:37:40 PM org.aspectj.weaver.tools.Jdk14Trace error
+SEVERE: register definition failed
+java.lang.RuntimeException: Problem processing attributes in RAj
+at org.aspectj.weaver.bcel.BcelObjectType.ensureAspectJAttributesUnpacked(BcelObjectType.java:385)

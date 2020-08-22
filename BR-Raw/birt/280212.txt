@@ -1,0 +1,2 @@
+Bug 280212 Function of subtotal/grandtotal in Row Area is always SUM for the first time
+Description: Function of subtotal and grandtotal is always SUM for the first time Build number: 2.5.0.v2000615-0630 Steps to reproduce: 1, New a crosstab 2, Go to property editor-> Row Area-> Sub Totals 3, Add a MAX subtotal 4, Check the function of new subtotal Expected result: The function of new subtotal should be MAX Actual result: The function of new subtotal is SUM, I should edit the function again to set it to MAX Error log:

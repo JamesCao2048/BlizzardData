@@ -1,0 +1,9 @@
+Platform inconsistency: drawLine(X,Y,X,Y) does nothing on the Mac
+On Windows and Linux drawLine(X,Y,X,Y) draws a single pixel, but on the Mac
+nothing is drawn.
+For example, add the following to the paintControl method of HelloWorld5.java
+from the SWT examples:
+gc.drawLine(100,100,100,100);
+I have since discovered there is a drawPoint() method, which does work, but this
+is still a bug
+- drawLine should work the same across the platforms.

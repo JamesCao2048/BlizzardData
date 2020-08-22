@@ -1,0 +1,9 @@
+Bug 259056 The script of chart disappears after select other node and switch back to chart in "Outline" view [0801]
+Description: The script of chart disappears after select other node and switch back to chart in "Outline" view.
+Build number: 2.3.2.v20081217-0730 Steps to reproduce: 1.New a report with a chart.
+2.Select a chart, switch to the "Script" tab and add script for the chart.
+3.In "Outline" view, select other node and switch back to the chart.
+4.Check the script in the "Script" page.
+Expected result: When switch back to the chart, the script is shown.
+Actual result: The script is lost.
+Error log: N/A

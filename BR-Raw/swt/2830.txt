@@ -1,0 +1,90 @@
+height of Text widgets for SWT/GTK differs from native GTKEntry widgets
+The height of "Text" widgets rendered on GTK from within SWT is
+slightly taller than "GtkEntry" widgets.
+Below I include a GTK
+program which displays a window containing just a single line
+GtkEntry, and a Java program which displays a single line Text widget.
+Both have the same appearance (they each have a border), but if you
+display them both next to each other you can see that the SWT version
+is slightly taller.
+The programs also output the height of the text widget, giving sizes
+of 26 and 24 for SWT and GTK respectively.
+I think maybe this is happening as a result of the INNER_BORDER stuff
+inside gtk/org/eclipse/swt/widgets/Text.java
+- but I don't see why
+this is being done, as it is it makes the windows I get in a SWT
+application look slightly different (I realise it's not a big
+difference but it sometimes catches the eye).
+I reproduced this with 3.0.2 and 3.1
+------------------------------------------------------------------------------
+/* Java program TextHeight.java */
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class TextHeight {
+private static Text text;
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+GridLayout layout = new GridLayout();
+layout.numColumns = 2;
+shell.setLayout(layout);
+Label label = new Label(shell, SWT.WRAP);
+label.setText("Label : ");
+
+Text text = new Text(shell, SWT.BORDER);
+text.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+shell.open();
+Point p = text.getSize();
+System.out.println("height of text is " + p.y);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+------------------------------------------------------------------------------
+/* C program gtktest.c */
+#include
+<gtk/gtk.h>
+gint delete_event(GtkWidget *widget, GdkEvent event, gpointer data )
+{
+return FALSE;
+}
+void end_program ( GtkWidget *widget, GdkEvent *event, gpointer data )
+{
+g_print ("Byen");
+gtk_main_quit();
+}
+int main( int argc, char *argv[] )
+{
+GtkWindow *window;
+GtkWidget *entry;
+GtkRequisition requisition;
+gtk_init (&argc, &argv);
+window = g_object_new(GTK_TYPE_WINDOW,
+"default-height", 200,
+"default-width", 200,
+"border-width", 12,
+"title", "GtkTest",
+NULL);
+g_signal_connect(window,
+"delete_event", G_CALLBACK(delete_event),
+NULL);
+
+g_signal_connect(window,
+"destroy", G_CALLBACK(end_program),
+NULL);
+entry = g_object_new(GTK_TYPE_ENTRY,
+"has-frame",TRUE,
+NULL);
+gtk_widget_size_request(entry,&requisition);
+g_print ("height of text widget is %dn", requisition.height);
+
+gtk_container_add(GTK_CONTAINER(window), GT

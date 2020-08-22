@@ -1,0 +1,10 @@
+Bug 124096 sampledb properties should not be modified by users
+steps to reproduce:
+- create a new data source using the sample database
+- click on Finish, then go to edit it by double click on it again
+- change Database URL to "invalid"
+- change User Name to "invalid"
+- click on Test Connection expected behavior:
+- error message is thrown out.
+actual behavior:
+- got "connection successful".

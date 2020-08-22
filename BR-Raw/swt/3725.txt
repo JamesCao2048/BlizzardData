@@ -1,0 +1,22 @@
+Printing of java program causes failure
+When I try to print a java program in the text editor, one page prints out and
+the platform crashes (closes) with the following error:
+JAVAW caused a general protection fault
+in module
+<unknown> at 0000:00000939.
+Registers:
+EAX=ffffffff CS=04bf EIP=00000939 EFLGS=00000202
+EBX=00000000 SS=04a7 ESP=00000040 EBP=000088e4
+ECX=000004a7 DS=042f ESI=00000613 FS=1a3f
+EDX=04bf0934 ES=0000 EDI=0099b150 GS=069f
+Bytes at CS:EIP:
+26 8b 2f 33 e8 81 e5 c0 00 00 00 33 e8 26 89 2f
+Stack dump:
+00000000 88e4641f 00000000 00000000 00000000 00000000
+00000000 00000000 03020100 07060504 0b0a0908 0f0e0d0c
+03010200 07050604 0b090a08 0f0d0e0c
+This problem started only after I updated the platform to version 2.1. I've
+tried serveral different printing options (e.g., selection, pages) and re-
+installed my print drivers, but no correction of the problem.
+Thanks for the
+input.

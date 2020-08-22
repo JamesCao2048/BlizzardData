@@ -1,0 +1,26 @@
+[browser]Click URL linked to a new window, pop up two browser window
+When click URL linked to a new window, pop up two browser window and the last one worked.
+Please see the attached screen shot.
+This issue existed in the recent 3.3 SWT build.
+Please check the following code:
+........
+browser = new Browser(shell, SWT.NONE);
+initialize(display, browser);
+shell.open();
+browser.setUrl(" http://127.0.0.1:8080/birt/frameset?__report=link.rptdesign ");
+................
+static void initialize(final Display display, Browser browser) {
+browser.addOpenWindowListener(new OpenWindowListener() {
+public void open(WindowEvent event) {
+Shell shell = new Shell(display);
+shell.setText("New Window");
+shell.setLayout(new FillLayout());
+Browser browser = new Browser(shell, SWT.NONE);
+initialize(display, browser);
+event.browser = browser;
+shell.open();
+}
+});
+}
+...........
+I have debuged the code, the method "open(WindowEvent event)" will be executed twice and open two browser window.

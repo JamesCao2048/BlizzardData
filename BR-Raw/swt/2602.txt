@@ -1,0 +1,20 @@
+resizing Table can have draw problems
+3.1RC2 noon build, gtk 2.4.13
+- run the snippet below, it opens a small window
+- grab the window's bottom-right corner and make it bigger
+- this will leave lots of cheese, as shown in the next screenshot
+- this problem does not happen if the table has no columns
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Table table = new Table(shell, SWT.NONE);
+new TableColumn(table, SWT.NONE);  //
+<---
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

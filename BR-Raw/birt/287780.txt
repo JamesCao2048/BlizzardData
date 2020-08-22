@@ -1,0 +1,9 @@
+Bug 287780 Resources disappears when you select to replace itself.[0008]
+description: Resources disappears when you select to replace itself.
+build id: 2.5.1 v20090827-0630 steps to reproduce: 1.Right click any resource(image, library, etc.) and select Move...
+2.Select the folder where the resource is(the same folder) and click OK.
+3.Message pops up asking whether to replace and click Yes.
+Actual result: The resource file disappears and it can not be restored by undo.
+Expected result: When the destination is the same folder, Move...
+is not allowed.
+This is the behavior of Navigator.

@@ -1,0 +1,3 @@
+Bug 309625 Data source property binding properties are not copied during copy/paste
+Build number:2.6.0.v20100419-0630 Steps to reproduce: 1.New a datasource, set values in property binding pane.
+2.Copy and paste the data source 3.Check pasted data source Expected result: Property binding properties are pasted Actual result: Missed property binding properties.

@@ -1,0 +1,20 @@
+[Viewers] 
+expected:<true> but was:<false>
+junit.framework.AssertionFailedError: expected:<true> but was:<false>
+at org.eclipse.jface.tests.viewers.
+Bug201002 TableViewerTest.testBug201002( Bug201002 TableViewerTest.java:90)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:354)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:206)
+at org.eclipse.test.CoreTestApplication.runTests(CoreTestApplication.java:35)
+at org.eclipse.test.CoreTestApplication.run(CoreTestApplication.java:31)
+at org.eclipse.equinox.internal.app.EclipseAppContainer.callMethodWithException(EclipseAppContainer.java:586)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:367)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:611)
+at org.eclipse.equinox.launcher.Main.basicRun(Main.java:566)
+at org.eclipse.equinox.launcher.Main.run(Main.java:1363)
+at org.eclipse.equinox.launcher.Main.main(Main.java:1339)
+at org.eclipse.core.launcher.Main.main(Main.java:34)

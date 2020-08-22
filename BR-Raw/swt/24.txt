@@ -1,0 +1,10 @@
+Combo eats text on Enter
+I20110201-0800, same on WinXP and Win 7
+- Control Example > Combo
+- click the Combo's dropdown arrow
+- type ABC
+- press Enter key
+=> the text I just entered is eaten (text field is cleared)
+=> expected: text stays, but drop-down is closed
+This only seems to happen if at the time the drop-down is opened, the text field contains an entry from the combo list.
+Happened to me in the File Search dialog in the "File name patterns" field.

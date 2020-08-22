@@ -1,0 +1,2 @@
+Bug 183124 Add a filter to a list, the result is wrong
+Description: When I add a filter to a list, the result after previewing is wrong Steps to reproduce: 1.open the attached rptdesign 2.preview Expected result: row when index number greater or larger than 9 should be displayed Actual result: all rows are displayed and the index number is wrong

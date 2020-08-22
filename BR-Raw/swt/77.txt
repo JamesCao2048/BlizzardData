@@ -1,0 +1,5 @@
+[Win7]Text#setMessage(java.lang.String) has no effect on Text with setEditable(false)
+Build Identifier:  Indigo Service Release 1, build ID 20110916-0149
+The message isn't displayed if the Text isn't editable.
+In Linux and Windows XP the text is displayed
+Reproducible: Always

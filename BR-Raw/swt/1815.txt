@@ -1,0 +1,30 @@
+Examples that use StyledText crash on startup
+Reproducible for me by running JavaViewer, TextEditor or ClipboardExample from the examples project.
+The crash always dumps something similar to the console:
+2007-11-25 22:40:36.133 java[4337:80f] *** _NSAutoreleaseNoPool(): Object 0x1d2fa0 of class NSException autoreleased with no pool in place
+- just leaking
+Stack: (0x9351d27f 0x9342a962 0x93431e18 0x938b564e 0x938b5d38 0x513e 0x258a)
+2007-11-25 22:40:36.154 java[4337:80f] An uncaught exception was raised
+2007-11-25 22:40:36.155 java[4337:80f] *** NSRunStorage, _NSBlockNumberForIndex(): index (0) beyond array bounds (0)
+2007-11-25 22:40:36.155 java[4337:80f] *** _NSAutoreleaseNoPool(): Object 0x1462c0 of class NSCFString autoreleased with no pool in place
+- just leaking
+Stack: (0x9351d27f 0x9342a962 0x93435aca 0x9392f1ee 0x9093809b 0x938b5b0c 0x938b5d38 0x513e 0x258a)
+2007-11-25 22:40:36.156 java[4337:80f] *** _NSAutoreleaseNoPool(): Object 0x15ba90 of class NSCFData autoreleased with no pool in place
+- just leaking
+Stack: (0x9351d27f 0x9342a962 0x9343ed45 0x9343e921 0x9392f202 0x9093809b 0x938b5b0c 0x938b5d38 0x513e 0x258a)
+2007-11-25 22:40:36.157 java[4337:80f] *** Terminating app due to uncaught exception 'NSRangeException', reason: '*** NSRunStorage, _NSBlockNumberForIndex(): index (0) beyond array bounds (0)'
+2007-11-25 22:40:36.158 java[4337:80f] Stack: (
+2475881067,
+2425585819,
+2475880523,
+2475880586,
+2476978576,
+2477807156,
+2477806691,
+100269401,
+56121777,
+56097407
+)
+I tracked the crash down to the draw(GC gc, int x, int y, int selectionStart, int selectionEnd, Color selectionForeground, Color selectionBackground, int flags) method of TextLayout.
+It appears that when layoutManager.numberOfGlyphs() returns 0, the subsequent call to layoutManager.drawBackgroundForGlyphRange(range, pt) blows everything up.
+If I wrap that call around an if statement ensuring the call only gets made when range.length > 0, the examples startup as expected.

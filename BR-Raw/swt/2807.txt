@@ -1,0 +1,73 @@
+OutOfMemory Exception from corrupted clipboard?
+While trying to debug/test a new plugin, I started seeing some odd behavior on
+the startup of a new Eclipse instance.
+Typically, this would correspond to
+seemingly random 'OutOfMemory' errors from the main instance as well.
+I set a
+breakpoint on the OutOfMemory exception, and managed to get the following
+stack trace
+
+Thread [main] (Suspended (exception OutOfMemoryError))
+ResourceTransfer.nativeToJava(TransferData) line: 160
+Clipboard.getContents(Transfer, int) line: 304
+Clipboard.getContents(Transfer) line: 236
+PasteAction$1.run() line: 186
+UISynchronizer(Synchronizer).syncExec(Runnable) line: 147
+UISynchronizer.syncExec(Runnable) line: 28
+Display.syncExec(Runnable) line: 3255
+PasteAction.updateSelection(IStructuredSelection) line: 181
+
+PasteAction(BaseSelectionListenerAction).selectionChanged(IStructuredSelection)
+line: 124
+RefactorActionGroup.updateActionBars() line: 154
+MainActionGroup.updateActionBars() line: 315
+ResourceNavigator.updateActionBars(IStructuredSelection) line: 1206
+ResourceNavigator.createPartControl(Composite) line: 275
+ViewReference.createPartHelper() line: 310
+ViewReference.createPart() line: 185
+ViewReference(WorkbenchPartReference).getPart(boolean) line: 559
+WorkbenchPage$ActivationList.setActive(IWorkbenchPartReference) line:
+3399
+WorkbenchPage.onActivate() line: 2089
+WorkbenchWindow$5.run() line: 2359
+BusyIndicator.showWhile(Display, Runnable) line: 69
+WorkbenchWindow.setActivePage(IWorkbenchPage) line: 2341
+WorkbenchWindow.busyOpenPage(String, IAdaptable) line: 695
+Workbench.busyOpenWorkbenchWindow(String, IAdaptable) line: 617
+Workbench.openFirstTimeWindow() line: 1168
+WorkbenchConfigurer.openFirstTimeWindow() line: 180
+IDEWorkbenchAdvisor(WorkbenchAdvisor).openWindows() line: 706
+Workbench.init(Display) line: 981
+Workbench.runUI() line: 1541
+Workbench.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 315
+PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 143
+IDEApplication.run(Object) line: 103
+PlatformActivator$1.run(Object) line: 230
+EclipseStarter.run(Object) line: 371
+EclipseStarter.run(String[], Runnable) line: 160
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not
+available [native method]
+NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39
+DelegatingMethodAccessorImpl.invoke(Object, Object[]) line: 25
+Method.invoke(Object, Object[]) line: 324
+Main.invokeFramework(String[], URL[]) line: 330
+Main.basicRun(String[]) line: 274
+Main.run(String[]) line: 977
+Main.main(String[]) line: 952
+
+
+Looking at the local variables for the topmost stack element, I see the
+following:
+
+this= ResourceTransfer  (id=46)
+transferData= TransferData  (id=73)
+bytes= byte[12]  (id=75)
+in= DataInputStream  (id=76)
+count= 1718185572
+
+
+It appears that somehow the count is being corrupted.
+
+The variables from one level up are as follows:
+this= Clipboard  (id=47)
+transfer= ResourceTransfer

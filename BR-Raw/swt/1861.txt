@@ -1,0 +1,13 @@
+[64] New project wizard does not work on Vista 64 bits
+Created  attachment 79427   [details]
+Bug overview
+Symptoms: When I open the New Project wizard, I cannot select the project type, so I cannot create any project other than Java project.
+Nothing happens when I click, right-click or double-click into the project type area.
+Nothing happens if I try to select the project type with Tab key.
+The project type are does not resize correctly when I resize the dialog box.
+System: Windows Vista Ultimate x64
+Eclipse version and JRE:
+- Eclipse 3.3.1 x86 with JRE 1.6.02 x86
+- Eclipse 3.4 M2 x64 with JRE 1.6.02 x64
+The problem is the same with these two different versions of JRE and Eclipse.
+Here a screenshot of the problem:

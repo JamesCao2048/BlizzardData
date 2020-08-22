@@ -1,0 +1,4 @@
+Bug 116424 [Regression]Translation doesn't work in help text of data item.
+Description: Translation doesn't work in help text of data item.
+Steps to reproduce: 1.run attached file grid-data-action-de_DE.xml using ReportRunner and set locale to de_DE Expected result: See attached golden file.
+Actual result: Help text set in the data after the second label still display english words.

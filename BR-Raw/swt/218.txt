@@ -1,0 +1,38 @@
+SWTException: Graphic is disposed for PlaceholderImpl
+In
+Version: 4.2.0
+Build id: I20120515-2200
+I get frequent exceptions like the one below when closing the workbench.
+Ids mentioned: elementId: org.eclipse.jdt.ui.JavadocView & elementId: org.eclipse.jdt.ui.SourceView
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2012-05-17 11:39:53.855
+!MESSAGE Exception occurred while unrendering: org.eclipse.e4.ui.model.application.ui.advanced.impl.PlaceholderImpl@4dc6bbd3 (elementId: org.eclipse.jdt.ui.SourceView, tags: [], contributorURI: null) (widget: null, renderer: null, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (closeable: false)
+!STACK 0
+org.eclipse.swt.SWTException: Graphic is disposed
+at org.eclipse.swt.SWT.error(SWT.java:4361)
+at org.eclipse.swt.SWT.error(SWT.java:4276)
+at org.eclipse.swt.SWT.error(SWT.java:4247)
+at org.eclipse.swt.graphics.Image.getBounds(Image.java:666)
+at org.eclipse.swt.custom.CTabFolderRenderer.computeSize(CTabFolderRenderer.java:246)
+at org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering.computeSize(CTabRendering.java:149)
+at org.eclipse.swt.custom.CTabFolder.setItemSize(CTabFolder.java:2668)
+at org.eclipse.swt.custom.CTabFolder.updateItems(CTabFolder.java:3637)
+at org.eclipse.swt.custom.CTabFolder.updateItems(CTabFolder.java:3574)
+at org.eclipse.swt.custom.CTabFolder.destroyItem(CTabFolder.java:737)
+at org.eclipse.swt.custom.CTabItem.dispose(CTabItem.java:126)
+at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.hideChild(StackRenderer.java:799)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:774)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$3(PartRenderingEngine.java:763)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$8.run(PartRenderingEngine.java:758)
+at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:743)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:789)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$3(PartRenderingEngine.java:763)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$8.run(PartRenderingEngine.java:758)
+at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:743)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:789)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$3(PartRenderingEngine.java:763)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$8.run(PartRenderingEngine.java:758)
+at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:743)
+at org.eclipse.e4.ui.internal.workbenc

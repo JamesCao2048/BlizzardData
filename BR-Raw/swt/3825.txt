@@ -1,0 +1,4 @@
+FontData "equals()" and "hashcode()" methods do not consider height of the the fontdata
+Checking the height of logfont is not enough.
+The height attribute should also
+be considered when equating two fontdatas and in hashcode.

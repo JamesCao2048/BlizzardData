@@ -1,0 +1,30 @@
+TextLayout uses wrong system font
+Run the testcase.
+Note that the wrong font is used when org.eclipse.swt.internal.carbon.smallFonts system property is specified.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+public class PR {
+
+public static void main(String[] args) throws Exception {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+TextLayout layout = new TextLayout(display);
+layout.setText("Hello");
+Rectangle rect = layout.getBounds();
+layout.draw(event.gc, 10, 10);
+layout.dispose();
+rect.x = rect.y = 10;
+event.gc.drawRectangle(rect);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+}

@@ -1,0 +1,14 @@
+Macintel: Password text fields don't show echo character
+3.1 on Macintel:
+Password fields don't show echo characters.
+It seems that the UniChar passed to OS.TXNEchoMode is interpreted as a 2-byte string!
+On big endian systems (PPC) the default value of '245' results in the string '245' '0' which works fine.
+On small endian systems (Intel) the default value results in the string '0' '245'
+Since the first character '0' is treated as a string terminator, no echo character is shown.
+The following experiment proves this: if I use this declaration:
+static final char PASSWORD = ('a'
+<< 8) + 'b';
+then the first echo character will be 'b' and the second 'a'
+The workaround for this problem is the following declaration:
+static final char PASSWORD = ('245'
+<< 8) + '245';

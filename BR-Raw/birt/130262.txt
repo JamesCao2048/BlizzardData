@@ -1,0 +1,4 @@
+Bug 130262 [Regression]Click Data Explorer does not cancel palette insert mode
+Description: Click Data Explorer does not cancel palette insert mode.
+Steps to reproduce: 1.Click grid in Palette, then click Data Explorer Result: Move mouse to Layout, it still keep the status of insert grid mode.
+By the way, after step1, if I clicked a col in dataset and drag it to Layout, the column was inserted as expected but the mouse cursor still kept the insert grid mode.

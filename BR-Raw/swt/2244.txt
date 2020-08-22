@@ -1,0 +1,11 @@
+Tree.setRedraw(true) causes the drawing operations to be ignored on solaris
+The following code behaves like setRedraw(false) was called:
+Tree tree = new Tree(composite, SWT.BORDER | SWT.CHECK);
+...
+(add tree items)
+tree.setRedraw(true);
+After call to setRedraw(true), user cannot check and/or select tree items (the check status can be readed using getChecked(); but is not displayed
+- as if redraw is turned off).
+Nested calls to Control.setRedraw() are stacked (as said in documentation); but I believe that extra "setRedraw(true)" calls should not turn redraw off.
+At least, on win32, that extra call does not cause problems (the bug appears on solaris-motif).
+Snippet will be attached in next comment.

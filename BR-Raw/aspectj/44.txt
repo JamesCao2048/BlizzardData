@@ -1,0 +1,11 @@
+NPE when saving an aspect - Aspectj Internal Compiler Error
+Created  attachment 200625   [details]
+Two projects
+java.lang.NullPointerException
+at org.aspectj.weaver.ShadowMunger.getBinaryFile(ShadowMunger.java:201)
+at org.aspectj.weaver.ShadowMunger.getBinarySourceLocation(ShadowMunger.java:188)
+at org.aspectj.weaver.model.AsmRelationshipProvider.createAdviceChild(AsmRelationshipProvider.java:699)
+at org.aspectj.weaver.model.AsmRelationshipProvider.addChildNodes(AsmRelationshipProvider.java:657)
+at org.aspectj.weaver.model.AsmRelationshipProvider.crea ... bleAspect$edu_uat_cs2011_observerpattern_Observable$observers(java.util.List)
+end public class edu.uat.csc263.su10045.observermodel.DepartmentManager
+I have attached a zip file containing the two projects that in combination caused this problem.  To recreate, load the projects, go into DepartmentManagerObservableAspect, modify the pointcut and save the file.

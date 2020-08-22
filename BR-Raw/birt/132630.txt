@@ -1,0 +1,2 @@
+Bug 132630 Additional markers can not support interactivity
+Additional markers can not support interactivity Steps: 1.Create a line chart 2.Set Y series marker to additional marker such as star or ellipse 3.Add a interactivity such as showTooltip to Y series 4.Preview in web viewer Actual results: 1.Additional markers can not support interactivity Expected Results: 1.Additional markers can nsupport interactivity

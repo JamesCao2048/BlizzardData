@@ -1,0 +1,6 @@
+Bug 156632 [Acceptance]Cannot paste theme when select Themes in Outline.
+Description: Cannot paste theme when select Themes in Outline.
+Steps to reproduce: 1.New a library.
+2.Select defaulttheme in outline and cut it 3.Select Themes and right click to paste the theme back.
+Expected result: Paste in context menu can be used.
+Actual result: Paste is gray

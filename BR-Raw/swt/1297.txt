@@ -1,0 +1,10 @@
+BlockSelection: paste on wrong place when Styledtext is scrolled
+run TextEditor
+open a file (a few lines, a few long lines too)
+switch to block selection mode
+resize so that the h scroll bar shows
+scroll to the left
+put some text in the clipboard
+selection some text in the editor
+paste
+Bug: the insertion location of the past is offset by the scroll offset.

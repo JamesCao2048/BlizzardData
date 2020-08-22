@@ -1,0 +1,5 @@
+Bug 121002 Dialogs span multiple monitors instead of center on main monitor
+Birt 2.0M3 (only version tested) Dialog boxes in the Report Designer (Chart editor, error message dialogs, etc.) when used on a machine with multiple monitors, are displayed centered across both displays, causing them to span the 2 monitors so half the dialog is on one monitor and the other half is on the 2nd monitor.
+This is true for error message dialogs as well as the chart editor dialog (and probably others).
+These dialogs should appear centered on the main monitor, or centered on the monitor that has the main Eclipse window, or centered in the Eclipse window or whatever is the guideline for Eclipse/SWT apps.
+Other dialogs in Eclipse (error message dialogs, new project wizard, project properties, etc.) behave properly.

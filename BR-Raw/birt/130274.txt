@@ -1,0 +1,5 @@
+Bug 130274 [RCP]The status of library keep unsaved when click the save button
+Description: The status of library keep unsaved when click the save button Steps to reproduce: 1.new a library 2.new a text and input something in it 3.save the library.
+Actual resutl: The status of library keep unsaved.
+When you close and reopen it, the modification has been saved.
+Expect result: The status of library should be presented as saved when click the save button

@@ -1,0 +1,2 @@
+Bug 279732 URI image using constant value with quotes should not display in layout
+Description: URI image using constant value with quotes should not display in layout Build number: 2.5.0.v20090610-0630 Steps to reproduce: 1, copy image a.jpg in resource folder 2, New a constant type resource folder image and input value as "a.jpg" 3, Finish the image and preview Expected result: The value with quotes is invalid, the image should not display in both layout and preview Actual result: The invalid image can display in layout correctly and failed in preview Error log:

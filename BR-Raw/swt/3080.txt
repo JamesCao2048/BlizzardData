@@ -1,0 +1,46 @@
+Repaint problems for Combo using SWT.SIMPLE style
+When a few Combo boxes using SWT.SIMPLE style are visible, a series of manual
+resizes of the containing composite leaves areas of the Combo littered with
+buffer noise.
+The first two attached screen-dumps show the result of running the test code
+below, both before and after resizing of the window.
+The third one shows a
+portion of a commercial interface I am attempting to build at the moment,
+where the same problem is evident.
+-----------------8<---------------------
+package test;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class ComboRepaintBugDemo {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+FillLayout fillLayout = new FillLayout(SWT.VERTICAL);
+fillLayout.marginHeight = 20;
+fillLayout.marginWidth = 20;
+fillLayout.spacing = 20;
+shell.setLayout(fillLayout);
+Combo combo1 = new Combo(shell, SWT.SIMPLE);
+combo1.setBackground(display.getSystemColor(SWT.COLOR_RED));
+Combo combo2 = new Combo(shell, SWT.SIMPLE);
+combo2.setBackground(display.getSystemColor(SWT.COLOR_GREEN));
+
+Combo combo3 = new Combo(shell, SWT.SIMPLE);
+combo3.setBackground(display.getSystemColor(SWT.COLOR_BLUE));
+
+Combo combo4 = new Combo(shell, SWT.SIMPLE);
+combo4.setBackground(display.getSystemColor(SWT.COLOR_YELLOW));
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+-------------------8<-----------------

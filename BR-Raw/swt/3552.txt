@@ -1,0 +1,24 @@
+Deleting the first column of a Table may throw an exception
+If a table is created which has images associated with items in the first
+column, but not in the second, deleting the first column throws an
+ArrayIndexOutOfBoundsException.
+The exception produced was:
+java.lang.ArrayIndexOutOfBoundsException:
+-1
+at org.eclipse.swt.widgets.ImageList.get(ImageList.java:176)
+at org.eclipse.swt.widgets.Table.destroyItem(Table.java:523)
+at org.eclipse.swt.widgets.TableColumn.releaseChild
+(TableColumn.java:305)
+at org.eclipse.swt.widgets.Widget.dispose(Widget.java:371)
+at ColumnDeleteProblem.main(ColumnDeleteProblem.java:43)
+Exception in thread "main"
+In the org.eclipse.swt.widgets.Table class, if the first column is being
+destroyed and other columns exists, the second column is shifted to the first
+and then destroyed.
+During this shifting, an assumption is made that if the
+Table has an imagelist, then the image indices (from the LVITEM structures) of
+the second column are valid indices into the imagelist.
+The second column's
+indices are not valid, however, because the second column's items do not have
+images.
+The code in question is in Table.java, lines 522-523 (for 3.0, 529-530).

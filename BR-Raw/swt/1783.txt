@@ -1,0 +1,15 @@
+Annoying Message Box "prohibit running ActiveX controls" appear in browser when accessing page with applet
+Build ID: I20070625-1500
+Steps To Reproduce:
+This bug is caused by the workaround implemented for bug id 59506.
+To reproduce; use the SWT/Eclipse browser to access a page that contains an applet.
+More information:
+The ShowMessage method in WebSite.java attempts to resolve this problem however it is not working on my version of IE7. This is because lpstrText contains the following value;
+"One or more ActiveX controls could not be displayed because either:
+1) Your current security settings prohibit running ActiveX controls on this page, or
+2) You have blocked a publisher of one of the controls.
+As a result, the page may not display correctly."
+and the string loaded from SHDOCLC.DLL contains the following text;
+"Your current security settings prohibit running ActiveX controls on this page.
+As a result, the page may not display correctly."
+These strings are not equal therefore this annoying message box is always displayed.

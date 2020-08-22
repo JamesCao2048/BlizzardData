@@ -1,0 +1,10 @@
+ExpandItem header should set cursor to CURSOR_HAND in Windows
+SWT 3.2rc2, Windows XP sp2
+All of the ExpandBar controls I've seen in XP visually indicate that an ExpandItem may be expanded/collapsed by changing the cursor to the hand cursor when the pointer moves over the ExpandItem's header.
+The SWT version doesn't do this, but it'd be nice if it did
+- apart from consistency with Windows, it's really useful.
+In addition, some of the Windows ExpandBars change the colour of the ExpandItem's text (and the chevron) to indicate the same thing.
+The one in Control Panel does, but the one in Search Results doesn't
+- I think the rule could be that it should change colour unless you've explicitly specified a Color via setForeground(), but I'm not so sure on this one.
+While I'm at it, I'm not sure the SWT ExpandBar can currently emulate the one in Windows Search Results in other ways: that one has both the ExpandBar's background and its ExpandItems' backgrounds set to the same Color.
+I just gave this a quick try in 3.2rc2 and I end up with grey ExpandItems with a plain chevron (not the round one), and the font is suddenly different too.

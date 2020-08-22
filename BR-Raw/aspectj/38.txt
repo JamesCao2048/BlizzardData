@@ -1,0 +1,11 @@
+Memory leak in CompilationAndWeavingContext leading to PermGen OOME
+Build Identifier: 1.6.11
+The static contextMap in CompilationAndWeavingContext keeps strong references to Thread instances (which in turn strongly reference their contextClassLoader which prevents all kinds of stuff from unloading).
+In my particular use case I am running unit tests, each in their own WeavingURLClassLoader, but these ClassLoaders are never released, and running several unit tests at once leads to PermGen OutOfMemoryError.
+Using -XX:+HeapDumpOnOutOfMemory and analyzing the resulting heap dump in Eclipse Memory Analyzer points to CompilationAndWeavingContext.contextMap.
+I am able to work around this issue by executing the following at the end of each unit test to clear out this contextMap:
+CompilationAndWeavingContext.setMultiThreaded(false);
+CompilationAndWeavingContext.reset();
+CompilationAndWeavingContext.setMultiThreaded(true);
+I am also able to resolve this issue (more satisfactorily) by patching CompilationAndWeavingContext and changing contextMap into a ThreadLocal.
+Reproducible: Always

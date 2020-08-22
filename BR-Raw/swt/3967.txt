@@ -1,0 +1,45 @@
+GTK: Label positioning incorrect when style bit used and bounds set(BBAWT)
+When I set the bound of the label and use SWT.CENTER as the style bit for the
+label the label positioning appears too far to the right on the shell.Here is
+the code that I used to test the label:
+//------------------starts here
+------------------------//
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSWTDialog {
+public static void main(String[] args) {
+Display disp = new Display();
+final Shell sh = new Shell(disp);
+sh.setLayout(new GridLayout());
+Button but = new Button(sh, SWT.BORDER);
+but.setText("open dialog");
+but.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+Shell shell = new Shell(sh);
+shell.setText("test");
+shell.setBounds(300, 300, 300, 150);
+Button b = new Button(shell, SWT.BORDER);
+Button b1 = new Button(shell, SWT.BORDER);
+Label label = new Label(shell, SWT.CENTER);
+label.setText("this is a test label");
+label.setBounds(10, 20, 280, 60);
+b.setText("button 1");
+b.setBounds(80, 100, 60, 20);
+b1.setText("button 2");
+b1.setBounds(160, 100, 60, 20);
+shell.pack();
+shell.open();
+}
+});
+sh.pack();
+sh.open();
+while (!sh.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}

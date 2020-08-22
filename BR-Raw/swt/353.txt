@@ -1,0 +1,8 @@
+GC can not capture screen correctly in MAC 10.7 lion
+Build Identifier: Eclipse SDK 3.6.2 carbon M20110105-0951
+GC can not capture screen correctly in MAC 10.7 lion
+Reproducible: Always
+Steps to Reproduce:
+Run the sample, it will capture an area and stored the contents into an image.
+In MAC 10.7, it can not capture correctly(Both carbon and cocoa has this issue).
+10.6 has no problem.

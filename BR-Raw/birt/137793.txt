@@ -1,0 +1,9 @@
+Bug 137793 Chart parameter and data access needed in scripts
+I have a pie chart that displays some data.
+When I click on a slice, I want to execute a javascript function and pass some of the properties of the report and the slice to the function.
+For example I would like to pass some of the parameters of this report to this javascript.
+In addition the data related to the slice clicked on shoule be accessible.
+The same data and can be used via the drillthrough interactivity action.
+The way I would envision this working would be: 1) Open the chart properties.
+2) Navigate to the Format Chart tab 3) Select the Value Series and click the Interactivity button 4) Associate a Mouse Click action that invokes a script 5) The configuration of the script should allow for parameters (params[]) and data specific to the section of the chart (pie slice, bar...) to be entered.
+Similar to the values which can be referenced in the drill through functionality.

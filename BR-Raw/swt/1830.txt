@@ -1,0 +1,4 @@
+[OLE] Snippet265 leaks
+Created  attachment 83201   [details]
+A patch to fix the problem
+The OleAutomation object in openFile() is never disposed.

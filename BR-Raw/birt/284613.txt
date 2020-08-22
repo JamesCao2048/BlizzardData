@@ -1,0 +1,11 @@
+Bug 284613 TVT35:TCT250: PLK: dots at end of radio button labels
+<response_by> Moravia IT at 2009.07.22.12.03.24
+</response_by> Build: 20090721-1300-nl3-win32 Language: Polish Steps: 1) Expand BIRTproject in the Navigator, right click on Empty_Report.rptdesign and select Open.
+2) In the Data Explorer, right click on Data Sources and click New Data Source.
+Problem Description: Labels of radio buttons have dots at their ends.
+Can you please remove them?
+99% of radio button labels doesn't have them, there is no reason for the two labels to have dots.
+Similar problem occurs for some checkboxes on panels following main panel.
+Thanks, Kamil
+<response_by> Matthew McClintock at 2009.07.24.13.01.40
+</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

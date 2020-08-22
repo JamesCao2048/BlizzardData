@@ -1,0 +1,14 @@
+Group computeSize wrong
+Build ID: I20090430-2300
+Steps To Reproduce:
+1.Install Cocoa version of Eclipse on Mac
+2.Eclipse > Preferences, Plug-in Development, Target Platform
+3.Click "Running Platform" line, then click"Edit..."
+4.Click "Environment" tab
+Actual result:
+The group box at the bottom of the dialog, labeled "Java Runtime Environment," is laid out incorrectly: It is truncated at the bottom.
+The moment you begin to resize the dialog, it lays out correctly.
+See cocoa-screenshot.png.
+Expected result:
+Dialog lays out correctly, as it does if you run the Carbon version of Eclipse.
+See carbon-screenshot.png.

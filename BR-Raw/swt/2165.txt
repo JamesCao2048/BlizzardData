@@ -1,0 +1,10 @@
+Right click a shell of SWT.NO_FOCUS and ON_TOP to bring up a context menu will trigger a shell deactivated event
+Build ID: M20070112-1200
+Steps To Reproduce:
+1.New a shell with SWT.NO_FOCUS|ON_TOP from the workbench
+2.Add shell listener to this shell to listen shellDeactivated event
+3.Add a context menu to this shell
+4.On right click the shell, while showing the context menu, a shellDeactivated event is triggered.
+More information:
+ONLY occurs in Linux eclipse, window Eclipse has no shellDeactivated event on the click bringing up the context menu.
+More information will be provided later.

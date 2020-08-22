@@ -1,0 +1,24 @@
+Table not visible
+For some reason, I can't see the table when I run this code.
+It works fine on
+GTK+ and Win32.
+Shell shell = new Shell(display);
+Text text = new Text(shell, SWT.NONE);
+text.setBounds(0,0,300,40);
+final Table table = new Table(shell, SWT.VIRTUAL);
+table.setBounds(0,40,300,200);
+shell.setSize(320,240);
+shell.open();
+while(display.readAndDispatch());
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TableItem titem = (TableItem) event.item;
+int index = table.indexOf(titem);
+titem.setText("Hello: " + index);
+}
+});
+table.setItemCount(30000);
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+shell.dispose();

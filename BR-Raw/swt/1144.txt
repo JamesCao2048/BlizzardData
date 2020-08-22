@@ -1,0 +1,9 @@
+CCombo popup doesn't scroll with CCombo
+Using N20090303-2000 a CCombo popup list of choices doesn't move with the CCombo if the CCombo is in an editor and the editor is scrolled vertically using the scrollbar
+steps to reproduce
+# open a Mylyn task editor (for Bugzilla)
+# ensure that scrollbars are showing by resizing the editor if necessary
+# cause one of the CCombos in the editor to show its list of choices by clicking the CCombo's button
+# use the scrollbar on the editor to scroll vertically
+# notice that the editor scrolls, but the CCombo popup doesn't (it remains at its original location)
+might be related to  bug 266370

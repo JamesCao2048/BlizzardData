@@ -1,0 +1,10 @@
+BIDI: Styled text change the characters with Large fonts
+Tested using win 2k Arabic locale, build RC1
+- Using the Text editor example.
+- Write an Arabic text, select it and select Simplified Arabic font with Size 48
+- Close the font dialog.
+- Select the text and click on the Bold button.
+- The characters changes to rubbish and they overlap on each other.
+NB:
+If we select the Bold style from the fontDialog box, we got the correct
+behavior.

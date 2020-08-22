@@ -1,0 +1,4 @@
+[Accessibility] StyledText speaks name twice
+Create a single-line StyledText preceded by a Label.
+Run this, and turn on VoiceOver.
+When the StyledText takes focus, it speaks the Label text twice.

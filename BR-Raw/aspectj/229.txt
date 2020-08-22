@@ -1,0 +1,15 @@
+ClassCastException in AjState.recordClassFile()
+I got this exception while working on a static inner aspect. A full rebuild avoided the problem.
+java.lang.ClassCastException: org.aspectj.weaver.MissingResolvedTypeWithKnownSignature
+at org.aspectj.ajdt.internal.core.builder.AjState.recordClassFile(AjState.java:774)
+at org.aspectj.ajdt.internal.core.builder.AjState.noteResult(AjState.java:627)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager$3.acceptResult(AjBuildManager.java:867)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterProcessing(AjCompilerAdapter.java:206)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org_aspectj_ajdt_internal_compiler_CompilerAdapter$4$6b855184(CompilerAdapter.aj:90)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:528)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:329)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:845)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:266)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.incrementalBuild(AjBuildManager.java:168)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:117)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)

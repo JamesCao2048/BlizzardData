@@ -1,0 +1,96 @@
+CoolBar - Plus 2, Minus 2 problem
+swt 20020919
+When CoolItems are create they are 2 pixels wider than they should be.
+Here's the example:
+[click on the Test button and see the chevron appears: there is extra 2 pixels
+between items]
+package coolbar.prs;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.graphics.*;
+public class CoolBarWrapTest {
+static Display display;
+static Shell shell;
+static CoolBar coolBar;
+static String[][] toolNames = {
+{"search"},
+{"script_wiz"},
+{"debug", "run"},
+{"opentype"},
+{"new_wiz", "save", "saveas", "printer"},
+};
+static int border = 20;
+
+public static void main (String [] args) {
+display = new Display ();
+shell = new Shell (display);
+coolBar = new CoolBar(shell, SWT.FLAT | SWT.BORDER);
+createCoolItem(0,-1);
+createCoolItem(4,-1);
+createCoolItem(1,1);
+createCoolItem(3,2);
+createCoolItem(2,2);
+
+shell.addControlListener( new ControlAdapter() {
+public void controlResized(ControlEvent e) {
+Rectangle rect = shell.getClientArea();
+
+Point size = coolBar.computeSize (rect.width
+-
+(2*border), SWT.DEFAULT);
+coolBar.setBounds(rect.x + border, rect.y + border,
+size.x, size.y);
+}
+});
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Test");
+button.setBounds( 20, 200, 32, 20);
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+Point size = coolBar.computeSize (SWT.DEFAULT,
+SWT.DEFAULT);
+coolBar.setSize (size);
+}
+});
+shell.setSize(350, 250);
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+static void createCoolItem(int index, int atIndex) {
+ToolBar toolBar = new ToolBar(coolBar, SWT.FLAT);
+String[] toolFileNames = toolNames[index];
+for (int j = 0; j
+< toolFileNames.length; j++) {
+String fileName = toolFileNames[j];
+if (fileName == null) {
+new ToolItem(toolBar, SWT.SEPARATOR);
+} else {
+ToolItem item = new ToolItem(toolBar, SWT.PUSH);
+item.setImage(createCoolBarIcon(display, toolFileNames[j]));
+}
+}
+CoolItem coolItem;
+if (atIndex ==
+-1) {
+coolItem = new CoolItem(coolBar, SWT.DROP_DOWN);
+} else {
+coolItem = new CoolItem(coolBar, SWT.DROP_DOWN, atIndex);
+}
+coolItem.setControl(toolBar);
+coolItem.setData(toolFileNames[0]);
+Point size = toolBar.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+Point coolSize = coolItem.computeSize (size.x, size.y);
+int minWidth = toolBar.getItems()[0].getWidth();
+coolItem.setMinimumSize(minWidth, coolSize.y);
+coolItem.setPreferredSize(coolSize);
+coolItem.setSize(coolSize);
+}
+static Image createCoolBarIcon(Display display, String fileName) {
+try {
+ImageData source = new ImageData
+(CoolBarWrapTest.class.getResourceAsStream(fileName + ".gif"));

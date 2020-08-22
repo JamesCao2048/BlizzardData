@@ -1,0 +1,7 @@
+Enabling owner draw removes horizontal scrollbar
+I20070516-0010.
+1.start fresh workspace
+2.create a Java project with very long name (==> scroll bar)
+3.enable colored labels
+==> horizontal scroll bar gone
+NOTE: resizing fixes the problem BUT: in M7 this did not work and not even closing and reopening the Package Explorer helped.

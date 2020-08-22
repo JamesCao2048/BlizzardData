@@ -1,0 +1,15 @@
+3.2 M5 - ExpandItem does not work on WinCE
+I got the following error message; on Win Mobile 2003 (not 05
+-yet-, Steve, no worries).
+ExpandBar/Item would be great on WinCE ;-)
+UnsatisfiedLinkError:SystemParametersInfoW
+java.lang.UnsatisfiedLinkError: SystemParametersInfoW
+at org.eclipse.swt.internal.win32.OS.SystemParametersInfo()
+at org.eclipse.swt.widgets.ExpandItem.drawItem()
+at org.eclipse.swt.widgets.ExpandBar.WM_PAINT()
+at org.eclipse.swt.widgets.Control.windowProc()
+at org.eclipse.swt.widgets.Display.windowProc()
+at org.eclipse.swt.widgets.Decorations.setVisible()
+at org.eclipse.swt.widgets.Shell.setVisible()
+at org.eclipse.swt.widgets.Shell.open()
+at mcMain.main()

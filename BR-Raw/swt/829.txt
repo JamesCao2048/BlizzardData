@@ -1,0 +1,5 @@
+Repaint cheese with RTL scrollable in bottom left corner
+HEAD
+The workaround for  bug 28132  does not seem to work for right-to-left widgets.
+To reproduce in the ControlExample, go to the Text widget and then change it to RTL (by pressing Ctrl+Right_Shift or selecting SWT.RIGHT_TO_LEFT).
+Bug is probably that the code in Scrollable#wmNCPaint(int, int, int) that computes the cornerRect is hardcoded to have the corner at windowRect.right.

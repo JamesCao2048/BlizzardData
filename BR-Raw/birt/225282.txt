@@ -1,0 +1,3 @@
+Bug 225282 In ParameterAdapter,report parameter should be collected as paremter binding not parameter default value
+In ParameterAdapter, if the parameter links with a report parameter, it will set the ParameterDefinition with default value expression "params["xxx"]", this is not correct, since the linked report paraemter will be taken on as parameterBinding.
+We should keep the original parameter value in ParameterDefinition.

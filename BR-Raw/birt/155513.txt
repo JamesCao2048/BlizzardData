@@ -1,0 +1,7 @@
+Bug 155513 New behavior to create column binding names.
+The rule is that: if a content element defines data set or column bindings, to refer bindings on container, it must use syntax like row._outer.
+So, ONLY check the data binding to which the new column is being added.
+That is, binding names can be same for content and container elements.
+For example, if the column binding is added to the data, only check column bindings on data.
+Do not need to concern column bindings on its container like table item.
+Make sure other teams know this change.

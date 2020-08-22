@@ -1,0 +1,29 @@
+Contextual Menu opens from parent Widgets as well
+SWT: 3.2 M6
+MacOSX: 10.4.6
+Having this snippet, open the contextual menu on the table.
+Then click again on the table and see the Shell's popup menu appear:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Menu m1 = new Menu(shell, SWT.POP_UP);
+MenuItem item1 = new MenuItem(m1, SWT.NONE);
+item1.setText("Item1");
+shell.setMenu(m1);
+Table t = new Table(shell, SWT.BORDER);
+new TableItem(t, SWT.None).setText("Hello World");
+Menu m2 = new Menu(shell, SWT.POP_UP);
+MenuItem item2 = new MenuItem(m2, SWT.NONE);
+item2.setText("Item2");
+t.setMenu(m2);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+Ben

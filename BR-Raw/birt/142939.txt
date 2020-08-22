@@ -1,0 +1,4 @@
+Bug 142939 Invalid interval will cause incorrect group action.
+Description: Invalid interval will cause incorrect group action.
+Steps to reproduce: 1.Insert a list 2.Add a group, key is string type column, set interval to year, range to 3 3.Preview Expected result: Error msg about invald interval and ignore the invalid interval.
+Actual result: No error msg and only return one group with all datarows.

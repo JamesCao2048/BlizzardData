@@ -1,0 +1,51 @@
+Separator ToolItems with Controls do not wrap soon enough
+When putting a separator ToolItem with an attached Control on a wrapping
+ToolBar, this item does not wrap correctly.
+This does not happen in all cases (I
+have a wrapping ToolBar with such a separator item in an application where it
+works) but the following snippet exhibits this behaviour.
+This is a modified version of Snippet58 (added SWT.WRAP to ToolBar, put
+separator at the end, added GridLayout to do the wrapping):
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.*;
+public class Snippet {
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setLayout(new GridLayout());
+ToolBar bar = new ToolBar (shell, SWT.BORDER|SWT.WRAP);
+bar.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, true));
+for (int i=0; i<4; i++) {
+ToolItem item = new ToolItem (bar, 0);
+item.setText ("Item " + i);
+}
+int start = bar.getItemCount ();
+for (int i=start; i<start+4; i++) {
+ToolItem item = new ToolItem (bar, 0);
+item.setText ("Item " + i);
+}
+ToolItem sep = new ToolItem (bar, SWT.SEPARATOR);
+Combo combo = new Combo (bar, SWT.READ_ONLY);
+for (int i=0; i<4; i++) {
+combo.add ("Item " + i);
+}
+combo.pack ();
+sep.setWidth (combo.getSize ().x);
+sep.setControl (combo);
+bar.pack ();
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}
+When I run this snippet and make the window taller and smaller (so that the
+ToolBar wraps and the wrapped line is visible), the separator with the Combo
+does not wrap when it doesn't fit on the first line anymore but only when it
+becomes completely invisible on the first line.
+I tried this with 3.0.1 and 3.1M3 on XP Pro SP1 (Windows Classic theme) with
+same results.

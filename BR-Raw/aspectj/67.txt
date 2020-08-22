@@ -1,0 +1,8 @@
+NPE parameterizing perclause
+java.lang.NullPointerException
+at org.aspectj.weaver.ReferenceType.getPerClause(ReferenceType.java:823)
+at org.aspectj.weaver.patterns.PerFromSuper.lookupConcretePerClause(PerFromSuper.java:82)
+at org.aspectj.weaver.patterns.PerFromSuper.concretize(PerFromSuper.java:61)
+at org.aspectj.weaver.CrosscuttingMembers.setPerClause(CrosscuttingMembers.java:512)
+at org.aspectj.weaver.ResolvedType.collectCrosscuttingMembers(ResolvedType.java:748) ... oBuildJob.run(AutoBuildJob.java:242)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

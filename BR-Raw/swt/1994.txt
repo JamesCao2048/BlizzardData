@@ -1,0 +1,6 @@
+GC drawImage fails on bidi + icon + double buffered
+build eclipse 3.3 rc2
+Create a drawing area with SWT.DOUBLE_BUFFERED and SWT.RIGTH_TO_LEFT.
+In the paint handler draw an icon.
+Run the test case and move a small window over the the icon
+-> cheese!

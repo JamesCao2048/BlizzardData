@@ -1,0 +1,11 @@
+Ctrl+ Clicking on PackageExplorer expands items
+I200405190010, Solaris 8, CDE
+Hold down the Ctrl key and try selecting different items in the list in the tree
+view.
+This seems to be treated as a double-click, which opens one of the
+items.
+What's worse is that it expands the top-most item in the current
+selection that has not already been expanded.
+This is sometimes quite distant
+from the current selection (e.g., try a "shift" selection and then move
+elsewhere and try to add to the selection using "ctrl").

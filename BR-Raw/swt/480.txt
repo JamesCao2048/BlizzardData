@@ -1,0 +1,33 @@
+Display#setCursorLocation(Point) does not cause MouseMove event on MacOSX Cocoa
+While on win32.win32.x86 a call to Display.setCursorLocation(Point) causes a SWT.MouseMove event to occur, this does not happen on mac.cocoa.x86_64.
+The following snippet may be used to reproduce the behavior:
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell();
+shell.setLayout(new FillLayout());
+final FigureCanvas canvas = new FigureCanvas(shell);
+canvas.addListener(SWT.MouseMove, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("Event occured: " + event);
+}
+});
+shell.setSize(300, 300);
+shell.open();
+display.asyncExec(new Runnable() {
+public void run() {
+Point location = canvas.toDisplay(50, 50);
+canvas.getDisplay().setCursorLocation(location);
+}
+});
+while (!shell.isDisposed()) {
+while (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+While there is no output on mac.cocoa.x86_64, running the code on win32.win32.x86 gives you the following output:
+Event occured: Event {type=5 FigureCanvas {} time=6678468 data=null x=50 y=50 width=0 height=0 detail=0}
+I am not sure, whether it is considered part of the API-contract of Display#setCursorLocation(Point) that a SWT.MouseMove will occur as a result.
+Even if not, I think the behavior should be consistent across platforms.
+Certain GEF mechanisms dependent on the event occurence and are currently broken (e.g.
+consider  bug #242481 ), thus rating severity as major.

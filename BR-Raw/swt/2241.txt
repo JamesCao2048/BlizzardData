@@ -1,0 +1,9 @@
+setExpanded(false) doesn't work when tree item is not visible (regression)
+Build: I20061024
+1) Expand a project with many children in the Navigator or Package Explorer view
+2) Scroll the view down so that the project root tree item is not visible, but the children are still visible
+3) Click "Collapse All" in the view tool bar.
+-> Nothing happens.
+The root element only collapses if it is visible, or if none of its children are visible.
+Reproduced the problem on XP, Win2K, and Vista.
+I suspect this is a problem in AbstractTreeViewer.collapseAll.

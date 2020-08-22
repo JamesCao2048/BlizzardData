@@ -1,0 +1,37 @@
+bad source locations for declare error/warning
+[Submitted on behalf of Adrian Colyer and Jim Hugunin]
+> ...- there's one thing in the weaver I
+> couldn't solve tonight (Jim/Mik) : org.aspectj.weaver.Checker.match(..) is
+> called when checking whether a declare warning /error pointcut matches a
+> given shadow. If t does, a Message is created whose sourceLocation is
+> shadow.getSourceLocation(). The implementation of getSourceLocation in
+> BcelShadow returns the unqualified file name rather than the qualified one
+> (e.g "Point.java" rather than
+> "org.eclipse.ajdt.demo/src/figures/Point.java") which means that later on
+> eclipse can't find the resource the marker is supposed to be attached to.
+> I've patched it in AJDT by scanning the project for the first resource
+> that
+> ends in the given name and using that, which we will get away with for
+> many
+> projects. I couldn't find an easy way to fix it properly in the weaver.
+This is an issue with the weaver operating on bytecode, where the only
+information about the actual source file is the FILENAME attribute in
+the .class file which just contains the final unqualified portion of the
+name.  I can think of three solutions to this:
+1. Change the code for getSourceLocation to use the current package in order
+to produce a more complete filename, i.e. figures/Point.java instead of just
+Point.java.  This should be a relatively straightforward and localized change
+and is the only solution that would help the case of weaving into .jar files.
+2. Pass some additional information from the eclipse compiler phase to the
+bytecode weaver to let it know the actual source locations of files.  This
+could give you the actual source file, but is a crosscutting change that would
+affect a lot of the system.
+3. Handle declare error and warning in a special pass that performs weaving on
+the AST rather than the .class file.  This is the only solution that will give
+you correct column information which can make these messages easier to
+understand, but it is a LOT of work.
+I'd recommend that you consider doing #1 in order to improve the quality of
+your hack in the short-term.  I plan to look at #2 as part of a final clean-up
+of the incremental compilation code before the candidate1 release.  I think
+that ultimately #3 is the right answer, but it would be a very large amount of
+work and could only happen post-1.1.

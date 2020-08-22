@@ -1,0 +1,24 @@
+Can no longer compile JDK 1.5 projects with apsectj for JDeveloper
+I am working with AspectJ 1.5.2 in JDeveloper and have found that it is
+not possible to convince the compiler to use JDK 5 constructs.
+
+It appears that there is a method on AjcBuildOptions called
+getJavaOptionsMap() which is currently implemented to return null in all
+cases. In CompilerAdapter.configureBuildOptions areound line 358 the
+code tried to access this object to access whether to use JDK 5
+constructs or not. Since the return value is always null the project is
+never properly configured.
+
+I notice that the only other implementation of the root interface is
+CoreBuildOption which appears to directly return a structure from the
+eclipse class JavaProject. It would appear that this interface is
+breaking the rules on abstraction, is this the correct read on the
+situation?
+If so the solution would either be to implement a CoreBuildOption class
+to correctly work with the ADJE project adapter class or alter the code in
+Compiler adapter to correct use the properties in project adapter. I think
+that the latter is probably the best as BuildOption assumes a depedency on
+Eclipse which shouldn't be there.
+We do currently have customer, one in nato, who are currently having to
+work around this issue so it would be good to get it resolve for 1.5.3 if possible
+But I know I am a bit late for that now do to a lost email.

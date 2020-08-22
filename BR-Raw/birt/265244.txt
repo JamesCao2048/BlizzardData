@@ -1,0 +1,4 @@
+Bug 265244 Add a switch to optimize HTML report output size
+Currently, the HTML report content returned by engine contains some spaces, padding, newlines that make the HTML code easier to read/debug.
+Please add a flag/option to disable the addition of such spaces.
+This can be useful to reduce the HTML report content size to improve the performance.

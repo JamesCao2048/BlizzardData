@@ -1,0 +1,4 @@
+TreeItem and TableItem constructors should state precondition on index
+I20060216-2000
+TreeItem and TableItem constructors should state their preconditions on the 'index' parameter.
+Bug 121483  indicates that there are restrictions on the allowed range, and they should be documented.

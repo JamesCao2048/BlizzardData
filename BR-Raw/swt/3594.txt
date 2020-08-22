@@ -1,0 +1,10 @@
+Text's focus border has wrong background
+I20030516
+MacOS X 10.2.6
+- start Eclipse with new workspace
+- open New wizard
+- select Simple / New File
+- press Next
+- click in description "Create a new file resource" (transfers focus)
+- click in text field "Enter or select the parent folder"
+Observe: the focus border of the description field gets the striped background

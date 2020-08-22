@@ -1,0 +1,3 @@
+Cannot get font foreground colors
+On Windows at least the font selection dialog will allow us to select a font colour but the API does not allow us to access this colour.
+As a result we need to use seperate preferences for font style and colour which can be confusing to the user when they see the color in the selection dialog.

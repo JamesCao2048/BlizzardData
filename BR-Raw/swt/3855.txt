@@ -1,0 +1,4 @@
+Gtk directory dialog behaves like a file dialog
+- it's too easy to get a null result when a directory has been selected but a
+file hasn't
+- there are many spurious file-related widgets that are inappropriate

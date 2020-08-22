@@ -1,0 +1,6 @@
+Bug 106269 Cannot set a background image in a style
+Eclipse 3.1, GEF 3.1, EMO-SDO-SDK 2.1.0, BIRT 1.0.1 GTK+ 2.6.8 (Debian Linux) 1.Open the report editor on a report 2.In the layout tab, right click in the report and choose Style > Add Style...
+3.Choose Background in the list on the left 4.Click Browse 5.A file chooser dialog opens with a filter called "SWT image (gif, jpeg, png, ico, bmp)".
+6.Navigate to a directory containing some png images
+-- none are displayed How is this FileDialog being created?
+What filter pattern is being used?

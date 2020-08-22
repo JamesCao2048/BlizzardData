@@ -1,0 +1,45 @@
+Shell.getSize() returns incorrect height for SHEET | RESIZE style
+Build Identifier: 3.7m3
+Mac OSX 10.6.6, Cocoa 32 bit:
+Run example code below: Shell.getSize() should return a point with y = 300, but it is 278.
+This problem only occurs when both SHEET and RESIZE style is set.
+Reproducible: Always
+Steps to Reproduce:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+public class TestSheetSize {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+FillLayout layout = new FillLayout();
+layout.marginWidth = 150;
+layout.marginHeight = 150;
+shell.setLayout(layout);
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Push Me");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+final Shell popup = new Shell(shell, SWT.SHEET | SWT.RESIZE);
+popup.setSize(300, 300);
+display.asyncExec(new Runnable() {
+public void run() {
+System.out.println("Size = " + popup.getSize());
+}
+});
+popup.open();
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

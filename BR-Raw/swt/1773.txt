@@ -1,0 +1,5 @@
+in Device.getFontList() every FontData has height=0
+The title says it all.
+In win32 and gtk I can create a font using:
+font = new Font(display, display.getFontList("Courier", true)[0]);
+in mac this fails cause display.getFontList("Courier", true)[0].getHeight() == 0.

@@ -1,0 +1,11 @@
+Do not understand Javadoc of Link.setText()
+3.1 M5a
+Javadoc of Link.setText says:
+* anchor, a single HREF attribute is supported.
+When a hyperlink is
+* selected, the text field of the selection event contains either the
+* text of hyperlink or the value of the HREF, if one was specified.
+I could not find a field or other way to access the text field of the selection
+event.
+Q: If I have > 1 link, how do I know in the selection event which one has been
+clicked?

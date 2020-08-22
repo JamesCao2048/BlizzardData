@@ -1,0 +1,27 @@
+StackOverflowError in StyledText
+I20060314-1200
+I had to kill the Workbench because of this.
+java.lang.StackOverflowError
+at org.eclipse.jface.text.projection.ProjectionMapping.getImageLength(ProjectionMapping.java:571)
+at org.eclipse.jface.text.projection.ProjectionTextStore.getLength(ProjectionTextStore.java:121)
+at org.eclipse.jface.text.AbstractDocument.getLength(AbstractDocument.java:800)
+at org.eclipse.jface.text.AbstractDocument.computeIndexInCategory(AbstractDocument.java:495)
+at org.eclipse.jface.text.projection.ProjectionMapping.findSegmentIndex(ProjectionMapping.java:107)
+at org.eclipse.jface.text.projection.ProjectionMapping.toExactOriginRegions(ProjectionMapping.java:537)
+at org.eclipse.jface.text.projection.ProjectionTextStore.get(ProjectionTextStore.java:144)
+at org.eclipse.jface.text.AbstractDocument.get(AbstractDocument.java:997)
+at org.eclipse.jface.text.DefaultDocumentAdapter.doGetLine(DefaultDocumentAdapter.java:145)
+at org.eclipse.jface.text.DefaultDocumentAdapter.getLine(DefaultDocumentAdapter.java:168)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:727)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:673)
+at org.eclipse.swt.custom.StyledText.getPointAtOffset(StyledText.java:4728)
+at org.eclipse.swt.custom.StyledText.setCaretLocation(StyledText.java:6612)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:892)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:673)
+at org.eclipse.swt.custom.StyledText.getPointAtOffset(StyledText.java:4728)
+at org.eclipse.swt.custom.StyledText.setCaretLocation(StyledText.java:6612)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:892)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:673)
+at org.eclipse.swt.custom.StyledText.getPointAtOffset(StyledText.java:4728)
+at org.eclipse.swt.custom.StyledText.setCaretLocation(StyledText.java:6612)
+...

@@ -1,0 +1,4 @@
+GC#drawRoundRectangle(..) draw too big radii on Cocoa
+I20090515-1143
+GC#drawRoundRectangle(int x, int y, int width, int height, int arcWidth, int arcHeight) draws too big radii on Cocoa (at least compared to Carbon and WinXP).
+Can be seen in the PaintExample and in the custom buttons of CTabFolder ( attachment 136213   [details] ).

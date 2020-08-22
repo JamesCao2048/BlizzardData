@@ -1,0 +1,5 @@
+TableColumn.setText(") results in screen cheese
+Passing the empty string to TableColumn.setText on windows inserts a bunch of
+gibberish characters into the table heading.
+This appears to be because TCHAR is not null-terminating zero length strings
+when given the terminate=true argument.

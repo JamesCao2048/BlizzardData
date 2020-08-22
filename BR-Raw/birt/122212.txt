@@ -1,0 +1,8 @@
+Bug 122212 Cancel the action of creating a chart, then delete a data set, it still refers to the non-existent chart.
+Description: Cancel the action of creating a chart, then delete a data set, it still refers to the non-existent chart.
+Steps to reproduce: 1.Create a data source and related data set.
+2.Add a chart and select a data set in chart dialog.
+3.Cancel creating chart action.
+4.Delete the data set from data explorer view.
+5.It pops up a dialog said that "the data set refers to the chart".
+But indeed the chart doesn't exist.

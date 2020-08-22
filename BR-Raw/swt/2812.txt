@@ -1,0 +1,70 @@
+MouseEnter should be fired even when the mouse is down (BBAWT)
+1.Run the following testcase
+2.Click on the label on the left side, and hold the button down
+3.Move the button over the label on the right, without releasing the button
+4.After a few seconds, release the button over the right label
+Notice that the mouseEnter event isn't fired until the button is released.
+I
+believe it should be fired regardless of whether the button is down (i.e.
+the
+second you cross over to the right label in step 3).
+--- testcase
+---
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseMoveListener;
+import org.eclipse.swt.events.MouseTrackListener;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+public class SWTTestMouseExitEnterEvents implements MouseTrackListener,
+MouseMoveListener{
+private Display	display;
+private Shell	shell;
+//-------------------------------------------------------------------
+//
+//-------------------------------------------------------------------
+static public void main(String[] args) {
+new SWTTestMouseExitEnterEvents().runMain(args);
+}
+//-------------------------------------------------------------------
+//
+//-------------------------------------------------------------------
+private void runMain(String[] args) {
+display = new Display();
+
+shell = new Shell(display);
+shell.setText(getClass().getName());
+shell.setLayout(new FillLayout());
+shell.setSize(300, 300);
+
+Label label1 = new Label(shell,SWT.BORDER);
+Label label2 = new Label(shell,SWT.BORDER);
+label1.setText("left");
+label2.setText("right");
+
+label1.addMouseTrackListener(this);
+label2.addMouseTrackListener(this);
+label1.addMouseMoveListener(this);
+label2.addMouseMoveListener(this);
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+public void mouseEnter(MouseEvent e) {
+System.out.println("mouseEntered " + e.widget);
+}
+public void mouseExit(MouseEvent e) {
+System.out.println("mouseExited " + e.widget);
+}
+public void mouseHover(MouseEvent e) {
+}
+public void mouseMove(MouseEvent e) {
+System.out.println("mouseMoved " + e.widget);
+}
+}

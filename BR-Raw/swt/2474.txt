@@ -1,0 +1,34 @@
+adding TableColumn at index 0 makes cell disappear
+- run the snippet below
+- press the button, which creates a TableColumn at index 0 with width 60
+- note that when this column is created that item 0's column 0 text disappears
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,300,300);
+final Table table = new Table(shell, SWT.NONE);
+table.setBounds(10,10,200,200);
+table.setLinesVisible(true);
+table.setHeaderVisible(true);
+for (int i = 0; i
+< 2; i++) {
+TableColumn column = new TableColumn(table, SWT.NONE);
+column.setWidth(60);
+column.setText("col" + i);
+}
+new TableItem(table, SWT.NONE).setText(new String[] {"item0col0", "item0col1"});
+shell.open();
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(10,230,70,30);
+button.setText("Push");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+new TableColumn(table, SWT.NONE, 0).setWidth(60); //
+<--
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

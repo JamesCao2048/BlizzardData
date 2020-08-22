@@ -1,0 +1,4 @@
+Arabic: SWT (version 3.659) ignores the font set over style ranges
+Build Identifier: M20110210-1200
+By every other word written in arabic letters, SWT ignores the fallback font I set over the style ranges to display the not ASCII-characters in a styled text, when the font used by widget doesn't contain the arabic glyphs.
+Reproducible: Always

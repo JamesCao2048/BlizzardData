@@ -1,0 +1,8 @@
+Crash using command-O.
+- open a Java editor
+- select Command-o
+- after the outline popup opens, click on the editor
+- notice that the outline doesn't go away
+- now click back on the outline view
+- VM crash.
+Verified that this happens on Mac, but not on Windows.

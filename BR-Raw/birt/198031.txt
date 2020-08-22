@@ -1,0 +1,2 @@
+Bug 198031 Legend interactivity does not work correctly for drill-throughs
+Under Value (Y) Series enable interactivity for the event "Mouse Click" Set action to Hyperlink The type of the hyperlink is Drill-through and the target is the a sub-report Pass parameter to sub-report as row["value_of_the_legend_item"] Suppose there are 3 values, x,y and z No matter which legend item you click (x, y or z), z gets passed as param to the subreport

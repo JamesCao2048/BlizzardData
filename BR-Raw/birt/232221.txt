@@ -1,0 +1,4 @@
+Bug 232221 Native name is lost when reset the dataset parameter in SQB Dataset
+Description: Native name is lost when reset the dataset parameter in SQB Dataset Build number: 2.3.0.v20080515-0630 Steps to reproduce: 1, New a SQB Dataset from "BIRT Classic Models Sample Database" Connection profile 2, Specify the Query in SQB like: SELECT * FROM CLASSICMODELS.CUSTOMERS WHERE CUSTOMERNUMBER
+< :b OR CUSTOMERNAME = :a 3, Click Finish and goto Parameters page 4, Reset the parameters 5, Go to SQL Select Query page to check the Query Expected result: The native name of parameters a and b should not be lost Actual result: The parameters in query are changed to ?, their native names are lost.
+Error log:

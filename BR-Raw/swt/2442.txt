@@ -1,0 +1,24 @@
+Adding column to var view causes VM to GP
+I20060330-2000
+* Running Eclipse on jdk1.4.2_09:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x002c409b, pid=3832, tid=3086952128
+#
+# Java VM: Java HotSpot(TM) Client VM (1.4.2_09-b05 mixed mode)
+# Problematic frame:
+# C  [libgtk-x11-2.0.so.0+0x1c309b]  gtk_tree_model_get_valist+0xbe
+#
+# An error report file with more information is saved as hs_err_pid3832.log
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#
+Steps to reproduce:
+* Debug a program to a breakpoint
+* The variables view shows columns by default
+* To add a new columns select "Layout > Select Columns..." from the view menu
+* Check "Actual type" and OK in the dialog
+> BOOM
+Will attach detail error log

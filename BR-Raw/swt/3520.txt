@@ -1,0 +1,39 @@
+GTK: Combo.setForeground() and Combo.setFont() dont change the drop-down list
+In this test the foreground color and the Font for the Combo is only changed for
+the selected item and not for the rest of the items in the drop-down list.
+This
+test works fine on Windows.
+The test:
+----------------test case starts here--------------------------------
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.*;
+public class TestSWTChoice {
+public static void main(String[] args) {
+Display disp = Display.getDefault();
+Shell shell = new Shell(disp);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+Combo combo = new Combo(shell, SWT.CLIP_CHILDREN | SWT.CLIP_SIBLINGS |
+SWT.READ_ONLY | SWT.DROP_DOWN);
+combo.add("first");
+combo.add("second");
+combo.add("third");
+combo.add("fourth");
+combo.select(0);
+Font font = new Font(disp, "Sans",12, SWT.ITALIC);
+combo.setFont(font);
+combo.setForeground(disp.getSystemColor(SWT.COLOR_GREEN));
+shell.setSize(200,200);
+shell.setLocation(0,0);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}
+----------------------test case ends here-----------------------------

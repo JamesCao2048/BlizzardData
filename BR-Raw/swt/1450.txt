@@ -1,0 +1,16 @@
+Text does not WRAP on RHEL3
+- gtk version on RHEL3 is 2.2.4
+- works on RHEL4
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+shell.setLayout(new FillLayout());
+Text text = new Text(shell, SWT.MULTI | SWT.WRAP);
+text.setText("as as as asd asd ads asdf asdf asdf as asd adsf");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

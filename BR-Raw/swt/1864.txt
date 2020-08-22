@@ -1,0 +1,84 @@
+Eclipse process halted when interacting with tree.
+Build ID: Build id: I20070625-1500
+I'can't reproduce it reliably...
+it happened when I was interacting with the tree (in a CNF-based package explorer), and I was only able to see it because I always start eclipse with
+-Xdebug (so, I started another eclipse instance to see where it was locked).
+The stack where it gets halted is below.
+It happens on:
+while (hDeselectItem != hAnchor){....}
+that never ends.
+The hAnchor was always: 1330616848 and the hDeselectItem was always 0 (zero).
+Thread [main] (Suspended (breakpoint at line 5534 in Tree))
+Tree.WM_KEYDOWN(int, int) line: 5534
+Tree(Control).windowProc(int, int, int, int) line: 3701
+Tree.windowProc(int, int, int, int) line: 5370
+Display.windowProc(int, int, int, int) line: 4364
+OS.DispatchMessageW(MSG) line: not available [native method]
+OS.DispatchMessage(MSG) line: 2264
+Display.readAndDispatch() line: 3291
+Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 2389
+Workbench.runUI() line: 2353
+Workbench.access$4(Workbench) line: 2219
+Workbench$4.run() line: 466
+Realm.runWithDefault(Realm, Runnable) line: 289
+Workbench.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 461
+PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 149
+IDEApplication.start(IApplicationContext) line: 106
+EclipseAppHandle.run(Object) line: 153
+EclipseAppLauncher.runApplication(Object) line: 106
+EclipseAppLauncher.start(Object) line: 76
+EclipseStarter.run(Object) line: 363
+EclipseStarter.run(String[], Runnable) line: 176
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available [native method]
+NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39
+DelegatingMethodAccessorImpl.invoke(Object, Object[]) line: 25
+Method.invoke(Object, Object...) line: 585
+Main.invokeFramework(String[], URL[]) line: 504
+Main.basicRun(String[]) line: 443
+Main.run(String[]) line: 1169
+Main.main(String[]) line: 1144
+Some other variables in that same context (hope it helps...)
+this	Tree  (id=55)
+accessible	null
+background	-1
+backgroundImage	null
+backgroundMode	0
+columns	TreeColumn[4]  (id=100)
+currentItem	null
+cursor	null
+customDraw	false
+data	Object[9]  (id=103)
+display	Display  (id=56)
+dragStarted	false
+drawCount	0
+eventTable	EventTable  (id=104)
+explorerTheme	false
+font	722076327
+foreground	-1
+gestureCompleted	false
+hAnchor	1330616848
+handle	2886106
+headerImageList	null
+headerToolTipHandle	0
+hFirstIndexOf	1335940464
+hInsert	0
+hLastIndexOf	1335940464
+horizontalBar	ScrollBar  (id=108)
+hSelect	0
+hwndHeader	0
+hwndParent	0
+ignoreColumnMove	false
+ignoreCustomDraw	false
+ignoreDeselect	false
+ignoreDrawBackground	false
+ignoreDrawFocus	false
+ignoreDrawForeground	false
+ignoreDrawHot	false
+ignoreDrawSelection	false
+ignoreExpand	false
+ignoreFullSelection	false
+ignoreItemHeight	false
+ignoreResize	false
+ignoreSelect	false
+ignoreShrink	false
+imageList	ImageList

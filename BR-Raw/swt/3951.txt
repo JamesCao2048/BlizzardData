@@ -1,0 +1,45 @@
+when swt window in focus palettes of other windows hosed, and vise versa
+When an swt window comes into focus, all background windows colors are changed
+to incorrect colors, and similarly when another window is in focus the swt
+windows colors will change to be incorrect.
+I have tested this on an Sh4
+(BigSur/Tahoe) running a maxall configuration of WinCe 3.00 with j9 version 1.5
+from wsdd 4.0 runtimes with swt version 2104
+Test case
+----------cut here-----------
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+
+/**
+* @author pddempse
+*
+* To change this generated comment edit the template variable "typecomment":
+* Window>Preferences>Java>Templates.
+* To enable and disable the creation of type comments go to
+* Window>Preferences>Java>Code Generation.
+*/
+public class SwtColorProblem {
+private Display	display;
+private Shell	shell;
+//-------------------------------------------------------------------
+//
+//-------------------------------------------------------------------
+static public void main(String[] args) {
+new SwtColorProblem().runMain(args);
+}
+//-------------------------------------------------------------------
+//
+//-------------------------------------------------------------------
+private void runMain(String[] args) {
+display = new Display();
+
+shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setSize(300, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}

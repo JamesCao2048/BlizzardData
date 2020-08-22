@@ -1,0 +1,6 @@
+Bug 161692 Viwer does not work
+Using Birt RCP Designer NB20061810 or NB20061910 the report web viewer does not work since it can not find ReportDesign any more.
+The viewer does not work even as stand alone web application.
+Following Error message appears:
+-------------------------------------------------------------------------------- org.eclipse.birt.report.service.api.ReportServiceException: Can not find the report design in the report document E:Birtpluginsorg.eclipse.birt.report.viewer_2.2.0.v20061019-0630birtdocumentsB2FDE3C9921D743674F16995544925D0Birthttptp.rptdocument.
+--------------------------------------------------------------------------------

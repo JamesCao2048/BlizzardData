@@ -1,0 +1,14 @@
+overlap image transparency failure in 16bits color quality
+Build ID: 3.2.2
+Steps To Reproduce:
+1.Open the Display's properties from Control Panel of Window XP; and confirm the Color quality is 32bits.
+2.Copy the overlap.png to c:, then run the snippet code from Eclipse PDE;
+3.A window is open, and you will see the green circle block is shown on window.
+This is expect result as the code.
+4.Open the Display's properties from Control Panel again, and change the Color quality to 16bits, then apply this change.
+5.You will see the red rectangle block is shown overlap below the green circle.
+this is a wrong result.
+Actually, the Red rectangle block is the transparent background pixels overlap the green circle image.
+It should not shown as background either 16bits or 32 bits color quality.
+Code snippet is attached below.
+More information:

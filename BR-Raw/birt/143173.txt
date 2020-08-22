@@ -1,0 +1,2 @@
+Bug 143173 No error for recursive including when exporting a report to a library
+Steps to reproduce: 1.New a library named "Lib", add a lable in it 2.New a report, extends Lib.label 3.Export the report, choose target library "Lib" Expected result: Error to warn the recursive including Actual result: The target library includes itself without error

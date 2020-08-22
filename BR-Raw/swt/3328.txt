@@ -1,0 +1,56 @@
+hang in gtk_clipboard_wait_for_contents()
+I200405251200
+Pasting a large file in eclipse results in a hang.
+I reproduced the hang
+copying ~ 170 lines from a text file into eclipse, pasting less than 100 lines
+seems to work just fine.
+Gtk+-2.4.
+Thread [main] (Suspended)
+OS.gtk_clipboard_wait_for_contents(int, int) line: not available [native method]
+Clipboard.gtk_clipboard_wait_for_contents(int, int) line: 385
+Clipboard.getContents(Transfer) line: 191
+StyledText.paste() line: 5614
+SourceViewer(TextViewer).doOperation(int) line: 3387
+SourceViewer.doOperation(int) line: 744
+TextOperationAction$1.run() line: 122
+BusyIndicator.showWhile(Display, Runnable) line: 69
+TextOperationAction.run() line: 120
+TextOperationAction(Action).runWithEvent(Event) line: 881
+ActionHandler.execute(Map) line: 141
+Command.execute(Map) line: 132
+WorkbenchKeyboard.executeCommand(String) line: 469
+WorkbenchKeyboard.press(List, Event) line: 887
+WorkbenchKeyboard.processKeyEvent(List, Event) line: 928
+WorkbenchKeyboard.filterKeySequenceBindings(Event) line: 546
+WorkbenchKeyboard.access$2(WorkbenchKeyboard, Event) line: 494
+WorkbenchKeyboard$1.handleEvent(Event) line: 259
+EventTable.sendEvent(Event) line: 82
+Display.filterEvent(Event) line: 979
+StyledText(Widget).sendEvent(Event) line: 943
+StyledText(Widget).sendEvent(int, Event, boolean) line: 968
+StyledText(Widget).sendEvent(int, Event) line: 953
+StyledText(Control).sendKeyEvent(int, GdkEventKey) line: 2293
+StyledText(Control).gtk_key_press_event(int, int) line: 1793
+StyledText(Composite).gtk_key_press_event(int, int) line: 448
+StyledText(Widget).windowProc(int, int, int) line: 1194
+Display.windowProc(int, int, int) line: 3040
+OS.gtk_main_do_event(int) line: not available [native method]
+Display.eventProc(int, int) line: 839
+OS.gtk_main_iteration() line: not available [native method]
+Display.readAndDispatch() line: 2252
+Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 1363
+Workbench.runUI() line: 1334
+Workbench.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 253
+PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 141
+IDEApplication.run(Object) line: 97
+PlatformActivator$1.run(Object) line: 307
+EclipseStarter.run(Object) line: 256
+EclipseStarter.run(String[], Runnable) line: 127
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available
+[native method]
+NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39
+DelegatingMethodAccessorImpl.invoke(Object, Object[]) line: 25
+Method.invoke(Object, Object[]) line: 324
+Main.basicRun(String[]) line: 185
+Main.run(String[]) line: 638
+Main.main(String[]) line: 622

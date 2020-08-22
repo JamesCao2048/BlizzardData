@@ -1,0 +1,5 @@
+Cannot change tabs in TabFolder using keyboard
+Build id: I20081104-0916
+On Carbon, give focus to any tab in a tab folder, then you can type the arrow keys to move to another tab, and space to select it.
+You cannot do this in SWT Cocoa TabFolders.
+This is a keyboard accessibility issue.

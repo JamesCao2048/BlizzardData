@@ -1,0 +1,13 @@
+SWT Tree: in 3.4, DragSourceEvent gives higher x-coordinate than in 3.3
+Created  attachment 107455   [details]
+SWT Snippet
+Build ID: I20080617-2000
+Steps To Reproduce:
+1.Run Attached Snippet in 3.4
+2.Drag the contents of the first (and only) Tree-Cell
+3.Notice the x-coordinates output in the Console (up to about 370) to be higher than the actual column-width (200) and shell-width(300)
+4.Do The same in 3.3: Realistic values will be output.
+More information:
+I asked this on the swt-newsgroup, but no response.
+(As a sidenote, there is another difference: in 3.4, a Drag-Image is shown, in 3.3 there is none.
+I would prefer to have none.)

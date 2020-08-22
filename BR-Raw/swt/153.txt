@@ -1,0 +1,2 @@
+Remove GdkGCValues_sizeof
+Unused and breaks compilation on GTK 3.x.

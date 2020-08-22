@@ -1,0 +1,12 @@
+use DeleteObject to dispose non-Mlang fonts
+Before fixing  bug 192646  all fallback fonts were created with Mlang.
+After  bug 192646  a fallback font can be created Mlang or with CreateFontIndirect.
+Right now StyleItem#free() always dispose the fallback font using
+mLangFontLink2->ReleaseFont(fallbackFont)
+This need to be fixed to something like this:
+if (mlang) {
+//mLangFontLink2->ReleaseFont(fallbackFont)
+OS.VtblCall(8, mLangFontLink2, fallbackFont);
+} else {
+OS.DeleteObject(fallbackFont);
+}

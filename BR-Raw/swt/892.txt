@@ -1,0 +1,11 @@
+Cocoa:Verify Listener not called on selecting items in Combo
+Build ID: I20090528-2000 : 3.5RC3
+Steps To Reproduce:
+1.Launch the snippet 289.It uses a verify listener to verify that the selected item has numbers.
+2.In the dropdown select "aaaa"
+3."aaaa" should not be selected.
+But, aaaa gets selected because the Verify Listener  is not called on selecting the items in the Combo.
+Expected: Combo should send SWT.Verify event on selecting the items of the Combo.
+More information:
+Verify event is sent on typing new text in the Combo.
+Works fine on Carbon.

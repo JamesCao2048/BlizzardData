@@ -1,0 +1,6 @@
+Shell doesn't send SWT.Move
+Created  attachment 100807   [details]
+Registration of the windowDidMove()
+Shell doesn't send SWT.Move when it's being moved.
+It has a correct implementation of windowDidMove(), but this method is never called because it isn't registered.
+The attached patch adds an appropriate string to the Display.initClasses().

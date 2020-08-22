@@ -1,0 +1,10 @@
+Bug 193259 Enhance about the process of java script and event handler.[08]
+Description: Enhance about the conflict of java script and event handler.
+I have a case, I design a report with script data source and script dataset.
+Previously I wrote java script for dataset in script view and it works.
+Then I decided to use event handler to process script dataset, I wrote a java class to extends ScriptedDataSetEventAdapter and overwrite open and fetch methods.
+As I want to keep the script in script view, I just comment them by /**/.
+Run the report will throw Exception.
+I found it's caused by comments in script view.
+If I deleted them, the report works.
+I attached the report and java class.

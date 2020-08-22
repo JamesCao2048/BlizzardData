@@ -1,0 +1,13 @@
+Clicking on shell title bar causes activation events with null active shells
+I200405140800. Linux 2.6.4, GTK+ 2.4.0, KDE 3.2.1
+
+I have a filter attached to the display listening for activation events.
+I get
+one activation event for every widget in the hierarchy.
+However, it seems that
+the display.getActiveShell() responds with "null" until the top-level shell
+receives the activation event.
+This means that while processing these
+activation events, it appears as if no shell is active.
+
+This does not happen on Windows XP.

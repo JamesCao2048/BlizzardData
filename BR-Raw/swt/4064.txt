@@ -1,0 +1,18 @@
+Regression in OLE support
+In F2:
+
+Reboot your PD
+Create a simple project
+Drag and drop a powerpoint doc.
+Double click to open the powerpoint doc.
+Notice that the editor comes up blank.
+Close the eclipse .ppt editor.
+
+Notice that the editor thinks the file is dirty when it isn't
+Open Powerpoint.
+Create a simple presentation.
+Go back to eclipse.
+Double click on the .ppt file.
+
+Notice that the presentation opens properly.
+Trying the same steps on the 0515 build does not recreate the problem.

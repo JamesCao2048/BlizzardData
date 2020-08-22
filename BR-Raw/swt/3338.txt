@@ -1,0 +1,53 @@
+Null Pointer when opening Folder in File>Open External File
+Go to the menu and choose, File>Open External File, when the open file dialog
+comes up select a folder from the left side list and hit open, should get a big
+long traceback similar to the following
+org.eclipse.ui.PartInitException[0]: java.lang.NullPointerException
+at java.io.Reader.<init>(Reader.java:61)
+at java.io.InputStreamReader.<init>(InputStreamReader.java:80)
+at
+org.eclipse.core.internal.filebuffers.JavaTextFileBuffer.setDocumentContent(JavaTextFileBuffer.java:300)
+at
+org.eclipse.core.internal.filebuffers.JavaTextFileBuffer.initializeFileBufferContent(JavaTextFileBuffer.java:231)
+at
+org.eclipse.core.internal.filebuffers.JavaFileBuffer.create(JavaFileBuffer.java:81)
+at
+org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:68)
+at
+org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:470)
+at
+org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:414)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:2507)
+at
+org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:173)
+at
+org.eclipse.ui.texteditor.ExtendedTextEditor.doSetInput(ExtendedTextEditor.java:1067)
+at org.eclipse.ui.editors.text.TextEditor.doSetInput(TextEditor.java:290)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor$14.run(AbstractTextEditor.java:1978)
+at
+org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:302)
+at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:252)
+at
+org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:576)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84)
+at
+org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:573)
+at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1606)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:1993)
+at
+org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:2011)
+at org.eclipse.ui.internal.EditorManager.createSite(EditorManager.java:569)
+at
+org.eclipse.ui.internal.EditorManager.openInternalEditor(EditorManager.java:633)
+at
+org.eclipse.ui.internal.EditorManager.openEditorFromDescriptor(EditorManager.java:438)
+at org.eclipse.ui.internal.EditorManager.openEditor(EditorManager.java:426)
+at
+org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2129)
+at org.eclipse.ui.internal.WorkbenchPage.access$6(WorkbenchPage.java:2072)
+at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:2059)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:84)
+at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2054)

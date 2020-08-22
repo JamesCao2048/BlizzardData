@@ -1,0 +1,10 @@
+change the keyboard block selection expansion increment to match average char width
+Perhaps this is already fixed, just filing this for completeness.
+Follow-up from splitting  bug 8521 :
+From  bug 8521 comment 61 :
+- when using the arrow keys to expand the selection over EOL, the spacing is
+too big
+- it should use the average char width, which has the advantage to make
+the probable use case
+- mono-spaced fonts
+- work nicely.

@@ -1,0 +1,8 @@
+StyledText with SWT.WRAP cuts last character of wrapped line
+I20051116-1332
+- CustomControlExample, StyledText, WinXP default font (Tahoma Regular 8)
+- select 50 X 50
+- select SWT.WRAP
+- set text to "a/Path/to/A.java" (no quotes)
+-> the character "A" is cut off; should appear on second line
+This is very annoying in the Details Pane of debug's Variables view.

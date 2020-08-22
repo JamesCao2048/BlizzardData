@@ -1,0 +1,5 @@
+Bug 113730 Wrong relationship between cascading parameters
+1.Create a datasource(sample), create a dataset(select * from CLASSICMODELS.ORDERS).
+2.Create a cascading parameter,the parent parameter is ORDERNUMBER, the child parameter is ORDERDATE.
+3.Pull the two parameters to the layout to preview.
+Click parameter dialog to change the values of the parameter, when change the parent parameter, the child parameter will not change to the corresponding value, while keep the last selected value.

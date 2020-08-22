@@ -1,0 +1,4 @@
+Bug 146517 support extensible new report output formats
+User can create new report emitters to support new report output formats.
+But right now, many part of the BIRT UI (designer, and report viewer), drill thru bookmark syntax, assume the report output format to be a fix list.
+Need to walk thru end to end how to add new report output format, and how user can create bookmark and drill thru links to a customer report output format.

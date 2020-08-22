@@ -1,0 +1,57 @@
+ImageData.blit throws ArrayIndexOutOfBounds Exception
+I'm running the M5 version of SWT and I get the ArrayIndexOutOfBounds exception
+when creating an Image with a large ImageData.
+This testcase passes when run with the version of swt that shipped with eclipse
+1.0.
+Here's my test case :
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
+import org.eclipse.swt.graphics.PaletteData;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.widgets.Display;
+public class SwtTestCase {
+
+public static void main(String[] args){
+SwtTestCase b = new SwtTestCase();
+ImageData a = new ImageData(100000, 90, 1, b.createPalette());
+try{
+Image c = new Image(Display.getDefault(), a);
+} catch (ArrayIndexOutOfBoundsException e){
+System.out.println("Array Index out of Bounds case by Image
+constructor");
+e.printStackTrace();
+}
+System.out.println("Finished");
+}
+
+private PaletteData createPalette(){
+try{
+RGB[] tempRGB = {new RGB(255,255,255), new RGB(0,0,0)};
+return (new PaletteData(tempRGB));
+} catch (Exception e){
+System.out.println(e);
+}
+return null;
+}
+}
+And here's my output for the M5 Version of swt :
+Array Index out of Bounds case by Image constructor
+java.lang.ArrayIndexOutOfBoundsException
+Stack trace:
+java/lang/Throwable.<init>()V
+java/lang/Throwable.<init>(Ljava/lang/String;)V
+java/lang/ArrayIndexOutOfBoundsException.<init>(Ljava/lang/String;)V
+org/eclipse/swt/graphics/ImageData.blit(I[BIIIIIII[B[B[BI[BI[BIIIIIII[B[B
+[BZZ)V
+org/eclipse/swt/graphics/Image.init
+(Lorg/eclipse/swt/graphics/Device;Lorg/eclipse/swt/graphics/Image;Lorg/ec
+lipse/swt/graphics/ImageData;)[I
+org/eclipse/swt/graphics/Image.init
+(Lorg/eclipse/swt/graphics/Device;Lorg/eclipse/swt/graphics/ImageData;)V
+org/eclipse/swt/graphics/Image.<init>
+(Lorg/eclipse/swt/graphics/Device;Lorg/eclipse/swt/graphics/ImageData;)
+V
+SwtTestCase.main([Ljava/lang/String;)V
+Finished
+And here's the output for swt 1.0 :
+Finished

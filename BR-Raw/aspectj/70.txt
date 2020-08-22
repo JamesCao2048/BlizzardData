@@ -1,0 +1,5 @@
+early field resolution leading to problems for ITDs when declare parents in use
+I have a type that is being used where a generic is being expected.  That generic specifies an upper bound.  The type only obeys the upper bound once a declare parents has applied to it.
+I have an intertype declaration (a field).  When the ITD is applied we do some work to see if it clashes with existing fields.  This causes existing fields to be resolved.  If this resolution triggers a bounds check for the declare parents affected type before the declare parents has applied, a problem will be raised.
+Basically if the target of the declare is processed before the intertype then we are ok, but that is luck based.
+We should do the declare parents first (and declare annotation) and then do intertype declarations (since they may trigger this extra resolution).

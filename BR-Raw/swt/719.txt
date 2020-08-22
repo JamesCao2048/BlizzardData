@@ -1,0 +1,37 @@
+NPE in Program.getProgram(..)
+Build Identifier: 3.6M5 I20100129-1300
+I am getting errors in the error log from jface with the following stacktrace but I am not sure what exactly is causing it, i.e.
+what set of steps is required:
+null
+Error
+Mon Feb 22 14:37:37 GMT 2010
+Problems occurred when invoking code from plug-in: "org.eclipse.jface".
+java.lang.NullPointerException
+at org.eclipse.swt.program.Program.getProgram(Program.java:150)
+at org.eclipse.swt.program.Program.findProgram(Program.java:76)
+at org.eclipse.ui.internal.registry.EditorRegistry.getSystemExternalEditorImageDescriptor(EditorRegistry.java:1249)
+at org.eclipse.ui.internal.registry.EditorRegistry.getImageDescriptor(EditorRegistry.java:1457)
+at org.eclipse.ui.internal.ide.model.WorkbenchFile.getBaseImage(WorkbenchFile.java:63)
+at org.eclipse.ui.internal.ide.model.WorkbenchResource.getImageDescriptor(WorkbenchResource.java:42)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaElementImageProvider.getWorkbenchImageDescriptor(JavaElementImageProvider.java:181)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaElementImageProvider.computeDescriptor(JavaElementImageProvider.java:121)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaElementImageProvider.getImageLabel(JavaElementImageProvider.java:96)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaUILabelProvider.getImage(JavaUILabelProvider.java:144)
+at org.eclipse.jdt.internal.ui.packageview.PackageExplorerLabelProvider.getImage(PackageExplorerLabelProvider.java:137)
+at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.getImage(DelegatingStyledCellLabelProvider.java:184)
+at org.eclipse.jface.viewers.DecoratingStyledCellLabelProvider.getImage(DecoratingStyledCellLabelProvider.java:167)
+at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.update(DelegatingStyledCellLabelProvider.java:118)
+at org.eclipse.jface.viewers.DecoratingStyledCellLabelProvider.update(DecoratingStyledCellLabelProvider.java:134)
+at org.eclipse.jface.viewers.ViewerColumn.refresh(ViewerColumn.java:152)
+at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:931)
+at org.eclipse.jface.viewers.AbstractTreeViewer$UpdateItemSafeRunnable.run(AbstractTreeViewer.java:102)
+at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:1011)
+at org.eclipse.jdt.internal.ui.viewsupport.ProblemTreeViewer.doUpdateItem(ProblemTreeViewer.java:73)
+at org.eclipse.jdt.internal.ui.viewsupport.ResourceToItemsMapper.updateItem(ResourceToItemsMapper.java:74)
+at org.eclipse.jdt.internal.ui.viewsupport.ResourceToItemsMapper.resourceChanged(ResourceToItemsMapper.java:63)
+at org.eclipse.jdt.internal.ui.viewsupport.ProblemTreeViewer.handleLabelProviderChanged(ProblemTreeViewer.java:200)
+at org.eclipse.jface.viewers.ContentViewer$1.labelProviderChanged(ContentViewer.java:97)
+at

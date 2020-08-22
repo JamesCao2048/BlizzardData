@@ -1,0 +1,49 @@
+The logic for drawing Vertical gradient of Bottom tabs is incorrect
+Build ID: I20081030-1917
+Steps To Reproduce:
+The vertical gradient is not drawn proper when the following options are used
+-
+CTabFolder tabs = new CTabFolder(shell, SWT.BUTTON);
+tabs.setTabHeight(500); //just for clear visibility.
+tabs.setSelectionBackground(new Color[]{display.getSystemColor(SWT.COLOR_DARK_BLUE),
+display.getSystemColor(SWT.COLOR_RED),
+display.getSystemColor(SWT.COLOR_GREEN),	                           display.getSystemColor(SWT.COLOR_CYAN)},	               new int[] {5, 20, 99},true);
+More information:
+The logic in the method
+- CTabFolder.drawBackground(GC gc, int[] shape, int x, int y, int width, int height, Color defaultBackground, Image image, Color[] colors, int[] percents, boolean vertical) has to be modified as
+-
+AT
+--------->
+if (vertical) {
+if (onBottom) {
+TO
+----------->
+//*********************************************************
+if (onBottom) {
+if (percents[percents.length
+- 1]
+<= 100) {
+int position = percents[percents.length
+- 1] * height / 100;
+gc.setBackground(defaultBackground);
+gc.fillRectangle(x, y, width, position);
+}
+int pos = 0;
+Color lastColor = colors[colors.length-1];
+if (lastColor == null) lastColor = defaultBackground;
+for (int i = percents.length-1; i >= 0; i--) {
+gc.setForeground(lastColor);
+lastColor = colors[i];
+if (lastColor == null) lastColor = defaultBackground;
+gc.setBackground(lastColor);
+int nextPercent;
+if(i>0)
+nextPercent = percents[i-1];
+else
+nextPercent=0;
+int gradientHeight = ((percents[i]-nextPercent) * height / 100);
+gc.fillGradientRectangle(x, y+pos, width, gradientHeight, true);
+pos += gradientHeight;
+}
+}
+//*********************************************************

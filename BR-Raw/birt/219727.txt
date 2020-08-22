@@ -1,0 +1,4 @@
+Bug 219727 Enhance cube execute APIs to reduce data define work
+Currently, if I want to execute a cube, I should define the cube, all the data sets and all the data sources before preparing and executing the cube.
+However, is it required for user to define these properties?
+These properties should be got and defined in API by itself.

@@ -1,0 +1,5 @@
+Bug 101361 Bugs in org.eclipse.birt.report.engine.extension.internal.ExtensionManager
+It appears that there are at least two array indexing bugs in the ExtensionManager class.
+In the following places the configuration element array is being addressed by the variable "i" when it appears it should be addressed by "j".
+In our case, this caused an ArrayIndexOutOfBoundsException.
+Line 224 of the #loadGenerationExtensionDefns() method Line 246 of the #loadPresentationExtensionDefns() method Line 268 of the #loadQueryExtensionDefns() method

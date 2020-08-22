@@ -1,0 +1,13 @@
+DND actions in AbstractTreeViewer lead to NPE and application freeze [Carbon]
+Build Identifier: M20110210-1200
+I noticed lately that a big, serious, crashing Eclipse NPE occurs on DND actions in a SWT Tree in the Carbon version of our RCP application.
+I traced it to one point in AbstractTreeViewer.
+This wasn't happening before.
+So I checked if it was happening in Eclipse Carbon version itself.
+Yes it does.
+Reproducible: Always
+Steps to Reproduce:
+1.In Package Explorer create some simple files and folders in a General Project.
+2.DND some files between folders.
+Try and do this a few times.
+Leads to NPE.

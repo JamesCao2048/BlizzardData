@@ -1,0 +1,18 @@
+[perfs] Possible regression for "Draw on a window" perf test
+Looking at M20090121-0842 results it seems that a significant regression occurred since last 2 builds on scenario:
+org.eclipse.swt.test.Draw on a window (Win XP Sun 1.4.2_10 (3 GHz 2 GB))
+Here are the numbers for this test since 3.4.1 for this test machine:
+R3_4_1	M20080911-1700	-0.5%
+M20081001-0800	-0.7%
+M20081023-1830	-0.4%
+M20081119-1141	0.1%
+M20081127-1656	-0.4%
+M20081203-0800	0.1%
+M20081212-1143	-0.5%
+M20081217-0800	-0.1%
+M20081218-1102	-0.2%
+M20081224-0800	0.4%
+M20090107-0800	0.0%
+M20090116-0841	-37.9%
+M20090121-0842	-39.1%
+Usually, I wait to get a little bit more feedback to confirm the regression but I think it's better to have a look at this right now due to 3.4.2 deadline...

@@ -1,0 +1,6 @@
+Bug 286750 Change chart type should not change title[13]
+Description: Change chart type should not change orginal specified title.
+Build number:2.5.1.v200908170920 Steps to reproduce: 1.New a chart, set title to "my chart".
+2.Change chart type to a different one.
+Expected result: Keep the title specified by user.
+Actual result: Title is changed to corresponding chart type title Error log:n/a

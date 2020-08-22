@@ -1,0 +1,6 @@
+Bug 199976 Column width is ignored if total width is larger than page width[1203]
+Description: Column width is ignored if total columns' width larger than page width Build number:2.2.1.v20070815 Steps to reproduce: 1.Insert a grid with two columns.
+2.Set first column width to 2in, set second column width to 7 in.
+3.Preview in excel Expected result: Display column with 2in and 7 in.
+Actual result: Display two columns with same default width.
+Error log:n/a

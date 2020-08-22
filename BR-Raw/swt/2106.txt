@@ -1,0 +1,39 @@
+Disposed TableEditor recieves resize event and crashes
+TableEditor.ControlMoved is called for disposed editor.
+It calls TableEditor._resize()(in the last version "_resize" is renamed to "layout").
+void _resize () {
+if (table.isDisposed()) return;
+if (item == null || item.isDisposed()) return;
+int columnCount = table.getColumnCount();
+if (columnCount == 0 && column != 0) return;
+if (columnCount > 0 && (column
+< 0 || column >= columnCount)) return;
+super._resize();
+}
+But table is null, so we have a crash.
+If u look at TableEditor.dispose() code u see that sometimes removeControlListener is NOT removed for the disposed editor.
+public void dispose () {
+if (this.column >
+-1 && this.column
+< table.getColumnCount()){
+TableColumn tableColumn = table.getColumn(this.column);
+tableColumn.removeControlListener(columnListener);
+}
+columnListener = null;
+table = null;
+item = null;
+column =
+-1;
+
+super.dispose();
+}
+This happens in our application.
+I could not reproduce this in a separate snippet.
+It happened when columns were added and removed from the table a lot, editors are disposed and a resize event is fired for the table for any reason.
+I know for sure that this editor was disposed.
+If u can not reproduce the problem, and can not prevent from _resize to be fired on disposed editor, at least move the line:
+"if (item == null || item.isDisposed()) return;"
+to be first in the _resize() method.
+So, that it would not crash on table.isDisposed() line.
+I attach a print screen with call stack of a problem.
+Thanks

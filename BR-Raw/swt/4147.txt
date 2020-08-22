@@ -1,0 +1,18 @@
+Some ActiveX control can not accept key input.
+Some ActiveX control can not accept key input.
+The reason is :
+OleFrame.translateleOleAccelerator() calls ActiveX control's
+TranslateAccelerator().
+Then the control calls OleControlSite.TranslateAccelerator().
+OleControlSite.TranslateAccelerator() returns error, since it is not
+implemented.
+The control's TranslateAccelerator() returns the same error code to
+OleFrame.translateOleAccelerator().
+In the method, the return code is compared  with S_FALSE like:
+private boolean translateOleAccelerator(MSG msg) {
+if (objIOleInPlaceActiveObject == null) return false;
+return objIOleInPlaceActiveObject.TranslateAccelerator(msg) != OLE.S_FALSE;
+}
+Where the method return *true* for error code.
+translateOleAccelerator should be
+return objIOleInPlaceActiveObject.TranslateAccelerator(msg) == OLE.S_OK;

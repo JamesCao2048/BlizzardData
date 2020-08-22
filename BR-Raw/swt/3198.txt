@@ -1,0 +1,12 @@
+AIX Table performance problem
+I'm having a performance problem with tables on AIX.
+I have a table in a view with 30 or so table
+columns filled with 4,000 rows of data.
+I have the ability for a user to select a format file for the table
+that changes which columns of the data are displayed without hiding the view.
+I do this by disposing
+the TableColumns and creating new TableColumns based on the format data.
+When I tested this on OS
+X (PowerBook G4 500 MHz) the performance was perfectly acceptable.
+When I moved the code to AIX
+(Power3 350 MHz I think) the performance was hideous.

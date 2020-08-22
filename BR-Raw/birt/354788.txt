@@ -1,0 +1,9 @@
+Bug 354788 Visibility not working properly with crosstab horizontal page break
+Build Identifier: birt-rcp-report-designer-2_6_1 In my report, I have a cross tab with column area page break given with Interval 2 for product line as shown in image pagebreak.bmp.
+In master page, i have a grid in header section with an image.
+The visibility of image is controlled based on on data set field as follows: When HEADER_TYPE = 1, hide image Else show image.
+Now, when I generate the report in pdf, page break is happening for horizontal interval 2 as expected.
+But, for the next set of product lines, the image is not getting hidden.
+Please find the attached zip file with the sample rptdesign and output pdf.
+Please help me to fix this issue.
+Reproducible: Always

@@ -1,0 +1,15 @@
+getOffset () in emulated TextLayout.java wrong for proportional fonts
+In SWT's emulated TextLayout (used in SWT/Photon and until recently in
+SWT/Fox),
+method 'public int getOffset (int x, int y, int[] trailing)'
+<snip>
+int charWidth = gc.stringExtent(String.valueOf(chars[0])).x;
+</snip>
+should be
+<snip>
+int charWidth = gc.stringExtent(String.valueOf(chars[offset])).x;
+</snip>
+This is on line 885, I think.
+For obvious reasons, this bug manifests itself only when proportional (non-
+monospaced) font is used, which is a rare case for the Eclipse-Java-Editor
+client of StyledText.

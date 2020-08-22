@@ -1,0 +1,4 @@
+Bug 114460 Chart Format color is not accurate
+details: Chart Format color is not accurate steps to reproduce: 1.New a design report.
+2.Drop a chart 3.Select Pie Chart 4.In Format Chart, Series--Orthogonal Series, Select Leader Line--Color 5.Click other area that is not belong to eclipse actual result: An error message pop up:An error has occured.See error log for more details.
+expected result: No error.

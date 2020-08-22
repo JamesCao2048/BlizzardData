@@ -1,0 +1,2 @@
+Bug 301494 Forbid to drag measure to category/optional axis[13]
+Build Identifier: 2.5.2.v20100202 Chart should forbid to dnd measure to category x axis and optional y series, also it should forbid dnd dimension to y series Reproducible: Always Steps to Reproduce: 1.New a cube 2.Insert a chart, bind with cube 3.DND measure to category, dnd dimension to y series Expected result:Step2,3 should be forbidden Actual result:user can do step2,3

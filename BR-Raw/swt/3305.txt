@@ -1,0 +1,5 @@
+Caret.drawCaret ignores image content
+I20030528
+Mac OS 10.2.6
+On MacOS X the implementation of Caret.drawCaret does not use the contents of an
+image but only its bounds.

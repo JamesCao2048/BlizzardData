@@ -1,0 +1,6 @@
+block selection, getSelectionText and getSelectionTextCount should be aware of block selection
+getSelectionText and getSelectionTextCount should be aware of block selection.
+getSelectionText() should always return the same text a copy/cut operation set in the clipboard.
+getSelectionTextCount() returns getSelectionText().length.
+NOTE: in block selection , getSelectionRange().y can be different from getSelectionTextCount().
+the only diferrence being that clibboard text uses system line demiliters while the text returned by getSelectionText uses model line demiliters.

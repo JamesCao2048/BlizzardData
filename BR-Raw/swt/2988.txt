@@ -1,0 +1,10 @@
+GC.copyArea causes continuous repainting of Canvas
+Using the second variant of copyArea, that specifies source and destination
+within the receiver, causes a rapid continous redrawing of the canvas,
+noticeable as a rapid flickering over the source position of the copyArea
+command.
+The attached example shows this by drawing an Image on a Canvas and then
+copying a fragment of the Image to be displayed at different position
+on the Canvas, using both copyArea methods.
+Version: 3.1.0
+Build id: I20050219-1500

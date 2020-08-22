@@ -1,0 +1,5 @@
+IllegalStateException: Undeclared type variable when hiding
+ISE thrown compiling  http://sourceforge.net/projects/collections  4.0beta3 source.
+javac issues two warnings, but Eclipse 3.1 (JDT) issues *many* for type
+parameter hiding types (perhaps  bug 103783 ).  I haven't isolated a test case or
+tried it on earlier releases - sorry.

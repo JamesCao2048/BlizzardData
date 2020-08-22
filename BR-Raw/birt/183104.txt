@@ -1,0 +1,9 @@
+Bug 183104 Allow a Custom ODA Data Source Wizard Page to override the Linked Profile Properties' Value
+The ODA designer framework provides a connection profile selection wizard and page to allow an user to select a connection profile instance from a file-based profile repository.
+It in turn assigns the connection profile reference info as public properties in a DataSourceDesign definition.
+Such assignment takes place by default when the ODA profile selection wizard is used.
+It currently ignores any values that a custom ODA wizard page may have specified for these profile reference properties (ConnectionProfileProperty.PROFILE_NAME_PROP_KEY and PROFILE_STORE_FILE_PATH_PROP_KEY).
+The ODA framework should have allowed a custom ODA wizard page to override such property values returned by its collectCustomProperties method.
+By default, the related properties are not included in the property collection provided to a custom ODA wizard page for initialization.
+And it should not add those properties if it wants to assume the default behavior.
+A custom ODA wizard page should however be able to explicitly add these properties, which if exists would override the values contributed by the connection profile selection page.

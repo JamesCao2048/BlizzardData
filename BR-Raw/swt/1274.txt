@@ -1,0 +1,56 @@
+Table column is not zero sized initially
+Run the test case.
+Note that the item is visible, but the table column should have zero size (other platfoms).
+Also the horizontal scroll is not showing.
+It does not show if you press the button to pack either.
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+final Table table = new Table(shell, SWT.MULTI | SWT.BORDER);
+final TableColumn column = new TableColumn(table, SWT.NONE);
+table.setFont(new Font(display, "Monaco", 40, SWT.NORMAL));
+for (int i = 0; i
+< 10; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText("Itemxxxxxxxxxxxxxxxxxxxxx" + table.indexOf(item));
+}
+
+table.addListener(SWT.MeasureItem, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem)event.item;
+String text = item.getText();
+event.gc.setFont(display.getSystemFont());
+event.width = event.gc.stringExtent(text).x;
+}
+});
+table.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+event.detail &= ~SWT.FOREGROUND;
+}
+});
+table.addListener(SWT.PaintItem, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem)event.item;
+String text = item.getText();
+event.gc.setFont(display.getSystemFont());
+event.gc.drawString(text, event.x, event.y);
+}
+});
+
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Pack column");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+column.pack();
+}
+});
+shell.setBounds(50, 50, 300, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

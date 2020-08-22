@@ -1,0 +1,10 @@
+Program.execute mangles URLs
+3.0-gtk
+On Gnome, Program.execute mangles the passed filename and tries to convert it
+into an URL (it adds 'file://' in front of the name).
+This is only correct when
+executing applications that expect a URL and when a real file is passed.
+When
+executing the mozilla program, one may want to specify a URL instead of a file.
+Actual: ' http://www.eclipse.org ' is converted to 'file:// http://www.eclipse.org '
+Expected: URLs are left alone.

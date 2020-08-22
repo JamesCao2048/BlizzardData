@@ -1,0 +1,4 @@
+Bug 193895 Can not select the data cube in advanced and properties[1102]
+Description: Can not select the data cube in advanced and properties[1102] Step: 1.New a report design, datasource, dataset, data cube 2.New a cross table 3.Switch Property Editor
+- Advanced 4.Switch Properties Actual result: Select the Cube selection and spread the drop down list, no data cube in it.
+Exception result: It can select the data cube in advance or properties

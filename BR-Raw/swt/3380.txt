@@ -1,0 +1,32 @@
+[browser] safari - 2 browsers on different tab items in same tab folder overlap
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.browser.*;
+public class PRBrowser {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("PRBrowser");
+shell.setLayout(new FillLayout());
+TabFolder folder = new TabFolder(shell, SWT.NONE);
+TabItem item1 = new TabItem(folder, SWT.NONE);
+TabItem item2 = new TabItem(folder, SWT.NONE);
+Browser browser1 = new Browser(folder, SWT.NONE);
+browser1.setUrl(" http://www.eclipse.org ");
+Browser browser2 = new Browser(folder, SWT.NONE);
+browser2.setUrl(" http://www.ibm.com ");
+item1.setControl(browser1);
+item1.setText("1");
+item2.setControl(browser2);
+item2.setText("2");
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

@@ -1,0 +1,38 @@
+Issue with background images and CLabels
+CLabels (and potentially other controls) have adverse effects on the painting of background images.
+When a control with a background image and a CLabel as a child is partially obscured by another shell huge amounts of cheese is generated wherever the shell travels.
+If the CLabel is changed to a label then this is not observed.
+Simple test case:
+package foo;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CLabel;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+public class Snippet {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Image background = new Image(display, "bg.gif");
+Image buttonImage = new Image(display, "button.gif");
+shell.setBackgroundMode(SWT.INHERIT_DEFAULT);
+shell.setBackgroundImage(background);
+Composite child = new Composite(shell, SWT.BORDER);
+child.setLayout(new FillLayout());
+CLabel label = new CLabel(child, SWT.NONE);
+label.setImage(buttonImage);
+label.setText("Test");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+background.dispose();
+buttonImage.dispose();
+}
+}
+This has been observed in XP and 2k.

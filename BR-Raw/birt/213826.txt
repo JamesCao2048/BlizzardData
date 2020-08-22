@@ -1,0 +1,8 @@
+Bug 213826 The image can not be shown when using event handler to set image [0800]
+Description: The image can not be shown when using event handler to set image.
+Build number: 2.2.2.v20071225-0630 Steps to reproduce: 1.Copy the attached images and report design to the same folder.
+2.New a java project and import the attached java file.
+3.Preview the attached report design.
+Expected result: The image is shown.
+Actual result: The image is not shown when preview.
+Error log: N/A

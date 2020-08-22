@@ -1,0 +1,5 @@
+EC: Tab un-indent does not work
+- select a block of text in the Java editor
+- press Tab and the whole block will be indented
+- now press Shift+Tab and focus will be reassigned instead of un-indenting the
+block

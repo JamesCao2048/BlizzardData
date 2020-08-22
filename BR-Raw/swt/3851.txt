@@ -1,0 +1,22 @@
+Can't drop views over some widgets
+Build GM5
+- Linux/GTK
+The GTK build of Eclipse does not seem to let you drop a view over top of a
+scroll bar or a table header.
+1) Start a fresh copy of Eclipse.
+2) From the resource perspective, drag the outline view over the Tasks view.
+- Notice that when the mouse cursor is over the header for the table in the
+tasks view, the no drop cursor is shown.
+Dropping the Outline view at this point
+will not reposition the view.
+3) If the navigator view does not have a horizontal scroll bar, create a project
+with a very long name so that the navigator does show a scroll bar.
+4) Drag the outline view from on top of the tasks view to the bottom of the
+navigator view.
+- Notice that when the mouse cursor is over the horizontal scroll bar, the no
+drop cursor is shown.
+- Notice also that the space on the screen where the dock below cursor is very
+small.
+- Notice that even when the Dock below cursor is being shown that dropping the
+view does not always reposition the view.
+This is not the behaviour that I have seen when using Motif, or when on Windows.

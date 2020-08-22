@@ -1,0 +1,21 @@
+CCombo.computeSize returning incorrect values when using wHint/hHint
+The CCombo.computeSize behavior is inconsistent with other widgets in that the wHint and hHint do not override the internal widget computed size.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+CCombo combo = new CCombo(shell, SWT.WRAP);
+combo.add("This is some text that is longer than the width hint");
+System.out.println("ccombo computesize default: " +
+combo.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+System.out.println("ccombo computesize 40: " + combo.computeSize(40, SWT.DEFAULT));
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+For me:
+ccombo computesize default: Point {220, 14}
+ccombo computesize 40: Point {220, 14}
+While the width and height are only hints the way inwhich the CCombo implements it is inconsistent with other widgets such as the Combo, Text, Table, etc.
+In those cases, the hint is returned largely "as is".

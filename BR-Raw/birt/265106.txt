@@ -1,0 +1,6 @@
+Bug 265106 text with hyperlink in excel should has the same style as in html
+Build ID: I20081211-1908 Steps To Reproduce: 1.New a report and insert a label 2.Set hyperlink on label.
+3.Output the report to html, you can see the text color is blue and with underline.
+But if it is outputted to excel, the blue color and underline does not exist.
+It should be same as html.
+More information:

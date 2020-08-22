@@ -1,0 +1,35 @@
+Controls do not appear in tool items
+Eclipse 20020409
+Linux motif
+This bug appears for any control set into a tool item.
+If you uncomment the line "ccombo.moveAbove (null);" the combo widget appears
+in the toolbar otherwise all you see is the separator.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+final ToolBar toolBar = new ToolBar(shell, SWT.FLAT | SWT.BORDER);
+ToolItem ti = new ToolItem(toolBar, SWT.PUSH);
+
+ti = new ToolItem(toolBar, SWT.SEPARATOR);
+CCombo ccombo = new CCombo(toolBar, SWT.NONE);
+//	Combo ccombo = new Combo(toolBar, SWT.NONE);
+for (int i = 0; i
+< 10; i++) {
+ccombo.add("item "+i);
+}
+ccombo.pack();
+ti.setControl(ccombo);
+ti.setWidth(100);
+
+toolBar.setLocation(10, 10);
+toolBar.pack();
+//BUG
+- move above
+//ccombo.moveAbove (null);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,26 @@
+Combo throws exception in junit test
+4) test_removeII
+(org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Combo)
+java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:2351)
+at org.eclipse.swt.SWT.error(SWT.java:2295)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:375)
+at org.eclipse.swt.widgets.Combo.remove(Combo.java:938)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Combo.test_removeII
+(Test_org_eclipse_swt_widgets_Combo.java:397)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Combo.runTest
+(Test_org_eclipse_swt_widgets_Combo.java:688)
+at org.eclipse.swt.tests.junit.AllTests.main(AllTests.java:25)
+5) test_setItemILjava_lang_String
+(org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Combo)
+java.lang.ArrayIndexOutOfBoundsException: 0
+at org.eclipse.swt.widgets.Combo.setItem(Combo.java:1103)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Combo.test_setItemILja
+va_lang_String(Test_org_eclipse_swt_widgets_Combo.java:503)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Combo.runTest
+(Test_org_eclipse_swt_widgets_Combo.java:695)
+at org.eclipse.swt.tests.junit.AllTests.main(AllTests.java:25)

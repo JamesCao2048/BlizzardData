@@ -1,0 +1,33 @@
+Tree.showItem() may not reveal children of non-expanded items
+- run the snippet below
+- expand each of the descendent items in the Tree all the way to the bottom
+- collapse the top item only
+- double-click anywhere in the Tree's whitespace
+
+-> the bottom item is not successfully revealed but it should be
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10, 10, 300, 300);
+shell.setLayout(new FillLayout());
+final Tree tree = new Tree(shell, SWT.MULTI);
+TreeItem item0 = new TreeItem(tree, SWT.NONE);
+item0.setText("org.eclipse.swt");
+TreeItem item1 = new TreeItem(item0, SWT.NONE);
+item1.setText("Eclipse SWT/Cocoa");
+TreeItem item2 = new TreeItem(item1, SWT.NONE);
+item2.setText("org.eclipse.swt.graphics");
+final TreeItem item3 = new TreeItem(item2, SWT.NONE);
+item3.setText("Font");
+shell.open();
+tree.addListener(SWT.MouseDoubleClick, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("doit!");
+tree.showItem(item3);
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

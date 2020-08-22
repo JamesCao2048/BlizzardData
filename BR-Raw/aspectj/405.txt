@@ -1,0 +1,48 @@
+Exploding compile time with if() statements in pointcut
+Compile time explodes when adding if(...) statements to pointcuts.
+This is the same with ajc 1.2.1 and 1.5M2 although 1.5M2 is a little bit faster,
+but compile time still explodes.
+Example:
+pointcut pc2() :
+(execution(* Test.a(..)) && if(sl.isEnabled()) )
+|| (execution(* Test.a(..)) && if(sl.isEnabled()) )
+compiled in about 1 second.
+Up to 7 such conditions , eg.
+pointcut Pc7() :
+(execution(* Test.a(..)) && if (sl.isEnabled()))
+|| (execution(* Test.b(..)) && if (sl.isEnabled()))
+|| (execution(* Test.c(..)) && if (sl.isEnabled()))
+|| (execution(* Test.d(..)) && if (sl.isEnabled()))
+|| (execution(* Test.e(..)) && if (sl.isEnabled()))
+|| (execution(* Test.f(..)) && if (sl.isEnabled()))
+|| (execution(* Test.g(..)) && if (sl.isEnabled()));
+are also compiled quite quickly (~ 3 seconds with both ajc 1.2.1 and 1.5M2).
+Now, adding another condition (8 lines) causes 6 seconds compile time. Adding
+yet another condition line (= 9 ex. lines) causes ~ 1 min compile time!
+(10 such lines even more than 8 minutes)
+Sample source code below
+------------------------
+// ########## Aspect.aj ###############
+public aspect Aspect {
+private static final SimpleLogger sl
+= new SimpleLogger();
+pointcut PC() :
+(execution(* Test.a(..)) && if (sl.isEnabled()))
+|| (execution(* Test.b(..)) && if (sl.isEnabled()))
+|| (execution(* Test.c(..)) && if (sl.isEnabled()))
+|| (execution(* Test.d(..)) && if (sl.isEnabled()))
+|| (execution(* Test.e(..)) && if (sl.isEnabled()))
+|| (execution(* Test.f(..)) && if (sl.isEnabled()))
+|| (execution(* Test.g(..)) && if (sl.isEnabled()))
+|| (execution(* Test.h(..)) && if (sl.isEnabled()))
+|| (execution(* Test.i(..)) && if (sl.isEnabled()))
+|| (execution(* Test.j(..)) && if (sl.isEnabled()))
+;
+before() : PC() {
+sl.log("Before");
+}
+after() : PC() {
+sl.log("After");
+}
+}
+// ########## Test.java ###############

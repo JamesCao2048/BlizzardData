@@ -1,0 +1,44 @@
+Table item background is green when selected
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+final Table table = new Table(shell, SWT.MULTI | SWT.BORDER);
+table.setFont(new Font(display, "Monaco", 40, SWT.NORMAL));
+for (int i = 0; i
+< 1; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText("Itemxxxxxxxxxxxxxxxxxxxxx" + table.indexOf(item));
+}
+
+table.addListener(SWT.MeasureItem, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem)event.item;
+String text = item.getText();
+event.gc.setFont(display.getSystemFont());
+event.width = event.gc.stringExtent(text).x;
+}
+});
+table.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+event.detail &= ~SWT.FOREGROUND;
+}
+});
+table.addListener(SWT.PaintItem, new Listener() {
+public void handleEvent(Event event) {
+TableItem item = (TableItem)event.item;
+String text = item.getText();
+event.gc.setFont(display.getSystemFont());
+event.gc.drawString(text, event.x, event.y);
+}
+});
+table.setSelection(0);
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

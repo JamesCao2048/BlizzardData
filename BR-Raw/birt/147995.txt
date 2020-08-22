@@ -1,0 +1,2 @@
+Bug 147995 Master page lost when drill through to a report document
+Description: Master page lost when drill through to a report document Steps to reproduce: 1.New a report rpt1 with master page 2.Generate the report document for rpt1 3.New another report rpt2, drill through to the report document 4.Preview rpt2, link to the report document, master page is missing

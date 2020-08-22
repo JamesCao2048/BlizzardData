@@ -1,0 +1,32 @@
+SerialVersionUID handling
+from emails - needs a decision
+---------------
+Hi Andy
+is there a way for the weaver to add to weaved classes the serial ver
+uid field based on the pre-weaved bytecode computation.
+Right now it issues lint warning when a Serializable class without
+serial ver uid is encountered and due to evil #75442 this is very
+annoying for LTW.
+A first step would be to at least deal with that when we had the
+perObbjectTypeMunger (then should not change any kind previous stuff).
+Alex
+------------
+Andy,
+Generating the suid sounds like a nice idea but the code the JVM used is
+private inside ObjectStreamClass. Also we need to take care with ITD fields
+to ensure correct behaviour when sending and receiving from non-woven
+classes. Basically the programmer needs to be engaged, it only affects
+serializable classes and in 1.5 there is a warning if you don't declare the
+field so there is a strong hint to the programmer to solve the problem. For
+LTW we should make an enhancement to allow the user to configure Lint and
+other things. For example they may or may not be interested in advice not
+matching.
+Matthew Webster
+----------------------
+Alex,
+We should make a distinction between benign changes to suid and those that
+affect members. Generating suid when we add a static initializer (to
+support thisJoinPoint or the staticinitialization join point), accessor
+methods for privileged aspects or transient per-fields is OK. Doing for
+ITDs is more problematic.
+Matthew Webster

@@ -1,0 +1,7 @@
+Combo#add(String,int) does update selection-index
+Created  attachment 86364   [details]
+Snippet to reproduce
+When e.g.
+the first item is selected and you call Combo#add("a1",0) the index is not shifted to 1 and the widget still displays the old-item.
+CCombo behaves correctly.
+This leads to undesired effects in JFace-ComboViewer.

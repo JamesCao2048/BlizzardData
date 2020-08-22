@@ -1,0 +1,6 @@
+GTK: Text Widget, computeSize issue
+Eclipse 20021009, gtk
+With the attached code the size of the text widget looks incorrect on gtk.
+Prior to resizing the widget, the text widget does not display any text.
+Once
+the widget is resized then the expected text is displayed.

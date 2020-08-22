@@ -1,0 +1,18 @@
+SWT.RIGHT does not work in Text
+RUn th efollowing snippet.
+The text is not Right aligned.
+Same is true if
+the style SWT.SINGLE is added.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+Text text = new Text(shell, SWT.RIGHT);
+text.setText("Hello");
+text.setBounds(10, 10, 200, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

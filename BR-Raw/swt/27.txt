@@ -1,0 +1,69 @@
+CTabFolder context menu opens in the wrong place when invoked by the keyboard
+Run CustomControlExample and go to CTabFolder.
+Check "Popup menu".
+Select a CTabFolder tab (so focus rectangle is drawn around the tab name).
+Move the mouse far away, so that it is not in the CTabFolder.
+Now type Shift+F10 to bring up a context menu.
+The context menu will pop up wherever you left the mouse.
+It should pop up within the CTabFolder's selected tab.
+Bug 374147  added API to allow custom controls to fix this problem based on the semantics of the control.
+(i.e.
+StyledText pops up a keyboard-initiated context menu at the caret).
+The following patch brings up the menu near the top-right corner of the selected CTabFolder tab if it was popped up using the keyboard.
+--- snip
+---
+### Eclipse Workspace Patch 1.0
+#P org.eclipse.swt
+diff
+--git Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/CTabFolder.java Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/CTabFolder.java
+index 9d6d4b0..b8ba5e9 100644
+--- Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/CTabFolder.java
++++ Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/CTabFolder.java
+@@
+-274,6 +274,7 @@
+case SWT.FocusIn:          onFocus(event);	break;
+case SWT.FocusOut:         onFocus(event);	break;
+case SWT.KeyDown:          onKeyDown(event); break;
++				case SWT.MenuDetect:       onMenuDetect(event); break;
+case SWT.MouseDoubleClick: onMouseDoubleClick(event); break;
+case SWT.MouseDown:        onMouse(event);	break;
+case SWT.MouseEnter:       onMouse(event);	break;
+@@
+-295,6 +296,7 @@
+SWT.FocusIn,
+SWT.FocusOut,
+SWT.KeyDown,
++		SWT.MenuDetect,
+SWT.MouseDoubleClick,
+SWT.MouseDown,
+SWT.MouseEnter,
+@@
+-1647,6 +1649,23 @@
+}
+return false;
+}
++void onMenuDetect(Event event) {
++	if (event.detail == SWT.MENU_KEYBOARD) {
++		if (selectedIndex !=
+-1) {
++			CTabItem item = items[selectedIndex];
++			Rectangle rect = getDisplay().map(this, null, item.getBounds());
++			if (!rect.contains(event.x, event.y)) {
++				/* If the mouse is not in the currently-selected tab,
++				 * then pop up the menu near the top-right corner of the current tab.
++				 */
++				Rectangle itemTrim = renderer.computeTrim(selectedIndex, SWT.NONE, 0, 0, 0, 0);
++				Rectangle closeTrim = renderer.computeTrim(CTabFolderRenderer.PART_CLOSE_BUTTON, SWT.NONE, 0, 0, 0, 0);
++				event.x = rect.x + rect.width
+- item.closeRect.width + itemTrim.x
+- closeTrim.width;
++				event.y = rect.y
+- itemTrim.y
+- closeTrim.y;
++			}
++		}
++	}
++}
+void onMouseDoubleClick(Event event) {
+if (event.button != 1 ||
+(event.stateMask & SWT.BUTTON2) != 0 ||

@@ -1,0 +1,2 @@
+Bug 310958 Chart live preview failed when chart used dataset filter changing
+Description: [Regression] Chart live preview failed when chart using dataset with filter Build: 2.6.0.v20100429-0630 Steps to reproduce: 1.New a data set with filter Between/Equal/In/Great than 2.New a chart using the data set 3.Check the live preview in chart builder Actual result: Chart live preview failed

@@ -1,0 +1,34 @@
+Combo on Linux missing, doesn't show up. FormData
+I have a wizard page that creates a Combo, the Combo is positioned using FormLayout and Formdata.
+On Linux (RedHat 4 Enterprise desktp) the Control fails to show up.
+Unless, I increase the Bottom Formdata to a larger percent.
+--------------------------------
+final Composite composite = new Composite(parent, SWT.NONE);
+FormLayout formLayout = new FormLayout();
+formLayout.marginHeight = 5;
+formLayout.marginWidth = 5;
+_comboLabel = new Label(composite, SWT.NONE);
+String message = Messages.PAGE_COMBO_MESSAGE;
+_comboLabel.setText(message);
+FormData dataComboLabel = new FormData();
+dataComboLabel.top = new FormAttachment(0, 5);
+dataComboLabel.left = new FormAttachment(0, 0);
+dataComboLabel.bottom = new FormAttachment(10, 0);
+dataComboLabel.right = new FormAttachment(100,
+-5);
+_comboLabel.setLayoutData(dataComboLabel);
+_combo = new Combo(composite, SWT.READ_ONLY);
+FormData data = new FormData();
+top = new FormAttachment(_comboLabel, 5);
+data.left = new FormAttachment(0, 0);
+// !!!! weird problem here on linux
+data.bottom = new FormAttachment(10, 0);
+data.right = new FormAttachment(100,
+-5);
+_combo.setLayoutData(data);
+------------------
+If I increase the "data.bottom..." values to
+data.bottom = new FormAttachment(20, 0);
+The control will then render on linux.
+** Note on Vista and Windows XP SP2 the control renders fine.
+Expected same behavior on Linux as on Vista and XP.

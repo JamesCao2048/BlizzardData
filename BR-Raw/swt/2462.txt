@@ -1,0 +1,7 @@
+Error occurs when delete text in StyledText
+First, run Snippet 212, whose URL is  http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet212.java?rev=HEAD&content-type=text/vnd.viewcvs-markup
+Then, resize the shell.
+Make it being smaller than its content height, please see  attachment 1   [details]
+Then, press Shift + Down Arrow to select all text, please see  attachment 2   [details]
+Then, press Backspace, an error will occur.
+The log is uploaded as  attachment 3   [details]

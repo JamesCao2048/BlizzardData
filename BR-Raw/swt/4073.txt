@@ -1,0 +1,12 @@
+Task View: Not clearing priority icons
+Build F2
+The priority icons that are shown in task view can be displayed beside the wrong
+task.
+1) Make sure the task view is empty.
+2) Create 3 tasks called 'a', 'b', and 'c'
+3) Assign a high priority to task 'a'
+4) Select task 'b'
+5) Sort by priority repeatedly, by clicking on the table header
+6) Notice that whenever 'a' is the bottom task, that the priority icon is also
+shown beside 'c'.
+The icon can be cleared by selecting 'c'.

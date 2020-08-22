@@ -1,0 +1,2 @@
+Bug 156636 [Acceptance] Format does not take effect in pre-defined style report
+Format does not take effect in pre-defined style report Steps to reproduce: 1.New a report, add a sample datasource and data set with table "CUSTOMERS" 2.Drag the dataset in the report 3.Add a pre-define style "report" Set format Number as to Currency Set format Datetime to Shorttime Set format String to Lowercase 4.Preview the report in Web viewer, HTML and PDF Expected result: Format takes effect Actual result: Format does not take effect

@@ -1,0 +1,5 @@
+[Browser] don't use InitXPCOM2 to initialize xulrunner
+Created  attachment 130602   [details]
+patch
+http://groups.google.com/group/mozilla.dev.platform/browse_thread/thread/7bcd0017fc4a32ce  indicates that InitXPCOM* will be removed as of xulrunner 1.9.2. Our xulrunner startup sequence needs to change to use XRE_InitEmbedding instead (but InitXPCOM2 is still needed for mozilla versions != xulrunner).
+Patch is attached.

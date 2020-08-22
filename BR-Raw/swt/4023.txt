@@ -1,0 +1,29 @@
+StyledText - BIDI - Bad effect of RLO unicode character
+Tested on win2k Arabic Locale, build eclipse-SDK-GM4-win32.zip
+-Create a new Java Project.
+-Create a new Java Class named TestStyledText.
+-Insert the following code in the newly created class:
+public class TestStyledText {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+shell.setSize(300, 300);
+Group grp1 = new Group(shell, SWT.NULL);
+grp1.setLayout(new GridLayout());
+StyledText styledText = new StyledText(grp1, SWT.H_SCROLL |
+SWT.V_SCROLL | SWT.MULTI);
+styledText.setSize(500, 500);
+styledText.setText("u202euFE9FuFEF4uFEFCuFEE5");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}
+-The u202e is Right to Left Override unicode control character.
+-Run the Java class as a Java application.
+-Only the character uFEE5 is displayed in the StyledText component, other are
+displayed as white spaces,
+NB:When I select all the text and copy it to notepad, it is correctly displayed.

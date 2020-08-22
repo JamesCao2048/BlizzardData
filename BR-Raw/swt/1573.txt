@@ -1,0 +1,6 @@
+[Accessibility] Controls that implement kEventAccessibleGetNamedAttribute need to call swt accessible API
+20080513
+Many of the Carbon controls had to override kEventAccessibleGetNamedAttribute in order to provide basic accessibility for the control.
+If an application hooked an AccessibleListener to any of these controls, then the application's AccessibleListener code was not being called.
+The fix involved coming up with a mechanism to let the Accessible class know that theEvent may already contain valid data.
+Also, care needed to be taken to make sure that CallNextEventHandler was not called twice for the same event.

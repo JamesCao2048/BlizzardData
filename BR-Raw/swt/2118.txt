@@ -1,0 +1,20 @@
+Program.findProgram(String extension) should gracefully handle long input
+The RegistryKey .net class does some pre-validation before actually hitting the registry.
+It would be nice to do something similar in the java layer before calling OS.RegistryKey_OpenSubKey
+- ideally not only in Program.findProgram but as a common sanity check.
+I believe the non-wpf win32 version returns null.
+e.g.
+String reallyLongExtension = "xxxxxx.....";
+Program.findProgram(reallyLongExtension);
+will currently (3.3 M6) throw something like:
+System.ArgumentException: Registry subkeys should not be greater than 255 characters.
+at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+at Microsoft.Win32.RegistryKey.ValidateKeyName(String name)
+at Microsoft.Win32.RegistryKey.OpenSubKey(String name, Boolean writable)
+at Microsoft.Win32.RegistryKey.OpenSubKey(String name)
+at Java_org_eclipse_swt_internal_wpf_OS_RegistryKey_1OpenSubKey(JNIEnv_* env, _jclass* that, Int32 arg0, Int32 arg1)
+Java:
+java.lang.Exception: Stack trace
+at java.lang.Thread.dumpStack(Unknown Source)
+at org.eclipse.swt.internal.wpf.OS.RegistryKey_OpenSubKey(Native Method)
+at org.eclipse.swt.program.Program.findProgram(Program.java:69)

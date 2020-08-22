@@ -1,0 +1,2 @@
+Bug 158255 Wrong method name in PlatformConfig
+There is a method in org.eclipse.birt.core.framework.PlatformConfig class: public void getBIRTHome( String birtHome ) { properties.put( BIRT_HOME, birtHome ); } but obviously the method name should be "setBIRTHome".

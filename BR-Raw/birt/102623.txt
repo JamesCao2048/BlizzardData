@@ -1,0 +1,8 @@
+Bug 102623 Image can't be refreshed after importing again.
+Description: Image can't be refreshed after importing again.
+Steps to reproduce: 1.Import an image named "image1.jpg" into layout view.
+2.Delete this image file from outline->image.
+3.Rename "image2.jpg" as "image1.jpg".
+4.Import new "image1.jpg" into layout again.
+Expected result: New image is displayed.
+Actual result: Original image is still displayed.

@@ -1,0 +1,85 @@
+Performance of GC.fill* methods on GTK
+The following example from Ian Bull on the SWT newsgroup demonstrates that GC.fill* methods are very slow on GTK.
+The time is being spent in OS.gdk_gc_get_values(handle, values).
+We could cache the GdkGCValues and this would bring the GTK performance in line with Windows.
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class ImagePerformance {
+/**
+* Small performance test
+* @author Ian Bull
+*
+*/
+
+public static void main( String[] args ) {
+
+Display display = new Display();
+
+final Color white = new Color(display, 255, 255, 255);
+final Color red = new Color(display, 255, 0, 0);
+final Color blue = new Color(display, 0, 0, 255);
+
+Shell shell = new Shell( display );
+shell.setText("Canvas Performance");
+shell.setSize(600,600);
+FillLayout fl = new FillLayout(SWT.VERTICAL);
+fl.marginHeight = 10;
+fl.marginWidth = 10;
+fl.spacing = 10;
+
+shell.setLayout( fl );
+
+final Canvas canvas = new Canvas( shell, SWT.DOUBLE_BUFFERED);
+canvas.setBackground(white);
+Button button = new Button( shell, SWT.PUSH );
+
+button.setText("Run Test");
+
+button.addSelectionListener(new SelectionAdapter() {
+
+public void widgetSelected(SelectionEvent e) {
+
+canvas.redraw();
+long start = System.currentTimeMillis();
+canvas.update();
+long end = System.currentTimeMillis();
+System.out.println("Total: " + ( end
+- start ));
+
+}
+});
+
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+if (true) return;
+e.gc.setBackground(red);
+e.gc.fillRectangle(3, 3, 600, 300);
+for ( int i = 0; i
+< 200; i++ ) {
+for ( int j = 0; j
+< 200; j++ ) {
+e.gc.setBackground(blue);
+e.gc.fillOval(i*4, j*4, 3,3);
+}
+}
+e.gc.setBackground(red);
+
+}
+
+});
+
+shell.open();
+
+while ( !shell.isDisposed() ) {
+if ( !display.readAndDispatch() ) display.sleep();
+}
+white.dispose();
+red.dispose();
+blue.dispose();
+display.dispose();
+
+}
+}

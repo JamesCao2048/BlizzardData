@@ -1,0 +1,8 @@
+Loss of focus during typing
+I just blamed EGit for a situation where typing text in a text field of a dialog is disrupted by focus loss (see  bug 352253 comment 30  2nd para), but then a similar issue happened in the Java editor, so I'm asking if this could be caused by a recent change in platform UI or similar?
+In the editor I see the following effect:
+Everytime a keystroke changes the dirty flag (set or unset in case of Ctrl-z) the editor looses focus.
+At a closer check, even plain text editors are affected.
+After focus loss, none of the normal hotkeys work, only menu accelerators do (proving that the window still has the focus somewhere).
+SDK is I20120828-0800, the bug in the editor seems to be really new.
+FWIW: I'm on Kubuntu 12.04.

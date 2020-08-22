@@ -1,0 +1,2 @@
+Bug 155943 "Restore Properties" is always enabled for extended chart
+Steps to reproduce: 1.New a report, includes a library, extends lib.chart 2.Choose the chart Expected result: "Restore Properties" is disabled untill set/change any local properties for the chart Actual result: "Restore Properties" is always enabled

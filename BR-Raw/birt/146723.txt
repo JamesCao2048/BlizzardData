@@ -1,0 +1,6 @@
+Bug 146723 In BIRT Report Viewer (the Web Viewer), a grouped report displays incorrect characters in the TOC
+Eclipse 3.2.0 Build id: I20060602-1317 BIRT Report Designer version 2.1.0.N20060612-0630 Build id: 200606120630 In BIRT Report Viewer (the Web Viewer), a grouped report displays incorrect characters in the TOC.
+Steps to reproduce: 1 Open the attached Customers_grouped.rptdesign in BIRT Report Designer.
+2 Choose File-->View Report in Web Viewer.
+3 Choose Toggle table of contents.
+The table of contents displays incorrect characters for the ranges of values.

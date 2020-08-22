@@ -1,0 +1,73 @@
+It displays a wrong character when input "1" character by display.post() method on Mac OS X
+Build ID: 3.3
+Steps To Reproduce:
+In following example, I want to input a "1" character in a text widget.
+However, I got a curious "搂" character but not "1".
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class TryPost {
+/**
+* @param args
+*/
+public static void main(String[] args) {
+new TryPost();
+}
+public TryPost() {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(4, false));
+
+final Text text = new Text(shell, SWT.BORDER);
+shell.pack();
+shell.open();
+
+new Thread() {
+public void run() {
+display.syncExec(new Runnable() {
+public void run() {
+Event event = new Event();
+event.type = SWT.KeyDown;
+event.keyCode = 0;
+event.character = '1';
+display.post(event);
+
+event = new Event();
+event.type = SWT.KeyUp;
+event.keyCode = 0;
+event.character = '1';
+display.post(event);
+}
+});
+}
+}.start();
+
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+}
+More information:
+I have tried it on both Mac OS X 10.4.9 and Mac OS X 10.5 beta.
+It has the same result.
+I check the code and guess it may caused by these codes(Display.java):
+switch (type) {
+case SWT.KeyDown:
+case SWT.KeyUp: {
+...
+if ((result1 & 0x7f) == key || (result2 & 0x7f) == key) {
+vKey = i;
+break;
+}
+}
+...
+}
+when event.character is '1', if result value is 177, (result & 0x7f) will be 49, which is the ASCII value of '1'.
+So it input 177 as key value but not 49, and it will display a curious "搂" character.
+I suggest it can be modified as:
+if ((result1 & 0xff) == key || (result2 & 0xff) == key)
+it will work.

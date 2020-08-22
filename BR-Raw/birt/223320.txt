@@ -1,0 +1,3 @@
+Bug 223320 Compiled script cache for IReportContext.evaluate()
+Script expression should be cached or directly delegate to ScriptContext.evaluate(String) when call IReportContext.evaluate(String).
+Currently, each time IReportContext will create a new script expression object and do compile, which cause very bad performance in big iteration.

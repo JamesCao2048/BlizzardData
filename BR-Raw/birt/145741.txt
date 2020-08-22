@@ -1,0 +1,4 @@
+Bug 145741 Could not set the value of Boolean parameter as 0 or 1
+Description: Could not set the value of report scalar boolean parameter as 0 or 1.Steps to reproduce: 1.Create a report parameter, boolean type, Combo Box display type.
+2.Add the value as 0, failed.
+Expect result: Could set integer value to boolean type parameter.

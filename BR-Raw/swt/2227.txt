@@ -1,0 +1,12 @@
+DnD removes selection and moves caret
+I20061024-1200
+StyledText DnD removes selection and moves caret if it acts as text DnD source and DnD target at the same time.
+1.modify Snippet210.java to have only one text widget which acts as drag source
+and as drop target
+2.start the snippet twice
+3.select some text one window and copy+drag it to the other
+==> selection in first window goes away and caret moves around
+4.set focus back to window one
+==> caret is at a totally different location
+Same happens if you start dragging some text outside of the window and abort.
+Maybe that's a user error and I have to write some additional code but I would expect that this works our of the box.

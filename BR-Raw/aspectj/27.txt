@@ -1,0 +1,9 @@
+RuntimeException when trying to compile broken code
+java.lang.RuntimeException
+at org.aspectj.weaver.NameMangler.makeVisibilityName(NameMangler.java:297)
+at org.aspectj.weaver.NameMangler.interMethod(NameMangler.java:242)
+at org.aspectj.weaver.AjcMemberMaker.interMethod(AjcMemberMaker.java:538)
+at org.aspectj.ajdt.internal.compiler.problem.AjProblemReporter.methodMustOverride(AjProblemReporter.java:385)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(M ... dJob.java:241)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Compile error: RuntimeException thrown: protected inter-types not allowed

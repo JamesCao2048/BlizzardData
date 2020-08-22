@@ -1,0 +1,4 @@
+CLabel documentation says class is not intended to be subclassed, then recommends subclassing.
+The javadoc for the CLabel class includes this statement: "IMPORTANT: This class is not intended to be subclassed."
+Then the javadoc for CLabel's protected shortenText method states: "Override if you need a different strategy."
+Please fix the documentation to clarify if subclassing is acceptable.

@@ -1,0 +1,116 @@
+Table Column Resizable Doesn't work if you click on Column itself.
+I realized this bug because I had some hidden columns in my table.
+And when i
+click on the vertical separator of the column titles, i could expand those
+hidden column.
+Attached is the code snippet.
+I have a second column with "0" width and also,it
+s to setResizable(false).
+That means you shouldn't able to change the size of
+that column.
+But when you clik on vertical separator of the column titles, you
+can expand that column.
+You have to really click hard to get the particular
+timing or point.
+e.g             ID | HiddenID | Name
+If you have column tiles like above, you should slightly right to the first
+vertical separator.
+Also, that column does NOT have to be "0" width, It could
+be any width and still you can change the size first time you click on
+separator.
+So once that column has expanded to particular size, then you can't
+change the size.
+Good luck in reproducing it..:)
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+public class HiddenColumnTest {
+Display display = null;
+Shell aWindow = null;
+
+public HiddenColumnTest()
+{
+display = new Display();
+Shell aWindow = new Shell(display);
+
+// set up layout
+GridLayout layout = new GridLayout();
+layout.marginHeight = 0;
+layout.marginWidth = 0;
+layout.horizontalSpacing = 0;
+layout.verticalSpacing = 0;
+layout.numColumns = 1;
+aWindow.setLayout(layout);
+aWindow.setSize(400, 200);
+aWindow.setLocation(250, 250);
+
+// set window title
+aWindow.setText("HiddenColumnTest");
+
+// create table
+Table aTable = new Table(aWindow, SWT.NONE);
+GridData gridData = new GridData(GridData.FILL_BOTH);
+aTable.setLayoutData(gridData);
+
+// set titles visible for table
+aTable.setHeaderVisible(true);
+
+// just for testing
+aTable.setLinesVisible(true);
+
+// column widths
+int[] columnWidths = {100, 20, 300};
+
+// whether the column in resizable or not
+boolean[] columnResizable = {true, false, true};
+
+// column Titles
+String[] columnTitles = {
+"ID",
+"HiddenID",
+"Name",
+};
+
+// set up table columns
+for (int i = 0; i
+< columnTitles.length; i++)
+{
+TableColumn tableColumn = new TableColumn(aTable,
+SWT.NONE);
+tableColumn.setWidth(columnWidths[i]);
+tableColumn.setText(columnTitles[i]);
+tableColumn.setResizable(columnResizable[i]);
+}
+
+// add 5 rows for testing
+for (int i =0 ; i
+< 5; i++)
+{
+// adding rows
+TableItem item = new TableItem(aTable, SWT.NONE);
+item.setText(0, "" + i);
+item.setText(1, "Hide " + i);
+item.setText(2, "Name " + i);
+}
+
+// open the window
+aWindow.pack();
+aWindow.open();
+
+
+while (!aWindow.isDisposed())
+{
+if (!display.readAndDispatch())
+{
+display.sleep();
+}
+}
+display.dispose();
+}
+public static void main(String[] args) {
+HiddenColumnTest aTest = new HiddenColumnTest();
+}
+}

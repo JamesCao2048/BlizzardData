@@ -1,0 +1,7 @@
+Increase scrolling speed based on distance from the widget
+Currently the speed of selection scrolling when using the mouse in StyledText is
+fixed.
+This means it can take a long time to select large sections of text.
+It
+would be much better if StyledText increased the selection speed based on the
+distance the pointer is from the edge of the StyledText widget.

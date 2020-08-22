@@ -1,0 +1,25 @@
+SWT.NO_TRIM Shells cannot become the key window
+- snippet is below
+- this appears in eclipse when showing the context menu of the editor pane's CTabFolder, focus cannot be given to its contained Text
+static void setFocusInNO_TRIMshell() {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+shell.open();
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+Shell shell2 = new Shell(shell, SWT.NO_TRIM);
+shell2.setLayout(new FillLayout());
+shell2.setSize(300,300);
+Composite composite = new Composite(shell2, SWT.NONE);
+composite.setLayout(new FillLayout());
+Text text = new Text(composite, SWT.BORDER);
+shell2.open();
+text.setFocus();
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

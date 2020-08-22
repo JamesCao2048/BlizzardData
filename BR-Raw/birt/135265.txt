@@ -1,0 +1,2 @@
+Bug 135265 Paste to a wrong column
+Steps to reproduce: 1.Open the attached file 2.Choose the column[2] which contains a label , copy and paste to column[3] Expected result: It will be pasted to column[3] Actual result: It is pasted to column[4] The related bug is #103448

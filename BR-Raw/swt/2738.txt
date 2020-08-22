@@ -1,0 +1,28 @@
+SWT bugs: GDI Handles leak
+Running Eclipse SDK
+Version: 3.1.0
+Build id: I20050617-1618
+Some GDI objects are allocated but never released eventually causing
+SWTError: No more handles
+(1) Class:    org.eclipse.swt.graphics.Image
+Method:   int[] createGdipImage()
+At the very end of creating an icon, the following code lines:
+if (iconInfo.hbmColor == 0) OS.DeleteObject(iconInfo.hbmColor);
+if (iconInfo.hbmMask == 0) OS.DeleteObject(iconInfo.hbmMask);
+should be simply changed to:
+if (iconInfo.hbmColor != 0) OS.DeleteObject(iconInfo.hbmColor);
+if (iconInfo.hbmMask != 0) OS.DeleteObject(iconInfo.hbmMask);
+(2) Class:    org.eclipse.swt.graphics.GC
+Method:   void fillGradientRectangle()
+These two Colors are allocated:
+int fromGpColor = Gdip.Color_new(data.alpha
+<< 24 | rgb);
+int toGpColor = Gdip.Color_new(data.alpha
+<< 24 | rgb);
+However, wrong parameters are passed for their release:
+Gdip.Color_delete(fromColor); //this is the text color value not Handle!
+Gdip.Color_delete(toColor);//this is the background color value not Handle!
+Please note that the above leaks happen every time the screen gets painted an
+an icon is there or a shape with gradient fill is enabled.
+The leaked handles
+add up quite quickly and crash Eclipse.

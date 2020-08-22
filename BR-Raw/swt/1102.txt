@@ -1,0 +1,4 @@
+StyledText block selection: cut & paste should give original text
+I20090310-0100.
+When having a block selection and doing cut & paste I would expect to get the original text no matter whether I do the selection from top-left to bottom-right or from bottom-right to top-left.
+I think the correct solution when cutting is to have a long caret that covers all selected lines.

@@ -1,0 +1,39 @@
+NPE in Display.map(...) when called from TabFolder Selection listener
+- run the snippet below
+- click between the tabs a couple of times and you'll get the NPE at the bottom
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,300,200);
+new Composite(shell, SWT.NONE);
+final TabFolder folder = new TabFolder(shell, SWT.NONE);
+folder.setBounds(10,10,200,100);
+final Composite composite = new Composite(folder, SWT.NONE);
+final Composite comp2 = new Composite(composite, SWT.NONE);
+TabItem item0 = new TabItem(folder, SWT.NONE);
+item0.setControl(new Text(folder, SWT.SINGLE));
+TabItem item1 = new TabItem(folder, SWT.NONE);
+item1.setText("item");
+item1.setControl(composite);
+shell.open();
+folder.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+System.out.println(display.map(comp2, null, new Point(10,10)));
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Display.map(Display.java:2354)
+at org.eclipse.swt.widgets.Display.map(Display.java:2297)
+at cocoa.Main$29.handleEvent(Main.java:775)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:984)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1008)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:993)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:821)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2786)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2525)

@@ -1,0 +1,9 @@
+Bug 249277 map list condition works in Preview but not in Web Viewer
+Build ID: I20080617-2000 Steps To Reproduce: 1.Make a condition on a column, here COLUMN2, can be any column, with integer numbers row["COLUMN2"] Equal To "0" then display following value "" ( nothing , empty).
+2.Run in Preview zero values are not displayed (empty) , non zero values are displayed.
+Correct.
+3.Run in Web viewer zero values are not displayed , non zero values are also NOT displayed.
+All values have no value and are empty.
+Incorrect.
+More information: I have tried also row["COLUMN2"] match 0 also get the same effect.
+BIRT 2.3 , eclipse package install all in one.

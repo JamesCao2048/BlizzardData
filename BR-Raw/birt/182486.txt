@@ -1,0 +1,6 @@
+Bug 182486 [Automation][Regression] behavior of List onRender event handler was incorrect
+steps to reproduce:
+- use the attached report
+- preview expected behavior:
+- the font color of last list should be black actual behavior:
+- it was in blue as the second last list

@@ -1,0 +1,53 @@
+[SWT Mac] Incorrect mouseExit event generated when balloon ToolTip is shown
+Build ID: 3.4
+Steps To Reproduce:
+1.In SWT control's mouseHover event handler, create and show a balloon ToolTip.
+2.On Mac OS X 10.5, When the ToolTip is shown, the background control will receive an extra (incorrect) mouseExit event (which is generated in Display.runEnterExit).
+The extra mouseExit event is not generated on Windows & Linux.
+3.You can try compile and run the example.
+On Windows, the tooltip will show normally, but on Mac, the tooltip will disappear immediately after it is shown.
+4.Also, the mouseHover interval on Mac seems much bigger than Windows, but that's another story.
+More information:
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.Point;
+public class TooltipTest {
+
+/**
+* @param args
+*/
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell main = new Shell();
+main.setText("Hello");
+main.setBounds(100, 100, 200, 200);
+main.setVisible(true);
+main.addMouseTrackListener(new MouseTrackListener() {
+private ToolTip tip = null;
+public void mouseEnter(MouseEvent e) {
+}
+public void mouseHover(MouseEvent e) {
+main.setText("mouseHover");
+// Show the tooltip
+if (tip == null) {
+tip = new ToolTip(main, SWT.ICON_INFORMATION | SWT.BALLOON);
+tip.setMessage("Message");
+tip.setVisible(true);
+}
+}
+public void mouseExit(MouseEvent e) {
+main.setText("mouseExit");
+// Hide the tooltip
+if (tip != null) {
+tip.dispose();
+tip = null;
+}
+}
+});
+
+while (!main.isDisposed()) {
+display.readAndDispatch();
+}
+}
+}

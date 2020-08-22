@@ -1,0 +1,4 @@
+Bug 132103 No objects under Context in palette when scripting a data set
+Steps to reproduce: 1.New a data set and select it 2.Swith to script view, choose "onFetch" and open palette Expected result: Objects:this, row and reportContext should be given under Context And other objects available for other methods(e.g.
+BeforeOpen) should be there as well.
+Actual result: Nothing under Context The relative bug is #126110

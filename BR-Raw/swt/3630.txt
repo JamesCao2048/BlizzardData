@@ -1,0 +1,7 @@
+CTabFolder's client area is off by a few pixels when there are no tabs
+build I20030715
+- create a CTabFolder
+- create a child control, and set its bounds to be the tab folder's client area
+- it's off by a few pixels in x and y
+- getClientArea assumes that the extra borders shown when there are tabs are
+always there

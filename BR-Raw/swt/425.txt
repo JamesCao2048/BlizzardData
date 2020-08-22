@@ -1,0 +1,10 @@
+Rename Display.getAppMenuBar() to getMenuBar().
+It is clear that Display.getMenuBar() returns the application menu bar.
+No need to have "App" in the API name.
+It is also more consistent with current Shell.getMenuBar() API.
+We are also adding Display.getSystemMenu() which returns the system-provide menu for the application.
+Only available on cocoa at the moment (menu with about, preferences, etc).
+See  bug#329456 .
+We initially thought this API would be called getAppMenu(), but we decided to keep it consistent with all Display.getSystem* APIs (color, font, image, cursor, etc).
+So the new concept "App" is not needed anymore.
+We plan to add Shell.getSystemMenu() which returns the system-provide menu for shells (GTK/Windows).

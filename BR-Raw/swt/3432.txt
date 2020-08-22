@@ -1,0 +1,57 @@
+Drop down coolbar/toolbar menus and combo boxes take too many clicks
+Drop down menus: Open the SWT Controls example and select the Coolbar or
+Toolbar example.
+Press and hold the mouse down on one of the buttons that has
+a dropdown menu.
+What should happen is that the menu should come up, and as
+you move the mouse it should highlight menu items.
+When you release the mouse,
+it should select that menu item.
+However that's not what happens.
+SWT requires
+that you click and release the mouse button on the dropdown menu control, then
+click and release the mouse button on the item to select.
+Combo boxes: Same problem.
+Open the Combo box SWT example.
+Press and hold the
+mouse on the combo menu (the triangle button to the right of the combo value).
+You should be able to see the menu of values immediately, move the mouse down
+to the one you want, and release the mouse button.
+However that's not what
+happens.
+SWT requires that you click and release the mouse button on the combo
+drop-down menu, then click and release the mouse button on the item to select.
+Another example: Open the plug-in manifest editor on any plug-in, go to the
+extensions page, open up the properties view for any extension.
+Select some
+property that has a list of possible values.
+It takes about three clicks to
+select the value you want, when it should be a simple task of click-drag-let
+go.
+The example that annoys me the most that prompted me to write this is the
+dropdown toolbar menu for launching External Tools.
+I have to click on the
+arrow and let go (being careful not to click on the button next to the arrow
+which will just launch the last tool), then look down the list and click on
+the tool I want and let go.
+I alternate between two external tools, and do
+this operation dozens of times a day.
+The frustration finally built up into a
+bug report.
+:)
+This is on Windows XP.
+There is some inconsistency about how these controls
+work in native applications (for example I notice that in this web page on IE,
+the combo boxes require the mouse down/up,move,down/up sequence).
+However many
+applications that I'm used to (for example MS Outlook) work the way that I've
+described it should work above.
+Also combo boxes and dropdown menus that occur
+in toolbars / coolbars seem to universally NOT require the extra steps in all
+the apps I've tested.
+For them it's just click-drag-release, just like top
+level menus.
+Top level menus, even in Eclipse, support both ways of working.
+I think
+supporting the extra steps is important for accessibility, but supporting the
+quicker way too would be good.

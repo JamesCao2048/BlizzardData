@@ -1,0 +1,9 @@
+[preferences] Changing Code Formatter tab width does not change displayed tab width in open editor
+I20050215-2300
+- Java project with project-specific code formatter settings
+- open a CU of this project
+- change tab width from 4 to 2
+-> expected: displayed width of a tab character is now 2
+-> was: still 4
+The code formatter settings are already applied on Source > Format.
+Closing and reopening the editor gives the correct new width.

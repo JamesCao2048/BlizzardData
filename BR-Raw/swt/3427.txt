@@ -1,0 +1,16 @@
+NPE in getParentBackground.
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Control.getParentBackground(Control.java:827)
+at org.eclipse.swt.widgets.Text.kEventControlSetFocusPart(Text.java:929)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:320)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:623)
+at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1888)
+at part4.fileexplorer.FileExplorer.rename(FileExplorer.java:1194)
+at part4.fileexplorer.FileExplorer.rename(FileExplorer.java:1237)
+at part4.fileexplorer.FileExplorer$40.run(FileExplorer.java:906)
+at org.eclipse.swt.widgets.Display.runTimers(Display.java:2320)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1878)
+at part4.fileexplorer.FileExplorer.main(FileExplorer.java:68)
+Appears to be the old "widget disposed in focus lost" bug.
+Steve can recreate.

@@ -1,0 +1,14 @@
+Bug 266914 Spaces not supported in classpath configured with WEBAPP_CLASSPATH_KEY
+Build ID: 2.3.2 Steps To Reproduce: We are executing a BIRT report and when we set our classpath using the WEBAPP_CLASSPATH_KEY key.
+Example: EngineConfig config = new EngineConfig(); config.getAppContext().put( EngineConstants.WEBAPP_CLASSPATH_KEY,
+<classpath> ); The classpath we supply are Jars and Folders, separated by a ';' (on windows).
+When the classpath contains entries *without* spaces in the path, our report generation works.
+The problem occurs when there are spaces in the classpath (our report generation fails).
+I checked out the code and narrowed the code down to a problem in the createEngineClassLoader() method of org.eclipse.birt.report.engine.api.impl.ReportEngine.
+As this method is cycling through the various classpath options (EngineConstants.WEBAPP_CLASSPATH_KEY, EngineConstants.PROJECT_CLASSPATH_KEY, or EngineConstants.WORKSPACE_CLASSPATH_KEY), it creates an instance of File for each entry on the classpath, and then calls file.toURI().toURL().
+That call to toURI().toURL() is problematic because it turns all spaces into %20.So, for example, C:Program Filestestclasses turns into C:Program%20Filestestclasses The addition of %20 is problematic because the file paths are now wrong.
+In FileLoader (in class URLClassLoader, in package org.eclipse.birt.core.framework), the loadResource attempts to locate the given classname and load it.
+So, for example if we're trying to load org.eclipse.test.Sample, it will now search for C:Program%20Filestestclassesorg.eclipse.test.Sample.
+Even if that class exists in the filesystem, the code will not correctly load the class because of the %20.I quickly produced a 'hack' fix to verify that this is the problem.
+In the loadResource() method of FileLoader, I can replace the %20 with spaces and our report generation works.
+For example: baseDir.getAbsolutePath().replaceAll("%20", " ") More information:

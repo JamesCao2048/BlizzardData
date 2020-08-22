@@ -1,0 +1,2 @@
+Bug 132096 TOC pane will be closed when hyperlink to internal bookmark
+Steps to reproduce: 1.Add a label with TOC "aaa" and bookmark "a" 2.Add a table below the label, and set pagebreakBefore_Always, pagebreakAfter_Always on the table 3.Add a label with TOC "bbb" and bookmark "b" below the table 4.Preview the report in Web Viewer 5.Open the TOC pane and jump to page3 6.Click lable in page3 Expected result: TOC pane won't be closed when jumping to page1 Actual result: TOC pane is closed

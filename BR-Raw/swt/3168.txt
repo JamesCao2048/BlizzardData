@@ -1,0 +1,39 @@
+Tree Expand all "*" sends expand event regardless of current state
+Run the code below, select a node in the tree and press the "*" key repeatedly.
+The Tree sends an expand event for each sub-item in the tree regardless of
+whether the item was already expanded or not.
+Getting an expand event for an
+expanded node seems wrong.
+If this is correct behaviour (sending Expand event for an expanded node), then
+TableTree should be modified to do the same.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+final Tree tree = new Tree(shell, SWT.FULL_SELECTION);
+tree.addListener(SWT.Expand, new Listener() {
+public void handleEvent(Event event) {
+Item item = (Item)event.item;
+if (item != null) {
+System.out.println("Expand event "+item.getText
+());
+} else {
+System.out.println("Expand event "+null);
+}
+}
+});
+TreeItem item1 = new TreeItem(tree, SWT.NONE);
+item1.setText("A");
+TreeItem item2 = new TreeItem(item1, SWT.NONE);
+item2.setText("B");
+TreeItem item3 = new TreeItem(item2, SWT.NONE);
+item3.setText("C");
+TreeItem item4 = new TreeItem(item3, SWT.NONE);
+item4.setText("D");
+shell.setSize(400, 400);
+shell.open();
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+display.dispose();
+}

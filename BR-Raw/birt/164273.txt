@@ -1,0 +1,11 @@
+Bug 164273 Exception is thrown out when export a report to library [02]
+Description: Exception is thrown out when export a report to library It doesn't support java-based event handler, either.
+Build number: 2.2.0.v20061113-0636 Steps to reproduce: 1.New a library with a data source, a data set, a dynamic report parameter, a data binding to the data set.
+2.New a report use the library, and drag the data source, data set, report parameter and the data from Library Explorer to Outline.
+3.Drag the parameter from Outline to Layout, save.
+4.Export the report to library.
+Expected result: The report can be exported to library.
+Actual result: Exception is thrown out.
+Error log: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.2.0.v20061111-0633 Error Code:Error.NameException.DUPLICATE Error Message:The name "NewData" duplicates an existing name.
+Please choose a different name.

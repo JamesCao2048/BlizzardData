@@ -1,0 +1,24 @@
+TableItem NPE
+- run the JNI generator
+- select the OS class
+- select the ActivateKeyboardLayout method
+- left click in the Cast column of the second parameter (it does not have a
+cast value)
+- will get the following NPE:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.TableItem.getImageBounds(TableItem.java:409)
+at org.eclipse.swt.custom.TableEditor.computeBounds
+(TableEditor.java:103)
+at org.eclipse.swt.custom.ControlEditor.resize(ControlEditor.java:218)
+at org.eclipse.swt.custom.TableEditor.resize(TableEditor.java:219)
+at org.eclipse.swt.custom.TableEditor.setItem(TableEditor.java:195)
+at org.eclipse.swt.tools.internal.JNIGeneratorAppUI$10.handleEvent
+(JNIGeneratorAppUI.java:533)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:796)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2652)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2324)
+at org.eclipse.swt.tools.internal.JNIGeneratorAppUI.run
+(JNIGeneratorAppUI.java:627)
+at org.eclipse.swt.tools.internal.JNIGeneratorAppUI.main
+(JNIGeneratorAppUI.java:890)

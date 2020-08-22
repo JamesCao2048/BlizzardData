@@ -1,0 +1,7 @@
+[widgets] gtk2.18 - Blank pages in the install wizard
+Using I20091230-0802 (the latest build from the API branch), there are pages missing from the Install Wizard.
+In particular, after I select something to install, hit next, the
+- Install Details
+- Review Licenses
+are blank.
+(Note: Finish is not enabled either because I cannot accept the license).

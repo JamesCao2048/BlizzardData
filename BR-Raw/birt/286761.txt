@@ -1,0 +1,2 @@
+Bug 286761 Can't paste variable element
+When pasting a variable element to variables node, the the CopyUtil.canPaste(IElementCopy copy, DesignElementHandle container, String propName ) always return false, it should return true if the argument if correct.

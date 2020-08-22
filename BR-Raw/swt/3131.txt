@@ -1,0 +1,6 @@
+[consistency] ProgressBar does not fire some mouse events
+Note that on initial inspection this does not seem to be the same as  bug 78554 .
+- run the ControlExample, select the ProgressBar tab
+- listen for MouseDown, MouseUp, MouseDoubleClick, DragDetect and MenuDetect
+- go to the example ProgressBar on the page and try to get any of these to fire
+for you, but none will

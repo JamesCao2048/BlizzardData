@@ -1,0 +1,17 @@
+javadoc console output: hyperlink not clickable, no hand cursor [javadoc]
+I20040518-gtk, m9 test pass
+1.Create the smoke test junit project
+2.Choose Project
+-> Generate Javadoc
+3.Open the console and go to the line that says:
+/opt/eclipse/workspaces/smoke/JUnit/junit/runner/TestCollector.java:11: warning
+- Tag @see: Class or Package not found: TestSelector
+4.Hover over the first part of the line
+expected: see a hand cursor, clicking the link brings up the respective location
+actual: the cursor flashes a little, but no hand cursor visible, clicking has no
+effect
+Note that selecting the line, then choose "Open Link" from the context menu does
+work.
+Somehow, the cursor thing seems not to work
+- something seems to race,
+thus the cursor flashing.

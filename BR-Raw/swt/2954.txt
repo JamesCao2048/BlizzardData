@@ -1,0 +1,6 @@
+Context menu shows twice in combo box.
+When setting your own menu , then right clicking on a combo box, you get the
+default one from the os , and the one you set.
+There is no break in the case
+statement in the windowProc method in Combo.
+case OS.WM_CONTEXTMENU:		result = wmContextMenu (hwnd, wParam, lParam);

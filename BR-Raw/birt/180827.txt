@@ -1,0 +1,18 @@
+Bug 180827 Document refresh failed with IOException for a large report during render.
+When running a large report with 6million rows ,each row is about 10 columns , and 100 bytes, render fails with an i/o exception.
+Env: ibm1.5 jvm, BIRT runtime 2.2M5, Machine- Linux RHEL AS4, database
+- derby 10.3 TestEnv: scsi 10K RPM disks,4GRAM,2.8Ghz 2cpu , HT IntelXeon,RHEL Linux kernel2.6 The stack trace is below.
+sh-3.00$ .
+./run2.2.ksh 1 200 10 3000 java version "1.5.0" Java(TM) 2 Runtime Environment, Standard Edition (build pxi32dev-20060222 (SR1)) IBM J9 VM (build 2.3, J2RE 1.5.0 IBM J9 2.3 Linux x86-32 j9vmxi3223-20060222a (J IT enabled) J9VM
+- 20060220_05389_lHdSMR JIT
+- 20060220_2133_r8 GC
+- 20060214_AA) JCL
+- 20060222a iteration=0run=2228611Exception in thread "main" org.eclipse.birt.report.engine.
+api.EngineException: document refresh failed at org.eclipse.birt.report.engine.api.impl.ReportDocumentReader.doRefres h(ReportDocumentReader.java:281) at org.eclipse.birt.report.engine.api.impl.ReportDocumentReader.<init>(R eportDocumentReader.java:113) at org.eclipse.birt.report.engine.api.impl.ReportEngineHelper.openReport Document(ReportEngineHelper.java:447) at org.eclipse.birt.report.engine.api.impl.ReportEngineHelper.openReport Document(ReportEngineHelper.java:429) at org.eclipse.birt.report.engine.api.impl.ReportEngineHelper.openReport Document(ReportEngineHelper.java:373) at org.eclipse.birt.report.engine.api.impl.ReportEngine.openReportDocume nt(ReportEngine.java:406) at TaskTest.render(TaskTest.java:103) at TaskTest.main(TaskTest.java:153) Caused by: java.io.IOException: Invalid argument at java.io.RandomAccessFile.seek(Native Method) at org.eclipse.birt.core.archive.RAFileInputStream.readToBuffer(RAFileIn putStream.java:69) at org.eclipse.birt.core.archive.RAFileInputStream.
+read(RAFileInputStrea m.java:94) at java.io.FilterInputStream.read(FilterInputStream.java:89) at org.eclipse.birt.core.util.IOUtil.readInt(IOUtil.java:96) at org.eclipse.birt.report.engine.api.impl.ReportDocumentReader.doRefres h(ReportDocumentReader.java:212) ...
+7 more
+--------------------------- rptdocument was created successfully.
+sh-3.00$ ls
+-l *.rptdocument
+-rw-rw-r-- 1 cloudtst RAND 3904474296 Mar 24 19:09 T1_SmallQuery.rptdocument
+---------------------------

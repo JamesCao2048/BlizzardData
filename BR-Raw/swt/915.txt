@@ -1,0 +1,13 @@
+SWT.Browser widget reacts different compared to IE 6 itself (Javascript)
+Created  attachment 141267   [details]
+ZIP with the html page and all referenced files
+Build ID: M20090211-1700
+Steps To Reproduce:
+On a HTML-page with javascript (which changes the HTML-document via key listeners) two things go different (reference page with css and javascript in the attached zip)
+1.Using the backspace key the char left to the cursor is blanked out, but the position of the cursor leaves unchanged.
+2.Pasting text in one of the entry fields with ctrl+v puts the text into the field, but blanks out the first char.
+More information:
+The newest version of Eclipse (Galileo) also works like Ganymede.
+In the Europa version we did not have these problems.
+On other pages (not attached) the setting of the focus into the HTML-Page with javascript also does not work properly.
+Seems to be a problem with javascript??

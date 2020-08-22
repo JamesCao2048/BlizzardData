@@ -1,0 +1,12 @@
+Custom BusyIndicator - no hourglass cursor
+The test case is in com.ibm.swt.boris.example.custom.BusyIndicatorTest in
+Playground_Boris in swtwork.
+We just run a sleep() inside a busy indicator.
+
+This works on Windows but not GTK.
+The reason for this, is closely related to  bug 34979 .
+The whole showWhile()
+runs in the UI thread, but gdk_window_set_cursor() is asynchronous.
+If the
+runnable does not have its own event loop, setting the cursor will have no
+effect.

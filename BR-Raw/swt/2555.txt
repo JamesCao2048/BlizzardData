@@ -1,0 +1,13 @@
+a Tab is not 4 spaces
+RC3
+Ensure to use Monaco 11 as your default text editor font
+- create new file
+- type "----" (4 dashes)
+- hit Tab key
+Notice: the cursor advances by 1 pixel
+- type "----" (4 dashes)
+See result in first attachment.
+It seems that
+Tab = 4 * space + 1
+This makes Java auto indent very hard to use on Mac.
+I tried the same in TextEdit and get the (expected) result shown in  attachment 2   [details] .

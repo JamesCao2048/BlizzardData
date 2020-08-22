@@ -1,0 +1,9 @@
+Text.getCaretLineNumber() differs between Windows and Linux
+Build ID: M20080221-1800
+Steps To Reproduce:
+1.Run attached test case on linux (I used redhat linux 5)
+2.Click in text box
+- label displays "Caret line number is: 1"
+3.Run same test case on windows: Label displays "Caret line number is: 0"
+More information:
+I would expect the line number to be 0 in both cases (as most positioning in Java is 0 based).

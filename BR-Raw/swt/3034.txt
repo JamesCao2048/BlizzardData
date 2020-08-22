@@ -1,0 +1,11 @@
+Tree: problem with WM_PRINT
+I use WM_PRINT under Windows to create image of control that I show outside of
+visible screen.
+This work Ok for all control except new Tree with columns.
+When I try to send it WM_PRINT under WinXP, I see image without headers, only
+with items.
+Same code works without any problem with Table.
+When I ask for
+screen shot of full Shell, with all children, I see correct image of Tree, with
+headers, but now without items.
+Is there any way to have full image, with headers and items?

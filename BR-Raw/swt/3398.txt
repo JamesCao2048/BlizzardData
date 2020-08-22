@@ -1,0 +1,8 @@
+fillGradientRectangle doesn't work with XORMode on Windows
+when you setXORMode(true), fillGradientRectangle ignores it on Windows.
+It works as expected on Linux/gtk.
+I'm using 3.0M8.
+I will attach some sample code, and screenshots of what the same code produces
+on Windows and on Linux/gtk.
+Another weird thing is the label.addPaintListener() statement is only neccesary
+on Windows, Linux/gtk works just fine without it.

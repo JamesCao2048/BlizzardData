@@ -1,0 +1,144 @@
+java.lang.NullPointerException in Java15AnnotationFinder when using SWT
+I receive the following Exception when running SWT with AspjectJ load time weaving through the Spring Framework.  The lines around org.aspectj.weaver.reflect.Java15AnnotationFinder.getAnnotations(Java15AnnotationFinder.java:123) are as follows:
+for (int i = 0; i < anns.length; i++) {
+annSet.add(world.resolve(UnresolvedType.forSignature(anns[i].getTypeSignature())));
+}
+When using the debugger, I see "world" as a null value.
+Attached is a stripped down Eclipse project that generates the error during startup.  My runtime arguments are as follows:
+-javaagent:${resource_loc:/AspectJBug/lib/spring-agent.jar}
+--------------------------------------------
+[AppClassLoader@19d819d8] abort trouble in:
+final class org.eclipse.swt.awt.SWT_AWT$10 extends java.lang.Object implements java.lang.Runnable:
+private final java.awt.Frame val$frame [Synthetic]
+void <init>(java.awt.Frame):
+ALOAD_0     // Lorg/eclipse/swt/awt/SWT_AWT$10; this   (line 274)
+INVOKESPECIAL java.lang.Object.<init> ()V
+constructor-execution(void org.eclipse.swt.awt.SWT_AWT$10.<init>(java.awt.Frame))
+|               ALOAD_0     // Lorg/eclipse/swt/awt/SWT_AWT$10; this   (line 1)
+|               ALOAD_1
+|               PUTFIELD org.eclipse.swt.awt.SWT_AWT$10.val$frame Ljava/awt/Frame;
+|               RETURN
+constructor-execution(void org.eclipse.swt.awt.SWT_AWT$10.<init>(java.awt.Frame))
+end void <init>(java.awt.Frame)
+public void run():
+method-execution(void org.eclipse.swt.awt.SWT_AWT$10.run())
+| catch java.lang.Throwable -> E0
+| |             LDC "sun.awt.windows.WComponentPeer"   (line 277)
+| | method-call(java.lang.Class java.lang.Class.forName(java.lang.String))
+| | |           INVOKESTATIC java.lang.Class.forName (Ljava/lang/String;)Ljava/lang/Class;
+| | method-call(java.lang.Class java.lang.Class.forName(java.lang.String))
+| |             ASTORE_1
+| |             ALOAD_1     // Ljava/lang/Class; clazz   (line 278)
+| |             LDC "winGraphicsConfig"
+| | method-call(java.lang.reflect.Field java.lang.Class.getDeclaredField(java.lang.String))
+| | |           INVOKEVIRTUAL java.lang.Class.getDeclaredField (Ljava/lang/String;)Ljava/lang/reflect/Field;
+| | method-call(java.lang.reflect.Field java.lang.Class.getDeclaredField(java.lang.String))
+| |             ASTORE_2
+| |             ALOAD_2     // Ljava/lang/reflect/Field; field   (line 279)
+| |             ICONST_1
+| | method-call(void java.lang.reflect.Field.setAccessible(boolean))
+| | |           INVOKEVIRTUAL java.lang.reflect.Field.setAccessible (Z)V
+| | method-call(void java.lang.reflect.Field.setAccessible(boolean))
+| |             ALOAD_2     // Ljava/lang/reflect/Field; field   (line 280)
+| |             ALOAD_0     // Lorg/eclipse/swt/awt/SWT_AWT$10; this
+| |             GETFIELD org.eclipse.swt.awt.SWT_AWT$10.val$frame Ljava/awt/Frame;
+| | method-call(java.awt.peer.ComponentPeer java.awt.Frame.getPeer())
+| | |           INVOKEVIRTUAL java.awt.Frame.getPeer ()Ljava/awt/peer/ComponentPeer;
+| | method-call(java.awt.peer.ComponentPeer java.awt.Frame.getPeer())
+| |             ALOAD_0     // Lorg/eclipse/swt/awt/SWT_AWT$10; this
+| |             GETFIELD org.eclipse.swt.awt.SWT_AWT$10.val$frame Ljava/awt/Frame;
+| |             INVOKEVIRTUAL java.awt.Frame.getGraphicsConfiguration ()Ljava/awt/GraphicsConfiguration;
+| |             INVOKEVIRTUAL java.lang.reflect.Field.set (Ljava/lang/Object;Ljava/lang/Object;)V
+| catch java.lang.Throwable -> E0
+|               GOTO L0
+|           E0: POP   (line 281)
+|           L0: RETURN   (line 282)
+method-execution(void org.eclipse.swt.awt.SWT_AWT$10.run())
+end public void run()
+end final class org.eclipse.swt.awt.SWT_AWT$10
+-- (NullPointerException) null
+null
+java.lang.NullPointerException
+at org.aspectj.weaver.reflect.Java15AnnotationFinder.getAnnotations(Java15AnnotationFinder.java:123)
+at org.aspectj.weaver.reflect.ReflectionBasedResolvedMemberImpl.unpackAnnotations(ReflectionBasedResolvedMemberImpl.java:174)
+at org.aspectj.weaver.reflect.ReflectionBasedResolvedMemberImpl.hasAnnotation(ReflectionBasedResolvedMemberImpl.java:158)
+at org.aspectj.weaver.patterns.ExactAnnotationTypePattern.matches(ExactAnnotationTypePattern.java:82)
+at org.aspectj.weaver.patterns.AnnotationPointcut.matchInternal(AnnotationPointcut.java:151)
+at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:146)
+at org.aspectj.weaver.patterns.AndPointcut.matchInternal(AndPointcut.java:52)
+at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:146)
+at org.aspectj.weaver.ShadowMunger.match(ShadowMunger.java:75)
+at org.aspectj.weaver.Advice.match(Advice.java:112)
+at org.aspectj.weaver.bcel.BcelAdvice.match(BcelAdvice.java:118)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:2811)
+at org.aspectj.weaver.bcel.BcelClassWeaver.matchInvokeInstruction(BcelClassWeaver.java:2773)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:2506)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:2332)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:494)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:119)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1651)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1602)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1380)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1200)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:360)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:262)
+at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:78)
+at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:52)
+at org.springframework.context.weaving.AspectJWeavingEnabler$AspectJClassBypassingClassFileTransformerDecorator.transform(AspectJWeavingEnabler.java:84)
+at sun.instrument.TransformerManager.transform(TransformerManager.java:141)
+at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:174)
+at java.lang.ClassLoader.defineClassImpl(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:228)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:148)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:557)
+at java.net.URLClassLoader.access$400(URLClassLoader.java:120)
+at java.net.URLClassLoader$ClassFinder.run(URLClassLoader.java:962)
+at java.security.AccessController.doPrivileged(AccessController.java:275)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:488)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:607)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:327)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+at org.eclipse.swt.awt.SWT_AWT.new_Frame(SWT_AWT.java:274)
+Feb 21, 2008 12:09:23 PM org.aspectj.weaver.tools.Jdk14Trace error
+SEVERE: org/eclipse/swt/awt/SWT_AWT$10
+java.lang.NullPointerException
+at org.aspectj.weaver.reflect.Java15AnnotationFinder.getAnnotations(Java15AnnotationFinder.java:123)
+at org.aspectj.weaver.reflect.ReflectionBasedResolvedMemberImpl.unpackAnnotations(ReflectionBasedResolvedMemberImpl.java:174)
+at org.aspectj.weaver.reflect.ReflectionBasedResolvedMemberImpl.hasAnnotation(ReflectionBasedResolvedMemberImpl.java:158)
+at org.aspectj.weaver.patterns.ExactAnnotationTypePattern.matches(ExactAnnotationTypePattern.java:82)
+at org.aspectj.weaver.patterns.AnnotationPointcut.matchInternal(AnnotationPointcut.java:151)
+at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:146)
+at org.aspectj.weaver.patterns.AndPointcut.matchInternal(AndPointcut.java:52)
+at org.aspectj.weaver.patterns.Pointcut.match(Pointcut.java:146)
+at org.aspectj.weaver.ShadowMunger.match(ShadowMunger.java:75)
+at org.aspectj.weaver.Advice.match(Advice.java:112)
+at org.aspectj.weaver.bcel.BcelAdvice.match(BcelAdvice.java:118)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:2811)
+at org.aspectj.weaver.bcel.BcelClassWeaver.matchInvokeInstruction(BcelClassWeaver.java:2773)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:2506)
+at org.aspectj.weaver.bcel.BcelClassWeaver.match(BcelClassWeaver.java:2332)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:494)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:119)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1651)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1602)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1380)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1200)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:360)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:262)
+at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:78)
+at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:52)
+at org.springframework.context.weaving.AspectJWeavingEnabler$AspectJClassBypassingClassFileTransformerDecorator.transform(AspectJWeavingEnabler.java:84)
+at sun.instrument.TransformerManager.transform(TransformerManager.java:141)
+at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:174)
+at java.lang.ClassLoader.defineClassImpl(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:228)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:148)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:557)
+at java.net.URLClassLoader.access$400(URLClassLoader.java:120)
+at java.net.URLClassLoader$ClassFinder.run(URLClassLoader.java:962)
+at java.security.AccessController.doPrivileged(AccessController.java:275)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:488)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:607)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:327)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+at org.eclipse.swt.awt.SWT_AWT.new_Frame(SWT_AWT.java:274)

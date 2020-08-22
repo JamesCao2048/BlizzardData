@@ -1,0 +1,22 @@
+AST Support for PointcutDesignators
+I would like an enhancement to be able to match two PointcutDesignators (called 'pointcut definitions' in the AJ5 quick reference). Currently, the following test fails:
+---------------AjASTMatcherTest.java---------------
+public void testMatchDefaultPointcut() {
+AjAST ast = AjAST.newAjAST(AST.JLS3);
+DefaultPointcut dp1 = ast.newDefaultPointcut();
+DefaultPointcut dp2 = ast.newDefaultPointcut();
+dp1.setDetail("call(* *.foo(..)");
+dp2.setDetail("call(* *.bar(..)");
+assertFalse(dp1.subtreeMatch(new AjASTMatcher(), dp2));
+}
+---------------------------------------------------
+The reason is that there are no implementations for the many different kinds of pointcut definitions of AspectJ. Instead, DefaultPointcut simply contains the pointcut definition in a String-field "detail" as shown in the test case. The same is true for DefaultTypePattern and SignaturePattern. Additionally, in the current implementation a DefaultPointcut, DefaultTypePattern, and SignaturePattern node will always match another AST node if that node is of the same type (instanceof).
+From what I see, it is necessary to
+1) add types for every possible pointcut definition,
+2) extend the current implementation of type name patterns and
+3) signature patterns,
+4) extend the parser (internal and external?) to create nodes for the pointcut definitions,
+5) extend the converter to convert the new node types, and finally
+6) extend the matcher to be able to match two pointcut definitions.
+Implementation is already done for combinations of poincuts using and (&&), or (||), not (!), cflow, and reference pointcuts (without parameters).
+Please comment on the task list as it is just an initial overview resulting from my limited knowledge on this field.

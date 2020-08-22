@@ -1,0 +1,41 @@
+[compiler] NullpointerException during compile
+Created  attachment 90626   [details]
+example code producing the error
+The attached code produces a NullpointerException when compiling it with aspectj.
+I checked it with the following compiler versions: (using sun java 1.6.0.04)
+ajc 1.5.3
+AJDT 1.5.2.200802061816 (ajc 1.6.0.20080206212408)
+Exception:
+java.lang.NullPointerException
+at org.aspectj.weaver.Shadow.toResolvedString(Shadow.java:735)
+at org.aspectj.weaver.patterns.ArgsPointcut.findResidueNoEllipsis(ArgsPointcut.java:237)
+at org.aspectj.weaver.patterns.ArgsPointcut.findResidueInternal(ArgsPointcut.java:273)
+at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:269)
+at org.aspectj.weaver.patterns.AndPointcut.findResidueInternal(AndPointcut.java:94)
+at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:269)
+at org.aspectj.weaver.patterns.AndPointcut.findResidueInternal(AndPointcut.java:94)
+at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:269)
+at org.aspectj.weaver.bcel.BcelAdvice.specializeOn(BcelAdvice.java:146)
+at org.aspectj.weaver.bcel.BcelShadow.prepareForMungers(BcelShadow.java:327)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:470)
+at org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.java:2832)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:506)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:119)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1612)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1563)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1341)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1135)
+at org.aspectj.ajdt.internal.compiler.AjPipeliningCompilerAdapter.weaveQueuedEntries(AjPipeliningCompilerAdapter.java:455)
+at org.aspectj.ajdt.internal.compiler.AjPipeliningCompilerAdapter.queueForWeaving(AjPipeliningCompilerAdapter.java:392)
+at org.aspectj.ajdt.internal.compiler.AjPipeliningCompilerAdapter.afterProcessing(AjPipeliningCompilerAdapter.java:380)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$after$org_aspectj_ajdt_internal_compiler_CompilerAdapter$5$6b855184(CompilerAdapter.aj:98)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:533)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:329)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:906)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:260)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:176)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:378)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:253)
+at org.aspectj.tools.ajc.Main.main(Main.java:88)

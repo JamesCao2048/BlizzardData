@@ -1,0 +1,3 @@
+Bug 196947 excel emmiter - border width
+Hello, Whatever i put into value of "Border Width" in Report Designer, generated xls file always has elements with 3-px borders
+- inside the generated xls file there is ss:Weight="3" in every bordered element

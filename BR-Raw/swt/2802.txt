@@ -1,0 +1,57 @@
+GDI+ crash with icons where width > height [was: GEF paint() with setAlpha caused JVM crash]
+I'll give more information later if needed.
+Eclipse 3.1RC2, GEF 3.1RC1,
+WindowsXP.
+This might be a SWT but though and not GEF I'm guessing.
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at
+PC=0x77F83AED
+Function=RtlSizeHeap+0x7D7
+Library=C:WINDOWSSystem32ntdll.dll
+Current Java thread:
+at org.eclipse.swt.internal.gdip.Gdip.Bitmap_new(Native Method)
+at org.eclipse.swt.graphics.Image.createGdipImage(Image.java:890)
+at org.eclipse.swt.graphics.GC.drawImage(GC.java:671)
+at org.eclipse.swt.graphics.GC.drawImage(GC.java:622)
+at org.eclipse.draw2d.SWTGraphics.drawImage(SWTGraphics.java:343)
+at org.eclipse.draw2d.ImageFigure.paintFigure(ImageFigure.java:121)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1053)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1123)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1127)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at
+com.lombardisoftware.client.ae.gef.widgets.TWAbstractStepFigure.paint(TWAbstractStepFigure.java:144)
+at
+com.lombardisoftware.bpd.component.flowcomponent.activity.ae.ActivityWidget.paint(ActivityWidget.java:56)
+at teamworks.bpd.heatmap.marker.BPDMarker$MarkerShape.fillShape(BPDMarker.java:119)
+at org.eclipse.draw2d.Shape.paintFigure(Shape.java:107)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1053)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1123)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1123)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1123)
+at org.eclipse.draw2d.Viewport.paintClientArea(Viewport.java:156)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:1091)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:1123)
+at org.eclipse.draw2d.Figure.paint(Figure.java:1055)
+at
+org.eclipse.draw2d.DeferredUpdateManager.repairDamage(DeferredUpdateManager.java:225)
+at
+org.eclipse.draw2d.DeferredUpdateManager.performUpdate(DeferredUpdateManager.java:145)
+- locked
+<0x10da3ba0> (a org.eclipse.draw2d.DeferredUpdateManager)
+at
+org.eclipse.draw2d.DeferredUpdateManager$UpdateRequest.run(DeferredUpdateManager.java:40)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:118)
+- locked
+<0x10014a00> (a org.eclipse.swt.widgets.RunnableLock)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:30

@@ -1,0 +1,3 @@
+Bug 152438 Once the focus is set in the table of the parameter dialog press any arrow key will delete one line
+Description: Once the focus is set in the table of the parameter dialog, press any arrow key will delete one line.
+Steps to reproduce: 1.New a parameter to open parameter editor 2.Set data type as String, set display type as List Box, list of value as Static, add or import some value into the table 3.Let the table get focus, press up/down arrow key Expected result: Focus moves between lines Actual result: Press any arrow key will delete one line

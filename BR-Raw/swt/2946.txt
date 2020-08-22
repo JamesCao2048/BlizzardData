@@ -1,0 +1,5 @@
+Line Width of 0 is invisible on the Mac
+The default GC.getLineWidth() is zero on all platforms but the Mac.
+If the line width is set to 0 on the Mac, it becomes invisible.
+width==0 should result in a line width of 1 pixel, independent of zoom being
+applied to the GC.

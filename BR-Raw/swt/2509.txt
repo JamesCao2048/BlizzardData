@@ -1,0 +1,27 @@
+cell custom background colour appears in adjacent cells
+- run the snippet below, which creates a table with four columns and one item
+- the item's background is set for the second column to green
+- but the item's background shows as green in the second through fourth columns
+- removing the EraseItem listener makes the problem go away
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,250,200);
+final Table table = new Table(shell, SWT.FULL_SELECTION);
+table.setBounds(10,10,220,150);
+table.setLinesVisible(true);
+new TableColumn(table, SWT.NONE).setWidth(50);
+new TableColumn(table, SWT.NONE).setWidth(50);
+new TableColumn(table, SWT.NONE).setWidth(50);
+new TableColumn(table, SWT.NONE).setWidth(50);
+new TableItem(table, SWT.NONE).setBackground(1, display.getSystemColor(SWT.COLOR_BLUE));
+table.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,3 @@
+Bug 147253 [Context Sensitive] Preferences->Report Design->Data Set Editor, context help button doesn't work when JDBC Data Set get focus
+Description: In Preferences->Report Design->Data Set Editor, context help button doesn't work when JDBC Data Set get focus.
+Steps to reproduce: 1.Select Windows menu 2.Select Preference 3.Select Data set editor 4.Select JDBC Data Set, make sure the focus is on it (Notes: when click on JDBC Data Set the first time, focus isn't on it, you must select it again to set focus on it) 5.Click help button Expected result: Context help shows up Actual resutl: Help button doesn't work, and F1 doesn't work too.

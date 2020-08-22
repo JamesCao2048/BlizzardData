@@ -1,0 +1,3 @@
+[10.7] Keyboard events are not received if Shell has SWT.RESIZE style
+If a Shell has the SWT.RESIZE style the Key evenets are not received to a registered listener.
+This is on OS X 10.7 (Lion) Developer Preview 3.

@@ -1,0 +1,24 @@
+"adviceexecution() && args()" pcd does not pick up around advice execution because args() does not match the AroundClosure parameter.
+In the following sample, the advice defined in "other_aspect" does not pick up
+the execution of around advice defined in "some_aspect". It matches only
+against the before advice defined in "some_aspect".
+The implicit AroundClosure parameter of an around advice seems to come in the
+way of args() matching.
+------------------------------------------------------
+aspect some_aspect {
+pointcut call_m(int a, int b) :
+call(int test.m(..)) && args(a, b);
+
+before(int x, int y) : call_m(x, y) { ...  }
+int around(int x, int y) : call_m(x, y) { ... }
+}
+
+aspect other_aspect {
+before(int x, int y) :
+adviceexecution() && within(some_aspect) &&
+args(x, y){
+...
+}
+}
+--------------------------------------------------------
+AspectJ doc has to state this explicitly.

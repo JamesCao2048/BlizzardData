@@ -1,0 +1,42 @@
+Possible Deadlock in JFace ModalContext
+Build ID: M20070212-1330
+The inner class ModalContextThread is not threadsafe and sometimes leads to a deadlock, at least under Linux + GTK.
+The problem is, that the block() method not always returns, when the run() method is finished.
+Have a look at these two methods:
+The block() method is called in the SWT thread and does basically this:
+while(continueEventDispatching)
+if (!display.readAndDispatch())
+display.sleep();
+The run method is called in an own thread and does (after the execution of the task) basically this:
+display.syncExec(new Runnable(){});
+continueEventDispatching = false;
+display.asyncExec(null);
+The asyncExec(null) should wake up the SWT thread from display.sleep().
+Unfortunately, this does not work, when the asyncExec() is executed exactly between the display.readAndDispatch() and the display.sleep().
+This can happen, because there is no synchronisation.
+In this case the display.sleep() does not return immediately, but waits for the next event, which may come never.
+You can see the same problem in the following code snippet:
+public static void main(String[] args) throws InterruptedException {
+final Shell shell = new Shell();
+while(true){
+if (! shell.getDisplay().readAndDispatch()){
+Thread async = new Thread(){
+public void run() {
+shell.getDisplay().asyncExec(null);
+}
+};
+async.start();
+async.join();
+System.out.println("sleep");
+shell.getDisplay().sleep();
+System.out.println("wakeup");
+}
+}
+}
+A fix for this problem would be to call
+display.asyncExec(new Runnable(){
+public void run(){
+}
+});
+In contrast to using the null argument, this Runnable generates a real event instead of just waking up the SWT thread.
+So the SWT thread does not really begin to sleep.

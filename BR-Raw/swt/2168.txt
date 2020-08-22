@@ -1,0 +1,46 @@
+Table: FULL_SELECTION focus outline too short when background image set
+SWT-win32, v3228
+The focus rectangle is not wide enough when a background image
+is set on a FULL_SELECTION table.
+See snippet and screenshot.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TableFocusTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Image img = new Image(display, 64, 64);
+GC gc = new GC(img);
+gc.setBackground(display.getSystemColor(SWT.COLOR_MAGENTA));
+gc.fillRectangle(img.getBounds());
+gc.dispose();
+
+Table tbl = new Table(shell, SWT.FULL_SELECTION);
+tbl.setHeaderVisible(true);
+tbl.setBackgroundImage(img);
+
+new TableColumn(tbl, SWT.LEFT).setWidth(100);
+new TableColumn(tbl, SWT.LEFT).setWidth(75);
+
+TableItem item = new TableItem(tbl, SWT.NONE);
+item.setText(0, "12345");
+item.setText(1, "ABCDEF");
+tbl.select(0);
+
+shell.setSize(350, 100);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+img.dispose();
+display.dispose();
+}
+}

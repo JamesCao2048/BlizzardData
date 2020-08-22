@@ -1,0 +1,137 @@
+Dumps assembly code if Object[] used in args (BcelRenderer.java:152)
+PROGRAM
+import org.aspectj.lang.*;
+import java.lang.reflect.*;
+import org.aspectj.lang.reflect.*;
+public class Test4 {
+public static void main(String[] args) throws Exception {
+Test4 t = new Test4();
+System.out.println(t.foo("a"));
+}
+String foo(Object s) {
+return "x"+s;
+}
+}
+aspect profile {
+// It's the [] that is offending the compiler
+Object around(Object targ, Object[] x): call(* *(..)) && target(targ) &&
+!within(profile) && args(x) {
+System.out.println("" + targ + "," + x);
+return proceed(targ,x);
+}
+
+}
+RESULT OF COMPILATION
+[erik@oden test] ajc Test4.java
+trouble in:
+public class Test4 extends java.lang.Object:
+public void <init>():
+ALOAD_0     // Test4 this   (line 5)
+INVOKESPECIAL java.lang.Object.<init> ()V
+constructor-execution(void Test4.<init>())
+|               RETURN
+constructor-execution(void Test4.<init>())
+end public void <init>()
+
+public static void main(String[]) throws java.lang.Exception:
+method-execution(void Test4.main(java.lang.String[]))
+|               NEW Test4   (line 7)
+|               DUP
+| constructor-call(void Test4.<init>())
+| |             INVOKESPECIAL Test4.<init> ()V
+| constructor-call(void Test4.<init>())
+|               ASTORE_1
+| field-get(java.io.PrintStream java.lang.System.out)
+| |             GETSTATIC java.lang.System.out Ljava/io/PrintStream;   (line
+8)
+| field-get(java.io.PrintStream java.lang.System.out)
+|               ALOAD_1     // Test4 t
+|               LDC "a"
+|               ASTORE_2
+|               ASTORE_3
+| method-call(void java.io.PrintStream.println(java.lang.String))
+| |             INVOKEVIRTUAL java.io.PrintStream.println
+(Ljava/lang/String;)V
+| method-call(void java.io.PrintStream.println(java.lang.String))
+|               RETURN   (line 9)
+method-execution(void Test4.main(java.lang.String[]))
+end public static void main(String[]) throws java.lang.Exception
+
+String foo(Object):
+method-execution(java.lang.String Test4.foo(java.lang.Object))
+|               NEW java.lang.StringBuffer   (line 11)
+|               DUP
+|               LDC "x"
+| constructor-call(void java.lang.StringBuffer.<init>(java.lang.String))
+| |             INVOKESPECIAL java.lang.StringBuffer.<init>
+(Ljava/lang/String;)V
+| constructor-call(void java.lang.StringBuffer.<init>(java.lang.String))
+|               ALOAD_1     // java.lang.Object s
+| method-call(java.lang.StringBuffer
+java.lang.StringBuffer.append(java.lang.Object))
+| |             INVOKEVIRTUAL java.lang.StringBuffer.append
+(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+| method-call(java.lang.StringBuffer
+java.lang.StringBuffer.append(java.lang.Object))
+| method-call(java.lang.String java.lang.StringBuffer.toString())
+| |             INVOKEVIRTUAL java.lang.StringBuffer.toString
+()Ljava/lang/String;
+| method-call(java.lang.String java.lang.StringBuffer.toString())
+|               ARETURN
+method-execution(java.lang.String Test4.foo(java.lang.Object))
+end String foo(Object)
+
+static final String foo_aroundBody0(Test4, Object):
+ALOAD_0
+ALOAD_1
+INVOKEVIRTUAL Test4.foo
+(Ljava/lang/Object;)Ljava/lang/String;   (line 8)
+ARETURN
+end static final String foo_aroundBody0(Test4, Object)
+end public class Test4
+Exception thrown from AspectJ 1.1beta4
+
+This might be logged as a bug already -- see the bug database at
+http://dev.eclipse.org  (product: AspectJ, component: compiler)
+
+Bugs for exceptions thrown have titles File:line from the top stack,
+e.g., "SomeFile.java:243"
+
+If you don't find the exception below in a bug, please add a new bug
+To make the bug a priority, please include a test program
+that can reproduce this exception.
+org.apache.bcel.generic.ArrayType
+org.apache.bcel.generic.ArrayType
+java.lang.ClassCastException: org.apache.bcel.generic.ArrayType
+at org.aspectj.weaver.bcel.BcelRenderer.visit(BcelRenderer.java:152)
+at org.aspectj.weaver.ast.Instanceof.accept(Instanceof.java:29)
+at org.aspectj.weaver.bcel.BcelRenderer.recur(BcelRenderer.java:128)
+at org.aspectj.weaver.bcel.BcelRenderer.renderTest(BcelRenderer.java:94)
+at
+org.aspectj.weaver.bcel.BcelAdvice.getTestInstructions(BcelAdvice.java:271)
+at
+org.aspectj.weaver.bcel.BcelShadow.weaveAroundInline(BcelShadow.java:1199)
+at org.aspectj.weaver.bcel.BcelAdvice.implementOn(BcelAdvice.java:117)
+at org.aspectj.weaver.Shadow.implementMungers(Shadow.java:306)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:278)
+at
+org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.java:917)
+at
+org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:244)
+at
+org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:35)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:312)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:264)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.weaveAndGenerateClassFiles
+(AjBuildManager.java:351)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.
+java:112)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:54)
+at org.aspectj.tools.ajc.Main.run(Main.java:199)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:138)
+at org.aspectj.tools.ajc.Main.main(Main.java:58)
+
+
+1 fail|abort

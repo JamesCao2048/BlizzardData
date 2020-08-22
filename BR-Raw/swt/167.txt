@@ -1,0 +1,2 @@
+Use Cairo instead of Gdk deprecated methods in Sash widget drawBand()
+Sash widget's drawBand() method needs Cairo implementation instead of existing Gdk methods, as most of them are deprecated.

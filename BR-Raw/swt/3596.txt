@@ -1,0 +1,22 @@
+"Alt+" key strokes not always received on "zh_CN.GB18030"
+Key strokes including the "Alt+" modifier are not received as expected by SWT in
+the "zh_CN.GB18030".
+ENVIRONMENT:
+Eclipse-GTK (I20030910), GNOME/Metacity, RedHat 9.0, Sun JDK 1.4.2,
+locale="zh_CN.GB18030"
+STEPS TO REPRODUCE:
+1.) Run snippet #25 from the SWT development homepage (key logger)
+2.) Press and hold "Alt".
+3.) Press and release "F" three times.
+4.) Release "Alt".
+ACTUAL RESULTS:
+DOWN: stateMask=0x0, keyCode=0x10000, character=0x0 '0'
+DOWN: stateMask=0x0, keyCode=0x0, character=0x66 'f'
+UP  : stateMask=0x10000 ALT, keyCode=0x0, character=0x66 'f'
+DOWN: stateMask=0x0, keyCode=0x0, character=0x66 'f'
+UP  : stateMask=0x10000 ALT, keyCode=0x0, character=0x66 'f'
+DOWN: stateMask=0x0, keyCode=0x0, character=0x66 'f'
+UP  : stateMask=0x10000 ALT, keyCode=0x0, character=0x66 'f'
+UP  : stateMask=0x10000 ALT, keyCode=0x10000, character=0x0 '0'
+EXPECTED RESULTS:
+The DOWN key events should have the "ALT" state mask.

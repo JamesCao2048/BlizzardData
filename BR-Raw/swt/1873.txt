@@ -1,0 +1,10 @@
+GTK-BIDI: RTL support in FileDialog.
+Created  attachment 80640   [details]
+Screenshots
+Build ID: 3.4M2
+Steps To Reproduce:
+1.Run application, witch creates FileDialog with RTL orientation style.
+Result: dialog has LTR orientation.
+More information:
+RTL orientation isn't set for all tree of GTK widgets.
+Attachment contains screenshots and patch for latest sources.

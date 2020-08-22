@@ -1,0 +1,4 @@
+CTabFolder should not cache borderColor
+CTabFolder.borderColor is caching a system color.
+System colors should not be cached because they need to change when the user changes the system color, which could be at any time.
+The border color should be looked up every time it is needed for drawing, using getDisplay().getSystemColor().

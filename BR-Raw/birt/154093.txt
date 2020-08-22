@@ -1,0 +1,6 @@
+Bug 154093 Performance problem when rendering a chart with 1800 datapoints
+I'm having some performance issues when I render 1800 datapoints in a chart.
+Rendering 1800 data points in a table is fine.
+My report just contains a simple line chart that is bound to a csv file.
+The csv file contains 1800 datapoints.
+I will attach the report template file and csv file.

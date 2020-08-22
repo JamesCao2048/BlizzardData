@@ -1,0 +1,8 @@
+Bug 115442 Styles in themes can't be applied to a report.
+Description: Styles in themes can't be applied to a report.
+Steps to reproduce: 1.Create a library file and add a theme in it.
+2.Add some styles in the theme.
+3.Include this library in a design file.
+4.Select a theme in property editor.
+5.Pull down style list.
+Actual result: style names are not displayed in list and it can't be applied in this report.

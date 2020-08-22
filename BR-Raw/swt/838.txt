@@ -1,0 +1,2 @@
+SWT overrides LSUIPresentationMode in Info.plist
+In cocoa and carbon, Shell.updateSystemUIMode() resets the UI mode to kUIModeNormal overwriting the Info.plist setting.

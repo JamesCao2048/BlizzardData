@@ -1,0 +1,12 @@
+Mac: Menu Highlight Cheese
+A Listener responds to a menu item selection event, which was caused by a keyboard shortcut, by
+changing the active Shell (perhaps by using a FileDialog).
+The menu highlight is not properly cleared.
+Thus, when the original Shell is once again made active, the highlight lingers until some other action
+clears it.
+Note that the highlight only lingers when the menu item is activated via keyboard shortcut
+--
+selecting a menu item via mouse click works properly.
+This behavior was observed using SWT 3.1 on Mac OS X 10.4.2.
+P.S.
+Perhaps this is a reason why  bug #102293  has not been resolved?

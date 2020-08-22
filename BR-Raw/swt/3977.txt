@@ -1,0 +1,10 @@
+accessibility - tab key in dialog boxes
+Windows standard is that tab and shift+tab keys within a dialog box move the
+focus to the next previous control even if the control is in the same group.
+But in eclipse if there are several controls in the same tab group one is
+forced to use arrows keys to switch focus among them;
+Users of accessibility devices such as screen readers are not used to this
+behaviour which, if not known, could make them to ignore the existence of
+controls in a dialog box because they are completely skipped tabbing around.
+So I propose that tab and shift+tab move focus even to controls belonging to
+the same group.

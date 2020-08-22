@@ -1,0 +1,10 @@
+Bug 134445 [linux] scroll bars are required in Hyperlink Options
+steps to reproduce:
+- create a report
+- insert a label
+- edit its hyperlink
+- select Drill-through
+- notice the dialog box expected behavior:
+- the user is able to choose all options actual behavior:
+- the user could only format the target report in HTML as PDF option was inivisible.
+it seemed that it's limited by the size of the screen.

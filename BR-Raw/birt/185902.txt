@@ -1,0 +1,2 @@
+Bug 185902 Event handler option on lable is lost in property editor [0000]
+Event handler option on label is lost in property editor [0000] Build number: 2.2.0.v20070508-0630 Steps to reproduce: 1.insert a label to layout and input "label" 2.select the label the go to "Property Editor",select "Event handler" Expected result: Event handler on label can be selected Actual result: Event handler on label is lost in property editor Error log: N/A

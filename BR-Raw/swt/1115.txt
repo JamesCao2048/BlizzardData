@@ -1,0 +1,19 @@
+Toolbar combo box multiple glitches
+The combo menu item in the toolbar has a few problems.
+Run Control Example
+Go to Toolbar tab
+Click on 'Combo child'
+* There's what looks like a straight line to the right of the combo box e.g.
+[   V]-
+<- bit of line on right (closer inspection suggests that this is in fact the SWT.SEPARATOR overflowing; it's more visible in SWT.VERTICAL than SWT.HORIZONTAL)
+* The combination 'SWT.HORIZONTAL' and not 'SWT.RIGHT' causes a break-up of the 'text and image' menu choice
+* Using 'SWT.VERTICAL' with the image toolbar shows just the drop-down and a few pixels of choice width; I would expect it to expand
+* Using 'SWT.VERTICAL' causes the combo box to appear extended; in addition causing the warning below
+* A warning is printed:
+"2007-11-25 21:34:58.369 java[9610:10b] This application is trying to draw a very large combo box, 51 points tall.
+Vertically resizable combo boxes are not supported, but it happens that 10.4 and previous drew something that looked kind of sort of okay.
+The art in 10.5 does not break up in a way that supports that drawing.
+To avoid breaking existing apps, NSComboBox in 10.5 will use the 10.4 art for large combo boxes, but it won't exactly match the rest of the system.
+This application should be revised to stop using large combo boxes.
+This warning will appear once per app launch."
+PS Let me know if you want screenshots for the above

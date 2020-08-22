@@ -1,0 +1,28 @@
+Eclipse gets SIGSEGV
+Build ID: I20070209-1006
+Steps To Reproduce:
+1.Open EMF ecore file (use Sample Ecore Model Editor)
+2.Open Properties View for any attribute
+3.Open pop-up menu for EType property
+4.Using quick find select any type (for example type EString)
+5.Press enter
+6.Read info about segmentation fault in your shell
+This way I can reproduce problem with 100% success.
+But sometimes I can
+crash Eclipse using any pop-up menu.
+More information:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x402171ad, pid=24876, tid=1082313216
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_06-b05 mixed mode, sharing)
+# Problematic frame:
+# C  [libgtk-x11-2.0.so.0+0x1f51ad]
+#
+# An error report file with more information is saved as hs_err_pid24876.log
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#
+Aborted

@@ -1,0 +1,5 @@
+Bug 124059 Stored procedure: parameters: default value required
+Create a stored procedure data set.
+Use valid argument in query, eg.
+{call sp_tables('CUSTOMERS')} A parameter is created and a default value is required; data set cannot be saved until you change the argument to a question mark and define a default value.
+Shouldn't you be able to hard-code an argument and not have to define a parameter?

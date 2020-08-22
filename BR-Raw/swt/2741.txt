@@ -1,0 +1,3 @@
+setToolTipText() method of org.eclipse.swt.widgets.Combo not working in Linux platform
+In Linux(GTK), the setToolTipText(String) does not show the tool tip text for
+Combo (org.eclipse.swt.widgets.Combo).

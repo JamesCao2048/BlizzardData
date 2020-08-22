@@ -1,0 +1,3 @@
+Bug 151658 Background set in image will treat margin as padding in PDF.
+Description: Background set in image will treat margin as padding in PDF.
+Steps to reproduce: 1.Insert an image 2.Set Margin Left to 20pt 3.Set Background Color to red 4.Preview in html and pdf Expected result: Background color will not cover margin space in left side Actual result: In pdf, background color displayed in left margin space.

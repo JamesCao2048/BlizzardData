@@ -1,0 +1,15 @@
+Fatal crash when creating Cursor
+Build Identifier: I20100129-1300
+SWT Cursor creation cause major Eclipse crash.
+This happens on the Carbon edition of Eclipse 3.6 M5.Snow Leopard 10.6.2
+and Java 1.6.0_17.
+I first found it in a GEF-based app and file  bug #301400 .
+Then Chris Russo determined where the bug really lies and created a Test Case.
+It's here:
+void createNSCursor(int hotspotX, int hotspotY, byte[] buffer, int width, int height) {
+if (!initialized) {
+initialized = true;
+int window = Cocoa.objc_msgSend(Cocoa.objc_msgSend(Cocoa.C_NSWindow, Cocoa.S_alloc), Cocoa.S_init);
+Cocoa.objc_msgSend(window, Cocoa.S_release);
+}
+Reproducible: Always

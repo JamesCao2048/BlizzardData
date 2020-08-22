@@ -1,0 +1,91 @@
+TabItems appear above TabFolder titles when set to a minimum size on Mac OS X
+If a TabFolder in a SashForm is reduced in size so that only the tab titles are
+visible, for certain positions, the TabItem appears on top of the tab titles.
+When this happens the TabItems can no longer be selected.
+The code below
+illustrates this problem.
+If the upper part of the SashForm is reduced in size
+at certain positions when the TabItem should no longer be visible, it appears
+above the title.
+This occurs with Eclipse 3.1M6 Mac OS X (10.3)
+package test;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.TabFolder;
+import org.eclipse.swt.widgets.TabItem;
+public class TestMacTabFolder {
+
+private Shell shell;
+private Display display;
+private SashForm sashForm;
+
+public TestMacTabFolder() {
+
+// shell
+display = new Display();
+shell = new Shell(display);
+shell.setLayout(new GridLayout());
+shell.setSize(640, 480);
+
+// main composite
+final Composite mainComposite = new Composite(shell, SWT.BORDER);
+mainComposite.setLayout(new GridLayout());
+mainComposite.setLayoutData(new GridData(GridData.FILL_BOTH));
+
+// Sash form split vertically
+sashForm = new SashForm(mainComposite, SWT.VERTICAL);
+sashForm.setLayout(new GridLayout());
+sashForm.setLayoutData(getGridData());
+
+
+// Create the tab folder
+TabFolder tabFolder = new TabFolder(sashForm, SWT.BORDER | SWT.BOTTOM);
+tabFolder.setLayout(new GridLayout());
+tabFolder.setLayoutData(getGridData());
+
+// first tab item
+Composite itemComposite1 = new Composite(tabFolder, SWT.NONE);
+itemComposite1.setLayout(new GridLayout());
+itemComposite1.setLayoutData(getGridData());
+itemComposite1.setBackground(display.getSystemColor(SWT.COLOR_GREEN));
+TabItem item1 = new TabItem(tabFolder, SWT.NONE);
+item1.setText("Item 1");
+item1.setControl(itemComposite1);
+
+// second tab item
+Composite itemComposite2 = new Composite(tabFolder, SWT.NONE);
+itemComposite2.setLayout(new GridLayout());
+itemComposite2.setLayoutData(getGridData());
+itemComposite2.setBackground(display.getSystemColor(SWT.COLOR_BLUE));
+TabItem item2 = new TabItem(tabFolder, SWT.NONE);
+item2.setText("Item 2");
+item2.setControl(itemComposite2);
+
+// bottom composite in the sash formm
+Composite bottomComposite = new Composite(sashForm, SWT.BORDER);
+bottomComposite.setLayout(new GridLayout());
+bottomComposite.setLayoutData(getGridData());
+bottomComposite.setBackground(display.getSystemColor(SWT.COLOR_RED));
+
+// layout the shell
+shell.layout();
+
+}
+
+private void run() {
+
+shell.open();
+while (shell != null && !shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+
+private GridData getGridData() {
+GridData gridData = new GridData();
+gridData.grabExcessHorizontalSpace = true;

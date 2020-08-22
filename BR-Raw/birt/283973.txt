@@ -1,0 +1,10 @@
+Bug 283973 The expression value is not saved into report xml file correctly.
+If use UserPropertyDefn "setDefault" method and pass an expression to this method, the value is not saved into report xml file correctly.
+<list-property name="userProperties">
+<structure>
+<property name="name">Test</property>
+<property name="type">expression</property>
+<property name="isVisible">true</property>
+<property name="default">Test</property>
+</structure>
+</list-property>

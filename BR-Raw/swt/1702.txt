@@ -1,0 +1,10 @@
+alignment support for RowLayout and RowData
+I have found that the RowLayout is pretty useful and has some unique functionality.
+However, when I line up labels and combo boxes in a horizontal row, the vertical alignment is off.
+I am being forced to use GridLayout in these cases to fix the alignment.
+I think RowData should have an "alignment" field.
+(possible values: SWT.BEGINNING, SWT.CENTER, SWT.END, SWT.FILL)  For horizontal rows, this field would specify the vertical alignment.
+For vertical rows, this field would specify the horizontal alignment.
+The semantics would be like the aligment fields in the GridData object.
+If this seems reasonable but there isn't free time to do this, I may be able to write it myself and submit it.
+So, please let me know if such a patch would be necessary and welcome.

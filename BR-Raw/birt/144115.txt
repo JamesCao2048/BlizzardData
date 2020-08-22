@@ -1,0 +1,5 @@
+Bug 144115 [Accessibility]Can't change parameter value in chart builder without mouse
+Can't change parameter value in chart builder without mouse.
+Steps to reproduce: 1.New a report 2.New a sample data soure 3.New a data set ds1 4.Add a parameter p1 in data set builder 4.Insert a chart to open Chart builder, switch to Select Data tab, use ds1 as Data Set.
+5.Use Tab key to navigate Select Data tab, when Parameters...
+button gets focus, press Enter key, Parameters dialog shows up 6.Try to use keyboard to locate insertion caret in the cells of Value column Expected result: Can locate insertion caret in the cells of Value column Actual result: Can't locate insertion caret in the cells of Value column by keyboard

@@ -1,0 +1,11 @@
+StyledText cheese when redrawing selection in FULL_SELECTION mode
+I20070410-1043
+- new workspace
+- set an empty file as user dictionary
+- new project P
+- open P/.project
+- Select All
+- hover over "ent" of the closing "</comment>" tag until tooltip appears
+- move mouse to top
+=> white area remains after "<projects>"
+- with the same procedure, the tooltip for "<comment>" correctly restores the blue background under the tooltip

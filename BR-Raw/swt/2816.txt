@@ -1,0 +1,6 @@
+api spec on GC.setLineDash(int[]) should mention null
+setLineDash currently accepts NULL, and it is equivalent to calling
+GC#setLineStyle(SWT.LINE_SOLID).
+It this intentional?
+It should be specified in
+the API so that new ports get it right.

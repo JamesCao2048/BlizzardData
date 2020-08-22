@@ -1,0 +1,35 @@
+OLE part have a access violation exception
+First time to report a bug here
+-- and new to eclipse.
+This bug is relating to the OLE part, so only appear on Windows platform.
+I am trying to put some ActiveX control in my application, and I need to get a
+IDispatch property of an OleAutomation.
+I call OleAutomation.getProperty(), this function will then invoke the
+underlying IDispatch.invoke(), and later call into Variant.setData() to copy the
+result into the Variant structure.
+In the Variant.setData() function, there is something as:
+case COM.VT_DISPATCH : {
+int[] ppvObject = new int[1];
+OS.MoveMemory(ppvObject, pData + 8, 4);
+dispatchData = new IDispatch(ppvObject[0]);
+dispatchData.AddRef();
+break;
+}
+This is for when the return type is VT_DISPATCH, then create a IDispatch object
+and AddRef() to it.
+Unfortunately, ppvObject[0] can be null.
+In this case,
+AddRef() crash the system.
+I believe, this part of code should be:
+case COM.VT_DISPATCH : {
+int[] ppvObject = new int[1];
+OS.MoveMemory(ppvObject, pData + 8, 4);
+if (ppvObject[0]!=null) {
+dispatchData = new IDispatch(ppvObject[0]);
+dispatchData.AddRef();
+} else {
+dispatchData = null;
+}
+break;
+}
+BTW I like SWT very much.

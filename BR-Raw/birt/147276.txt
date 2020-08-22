@@ -1,0 +1,30 @@
+Bug 147276 [2.1RC4, pdf] The <LI> tag gets rendered wrong when there is a lot of text
+Version: 2.1RC4 Output: Pdf The html
+<LI> tag gets rendered wrong if there is so much text between
+<LI> and
+</LI> that a line break needs to be inserted by birt.
+Wrong means that the bullet will be rendered in the wrong line when rendering as pdf.
+The bug can be reproduced by following the steps below:
+- Create a new empty report
+- Add a "text widget" from the palett
+- Chose HTML / Dynamic Text
+- Add the following text:
+<UL>
+<LI>A line with some text</LI>
+<LI>A line with a lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.
+A lot of text.</LI>
+<LI>An other normal short line</LI>
+</UL>

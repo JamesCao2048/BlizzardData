@@ -1,0 +1,10 @@
+Bug 167395 Current version BIRT can't support SVG well.
+step: 1.Creat a new report with a chart in svg form.
+2.preview the report and save the svg image to a file "test.svg".
+3.Creat another new report.
+Add an image to the report.
+The dialog "Edit Image Item" will diaplay.
+4.In the dialog "Edit Image Item",choose "Embedded image".
+Press the button "Add Image" to add the "test.svg".
+choose the "test.svg" and press the button "Insert", exception happens.
+BIRT code version: 2006.12.11 afternoon.

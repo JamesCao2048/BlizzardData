@@ -1,0 +1,36 @@
+NPE when changing iFrame url via SWT browser evaluate() method
+Build Identifier: SWT 3.5.2.v3557f
+We are developing a an app that leverages iFrames to manage a collection of different pieces of browser content and are trying to dynamically manage the separate iFrame data with a call from the SWT browser evaluate() method to a javascript method we have created to change the iFrames in the browser.
+When testing this we ran into NPE's quite quickly after attempting to make the call several times in a row.
+Here is the stack we are getting:
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.browser.Mozilla.execute(Mozilla.java:1810)
+at org.eclipse.swt.browser.Mozilla.OnStateChange(Mozilla.java:2903)
+at org.eclipse.swt.browser.Mozilla$9.method3(Mozilla.java:1557)
+at org.eclipse.swt.internal.mozilla.XPCOMObject.callback3(XPCOMObject.java:266)
+at org.eclipse.swt.internal.mozilla.XPCOM._JS_EvaluateUCScriptForPrincipals(Native Method)
+at org.eclipse.swt.internal.mozilla.XPCOM.JS_EvaluateUCScriptForPrincipals(XPCOM.java:163)
+at org.eclipse.swt.browser.Mozilla.execute(Mozilla.java:1837)
+at org.eclipse.swt.browser.WebBrowser.evaluate(WebBrowser.java:378)
+at org.eclipse.swt.browser.Browser.evaluate(Browser.java:539)
+at org.eclipse.swt.snippets.Snippet308$1.widgetSelected(Snippet308.java:53)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3910)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3503)
+at org.eclipse.swt.snippets.Snippet308.main(Snippet308.java:62)
+The line generating the NPE is this a de-reference of the "script" variable that is passed into the Mozilla.execute() method.
+In this specific case execute it called by the OnStateChange method with a null due to the fact that the specific function that the code is attempting to "re-install" does not have a functionString defined because it appears to be an internal function and for whatever reason it was not assigned a functionString value when it was dynamically created.
+I will attach a simple testcase based on Snippet308 that can be used to recreate the problem.
+Reproducible: Always
+Steps to Reproduce:
+1.Import the attached snippet project into your workspace
+2.Place the offers.html file into a dir on your PC (defaults to c:/tempy )
+3.If the location of the offers.html is not c:/tempy then update the test code to point to the location on your PC where you placed it.
+2.Run ( SWT snippet )
+3.When the UI appears click on the button on the right called "Change UrL".
+You will see that yahoo is loaded in to the browser frame on the left.
+4.Click this button several more times and your application will crash with the exception provided.
+While this may seem to be a strange case, it is an important piece of our application and is critical for us.
+When this NPE is generated we have been

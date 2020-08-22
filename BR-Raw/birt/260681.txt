@@ -1,0 +1,6 @@
+Bug 260681 Allow JDBC driver manager dialog to add multiple jars at one time through FileDialog
+Eclipse Build ID: I20081211-1908 Steps To Reproduce: 1.Go the JDBC driver manager dialog.
+2.Press "Add" button to add new jar in the jar list.
+3.Only one jar file can be added in at one time.
+That is quite inconvinient for the user if he wants to add multiple jar files under the same folder.
+So the jar file selection dialog should support multiple selection.

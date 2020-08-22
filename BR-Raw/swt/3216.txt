@@ -1,0 +1,49 @@
+UnsatisfiedLinkError jawt.dll already loaded in another classloader
+I am developing plugins for various IDEs.
+Till now all our products were Swing
+based and all the plugins were working fine.
+We recently switched from Swing to SWT.
+Now I am trying to embedd our products
+(SWT components) in various IDEs( Swing components).
+I am using jars and dlls of Eclipse 3.
+Embedding of SWT in Swing is working fine in stand alone application.
+But when
+I deploy my plugin in IDE eg IntelliJ IDEA, following error is thrown
+org.eclipse.swt.SWTError: Not implemented (java.lang.UnsatisfiedLinkError:
+Native Library D:AppsIDEsIdea4.0jrebinjawt.dll already loaded in another
+classloader)
+at org.eclipse.swt.SWT.error(SWT.java:2717)
+at org.eclipse.swt.SWT.error(SWT.java:2616)
+at org.eclipse.swt.awt.SWT_AWT.new_Shell(SWT_AWT.java:265)
+*** Stack trace of contained error ***
+java.lang.UnsatisfiedLinkError: Native Library D:AppsIDEsIdea4.0jrebinjawt
+.dll already loaded in another classloader
+at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1525)
+at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1477)
+at java.lang.Runtime.loadLibrary0(Runtime.java:788)
+at java.lang.System.loadLibrary(System.java:834)
+at org.eclipse.swt.awt.SWT_AWT.loadLibrary(SWT_AWT.java:67)
+at org.eclipse.swt.awt.SWT_AWT.new_Shell(SWT_AWT.java:262)
+at com.appperfect.plugins.common.SWTContainer$1.run(SWTContainer.java:49
+)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.ja
+va:106)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2749)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2434)
+at com.appperfect.plugins.common.DisplayThread.swtEventLoop(DisplayThrea
+d.java:72)
+at com.appperfect.plugins.common.DisplayThread.run
+(DisplayThread.java:65)
+We are not able to proceed because of this problem.
+If problem is not resolved
+then we may have to switched back to Swing.
+:(
+Problem is because SWT_AWT explicitly loads jawt.dll, this may be because
+SWT_AWT or some other class in swt.jar directly calls a native method in
+jawt.dll.
+If this is not so and just swt dlls have internal dependeny on
+jawt.dll then I think explicit loading of jawt is not required.
+Is there any work around?
+Am I missing something?
+-Sudhan.

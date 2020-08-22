@@ -1,0 +1,15 @@
+Ctrl+Tab key binding works incorrectly.
+Build ID: I20090430-2300
+Steps To Reproduce:
+1.Assign key binding for 'Next Editor' as Ctrl+Tab.
+2.Open three editors.
+3.Press Ctrl+Tab to bring up the 'Editors' dialog.
+There are three editors listed and the second one is selected.
+4.Holding the Ctrl key, hit Tab key to select the third editor.
+- Expected behavior:
+The third editor is selected and the 'Editors' dialog is still displayed.
+- Actual behavior:
+The 'Editors' dialog is closed.
+More information:
+- In the 'Keys' preference dialog, pressing Ctrl+Tab in the 'Binding' field results in '^Tab ^Tab' instead of '^Tab'.
+-  bug 266405  could be related.

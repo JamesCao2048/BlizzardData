@@ -1,0 +1,11 @@
+GTK-BIDI: RTL support in CoolBar.
+Created  attachment 80348   [details]
+Problem with dragging rtl cool items
+Build ID: 3.4M2
+Steps To Reproduce:
+1.Run SWT application with RTL-oriented CoolBar
+2.Move item up or down from one row to another.
+Item is placed on the wrong position on its new row.
+More information:
+Attachment contains screenshots and diff files with suggested changes.
+Diff files are done on the base of sources from 3.4M2 build.

@@ -1,0 +1,29 @@
+AJDT not very stable when confronted with java/aspect errors.
+AJDT is not very stable when an eclipse project contains errors like
+missing classes, wrong package statements etc. etc. This may occurs when
+refactoring a project (sometimes by changing the source outside eclipse).
+Note I am using Eclipse 2.1.1, AJDT 1.1.4 + incremental compilation.
+Generally a lot of exceptions will occur (mostly nullpointer). Here are some
+of them:
+I:
+java.lang.NullPointerException
+at org.aspectj.asm.internal.ProgramElement.toLinkLabelString
+(ProgramElement.java:403)
+at org.eclipse.ajdt.internal.core.AJDTStructureViewNode.getLabel
+(AJDTStructureViewNode.java:171)
+at org.eclipse.ajdt.internal.core.AJDTStructureViewNodeAdapter.getLabel
+(AJDTStructureViewNodeAdapter.java:89)
+at org.eclipse.ui.model.WorkbenchLabelProvider.getText
+(WorkbenchLabelProvider.java:142)
+II:
+java.lang.NullPointerException
+at org.eclipse.ajdt.internal.ui.editor.AspectJEditor$1.run
+(AspectJEditor.java:242)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+III:
+java.lang.NullPointerException
+at org.aspectj.ajde.internal.CompilerAdapter.compile
+(CompilerAdapter.java:79)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run
+(AspectJBuildManager.java:165)
+!

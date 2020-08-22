@@ -1,0 +1,9 @@
+Unclosed stream in AjAttribute
+Created  attachment 153879   [details]
+Patch to close the stream at the end of the method.
+The getAllBytes() method of org.aspectj.weaver.AjAttribute uses a
+DataOutputStream to write into a ByteArrayOutputStream. However, the stream is
+neither closed nor flushed at the end of the method, so that its not sure that
+all bytes are actually written (it depends on the implemention of
+DataOutputStream).
+To fix it, one should add a call to close() or flush(). A patch is attached.

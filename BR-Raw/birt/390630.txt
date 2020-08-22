@@ -1,0 +1,3 @@
+Bug 390630 [Accessibility]Screen reader does not speak the 'Allow Export' label in Aggregation Builder
+BuildId: 4.2.1.v20120918-1113 Steps to reproduce: 1.Insert an aggregation in the Table or list footer 2.In the aggregation builder 3.Check or uncheck the 'Allow Export' option Expected result: Screenreader should speak like 'Allow export checked' or 'Allow export unchecked' other than checked/unchecked.
+Error Log: N/A

@@ -1,0 +1,2 @@
+Bug 176451 The library which is named such as #1234.rptlibrary can not use in Library Explorer[01]
+Description: The library which is named such as #1234.rptlibrary can not use in Library Explorer[01] Build number: 2.2.0.v20070306-0630 Steps to reproduce: 1, New a rptlibrary which name is beginning with "#" 2, Publish it 3, Open Library Explorer Expected result: The icon of rptlibary is correct and it can be spreaded Actual result: The icon of rptlibary is like text icon and can not be spreaded Error log:

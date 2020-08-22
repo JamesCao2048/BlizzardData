@@ -1,0 +1,2 @@
+Bug 299610 Duplicate column name issue when removing and new a computed column with same name
+Description: Duplicate column name issue when removing and new a computed column with same name Build number: 2.5.2.v20090114-0630 Steps to reproduce: 1, New a data set 2, New two computed columns one is C1 another one is C2 3, Edit the data set and preview 4, Go to computed column and Remove C2 5, New a computed column C2 Expected result: C2 can be created successfully Actual result: In step5, Duplicate Column Name error display in dialog Error log:

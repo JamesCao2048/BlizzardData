@@ -1,0 +1,9 @@
+CBanner at top does vertical sizing based on left components
+If the text on the buttons on the right is larger than the height of the image
+alone, then the buttons become cut off.
+This can be easily seen by bumping up
+the font size on the OS.
+It happens by default on my machine.
+
+This should be easy enough to fix, but has a fairly significant visual effect
+for Linux users.

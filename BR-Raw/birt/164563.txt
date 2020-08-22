@@ -1,0 +1,3 @@
+Bug 164563 Orphan doesn't take effect on some items[03]
+Orphan doesn't take effect on some items.
+Buld number: 2.2.0.v20061113-0630 Steps to reproduce: 1.new a report and drag label to layout ,input some text 2.copy the label and paste in layout till there are only two lines remaining in PDF page 3.insert another label and input enough text to cover 4 lines 4.new a style and set widow to 0,orphan to 3 5.preview in PDF Expected result: Orphan will take effect and the last label will be displayed entirely in the second PDF page Actual result: One row of last label is displayed in first PDF page and other three rows are displayed in second PDF page.

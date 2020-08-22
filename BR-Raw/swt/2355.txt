@@ -1,0 +1,38 @@
+GC#drawText doesn't work with arabic text when advance is on
+build Eclipse 3.2 M6
+tested on gtk 2.4.4 and 2.8.2, same result.
+To reproduce the problem you need: use GC#drawString, have advance graphics on, use a arabic text sample (didn't last cjk or he).
+Here a snippet:
+public static void main(String[] args) {
+final Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+GC gc = event.gc;
+gc.setAdvanced(true);
+if (!gc.getAdvanced()) {
+System.out.println("Advance graphics off");
+}
+gc.setAntialias(SWT.ON);
+String string = "u0627u0644u0627u0634u0643u0627u0644 u063Au064Au0631 u0645u0642u0628";
+Font font = new Font(display, "Tahoma", 16, SWT.NORMAL);
+
+TextLayout layout = new TextLayout(event.display);
+layout.setFont(font);
+layout.setText(string);
+layout.draw(gc, 10, 10);
+layout.dispose();
+
+gc.setFont(font);
+gc.drawString(string, 10, 70);
+font.dispose();
+}
+});
+shell.setSize(280, 240);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose ();
+}

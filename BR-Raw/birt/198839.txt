@@ -1,0 +1,5 @@
+Bug 198839 Hide element on master page works only for PDF output
+1.Insert any element (grid, label, image, text) in the header or footer of the master page.
+2.Use the Visibility property to hide the element for all outputs.
+Expected result: Element does not appear in any of the output formats.
+Actual result: The element is hidden only in PDF.

@@ -1,0 +1,97 @@
+TreeItem.setExpanded(false) can cause blank lines in a virtual tree.
+Created  attachment 202568   [details]
+Screenshot of blank data in virtual tree produced by snippet.
+Build id: I20110613-1736 (Linux 32 bit, libgtk2.0-0: 2.20.1-0ubuntu2)
+It seems that when tree elements are collapsed in a virtual tree and the scroll position is reset in the viewport, the items that became visible do not trigger an update, leaving them blank.
+
+To reproduce the problem:
+1) Run the snippet below.
+2) Scroll to bottom of tree.
+3) Press refresh button
+4) Press the collapse button.
+This snippet is a modified version of the virtual tree swt snippet.
+The refresh and collapse buttons perform the equivalent operations as the jface TreeViewer ones.
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout (new GridLayout());
+
+final Tree tree = new Tree(shell, SWT.VIRTUAL | SWT.BORDER);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem)event.item;
+TreeItem parentItem = item.getParentItem();
+String text = null;
+if (parentItem == null) {
+text = "node "+tree.indexOf(item);
+} else {
+text = parentItem.getText()+"
+- "+parentItem.indexOf(item);
+}
+item.setText(text);
+item.setItemCount(10);
+}
+});
+tree.setItemCount(20);
+tree.setLayoutData(new GridData(GridData.FILL_HORIZONTAL | GridData.FILL_VERTICAL));
+
+Button refresh = new Button(shell, SWT.PUSH);
+refresh.setText("refresh");
+refresh.addSelectionListener(new SelectionListener() {
+public void widgetDefaultSelected(SelectionEvent e) {
+widgetSelected(e);
+}
+
+public void widgetSelected(SelectionEvent e) {
+tree.clearAll(true);
+}
+});
+refresh.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+
+Button collapse = new Button(shell, SWT.PUSH);
+collapse.setText("collapse");
+collapse.addSelectionListener(new SelectionListener() {
+public void widgetDefaultSelected(SelectionEvent e) {
+widgetSelected(e);
+}
+
+public void widgetSelected(SelectionEvent e) {
+collapse(tree, tree);
+}
+});
+collapse.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+shell.setSize(400, 300);
+shell.open();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+private static void collapse(Tree tree, Widget widget) {
+if (widget instanceof Item) {
+Item item = (Item) widget;
+setExpanded(tree, item, false);
+}
+Item[] children = getChildren(widget);
+if (children != null) {
+for (int i = 0; i
+< children.length; i++) {
+collapse(tree, children[i]);
+}
+}
+}
+private static void setExpanded(Tree tree, Item node, boolean expand) {
+((TreeItem) node).setExpanded(expand);
+// force repaints to happen
+tree.update();
+}
+private static Item[] getChildren(Widget o) {
+if (o instanceof TreeItem) {
+return ((TreeItem) o).getItems();
+}
+if (o instanceof Tree) {
+return ((Tree) o).getItems();
+}
+return null;
+}
+}

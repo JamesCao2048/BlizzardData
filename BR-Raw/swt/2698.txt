@@ -1,0 +1,56 @@
+Extra non-functional horizontal scroll bar in TreeViewer
+I removed the deprecated TableTree on a preferences page created previously and
+replaced it with Tree.
+Everything seems to work and look the same except for a
+non-functional horizontal scroll bar that now appears below the Tree.
+This
+horizontal scroll bar does nothing and appears no matter how the page is sized.
+When the page is small enough to where a horizontal scroll bar is needed,
+another scroll bar appears under the non-functional scroll bar.
+
+Here is my ceateContents() code:
+protected Control createContents(Composite parent)
+{
+Composite masterComposite = new Composite(parent, SWT.NONE);
+Layout masterLayout = new FillLayout();
+masterComposite.setLayout(masterLayout);
+CellEditor[] editors = new CellEditor[COLUMN_PROPERTIES.length];
+viewer = new TreeViewer(masterComposite, SWT.BORDER | SWT.SINGLE);
+viewer.setColumnProperties(COLUMN_PROPERTIES);
+viewer.setCellEditors(editors);
+viewer.setCellModifier(new CellModifier(viewer));
+viewer.setLabelProvider(new ViewerLabelProvider());
+viewer.setContentProvider(new ViewerContentProvider());
+viewer.setSorter(new ViewerSorter()
+{
+public int compare(Viewer viewer, Object e1, Object e2)
+{
+if (e1 == null || e2 == null) return 0;
+if (e1 instanceof X5CardDescriptor && e2 instanceof X5CardDescriptor)
+return ((X5CardDescriptor) e1).getName().compareTo(((X5CardDescriptor)
+e2).getName());
+return 0;
+}
+});
+viewer.setInput(CARD_CATEGORY);
+Tree tree = viewer.getTree();
+tree.setHeaderVisible(true);
+tree.setLinesVisible(false);
+TreeColumn cardColumn = new TreeColumn(tree, SWT.LEAD);
+cardColumn.setText(COLUMN_PROPERTIES[0]);
+cardColumn.setWidth(180);
+editors[0] = null;
+TreeColumn bgColorColumn = new TreeColumn(tree, SWT.LEAD);
+bgColorColumn.setText(COLUMN_PROPERTIES[1]);
+bgColorColumn.setWidth(70);
+editors[1] = new ColorCellEditor(tree);
+TreeColumn fgColorColumn = new TreeColumn(tree, SWT.LEAD);
+fgColorColumn.setText(COLUMN_PROPERTIES[2]);
+fgColorColumn.setWidth(70);
+editors[2] = new ColorCellEditor(tree);
+TreeColumn fontStyleColumn = new TreeColumn(tree, SWT.LEAD);
+fontStyleColumn.setText(COLUMN_PROPERTIES[3]);
+fontStyleColumn.setWidth(70);
+editors[3] = new ComboBoxCellEditor(tree, FS_VALUES, SWT.READ_ONLY);
+return masterComposite;
+}

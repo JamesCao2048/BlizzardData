@@ -1,0 +1,82 @@
+Background Inheritance Incorrect in Composite Hierarchies
+Opened by Brian Farn 2006.03.03
+Eclipse Version: 3.2.0 M5a, Build id: I20060223-1656
+Description
+-----------
+A top composite with an image background has a background mode of INHERIT_DEFAULT.
+A label parented by the top composite correctly inherits the top composite's background.
+The top composite has a child composite with a background mode of INHERIT_DEFAULT.
+A label parented by the child composite inherits the top composite's background, but seems to inherit an incorrect region of the top composite background (possible pixel mapping error).
+Sample UI Hierarchy
+-------------------
+Shell
+Composite: Has a background image, background mode is INHERIT_DEFAULT
+Label: Correctly displays background of parent composite
+Text: Displayed correctly
+Composite: Background mode is INHERIT_DEFAULT, correctly displays background of parent composite
+Label: Incorrectly displays background of top composite
+Text: Displayed correctly
+Sample code
+-----------
+package tc;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class TransparentMain {
+
+protected TransparentCompositeBackground _transparentBackground = null;
+public static void main( String[] args ) {
+new TransparentMain();
+}
+public TransparentMain(){
+Shell _shell = new Shell();
+_shell.setSize( 500, 250 );
+_shell.setText( "Transparent Main" );
+FillLayout layout = new FillLayout();
+_shell.setLayout( layout );
+
+_transparentBackground = new TransparentCompositeBackground( _shell );
+
+Display display = Display.getDefault();
+_shell.setLocation( 300, 300 );
+_shell.open();
+while( _shell.isDisposed() == false ){
+if( display.readAndDispatch() == false )
+display.sleep();
+}
+}
+
+public class TransparentCompositeBackground extends Canvas {
+protected ImageData _imageData = null;
+/**
+*
+*/
+public TransparentCompositeBackground( Composite compositeParent) {
+super( compositeParent, SWT.NULL );
+this.setBackgroundMode( SWT.INHERIT_DEFAULT );
+
+Image image = createImage();
+this.setBackgroundImage( image );
+
+GridLayout layout = new GridLayout( 1, false );
+setLayout( layout );
+
+Label label = new Label( this, SWT.NULL );
+GridData gridData = new GridData( GridData.FILL_HORIZONTAL );
+label.setLayoutData( gridData );
+label.setText( "A label and text on a composite" );
+
+Text text = new Text( this, SWT.BORDER );
+gridData = new GridData( GridData.FILL_HORIZONTAL );
+text.setLayoutDat

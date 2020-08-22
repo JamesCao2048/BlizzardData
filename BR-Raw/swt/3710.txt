@@ -1,0 +1,3 @@
+BIDI: rtl-oriented TableCursor set next column instead of previos and vice versa, when it uses right and left arrow keys.
+When TableCursor has rtl orientation, left and right arrow keys should be
+swapped.

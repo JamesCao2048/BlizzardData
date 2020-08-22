@@ -1,0 +1,75 @@
+Wrong colors with gradient pattern
+The code below should show a window filled with a gradient from light blue to white.
+In the current SWT build it shows a gradient all right but with an orange tint at the center.
+Sorry, I don't know how to submit code.
+I think the following patch should fix this:
+### Eclipse Workspace Patch 1.0
+#P org.eclipse.swt
+Index: Eclipse SWT/win32/org/eclipse/swt/graphics/Pattern.java
+===================================================================
+RCS file: /home/eclipse/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/graphics/Pattern.java,v
+retrieving revision 1.7
+diff
+-u
+-r1.7 Pattern.java
+--- Eclipse SWT/win32/org/eclipse/swt/graphics/Pattern.java	8 Jul 2005 17:43:12
+-0000	1.7
++++ Eclipse SWT/win32/org/eclipse/swt/graphics/Pattern.java	31 Jan 2006 15:54:43
+-0000
+@@
+-160,7 +160,7 @@
+int a = (int)((alpha1 & 0xFF) * 0.5f + (alpha2 & 0xFF) * 0.5f);
+int r = (int)(((colorRef1 & 0xFF) >> 0) * 0.5f + ((colorRef2 & 0xFF) >> 0) * 0.5f);
+int g = (int)(((colorRef1 & 0xFF00) >> 8) * 0.5f + ((colorRef2 & 0xFF00) >> 8) * 0.5f);
+-		int b = (int)(((colorRef1 & 0xFF000) >> 16) * 0.5f + ((colorRef2 & 0xFF0000) >> 16) * 0.5f);
++		int b = (int)(((colorRef1 & 0xFF0000) >> 16) * 0.5f + ((colorRef2 & 0xFF0000) >> 16) * 0.5f);
+int midColor = Gdip.Color_new(a
+<< 24 | r
+<< 16 | g
+<< 8 | b);
+Gdip.LinearGradientBrush_SetInterpolationColors(handle, new int[]{foreColor, midColor, backColor}, new float[]{0, 0.5f, 1}, 3);
+Gdip.Color_delete(midColor);
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Pattern;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class GradientPatternTest {
+public static void main(String[] args) {
+Shell shell;
+Canvas canvas;
+Display display;
+display = Display.getDefault();
+shell = new Shell(display);
+shell.setLayout(new FillLayout());
+canvas = new Canvas(shell, SWT.NORMAL);
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+Pattern pattern;
+Color color;
+e.gc.setBackground(e.display.getSystemColor(SWT.COLOR_WHITE));
+e.gc.fillRectangle(0, 0, ((Control) e.widget).getSize().x,
+((Control) e.widget).getSize().y);
+color = new Color(e.display, 191, 191, 255);
+pattern = new Pattern(e.display, 0, 0, ((Control) e.widget).getSize().x, 0, color, 63, e.display
+.getSystemColor(SWT.COLOR_WHITE), 63);
+e.gc.setBackgroundPattern(pattern);
+e.gc.fillRectangle(0, 0, ((Control) e.widget).getSize().x,
+((Control) e.widget).getSize().y);
+pattern.dispose();
+color.dispose();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}

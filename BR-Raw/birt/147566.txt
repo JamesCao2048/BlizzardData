@@ -1,0 +1,2 @@
+Bug 147566 Parameter selection page, space is displayed as "#32"
+Parameter selection page, space is displayed as "#32" Steps: Data source: sample db Data set: select * from customers 1.Create a cascading parameter, select the data set, p1: row["customernumber"]; p2: row["customername"] 2.Drag the p2 into layout 3.Preview in web viewer Actual Results: 1.Parameter selection page is pop up 2.p1 select 128 3.view p2's value Expected Results: 1.Can be displayed correctly.

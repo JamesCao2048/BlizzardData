@@ -1,0 +1,8 @@
+False "unsaved changes" notification from launch configs
+Build 20020602 (F2)
+I still get false "You have unsaved changes" notifications from Java
+Application configs periodically.
+I haven't been able to create a reproducible
+test case.
+However, it should be simple to go through the code and spot any
+lingering occurances of this persisting bug.

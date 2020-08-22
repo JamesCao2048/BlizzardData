@@ -1,0 +1,24 @@
+[Browser] Control-N from Browser causes multiple errors.
+Build ID: Eclipse3.2.1
+Steps To Reproduce:
+1.Create a Browser control with an url.
+2.Click in the body (not on a link) in Browser
+- Focus needs to be in the body to reproduce
+3.Get several error messages
+- "register faik".
+Click ok at each one to continue
+4.Then get error
+- Java Plug-in Fatal Error
+- Cannot load class sun/plugin/JavaRunTime.
+More information:
+I've reproduced on a couple of machines.
+On others, it doesn't happen.
+So I don't know how to attach an image.
+I will describe the popup dialog message:
+Title: Java(TM) Plug-in Fatal Error
+Cannot load class sun/plugin/JavaRuntime.
+The Bridge was installed at
+<c:progra~1JavaJ2RE14~1.2_0> but the class is not there
+Modify the registry key to reflect the new bridge location
+The key is HKEY_LOCAL_MACHINESOFTWAREJavaSoftJava Plug-in or change your classpath to include the new directory
+please consult the documentation for more information.

@@ -1,0 +1,3 @@
+NPE when hasfield evaluating with annotations and there is an unresolved import
+hasfield/hasmethod can cause early matching - before the weaving process kicks in properly.  For a 'normal' compile error, like an unresolvable import, the error is put out before the weaving process kicks off.  However hasfield/hasmethod happening early causes an NPE to occur before the error is put out.
+A guard for the NPE (which occurs in EclipseResolvedMember.getAnnotationTypes()) addresses this problem and allows the real error to come out.

@@ -1,0 +1,2 @@
+Bug 141488 Mouse icon didn't change with interactivity in SVG chart
+Steps to reproduce: 1.New a SVG chart, add a interactivity on chart title 2.Preview the report Expected result: Mouse icon will change(to the hand shape) when hovering the chart title Actual result: Mouse icon didn't change but it will link to the target report by clicking the chart title

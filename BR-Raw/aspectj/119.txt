@@ -1,0 +1,16 @@
+[plan] [ataspectj] Abstract @Aspect causing problems
+Trying to use an abstract @Aspect from a library jar file is causing problems.
+In the (soon to be) attached zip of eclipse projects:
+* logging-library: defines two abstract trivial logging aspects, one in code-style and one in @AspectJ style.
+* sample-system: uses the code-style abstract aspect successfully
+* sample-system2: uses the @AspectJ style abstract aspect and won't compile in Eclipse
+Exception:
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.AtAjAttributes$LazyResolvedPointcutDefinition.getPointcut(AtAjAttributes.java:1632)
+at org.aspectj.weaver.ShadowMunger.addChildNodes(ShadowMunger.java:258)
+at org.aspectj.weaver.ShadowMunger.createHierarchy(ShadowMunger.java:247)
+at org.aspectj.weaver.AsmRelationshipProvider.adviceMunger(AsmRelationshipProvider.java:180)
+at org.aspectj.weaver.Shadow.implementMungers(Shadow.java:717)
+a ... int;)Ljava/lang/String;
+ARETURN
+end public Object run(Object[])

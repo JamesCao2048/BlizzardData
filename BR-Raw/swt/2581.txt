@@ -1,0 +1,43 @@
+drawRoundRectangle draw bad round corner of rectangle.
+Hi !
+I'm using eclipse 3.1 on Windows XP, when I draw round rectangles
+sometimes the rounded corners are drawn badly specially when a Transform is used in gc.
+"badly" means rounded corner circle are not the right ones but "opposite".
+(see attached picture).
+Used snippet:
+package test1;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Transform;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class RoundRect
+{
+public static void main(String[] args)
+{
+Display disp = new Display();
+Shell shell = new Shell( disp );
+shell.setSize( 400, 300 );
+shell.addPaintListener( new PaintListener() {
+public void paintControl(PaintEvent e) {
+Transform tr = new Transform( e.display );
+//same effect:                                tr.translate( 0,0 );
+tr.translate( 5,5 );
+e.gc.setTransform( tr );
+e.gc.setBackground( new Color(null,255,0,0));
+e.gc.fillRoundRectangle( 0,0, 142, 90, 90,90 );
+e.gc.drawRoundRectangle( 0,0, 142, 90, 90,90 );
+e.gc.setTransform( null );
+tr.dispose();
+}
+});
+
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!disp.readAndDispatch ())
+disp.sleep ();
+}
+disp.dispose ();
+}
+}

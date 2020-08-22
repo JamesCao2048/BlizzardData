@@ -1,0 +1,16 @@
+[Browser][WebKit] Javadoc tooltip cannot be closed with Esc
+Build Identifier: 20110615-0604
+Tooltips opened with F2 ("Show Tooltip Description") can be closed by pressing Esc, except Javadoc tooltips.
+This worked fine in Eclipse-3.4, it ceased to work in 3.7.
+Reproducible: Always
+Steps to Reproduce:
+1.Enter the following into a new Java class with an arbitrary name:
+public static void test()
+{
+final String s = new String();
+}
+2.
+Place the cursor over String and press F2.A javadoc tooltip appears.
+Press Esc, nothing happens, the tooltip remains on the screen.
+Place the cursor over s, which is underlined in yellow, and press F2.The warning appears in a tooltip.
+Press Esc, and the tooltip disappears.

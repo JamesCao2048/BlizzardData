@@ -1,0 +1,7 @@
+Alt+Numpad_Divide issues two key events
+Pressing Alt+Numpad_Divide or Shift+Alt+Numpad_Divide seems to issue two key events.
+Easy to see in Preferences
+-> Keys
+-> press [Shift+]Alt+Numpad_Divide in the "Key Sequence" Name field.
+All's OK for the other control key combinations (Shift+Numpad_Divide, Ctrl+Numpad_Divide, Shift+Control+Numpad_Divide), Numpad_Divide by itself, and also Ctrl+Alt+Numpad_Divide.
+This appears to be the case for Eclipse R3.1 as well.

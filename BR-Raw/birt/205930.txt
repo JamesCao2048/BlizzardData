@@ -1,0 +1,7 @@
+Bug 205930 2.2.2 Cube Builder: Dragging a dimension from cube builder should show all the associated levels.
+The current behavior is that user drags the data field from the cube and to show the hierarchy, he has to click on Show/Hide columns and select the underlying field.
+Proposed Solution: When the user selects the Product Line as group.
+Product Name is the underlying field.
+When user drags the Product Line field from the cube, Product Name should also follow through.
+If user does not want to show the Product Name, he can choose to hide it from show/hide group levels.
+User should also be able to add levels from the Data Cube in Data Explorer by dragging them to the cross tab.

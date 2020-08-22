@@ -1,0 +1,35 @@
+AIOOB exception for Tree
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+at org.eclipse.swt.widgets.Tree.setItemCount(Tree.java:2392)
+at org.eclipse.swt.widgets.Tree.setItemCount(Tree.java:2402)
+at veronika.Newsgroup.main(Newsgroup.java:18)
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout (new FillLayout());
+final Tree tree = new Tree(shell, /*SWT.VIRTUAL |*/ SWT.BORDER);
+tree.setItemCount(20);
+shell.setSize(400, 300);
+shell.open();
+for (int i = 0; i
+< 10; i++) {
+final TreeItem item = tree.getItem(i);
+display.asyncExec(new Runnable() {
+public void run() {
+TreeItem parentItem = item.getParentItem();
+String text = null;
+if (parentItem == null) {
+text = "node "+tree.indexOf(item);
+} else {
+text = parentItem.getText()+"
+- "+parentItem.indexOf(item);
+}
+item.setText(text);
+}
+});
+}
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

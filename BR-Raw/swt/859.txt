@@ -1,0 +1,4 @@
+Program.findProgram("txt") returns null on Snow Leopard
+findProgram does some extra work for text edit in order to be sure that the app knows how to handle the extension.
+On Snow Leopard the TextEdit plist file has changed and the extra checking fails.
+Using LaunchServices code directly (like Carbon port) works correctly.

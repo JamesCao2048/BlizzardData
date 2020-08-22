@@ -1,0 +1,30 @@
+SashForm no longer working on OSX
+Build ID: I20061129-1340
+Steps To Reproduce:
+The following snippet no longer works using the latest nightly builds.
+It did on SWT 3.3M3 and prior.
+Run the snippet and try to drag the sash.
+The sash does not move.
+1/2 the time the cursor doesn't even change.
+public class SashFormTest
+{
+public static void main(String[] args) {
+Display display = Display.getDefault();
+Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setLayout(new FillLayout());
+SashForm sf = new SashForm(shell, SWT.VERTICAL);
+sf.SASH_WIDTH = 10;
+sf.setLayout(new FillLayout());
+
+new Composite(sf, SWT.BORDER);
+new Composite(sf, SWT.BORDER);
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+More information:

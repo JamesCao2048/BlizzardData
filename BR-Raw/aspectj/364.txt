@@ -1,0 +1,40 @@
+Type mismatch: cannot convert from Collection to Collection
+(From aspectj-users)
+The program below produces the erroneous message:
+[iajc] D:workdirDPsamplemainsrccomdesignpatternobserverObserverProt
+ocol.aj:39 [error] Type mismatch: cannot convert from Collection to Collection
+[iajc] return observers;
+[iajc]        ^^^^^
+//Subject.java
+interface Subject {
+public void addObserver(Observer observer);
+public void removeObserver(Observer observer);
+public Collection getObservers();
+}
+//Observer.java
+interface Observer
+{
+public void update();
+}
+//ObserverProtocol
+public abstract aspect ObserverProtocol{
+abstract pointcut stateChange(Subject subject);
+after(Subject subject):stateChange(subject){
+Iterator it=subject.getObservers().iterator();
+while(it.hasNext()){
+Observer observer=(Observer)it.next();
+observer.update();
+}
+}
+private Collection Subject.observers=new ArrayList();
+public void Subject.addObserver(Observer observer){
+observers.add(observer);
+}
+public void Subject.removeObserver(Observer observer){
+observers.remove(observer);
+}
+public Collection Subject.getObservers()
+{
+return observers;
+}
+}

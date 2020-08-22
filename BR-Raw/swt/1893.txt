@@ -1,0 +1,20 @@
+StyledText.doMouseWordSelect - NPE
+Build ID: swt.version=3346
+Steps To Reproduce:
+I've seen this exception several times in our logs but I cannot seem to reproduce the exception.
+I may be focus to/from a StyledText with selected text.
+It may be selected text word wrap.
+I wish I could help more.
+I cannot seem to reproduce it, but our clients can
+More information:
+java.lang.NullPointerException
+at org.eclipse.swt.custom.StyledText.doMouseWordSelect(Unknown Source)
+at org.eclipse.swt.custom.StyledText.doMouseLocationChange(Unknown Source)
+at org.eclipse.swt.custom.StyledText.handleMouseMove(Unknown Source)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(Unknown Source)
+at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+at XXX.main(XXX.java:676)
+{XXX Used to protect our privacy}

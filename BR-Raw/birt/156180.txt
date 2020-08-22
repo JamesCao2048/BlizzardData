@@ -1,0 +1,6 @@
+Bug 156180 Problem with Dataset Filteration
+In one Report I hv used the report parameters for From Division and To Division .
+When I run this report for the first time it is fine and filter the data for the division code , But, when I running the same report for the second with some other division code combination, the data is not getting refreshed .
+For eg : suppose tht I m running the report for division ORE AND ORA for the first time , the report is showing ORE....records and ORA records .
+For the second time I m using PRE and PRE as division code combination then the report Is showing OREs data , ORAs Data and PREs Data and all the values Agains ORE and ORA are 0s for all the fields tht means that query is working fine .
+I m not getting where I went wrong,can u just help me out on this issue .

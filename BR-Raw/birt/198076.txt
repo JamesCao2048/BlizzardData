@@ -1,0 +1,5 @@
+Bug 198076 If export a report design including a propertyBindings to a library, the exported library is incorrect[01]
+Description: Export a report design to a library, make sure the report design's dataset has a propertyBindings.
+After exporting, we can get a library file.
+Open the library file.
+Problem message occurs: "The property "queryTimeOut" in the element "library" is not defined." "The property "queryText" in the element "library" is not defined." After remove the queryTimeOut and queryText Properties, the problem resolved I think it is a issue when export the propertyBindings from rptdesign to library

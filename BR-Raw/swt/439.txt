@@ -1,0 +1,10 @@
+Cannot get simultaneous left and right mouse button in SWT.MouseMoveevents on Mac
+Build Identifier: 3.6.1.v3659
+If I attach a Listener for SWT.MouseMove events to a SWT Canvas, on Windows I can success fully query the event state mask for simultaneous left and right mouse buttons.
+On Mac the state mask never contains both the flag for button1 and button3.If they are clicked the same time button1 is the only one in the statemask.
+Reproducible: Always
+Steps to Reproduce:
+1.Execute the attached file
+2.press left, right, and both mouse buttons while moving
+3.On Windows it will print "Hit!" for the last case.
+Not so for Mac

@@ -1,0 +1,7 @@
+Column in problem view not properly refreshed when resizing the column width
+Using I20070530-0010, I can get a reproducable refresh problem in the problem view.
+If I resize the first column in order to be able to see the complete warning message and then I resize it to be quite small, I can see part of the message still displayed after the last column.
+I don't expect it.
+If I force a refresh of the view, the leftovers are properly removed.
+See attached screenshot.
+I add Tod on the CC as I don't know if the problem comes from SWT or JFace or the problem view itself.

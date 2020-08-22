@@ -1,0 +1,20 @@
+[OLE] Menus dissapear when opening/closing a RAC view with embedded MS Word 2007 (using OleControlSite)
+Build Identifier: I20090611-1540 (Version: 3.5.0)
+Try creating a new RAC View with embedded MS Word 2007. Using the OleControlSite object in order to do that.
+In the application, when opening this view, the application menus dissapear.
+If trying to set the application menus on the OleFrame object, then when opening the view the menus are there.
+But when closing the view, the menus in the application dissapear as well.
+Problem:  opening and closing the view, shouldn't dispose of the whole application menus.
+(example code in the attachments)
+Reproducible: Always
+Steps to Reproduce:
+1.Create new View extending ViewPart
+2.In createPartControl method, create the OleFrame object and the OleControlSite object with embedded word document.
+3.Run the RAC application, open this view
+-> notice that the application menus have dissapeared.
+4.Instead of step 3.
+-> set the application menus from the workbench on the OleFrame object.
+5.Run the RAC application, open this view
+-> notice that the application menus are there and working.
+6.Close the view
+-> notice that the application menus have dissapeared.

@@ -1,0 +1,94 @@
+Minimization of top Shell widgets impossible (SWT.MIN & SWT.NONE) on PocketPC (BBAWT)
+[TESTCASE INCLUDED @ THE END]
+[ENVIRONMENT:]
+Version SWT 3.044.
+Platform PocketPC
+- Windows CE (PocketPC 2003) on ARM
+[STEPS TO RECREATE:]
+Create a Shell with style SWT.MIN or SWT.NONE.
+Add the shell to a Display.
+Do not setBounds on the Shell.
+Open the shell.
+[OBSERVATIONS:]
+The shell appears maximised.
+There is an X botton at the top right corner.
+The title is different from that of the Shell (it is that of the prev window).
+Tapping on the X does not minimize the window.
+Selecting the Shell from the tasks list makes the Shell's title appear,
+but the Shell can still not be minimized.
+Tapping on the X button now
+makes it disappear.
+Trying to close the Shell from the tasks list makes the application hang,
+and forces a PocketPC soft reboot.
+[COMPARISON:]
+In previous versions, tapping on the X button would minimize the Shell and
+closing it from the tasks list would trigger an SWT.Close event.
+To be run on a PocketPC device:
+[TESTCASE]
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.*;
+public class SWTHelloWorld {
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display, SWT.CLIP_CHILDREN |
+SWT.CLIP_SIBLINGS | SWT.MIN);
+shell.setText("Das erste Fenster");
+//shell.setBounds(0, 120, 160, 100);
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Klick mich!");
+button.setBounds(0, 0, 120, 30);
+button.addSelectionListener(new SelectionListener() {
+public void widgetSelected(SelectionEvent e) {
+System.out.println("Danke");
+shell.dispose();
+}
+public void widgetDefaultSelected(SelectionEvent e) {
+// TODO Auto-generated method stub
+
+}
+});
+shell.addListener(SWT.Close, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("Close event passed by!") ;
+try {
+Thread.sleep(1000) ;
+} catch (InterruptedException e) {
+e.printStackTrace();
+}
+}
+}) ;
+shell.addShellListener(new ShellListener() {
+public void shellActivated(ShellEvent e) {
+// TODO Auto-generated method stub
+
+}
+public void shellClosed(ShellEvent e) {
+System.out.println("Shell Closed") ;
+}
+public void shellDeactivated(ShellEvent e) {
+// TODO Auto-generated method stub
+
+}
+public void shellDeiconified(ShellEvent e) {
+// TODO Auto-generated method stub
+
+}
+public void shellIconified(ShellEvent e) {
+// TODO Auto-generated method stub
+
+}
+
+}) ;
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}
+// Taken from  http://www.3plus4software.de/sma/Ein_SWT_Tutorial.html
+[JUSTIFICATION 4 PRIORITY]
+Failing standards checks.

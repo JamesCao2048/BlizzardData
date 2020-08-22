@@ -1,0 +1,23 @@
+Bug 284194 TVT35:TCT216: CHS: Bad Alignment of Expression
+<response_by> Ma Xiao Long at 2009.07.21.08.44.29
+</response_by> NLS Build Label: 20090719-0200-nl1-win32 Language: S.Chinese
+- Steps To Recreate Problem: 1) Expand BIRTproject in the Navigator, right click on Empty_Report.rptdesign and select Open.
+2) In the Data Explorer, right click on Data Sets and click New Data Set.
+Click Yes and then Finish.
+3) Click the Next button.
+4) In this panel, there are 2 lines numbered 1 and 2 which can be modified.
+Add "*" to the end of the first line, and add "CLASSICMODELS.CUSTOMERS" to the end of the second line(without the quotation marks).
+5) Click Finish.
+6) Click the OK button.
+7) In the Data Explorer, right click on Data Sets and click New Joint Data Set.
+8) Open the drop down list on the left side, select Data Set, and select CUSTOMERNUMBER in the list below.
+9) Do the same for the right side.
+10) Click the Finish button.
+11) Select Computed Columns in the left side of the panel.
+12) Click the New...
+button.
+13) Verify the red circled areas on the panel below are correctly displayed.
+14) Click Cancel.
+- Problem Description: The alignment of Expression is bad, it should be displayed in one line, pls help to check, thanks!
+<response_by> Kit Lo at 2009.07.21.15.30.40
+</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

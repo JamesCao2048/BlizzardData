@@ -1,0 +1,36 @@
+GC drawString garbled w/ GDI+ and raster font (was BidiLevel is improperly set to -1)
+Hi,
+I've been experiencing in my GMF diagram editor scrambling of the text labels.
+http://img530.imageshack.us/img530/5522/gmfscreenshotxu0.png
+The image above shows an example of this scrambling.
+I've tried several different builds and get the same behaviour.
+The latest I used:
+- eclipse-SDK-I20080918-0100-win32
+- emf-sdo-xsd-SDK-I200809161800
+- emf-transaction-SDK-I200809221455
+- GEF-ALL-I200809091900
+- gmf-sdk-2.1.2
+I've regenerated the model code, and also the diagram code.
+Nothing worked.
+Has nothing to do with XML encoding.
+Even starting a new diagram, things are shown messed up.
+The problem is located in org.eclipse.draw2d.text.TextFlow.paintText(Graphics g, String draw, int x, int y, int bidiLevel)
+protected void paintText(Graphics g, String draw, int x, int y, int bidiLevel) {
+if (bidiLevel ==
+-1) {
+g.drawString(draw, x, y);
+} else {
+TextLayout tl = FlowUtilities.getTextLayout();
+if (isMirrored())
+tl.setOrientation(SWT.RIGHT_TO_LEFT);
+tl.setFont(g.getFont());
+tl.setText(draw);
+g.drawTextLayout(tl, x, y);
+}
+}
+And the responsible is the "bidiLevel".
+While debugging, I realized that the value of the text was never scrambled, but rather just drawn incorrectly.
+This argument was always set to "-1".
+I hacked it to be set always to something different to "-1", and it worked!
+I suspected from it while trying different eclipse installations, GMF crashed with problems related with com.ibm.icu, where the "Bidi" concept is defined.
+Do you have a clue why I'm receiving "-1" in the BidiLevel?

@@ -1,0 +1,10 @@
+Bug 114470 [Smoke]Error message throws when using new Date("3/2/2005") as value in table filter.
+Description: Error message throws when using new Date("3/2/2005") as value in table filter.
+Steps to reproduce: 1.New a datasource and a dataset containing datetime column.
+2.Insert a table and new a filter based on the datetime column.
+3.In value1, input new Date("...").
+eg.
+new Date("3/2/2005") 4.Save and preview.
+Expected result: Filter works without errors.
+Actual result: There are errors on the report page:
+- There are error(s) in Table : table8 Error0 : data.engine.DataConversionError ( 1 time(s) )detail : An error happened in data type conversion.Can not convert it to Date.Can not convert it to Date.

@@ -1,0 +1,4 @@
+Bug 151694 appContext is null when evaluating parameters
+On a report with parameters, during the resolution of the report parameters, datasource used to populate values of each parameters doesn't have any appContext.
+We used a jdbcbridbe, and thru appContext, we're retrieving jndi name and others parameters usueful for our datasource.
+In those case, during the evaluation of parameters, appContext is null so the datasource used to populate values of the parameters are not from the same database ...

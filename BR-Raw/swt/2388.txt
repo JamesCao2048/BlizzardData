@@ -1,0 +1,10 @@
+Use of 1.4 APIs
+build n0426
+When compiling SWT against Foundation 1.0 class libraries, I get the following compile errors due to use of JDK 1.4 APIs:
+- the HTMLTransfer class is using StringBuffer#indexOf
+line 88
+line 92
+line 96
+line 84
+line 151
+line 162

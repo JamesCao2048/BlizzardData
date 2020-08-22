@@ -1,0 +1,4 @@
+Make gdk_pixbuf_render_to_drawable() dynamic
+As all the occurrences of gdk_pixbuf_render_to_drawable()  have Cairo implementations instead, there is no need to keep it static.
+This patch makes gdk_pixbuf_render_to_drawable() dynamic, thus omitting warning when GDK_DISABLE_DEPRICATED is defined:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gdk_pixbuf_render

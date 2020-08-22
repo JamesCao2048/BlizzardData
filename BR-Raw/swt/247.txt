@@ -1,0 +1,12 @@
+[10.7]Crash when opening two FileDialogs in a row
+Build Identifier: Build id: 20110916-0149
+When I'm trying to open two file dialogs in a row, jvm crashes with "Invalid memory access of location ...
+eip=...".
+I've detected this in Eclipse RCP Application, but it reproduces in plain SWT app too.
+I'm using Mac OS X 10.7.2 with latest Apple Java update (Java for Mac OS X 10.7 update 1).
+Bug not reproduces on Oracle's Java 7 for Mac OS X preview
+Reproducible: Always
+Steps to Reproduce:
+1.Create one file dialog, call .open() for it
+2.Create another file dialog, call .open() for it
+3.Enjoy jvm crash

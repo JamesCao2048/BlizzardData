@@ -1,0 +1,9 @@
+Bug 168317 Bookmark property of birt:report doesn't work.[0603]
+Description: Bookmark property of birt:report doesn't work.
+Build number:2.2.0.v20061216 Steps to reproduce: 1.New a BIRT Web project, new a jsp file based on birt template.
+2.Input below content inside body:
+<birt:report id="1" contextRoot="wtp_jsp_tags" reportDesign="target.rptdesign" height="400" bookmark="p1">
+</birt:report> target.rptdesign is attached.
+3.Run the project on server and preview the jsp file.
+Expected result: Jump to the end of the page where exists the bookmark p1.Actual result: Display report from the beginning.
+Error log:N/A

@@ -1,0 +1,14 @@
+Unhandled RuntimeException
+I'm getting an unhandled RuntimeException from STS 3.2.0.RELEASE:
+java.lang.RuntimeException
+at org.aspectj.asm.AsmManager.sameType(AsmManager.java:897)
+at org.aspectj.asm.AsmManager.removeRelationshipsTargettingThisType(AsmManager.java:711)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1033)
+at org.aspectj.ajdt.internal.compiler.AjPipeliningCompilerAdapter.weaveQueuedEntries(AjPipeliningCompilerAdapter.java:514)
+at org.aspectj.ajdt.internal.compiler.AjPipeliningCompilerAdapter.queueForWeavin ... ndation-domain/src/main/java<com.scispike.foundation.domain.trait.persistence*PersistableAspect.aj%com.scispike.foundation.domain.trait.persistence)
+Andy Clement, this can be reproduced in our private foundation repo's dev branch at commit d879446f2bfd83b51bf711d2931f4b28ce8c1901.
+After clicking ok on the exception dialog, there is an error marker on the package statement with text:
+Internal compiler error: java.lang.RuntimeException: Exception whilst walking up from target com.scispike.foundation.domain.trait.persistence kind=(package declaration)
+hid=(=foundation-domain/src/main/java<com.scispike.foundation.domain.trait.persistence*PersistableAspect.aj%com.scispike.foundation.domain.trait.persistence) at
+org.aspectj.asm.AsmManager.sameType(AsmManager.java:897)
+If I do a ProjectClean..., the exception is not reproduced and everything compiles ok.  Next edit repros the exception.

@@ -1,0 +1,38 @@
+rectangles with pensize > 1 draw at wrong position
+Run the following snippet and observe that some rectangles are antialiased (but
+shouldn't):
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class StrokeRectTest {
+public static void main(String[] args) {
+Display display= new Display();
+Shell shell= new Shell(display);
+shell.setLayout(new FillLayout());
+final Canvas canvas= new Canvas(shell, SWT.NULL);
+canvas.addPaintListener(
+new PaintListener() {
+public void paintControl(PaintEvent event) {
+GC g= event.gc;
+for (int y= 1; y
+<= 10; y++) {
+for (int x= 1; x
+<= 10; x++) {
+g.setLineWidth(Math.min(x, y));
+g.drawRectangle(x*50, y*50, 40, 40);
+}
+}
+}
+}
+);
+shell.setSize(600, 600);
+shell.open();
+while (! shell.isDisposed()) {
+if (! display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

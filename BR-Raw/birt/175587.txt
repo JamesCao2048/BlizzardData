@@ -1,0 +1,4 @@
+Bug 175587 Consolidate IReportEngine.shutdown() and destroy() methods
+Interface IReportEngine has two methods, shutdown() and destroy(), that appear to have identical functionality according to their JavaDoc comments.
+However as of 2.1.2 build destroy() is the method that actually cleans up the resources; shutdown() does not do anything useful.
+We need to do the following: (1) Deprecate method shutdown() (2) Make shutdown() call destroy() internally so that older code that uses that method can function properly.

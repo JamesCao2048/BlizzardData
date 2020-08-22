@@ -1,0 +1,44 @@
+remove() function in combo behaves inconsistently (BBAWT)
+On Linux (GTK AND Motif), if you remove() the last item in a combo, the text
+field of the combo still shows that item.
+But on Windows and QNX, it does not.
+The following test case demonstrates this, as there are no items remaining in
+the combo, but it still shows 'Item 2' in the textfield.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class SWTChoiceTest {
+
+Display display;
+Shell shell;
+Combo combo;
+
+public void run(){
+display = new Display();
+shell = new Shell(display,SWT.SHELL_TRIM);
+combo = new Combo(shell,SWT.DROP_DOWN | SWT.READ_ONLY | SWT.CLIP_CHILDREN |
+SWT.CLIP_SIBLINGS);
+shell.setLayout(new FillLayout());
+shell.setSize(400,400);
+combo.add("Item 1");
+combo.add("Item 2");
+combo.select(0);
+shell.open();
+combo.remove(0);
+combo.remove(0);
+while(!shell.isDisposed()){
+display.readAndDispatch();
+display.sleep();
+}
+display.dispose();
+
+
+}
+
+public static void main(String [] args){
+new SWTChoiceTest().run();
+}
+
+}

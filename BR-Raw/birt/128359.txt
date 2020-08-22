@@ -1,0 +1,7 @@
+Bug 128359 The logic is not correctly when a filter is added to the table on the layout
+Description: The logic is not correctly when a filter is added to the table on the layout Steps to reproduce: Let me give an example.
+1.Creat a report, new a datasource and a dataset 2.We consume that the dataset has 10 records(DataResult_A) .
+We set a filter(Filter_A) in the dataset, and then the 6 records of the dataset(DataResult_B) are gained.
+3.Drag the dataset to the layout, and set another filter(Filter_B) on the table.
+Actual result: The result of Filter_B is based on DataResult_A.
+Expect result: The result of Filter_B should be based on DataResult_B.

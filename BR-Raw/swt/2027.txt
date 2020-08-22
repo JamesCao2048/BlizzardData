@@ -1,0 +1,7 @@
+No context menus in tables
+I20070514-0010 (works in I20070511-0010
+- got broken in I20070512-0010).
+Context menus no longer appear in all views that show information in a table (e.g.
+Search, Types view, lower pane of Type Hierarchy).
+Works in trees.
+Looks like an SWT bug since replacing SWT with the version from I20070511-0010 fixes the problem.

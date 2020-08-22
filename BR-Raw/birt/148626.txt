@@ -1,0 +1,2 @@
+Bug 148626 [Regression]Can't fetch value from the filter of table/chart which inherites data from container
+Steps: 1.create a table and bind a dataset in it 2.create another table/chart in the table detail/table group header 3.switch to the Filter tab in property editor 4.create a filter and select value in "<select value...>" combo 5.an error popuped up, "The expression value can't be retrieved"

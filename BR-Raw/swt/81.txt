@@ -1,0 +1,3 @@
+[GTK3] Terminate button in Console view is always enabled
+When running Eclipse using GTK 3 (export SWT_GTK3=1) the terminate button in Console view always remains enabled even after any running instances are terminated.
+The same issue is also seen with the 'Stop Search' button in the Search view.

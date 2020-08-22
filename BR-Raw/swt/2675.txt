@@ -1,0 +1,65 @@
+SWT Example Launcher: Double-click on "Standalone" folder produces a "Could not instantiate the class to run" log
+Build: Eclipse 3.1 I20050627-1435
+Platform: Solaris GTK
+Steps:
+- Install Eclipse 3.1 with SWT Examples
+- From Eclipse workbench, go to Window
+-> Show View
+-> Other ...
+- Expand SWT Examples and select SWT Example Launcher.
+Click OK.
+- From the SWT Example Launcher view, double-click the "Standalone" folder
+(under Examples) to open it.
+The following error log is created:
+!ENTRY org.eclipse.swt.examples.launcher 4 0 2005-09-22 12:00:56.675
+!MESSAGE Could not instantiate the class to run.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Executable extension definition
+for "mainClass" not found.
+at
+org.eclipse.core.internal.registry.ConfigurationElement.throwException
+(ConfigurationElement.java:192)
+at
+org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtensio
+n(ConfigurationElement.java:108)
+at
+org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableEx
+tension(ConfigurationElementHandle.java:48)
+at org.eclipse.swt.examples.launcher.ItemDescriptor.createItemInstance
+(ItemDescriptor.java:62)
+at org.eclipse.swt.examples.launcher.LauncherView.launchItem
+(LauncherView.java:186)
+at org.eclipse.swt.examples.launcher.LauncherView.access$2
+(LauncherView.java:169)
+at
+org.eclipse.swt.examples.launcher.LauncherView$1.widgetDefaultSelected
+(LauncherView.java:69)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:97)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1021)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2867)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2572)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1699)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1663)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:367)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:103)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:226)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:376)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:163)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:334)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:278)
+at org.eclipse.core.launcher.Main.run(Main.java:973)
+at org.eclipse.core.launcher.Main.main(Main.java:948)
+!SUBENTRY 1 org.eclipse.core.runtime 4 1 2005-09-22 12:00:56.677
+!MESSAGE Executable extension definition for "mainClass" not found.

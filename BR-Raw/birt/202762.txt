@@ -1,0 +1,10 @@
+Bug 202762 [Regression] Report parameter does not work correctly when the type or the data entered is wrong [0705]
+Description: Report parameter does not work correctly when the type or the data entered is wrong.
+Build number: 2.2.1.v20070910-0630 Steps to reproduce: 1.New a report with a parameter and set type to integer.
+2.Preview and input "abc" and click OK.
+3.Preview again and click OK.
+Expected result: 1.Exception should pops up when preview for the fist time to indicate the type of the data entered is wrong.
+2.Preview works correctly for the second preview.
+Actual result: 1.No exception for the first preview and change from preview tab back to Layout tab.
+2.Dialogue pops up says "New Parameter is required" for the second preview.
+Error log: N/A

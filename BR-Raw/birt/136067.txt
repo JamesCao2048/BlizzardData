@@ -1,0 +1,2 @@
+Bug 136067 [Smoke][Linux-AS]:Url Redirector dialog, have no Drill-Through item
+[Smoke][Linux-AS]:Url Redirector dialog, have no Drill-Through item Steps: 1.Drag a label into layout 2.Open Property Editor Viewer, select Hyperlink, click "..." button 3.Open Url Redirector dialog Actual Results 1.Url Redirector dialog, there is not Drill-Through item Expected Results 1.Url Redirector dialog, there is Drill-Through item

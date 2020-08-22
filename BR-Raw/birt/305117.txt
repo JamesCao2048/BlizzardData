@@ -1,0 +1,7 @@
+Bug 305117 [Accessibility] Can not switch from 'Available Items' to query text area directly.[17]
+description: When we are writing the query text, we select from the 'Available Items' or enter text directly.
+So it should be more convenient if we can switch between directly.
+build id: 2.6.0 v20100309-0630 steps to reproduce: 1.Open a data set.
+2.Try to switch from 'Available Items' to query text area by keyboard.
+Actual result: Can not switch directly.
+You have to go through the dialog.

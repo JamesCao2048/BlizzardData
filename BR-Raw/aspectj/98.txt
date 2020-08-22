@@ -1,0 +1,70 @@
+JavaDocRunner fails on System.setSecurityManager in Netbeans
+Attempting to use the ajdoc ant task in Netbeans 6.7.  The JavaDocRunner attempts to set the SecurityManager and this is prevented by Netbeans.  Below is the ant stacktrace printed to the Netbeans output window.  I can run the ant task from the command line with no errors.  Only in the context of Netbeans does it fail.
+I think the JavaDocRunner should run with whatever SecurityManager is in place and allow errors from executing javadoc to occur.  Attached is a patch file removing the anonymous SecurityManager and calls to System.setSecurityManager().
+init:
+> Calling ajc...
+> Building signature files...
+> Calling javadoc...
+An internal error occured in ajdoc
+
+If this has not already been logged as a bug raised please raise
+a new AspectJ bug at  https://bugs.eclipse.org/bugs  including the
+text below. To make the bug a priority, please also include a test
+program that can reproduce this problem.
+
+java.lang.SecurityException
+java.lang.SecurityException
+at org.netbeans.TopSecurityManager.checkSetSecurityManager(TopSecurityManager.java:431)
+at org.netbeans.TopSecurityManager.checkPermission(TopSecurityManager.java:365)
+at java.lang.System.setSecurityManager0(System.java:273)
+at java.lang.System.setSecurityManager(System.java:264)
+at org.aspectj.tools.ajdoc.JavadocRunner.callJavadoc(JavadocRunner.java:43)
+at org.aspectj.tools.ajdoc.Main.callJavadoc(Main.java:277)
+at org.aspectj.tools.ajdoc.Main.main(Main.java:156)
+at org.aspectj.tools.ant.taskdefs.Ajdoc.compile(Ajdoc.java:710)
+at org.aspectj.tools.ant.taskdefs.Ajdoc.execute(Ajdoc.java:697)
+at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+at sun.reflect.GeneratedMethodAccessor131.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+at org.apache.tools.ant.Task.perform(Task.java:348)
+at org.apache.tools.ant.Target.execute(Target.java:357)
+at org.apache.tools.ant.Target.performTasks(Target.java:385)
+at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1337)
+at org.apache.tools.ant.Project.executeTarget(Project.java:1306)
+at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+at org.apache.tools.ant.Project.executeTargets(Project.java:1189)
+at org.apache.tools.ant.module.bridge.impl.BridgeImpl.run(BridgeImpl.java:278)
+at org.apache.tools.ant.module.run.TargetExecutor.run(TargetExecutor.java:497)
+at org.netbeans.core.execution.RunClassThread.run(RunClassThread.java:151)
+org.netbeans.core.execution.ExitSecurityException: Exit from within execution engine, normal
+at org.netbeans.core.execution.SecMan.checkExitImpl(SecMan.java:85)
+at org.netbeans.core.execution.SecMan$PrivilegedCheck.run(SecMan.java:160)
+at java.security.AccessController.doPrivileged(Native Method)
+at org.netbeans.core.execution.SecMan$PrivilegedCheck.check(SecMan.java:175)
+at org.netbeans.core.execution.SecMan$PrivilegedCheck.checkExit(SecMan.java:170)
+at org.netbeans.core.execution.SecMan.checkExit(SecMan.java:69)
+at org.netbeans.TopSecurityManager.checkExit(TopSecurityManager.java:149)
+at java.lang.Runtime.exit(Runtime.java:88)
+at java.lang.System.exit(System.java:906)
+at org.aspectj.tools.ajdoc.Main.exit(Main.java:765)
+at org.aspectj.tools.ajdoc.Main.main(Main.java:163)
+at org.aspectj.tools.ant.taskdefs.Ajdoc.compile(Ajdoc.java:710)
+at org.aspectj.tools.ant.taskdefs.Ajdoc.execute(Ajdoc.java:697)
+at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+at sun.reflect.GeneratedMethodAccessor131.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+at org.apache.tools.ant.Task.perform(Task.java:348)
+at org.apache.tools.ant.Target.execute(Target.java:357)
+at org.apache.tools.ant.Target.performTasks(Target.java:385)
+at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1337)
+at org.apache.tools.ant.Project.executeTarget(Project.java:1306)
+at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+at org.apache.tools.ant.Project.executeTargets(Project.java:1189)
+at org.apache.tools.ant.module.bridge.impl.BridgeImpl.run(BridgeImpl.java:278)
+at org.apache.tools.ant.module.run.TargetExecutor.run(TargetExecutor.java:497)
+at org.netbeans.core.execution.RunClassThread.run(RunClassThread.java:151)
+BUILD FAILED (total time: 3 seconds)

@@ -1,0 +1,13 @@
+Printing does NOT work on Mac
+Build ID: I20080530-1730
+Steps To Reproduce:
+1.Open a file with Text Editor
+2.Select print from the toolbar
+
+Notice, that it doesn't print.
+The failure is in Print.java on line 367. It throws a NullPointer exception.
+The logic seems flawed because this method is trying to set the defaultFont.
+What's strange is the systemFont is null, yet the way you get the systemFont is to call getSystemFont().
+But, this method will return the defaultFont, which is the very thing we're trying to set originally.
+More information:
+I'm using Java 5 on Mac OS X 10.5.3.

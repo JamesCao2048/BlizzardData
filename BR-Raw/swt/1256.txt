@@ -1,0 +1,12 @@
+Certain Images copied from Lotus Notes and pasted using SWT's Clipboard are corrupted
+Build ID: I20080617-2000
+Steps To Reproduce:
+I can only reproduce this with a few images that were emailed to me in Lotus Notes.
+I do not know their format.
+If I upload the image, this bug is not reproducible, therefore, to reproduce, I'll need to forward an email to a developer who is using Notes.
+Then copy the image in the email, and paste using the SWT Clipboard example.
+You'll see that the image is corrupted (it's almost as if its an offset problem
+- the width seems shifted).
+I have pasted this image into other programs, including Lotus Notes, Word, and some freeware image utilities, and they are not corrupted when I paste there.
+
+More information:

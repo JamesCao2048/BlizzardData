@@ -1,0 +1,2 @@
+overweaving misbehaving when subclassing WeavingURLClassLoader
+Raised by the Spring Insight team, they observed that in a system where they are using a special classloader (subclassing weaving url classloader) they see it fail to weave an aspect if overweaving is on.

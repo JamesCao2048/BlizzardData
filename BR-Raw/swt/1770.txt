@@ -1,0 +1,6 @@
+Compiler warnings in N20080123-0010 in swt tests
+/JUnit Tests/org/eclipse/swt/tests/junit/Test_org_eclipse_swt_graphics_Region.java : 1 warning :
+OTHER WARNINGS 1.WARNING in /JUnit Tests/org/eclipse/swt/tests/junit/Test_org_eclipse_swt_graphics_Region.java
+(at line 899)
+int[] onePoint = new int[] {};
+The local variable onePoint is never read

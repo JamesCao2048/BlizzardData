@@ -1,0 +1,12 @@
+Antialiasing memory leak
+SWT 3138, WinXP :
+When setting the antialising using either :
+gc.setAntialias(SWT.ON);
+or
+gc.setTextAntialias(SWT.ON);
+the application leaks (at a rate of approcimately 300kB/s => 20MB is leaked
+every minute)
+I experience the leak from the windows taks manager, GDI objects is constant,
+same with handles, but memory keep raising.
+If I turn off the antialiasing in the application (while debugging with
+eclipse), the leak stops, if I turn it back on, the leak comes back.

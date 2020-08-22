@@ -1,0 +1,19 @@
+NPE using declare @type
+reported by Ramnivas:
+java.lang.NullPointerException
+at
+org.aspectj.weaver.bcel.BcelObjectType.hasAnnotation(BcelObjectType.java:558)
+at
+org.aspectj.weaver.ReferenceType.hasAnnotation(ReferenceType.java:161)
+at
+org.aspectj.weaver.patterns.ExactAnnotationTypePattern.matches(ExactAnnotationTypePattern.java:101)
+at
+org.aspectj.weaver.patterns.ExactAnnotationTypePattern.matches(ExactAnnotationTypePattern.java:94)
+at
+org.aspectj.weaver.patterns.AnyWithAnnotationTypePattern.matchesExactly(TypePattern.java:513)
+at
+org.aspectj.weaver.patterns.TypePattern.matchesStatically(TypePattern.java:129)
+at
+org.aspectj.weaver.patterns.DeclareAnnotation.matches(DeclareAnnotation.java:269)
+at
+org.aspectj.weaver.bcel.BcelWeaver.applyDeclareAtType(BcelWeaver.java:1590)

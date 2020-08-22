@@ -1,0 +1,35 @@
+[JUNIT]Shell.isMinimized() returns false after shell.setMinized(true)
+I20030221
+Test_org_eclipse_swt_widgets_Decorations.test_setMinimizedZ
+Shell.isMinimized returns false after shell.setMinimized(true).
+junit.framework.AssertionFailedError: :2:
+at junit.framework.Assert.fail(Assert.java:47)
+at junit.framework.Assert.assertTrue(Assert.java:20)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Decorations.test_setMinimized
+Z(Test_org_eclipse_swt_widgets_Decorations.java:158)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Decorations.runTest(Test_org
+_eclipse_swt_widgets_Decorations.java:243)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Shell.runTest(Test_org_eclips
+e_swt_widgets_Shell.java:425)
+at junit.framework.TestCase.runBare(TestCase.java:127)
+at junit.framework.TestResult$1.protect(TestResult.java:106)
+at junit.framework.TestResult.runProtected(TestResult.java:124)
+at junit.framework.TestResult.run(TestResult.java:109)
+at junit.framework.TestCase.run(TestCase.java:118)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.jav
+a:377)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:261)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:15
+2)
+at java.lang.reflect.Method.invoke(Native Method)
+at com.apple.buckyball.app.LaunchRunner.run(LaunchRunner.java:82)
+at com.apple.buckyball.app.LaunchRunner.callMain(LaunchRunner.java:44)
+at com.apple.buckyball.app.CarbonLibApp.launch(CarbonLibApp.java:67)

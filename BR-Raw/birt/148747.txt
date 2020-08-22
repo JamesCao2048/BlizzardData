@@ -1,0 +1,5 @@
+Bug 148747 Design become invalid when I extend a masterpage from Library
+The attachment contains a report file and a library file.
+Reproduce: 1.Deploy the library("lib"), and open the report.
+2.Drag Masterpage("page1") from "lib" to report.
+3.Reopen the report, it become invalid.

@@ -1,0 +1,2 @@
+Bug 244326 have drill throughs use paths relative to report dir instead of system root
+Build ID: I20080617-2000 Steps To Reproduce: When I have a dillthrough report defined in my report the generated link points to (in the __report= arg) /var/lib/tomcat5/webapps/birt/Reports/ReportName.rptdesign instead of pointing to Reports/ReportName.rptdesign More information: some might see exposing the entire path as a security risk, also, shouldn't the viewer not allow access to documents outside it's own directory??

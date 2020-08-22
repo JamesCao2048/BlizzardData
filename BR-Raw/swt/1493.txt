@@ -1,0 +1,7 @@
+Cannot dismiss attribute type combo
+Open the schema editor on UI schema ...
+org.eclipse.ui/schema/menus.exsd
+Select an attribute and try and change the type.
+The type changes (and the section fields get updated) but the combo box won't go away, and continues to push changes to the attribute section.
+I tried the combos in the PDE editor and they did not exhibit the same problem.
+PW

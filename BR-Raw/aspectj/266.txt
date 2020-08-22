@@ -1,0 +1,3 @@
+fix for 
+The fix for  bug 58520  has caused two AJDT marker tests to fail. The reason for the failures is that the test is checking that the markers have a specific message i.e. advises Demo.foo(int, Object) (runtime test). However, due to the fix for  bug 58520 , the message is now saying advises Demo.foo(int, java.lang.Object) (runtime test). Since everything in AJDT works of the same model, the xref view is also showing the fully qualified arguments. However, this is inconsistent with the Outline view.
+The fix is along the lines of adding the capability to choose whether you want the fully qualified name or not.

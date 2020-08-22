@@ -1,0 +1,6 @@
+[Widgets] Images on TableColumns are top-left justified instead of vertically centering like the sort arrows
+User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_1; en-us) AppleWebKit/531.9 (KHTML, like Gecko) Version/4.0.3 Safari/531.9
+Build Identifier: 3.5.1 GM
+In Cocoa SWT, if you setImage on a TableColumn, you end up with odd veritcal alignment.
+The sort arrow is positioned in the middle of the cell, but custom images are at y=0 and it looks goofy.
+Reproducible: Always

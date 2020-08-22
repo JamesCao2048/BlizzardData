@@ -1,0 +1,18 @@
+IE Browser widget should always encode LocationEvent#location, also for file:///
+The IE Browser widget should always encode LocationEvent#location, also for "file:///" URLs.
+Currently, the location is properly encoded for URLs with other protocols (e.g.
+http:// or foo://), but the file:// protocol is handled specially, and even unusably in some situations.
+Example:
+<html><head><base href='file://C:/te%20mp/'></head><body><a href='fi%20le.html'>Link</a></body></html>
+When you use setText in the ControlExample and then click the link, then the LocationListener events have location "file://C:/te%20mp/fi le.html".
+Note how the first part of the URL is properly encoded, but the second part is not.
+Without the
+<base> element, the location is not encoded for file:// URLs with IE, e.g.:
+- setUrl("file:///C:/t/sp%20ace/link.html") notifies location
+"file:///C:/t/sp ace/link.html" (bad), but
+- setUrl("foo:///C:/t/sp%20ace/link.html" notifies
+"foo:///C:/t/sp%20ace/link.html" (good).
+(In reply to  bug 305230 comment #3 )
+> I still think LocationEvent#location should specify that the string is an
+> encoded URI (non-ASCII characters escaped as per RFC 2396).
+This should really be specified in the API.

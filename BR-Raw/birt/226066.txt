@@ -1,0 +1,3 @@
+Bug 226066 Can not add aggregation on table which has shared resultset
+Description: Can not add aggregation on table which has shared resultset Build number: 2.3.0.v20080408-0630 Steps to reproduce: 1, New a table named tableA and binding with dataset 2, Add a sum aggregation on tableA 3, New a table named tableB and share bindings from tableA 4, New a aggregation on tableB Actual result: The aggregation builder's OK button always gray even I selected the Column Binding Name from the list.
+Error log:

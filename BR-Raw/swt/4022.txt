@@ -1,0 +1,19 @@
+CoolBar computeSize fails on XP
+selfhosting with SWT code > 20020709 (no build available so far)
+CoolBar computeSize fails on windows XP (tested running with the manifest file)
+Situation 1:
+1
+- Resize the workbench windows until the CoolBar wraps.
+2
+- Maximized the workbench window.
+3
+- A empty row remains (bug).
+Note: It looks like the SetWindowPos do not cause the CoolBar unwrap.
+Situation 2:
+1
+- Play a bit resizing the workbench windows making the CoolBar wrap and
+unwrap.
+2
+- Eventually a empty row appears.
+Note: It looks like the compute trim for the coolbar on XP have to consider
+more than the border size.

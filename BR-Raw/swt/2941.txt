@@ -1,0 +1,11 @@
+StyledText should not fill the clipboard on every selection change
+3.1 stream
+See  bug 92209 .
+Filling the clipboard with the current selection upon every
+selection change *really* hurts one test case: selecting big editor areas and
+changing the selection with the arrow keys and holding shift (or selecting large
+areas with the mouse).
+Note that this happens on Windows as well as GTK.
+IMO, copying the entire (almost) document content upon every selection change is
+way too expensive.
+Is there a way to avoid this?

@@ -1,0 +1,46 @@
+WinCE/SH4: Arrow keys don't generate key events
+We have a machine running WindowsCE on an SH4 that has a full keyboard and
+mouse, based on a customer configuration.
+The customer has reported (and we
+have verified) that certain key events are not getting propagated by SWT on
+this platform.
+In the following testcase, key events fire for the letter keys, but no key
+events are fired for the arrow keys.
+--- cut here
+---
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSwtKeyEvents {
+public static void main(String[] args) {
+Display disp = Display.getDefault();
+Shell shell = new Shell(disp);
+shell.setLayout(new FillLayout());
+Canvas canvas = new Canvas(shell, 0);
+canvas.addKeyListener(new KeyAdapter() {
+public void keyPressed(KeyEvent e) {
+switch (e.keyCode) {
+case SWT.ARROW_DOWN: System.out.println
+("arrow down"); break;
+case SWT.ARROW_UP: System.out.println
+("arrow up"); break;
+case SWT.ARROW_LEFT: System.out.println
+("arrow left"); break;
+case SWT.ARROW_RIGHT: System.out.println
+("arrow right"); break;
+default: System.out.println
+(e.character);
+}
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}

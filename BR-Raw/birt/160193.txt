@@ -1,0 +1,4 @@
+Bug 160193 Parameter name is changed with data type
+Steps to reproduce: 1.New a sample data source 2.New a data set with below query: select * from CLASSICMODELS.CUSTOMERS where CLASSICMODELS.CUSTOMERS.CUSTOMERNUMBER = ?
+3.Switch to parameters in data set editor, a parameter is created automatically 4.Double click the parameter, click "..." button behind the "Linked to report parameter", note the default name of report parameter is "param1".
+Click "cancel" to destory "new parameter dialog" 5.Change data set paramter type to Any, and click "..." again Expected result: Default name of report parameter is "param1" Actual result: Default name of report parameter is changed to "NewParameter1"

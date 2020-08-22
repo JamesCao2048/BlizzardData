@@ -1,0 +1,15 @@
+NPE on Emulated CoolItem constructor
+build 20020602 (F2)
+The last changes on the emulated CoolItem  contructor have
+introduced a bug, it is the code:
+public CoolItem (CoolBar parent, int style) {
+this (parent, style, parent.getItemCount());
+}
+And this is right code:
+public CoolItem (CoolBar parent, int style) {
+super(parent, style);
+this.parent = parent;
+parent.createItem (this, parent.getItemCount());
+calculateChevronTrim ();
+}
+This bug do not occurs on Eclipse !

@@ -1,0 +1,15 @@
+[Perspectives] MenuManager.update() causes menu to be redrawn too often
+When I change perspective 9 times, MenuManager.updateAll() is called 9 times.
+MenuManager.update(force,recursive) ends up being called 78 times.
+While removing the included obsolete menu items, mi[i].dispose() causes a
+redraw of the menu for each dispose, happening 162 times.
+MenuItem.dispose
+-> MenuItem.releaseChild
+-> Menu.destroyItem
+-> Menu.redraw.
+Menu.redraw is called 162 time and 4.1% of perspective switching is spent here.
+MenuManager.updateAll should contain code to say menu.setRedraw(false), do all
+the removals, and then do menu.setRedraw(true);
+As an aside, WorkbenchWindow.updateActionBars() uses 16.5% of CPU.
+Of that, MenuManager.updateAll() uses 15.1% and CoolbarManager.update() only
+1.3%

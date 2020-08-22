@@ -1,0 +1,55 @@
+FileDialog hangs SWT Application
+This is a regression from  Bug 88958 .
+Calling the FileDialog while having
+another thread updating SWT objects via Display.asyncExec(..) will completely
+lock the SWT application.
+I've only tested this in detail with updating the
+ToolTipText on a TrayItem, but my guess is it would affect code that works in a
+similar way (ie.
+calling certain Windows OS APIs while FileDialog is present).
+Only affects Win98. Windows 2000 works fine.
+I don't have any other versions
+to test on.
+Prior to the fix for  Bug 88958 , everything worked okay.
+Snippet:
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display, SWT.DIALOG_TRIM);
+shell.setLayout(new FillLayout());
+
+final TrayItem trayItem = new TrayItem(display.getSystemTray(), SWT.NULL);
+Button button = new Button(shell, SWT.NONE);
+button.setText("Open...");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+FileDialog dialog = new FileDialog(shell, SWT.OPEN);
+dialog.open();
+}
+});
+
+Thread thread = new Thread() {
+public void run()  {
+while (!trayItem.isDisposed()) {
+trayItem.getDisplay().asyncExec(new Runnable() {
+public void run() {
+trayItem.setToolTipText(new String("Moo"));
+}
+});
+
+try  {
+Thread.sleep(1000);
+}  catch (InterruptedException e) {
+System.out.println(e);
+}
+}
+}
+};
+thread.start();
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

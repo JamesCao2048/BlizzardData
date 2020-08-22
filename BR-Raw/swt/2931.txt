@@ -1,0 +1,10 @@
+[consistency] TreeEvent fired upon disposal of TreeItems
+Either calling dispose() on a TreeItem or removeAll() on the Tree results in
+TreeEvents being fired.
+That happens in case the disposed TreeItem was expanded
+and contained children.
+Mac seems to collapse all expanded TreeItems at first
+before proceeding with the disposal.
+This is not happening on Windows, and I dont think its happening on Linux GTK or
+Solaris Motif either.
+Ben

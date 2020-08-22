@@ -1,0 +1,39 @@
+GPF setting image to menu item (Photon)
+Show hierarchy view of org.eclipse.swt.widgets.Widget and
+eclipse will GPF.
+Unhandled exception
+Type=GPF vmState=0xffffffff
+Handler1=0xb8242414 Handler2=0xb82314f8
+Signal=0x0000000b
+EFlags=0x00011202
+EDI=0x09c2a7bc ESI=0x083523c8 EAX=0x0baa537c
+EBX=0xb0460064 ECX=0x00000000 EDX=0x00000000
+EBP=0x080474d4 ESP=0x080474bc EIP=0xb03ceb2e
+CS=0x000000f3 SS=0x000000fb
+Thread: main (priority 5) (LOCATION OF ERROR)
+0089 org/eclipse/swt/internal/photon/OS.PtSetResources(II[I)I  (@085d5e91)
+006f org/eclipse/swt/widgets/MenuItem.setImage(Lorg/eclipse/swt/graphics/Image;)V
+00f6 org/eclipse/jface/action/ActionContributionItem.updateImages(Z)Z
+0214 org/eclipse/jface/action/ActionContributionItem.update(Ljava/lang/String;)V
+0025 org/eclipse/jface/action/ActionContributionItem.actionPropertyChange(Lorg/eclipse/jface/util/PropertyChangeEvent;)V
+0002 org/eclipse/jface/action/ActionContributionItem.access$1(Lorg/eclipse/jface/action/ActionContributionItem;Lorg/eclipse/jface/util/PropertyChangeEvent;)V
+0005 org/eclipse/jface/action/ActionContributionItem$ActionListener.propertyChange(Lorg/eclipse/jface/util/PropertyChangeEvent;)V
+17e05 org/eclipse/jface/action/Action.firePropertyChange(Lorg/eclipse/jface/util/PropertyChangeEvent;)V  (@08639f19)
+0175 org/eclipse/jface/action/Action.firePropertyChange(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V  (@08639f19)
+0017 org/eclipse/jface/action/Action.setImageDescriptor(Lorg/eclipse/jface/resource/ImageDescriptor;)V
+0011 org/eclipse/ui/actions/LabelRetargetAction.updateImages(Lorg/eclipse/jface/action/IAction;)V
+0032 org/eclipse/ui/actions/LabelRetargetAction.setActionHandler(Lorg/eclipse/jface/action/IAction;)V
+0026 org/eclipse/ui/actions/RetargetAction.partActivated(Lorg/eclipse/ui/IWorkbenchPart;)V
+0008 org/eclipse/ui/internal/PartListenerList$1.run()V
+0029 org/eclipse/core/internal/runtime/InternalPlatform.run(Lorg/eclipse/core/runtime/ISafeRunnable;)V  (@087d8a2d)
+87d308b org/eclipse/core/runtime/Platform.run(Lorg/eclipse/core/runtime/ISafeRunnable;)V  (@087d3434)
+00c0 org/eclipse/ui/internal/PartListenerList.firePartActivated(Lorg/eclipse/ui/IWorkbenchPart;)V  (@087d3434)
+0005 org/eclipse/ui/internal/WWinPartService.partActivated(Lorg/eclipse/ui/IWorkbenchPart;)V
+0008 org/eclipse/ui/internal/PartListenerList$1.run()V
+0029 org/eclipse/core/internal/runtime/InternalPlatform.run(Lorg/eclipse/core/runtime/ISafeRunnable;)V  (@087d8a2d)
+87d308b org/eclipse/core/runtime/Platform.run(Lorg/eclipse/core/runtime/ISafeRunnable;)V  (@087d3434)
+00c0 org/eclipse/ui/internal/PartListenerList.firePartActivated(Lorg/eclipse/ui/IWorkbenchPart;)V  (@087d3434)
+0005 org/eclipse/ui/internal/WorkbenchPage.firePartActivated(Lorg/eclipse/ui/IWorkbenchPart;)V
+007c org/eclipse/ui/internal/WorkbenchPage.setActivePart(Lorg/eclipse/ui/IWorkbenchPart;)V
+0048 org/eclipse/ui/internal/WorkbenchPage.activate(Lorg/eclipse/ui/IWorkbenchPart;)V
+001e org/eclipse/ui/internal/WorkbenchPage.busyShowView(Ljava/lang/String;Z)

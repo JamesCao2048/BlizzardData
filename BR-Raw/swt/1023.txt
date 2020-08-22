@@ -1,0 +1,29 @@
+drawing problem after inserting Bullet into StyledText
+- run the snippet below
+- click in the StyledText, which inserts a Bullet
+
+-> note that the text following the linebreak has now disappeared
+- arrowing down once or twice will make the missing line re-appear at the bottom
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setSize(300, 200);
+shell.setLayout(new FillLayout());
+final StyledText text = new StyledText(shell, SWT.MULTI | SWT.WRAP);
+String line0 = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ";
+String line1 = "sed diam nonumy";
+text.setText(line0 + text.getLineDelimiter() + line1);
+text.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+StyleRange bulletStyle = new StyleRange();
+bulletStyle.metrics = new GlyphMetrics(0, 0, 50);
+Bullet bullet = new Bullet(bulletStyle);
+text.setLineBullet(0, 1, bullet);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

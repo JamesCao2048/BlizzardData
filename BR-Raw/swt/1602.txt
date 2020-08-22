@@ -1,0 +1,9 @@
+[open type] Open Type dialog does not work in high contrast
+Created  attachment 90915   [details]
+Open Type dialog
+1) go to Control Panel-Accessibilty->Display and enable high contrast mode
+2) open eclipse
+3) ctrl-shift-t to open the open type dialog
+expected result: I can read the contents of the list
+result: the list renders with black text on a black background.
+I can only read the text when I select an item.

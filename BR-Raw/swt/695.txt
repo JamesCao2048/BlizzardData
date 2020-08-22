@@ -1,0 +1,26 @@
+Fullscreen mode doesn't cover the windows taskbar on Windows 7
+Build Identifier: version 3.631
+When a shell is set to Fullscreen on Windows 7, it doesn't cover the Windows 7 taskbar.
+Here's a snippet to reproduce :
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class TestFS {
+
+public static void main(String[] args) {
+Display display = new Display();
+Shell s = new Shell();
+
+s.open();
+
+s.setFullScreen(true);
+
+while(!s.isDisposed()) {
+if(!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+Reproducible: Always
+Steps to Reproduce:
+1.run the snippet from above, or bring any shell to fullscreen

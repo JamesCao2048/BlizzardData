@@ -1,0 +1,5 @@
+Next Editor causes crash when remapped to Ctrl-Tab
+Adding a Ctrl-Tab mapping to what is normally Cmd-Shift-F6 (Next Editor) causes
+Eclipse 3.1M7 to crash.
+The first time it is invoked, the editor selection
+window is opened, the second time causes the crash.

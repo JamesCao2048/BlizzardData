@@ -1,0 +1,25 @@
+Trying to create launch config results in StackOverflowError
+I was working with last night's build on Linux-GTK, and trying to create a
+launch configuration causes a StackOverflowError.
+Steps:
+1.I checked out the platform-ui and platform-ui-tests modules
+2.Go to the Run icon triangle and select "Run..." from the dropdown
+it goes away, and then pops up an error saying you better exit the workbench.
+I've included the .log, but it's not very useful :-)
+!SESSION 2005-09-27 10:54:20.899
+-----------------------------------------------
+eclipse.buildId=N20050927-0010
+java.version=1.4.2_08
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:
+-os linux
+-ws gtk
+-arch x86
+!ENTRY org.eclipse.ui 4 4 2005-09-27 11:51:03.172
+!MESSAGE Unhandled event loop exception
+!ENTRY org.eclipse.ui 4 0 2005-09-27 11:51:03.186
+!MESSAGE java.lang.StackOverflowError
+!STACK 0
+java.lang.StackOverflowError
+PW

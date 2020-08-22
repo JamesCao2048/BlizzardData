@@ -1,0 +1,6 @@
+Remove gtk_timeout_remove and gtk_timeout_add
+Remove gtk_timeout_remove and gtk_timeout_add
+* gtk_timeout_remove has been replaced by g_source_remove
+* gtk_timeout_add has been replaced by g_timeout_add
+Both new functions are available since glib 2.0.
+Commit/patch  http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=83b909f61c12636d5e53f6f80704abb7fb2cc962

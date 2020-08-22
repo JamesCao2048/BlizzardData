@@ -1,0 +1,21 @@
+Implement RichText editor for SWT
+The RCP will be a great platform for many different products.
+Some products
+will need an richtext editor (e.g.
+Email client, CRM products, Helpdesk
+systems, ...).
+The best way would be, if the eclipse project provided an richtext editor.
+The
+Look&Feel of the products would be similar and the machine resources would be
+less used.
+Needed Features:
+-> Multiline editor
+-> Different Fonts (include: Bold, Underline, Italic)
+-> Different colors (Foreground, Background)
+-> The text could contain Bullets (and enumeration)
+-> The text could contain Tables
+-> The text could contain Images
+-> The text could contain Attachments
+Data API:
+-> Get and set HTML
+-> Get and set MIME multipart (including HTML, Images and Attachments)

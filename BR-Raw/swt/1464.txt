@@ -1,0 +1,62 @@
+losing keybindings...
+I started tracking this down this afternoon, but didn't get finished and I have to get to the airport now.
+1
+- start Eclipse
+2
+- in editor notice that ctrl-space works
+3
+- pretzel-tab to another application
+4
+- pretzel-tab back to eclipse
+--> ctrl-space doesn't work anymore.
+When you come back to eclipse, the org.eclipse.ui.window and org.eclipse.ui.dialogAndWindow contexts get removed from ContextManager.
+Stack to removeActiveContext call (note that I've been hacking around a lot so line number may be off):
+Daemon Thread [Thread-0] (Suspended (breakpoint at line 227 in ContextManager))
+ContextManager.removeActiveContext(String) line: 227
+ContextAuthority.updateContext(String, boolean) line: 773
+ContextAuthority.deactivateContext(IContextActivation) line: 368
+ContextAuthority.unregisterShell(Shell) line: 750
+ContextService.unregisterShell(Shell) line: 257
+WorkbenchWindow.hardClose() line: 1583
+WorkbenchWindow.busyClose() line: 722
+WorkbenchWindow.access$0(WorkbenchWindow) line: 698
+WorkbenchWindow$3.run() line: 814
+BusyIndicator.showWhile(Display, Runnable) line: 70
+WorkbenchWindow.close() line: 812
+WindowManager.close() line: 109
+Workbench$16.run() line: 912
+SafeRunner.run(ISafeRunnable) line: 37
+Workbench.busyClose(boolean) line: 909
+Workbench.access$15(Workbench, boolean) line: 838
+Workbench$23.run() line: 1082
+BusyIndicator.showWhile(Display, Runnable) line: 70
+Workbench.close(int, boolean) line: 1080
+Workbench.close() line: 1052
+Workbench$56.handleEvent(Event) line: 2253
+EventTable.sendEvent(Event) line: 84
+Display.sendEvent(int, Event) line: 2830
+Display.applicationDelegateProc(int, int, int) line: 3466
+OS.objc_msgSend(int, int, int) line: not available [native method]
+NSApplication.terminate(id) line: 326
+Display.applicationDelegateProc(int, int, int) line: 3453
+OS.objc_msgSendSuper(objc_super, int, int) line: not available [native method]
+Display.applicationSendEvent(int, int, int) line: 3408
+Display.applicationProc(int, int, int) line: 3419
+OS.objc_msgSend(int, int, int) line: not available [native method]
+NSApplication.sendEvent(NSEvent) line: 253
+Display.readAndDispatch() line: 2493
+Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 2382
+Workbench.runUI() line: 2346
+Workbench.access$4(Workbench) line: 2198
+Workbench$5.run() line: 493
+Realm.runWithDefault(Realm, Runnable) line: 288
+Workbench.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 488
+PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 149
+IDEApplication.start(IApplicationContext) line: 113
+EclipseAppHandle.run(Object) line: 193
+EclipseAppLauncher.runApplication(Object) line: 110
+EclipseAppLauncher.start(Object) line: 79
+EclipseStarter.run(Object) line: 382
+EclipseStarter.run(String[], Runnable) line: 179
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available [native method]
+NativeMethodAccessorImpl.invoke(Object, Obje

@@ -1,0 +1,19 @@
+Photon - implement the SWT browser widget
+Provide an implementation of the new SWT browser widget for the QNX platform.
+Stubs:
+The org.eclipse.swt source from HEAD contains stubs for the Browser widget on
+Photon.
+Source folders:
+Eclipse SWT Browser/photon (org.eclipse.swt.browser.Browser for photon
+- to be
+implemented)
+Eclipse SWT Browser/common (events which must be supported by the Browser
+widget)
+1.report if part of the Browser api and events don't map to the Photon
+platform
+2.for early feedback, you can post a (temporary) simplified version of the
+Browser which does not support the events.
+3.The final implementation can be tested against the following snippet:
+http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-swt
+-
+home/snippits/snippet128.html

@@ -1,0 +1,6 @@
+org.eclipse.swt.graphics.GC.drawString() fails to draw euro sign
+When you call org.swt.graphics.GC.drawString() with the text string containing
+euro sign, drawString() fails to draw it and the trailing characters.
+For example, if you call drawString() with 'ABC$DEF' ($ stands for euro sign),
+you will have only 'ABC' rendered and '$DEF' is lost.
+RedHad 7.2

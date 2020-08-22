@@ -1,0 +1,9 @@
+Bug 191996 'Edit Data Set' dialog doesn't remember location and setup when it's closed.
+Build ID: I20060602-1317 Steps To Reproduce: 1.Double click an existing MySQL Data Set from the 'Data Sets' item, found in the 'Data Explorer'.
+2.Move the 'Edit Data Set' dialog to a new location.
+3.Change the positions of the vertical splits between the option selection tree, database table tree and the data set SQL statement.
+4.Hit the OK button.
+5.Double click the same Data Set selected during step 1.The position of the dialog and splits have been lost.
+More information: The Edit Data Set dialog for MySQL queries doesn't remember: 1) it's location on the screen, 2) the position of the vertical split between the Area selection tree, the database table tree and the data set selection SQL statement.
+As a result, when refining a large SQL statement, the user is needs to resizing the edit dialog everytime the Data Set is opened.
+It would be better if the dialog restored its previous location and split positions.

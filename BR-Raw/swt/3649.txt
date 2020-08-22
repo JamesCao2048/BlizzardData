@@ -1,0 +1,13 @@
+BIDI: text in the rtl-oriented Text control can't be aligned to the trailing edge of this control.
+SWT, as usually, uses for creating of it's Text control CreateWindowEx() native
+call with WS_EX_LAYOUTRTL extended window's style.
+In spite of this,
+corresponding native Edit control is created as not mirrored window with
+WS_EX_RIGHT, WS_EX_LEFTSCROLLBAR and WS_EX_RTLREADING extended styles and
+ES_RIGHT alignment style.
+Therefore contents of rtl-oriented Text control can't
+be aligned to it's trailing edge.
+We suggest to use WS_EX_RTLREADING and WS_EX_LEFTSCROLLBAR instead of
+WS_EX_LAYOUTRTL extended style.
+Using of alignment styles will depend on
+current orientation of Text control.

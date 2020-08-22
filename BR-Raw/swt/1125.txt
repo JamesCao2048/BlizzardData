@@ -1,0 +1,33 @@
+[OLE] Saving docx file will corrupt the file and produce OLE exception
+I have created an RCP application.
+I can open microsoft office documents 2007 inside, with the docx extension.
+But if I modify the document and save it, the save operation corrupts the document somehow.
+Next time when I try to open it from the RCP application, I got an OLE exception "cannot create the in place editor".
+If I try to open the document directly with microsoft office, the error is "the file is corrupted".
+However if I chose to restore it, the file can be restored correctly.
+And now the weird thing is that the size of the document after the save from the RCP application is changing from 20ko to 99ko.
+It looks like some garbage is added in the docx document.
+I got exactly the same error if I try the same thing directly in the eclipse IDE.
+I have eclipse 3.3 and jre1.5.0_11.
+To duplicate:
+1.Copy a docx file into a project directory.
+2.Open this docx file inside Eclipse IDE.
+The file should be opened without any problem.
+3.Modify the file, and save.
+4.Close the file editor tab.
+5.Open the file again, get following exception:
+Cannot create the in-place editor
+Reason:
+This is probably because there is no OLE editor registered against the type of file you were trying to open.
+Details:
+Failed to create Ole Client.
+result =
+-2147467260
+6.Use Open With
+-> System Editor, get following message:
+The Office Open XML file test.docx cannot be opened because there are problems with the contents.
+Details: The file is corrupt and cannot be opened.
+This is a serious issue for our project as our application allows user to edit MS documents in-place.
+As more and more customers are using Office 2007, this is a show stopper for us.
+Thanks.
+Page

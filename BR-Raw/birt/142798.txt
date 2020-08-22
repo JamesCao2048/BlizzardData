@@ -1,0 +1,4 @@
+Bug 142798 TVT3.2:TCT580: pl: Truncation in Report form.
+OS : RHEL 3.1 Must fix or not a must fix: YES Build date: 0518 Component name: BRIT Blocking: NO Language: pl Bitmap Location: V:defectspl20.001170.jpg Tester Name: Marek Gaskiewicz Steps to recreate the problem: Open New Project dialog from Eclipse File menu Select Business Intelligence and Reporting Tools Click Next Type any Project name on Report Project dialog and Click Finish Open Associated Perspective dialog is displayed.
+Click Yes From the menu, select File->New->Report Click Next Select Blank Report Select Side by Side Chart & Listing Click Next to display Set Template Property From the menu, select File->New->Template Click Next Click Finish Problem Description: There's a text truncation on newly generated form (see screenshot).
+This article was reassigned from Category:''TVT/Testing''.

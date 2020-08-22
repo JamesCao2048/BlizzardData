@@ -1,0 +1,29 @@
+Empty button has different height from one with text
+The following program passes on Win32, Linux-GTK, and MacOS X, but fails on
+Linux-Motif.
+I believe the behaviour on Motif should be fixed.
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class EmptyButton {
+public static void main(String[] args) {
+Display d = new Display();
+Shell t = new Shell(d);
+Shell s = new Shell(t);
+Button b = new Button(s, SWT.PUSH);
+b.setText("");
+b.setSize(b.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+int b1height = b.getSize().y;
+System.out.println("Button 1: " + b1height);
+b = new Button(s, SWT.PUSH);
+b.setText("Some Text");
+b.setSize(b.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+int b2height = b.getSize().y;
+System.out.println("Button 2: " + b2height);
+if(b1height != b2height) {
+System.out.println("FAILED: Heights are not the same.");
+} else {
+System.out.println("PASSED: Heights are the same.");
+}
+d.dispose ();
+}
+}

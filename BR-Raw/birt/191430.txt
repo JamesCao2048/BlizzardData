@@ -1,0 +1,9 @@
+Bug 191430 [Regression] The table will binding to the data set if add a data binding to the data set [0001]
+Description: The table will binding to the data set if add a data binding to the data set.
+Build number: 2.2.0.v20070607-0630 Steps to reproduce: 1.New a report with a data set.
+2.New a table (not binding to the data set), add a data in one table cell.
+3.Right click to change the data column, select the data set and one column.
+4.Select the table and go to the binding page.
+Expected result: The table is binding to only one column.
+Actual result: The table is binding to the data set.
+Error log: N/A

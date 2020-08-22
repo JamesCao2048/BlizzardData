@@ -1,0 +1,18 @@
+column resize cursor shows at wrong position
+- run the snippet below
+- hover over the column separator in the header and note that the cursor does not change to the resize image (it should change), though if you now mouse down here and drag the column will resize properly
+- now if you slowly move the mouse to the left within the header you'll find a spot where the cursor does change to the resize image, but this is of course the wrong place, and mousing down and dragging here will not do a resize
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10, 10, 200, 200);
+final Table table = new Table(shell, SWT.NONE);
+table.setBounds(10,10,150,150);
+new TableColumn(table, SWT.NONE).setWidth(80);
+table.setHeaderVisible(true);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

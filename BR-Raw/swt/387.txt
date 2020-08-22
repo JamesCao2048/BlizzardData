@@ -1,0 +1,4 @@
+Link widget shows IBeam cursor
+HEAD Cocoa
+The Link widget is a bit distracting, since it shows the IBeam cursor when the mouse is in the widget, but not on text or on a link.
+Can easily be seen in the ControlExample with SWT.BORDER and size 100 x 100.

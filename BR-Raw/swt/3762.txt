@@ -1,0 +1,48 @@
+[Motif] GC.getFontMetrics() causes VM to crash when font is really small.
+In Motif, with a very small font (height ~= 2), GC.getFontMetrics() causes the
+VM to crash (stack trace below).
+I debugged this method and found that
+OS.memmove() is being called with src = 0 because the XFontStruct.per_char = 0.
+GTK and Windows don't seem to be affected.
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0x4207BDE5
+Function=memmove+0x35
+Library=/usr/java/j2sdk1.4.1_02/bin/java
+Current Java thread:
+at org.eclipse.swt.internal.motif.OS.memmove(Native Method)
+at org.eclipse.swt.graphics.GC.getFontMetrics(GC.java:1939)
+at org.eclipse.draw2d.SWTGraphics.getFontMetrics(SWTGraphics.java:278)
+at org.eclipse.draw2d.ScaledGraphics.zoomTextPoint(ScaledGraphics.java:426)
+at org.eclipse.draw2d.ScaledGraphics.drawText(ScaledGraphics.java:239)
+at org.eclipse.draw2d.Graphics.drawText(Graphics.java:107)
+at org.eclipse.draw2d.Label.paintFigure(Label.java:445)
+at org.eclipse.draw2d.Figure.paint(Figure.java:921)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:959)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:993)
+at org.eclipse.draw2d.Figure.paint(Figure.java:923)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:959)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:989)
+at org.eclipse.draw2d.Figure.paint(Figure.java:923)
+at org.eclipse.draw2d.Figure.paintChildren(Figure.java:959)
+at org.eclipse.draw2d.Figure.paintClientArea(Figure.java:989)
+at org.eclipse.draw2d.Figure.paint(Figure.java:923)
+at org.eclipse.draw2d.parts.Thumbnail$ThumbnailUpdater.run(Thumbnail.java:157)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:98)
+- locked
+<0x44405e28> (a org.eclipse.swt.widgets.RunnableLock)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:1940)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1731)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1402)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1385)
+at
+org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:845)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
+at org.eclipse.core.launcher.Main.run(Main.java:747)
+at org.eclipse.core.launcher.Main.main(Main.java:583)

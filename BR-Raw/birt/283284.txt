@@ -1,0 +1,2 @@
+Bug 283284 Rank aggregation doesn't work without setting ascending argument
+Description: Rank aggregation doesn't work without setting ascending argument Build number: 2.5.0.v20090713-0630 Steps to reproduce: 1, New a table with group 2, New a Rank aggregation and left ascending argument to null 3, Preview the report Expected result: No exception occurred and rank aggregation works correctly Actual result: Exception occurred Error log:

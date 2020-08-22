@@ -1,0 +1,2 @@
+Bug 197261 [2.2.1]The report that contain library xtab and set filter cannot be run
+Description: [2.2.1]The report that contain library xtab and set filter cannot be run Step: 1.New a library and add a xtab 2.New a report and use the library 3.Drop the xtab from library explorer into layout 4.Set the filter on the xtab that is in report 5.Preview Actual result: It pop up an error said that the report cannot be run

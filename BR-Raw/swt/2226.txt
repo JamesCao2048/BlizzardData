@@ -1,0 +1,5 @@
+[DND] 'Alt' does not request DROP_LINK
+SWT Drag and Drop on Windows requests a link when pressing ctrl+shift, but not when pressing alt.
+It would be nice to support requesting the DROP_LINK operation when pressing alt since some windows users are used to create links by pressing alt, and might not even be aware that ctrl+shift also works (like me some ten minutes ago :) ).
+This bug can easily be reproduced by running a DNDExample like:
+http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/SWTDNDDragandDropcomprehensiveExample.htm

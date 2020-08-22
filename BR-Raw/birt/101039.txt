@@ -1,0 +1,5 @@
+Bug 101039 Series colors do not have different default values
+When you create a pie chart, all colors are gray by default.
+When you create a bar chart with multiple Y series, additional Y series are all gray by default.
+Expected: The pie chart should have different colors for each value by default.
+For bar charts, the additional series should be automatically be assigned a different color by default.

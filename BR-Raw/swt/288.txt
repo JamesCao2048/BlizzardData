@@ -1,0 +1,50 @@
+Link#setEnabled(boolean) does not update color without a redraw()
+master
+Link#setEnabled(boolean) does not update the color of the text without a redraw() call from the client.
+The color of the link is correctly updated.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Link;
+import org.eclipse.swt.widgets.Shell;
+public class SnippetDisableLink {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+
+shell.setLayout(new GridLayout());
+
+final Link link = new Link(shell, SWT.NONE);
+link.setText("This a very simple
+<A>link widget</A>.");
+
+final Button button = new Button(shell, SWT.PUSH);
+button.setText("Enable/Disable");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+boolean enable = !link.getEnabled();
+System.out.println("enabled: " + enable);
+link.setEnabled(enable);
+}
+});
+
+Button redraw = new Button(shell, SWT.PUSH);
+redraw.setText("Redraw");
+redraw.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+link.redraw();
+}
+});
+
+shell.pack ();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

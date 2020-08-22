@@ -1,0 +1,32 @@
+Components in SWT_AWT are not displayed on Solaris
+Swing components added to an AWT frame generated from SWT_AWT.new_Frame() are
+not being displayed.
+The code below works fine on Windows XP, but not on
+Solaris.
+I am using Eclipse 3.0RC3 and Java 1.5.0 Beta 2.
+/*** Begin Java Source ***/
+package com.tsccos.eclipse.tools.mvs.timeline.views;
+import java.awt.Frame;
+import javax.swing.JLabel;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.awt.SWT_AWT;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.part.ViewPart;
+public class TimelineView extends ViewPart {
+private Composite awtComposite;
+public TimelineView() {
+}
+public void createPartControl(Composite parent) {
+awtComposite = new Composite(parent, SWT.EMBEDDED);
+Frame awtFrame = SWT_AWT.new_Frame(awtComposite);
+awtFrame.add(new JLabel("This is a Swing JLabel"));
+
+Label label = new Label(parent, SWT.NONE);
+label.setText("This is a SWT Label");
+}
+public void setFocus() {
+this.awtComposite.setFocus();
+}
+}
+/*** End Java Source ***/

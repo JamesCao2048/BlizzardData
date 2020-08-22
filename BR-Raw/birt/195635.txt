@@ -1,0 +1,11 @@
+Bug 195635 Refresh library doesn't work when select root node in Outline.[01]
+Description: Refresh library doesn't work when select root node in library Outline.
+Build number:2.2.1.v200707061322 Steps to reproduce: 1.New a library liba.rptlibrary.
+2.New data source and dataset, drag dataset to Layout.
+3.New a library libc.rptlibrary.
+4.Drag table in lia to libc.
+5.Delete table in liba and save.
+6.In libc, select root node in Outline, right click and select refresh library.
+Expected result: Table item displays with red error words.
+Actual result: Nothing change unless select Libaries node and refresh library.
+Error log:n/a

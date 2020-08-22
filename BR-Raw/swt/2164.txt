@@ -1,0 +1,11 @@
+[Program] Notes bookmark URL cannot be launched by swt for Linux-GTK
+On Linux, swt for gtk assumes all the file names and urls contain a '.'.
+So org.eclipse.swt.program.Program.launch will check if fileName contains '.' first.
+For the filenames with '.', swt will call gnome's native function to launch this file.
+Or else, this fileName is considered as a program and executed by Compatibility.exec.
+But for Notes, its bookmark URL is like "notes:///ClientBookmark?OpenWorkspace" without a '.'.
+So even Notes URL protocol is registered by gconf on Linux, Notes cannot be launched using Program.launch.
+But it can be launched by firefox.
+This problem blocks the program I'm working on so much.
+So is there any way to solve it?
+Thanks.

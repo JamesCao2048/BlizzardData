@@ -1,0 +1,50 @@
+[Browser] Browser fails when 32-bit XULRunner detected on 64-bit OS
+Build Identifier: I20100608-0911
+i have Helios (I20100608-0911) installed on OpenSUSE 11.3 / x86_64, with,
+rpm
+-qa | egrep
+-i "xulrunner|MozillaFirefox-3"
+mozilla-xulrunner192-devel-1.9.2.8-3.1.x86_64
+mozilla-xulrunner191-1.9.1.11-1.3.x86_64
+mozilla-xulrunner191-devel-1.9.1.11-1.3.x86_64
+mozilla-xulrunner191-32bit-1.9.1.11-1.3.x86_64
+mozilla-xulrunner192-1.9.2.8-3.1.x86_64
+MozillaFirefox-3.6.8-1.3.x86_64
+and,
+ls
+-ald /usr/lib*/*xul*
+lrwxrwxrwx  1 root root   18 2010-08-16 22:35 /usr/lib64/xulrunner-1.9.1
+-> xulrunner-1.9.1.11
+drwxr-xr-x 12 root root 4096 2010-08-16 22:37 /usr/lib64/xulrunner-1.9.1.11/
+lrwxrwxrwx  1 root root   17 2010-08-16 22:36 /usr/lib64/xulrunner-1.9.2
+-> xulrunner-1.9.2.8
+drwxr-xr-x 12 root root 4096 2010-08-16 22:37 /usr/lib64/xulrunner-1.9.2.8/
+drwxr-xr-x  3 root root 4096 2010-08-16 22:37 /usr/lib64/xulrunner-devel-1.9.1.11/
+drwxr-xr-x  3 root root 4096 2010-08-16 22:37 /usr/lib64/xulrunner-devel-1.9.2.8/
+lrwxrwxrwx  1 root root   18 2010-08-16 22:35 /usr/lib/xulrunner-1.9.1
+-> xulrunner-1.9.1.11
+drwxr-xr-x 12 root root 4096 2010-08-16 22:35 /usr/lib/xulrunner-1.9.1.11/
+i've installed Mylyn + Bugzilla connector, 3.4.1.v20100804-0100-e3x-7D77-BgJ9DH9bIS4CIC
+i can log in to bugzilla, and see/retrieve reports, as expected.
+if/when I attempt to make changes & then "Submit", I get an "XULRunner not found" error:
+/home/dev001/.eclipse/org.eclipse.platform_3.5.0_185596441/configuration/org.eclipse.osgi/bundles/151/1/.cp/libswt-mozilla-gtk-3650.so: libxpcom.so: cannot open shared object file: No such file or directory
+no swt-mozilla-gtk in java.library.path
+/tmp/swtlib-64/libswt-mozilla-gtk-3650.so: libxpcom.so: cannot open shared object file: No such file or directory
+Can't load library: /tmp/swtlib-64/libswt-mozilla-gtk.so
+)
+at org.eclipse.swt.SWT.error(SWT.java:4109)
+at org.eclipse.swt.browser.Mozilla.initMozilla(Mozilla.java:1703)
+at org.eclipse.swt.browser.Mozilla.create(Mozilla.java:637)
+at org.eclipse.swt.browser.Browser.<init>(Browser.java:119)
+at org.eclipse.mylyn.internal.tasks.ui.util.WebBrowserDialog.createCustomArea(WebBrowserDialog.java:55)
+at org.eclipse.jface.dialogs.MessageDialog.createDialogArea(MessageDialog.java:273)
+at org.eclipse.jface.dialogs.IconAndMessageDialog.createDialogAndButtonArea(IconAndMessageDialog.java:221)
+at org.eclipse.jface.dialogs.IconAndMessageDialog.createContents(IconAndMessageDialog.java:200)
+at org.eclipse.jface.window.Window.create(Window.java:431)
+at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+at org.eclipse.jface.window.Window.open(Window.java:790)
+at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:334)
+at org.eclipse.mylyn.internal.tasks.ui.util.WebBrowserDialog.openAcceptAgreement(WebBrowserDialog.java:46)
+at org.eclipse.mylyn.internal.tasks.ui.util.TasksUiInternal.displayStatus(TasksUiInternal.java:544)
+at org.eclipse.mylyn.internal.tasks.ui.util.TasksUiInternal.displayStatus(TasksUiInternal.java:592)
+at

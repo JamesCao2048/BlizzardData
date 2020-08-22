@@ -1,0 +1,10 @@
+StyledText - replace getXAtOffset(caretOffset) with caret.getLocation().x
+build 20020319
+In a number of places we get the location of the caret by calling getXAtOffset
+(caretOffset).
+I haven't looked at the code but we may be able to replace this with a call to
+caret.getLocation().x.
+This won't be possible though if the caret is null
+(i.e., when there is no caret).
+We could at least optimize the case when there
+is a caret.

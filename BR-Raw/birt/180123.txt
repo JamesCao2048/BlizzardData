@@ -1,0 +1,6 @@
+Bug 180123 Add input format hint for date and time type as datetime type does.[0705]
+Description: Add input format hint for date and time type as datetime type does.
+build number:2.2.0.v20070330 Steps to reproduce: 1.New a report parameter.
+2.Set Type as Date or Time.
+Expected result: Show value input format below default value as datetime type does.
+Actual result: No hint about how to input date/time value.

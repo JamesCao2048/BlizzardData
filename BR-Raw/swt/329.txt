@@ -1,0 +1,68 @@
+Virtual Table throws exception when AVG is installed
+Build Identifier: 3.7.0 (I20110613-1736)
+AVG is a popular free anti-virus program, but their latest version seems to cause SWT virtual tables to crash.
+Reproducible: Always
+Steps to Reproduce:
+1.Download and install the free version of AVG here:
+http://free.avg.com/au-en/free-antivirus-download
+2.Run the snippet shown below.
+3.When the table appears, scroll up and down for about 15 seconds.
+Eventually the following exception is thrown:
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
+at org.eclipse.swt.widgets.Table.wmNotifyChild(Table.java:6743)
+at org.eclipse.swt.widgets.Control.wmNotify(Control.java:5534)
+at org.eclipse.swt.widgets.Composite.wmNotify(Composite.java:1896)
+at org.eclipse.swt.widgets.Control.WM_NOTIFY(Control.java:5086)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:4584)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1610)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2061)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4985)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:2424)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:564)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:430)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:4623)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:5893)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4985)
+at org.eclipse.swt.internal.win32.OS.PeekMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.PeekMessage(OS.java:3095)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3749)
+at TestVirtualTable.main(TestVirtualTable.java:64)
+------------------- code snippet
+-------------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.RowData;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
+/**
+* A version of Snippet 144 with columns added.
+*/
+public class TestVirtualTable {
+
+static final int COUNT = 200;
+
+public static void main(String[] args) {
+
+Display display = new Display ();
+final Shell shell = new Shell (display);
+shell.setLayout (new RowLayout (SWT.VERTICAL));
+final Table table = new Table (shell, SWT.VIRTUAL | SWT.BORDER);
+table.addListener (SWT.SetData, new Listener () {
+public void handleEvent (Event event) {
+if(event.index
+< 0) {
+throw new RuntimeException("Index
+< 0");
+}
+
+TableItem item = (TableItem) event.item;
+int index = table.indexOf (item);
+String randomString = ("" + Math.random()).subs

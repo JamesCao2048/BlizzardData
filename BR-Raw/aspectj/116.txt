@@ -1,0 +1,9 @@
+java.lang.StringIndexOutOfBoundsException
+ava.lang.StringIndexOutOfBoundsException
+at java.lang.String.substring(String.java:1938)
+at org.aspectj.ajdt.ajc.ConfigParser.stripWhitespaceAndComments(ConfigParser.java:103)
+at org.aspectj.ajdt.ajc.ConfigParser.parseConfigFileHelper(ConfigParser.java:69)
+at org.aspectj.ajdt.ajc.ConfigParser.parseImportedConfigFile(ConfigParser.java:224)
+at org.aspectj.ajdt.ajc.ConfigParser.parseOneArg(ConfigParser.java:213)
+at org.aspectj.ajdt.ajc.ConfigP ... 82)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

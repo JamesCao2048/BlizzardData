@@ -1,0 +1,21 @@
+Tree#selectAll() should only select visible items (those without any collapsed parent)
+I20110322-0800
+Tree#selectAll() should only select visible items (i.e.
+roots and items whose parents are expanded and visible).
+Currently, it selects all items in the Tree, which is unexpected.
+The problem can be seen with Snippet61 if you add this listener and then press "A":
+tree.addListener(SWT.KeyDown, new Listener() {
+public void handleEvent(Event e) {
+if (e.keyCode == 'a') {
+e.doit= false;
+System.out.println("selectAll");
+tree.selectAll();
+tree.notifyListeners(SWT.Selection, new Event());
+}
+}
+});
+On GTK, only visible items are selected (as expected).
+This is a problem in the SDK, which calls selectAll() on Ctrl+A, so we see the wrong selections in many places.
+An example where this gets really weird is the tree in the Edit JRE dialog from the Installed JREs preference page: Right after opening the dialog, I can press Ctrl+A and then click Javadoc Location...
+.
+But after I've expanded and collapsed the first tree item, Ctrl+A disables the button.

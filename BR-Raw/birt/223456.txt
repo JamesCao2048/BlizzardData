@@ -1,0 +1,2 @@
+Bug 223456 The binding of derived measure is treated as Dimension in filter condition tree[1102]
+Description: The binding of derived measure is treated as Dimension in filter condition tree[1102] Build number: 2.3.0.v20080321-1139 Steps to reproduce: 1, New a crosstab binding with dataset 2, New a derived measure 3, New a filter and select derived measure in filter condition tree Expected result: The derived measure should be treated as measure but not dimension Actual result: Derived measure binding is under the Dimension node.

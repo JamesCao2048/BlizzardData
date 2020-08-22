@@ -1,0 +1,38 @@
+Text wider than normal in toolitem if ampersand (&) used
+Text without ampersands in it is displayed correctly.
+Text with a ampersand in it, but with more than one word is wider that normal.
+Text with one word starting with an ampersand is even wider.
+(Mac OS 10.3)
+The following snippet demonstrates this:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class Bug
+{
+public static void main(String[] args)
+{
+Display display = Display.getDefault();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setSize(100,100);
+ToolBar toolbar = new ToolBar(shell,SWT.NONE);
+// fine
+ToolItem good = new ToolItem(toolbar, SWT.NONE);
+good.setText("good");
+// text somewhat wider that normal
+ToolItem hmm = new ToolItem(toolbar, SWT.NONE);
+hmm.setText("somewhat &wrong");
+// single words displayed double size
+ToolItem bad = new ToolItem(toolbar, SWT.NONE);
+bad.setText("&1");
+shell.open();
+shell.pack();
+
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}
+I will attach a screenshot.

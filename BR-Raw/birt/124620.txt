@@ -1,0 +1,11 @@
+Bug 124620 Referenced Parameter icon should be invalid if the parameter in library is deleted
+Description: Referenced parameter icon should be invalid if the source parameter in library is deleted.
+Steps to reproduce: 1.Create a library.
+Insert a report scalar parameter.
+2.Create a report, use the above library.
+In the library explorer, pull the parameter to the data explorer view of report.
+3.Open the library file, delete the parameter.
+Then reopen the report design file, the icon of parameter seems nothing happened.
+But if those operations happened in dataset, the icon of dataset in the report will be invalid.
+It is acceptable.
+Expected Result: The icon of referenced parameter should be invalid.

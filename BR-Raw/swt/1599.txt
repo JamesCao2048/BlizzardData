@@ -1,0 +1,25 @@
+Widget is disposed in ControlExample
+- run the ControlExample
+- press the Set/Get API Button
+--> shows a dialog
+- press this button again
+--> shows another dialog
+- close the second of these dialogs
+- in the first dialog choose anything in the Combo and you'll get the error at the bottom
+
+-> the problem is that Tab.resetLabels() is sending #getText() to the Text that was on the second of the dialogs; this happens because the two shown dialogs were sharing Tab's fields like setText, get/setButton, etc.
+Exception in thread "main" org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:3773)
+at org.eclipse.swt.SWT.error(SWT.java:3691)
+at org.eclipse.swt.SWT.error(SWT.java:3662)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:462)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:335)
+at org.eclipse.swt.widgets.Combo.getText(Combo.java:838)
+at org.eclipse.swt.examples.controlexample.Tab.resetLabels(Tab.java:1018)
+at org.eclipse.swt.examples.controlexample.Tab$35.widgetSelected(Tab.java:982)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:227)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1002)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3782)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3381)
+at org.eclipse.swt.examples.controlexample.ControlExample.main(ControlExample.java:210)

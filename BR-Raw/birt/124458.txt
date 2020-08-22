@@ -1,0 +1,2 @@
+Bug 124458 [Smoke]Data in list is only previewed the first data by Web View
+Details: [Smoke]Data in list is only previewed the first data by Web View Setp: 1.New a sample datasource and dataset 2.Insert a list and drop a data from dataset to detail rows 3.Preview with Web View Actual result: It only preview the first data in each rows.

@@ -1,0 +1,9 @@
+NullPointerException at org.eclipse.swt.browser.IE.handleDOMEvent
+Build Identifier: 3.6 M6 Release
+The SWT Browser generates a NullPointerException at org.eclipse.swt.browser.IE.handleDOMEvent when IE is the embedded browser.
+This behavior can be seen using the login page at www.facebook.com
+Reproducible: Always
+Steps to Reproduce:
+1.Launch and instance of the SWT Browser
+2.Navigate to www.facebook.com
+3.Enter e-mail address and password (a real account is no required, just typing in the fields will trigger the exception)

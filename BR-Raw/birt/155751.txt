@@ -1,0 +1,2 @@
+Bug 155751 [regression]Nothing displayed when drag report items from a old library to a report layout
+Nothing displayed when drag report items from a old library to a report layout Steps to reproduce: 1.new a report and use a old library in outline view 2.Drag table,label,text,chart all to the report layout 3.Nothing displayed when previewed Expected result: Items can be diplayed properly' Actual result: Items weren't displayed when drag report items from a old library to a report layout while displayed well when drag report items from a new library to a report layout

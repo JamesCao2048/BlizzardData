@@ -1,0 +1,8 @@
+Bug 259632 BIDI - Export to PDF changes sequence in word of sentences with Non Latin Chars in HTML Text Fields
+Build ID: 3.4.0 Steps To Reproduce: 1.Create report with BIDI orientation RTL.
+2.Add TEXT Fields with HTML Content (Content Type=HTML) 3.Make sure Line breaks will happen (insert the content into a cell of a grid not very wide) 4.Export report to PDF and WORD.
+5.PDF content shows sentence was changed
+- Words moved placed (Last word moved to middle etc).
+Export to WORD and see content is OK.
+6.THIS happens only when content Type = HTML , when changed to Auto it is displayed ok in PDF.
+More information:

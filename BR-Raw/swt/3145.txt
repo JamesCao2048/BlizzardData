@@ -1,0 +1,26 @@
+Funny behaviour on Linux GTK with MessageBox with % character
+Following displays
+hello 1,591491E-31442,3887746OK
+Instead of hello %E4
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+public class PR {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("PR");
+MessageBox messageBox = new MessageBox(shell, SWT.OK);
+messageBox.setText("");
+messageBox.setMessage("hello %E4%F6OK");
+messageBox.open();
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

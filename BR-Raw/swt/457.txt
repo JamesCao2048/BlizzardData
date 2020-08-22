@@ -1,0 +1,9 @@
+LocationProvider null when xulrunner is already initialized by another browser
+Build Identifier: 3.5.2
+If xulrunner is already initialized by another browser, the following line in Mozilla.java is not executed
+if (!Initialized) {
+LocationProvider = new AppFileLocProvider (mozillaPath);
+LocationProvider.AddRef ();
+The LocationProvider is not initialized and caused the exception when executes javascript in public boolean execute (String script)
+String mozillaPath = LocationProvider.mozillaPath + delegate.getJSLibraryName () + '0';
+Reproducible: Always

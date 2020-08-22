@@ -1,0 +1,5 @@
+Bug 134949 Themes nest in other library
+Details: Themes nest in other library Step: 1.Library A use LibraryB, and Library B has a themes 2.Report design use Library A 3.I open the Library tree of A in library explorer and drop the themes from B into layout.
+Actual result: It pop up an error message and said that the library namespace "B" exists already.
+Exception result: I don't konw if I can use by this method.
+But I think it is a method user may be used.

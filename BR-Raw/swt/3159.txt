@@ -1,0 +1,7 @@
+[browser] Browser.java should not use nsIScriptContext
+Currently, the execute() method in Browser.java uses the nsIScriptContext
+interface in order to run Javascript on the current document.
+However, this
+interface is a non-frozen, internal interface.
+We should switch to a more
+appropriate API.

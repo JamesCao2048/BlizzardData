@@ -1,0 +1,6 @@
+Bug 124193 Parent axis doesn't work for recursive XPath
+When table mapping for XML files is specified via recursive XPath: e.g.
+"//book", the parent axis access is broken for column mappings on such table: e.g.
+"../bookstore/@name" will not work.
+Same parent axis access works fine if non-recursive XPath is used for table mapping: e.g.
+"/bookstore/book".

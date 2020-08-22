@@ -1,0 +1,7 @@
+Missing AddRef in new Relation
+When a Relation is created, a reference needs to be counted right
+away in the constructor.
+This prevents the object from being prematurely
+released.
+This is similar to the first patch in  Bug 311821 .
+Also, this patch calls getAddress() directly to get the target address, which protects against null pointer exceptions.

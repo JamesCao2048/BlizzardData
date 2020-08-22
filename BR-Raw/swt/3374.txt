@@ -1,0 +1,65 @@
+gradient fill does not print its color properly
+When I try to print gradient foreground color as yellow, it
+prints out turquoise.
+If you change the fillGradient() call
+ti fillRectangle() the right color prints out.
+I have seen this happen with other colors too.
+
+I altered the print example to demonstrate the problem.
+package printing.tests;
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.printing.*;
+public class BasicPrint {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+FontDialog fontDialog = new FontDialog(shell, SWT.NULL);
+FontData displayFontData = fontDialog.open();
+PrintDialog dialog = new PrintDialog(shell, SWT.NULL);
+PrinterData data = dialog.open();
+shell.dispose();
+if (displayFontData == null || data == null) {
+System.out.println("Cancelled");
+return;
+}
+Printer printer = new Printer(data);
+Rectangle clientArea = printer.getClientArea();
+Font printerFont = new Font(printer, displayFontData.getName(),
+displayFontData.getHeight(), SWT.NORMAL);
+// this is the color that causes the problem
+Color foreground = new Color(printer, 255, 252, 194);	//
+yellow
+Color background = new Color(printer, 0xff, 0xff, 0xff);
+Image pageBuffer = new Image(printer, clientArea.width,
+clientArea.height);
+GC pageGC = new GC(pageBuffer);
+pageGC.setFont(printerFont);
+pageGC.setForeground(foreground);
+pageGC.setBackground(background);
+Rectangle rect = new Rectangle(20, 20, clientArea.width / 2,
+clientArea.height / 4);
+pageGC.drawRectangle(rect);
+pageGC.fillGradientRectangle(rect.x, rect.y, rect.width,
+rect.height, false);
+pageGC.drawString("Test", 222, 222);
+if (printer.startJob("Gradient Color Test")) {
+Rectangle trim = printer.computeTrim(0, 0, 0, 0);
+Point dpi = printer.getDPI();
+int leftMargin = dpi.x + trim.x; // one inch from left
+side of paper
+int topMargin = dpi.y / 2 + trim.y; // one-half inch
+from top edge of paper
+GC gc = new GC(printer);
+if (printer.startPage()) {
+gc.drawImage(pageBuffer, leftMargin, topMargin);
+gc.dispose();
+printer.endPage();
+}
+printer.endJob();
+}
+pageGC.dispose();
+pageBuffer.dispose();
+}
+}

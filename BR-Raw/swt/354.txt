@@ -1,0 +1,42 @@
+Table.pack() makes column width too small by one pixel
+On Windows 7, when adding a listener for the event type SWT.MeasureItem, the method TableColumn.pack() for all but the first column makes the column too small by one pixel.
+The column shows 'the...' instead of 'there'.
+I can reproduce the problem with the code below compiled with org.eclipse.swt.win32.win32.x86_3.6.2.v3659c.jar or
+org.eclipse.swt.win32.win32.x86_3.7.0.v3730b.jar
+I do not see the problem on Windows XP.
+Also, the problem goes away when removing the listener.
+Sample code:
+============
+public class Main {
+public static void main(String[] args) {
+try {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.NONE);
+table.setHeaderVisible(true);
+table.addListener(SWT.MeasureItem, new Listener() {
+@Override
+public void handleEvent(Event event) {
+}
+});
+TableColumn column1 = new TableColumn(table, SWT.NONE);
+TableColumn column2 = new TableColumn(table, SWT.NONE);
+for (int i = 0; i
+< 10; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"hi", "there"});
+}
+column1.pack();
+column2.pack();
+shell.setSize(300, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+} catch (Throwable th) {
+System.out.println(th);
+}
+}
+}

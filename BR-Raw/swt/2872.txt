@@ -1,0 +1,68 @@
+Colors on a VIRTUAL table with columns will not show up on open
+3.1 M7
+If you set the colors on a VIRTUAL table that has columns in the callback for
+SetData this will be ignored if the callback is called during shell opening.
+STEPS
+1) Run the example below.
+You will see yellow in the first entry but no other.
+2) Scroll around.
+Anything hidden will start getting colored.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
+/**
+*
+* @author cgustafson
+*
+*/
+public class ColorTable {
+public static void main(String[] args) {
+Display display = new Display();
+Shell parent = new Shell(display, SWT.CLOSE);
+parent.setLayout(new GridLayout());
+final Table table = new Table(parent, SWT.VIRTUAL | SWT.V_SCROLL);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+table.setItemCount(90);
+table.addListener(SWT.SetData, new Listener() {
+/*
+* (non-Javadoc)
+*
+* @see
+org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
+*/
+public void handleEvent(Event event) {
+TableItem item = (TableItem) event.item;
+final int index = table.indexOf(item);
+
+String label = "Element " + String.valueOf(index);
+item.setData(label);
+item.setText(0,label);
+item.setBackground(item.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
+item.setForeground(item.getDisplay().getSystemColor(SWT.COLOR_BLUE));
+
+}
+});
+TableColumn dateCol = new TableColumn(table, SWT.LEFT);
+dateCol.setText("Date");
+dateCol.setWidth(200);
+GridData gd = new GridData();
+gd.grabExcessVerticalSpace = true;
+gd.verticalAlignment = SWT.FILL;
+gd.grabExcessHorizontalSpace = true;
+gd.horizontalAlignment = SWT.FILL;
+gd.heightHint = 500;
+table.setLayoutData(gd);
+parent.pack();
+parent.open();
+while (!parent.isDisposed())
+display.readAndDispatch();
+}
+}

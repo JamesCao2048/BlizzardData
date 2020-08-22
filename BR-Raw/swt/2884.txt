@@ -1,0 +1,17 @@
+SWT Browser crashes on MacOS
+N20050502
+SWT Browser crashes VM.
+Several ways to get a crash:
+1) Go to preference and go to Browser preferences.
+OR
+2) try creating an instance of an SZWT browser anywhere.
+you get the following:
+Exit code = 5
+/user/bin/Java
+-XstartOnFirstThread
+....
+on the command line you get:
+dyld: /usr/bin/java Undefined symbols:
+/Users/eclipse/Desktop/mazenDONTTouchIT/eclipseN20050502/configuration/org.ecli
+pse.osgi/bundles/60/1/.cp/libswt-webkit-carbon-3132.jnilib
+undefined reference to _objc_getClass expected to be defined in WebKit

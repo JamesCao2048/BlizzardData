@@ -1,0 +1,12 @@
+NPE on attempt to compile
+I can't really pinpoint any code that trigger this. It happens on for an incremental, and only some of the time. If I do a full build of the project then I do not get the error and all seems to work.
+----
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelWeaver.raiseUnboundFormalError(BcelWeaver.java:833)
+at org.aspectj.weaver.bcel.BcelWeaver.validateSingleBranch(BcelWeaver.java:688)
+at org.aspectj.weaver.bcel.BcelWeaver.validateBindings(BcelWeaver.java:627)
+at org.aspectj.weaver.bcel.BcelWeaver.rewritePointcuts(BcelWeaver.java:556)
+at org.aspectj.weaver.bcel.BcelWeaver.prepareForWeave(BcelWeaver.java:484)
+at org.aspectj.ajd ... oBuildJob.run(AutoBuildJob.java:235)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Compile error: NullPointerException thrown: null

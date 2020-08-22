@@ -1,0 +1,8 @@
+Bug 145274 __isnull does not work properly when parameters have default value
+steps to reproduce:
+- create a report
+- add a parameter with default value
+- preview report in web viewer
+- modify the url with __null pattern expected behavior:
+- __null takes effect actual behavior:
+- it simply didn't

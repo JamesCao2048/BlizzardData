@@ -1,0 +1,38 @@
+NPE in org.eclipse.swt.program.Program.gnome_getProgram
+Version: 4.2.0  (actually from 4.3-I-builds)
+Build id: I20120725-1800
+The last line of GTK's Program#gnome_getProgram(Display,String) needs to check that "program != null"
+static Program gnome_getProgram(Display display, String mimeType) {
+Program program = null;
+byte[] mimeTypeBuffer = Converter.wcsToMbcs(null, mimeType, true);
+int /*long*/ ptr = GNOME.gnome_vfs_mime_get_default_application(mimeTypeBuffer);
+if (ptr != 0) {
+[...]
+}
+return program.command != null ?
+program : null;
+}
+Unfortunately since JDT's label providers sometimes delegates to Program#findProgram(), this can kill the IDE.
+!ENTRY org.eclipse.jface 4 2 2012-07-30 12:46:24.775
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface".
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.swt.program.Program.gnome_getProgram(Program.java:568)
+at org.eclipse.swt.program.Program.findProgram(Program.java:636)
+at org.eclipse.swt.program.Program.findProgram(Program.java:612)
+at org.eclipse.ui.internal.registry.EditorRegistry.getSystemExternalEditorImageDescriptor(EditorRegistry.java:1272)
+at org.eclipse.ui.internal.registry.EditorRegistry.getImageDescriptor(EditorRegistry.java:1480)
+at org.eclipse.ui.internal.ide.model.WorkbenchFile.getBaseImage(WorkbenchFile.java:63)
+at org.eclipse.ui.internal.ide.model.WorkbenchResource.getImageDescriptor(WorkbenchResource.java:42)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaElementImageProvider.getWorkbenchImageDescriptor(JavaElementImageProvider.java:182)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaElementImageProvider.computeDescriptor(JavaElementImageProvider.java:122)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaElementImageProvider.getImageLabel(JavaElementImageProvider.java:97)
+at org.eclipse.jdt.internal.ui.viewsupport.JavaUILabelProvider.getImage(JavaUILabelProvider.java:144)
+at org.eclipse.jdt.internal.ui.packageview.PackageExplorerLabelProvider.getImage(PackageExplorerLabelProvider.java:140)
+at org.eclipse.jdt.internal.ui.navigator.JavaNavigatorLabelProvider.getImage(JavaNavigatorLabelProvider.java:128)
+at org.eclipse.ui.internal.navigator.NavigatorContentServiceLabelProvider.findImage(NavigatorContentServiceLabelProvider.java:197)
+at org.eclipse.ui.internal.navigator.NavigatorContentServiceLabelProvider.getColumnImage(NavigatorContentServiceLabelProvider.java:105)
+at org.eclipse.ui.internal.navigator.NavigatorContentServiceLabelProvider.getImage(NavigatorContentServiceLabelProvider.java:98)
+at org.eclipse.ui.internal.navigator.NavigatorDecoratingLabelProvider$StyledLabelProviderAdapter.getImage(NavigatorDecoratingLabelProvider.java:60)
+at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.getImage(DelegatingStyledCellLabelProvider.java:184)
+at org.eclipse.jface.viewers.DecoratingStyledCellLabelProvid

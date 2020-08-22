@@ -1,0 +1,8 @@
+Bug 151960 Library element popup menu display is wrong.
+1:Creat a libray, add a table to this libray.
+2:public this library.
+3:Creat a report design.
+4:Open the library explore, drag the table to the layout editor.
+5:Select the table row, copy the selection row.
+6:Select other row, clik the right button of the mouse to popup the menu .
+The result:Paste action and insert copied column action is highlight.

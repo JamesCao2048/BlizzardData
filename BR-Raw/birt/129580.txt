@@ -1,0 +1,7 @@
+Bug 129580 HCG_BIDI: Undesirable order of BiDi chars in Edit Text Item dialog
+This is BiDi specific defect.
+Capital characters refer to BiDi (Hebrew/Arabic) characters.
+1.Create report 2.Add text item from the palette 3.Define it as HTML/Dynamic Text 4.Add
+<CODE> section 5.Type inside some logical expression using BiDi characters.
+if ABC != "OLLEH world" then ABC = "ELLOH" Actual result: if OLLEH" =! ABC world" then ELLOH" = ABC" The order of characters is corrupted.
+The content of comment and variables names is mixed.

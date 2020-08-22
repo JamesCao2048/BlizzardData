@@ -1,0 +1,7 @@
+Bug 166162 Enhance BIRT configuration deployment setting dialog when import BIRT runtime component.[0603]
+Description: Enhance BIRT configuration deployment setting dialog when import BIRT runtime component.
+Build number:2.2.0.v20061129 Steps to reproduce: 1.New a BIRT WTP project.
+2.Select it and import BIRT runtime component.
+Expected result: provide an option to check whether user want to reconfigure web.xml or just keep the original setting untouched.
+Actual result: User has to input the context parameter values in BIRT configuration deployment setting dialog again and confirm that whether they will rewrite the web.xml file.
+Error log:N/A

@@ -1,0 +1,2 @@
+[CCombo] CCombo in form : dropdown scrolling causes parent shell to scroll too
+When scrolling vertically in the drop down, either with the keyboard keys or a click on the scroll bar, if the CCombo is in a form nested in a Shell that also has a vertical scroll bar, the shell scrolls in the sameway the CCombo drop down does.

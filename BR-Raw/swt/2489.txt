@@ -1,0 +1,59 @@
+ExpandBar leaves space for scrollbar when not required
+Run the following example.
+The top item should fill as much space as is available.
+When the shell first opens and when expanding and collapsing the bottom item sometimes there is space left for a scrollbar when none is needed or showing.
+Also, sometimes the top item does not grow when collapsing the bottom item.
+Not sure why.
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final ExpandBar expandBar = new ExpandBar(shell, SWT.NONE);
+expandBar.setSpacing(3);
+
+ExpandItem item =  new ExpandItem(expandBar, SWT.NONE);
+item.setText("Folders");
+item.setExpanded(true);
+Text label = new Text(expandBar, SWT.BORDER);
+label.setText("item 1");
+item.setControl(label);
+
+item = new ExpandItem(expandBar, SWT.NONE);
+item.setText("Search");
+item.setHeight(100);
+item.setExpanded(false);
+label = new Text(expandBar, SWT.BORDER);
+label.setText("item 2");
+item.setControl(label);
+
+Listener listener = new Listener() {
+public void handleEvent(Event e) {
+ExpandItem[] items = expandBar.getItems();
+Rectangle area = expandBar.getClientArea();
+int spacing = expandBar.getSpacing();
+int header0 = 24; //items[0].getHeaderHeight();
+int header1 = 24; //items[1].getHeaderHeight();
+area.height
+-= (items.length + 1)*spacing + header0 + header1;
+boolean expanded1 = items[1].getExpanded();
+if (e.type == SWT.Expand || e.type == SWT.Collapse) {
+ExpandItem item = (ExpandItem)e.item;
+if (item == items[1]) {
+expanded1 = !expanded1;
+}
+}
+if (expanded1) area.height
+-= items[1].getHeight();
+items[0].setHeight(area.height);
+}
+};
+expandBar.addListener(SWT.Resize, listener);
+expandBar.addListener(SWT.Expand, listener);
+expandBar.addListener(SWT.Collapse, listener);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

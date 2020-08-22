@@ -1,0 +1,66 @@
+NPE when using crossrefs option for iajc ant task
+The ant task is shown below.  I ommited the full paths to the values of inpath, outJar, and argfiles, because they are somewhat long (hence the "..." before the file names):
+<iajc
+crossrefs="true" argfiles="...weave-jars.txt" inpath="...org.eclipse.core.runtime_3.2.0.v20060603.jar" outJar="...org.eclipse.core.runtime_3.2.0.v20060603_woven.jar">
+<classpath>
+<pathelement location="C:aspectj1.5libaspectjrt.jar"/>
+<fileset dir="${plugins.dir}">
+<include name="**/*.jar"/>
+</fileset>
+</classpath>
+</iajc>
+My argfile only contains the absolute path of a single .aj file, which contains one aspect.  The aspect is shown below.  It is very basic - advice bodies simply toggle a boolean variable.
+public aspect FFDC {
+public static boolean bit = false;
+protected pointcut ffdcScope(): within(org.eclipse..*);
+protected pointcut excluded():  within(org.eclipse.ffdc.FFDC+)
+|| within(org.eclipse.core.internal.runtime.PlatformActivator);
+
+before(CoreException c): ffdcScope() && !excluded()
+&& handler(CoreException+) && args(c) {
+bit = !bit;
+}
+
+after() throwing(CoreException c): ffdcScope() && !excluded() && !handler(*) {
+bit = !bit;
+}
+
+after(Plugin activator): execution(void PlatformActivator.start(..))
+&& this(activator) {
+bit = !bit;
+}
+}
+This task worked properly before I added "crossrefs=true".  After adding this option, I get the following error:
+weave-C:eclipsesdk-aspect-packageeclipsepluginsorg.eclipse.core.runtime_3.2.0.v20060603.jar:
+[iajc] abort ABORT -- (NullPointerException) null
+[iajc] null
+[iajc] java.lang.NullPointerException
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:313)
+[iajc]     at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:163)
+[iajc]     at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+[iajc]     at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+[iajc]     at org.aspectj.tools.ajc.Main.run(Main.java:367)
+[iajc]     at org.aspectj.tools.ajc.Main.runMain(Main.java:246)
+[iajc]     at org.aspectj.tools.ant.taskdefs.AjcTask.executeInSameVM(AjcTask.java:1282)
+[iajc]     at org.aspectj.tools.ant.taskdefs.AjcTask.execute(AjcTask.java:1080)
+[iajc]     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:275)
+[iajc]     at org.apache.tools.ant.Task.perform(Task.java:364)
+[iajc]     at org.apache.tools.ant.Target.execute(Target.java:341)
+[iajc]     at org.apache.tools.ant.Target.performTasks(Target.java:369)
+[iajc]     at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1216)
+[iajc]     at org.apache.tools.ant.helper.SingleCheckExecutor.executeTargets(SingleCheckExecutor.java:37)
+[iajc]     at org.apache.tools.ant.Project.executeTargets(Project.java:1068)
+[iajc]     at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:382)
+[iajc]     at org.apache.tools.ant.taskdefs.CallTarget.execute(CallTarget.java:107)
+[iajc]     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:275)
+[iajc]     at org.apache.tools.ant.Task.perform(Task.java:364)
+[iajc]     at org.apache.tools.ant.Target.execute(Target.java:341)
+[iajc]     at org.apache.tools.ant.Target.performTasks(Target.java:369)
+[iajc]     at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1216)
+[iajc]     at org.apache.tools.ant.Project.executeTarget(Project.java:1185)
+[iajc]     at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:40)
+[iajc]     at org.apache.tools.ant.Project.executeTargets(Project.java:1068)
+[iajc]     at org.apache.tools.ant.Main.runBuild(Main.java:668)
+[iajc]     at org.apache.tools.ant.Main.startAnt(Main.java:187)
+[iajc]     at org.apache.tools.ant.launch.Launcher.run(Launcher.java:246)
+[iajc]     at org.apache.tools.ant.launch.Launcher.main(Launcher.java:67)

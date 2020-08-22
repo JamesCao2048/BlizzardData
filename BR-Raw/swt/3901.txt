@@ -1,0 +1,40 @@
+GP -Tree removeAll reboot windowsXp
+build 20020924
+ensure you are using common-control 6.0
+- Run the test case.
+- Click in the test button, it will insert 350 items on Tree
+- Click in the test button again, it will call removeAll for the Tree
+- the removeall process is very slow, and eventually it will cause windows to
+reboot.
+Testcase:
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setLayout(new FillLayout());
+
+final Tree tree = new Tree (shell, SWT.BORDER |
+SWT.FULL_SELECTION);
+Button button = new Button (shell, SWT.PUSH);
+button.setText("Test");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+if (tree.getItemCount() == 0) {
+for (int i =0; i< 350; i++) {
+TreeItem item = new TreeItem
+(tree, 0);
+item.setText("Text " + i);
+}
+} else {
+tree.removeAll();
+}
+}
+});
+
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ())
+display.sleep ();
+}
+
+display.dispose ();
+}

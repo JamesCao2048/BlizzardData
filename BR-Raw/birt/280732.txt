@@ -1,0 +1,7 @@
+Bug 280732 The property "createdBy" should be set when the report is created [00]
+Description: The property "createdBy" should be set when the report is created.
+Build number: 2.5.0.v20090616-0630 Steps to reproduce: 1.New a report design check the XML Source.
+2.Add a label and check the XML Source.
+Expected result: The property "createdBy" is set when the report is created and is updated if the value has been changed.
+Actual result: The property "createdBy" is not set until some changes is made.
+Error log: N/A

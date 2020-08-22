@@ -1,0 +1,7 @@
+Tree Shift-Click not working when item collapse changes selection
+Build 2.1-M2
+I noticed in various occasions that shift-clicking would not work (would just
+perform a selection of one item) mostly in the navigator/package view tree
+views.
+Redoing the selection is usually working fine, but it is painfull when this
+behavior cannot be trusted.

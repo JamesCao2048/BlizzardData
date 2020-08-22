@@ -1,0 +1,12 @@
+Program integration with KDE
+The Program class provided with Eclipse/GTK uses GNOME bindings to retrieve
+programs associated with a particular file extension.
+Now, given that:
+* there is no publicly available QT port;
+* many people like me use KDE and don't even have GNOME installed
+
+it would be nice it at least the Program class would be able to inspect and
+use the KDE bindinds when looking for applications, should the current
+environment be KDE.
+I guess this is possible without linking the KDE libraries,
+and by parsing the KDE configuration files instead...

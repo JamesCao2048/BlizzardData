@@ -1,0 +1,66 @@
+[Import/Export] Add 3rd Option for Export to File System
+The servlet spec in the J2EE spec calls for a WEB-INF directory under the
+document root with a classes directory under that.
+I want to export my Java
+classes to this classes directory.
+Currently that is only possible if my
+project in Eclipse just happens to be named "WEB-INF".
+The two options
+currently available for exporting to the file system are:
+"Create directory structure for files"
+or
+"Create only selected directories"
+With the first option, there doesn't seem to be any way to select only
+directories from a top level package and lower.
+If a checkbox for a directory
+corresponding to a package is clicked, the checkboxes for the directories
+about it
+- including the project directory
+- are also filled in with gray
+checkmarks.
+During the export, the project directory is (unwillingly in my
+case) created.
+So what one ends up with when one attempts to export to the
+classes directory is:
+doc-root
+WEB-INF
+classes
+Project_Name
+top-level-package
+sub-package
+sub-package
+class
+class
+I have to manually open the Project_Name folder in the above hierarchy, cut
+the top-level-package, go up a level, paste it where it belongs under classes,
+and then deleted the unwanted Project_Name directory.
+The second option just dumps all the classes into one directory, so unless I
+only use a single package in my project or export the classes separately for
+each package (even more unworkable than the above cut-and-paste), this option
+can't be used.
+This problem is THE single biggest impediment to my efficient use of Eclipse.
+SUGGESTION:
+Add a 3rd option, similar to the first:
+"Create directory structure for files without project directory"
+Or, it could be made even more general:
+"Create directory structure for files with only explicity selected
+directories"
+In the first variant, just the project directory itself is left out, and the
+export is from the top level directory under the project on down.
+This would
+work fine with exports where the target is the WEB-INF/classes directory.
+Nothing in the UI would have to be changed beyond adding the option.
+In the second variant, only directories with *black* checkmarks (and below),
+not gray implicitly marked ones above, are exported to the target directory.
+In the case of Java classes, one could export to target subpackages.
+This
+raises an issue however of how to allow the user to select directories and
+files to be exported.
+Currently, selecting a file implicity selects all the
+directories above it, filling in the checkboxes with gray checkmarks, and
+selecting a directory explicity selects all directories and files below it.
+The user would have to select a directory first, and then unselect the
+directories and files below it that he/she didn't want, which would be
+tedious.
+It would be useful if there were some way to select a given file,
+then mark the directory above it from which level the direct

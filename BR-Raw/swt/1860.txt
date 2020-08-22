@@ -1,0 +1,8 @@
+[Leopard] Progress dialog does not properly close on Leopard
+Build ID: 3.3.1 running on OS X 10.5 Leopard
+Steps To Reproduce:
+1.Create an IRunnableWithProgress
+2.Run using the workbench progress service
+3.Wait for runnable to complete
+More information:
+The progress dialog will not close unless you move the mouse.

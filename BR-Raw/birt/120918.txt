@@ -1,0 +1,6 @@
+Bug 120918 Usability: Tabs above and below Layout Editor are confusing
+In BIRT 2.0 (I'm using M3), the Layout Editor has tabs above and below the editor window to give the developer different views.
+Top: Normal, Master Page, Source Bottom: Layout, Preview, Script What is not clear initially from the UI is that the bottom choices are only available with the "Normal" top choice.
+In addition, the "Source" label is not clear
+-- implication is that this is (programatic) source code.
+The Usability team should look at this to determine what improvements could be made, but a suggestion would be to flatten this into a top set of tabs only: Report Layout, Master Page, Script, XML Report Design, Preview

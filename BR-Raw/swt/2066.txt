@@ -1,0 +1,6 @@
+Revert CTabItem unselected tab separator style for simple tabs
+In M6 we introduced a change to the tab separator (vertical edge) style for both curvy and simple tabs, for the unselected tab case.
+Previously, unselected simple tabs just drew vertical lines for their separators.
+In discussing with Tod, we should revert to the 3.2 style for several reasons:
+1) Those who pick simple tabs typically don't want their UI look to change
+2) PDE uses simple tabs in their editors but because they don't use borders, the vertical separators with slight curve at the end looks like a bug.

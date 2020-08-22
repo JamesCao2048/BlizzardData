@@ -1,0 +1,10 @@
+ImageLoader.save cannot set JPEG compression ratio
+When saving an image to JPEG, there is no way to set the compression ratio.
+And at the same time the default compression seems to be quite high (~20%), and
+images are really not looking good at the default compression rate.
+Could we either:
+- set the compression rate when saving?
+- or at least haev a default compression rate much lower?
+A modest increase in
+size wuold result in a usable file format for image saving.
+Thanks!

@@ -1,0 +1,4 @@
+[Viewers] TableViewer scrolls after selection on AIX
+Eclipse 3.3.2
+If you select a row in a TableViewer, scroll down a page or two, then when you shift-click to select a range of rows the viewer scrolls back to the first row.
+This problem appears specific to AIX.

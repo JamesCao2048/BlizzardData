@@ -1,0 +1,25 @@
+StyledText - selection rendered incorrectly on bidi platforms
+build 20030903
+The attached BidiUtil exposes a bug in the selection rendering code in
+DisplayRenderer.drawLineSelectionBackground
+Steps to reproduce:
+-using the attached BidiUtil type one english character followed by three or
+more Arabic/Hebrew characters
+-place the caret at the beginning of the line
+-select the next two characters, to include one bidi characters.
+->The selection background includes unselected characters.
+When forcing a
+redraw of the entire client area the entire bidi segment is drawn with a
+selection background.
+The problem is that DisplayRenderer.drawLineSelectionBackground
+includes code to redraw the entire selection background and that code does not
+take bidi segments into account (direction runs).
+I don't believe we even need
+to redraw the entire selection background anymore because there is code in
+StyledTextRenderer.drawLine that creates a style range for the selection.
+The
+proper selection background is therefore drawn in
+StyledTextRenderer.drawStyledLine, taking bidi segments and tab stops into
+account.
+drawLineSelectionBackground should only be used to render the special
+line break selection.

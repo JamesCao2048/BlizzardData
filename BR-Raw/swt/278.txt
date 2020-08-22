@@ -1,0 +1,3 @@
+[Browser] passing of JS booleans to java is failing
+A change (bug?) has been introduced in the JavascriptCore component that accompanies WebKitGTK.
+As of WebKitGTK 1.4 the JSValueToBoolean() API now fails to resolve a boolean JSValueRef to 0 or 1, and as a result the Browser is interpreting all passed booleans as true since their values != 0. This is a regression relative to WebKitGTK 1.2, where passed boolean values are being resolved fine.

@@ -1,0 +1,46 @@
+Interactive text selection lags on Linux-GTK+
+The highlighted text selection in the Eclipse editor often lags behind my mouse
+on my P3-733. If I rapidly select some text in the editor, the caret seems to
+follow directly with my mouse movements, while the highlight block trails
+behind.
+Since the caret can keep up, the problem does not seem to be with the
+event propagation or mouse motion hints.
+The responsiveness can be improved by flushing GTK+'s outstanding repaints after
+processing each mouse event.
+StyledText handles mouse move events by calling
+Control.redraw() for each line of text that has changed.
+This uses
+gdk_window_invalidate_rect() to invalidate the region internally in GTK+.
+This
+will not generate an expose event until the GTK+ event loop goes idle.
+The following patch in StyledText.handleMouseMove() improves the situation on my
+machine.
+Note that update() also flushes any expose events from the X server,
+which is not necessary in this case since all of the invalidations are done
+internally using gdk_window_invalidate_rect().
+However, since this operation is
+interactive, I am not sure this really matters.
+Index: Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/StyledText.java
+===================================================================
+RCS file: /home/eclipse/org.eclipse.swt/Eclipse SWT Custom
+Widgets/common/org/eclipse/swt/custom/StyledText.java,v
+retrieving revision 1.235
+diff
+-u
+-r1.235 StyledText.java
+--- Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/StyledText.java
+23 Nov 2004 22:38:23
+-0000      1.235
++++ Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/StyledText.java
+11 Dec 2004 19:26:38
+-0000
+@@
+-5063,6 +5063,7 @@
+}
+event.y
+-= topMargin;
+doMouseLocationChange(event.x, event.y, true);
++       update();
+doAutoScroll(event);
+}
+/**

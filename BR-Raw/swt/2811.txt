@@ -1,0 +1,27 @@
+Table.remove(int) can change selection
+3.1RC1
+- run the snippet below
+- its last two items are initially selected
+- click on the shell, this invokes Table.remove(0)
+- note that "item1" has lost its selection as a result of this
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,300,300);
+final Table table = new Table(shell, SWT.MULTI);
+table.setBounds(10,10,200,200);
+new TableItem(table, SWT.NONE).setText("item 0");
+new TableItem(table, SWT.NONE).setText("item 1");
+new TableItem(table, SWT.NONE).setText("item 2");
+shell.open();
+table.setSelection(new int[] {1,2});
+shell.addListener(SWT.MouseDown, new Listener() {
+public void handleEvent(Event event) {
+table.remove(0);
+}
+});
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

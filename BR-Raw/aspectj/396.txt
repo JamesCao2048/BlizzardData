@@ -1,0 +1,20 @@
+@AJ and formal binding impl
+Some notes on formal binding impl for @AJ
+In code style, the advice signature is always looking the same
+(..bindings.., org.aspectj.lang.Part thisJoinPointStaticPart, JoinPoint
+thisJoinPoint, org.aspectj.lang.Part thisEnclosingJoinPointStaticPart)
+In @ style, it is user defined.
+The current impl is handling the formal binding in a way that only
+args/this/target can be bound.
+I had to add some conditionals to handles cases like that:
+void myAdvice(JoinPoint jp, Object target) {..}
+where target() binding is at index 1, while the index 0 is not an unbound but
+actually "virtually" bound to the joinpoint.
+Pointcut are thus having a virtuallyBoundedNames String[] that is the list of
+arguments for which we don't want any complain if it not bound.
+This one is populated during  @ extraction, and Pointcut.concretize() make sure
+the info is not lost when composition occurs (with PerClause f.e.)
+The only issue is that currently, binding JP/SJP/ESJP themselves is not possible
+f.e. "... && args(jp)" myAdvice(JoinPoint jp, JoinPoint currentJp)
+Is that a big issue ?
+May be impact adviceexecution() and could impact some use cases around mock testing.

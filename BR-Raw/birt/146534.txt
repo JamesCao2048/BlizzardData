@@ -1,0 +1,14 @@
+Bug 146534 ReportEditorInput is not API any more
+Hi all, I've posted this on the newsgroup with no feedback.
+Jason Weathersby advised me to post it here, too.
+I've just updated from 2.1M5 to RC4 and found that ReportEditorInput isn't API any more.
+With the changes to M5 it was moved to package org.eclipse.birt.report.designer.ui.editors.
+This was a good change I think as developers could just inherit and have a java.io.File based implementation of IStorageEditorInput and IPathEditorInput.
+I did so and deleted my own implementation along with my custom implementation of IStorage.
+With RC0 ReportEditorInput is in an internal package again.
+What is the preferred way of dealing with IEditorInput and the BIRT RCP Editor?
+Will a custom implementation of IStorageEditorInput, IPathEditorInput and IStorage do the job (again)?
+I came across some code lines like: if ( input instanceof ReportEditorInput ) but, theses seem to be gone with RC4 as well.
+Maybe a default implementation based on java.io.File (like there was is M5) is a good idea?
+Maybe it's somewhere else now and I can't find it ...
+Best regards Alex

@@ -1,0 +1,5 @@
+GLCanvas renders garbage
+Build I20090521-2000
+If you create a GLCanvas in a view, show that view, then restart Eclipse, garbage will be drawn and the application will be unusable.
+The problem is easy to reproduce with the LWJGL plugins.
+Simple open the LWJGL test view, then restart Eclipse.

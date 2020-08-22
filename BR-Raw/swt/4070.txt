@@ -1,0 +1,14 @@
+Widget in outliner gets wrapped/cropped
+Build 20020602 (F2)
+Linux-GTK
+1.Open the outliner.
+2.Close all editors.
+The tree widget is replaced with a text widget (note: I'm
+not sure about exactly which widgets are used) that says: "An outline is not
+available"
+3.Shrink the outliner such that the text cannot be fit on a single line.
+4.On Win32, the text does not wrap, but instead gets truncated.
+On Linux-GTK,
+the text wraps, but the top and bottom of the letters get cut off.
+It appears
+that the containing widget isn't growing.

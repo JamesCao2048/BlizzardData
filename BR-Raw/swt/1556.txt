@@ -1,0 +1,7 @@
+[Accessibility] Characters typed into Text are not accessible on Tiger
+Run ControlExample, go to Text tab.
+Turn on VoiceOver (Command+F5).
+Type Tab key to give focus to Text.
+Type characters.
+VoiceOver should speak the characters, but it isn't.
+The problem appears to be fixed for Leopard but not for Tiger.

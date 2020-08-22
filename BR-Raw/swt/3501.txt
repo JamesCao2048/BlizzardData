@@ -1,0 +1,9 @@
+unexpected behavior for TableItem.setBackground() when column is not left-aligned
+When a table column is not left-aligned(i.e.
+SWT.CENTER or SWT.RIGHT is used),
+calling TableItem.setBackground() will only set the background color of each
+cell from where the text starts to the end of the cell, not the entire cell.
+
+So when you select a row, instead of the whole row being colored the same
+continuously from left to right, you have all these white spaces on the left of
+each cell.

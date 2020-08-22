@@ -1,0 +1,3 @@
+Use gtk_widget_get_visible instead of GTK_WIDGET_VISIBLE for newer GTK+
+This patch omits use of GTK_WIDGET_VISIBLE for newer GTK+ and uses gtk_widget_get_visible() instead:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gtk_widget_get_visible

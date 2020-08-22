@@ -1,0 +1,6 @@
+Bug 134444 Locale setting lost when change current page with internal bookmark
+Description: Locale setting lost when change current page with internal bookmark Steps to reproduce: 1.Insert two labels 2.Add bookmark in the first label 3.In the second label,set internal bookmark link to the first label, set page-break-before to always.
+4.In preference, set Locale to a different locale.
+5.Preview in Web Viewer, go to the second page and click the link.
+Expected result: Locale setting in webaddress keeps unchanged.
+Actual result: After click the link, Locale setting lost in webaddress.

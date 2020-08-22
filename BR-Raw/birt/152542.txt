@@ -1,0 +1,6 @@
+Bug 152542 Supports user-specified link of an ODA Data Set Parameter to a BIRT Report Parameter
+BIRT 2.1 currently supports a small subset of the ODA parameter metadata (oda.design.ParameterDefinition) specified by a custom ODA designer, by mapping them to a ROM DataSetParam.
+However, although most attributes defined in an oda parameter design are also supported in BIRT report parameter, their values are not carried over to the report parameter.
+Thus BIRT users have to manually repeat the parameter attributes when defining a report parameter.
+This enhancement shall allow users to specify an explicit link from a ROM input Data Set Parameter to a Report Parameter in the Data Set Editor.
+This way, related attributes already specified in an oda parameter can be automatically applied via a ROM oda DataSetParam to its linked report parameter.

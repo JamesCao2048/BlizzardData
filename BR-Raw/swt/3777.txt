@@ -1,0 +1,10 @@
+confirm exit checkbox cannot be selected
+RC2
+- start Eclipse
+- try to shut it down by clicking its Close decoration in the top-right corner
+- a "Confirm Exit" prompter is shown, with a "Don't show this prompter anymore"
+checkbox
+- click the checkbox and note that it can't be checked, so you can only press
+OK or Cancel from here
+- this doesn't happen elsewhere, so there must be something special about
+either this prompter or its invocation from a window-close request

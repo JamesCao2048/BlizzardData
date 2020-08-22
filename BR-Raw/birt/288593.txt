@@ -1,0 +1,2 @@
+Bug 288593 NPE happened after using library and then deleting report project
+Description: NPE happened after using library and then deleting report project Build number: 2.5.1.v20090904-0630 Steps to reproduce: 1, New a report project and show Resource Explorer View 2, New a report design 3, New a library 4, Go to report design outline and use the library 5, Go back to Navigator and delete the project Expected result: Deleting is successful without NPE Actual result: NPE occurred in step5 Error log:

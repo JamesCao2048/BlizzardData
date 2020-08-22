@@ -1,0 +1,36 @@
+Combo should not send ModifyEvent on #select(int) if item unchanged
+Combo should not send a ModifyEvent on #select(int) if the call doesn't change the selected item.
+This causes  bug 377984  on the Mac.
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snip {
+public static void main(String[] args) {
+Display display= new Display();
+Shell shell= new Shell(display);
+shell.setLayout(new GridLayout());
+
+Combo combo= new Combo(shell, SWT.DROP_DOWN | SWT.READ_ONLY);
+combo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
+String[] items= {"a", "b", "c"};
+combo.setItems(items);
+
+combo.addModifyListener(new ModifyListener() {
+public void modifyText(ModifyEvent e) {
+System.out.println(e);
+}
+});
+
+combo.select(1); // sends ModifyEvent (good)
+combo.select(1); // sends ModifyEvent only on Mac (bad)
+shell.setSize(200, 160);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

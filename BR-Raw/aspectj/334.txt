@@ -1,0 +1,41 @@
+illegal change to pointcut declaration
+org.aspectj.weaver.BCException
+at
+org.aspectj.weaver.patterns.ReferencePointcut.concretize1(ReferencePointcut.java:306)
+at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:229)
+at
+org.aspectj.weaver.patterns.ReferencePointcut.concretize1(ReferencePointcut.java:331)
+at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:229)
+at org.aspectj.weaver.patterns.Pointcut.concretize(Pointcut.java:216)
+at org.aspectj.weaver.Advice.concretize(Advice.java:273)
+at org.aspectj.weaver.bcel.BcelAdvice.concretize(BcelAdvice.java:83)
+at
+org.aspectj.weaver.CrosscuttingMembers.addShadowMunger(CrosscuttingMembers.java:84)
+at
+org.aspectj.weaver.CrosscuttingMembers.addShadowMungers(CrosscuttingMembers.java:78)
+at org.aspectj.weaver.ResolvedType.collectCrosscuttingMembers(ResolvedType.java:462)
+at
+org.aspectj.weaver.CrosscuttingMembersSet.addOrReplaceAspect(CrosscuttingMembersSet.java:62)
+at org.aspectj.weaver.bcel.BcelWeaver.prepareForWeave(BcelWeaver.java:426)
+at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompilerAdapter.java:283)
+at
+org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(AjCompilerAdapter.java:178)
+at
+org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning$org_aspectj_ajdt_internal_compiler_CompilerAdapter$2$f9cc9ca0(CompilerAdapter.aj:70)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:367)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:760)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:225)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:151)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:122)
+at
+org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
+BCException thrown: illegal change to pointcut declaration:
+spike.np.CommandCase.handleCommand(BindingTypePattern(spike.np.OtherHandler$MyWorld,
+0))
+when batch building
+BuildConfig[/home/guido/workspace/.metadata/.plugins/org.eclipse.ajdt.core/np.generated.lst]
+#Files=11

@@ -1,0 +1,3 @@
+FontDialog leaks a string
+The result of gtk_font_selection_dialog_get_font_name() is a newly allocated
+string that must be freed.

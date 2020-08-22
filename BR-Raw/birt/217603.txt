@@ -1,0 +1,4 @@
+Bug 217603 Style on table view and chart view should not share in layout [1302]
+Description: Style on table view and chart view should not share in layout [1302] Step: 1.New a table and set font color is red.
+2.Create and switch to chart view.
+Actual result: The font of chart view in layout color is red.

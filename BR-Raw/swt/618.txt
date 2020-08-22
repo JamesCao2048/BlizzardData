@@ -1,0 +1,7 @@
+Internal fixes for StyledText (getWordNext() and getWordPrevious())
+Created  attachment 169391   [details]
+patch
+StyledText has two helping methods to return the next or previous word stop given a offset.
+We need to make sure these methods work fine when the given offset is at or in the middle of line delimiter.
+Although theses cases do not happen in StyledText directly they do happen for accessibility.
+Please test patch in win32/gtk and cocoa if possible.

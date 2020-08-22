@@ -1,0 +1,7 @@
+NPE in org.eclipse.swt.widgets.Menu._setVisible
+Found the following in my log file.
+No steps to reproduce.
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:199)
+at org.eclipse.swt.widgets.Display.runPopups(Display.java:3489)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3071)

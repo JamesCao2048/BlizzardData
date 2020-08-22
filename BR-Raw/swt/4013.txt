@@ -1,0 +1,16 @@
+StyledText - mixing text width/caret position is confusing
+build 20020321
+The concept of caret position and text width used to be interchangeable.
+We
+always measure text from the beginning of the line to a character offset in the
+line which normally is the same as the caret position.
+This changed when we added support for margins in SINGLE mode.
+When a left
+margin is set, the caret positition == text width + leftMargin.
+We should make this difference and the concept of caret position == text width
+clearer in the doc.
+This is especially confusing since we introduced
+StyledTextBidi.getCaretPosition which is called in bidiTextWidth and is also
+used for caret position *and* text width.
+We may want to rename getCaretPosition and the textWidth methods so that they
+suggest neither caret position nor text width (getTextPosition ?).

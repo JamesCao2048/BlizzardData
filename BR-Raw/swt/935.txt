@@ -1,0 +1,16 @@
+NPE in Shell.WM_ENTERIDLE
+Sometimes, our users report the following NPE:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Shell.WM_ENTERIDLE(Unknown Source)
+at org.eclipse.swt.widgets.Control.windowProc(Unknown Source)
+at org.eclipse.swt.widgets.Canvas.windowProc(Unknown Source)
+at org.eclipse.swt.widgets.Decorations.windowProc(Unknown Source)
+at org.eclipse.swt.widgets.Shell.windowProc(Unknown Source)
+at org.eclipse.swt.widgets.Display.windowProc(Unknown Source)
+at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+at org.eclipse.swt.widgets.Menu._setVisible(Unknown Source)
+at org.eclipse.swt.widgets.Display.runPopups(Unknown Source)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+[no more swt in stack trace below this line]
+I have looked at the code and no idea how this can happen.
+It looks like 'display' was null.

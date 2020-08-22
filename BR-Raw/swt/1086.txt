@@ -1,0 +1,6 @@
+[CTabFolder] CTabItem.drawClose could preserve color
+CTabItem.drawClose creates and disposes of a color.
+Since this happens on each paint, it would be better to cache.
+at org.eclipse.swt.custom.CTabItem.drawClose(CTabItem.java:197)
+at org.eclipse.swt.custom.CTabItem.drawSelected(CTabItem.java:423)
+at org.eclipse.swt.custom.CTabItem.onPaint(CTabItem.java:790)

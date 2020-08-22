@@ -1,0 +1,9 @@
+Bug 172606 Error icon in Library Explorer for multi-extends item.[01]
+Description: Error icon in Library Explorer for multi-extends item.
+Build number:2.1.2.v20070202 Steps to reproduce: 1.New a.rptlibrary and b.rptlibrary.
+2.New a table in a.rptlibray.
+3.Open b.rptlibray and extends table item in a.rptlibray.
+4.Open Library Explore, check table item inside b.rptlibrary.
+Expected result: Normal item icon before table item.
+Actual result: Error icon indicate the item exists errors.
+see attached.

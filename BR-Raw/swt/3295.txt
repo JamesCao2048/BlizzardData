@@ -1,0 +1,31 @@
+Setting font back to its default value in a table tree widget causes an illegalArgumentException
+RC2, linux, motif.
+Custom widget example.
+Open the table tree tab.
+Change the font, then change the default.
+You will get the following exception.
+Exception in thread "main" java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:2677)
+at org.eclipse.swt.SWT.error(SWT.java:2616)
+at org.eclipse.swt.SWT.error(SWT.java:2587)
+at org.eclipse.swt.graphics.GC.setFont(GC.java:2504)
+at org.eclipse.swt.widgets.TableItem.drawText(TableItem.java:258)
+at org.eclipse.swt.widgets.TableItem.paint(TableItem.java:1124)
+at org.eclipse.swt.widgets.Table.paintSubItem(Table.java:1936)
+at org.eclipse.swt.widgets.Table.paintItems(Table.java:1903)
+at org.eclipse.swt.widgets.Table.paint(Table.java:1834)
+at org.eclipse.swt.widgets.Table.handleEvents(Table.java:1437)
+at
+org.eclipse.swt.widgets.SelectableItemWidget$2.handleEvent(SelectableItemWidget.java:1199)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java(Compiled Code))
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:731)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:752)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:738)
+at org.eclipse.swt.widgets.Control.XExposure(Control.java:2963)
+at org.eclipse.swt.widgets.Composite.XExposure(Composite.java:865)
+at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:906)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3478)
+at org.eclipse.swt.internal.motif.OS.XtDispatchEvent(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2640)
+at
+org.eclipse.swt.examples.controlexample.CustomControlExample.main(CustomControlExample.java:55)

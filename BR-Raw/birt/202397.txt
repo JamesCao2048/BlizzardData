@@ -1,0 +1,6 @@
+Bug 202397 After preview in layout. The dataset and datasource can not be copied in data explorer[07]
+Description: After preview in layout.
+The dataset and datasource can not be copied in data explorer, only can copied but can not pasted.
+I think the focus must be lost.
+Build number: 2.2.1.v20070906-0630 Steps to reproduce: 1, New a datasource and dataset 2, Drag some thing into layout and preview in layout 3, Go back to layout and select the dataset or datasource in data explorer 4, Right click and copy the dataset or datasource 5, Right click try to paste the dataset or datasource Expected result: The dataset and datasource can be copy and paste Actual result: After select copy, the paste is gray.
+Error log:

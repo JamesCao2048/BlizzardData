@@ -1,0 +1,7 @@
+Bug 266075 Exception is thrown out when click "Cancel" during Import Chart runtime component [0603]
+Description: Exception is thrown out when click "Cancel" during Import Chart runtime component.
+Build number: 2.5.0.v20090225-0630 Steps to reproduce: 1.New a BIRT Chart Web Project.
+2.Select BIRT Intelligence and Reporting Tools->"Import Chart runtime component...".
+3.Click "Cancel".
+Expected result: No exception.
+Actual result: Exception is thrown out.

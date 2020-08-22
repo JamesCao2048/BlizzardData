@@ -1,0 +1,8 @@
+No mouse up when tree expansion indicator selected
+The Macintosh eats the up in this case, probably internally calling
+TrackMouseLocation() somewhere in the DataBrowser code.
+This manifests itself in Eclipse as 'single click ignored'.
+You expand a
+bunch of tree nodes and then single click on an item, it selects and nothing
+happens.
+Then you click again on the item and the selection action happens.

@@ -1,0 +1,11 @@
+Bug 256850 The note failed to appear if the extended report is applied a style in the report design.
+description: The note failed to appear if the extended report is applied a style in the report design.
+build id: 2.3.2 v20081127-0730 steps to reproduce: 1.New a library.
+Insert a label.
+New a style with font color as red.
+Apply the style to the label.
+2.New a report, use the label from the library.
+New a style with font color as yellow.
+Apply the style to the label.
+Expected result: The label's font color changes to yellow and in General tab of properties editor, a note will appear that the item is modified in report design.
+Actual result: The label's font color changes to yellow but the note does not appear.

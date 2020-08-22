@@ -1,0 +1,6 @@
+[Browser] Browser leaks due to COM objects
+Build ID: I20070601-1539
+Steps To Reproduce:
+While analyzing memory dumps from an RCP application I noticed there were 321 instances of WebSite retained in memory.
+The WebSites are retained due to org.eclipse.swt.internal.ole.win32.COMObject#ObjectMap.
+I was able to recreate a standalone testcase that shows this happens when a browser's setText method is called and doesn't happen when the method isn't called.

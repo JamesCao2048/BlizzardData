@@ -1,0 +1,10 @@
+Path.getPathData() returns points as integers and not floats
+Build Identifier: 20100917-0705
+Path.getPathData() effectively returns an array of points that are all integers.
+This seems strange, since it accepted a list of points specified as floats.
+The problem is that the list in will not match the list out 鈥撀爏o when using Draw2D ScaledGraphics to make a larger path, it applies a transform based on the scaling factor and the list and type of points provided by PathData.
+The problem is most evident in xy graphs (charts) where a continuous function draws a smooth curve on the screen but a jagged one on any other device, since it's losing precision in its coordinates.
+The solution is simple in theory.
+'Fix' getPathData() to return a list of floats (or modify PathData or Path to provide an alternate access to a float-based list of plot points.
+I can think of no workaround.
+Reproducible: Always

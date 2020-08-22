@@ -1,0 +1,30 @@
+Regression: Line dash style is ignored
+SWT-win32, v3305
+When drawing, the line dash style is ignored.
+See test case and screenshot.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class DrawingTest2 {
+public static void main(String[] args) {
+final Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event e) {
+e.gc.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
+e.gc.setLineDash(new int[] {5, 5});
+e.gc.drawRectangle(10, 10, 50, 50);
+}
+});
+
+shell.setSize(200, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

@@ -1,0 +1,18 @@
+Bug 119127 Accessing data: UTF-8 BOM encoded text file causes problems
+Create a simple flat file to use as a data source.
+Save it as UTF-8 using Notepad in Windows.
+Try to use it as a flat file data souce: 1.Create a new XML data source: This can be successfully created and a new data source appears in the project data sources.
+2.Create a new XML: Click New Data Set on context menu.
+3.Define new XML data set.
+Select XML data source.
+Choose Next.
+4.Select the sample.xml file.
+Choose Next.
+5.Choose XPath Expression.
+You cannot continue.
+There are no options available in the XML structure portion of the screen.
+Clicking Next does nothing.
+User cannot advance.
+Evaluation from Lin Zhu: The sample xml file is of UTF-8 BOM format rather than the standard UTF-8 format.
+If we simply save that xml file to standard UTF-8 format then everything is all right.
+Although Xecers claims that it supports UTF-8 BOM encoding, when we pass a file encoded with UTF-8 BOM it will throw a SaxParserException which reads " Content is not allowed in prolog", and this is usually caused by error encoding information.

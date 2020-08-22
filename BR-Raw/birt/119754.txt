@@ -1,0 +1,5 @@
+Bug 119754 ClassCastException when trying to change the mouse over activity on the legend item
+I want to highlight a series when hovering over the legend item.
+I accomplish this by doing the following on the chart model: chart.getLegend().getTriggers( ) .add( TriggerImpl.create( TriggerCondition.ONMOUSEOVER_LITERAL, ActionImpl.create( ActionType.HIGHLIGHT_LITERAL, SeriesValueImpl.create( "not-used" ) ) ) ); However I get the following exception for the SWT and Swing renderers.
+I suspect that both renderers are expecting tool tip action.
+java.lang.ClassCastException at org.eclipse.birt.chart.device.swt.SwtEventHandler.showTooltip(SwtEventHandler.java:701) at org.eclipse.birt.chart.device.swt.SwtEventHandler.mouseMove(SwtEventHandler.java:621) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:145) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:843) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3080) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2713)

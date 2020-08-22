@@ -1,0 +1,6 @@
+Bug 160804 org.eclipse.birt.report.model compiles error in daily build 20061013
+org.eclipse.birt.report.model compiles error in daily build 20061013.The error msg is below: compileSource: [javac] Compiling 69 source files to E:5pluginsorg.eclipse.birt.report.modelbin [javac] E:5pluginsorg.eclipse.birt.report.modelsrcorgeclipsebirtreportmodelparserOdaDataSourceState.java:175: cannot access org.eclipse.core.runtime.IExtension [javac] file orgeclipsecoreruntimeIExtension.class not found [javac] ExtensionManifest extension = ManifestExplorer.getInstance( ) [javac] ^ [javac] Note: Some input files use or override a deprecated API.
+[javac] Note: Recompile with
+-deprecation for details.
+[javac] 1 error [forEach] Execution error on task: [ant] message: E:DailyBuildprepareDailyBuilddailybuildscriptDailyBuild.xml:1268: The following error occurred while executing this line: [forEach] E:5pluginsorg.eclipse.birt.report.modelBuildModel.xml:409: Compile failed; see the compiler error output for details.
+[forEach] Project failed on itself: [forEach] Continue execution.

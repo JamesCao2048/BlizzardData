@@ -1,0 +1,23 @@
+[Browser] SWTException when resizing CTab containing Browser
+Hi,
+I am getting feedback from RSSOwl users on Mac that see a "SWTException: Widget
+is disposed" when a CTabItem laying in a CTabFolder is resized.
+I tracked this
+problem down to line 192 in Browser.java.
+Whenever the Event SWT.RESIZE is
+triggered, a call to "isVisible()" is made.
+In there the normal checkWidget()
+call results in the Exception.
+On any other OS, no exception is thrown.
+The interesting part is, that I am not disposing the browser unless the
+CTabItem was closed.
+But this exception occurs (sometimes, not in every case)
+when a Browser Tab is visible and resized.
+It's even sufficient to resize the
+entire application (since that fires SWT.RESIZE to the Browser too).
+Is this a known issue?
+I think it will be difficult for me to post a code
+snippet, since I am not really knowing what this is about.
+I am going to ask my
+users for more details.
+Ben

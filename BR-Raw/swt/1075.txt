@@ -1,0 +1,6 @@
+findProgram("a.null and void") returns Text Edit instead of null
+Test case:
+Program prg = Program.findProgram("a.null and void");
+On other platforms prg will be null.
+UI test suite relies on this behavior.
+On cocoa tests are failing because Text Edit is being opened up in front of the workbench and screwing up window activation.

@@ -1,0 +1,9 @@
+Bug 255837 Group sorting inconsistent when a sort condition is ascending
+When all sort conditions are descending, I do not see any inconsistencies.
+I have attached an example report using the Classic Models database.
+Note the inconsistencies of the ascending sort conditions.
+Different combinations yield different results.
+In the first table, note that the MINQUANTITYORDERED sort seems to have no effect at all.
+If you swap the order of the sort conditions, it seems to have the reverse effect.
+In the second table, note that the group is sorted by FIRSTNAME descending, regardless of the position of the sort conditions.
+This is flagged as major because complex, dynamic sorting on a group is a requirement for our product release.

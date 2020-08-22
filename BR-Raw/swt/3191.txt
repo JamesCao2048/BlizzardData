@@ -1,0 +1,28 @@
+snippet 2
+I noticed that if I wanted to replace the static creation of the table items
+and create it dynamically with a "for" loop, that a "widget disposed" type
+exception is thrown from line "items[i].dispose();" at line 541 of snippet 2
+located under "inserting a row in a table" if clicking the second column to
+perform a sort.
+I am wondering if there is a reference issue in the Table.
+If you replace the static creation of the TableItems with the dynamic creation
+used in a "for" loop you will see that the exception is thrown.
+Replace:
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"a", "6"});
+item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"d", "1"});
+item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"a", "5"});
+item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"a", "4"});
+item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"b", "3"});
+item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"c", "2"});
+with:
+for(int k = 12; k > 0; k--) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] {"a", String.valueOf(k)});
+}
+then click on column 2 to sort the numbers.

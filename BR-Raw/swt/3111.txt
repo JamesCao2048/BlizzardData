@@ -1,0 +1,26 @@
+[JUNIT] Failure in post KeyDown test on Display
+eclipse.buildId=I20041214-2000
+test_postLorg_eclipse_swt_widgets_Event(org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Display)
+junit.framework.AssertionFailedError
+at junit.framework.Assert.fail(Assert.java:47)
+at junit.framework.Assert.assertTrue(Assert.java:20)
+at junit.framework.Assert.assertTrue(Assert.java:27)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Display.test_postLorg_eclipse_swt_widgets_Event(Test_org_eclipse_swt_widgets_Display.java:724)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Display.runTest(Test_org_eclipse_swt_widgets_Display.java:1174)
+at junit.framework.TestCase.runBare(TestCase.java:127)
+at junit.framework.TestResult$1.protect(TestResult.java:106)
+at junit.framework.TestResult.runProtected(TestResult.java:124)
+at junit.framework.TestResult.run(TestResult.java:109)
+at junit.framework.TestCase.run(TestCase.java:118)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:468)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:343)
+at
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:195)

@@ -1,0 +1,4 @@
+CTabFolderRenderer created too many times
+The default CTabFolderRenderer can be created too many times when calling CTabFolder.setRenderer(null)
+- which is valid.
+We need to have some way to know that we are using the default renderer already and not recreate it every time setRenderer gets called.

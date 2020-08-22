@@ -1,0 +1,14 @@
+[CCombo] Incorrect CCombo behaviour (list gets stuck)
+integration build 0409, Motif only
+- File
+-> New
+-> Other
+- Plugin development
+-> Feature Project, Next
+- continue through the wizard to create the Feature project, Finish
+- a feature editor is automatically opened
+- go to the Information page
+- click the drop-down arrow on the Section combo, and it's dropped down
+- click this drop-down arrow again, and focus leaves but then re-enters the
+combo.
+Its list is not retracted.

@@ -1,0 +1,3 @@
+Bug 229649 BirtViewerReportService.getParameterDefinitionTask() does not have appcontext pushed
+Can we make a change so the viewer to allow the BirtViewerReportService.getParameterDefinitionTask() to push the appcontext prior to setting it?
+The reason is that the appcontext may have information that is required for the oda layer when a parameter is tied to a dataset HttpServletRequest request = (HttpServletRequest) options .getOption( InputOptions.OPT_REQUEST ); HashMap context = new HashMap( ); context.put( EngineConstants.APPCONTEXT_BIRT_VIEWER_HTTPSERVET_REQUEST, request ); ParameterAccessor.pushAppContext( context, request ); // ADD THIS LINE task.setAppContext( context );

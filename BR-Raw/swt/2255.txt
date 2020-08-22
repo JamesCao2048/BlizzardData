@@ -1,0 +1,29 @@
+List: preferred width incorrect after items are removed
+If a win32/x86 List widget uses the SWT.H_SCROLL style, its horizontal scroll width is not recomputed when items are removed.
+This causes two problems:
+1. computeSize(SWT.DEFAULT,SWT.DEFAULT,true) may return a width that is too big.
+
+2. The list continues to display a horizontal scrollbar even when it is no longer necessary.
+The problem appears to be in List.setScrollWidth(int, boolean) :
+void setScrollWidth (int newWidth, boolean grow) {
+int width = OS.SendMessage (handle, OS.LB_GETHORIZONTALEXTENT, 0, 0);
+if (grow) {
+if (newWidth
+<= width) return;
+OS.SendMessage (handle, OS.LB_SETHORIZONTALEXTENT, newWidth + 3, 0);
+} else {
+if (newWidth
+< width) return;
+setScrollWidth ();
+}
+}
+This method compares the current horizontal extent to the maximum width of the items being added (grow=true) or removed (grow=false).
+If necessary it updates the horizontal extent (recalculating it from scratch when grow="false").
+The problem is that the horizontal extent is always set to the maximum item width __plus 3 pixels__.
+Therefore, the current horizontal extent will _always_ be greater than the width of any of its items.
+In the case of removals, this means that the line:
+if (newWidth
+< width) return;
+is always true and the line:
+setScrollWidth ();
+is never executed.

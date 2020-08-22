@@ -1,0 +1,2 @@
+Bug 121166 in the second time use of scripted data set, the result is null
+1: Create a scripted data source 2: Create a scripted data set 3: Drag this data set to report design to create a table 4: Do step 4 again to create the second table 5: Preview report, the first table has result but the second table is null Expected: 5: the first table and the second table have the same result

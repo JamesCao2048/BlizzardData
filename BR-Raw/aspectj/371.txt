@@ -1,0 +1,27 @@
+no "matches declare" entry in structure model for single declare warning statement
+A project containing one class and one aspect:
+-----------------------------------------------------
+package pack;
+public class C {
+public static void main(String[] args) {
+new C().sayHello();
+}
+
+public void sayHello() {
+System.out.println("HELLO");
+}
+}
+----------------------------------------------------
+package pack;
+public aspect A {
+
+declare warning :
+execution(* C.sayHello(..)) :
+"blah blah";
+
+}
+-----------------------------------------------------
+has the "matched by" entry for A.aj, but doesn't have the "matches declare"
+entry for C.java.
+This means that in AJDT, C.sayHello isn't added to our map and consequently we
+don't get any relationships showing in the Cross Reference view for A.aj.

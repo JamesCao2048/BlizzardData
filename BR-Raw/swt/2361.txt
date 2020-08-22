@@ -1,0 +1,5 @@
+3.2M6 OS X Label right justify jammed up on the right
+SWT/OS X Label right justify jams the text right up on the right edge of the label versus some space when left justified.
+Works fine on Windows.
+Work around is to use CLabel, which handles this correctly
+But awkward that a widget as basic as a Label cannot right justify correctly when run on OS X.

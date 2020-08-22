@@ -1,0 +1,46 @@
+FocusIn and FocusOut events are processed with different cases in Shell.
+Since about org.eclipse.swt 3.3.0.v3339, a filter for x focus change event (FocusIn and FocusOut event)is added in org.eclipse.swt.widget.Shell.
+When the focus event meets some conditions, shell will set some fileds and send SWT event.
+But the conditions to process FocusIn event and FocusOut event are not the same.
+For FocusOut event, when its detail is one of OS.NotifyNonlinear, OS.NotifyNonlinearVirtual and OS.NotifyVirtual, above actions will be done.
+But for FocusIn event, just when its detail is either OS.NotifyNonlinear or OS.NotifyVirtual, the corresponding actions will be done.
+Where is OS.NotifyNonlinearVirtual case?
+It impacts general focus events.
+Following is the source code of filterProc:
+int /*long*/ filterProc (int /*long*/ xEvent, int /*long*/ gdkEvent, int /*long*/ data2) {
+int eventType = OS.X_EVENT_TYPE (xEvent);
+if (eventType != OS.FocusOut && eventType != OS.FocusIn) return 0;
+XFocusChangeEvent xFocusEvent = new XFocusChangeEvent();
+OS.memmove (xFocusEvent, xEvent, XFocusChangeEvent.sizeof);
+switch (eventType) {
+case OS.FocusIn:
+if (xFocusEvent.mode == OS.NotifyNormal || xFocusEvent.mode == OS.NotifyWhileGrabbed) {
+if (xFocusEvent.detail == OS.NotifyNonlinear || xFocusEvent.detail == OS.NotifyAncestor) {//=====where is OS.NotifyNonlinearVirtual?
+if (tooltipsHandle != 0) OS.gtk_tooltips_enable (tooltipsHandle);
+display.activeShell = this;
+display.activePending = false;
+sendEvent (SWT.Activate);
+}
+}
+break;
+case OS.FocusOut:
+if (xFocusEvent.mode == OS.NotifyNormal || xFocusEvent.mode == OS.NotifyWhileGrabbed) {
+switch (xFocusEvent.detail) {
+case OS.NotifyNonlinear:
+case OS.NotifyNonlinearVirtual:
+case OS.NotifyVirtual:
+if (tooltipsHandle != 0) OS.gtk_tooltips_disable (tooltipsHandle);
+Display display = this.display;
+sendEvent (SWT.Deactivate);
+setActiveControl (null);
+if (display.activeShell == this) {
+display.activeShell = null;
+display.activePending = false;
+}
+break;
+}
+}
+break;
+}
+return 0;
+}

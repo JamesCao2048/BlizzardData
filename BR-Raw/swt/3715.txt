@@ -1,0 +1,7 @@
+new GC(this) produces a GC that does nothing
+Creating a graphic context by calling new GC(this) in a custom Composite widget
+does not work on Mac OS: Drawing on the newly create GC shows no effect.
+(At
+least drawing lines does not work, I have not tried much more).
+My code works fine on Win32 and Linux.
+The bug appeared in 2.1 M4

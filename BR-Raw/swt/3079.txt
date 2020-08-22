@@ -1,0 +1,61 @@
+Table.pack() extends last column to include scroll bar
+The following code causes a shell to grow without bounds.
+The problem is that
+Windows expands the last column to include the scroll bar when Column.pack()
+is called.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
+public class EclipseCorner4 {
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Table Column Pack");
+GridLayout vertical = new GridLayout();
+vertical.numColumns = 1;
+shell.setLayout(vertical);
+final Table table = new Table(shell, SWT.SINGLE);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+final TableColumn col1 = new TableColumn(table, SWT.CENTER);
+col1.setText("Column 1");
+final TableColumn col2 = new TableColumn(table, SWT.CENTER);
+col2.setText("Column 2");
+col1.pack();
+col2.pack();
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Fill Data");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent event) {
+// table.layout(true);
+table.setRedraw(false);
+table.removeAll();
+String[] data1 = { "1", "2" };
+String[] data2 = { "3", "4" };
+TableItem item1 = new TableItem(table,
+SWT.NONE);
+item1.setText(data1);
+TableItem item2 = new TableItem(table,
+SWT.NONE);
+item2.setText(data2);
+col1.pack();
+col2.pack();
+shell.pack();
+table.setRedraw(true);
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

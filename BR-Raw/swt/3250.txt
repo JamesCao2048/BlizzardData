@@ -1,0 +1,6 @@
+Setting a ToolItem's control to a Button doesn't work in Linux GTK
+In a ToolBar, setting a ToolItem's control to a Button doesn't work in Linux
+GTK.
+I was under the impression that it should work, since it worked in
+Windows and adding other SWT controls such as Text worked.
+A workaround was to add the button to a Composite first.

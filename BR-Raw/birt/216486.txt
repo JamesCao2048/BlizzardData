@@ -1,0 +1,7 @@
+Bug 216486 Expand support for style attributes
+Given that BIRT Report content is increasingly integrated into corporate web sites with corporate styles being applied to report content, it is important to consider expanding the support for style attributes in CSS.
+This project looks at providing support for more style attributes.
+- One noticable attribute missing is styles for links.
+Since drill-down links are quite important, there should be a way to control the style of these links.
+This should also include the CSS psudeo classes such as ":hover" or ":visited".
+- More advanced css features, like style id's (using the #), matching styles (using the >), siblings (using the +), psuedo classes (:visited, :hover, etc), element styles (styles linked to html elements) and other cascading features

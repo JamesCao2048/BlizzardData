@@ -1,0 +1,13 @@
+Unable to select any window when JFace warning dialog and file browse dialog are both open
+Build Identifier: 3.4.2.M20090107-0800
+If you open the preference page, then from there click on a Browse button to open a file browser dialog, then trigger some event that causes an org.eclipse.jface.dialogs.MessageDialog.openWarning() call to happen, you end up with a warning dialog under the file browser, and neither one can actually be clicked on, thus causing a locking situation.
+The user must force quit the application.
+There does not seem to be an appropriate SWT style that will allow a dialog like this to be on top of a File Browser or similar system level dialog (such as the Font picker).
+Reproducible: Always
+Steps to Reproduce:
+1.Go to a preference page that has a Browse...
+button on it.
+Click it to open a file browser dialog
+2.With that dialog open, call org.eclipse.jface.dialogs.MessageDialog.openWarning()
+3.Two windows are open, neither one can be dismissed.
+Must force quit the application.

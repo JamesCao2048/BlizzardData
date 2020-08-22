@@ -1,0 +1,50 @@
+Selected item lost in Tree
+Run the following test case
+Scroll down so that top of tree isn't visible.
+Select an item, expand it, then collapse it again and you'll be taken back to the top of the tree.
+The selection is still correct, the selected item is just not visible anymore.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.TreeEvent;
+import org.eclipse.swt.events.TreeListener;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeItem;
+public class TreeTest {
+Tree tree;
+public static void main(String[] args) {
+new TreeTest().test();
+}
+public void test() {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+tree = new Tree(shell, SWT.VIRTUAL | SWT.BORDER);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TreeItem widget = (TreeItem) event.item;
+TreeItem parentItem = widget.getParentItem();
+int index =
+-1;
+if (parentItem == null)
+index = tree.indexOf(widget);
+else
+index = parentItem.indexOf(widget);
+widget.setText(""+index);
+widget.setItemCount(10);
+}
+});
+
+tree.setItemCount(300);
+shell.setSize(300, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

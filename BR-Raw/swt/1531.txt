@@ -1,0 +1,7 @@
+Canvas#getCaret() should tell that caret can be null
+I20080530-1730
+Canvas#getCaret() should tell that the caret can be null.
+This snippet produces an NPE:
+Display display = new Display();
+Shell shell = new Shell(display);
+Point size= shell.getCaret().getSize();

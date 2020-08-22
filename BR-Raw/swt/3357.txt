@@ -1,0 +1,10 @@
+junit tests need to use the eclipse launcher
+The eclipse junit tests currently start eclipse from the java executable
+directly.
+They should be started through the eclipse launcher directly.
+Note that the Eclipse launcher does a few extra things like:
+- set up the LD_LIBRARY_PATH/MOZILLA_FIVE_HOME variables for the SWT Browser
+widget as documented in SWT FAQ.
+Junit tests for SWT fail as a result on Linux
+GTK.
+SWT junit tests for GTK now disabled until PR closed.

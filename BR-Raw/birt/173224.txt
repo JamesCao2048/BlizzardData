@@ -1,0 +1,5 @@
+Bug 173224 [regression] preview attached report caused data exception
+steps to reproduce:
+- preview attached report within deployed birt report viewer expected behavior:
+- report is rendered properly actual behavior:
+- exception thrown in console, although report was rendered

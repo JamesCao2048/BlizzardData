@@ -1,0 +1,33 @@
+In GTK, setBackgroundImage and setBackgroundMode failed when children setForeground
+gtk version: 2.4.9
+I want a label with colored foreground and a background image that inherit from its parent, but failed.
+public class TestLabelBackground
+{
+public static void main(String[] args)
+{
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBackgroundImage(new Image(null, TestLabelBackground.class
+.getResourceAsStream("b.gif")));
+shell.setBackgroundMode(SWT.INHERIT_DEFAULT);
+shell.setLayout(new GridLayout());
+Label label = new Label(shell,SWT.NONE);
+// this disables background inherit
+label.setForeground(new Color(null, 255,220, 200));
+label.setText("asdfasdgasdfa");
+shell.setSize(300,200);
+shell.open();
+while(!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+{
+display.sleep();
+}
+}
+display.dispose();
+}
+}
+It seems if parent's backgroundImage and mode are set after label's setForeground, things will be ok.
+But this approach is unreliable when UI is complex, i.e.
+in some cases, a control inherit an image not from it's own parent.
+In windows, setBackgroundImage and setBackgroundMode work fine when children setForeground.

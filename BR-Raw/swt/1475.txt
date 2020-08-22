@@ -1,0 +1,10 @@
+Problems with read-only text boxes on Linux
+I have some UI in the WTP project where I am attempting to follow the Eclipse accessibility guidelines by turning free-standing labels into border-less read-only text boxes so that screen readers can get at them.
+The text boxes are located in a tab panel.
+This works fine on WinXP and Vista.
+The text box background is truly transparent.
+On WinXP the gradient on the tab panel comes through correctly.
+However, on Linux the text box background is white while tab panel is gray.
+I tried setting the text box background explicitly to SWT.COLOR_WIDGET_BACKGROUND, which makes the UI render correctly on Linux (at least in my setup), but of course breaks WinXP.
+Is this a bug in SWT Linux implementation?
+If not, is my only option to include OS-specific code branches in my UI code?

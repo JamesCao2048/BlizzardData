@@ -1,0 +1,38 @@
+Images on MenuBar are not lining up with thier Hotstop
+the hostspot is next to the 2nd menu item, and the image is on the right hand
+side.
+also need this to work on the Pocket PC.
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+public class ImageMenuBar
+{
+public static void main(String[] args)
+{
+Display display = new Display();
+Shell shell = new Shell(display, SWT.APPLICATION_MODAL |
+SWT.CLOSE);
+
+Image image = new Image(display, 10, 10);
+GC gc = new GC(image);
+gc.setBackground(display.getSystemColor(SWT.COLOR_BLUE));
+gc.fillPolygon(new int[] { 1, 1, 15, 1, 15, 15 });
+gc.dispose();
+
+Menu menu = new Menu(shell, SWT.BAR);
+MenuItem m1 = new MenuItem(menu, SWT.CASCADE);
+m1.setText("menu1");
+MenuItem m2 = new MenuItem(menu, SWT.CASCADE);
+m2.setText("menu2");
+MenuItem m3 = new MenuItem(menu, SWT.CASCADE);
+m3.setImage(image);
+shell.setMenuBar(menu);
+shell.open();
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+display.sleep();
+}
+System.exit(0);
+}
+}

@@ -1,0 +1,9 @@
+Bug 298628 Improve UI usability of the "Externalize to Connection Profile" Option
+In BIRT Data Explorer, select "Externalize to Connection Profile..." option in the context menu of a data source design that has referenced an external connection profile.
+The ExportDataSourceDialog opens.
+Press Ok.
+An error message is displayed saying that the data source has already externalized its properties.
+For better UI usability, the "Externalize to Connection Profile..." menu option should ideally be disabled when a data source is already externalized.
+But doing such validation could impact performance.
+Alternatively, the ExportDataSourceDialog should have made the validation on open, and disabled its Ok button with an appropriate message in the dialog.
+Note: the validation (on whether a data source has already externalized to profile) can be made by calling oda.design.DataSourceDesign#hasLinkToProfile().

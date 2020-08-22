@@ -1,0 +1,13 @@
+Bug 195873 Radio buttons in BIRT 2.1.2 reports do not display correctly in BIRT 2.2.0
+Build ID: I20070625-1500 Steps To Reproduce: Steps To Reproduce: 1.Create a simple report in BIRT 2.1.2 defining a radio button with 3 selections.
+Each selection should have a different value and display information.
+In my testcase, I used pie with display text "pie chart", bar with display text "bar chart" and line with display text "line chart" 2.Add an output dynamic text line to display the parameter selected with the radio button.
+(Attached report design provides a simple report implementing steps 1 & 2).
+3.Preview the report in BIRT 2.1.2.It should correctly show the radio buttons with the correct values and display the correct paramter selected on the report.
+4.Copy the rptdesign file into a BIRT 2.2.0 project.
+Preview the report in BIRT 2.2.0.It incorrectly shows the radio button selections as pie, pie and pie.
+If you select the second radio button the paramter selected will show on the report as "bar".
+More information: The problem seems to be introduced in BIRT 2.2.0 with the addition of a new property in the reports parameters list.
+If the XML is editted in BIRT 2.2.0 and the following property line is inserted into the XML file,
+<property name="distinct">false</property>, then the correct radio button text will be displayed.
+More information: Reports written and tested in BIRT 2.1.2 should be upward compatable and able to be run in BIRT 2.2.0 without having to edit all the rptdesign files to add the above property setting.

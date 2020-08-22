@@ -1,0 +1,8 @@
+Bug 193894 includeScripts does not work with libraries
+Jason Weathersby wrote: If you enter
+<list-property name="includeScripts">
+<property>tests.js</property>
+</list-property> In your report design, you should be able to call the functions in the javascript file.
+This property is a module property, but I was not able to get it to work with libs.
+-- I'd like to associate some file with javascript functions with the rptlibrary.
+I want to achieve that all reports referencing this library will have access to javascript methods defined in this file.

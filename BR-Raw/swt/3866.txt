@@ -1,0 +1,11 @@
+drag drop threshold region not calculated properly
+The Windows implementation of SWT does not correctly identify the threshold
+region (i.e., the area surrounding the mouse cursor outside of which movement
+should be regarded as the initiation of a drag and drop operation).
+This is
+because the threshold detection code expects screen coordinates while the
+mouse event uses client coordinates.
+It can be fixed by adding the following
+line to org/eclipse/swt/widgets/Control.java:3397.(I've tested this and it
+works for me.)
+OS.ClientToScreen(handle, pt);

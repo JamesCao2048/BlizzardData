@@ -1,0 +1,52 @@
+Pixel corruption when using clipping on a double-buffered control
+SWT-win32, v3136 (3.1RC1)
+- Run the testcase below
+- The canvas is supposed to have its left half painted red,
+the right half painted green
+- Move the shell partly off the screen, then back in order
+to cause the damaged regions to be redrawn; note that the
+result does not look as expected
+Without the SWT.DOUBLE_BUFFERED style, the problem goes away.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class DoubleBufferClippingTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+final Canvas cnv = new Canvas(shell, SWT.DOUBLE_BUFFERED);
+cnv.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+int width  = cnv.getSize().x;
+int height = cnv.getSize().y;
+
+int halfWidth = width / 2;
+
+e.gc.setClipping(0, 0, halfWidth, height);
+e.gc.setBackground(cnv.getDisplay().getSystemColor(SWT.COLOR_RED));
+e.gc.fillRectangle(0, 0, width, height);
+
+e.gc.setClipping(halfWidth, 0, width
+- halfWidth, height);
+e.gc.setBackground(cnv.getDisplay().getSystemColor(SWT.COLOR_GREEN));
+e.gc.fillRectangle(0, 0, width, height);
+}
+});
+
+shell.setSize(200, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}

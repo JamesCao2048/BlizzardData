@@ -1,0 +1,52 @@
+Crash in Carbon native CopyMask
+Saved an edited file, causing an incremental compile.
+The drive the file was on
+was asleep so I got the spinning beach ball while it spun up.
+After the normal
+spin-up time, Eclipse crashed.
+partial Eclipse.crash.log contents:
+&#65279;Thread 1 Crashed:
+#0   0x90074930 in memmove
+#1   0x91a573b8 in FixStretchVars
+#2   0x91a53d80 in CommonBits
+#3   0x91a65a78 in CopyMask
+#4   0x03b90fdc in Java_org_eclipse_swt_internal_carbon_OS_CopyMask
+#5   0x01920394 in 0x1920394
+#6   0x019222bc in 0x19222bc
+#7   0x01939b0c in 0x1939b0c
+#8   0x01e6ee7c in 0x1e6ee7c
+#9   0x018ce7bc in 0x18ce7bc
+#10  0x01906474 in 0x1906474
+#11  0x0153a168 in 0x153a168
+#12  0x95c03e90 in findpc
+#13  0x95c03cf4 in findpc
+#14  0x95c2fe20 in JNI_GetCreatedJavaVMs_Impl
+#15  0x95c13768 in JNI_GetCreatedJavaVMs_Impl
+#16  0x03b9e7bc in callback
+#17  0x03b98f3c in fn5_2
+#18  0x92c11d04 in DrawOurControl(UserPaneGlobals*)
+#19  0x92bd42b8 in UserPaneCDEF
+#20  0x92baf700 in DispatchMessage(HIView*, short, long, unsigned char,
+unsigned char)
+#21  0x92bca9b4 in Draw(HIView*, OpaqueEventRef*)
+#22  0x92bb681c in ClassicCDEFAdapter::EventHandler(OpaqueEventHandlerCallRef*,
+OpaqueEventRef*, void*)
+#23  0x92ba25b4 in DispatchEventToHandlers
+#24  0x92ba291c in SendEventToEventTargetInternal
+#25  0x92ba5d28 in SendEventToEventTargetWithOptions
+#26  0x92bb2e20 in SendControlDefDraw(HIView*, short, OpaqueGrafPtr*,
+OpaqueRgnHandle*, CGContext*)
+#27  0x92baea3c in HIView::DrawInternal(short, OpaqueGrafPtr*,
+OpaqueRgnHandle*, unsigned char, unsigned char, unsigned char, HIView*, CGContext*)
+#28  0x92bb02f0 in HIView::Draw(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned long, HIView*, CGContext*)
+#29  0x03b94524 in Java_org_eclipse_swt_internal_carbon_OS_ShowControl
+I'm running the M1 Mac Eclipse build under jdk 1.4.1 dp5. I filed a similar bug
+for a different subroutine call yesterday.
+Since these look like calls into the
+Carbon libs, I can't tell if the fault is there (and should be reported to
+Apple) or if Eclipse should be handling the exception.
+In any case, it doesn't
+look like a jdk 1.4.1 issue to me.
+Hopefully I'm not revealing any of the NDA
+secrets.

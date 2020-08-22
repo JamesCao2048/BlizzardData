@@ -1,0 +1,15 @@
+List is not displayed when using GridLayout on Linux with GTK+ >=2.18.4
+Created  attachment 199302   [details]
+SWT Shell with a Grid Layout containing a List
+An org.eclipse.swt.widgets.List is not displayed when using in  an org.eclipse.swt.layout.GridLayout on Linux with GTK+ >=2.18.4 as it does in Windows (any) or other components in Linux (Text, Combo, etc.)
+It requires to set explicitly the hints.
+Having in a class:
+:
+private List list = null;
+:
+:
+shell = new Shell();
+:
+shell.setLayout(new GridLayout());
+list = new List(shell, SWT.NONE);
+Adds the List to the Shell, but is not displayed in Linux as it does in Windows.

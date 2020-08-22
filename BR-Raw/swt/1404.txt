@@ -1,0 +1,33 @@
+underline not select when last run run is full selected
+Run this test case and see the color for underline,strikeout, and border are wrong
+public static void main(String[] args) {
+final Display display = new Display();
+int style = SWT.SHELL_TRIM;
+final Shell shell = new Shell(display, style);
+final String string = "Felipe;";
+final Font font = new Font (display, "Tahoma", 24, SWT.NORMAL);
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+TextLayout layout = new TextLayout(event.display);
+layout.setOrientation(shell.getStyle() & (SWT.RIGHT_TO_LEFT | SWT.LEFT_TO_RIGHT));
+layout.setText(string);
+layout.setFont(font);
+//			event.gc.setAdvanced(true);
+TextStyle style = new TextStyle();
+style.underline = true;
+style.strikeout = true;
+style.borderStyle = SWT.BORDER_SOLID;
+layout.setStyle(style, 0, 6);
+layout.draw(event.gc, 10, 130, 6, 6, null, null, 0);
+layout.dispose();
+}
+});
+shell.setSize(280, 240);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose ();
+}
+The reason is that when the last run is full select the clipping is not used (the code was only addclipping for partial select runs).
+There bug was introduced by the changes in TextLayout#draw of oct 9 of 2008

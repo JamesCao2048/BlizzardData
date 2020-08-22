@@ -1,0 +1,16 @@
+[SWT][Browser][Mozilla] memory leak in embeded mozilla browser widget
+Build Identifier: 3.6
+The Browser widget created with SWT.MOZILLA has big memory leak issue in below scenario: reload the page every 5 secondes and keep moving the mouse over the page.
+The memory goes from 90MB to 300MB in about 7 minutes, then the RCP application crashes.
+The Java heap size of the RCP application is very stable, so the leak must happen in Native code.
+Reproducible: Always
+Steps to Reproduce:
+A test application is attached, reproduce this issue with below steps:
+1) Import XULRunnerTest.zip into Eclipse
+2) Run xulrunnertest.Snippet267 with VM argument:
+-Dorg.eclipse.swt.browser.XULRunnerPath="your_xulrunner_path", I'm using XULRunner 1.9.2
+3) The Yahoo home page will be refreshed every 5 seconds automatically.
+4) Open Task Manager in XP to mornitor the memory usage of the RCP application.
+5) Keeping moving the mouse over the Yahoo page.
+6) You will see the memory keeps growing quickly
+The memory usage for this RCP is very stable if no mouse moving over the Yahoo home page.

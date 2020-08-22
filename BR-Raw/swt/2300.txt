@@ -1,0 +1,12 @@
+[encoding] DBCS3.2: some DBCS is displayed as dot on default font on WinXP/2003
+OS:		windows 2003
+Language:	Japanese
+Build level: 	I200405211200
+JDK version:  IBM JDK 1.4.2 Beta
+Steps to recreate problem:
+1-launch a brand new Eclipse and checkout pre-defined java project
+2-open a java file that contains Japanese text
+....
+Error:  all of katakana were displayed as ".", and Japanese comma was bogus
+Expected Result: in Eclipse 2.1.3, these characters were displayed fine.
+I guess font substitution in SWT has some errors for Japanese font.

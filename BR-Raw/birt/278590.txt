@@ -1,0 +1,6 @@
+Bug 278590 [Regression]NPE occurs when insert TIF image
+Description: Insert a TIF type embedded image,NPE occurs.
+Build version:2.5.0.v20090601-0630 Steps to reproduce: 1.Insert a embedded image with TIF type.
+Error message: An unexpected internal exception occurred.
+Please see log for detail.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.5.0.v20090531a Error Code:Error.GUIException.invokedByUnexpectedException Error Message:Caused by java.lang.NullPointerException.

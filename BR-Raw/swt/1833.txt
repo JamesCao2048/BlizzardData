@@ -1,0 +1,33 @@
+[Browser] Linux: SSL navigation is disabled when Mozilla profile directory does not exist
+Build ID: Eclipse 3.3
+Steps To Reproduce:
+Env: Suse Linux ED10
+Eclipse: 3.3
+SSL website ( https://bugs.eclipse.org/bugs ) can't visit if Mozilla profile directory doesn't exist(~/.mozilla/eclipse)
+Steps to reproduce
+1.Goto Mozilla profile root directory, rm "eclipse"(or rename) directory if it has.
+This is to make a clean environment
+2.Open Eclipse, show "Internal web browser" from menu Windows
+->Show View->Others, "General" catalog.
+3.Visit " https://bugs.eclipse.org/bugs ".
+4.Get two error dialogs, and then SSL is disabled.
+In another way, if you visit a normal HTTP WebSite( http://www.eclipse.org ) at first, then navigate to SSL website, it is ok.
+The reason is when Mozilla visits SSL site, it persists credentail information at two files(cert8.db & key3.db), but if the Eclipse specified profile directory doesn't exist, it will fail.
+If we visit HTTP first, Mozilla will try to create "Eclipse" directory, and put "/cache" "history.dat" files on that.
+So when user visits SSL website firstly on a clean environment, this problem happens.
+More information:
+A proposed fix would be update AppFileLocProvider.java file on org.eclipse.swt.browser package, when Mozilla.java calls setProfilePath() method, it should check if it exists, and create it if it doesn't.
+This can fix the problem, and doesn't impact other functions.
+void setProfilePath (String path) {
+profilePath = path;
+if(profilePath!=null){
+File profileF=new File(profilePath);
+if(profileF.exists()==false){
+try{
+profileF.mkdir();
+}catch(Exception e){
+//log some error here.
+}
+}
+}
+}

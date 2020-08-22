@@ -1,0 +1,48 @@
+Shells assuming SWT.RESIZE on GTK and Motif (BBAWT)
+On Windows, if you create a Shell without the SWT.RESIZE flag, the shell is
+*not* resizeable.
+However, on GTK *and* Motif, the shell is resizeable.
+SWT version 3.002
+In the following testcase, click on the "open dialog" button.
+The child shell
+should not be resizeable since RESIZE was not used, but both Motif and GTK use a
+resizeable shell.
+=== testcase ===
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSWTDialog {
+public static void main(String[] args) {
+Display disp = new Display();
+final Shell sh = new Shell(disp);
+sh.setLayout(new GridLayout());
+Button but = new Button(sh, SWT.BORDER);
+but.setText("open dialog");
+but.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+final Shell dialogShell =
+new Shell(sh, SWT.BORDER | SWT.CLOSE | SWT.TITLE);
+dialogShell.setText("test");
+dialogShell.setBounds(300, 300, 300, 150);
+Button b = new Button(dialogShell, SWT.BORDER);
+final Label label = new Label(dialogShell, SWT.CENTER);
+label.setText("this is a test label");
+label.setBounds(10, 20, 280, 60);
+b.setText("button 1");
+b.setBounds(80, 100, 60, 20);
+dialogShell.setVisible(true);
+dialogShell.pack();
+dialogShell.open();
+}
+});
+sh.pack();
+sh.open();
+while (!sh.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}

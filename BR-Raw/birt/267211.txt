@@ -1,0 +1,4 @@
+Bug 267211 chart date grouping with date/time values not in data
+Ok
+- so I have a chart that does a category grouping on the x-axis based on DateTime data.
+My dataset contains dates from 01-JAN-08 through 31-DEC-08.However in the resulting chart, the x-axis starts at 01-DEC-07.I don't know why, but a date from 2007 made it into the x-axis of my chart when I have verified numerous times that no dates from 2007 are in my data.

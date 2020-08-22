@@ -1,0 +1,17 @@
+Combo behavior not very user-friendly
+We have a DROP_DOWN combo (not READ_ONLY) and we listen to it for default
+selection events.
+There are a couple of problems:
+1) When the user selects something with the mouse from the drop-down, the drop-
+down disappears, but the default selection event is not fired.
+The user has to
+then hit "Enter" to do that.
+Listening for selection changes doesn't help us
+because it is fired all the time, including when the user uses arrow-keys to
+navigate the drop-down.
+2) If you have an item on the drop-down selected, hitting Enter should close
+the drop-down and fire widget default selected.
+This is what happens if your
+Combo is READ_ONLY.
+If not, then the drop-down does not close (although
+default selection event is fired).

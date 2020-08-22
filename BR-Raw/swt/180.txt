@@ -1,0 +1,28 @@
+Tree widgets leaked due to TreeColumn's modelhandle reference in Display.widgetTable
+Build Identifier: Version: 3.7.1.v3738a
+issue is only on Linux platforms (Linux,Solaris, ..etc)
+not seen in windows platform
+Tree keep 5 reference for each handle in Display.
+out of which modelhandle reference is not released when Tree disposed.
+1.modehandle add Tree reference to Display.widgetTable through
+Display.addWidget()
+2.when TreeColumn is created in Tree.
+modelHandle is replaced.
+3.Tree reference in Display.widgetTable is not released
+is causing disposed Tree widgets never garbage collected.
+640 		if (modelIndex == modelLength) {
+641			int /*long*/ oldModel = modelHandle;
+642			int /*long*/[] types = getColumnTypes (columnCount + 4); // grow by 4 rows at a time
+643			int /*long*/ newModel = OS.gtk_tree_store_newv (types.length, types);
+644			if (newModel == 0) error (SWT.ERROR_NO_HANDLES);
+645			copyModel (oldModel, FIRST_COLUMN, newModel, FIRST_COLUMN, types, (int /*long*/)0, (int /*long*/)0, modelLength);
+646			OS.gtk_tree_view_set_model (handle, newModel);
+647			OS.g_object_unref (oldModel);
+648			modelHandle = newModel;
+}
+Reproducible: Always
+Steps to Reproduce:
+1.Create Tree with 2 or more TreeColumn
+2.dispose Tree / recreate Tree
+3.check heap dump.
+disposed Tree is referenced in Display.widgetTable

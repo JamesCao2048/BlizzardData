@@ -1,0 +1,9 @@
+scrolling Tree with columns horizontally fires Move and Resize events
+- run the ControlExample, go to the Tree tab
+- turn on the Multiple Columns checkbox
+- set the Tree's size to 100x100 so that a horizontal scrollbar is needed
+- turn on listening for SWT.Move and SWT.Resize events
+- scroll the example Tree on the page horizonally and note that Move and Resize
+events are fired
+- this does not match Tree on the other platforms, and does not match Table on
+win32

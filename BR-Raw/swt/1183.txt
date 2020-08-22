@@ -1,0 +1,5 @@
+should DND set cursors?
+I was running eclipse with the 64 bit port and I notice that the cursor was changing properly during drag and drop.
+The calls to SetThemeCursor() do not run on 64 bit, so I believe the underline OS is changing the cursor for us, probably using the operation value we return.
+I removed the calls on 32 bit as well and it seems to work fine.
+Scott, do you think there is any reason to make those calls?

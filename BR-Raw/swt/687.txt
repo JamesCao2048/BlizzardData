@@ -1,0 +1,12 @@
+[Graphics] Lines not honoring print margins
+User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_1; en-us) AppleWebKit/531.9 (KHTML, like Gecko) Version/4.0.3 Safari/531.9
+Build Identifier: Version: 3.6.0 Build id: I20090917-0100
+The Java source editor is not honouring the print margins that are set (see the screenshot).
+You will have to take my word for it that the insertion point is abutting the right hand edge of the print margin line when the screenshot was taken (the insertion point is not shown when the dialog is open in front of it)
+I have checked and all three margin settings are 120 (i.e.
+two in the formatter and the general text editors default).
+Reproducible: Always
+Steps to Reproduce:
+1.Create a java source file with long lines that extend to 120 chars
+2.Set print margins to 120
+3.Open the file in the java editor

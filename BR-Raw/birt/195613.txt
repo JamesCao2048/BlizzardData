@@ -1,0 +1,2 @@
+Bug 195613 drill through to toc in target report does not work properly[04]
+steps to reproduce: use attached reports preview new_report_9.rptdesign in PDF click on actuate logo expected behavior: data item of 2nd page (toc) in target report is displayed actual behavior: target report was reached, but failed to navigated to the toc item

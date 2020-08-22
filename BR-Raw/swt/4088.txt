@@ -1,0 +1,9 @@
+Coolbar - chevron not always displayed when it should be
+Build 20020521, RH 7.2, Linux-Motif
+1.Run the attached test case.
+2.Slide the "launch" cool item all the way over to the right, so that the
+chevron appears and only one tool is showing.
+3.Press the Switch button.
+4.Press the Switch button again, which will restore the coolbar as in Step 2.
+Notice that the chevron is no longer displayed even though the coolitem is not
+fully exposed.

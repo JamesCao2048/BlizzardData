@@ -1,0 +1,42 @@
+click on end of line place cursor wrong offset
+I20080325-0100, regression introduced by fix for  bug 223179
+Click on a line has contains double quotes (these lines are wrapped with bidi segements by the platform).
+The cursor is placed before the last character of the line instead of being placed after the last character.
+Simple Snippet:
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.graphics.*;
+public class TextLayoutSegmentsTest {
+public static void main(String[] args) {
+final Display display = new Display();
+int style = SWT.SHELL_TRIM;
+//	style |= SWT.RIGHT_TO_LEFT;
+final Shell shell = new Shell(display, style);
+final String string = "String u05D0u05D1 = ""u05E0u05E1u05D9u05D5u05DF u05E9u05E0u05D9"";";
+final int[] segments = {0, 12, 23, 24};
+
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+int[] trailing = new int[1];
+TextLayout layout = new TextLayout(event.display);
+layout.setTabs(new int[] {18, 18, 18, 18, 18});
+layout.setOrientation(shell.getStyle() & (SWT.RIGHT_TO_LEFT | SWT.LEFT_TO_RIGHT));
+layout.setText(string);
+layout.setSegments(segments);
+layout.draw(event.gc, 10, 10);
+System.out.println(layout.getOffset(2000, 2, trailing) + " " + trailing[0]);
+layout.dispose();
+}
+});
+shell.setSize(280, 240);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose ();
+}
+}
+---
+That returns offset==23 and trailing==0
+The correct result is offset==23 and trailing==0
+The is caused when the line ends with LTR_MARK or RTL_MARK (bidi control characters used to implement bidi segments) in the last offset of the line, in this case ATSUPositionToOffset returns the leading offset of the next line instead of the trailing offset of the current line.

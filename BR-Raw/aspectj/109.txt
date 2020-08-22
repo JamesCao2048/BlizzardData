@@ -1,0 +1,3 @@
+Resource deletion in source folder on full build when source and output folders are the same.
+On the clean before a full aspectj build resources are removed from the output folder.  This is true even when the output and the source folder are the same.  In this case, the resources are deleted from the source folder!
+When the source and output folders are the same, resources should never be deleted.

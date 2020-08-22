@@ -1,0 +1,32 @@
+[WM2003] GC cannot instantiate on PPC 2003
+>swt-N20040109-win32-ce-arm-ppc
+The following code that used to work on PPC 2002 is no longer working in PPC
+2003:
+//--SNIPPET START
+Text monthText = new Text(panel, SWT.BORDER);
+GC gc = new GC(monthText);
+FontMetrics fm = gc.getFontMetrics();
+int width = 4 * fm.getAverageCharWidth();
+gc.dispose();
+//-- SNIPPET END
+*** Stack trace of contained exception ***
+java.lang.UnsatisfiedLinkError: org/eclipse/swt/internal/win32/OS.GetLayout(I)I
+Stack trace:
+java/lang/Throwable.<init>()V
+java/lang/Throwable.<init>(Ljava/lang/String;)V
+java/lang/UnsatisfiedLinkError.<init>(Ljava/lang/String;)V
+org/eclipse/swt/widgets/Control.internal_new_GC
+(Lorg/eclipse/swt/graphics/GCData;)I
+org/eclipse/swt/graphics/GC.<init>(Lorg/eclipse/swt/graphics/Drawable;I)V
+org/eclipse/swt/graphics/GC.<init>(Lorg/eclipse/swt/graphics/Drawable;)V
+com/capwin/pvc/query/ui/QueryByNamePanel.buildDob()V
+com/capwin/pvc/query/ui/QueryByNamePanel.<init>()V
+java/lang/Class.newInstanceImpl()Ljava/lang/Object;
+java/lang/Class.newInstance()Ljava/lang/Object;
+com/capwin/pvc/ui/PanelManager.displayPanel(Ljava/lang/Class;)V
+com/capwin/pvc/listener/HomeListener$1.run()V
+org/eclipse/swt/widgets/RunnableLock.run()V
+org/eclipse/swt/widgets/Synchronizer.runAsyncMessages()Z
+org/eclipse/swt/widgets/Display.runAsyncMessages()Z
+org/eclipse/swt/widgets/Display.readAndDispatch()Z
+com/capwin/pvc/ui/Main.run()V

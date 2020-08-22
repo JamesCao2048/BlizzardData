@@ -1,0 +1,3 @@
+Bug 186805 Set Adobe PDF File Property "PDF Producer" to BIRT
+In order to promote BIRT in the broader community, the PDF emitter should set the "PDF Producer" property to: BIRT Report Engine using iText Ideally, we should include the BIRT version and iText version: BIRT Report Engine x.y.z using iText a.b This information is shown in the Adobe PDF Properties dialog as "PDF Producer".
+See attched screenshot.

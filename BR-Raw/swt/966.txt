@@ -1,0 +1,14 @@
+Accessibility Control Example ClassCastException
+With GTK Accessibility Module initialized, I get the following stack trace when running ControlsWithAccessibleNamesExample:
+Exception in thread "main" java.lang.ClassCastException: org.eclipse.swt.accessibility.AccessibleObject
+at org.eclipse.swt.examples.accessibility.ControlsWithAccessibleNamesExample$1.getName(ControlsWithAccessibleNamesExample.java:67)
+at org.eclipse.swt.accessibility.AccessibleObject.atkObject_get_name(AccessibleObject.java:395)
+at org.eclipse.swt.internal.gtk.OS._gtk_container_add(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_container_add(OS.java:5738)
+at org.eclipse.swt.widgets.Control.showWidget(Control.java:4274)
+at org.eclipse.swt.widgets.Label.showWidget(Label.java:583)
+at org.eclipse.swt.widgets.Control.createWidget(Control.java:528)
+at org.eclipse.swt.widgets.Label.createWidget(Label.java:244)
+at org.eclipse.swt.widgets.Control.<init>(Control.java:95)
+at org.eclipse.swt.widgets.Label.<init>(Label.java:95)
+at org.eclipse.swt.examples.accessibility.ControlsWithAccessibleNamesExample.main(ControlsWithAccessibleNamesExample.java:89)

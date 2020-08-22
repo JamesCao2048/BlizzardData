@@ -1,0 +1,5 @@
+Bug 179674 Support time dimension in model
+When define time dimension in model, the "itTime" property will be set.
+However this is not enough.
+We also need to know to what precision the time value should be evaluated, say, year, month, day, etc.
+Model needs to be enhanced to support such requirement.

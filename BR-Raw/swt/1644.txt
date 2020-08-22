@@ -1,0 +1,38 @@
+Help Browser crashes on Windows 2000
+Build ID: M20071023-1652
+Steps To Reproduce:
+1.Start Eclipse on Windows 2000 (inside VMWare Player on Linux)
+2.Select Help
+-> Help Contents
+3.As soon as the mouse enter the browser it will crash.
+This error message is printed on the Console:
+[INFO] HttpServer
+- Version Jetty/5.1.x
+[INFO] Container
+- Started org.mortbay.jetty.servlet.ServletHandler@4b9101
+[INFO] Container
+- Started HttpContext[/help,/help]
+[INFO] SocketListener
+- Started SocketListener on 0.0.0.0:51545
+[INFO] Container
+- Started org.mortbay.http.HttpServer@ee5d13
+Exception in thread "Help Browser UI" java.lang.ArrayIndexOutOfBoundsException: 0
+at org.eclipse.swt.browser.IE.handleMouseEvent(IE.java:807)
+at org.eclipse.swt.browser.IE$2.handleEvent(IE.java:155)
+at org.eclipse.swt.ole.win32.OleEventTable.sendEvent(OleEventTable.java:55)
+at org.eclipse.swt.ole.win32.OleEventSink.notifyListener(OleEventSink.java:144)
+at org.eclipse.swt.ole.win32.OleEventSink.Invoke(OleEventSink.java:119)
+at org.eclipse.swt.ole.win32.OleEventSink.access$1(OleEventSink.java:96)
+at org.eclipse.swt.ole.win32.OleEventSink$1.method6(OleEventSink.java:70)
+at org.eclipse.swt.internal.ole.win32.COMObject.callback6(COMObject.java:119)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2265)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3291)
+at org.eclipse.help.ui.internal.browser.embedded.EmbeddedBrowserAdapter$UIThread2.run(EmbeddedBrowserAdapter.java:40)
+I made a quick fix in IE.java:
+void handleMouseEvent (OleEvent e) {
++	if (e.arguments == null || e.arguments.length
+< 1)
++		return;
+Variant arg = e.arguments[0];
+Which seems to work but there is probably a better fix.

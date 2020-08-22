@@ -1,0 +1,7 @@
+[Browser] Exception error messages are not very meaningful
+When using the SWT Browser in Linux it seems that the "SWTError: No more
+handles" error is used for several different situations that don't really mean
+there are no more handles.
+This makes it very difficult to debug problems.
+Would it be possible to use more meaningful errors that will help users deduce
+what the real problems are?

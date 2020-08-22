@@ -1,0 +1,65 @@
+Repainting a double-buffered canvas may cause pixel corruption
+SWT-win32, v3138 (3.1-final)
+[Different from  bug 98439 , GC.setClipping is not called]
+In the testcase below, there is a double-buffered canvas whose
+background colour is set to red but which also has a paint listener
+attached to it that, when called, fills the entire region of the
+widget with cyan.
+In other words, you should never see any red areas.
+In practice, these red areas do occur in form of screen artifacts
+under certain repainting conditions.
+Not sure if you will be able
+to reproduce this easily (or at all), but here are the steps:
+- Run the testcase
+- Put a shell belonging to another application on top of the test shell
+and move it around to cause the canvas to be redrawn.
+You may need
+to do this for a minute or two to see the effects; if it does not
+work, try introducing a short delay in the paint process or
+using an irregularly-shaped window (-> media player) on top
+I will attach a screenshot demonstrating the problem.
+Notes:
+- Happens with both Classic Theme and XP Theme, with or without manifest
+- Also happens with SWT versions that do not have the fix for  bug 98439
+- Not reproducible without SWT.DOUBLE_BUFFERED style
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class DoubleBufferTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+final Control ctrl = new Canvas(shell, SWT.DOUBLE_BUFFERED);
+ctrl.setBackground(display.getSystemColor(SWT.COLOR_RED));
+
+ctrl.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+Rectangle bounds = ctrl.getBounds();
+
+e.gc.setBackground(ctrl.getDisplay().getSystemColor(SWT.COLOR_CYAN));
+e.gc.fillRectangle(0, 0, bounds.width, bounds.height);
+
+// simulate time-consuming drawing operations
+// (also try different millisecond values if necessary)
+//try {Thread.sleep(10);} catch (InterruptedException ex) {}
+}
+});
+
+shell.setMaximized(true);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}

@@ -1,0 +1,10 @@
+[consistency] Slider fires two Selection events before MouseDown
+- run the ControlExample, Slider/Scale tab
+- turn on the MouseDown and Selection listeners
+- click on the example Slider's thumb
+
+-> on OSX the following is fired: Selection, Selection, MouseDown
+
+-> on win32 the following is fired: MouseDown, Selection, Selection ( bug 78558 )
+
+-> everywhere else: MouseDown, Selection

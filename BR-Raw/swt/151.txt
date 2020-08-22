@@ -1,0 +1,23 @@
+Specific file name filter not working on Mac OS X
+Build Identifier:
+Setting the file filter to a specific file name in the FileDialog doesn't allow selecting the file.
+For example, having a file named "test.txt" and setting the filter to "test.txt".
+On Windows or Linux you can select the file, but on Mac OS X the file dialog doesn't allow you to select it.
+Example code:
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class TestFileDialog {
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.open ();
+FileDialog dialog = new FileDialog (shell, SWT.OPEN);
+dialog.setFilterExtensions (new String [] {"test.txt"});
+dialog.open();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}
+Reproducible: Always

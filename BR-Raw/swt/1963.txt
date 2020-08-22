@@ -1,0 +1,30 @@
+SWT ToolTip does not render Arabian text tooltip correctly on SLED10 Linux
+Build ID: Eclipse3.2.2
+Steps To Reproduce:
+1.Create a SWT Application
+2.Create a ToolTip on Shell and setMessage with Arabian text.
+3.Launch application
+More information:
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+ToolTip tip = new ToolTip(shell, SWT.BALLOON );
+tip.setMessage("u0627u0644u0639u0631u0628u064Au0651u0629");
+tip.setVisible(true);
+shell.open ();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+We modified setMessage(String message) method in ToolTip.java and add the following code to let it works:
+layoutMessage = OS.gtk_widget_create_pango_layout (handle, buffer);
+//lijiao added
+OS.pango_layout_set_auto_dir(layoutMessage, false);
+//end
+OS.pango_layout_set_wrap (layoutMessage, OS.PANGO_WRAP_WORD_CHAR);
+I found in GC and TextLayout::createLayout() SWT used the following code:
+if (OS.GTK_VERSION >= OS.VERSION(2, 4, 0)) {
+OS.pango_layout_set_auto_dir(layout, false);
+}
+Could we use this code in ToolTip.setMessage(String msg)?

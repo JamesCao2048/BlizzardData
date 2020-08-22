@@ -1,0 +1,9 @@
+Bug 213832 Min and Max of Axis can not be changed through keyboard.
+description: Min and Max of Axis can not be changed through keyboard.
+build version: 2.2.2 v200712181951 steps to reproduce: 1.New a report.
+2.New a datasource with sample DB and new a dataset with table orders.
+3.New a chart, bind the dataset, select ordernumber as category and select orderdate as value series.
+4.On Format Chart page, select Chart Area->Axis->Y Axis, click scale button and change the Min or Max with keyboard.
+5.Close the scale dialog and reopen.
+Expected result: Min or Max value is changed.
+Acutal result: Min or Max value keeps unchanged.

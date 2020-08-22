@@ -1,0 +1,6 @@
+StyledText: Unexpected loss of mouse cursor
+3.4 M5 and newer
+Changes made to fix  bug 42488  lead to unexpected loss of the mouse cursor: if the (arrow) cursor is outside the StyledText widget but inside the same shell somewhere and I hit e.g.
+ESC I would not expect that my cursor disappears.
+I wouldn't even expect the arrow cursor to disappear when I type.
+Only if the (arrow or I-beam) cursor is inside the StyledText widget I'd expect to loose my cursor.

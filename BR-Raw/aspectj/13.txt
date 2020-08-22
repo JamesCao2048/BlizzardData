@@ -1,0 +1,48 @@
+Java throws OutOfMemory in call to Class.getGenericSuperclass() on woven class
+Ran AspectJ compiler on this class:
+public class Bug {
+@org.springframework.beans.factory.annotation.Configurable
+public static class ClassA<T extends Interface1 & Interface2> {
+}
+public static class ClassB extends ClassA<ClassB> implements Interface1, Interface2 {
+}
+public interface Interface1 {
+}
+public interface Interface2 {
+}
+public static void main(String[] args) throws Exception {
+System.out.println(ClassB.class.getGenericSuperclass());
+}
+}
+Then tried to execute the class' main() method using Java 1.6.0-37 and got OOM:
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+at java.util.Arrays.copyOf(Arrays.java:2760)
+at java.util.Arrays.copyOf(Arrays.java:2734)
+at java.util.ArrayList.ensureCapacity(ArrayList.java:167)
+at java.util.ArrayList.add(ArrayList.java:351)
+at sun.reflect.generics.parser.SignatureParser.parseFormalTypeParameters(SignatureParser.java:190)
+at sun.reflect.generics.parser.SignatureParser.parseZeroOrMoreFormalTypeParameters(SignatureParser.java:177)
+at sun.reflect.generics.parser.SignatureParser.parseClassSignature(SignatureParser.java:171)
+at sun.reflect.generics.parser.SignatureParser.parseClassSig(SignatureParser.java:126)
+at sun.reflect.generics.repository.ClassRepository.parse(ClassRepository.java:34)
+at sun.reflect.generics.repository.ClassRepository.parse(ClassRepository.java:23)
+at sun.reflect.generics.repository.AbstractRepository.<init>(AbstractRepository.java:56)
+at sun.reflect.generics.repository.GenericDeclRepository.<init>(GenericDeclRepository.java:30)
+at sun.reflect.generics.repository.ClassRepository.<init>(ClassRepository.java:30)
+at sun.reflect.generics.repository.ClassRepository.make(ClassRepository.java:47)
+at java.lang.Class.getGenericInfo(Class.java:2254)
+at java.lang.Class.getTypeParameters(Class.java:621)
+at sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl.validateConstructorArguments(ParameterizedTypeImpl.java:39)
+at sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl.<init>(ParameterizedTypeImpl.java:35)
+at sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl.make(ParameterizedTypeImpl.java:77)
+at sun.reflect.generics.factory.CoreReflectionFactory.makeParameterizedType(CoreReflectionFactory.java:86)
+at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:122)
+at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:31)
+at sun.reflect.generics.repository.ClassRepository.getSuperclass(ClassRepository.java:66)
+at java.lang.Class.getGenericSuperclass(Class.java:677)
+at Bug.main(Bug.java:18)
+Using JDK 1.7 we get a java.lang.reflect.GenericSignatureFormatError instead.
+Users mailing list discussion thread:
+http://dev.eclipse.org/mhonarc/lists/aspectj-users/msg13789.html
+This bug may be related to  Bug #360253 .
+Reproducible test case will be attached.

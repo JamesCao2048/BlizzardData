@@ -1,0 +1,2 @@
+Bug 173039 Exception is shown when accessing a db on an unknown host
+Create a report Add a datasource and specified a invalid host name Click on test connection An oversized error dialog appears showing a stack trace Expected: a simple error such as "Host xxx is not accessible" should be displayed instead.

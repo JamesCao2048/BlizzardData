@@ -1,0 +1,13 @@
+NPE in ExactAnnotationTypePattern.matches
+[ERROR] java.lang.NullPointerException
+[ERROR] at org.aspectj.weaver.patterns.ExactAnnotationTypePattern.matches(ExactAnnotationTypePattern.java:137)
+[ERROR] at org.aspectj.weaver.patterns.ExactAnnotationTypePattern.matches(ExactAnnotationTypePattern.java:96)
+[ERROR] at org.aspectj.weaver.patterns.AnyWithAnnotationTypePattern.matchesExactly(AnyWithAnnotationTypePattern.java:55)
+[ERROR] at org.aspectj.weaver.patterns.TypePattern.matchesStatically(TypePattern.java:132)
+[ERROR] at org.aspectj.weaver.patterns.DeclareParents.match(DeclareParents.java:63)
+[ERROR] at org.aspectj.weaver.patterns.DeclareParents.findMatchingNewParents(DeclareParents.java:358)
+[ERROR] at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.doDeclareParents(AjLookupEnvironment.java:885)
+[ERROR] at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.weaveInterTypeDeclarations(AjLookupEnvironment.java:766)
+[ERROR] at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.weaveIntertypes(AjLookupEnvironment.java:424)
+[ERROR] at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.weaveIntertypes(AjLookupEnvironment.java:410)
+[ERROR] at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindings(AjLookupEnvironment.java:261)

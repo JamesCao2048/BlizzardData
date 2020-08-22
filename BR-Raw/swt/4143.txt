@@ -1,0 +1,12 @@
+OleControlSIte doesn't propagate WM_SETFOCUS message to an ActiveX control
+OleControlSite seems not to propagate WM_SETFOCUS message to its child ActiveX
+control.
+Try following steps:
+1.Open an editor which hosts an ActiveX control by using SWT,
+2.Set keyboard focus to the editor
+3.Open eclipse's preference dialog
+4.Close the dialog
+Then keyboard focus isn't restored to the ActiveX control.
+OleControlSite's(Actually Composite's) setFocus() method
+gets called, but it doesn't propagate WM_SETFOCUS message to
+the child ActiveX control.

@@ -1,0 +1,77 @@
+[Widgets] setting minimum size on an ON_TOP Shell makes it unable to grow
+From the swt newsgroup (post + snippet below), I also see it on RHEL4. If line "shell2.setMinimumSize(MIN_SIZE, MIN_SIZE);" is commented out then the ON_TOP Shell is able to grow.
+"
+I'm trying to create a borderless shell (NO_TRIM) with a minimum size on
+Linux.
+When I do this, resizing the window to be *larger* doesn't seem to work
+(though resizing smaller works until it hits the minimum size).
+I've
+attached a snippet which illustrates the problem I'm seeing.
+public class ResizeShellSnippet {
+private static final int INITIAL_SIZE = 525;
+public static final int MIN_SIZE = 500;
+public ResizeShellSnippet(final Shell shell) {
+Button grow = new Button(shell, SWT.PUSH);
+grow.setText("Grow"); //$NON-NLS-1$
+grow.addSelectionListener(new SelectionAdapter() {
+@Override
+public void widgetSelected(SelectionEvent e) {
+Rectangle rect = shell.getBounds();
+rect.height = rect.height + 5;
+rect.width = rect.width + 5;
+shell.setBounds(rect);
+}
+});
+Button shrink = new Button(shell, SWT.PUSH);
+shrink.setText("Shrink"); //$NON-NLS-1$
+shrink.addSelectionListener(new SelectionAdapter() {
+@Override
+public void widgetSelected(SelectionEvent e) {
+Rectangle rect = shell.getBounds();
+rect.height = rect.height
+- 5;
+rect.width = rect.width
+- 5;
+shell.setBounds(rect);
+}
+});
+Button close = new Button(shell, SWT.PUSH);
+close.setText("Close"); //$NON-NLS-1$
+close.addSelectionListener(new SelectionAdapter() {
+@Override
+public void widgetSelected(SelectionEvent e) {
+shell.close();
+}
+});
+}
+public static void main(String[] args) {
+Display display = Display.getDefault();
+try {
+//The regular shell will be able to grow
+final Shell shell = new Shell();
+shell.setMinimumSize(MIN_SIZE, MIN_SIZE);
+shell.setLayout(new GridLayout());
+new ResizeShellSnippet(shell);
+shell.pack();
+shell.setBounds(0, 0, INITIAL_SIZE, INITIAL_SIZE);
+shell.open();
+//The borderless shell with a minimum size won't be able to grow
+//(Though it can shrink to the minimum size)
+final Shell shell2 = new Shell(SWT.NO_TRIM);
+shell2.setMinimumSize(MIN_SIZE, MIN_SIZE);
+shell2.setLayout(new GridLayout());
+new ResizeShellSnippet(shell2);
+shell2.pack();
+shell2.setBounds(INITIAL_SIZE, 0, INITIAL_SIZE, INITIAL_SIZE);
+shell2.open();
+while (!shell.isDisposed() && !shell2.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+} finally {
+display.dispose();
+}
+}
+}
+"

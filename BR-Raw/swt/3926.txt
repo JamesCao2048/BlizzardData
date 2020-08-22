@@ -1,0 +1,6 @@
+Incomplete JavaDoc on MenuItem.setText
+There is no javadoc comment for MenuItem.setText.
+The javadoc in the superclass (Item)
+does not talk about the "content after the t character is displayed in the accelerator text
+area" behavior that SWT supports.
+This behavior needs to be documented.

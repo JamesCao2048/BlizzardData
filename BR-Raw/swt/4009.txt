@@ -1,0 +1,9 @@
+Unable to display Today screen when SWT app running on WinCE
+Once I have deployed an SWT application to the PocketPC and started the
+application, I cannot show the Today screen in the PocketPC.
+If I choose Start-
+Today, my application is shown instead of the Today screen.
+Just open an SWT-based window, and then using the task list button, try to
+switch to the Today view
+- it continues displaying the SWT app and
+changes the title bar to the text "Today".

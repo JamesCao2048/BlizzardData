@@ -1,0 +1,22 @@
+Entire Eclipse Platform loses focus and goes into the background...
+I have Windows 2000, JDK 1.4.0_01, Eclipse 2.1 M5 build.
+The steps detailed below cause Eclipse to go to the background and relinquish
+foreground visibility to any application that it was on top of.
+0.Open Eclipse on top of someother application.
+----------------------------------------------------
+1.Open a Java file in the Java Perspective.
+2.Go to a valid functional block (such as inside a method) and type "String."
+3.Wait for Code Assit to come up (or invoke it yourself).
+4.Use your mouse to select(single-click) any method (such as valueOf(char c))
+[If you look close you will see the Eclipse Platform gives focus to Code
+Assist, which is fine but is probably the source of the problem]
+5.Wait for the Hoover Help to show the Javadoc of the method to the right of
+Code Assit.
+6.Use your mouse to click on the Hoover Help Javadoc.
+You should now see the other application (from step 0) in the foreground and
+eclipse in the background.
+This is probably a problem with any other perspective as well, and is a problem
+for any Code Assist(not just String).
+I'm not sure if Eclipse is attempting to launch my web browser to show the
+Javadoc (but it doesn't).
+Scott

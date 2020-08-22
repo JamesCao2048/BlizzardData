@@ -1,0 +1,64 @@
+Non-resizable table columns resized by CTRL+KEYPAD_ADD
+SWT-win32, 3.2M1
+Specifying setResizable(false) for a TableColumn is supposed
+to prevent the user from changing the width of that column,
+but it fails for the case where the user uses the table column
+adjustment feature (CTRL+KEYPAD_ADD) to make the columns fit
+their (visible) contents.
+Right now, typing CTRL+KEYPAD_ADD will resize *all* columns.
+It should only affect those for which getResizable() == true.
+(Note that the current behaviour also disrupts the technique of
+using a zero-width dummy column to work around  bug 16223 .)
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TableColumnResizeTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Table tbl = new Table(shell, SWT.FULL_SELECTION | SWT.BORDER);
+tbl.setHeaderVisible(true);
+tbl.setLinesVisible(true);
+
+TableColumn col0 = new TableColumn(tbl, SWT.LEFT);
+col0.setWidth(0);
+col0.setResizable(false);
+
+TableColumn col1 = new TableColumn(tbl, SWT.RIGHT);
+col1.setWidth(40);
+col1.setResizable(false);
+
+TableColumn col2 = new TableColumn(tbl, SWT.LEFT);
+col2.setWidth(60);
+col2.setResizable(true);
+col2.setText("Resizable");
+
+TableColumn col3 = new TableColumn(tbl, SWT.LEFT);
+col3.setWidth(60);
+col3.setResizable(false);
+
+for (int idx = 0; idx
+< 100; idx++) {
+TableItem item = new TableItem(tbl, SWT.NONE);
+item.setText(0, "");
+item.setText(1, "" + idx);
+item.setText(2, "Sample text " + idx);
+item.setText(3, item.getText(2));
+}
+
+shell.setSize(300, 300);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}

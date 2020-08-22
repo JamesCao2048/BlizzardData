@@ -1,0 +1,6 @@
+Text#removeSegmentListener inconsitent with other code
+99% of SWT code does null checks like this:
+if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
+the removeSegmentListener uses another one:
+if (listener == null) SWT.error (SWT.ERROR_NULL_ARGUMENT);
+In the end the first call ends up in SWT.error() but I think it would be more consitent

@@ -1,0 +1,3 @@
+Need a Cocoa runloop observer for async messages
+In the Carbon SWT Display has a runloop observer with an observerProc callback that calls runAsyncMessages(false) when the runloop gets kCFRunLoopBeforeWaiting.
+There's no Cocoa-level abstraction for run loop observers, and since this code is already 64-bit-ready we should carry it forward to the Cocoa SWT.

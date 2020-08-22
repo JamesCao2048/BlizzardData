@@ -1,0 +1,6 @@
+GC.drawImage does not shift correctly when scaled in GTK
+Created  attachment 235281   [details]
+Image that explains the problem
+When GC.drawImage is used to copy a section from an image, the scale factor is not applied to the offset.
+I'll attach a testcase to reproduce the issue.
+My GTK+ version: 2.24.10

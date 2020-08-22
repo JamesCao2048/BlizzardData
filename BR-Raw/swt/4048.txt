@@ -1,0 +1,38 @@
+Find/Replace shouldn't replace typed entry with value from history
+I'm using the F1 build.
+The Find/Replace dialog (accessed through Edit > Find/Replace...) has a history
+of recent searches.
+When you type in the "Find" or "Replace With" fields it
+searches for entries from a previous search.
+If it finds one, it replaces what
+you have typed with the value from the history.
+The search of the history is
+case insensitive, which means that the case of what you have typed may be
+changed to the case of the value in the history.
+In some scenarios this makes it impossible to perform find or replace
+operations.
+For example, searching for "hello" and replacing it with "hi" then
+searching for "Hello" and replacing it with "Hi" is not possible.
+For me, it is
+very common to perform operations like this.
+I think the current behaviour to be changed to something more simple which
+allows the full range of find and replace operations to be performed.
+It would
+be better if what I type isn't replaced with a value from the history.
+The current behaviour seems to be similar to "autocomplete" which is
+particularly common in browsers.
+In the future, perhaps, a full "autocomplete"
+feature could be provided.
+But this should still respect the case of what the
+user types.
+Until then, I think the feature should be removed.
+---
+To reproduce:
+- Open a document so that Edit>Find/Replace...
+becomes available.
+- Choose Edit>Find/Replace...
+- Type "a" into the Find field.
+- Click "Find".
+- Try to type "A" into the Find field.
+You shouldn't be able to.
+The behaviour is similar for the Replace With field.

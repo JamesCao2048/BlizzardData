@@ -1,0 +1,5 @@
+Bug 118557 Default name setting of data source, data set and dynamic text doesn't take effect.
+Description: Default name setting of data source, data set and dynamic text doesn't take effect.
+Steps to reproduce: 1.Select Window>Preferences>BIRT>Element Names.
+2.Set DataSource, DataSet and TextData default name.
+3.Add a data source, data set and dynamic text and find that their default names are not displayed.

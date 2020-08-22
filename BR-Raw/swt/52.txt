@@ -1,0 +1,4 @@
+SWTApplication.setHelpMenu() is not defined on OS X 10.5
+- when self-hosting on OS X 10.5 the following is written to stderr, because NSApplication.setHelpMenu() is defined only as of OS X 10.6.
+java[214:80f] ***
+-[SWTApplication setHelpMenu:]: unrecognized selector sent to instance 0x11dac0

@@ -1,0 +1,6 @@
+[swt-win32] System menu of a NO_TRIM shell on Task Bar
+Build ID: I20090611-1540
+Steps To Reproduce:
+A NO_TRIM shell has no system menu on the task bar, the shell does not yet react to ALT+F4, which closes the shell on MS Windows.
+but we almost always need that if the shell has an entry in the task bar.
+More information:

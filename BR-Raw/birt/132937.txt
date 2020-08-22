@@ -1,0 +1,2 @@
+Bug 132937 Report didn't refresh when the virtual parent was deleted in the included library
+Steps to reproduce: 1.New a library"LibA" and a table "table1" 2.New a report including the library 3.Drag LibA.table1 in the report 4.Delete the table in the library 5.Refresh the report Expected result: The extended table won't display in the layout Actual result: The extended table is still in the layout till reopen the report

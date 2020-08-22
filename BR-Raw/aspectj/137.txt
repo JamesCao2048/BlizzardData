@@ -1,0 +1,13 @@
+Compile error: IllegalArgumentException thrown: negative line: -1
+If line numbers have not been added to the generated class files the following exception is thrown:
+java.lang.IllegalArgumentException
+at org.aspectj.bridge.SourceLocation.validLine(SourceLocation.java:41)
+at org.aspectj.bridge.SourceLocation.<init>(SourceLocation.java:96)
+at org.aspectj.bridge.SourceLocation.<init>(SourceLocation.java:85)
+at org.aspectj.bridge.SourceLocation.<init>(SourceLocation.java:70)
+at org.aspectj.ajdt.internal.core.builder.EclipseSourceContext.makeSourceLocation(EclipseSourceContext.java:57)
+at org.aspectj.we ... reUtility.java:155)
+at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Compile error: IllegalArgumentException thrown: negative line: -1
+An easy way to reproduce the problem is to uncheck the corresponding checkbox in the Classfile Generation section of the Java Compiler options in Eclipse.  A full build is performed during which an AspectJ Internal Compiler Error is thrown.
+My Eclipse feature version is org.eclipse.ajdt_1.5.0.200706070619.

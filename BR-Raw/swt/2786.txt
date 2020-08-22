@@ -1,0 +1,9 @@
+Name Conflict dialog appears behind Progress dialog
+3.1RC2, GTK+ 2.6.7, metacity 2.10
+1.Select a file in the resource navigator
+2.Hit Ctrl+C
+3.Hit Ctrl+V
+A progress dialog appears, and it is immediately followed by a "Name Conflict"
+dialog.
+Unfortunately, the progress dialog is above the conflict dialog in the
+stacking order, obscuring it from view.

@@ -1,0 +1,3 @@
+Closing an editor takes two clicks
+If you move the mouse outside the "X" on the editor tab after clicking it to close the editor, the editor does not close.
+A quick look at this seemed to indicate that the mouse up event wasn't getting the right x and y coordinates, but I none of my simple test cases backed that up.

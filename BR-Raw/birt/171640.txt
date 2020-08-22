@@ -1,0 +1,5 @@
+Bug 171640 Opened db connection after report generation
+1.Use report engine for rendering report (not under eclipse ide) 2.Use JNDI to obtain JDBC connection.
+My app now working under JBoss appserver.
+But using of JNDI to obtain db connection not an important to reproduce its bug.
+3.After calling myRunAndRenderTask.run(), engine opens new db connection and after run() call has been finished db conection still open.

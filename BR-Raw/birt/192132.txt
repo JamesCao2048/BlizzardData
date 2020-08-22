@@ -1,0 +1,5 @@
+Bug 192132 [enhancement] reduce numbers of queries being executed for olap and xtab report
+steps to reproduce:
+- use the attached report
+- preview in web viewer by profiling execution at web server and database server, it was noticed that when defining a data cube, each dimension executed new query requiring data from database, even though there was only one based table used by the data cube.
+could we enhance it by doing it once, then slice dimension data from query result?

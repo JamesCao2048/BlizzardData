@@ -1,0 +1,6 @@
+Tooltips not appearing properly
+Build Identifier: 4.2 Build id: I20120429-1800
+Tooltips all over Eclipse (toolbar icons, view icons, basically wherever tooltips appear) are flashing for less than a second and disappearing immediately.
+This is after fix for  bug 46025  was committed but I'm still not sure what is causing the problem.
+The problem also seems very similar to the behavior reported in  bug 354126 .
+Reproducible: Always

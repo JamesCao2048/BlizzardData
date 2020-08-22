@@ -1,0 +1,5 @@
+Cleanup pre GTK 2.4 leftovers.
+This is a lot of code that can not be used nowadays but just makes it
+harder to kill deprecated functions in order to use newer GTK versions.
+Commit:
+http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=db7d33313b6ee92cdb9e904f457bbed53c631f13

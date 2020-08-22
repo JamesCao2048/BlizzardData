@@ -1,0 +1,4 @@
+Bug 145749 Strange "Stack Trace" appears when navigating the controls in Enter parameter dialog by tab key
+Description: Strange "Stack Trace" appears when navigating the controls in Enter parameters dialog by tab key.
+Steps to reproduce: 1.New a report 2.New a parameter without default value 3.Switch to Preview tab, Enter parameters dialog will pop up 4.Use tab key to navigate the controls in this dialog Expected result: Can navigate the controls correctly Actual result: A strange "Stack Trace" appears when cancle button lose focus.
+Please see screen shot.

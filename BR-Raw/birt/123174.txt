@@ -1,0 +1,10 @@
+Bug 123174 inappropriate column header when inserting a table group
+steps to reproduce:
+- create a table, bind it to an existing data set
+- insert a table group, e.g.
+row["CUSTOMERNUMBER"]
+- drag some data into table detail row
+- preview report expected behavior:
+- the column header should be the name of the column actual behavior:
+- the column header was expr.
+row["CUSTOMERNUMBER"]

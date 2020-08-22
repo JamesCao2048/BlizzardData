@@ -1,0 +1,8 @@
+[Widgets] Context menu does not go away after setVisible(false)
+3.5, 3.6 and latest 3.7 build.
+Happens on MacOSX 10.5.6 and 10.5.8 but not 10.6.
+Our org.eclipse.jdt.ui.tests.leaks.JavaLeakTest.testJavaEditorContextMenu() test ('org.eclipse.jdt.ui.tests' bundle) waits forever on Mac Cocoa because the menu doesn't get closed using setVisible(false).
+The result is that the test runs 2 hours before it gets killed.
+This works on all other platforms and also on the latest Mac version, hence filing against SWT.
+The relevant code is in JavaLeakTest.openContextMenu(Menu).
+Should be easy to extract a snippet from that.

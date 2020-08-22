@@ -1,0 +1,3 @@
+Bug 161222 Decoration label should be optional in Gantt Chart
+It should not be mandatory to specify a decoration label for Gantt Charts, this can be left blank.
+Currently the UI and Engine enforce a data definition to be specified for it.

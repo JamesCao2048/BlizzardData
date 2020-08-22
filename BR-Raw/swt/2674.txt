@@ -1,0 +1,93 @@
+JUnit tests for Browser are printing to console
+I don't think the JUnit tests should print to the console.
+Here is the console result of running the browser tests:
+** Browser1 **
+URL Loading
+- args:  http://www.eclipse.org  Expected Event Sequence:
+Location.changing > Location.changed (top true)> Progress.completed
+changing  http://www.eclipse.org/
+changing  http://www.eclipse.org/banner.html
+changing  http://www.eclipse.org/home_nav.html
+changing  http://www.eclipse.org/main.html
+changed  http://www.eclipse.org/banner.html
+changed  http://www.eclipse.org/home_nav.html
+changed  http://www.eclipse.org/main.html
+changed  http://www.eclipse.org/
+completed
+timer start
+timer asyncexec shell.close
+timer over
+.URL Loading
+- args:  http://www.google.com  Expected Event Sequence:
+Location.changing > Location.changed (top true)> Progress.completed
+changing  http://www.google.com/
+changed  http://www.google.ca/
+completed
+timer start
+timer asyncexec shell.close
+timer over
+.URL Loading
+- args:  http://www.ibm.com  Expected Event Sequence:
+Location.changing > Location.changed (top true)> Progress.completed
+changing  http://www.ibm.com/
+changed  http://www.ibm.com/us/
+completed
+timer start
+timer asyncexec shell.close
+timer over
+.URL Loading Filtering
+- args:  http://www.eclipse.org  Expected Event Sequence:
+Location.changing cancel true > no Location.changed, no Progress.completed
+changing  http://www.eclipse.org/
+changed  true
+timer start
+timer asyncexec shell.close
+timer over
+.URL Loading Filtering
+- args:  http://www.google.com  Expected Event Sequence:
+Location.changing cancel true > no Location.changed, no Progress.completed
+changing  http://www.google.com/
+changed  true
+timer start
+timer asyncexec shell.close
+timer over
+.URL Loading Filtering
+- args:  http://www.ibm.com  Expected Event Sequence:
+Location.changing cancel true > no Location.changed, no Progress.completed
+changing  http://www.ibm.com/
+changed  true
+timer start
+timer asyncexec shell.close
+timer over
+.** Browser2 **
+setText
+- args:
+<HTML><HEAD><META HTTP-EQUIV="Content-Type"
+CONTENT="text/html; charset=iso-8859-1"><TITLE>Test with 2
+frames</TITLE></HEAD><BODY>some simple test case here</BODY></HTML> Expected
+Event Sequence: Location.changing > Location.changed > Progress.completed
+changing about:blank
+changed about:blank
+completed
+timer start
+timer asyncexec shell.close
+timer over
+.setText URL Loading Filtering
+- args:
+<HTML><HEAD><META HTTP-EQUIV="Content-
+Type" CONTENT="text/html; charset=iso-8859-1"><TITLE>Test with 2
+frames</TITLE></HEAD><BODY>some simple test case here</BODY></HTML> Expected
+Event Sequence: Location.changing cancel true > no Location.changed, no
+Progress.completed
+changing about:blank
+timer start
+timer asyncexec shell.close
+timer over
+.** Browser3 **
+PLUGIN_PATH
+<null>
+javascript window.open
+- args:
+file:/C:/eclipse/workspace/org.eclipse.swt.tests/bin/browser3.html Expected
+Event Sequence: Browser1:OpenWindow.open > { Browser2:Location.changing,
+Browser2:Visibility.show, Brow

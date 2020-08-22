@@ -1,0 +1,8 @@
+SWT_AWT frames in task bar
+On switching between windows there are SWT panels disposed with embedded
+AWT (with SWT_AWT.newFrame).
+On this actions I got empty windows appearing
+in taskbar (windows).
+It could be acceptable for 1  but when I see appearing
+5 in a time and disappearing, it doesn't look nice.
+Perhaps, instead of the "invokeLater" on disposing frame, should be used some kind of "invokeAndWait"

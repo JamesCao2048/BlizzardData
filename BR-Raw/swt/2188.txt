@@ -1,0 +1,16 @@
+[Viewers] Treeview expand/collapse ignores somewhat quick + and - clicks (doubleclicks)
+- eclipse-SDK-3.2-win32.zip
+- Windows XP
+- Sun JDK 1.5.0
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0-b64)
+Java HotSpot(TM) Client VM (build 1.5.0-b64, mixed mode)
+Clicking on + then
+- in a tree view ignores successive clicks if they are less than about half a second apart.
+This is not a problem in native Windows (Windows explorer, for example).
+Fixing this makes applications seem more responsive and improves the user experience.
+One example scenario would be missing with the mouse and expanding the wrong tree, then collapsing it immediately to expand the right one.
+To reproduce:
+- Start Eclipse 3.2
+- Create a Java project, or go to Window->Show View->Other...
+- Rapidly click on the +/- to expand and collapse a tree.
+Notice how rapid successive clicks are ignored.

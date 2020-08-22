@@ -1,0 +1,39 @@
+[Win32] MessageBox gets stuck in event loop
+Here is the follow up got  Bug 227968 .
+The problem:
+1.Bring up a message box.
+2.Bring up another modal dialog.
+3.Click on the message box buttons to dismiss it.
+4.Other dialog is now frozen.
+What happens is that we never get out of the message box event loop after dismissing the messagebox.
+The snippet that illustrates the problem:
+public static void main (String [] args) {
+final Display display = new Display ();
+final Shell eclipse = new Shell (display);
+eclipse.setText("eclipse");
+eclipse.setBounds(10,10,800,800);
+eclipse.open();
+display.asyncExec(new Runnable() {
+public void run() {
+new MessageBox(eclipse, SWT.ICON_QUESTION | SWT.YES |
+SWT.NO).open();
+}
+});
+display.asyncExec(new Runnable() {
+public void run() {
+Shell progress = new Shell(display, SWT.APPLICATION_MODAL |
+SWT.SHELL_TRIM);
+progress.setText("progress");
+progress.setBounds(50,50,200,100);
+new ProgressBar(progress, SWT.NONE).setBounds(10,10,50,40);
+progress.open();
+while (!progress.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}
+});
+while (!eclipse.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

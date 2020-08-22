@@ -1,0 +1,41 @@
+Incorrect key events reported when NO_FOCUS style used
+SWT-gtk, v3305, gtk2-2.8.10-36, German keyboard
+- Run the snippet below
+- Type 谩 (' dead key + a) or 锚 (^ dead key + e)
+Output on Windows:
+keyDown: character=谩
+keyDown: character=锚
+Output on GTK (note missing accents):
+keyDown: character=a
+keyDown: character=e
+When the NO_FOCUS style is removed, the output is as expected.
+Appears to depend on a block of code checking for NO_FOCUS in
+Composite.createHandle(int, boolean, boolean).
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class KeyTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Canvas cnv = new Canvas(shell, SWT.NO_FOCUS);
+cnv.addListener(SWT.KeyDown, new Listener() {
+public void handleEvent(Event e) {
+System.out.println("keyDown: character=" + e.character);
+}
+});
+
+shell.setBounds(200, 200, 200, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

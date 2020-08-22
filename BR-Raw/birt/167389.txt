@@ -1,0 +1,7 @@
+Bug 167389 Perspective should switch to ReportDesign when new a library.[0603]
+Description: Perspective should switch to ReportDesign when new a library in BIRT Web Project.
+Build number:2.2.0.v20061211 Steps to reproduce: 1.New a BIRT Web Project.
+2.Select the project and right click to new a library file.
+Expected result: Perspective switch to Report Design as new a report and template do.
+Actual result: Perspective stayed at J2EE.
+Error log:N/A

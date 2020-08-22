@@ -1,0 +1,10 @@
+StyledText scroll not working with PageUp/Down keys.
+When all contensts are selected in StyledText, PageDown or PageUp keys does not
+scroll the client area so that the caret is shown in the window.
+Behavior of ArrowDown and ArrowUp keys looks good.
+With TextEditor:
+1) Open the text file which is large enough to show a vertical scrollbar.
+2) Scroll down to the middle of the file.
+3) Edit
+-> Select All
+4) Push PageUp key.

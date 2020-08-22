@@ -1,0 +1,5 @@
+CTabItem gets clipped on right hand side
+build I20070320
+The right hand side of the tab sometimes gets clipped.
+To reproduce, rezise a view stack with a few views narrow/wide.
+I am running with high DPI but not sure if that's the only combination that will create this.

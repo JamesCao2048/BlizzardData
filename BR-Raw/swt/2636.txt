@@ -1,0 +1,14 @@
+Text#getCaretLocation() replaces selected text by " " iff caret is after last character
+I20051004-0800
+- select the last few characters of a Text such that the caret is at the very end
+- call Text#getCaretLocation()
+=> Selection is replaced by a space.
+=> Neither selection nor text should be changed.
+This can easily be reproduced in Eclipse:
+- have:
+void m() {
+new java.util.ArrayList();
+}
+- select "new java.util.ArrayList()"
+- Refactor > Extract Local Variable
+- press Ctrl+Space

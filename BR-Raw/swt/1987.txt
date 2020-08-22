@@ -1,0 +1,7 @@
+CCombo doesn't receive key-events
+On MacOSX when opening a CCombo one is not able to scroll the list up/down using the keyboard.
+It seems that no key-events are delivered to it.
+On WinXP this is working as expected and I think I can remember that in also works on Gtk.
+This is a major problem for applications because usability is decreased when CCombo has to be used e.g.
+when Inline-Editing tables/trees.
+I know we are late in 3.3 but would it be able to fix it in this cycle?

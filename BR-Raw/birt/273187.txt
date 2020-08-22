@@ -1,0 +1,21 @@
+Bug 273187 Report Could Not Be Generated In Servlet Viewer But Can Be Generated in Design Viewer
+When attempting to generate a report via our report servlet, an exception is thrown.
+This problem doesn't occur when previewing / seeing from Design viewer the RCP designer.
+But it happens sometimes in reports.
+How The Error Occurs ==================== 1.We launch a report (initiate a servlet) via a report interface form after we specify the parameters range and we would fire the launch command to generate it.
+2.For example, if I am to generate a Cession Percentage report, the interface form will show the range of parameters, default values appearing.
+Branch From
+- 0 Branch To
+- zzzzzzzzzz Dept Fm
+- 0 Dept To
+- zzzzzzzzzz Sub Class FM
+- 0 Sub Class To
+- zzzzzzzzzz From Date
+- 22/4/2009 (sysdate) To Date
+- 22/4/2009 (sysdate) 3.If I generate a report based on the default parameters or certain parameter range, the report generation will fail.
+This too will happen if I specify Sub Class range that is SUBH4 to SUBH4, it will also fail.
+But, if I give From Date as 01/01/2009 and maybe something parameters a bigger range, the report will get generated.
+4.In Design view, if there are no results on the range I've entered, the dataset will not appear, just the master page content.
+If in servlet view, it throws an error.
+The stacktrace is as follows: Caused by: java.lang.AssertionError at org.eclipse.birt.data.engine.executor.aggregation.AggregationHelper.calculate(AggregationHelper.java:140) at org.eclipse.birt.data.engine.executor.aggregation.AggregationHelper.populateAggregations(AggregationHelper.java:109) at org.eclipse.birt.data.engine.executor.aggregation.AggregationHelper.(AggregationHelper.java:86) at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.populateAggregationInBinding(PassManager.java:143) at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.pass(PassManager.java:126) at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.populateResultSet(PassManager.java:70) at org.eclipse.birt.data.engine.executor.transform.ResultSetPopulator.populateResultSet(ResultSetPopulator.java:196) at org.eclipse.birt.data.engine.executor.transform.CachedResultSet.(CachedResultSet.java:86) at org.eclipse.birt.data.engine.executor.DataSourceQuery.execute(DataSource
+Query.java:894) at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:331) at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1005) at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:235) at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:160) at org.eclipse.birt.report.engine.data.dte.QueryResultSet.(QueryResultSet.java:92) at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:129) at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:253) at org.eclipse.birt.report.engine.executor.ExecutionContext.execu

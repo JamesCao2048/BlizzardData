@@ -1,0 +1,9 @@
+CoolBar loses lines between M4 and M5
+I'm working with SWT since february this year, and for practice I modified
+the WebBrowser example a little bit (used a coolbar with hotImage etc.).
+I downloaded the last release of Eclipse M5 but my application appears
+differently: no separator between the two cool item.
+Steve Northover replied on the eclipse.platform.swt newsgroup that's a repaint
+bug and to enter a bug report.
+I've searched the most recently bugs, but didn't find reports relating to this
+problem.

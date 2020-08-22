@@ -1,0 +1,4 @@
+Bug 156317 [Deploy][WAS5]Preview report with XML data source in LAN failed in frameset servlet.
+Description: Preview report with XML data source in LAN failed in frameset servlet.
+Test environment: WebSphere 5.1 Win2000 Steps to reproduce: 1.Deploy birt in Websphere5 2.Preview attached report which uses XML file as data source and the XML file is stored in local LAN.
+3.Preview with frameset servlet 4.Preview with run servlet Expected result: Data display Actual result: Data displayed in run serverlet but not in frameset servlet

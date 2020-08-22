@@ -1,0 +1,8 @@
+Bug 199712 Output servlet doesn't support __svg[0601]
+Description: Output servlet doesn't support __svg Build number:2.2.1.v200708130947 Steps to reproduce: 1.Preview a svg chart in browser using frameset/run/preview/output servlets.
+2.Add __svg=true in url and check rendered chart image.
+3.Change to __svg=false in url and check rendered chart image.
+Expected result: When svg=true, the chart image is a svg image in html source.
+When svg=false, the chart image isn't a svg image.
+Actual result: For output servlet, svg is true or false will always display chart image with non-svg type.
+It's ok for Frameset/run/preview servlets.

@@ -1,0 +1,14 @@
+[Browser] crash when showing text entry prompter
+- crashes with xulrunner >= 1.9, previous xulrunner versions don't crash
+- run Snippet128 with Browser style SWT.MOZILLA
+- point it at a page with the following content:
+<HTML>
+<BODY>
+<script>
+var userName
+userName = prompt("What is your name?","Name goes here")
+alert(userName)
+</script>
+</BODY>
+</HTML>
+- press OK in the resulting dialog and a crash will occur (the dump shows the crash happening in the event loop)

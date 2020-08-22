@@ -1,0 +1,6 @@
+Bug 132652 Click other property will cause the previous revised value lost in Properties sheet.
+Description: Click other property will cause the previous revised value lost in Properties sheet.
+Steps to reproduce: 1.Insert a label 2.Open Properties sheet, select the label.
+3.Input 10pt in Margin left, then click Margin right.
+Expected result: 10pt is saved.
+Actual result: 10pt was lost.

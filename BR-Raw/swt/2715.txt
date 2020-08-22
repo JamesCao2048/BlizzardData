@@ -1,0 +1,37 @@
+ToolItem.setText(") should remove Text and return to initial Height
+When calling setText("") on a ToolItem, the item is still requiring more height,
+as if a Text was visible.
+I would expect the ToolItem to return to the initial
+State it had before calling any setText.
+Otherwise it would not be possible to
+restore the state.
+A common usecase is to switch between "Only Icons" and "Icons
+and Text" interface for Toolbars (compare Firefox Toolbar).
+Snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final ToolBar bar = new ToolBar(shell, SWT.FLAT);
+final ToolItem item = new ToolItem(bar, SWT.PUSH);
+item.setText("Hello World");
+item.setImage(new Image(display, 32, 32));
+bar.pack();
+item.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+item.setText("");
+bar.pack();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+After clicking on the Toolitem, the Text is removed, but the ToolItem is still
+bigger than neccessary.
+Ben

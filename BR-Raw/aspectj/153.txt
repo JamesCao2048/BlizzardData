@@ -1,0 +1,68 @@
+[itds] Problem with ITDs appearing to be applied twice (and clashing) for binary types
+As reported by Josh on the mailing list:
+I have the following 2 files:
+
+Advised.aj:
+
+package bugs;
+
+public class Advised {}
+aspect ITD {
+public void Advised.f() {}
+}
+
+Ref.aj:
+
+package notbugs;
+
+import bugs.Advised;
+
+public class Ref {
+public void g() {
+new Advised().f();
+}
+}
+
+I am attempting to build Advised.aj into a jar, and refer to it from Ref.aj, using the following ant build.xml:
+
+<?xml version="1.0"?>
+
+<project name="Bugs" basedir="C:workplaceimdsBugs"
+xmlns:aj="antlib:org.aspectj">
+<taskdef uri="antlib:org.aspectj" resource="org/aspectj/antlib.xml" classpath="./aspectjtools.jar"/>
+<target name="clean">
+<delete dir="bugs" includes="**/*.class"/>
+<delete dir="notbugs" includes="**/*.class"/>
+</target>
+<target name="task1">
+<aj:iajc srcdir="." destdir="." source="1.5" target="1.5">
+<classpath location=".aspectjrt.jar"/>
+<include name="bugs/Advised.aj"/>
+</aj:iajc>
+</target>
+<target name="task2">
+<aj:iajc source="1.5" target="1.5" srcdir=".">
+<classpath location=".aspectjrt.jar"/>
+<aspectpath location="."/>
+<include name="notbugs/Ref.aj"/>
+</aj:iajc>
+</target>
+</project>
+
+From within Eclipse, there are no build errors because this is all one project.  On the command line, however, once I execute 鈥渁nt task2鈥, I get the following marvelous error message which suggests that ajc is trying to ITD f into a class it already ITDd f into before:
+
+[aj:iajc] error at C:workplaceimdsBugsbugsAdvised.aj:5::77 inter-type declaration from bugs.ITD conflicts with existing member: void bugs.Advised.f()
+[aj:iajc] MessageHolder:  (8 info)  (1 error)
+[aj:iajc] [error   0]: error at C:workplaceimdsBugsbugsAdvised.aj:5::77 inter-type declaration from bugs.ITD conflicts with existing member: void bugs.Advised.f()
+
+Let me also say that in my real use-case, the jar produced by task1 will contain aspects that should apply to clients thereof, and as such, that jar should indeed be in the aspectpath (not the classpath) for task2 (unless I am seriously misunderstanding something).
+
+How to stop this duplicate attempt to ITD?
+
+Josh
+---
+Josh is correct that using aspectpath will pull in the aspects for application to other types, the problem is that when pulling in type Advised, we reapply known ITDs and it clashes with the one added in the original build of the type.
+Two possible fixes that I am looking at:
+- don't reapply the ITDs (they are added to ensure type system is consistent) to binary types pulled in from the aspectpath
+- recognize the ITD is clashing with a member previously applied through the same ITD
+I am not sure we can determine it came from the aspectpath at the point the clash is detected.  I have option (2) already implemented, but I'll try a little more with option 1 before giving up ;)

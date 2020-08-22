@@ -1,0 +1,11 @@
+Snippet139 - No more handles
+Version: 3.2.0
+Build id: I20060412-0847
+Run Snippet139.The following SWTError is shown:
+Exception in thread "main" org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(SWT.java:3400)
+at org.eclipse.swt.SWT.error(SWT.java:3297)
+at org.eclipse.swt.SWT.error(SWT.java:3268)
+at org.eclipse.swt.graphics.Image.init(Image.java:1067)
+at org.eclipse.swt.graphics.Image.<init>(Image.java:552)
+at org.eclipse.swt.snippets.Snippet139.main(Snippet139.java:102)

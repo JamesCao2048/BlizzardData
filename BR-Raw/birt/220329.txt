@@ -1,0 +1,9 @@
+Bug 220329 Invalid chart types will reappear after invoke a normal chart builder.
+description: Invalid chart type will reappear after invoke a normal chart builder.
+build version: 2.3.0 v20080226-0800 steps to reproduce: 1.Insert a crosstab to layout.
+2.Show measure as chart view.Double click the chart builder, you will see that invalid chart types, like chart without axis or chart needs more than more value for value series, are not available.
+3.Insert a normal chart to layout.
+4.Double click the chart in crosstab.Check the available chart types.
+Expected result: These invalid chart types are still not available.
+Actual result: These invalid chart types become avaible again.
+This is not expected.

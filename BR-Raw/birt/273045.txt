@@ -1,0 +1,14 @@
+Bug 273045 [BIDI3.5]The numeral value is not having "Hindi" shape in Cross Tab component in report
+Build ID: I20090406-1612 Steps To Reproduce: Platform used : Red Hat Enterprise Linux 5 Prerequisite : *Switch the Locale of your machine to Arabic.
+*Open eclipse in "RTL" mode (open a terminal, write these 3 commands "export LANG=ar_EG.UTF8" , "export LC_ALL=ar_EG.UTF8","./eclipse
+-nl ar").
+*Download the attachment containing Test_Report_CrossTab.rptdesign & exportdata.csv files.
+1.Start Eclipse and if the current perspective is not the Report Designer.
+, set the perspective to Report Designer .
+2.On Navigator view, right click the project and select Import, select File System, and select the Test_Report_CrossTab.rptdesign.
+Then, click Finish.
+3.Double click the Test_Report_CrossTab.rptdesign on Navigator view.
+The report design is displayed.
+Then, double click the CrossTabDataSource and set the Select Folder to the path you have copied exportdata.csv 4.Preview the Report Expected Result: You should see the Price in the format of arabic locale "hindi shape".
+Actual Result: The numeral value is not having "Hindi" shape.
+More information: Please refer to the report and the screen shot in the attachment.

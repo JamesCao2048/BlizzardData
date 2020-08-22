@@ -1,0 +1,7 @@
+Bug 126953 property editor to show the entire path for all file extentions.
+Right now, outline view shows the entire path of a file name, which is very long and takes much space.
+Instead, only file names should be used in outline view.
+If user has given a title to the file type (.rptdesign, .rptlibrary, .rpttemplate)that particular title should be shown in outline view.
+If there is no title given then the saved file name should be shown.
+The mouse hover on the 'node' will prompt the entire path.
+Additionally, properties editor under general category of the node should show the path of the file as read only.

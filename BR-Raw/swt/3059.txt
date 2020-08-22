@@ -1,0 +1,10 @@
+DND in the FileViewer example resets tree selection
+RC2
+Linux-GTK
+In the FileViewer example, expand the tree a few levels and drag a file from the table on the right to somewhere in the tree on the left.
+No matter where
+the drop occurs, the selection is reset to the filesystem root.
+A client
+application wouldn't want to lose the user's context this way.
+The selection
+should remain on the item that was dropped onto.

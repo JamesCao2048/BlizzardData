@@ -1,0 +1,6 @@
+Emulated CoolItem do not respect SWT.DROP_DOWN flag
+build 20020624
+A CoolItem should only has the chevron when the SWT.DROP_DOWN flag is set, but
+the emulated CoolItem always has it doesn't matter if the flag is set or not.
+ControlExample shows this bug.
+I think we should fix this after 2.0.

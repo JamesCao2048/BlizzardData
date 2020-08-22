@@ -1,0 +1,11 @@
+Bug 236018 Some column are not highlighted when specified to a series [13]
+Description: Some column are not highlighted when specified to a series.
+Build number: 2.3.0.v20080606-1648 Steps to reproduce: 1.New a data set binding to CUSTOMERS.
+2.New a chart with More Axis.
+3.In "Select Data" tab, binding the chart to the data set, create three Y axis.
+4.Right click different columns to spcify Axis 1
+- Series 1, Axis 2
+- Series 1 and Axis 3
+- Series 1.Expected result: All the columns are highlighted.
+Actual result: Only the first column is highlight.
+Error log: N/A

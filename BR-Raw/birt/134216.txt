@@ -1,0 +1,9 @@
+Bug 134216 [regression] add a report item to library does not work properly
+steps to reproduce:
+- create a library
+- add report items, say label
+- add 1st label
+- add 2nd laebl expected behavior:
+- everytime i drag a label to Outline->ReportItems, the label will be added actual behavior:
+- for the 1st label, it worked out fine
+- for the 2nd label, i had to drag a label twice to complete the operation note that this happened with other report items as well

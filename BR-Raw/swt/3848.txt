@@ -1,0 +1,31 @@
+DBCS: Can't input DBCS characters in Search dialog
+Reporter: Tiffany
+Language: Korean/Simplfied Chinese/Traditional Chinese
+
+Build driver: eclipse-SDK-M4-linux-motif
+
+Severity:
+OS: RedHat 8
+JDK Ver.: IBM JDK1.3.1 + SR3
+
+Test case #:  3.1 Searching for DBCS text
+
+Summary: DBCS: Can't input DBCS characters in Search dialog.
+Description:
+
+Steps to recreate problem:
+1.Launch workbench with motif build
+2.Create a Java project step by step
+3.Create a file in the project step by step
+4.Enter some DBCS text in the file
+5.Click Search button on the toolbar to launch the Search dialog
+6.Press the File Search tab
+7.In the "Containing Text" field, input some DBCS characters
+<<Error>>
+At step 7, can't input any DBCS characters in
+the "Containing Text" field
+
+
+<<Expected Result>>
+DBCS characters can be inputed in the "Containing Text"
+field successfully.

@@ -1,0 +1,9 @@
+Bug 117644 Set inside nested table's filter to use outer table's column with two tables usi
+Description: Set inside nested table's filter to use outer table's column with two tables using different data source will cause exception Steps to reproduce: 1.create a new report 2.create datasource1 from sample database,datasource2 with jdbc database type 3.create ds1 from datasource1 and ds2 from datasource2 4.insert a table(table1) and bind it to ds1 5.insert a table(table2) to table1's detail row and bind it to ds2 6.select the table2 and select filter tab in property editor 7.select ds1's column as filter's expression 8.click the value1 drop down list and click select value Expected result: values are listed Actual result: Birt Exception: Let me simplify it as following example.
+Below is a report.
+column1 (Table) column2 (Nested Table) If we add a filter in nested table, it has an expression rows[0]["column1"] which indicates we want to use outer table column data as filter condition.
+Next, we choose value1, and click
+<select value>, an error dialog will pop up.
+The cause is in selecting value, DtE will try to get all rows[0]["column1"] value and provider them to user.
+But in designing time, only nested table info is passed to DtE, and then DtE can not get outer table data.
+In running time, there is no problem if user set a static value by not using select value.

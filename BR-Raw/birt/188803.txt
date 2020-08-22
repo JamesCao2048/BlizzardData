@@ -1,0 +1,2 @@
+Bug 188803 The interval of datetime type level dosen't work[1102]
+Description: The interval of datetime type level dosen't work[1102] Build number: 2.2.0.v20070524-0630 Steps to reproduce: 1, New a cube with datetime type levels 2, Specify the interval such as 2 on month level 3, New a crosstab using the cube 4, Preview Expected result: The month is group based on 2 interval Actual result: No effect after specify the interval of month Error log:

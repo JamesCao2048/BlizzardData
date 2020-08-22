@@ -1,0 +1,11 @@
+Weak FontData hashCode
+The following font datas all produce the same hash code:
+new FontData( "Times", 15, SWT.NORMAL ).hashCode();
+new FontData( "Times", 14, SWT.BOLD ).hashCode();
+new FontData( "Times", 13, SWT.ITALIC ).hashCode();
+new FontData( "Times", 12, SWT.BOLD | SWT.ITALIC ).hashCode();
+This can be fixed by changing FontData hashCode from:
+return name.hashCode() ^ getHeight() ^ style;
+to:
+return name.hashCode() ^ getHeight()
+<< 2 ^ style;

@@ -1,0 +1,2 @@
+Bug 272852 [Automation][Regression]Format Number doesn't work
+Description: [Automation][Regression]Format Number doesn't work Build number: 2.5.0.v20090420-1104 Steps to reproduce: 1, New a float type data item and value is 1.140212 2, Go to Format Number in Property editor 3, Set a Format for example: Percent 4, Preview the report Expected result: Number Format is working in preview result Actual result: The result is still 1.40212, Number format failed to work Error log:

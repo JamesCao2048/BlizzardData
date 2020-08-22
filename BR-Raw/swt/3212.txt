@@ -1,0 +1,17 @@
+Textlayout does not render multiline text correctly
+When I run code with the following snippet, the first time when Chinese
+characters appears, TextLayout renders that line very well.
+However for the
+subsequent lines, Textlayout just shows boxes.
+It is not a font problem, Textlayout can show the first line perfectly.
+All
+the characters in the subsequent lines are just repition of the first line.
+////////////////////// The code /////////////////////////
+TextLayout layout = new TextLayout(Display.getCurrent());
+layout.setWidth(200);
+
+layout.setText("This is a test.This is a test.This is u65E5
+u672Cu8A9Eu65E5u672Cu8A9Eu65E5u672Cu8A9Eu65E5
+u672Cu8A9Eu672Cu8A9Eu65E5u672Cu672Cu8A9Eu65E5u672Cu672Cu8A9Eu65E5
+u672Ca test.This is a test.Thisn is a test.");
+layout.draw(gc, 10, 10);

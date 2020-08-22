@@ -1,0 +1,89 @@
+Exception in StyledText with WRAP flag.
+Eclipse 2.1 M3, Windows 2000
+The following exception occurs, when deleting some lines in a wrapped
+StyledText widget.
+It is important, that the selection starts at a real line
+wich is not the last one and ends at the last virtual line.
+(Real line is a
+line terminated with "rn", and the virtual line is a line shown by the
+StyledText widget.) It is also important that all selected lines are wrapped by
+the widget.
+java.lang.ArrayIndexOutOfBoundsException
+at org.eclipse.swt.custom.WrappedContent.reset(WrappedContent.java:336)
+at org.eclipse.swt.custom.WrappedContent.textChanged
+(WrappedContent.java:437)
+at org.eclipse.swt.custom.StyledText$WordWrapCache.textChanged
+(StyledText.java:1521)
+at org.eclipse.swt.custom.StyledText.handleTextChanged
+(StyledText.java:5146)
+at org.eclipse.swt.custom.StyledText$6.textChanged(StyledText.java:4759)
+at org.eclipse.swt.custom.StyledTextListener.handleEvent
+(StyledTextListener.java:57)
+at org.eclipse.swt.custom.DefaultContent.sendTextEvent
+(DefaultContent.java:795)
+at org.eclipse.swt.custom.DefaultContent.replaceTextRange
+(DefaultContent.java:787)
+at org.eclipse.swt.custom.WrappedContent.replaceTextRange
+(WrappedContent.java:380)
+at org.eclipse.swt.custom.StyledText.modifyContent(StyledText.java:5621)
+at org.eclipse.swt.custom.StyledText.sendKeyEvent(StyledText.java:6545)
+at org.eclipse.swt.custom.StyledText.doBackspace(StyledText.java:2386)
+at org.eclipse.swt.custom.StyledText.invokeAction(StyledText.java:5427)
+at org.eclipse.swt.custom.StyledText.handleKey(StyledText.java:5011)
+at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:5030)
+at org.eclipse.swt.custom.StyledText$8.handleEvent(StyledText.java:4800)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:825)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:1692)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1410)
+With the following test class the problem can be reproduced simply.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class StyledTextProblem
+{
+public static void main(String[] args)
+{
+Display display = new Display ();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+StyledText text = new StyledText(shell, SWT.BORDER | SWT.WRAP);
+
+String string = "0123456789 ";
+StringBuffer sb = new StringBuffer();
+
+for (int j = 0; j
+< 4; j++)
+{
+if (j != 0)
+{
+sb.append("rn");
+}
+
+for (int i = 0; i
+< 30; i++)
+{
+sb.append(string);
+}
+}
+text.setText(sb.toString());
+
+shell.setSize(600, 400);
+shell.open();
+
+text.selectAll();
+text.cut();
+
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+{
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}

@@ -1,0 +1,11 @@
+Bug 122480 It is difficult to edit the properties of a library root element with Property Editor
+Open a library.
+The Property Editor shows the properties of the library's root element.
+Click on any item in the Data Explorer, Palette, or Outline.
+The Property Editor shows the appropriate properties or is blank.
+Click on the library root element in the Outline.
+The Property Editor blanks.
+Click on the dark gray area outside the white or gray rectangle in the main editor window.
+The Property Editor shows the properties of the library's root element.
+Expected: Clicking on the library root element in the Outline shows the properties of the library's root element in the Property Editor.
+Click on the dark gray area outside the white or gray rectangle in the main editor window shows a blank Property Editor.

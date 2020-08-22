@@ -1,0 +1,7 @@
+[itds] Problem with an ITD on an interface
+If an ITD method is declared on an interface with an anonymous inner class
+returned as the result, the compiler generates an error for any "super.xxx"
+calls in the anonymous inner class.  The example project shows this with a
+nested inner interface, but the same problem occurs with an ITD of this kind
+on any interface.  The error does not occur if the ITD is declared on an inner
+class (as shown in the example) or a normal class.

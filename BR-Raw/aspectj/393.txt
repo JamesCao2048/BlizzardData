@@ -1,0 +1,6 @@
+org.aspectj.weaver.patterns.WildTypePattern.maybeGetCleanName(WildTypePattern.java:500)
+I want to declare a pointcut to capture invocation of methods on annotated
+interfaces being subtypes of a given interface.
+here is the full ajcore report:
+http://veleno.pastebin.com/332842
+i will attach a test case.

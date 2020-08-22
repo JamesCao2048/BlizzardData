@@ -1,0 +1,23 @@
+[Cocoa SWT] TabItem.setImage() not working
+Build ID: I20090611-1540
+Steps To Reproduce:
+Under the Cocoa x86_64 Mac OS X version of Eclipse 3.5, TabItem images don't appear.
+Under the Carbon version of 3.5, they do.
+The code below reproduces the problem
+-- it works on both platforms, but the tabs are image-less on Carbon.
+(I don't know if this is a limitation with the native Cocoa widgets or not; if it is, perhaps a Javadoc note that images aren't supported on all platforms would help.)
+Shell shell = new Shell();
+TabFolder tf = new TabFolder(shell, SWT.BORDER);
+tf.setLayoutData( new GridData( SWT.FILL, SWT.FILL, true, true ) );
+TabItem ti = new TabItem(tf, SWT.NONE);
+ti.setControl( new Composite(tf, SWT.NONE) );
+ti.setText("One");
+ti.setImage( JFaceResources.getImage(Dialog.DLG_IMG_HELP) );
+ti = new TabItem(tf, SWT.NONE);
+ti.setControl( new Composite(tf, SWT.NONE) );
+ti.setText("Two");
+ti.setImage( JFaceResources.getImage(Dialog.DLG_IMG_HELP) );
+
+tf.pack();
+shell.pack();
+shell.open();

@@ -1,0 +1,13 @@
+Cursor position does not change while typing in Japanese input method program
+Build ID: I20090515-1143
+Steps To Reproduce:
+1.Open a text editor.
+2.Switch to Japanese hiragana input mode (Kotoeri).
+3.Press 'a' key.
+4.Japanese hiragana character '銇' is displayed.
+Expected cursor position:
+銇倈
+Actual cursor position:
+|銇
+More information:
+The cursor position does not change by typing more characters, converting hiragana into kanji or pressing arrow keys.

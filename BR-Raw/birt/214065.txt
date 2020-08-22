@@ -1,0 +1,2 @@
+Bug 214065 [Regression]Group TOC are created automatically when preview in Web viewer and PDF
+Description: [Regression]Group TOC are created automatically when preview in Web viewer and PDF Build number: 2.3.0.v200701012-1021 Steps to reproduce: 1, New a table binding with dataset 2, New a group on table and do not specify the group toc 3, Preview in Web viewer and PDF Expected result: No default TOC of group Actual result: Some empty group toc created automatically in preview Error log:

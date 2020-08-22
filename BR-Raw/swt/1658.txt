@@ -1,0 +1,51 @@
+[Browser] crash when disposed in changing callback
+Just click on the link in the Browser.
+Snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Browser b = new Browser(shell, SWT.NONE);
+b.setText("<a href="" http://www.eclipse.org "" target=""_blank""> http://www.eclipse.org
+</a>");
+b.addOpenWindowListener(new OpenWindowListener() {
+public void open(WindowEvent event) {
+final Shell s = new Shell();
+s.setSize(300, 300);
+s.setLocation(new Point(300, 300));
+s.setLayout(new FillLayout());
+Browser b = new Browser(s, SWT.None);
+event.browser = b;
+s.open();
+b.addLocationListener(new LocationAdapter() {
+public void changing(LocationEvent event) {
+BrowserUtils.openLink(event.location);
+s.dispose();
+}
+});
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+Result:
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0bbbb64f, pid=4988, tid=4164
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_11-b03 mixed mode)
+# Problematic frame:
+# C  [ieframe.dll+0xcb64f]
+#
+# An error report file with more information is saved as hs_err_pid4988.log
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#

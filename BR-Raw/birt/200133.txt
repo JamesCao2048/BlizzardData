@@ -1,0 +1,2 @@
+Bug 200133 Chart can not share the column binding from table item[00]
+Description: Chart can not share the column binding from table item[00] Step: 1.New a datasource and dataset 2.New a table named table1 and binding the dataset 3.New a chart and binding the sharing result set on table1 Actual result: The data columns have been not share on the chart Exceptioon result: The data column binding will share on the chart

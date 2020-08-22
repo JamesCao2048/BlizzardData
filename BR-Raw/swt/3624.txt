@@ -1,0 +1,118 @@
+Thread processing is extremely slow on GTK. (BBAWT)
+SWT Version: 3009
+Linux Version: RH 8
+SWT thread processing is much slower on GTK than on any other platform.
+This
+seems subtle but it is important because we do so much thread processing in our
+AWT code.
+The following code demonstrates this.
+It creates a shell with 100 buttons on the
+display thread, and then does the same thing by spawning a thread and
+syncExecing for every SWT call (mimicking our implementation).
+It then displays
+how long it took in both instances.
+On Windows 2000, Motif, and QNX, the ratio between the time while off the
+display thread and while on is always less than 7:1.But on GTK, the ratio is
+usually around 45:1.
+Here is the output for each platform:
+Windows 2000:
+Main UI thread time = 210
+Secondary UI thread time = 681
+Motif (RH 8):
+Main UI thread time = 258
+Secondary UI thread time = 1715
+QNX:
+Main UI thread time = 406
+Secondary UI thread time = 1000
+GTK (RH 8):
+Main UI thread time = 441
+Secondary UI thread time = 20016
+Here's the test case:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class SWTThreadTest extends Thread {
+long start;
+long end;
+Display display;
+Shell shell;
+Shell shell2;
+Button b;
+final int numIterations = 100;
+public void run() {
+display = new Display();
+start = System.currentTimeMillis();
+shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setSize(900, 300);
+for (int i = 0; i
+< numIterations; i++) {
+b = new Button(shell, SWT.PUSH);
+b.setBounds(0, 0, 50
+- (10 * i), 50
+- (10 * i));
+b.setText("d");
+b.setVisible(true);
+}
+shell.setVisible(true);
+end = System.currentTimeMillis();
+System.out.println("Main UI thread time = " + (end
+- start));
+Thread thread2 = new Thread() {
+public void run() {
+while (display == null) {
+}
+createShell();
+setupShell();
+for (int i = 0; i
+< numIterations; i++) {
+createButton();
+setButtonSize(i);
+setButtonText();
+setButtonVisible();
+}
+openShell();
+end = System.currentTimeMillis();
+System.out.println(
+"Secondary UI thread time = " + (end
+- start));
+}
+public void setupShell() {
+display.syncExec(new Runnable() {
+public void run() {
+shell2.setSize(900, 300);
+}
+});
+}
+public void openShell() {
+display.syncExec(new Runnable() {
+public void run() {
+shell2.setVisible(true);
+}
+});
+}
+public void createShell() {
+display.syncExec(new Runnable() {
+public void run() {
+shell2 = new Shell(display, SWT.SHELL_TRIM);
+}
+});
+}
+public void setButtonText() {
+display.syncExec(new Runnable() {
+public void run() {
+b.setText("d");
+}
+});
+}
+public void setButtonSize(final int i) {
+display.syncExec(new Runnable() {
+public void run() {
+b.setBounds(0, 0, 50
+- (10 * i), 50
+- (10 * i));
+}
+});
+}
+public void setButtonVisible() {
+dis

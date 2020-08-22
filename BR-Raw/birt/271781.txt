@@ -1,0 +1,8 @@
+Bug 271781 Image in header on master page causes extra line for Word Emitter
+From the newsgroup: In my .rptdesign, I have a master page with a standard header
+- a grid with 3 cells.
+The 3 cells have a background color and the 3rd cell contains a right aligned image.
+When I generate the PDF, all is fine, the header looks like a solid block of color with the image on the right hand side so it looks like
+- XXX XXX IMAGE But when I generate the Word document and look at the Header, there appears to be an extra blank line or return character in the 3rd cell after the image, which means I get an extra line of color at the bottom of the header so it roughly looks like- XXX XXX IMAGE XXX XXX XXX Atttached is a report with only data on the master page that shows the issue.
+If I add a dummy label in the third cell with the image and set both the image and the label style to text block inline, the issue does not happen.
+Jason

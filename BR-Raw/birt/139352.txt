@@ -1,0 +1,7 @@
+Bug 139352 It is not synchronize after the key and value on localization in layout
+Steps to reproduce: 1.New a report design and new a properties file.
+2.Add a label and input label.
+3.Switch to Property editor Localization 4.Click ...
+and add a key-key1, value-label2 5.Click ...
+and select the key of key1.Modify the value to label3 and press add, OK.
+Actual result: The content of label in lay out is label2, but lable3.

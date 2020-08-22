@@ -1,0 +1,15 @@
+Tables don't repaint
+3.1 M7, GTK+ 2.6.4, KDE 3.3.2, X.org 6.8.2, Linux 2.6.11
+If a table becomes obscured, it may not repaint properly when it becomes visible
+again.
+STEPS TO REPRODUCE:
+------------------
+1.) Open the keys preference page
+2.) Move the dialog off the screen.
+3.) Move back on the screen.
+With these steps, the table headers will sometimes not appear, or only paint
+partially.
+If the table is enabled, moving the mouse over a table column header
+will cause that table column header to repaint.
+If the table is disabled, the
+table headers will remain unpainted or partially painted.

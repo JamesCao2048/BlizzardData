@@ -1,0 +1,5 @@
+Bug 171979 [Automation]The result of total.mode() is wrong
+1.use the attached report 2.preview Expected Result: Total.mode(row["Decimal"]) returns "0.000000000009".
+Total.mode(row["date"]) returns "1/12/2003 08:17:17 AM", "1/12/2005 09:18:16 AM" and "1/12/2007 11:20:16 AM".
+Actual Result: Total.mode(row["Decimal"]) returns "0".
+Total.mode(row["date"]) returns nothing.

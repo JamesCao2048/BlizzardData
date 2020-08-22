@@ -1,0 +1,24 @@
+progress does not animate if create before Shell.open()
+public static void main (String [] args) {
+try {
+
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Composite comp = new Composite(shell, SWT.NONE);
+shell.pack();
+shell.open();
+
+final ProgressBar bar = new ProgressBar(comp, SWT.INDETERMINATE);
+bar.pack();
+//shell.open();
+
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+} catch (Throwable e) {
+e.printStackTrace();
+}
+}

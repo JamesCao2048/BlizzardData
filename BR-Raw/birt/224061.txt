@@ -1,0 +1,9 @@
+Bug 224061 Fail to set calculated number from date as series for difference chart[13]
+Description: Fail to set calculated number from date value as series for difference chart Build number:2.3.0.v20080326 Steps to reproduce: 1.New sample dataset from ORDERS.
+2.New a chart, select difference type.
+3.I try to use the chart to display difference between SHIPDATE AND REQUIREDATE, so I input row["SHIPDATE"].getDay() in series through Expression Builder.
+4.Define other category and attributes for chart.
+Expected result: This kind of chart can be created and preview.
+Actual result: In step3, errors are shown to indicate the series value type isn't accepted but it's number actually.
+Then the series definition will be cleaned when I define some other attributes in chart.
+Error log:n/a

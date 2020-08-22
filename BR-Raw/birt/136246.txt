@@ -1,0 +1,5 @@
+Bug 136246 [regression]Export data exported error column name.
+Description: Export data exported error column name.
+Steps to reproduce: 1.export data in a table, select several columns.
+Expected result: Selected column name and data are exported.
+Actual result: No matter what columns you selected, exported columns name always display columns beginning from the first, and then the second, and so on.

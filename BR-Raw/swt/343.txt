@@ -1,0 +1,5 @@
+Missing version check when using OS.sel_flashScrollers
+When I run the ControlExample on Mac OSX 10.6, this message is printed on the console.
+java[50660:a07]
+-[SWTScrollView flashScrollers]: unrecognized selector sent to instance 0x1215d0
+The version check for OSX 10.7 is missing before using OS.sel_flashScrollers in ScrollBar.updateBar().

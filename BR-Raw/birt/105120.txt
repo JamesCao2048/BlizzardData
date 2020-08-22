@@ -1,0 +1,2 @@
+Bug 105120 No right data set value returned after change variable defined in data source
+details: preview doesn't return right data set value after change variable defined in data source steps to reproduce: 1.define "j=0" in scripted data source Open function 2.use j reference with a data set variable 3.edit "j=0" to "j=4" 4.preview scripted data set actual result: data set return value won't change expected result: preview should return right data set value after change variable defined in data source

@@ -1,0 +1,25 @@
+Decorations.computeTrim can cause program to hang
+SWT-win32, v3228
+- Run the snippet below
+- The while loop in Decorations.computeTrim never terminates,
+causing the test case to hang
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+public class ShellHangTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setMenuBar(new Menu(shell, SWT.BAR));
+shell.setVisible(true);
+shell.setMinimized(true);
+shell.setVisible(false);
+
+System.out.println("Before shell.computeTrim");
+shell.computeTrim(0, 0, 100, 100);
+System.out.println("After shell.computeTrim");
+
+display.dispose();
+}
+}

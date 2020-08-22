@@ -1,0 +1,64 @@
+Display#post(*) sometimes freezes eclipse
+I'm using code in a Job that waits on a blocking Queue, pulls of KeyDown and KeyUp events, and posts them to the display.
+execute(Hello!,h)
+Event: Event {type=1 null time=0 data=null x=0 y=0 width=0 height=0 detail=0} h 0
+true
+Re-schedule
+Event: Event {type=2 null time=0 data=null x=0 y=0 width=0 height=0 detail=0} h 0
+true
+Re-schedule
+Sometimes it works as above (although it results in 2 letters in the text editor :-)
+Sometimes, it freezes:
+execute(Hello!,h)
+Event: Event {type=1 null time=0 data=null x=0 y=0 width=0 height=0 detail=0} h 1
+When it freezes and I suspend stacks to understand where eclipse is, it appears to be locks on the display?
+ex:
+Thread [Worker-5] (Suspended)
+Object.wait(long, int) line: not available [native method]
+Lock(Object).wait() line: 199 [local variables unavailable]
+Lock.lock() line: 34
+OS.GDK_DISPLAY() line: 1094 [local variables unavailable]
+Display.post(Event) line: 2904
+PostHandler$1.run(IProgressMonitor) line: 38
+Worker.run() line: 55
+Thread [main] (Suspended)
+Display(Device).isDisposed() line: 683
+Display.checkDevice() line: 705
+Display.getSystemFont() line: 2229
+CLabel(Control).defaultFont() line: 96
+CLabel(Control).internal_new_GC(GCData) line: 2954
+GC.gtk_new(Drawable, GCData) line: 196
+CLabel(Control).gtk_expose_event(int, int) line: 2706
+CLabel(Composite).gtk_expose_event(int, int) line: 669
+CLabel(Canvas).gtk_expose_event(int, int) line: 170
+CLabel(Widget).windowProc(int, int, int) line: 1539
+CLabel(Control).windowProc(int, int, int) line: 4507
+Display.windowProc(int, int, int) line: 4099
+OS._gtk_main_do_event(int) line: not available [native method]
+OS.gtk_main_do_event(int) line: 5806
+Display.eventProc(int, int) line: 1177
+OS._g_main_context_iteration(int, boolean) line: not available [native method]
+OS.g_main_context_iteration(int, boolean) line: 1564
+Display.readAndDispatch() line: 3031
+Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 2382
+Workbench.runUI() line: 2346
+Workbench.access$4(Workbench) line: 2198
+Workbench$5.run() line: 493
+Realm.runWithDefault(Realm, Runnable) line: 288
+Workbench.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 488
+PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 149
+IDEApplication.start(IApplicationContext) line: 113
+EclipseAppHandle.run(Object) line: 193
+EclipseAppLauncher.runApplication(Object) line: 110
+EclipseAppLauncher.start(Object) line: 79
+EclipseStarter.run(Object) line: 370
+EclipseStarter.run(String[], Runnable) line: 179
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available [native method]
+NativeMethodAccessorImpl.invoke(Object, Object[]) line: 79
+DelegatingMethodAccessorImpl.invoke(Object, Object[]) line: 43
+Method.invoke(Object, Object...) line: 618
+Main.invokeFramework(String[], URL[]) line: 549
+Main.basicRun(String[]) line: 504
+Main.run(String[]) line: 1236
+Main.main(String[]) line: 1212
+I'm a

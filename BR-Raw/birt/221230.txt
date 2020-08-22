@@ -1,0 +1,14 @@
+Bug 221230 Problem debugging chart event handler using 2.3 M5
+When writting a Chart Event Hanlder in Java, the debugger does not function correctly.
+Steps to reproduce.
+1
+- Create a chart event handler that extends the ChartEventHandlerAdapter.
+2
+- Test in report to verify it works.
+3
+- Create a new debug configuration for the report.
+4
+- Add project containing the event handler to the debug configuration classpath.
+5
+- Set breakpoint in report and debug report 6
+- The debugger shows the NoClassDefFoundError: org/eclipse/birt/chart/script/ChartEventHandlerAdapter

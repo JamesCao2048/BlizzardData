@@ -1,0 +1,15 @@
+Closing context menu programmatically does not work when shell not active
+Created  attachment 78992   [details]
+SnippetMenuStaysOpen.java
+I20070920-0936
+Closing a context menu programmatically does not always work when the parent shell is not active.
+I'll attach a snippet, which opens and closes a context menu twice.
+When I run the snippet without touching the mouse, it nicely reaches the last step (6).
+But when I activate another window right after starting the snippet, it hangs while showing the context menu for the second time at:
+OS.TrackPopupMenu(int, int, int, int, int, int, RECT) line: not available [native method]
+Menu._setVisible(boolean) line: 230
+Display.runPopups() line: 3772
+Display.readAndDispatch() line: 3351
+SnippetMenuStaysOpen.main(String[]) line: 61
+Context: I tried to write a leak test that opens an editor, opens and closes the context menu, closes the editor, and then verifies that no instance of the editor is present in the system.
+The test works fine as long as the target Eclipse window has focus, but it hangs when I try to do something else on the same machine.

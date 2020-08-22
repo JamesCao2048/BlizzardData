@@ -1,0 +1,31 @@
+JVM (Eclipse) crash with SIGSEGV in ld-linux-x86-64.so.2
+Build Identifier: I20120531-0600 (3.8 RC3)
+While evaluating Eclipse 3.8 I'm observe sporadic VM crashes (once a day).
+Common for all crashes is that they happen only with Eclipse 3.8 (Eclipse 3.7.0 running fine in same environment) and that the root cause is always:
+# Problematic frame:
+# C  [ld-linux-x86-64.so.2+0x8c0b]
+I've googled and found only one related report  http://www.eclipse.org/forums/index.php/m/875330/
+There are also two closed / worksforme bugs:  bug 380710  and  bug 363491 .
+Bug 380710   is also reported for 3.8.
+Our environment is RHEL 5.8 64 bit, JVM is 1.7.0_04 from Oracle.
+$uname
+-a
+Linux socbl593 2.6.18-308.el5 #1 SMP Fri Jan 27 17:17:51 EST 2012 x86_64 x86_64 x86_64 GNU/Linux
+$ java
+-version
+java version "1.7.0_04"
+Java(TM) SE Runtime Environment (build 1.7.0_04-b20)
+Java HotSpot(TM) 64-Bit Server VM (build 23.0-b21, mixed mode)
+As we do not see similar crashes in our lab with ~50 people using Eclipse 3.7.0 every day (with the same environment!), I can only correlate the crashes to the newer Eclipse version.
+Reproducible: Sometimes
+Steps to Reproduce:
+Please note, that half of the crash reports happens on VM shutdown.
+Typically I've seen it often on regular switch of the workspace or regular closing Eclipse.
+I've also seen crashes where you simply move the mouse or switch to Eclipse and it disappears from the screen without any notice except the VM crash dump.
+Interestingly, many crashes point to the same address ld-linux-x86-64.so.2+0x8c0b.
+Unfortunately I have no idea what this address could be.
+In our case /lib64/ld-linux-x86-64.so.2 is a symbolic link to /lib64/ld-2.5.so
+$ file /lib64/ld-2.5.so
+/lib64/ld-2.5.so: ELF 64-bit LSB shared object, AMD x86-64, version 1 (SYSV), not stripped
+Any idea what it could be?
+Which additional information you would like to see?

@@ -1,0 +1,6 @@
+Resource leak in swt Text control
+Creating an editable Text field, setting it afterwards to not editable (setEditable(false)) and then disposing the Text field results in a resource leak.
+This behaviour can easily be recognised also in the source code of the Text widget.
+If at creation the Text field is editable, the call to imContext() in the register() function will return a valid handle, which is then added to the widget array in the display.
+If afterwards (before disposing the Text widget) the text field is set to not editable, the call to imContext in the deregister() function will return a 0 value, resulting in a resource leak.
+This behaviour has been seen in eclipse 3.5.2 and 3.8.1.

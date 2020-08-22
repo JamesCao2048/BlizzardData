@@ -1,0 +1,11 @@
+[JUNIT] Scrollbar tests fail
+I20030221
+Scrollbar JUnit tests failing:
+1)Test_org_eclipse_swt_widgets_ScrollBar.test_setThumbI line 817
+junit.framework.AssertionFailedError: expected:<0> but was:<10>
+2) Test_org_eclipse_swt_widgets_ScrollBar.test_setSelectionI line 801
+junit.framework.AssertionFailedError: expected:<0> but was:<10>
+3) Test_org_eclipse_swt_widgets_ScrollBar.test_setMinimumI line 767
+junit.framework.AssertionFailedError: expected:<0> but was:<10>
+4) Test_org_eclipse_swt_widgets_ScrollBar.test_setMaximumI line 751
+junit.framework.AssertionFailedError: expected:<0> but was:<10>

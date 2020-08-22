@@ -1,0 +1,8 @@
+type construction for signature makes mistakes with wildcards
+If you have a type with multiple type params, like this:
+Foo<?,T>
+the signature is:
+LFoo<*TT;>;
+and the handling of * is not working in TypeFactory.  If that signature is passed in it will actually build:
+Foo<?>
+having lost the second type parameter, this breaks code later that has expectations on the number of params.  (e.g. ArrayIndexOutOfBoundsException when building parameterization map)

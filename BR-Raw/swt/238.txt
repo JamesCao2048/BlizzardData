@@ -1,0 +1,30 @@
+Default Mac OS X Search feature in Help Menu not working correctly
+The native search feature in Mac OS X, to search menus only works when SWT creates the menu based in the application Shell, otherwise, if you get the Menu from "Display.getCurrent().getMenuBar()" or "Display.getDefault().getMenuBar()" it doesn't seem to work at all.
+- Here is a code sample for missing-search.png (search doesn't work):
+==========================================================
+public static Menu getMenu() {
+if(menu == null) {
+menu = getDisplay().getMenuBar();
+if(menu == null) {
+Shell shell = getShell();
+menu = new Menu(shell, SWT.BAR);
+shell.setMenuBar(menu);
+}
+}
+return menu;
+}
+==========================================================
+- Here is a code sample for working-search.png (search does work):
+==========================================================
+public static Menu getMenu() {
+if(menu == null) {
+//menu = getDisplay().getMenuBar();
+if(menu == null) {
+Shell shell = getShell();
+menu = new Menu(shell, SWT.BAR);
+shell.setMenuBar(menu);
+}
+}
+return menu;
+}
+==========================================================

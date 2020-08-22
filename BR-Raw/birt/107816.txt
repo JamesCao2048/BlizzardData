@@ -1,0 +1,7 @@
+Bug 107816 If I enter "Currency" as a Format Code of Number, it can't be applied properly.
+Description: If I enter "Currency" as a Format Code of Number, it can't be applied properly.
+Steps: 1.Create a new style of format number.
+2.Enter "Currency" as format code.
+3.Apply it to a data.
+Actual result: it isn't displayed as "$1,234.56".
+It is displayed as "Currency1234.56".

@@ -1,0 +1,20 @@
+StyledText reporting wrong accessibility information when deleting data with backspace
+Build Identifier: 3.5
+I'm using the orca screen reader, the GNOME platform and eclipse 3.5.When deleting characters in java editor, orca reports the character at the cursor position after deleting instead of the deleted character.
+Investigating the issue with some debugging of orca I found that the editor is providing the wrong data on the atk event it generates for the atk object:text:changed:deleted event.
+The orca metabug with more information and debug files with described behaviour can be found here:
+https://bugzilla.gnome.org/show_bug.cgi?id=572555
+Orca screen reader:
+http://live.gnome.org/Orca
+I do know eclipse uses native controls (swt) and this bug might be somewhere related to GTK.
+But this only happens in java editor and not on the other text controls of eclipse (preferences, project wisard, etc.).
+This does not happen at least on Windows platform.
+To reproduce the described behaviour you can run Orca and see its debug or (I think is better for non screen reader users) use the accercizer accessibility explorer:
+http://live.gnome.org/Accerciser
+Just erase some characters in java editor and see the generated events, mainly the any_data for the text:changed:deleted event.
+It should be the deleted String but it's not.
+Reproducible: Always
+Steps to Reproduce:
+1.Open a clas file in java editor
+2.Delete some characters, for instance the three first characters of the word public ("pub") using backspace.
+3.See the generated atk/at-spi events, using orca debugging facility or the accercizer tool.

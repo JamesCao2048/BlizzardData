@@ -1,0 +1,2 @@
+Bug 147639 PDF output generated from document and report are different
+Steps to reproduce: 1.Run the attached report with "run?" and "__format=pdf" 2.Run the attached report with "frameset" and "__format=pdf" Expected result: Two pdf output should be the same Actual result: 1.The page number of two output files are different 2.Page 12-13 of two output files are different

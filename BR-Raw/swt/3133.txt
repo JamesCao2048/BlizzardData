@@ -1,0 +1,36 @@
+Strange NullPE in Widget.sendEvent(int eventType, Event event, boolean send)
+Hi,
+from my users I am sometimes getting logs about a crash that I am not able to
+reproduce or interpret.
+The stack looks like:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:809)
+at org.eclipse.swt.widgets.Widget.postEvent(Widget.java:621)
+at org.eclipse.swt.widgets.Control.sendMouseEvent(Control.java:1801)
+at org.eclipse.swt.widgets.Control.sendMouseEvent(Control.java:1797)
+at org.eclipse.swt.widgets.Table.sendMouseDownEvent(Table.java:2010)
+at org.eclipse.swt.widgets.Table.WM_LBUTTONDOWN(Table.java:2869)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3007)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3349)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1479)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2440)
+at net.sourceforge.rssowl.controller.GUI.runEventLoop(Unknown Source)
+at net.sourceforge.rssowl.controller.GUI.showGui(Unknown Source)
+at net.sourceforge.rssowl.controller.RSSOwlLoader$2.run(Unknown Source)
+at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:106)
+at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:2760)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2445)
+at net.sourceforge.rssowl.controller.RSSOwlLoader.<init>(Unknown Source)
+at net.sourceforge.rssowl.controller.RSSOwlLoader.main(Unknown Source)
+I browsed into the Widget.java to line 809 and the only part that could result
+in a NullPE is "display.filters (eventType)".
+But that would mean that display
+is NULL at that time, which is not clear to me.
+Users told me they clicked into the Newstable (a simple Table widget) with the
+left-mouse button.
+They are using WindowsXP.
+Any explanation why display could be NULL after that action?
+Thanks,
+Ben

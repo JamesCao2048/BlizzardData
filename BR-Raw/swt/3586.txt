@@ -1,0 +1,8 @@
+Can't assign command to Ctrl+Backspace
+I20030827
+Out of the box Ctrl+Backspace should delete the previous word.
+Somehow the key
+binding manager thinks this is Ctrl+Del and deletes the next word.
+If I try to reassing the key via key pref page it displays Ctrl+Del when I press
+Ctrl+Backspace.
+I have a Swiss German Keyboard using Swiss German Locale.

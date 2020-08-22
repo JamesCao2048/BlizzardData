@@ -1,0 +1,6 @@
+read-only Combo.setText() does not fire Modify event on GTK
+Created  attachment 86811   [details]
+Testcase for the reported problem
+Build ID: M20071023-1652
+Calling setText() on a read-only Combo fires a Modify-event on Windows, but does not on Linux GTK (GTK version 2.12.3 on Debian).
+Testcase attached.

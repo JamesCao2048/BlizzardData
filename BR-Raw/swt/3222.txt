@@ -1,0 +1,6 @@
+BIDI issue in Variables view
+3.0
+While debugging Unicode-surrogate problems, I came across a string containing arabic characters.
+The string showed up as shown in the attached screenshot.
+I'm not sure whether this is a bug (and I could live with it if it were :-),
+but I'm just curious whether this behavior is correct from a BIDI point of view.

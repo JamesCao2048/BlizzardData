@@ -1,0 +1,3 @@
+[Browser] disposing Browser in KeyDown causes crash
+- happens on OSX with the Safari and Mozilla browsers
+- it seems that HICocoaView is not doing a disposed check after sending key notifications

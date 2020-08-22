@@ -1,0 +1,63 @@
+JVM crash [Tree.setSelection] because SWT (Vista?) error
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x74756647, pid=1268, tid=4964
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0-beta2-b86 mixed mode)
+# Problematic frame:
+# C  [COMCTL32.dll+0x36647]
+#
+# If you would like to submit a bug report, please visit:
+#    http://java.sun.com/webapps/bugreport/crash.jsp
+#
+---------------  T H R E A D
+---------------
+Current thread (0x0185f800):  JavaThread "main" [_thread_in_native, id=4964]
+siginfo: ExceptionCode=0xc0000005, reading address 0x0003001f
+Registers:
+EAX=0x00000001, EBX=0x001488f0, ECX=0x00afebac, EDX=0x7731e524
+ESP=0x00afebac, EBP=0x00afebd4, ESI=0x00030003, EDI=0x00030003
+EIP=0x74756647, EFLAGS=0x00010206
+Top of Stack: (sp=0x00afebac)
+0x00afebac:   00139e70 001488f0 00090604 00afebc8
+0x00afebbc:   00000000 00000005 00139e70 00000000
+0x00afebcc:   00000000 0000033c 00afebfc 747dc448
+0x00afebdc:   00139e70 00030003 00000000 00000002
+0x00afebec:   00000200 00139e70 0000110b 00000005
+0x00afebfc:   00afec70 74756762 00000000 00000001
+0x00afec0c:   001488f0 00000003 00000000 00afecec
+0x00afec1c:   0000110b 00000000 00139e70 001541f0
+Instructions: (pc=0x74756647)
+0x74756637:   90 90 90 8b ff 55 8b ec 83 ec 20 53 56 8b 75 0c
+0x74756647:   0f b7 5e 1c 33 5d 10 23 5d 14 75 08 5e 8b c3 5b
+Stack: [0x00ab0000,0x00b00000),  sp=0x00afebac,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [COMCTL32.dll+0x36647]
+C  [COMCTL32.dll+0xbc448]
+C  [COMCTL32.dll+0x36762]
+C  [USER32.dll+0x23702]
+C  [USER32.dll+0x23331]
+C  [USER32.dll+0x2442a]
+C  [USER32.dll+0x243d0]
+C  [swt-win32-3309.dll+0x1372]
+J  org.eclipse.swt.internal.win32.OS.CallWindowProcW(IIIII)I
+J  org.eclipse.swt.widgets.Tree.callWindowProc(IIII)I
+J  org.eclipse.swt.widgets.Control.windowProc(IIII)I
+J  org.eclipse.swt.widgets.Tree.windowProc(IIII)I
+J  org.eclipse.swt.widgets.Display.windowProc(IIII)I
+v  ~StubRoutines::call_stub
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  org.eclipse.swt.internal.win32.OS.CallWindowProcW(IIIII)I
+J  org.eclipse.swt.widgets.Tree.callWindowProc(IIII)I
+J  org.eclipse.swt.widgets.Control.windowProc(IIII)I
+J  org.eclipse.swt.widgets.Tree.windowProc(IIII)I
+J  org.eclipse.swt.widgets.Display.windowProc(IIII)I
+v  ~StubRoutines::call_stub
+J  org.eclipse.swt.internal.win32.OS.SendMessageW(IIII)I
+J  org.eclipse.swt.internal.win32.OS.SendMessage(IIII)I
+j  org.eclipse.swt.widgets.Tree.setSelection([Lorg/eclipse/swt/widgets/TreeItem;)V+144
+j  org.eclipse.debug.internal.ui.viewers.AsynchronousTreeViewer.doAttemptSelectionToWidget(Lorg/eclipse/jface/viewers/ISelection;Z)Lorg/eclipse/jface/viewers/ISelection;+484
+j  org.eclipse.debug.internal.ui.viewers.AsynchronousViewer.attemptSelection(Z)V+19
+j  org.eclipse.debug.internal.ui.viewers.AsynchronousViewer$1.runInUIThread(Lorg/eclipse/core/runtime/IProgressMonitor;)Lorg/eclipse/core/runtime/IStatus;+8
+j  org.eclipse.ui.progress.UIJob$1.

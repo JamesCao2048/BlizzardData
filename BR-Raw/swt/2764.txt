@@ -1,0 +1,5 @@
+support MacOS command line option "-Xdock:name=<application name>
+SWT already supports the "-Xdock:icon=<path to icon file>" command line option by checking for a
+environment variable "APP_ICON_xxxx" in Display.createDisplay().
+For consistency reason the "-Xdock:name=<application name>" should be supported as well.
+The corresponding environment variable is "APP_NAME_xxxx"

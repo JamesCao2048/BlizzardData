@@ -1,0 +1,10 @@
+MouseWheel event provides wrong coordinates in case of negative x coordinate (event outside widget)
+FIX
+LRESULT org.eclipse.swt.widgets.Widget#wmMouseWheel (int hwnd, int wParam, int lParam)
+LINE 1975
+BUG CODE:
+lParam = pt.x | (pt.y
+<< 16);
+FIXED CODE:
+lParam = ((int)pt.x & 0xFFFF) | ((int)pt.y
+<< 16);

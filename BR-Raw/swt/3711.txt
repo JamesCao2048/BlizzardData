@@ -1,0 +1,5 @@
+BIDI: Drop-down list of CCombo doesn't inherit it's orientation from CCombo.
+Shell, which stores drop-down list of CCombo, is always created with NO_TRIM
+style only.
+Therefore it inherit it's orientation not from CCombo, but from
+it's parent shell.

@@ -1,0 +1,67 @@
+StyledText needs to implement AccessibleEditableTextListener
+From  bug 324005 , StyledText needs to implement AccessibleEditableTextListener so that accessibility tools such as speech recognition systems can replace text.
+It is understood that StyledText itself cannot implement the setTextAttributes method of AccessibleEditableTextListener because it is completely up to the application whether or not an "external tool" such as a speech recognition engine will be allowed to modify the styles of the text.
+(For example a Java Editor has its own syntax highlighting, so in that case it does not make sense for an external tool to selectively modify text styles).
+Here is a Snippet that can be used as an example:
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.accessibility.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+public class AccessibleEditableTextTest {
+
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("AccessibleEditableText");
+shell.setLayout(new GridLayout());
+
+final StyledText text = new StyledText(shell, SWT.BORDER | SWT.MULTI);
+text.setText("The quick brown fox jumps over the lazy dog.nThat's all folks!");
+text.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+TextStyle textStyle = new TextStyle(new Font(display, "Courier", 12, SWT.BOLD), display.getSystemColor(SWT.COLOR_RED), null);
+textStyle.strikeout = true;
+textStyle.underline = true;
+textStyle.underlineStyle = SWT.UNDERLINE_SINGLE;
+text.setStyleRanges(new int[] {4, 5}, new StyleRange[] {new StyleRange(textStyle)});
+final Text valueField = new Text(shell, SWT.MULTI | SWT.WRAP | SWT.BORDER);
+GridData data = new GridData(400, 200);
+data.horizontalAlignment = SWT.FILL;
+valueField.setLayoutData(data);
+
+text.getAccessible().addAccessibleAttributeListener(new AccessibleAttributeAdapter() {
+public void getTextAttributes(AccessibleTextAttributeEvent e) {
+valueField.setText("getTextAttributes " + e);
+}
+});
+text.getAccessible().addAccessibleEditableTextListener(new AccessibleEditableTextListener() {
+public void copyText(AccessibleEditableTextEvent e) {
+valueField.setText("copyText " + e);
+text.setSelection(e.start, e.end);
+text.copy();
+e.result = ACC.OK;
+}
+
+public void cutText(AccessibleEditableTextEvent e) {
+valueField.setText("cutText " + e);
+text.setSelection(e.start, e.end);
+text.cut();
+e.result = ACC.OK;
+}
+
+public void pasteText(AccessibleEditableTextEvent e) {
+valueField.setText("pasteText " + e);
+text.setSelection(e.start);
+text.paste();
+e.result = ACC.OK;
+}
+
+public void replaceText(AccessibleEditableTextEvent e) {
+valueField.setText("replaceText " + e);
+text.replaceTextRange(e.start, e.end
+- e.start, e.string);
+e.result = ACC.OK;
+}
+public void setTextAttributes(AccessibleTextAttributeEvent e) {
+valueField.setTe

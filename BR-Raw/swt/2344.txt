@@ -1,0 +1,7 @@
+Regression: Radio buttons fail to redraw background
+[Setting "Version" to 3.2 since Bugzilla does not yet offer 3.3]
+SWT-win32, v3301 (HEAD), Windows Classic Theme
+- Run Snippet 214
+- Click on some of the radio buttons
+-> The background is not redrawn, resulting in abandoned focus outlines
+and text that is getting bolder (ClearType=on)

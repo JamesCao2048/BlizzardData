@@ -1,0 +1,6 @@
+StyledText#setSelection(..) sets caret at wrong end in block selection mode
+Created  attachment 220332   [details]
+fix
+StyledText#setSelection(..) sets the caret at the wrong end in block selection mode if the selection is right to left.
+One effect of this is that "Select Previous Word" (Ctrl+Shift+Left) is broken in block selection mode.
+The attached fix is trivial.

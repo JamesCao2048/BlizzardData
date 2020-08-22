@@ -1,0 +1,2 @@
+Bug 299740 NPE occurred previewing crosstab which data source property binding is wrong
+Description: NPE occurred previewing crosstab which data source property binding is wrong Build number: 2.5.2.v20100115-0630 Steps to reproduce: 1, New a cube based on a data set 2, Specify the url in data source property binding and make sure the url is a wrong url 3, New a crosstab and preview Expected result: Exception occurred that connection failed, url is invalid Actual result: NPE occurred

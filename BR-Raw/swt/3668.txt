@@ -1,0 +1,39 @@
+crash in OS.gtk_main_iteration() when double-click disabled text widget
+using linux redhat 8.0 gtk eclipse base build wswb-2.1.1-M200305211757
+I have a view that contains a disabled styled text widget (i call setEnabled
+(false) on the widget).
+I notice that if the view does not have focus, then i
+double-click (or sometimes triple click,  or just keep clicking till crash)
+into the view, my workbench crashes!  If the view already has focus, and I
+triple-click the text widget, a cursor appears and i can type in the widget
+like it is enabled.
+this problem does not occur in linux motif/windows
+Here is what i get:
+Unhandled exception
+Type=GPF vmState=0xffffffff
+Target=20030502 (Linux 2.4.18-27.8.0 x86)
+eax: 0x00000005   ebx: 0x4213820c   ecx: 0x00000000  edx: 0x00000000
+esi: 0x0000000d   edi: 0x00000000   ebp: 0xbfffdfe0  esp: 0xbfffdfc8
+es: 0x0000002b   ds: 0x0000002b   eip: 0x42075a29  eflags: 0x00010202
+cs: 0x00000023   ss: 0x0000002b
+Thread: main (priority 5) (LOCATION OF ERROR)
+008f org/eclipse/swt/internal/gtk/OS.gtk_main_iteration()I  (@40903c17)
+002f org/eclipse/swt/widgets/Display.readAndDispatch()Z  (@4091c713)
+000d org/eclipse/ui/internal/Workbench.runEventLoop
+(Lorg/eclipse/jface/window/Window$IExceptionHandler;)V
+00c9 org/eclipse/ui/internal/Workbench.run(Ljava/lang/Object;)
+Ljava/lang/Object;
+0039 org/eclipse/core/internal/boot/InternalBootLoader.run
+(Ljava/lang/String;Ljava/net/URL;Ljava/lang/String;
+[Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;
+0006 org/eclipse/core/boot/BootLoader.run
+(Ljava/lang/String;Ljava/net/URL;Ljava/lang/String;
+[Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;
+0007 java/lang/reflect/AccessibleObject.invokeL(Ljava/lang/Object;
+[Ljava/lang/Object;)Ljava/lang/Object;
+0171 java/lang/reflect/Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)
+Ljava/lang/Object;
+00f6 org/eclipse/core/launcher/Main.basicRun([Ljava/lang/String;)
+Ljava/lang/Object;
+000e org/eclipse/core/launcher/Main.run([Ljava/lang/String;)Ljava/lang/Object;
+0026 org/eclipse/core/launcher/Main.main([Ljava/lang/String;)V

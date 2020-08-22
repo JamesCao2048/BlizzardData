@@ -1,0 +1,9 @@
+Add Resource.getDevice()
+It would be really useful to if Resource had a getDevice() method.
+The JFace ImageDescriptors could use this when creating a descriptor from an
+existing resource.
+The descriptor is capable of reusing the existing image when
+asked for another image on the same device, but it frequently needs to create
+copies of the image in the (common) situations where the device is unknown.
+A getDevice() method would allow us to reduce the number of images created when
+a new image is created on the same device.

@@ -1,0 +1,5 @@
+Bug 202121 setDateFormat does not working
+If you want to set date format of the table column style you have to use setDateTimeFormatCategory and setDateTimeFormat instead of setDateFormatCategory and setDateFormat.
+If you will try to use setDateFormatCategory in the first case in xml-source you will see that your style contains dateFormat property.
+This property is not working at all, in the second case in xml-source you will see that your style contains dateTimeFormat property.
+I think it will be better if the result of setDateTimeFormatCategory and setDateFormatCategory will be the same.

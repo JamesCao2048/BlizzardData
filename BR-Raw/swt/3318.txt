@@ -1,0 +1,12 @@
+TableItem does not redraw correctly on setText(int, String)
+Since RC1
+When I call TableItem.setText(3, "blabla"), the table cell redraws.
+However,
+the first 12 pixels or so are not redrawn.
+It looks like the Table thinks
+the item has an image set?
+I don't use images for column three.
+The other
+columns in my table that have images do redraw correctly.
+Works fine with 3.0 build from May 25.Breaks in RC1
+This is pure SWT, no jface

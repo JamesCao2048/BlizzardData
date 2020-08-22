@@ -1,0 +1,2 @@
+Cannot paint on label with text.
+if a label has text we don't receive any drawRect calls and as a result don't send any paint events.

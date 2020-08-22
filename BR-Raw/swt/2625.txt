@@ -1,0 +1,43 @@
+NullPE in Tree#_getItem(TreeItem parentItem, int index)
+I just released a new version of my reader using latest SWT 3.2 M3 and now I am
+getting a lot logfiles, looking like this one:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Tree._getItem(Tree.java:203)
+at org.eclipse.swt.widgets.Tree.getItems(Tree.java:1422)
+at org.eclipse.swt.widgets.Tree.getItems(Tree.java:1414)
+at net.sourceforge.rssowl.controller.FavoritesTree.getTreePath(Unknown Source)
+at net.sourceforge.rssowl.controller.FavoritesTree.onSelection(Unknown Source)
+at net.sourceforge.rssowl.controller.FavoritesTree$7.widgetSelected(Unknown Source)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:90)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1546)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1570)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1555)
+at org.eclipse.swt.widgets.Tree.itemNotificationProc(Tree.java:2025)
+at org.eclipse.swt.widgets.Display.itemNotificationProc(Display.java:2220)
+at org.eclipse.swt.internal.carbon.OS.RemoveDataBrowserItems(Native Method)
+at org.eclipse.swt.widgets.Tree.removeAll(Tree.java:2261)
+at net.sourceforge.rssowl.controller.FavoritesTree.buildFavoritesTree(Unknown
+Source)
+at net.sourceforge.rssowl.controller.EventManager.actionNewCategory(Unknown Source)
+at net.sourceforge.rssowl.controller.EventManager.actionNewCategory(Unknown Source)
+at
+net.sourceforge.rssowl.controller.popup.FavoritePopup$6.widgetSelected(Unknown
+Source)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:90)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1546)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1570)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1555)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1332)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3248)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2899)
+at net.sourceforge.rssowl.controller.GUI.runEventLoop(Unknown Source)
+at net.sourceforge.rssowl.controller.GUI.showGui(Unknown Source)
+at net.sourceforge.rssowl.controller.RSSOwlLoader.<init>(Unknown Source)
+at net.sourceforge.rssowl.controller.RSSOwlLoader.main(Unknown Source)
+Comparing Tree in CVS, there was a recent change on 28.10.which might be the
+reason?
+This exception looks quite new to me, I was not reported to me using a
+SWT version of 3 weeks ago.
+Ben

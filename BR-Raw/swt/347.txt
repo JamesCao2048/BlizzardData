@@ -1,0 +1,12 @@
+SWT TrayItem Image not scaling properly on Mac OSX
+Created  attachment 198864   [details]
+Scaling problem of the TrayItem on Mac 10.6.x
+On my cross-platform SWT Java application, I'm using TrayItem's setImages() function to set the dock and status bar icon.
+The icon is a 128x128 transparent PNG.
+The status and tray icons are appropriately clipped on both Windows and Linux distributions, but on the Mac I have problems that make the status bar icon appear with strange padding on both sides like  attachment 1   [details] .
+It's strange to me that this is working on all other platforms but the Mac.
+For instance, on my Linux and Windows 7 boxes, this does not occur.
+I believe the issue lies in widgets/TrayIcon.java in the setImage function.
+There the code calls item.setLength to the width of the image + the border.
+I believe this is what is causing the extra padding to show up.
+This only happens on the Mac because (I think) Windows and Linux automatically crop to a square icon which Mac does not.

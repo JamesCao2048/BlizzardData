@@ -1,0 +1,7 @@
+Bug 113047 No chidren node listing when change data source for a data set in data set editor page of the query tab.
+description: No chidren node listing when change data source for a data set in data set editor page of the query tab.
+steps to reproduce: 1.new a data set without SQL statement 2.in data set editor data source page.
+change data source 3.the new data source has no database/table /column information actual result: No chidren node listing when change data source for a data set in data set editor page of the query tab.
+Close the data set editor and reopen it.
+The children listed out.
+expected result: when change data source, new data source children list out

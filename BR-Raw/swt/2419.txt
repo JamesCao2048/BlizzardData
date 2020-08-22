@@ -1,0 +1,8 @@
+Tree- Random foreground color appears for Tree when selecting items and subitems
+Version: 3.2.0
+Build id: I20060125-0800
+-> Run Snippet226
+-> Expand some of the tree items so the subitems are visible
+-> Note that all the items and subitmes have foreground color grey but as soon as you select one item or a subitem then some of the rows (happens to random rows, not one in particular) become black.
+-> Click on various subitems to see the behaviour
+I am attaching a screenshot of the bug.

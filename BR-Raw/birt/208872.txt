@@ -1,0 +1,7 @@
+Bug 208872 Provide new Crosstab model APIs for chart support
+The goal of this enhancement is to support charts inside crosstab measure cells.
+Charts will span accross an entire row or column, and therefore the crosstab model should provide some API to:
+- merge all cells on rows, or on columns.
+This needs integration with report engine to get the merged subquery for all the cells.
+- insert a header/footer row or column for custom content (in this case, the chart will render the axis there)
+- allow to set a fixed dimension for the width/height of the base measure cell (charts cannot expand/shrink dynamically, so the size must be set at design time)

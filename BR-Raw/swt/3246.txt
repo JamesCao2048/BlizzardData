@@ -1,0 +1,45 @@
+Inspect32 does not show name for CCombo
+Accessibility problem.
+CCombo widget does not return accessible "Name" property.
+The Inspect32
+shows "none".
+Here is a sample code;
+private static int STYLE = SWT.FLAT;
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+
+final Composite page = new Composite(shell, STYLE);
+GridLayout layout = new GridLayout();
+layout.numColumns = 2;
+page.setLayout(layout);
+page.setLayoutData(new GridData(GridData.FILL_BOTH));
+Label label = new Label(page, 0);
+label.setText("Combobox test");
+CCombo ccombo = new CCombo(page, STYLE);
+ccombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+ccombo.addKeyListener(new KeyAdapter() { });
+page.layout(true);
+
+shell.open();
+shell.addControlListener(new ControlAdapter() {
+public void controlResized(ControlEvent e) {
+Rectangle r = shell.getClientArea();
+page.setBounds(r);
+}
+});
+shell.setSize(256, 360);
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose();
+}
+How to reproduce;
+1, Start Inspect32.exe.
+2, Run above example.
+A shell with Label and CCombo is shown.
+3, Click the CCombo.
+The Inspect32 shows "none" for "Name" property.
+<<< ERROR
+Expected result;
+The Inspect32 shows "Combobox test" for "Name" property.

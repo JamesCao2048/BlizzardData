@@ -1,0 +1,9 @@
+[OpenGL] Mac GLCanvas does not immediately update GL state upon resize
+The fixBounds method gets asyncExec'ed when a resize, hide or show event occurs...
+is there any reason this can't be called immediately?
+The problem is that I receive notification of the resize and try to draw to the canvas, but the drawing becomes invalid as soon as the fixBounds method gets called...
+fixBounds should've already been called before I started drawing!
+I am trying to do selective updates instead of just redrawing the screen constantly, so it's crucial that when I'm told about a resize I can immediately draw and the GL state will already be up to date.
+Specifically, I am trying to plug in an OpenGL version of the Draw2D Graphics class, and resizing the window creates a bunch of screen garbage because of this problem.
+Looking at the source for the Windows and Linux implementations of GLCanvas, it looks like they update their GL state immediately when notified of a resize event.
+Shouldn't the behavior be uniform across platforms?

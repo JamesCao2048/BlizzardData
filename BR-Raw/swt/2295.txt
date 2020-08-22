@@ -1,0 +1,5 @@
+The ToolTip object is not disposed appropriately and prevents from creating another ToolTip on the same shell
+the new ToolTip class in SWT 3.2 can not be disposed appropritately.
+On the same shell object, if a ToolTip (I used balloon style) is created and disposed, a second ToolTip (again, balloon style) object can be instantiated but will not be displayed.
+The parent Shell object keeps the OS handle of the balloon Tooltip handle, but handle is not reset when the destroytooltip() method in the Shell class is invoked.
+Since the old hanlde is still lingering aorund, Shell object thinks no need to ask the OS to create a new handle again.

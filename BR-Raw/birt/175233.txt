@@ -1,0 +1,10 @@
+Bug 175233 Request to change access specifier of the org.eclipse.birt.report.designer.ui.editors.MultiPageReportEditor.updateRelatedViews() method from private to protected or public
+Hi, We are extending the BIRT Designer to add support for the versioning system in our project.
+Our requirement is as follows: 1.User creates a new BIRT report and saves it 2.First time when the report is created its version is 1.3.Any subsequent save creates a new version 4.The version is always included in the filename.
+5.Once a new version is created, we are able to display its new name(with the new version number) on the editor tab.
+But we are unable to update the name on the "Outline" view where the Data sources and Data sets are displayed.
+6.For this sake we have extended org.eclipse.birt.report.designer.ui.editors.MultiPageReportEditor and overridden the public void doSave(IProgressMonitor progressMonitor) method.
+7.In order to display the new name on the "Outline" view, we need to call org.eclipse.birt.report.designer.ui.editors.MultiPageReportEditor.updateRelatedViews() method but its private.
+If we decide to copy this method then we need to replicate the following methods from org.eclipse.birt.report.designer.ui.editors.MultiPageReportEditor: updateOutLineView(),getOutlinePage(), dispose(), getAdapter(), updateRelatedViews(), pageChange(), getPalettePage(), updatePaletteView(), updateDateView(), getDataPage() Apart from this we will require to even copy the class org.eclipse.birt.report.designer.internal.ui.editors.schematic.ReportMultiBookPage as this class is not exposed for use for other plugins.
+To avoid so much code replication we request you to change the access specifier of the org.eclipse.birt.report.designer.ui.editors.MultiPageReportEditor.updateRelatedViews() method from private to protected or public
+-- Regards, Rakesh Shete

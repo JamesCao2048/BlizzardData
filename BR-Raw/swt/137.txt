@@ -1,0 +1,4 @@
+Use g_type_query to query for class and instance sizes of GtkFixed
+Because of sealing we can no longer access GtkFixed and GtkFixed sizeof
+so remove them with the standard gobject api for retrieving this
+documentation.

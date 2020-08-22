@@ -1,0 +1,8 @@
+Editors do not respect operating system caret settings
+Build ID: I20070621-1340
+Steps To Reproduce:
+1.Change thickness of caret in control panel
+2.Launch eclipse
+3.Open a file
+More information:
+The text caret's size is not reflected by eclipse it remains the standard size inside editor windows; while the size change is reflected correctly in Eclipse dialogs.

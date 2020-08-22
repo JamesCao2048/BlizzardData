@@ -1,0 +1,2 @@
+Bug 142137 Style name can't be changed to None in Property Editor after delete the style
+Steps to reproduce: 1.New a style named "S1", apply it on a label 2.Delete "S1" 3.Switch to Property Editor, change label style to None Expected result: Style is changed to None Actual result: Style is still "S1" till change it with context menu

@@ -1,0 +1,7 @@
+GTK+ 2.2 requests data from non-visible rows of a VIRTUAL table
+Because the fixed_height_mode property is not supported until GTK+ 2.2,
+GtkTreeView requests all rows to perform validation.
+Virtual tables can
+probably get a good speed boost by returning some dummy data until the row
+actually becomes visible, rather than going and asking the application for the
+data too early.

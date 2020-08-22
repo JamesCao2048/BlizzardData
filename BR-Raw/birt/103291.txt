@@ -1,0 +1,2 @@
+Bug 103291 Group key doesn't support inputting text
+Description: Group key doesn't support inputting text Steps to reproduce: 1.Add a table and bind it with data set 2.Add a group to the table: enter a row name in the "Group On:" textbox 3.Save and preview Expected result: Everything is OK Actual result: Error occurs because the group key is added as a string not a expression

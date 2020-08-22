@@ -1,0 +1,7 @@
+Bidi - NPE when closing Eclipse
+build F3
+-had a workspace created with English Win2k in English system locale
+-switched the default locale to Hebrew
+-restarted Windows
+-in Eclipse I could now type R2L Hebrew text
+-on shutdown I got the attached NPE in BidiUtil.removeLanguageListener

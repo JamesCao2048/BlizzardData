@@ -1,0 +1,8 @@
+Bug 192281 variant portion of locale is ignored during internationalization
+The use of resource files for internationalization ignores the variant portion of the locale.
+For example we have reports that rely on a label.properties file for the column headers.
+If the current locale is es_MX the report will properly display the labels from label_es_MX.properties.
+However if the locale includes a variant such as es_MX_client all of the labels still get loaded from label_es_MX.properties rather than label_es_MX_client.properties.
+According to the FAQ on internationalization: "When you run your report, BIRT will use the standard Java system for locating a property file that matches the user's locale." From that I would assume the same property lookup order used by the java ResourceBundle class: * baseName + "_" + language1 + "_" + country1 + "_" + variant1 * baseName + "_" + language1 + "_" + country1 * baseName + "_" + language1 * baseName + "_" + language2 + "_" + country2 + "_" + variant2 * baseName + "_" + language2 + "_" + country2 * baseName + "_" + language2 * baseName Where the specified locale is language1_country1_variant1 and the default locale is language2_country2_variant2 To reproduce: 1.create a report that has a label bound to a base resource file and deploy it.
+2.create a locale specific (including variant) version of the base resource file and deploy it.
+3.render the report using the viewer and pass in the __locale parameter consisting of the full locale used in step 2 At this point you should be able to confirm the location of the loaded label is not from the variant version of the resource file.

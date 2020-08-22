@@ -1,0 +1,14 @@
+gio_getMimeInfo' seems to leak a file descriptor to "/usr/share/mime/globs" on every call
+When running under CDT, I can use eclipse for a while.
+Eventually, (within 12-14 hours), I can no longer save modified files.
+I also cannot save the workspace state upon exiting.
+When looking at the "Details" area of the error box, the system complains that too many files are open.
+Indeed, when I do an 'ls
+-al' of /proc/<PID>/fd  (where PID is the process ID associated with java/Eclipse), the system reports '/usr/share/mime/globs' is opened 878 times.
+I am running Fedora 11 on x86_64 and Sun's jre 1.6.0_16.   I was able to reproduce this with a few different projects.
+
+-- Configuration Details
+--
+Product: Eclipse 1.3.0.20091112-2040 (org.eclipse.epp.package.cpp.product)
+Installed Features:
+org.eclipse.platform 3.6.0.v20091109-9gF72GDmFufcs2XNpLRoGQ7j_VEb2CRgdc

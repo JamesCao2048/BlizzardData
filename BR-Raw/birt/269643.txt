@@ -1,0 +1,4 @@
+Bug 269643 Using consistentL&F in filter dialog
+In BIRT designer, the data set editor filter dialog is different from that of table filter dialog.
+This however is not expected for we want all the filter dialog in BIRT keep consistency in terms of L&F.
+Data Set Editor should change to reuse Table's filter definition dialog.

@@ -1,0 +1,4 @@
+computeSize() wrong for DateTime with SWT.DATE style (Hebrew calendar)
+1) Change the locale to Hebrew on Windows 7 (or Vista) and change to calendar type to Hebrew.
+2) Run the ControlExample, select the DateTime tab and  check the SWT.DATE style.
+Note that the preferred size of the widget is wrong.

@@ -1,0 +1,6 @@
+Bug 203888 Syntax Checker for JavaScript
+BIRT provides the report developer the ability to use JavaScript to build custom logic in reports.
+Report developers currently do not have the ability to validate JavaScript code during design.
+JavaScript errors are only caught at runtime.
+This project looks at providing report developers the ability to validate JavaScript code at design time.
+The benefits of doing so are increased report developer productivity since errors can be caught and corrected at design time instead of at runtime.

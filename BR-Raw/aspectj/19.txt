@@ -1,0 +1,5 @@
+Added support for more cache backing(s)
+Created  attachment 221903   [details]
+Asynchronous file cache backing(s) patch
+Added support for asynchronouse cache backings - one uses a "flat" model similar to the default cache backing only does the updates in the background. The other uses a ZIP file to hold the cached bytes.
+Attached is a patch file for the fix/feature

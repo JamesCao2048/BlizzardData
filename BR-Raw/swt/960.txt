@@ -1,0 +1,26 @@
+BlockSelection: Exception and crash while RTL orientation
+Build ID: I20090520-2000
+Steps To Reproduce:
+1) Run 'TextEditor'and have :
+ABC
+ABCDEF
+AB
+2) Change the orientation to 'Right to left'
+3) Enable Block Selection
+4) Block select the (complete) text
+5) Application (Text Editor) crash due to the below exception
+-
+Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range:
+-3
+at java.lang.String.<init>(Unknown Source)
+at org.eclipse.swt.custom.DefaultContent.getTextRange(DefaultContent.java:709)
+at org.eclipse.swt.custom.StyledText.getBlockSelectionText(StyledText.java:3549)
+at org.eclipse.swt.custom.StyledText.copySelection(StyledText.java:1789)
+at org.eclipse.swt.custom.StyledText.handleMouseUp(StyledText.java:5922)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:5528)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3880)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3473)
+at org.eclipse.swt.examples.texteditor.TextEditor.main(TextEditor.java:102)
+More information:

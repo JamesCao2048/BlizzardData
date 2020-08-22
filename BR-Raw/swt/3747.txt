@@ -1,0 +1,50 @@
+Setting direction on SWT.ARROW Button displays warnings
+RC2, using gtk2.2.1
+- run the Control Example, go to the Button tab
+- select the ARROW radio and will get the following warning spew:
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): assertion `GTK_IS_LABEL (label)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): assertion `GTK_IS_LABEL (label)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): assertion `GTK_IS_LABEL (label)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): assertion `GTK_IS_LABEL (label)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): assertion `GTK_IS_LABEL (label)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): assertion `GTK_IS_LABEL (label)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): assertion `GTK_IS_LABEL (label)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtkmisc.c: line 210
+(gtk_misc_set_alignment): assertion `GTK_IS_MISC (misc)' failed
+(<unknown>:1756): Gtk-CRITICAL **: file gtklabel.c: line 1230
+(gtk_label_set_justify): asser

@@ -1,0 +1,35 @@
+GDI Object Leak
+Eclipse 3.2 M4
+Run the following example.
+Notice that each time the "test" button is pressed, the number of GDI Objects increases.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+Button b = new Button(shell, SWT.PUSH);
+b.setText("test");
+b.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+GC gc = new GC(shell);
+Region rg1 = new Region(display);
+gc.getClipping(rg1);
+gc.setAntialias(1);
+gc.setClipping(rg1);
+Region rg2 = new Region(display);
+gc.getClipping(rg2);
+rg1.dispose();
+rg1 = null;
+rg2.dispose();
+rg2 = null;
+
+gc.dispose();
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

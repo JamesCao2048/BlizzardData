@@ -1,0 +1,9 @@
+StyledText: squiggles not drawn for tabs
+R3.4 and 3.5 M1.
+The squiggle drawing algorithm fails for tabs on WindowsXP (works on Linux-GTK).
+Paste this into the Package Explorer to see the missing squiggles:
+public class T {
+void main() {
+String s= "missing	squiggles		for		Tabs"
+String s2= "squiggles    work    for    Spaces"
+}

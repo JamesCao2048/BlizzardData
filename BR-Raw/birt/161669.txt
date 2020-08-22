@@ -1,0 +1,3 @@
+Bug 161669 Incomplete adaptation of an oda data set design's Dynamic Query
+When adapting a dynamic query in an ODA DataSetDesign's input parameter definition (oda.design.DynamicValuesQuery.getDataSetDesign() ), ModelOdaAdapter stops at saving its referenced dataSet name, but does not actually create/update corresponding odaDataSetHandle in model.
+This leads to an error when attempting to use the referenced data set name.

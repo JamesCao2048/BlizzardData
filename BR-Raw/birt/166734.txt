@@ -1,0 +1,10 @@
+Bug 166734 Target is opened in the new window even choose the same window when preview in PDF [00]
+Description: Target is opened in the new window even choose the same window.
+Build number: 2.1.2.v20061205-0710 Steps to reproduce: 1.New a report target.rptdesign, insert several items.
+2.Preview it in Web Viewer.
+3.New a report, insert a label 4.Select the label, select Property Editor->Hyperlink, Tick Drill-through 5.In step1, tick report document, select target.rptdocument from your folder.
+In step4, tick Same Window.
+6.Preview report in PDF, click the link.
+Expected result: Target is opened in the same window.
+Actual result: Target is opened in the new window.
+Error log: N/A

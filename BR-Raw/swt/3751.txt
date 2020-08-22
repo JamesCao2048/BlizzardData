@@ -1,0 +1,48 @@
+Rapid button pressing
+I've noticed that the buttons I create with SWT seem to have problems
+responding to rapid mouse clicks.
+Here's the basic scenario: I create a
+button on a Composite, without necessarily adding any
+SelectionListeners.
+Then I (compile, run, and) click it many times in
+fast succession.
+Visually, the button appears to depress on about every
+other click.
+However (by adding a listener), I can tell that selection
+events are being fired with every click.
+The overall effect is jolting
+-- the button appears to do its business too many times (since I
+intuitively expect it to function only as many times as it depresses).
+When I use a native windows app, I can quick as fast as I like, and I
+will see a depression with each click.
+If you compile the following, and
+click on the button quickly 10 times, the "click" counter will run up to
+9, but you'll see 5 depresses (I think ...
+it's hard to count).
+import java.io.*;
+import java.util.*;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+public class Test {
+static int count = 0;
+public static void main (String [] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Button button = new Button(shell, SWT.PUSH);
+button.setText("click me");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+System.out.println("click: " + count++);
+button.update();
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed ())
+if (!display.readAndDispatch ()) display.sleep ();
+display.dispose ();
+}
+}

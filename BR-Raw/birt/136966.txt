@@ -1,0 +1,2 @@
+Bug 136966 When set an alias on a column, the column can not be used in the cascading parameter
+Description: When set an alias on a column, the column can not be used in the cascading parameter Steps to reproduce: 1.new a datasource and a dataset 2.set an alias on a column 3.new a cascading parameter, set the column with an alias as the values column Actual result: the column can not be used in the cascading parameter

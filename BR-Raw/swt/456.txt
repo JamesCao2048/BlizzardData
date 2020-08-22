@@ -1,0 +1,11 @@
+Trying to reveal element in Table takes very long
+Created  attachment 186849   [details]
+Sample from Activity Monitor
+HEAD Cocoa
+Eclipse consistently hangs when I do this:
+- open Keys preference page
+- click into filter field and type "Show In (Pac"
+- bind "Show In (Package Explorer)" to Command+P
+=> in the Conflicts table, "Print" shows up
+- click Print there
+=> eclipse process uses a lot of CPU cycles and doesn't respond any more for at least several minutes

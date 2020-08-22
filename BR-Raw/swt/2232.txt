@@ -1,0 +1,25 @@
+no mouse move in button when dragging
+Eclipse 2.1
+Run the following example.
+Click down with the left mouse button in the button and drag the mouse.
+There are no mouse move events while the mouse button is down.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+Button b = new Button(shell, SWT.BORDER);
+b.setBounds(10, 10, 100, 100);
+Listener l = new Listener() {
+public void handleEvent(Event e) {
+System.out.println(">>> mouse move event");
+}
+};
+b.addListener(SWT.MouseMove, l);
+
+shell.setSize(150, 150);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,53 @@
+frequent "invalid thread access
+I'm not sure 100% where the problem lies with this (hard to say if it's SWT, or JFace, or what), but since updgrading to 3.4 M4 I've been having invalid thread accesses like crazy.
+This also coincided with getting a new dual core laptop, which is much more likely the issue.
+I don't necessarily have to be doing anything for these errors to happen.
+Just leaving the workbench sitting long enough with some editors open is usually enough.
+Unfortunately all I have are some stack traces from the error log, I have yet to find a reproducible test case other than "just wait, it will happen".
+Once the error happens, UI behaviour of the workbench gets very flaky...
+text entry starts showing up in reverse in text controls for example.
+The text entry problem seems to be the most common symptom so far.
+Some example stack traces are below.
+Apologies in advance if this is a dupe.
+I searched for bugs related to "invalid thread access" and there were 200+ of them, which was too many to wade through.
+If there is any way I can be of better aid in narrowing this down, let me know.
+eclipse.buildId=I20071213-1700
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows XP x86-32 jvmwi3260-20071121_15015 (JIT enabled)
+J9VM
+- 20071121_015015_lHdSMR
+JIT
+- r9_20071121_1330
+GC
+- 20071031_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86
+Error
+Mon Jan 14 12:07:24 EST 2008
+Unhandled event loop exception
+org.eclipse.swt.SWTException: Invalid thread access
+at org.eclipse.swt.SWT.error(SWT.java:3716)
+at org.eclipse.swt.SWT.error(SWT.java:3634)
+at org.eclipse.swt.SWT.error(SWT.java:3605)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:441)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:335)
+at org.eclipse.swt.custom.StyledText.getBackground(StyledText.java:3054)
+at org.eclipse.swt.custom.StyledText.handlePaint(StyledText.java:5291)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:4866)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:952)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:976)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:961)
+at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1402)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3831)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:334)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4450)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2329)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3359)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+at org.eclipse.jface.window.Window.open(Window.java:801)
+at org.eclipse.ui.internal.views.log.EventDetailsDialog.open(EventDetailsDialog.java:166)
+at org.eclipse.ui.internal.views.log.EventDetailsDialogAction.run(EventDe

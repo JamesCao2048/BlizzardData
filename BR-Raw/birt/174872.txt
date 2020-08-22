@@ -1,0 +1,6 @@
+Bug 174872 Clean up chart model
+The chart model contains unused attributes and components.
+Those just make it difficult to understand the model architecture, so they should be removed from the schema, and the EMF classes must re-generated.
+Examples are: ChartPreferences, Rule.
+We need to analyze the model to find out all unused ones.
+Note that this should not break backward compatibility, otherwise just make them deprecated.

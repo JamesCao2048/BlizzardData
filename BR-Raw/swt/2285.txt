@@ -1,0 +1,3 @@
+SWT Table column resize issue
+If you double click the column resizer (line splitting two column in table column header) in a SWT Table with first column being numbers ,the column shrinks so that you cannot view the entire column data.This happens only for the first column with numbers.
+Usually the column should resize to show the datas properly .only the table column name is showed truncated.But here the column data is itself hidden.

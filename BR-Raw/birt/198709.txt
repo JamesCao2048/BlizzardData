@@ -1,0 +1,7 @@
+Bug 198709 bad resizing in Edit Data Set dialog
+Build ID: N/A Steps To Reproduce: Create a new data set.
+When in the Edit Data Set dialog, resize the frame.
+The left column need not grow with the window.
+When resizing, I'm really trying to get more space on the right pane.
+In the Query Section, there are three panes showing (section list, available items / filters, query text.) When I resize, I only want the query text pane to grow.
+More information:

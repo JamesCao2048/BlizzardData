@@ -1,0 +1,68 @@
+Grayed PNG image displayed white background in some Linux
+Build ID: M20060921-0945
+Steps To Reproduce:
+The following code displays a transparent image(transparent.png) in a window.
+There should be nothing displayed.
+But in some machine(ThinkPad T60, ThinkCenter 8212, ThinkCenter 8141) with SLED10 linux, it displayed a white image.
+public class TestImage
+{
+public TestImage()
+{
+}
+public static void main(String args[])
+{
+final Display display = new Display();
+Shell shell = new Shell();
+RowLayout rowlayout = new RowLayout(SWT.VERTICAL);
+shell.setLayout(rowlayout);
+final Image whiteimage = createStockImage(display, "transparent.png");
+final Image graywhiteImage = new Image(null, whiteimage, SWT.IMAGE_GRAY);
+GC gc = new GC(display);
+Canvas canvas = new Canvas(shell, 0);
+RowData data = new RowData();
+data.width = 400;
+data.height = 400;
+canvas.setLayoutData(data);
+canvas.setSize(new Point(200,200));
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent arg0)
+{
+arg0.gc.drawImage(graywhiteImage, 0, 0);
+}
+});
+canvas.redraw();
+shell.setSize(new Point(500,500));
+shell.layout();
+shell.open();
+while(!shell.isDisposed())
+try
+{
+if(!display.readAndDispatch())
+display.sleep();
+}
+catch(Exception e)
+{
+e.printStackTrace();
+}
+}
+private static Image createStockImage(Display display, String path)
+{
+try
+{
+java.io.InputStream stream = TestImage.class.getResourceAsStream(path);
+if(stream != null)
+{
+org.eclipse.swt.graphics.ImageData imageData = new ImageData(stream);
+if(imageData != null)
+{
+org.eclipse.swt.graphics.ImageData mask = imageData.getTransparencyMask();
+return new Image(display, imageData);
+}
+}
+}
+catch(java.lang.Exception exception) { }
+return null;
+}
+More information:
+The following bugs may relate to it:164691, 165751.In my test, if the PNG is not transformed to gray, it has no problem.
+GIF file has no problem.

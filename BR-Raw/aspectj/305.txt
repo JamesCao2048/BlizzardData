@@ -1,0 +1,37 @@
+unqualified superaspect<T> pointcut sortafunny in subaspect
+Advice not applied in subaspect using parameterized superaspect pointcut without
+qualifying with type parameter.
+Declare error using same locution works.
+Doc ambiguous:  "All references to a pointcut declared in a generic type from
+outside of that type must be via a parameterized type reference, and not a raw
+type reference."  I get no compiler error in either case, so perhaps "outside of
+that type or subtypes."  But can't interfaces can be parameterized and pointcuts
+declared on interfaces?  Eek!
+This was disconcerting because the declare warning showed the pointcut was
+correct, but still the advice was not being applied.  (My initial aspect was a
+perthis(), so I thought that was the problem.)
+Not sure if this is treated by  bug 112105  or any other generics bugs (is there a
+tag for them?)
+-------------------------------------------------------
+package bugs;
+public class ParameterizedTypeInPointcut {
+public static void main(String[] args) {
+C.go();
+}
+static class C {
+static void go() {}
+}
+}
+abstract aspect AA_ParameterizedTypeInPointcut<Target> {
+pointcut going() :call(void Target.go()) ;
+before() : going() {
+System.out.println("AA.going()");
+}
+}
+aspect A_ParameterizedTypeInPointcut extends
+AA_ParameterizedTypeInPointcut<ParameterizedTypeInPointcut.C>{
+declare warning : going() : "going()"; // works fine
+before() : going() { // advice not applied
+System.out.println("A.going()");
+}
+}

@@ -1,0 +1,38 @@
+StyledText blank in Linux RedHat
+Created  attachment 104906   [details]
+The screen shot on Linux (not working case)
+Build ID: Eclipse 3.4 RC2
+Steps To Reproduce:
+1.Create an application that uses the following StyledText widget (code sample provided below).
+2.Running it in Linux RedHat 32 bit.
+The text appears to be blank (image attached).
+It works on Windows, only has problem on Linux.
+Code sample:
+===========================================================
+import org.eclipse.swt.custom.StyleRange;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Display;
+public void createPartControl(Composite parent) {
+
+...............
+StyledText link = new StyledText(stComp, SWT.CENTER | SWT.READ_ONLY | SWT.SINGLE);
+gridData = new GridData(GridData.HORIZONTAL_ALIGN_CENTER | GridData.GRAB_HORIZONTAL | GridData.VERTICAL_ALIGN_CENTER);
+gridData.horizontalAlignment = GridData.FILL;
+gridData.grabExcessHorizontalSpace = true;
+gridData.minimumWidth = 400;
+
+link.setBackground(parent.getBackground());
+link.setText("View the diagnostic report for this application");
+Display disp = Display.getCurrent();
+if (disp == null)
+disp = Display.getDefault();
+
+final Color color = Disp.getSystemColor(SWT.COLOR_BLUE);
+final Color background = link.getBackground();
+StyleRange sr = new StyleRange(0, link.getText().length(), color, background);
+sr.underline = true;
+link.setStyleRange(sr);
+..........
+}
+More information:

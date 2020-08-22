@@ -1,0 +1,5 @@
+Not removing event filter added with gdk_window_add_filter
+We use gdk_window_add_filter() to listen for focus events to fix ON_TOP shells.
+While this call takes a window, this is just the window to search for, and it
+seems that the filter may not be removed automatically when the window is destroyed.
+The fix is to use gdk_window_remove_filter() appropriately.

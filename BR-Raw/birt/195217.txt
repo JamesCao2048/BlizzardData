@@ -1,0 +1,7 @@
+Bug 195217 [2.1.3]Border is missing on table group cell when preview in PDF[0300][1200]
+Description: Get the attached report design file, preview in PDF, the bottom border is missing in table group cell.
+Build version:2.1.3.v20070702-1703 Steps to reproduce: 1.Get the attached report design.
+There is a table with group in the layout, and set the "Drop" property to "Detail", and set its border.
+2.Preview in pdf, the buttom border is missing.
+Expected result: No border is missing.
+Error log: N/A.

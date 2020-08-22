@@ -1,0 +1,6 @@
+Bug 271500 Class files not updated for data set preview
+If I develop a java project and a BIRT project in the same workspace and I write a report that calls the pojo in a scripted dataseet that is defined in the java project, it does not refresh when I preview the dataset.
+If I change the class and select preview dataset the old class is used.
+If I preview the report it works fine.
+The only way to solve it is to stop and start eclipse.
+The webviewer uses the ReloadableClassLoader which reloads the urls, can we add something like this for the data set preview?

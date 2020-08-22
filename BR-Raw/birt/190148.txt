@@ -1,0 +1,4 @@
+Bug 190148 html tag <address> is missing when view as pdf
+Build ID: RC0-0518 Steps To Reproduce: 1.create a report design 2.add a text with
+<address>somewhere</address> 3.view as html or pdf result: it hangs up for long time, or it is dropped More information: my suggestion for those unhandled html tag now, convert it into plain text, we do not want any loss in our content.
+Thanks!

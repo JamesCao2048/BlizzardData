@@ -1,0 +1,11 @@
+Outliner: focus causes select causes horizontal scroll
+Build: F1
+Create a java project
+Create a java package named a.really.longish.name.that.exhibits.the.bug
+Create a java class named Foo in a.really.longish.name.that.exhibits.the.bug
+Notice that the outliner selects the package name, and scrolls it.
+Now I can't
+see the icons that help me determine the type of the element.
+This appears to only happen the first time I open an editor.
+I would expect the icons to be displayed as well as the name when the auto
+selection occurs.

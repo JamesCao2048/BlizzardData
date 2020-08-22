@@ -1,0 +1,45 @@
+StyledText with SWT.WRAP flag does not shape arabic letters
+RHEL 4.0
+gtk2-2.4.13-12
+pango-1.6.0-7
+package cairo is not installed
+Arabic letters are not properly shaped in a StyledText using SWT.WARP flag.
+Code to reproduce:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class Bugzilla135075 {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setText("Bugzilla #135075");
+shell.setLayout(new GridLayout(2, false));
+final StyledText text = new StyledText (shell, SWT.BORDER | SWT.WRAP);
+text.setLayoutData(new GridData(SWT.FILL,SWT.CENTER, true, false));
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Fill text");
+//- This text is not properly shaped in the text field.
+text.setText("&#1575;&#1582;&#1578;&#1576;&#1575;&#1585;");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+//- This time, the displayed text is correct.
+text.setText("&#1575;&#1582;&#1578;&#1576;&#1575;&#1585;");
+}
+});
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}
+It is interesting to notice that the first setText call produces wrong shaping, but when the user edits the text field its content becomes correct.
+The setText call made through the button click produces always expected text.

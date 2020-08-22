@@ -1,0 +1,52 @@
+pointcut call(MethodPattern) matches non-visible methods in parent class
+aspectjtools.jar / ajc v1.2
+We believe that the call(methodpattern) pointcut has matching behaviour that is
+inconsistent with what we expect from Java in relation to invocations of methods
+on subclasses and superclasses.
+Background:
+Our goal is to use an aspect to declare ajc compiler warnings on any invocation
+to a target method, where the space of targets is defined as any visible method
+of any class in a specified package P or its subpackages.
+As well as straight invocations from types in packages oustide P and its
+subpackages, we wish to match method invocations on P where the methods invoked
+are inherited from P -- that is , they are obtained in a type that directly
+extends a type in P or its subpackages.
+The fragment of the aspect we are using is:
+public aspect Aspect1
+{
+pointcut methodCalls() :
+!within(Aspect1) &&
+call(* P..*.*(..)) ;         // 'P' is the target package space
+declare warning : methodCalls() : "invoking";
+//...
+}
+Consider these cases:
+Case 1 method inheritance:
+Superclass A in package P declares and implements a public method M.  A direct
+subclass B (in a package outside P) directly extends A and inherits this method.
+Now, any calls inside B to M or this.M() are matched by the call() join point
+above which seeks to match calls to P..*.*() This is as we would expect since
+the implementation in package space P is actually being called.
+Case 2 method overriding:
+Superclass A in package P declares and implements a public method M.  Direct
+subclass B (in a package outside P) overrides A.M with its own implementation
+M'. M' does not invoke M.  Now, calls inside B to M' or this.M'() are still
+matched by the call() join point above which seeks to match calls to P..*.*()
+even though M' does not invoke or depend on M.  We do not expect this result
+since we do not think M is actually called.
+Case 3 redeclaration of non-visible method with the same name:
+Superclass A in package P declares and implements a private method M.  Direct
+subclass B (in a package outside P) introduces its own method M having the same
+signature as A.M.  Now, calls in B to M or this.M() are still matched by the
+call() join point above which seeks to match calls to P..*.*() even though A.M
+is not visible to B and is never called by it. We do not expect this result
+since we do not think A.M is ever called.
+The only way we can explain this apparent behaviour is by reasoning that the
+compiler is treating the subclass B "as a type of" its parent A and somehow
+concluding that method calls on B can be equated with calls to methods of
+identical signature on A.  However this seems at odds with the rules for Java
+visibility and with our expectations for when the call(...) joinpoint should match.
+We have experimented with execution(...) join points to perform this matching
+but that has turned up a different set of problems which we are still analyzing.
+Please can you shed any light on what the call joinpoint is doing here?
+regards, Dave

@@ -1,0 +1,24 @@
+Virtual table create all items if setItemCount before create first column
+Created  attachment 94319   [details]
+Snippet demonstrating delay
+Copied from SWT newsgroup:
+I can duplicate the delay in both 3.3 and 3.4M5 using the attached snippet.
+I get an 8-10 second delay if I set the item count *before* creating the first column.
+If I the first column is created before setting the item count there is no delay.
+The delay only occurs with the first column.
+I think this is because of the following section of code in Table.createItem(TableColumn, int):
+if ((parent.style & SWT.VIRTUAL) == 0) {
+LVITEM lvItem = new LVITEM ();
+lvItem.mask = OS.LVIF_TEXT | OS.LVIF_IMAGE;
+lvItem.pszText = OS.LPSTR_TEXTCALLBACK;
+lvItem.iImage = OS.I_IMAGECALLBACK;
+for (int i=0; i<itemCount; i++) {
+lvItem.iItem = i;
+OS.SendMessage (handle, OS.LVM_SETITEM, 0, lvItem);
+}
+}
+This statement is checking parent.style instead of this.style.
+I believe it should be:
+if ((style & SWT.VIRTUAL) == 0) {
+^
+For now there is a reliable workaround: create at least one column before setting the item count.

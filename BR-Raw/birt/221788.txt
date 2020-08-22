@@ -1,0 +1,3 @@
+Bug 221788 [Automation][Regression]Table script on prepare does not work in HTML&PDF
+Description: Set this.caption = "key" in script on prepare, but it does not work when preview report in HTML&PDF.
+Test Date: 20080307 Test Build: BIRT2.3.0 Daily Build: v20080307-1007 Step to reproduce: 1.Use the report attached 2.Preview it in HTML&PDF

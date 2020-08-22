@@ -1,0 +1,11 @@
+Resetting alpha to 0xFF has no effect
+Created  attachment 138728   [details]
+Snippet that demonstrates the problem under Mac OS X Cocoa
+I am doing some painting using advanced graphics.
+In particular I've noticed problems with the following sequence:
+1.Paint something using alpha
+2.Revert alpha to 0xFF
+3.Draw text
+At third step the text is drawn with the alpha value that was used in the 1st step.
+Drawing something different than text in the 3rd step works as expected.
+I am attaching the snippet and the screenshots that show the problem.

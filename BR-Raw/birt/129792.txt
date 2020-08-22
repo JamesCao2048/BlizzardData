@@ -1,0 +1,3 @@
+Bug 129792 BIDI3.2: [HCG] HTML/Web/PDF viewers are not mirrored
+This is very specific BiDi issue related to the ability of the product to mirror its interface (and sometimes alter other aspects of its behavior) when Eclipse is started with option "-dir rtl" 1.Start eclipse with "-dir rtl" option 2.Create any Report 3.Preview it using Web/HTML/PDF options Result: The layout of report as it appear in the Eclipse in the Layout tab and as it appears in HTML/PDF are different.
+While on Layout tab the report is mirrored on HTML/PDF it is not.

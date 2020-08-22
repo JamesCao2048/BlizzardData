@@ -1,0 +1,4 @@
+gdk_region_get_rectangles leaks
+gdk_region_get_rectangles() requires that the returned array be freed with
+g_free().
+This was missed in GC.setTransform() and GC.drawImageXRender().

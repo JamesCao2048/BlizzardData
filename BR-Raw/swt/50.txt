@@ -1,0 +1,13 @@
+[Retina] screen capture via cmd shift control 4 is not working as expected
+Created  attachment 232575   [details]
+Sample app to reproduce this problem
+On Mac retina
+- screen capture via cmd shift control 4 ..
+when pasting into ST chat window, the image is not properly sized.
+The screen captured pic is enlarged when pasting to a StyledText.
+But it is ok when pasting to Mac TextEdit
+Please follow the steps to reproduce this problem.
+1.Run sample app
+2.Press command+shift+control+4 to capture an image
+3.Click the Paste button in the sample app to paste the image
+Then you will find the image is enlarged.

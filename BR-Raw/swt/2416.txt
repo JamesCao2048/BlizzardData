@@ -1,0 +1,68 @@
+Combo on Mac incorrectly sends KeyDown event before Traverse when arrow up/down keys used
+N20060410-0010, Mac (OSX 10.3.9, haven't tried others)
+My understanding of SWT.Traverse is as follows:
+- for navigation keys in a control, SWT.Traverse should always be received before the corresponding SWT.KeyDown event for that key
+- setting the doit field to true should cause the Traverse described in the detail field to occur
+- setting the doit field to false should cancel the Traverse and a corresponding SWT.KeyDown event will be sent for that key.
+This is NOT happening on the Mac when using the arrowup and arrowdown keys.
+Instead, a KeyDown event is received, then a Traverse event, and then (optionally) a second keydown event.
+This is breaking the platform UI field assist popup.
+It causes double handling of the keystroke.
+The following snippet will demonstrate the problem by printing the received keystrokes to the console.
+package snippets;
+/*
+* Shouldn't traverse always come before keydown?
+* On the Mac, hitting the up or down arrow causes a KeyDown before
+* a Traverse, and then another KeyDown.
+
+*/
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class ComboKeystrokes {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+Combo combo = new Combo(shell, SWT.DROP_DOWN | SWT.BORDER);
+combo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+combo.setText("Here is some text");
+Listener listener = new Listener() {
+public void handleEvent(Event e) {
+StringBuffer sb;
+if (e.type == SWT.Traverse) {
+sb = new StringBuffer("Traverse"); //$NON-NLS-1$
+} else {
+sb = new StringBuffer("KeyDown"); //$NON-NLS-1$
+}
+sb.append(" received by combo"); //$NON-NLS-1$
+dump(sb.toString(), e);
+}
+private void dump(String who, Event e) {
+StringBuffer sb = new StringBuffer(
+"--- [ContentProposalAdapter]n"); //$NON-NLS-1$
+sb.append(who);
+sb.append("
+- e: keyCode=" + e.keyCode + hex(e.keyCode)); //$NON-NLS-1$
+sb.append("; character=" + e.character + hex(e.character)); //$NON-NLS-1$
+sb.append("; stateMask=" + e.stateMask + hex(e.stateMask)); //$NON-NLS-1$
+sb.append("; doit=" + e.doit); //$NON-NLS-1$
+sb.append("; detail=" + e.detail + hex(e.detail)); //$NON-NLS-1$
+sb.append("; widget=" + e.widget); //$NON-NLS-1$
+System.out.println(sb);
+}
+private String hex(int i) {
+return "[0x" + Integer.toHexString(i) + ']'; //$NON-NLS-1$
+}
+};
+combo.addListener(SWT.KeyDown, listener);
+combo.addListener(SWT.Traverse, listener);
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

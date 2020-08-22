@@ -1,0 +1,3 @@
+Text from DirectoryDialog#setMessage(..) not visible
+I20090428-0100
+The text that clients set with DirectoryDialog#setMessage(..) is not shown on Cocoa, even though the Javadoc says: "This message will be visible on the dialog while it is open."

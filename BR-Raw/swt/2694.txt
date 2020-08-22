@@ -1,0 +1,10 @@
+perspective button goes blank after closing perspective
+3.2M2
+observed on linux-motif and hpux, but not on gtk, so appears to be swt problem
+- drag the CBanner's separator to ~ the 50% mark
+- press its "Open Perspective" button, switch to the Debug perspective
+- after the perspective switch is done, right-click the Debug button in the
+CBanner and select Close
+- this returns you to the previous perspective, but its button in the CBanner
+now appears blank
+- will attach screenshot next

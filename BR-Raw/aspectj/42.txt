@@ -1,0 +1,13 @@
+NPE in AjBuildManager.java:528 after non-Java/AJ file was renamed
+Build Identifier:
+Upon using Eclipse's "Rename Resource" dialog to rename my project's "src/main/resources/META-INF/spring/email.properties" file to "scheduler.properties" in the same directory, Eclipse displayed the "AspectJ Internal Compiler Error" dialog with this stack trace:
+java.io.FileNotFoundException
+at java.io.FileInputStream.open(Native Method)
+at java.io.FileInputStream.<init>(FileInputStream.java:120)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.copyResourcesFromFile(AjBuildManager.java:528)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.copyResourcesToDestination(AjBuildManager.java:466)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performBuild(AjBuildManager.java:363)
+... e error: FileNotFoundException thrown: /Users/aswan/projects/foo/src/main/resources/META-INF/spring/email.properties (No such file or directory)
+Reproducible: Couldn't Reproduce
+Steps to Reproduce:
+N/A

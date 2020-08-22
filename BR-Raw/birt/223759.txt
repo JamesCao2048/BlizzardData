@@ -1,0 +1,15 @@
+Bug 223759 BIRT color chooser opens far from property editor
+Open a BIRT report.
+Select a label.
+Open the property editor.
+Click on the background color chooser button.
+The chooser opens, but it is way up near the upper left corner of the screen.
+The button I clicked was down by the bottom right corner.
+Thus, I need to first find the chooser, then move my mouse way across the screen and back.
+Move the color chooser closer to the property editor.
+Choose a color and press OK.
+Press the color chooser button again.
+The chooser is back to its original location.
+Expected that the chooser would open right near the button, the way a context menu or Java variable browser window does.
+This will minimize hand motion when choosing a color.
+Also, if the chooser location is to be independent of where the chooser button is clicked, expected the chooser to remember its location so I can move it manually to a convenient location.

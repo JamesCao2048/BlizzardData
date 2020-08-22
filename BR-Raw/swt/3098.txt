@@ -1,0 +1,60 @@
+Help fails to open
+In 3.1M4 Help is failing to open.
+I get a dialog saying:
+"An exception offured while lauching help.
+Refer to the log for more details".
+The log is as follows:
+!SESSION 2005-01-12 12:43:57.515
+-----------------------------------------------
+eclipse.buildId=I20041216-2000
+java.version=1.5.0
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86
+!ENTRY org.eclipse.help.base 4 0 2005-01-12 12:43:57.515
+!MESSAGE An exception occurred while launching help.
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.swt.browser.Browser.<init>(Browser.java:514)
+at
+org.eclipse.help.ui.internal.browser.embedded.EmbeddedBrowserFactory.test(EmbeddedBrowserFactory.java:69)
+at
+org.eclipse.help.ui.internal.browser.embedded.EmbeddedBrowserFactory.isAvailable(EmbeddedBrowserFactory.java:49)
+at
+org.eclipse.help.internal.browser.BrowserManager.createBrowserDescriptors(BrowserManager.java:215)
+at org.eclipse.help.internal.browser.BrowserManager.init(BrowserManager.java:75)
+at
+org.eclipse.help.internal.browser.BrowserManager.createBrowser(BrowserManager.java:330)
+at
+org.eclipse.help.internal.base.BaseHelpSystem.getHelpBrowser(BaseHelpSystem.java:110)
+at org.eclipse.help.internal.base.HelpDisplay.displayHelpURL(HelpDisplay.java:174)
+at org.eclipse.help.internal.base.HelpDisplay.displayHelp(HelpDisplay.java:54)
+at org.eclipse.help.ui.internal.DefaultHelpUI.displayHelp(DefaultHelpUI.java:43)
+at org.eclipse.ui.help.WorkbenchHelp.displayHelp(WorkbenchHelp.java:210)
+at
+org.eclipse.ui.internal.actions.HelpContentsAction$1.run(HelpContentsAction.java:80)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at
+org.eclipse.ui.internal.actions.HelpContentsAction.run(HelpContentsAction.java:78)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:989)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:555)
+at
+org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:505)
+at
+org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:419)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:833)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2803)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2448)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1569)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1540)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:285)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:144)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:102)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:220)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:273)

@@ -1,0 +1,8 @@
+StyledText computeSize() answering slightly short width when SWT.WRAP, causes missing text
+To see a manifestation of this in eclipse, which I think makes this important, hover over a compilation problem in a java editor like "display.getBounds2()", and in the hover you'll see: "The method getBounds2() is undefined for the type" (note that the final word "Display" is missing)
+swt-only steps:
+- run the CustomControlExample, go to the StyledText tab
+- remove "One Two Three" from the second line and its preceding CR/LF
+- now click the SWT.WRAP radio button and note that "dog." disappears (it has been wrapped to the next line)
+
+-> but it was able to fit in the identical width when the style wasn't SWT.WRAP

@@ -1,0 +1,28 @@
+Tree PaintItem event has wrong x
+- run the snippet below, which draws a focus box with the event's bounds for each item
+- note that beyond the root level of depth the focus box does not move to the right with the item that it's giving the PaintItem coordinates for, so client code that uses the event's x to determine where to draw its custom contents will paint at the wrong place
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+final Tree tree = new Tree(shell, SWT.MULTI | SWT.FULL_SELECTION);
+tree.setBounds(10,10,150,150);
+TreeItem item = new TreeItem(tree, SWT.NONE);
+item.setText("root");
+for (int i = 0; i
+< 4; i++) {
+item = new TreeItem(item, SWT.NONE);
+item.setText("child " + i);
+}
+tree.addListener(SWT.PaintItem, new Listener() {
+public void handleEvent(Event event) {
+event.gc.drawFocus(event.x, event.y, event.width, event.height);
+System.out.println("x=" + event.x);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

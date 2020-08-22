@@ -1,0 +1,4 @@
+Bug 235048 [Automation][Regression]Invisible series should not take space of chart area
+Description: There are 2 series in one chart, if user set one series to invisible, the area should not be taken by it.
+This chart should plot as same as the chart only has one series.
+Test Date: 20080602 Test Build: BIRT2.3.0 v20080602-0930 Step to reproduce: 1.Use the report attached 2.Preview it Expect result: Please refer to the golden file attached Actual result: Please refer to the failed screen shot attached

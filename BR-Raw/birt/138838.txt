@@ -1,0 +1,4 @@
+Bug 138838 [Regression]Localization can't be set
+Steps to reproduce: 1.New a report, add a Resource file "a.properties" for it 2.Add a label, select it, switch to property editor 3.Choose Localization, set key to "a", value to "actuate", add them to the resource file.
+4.Select the key and value, click "OK" Expected result: "a=acutate" is added to the resource file and display text of lable is "actuate" Actual result: Read-Only File Encountered: File "XXXXa.properties_en_US.properties" is read-only, please make sure it can be written first.
+Note: the path for the resource file in the exception(XXXXa.properties_en_US.properties) is not the resource folder but the current workspace

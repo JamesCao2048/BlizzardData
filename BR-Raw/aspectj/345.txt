@@ -1,0 +1,45 @@
+Advice on inner classes not show in Outline view or gutter
+Advice associated with pointcuts that match join points in inner classes are
+not shown. Declare warning/error are shown however. See attached screenshot
+for example below. Notice WEAVEINFO messages indicate problem is in AJDT not
+AspectJ. Also notice phantom entry in Outline view "injar aspectL Test.java".
+package bug_nnnnn;
+public class Test {
+public void test () {
+new Runnable() {
+public void run() {
+try {
+throw new Exception();
+}
+catch (Exception ex) {
+handleException(ex);
+}
+}
+};
+}
+
+public static void handleException (Throwable th) {
+
+}
+
+public static void main(String[] args) {
+try {
+throw new Exception();
+}
+catch (Exception ex) {
+handleException(ex);
+}
+}
+}
+aspect Aspect {
+
+declare warning : call(void handleException(..)) && !within(Aspect) :
+"Only Aspect should handle exceptions";
+
+pointcut caughtExceptions (Throwable th) :
+handler(Throwable+) && args(th);
+
+before (Throwable th) : caughtExceptions(th) {
+Test.handleException(th);
+}
+}

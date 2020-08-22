@@ -1,0 +1,8 @@
+Can't paste into password field.
+Version: 3.5.0
+Build id: I20090129-0100
+1) Copy some text (doesn't matter what it is)
+2) Open the CVS Add Repository Location dialog
+3) Attempt to paste the text into the password field
+Notice that no text is entered.
+(I suspect this may be platform behavior on Cocoa, but it used to work in Carbon.)

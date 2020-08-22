@@ -1,0 +1,52 @@
+StyledText - StringIndexOutOfBoundsException in StyledTextRenderer
+200308281813
+When hovering over the quick diff ruler to display the diff hover.
+Not
+reproducable, but consistently failing for a certain hover (I suspect an empty
+hover message, but not sure).
+java.lang.StringIndexOutOfBoundsException: String index out of range:
+-1
+at java.lang.Throwable.<init>(Throwable.java)
+at java.lang.Throwable.<init>(Throwable.java)
+at
+java.lang.StringIndexOutOfBoundsException.<init>(StringIndexOutOfBoundsException.java:67)
+at java.lang.String.substring(String.java)
+at org.eclipse.swt.custom.DisplayRenderer.getStyledTextWidth(DisplayRenderer.java)
+at org.eclipse.swt.custom.StyledTextRenderer.getTextWidth(StyledTextRenderer.java)
+at
+org.eclipse.swt.custom.StyledText$ContentWidthCache.contentWidth(StyledText.java)
+at org.eclipse.swt.custom.StyledText$ContentWidthCache.calculate(StyledText.java)
+at org.eclipse.swt.custom.StyledText.computeSize(StyledText.java:2116)
+at org.eclipse.swt.layout.GridLayout.calculateGridDimensions(GridLayout.java)
+at org.eclipse.swt.layout.GridLayout.computeLayoutSize(GridLayout.java)
+at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java)
+at org.eclipse.swt.widgets.Composite.computeSize(Composite.java)
+at org.eclipse.swt.widgets.Control.computeSize(Control.java)
+at
+org.eclipse.jdt.internal.ui.text.java.hover.SourceViewerInformationControl.computeSizeHint(SourceViewerInformationControl.java:315)
+at
+org.eclipse.jdt.internal.ui.text.CustomSourceInformationControl.computeSizeHint(CustomSourceInformationControl.java:70)
+at
+org.eclipse.jface.text.AbstractInformationControlManager.internalShowInformationControl(AbstractInformationControlManager.java:708)
+at
+org.eclipse.jface.text.AbstractInformationControlManager.presentInformation(AbstractInformationControlManager.java:677)
+at
+org.eclipse.jface.text.AbstractHoverInformationControlManager.presentInformation(AbstractHoverInformationControlManager.java:423)
+at
+org.eclipse.jface.text.AbstractInformationControlManager.setInformation(AbstractInformationControlManager.java:224)
+at
+org.eclipse.jface.text.source.AnnotationBarHoverManager.computeInformation(AnnotationBarHoverManager.java:97)
+at
+org.eclipse.jface.text.AbstractInformationControlManager.doShowInformation(AbstractInformationControlManager.java:661)
+at
+org.eclipse.jface.text.AbstractHoverInformationControlManager$MouseTracker.mouseHover(AbstractHoverInformationControlManager.java)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2036)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:2019)
+at
+org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoader.java:858)
+at org.eclipse.core.boot.BootLoader.run(Bo

@@ -1,0 +1,9 @@
+TRAVERSE_PAGE_NEXT events don't get through StyledText
+I20090313-0100
+On Cocoa, TRAVERSE_PAGE_NEXT/PREVIOUS events don't get through StyledText.
+This can e.g.
+be seen in the CustomControlExample: Ctrl+PageUp/PageDown traverses through all tabs, but when the focus is in the StyledText control, traversal does not works any more.
+With empty KeyDown, KeyUp, and Traverse listeners, I only get these events when I press Ctrl+PageDown:
+KeyDown [1]: KeyEvent{StyledText {} time=381924716 data=null character='0' keyCode=262144 stateMask=0 doit=true}
+KeyUp [2]: KeyEvent{StyledText {} time=381926556 data=null character='0' keyCode=16777222 stateMask=262144 doit=true}
+KeyUp [2]: KeyEvent{StyledText {} time=381927181 data=null character='0' keyCode=262144 stateMask=262144 doit=true}

@@ -1,0 +1,7 @@
+Bug 180879 [regression]Report Engine log file isn't generated.[0600]
+Description: Report Engine log file isn't generated.
+Build number:2.2.0.v20070404 Steps to reproduce: 1.Preview BIRT report.
+2.Check log in logs folder under viewer plugin birt folder.
+Expected result: Log file is created.
+Actual result: No log files.
+Error log:N/A

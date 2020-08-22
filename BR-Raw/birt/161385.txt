@@ -1,0 +1,2 @@
+Bug 161385 Redundant display text occour when preview a parameter
+Redundant display text occour when preview a parameter Steps to reproduce: 1.new a boolean parameter 2.set "combo box" display type and "list of value" to static 3.new a parameter and display text "false" ,value "0" 4.drag the parameter to the layout 5.preview Expected result: there's only "false" displayed in parameter dialogue Actual result: there are "false" and "0"

@@ -1,0 +1,3 @@
+WebKitGTK can now throw exception with SWT.WEBKIT style
+The current implementation of BrowserFactory on gtk will attempt to use the WebKitGTK Browser implementation for all Browsers created with style SWT.WEBKIT, even if it initially fails to load its swt-webkit library.
+Don't do this!

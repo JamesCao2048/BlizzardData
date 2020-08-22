@@ -1,0 +1,10 @@
+max StyledText window, fire MouseMove event
+I add StyledText to fill a standalone program.
+When I maximize this window
+using double click title bar( NOT click maximum button! ), the MouseMove event
+is fired!
+Try to write some text on StyledText, and select a block text.
+Then double
+click title bar.
+The selected block text will change select area because of
+this bug.

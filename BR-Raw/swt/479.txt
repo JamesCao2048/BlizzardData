@@ -1,0 +1,2 @@
+Invalid MouseHover event on MacOSX Cocoa
+As reported in  bug #331993  updating the mouse location via Display#setCursorLocation(Point) or by issuing a SWT.MouseMove event via Display#post(Event) seems to cause an invalid MouseHover event on MacOSX Cocoa.

@@ -1,0 +1,5 @@
+Bug 122584 Cascading parameter values can't be displayed properly in html viewer.
+Description: Cascading parameter values can't be displayed properly in html viewer.
+Steps to reproduce: 1.Preview attached design file in html viewer.
+2.Click on "change parameter" button in html viewer.
+3.Select the first parameter value and expect that the second parameter value in the same cascading parameter group could be displayed, but it is not displayed.

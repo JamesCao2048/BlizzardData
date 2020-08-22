@@ -1,0 +1,19 @@
+[Browser] dialog is not shown in response to returned string from onbeforeunload JS event
+Probably happens on carbon as well.
+Sample HTML page:
+<HTML>
+<head>
+<script>
+function closeIt()
+{
+alert('onbeforeunload invoked');
+return "hey! hey! hey!";
+}
+window.onbeforeunload = closeIt;
+</script>
+</head>
+<body>
+
+<a href=" http://www.eclipse.org ">Click here to navigate to www.eclipse.org</a>
+</body>
+</html>

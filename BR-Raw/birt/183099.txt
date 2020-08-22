@@ -1,0 +1,11 @@
+Bug 183099 White spaces before parameter value are ignored in birt:paramDef tag.[]0603
+Description: White spaces before parameter value are ignored in birt:paramDef tag.
+Build number:2.2.0.v200704190630 Steps to reproduce: 1.New a report with a string parameter and drag it to Layout.
+2.New a jsp file with content:
+<birt:parameterPage id="0" name="customparameterpage" reportDesign="report.rptdesign" isCustom="true">
+<birt:paramDef id="1" name="p_str" value=" value"/>
+<input type="submit" name="OK" value="submit"/>
+</birt:parameterPage> 3.Preview the jsp file.
+Expected result: Display " value" in web page.
+Actual result: Display "value" and three white spaces are lost.
+Error log:N/A

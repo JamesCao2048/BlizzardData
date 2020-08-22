@@ -1,0 +1,10 @@
+popup menu has bunch of empty items if it contains many items
+Created  attachment 85861   [details]
+modified Snippet131 to show the bug
+Please run attached snippet on GTK.
+Do a right click on the shell, and you should get a menu where the upper half is empty.
+You get arrows for scrolling the menu, if you do so, you can scroll the menu to a state, where no arrows are neccessary.
+I'll attach a screenshot as well.
+It is even easier to reproduce, if you increase the number of MenuItems, so that the menu doesn't fit on the screen.
+This is very similar to  bug 71844 , but while I cannot reproduce it with the plugin provided there, it is reproducible with the snippet attached here.
+I suppose it is the number of MenuItems which makes the difference.

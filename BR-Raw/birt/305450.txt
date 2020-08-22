@@ -1,0 +1,4 @@
+Bug 305450 [accessibility]hyperlink tooltip should be set to screentip in excel/ppt
+Build:2.6.0.v20100311 Steps to reproduce: 1.Insert a label, define hyperlink and hyperlink tooltip 2.Preview in word/excel/ppt Expected result: Tooltip works, office software has screentip property in hyperlink, we should set tooltip in this property Current behavior: Doc works.
+Excel display tooltip as a comment.
+PPt display no tooltip

@@ -1,0 +1,23 @@
+ExpandableWidget#setText/layout messes up StyledText in it
+When StyledText is in ExpandableWidget and ExpandableWidget#setText
+and ExpandableWidget#layout are called, StyledText's redraw doesn't
+work so that if some refresh event, i.e.
+iconify/deiconify happens,
+its content isn't redrawn correctly.
+Here is how to.
+a) Install the attached plugin.
+b) Run workbench
+c) Window > Show view > Other ...
+d) Sample Category > ExpandableWidget view
+e) Open Inner section(0), then open Nested section(0)
+f) Copy and Paste very long string in StyledText next to the label of "Second
+label" ( You can type here instead of Copy and Paste.
+If so, while typing,
+you will see a refresh problem so that you don't have to do g) and h) below)
+g) Make sure that the pasted string is wrapped.
+( So that you will see multiple
+lines in StyledText.
+See Fig 1 in the attached picture )
+h) Iconify/Deiconify the workbench window
+You will see the content in StyleText is gone.
+( Fig 2 )

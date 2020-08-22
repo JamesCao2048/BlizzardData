@@ -1,0 +1,61 @@
+SWT_AWT not working in CTabFolder with JDK 6 on Linux
+If a SWT_AWT.newFrame is embedded into CTabFolder, the SWT_AWT frame is not rendered.
+It works if CTabFolder is replaced with TabFolder.
+In WinXP everything is ok.
+Works also fine in JDK 1.5.0_09.
+Failing Linux configuration:
+Java(TM) SE Runtime Environment (build 1.6.0-b105)
+Java HotSpot(TM) Client VM (build 1.6.0-b105, mixed mode, sharing)
+SWT Build 3.3 020
+- Tuesday December 12, 2006
+Ubuntu 6.10
+Code to test
+--->
+import java.awt.Frame;
+import javax.swing.JButton;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.awt.SWT_AWT;
+import org.eclipse.swt.custom.CTabFolder;
+import org.eclipse.swt.custom.CTabItem;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.TabFolder;
+import org.eclipse.swt.widgets.TabItem;
+public class SWTCTabFolderTest {
+public static void main(String[] args) {
+try {
+new SWTCTabFolderTest();
+}
+catch (Throwable t) {
+t.printStackTrace();
+}
+}
+public SWTCTabFolderTest() {
+Display display = new Display();
+Shell shell = new Shell();
+shell.setSize(400, 400);
+shell.setLayout(new FillLayout());
+//		TabFolder tabFolder = new TabFolder(shell, SWT.TOP);
+//		TabItem tabItem = new TabItem(tabFolder, SWT.NONE);
+CTabFolder tabFolder = new CTabFolder(shell, SWT.TOP);
+CTabItem tabItem = new CTabItem(tabFolder, SWT.NONE);
+tabItem.setText("TabItem");
+
+Composite awtComposite = new Composite(tabFolder, SWT.EMBEDDED);
+tabItem.setControl(awtComposite);
+Frame awtFrame = SWT_AWT.new_Frame(awtComposite);
+awtFrame.setLayout(new java.awt.GridLayout(1, 1));
+awtFrame.add(new JButton("Button"));
+shell.setVisible(true);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}

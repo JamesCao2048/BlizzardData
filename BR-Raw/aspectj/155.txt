@@ -1,0 +1,10 @@
+When ordering a Clean with Build Automatico I receive the error below.
+When executing an Clean Project in Eclipse with Automatic Building I receive the error below.
+line from the top stack, e.g. "SomeFile.jara:243"
+java.lang.NullPointerException
+at org.aspectj.ajdt.internal.compiler.problem.AjProblemReporter.methodMustOverride(AjProblemReporter.java:380)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:153)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:400)
+at org.aspectj.org.eclipse.jdt.internal.compiler.ast.TypeDe ... pter.java:107)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
+NullPointerException thrown: null

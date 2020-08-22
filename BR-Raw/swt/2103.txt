@@ -1,0 +1,3 @@
+CTabFolder's getSelection() javadocs is incorrect
+The current javadocs says that an empty array will be returned if nothing has been selected.
+In reality, the return type is a CTabItem (so returning an array is impossible to begin with), and the actual return value for a CTabFolder with no selection is null.

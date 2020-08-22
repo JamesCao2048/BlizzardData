@@ -1,0 +1,8 @@
+File open dialog does not handle filters
+3.1M2
+In eclipse:
+1.Go to File > Import
+2.Choose 'Zip File'
+3.Hit 'Browse'
+The file dialog that pops up is supposed to filter on the file types *.jar and
+*.zip, but instead the text appears in the file name text entry.

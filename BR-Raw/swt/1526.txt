@@ -1,0 +1,38 @@
+improper usage of "Device" when setting font description in org.eclipse.swt.graphics.TextLayout constructor
+Build ID: I20080516-1333
+Steps To Reproduce:
+This defect mainly shows up on RetHat Linux 5.
+The constructor is coded-up like this:
+public TextLayout (Device device) {
+super(device);
+context = OS.gdk_pango_context_get();
+if (context == 0) SWT.error(SWT.ERROR_NO_HANDLES);
+OS.pango_context_set_language(context, OS.gtk_get_default_language());
+OS.pango_context_set_base_dir(context, OS.PANGO_DIRECTION_LTR);
+OS.gdk_pango_context_set_colormap(context, OS.gdk_colormap_get_system());
+layout = OS.pango_layout_new(context);
+if (layout == 0) SWT.error(SWT.ERROR_NO_HANDLES);
+OS.pango_layout_set_font_description(layout, device.systemFont.handle);
+OS.pango_layout_set_wrap(layout, OS.PANGO_WRAP_WORD_CHAR);
+OS.pango_layout_set_tabs(layout, this.device.emptyTab);
+if (OS.GTK_VERSION >= OS.VERSION(2, 4, 0)) {
+OS.pango_layout_set_auto_dir(layout, false);
+}
+text = "";
+ascent = descent =
+-1;
+styles = new StyleItem[2];
+styles[0] = new StyleItem();
+styles[1] = new StyleItem();
+init();
+}
+There is a problem with this code specifically in the following line:
+OS.pango_layout_set_font_description(layout, device.systemFont.handle);
+Here is the FIX:
+Instead of "device.systemFont.handle", it should be "this.device.systemFont.handle".
+This is because if the input parameter "device" in the constructor gets the value as null, then Resource class will execute Device.getDevice() to retrieve the device.
+And hence, the above code should be changed to reflect this value of the device.
+More information:
+Due to this, Arabic Language is not active/enabled in Rational Application Developer on RedHat Linux and incase, you have access to RATLC, here is the defect number:
+RATLC01167844
+- BIDIAM75: Page Designer inactive on Arabic locale

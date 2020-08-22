@@ -1,0 +1,154 @@
+ajc -aspectpath fails with NPE for cflow pointcuts
+ajc version: AspectJ Compiler DEVELOPMENT CVS build 20030311 20:00 GMT+1
+(This is probably a regression bug since it does not appear in ajc 1.1b4)
+When using the ajc -aspectpath option, the compiler crashes with a NPE. This
+does not occur when compiling without the -aspectpath option.
+To reproduce:
+Extract the two files to en empty directory:
+//  File: A.aj
+aspect A  {
+pointcut withinTest(): within(Test);
+pointcut callToHandleOrder() :
+(cflow(withinTest()) && call(* *.handleOrder(..)));
+Object around(): callToHandleOrder() {
+return "test";
+}
+// End of A.aj
+// File: Test.java
+public class Test
+{
+public static void main(String[] args)
+{
+System.out.println(new Test().handleOrder("test")) ;
+}
+private String handleOrder(String t)
+{
+return t;
+}
+}
+// End of Test.java
+2. Verify that the "standard" compile option works:
+> ajc -sourceroots .
+No errors are generated
+3.a Now try the -aspectpath options. I.e first put the A.aj in an aspect "read-
+only" jar and then weave in the jar.
+> ajc A.aj  -outjar tmp.jar
+C:aspectj1.1docexamplesbugA.aj:5 no match for this type name: Test
+[Xlint:invalidAbsoluteTypeName]
+1 warning
+> ajc Test.java -aspectpath tmp.jar
+java.lang.NullPointerException
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeEclipseTypeMunger
+(EclipseFactory.java:163)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.finishTypeMungers
+(EclipseFactory.java:147)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindin
+gs(AjLookupEnvironment.java:91)
+at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile
+(Compiler.java:312)
+at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:326)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:232)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:171)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager$BatchBuilder.run
+(AjBuildManager.java:655)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
+(AjBuildManager.java:139)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:55)
+at org.aspectj.tools.ajc.Main.run(Main.java:216)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:155)
+at org.aspectj.tools.ajc.Main.main(Main.java:72)
+C:aspectj1.1docexamplesbugTest.java:0 Internal compiler error
+java.lang.NullPointerException
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeEclipseTypeMunger
+(EclipseFactory.java:163)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.finishTypeMungers
+(EclipseFactory.java:147)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindin
+gs(AjLookupEnvironment.java:91)
+at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile
+(Compiler.java:312)
+at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:326)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:232)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:171)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager$BatchBuilder.run
+(AjBuildManager.java:655)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
+(AjBuildManager.java:139)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:55)
+at org.aspectj.tools.ajc.Main.run(Main.java:216)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:155)
+at org.aspectj.tools.ajc.Main.main(Main.java:72)
+!! no source information available !!
+Exception thrown from AspectJ DEVELOPMENT
+This might be logged as a bug already -- find current bugs at
+http://bugs.eclipse.org/bugs/buglist.cgi?product=AspectJ&component=Compiler
+Bugs for exceptions thrown have titles File:line from the top stack,
+e.g., "SomeFile.java:243"
+If you don't find the exception below in a bug, please add a new bug
+at  http://bugs.eclipse.org/bugs/enter_bug.cgi?product=AspectJ
+To make the bug a priority, please include a test program
+that can reproduce this exception.
+null
+java.lang.NullPointerException
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeEclipseTypeMunger
+(EclipseFactory.java:163)
+at
+org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.finishTypeMungers
+(EclipseFactory.java:147)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindin
+gs(AjLookupEnvironment.java:91)
+at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile
+(Compiler.java:312)
+at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:326)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:232)
+at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile
+(AbstractImageBuilder.java:171)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager$BatchBuilder.run
+(AjBuildManager.java:655)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild
+(AjBuildManager.java:139)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:55)
+at org.aspectj.tools.ajc.Main.run(Main.java:216)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:155)
+at org.aspectj.tools.ajc.Main.main(Main.java:72)
+1 fail|abort, 1 error
+Signal 127
+-----------------------
+Possible fix:
+The NullPointerException happens because concret.getMunger() returns null
+just before calling EclipseTypeMunger.supportsKind.
+The following guard in the EclipseFactory.makeEclipseTypeMunger fixes
+the problem:
+public EclipseTypeMunger makeEclipseTypeMunger(ConcreteTypeMunger concrete) {
+if (concrete instanceof EclipseTypeMunger) return
+(EclipseTypeMunger)concrete;
+if ( concrete.getMunger() == null)
+{
+System.err.println("TODO (per.hustad):" + this.getClass().getName() +
+" concrete.getMunger() returned null for " + concrete + " - will
+return null now!");
+return null;
+}
+if (EclipseTypeMunger.supportsKind(concrete.getMunger().getKind())) {
+return new EclipseTypeMunger(this, concrete.getMunger
+(), concrete.getAspectType(), null);
+} else {
+return null;
+}
+}

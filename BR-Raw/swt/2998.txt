@@ -1,0 +1,14 @@
+Strange redraw and disabled behaviour with SWT.CHECK toolitems with and without disabled icons set.
+First, have a look at  bug 87635 , note that the way the button looks when
+disabled is different depending on whether the toolitem has been checked or not.
+Second: on build
+Version: 3.1.0
+Build id: I20050219-1500
+I took the SWT Control example and added a disabled image for checkbox items in
+the toolbars on the Toolbar tab and got a number of strange problems:
+1) checkboxes drew the disabled and enabled buttons overtop of each other when
+disabled
+2) when a checkbox was NOT checked it did not use it's disabled icon at all when
+it was disabled then when you force a redraw it might draw the disabled over the
+enabled or just draw the disabled.
+code will be attached.

@@ -1,0 +1,5 @@
+Bug 193425 Content Sensitive Help does not automatically display on selecting a Data Editor page node
+In BIRT Data Source/Set Editor, pressing the ?
+(Help) icon at any page node opens the tray, but no related About content is displayed.
+One has to first move the focus to within a page control, then pressing the Help icon brings up the related About content.
+The expected behavior, as found in platform PropertyDialog, is to automatically update and refresh the related About content by simply selecting a page node.

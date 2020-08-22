@@ -1,0 +1,8 @@
+Display class needs to pick better default fonts.
+Right now the display class is picking fonts based on the default font used by
+the button widget in libph.
+However, the fonts in libph are not the best
+choices since they cannot be changed without breaking existing applications.
+The proposed change forces the TEXT_FONT and LIST_FONT fonts to be TextFont8
+until there is a decent mechanism in place in photon for finding system wide
+font configuration data.

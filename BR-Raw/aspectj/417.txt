@@ -1,0 +1,29 @@
+@args causes a VerifyError: Unable to pop operand off an empty stack
+I'm getting a VerifyError exception when I try to use @args
+in following code:
+------------------ Test3.java -------------------------
+import java.lang.annotation.*;
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@interface Ann {}
+@Ann
+class AClass{}
+public class Test3 {
+void abc(AClass y) {}
+public static void main(String[] args) {
+new Test3().abc(new AClass());
+}
+}
+aspect Annotations {
+before(Ann ann) : call(* Test3.*(..)) && @args(ann) {
+System.out.println("Before: " + thisJoinPoint);
+}
+}
+----
+On JRockIt5 jre and AspectJ 1.5.0M2 I get following result:
+-----------
+java.lang.VerifyError: (class: Test3, method: main signature:
+([Ljava/lang/String;)V) Unable to pop operand off an empty stack
+-----------
+I'm getting similar error with sun jre and with older versions
+of AspectJ5 (20050324155000 and from 10th feb).

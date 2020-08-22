@@ -1,0 +1,4 @@
+Bug 201379 Different process way for maxlevels 0 and maxrows 0[0003]
+Description: Different process way for maxlevels and maxrows when they are set to 0 Build number:2.2.1.v20070828 Steps to reproduce: 1.Deploy BIRT.
+2.set BIRT_VIEWER_MAX_ROWS as 0 3.set BIRT_VIEWER_MAX_CUBE_LEVELS as 0.4.Preview report containing table and crosstab.
+Expected result: Same effect for these two properties Actual result: Return all rows for table and return 0 for crosstab Error log:n/a

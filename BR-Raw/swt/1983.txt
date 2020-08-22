@@ -1,0 +1,6 @@
+cheese in java editor
+Version: 3.3.0
+Build id: I20070608-0010
+The bug is in TextLayout, it doesn't draw the full selection background properly cause it has a test (for performance reason) where it doesn't draw a line when textual part of the line is outside of the clipping.
+To reproduce this problem on eclipse just resize the editor, or move a window over the editor, or open the cotext menu over it.
+Photon, has the same problem.

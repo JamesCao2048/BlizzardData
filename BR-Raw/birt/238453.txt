@@ -1,0 +1,7 @@
+Bug 238453 Code Simplification
+I had to take a look at the calculation that is used in the Mode calculation in the org.eclipse.birt.data.engine.aggregation.TotalMode class.
+You are using a HashMap to store data about the mode values and counts.
+Since the HashMap is order independent, you have to use a Counter internal class to keep track of the order that elements are inserted.
+Doesn't it make sense to change the implementation to use either a TreeMap or a LinkedHashMap (Java 1.5) so that you don't have to add the step of looking for first inserted item?
+Would this be a good HelpWanted enhancement?
+sr

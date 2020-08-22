@@ -1,0 +1,7 @@
+Addition of tasks to task window is too slow
+When attacking a new code base, I am likely to get up to a thousand warnings in the task window.
+Eclipse adds these warnings individually, which takes a long time.
+If I do a full rebuild of all projects, it will first remove, then re-add all of the warnings.
+(This process can take several seconds for a large number of warnings on a TiBook 667.)
+Either the table component in the MacOS X M5 release needs to be sped up dramatically, or Eclipse needs to disconnect the view from the model while tasks are added.
+(That second option is based on my experience with Swing components, and so may not apply to SWT.)

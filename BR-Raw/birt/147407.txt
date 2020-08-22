@@ -1,0 +1,3 @@
+Bug 147407 Preview the attached report in the web viewer first time and then click the TOC button will cause NPE error
+Description: It just can be reprouduced at first time preview.
+Step to reproduce: 1.please use attach report file 2.preview it in the web viewer 3.click the "Toggle table of contents" button Actual result: As the atteched screenshot shows,There is a NPE error.And if you preview it in the Web viewer again, the phenomenon is disappear.But reopen the eclipse and preview it at first time, it will be occured.

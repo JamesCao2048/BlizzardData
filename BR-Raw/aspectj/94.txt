@@ -1,0 +1,7 @@
+LangUtils JVM version detection cannot handle Java 7
+User-Agent:       Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2
+Build Identifier: 1.6.4
+The JVM detection in LangUtils is currently unable to handle Java7, whilst this is naturally an unreleased version of the JVM, the fix is trivial.
+Reproducible: Always
+Steps to Reproduce:
+Attempt to use the LangUtils java version support on java7

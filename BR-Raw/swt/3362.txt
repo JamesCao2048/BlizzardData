@@ -1,0 +1,6 @@
+Lightweight close buttons on CTabFolder are problematic
+Using emulated buttons on a control which has DragSource listeners is
+problematic.
+Please revert to using heavyweight controls for the "X" button on
+Views.
+Probably route this to SWT?

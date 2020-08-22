@@ -1,0 +1,5 @@
+Bug 158494 [Regression] Exception is thrown out when apply a pre-defined style to an item
+Exception is thrown out when apply a pre-defined style to an item Steps to reproduce: 1.New a pre-defined style "Data": edit font color as red 2.Drag data from palette to lay out 3.Choose the data item and go to Properties editor
+-> General
+-> Style Expected result: Style Data should not show up Actual result: Choose Style Data and exception is thrown out Error log: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.1.1.v20060922-0630 Error Code:Error.StyleException.NOT_FOUND Error Message:The style "Data" used by report.Body[0] is not found.

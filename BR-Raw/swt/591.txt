@@ -1,0 +1,8 @@
+AIOOBE calling IAHyperlink methods
+Created  attachment 174033   [details]
+test case that shows the failure
+Run the attached snippet, which sets up a hyperlink listener with a name and description.
+Run AccProbe, and try to look at the IAHyperlink name and description.
+There is an array index out of bounds calling "method5" which is IAccessibleHyperlink::getDescription.
+The number of parameters is incorrect
+- it should be 2, but instead, there are 0.

@@ -1,0 +1,2 @@
+[Browser] WebKitGTK crashes when clearing all session cookies
+Browser.clearSessions() crashes when WebKitGTK is the underlying renderer as a result of a cookie pointer being incorrectly freed.

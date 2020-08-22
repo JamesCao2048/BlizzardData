@@ -1,0 +1,5 @@
+iajc-Ant-Task fails "type already defined
+Created  attachment 123223   [details]
+Eclipse-project-export that demonstrates the error
+As attachment you find a simple Eclipse-Project, which reproduces the error. The project-structure consists of two packages "anttest" and "anttest.test". The second package should not be included in the build, so I was trying to exclude it using a dirset. This does not work, because with this configuration iajc always fails with an "already defined"-error for every type (class or aspect).
+As comment I included a simple workaround for this problem in the iajc-task. This workaround does its job, but I want to reuse the source-path-definition, which is not possible this way.

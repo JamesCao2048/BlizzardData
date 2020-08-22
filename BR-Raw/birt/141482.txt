@@ -1,0 +1,2 @@
+Bug 141482 [Smoke][Regression]Style didn't take effect in Web Viewer and PDF
+Steps to reproduce: 1.New a report, add a label 2.New a style, set background color to red 3.Apply style on label 4.Preview in Web Viewer and PDF Expected result: Background color of label is red Actual result: Style didn't take effect in Viewer and PDF

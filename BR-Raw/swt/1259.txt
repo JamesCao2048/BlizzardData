@@ -1,0 +1,5 @@
+GTK combo doesn't fire selection during arrow up/down
+build RC4 3.4
+gtk 2.8.20 and 2.12.1
+run the snippet, and use arrow down and up to change the selection
+no events are fired.

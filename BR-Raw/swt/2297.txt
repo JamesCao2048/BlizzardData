@@ -1,0 +1,4 @@
+TreeItem.getExpanded() does not work on Windows Mobile 2003
+As the summary says, TreeItem.getExpanded() works fine on Windows XP but always returns false on Windows Mobile 2003
+- see attached test case.
+In my application I need to only process nodes that are showing their children for efficiency reasons so if you could fix this or provide a work around I would appreciate it.

@@ -1,0 +1,2 @@
+Bug 167511 [Block]NPE when using customized IStyleProcessor with Chart Generator and no Chart will be rendered
+Use a customized IStyleProcessor with Generator.build() and the chart will not be rendered in UI.

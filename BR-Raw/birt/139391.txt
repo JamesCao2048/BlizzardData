@@ -1,0 +1,2 @@
+Bug 139391 [Regression]Chart interactivity didn't work well
+Steps to reproduce: 1.Add a chart, add a drill-through interactivity to chart title 2.Preview in Web Viewer, click chart title Expected result: Link to the target report, and the report display in a new window correctly Actual result: Link to the target report in the "_self" window, and display the target report incorrectly (see the sreenshot)

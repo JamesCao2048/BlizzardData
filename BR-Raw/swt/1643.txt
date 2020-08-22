@@ -1,0 +1,6 @@
+Esc deactivates parent shell if SWT.TOOL is used
+I20080330-1350
+- press Ctrl+Shift+L (Key Assist)
+- press Esc
+=> expected: workbench window becomes active again
+=> was: the next OS window on the MRU stack comes to front (as if I pressed Alt+Tab)

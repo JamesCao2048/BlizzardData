@@ -1,0 +1,23 @@
+Text limit for Text widget doesn't work in some cases
+Reproducible with Cocoa HEAD.
+Came across this while working on a different Text bug.
+Text.append(), insert(), paste() don't check for textlimit before changing the text.
+Test snippet:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setSize(200, 75);
+GridLayout layout = new GridLayout(1, false);
+shell.setLayout(layout);
+Text text = new Text(shell, SWT.BORDER|SWT.MULTI);
+text.setLayoutData(new GridData(GridData.FILL_BOTH));
+text.setTextLimit(6);
+text.setText("124");
+text.insert("456789");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,13 @@
+Repaint cheeze with editor bottom right corner
+I've noticed this on both my home and work WinXP installs, for latest
+integration build (1210).
+1.open the eclipse workbench
+2.open an editor
+3.place another browser (e.g.
+Internet Explorer) overtop the workbench
+4.move the second browser around such that the bottom right corner of the
+editor (where the scroll bars meet) is partially exposed
+The result is horizontal lines left in the bottom right editor box which
+appear to be the border of the top browser.
+Its only true for horizontal
+browser edges, not vertical.

@@ -1,0 +1,5 @@
+Bug 150601 Drillthrough link from pdf(frameset) should link to frameset servlet instead of run.
+Description: Drillthrough link from pdf(frameset) should link to frameset servlet instead of run.
+Steps to reproduce: 1.New a report 2.Insert a label and define a drill through link to other report 3.Preview in Web viewer, click Print as PDF button in viewer toolbar 4.Click drill through link in pdf Expected result: Target report opens through frameset sevlet instead of run servlet.
+Because the pdf is displayed through frameset servlet.
+Actual result: Target report opened through run sevlet

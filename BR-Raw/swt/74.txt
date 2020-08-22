@@ -1,0 +1,23 @@
+[GTK3] setBackgroundImage not working on Fedora 18
+This snippet fails on GTK3 when running on Fedora 18.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.*;
+public class Test {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setBackgroundImage(display.getSystemImage(SWT.ICON_ERROR));
+
+Composite composite = new Composite(shell, SWT.BORDER);
+composite.setBounds(30, 20, 200, 200);
+composite.setBackgroundImage(display.getSystemImage(SWT.ICON_WARNING));
+
+shell.setSize(300, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

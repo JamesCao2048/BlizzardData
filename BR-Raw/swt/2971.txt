@@ -1,0 +1,51 @@
+NPE in CCombo.dropDown()
+build I20050330-0500
+- was following steps in  bug 89146 comment 1
+- while the combo was dropped down (with the Properties view active), I clicked
+on the source tab of the schema editor
+- got:
+!ENTRY org.eclipse.ui.workbench 4 2 2005-03-30 23:53:31.124
+!MESSAGE Problems occurred when invoking code from plug-in:
+"org.eclipse.ui.workbench".
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.swt.custom.CCombo.dropDown(CCombo.java:380)
+at org.eclipse.swt.custom.CCombo.popupEvent(CCombo.java:935)
+at org.eclipse.swt.custom.CCombo$1.handleEvent(CCombo.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:842)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:866)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847)
+at org.eclipse.swt.widgets.Decorations.WM_ACTIVATE(Decorations.java:1553)
+at org.eclipse.swt.widgets.Shell.WM_ACTIVATE(Shell.java:1461)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3027)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1493)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3466)
+at org.eclipse.swt.internal.win32.OS.SetFocus(Native Method)
+at org.eclipse.swt.widgets.Control.forceFocus(Control.java:652)
+at org.eclipse.swt.widgets.Control.setFocus(Control.java:2126)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:683)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:681)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:681)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:681)
+at
+org.eclipse.ui.forms.widgets.SharedScrolledComposite.setFocus(SharedScrolledComposite.java:123)
+at org.eclipse.ui.part.MultiPageEditorPart.setFocus(MultiPageEditorPart.java:657)
+at org.eclipse.ui.part.MultiPageEditorPart.setFocus(MultiPageEditorPart.java:603)
+at org.eclipse.ui.internal.WorkbenchPage$3.run(WorkbenchPage.java:566)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1021)
+at org.eclipse.core.runtime.Platform.run(Platform.java:757)
+at org.eclipse.ui.internal.WorkbenchPage.activatePart(WorkbenchPage.java:563)
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:2725)
+at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:2403)
+at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:245)
+at org.eclipse.ui.internal.EditorPane.requestActivation(EditorPane.java:88)
+at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:212)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:842)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:866)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:847)
+at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:989)
+at org.eclipse.swt.widgets.Shell.WM_MOUSEACTIVATE(Shell.java:1602)
+at org.eclipse.swt.widgets.Cont

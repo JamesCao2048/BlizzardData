@@ -1,0 +1,7 @@
+Javadoc of Display.addFilter could be improved
+I20050118
+The Javadoc of Display.addFilter doesn't tell anything about filtering, it only
+says that the added listener will be notified.
+As far as I understood it no
+event is filtered ever but the listener could set doit.false and hope that all
+other listeners check that flag.

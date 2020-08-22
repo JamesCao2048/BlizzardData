@@ -1,0 +1,2 @@
+Bug 182326 PDF emitter does not call registered IHTMLActionHandler
+It seems that PDF emitter calls my custom action handler only for IAction.ACTION_DRILLTHROUGH links but not for IAction.ACTION_HYPERLINK or IAction.ACTION_BOOKMARK ones.

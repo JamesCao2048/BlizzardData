@@ -1,0 +1,13 @@
+Compiler issues message concerning aop.xml even when not doing LTW
+From the mailing list:
+=============
+I am executing the command as below,
+
+COMMAND: ajc -inpath woven_hello1.jar -aspectpath aspect2.jar -outjar woven_hello2.jar
+
+I am getting same old error,
+woven_hello1.jar [error] aspect 'aspect1' woven into 'Hello' must be declared in an aop.xml file.
+(no source information available)
+I have placed both aspect1.class and aspect2.class in CLASSPATH system variable.
+==============
+We shouldn't be putting out messages about aop.xml when we are not doing LTW - this message points the user to a solution that will not work in this case!

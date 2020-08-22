@@ -1,0 +1,294 @@
+around advice does not work when LTW
+I defined a aop.xml and a aspect, I have already copy aspectjweaver.jar D:workBTMlibaspectjweaver.jar, and added -javaagent:D:workBTMlibaspectjweaver.jar option to the JVM in Eclipse, it works fine if there are before and after advice in aspect, but it will be wrong once I used around advice. if I use compile-time weaving, this around advice works fine.
+my Eclipse env: eclipse 3.0.2 + AJDT 1.2.1 RC1 release + Sun JDK 1.5.0.
+aspect file:
+import org.aspectj.lang.Signature;
+import org.aspectj.lang.JoinPoint;
+public abstract aspect World {
+//private Object result;
+pointcut greeting() : execution(* Hello.sayWorld(..));
+
+Object around(): greeting() {
+System.out.println("around start!");
+Object result = proceed();
+System.out.println("around end!");
+return result;
+}
+
+//    before() : greeting() {
+//    	Signature signature = thisJoinPoint.getSignature();
+//        System.out.println("before " + signature.getName());
+//    }
+
+//    after() returning () : greeting() {
+//    	Signature signature = thisJoinPoint.getSignature();
+//        System.out.println("after " + signature.getName());
+//    }
+}
+aop.xml file:
+<?xml version="1.0" encoding="UTF-8"?>
+<aspectj>
+<aspects>
+<aspect name="World"/>
+<concrete-aspect name="World1" extends="World">
+<pointcut name="greeting" expression="execution(* Hello.sayWorld(..)) ||
+execution(* Hello.sayHello(..))"/>
+</concrete-aspect>
+</aspects>
+<weaver options="-Xreweavable -verbose -XlazyTjp -showWeaveInfo">
+<include within="Hello"/>
+</weaver>
+</aspectj>
+around advice error message in eclipse console as below:
+info register aspect World
+info generating class 'World1'
+info weaving 'Hello'
+info weaver operating in reweavable mode.  Need to verify any required types exist.
+abort trouble in:
+public class Hello extends java.lang.Object:
+public void <init>():
+ALOAD_0     // Hello this   (line 2)
+INVOKESPECIAL java.lang.Object.<init> ()V
+constructor-execution(void Hello.<init>())
+|               RETURN
+constructor-execution(void Hello.<init>())
+end public void <init>()
+public static void main(String[])    org.aspectj.weaver.MethodDeclarationLineNumber: 7:75
+:
+INVOKESTATIC Hello.sayHello ()V   (line 9)
+RETURN   (line 10)
+end public static void main(String[])
+public static void sayHello()    org.aspectj.weaver.MethodDeclarationLineNumber: 12:180
+:
+end public static void sayHello()
+public static int sayWorld()    org.aspectj.weaver.MethodDeclarationLineNumber: 17:268
+:
+method-execution(int Hello.sayWorld())
+|               GETSTATIC java.lang.System.out Ljava/io/PrintStream;   (line 18)
+|               LDC "World"
+|               INVOKEVIRTUAL java.io.PrintStream.println (Ljava/lang/String;)V
+|               ICONST_0   (line 19)
+|               IRETURN
+method-execution(int Hello.sayWorld())
+end public static int sayWorld()
+static final void sayHello_aroundBody0():
+GETSTATIC java.lang.System.out Ljava/io/PrintStream;   (line 13)
+LDC "Hello"
+INVOKEVIRTUAL java.io.PrintStream.println (Ljava/lang/String;)V
+INVOKESTATIC Hello.sayWorld ()I   (line 14)
+POP
+RETURN   (line 15)
+end static final void sayHello_aroundBody0()
+end public class Hello
+public class Hello$AjcClosure1 extends org.aspectj.runtime.internal.AroundClosure:
+public void <init>(Object[]):
+ALOAD_0
+ALOAD_1
+INVOKESPECIAL org.aspectj.runtime.internal.AroundClosure.<init> ([Ljava/lang/Object;)V
+RETURN
+end public void <init>(Object[])
+public Object run(Object[]):
+ALOAD_0
+GETFIELD org.aspectj.runtime.internal.AroundClosure.state [Ljava/lang/Object;
+ASTORE_2
+INVOKESTATIC Hello.sayHello_aroundBody0 ()V
+ACONST_NULL
+ARETURN
+end public Object run(Object[])
+end public class Hello$AjcClosure1
+-- (NullPointerException) null
+null
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelAdvice.getAdviceArgSetup(BcelAdvice.java:457)
+at org.aspectj.weaver.bcel.BcelShadow.weaveAroundClosure(BcelShadow.java:2685)
+at org.aspectj.weaver.bcel.BcelAdvice.implementOn(BcelAdvice.java:230)
+at org.aspectj.weaver.Shadow.implementMungers(Shadow.java:588)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:405)
+at org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.java:2146)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:467)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:102)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1543)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1494)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1275)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1097)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:263)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:196)
+at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:65)
+at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:52)
+at sun.instrument.TransformerManager.transform(TransformerManager.java:122)
+at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:155)
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:620)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:124)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:260)
+at java.net.URLClassLoader.access$100(URLClassLoader.java:56)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:195)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:268)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:251)
+at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:319)
+Message: abort trouble in:
+public class Hello extends java.lang.Object:
+public void <init>():
+ALOAD_0     // Hello this   (line 2)
+INVOKESPECIAL java.lang.Object.<init> ()V
+constructor-execution(void Hello.<init>())
+|               RETURN
+constructor-execution(void Hello.<init>())
+end public void <init>()
+public static void main(String[])    org.aspectj.weaver.MethodDeclarationLineNumber: 7:75
+:
+INVOKESTATIC Hello.sayHello ()V   (line 9)
+RETURN   (line 10)
+end public static void main(String[])
+public static void sayHello()    org.aspectj.weaver.MethodDeclarationLineNumber: 12:180
+:
+end public static void sayHello()
+public static int sayWorld()    org.aspectj.weaver.MethodDeclarationLineNumber: 17:268
+:
+method-execution(int Hello.sayWorld())
+|               GETSTATIC java.lang.System.out Ljava/io/PrintStream;   (line 18)
+|               LDC "World"
+|               INVOKEVIRTUAL java.io.PrintStream.println (Ljava/lang/String;)V
+|               ICONST_0   (line 19)
+|               IRETURN
+method-execution(int Hello.sayWorld())
+end public static int sayWorld()
+static final void sayHello_aroundBody0():
+GETSTATIC java.lang.System.out Ljava/io/PrintStream;   (line 13)
+LDC "Hello"
+INVOKEVIRTUAL java.io.PrintStream.println (Ljava/lang/String;)V
+INVOKESTATIC Hello.sayWorld ()I   (line 14)
+POP
+RETURN   (line 15)
+end static final void sayHello_aroundBody0()
+end public class Hello
+public class Hello$AjcClosure1 extends org.aspectj.runtime.internal.AroundClosure:
+public void <init>(Object[]):
+ALOAD_0
+ALOAD_1
+INVOKESPECIAL org.aspectj.runtime.internal.AroundClosure.<init> ([Ljava/lang/Object;)V
+RETURN
+end public void <init>(Object[])
+public Object run(Object[]):
+ALOAD_0
+GETFIELD org.aspectj.runtime.internal.AroundClosure.state [Ljava/lang/Object;
+ASTORE_2
+INVOKESTATIC Hello.sayHello_aroundBody0 ()V
+ACONST_NULL
+ARETURN
+end public Object run(Object[])
+end public class Hello$AjcClosure1
+-- (NullPointerException) null
+null
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelAdvice.getAdviceArgSetup(BcelAdvice.java:457)
+at org.aspectj.weaver.bcel.BcelShadow.weaveAroundClosure(BcelShadow.java:2685)
+at org.aspectj.weaver.bcel.BcelAdvice.implementOn(BcelAdvice.java:230)
+at org.aspectj.weaver.Shadow.implementMungers(Shadow.java:588)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:405)
+at org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.java:2146)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:467)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:102)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1543)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1494)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1275)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1097)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:263)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:196)
+at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:65)
+at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:52)
+at sun.instrument.TransformerManager.transform(TransformerManager.java:122)
+at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:155)
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:620)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:124)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:260)
+at java.net.URLClassLoader.access$100(URLClassLoader.java:56)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:195)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:268)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:251)
+at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:319)
+org.aspectj.bridge.AbortException: trouble in:
+public class Hello extends java.lang.Object:
+public void <init>():
+ALOAD_0     // Hello this   (line 2)
+INVOKESPECIAL java.lang.Object.<init> ()V
+constructor-execution(void Hello.<init>())
+|               RETURN
+constructor-execution(void Hello.<init>())
+end public void <init>()
+public static void main(String[])    org.aspectj.weaver.MethodDeclarationLineNumber: 7:75
+:
+INVOKESTATIC Hello.sayHello ()V   (line 9)
+RETURN   (line 10)
+end public static void main(String[])
+public static void sayHello()    org.aspectj.weaver.MethodDeclarationLineNumber: 12:180
+:
+end public static void sayHello()
+public static int sayWorld()    org.aspectj.weaver.MethodDeclarationLineNumber: 17:268
+:
+method-execution(int Hello.sayWorld())
+|               GETSTATIC java.lang.System.out Ljava/io/PrintStream;   (line 18)
+|               LDC "World"
+|               INVOKEVIRTUAL java.io.PrintStream.println (Ljava/lang/String;)V
+|               ICONST_0   (line 19)
+|               IRETURN
+method-execution(int Hello.sayWorld())
+end public static int sayWorld()
+static final void sayHello_aroundBody0():
+GETSTATIC java.lang.System.out Ljava/io/PrintStream;   (line 13)
+LDC "Hello"
+INVOKEVIRTUAL java.io.PrintStream.println (Ljava/lang/String;)V
+INVOKESTATIC Hello.sayWorld ()I   (line 14)
+POP
+RETURN   (line 15)
+end static final void sayHello_aroundBody0()
+end public class Hello
+public class Hello$AjcClosure1 extends org.aspectj.runtime.internal.AroundClosure:
+public void <init>(Object[]):
+ALOAD_0
+ALOAD_1
+INVOKESPECIAL org.aspectj.runtime.internal.AroundClosure.<init> ([Ljava/lang/Object;)V
+RETURN
+end public void <init>(Object[])
+public Object run(Object[]):
+ALOAD_0
+GETFIELD org.aspectj.runtime.internal.AroundClosure.state [Ljava/lang/Object;
+ASTORE_2
+INVOKESTATIC Hello.sayHello_aroundBody0 ()V
+ACONST_NULL
+ARETURN
+end public Object run(Object[])
+end public class Hello$AjcClosure1
+at org.aspectj.bridge.MessageWriter.handleMessage(MessageWriter.java:47)
+at org.aspectj.weaver.tools.WeavingAdaptor$WeavingAdaptorMessageHandler.handleMessage(WeavingAdaptor.java:395)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1554)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1494)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1275)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1097)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:263)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:196)
+at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:65)
+at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:52)
+at sun.instrument.TransformerManager.transform(TransformerManager.java:122)
+at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:155)
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:620)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:124)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:260)
+at java.net.URLClassLoader.access$100(URLClassLoader.java:56)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:195)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:268)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:251)
+at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:319)
+Hello
+World

@@ -1,0 +1,16 @@
+GC.setLineStyle produces inconsistent dash for width equal 1
+Executing the attached snippet shows that line styles of varying widths
+are consistent and in proportion with one another EXCEPT when the
+width on the line equals one.
+This is also shown in the attached screenshot.
+For example, with SWT.LINE_DOT style a line width of 3 produces a line with
+3x3 pixels on and a gap of 3x3 pixels off.
+When the width is 2, you get
+2x2 pixels on, 2x2 pixels off.
+With a width of 1 you'd expect 1x1 pixel on,
+followed by 1x1 pixel off, but you get 3x1 on, 3x1 off.
+The screenshot also shows a similar disproportion with LINE_DASHDOT.
+Example run against:
+3.1M6
+Version: 3.1.0
+Build id: I20050401-1645

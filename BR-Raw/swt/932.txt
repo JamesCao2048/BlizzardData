@@ -1,0 +1,16 @@
+[DND] COM leak during drag and drop
+Created  attachment 137851   [details]
+Snippet to recreate leak
+Build ID: I20090528-2000
+Steps To Reproduce:
+This problem is causing out of memory errors in a large RCP application.
+I was able to recreate the defect using Snippet91.
+1.Run the attached snippet91.
+2.Drag and drop a child element
+3.Press the "Recreate tree" button.
+When the button is pressed the tree will be disposed and the COMObject.ObjectMap will be printed.
+4.Repeat steps 2
+- 3 to see the leak.
+More information:
+I expect that the COMObject.ObjectMap would be cleaned up when the tree is disposed but it isn't when a previous drag and drop has occurred.
+This causes DragSource$4 objects to leak, and in the real application, these anonymous inner classes reference much larger objects which eventually cause OutOfMemoryErrors.

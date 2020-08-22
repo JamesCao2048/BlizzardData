@@ -1,0 +1,13 @@
+Can't insert characters into a StyledText using the Character Palette on OS X
+Related to  bug 271805 , you can't insert characters using the general Character Palette into a StyledText.
+1.Open System Preferences, International, Input Menu and check Character Palette.
+2.Choose it from the input menu in the menu bar.
+3.Launch Eclipse if not already open.
+4.Click on any Java editor window.
+5.Choose a character set that won't require composition.
+Select Roman from the 'View:' popup and then 'Greek' from the left-hand list.'
+6.Click on any character and then click 'Insert'.
+==> The StyledText won't be modified.
+Ordinary Text fields will work.
+For example, choose File
+-> Export and insert characters into the filter.

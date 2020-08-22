@@ -1,0 +1,9 @@
+[Widgets] SWT.SHEET and non responsive file and directory dialogs on Mac OS X
+On Mac OS X, if an application is using MessageBox, created with style bit SWT.SHEET, and once such a MessageBox is created and displayed (and closed afterwards), any subsequently created FileDialog (or DirectoryDialog) becomes unresponsive in a sense, that it can not be closed by clicking on OK or Cancel Button, or by double-clicking on the file user wants to select.
+Steps to reproduce this bug:
+- create a Shell,
+- create and open a MessageBox with style SWT.SHEET,
+- close this MessageBox,
+- create and open a FileDialog or a DirectoryDialog (it doesn't matter if it is created with SWT.SHEET or not),
+- select a file (or directory) and press OK or Cancel button
+- the dialog won't close and selected file/directory can't be obtained from it.

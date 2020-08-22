@@ -1,0 +1,3 @@
+Bug 168373 Label on group header is not created when set a group key by inputting text [00]
+Build Number: v2.2.0 2006-1218 Description: Step to reproduce: 1.new a sampleDB datasoure and dataset "select * from CLASSICMODELS.CUSTOMERS" 2.Drag dataset to layout and get a table 3.Add a group when in group setting dialog set a group key by inputting "row["CUSTOMERNUMBER"]" Actual result: The group has be set but the label in group header is not created.But if setting gourp key by using Expression Editor or List is ok.
+Expected result: The label can be created.

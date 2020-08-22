@@ -1,0 +1,45 @@
+Cannot activate shell programatically on gtk
+- works on win2000, fails on RHEL4 and Ubuntu 8.04
+- update the name of the image in the snippet below to any available image file that's a good size to show in the system tray
+- run the snippet
+- give focus to some other open shell
+- click on the tray icon that was added by this snippet and note that it activates the snippet's shell successfully
+- give focus to some other open shell again
+- this time right-click on the tray icon added by this snippet and select its menu item
+
+-> this item attempts to activate the snippet's shell in an identical manner, but is not successful
+public static void main(String[] args) {
+final Display display = new Display();
+Image image = new Image(display, "./bookmark.gif");
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+new Text(shell, SWT.MULTI);
+final Menu menu = new Menu(shell, SWT.POP_UP);
+MenuItem menuItemShow = new MenuItem(menu, SWT.NONE);
+menuItemShow.setText("Show window");
+menuItemShow.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(final SelectionEvent e) {
+shell.forceActive();
+}
+});
+Tray tray = display.getSystemTray();
+TrayItem item = new TrayItem(tray, SWT.NONE);
+item.setImage(image);
+item.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+System.out.println("trying...");
+shell.forceActive();
+}
+});
+item.addMenuDetectListener(new MenuDetectListener() {
+public void menuDetected(MenuDetectEvent e) {
+menu.setVisible(true);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+image.dispose();
+display.dispose();
+}

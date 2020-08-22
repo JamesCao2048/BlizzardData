@@ -1,0 +1,8 @@
+Bug 191404 Connection is still successful after delete drivers[0703]
+Description: Create a Sqlserver datasource and dataset, then delete the jtds driver.
+Click "Test Connection" is still successful, and the dataset still works.
+Build Version:2.2.0.v20070607-0630 Steps to reproduce: 1.Add a jtds driver, and create a Sqlserver connection and dataset.
+2.Go to "Manage JDBC Drivers" dialog, and delete the driver.
+3.Click "Test Connection", the connection is successful.
+4.Click "Preview Results" in "Edit Data Set" dialog, it works.
+Expected Result: Delete driver will lose the connection.

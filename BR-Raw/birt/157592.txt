@@ -1,0 +1,9 @@
+Bug 157592 Inheritance of Datasource broken
+If I create a Report using a datasource of a library first everything seems to be ok.
+<oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="classic" id="4" extends="dSourceAppName.classic"/> After I created a dataset it looks like
+<oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="classic" id="4" extends="dSourceAppName.classic">
+<property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+<property name="odaURL">jdbc:mysql://localhost/classicmodels</property>
+<property name="odaUser">birt</property>
+<encrypted-property name="odaPassword">YmlydDAyODYy</encrypted-property>
+</oda-data-source> It also happens to a library! When I change the library (publish to resource folder) the new datasource isn't used.

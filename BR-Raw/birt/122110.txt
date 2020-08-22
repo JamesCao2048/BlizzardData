@@ -1,0 +1,3 @@
+Bug 122110 Template can't publish to the path which is the same as create path
+Details: Template can't publish to the path which is the same as create path Setp: 1.Open a report design and set windows-preferences-template-template folder to c:test.
+2.New a template in c:test 3.Publish template to template folder Actual result: Template folder can't publish, and this error lead to a new report can't be new, except delete the template Expection result: Even if the template folder path and template create path is the same is wrong, can it pop up a error message to notice user it is wrong handle.

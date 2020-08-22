@@ -1,0 +1,9 @@
+StyledText: Cannot overtype contents if text limit reached
+If I set the text limit for a StyledText using StyledText.setTextLimit() and then add text up to that limit, I cannot subsequently add any more text even if I have pressed insert to toggle the overwrite behaviour.
+Deleting one character allows the overtyping to occur as expected.
+I have attached a test case but the key lines are:
+StyledText t = new StyledText(shell, SWT.BORDER);
+t.setText("Press insert and try to type in this box");
+t.setTextLimit(t.getText().length());
+I would expect the StyledText to allow extra text to be typed when the ST.TOGGLE_OVERWRITE action has been peformed even if the text limit has been reached.
+I have a workaround for this issue which involves adding a KeyListener to the StyledText which deletes the character after the current caret position if the text limit has been reached.

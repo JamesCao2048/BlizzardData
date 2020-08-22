@@ -1,0 +1,9 @@
+ToolTip takes a very long time to show when tooltip message is very long
+Created  attachment 225547   [details]
+Sample code
+Create a ToolTip object, and set a very long text to its message.
+When we try to show this ToolTip, it takes a very long time.
+And during that time, there is no response for whole program.
+It seems to hang.
+But after tooltip finally shown, program will come back.
+I attached the sample code in attachement.

@@ -1,0 +1,17 @@
+[DBCS4.2] The backslash followed by DBCS character is not same as one followed by sbcs
+Build Identifier: I20120321
+Java: IBM JRE 7
+OS: Windows 7 Japanese, SJIS, AIX 7.1 Japanese SJIS
+Reproducible: Always
+Steps to Reproduce:
+1.Create a new Java class.
+2.Create a String variable, eg.
+String example="";
+3.Copy the following text into the quotes, c:銇枫倣銇愩倝銈program
+Expected results,
+The result should look like the one in correctbackslash37.png (Eclipse 3.7)
+Actual result,
+The result looks like incorrectbackslash42.png
+(Notice the backslash and the yen sign, both should either be yen sign or
+backslash as they are equivalent characters)
+This is a regression bug as it does not happen in previous eclipse version.

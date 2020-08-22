@@ -1,0 +1,17 @@
+Bug 192699 TVT33:TCT685: 'Custom Color' button truncation in palette
+<response_by> Peppy Florou at 2007.06.14.10.19.30
+</response_by> OS: Linux Build date: 20070612 Component name : BIRT Blocking: NO Tester Name: Peppy Florou Testcase: 04.001180
+- BIRT
+- CHART BUILDER FORMAT CHART SERIES PALETTE Steps to recreate the problem: Open Chart Builder.
+Go to Format Chart tab.
+Click the Series Palette button.
+Add a Palette.
+Click the dropdown menu.
+Problem Description: The button '?????????????
+?????' is truncated.
+Kindly please increase the size of the button in order for the text to fit.
+thanks, Peppy
+<response_by> Bryan Green at 2007.06.14.10.30.08
+</response_by> Routing to BIRT...
+<response_by> Bryan Green at 2007.06.14.10.30.27
+</response_by> This article was reassigned from Category:''TVT Testcases''.

@@ -1,0 +1,4 @@
+Bug 182687 Exception thrown out when preview crosstab with toc setting
+When preview crosstab which has set the toc property, exception will be thrown.
+Engine need to handle the case during toc processing while no IR object is associated with current content object.
+java.lang.NullPointerException at org.eclipse.birt.report.engine.executor.ReportItemExecutor.startTOCEntry(ReportItemExecutor.java:591) at org.eclipse.birt.report.engine.executor.ExtendedItemExecutor.execute(ExtendedItemExecutor.java:140) at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:36) at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layoutChildren(HTMLPageLM.java:124) at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout

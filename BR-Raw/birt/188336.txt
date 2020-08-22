@@ -1,0 +1,2 @@
+Bug 188336 Fairly Simple Report Generates NPE When Saving as Excel
+When attempting to Save the attached report to Excel, the following error is displayed in the viewer instead of the Excel file: + org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report; nested exception is: java.util.EmptyStackException

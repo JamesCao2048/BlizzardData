@@ -1,0 +1,8 @@
+Bug 202028 Text transform style does not take effect in DOC/XLS.
+Description: When previewed in DOC/XLS, text transform style does not take effect.
+steps to reproduce: 1.Insert a label and input text as "aaa".
+2.New a style and set text transform as Upper Case.
+3.Apply the style to the label.
+4.Preview in DOC/XLS.
+Expected result: The style takes effect and the label should be displayed as "AAA".
+Actual result: In DOC/XLS, the label still displayed as "aaa", which is not correct.

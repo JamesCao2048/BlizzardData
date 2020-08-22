@@ -1,0 +1,2 @@
+Bug 272611 Master page background image size takes no effect on doc preview
+Description: Master page background image size takes no effect on doc preview Build number: 2.5.0.v20090417-0630 Steps to reproduce: 1, New a fix layout report 2, Specify background image for master page and define the size to 4in * 4in 3, Preview report in doc Expected result: Background size takes effect on doc preview Actual result: The background image is in original size Error log:

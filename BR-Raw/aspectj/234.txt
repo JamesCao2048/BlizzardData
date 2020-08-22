@@ -1,0 +1,22 @@
+NullPointerException in PerObjectInterfaceTypeMunger.java:33
+AspectJ 1.5.1a + AJDT 1.4.0-dev on Eclipse 3.2M6
+Using the Sapcewar example, open Game.java and add:
+public void foo() {}
+save and an incremental build will fail with:
+java.lang.NullPointerException
+at org.aspectj.weaver.PerObjectInterfaceTypeMunger.equals(PerObjectInterfaceTypeMunger.java:33)
+at org.aspectj.weaver.bcel.BcelTypeMunger.equals(BcelTypeMunger.java:1672)
+at java.util.AbstractList.equals(AbstractList.java:610)
+at org.aspectj.weaver.CrosscuttingMembers.replaceWith(CrosscuttingMembers.java:321)
+at org.aspectj.weaver.CrosscuttingMembersSet.addOrReplaceAspect(CrosscuttingMembersSet.java:73)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.addCrosscuttingStructures(AjLookupEnvironment.java:397)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.collectAllITDsAndDeclares(AjLookupEnvironment.java:333)
+at org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindings(AjLookupEnvironment.java:173)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.beginToCompile(Compiler.java:301)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:315)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:862)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:269)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.incrementalBuild(AjBuildManager.java:168)
+at org.aspectj.ajde.internal.CompilerAdapter.compile(CompilerAdapter.java:117)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run(AspectJBuildManager.java:191)
+NullPointerException thrown: null

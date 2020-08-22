@@ -1,0 +1,14 @@
+Omit use of deprecated GTK_ACCEL_LABEL_SET_ACCEL_STRING and GTK_ACCEL_LABEL_GET_ACCEL_STRING
+When compiling with GSEAL_ENABLE flag, there are 2 warnings regarding GtkAccellabel that has no member accel_string.
+Please take a look at this patch:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gtk_accel_string
+I am not 100% sure that this is the exact way how it should be, but  it works.
+Why I have removed:
+int /*long*/ oldPtr = OS.GTK_ACCEL_LABEL_GET_ACCEL_STRING (label);
+I have noticed that when I added function:
+OS.gtk_accel_label_set_accel_widget (label, handle);
+instead of deprecated constant, "oldPtr" started producing memory leaks when I run ControlExample and also when I was running this test program:
+http://www.java2s.com/Tutorial/Java/0280__SWT/SetAcceleratorforMenuItem.htm
+When I have removed it, issues disappeared.
+If you still think this line should be there please let me know.
+Also, I have   tried replicating GTK_ACCEL_LABEL_GET_ACCEL_STRING with different functions from GtkAccelLabel and GtkLabel but without any success.

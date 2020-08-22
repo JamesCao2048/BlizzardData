@@ -1,0 +1,26 @@
+PocketPC: MULTI Text control ES_WANTRETURN/_TAB_NEXT problem
+PocketPC: MULTI Text control ES_WANTRETURN/_TAB_NEXT problem
+On PocketPC, when having a MULTI Text control with or without scrollbars,
+with or without wrap, etc.
+-- you cannot make it accept plain [Enter] key
+to break lines.
+Only Ctrl+Enter (Ctrl+M, Ctrl+J) would work.
+What helps is an internal OS hack:
+int oldBits = OS.GetWindowLong (text.handle, OS.GWL_STYLE);
+int newBits = oldBits | 0x1000; // ES_WANTRETURN
+OS.SetWindowLong (text.handle, OS.GWL_STYLE, newBits);
+Similar situation with the TAB key: we want it act regularly by inserting
+a TAB character into the text.
+But there is no "WANTTAB" flag.
+There is this Traverse functionality by adding a listener and in the
+handler to set the doit field for the event.
+However, in PocketPC,
+neither 'false' or 'true' has any effect on reviving the TAB
+(or ENTER).
+So the only solution for TAB is in the same Traverse handler to
+Text.insert() the character manually.
+This is a workaround and
+it behaves differently on the Desktop, however it should be consistent.
+These problems with NOT getting either LF or TAB character
+do not appear on desktop SWT.
+So this may be just a bug in PocketPC.

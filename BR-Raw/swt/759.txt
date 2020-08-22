@@ -1,0 +1,16 @@
+Crash due to call in SWT code for RHEL 4
+Build ID: Eclipse 3.4.2
+Steps To Reproduce:
+Our product, based on Eclipse 342 is crashing on RHEL 4 only for a particular scenario.
+The core dump below indicates the crash point is in the SWT code.
+
+1XHEXCPMODULE  Module: /usr/lib/libgtk-x11-2.0.so.0
+1XHEXCPMODULE  Module_base_address: 021C7000
+The crash point is in swt code:
+3XMTHREADINFO      "main" TID:0x0983A000, j9thread_t:0x0981F464, state:R, prio=6
+3XMTHREADINFO1            (native thread ID:0x4956, native priority:0x6, native policy:UNKNOWN)
+4XESTACKTRACE          at org/eclipse/swt/internal/gtk/OS._g_main_context_iteration(Native Method)
+4XESTACKTRACE          at org/eclipse/swt/internal/gtk/OS.g_main_context_iteration(Bytecode PC:9(Compiled Code))
+4XESTACKTRACE          at org/eclipse/swt/widgets/Display.readAndDispatch(Bytecode PC:23(Compiled Code))
+4XESTACKTRACE          at org/eclipse/ui/internal/Workbench.runEventLoop(Bytecode PC:9)
+More information: Contact me if you require more information.

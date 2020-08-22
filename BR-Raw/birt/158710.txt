@@ -1,0 +1,2 @@
+Bug 158710 Page break lost when printed as PDF in web viewer
+Masterpage was lost when printed as PDF in web viewer Steps to reproduce: 1.preview attached report in web viewer 2.print as PDF Expected result: Preview as PDF directly and printed as PDF in web viewer shoud be the same Actual result: Printed as PDf in web viewer lost master pages while previewed as PDF directly works well

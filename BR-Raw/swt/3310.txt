@@ -1,0 +1,5 @@
+Combo.setVisibleItemCount does nothing until resize/layout
+It is not obvious that value passed in setVisibleItemCount for Combo used only
+after next Combo resize.
+Would be good or use this value directly after method
+invocation, or say that resize is needed in JavaDoc.

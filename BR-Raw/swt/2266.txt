@@ -1,0 +1,4 @@
+Sibling decorations traversed in wrong order when decorations disposed
+When decorations is disposed, a list of sibling decorations is traversed in dispose method, towards the beginning of the list and then again from the end to find the one that will get focus.
+It seems however that the list should be traversed in the opposite direction (method traverseDecorations should be called with true instead of false) beacuse the current behaviour gives focus to the bottom decorations instead of the next-to-top-most one one the top-most one is disposed.
+Snippet showing the problem will follow shortly.

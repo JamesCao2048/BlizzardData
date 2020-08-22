@@ -1,0 +1,46 @@
+Table: Setting sort column to null does not update background
+SWT-win32, v3227
+- Run the test case below
+- Click the button once; the first column is set as the sort column,
+the column background changes to indicate "selected column"
+- Click the button again; the sort column is cleared by calling
+Table.setSortColumn(null) but the background is not updated
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TableSortColumnTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+
+final Table tbl = new Table(shell, SWT.NONE);
+tbl.setHeaderVisible(true);
+tbl.setSortDirection(SWT.UP);
+
+final TableColumn col = new TableColumn(tbl, SWT.LEFT);
+col.setText("Column");
+col.setWidth(100);
+
+Button btn = new Button(shell, SWT.PUSH);
+btn.setText("Click me");
+btn.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+tbl.setSortColumn((tbl.getSortColumn() == null) ?
+col : null);
+tbl.redraw();
+}
+});
+
+shell.setSize(300, 300);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

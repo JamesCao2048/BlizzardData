@@ -1,0 +1,7 @@
+resizing a TreeColumn does not fire Resize or Move
+- run the ControlExample, go to the Tree tab
+- turn on the Multiple Columns and Header Visible checkboxes
+- turn on listening for SWT.Move and SWT.Resize events
+- use the mouse to resize the columns in the example Tree with columns and note
+that no Resize or Move events are fired
+- doing the equivalent steps on the Table tab does result in these events firing

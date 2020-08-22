@@ -1,0 +1,5 @@
+Bug 121019 Java based scripting -> TextItemInstance/setText, getText does not work properly
+textItemInstance.setText( "Actuate Shanghai" ); System.out.println( textItemInstance.getText( ) ); after executing the codes above, i got "text/template".
+expected behavior:
+- Actuate Shanghai actual behavior:
+- text/template

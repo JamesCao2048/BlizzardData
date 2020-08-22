@@ -1,0 +1,6 @@
+GTK printer name for "Print to File" should not be NON-NLS
+PrintDialog.open() on GTK uses the special printer name "Print to File" in two places.
+But: I'm on a German system and here it's called "In Datei drucken".
+I guess using that name is a workaround for having no other way to know if the user wants to print to a file.
+Maybe it will go away some time.
+But as long as it's there the code should take the user's language into account.

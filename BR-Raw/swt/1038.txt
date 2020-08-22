@@ -1,0 +1,12 @@
+Checkboxes with images have incorrect image alignment
+Images are aligned too high.
+See attached screenshots comparing Carbon with Cocoa.
+on eclipse-SDK-I20090414-0800-macosx-cocoa-x86_64
+Checkboxes with images are created as follows:
+bc..
+filterEntitiesCheckbox = new Button(nodeSelectionComposite,SWT.CHECK|SWT.FLAT);
+filterEntitiesCheckbox.setImage(image1);
+filterEntitiesCheckbox.setToolTipText("Hide entities");
+filterSimpleTypesCheckbox = new Button(nodeSelectionComposite,SWT.CHECK|SWT.FLAT);
+filterSimpleTypesCheckbox.setImage(image2);
+filterSimpleTypesCheckbox.setToolTipText("Hide simple types");

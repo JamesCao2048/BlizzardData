@@ -1,0 +1,6 @@
+Bug 118487 Report iTem tempalte value should provide the option to revert.
+The Report Tempalte spec mockups expect the following.
+UI needs to support the following 2 options as described in the Report Template spec mockups.
+Please refer to it.
+- Revert to Template Item ( call DE API DesignElementHandle.revertToTemplateItem )
+- Revert to Report Item ( call DE API DesignElementHandle.reveretToReportItem or TransformToReportItem() ) to create a report item and get rid of the template definition )

@@ -1,0 +1,7 @@
+Shell.computeTrim() returns a wrong result.
+During the developement of e4 workbench designer in Mac Cocoa, I have noticed a bug of this method.
+1.Create a Shell with Trim
+2.Call Shell.computeTrim(0, 0, 0, 0)
+You will get a Rectangle (0, 0, 0, 22).
+The expected result is Rectangle (0,
+-22, 0, 22)

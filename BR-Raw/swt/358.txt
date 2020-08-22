@@ -1,0 +1,8 @@
+Mnemonic on label field does not work
+Created  attachment 199917   [details]
+Test class to reproduce the described behavior.
+Mnemonics on labels are implemented to set the focus to the next focus-able control.
+This works fine if in the same composite is a focus-able control.
+If not the mnemonic gets ignored.
+Responsible for this bug is the 'Label.mnemonicHit' method which checks the index against this also in parent composites.
+See also attached 'MnemonicLabelTest.java'.

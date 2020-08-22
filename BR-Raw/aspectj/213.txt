@@ -1,0 +1,36 @@
+Failure of testCompareSubclassDelegates() on J9 1.5.0 SR1
+This would appear to be a regression of  bug 120909  which was fixed for 1.5.0. The latest J9 can be obtained here  http://www-128.ibm.com/developerworks/java/jdk/index.html .
+TESTROOT
+RunTheseBeforeYouCommitTests
+AllTests
+BcweaverModuleTests15
+org.aspectj.weaver.TestJava5ReflectionBasedReferenceTypeDelegate
+testCompareSubclassDelegates(org.aspectj.weaver.TestJava5ReflectionBasedReferenceTypeDelegate)
+junit.framework.AssertionFailedError: Should be one extra (clinit) in BCEL case, but bcel=41 reflect=41
+at junit.framework.Assert.fail(Assert.java:47)
+at junit.framework.Assert.assertTrue(Assert.java:20)
+at org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateTest.testCompareSubclassDelegates(ReflectionBasedReferenceTypeDelegateTest.java:286)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:615)
+at junit.framework.TestCase.runTest(TestCase.java:154)
+at junit.framework.TestCase.runBare(TestCase.java:127)
+at junit.framework.TestResult$1.protect(TestResult.java:106)
+at junit.framework.TestResult.runProtected(TestResult.java:124)
+at junit.framework.TestResult.run(TestResult.java:109)
+at junit.framework.TestCase.run(TestCase.java:118)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at org.eclipse.jdt.internal.junit.runner.junit3.JUnit3TestReference.run(JUnit3TestReference.java:128)
+at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:460)
+at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:673)
+at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:386)
+at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:196)

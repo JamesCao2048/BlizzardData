@@ -1,0 +1,10 @@
+Bug 175954 Data Engine throws DataException when runtime query has multiple copies of the columns of the design-time query
+When the column meta data returned by the runtime query has multiple copies of the columns of the design-time query initially specified (say, in the ODA session response), the BIRT viewer will throw a DataException.
+For example, if the initial design-time query specified is "select customername from customers"
+-- which has 1 field
+-- and the runtime query is "select customername, customername from customers"
+-- which duplicates the field of the initial query, then a DataException will be thrown by the data engine.
+This is incorrect behavior because as long as the runtime query covers all the columns initially requested, the query should work.
+Specifically, the location that throws the DataException is at org.eclipse.birt.data.engine.executor.ResultClass.doSave(): public void doSave( OutputStream outputStream, Map requestColumnMap ) throws DataException { ...
+...
+if ( writeCount != size ) throw new DataException( ResourceConstants.RESULT_CLASS_SAVE_ERROR ); } Call stack: DataException.<init>(String) line: 43 ResultClass.doSave(OutputStream, Map) line: 196 CachedResultSet.doSave(StreamWrapper, boolean) line: 230 RDSaveUtil.saveForGeneration(IResultIterator, int, int[]) line: 95 RDSaveUtil.saveResultIterator(IResultIterator, int, int[]) line: 60 RDSave.saveResultIterator(IResultIterator, int, int[]) line: 160 ResultIterator$RDSaveHelper.doSave(Map, boolean) line: 774 ResultIterator$RDSaveHelper.doSaveExpr(Map) line: 739 BindingColumnsEvalUtil.getColumnsValue() line: 160 ResultIterator.prepareCurrentRow() line: 347 ResultIterator.next() line: 192 DteResultSet.next() line: 196 TableItemExecutor(QueryItemExecutor).executeQuery() line: 64 TableItemExecutor.execute() line: 72

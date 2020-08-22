@@ -1,0 +1,9 @@
+Bug 302143 Internal bookmark does not work for chart in pdf
+Build Identifier: Internal bookmarks are not working when linked from a chart to a table in a pdf report.
+However, the same internal bookmark works for a html report.
+The error is only for pdf reports.
+Reproducible: Always Steps to Reproduce: 1.Create a chart
+-> format chart-> Chart Area-> Interactivity
+-> Action
+-> Hyperlink
+-> Internal bookmark 2.Create a table with a bookmark and link the chart to this table 3.Generate a pdf report the link from chart to table does not work.

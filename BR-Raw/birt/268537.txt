@@ -1,0 +1,8 @@
+Bug 268537 Add Report Nature
+In versions of BIRT prior to 2.3 there was little compelling reason to associate a project with the BIRT Project perspective.
+In fact, several of the other native perspectives work better for report design, particularly java or j2ee depending on the amount of java, js, and CSS that a project has.
+With the advent of 2.3, and the new debug options and project specific reporting preferences, it becomes more compelling to have the the BIRT perspective.
+Rather than force developers to change their old Java projects, it would be really nice to have a context item on the project that allows a report to add the BIRT Nature to the project.
+An example of this can be seen by first having a standard Java project, and then right click on the project (while in java perspective).
+You will get a PDE Tools item with an option to convert projects to PDE Projects, which brings up a dialog of all similar projects that do not have the PDE Nature and builders.
+I don't think that we need to have all of the possible projects, if we simply had a context entry that said Add BIRT features, I think that it would be fine.

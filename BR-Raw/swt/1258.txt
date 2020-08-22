@@ -1,0 +1,8 @@
+Text with SWT.SEARCH doesn't work with east asian language pack
+Version: 3.2.0
+Build id: I20070323-1616
+While playing around with the SEARCH style i found that it didn't work at all when the windows East Asian language pack was installed.
+More info can be found here:  http://blogs.msdn.com/michkap/archive/2006/02/25/538735.aspx
+This is a windows bug and it has been fixed in Vista, but there is currently no way for calling code to detect that the style bit is being ignored.
+Would it be possible to detect that the language pack is installed and unset the SEARCH style bit?
+It already seems to be doing this if it detect the OS is less than XP.

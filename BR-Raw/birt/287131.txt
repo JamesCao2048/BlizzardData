@@ -1,0 +1,5 @@
+Bug 287131 [Compatibility]Preview result in data set is empty
+Description: [Compatibility]Preview result in data set is empty Build number: 2.5.1.v20090820-0630 Steps to reproduce: 1, Open attached report which is created in 2.0.0 release build 2, Edit the data set and preview directly 3, Go back to Output columns 4, Change the Query text for example add some space 5, Preview again Expected result: In step2, the show expected result in preview and in step3, no error message occurred.
+Actual result: In step2, the preview result is empty and in step3, error occurred.
+But if edit the query text all the issues has gone.
+Error log:

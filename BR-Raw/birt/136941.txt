@@ -1,0 +1,8 @@
+Bug 136941 Del key has no effect in XML Source
+Using BIRT 2.1RC0 build.
+To reproduce: Open or create a report design.
+Choose the XML Source tab.
+Select some text.
+Press the Del key.
+Expected: The selected text is deleted.
+Actual: Nothing happens.

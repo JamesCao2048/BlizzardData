@@ -1,0 +1,3 @@
+Bug 106141 The SQL Edit window needs some level of access to the BIRT Sample DB fields and columns.
+Description: The SQL Edit window needs some level of access to the BIRT Sample DB fields and columns.
+Steps to reproduce: 1.New a sample data source using BIRT provided sample DB 2.New a dataset 3.In query editor, input table name and enter "." Expected result: The table's columns are listed Actual result: Nothing happen This work in JDBC datasource related bug:88537

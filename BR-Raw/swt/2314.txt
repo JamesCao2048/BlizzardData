@@ -1,0 +1,27 @@
+Tooltip is not shown all the time
+I have two text controls (Text1 and Text2) in a shell, and I call setToolTipText on both the text controls.
+When the shell is first launched, Text1 gets the focus by default.
+Tooltip shows up when I move the cursor to Text1.If I now click on Text1, tooltip does not show up on Text1 anymore until I click on Text2 and bring the cursor back to Text1.
+I am only using text controls here as an example.
+I can see the same problem on other types of controls.
+The following snippet shows the problem:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+
+Text text1 = new Text(shell, SWT.NONE);
+text1.setBounds(100, 100, 100, 30);
+text1.setText("My text1");
+text1.setToolTipText("tooltip1");
+
+Text text2 = new Text(shell, SWT.NONE);
+text2.setBounds(300, 100, 100, 30);
+text2.setText("My text2");
+text2.setToolTipText("tooltip2");
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

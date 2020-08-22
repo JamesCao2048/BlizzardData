@@ -1,0 +1,12 @@
+Eclipse Cocoa: drag and drop in Package Explorer sometimes incorrectly shows icon indicating illegal drop target
+Build ID: I20081211-1908
+Steps To Reproduce:
+1.Package Explorer: Top Level Elements > Working Sets, and create a working set, e.g.
+"my working set"
+2.New Java project "foo"; it will show up in the "Other Projects" working set
+3.Drag project "foo" onto "my working set"
+Actual result:
+Sometimes, the cursor will be shown with a "don't drop here" circle-with-slash, indicating that you aren't allowed to drop it.
+(See screenshot.)  But if you do drop it, it moves just fine.
+Expected result:
+Mouse cursor should correctly indicate whether it is over a valid drop target.

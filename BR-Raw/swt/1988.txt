@@ -1,0 +1,29 @@
+regression: FocusOut not fired for Texts in an SWT.APPLICATION_MODAL shell
+3.3RC3 candidate build
+- run the snippet below
+- tab between the two text fields and you'll only see "in" printed to stdout, but you should see "out" and "in" for each focus change
+- this works fine if the Shell is not created with style SWT.APPLICATION_MODAL
+public static void main(String[] args) {
+Display display = Display.getDefault();
+FocusListener listener = new FocusListener() {
+public void focusLost(FocusEvent e) {
+System.out.println("out");
+}
+public void focusGained(FocusEvent e) {
+System.out.println("in");
+}
+};
+Shell shell = new Shell(display, SWT.APPLICATION_MODAL); //
+<--
+shell.setLayout(new GridLayout());
+shell.layout();
+shell.pack();
+shell.setSize(200, 200);
+new Text(shell, SWT.NONE).addFocusListener(listener);
+new Text(shell, SWT.NONE).addFocusListener(listener);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

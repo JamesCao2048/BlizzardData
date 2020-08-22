@@ -1,0 +1,7 @@
+Bug 180402 [Smoke][Automation][Regression] Chart cannot be rendered at all
+steps to reproduce:
+- create a report
+- add a chart item to the report
+- preview the report expected behavior:
+- chart is rendered actual behavior:
+- chart was not rendered at all

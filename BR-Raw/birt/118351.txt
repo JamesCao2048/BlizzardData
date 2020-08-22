@@ -1,0 +1,5 @@
+Bug 118351 Predefine style in library cannot refresh in layout
+Details: Predefine style in library cannot refresh in layout Step: 1.New a library and create two themes and two label predefine style with yellow and green background color.
+Named theme1 and theme2, style1 and style2.2.Open a report design and insert a label.
+Actual result: No matter what theme is selected, the background color has not been changed in layout.
+Expected result: Select a theme, background color of label in layout is changed.

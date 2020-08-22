@@ -1,0 +1,23 @@
+virtual table accessibility slow on GTK (was: Open Type is very slow: causes UI lockup with high CPU utilization)
+Build Identifier: Version: Juno Release Build id: 20120614-1722
+Open Type is incredibly slow on my new Asus G55V laptop (2.3GHz quad core i7 with 12GB ram, 2Gb Nvidia graphics, SSD).
+Performance of Open Type varies depending how many characters are entered (quickly before it locks up!).
+For example:
+Using a brand new workspace with a single empty project it takes about 20 seconds for Open Type to unlock itself with the string: java.lang
+I've tried various vm parameters, but have settled on the following in order to demonstrate the problem eclipse.ini (-XX:PermSize=256m
+-XX:MaxPermSize=256m
+-Xms512m
+-Xmx512m).
+Otherwise performance of the machine generally is generally excellent.
+Eclipse loads in a few seconds and navigation is otherwise not bad (find/search can be a bit slow to appear).
+Reproducible: Always
+Steps to Reproduce:
+1.Open new or existing java workspace (create a new empty project if necessary)
+2.Ctrl-Shift-T or click Open Type
+3.type: java.lang.
+or similar
+4.wait 20-30 seconds
+Ubuntu 12.04 x64 (3.2.0-26-generic)
+Sun JDK 1.7.0_06 (x64)
+Eclipse and workspace are installed on an SSD ext4 partition.
+I've tried moving each to a regular hdd with no effect.

@@ -1,0 +1,26 @@
+Walkback turning on wrap in StyledText.
+1) run the CustomControlExample
+2) click on the StyledText tab
+3) click in the StyledText widget such that the cursor is at the end
+4) type enough text that it scrolls left
+5) select some text and click on the "Foreground" button
+6) select the SWT.WRAP button
+7) walkback:
+Exception in thread "main" java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:3358)
+at org.eclipse.swt.SWT.error(SWT.java:3297)
+at org.eclipse.swt.SWT.error(SWT.java:3268)
+at org.eclipse.swt.custom.StyledText.setStyleRanges(StyledText.java:7733)
+at org.eclipse.swt.custom.StyledText.setStyleRanges(StyledText.java:7829)
+at org.eclipse.swt.examples.controlexample.StyledTextTab.createExampleWidgets(StyledTextTab.java:108)
+at org.eclipse.swt.examples.controlexample.Tab.recreateExampleWidgets(Tab.java:1135)
+at org.eclipse.swt.examples.controlexample.Tab$1.widgetSelected(Tab.java:161)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:90)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1481)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1505)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1267)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3273)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2909)
+at org.eclipse.swt.examples.controlexample.CustomControlExample.main(CustomControlExample.java:54)

@@ -1,0 +1,5 @@
+Bug 115769 [Acceptance]Background style defined in predefined table-detail/table-footer/table-header/list-detail/footer/header doesn't work.
+Description: Background style defined in predefined table-detail/table-footer/table- header/list-detail/footer/header doesn't work.
+Steps to reproduce: 1.Insert a list and table 2.Add predefined style for table-detail/footer/header, list- detail/footer/header, in style builder, set background color.
+3.Save and preview Expected result: Background style can be applied to corresponding part automatically.
+Actual result: No background style take effect.

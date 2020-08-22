@@ -1,0 +1,4 @@
+Bug 197241 Cross tab - Advanced filter on time dimension does not work
+Please refer to the attached report design.
+- Createa a cross tab with time dimension on one axis and product line on another axis
+- Define a filter on level = month, to show all months with sales >= 100000 for productLine = "classic cars" The filter does not work.

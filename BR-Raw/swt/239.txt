@@ -1,0 +1,3 @@
+[Browser] tabbing does not work in XULRunner 10 (Windows only)
+In XULRunner 10, sending WM_GETDLGCODE to a WM_KEYDOWN's MSG hwnd answers 0 instead of the expected DLGC_WANTTAB or DLGC_WANTALLKEYS.
+As a result, Tab presses always default to traversals out of the browser.

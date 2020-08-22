@@ -1,0 +1,2 @@
+Bug 220710 [Automation][Regression]Step size is NaN
+Description: step size is NaN ; Test Date: 20080228 Test Build: BIRT2.3.0 v20080228-0800 Step to reproduce: 1 Use the report attached 2 Preview it Expect result: The step size should be 60000 Actual result: Step size is NaN

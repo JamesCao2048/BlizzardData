@@ -1,0 +1,6 @@
+Bug 181361 Exception is thrown out in Chart builder when you set all null values for Value Series [0001]
+Description: Exception is thrown out in Chart builder when you set all null values for Value Series.
+Build number: 2.2.0.v20070405-0630 Steps to reproduce: 1.Create a Bar Chart, set all null value data for Value Series.
+Expected result: No exception is thrown out.
+Actual result: Exception is thrown out (See the screenshot).
+Error log: N/A

@@ -1,0 +1,5 @@
+Bug 115424 [smoke]Data can't be previewed when imported from library
+description: Data can't be previewed when imported from library steps to reproduce: 1.insert a data element to library 2.bind data to a data set 3.choose a data field to bind to data element 4.import library to a report 5.drag data to report 6.preview actual result: " iO3EI OU iIo:
+- report OO iIo: report iIo 0 : data.engine.UndefinedDataSet ( 1 IIeI EAI: I OaEy34Y14 Ey34Y14
+- Data OO iIo: null iIo 0 : Failed to evaluate row["DateOfEntry"] ( 1 IIeI EAI: Failed to evaluate row["DateOfEntry"]ReferenceError: "row" is not defined.
+(#1)" appears when preview expected result: data can be previewed

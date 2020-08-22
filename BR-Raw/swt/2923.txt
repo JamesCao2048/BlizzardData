@@ -1,0 +1,38 @@
+event doit=false does not work for Combo on Mac.
+I have a scenario where I want to prevent traversal on pressing return in a combo and setting event.doit
+to false works on other platforms but not the Mac.
+code snippet:
+// do not allow the dialog to be closed when enter is pressed
+filterCombo.addListener(SWT.Traverse, new Listener() {
+public void handleEvent(Event e) {
+if (e.detail == SWT.TRAVERSE_RETURN)
+e.doit = false;
+}
+});
+naiively if  I add a '!' before translateTraversal in the code below it starts to work:
+int kEventRawKeyPressed (int nextHandler, int theEvent, int userData) {
+/*
+* Feature in the Macintosh.
+The combo box widget consumes the
+* kEventRawKeyDown event when the Return key or up and down arrow
+* keys are pressed, causing kEventTextInputUnicodeForKeyEvent not
+* to be sent.
+The fix is to handle these keys in kEventRawKeyDown.
+*/
+int [] keyCode = new int [1];
+OS.GetEventParameter (theEvent, OS.kEventParamKeyCode, OS.typeUInt32, null, keyCode.length *
+4, null, keyCode);
+switch (keyCode [0]) {
+case 36: /* Return */
+>> MVM added !
+<<<		if (!translateTraversal (keyCode [0], theEvent)) return OS.noErr;
+if (!sendKeyEvent (SWT.KeyDown, theEvent)) return OS.noErr;
+postEvent(SWT.DefaultSelection);
+break;
+case 126: /* Up arrow */
+case 125: /* Down arrow */
+if (!sendKeyEvent (SWT.KeyDown, theEvent)) return OS.noErr;
+break;
+}
+return OS.eventNotHandledErr;
+}

@@ -1,0 +1,10 @@
+CVSUIPlugin.stop not being called
+Build ID: I20070608-1718
+Steps To Reproduce:
+1.load cvs ui plugin code into pde environment
+2.set breakpoint in CVSUIPlugin.stop
+3.start/stop pde debugging session, CVSUIPlugin.stop is never called (debugger never hits breakpoint)
+More information:
+i was attempting to work on a patch for  bug 167980 , so i went into the 'org.eclipse.team.cvs.ui' dir under '.metadata/.plugins' to clear it out for some testing, and  upon restarting eclipse and entering a test commit message and then shutting down, i find the contents of the directory empty.
+if i hook the debugger up to the cvs-ui source, and set a breakpoint in CVSUIPlugin.stop, the debugger does not break upon shutdown.
+i've experienced this on a brand new install the latest release candidate.

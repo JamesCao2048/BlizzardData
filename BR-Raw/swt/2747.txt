@@ -1,0 +1,6 @@
+Image flashing when using a Tree in a themed TabFolder
+If you have a themed TabFolder under XP (using the latest SWT release that fixes
+some TabFolder theme problems, see  https://bugs.eclipse.org/bugs/show_bug.cgi ?
+id=24538) and uses a Tree with images as a TabItem control, resizing the Shell
+causes massive flashing of the Tree images (similar to the flashing of images in
+Labels that was fixed in the SWT release mentioned above).

@@ -1,0 +1,19 @@
+NPE or StackOverflow when resolving reference pointcut in ReflectionWorld
+Given a type such as :
+private static class NamedPointcutResolution {
+
+@Pointcut("execution(* *(..))")
+public void a() {}
+
+
+@Pointcut("this(org.aspectj.weaver.tools.Java15PointcutExpressionTest.A)")
+public void b() {}
+
+@Pointcut("a() && b()")
+public void c() {}
+}
+The reflection based delegate is unable to resolve the pointcut c() failing
+with either (1) an NPE, or (2) a StackOverflow, depending on the order of the
+pointcut definitions in the type.
+The problem occurs because in resolving "c()" we get all the pointcuts in the
+type, which gets a(), b(), and c(), and tries to resolve them...

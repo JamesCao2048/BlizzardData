@@ -1,0 +1,13 @@
+Horizontal alignment in StyledText does not work for SWT.SINGLE
+Build Identifier: 20110505-1223
+Horizontal alignment (!=left) only works when StyledText style is set to SWT.MULTI and SWT.WRAP.
+If a StyledText SWT.SINGLE is created using the alignment SWT.CENTER or SWT.RIGHT, the text and caret disappear.
+It seems to be a problem related to the TextLayout width which is returning wrong numbers (like it has not width defined).
+Reproducible: Always
+Steps to Reproduce:
+Code-snippet:
+StyledText styledText = new StyledText(parent, SWT.SINGLE);
+styledText.setText(text);
+styledText.setAlignment(SWT.CENTER);
+styledText.setBounds(rectangle);
+I used this code as a Control of a CellEditor.

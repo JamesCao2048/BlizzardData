@@ -1,0 +1,8 @@
+Program.findProgram("html") fails with Firefox as the default browser
+On my Windows machine, Program.findProgram("html") returns null even though my
+default browser is correctly set to be Firefox.
+The problem is that the
+HKEY_CLASSES_ROOT\FirefoxHTML key has no value, which makes the name parameter
+invalid.
+The fix is to use the name of the key (in this case, FirefoxHTML)
+instead of trying to look up a real name.

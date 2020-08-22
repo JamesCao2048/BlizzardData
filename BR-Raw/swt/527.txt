@@ -1,0 +1,17 @@
+[SWT_AWT] SWT interfers with application menu
+Build Identifier: 3.6M6
+An AWT/Swing user interface may or may not decide to use the screen menu bar.
+The various configuration tweaks are:
+1.Setting the "apple.laf.useScreenMenuBar" system property to "true".
+2.Setting the "com.apple.mrj.application.apple.menu.about.name" system property to whatever name.
+3.Invoking "com.apple.eawt.Application.getApplication().addApplicationListener(listener)" to hook to the various application menu items.
+4.com.apple.eawt.Application.getApplication().setEnabledPreferencesMenu(true);
+Adding an SWT control must not interfer with the menus that appear in that bar, which is not the case currently.
+This is a showstopper for some of my users.
+SWT should detect that AWT is in the picture and not touch the application menu.
+Reproducible: Always
+Steps to Reproduce:
+1.Create an AWT/Swing application.
+2.Configures the application menu bar through Mac-specific system properties and APIs.
+3.Embed an SWT control
+=> menus are not the ones expected.

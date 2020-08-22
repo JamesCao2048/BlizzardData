@@ -1,0 +1,6 @@
+Bug 116564 The title of hyperlink builder should be "Hyperlink Options", now it changes with settings.
+Description: The title of hyperlink builder should be "Hyperlink Options", now it changes with settings.
+Steps to reproduce: 1.Set a label hyperlink as "www.actuate.com".
+2.Click on "OK" then reopen hyperlink builder.
+Actual result: its title becomes "www.actuate.com".
+Expected result: hyperlinke builder title should be "Hyperlink Options".

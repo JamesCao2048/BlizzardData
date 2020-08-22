@@ -1,0 +1,2 @@
+Bug 153378 [Regression]Label text won't show up when the text key is not found
+Steps to reproduce: 1.Add a label, set text to "aaa" 2.Add a resource file "a" to the report, add a text key "k1" which is not in the a.properties to the label 3.Preview in Web Viewer Expected result: Label display "aaa" when the text key is not found Actual result: Nothing in preview

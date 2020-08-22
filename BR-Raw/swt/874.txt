@@ -1,0 +1,23 @@
+[Widgets] FileDialog can not open a directory correctly on linux gtk swt
+Build ID: I20090611-1540
+Steps To Reproduce:
+1.write a swt example on linux platform with code like this
+FileDialog fileDialog=new FileDialog(Display.getDefault().getActiveShell(),SWT.OPEN);
+fileDialog.setFileName("/tmp");
+fileDialog.open();
+2.run this example ,you will see File dialog opened and select "tmp" directory .
+BUT NOT GO INTO THE TMP directory.
+
+More information:
+checked windows , its ok.
+I am using gtk32 bit linux, gtk 64bit not checked, gtk 64 may have same problem.
+root cause is:
+line 534  of FileDialog.java always invoke
+OS.gtk_file_chooser_set_filename(..)  and don't consider if it is a file or directory.
+Solution can be:
+replace line 534 with following
+if(fileName.isEmpty()){
+OS.gtk_file_chooser_set_current_folder(..);
+}else{
+OS.gtk_file_chooser_set_filename(..) ;
+}

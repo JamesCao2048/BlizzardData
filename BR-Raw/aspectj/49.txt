@@ -1,0 +1,4 @@
+overweaving can attribute duplicate attributes, one of which will not deserialize correctly
+When overweaving it is possible that a class will get a second WeaverState attribute.  This second one will not be valid (it hasn't been correctly configured).  This isn't normally a problem because the next thing that happens is that the class is defined to the VM.  But if *another* weave step occurs, the malformed attribute will cause that weave to fail with this kind of message:
+bad WeaverState.Kind: -115
+The solution is to avoid adding the duplicate when overweaving.

@@ -1,0 +1,16 @@
+File deleted by unexpected drag and drop
+Here is a strange scenario in which a file is deleted when it is selected.
+1) Open the Java Browsing Perspective
+2) Open the Package Explorer and place it on the far right of the editor
+3) In the Package Explorer, expand a project that is shared with CVS so a
+shared file is visible
+4) Edit this file and make a change
+5) Team>Sychronize the file.
+6) Make the Sync view a fast view such that the file from step 3 is visible in
+the Package Explorer while the sync view is open
+7) In the sync view, modify the file but DON'T save it.
+8) Click on the file in the packages explorer.
+The sync view will lose focus
+and the user is prompted to save the changes in the sync view.
+9) Say No when asked to save the changes
+10) File selected in step 8 is deleted

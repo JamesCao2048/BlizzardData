@@ -1,0 +1,22 @@
+[browser] exception thrown when JS call "confirm" in a frameset structure
+Build ID: Eclipse 3.3 M4
+Steps To Reproduce:
+Env:
+- Suse Linus ED10
+- XULRUnner 1.8.0.1 shipped with sled10
+- Eclipse 3.3M4/Eclipse 3.2.2
+1.Open Eclipse, show view "Intenet Web Browser".
+2.Visit a web page with frameset structure.(See attached sample html files)
+3.Click the "confirm" button.
+4.An exception is thown:
+rg.eclipse.swt.SWTError: XPCOM error
+-2147467262
+at org.eclipse.swt.browser.Browser.error(Browser.java:1328)
+at org.eclipse.swt.browser.PromptService.getBrowser(PromptService.java:117)
+at org.eclipse.swt.browser.PromptService.Confirm(PromptService.java:183)
+at org.eclipse.swt.browser.PromptService$2.method5(PromptService.java:46)
+at org.eclipse.swt.internal.mozilla.XPCOMObject.callback5(XPCOMObject.java:456)
+at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:5273)
+More information:
+- It is fine with the "confirm" call if no frameset

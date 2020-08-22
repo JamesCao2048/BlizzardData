@@ -1,0 +1,32 @@
+MouseUp incorrectly fired on Tree
+Run the following snippet, click on row one and hold your mouse button down.
+A MouseDown AND a MouseUp event is fired.
+Release the mouse and another MouseUp is fired.
+Works okay if you click on an area in the tree that's not part of a TreeItem row.
+3.2M5
+Snippet:
+Display display = Display.getDefault();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+Tree tree = new Tree(shell, SWT.FULL_SELECTION | SWT.BORDER);
+tree.setLayoutData(new  GridData(SWT.FILL, SWT.FILL, true, true));
+tree.addMouseListener(new MouseListener() {
+public void mouseDoubleClick(MouseEvent e) {
+System.out.println("DBL");
+}
+public void mouseDown(MouseEvent e) {
+System.out.println("Down");
+}
+public void mouseUp(MouseEvent e) {
+System.out.println("Up");
+}
+
+});
+TreeItem item = new TreeItem(tree, SWT.NONE);
+item.setText("test");
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}

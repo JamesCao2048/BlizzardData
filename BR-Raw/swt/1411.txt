@@ -1,0 +1,8 @@
+org.eclipse.swt.printing.PrintDialog.open() returns 'null' for two different scenarios
+I20081007-1600.
+Calling org.eclipse.swt.printing.PrintDialog.open() on a machine with no printers immediately returns 'null'.
+This is not specified in the API's Javadoc.
+APIs must specify if they return 'null' (and also specify what a 'null' return value means.
+From  http://www.eclipse.org/articles/article.php?file=Article-API-Use/index.html :
+"Null result.
+Do not return null as a result from an API method unless the result is explicitly documented (on the specifying interface or superclass) as allowing null."

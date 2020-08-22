@@ -1,0 +1,8 @@
+Toolbar with only separator(s) should not be in tab order
+Eclipse 4.2 M6
+Eclipse 4.2 creates toolbars with only 1 separator tool in them to separate the toolbars.
+(This simulates the old coolbar).
+On Windows, tab traversal ignores the separator-only-toolbars (which is good).
+On Mac, tab traverses to the separator-only-toolbar, and this is not good.
+To see this, traverse in the forward direction with ctrl+tab until you reach the toolbar.
+Then keep tabbing forward, and notice that there are too many tab keys required to tab from toolbar to toolbar.

@@ -1,0 +1,53 @@
+Application crashes when the link widget is invoked through keyboard
+Created  attachment 175206   [details]
+Snippet to reproduce
+The attached snippet can be used to reproduce a crash happening when the link is selected only through Space key.
+I've an application that crashes due to invoking a wizard through the selection of link using keyboard.
+Steps to reproduce
+-
+1) After launching the snippet, select the focused link using Space key.
+2) Press Space twice
+- to make sure wizard is moved to and fro between the pages (mouse can also be used to move between the pages)
+3) Press Cancel button
+- It results in a crash (crash will definitely happen after one or two attempts).
+If the link is selected either using mouse or through Enter key, then the crash does not happen.
+Here is the excerpt of the function stack for further reference
+-
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: KERN_INVALID_ADDRESS at 0x00000000a1b1c1f3
+Crashed Thread:  0
+Application Specific Information:
+Java information:
+Version: Java HotSpot(TM) Client VM (1.5.0_22-147 mixed mode, sharing)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_22-147) for macosx-x86, built on Nov  6 2009 10:33:51 by root with gcc 4.0.1 (Apple Inc.
+build 5465)
+Exception type: Bus Error (0xa) at pc=0x92229688
+Stack: [0xbf800000,0xc0000000)
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;II)I+0
+j  org.eclipse.swt.widgets.Widget.callSuper(III)V+31
+j  org.eclipse.swt.widgets.Widget.insertText(III)Z+4
+j  org.eclipse.swt.widgets.Control.insertText(III)Z+193
+j  org.eclipse.swt.widgets.Display.windowProc(III)I+1098
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;II)I+0
+j  org.eclipse.swt.widgets.Widget.callSuper(III)V+31
+j  org.eclipse.swt.widgets.Widget.superKeyDown(III)V+4
+j  org.eclipse.swt.widgets.Widget.keyDown(III)V+4
+j  org.eclipse.swt.widgets.Control.keyDown(III)V+111
+j  org.eclipse.swt.widgets.Display.windowProc(III)I+360
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;II)I+0
+j  org.eclipse.swt.widgets.Widget.callSuper(III)V+31
+j  org.eclipse.swt.widgets.Widget.windowSendEvent(III)V+4
+j  org.eclipse.swt.widgets.Shell.windowSendEvent(III)V+473
+j  org.eclipse.swt.widgets.Display.windowProc(III)I+895
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;II)I+0
+j  org.eclipse.swt.widgets.Display.applicationSendEvent(III)V+373
+j  org.eclipse.swt.widgets.Display.applicationProc(III)I+60
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSend(III)I+0
+j  org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(Lorg/eclipse/swt/internal/cocoa/NSEvent;)V+19
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+113
+j  org.eclipse.jface.MySnippets.LinkFailure.main([Ljava/lang/String;)V+85

@@ -1,0 +1,4 @@
+Bug 153823 JavaScript editor doesn't update correctly with multiple scripted datasets
+Once I added multiple scripted datasets to a report design with one data source, the script editor page failed to update each data set's scripting methods correctly.
+This bug is not only visual, but data-oriented as well since changes to the script in the script editing window were NOT reflected in the report XML.
+Reloading the report design file seemed to work at first, but once changes are made to the script, the editor become out of sync with the XML and starts displaying incorrect information and edits work in an inconsistent manner.

@@ -1,0 +1,6 @@
+Bug 143105 Invalid "row" binding reference does not generate an error
+Open the attached report.
+The data item in the second column is bound to an invalid expression row["junk"] (no binding by the name junk exists).
+No error is generated when this report is run.
+The 2nd column simply shows empty values.
+EXPECTED: erroneous "row" references must be reported as error.

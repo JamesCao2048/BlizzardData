@@ -1,0 +1,6 @@
+StyledText: block selection mode: trouble with caret and newline
+I20081202-0800.
+The block selection mode has troubles when I put the caret into a line and start typing: the small non-blinking caret stays (instead of the usual caret)
+- even after typing
+- and return does not working/is blocked.
+Can be reproduced in SWT's TextEditor example.

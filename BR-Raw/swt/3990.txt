@@ -1,0 +1,12 @@
+Step filter in-place text editor invisible
+Build 2.0
+Linux-GTK
+1.Go to Window->Preferences->Java->Debug->Step Filtering
+2.Click "Add Filter"
+3.A checkbox appears in the tree, but there is no visible text editor.
+4.Type "asdf".
+No text appears.
+5.Hit ENTER.
+The text "asdf" now appears.
+We need to either fix the in-place text editor or get rid of it and replace it
+with a simple text-input area above the tree.

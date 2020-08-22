@@ -1,0 +1,8 @@
+Can't print Image with alphas with transparent pixel unspecified
+Created  attachment 141353   [details]
+image to test
+Use snippet form  bug 28766  and hard code the path to the attached test.png file
+The image is not printed.
+The image is converted from BufferedImage to SWT Image.
+It has alphas specified and transparent pixel unspecified.
+If I set transparent pixel = 0 then image is printed, but this seems to be a hack.

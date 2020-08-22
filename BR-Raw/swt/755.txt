@@ -1,0 +1,2 @@
+Safari and WebKit should navigate to about:blank in setText()
+I think the current implementation of setText() results in the current page being overwritten, so it doesn't get an entry in the history.

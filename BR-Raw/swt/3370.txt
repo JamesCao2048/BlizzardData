@@ -1,0 +1,14 @@
+CTabFolder: Selecting tabs should not affect whether chevron is shown (should use constant space)
+build I20040310 + latest from HEAD
+- in default layout of Java perspective, in default window size (Window > New
+Window), the Package Explorer and Hierarchy view are in the same folder
+- both tabs appear, but Package Explorer's name appears as Package Expl...
+- if not, then shrink the folder until it does
+- click on Hierarchy tab
+- the Package Explorer tab disappears and you get the >>1 chevron
+- you, are in a different mode now, and experiencing disorientation
+- choose Package Explorer from the chevron menu
+- boths tabs are visible now
+Simply switching between tabs should not affect whether the chevron is shown.
+The tabs should use constant space across selection, even if they trade off
+space with each other.

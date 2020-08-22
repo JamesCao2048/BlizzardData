@@ -1,0 +1,23 @@
+Improving performance of ImageData.blit and Image.init methods
+Created  attachment 130285   [details]
+Source for Image and ImageData with our optimizations for our case
+Steve and I discussed this at EclipseCon and he asked me to open a bug about it.
+At Band XI, we do a substantial amount of work with using SWT for bitmap based graphics displays on embedded hardware.
+Recently, we've been performance tuning the startup of our applications.
+We uncovered some inefficiencies in the ImageData.blit methods and Image.init methods.
+We wanted to share our findings, along with some sample images, in the hopes that the performance of the methods can be improved.
+We optimized the methods for our cases are were able to achieve approximately a 50% reduction in execution time.
+The performance problem is in the doublely nested for loops inside the blit methods.
+Within the loops there exist a main switch based on the source bit depth and a switch based on the destination bit depth.
+Each source bit depth case uses anding and shifting to extract the alpha, red, green, and blue values from the pixel in question.
+The a,r,g,b values are combined into a device independent format after the source switch.
+The independent format is then shifted and anded some more in each of the destination cases to get the right values for a,r,g,b.
+All this anding and shifting isn't free.
+On an embedded box with bitmap based graphics it can be downright expensive, taking 1-2 seconds to process one of the attached images.
+
+The general strategy of the optimization we took is to notice that for most all of our cases, the source and destination depths are either 24->32, 32->32 or 32->24. In all of these cases we aren't using any transparency.
+This means that we can get the destination values for r,g and b very simply from the source data, with the bare minimum of shifting and anding necessary.
+In the attached Java files, goto Image.init(ImageData) and look for the calls to jpb_init and jpb_init2 in the ImageData class.
+This is the code path that we spend all our time in.
+We've provided several images at different bitdepths to help with your investigation.
+We used the Mac SWT source to make our modifications.

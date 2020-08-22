@@ -1,0 +1,21 @@
+[itds] abstract synchronized: compile error expected
+when using intertype declaration, the compiler doesn't check for illegal
+modifier combinations such as "abstract synchronized".
+another manifestation of this problem is when using intertype declaration to add
+a synchronized method to an interface. the problem is more severe in this case
+because conceptually, this method is not abstract at all.
+interface Interface {}
+abstract class Parent {}
+class Child extends Parent implements Interface {}
+aspect Bug {
+// illegal modifier combination not caught by ajc
+public abstract synchronized void Parent._abstract();
+public synchronized void Child._abstract() {}
+// the following has the same effect, but is easier to miss
+public /* implicit abstract */ synchronized void Interface._interface() {}
+// use Child to make java complain: "illegal modifiers: 0x421"
+// (this corresponds to "public abstract synchronized")
+public static void main(String[] args) {
+new Child();
+}
+}

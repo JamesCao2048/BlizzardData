@@ -1,0 +1,13 @@
+[typing] Editor flashes when extending selection by word with Ctrl+Shift+Right
+I20070323-1616 (M6)
+The Java editor sometimes flashes when extending a selection by word with Ctrl+Shift+Right.
+Steps:
+- new workspace
+- copy attachment into clipboard
+- paste to Package Explorer
+- set caret to before first 'res.add(...'
+- press Ctrl+Shift+Arrow_Right until selection is
+'res.add(new BindingProperty(this, "CONSTANT VALUE", const' (the editor automatically scrolls, so you will only see
+'(new BindingProperty(this, "CONSTANT VALUE", const' selected)
+- now repeatedly press Ctrl+Shift+Arrow_Right, then Ctrl+Shift+Arrow_Left to include/exclude 'Val '
+=> The whole editor area and the horizontal scroll bar flash on every keystroke

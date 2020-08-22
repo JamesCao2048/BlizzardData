@@ -1,0 +1,5 @@
+Bug 278597 Exception is thrown out when drag "Variable" from Palette to the Library master page header/footer [05]
+Description: Exception is thrown out when drag "Variable" from Palette to the Library master page header/footer.
+Build number: 2.5.0.v20090601-0630 Steps to reproduce: 1.New a library, drag "Variable" from Palette to the master page header/footer.
+Expected result: No exception.
+Actual result: Exception is thrown out.

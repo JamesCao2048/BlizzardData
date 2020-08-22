@@ -1,0 +1,5 @@
+Bug 186926 Enhance methods name in IFont, a simple APi class in model
+Two issues in IFont interface: 1.Bold is misspelled in setIsBold() method.
+2.Setter method name for Boolean arguments is not good.
+I prefer setBold to setIsBold.
+There are four boolean-setter methods needing modification like that.

@@ -1,0 +1,41 @@
+Eclipse 3.2 gtk RC2 dumps core on Solaris 9
+Eclipse 3.2 RC2 dumps core on Solaris 9 at startup....
+the following traceback is generated:
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0xDFD1557C
+Function=gtk_tooltips_force_window+0xB8
+Library=/usr/lib/libgtk-x11-2.0.so.0.100.0
+Current Java thread:
+at org.eclipse.swt.internal.gtk.OS._gtk_tooltips_force_window(Native Method)
+at org.eclipse.swt.internal.gtk.OS.gtk_tooltips_force_window(OS.java:6684)
+at org.eclipse.swt.widgets.Shell.setToolTipText(Shell.java:1638)
+at org.eclipse.swt.widgets.ToolItem.setToolTipText(ToolItem.java:1009)
+at org.eclipse.swt.widgets.ToolItem.setToolTipText(ToolItem.java:1003)
+at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:720)
+at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+at org.eclipse.jface.action.ToolBarManager.createControl(ToolBarManager.java:101)
+at org.eclipse.jface.action.ToolBarContributionItem.fill(ToolBarContributionItem.java:190)
+at org.eclipse.jface.action.CoolBarManager.update(CoolBarManager.java:919)
+at org.eclipse.jface.action.CoolBarManager.createControl(CoolBarManager.java:244)
+at org.eclipse.jface.internal.provisional.action.CoolBarManager2.createControl2(CoolBarManager2.java:76)
+at org.eclipse.jface.window.ApplicationWindow.createCoolBarControl(ApplicationWindow.java:513)
+at org.eclipse.ui.internal.WorkbenchWindow.createDefaultContents(WorkbenchWindow.java:952)
+at org.eclipse.ui.internal.WorkbenchWindowConfigurer.createDefaultContents(WorkbenchWindowConfigurer.java:610)
+at org.eclipse.ui.application.WorkbenchWindowAdvisor.createWindowContents(WorkbenchWindowAdvisor.java:267)
+at org.eclipse.ui.internal.WorkbenchWindow.createContents(WorkbenchWindow.java:898)
+at org.eclipse.jface.window.Window.create(Window.java:426)
+at org.eclipse.ui.internal.Workbench.busyOpenWorkbenchWindow(Workbench.java:789)
+at org.eclipse.ui.internal.Workbench.doOpenFirstTimeWindow(Workbench.java:1437)
+at org.eclipse.ui.internal.Workbench.access$10(Workbench.java:1435)
+at org.eclipse.ui.internal.Workbench$16.run(Workbench.java:1399)
+at org.eclipse.ui.internal.Workbench.runStartupWithProgress(Workbench.java:1421)
+at org.eclipse.ui.internal.Workbench.openFirstTimeWindow(Workbench.java:1397)
+at org.eclipse.ui.internal.WorkbenchConfigurer.openFirstTimeWindow(WorkbenchConfigurer.java:190)
+at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:708)
+at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run(

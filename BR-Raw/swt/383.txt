@@ -1,0 +1,19 @@
+GC with Transform crashes when rendering TextLayout with strikeout and selection
+Build Identifier: 20110218-0911
+On Windows (XP, Vista and 7), when trying to render a TextLayout with strikeout style and a selection on this style, the GC with a transform crashes the JVM with the following error:
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x09d01f00, pid=3116, tid=2340
+#
+# JRE version: 6.0_25-b06
+# Java VM: Java HotSpot(TM) Client VM (20.0-b11 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  0x09d01f00
+Apparently any transform will cause the problem, even if an empty transform.
+It doesn't happen to bold, italic, underline or any other style.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a TextLayout with some text and a strike out style.
+2.On paint, set a transform on the GC.
+3.Draw the text layout with selection containing the range which is struck out.

@@ -1,0 +1,46 @@
+NullPointerException when trying to print
+Build ID: M20080911-1700
+Steps To Reproduce:
+When I try to print a UML diagram created by the Soyatec eUML2 plugin, the print dialog does not open.
+In the log I see a NullPointerException in the string conversion code.
+1.Create class diagram
+2.Click on print button in toolbar
+Obviously the plugin is not providing a filename for the "Print to file" option, but eclipse should not blow up just because a plugin is behaving badly.
+More information:
+Environemnt Ubuntu 8.04 32-bit, Sun JDK 1.6.0_07-b06.The stack trace from the log is as follows:
+!ENTRY org.eclipse.ui 4 0 2008-11-03 14:09:38.029
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.swt.internal.Converter.wcsToMbcs(Converter.java:51)
+at org.eclipse.swt.printing.Printer.init(Printer.java:744)
+at org.eclipse.swt.graphics.Device.<init>(Device.java:155)
+at org.eclipse.swt.printing.Printer.<init>(Printer.java:304)
+at com.soyatec.uml.obf.gas.<init>(SourceFile:27)
+at com.soyatec.uml.obf.aaq.e(SourceFile:150)
+at com.soyatec.uml.obf.hag.f(SourceFile:63)
+at com.soyatec.uml.obf.ho.run(SourceFile:289)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:583)
+at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:500)
+at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1158)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3401)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3033)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:386)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.i

@@ -1,0 +1,74 @@
+[browser]RedHat EL4Update4, swt.browser cannot show with installed xulrunner 1.8.0.1
+Build ID: version:3.2.1, build id:M20061115-1052
+Steps To Reproduce:
+XULRunner1801 runtime reports "undefined symbol: g_assert_warning" error when embedding in Eclipse 3.2.1
+Env:
+On RedHat EL WS4 Update4
+Sun JVM 1.5.0_06
+Eclipse 3.2.1
+XULRunner 1.8.0.1 release
+Step to reproduce:
+1.Unzip Eclipse.
+2.Download xulrunner 1801 release from: http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/1.8.0.1/linux-i686/en-US/
+3.untar it, like /opt/xulrunner
+4.Open a terminal
+5.vi ~/.bashrc, put "export MOZILLA_FIVE_HOME=/opt/xulrunner".
+Save and exit
+6.source ~/.bashrc
+7.Start eclipse
+8.View "Help Content", it starts with external FireFox.
+9.Open View "Internet Web Browser", it shows error:
+No more handles (java.lang.UnsatisfiedLinkError: /work/download/eclipse_3.2.2/configuration/org.eclipse.osgi/bundles/68/1/.cp/libswt-mozilla-gtk-3235.so: /opt/xulrunner/libxul.so: undefined symbol: g_assert_warning)
+org.eclipse.swt.SWTError: No more handles (java.lang.UnsatisfiedLinkError: /work/download/eclipse_3.2.2/configuration/org.eclipse.osgi/bundles/68/1/.cp/libswt-mozilla-gtk-3235.so: /opt/xulrunner/libxul.so: undefined symbol: g_assert_warning)
+at org.eclipse.swt.SWT.error(SWT.java:3400)
+at org.eclipse.swt.SWT.error(SWT.java:3297)
+at org.eclipse.swt.browser.Browser.<init>(Browser.java:168)
+at org.eclipse.ui.internal.browser.BrowserViewer.<init>(BrowserViewer.java:224)
+at org.eclipse.ui.internal.browser.WebBrowserView.createPartControl(WebBrowserView.java:48)
+at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:332)
+at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+at org.eclipse.ui.internal.Perspective.showView(Perspective.java:1675)
+More information:
+1) We can run /opt/xulrunner/xulrunner sampleapplication.ini to start a xul application.
+But we just cannot embed it in Eclipse.
+Does it caused by different LD_LIBRARY_PATH value at JVM?
+2) Other system informations:
+root@localhost eclipse_3.2.2]# java
+-version
+java version "1.5.0_06"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_06-b05)
+Java HotSpot(TM) Client VM (build 1.5.0_06-b05, mixed mode, sharing)
+[root@localhost eclipse_3.2.2]# rpm
+-qa|grep gtk
+gtk-engines-0.12-6.el4
+iiimf-gtk-12.1-13.EL.5
+gtk2-2.4.13-19
+pygtk2-2.4.0-1
+gnome-python2-gtkhtml2-2.6.0-3
+gtk2-engines-2.2.0-7.el4
+gtksourceview-1.1.0-4
+pygtk2-libglade-2.4.0-1
+gtkspell-2.0.7-2
+usermode-gtk-1.74-1
+authconfig-gtk-4.6.10-rhel4.3
+gtkhtml2-2.6.2-1
+gtkhtml3-3.3.2-6.EL
+gtk+-1.2.10-33
+[root@localhost eclipse_3.2.2]# rpm
+-qa|grep glib
+glibc-common-2.3.4-2.25
+compat-glibc-headers-2.3.2-95.30
+glib2-2.4.7-1
+glibc-headers-2.3.4-2.25
+dbus-glib-0.22-12.EL.7
+glib-1.2.10-15
+glibc-kernheaders-2.4-9.1.98.EL
+glibc-2.3.4-2.25
+glib2-devel-2.4.7-1
+compat-glibc-2.3.2-95.30
+glibc-devel-2.3.4-2.25
+[root@localhost eclipse_3.2.2]# rpm
+-qa|grep libstd
+libstdc++-3.4.6-3
+compat-libstdc++-29

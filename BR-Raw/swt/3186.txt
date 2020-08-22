@@ -1,0 +1,4 @@
+SWT.ON_TOP and SWT.MIN|SWT.MAX are mutually eclusive
+Regression: with SWT 3062 for Windows, it is no longer possible to create a
+window that has MIN/MAX buttons and is also ON_TOP.
+脴yvind

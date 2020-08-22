@@ -1,0 +1,6 @@
+Bug 250237 Update the extended dataitem's properties as local after clicking OK button
+Description: To be consistent with text item, update the extended dataitem's properties as local after clicking OK button in edit dialog no matter whether user made any changes or not.
+Build number: 2.5.0.v20081009-0630 Steps to reproduce: 1, Extend a dataitem from a report library 2, Click OK button 3, Edit the dataitem again and do some modification in expression 4, Click OK Expected result: To be consistent with text item, if click OK button in edit dialog, it means the properties are edited no matter whether user made any changes or not.
+So after step2, the dataitem's properties should be updated as local properties.
+Actual result: Only do modification will update the local properties in dataitem's expression.
+Error log:

@@ -1,0 +1,10 @@
+[painting] "Show whitespace character" option makes the editor very slow on Mac
+Build Identifier: 20100617-1415
+Enabling the option "Show whitespace character" makes the editor very slow on Mac.
+Did not tested this on other platforms.
+The editor is very responsive if this option is off.
+Using Eclipse Cocoa 64bit version
+Reproducible: Always
+Steps to Reproduce:
+1.Enable "Show whitespace character"
+2.Try to use the editor

@@ -1,0 +1,32 @@
+Label with text and image set tries to display both
+Clients can change the thing that a Label displays from a string to an image
+(or vice versa) with the setText() and setImage() APIs.
+On Mac, invoking both
+of these on a Label results in it trying to display both, so the image
+overwrites the text wherever they intersect.
+On other platforms only the last
+thing that was set into the Label (ie.- either the string or the image) is
+displayed.
+Snippet:
+public static void main (String [] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+Image image = new Image (display, 16, 16);
+Color red = display.getSystemColor (SWT.COLOR_RED);
+GC gc = new GC (image);
+gc.setBackground(red);
+gc.fillRectangle(image.getBounds());
+gc.dispose();
+
+final Label label = new Label(shell,SWT.NONE);
+label.setText("abcdefg");
+label.setBounds(10,10,200,200);
+label.setImage(image);
+
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+image.dispose();
+display.dispose();
+}

@@ -1,0 +1,8 @@
+Bug 121871 Support intellisense for global varible "report" in both expression builder and script editor
+Currently expression builder already provide intellisense support for static objects (both BIRT and standard javaScript object).
+However, it doesn't support intellisene for "report".
+Even with the class structure displayed in the expression builder, it is quite difficult to figure out how to use the report varible without intellisense.
+We should use the same mechanism for "report." object intellisense support as we did for "this." objects:
+- UI (expression builder or script editor) get the type for "report" object
+- UI use reflection to get all properties, methods defined on report object.
+- The reflection process will be recursive.

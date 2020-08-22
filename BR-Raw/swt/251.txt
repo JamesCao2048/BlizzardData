@@ -1,0 +1,5 @@
+segments offset should be more flexible
+Currently segments offset in SegmentEvent requires the first element to always be zero.
+This restriction has no technical reason (just historic) and even if it did it is something that it is to handle in the implementation.
+No reason to have this in the API.
+this restriction is annoying for developer using the new bidi toolkit with StyledText, see  https://bugs.eclipse.org/bugs/show_bug.cgi?id=230854#c197

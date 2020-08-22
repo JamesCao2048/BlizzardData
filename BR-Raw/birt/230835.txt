@@ -1,0 +1,4 @@
+Bug 230835 Instruction should be removed since the operations are not allowed.
+description: When you create a chart view for crosstab, in chart builder there's an instrution "Right click or drag the levels to Category...".
+However such operations are disabled for some reason, so the instruction should be removed or modified.
+build id: 2.3.0 v20080507-0630

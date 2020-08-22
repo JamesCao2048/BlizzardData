@@ -1,0 +1,6 @@
+Bug 209753 [acceptance]Cascading group with list limit returns one more data[0705]
+Description: Cascading group with list limit returns one more data Build number:2.3.0.v20071114 Steps to reproduce: 1.New a cascading paramter group.
+2.Set List limit of the first sub parameter to 5, make sure the parameter has more than five values.
+3.Preview.
+Expected result: Five values in first parameter value list.
+Actual result: Six values in value list Error log:n/a

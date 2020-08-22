@@ -1,0 +1,7 @@
+Combo.setFocus() sets selection
+I20080702-0939
+Using the export wizard for "Runnable Jar File".
+I want to type the export path myself instead of browsing.
+As I'm on Linux my first letter is a "/" which causes jdt to show an error message for an invalid path and selecting the text of the textbox.
+Changing selection while typing makes it impossible to enter a real path.
+I think the wizard should not touch the selection of the text field.

@@ -1,0 +1,11 @@
+Bug 209154 Enhance Report Model to support view property
+The goal of this enhancement is to support a chart view property on crosstab or table report items.
+The view should follow the several rules:
+- The view automatically shares its binding with the host item, they can't be modified.
+- The view can be retrieved through the API only by querying it from the host item, through a getView() method.
+It is not accessible directly by id
+- A property should be available to control whether the host or view should be displayed (default is host item).
+If possible, this should be controllable using report parameters.
+- The model should return the visibile view to the report engine to ensure that there is no impact on engine code to support this new view.
+- The host/view combination is a single report item with a unique id Since the chart is an extended item, the model can provide additional properties to indicate which item can be view, and which item can be a host.
+For 2.3, only table and crosstab can be hosts, and only chart can be a view.

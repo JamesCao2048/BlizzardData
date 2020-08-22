@@ -1,0 +1,7 @@
+Tooltips are not visible any more on Cocoa
+I20101025-1800 and HEAD
+I don't see tool tips any more (e.g.
+Snippet278).
+This makes the IDE hard to use, since e.g.
+toolbar items have no description any more.
+Note that tooltips for cut tree or table items and for links ( bug 328706 ) are still there.

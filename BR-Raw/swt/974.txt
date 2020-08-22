@@ -1,0 +1,4 @@
+ToolItems and Buttons are not accessible on Cocoa (regression)
+Toolbars/ToolItems and Buttons are no longer accessible on Cocoa
+- this is a regression that occurred when SWTButtonCells were used instead of SWTButton because of  bug 272412 .
+The new SWTButtonCell initialization needs to add the accessibility callbacks.

@@ -1,0 +1,20 @@
+StyledText deletes too many characters in some situations
+The following situation reproduces the problem.
+In a styled text with double
+click word selection, enter the following text:
+hello world
+hi there!
+what happen!?
+Include an extra empty line after "what happen!?".
+Now double click "there".
+Press the home key.
+Press the down arrow to go down one line.
+Now, hold shift
+and press down arrow again.
+At this point, "what happen!?" is selected to the
+line below.
+Pressing delete at this point will result in the deletion of "there!" as well.
+The resulting text is:
+hello world
+hi
+Including a space after "hi".

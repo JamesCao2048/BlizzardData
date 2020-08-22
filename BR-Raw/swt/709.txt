@@ -1,0 +1,20 @@
+Control.print(GC) causes side effects in Windows 7 Aero
+Build Identifier: 3.5.1 M20090917-0800
+I have a composite with a "StackLayout" and two controls to flip between.
+When I perform Control.print(GC) on the two controls, the bottom control can nolonger be seen on the screen.
+This doesn't effect the code when run on Windows XP or when Windows 7 is switched to Classic mode.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a new java project
+2.Copy the following code and create a class SWTImagePrintTest:
+----START------------------------------
+----END--------------------------------
+3.You will need to have SWT libraries available for this project (project properties->Java Build Path->Libraries
+4.Run the application
+5.Click flip/flop button.
+You can see that the composite changes
+6.Click "Print"
+7.Click the flip/flop button, notice that the other composite is now blank/not being redrawn
+8.Show the blank composite
+9.Click Print again
+10.Note that the top is now blank for both composites.

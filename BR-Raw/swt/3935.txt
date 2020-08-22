@@ -1,0 +1,7 @@
+Copy causes exception
+0924 integration build.
+Happens on hpux, not on linux, haven't tried Aix or
+Solaris.
+- open an editor on a .java file
+- select some text, press CTRL+C to copy it
+- instead get the attached exception

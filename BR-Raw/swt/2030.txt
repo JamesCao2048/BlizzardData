@@ -1,0 +1,22 @@
+No Deactivate events from ON_TOP shells
+ON_TOP shells are no longer sending deactivate events.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+final Shell ontop = new Shell(shell, SWT.ON_TOP);
+ontop.addListener(SWT.Deactivate, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("ttdeactivate");
+ontop.dispose();
+}
+});
+ontop.setBounds(205, 205, 100, 100);
+shell.setBounds(200, 200, 300, 300);
+shell.open();
+ontop.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

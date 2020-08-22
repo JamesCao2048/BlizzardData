@@ -1,0 +1,3 @@
+Bug 153853 [Regression]The bound column names must be unique within the entire table.
+Regression case Regression_136421(under org.eclipse.birt.report.tests.model) failed.
+Expected result: Model will avoid adding a duplicate bound column name within a table.

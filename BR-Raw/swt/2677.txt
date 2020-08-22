@@ -1,0 +1,52 @@
+TreeItem.setBackground doesn't work
+SWT Win32
+- 3206 (3.2M2)
+1.Setting a treeItem's background only sets column 0, unlike a tableItem which
+sets all columns.
+(setBackground(Color))
+2.Setting a treeItem's column background (setBackground(int,Color)) doesn't
+seem to do anything.
+public static void main(String[] a) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText(SWT.getPlatform() +  "
+- " + SWT.getVersion());
+shell.setLayout(new FillLayout());
+Table table = new Table(shell, SWT.H_SCROLL | SWT.FULL_SELECTION);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+for (int i = 0; i
+< 3; i++) {
+new TableColumn(table, SWT.NONE).setWidth(100);
+}
+for (int i = 0; i
+< 10; i++) {
+TableItem ti = new TableItem(table, SWT.NONE);
+ti.setText(1, "Right Click Me!");
+ti.setBackground(table.getDisplay().getSystemColor(SWT.COLOR_RED));
+if (i % 2 == 0)
+ti.setBackground(1, table.getDisplay().getSystemColor(SWT.COLOR_RED));
+}
+Tree tree = new Tree(shell, SWT.H_SCROLL | SWT.FULL_SELECTION);
+tree.setHeaderVisible(true);
+tree.setLinesVisible(true);
+for (int i = 0; i
+< 3; i++) {
+new TreeColumn(tree, SWT.NONE).setWidth(100);
+}
+for (int i = 0; i
+< 10; i++) {
+TreeItem ti = new TreeItem(tree, SWT.NONE);
+ti.setText(1, "Right Click Me!");
+ti.setBackground(tree.getDisplay().getSystemColor(SWT.COLOR_RED));
+if (i % 2 == 0)
+ti.setBackground(1, tree.getDisplay().getSystemColor(SWT.COLOR_RED));
+}
+shell.setBounds(50, 50, 600, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

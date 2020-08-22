@@ -1,0 +1,14 @@
+Property Editor still shows the properties of layout items when switch to Master page viewer.
+Description:
+Property Editor still shows the properties of layout items when switch to
+Master page viewer.
+Steps to reproduce:
+1. New a report and insert a label.
+2. Select the label.(Property Editor shows label's properties)
+3. Switch to Master Page.
+Expected result:
+Property Editor changs to reflect Master Page properties.
+Actual result:
+It still showed the label's properties. This will confuse customers if they
+thought it as Master Page Editor and set properties without click Master Page
+viewer at first.

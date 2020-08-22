@@ -1,0 +1,8 @@
+Disposing a toolbar does not dispose the child controls properly
+GEF and others place drop-down combo controls on the Toolbar via a custom
+ContributionItem.
+At some point in our code we ask the Combo if it is
+disposed, and it says no.
+Then we try to do something, and it throws widget is
+disposed exception.
+The Toolbar is getting disposed, but is not disposing its child, the Combo.

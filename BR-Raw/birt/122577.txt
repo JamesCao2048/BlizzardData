@@ -1,0 +1,12 @@
+Bug 122577 Library Explorer does not refresh after creating or changing a library
+1.Open the Library Explorer view.
+Create a library.
+Expected: The library appears in Library Explorer.
+Actual: The library does not appear in Library Explorer until you re-open Eclipse.
+2.Open the Library Explorer view.
+Open an existing library.
+Change the library.
+For example, change the title, or add a report item.
+Save the library.
+Expected: The library changes appear in Library Explorer.
+Actual: The library changes do not appear in Library Explorer until you re-open Eclipse.

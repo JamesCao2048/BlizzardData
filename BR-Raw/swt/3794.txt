@@ -1,0 +1,8 @@
+List doesn't send out selection events for arrow keys
+I20030304
+- Open Window > Preferences > Workbench > Fonts
+- Select first item in List with mouse
+- use Arrow Down to select other entries
+Observe: the description field isn't updated.
+If you use the mouse to select the field, the
+description field is updated.

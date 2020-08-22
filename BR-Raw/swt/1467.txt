@@ -1,0 +1,32 @@
+Debugger crashes on Step out.
+Simple test case that crashes the same way:
+public static void main(String[] args) {
+try {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Test Shell");
+final Tree tree = new Tree(shell, SWT.BORDER | SWT.VIRTUAL);
+tree.setBounds(10, 10, 100, 200);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+item.setText("0x"+Integer.toHexString(event.index));
+}
+});
+shell.open();
+
+tree.setItemCount(100);
+final TreeItem item = tree.getItem(0);
+item.setItemCount(300);
+item.setExpanded(true);
+tree.clearAll(true);
+item.setItemCount(2);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+} catch (Throwable t) {
+t.printStackTrace();
+}
+}

@@ -1,0 +1,6 @@
+Child dialog gets in infinite flicker loop while use SWT.PRIMARY_MODAL style
+Build Identifier: Version:3.6.1   Build id:M20100909-0800
+If a child dialog (a dialog with SWT.PRIMARY_MODAL) is displayed, and then focus is switched out of that dialog then back on to the parent shell, the child dialog goes into an infinite flicker.
+The best way I've been able to reproduce this is to use Expose to toggle away from application, then use Expose to send focus back to the parent shell.
+This issue come out with 3.6.1 carbon swt, cocoa swt has no problem.
+Reproducible: Always

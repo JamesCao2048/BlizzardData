@@ -1,0 +1,9 @@
+Rotate gesture not working on 64bit build
+Cocoa 64 bit build
+Version: 3.7.0
+Build id: I20110603-0909
+Steps:
+1) Run Snippet 353
+2) Try the rotate gesture on the trackpad
+The gesture is recognized but event.rotation field is always 0.
+This works fine on 32 bit build.

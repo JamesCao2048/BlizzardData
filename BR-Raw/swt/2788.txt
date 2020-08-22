@@ -1,0 +1,12 @@
+TableColumn has width=0 and second column missing
+31RC2
+- Window
+-> Show View
+-> Other...
+- select PDE Runtime
+- Plug-in Registry, OK
+- in the opened view, the Table that's to the right of the Tree has two problems:
+
+-> column 0 has width 0 (its width can be increased by dragging its separator)
+
+-> column 1 seems non-existent

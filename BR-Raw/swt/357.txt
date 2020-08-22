@@ -1,0 +1,27 @@
+Keyboard moves sash the other way when controls have SWT.RIGHT_TO_LEFT on it
+1.Run the snippet below.
+2.Hit the
+<- key.
+3.The sash moves right.
+4.Likewise, the
+-> key moves the sash to the left.
+I'm not sure if bidi rules makes sense here.
+Shouldn't it do what the user is seeing _visually_ given that I am not trying to enter text here?
+Display display = new Display();
+Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.RIGHT_TO_LEFT);
+shell.setSize(400, 300);
+final Sash sash = new Sash(shell, SWT.BORDER | SWT.VERTICAL
+| SWT.RIGHT_TO_LEFT);
+sash.setBounds(180, 10, 32, 240);
+sash.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+sash.setBounds(e.x, e.y, e.width, e.height);
+}
+});
+shell.open();
+sash.setFocus();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();

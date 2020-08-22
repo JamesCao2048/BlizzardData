@@ -1,0 +1,71 @@
+No more handles error when running the Browser demo
+3.1M3 first candidate build
+- run eclipse with the examples
+- Window
+-> Show View
+-> Other...
+- select SWT Examples
+- Browser Demo, OK
+- the following error is spewed:
+org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(SWT.java:2723)
+at org.eclipse.swt.SWT.error(SWT.java:2622)
+at org.eclipse.swt.SWT.error(SWT.java:2593)
+at org.eclipse.swt.browser.Browser.<init>(Browser.java:118)
+at
+org.eclipse.swt.examples.browser.demos.views.PawnTab.<init>(PawnTab.jav
+a:61)
+at
+org.eclipse.swt.examples.browser.demos.views.BrowserDemoView.createPart
+Control(BrowserDemoView.java:32)
+at org.eclipse.ui.internal.PartPane$2.run(PartPane.java:142)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform
+.java:616)
+at org.eclipse.core.runtime.Platform.run(Platform.java:747)
+at
+org.eclipse.ui.internal.PartPane.doCreateChildControl(PartPane.java:138
+)
+at
+org.eclipse.ui.internal.ViewPane.doCreateChildControl(ViewPane.java:135
+)
+at
+org.eclipse.ui.internal.PartPane.createChildControl(PartPane.java:343)
+at org.eclipse.ui.internal.PartPane.createControl(PartPane.java:212)
+at org.eclipse.ui.internal.ViewPane.createControl(ViewPane.java:124)
+at org.eclipse.ui.internal.ViewFactory$1.run(ViewFactory.java:392)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform
+.java:616)
+at org.eclipse.core.runtime.Platform.run(Platform.java:747)
+at
+org.eclipse.ui.internal.ViewFactory.busyRestoreView(ViewFactory.java:28
+4)
+at org.eclipse.ui.internal.ViewFactory$2.run(ViewFactory.java:578)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.ui.internal.ViewFactory.restoreView(ViewFactory.java:575)
+at org.eclipse.ui.internal.Perspective.showView(Perspective.java:1697)
+at
+org.eclipse.ui.internal.WorkbenchPage.busyShowView(WorkbenchPage.java:7
+95)
+at
+org.eclipse.ui.internal.WorkbenchPage.access$9(WorkbenchPage.java:778)
+at org.eclipse.ui.internal.WorkbenchPage$13.run(WorkbenchPage.java:3105)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at
+org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:3102)
+at
+org.eclipse.ui.internal.WorkbenchPage.showView(WorkbenchPage.java:3081)
+at org.eclipse.ui.internal.ShowViewMenu.showOther(ShowViewMenu.java:209)
+at org.eclipse.ui.internal.ShowViewMenu$2.run(ShowViewMenu.java:71)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:988)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(A
+ctionContributionItem.java:946)
+at
+org.eclipse.jface.action.ActionContributionItem.access$2(ActionContribu
+tionItem.java:896)
+at
+org.eclipse.jface.action.ActionContributionItem$7.handleEvent(ActionCon
+tributionItem.java:810)
+at org.eclipse.swt.wi

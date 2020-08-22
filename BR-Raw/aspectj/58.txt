@@ -1,0 +1,5 @@
+NPE when weaving java.lang.Object at org.aspectj.weaver.bcel.BcelTypeMunger.createAnyBridgeMethodsForCovariance(BcelTypeMunger.java:1251)
+Created  attachment 191423   [details]
+AJ core dump
+I'm trying to add a method to Object using a inter-type declaration. When calling ajc, I encounter a NPE. From a cursory glance, it would appear that the code is looking for the parents classes of Object, which presumably is null.
+I've attached the dump and a simple example that causes it.

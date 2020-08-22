@@ -1,0 +1,15 @@
+NPE in deleteNewAndDup
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelShadow.deleteNewAndDup(BcelShadow.java:179)
+at org.aspectj.weaver.bcel.BcelShadow.prepareForMungers(BcelShadow.java:303)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:543)
+at org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.java:3147)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:490)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:100)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1687)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1631)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1394)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1180)
+at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:467)
+at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:318)
+at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:96)

@@ -1,0 +1,26 @@
+Incorrect height of widget in TextViewer
+In a plugin I use TextViewers with style SWT.SINGLE | SWT.BORDER.
+The
+TextViewers are embedded in composites that have a layout.
+However they are
+always rendered with a height that is insufficient to show the complete string
+text inside their widget, with the result that the text is partially chopped
+off and unreadable.
+Resizing of the window that contains the TextViewers does
+not have any effect.
+Of course the height can be adjusted by using a GridLayout
+in the enclosing composite and by defining a heightHint, but I believe the
+default height should allow to fully see the text in the TextViewer widget.
+The problem appears when running under Linux RedHat 7.3 with Eclipse R2.0-gtk2.
+The same code runs ok on a Windows 2000 machine, with Eclipse R2.0.
+I am separately attaching a little plugin project that demonstrates the
+problem.
+The plugin is a stripped down version of your Sample Plugin with a
+View, where I have placed two components in the sample view, the first one
+being a TextViewer and the second one a simple text.
+Under Windows 2000 all is
+well, but under Linux the TextViewer's height is insufficient.
+To run the test,
+simply import the plugin, compile it, run as Runtime Workbench and open the
+Sample View (under the Sample Category category).
+Thanks.

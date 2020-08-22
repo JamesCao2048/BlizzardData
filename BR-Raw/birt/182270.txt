@@ -1,0 +1,6 @@
+Bug 182270 Sample Data issue [0001]
+Description: Sample Data issue.
+Build number: 2.2.0.v20070413-1121 Steps to reproduce: 1.Drag a chart from Palette to Layout, first setlect type as Gantt, then change back to Bar,check the "Chart Preview" pane.
+Expected result: Y Axis is still of linear type.
+Actual result: Y Axis is of Date/Time type.
+Error log: N/A

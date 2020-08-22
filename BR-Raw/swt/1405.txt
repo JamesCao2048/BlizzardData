@@ -1,0 +1,13 @@
+Last character of the line disappears when selecting code at the end of line
+Using I20081014-1600, I had a weird display problem in the java editor.
+1) I have an editor with this contents:
+public class X {
+public static void main(String[] args) {
+String s = args[0];<< SELECT FROM HERE
+TO HERE>>System.out.println(s);
+}
+}
+2) Select the portion between
+<< and >>.
+3) When doing this, the semi-colon at the end of String s = args[0]; is displayed in white :-)
+4) Since my editor background is white, it looks like it disappeared.

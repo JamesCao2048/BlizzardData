@@ -1,0 +1,13 @@
+[Mac OS X] Cannot enable/disable breakpoint by clicking checkbox
+Build id: I20110428-0848 (Eclipse 3.7 M7, Cocoa 32-bit)
+Running on Mac OS X 10.5.8 and Java 1.5.0_28
+1.Open a Java file and add a breakpoint
+2.Switch to the Debug perspective
+3.Try to disable the breakpoint by clicking the checkbox
+in the Breakpoints view
+--> not possible
+Note that the breakpoint's table row will be deselected on mouse up.
+If previsouly not selected, it will be selected on mouse down and then deselected on mouse up.
+Interestingly, enabling and disabling works when holding down the alt/option key.
+The context menu actions also work.
+Marked as a blocker, because I think 3.7 should not be shipped with this bug.

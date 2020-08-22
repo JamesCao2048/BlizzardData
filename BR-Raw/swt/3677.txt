@@ -1,0 +1,9 @@
+GC.drawRoundedRectangle(...) method doesn't include the right and bottom edge
+The GC.drawRoundedRectangle(...) method doesn't include the right and
+bottom edge.
+I'm using WinXP and swt-win32-2133.dll.
+This behavior is inconsistent with the other APIs such as drawRectangle,
+drawOval, etc..., that include the bottom and right edge, and on GTK the
+rounded rectangle is drawn correctly with all 4 edges included.
+For the fill API GC.fillRoundRectangle(...) that should exclude the edges, it
+actually doubles up and excludes two pixels of theright and bottom edges.

@@ -1,0 +1,20 @@
+SWT ToolBar.setFont quirks on Mac OS X
+Created  attachment 75404   [details]
+Inactive ToolItems added before and after ToolBar.setFont
+Build ID: I20070625-1500
+Steps To Reproduce:
+ToolBar.setFont() must be placed after last added ToolItem, otherwise Font is only set for active (e.g.
+mouse down) items.
+/ "Inactive" Toolitems will be drawn with SystemFont if  added after ToolBar.setFont()
+Snippet:
+ToolBar toolbar = new ToolBar(shell, SWT.NONE);
+ToolItem toolitem = new ToolItem(toolbar, SWT.PUSH);
+toolitem.setText("Item before");
+
+toolbar.setFont(new Font(display, "LucidaGrande", 8, SWT.NORMAL);
+ToolItem toolitem2 = new ToolItem(toolbar, SWT.PUSH);
+toolitem2.setText("Item after"); // will be SystemFont
+Secondly, running SWT with
+-Dorg.eclipse.swt.internal.carbon.smallFonts and without setting any Font to Toolbar, active Items are drawn twice.
+More information:
+May it be sufficent to redrawWidget() with every added ToolItem?

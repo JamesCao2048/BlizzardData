@@ -1,0 +1,7 @@
+Bug 110566 Wrong data set result returned when set an invalid filter expression row[0]
+description: Wrong data set result returned when set an invalid filter expression row[0] steps to reproduce: 1.set a filter in data set with "row[0] equals to " 2.click on Preview tab.
+actual result: The first result record returned when preview expected result: As developer said that row[0] can only be generated after all the data were fetched.
+Row[0] can't be taken as filter expression.
+Then when set filter like "row[0] equals to 0".
+some relevant error message should pop up.
+Or just return null result set.

@@ -1,0 +1,7 @@
+Bug 162281 Better parsing of BIRT_VIEWER_LOG_LEVEL parameter
+java.util.logging.Level supplies a parse(String) method which parses log levels.
+Using this method is superior to the parsing used in ReportEngineServlet for the following reasons:
+- the level "ALL" is not recognized
+- one gets a proper exception if the level ins not recognized
+- a lot less code.
+I'll attach a patch for this.

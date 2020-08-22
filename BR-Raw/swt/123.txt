@@ -1,0 +1,6 @@
+Use cairo instead of gdk_draw_pixbuf()
+What I did in the patch below:
+gdk_draw_pixbuf() was already set us dynamic, however casts was causing problem when compiling against GTK+ 3, so I removed  casts.
+I have also implemented Cairo alternative in  2 classes, basing on GTK+ docs.
+Patch is available here:
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gdk_draw_pixbuff

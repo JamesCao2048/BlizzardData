@@ -1,0 +1,7 @@
+Disabling SWT controls has no effect for some controls
+Builds: Eclipse SDK Mac OSX Cocoa N20081126-2000 (compared to Carbon N20081126-2000)
+In the context of the SWT Controls Example, re the Link, ProgressBar, Sash, TabFolder and Text controls:
+Disabling the control (Enabled is not selected) has no effect i.e.
+there is no loss in functionality (unlike in Carbon).
+N.B.
+One exception to above: for Carbon, the Sash control is also unaffected by disabling the control.

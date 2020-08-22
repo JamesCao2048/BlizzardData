@@ -1,0 +1,8 @@
+SWT test failures on Windows 7
+I've been running tests on a Windows 7 Hudson slave at the Eclipse foundation to test running the build on eclipse.org hardware.
+There are a number of SWT failures and I was wondering if the SWT team could comment.
+Here is the list of SWT tests
+- there are 47 failures out of about 5600 tests
+https://hudson.eclipse.org/hudson/view/Eclipse%20and%20Equinox/job/eclipse-JUnit/113/testReport/org.eclipse.swt.tests.junit/
+I'm not sure if these failures are expected on Windows 7 or if they are due to infrastructure issues on this new test machine.
+thanks!

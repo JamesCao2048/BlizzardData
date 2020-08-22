@@ -1,0 +1,13 @@
+SWT Table: PaintItem events not sent for items with empty text on Mac OS X
+Look at snippet 236 (titled "draw different foreground colors for text in a TableItem") from the SWT snippets page ( http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet236.java?view=co ).
+The snippet shows how to create a custom paint for a table with multiple fonts.
+The snippet works fine on Windows, but on Mac OS X it gives an empty table with no items.
+The listener to PaintItem is not being called.
+This is due to the fact that the items are empty.
+Changing line 38 in the following manner solves the problem in the snippet and demonstrates the problem:
+From: new TableItem(table, SWT.NONE);
+To: new TableItem(table, SWT.NONE).setText(" ");
+At the very least, the snippet should be fixed.
+However, it is clear that this is a bug.
+PS.
+Item was found on OS X 10.4.11.

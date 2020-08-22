@@ -1,0 +1,6 @@
+BidiUtil static var retains references to runnables from StyledText
+When a StyledText is created, a runnable is added to the BidiUtil (line 1619:
+BidiUtil.addLanguageListener(*)).
+On dispose of the StyledText, the listener is only removed if isBidi() returns
+true (line 4873)
+It would appear that the listener is never removed.

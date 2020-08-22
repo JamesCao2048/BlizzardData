@@ -1,0 +1,4 @@
+[GTK3] wrong foreground in Eclipse editor area unselected tabs
+1) Run eclipse on GTK3 (export org.eclipse.swt.gtk3=1)
+2) Open a couple of editors
+Note that the foreground color of the unselected editor tab does match the GTK2 port and it is hard to read (white on almost white).

@@ -1,0 +1,19 @@
+CTabFolder#setSelection(CTabItem) IllegalArgumentException is wrong
+Currently:
+----------
+@exception IllegalArgumentException
+<ul>
+*
+<li>ERROR_NULL_ARGUMENT
+- if the listener is null</li>
+*
+</ul>
+Should be:
+----------
+@exception IllegalArgumentException
+<ul>
+*
+<li>ERROR_NULL_ARGUMENT
+- if the item is null</li>
+*
+</ul>

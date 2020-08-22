@@ -1,0 +1,10 @@
+Bug 134665 report become dirty after previewing data set
+steps to reproduce:
+- create a report
+- create a data source
+- create a data set
+- save the report
+- open the data set
+- preview results expected behavior:
+- the state of the report remains unchanged actual behavior:
+- the state of the report changed, as the report became dirty

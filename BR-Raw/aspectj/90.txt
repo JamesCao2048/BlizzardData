@@ -1,0 +1,8 @@
+RuntimeException weaving roo app with advice based on execution pointcut
+java.lang.RuntimeException
+at org.aspectj.weaver.ResolvedType.getAnnotations(ResolvedType.java:718)
+at org.aspectj.weaver.AbstractAnnotationAJ.retrieveAnnotationOnAnnotation(AbstractAnnotationAJ.java:123)
+at org.aspectj.weaver.AbstractAnnotationAJ.ensureAtTargetInitialized(AbstractAnnotationAJ.java:85)
+at org.aspectj.weaver.AbstractAnnotationAJ.specifiesTarget(AbstractAnnotationAJ.java:115)
+at org.aspectj.weaver.bcel.BcelWeaver.verifyTa ... .eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Compile error: RuntimeException thrown: ResolvedType.getAnnotations() should never be called

@@ -1,0 +1,10 @@
+possible NPE in printer
+see  bug 274931 comment 15
+(deviceName can be null but dereferenced in new TCHAR(0, deviceName,
+true)):
+org.eclipse.swt/Eclipse SWT
+Printing/win32/org/eclipse/swt/printing/Printer.java:143 Method call passes
+null for nonnull parameter of new org.eclipse.swt.internal.win32.TCHAR(int,
+String, boolean)
+it can only happen if buf (returned by GetProfileString) has no commas.
+is that possible ?

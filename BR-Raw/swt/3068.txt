@@ -1,0 +1,9 @@
+Cannot open filenames with 8-bit characters
+Currently, the FileDialog widget on GTK+ passes the resulting filename to
+Converter.mbcsToWcs to convert it from UTF8 to UTF16. However, filenames on
+UNIX systems are not always encoded in UTF8. The fix is to first use
+g_filename_to_utf8 to convert the filename to UTF8, and then convert the
+resulting string to UTF16.
+For testing this problem, I used the second .tar.gz file posted to  bug 84578 .
+This file uses the ISO-8859-1 encoding, and to get g_filename_to_utf8 to work,
+you must first set the environment variable G_FILENAME_ENCODING to "ISO-8859-1".

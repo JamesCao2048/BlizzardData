@@ -1,0 +1,8 @@
+tracker resize uses screen coordinates instead of control
+No matter what you use in tracker's first argument (display, parent shell, or control) the resulting
+tracker is always displayed using screen coordinates when it is created with the SWT.RESIZE style bit.
+Another problem is that the mouse responds very slowly, so that not only is the resize tracker not
+where it's supposed to be, but it's very hard to use.
+To reproduce use the same code as posted in  bug 40983, comment 2
+Occurs on Mac OS X 10.3.3 SWT 3.0M7 & 2.1
+Does not occur on Windows or Linux GTK

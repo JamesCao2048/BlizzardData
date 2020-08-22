@@ -1,0 +1,8 @@
+Bug 197225 Only set master page width will not take effect when preview in PDF [1200]
+Description: Only set master page width will not take effect when preview in PDF.
+Build number: 2.2.1.v20070719-0630 Steps to reproduce: 1.New a report with a label.
+2.Switch to Master Page tab and select type as "Custom", set Width to 5 in.
+3.Preview in PDF.
+Expected result: The master page width take effect.
+Actual result: The master page width will not take effect until Height is set.
+Error log: N/A

@@ -1,0 +1,60 @@
+[Contributions] NullPointerExceptions in MenuManager.update
+Today, with no apparent cause, my Eclipse (with MyEclipse, but as will be described later, I've eliminated
+MyEclipse as a cause) started displaying dialogs that "an error has occurred" when performing various
+operations (opening files, closing files, committing to CVS).
+Checking the logs revealed that NPEs were
+occurring in MenuManager.update, essentially whenever I clicked on anything.
+Initially I thought perhaps something in my workspace was corrupted, so I quit Eclipse and created a
+new workspace...
+same problem.
+Then I freshly unpacked a new Eclipse 3.1 and did not install
+MyEclipse in it, and let it create another new workspace on startup...
+same problem.
+I also tried to
+switch the default VM on my Mac OS X 10.4.2 system back to 1.4 (I use 1.5 normally)...
+same problem.
+So I'm reporting it in the hope that somebody can either figure out what in my configuration that I
+didn't manage to delete is causing the problem, or figure out what in Eclipse is causing the problem.
+System information, in case it'll be useful: PowerBook G4, 15", 1.5GHz, 1.5GB memory.
+It was 1.25GB
+memory until today, but Eclipse was working fine for a while even with the new memory, and it doesn't
+seem to me that that would be likely to cause this sort of issue anyway.
+Log produced by Eclipse:
+!SESSION 2005-08-03 17:22:08.956
+-----------------------------------------------
+eclipse.buildId=I20050627-1435
+java.version=1.5.0_02
+java.vendor=Apple Computer, Inc.
+BootLoader constants: OS=macosx, ARCH=ppc, WS=carbon, NL=en_US
+Framework arguments:
+-keyring /Volumes/Anlashok/Users/dmz/.eclipse_keyring
+-showlocation
+Command-line arguments:
+-os macosx
+-ws carbon
+-arch ppc
+-keyring /Volumes/Anlashok/Users/
+dmz/.eclipse_keyring
+-consoleLog
+-showlocation
+!ENTRY org.eclipse.ui 4 4 2005-08-03 17:22:51.918
+!MESSAGE Unhandled event loop exception
+!ENTRY org.eclipse.ui 4 0 2005-08-03 17:22:51.921
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.jface.action.MenuManager.update(MenuManager.java:591)
+at org.eclipse.jface.action.MenuManager.updateAll(MenuManager.java:721)
+at org.eclipse.ui.internal.WorkbenchWindow.updateActionBars(WorkbenchWindow.java:2485)
+at org.eclipse.ui.internal.WorkbenchWindow.updateActionSets(WorkbenchWindow.java:2555)
+at org.eclipse.ui.internal.WorkbenchPage$ActionSwitcher.updateActionSets(WorkbenchPage.java:
+485)
+at org.eclipse.ui.internal.WorkbenchPage$ActionSwitcher.updateActivePart(WorkbenchPage.java:
+335)
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:2857)
+at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:552)
+at org.eclipse.ui.internal.WorkbenchPage.makeActive(WorkbenchPage.java:1090)
+at org.eclipse.ui.internal.WorkbenchPage.updateActivePart(WorkbenchPage.java:1070)
+at org.eclipse.ui.internal.WorkbenchPage.hideView(WorkbenchPage.java:2012)
+at org.eclipse.ui.internal.ViewPane.doHide(ViewPane.java:196)
+at org.eclipse.ui.internal.PartSt

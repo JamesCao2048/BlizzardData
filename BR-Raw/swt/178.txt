@@ -1,0 +1,14 @@
+Warnings and Errors in the SWT Combo when running on Linux
+Created  attachment 217672   [details]
+Snippet
+I get a lot of those:
+(SWT:10646): GLib-GObject-CRITICAL **: g_object_get_qdata: assertion `G_IS_OBJECT (object)' failed
+(SWT:10646): GLib-GObject-WARNING **: invalid uninstantiatable type `(null)' in cast to `GtkObject'
+(SWT:10646): Gtk-CRITICAL **: IA__gtk_widget_realize: assertion `GTK_IS_WIDGET (widget)' failed
+(SWT:10646): Gtk-CRITICAL **: IA__gtk_widget_grab_focus: assertion `GTK_IS_WIDGET (widget)' failed
+(SWT:10646): Gtk-CRITICAL **: IA__gtk_widget_realize: assertion `GTK_IS_WIDGET (widget)' failed
+Reproduction steps:
+(1) Run a snippet.
+(2) Try changing the values while a dialog continues to appear and disappear
+Majority of g_object_get_gdata assertions is caused by Combo#deregister method, by line:
+display.removeWidget (menuHandle);

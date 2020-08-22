@@ -1,0 +1,3 @@
+Use gtk_render_check instead of gtk_paint_check for GTK+ 3
+This patch uses gtk_render_check instead of gtk_paint_check for GTK+ 3 :
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gtk3_render_check

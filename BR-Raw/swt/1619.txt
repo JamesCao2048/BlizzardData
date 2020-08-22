@@ -1,0 +1,2 @@
+GC.isClipped() always returns false in advanced graphics mode
+The GC.isClipped() method in Windows doesn't check if GDI+ is enabled as setClipping() and getClipping() do.

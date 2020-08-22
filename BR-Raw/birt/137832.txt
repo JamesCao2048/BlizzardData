@@ -1,0 +1,12 @@
+Bug 137832 Need expression builder in Edit Parameter dialog
+Use case: I want to a dynamic parameter for the order numbers that a user can select.
+However, I want to make it easy for the user to verify who the customer is that placed that order.
+I would therefore like to display: "10100
+-- Land Toys Inc" The value column could be just the order number.
+Right now if I want to accomplish this, I have to do the concatenation of order number and customer name in the data set sql statement.
+This is ok if the data source supports this.
+If my data source does not then I need the expression builder for this.
+In addition, I would like the expression builder available for the value column as well.
+That will allow me to do some preprocessing before passing the value on to the data set.
+The workaround is that I have to directly edit the XML source to add the Javascript expression in the parameters section.
+It would be nice to have this as part of the GUI.

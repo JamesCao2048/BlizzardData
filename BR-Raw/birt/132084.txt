@@ -1,0 +1,4 @@
+Bug 132084 Inconsistent manifest data type for an ODA driver's native data type code
+The ODA runtime extension point (org.eclipse.datatools.connectivity.oda.dataSource) schema has defined its dataTypeMapping.nativeDataTypeCode attribute to be an integer value.
+The oda.util.manifest package, which provides encapsulated access to an ODA runtime extension's plugin manifest, handles such attribute value as a "short" data type.
+It should be corrected to an "int", to be consistent with its schema definition.

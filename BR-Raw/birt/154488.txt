@@ -1,0 +1,7 @@
+Bug 154488 Add a data binding without define "Enable binding with the same expression" is no effect
+Details: Add a data binding without define "Enable binding with the same expression" is no effect Step: 1.New sample datasource named sampleDB 2.New a dataset named CUSTOMERS 3.select * from CLASSICMODELS.CUSTOMERS 4.Insert a data item and binding to CUSTOMERS 5.Add a data binding column and New data Item dialog pop up.
+6.Without rename the Name.
+7.Select Any 8.Open expression Editor, select Available Data Sets, select CUSTOMERS, select column of "CUSTOMERNUMBER" and click OK 9.Without click Enable binding with the same expression.
+10.Click OK.
+Actual result: The data binding column has been not added in binding list.
+Exception reuslt: The data binding column is added in binding list.

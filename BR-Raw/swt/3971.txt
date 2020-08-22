@@ -1,0 +1,49 @@
+* key expands TableTree but does not send SWT.Expand event
+R2.0, Win2k, Linux/Motif, GTK
+Although the "*" key behaves differently for the TableTree widget on different
+platforms, pressing it under Win2k, Linux/Motif, or Linux/GTK can expand at
+least one branch of the tree.
+However, no SWT.Expand event is fired when the
+tree is expanded in this manner.
+The following code illustrates the problem.
+The number in square brackets
+increments every time the tree fires an SWT.Expand event.
+-------------------8<----------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.TableTree;
+import org.eclipse.swt.custom.TableTreeItem;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class TableTreeTest {
+
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout(SWT.VERTICAL));
+final int[] count = new int[] { 0 };
+final Label label = new Label(shell, SWT.SINGLE);
+TableTree tree = new TableTree(shell, SWT.FULL_SELECTION);
+tree.addListener(SWT.Expand, new Listener() {
+public void handleEvent(Event event) {
+label.setText("[" + count[0]++ + "] Expand
+event");
+}
+});
+
+TableTreeItem item = new TableTreeItem(tree, SWT.NONE);
+item.setText("A");
+TableTreeItem item2 = new TableTreeItem(item, SWT.NONE);
+item2.setText("B");
+item2 = new TableTreeItem(item, SWT.NONE);
+item2.setText("C");
+item = new TableTreeItem(item2, SWT.NONE);
+item.setText("D");
+
+shell.open();
+shell.setSize(400, 400);
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+display.dispose();
+}
+}

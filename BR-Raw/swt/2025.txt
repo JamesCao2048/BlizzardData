@@ -1,0 +1,6 @@
+GC#drawRoundRectangle looks ugly on advance mode
+SWT M7
+setAdvance to true
+setLineWidth to an odd number
+draw a round rectangle, note the lines and arcs do not connect correctly.
+fix: implement drawRoundRectangle using path.

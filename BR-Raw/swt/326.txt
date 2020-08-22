@@ -1,0 +1,7 @@
+*Event#toString() methods should write hex strings for masks
+Created  attachment 151078   [details]
+proposed fix
+toString() methods in typed SWT events should write masks as hex strings, not
+decimal integers.
+This applies to stateMask and keyLocation, and I'd also do it
+for keyCode.

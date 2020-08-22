@@ -1,0 +1,4 @@
+Bug 153882 Use the API to get the visible images in module
+Please use the API below.
+ModuleHandle :: getVisibleImages() which returns only the embedded images defined in the report design.
+GUI should switch to use the API to show user the embedded images in the image builder.

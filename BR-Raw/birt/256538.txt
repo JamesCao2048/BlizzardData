@@ -1,0 +1,3 @@
+Bug 256538 Style refresh issue for predefined table-header-cell style[0300]
+Description: Style refresh issue for predefined table-header-cell style Build number:2.3.2.v20081125 Steps to reproduce: 1.Insert a table with content in header row 2.New a predefined table-header-cell style, set font style to italic, click OK 3.Edit the style, set font style to normal, click OK Expected result: In layout, first content in header shows italic effect, then shows normal effect actual result: First show italic effect, then still show italic effect without refresh.
+Error log:N/a

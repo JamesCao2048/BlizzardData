@@ -1,0 +1,20 @@
+StyledTextRenderer.hasLink() uses invalid indexing if no ranges array is defined
+Build Identifier: I20100608-0911
+I have implemented a org.eclipse.swt.custom.LineStyleListener to style my text (links, different colors), and for each line there can be 0-N StyleRanges.
+If I do not specify the LineStyleEvent.ranges array, then changing the mouse cursor when the mouse cursor is over a link doesn't always work correctly.
+I think the problem is in the method org.eclipse.swt.custom.StyledTextRenderer.hasLink(int):
+...
+for (int i = 0; i
+< styles.length; i++) {
+if (styles[i].start
+<= offset && offset
+< styles[i].start + styles[i].length &&
+styles[i >> 1].underline && styles[i >> 1].underlineStyle == SWT.UNDERLINE_LINK) {
+return true;
+}
+}
+...
+And more specifically in the latter two cases where the array 'styles' is indexed ("styles[i >> 1]").
+I think those should be replaced with "styles[i]".
+If I define the LineStyleEvent.ranges array then mouse cursor is changed correctly.
+Reproducible: Always

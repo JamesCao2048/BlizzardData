@@ -1,0 +1,5 @@
+BlockSelection: Shift+Click does not work with normal caret
+I20090518-2000
+StyledText in BlockSelection mode: Shift+Click does not work with the normal caret.
+Instead of selecting the block from the caret to the clicked location, it just sets the virtual caret at the clicked location.
+Subsequent Shift+Clicks then correctly span the selection, starting at the (new) caret location.

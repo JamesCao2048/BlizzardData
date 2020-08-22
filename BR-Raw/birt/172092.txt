@@ -1,0 +1,5 @@
+Bug 172092 [regression][automation] __maxrows=1 url pattern did not work
+steps to reproduce:
+- preview report using the following url fragment, preview?__report=report/regression_142673.rptdesign&__designer=true&__maxrows=1 expected behavior:
+- only one data row is displayed actual behavior/:
+- all data rows are displayed

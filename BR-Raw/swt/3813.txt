@@ -1,0 +1,19 @@
+StyledText - Shift+UP broken in StyledText control
+In 2.1, StyledText (I assume) was changed to remember the horizontal location
+of the cursor as the user presses UP and DOWN arrow keys.
+This is great for
+general navigation (thanks).
+But this remembered location should be forgotten
+when selecting text with the Keyboard.
+StyledText is not showing platform
+behavior.
+STEPS:
+<Given the following scenario, including blank lines>
+String
+<<CARET>>value = "abc";
+</End scenario>
+With the caret in the location indicated, press UP key, then SHIFT+DOWN.
+The
+expectation is that only the blank line is selected.
+Instead, the blank line
+and the beginning of the next line up until the cached location is selected.

@@ -1,0 +1,2 @@
+Calling List#setTopIndex() on Lists created with SWT.V_SCROLL scrambles the widget
+When creating a List without the scrolling bits set a call to setTopIndex() make the widget look strange.

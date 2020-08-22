@@ -1,0 +1,57 @@
+Layout occurs while creating table columns, causing AIOOBEs
+build I20050420-1200
+- open an editor
+- Ctrl+Shift+E to open the editors dialog
+- you get an ArrayIndexOutOfBoundsException (error dialog unfortunately just
+says the reason is "1")
+- this is due to the dialog's table's layout getting called when the first
+column is being created; the layout code expects both columns to have been created
+This is a recent regression.
+The stack is:
+Thread [main] (Suspended (exception ArrayIndexOutOfBoundsException))
+WorkbenchEditorsDialog$2.layout(Composite, boolean) line: 250
+Table(Composite).updateLayout(boolean, boolean) line: 855
+Table.WM_WINDOWPOSCHANGED(int, int) line: 3566
+Table(Control).windowProc(int, int, int, int) line: 3106
+Display.windowProc(int, int, int, int) line: 3469
+OS.CallWindowProcW(int, int, int, int, int) line: not available [native method]
+OS.CallWindowProc(int, int, int, int, int) line: 1571
+Table.callWindowProc(int, int, int, int) line: 174
+Table(Control).windowProc(int, int, int, int) line: 3113
+Display.windowProc(int, int, int, int) line: 3469
+OS.CallWindowProcW(int, int, int, int, int) line: not available [native method]
+OS.CallWindowProc(int, int, int, int, int) line: 1571
+Table.callWindowProc(int, int, int, int) line: 174
+Table(Control).windowProc(int, int, int, int) line: 3113
+Display.windowProc(int, int, int, int) line: 3469
+OS.SendMessageW(int, int, int, int) line: not available [native method]
+OS.SendMessage(int, int, int, int) line: 2220
+Table.createItem(TableColumn, int) line: 708
+TableColumn.<init>(Table, int) line: 73
+WorkbenchEditorsDialog.createDialogArea(Composite) line: 259
+WorkbenchEditorsDialog(Dialog).createContents(Composite) line: 687
+WorkbenchEditorsDialog(Window).create() line: 418
+WorkbenchEditorsDialog(Dialog).create() line: 996
+WorkbenchEditorsDialog(Window).open() line: 770
+WorkbenchEditorsAction.run() line: 59
+WorkbenchEditorsAction(Action).runWithEvent(Event) line: 996
+ActionHandler.execute(ExecutionEvent) line: 117
+Command.execute(ExecutionEvent) line: 312
+ParameterizedCommand.execute(Object, Object) line: 396
+WorkbenchKeyboard.executeCommand(Binding, Object) line: 452
+WorkbenchKeyboard.press(List, Event) line: 741
+WorkbenchKeyboard.processKeyEvent(List, Event) line: 784
+WorkbenchKeyboard.filterKeySequenceBindings(Event) line: 543
+WorkbenchKeyboard.access$3(WorkbenchKeyboard, Event) line: 486
+WorkbenchKeyboard$KeyDownFilter.handleEvent(Event) line: 110
+EventTable.sendEvent(Event) line: 82
+Display.filterEvent(Event) line: 777
+StyledText(Widget).sendEvent(Event) line: 841
+StyledText(Widget).sendEvent(int, Event, boolean) line: 866
+StyledText(Widget).sendEvent(int, Event) line: 851
+StyledText(Widget).sendKeyEvent(int, int, int, int, Event) line: 879
+StyledText(Widget).sendKeyEvent(int, int, int, int) line: 875
+StyledText(Widget).wmChar(int, int, int) line: 1182
+StyledText(Control).WM_CHAR(int, int) line: 3125
+StyledText(Control).windowProc(int, int, int, int) line: 3028
+Display.windowProc(int, int, int, int) line:

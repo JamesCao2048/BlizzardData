@@ -1,0 +1,18 @@
+Bug 203035 Timezones not supported
+Build ID: 3.3.0 Reportengine: 2.2.0 Steps To Reproduce: 1.Create a report with a sql statement like this: select system_id, created_on from data_table where created_on > ?
+and created_on
+< ?
+The two parameters are parameters, which must be entered by the user.
+2.Run the report with the runtime engine.
+More information: The runtime engine is embeded into my application.
+The user can be in different timezones.
+When a user enteres "11/11/06 11:11" and is in e.g.
+Tokio, its something different else if a user enters "11/11/06 11:11" and is in London.
+The 2 users expect different results.
+How can i set the timezone of the report-engine?
+Is it possible to set the timezone with runtime-engine?
+In my eyes it is not possible.
+The birt-runtime-engine always takes the default timezone of the Java Runtime Engine (TimeZone.getDefault()).
+I tried to ask this in the newsgroup, but nobody answered.
+If there is no possibility to set the timezone, this seems to be a "blocker" bug and should be fixed in the next release.
+Thx Orkus

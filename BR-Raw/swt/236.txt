@@ -1,0 +1,50 @@
+StyledText computes wrong control size when wrapping
+I20111205-1800
+StyledText computes a wrong control size just after wrapping to a second line.
+I didn't investigate where exactly the bug is, but the snippet below is a small extract of what happens in  bug 322556 .
+My OS font is Tahoma 8, but I can also reproduce with other fonts.
+When you run the snippet, you can see that the StyledText doesn't reserve enough vertical space for the 2 lines.
+Problem persists when you resize the shell vertically.
+When you make the shell wider or narrower, you can see that there's a certain width at which the text already wraps but the second line doesn't appear.
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class SnippetStyledTextWrap {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+Composite composite= new Composite(shell, SWT.NONE);
+composite.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
+GridLayout layout= new GridLayout(2, false);
+layout.marginHeight= 2;
+layout.marginWidth= 2;
+layout.horizontalSpacing= 0;
+composite.setBackground(display.getSystemColor(SWT.COLOR_GREEN));
+composite.setLayout(layout);
+final Label canvas= new Label(composite, SWT.NONE);
+GridData gridData= new GridData(SWT.BEGINNING, SWT.BEGINNING, false,
+false);
+gridData.widthHint= 17;
+gridData.heightHint= 16;
+canvas.setImage(display.getSystemImage(SWT.ICON_ERROR));
+canvas.setLayoutData(gridData);
+StyledText styledText= new StyledText(composite, SWT.WRAP);
+styledText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+styledText.setText("The constructor AssociativeInfixExpression" +
+"Fragment(InfixExpression, List<ASTNode>) is undefined");
+styledText.setFont(new Font(display, "Tahoma", 8, SWT.NORMAL));
+shell.pack();
+Point size= shell.getSize();
+shell.setSize(size.x
+- 5, size.y * 2);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch ())
+display.sleep();
+}
+display.dispose();
+}
+}

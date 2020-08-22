@@ -1,0 +1,12 @@
+unicode nonprintable / zero width space completely bricks editors
+Build Identifier: M20100909-0800
+Eclipse is completely bricked (rendering artifacts and/or hang and many errors in error log) by pasting the unicode character U+200B (zero width space) in a Java editor.
+I will attach the stacktrace of the exception that is repeatedly put in the error log right after pasting this character in an Eclipse Java editor.
+Curiously, with a plain text file only the exception is spammed in the error log, but Eclipse seems to continue running normally.
+Major problems occur in the Java editor (and other language-specific editors).
+Reproducible: Always
+Steps to Reproduce:
+1.Open eclipse & open a Java file
+2.Paste the unicode character U+200B (zero width space) in the editor.
+Assuming bugzilla and the webserver support unicode properly I have included this invisible characters between the two x's: x&#8203;x
+3.Observe that the error log is spammed full of ArrayIndexOutOfBoundsException; rendering of the editor window breaks and often (when pasting multiple times) rendering of other parts of Eclipse break too and/or it hangs indefinitely.

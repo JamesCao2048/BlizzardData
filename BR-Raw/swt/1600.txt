@@ -1,0 +1,36 @@
+No vertical scrollbars in the stacktrace console
+Created  attachment 98012   [details]
+screen cap
+If the output (or input) to the stacktrace and process console is larger than the size of the view no scrollbars are presented.
+The actual input to the stacktrace console is:
+Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in thread "main" java.lang.NullPointerException
+at Output.main(Output.java:11)Exception in

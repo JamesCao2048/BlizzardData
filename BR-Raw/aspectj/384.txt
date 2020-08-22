@@ -1,0 +1,26 @@
+VerifyError after weaving around trivial switch statement
+After compiling the attached source file and class file with
+ajc -inpath . -outjar t.jar Tracer.aj
+(on any of 1.2.1, 1.5.0M2 or the June 2005 snapshot) and then attempting to run
+it with
+gij -classpath ./t.jar:$CLASSPATH Test
+the following error is obtained:
+Exception in thread "main" java.lang.VerifyError: verification failed at PC 1 in
+Test:newTest_aroundBody2((I)LTest;): branch out of range
+at java.lang.VMClassLoader.resolveClass(java.lang.Class)
+(/usr/lib/libgcj.so.6.0.0)
+at java.lang.Class.initializeClass() (/usr/lib/libgcj.so.6.0.0)
+at java.lang.Class.forName(java.lang.String, boolean, java.lang.ClassLoader)
+(/usr/lib/libgcj.so.6.0.0)
+at gnu.java.lang.MainThread.run() (/usr/lib/libgcj.so.6.0.0)
+An excerpt from the output of
+javap -private -classpath t.jar -c Test
+shows that the generated switch is indeed bogus:
+private static final Test newTest_aroundBody2(int);
+Code:
+0:   iload_0
+1:   tableswitch{ //0 to 0
+0: -1157627302;
+default: 16 }
+20:  invokespecial   #3; //Method "<init>":()V
+23:  areturn

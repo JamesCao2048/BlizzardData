@@ -1,0 +1,5 @@
+Bug 277426 Add aggregation support to bubble value
+Currently the bubble value in Bubble chart doesn't support aggregation, and it always returns the first detail value.
+Bubble size can support aggregation.
+But in most cases, user needs bubble value with aggregation just like bubble size.
+The special case is that, if bubble value is category type, and aggregation is set except Count, this aggregation should be ignored, and still return the data index just like the result without aggregation.

@@ -1,0 +1,8 @@
+Bug 264303 Filter Expression of Chart using cube is not proper
+Description: Filter Expression of Chart using cube is not proper.
+I suggest to keep the prompt in selecting list, remove the Category: and Value: in expression builder.
+Build number: 2.3.2.v20090210-0730 & 2.5.0 v20090210-0630 Steps to reproduce: 1, New a Chart using cube 2, New a Filter in Chart Builder 3, Select the binding Category: data["A"] 4, The expression displayed data["A"] in Filters dialog 5, Specify the expression to Category: data["A"] + 100 6, The expression displayed Category: data["A"] + 100 Expected result: I suggest to Keep the current behavior of binding list: Category: data["A"] Value: data["B"] But after selecting, the expression should be data["A"] without Category:, this kind of expression is very confused.
+If I specify the condition to data["A"] + 100 or something else, the Category: is useless.
+Actual result: The expression is Category: data["A"] in expression builder.
+It is very confused.
+Error log:

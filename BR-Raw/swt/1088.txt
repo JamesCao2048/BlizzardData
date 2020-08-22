@@ -1,0 +1,10 @@
+[Browser] Make sure Eclipse works with xulrunner 1.9.1beta
+Build ID: n/a
+Steps To Reproduce:
+Have xulrunner 1.9.1 installed on your Linux system and Eclipse stops to start correctly.
+More information:
+While searching for a solution for the issue that Eclipse doesn't start anymore on any of my Linux machines I found some informations that Eclipse crashes with xulrunner 1.9.1 because of mozilla's interface changes.
+I confirmed that this is also the reason on my system.
+The thing is that I still have also xulrunner 1.9.0 available on my system which works when I specify the location to it to eclipse's vm.
+Therefore why does Eclipse use the newest xulrunner instead of one which is known to work?
+The /etc/gre.d registrations are correct so it should be possible to filter on a specific version.

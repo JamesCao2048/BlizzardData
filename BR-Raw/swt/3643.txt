@@ -1,0 +1,24 @@
+regression - Table.getImageBounds returns incorrect value
+Take the propertysheet as an example.
+If you select a project and try to click
+on the +/- next to the "Info" category entry, it won't expand/collapse.
+In this particular case if you click just on the upper-left corner of the box
+around the +/- you may be able to get it to work.
+But if you click anywhere else
+it won't work.
+In this particular case, TableTreeItem.getImageBounds() was returning a box that
+was lower than where you were clicking such that the event location only
+overlapped the image bounds at the upperleft corner.
+However, there is also a problem in that getImageBounds() doesn't return a
+rectangle with any dimensions many times.
+With the standard properties for
+things like project, there are no expandable properties other than the "info"
+category.
+But in our editor (Java Visual Editor) we have many such properties.
+And during testing, even though there were some entries that showed a +/-, the
+getImageBounds() returned a zero-sized rectangle for all of them.
+Though it
+wasn't consistent.
+It would return zero-sized most of the time, but not all of
+the time.
+This makes the property sheet unusable for expanded properties and categories.

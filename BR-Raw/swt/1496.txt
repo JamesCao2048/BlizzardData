@@ -1,0 +1,10 @@
+GTK Assertion for gdk_window_get_user_data
+I am working on a SWT port to another language, and i got an GTK assertion, triggered by that code:
+http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt/Eclipse%20SWT/gtk/org/eclipse/swt/widgets/Shell.java?annotate=1.274
+1989 :     int /*long*/ window = OS.gdk_window_at_pointer (x, y);
+1990 :     int /*long*/ [] user_data = new int /*long*/ [1];
+1991 :     OS.gdk_window_get_user_data (window, user_data);
+Line 1989 can set the window to NULL and gdk_window_get_user_data prints then the assertion.
+If i change the line 1991 to
+1991 :     if( window != 0 ) OS.gdk_window_get_user_data (window, user_data);
+the assertion goes away.

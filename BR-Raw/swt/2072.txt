@@ -1,0 +1,66 @@
+Image.getImageData crashes VM in win32.OS.MoveMemory
+Build ID:  M20070212-1330
+Steps To Reproduce:
+1.Create large image
+2.Allocate a lot of C heap memory
+3.call image.getImageData()
+I've reproduced the bug with this action.
+It may be easier by using OS.HeapAlloc to consume the C heap memory.
+public void run(IAction action) {
+// 1. Create a large image.
+Display display = Display.getDefault();
+Image image = new Image(display,4096,4096);
+try {
+// 2.Allocate a lot of C heap memory
+List<ByteBuffer> buffers = new ArrayList<ByteBuffer>();
+int meg = 1024*1024;
+for (int bufferSize=1024;bufferSize>0;bufferSize/=2) {
+int count=0;
+try {
+while (true) {
+buffers.add(ByteBuffer.allocateDirect(bufferSize*meg));
+++count;
+}
+} catch (OutOfMemoryError err) {
+System.out.println("allocated " + count +
+" " + bufferSize + "meg buffers");
+}
+}
+// 3.call image.getImageData()
+ImageData d = image.getImageData();
+} finally {
+image.dispose();
+}
+}
+More information:
+Here's the stack from the hs crash log file:
+Current thread (0x003a6400):  JavaThread "main" [_thread_in_native, id=2220]
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+Registers:
+EAX=0x04000000, EBX=0x00000000, ECX=0x01000000, EDX=0x00000000
+ESP=0x009df1f0, EBP=0x009df1f8, ESI=0x00000000, EDI=0x08f6c8d4
+EIP=0x2f96fba3, EFLAGS=0x00010212
+Top of Stack: (sp=0x009df1f0)
+0x009df1f0:   003a64e8 08f6c8d4 009df218 2f9489d9
+0x009df200:   08f6c8d4 00000000 04000000 003a6400
+0x009df210:   29a15778 29a15778 009df258 009fa8ed
+0x009df220:   003a64e8 009df260 009df270 00000000
+0x009df230:   04000000 29a234b0 009df238 00000000
+0x009df240:   009df270 29a234b0 00000000 29a15778
+0x009df250:   00000000 009df268 009df294 009f2ca1
+0x009df260:   29a219d8 009f8479 04000000 00000000
+Instructions: (pc=0x2f96fba3)
+0x2f96fb93:   00 00 00 75 14 c1 e9 02 83 e2 03 83 f9 08 72 29
+0x2f96fba3:   f3 a5 ff 24 95 b8 fc 96 2f 8b c7 ba 03 00 00 00
+Stack: [0x00990000,0x009e0000),  sp=0x009df1f0,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [swt-win32-3236.dll+0x2fba3]
+C  [swt-win32-3236.dll+0x89d9]
+j  org.eclipse.swt.internal.win32.OS.MoveMemory([BII)V+0
+j  org.eclipse.swt.graphics.Image.getImageData()Lorg/eclipse/swt/graphics/ImageData;+1646
+Presumably a null pointer is being passed to MoveMemory, probably because OS.HeapAlloc failed returning a null pointer that wasn't checked.
+(The isDib path checks that bm.bits!=0 earlier.)
+int lpvBits = OS.HeapAlloc(hHeap, OS.HEAP_ZERO_MEMORY, imageSize);
+if (OS.IsWinCE) SWT.error(SWT.ERROR_NOT_IMPLEMENTED);
+OS.GetDIBits(hBitmapDC, handle, 0, height, lpvBits, bmi, OS.DIB_RGB_COLORS);
+OS.MoveMemory(data, lpvBits, imageSize);

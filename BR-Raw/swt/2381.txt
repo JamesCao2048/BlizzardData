@@ -1,0 +1,11 @@
+Using the mouse to page down auto completion choices closes completion window
+Eclipse 3.2RC1a on Mac OS X 10.4.5
+I used Command+Space to obtain a list of proposals (Control+Space gives same behaviour) from SWT.<cmd+space>, resulting in a number of possibilities.
+The results were paged, so I got my scrollbar down the window.
+I can use the keyboard to scroll through the list, as well as page up/down.
+However, if I use the mouse to move one row down/up (by clicking on the arrows) or clicking in the scroll bar itself (to move forward/backward a page) then as soon as I release the mouse, the dialog disappears.
+This seems repeatable in the same session (I can try in a new session if this isn't repeatable).
+I'm also running a remote client (Citrix metaframe) which may be causing problems, so I'll try it without running that a bit later to see if the problem still occurs.
+Interestingly, if I hold down the mouse, the pages scroll past; it's only when I release the mouse that the pop-up goes away.
+No element is selected in the process, so it's not choosing a value; it's just disappearing.
+Nothing in the log.

@@ -1,0 +1,2 @@
+Bug 148525 Display text is not found from library resource file
+Steps to reproduce: 1.New a library, add a resource file "a.properties" 2.Add a label with text"abc", add a localization "k1=actuate" 3.New a report, extend the label 4.Preview the report Expected result: Report shows "actuate" in preview Actual result: Report shows "actuate" in layout, but "abc" in preview

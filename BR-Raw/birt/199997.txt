@@ -1,0 +1,7 @@
+Bug 199997 Edit Data Set Dialog problem
+Description: In the "Edit data set" dialog, when drag vertical scroll bar in the Query page, the "User identifier quoting" will be hidden.
+Build version:2.2.0.v20070815-0630 Steps to reproduce: 1.Open "Edit data set" dialog, in the query page, drag the vertical scroll bar.
+2.See the attached screenshot, the "User identifier quoting" will be hidden.
+Actual result: The "User identifier quoting" will be hidden.
+Expected result: "User identifier quoting" displays well.
+Error log: N/A.

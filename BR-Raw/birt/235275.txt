@@ -1,0 +1,6 @@
+Bug 235275 Apply theme to None cannot be kept in library[01]
+Description: Apply theme to None cannot be kept in library Build number:2.3.0.v20080603 Steps to reproduce: 1.New a library, right click in Layout, select Theme, apply theme to None.
+2.Save and close library.
+3.Reopen library, right click and check theme apply Expected result: Apply theme to None after reopen library.
+Actual result: Default theme is applied to library after reopen it.
+Error log:n/a

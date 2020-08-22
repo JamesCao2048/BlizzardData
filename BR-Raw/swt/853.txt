@@ -1,0 +1,3 @@
+StyledText: non-uniform tabstops on different lines
+The ability to set non-uniform tabstops on different lines already exists in Swing, GTK, and the upcoming version of MS Visual Studio, and is needed for elastic tabstops (  http://nickgravgaard.com/elastictabstops/  ) and other features.
+It should be possible to specify the positions or widths of the tabstops in pixels (or perhaps ems) rather than monospaced character widths.

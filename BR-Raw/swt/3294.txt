@@ -1,0 +1,9 @@
+Slow performance updating target
+I have a target platform with ~400 plugins.
+I'm using dynamic classpaths.
+
+When I go to the PDE preferences, reload a new target, click not in workspace,
+and hit ok, it takes a very long time before I have control again.
+Seems like some refresh is going on as well as threads in the job queue.
+This
+is using M7 as the development environment.

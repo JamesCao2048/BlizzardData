@@ -1,0 +1,4 @@
+Bug 287910 Highlight selected masterpage issue in XML Source[1400]
+Description: Highlight selected item issue in XML Source Build number:2.5.1.v20090828 Steps to reproduce: 1.New a report, add items in master page header and footer 2.Go to Outline and select master page header or footer, jump to header or footer, as expected.
+3.Remove item in master page header.
+4.Select master page header and footer nodes in Outline Expected result: Jump to header and footer Actual result: Always jump to first line of report Error log:N/a

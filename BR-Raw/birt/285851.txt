@@ -1,0 +1,14 @@
+Bug 285851 Imprecise tooltip information on pie chart slices in SWT
+Build ID: I20090611-1540 Steps To Reproduce: 1.Create a pie chart.
+2.Set category definition to row["PRODUCTLINE"].
+3.Add interactivity to value series: type Mouse Over, action "Show Tooltip", tooltip text: row["PRODUCTLINE"].
+The tooltips are displaying appropriate proper categories in Preview tab in Report Designer.
+Problems occur when the chart is drawn with SwtRendererImpl.
+Bounding boxes of the slices are used to determine on which slice the mouse is over.
+More information: I saw the comment: // using rectangle to simulate the arc due to swt limitation.
+in SwtRendererImpl.enableInteraction(), but I'm really sure what the limitation really is.
+It seeems more of a limitation of RegionAction class, which is final.
+I'd imagine a simple solution that a subclass of region action would hold the PathData of an arc, and its contains method would build a Region, load the PathData to that Region, call Region.contains() method and dispose the Region.
+Not having modifying access to SwtRendererImpl, I made a more hackish solution in our RCP application that is drawing BIRT charts, but the principle was the same
+- store arc PathData & build a Region to ask whether it contains mouse coordinates.
+This solution precisely determines what pie slice the mouse is currently over.

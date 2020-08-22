@@ -1,0 +1,7 @@
+Bug 174973 Master page "n of m" page count misaligned in PDF output
+The second number in the "n of m" is not aligned vertically with the other elements in the grid.
+The numbers were aligned in 2.1.1, but are misaligned in 2.1.2 and in BIRT 2.2M4.To reproduce:
+- Open enclosed report and generate PDF or
+- Create new report
+- modify Master page by adding n of m page count
+- shrink column width of grid to .15 in for each column so the elements are closer together (makes alignment problem noticeable)

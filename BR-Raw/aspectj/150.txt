@@ -1,0 +1,3 @@
+Fix javadoc for ProceedingJoinPoint.proceed(Object[])
+Currently, javadoc for ProceedingJoinPoint.proceed(Object[]) incorrectly mentions that arguments must be the same as the advice context (except for the join point object).
+However,  http://www.eclipse.org/aspectj/doc/released/adk15notebook/ataspectj-pcadvice.html  mentions a different expectation. It looks like copying the same text as in the  aj5notebook into javadoc should do well.

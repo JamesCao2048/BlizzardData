@@ -1,0 +1,5 @@
+image not shown in check and radio buttons
+In Mylyn we use the following code to create a check button with an image.
+attachContextButton = toolkit.createButton(buttonComposite, Messages.TaskEditorActionPart_Attach_Context, SWT.CHECK);
+attachContextButton.setImage(CommonImages.getImage(TasksUiImages.CONTEXT_ATTACH));
+Using Eclipse 3.4M6 I did not see the image.

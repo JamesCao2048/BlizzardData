@@ -1,0 +1,18 @@
+Bug 192593 Refresh library will change cube dimension name.[01][1101]
+Description: Refresh library will change cube dimension name.
+Build number:2.2.0.v20070614 Steps to reproduce: 1.New a library with data source, dataset and cube.
+2.New a report.
+3.Drag cube from library to report and insert a xtab based on the cube.
+4.Insert a label in library file and save.
+5.Back to report and in Outline, select report, right click and select refresh library.
+6.Preview the report.
+Expected result: Xtab display correctly.
+Actual result: CrossTabException.
+I found the cause is that refresh library action will change the cube dimension name.
+Error log: he following items have errors: ReportDesign (id = 1):
+- The associated dimension for crosstab is invalid.
+The associated dimension for crosstab is invalid.
+( 1 time(s) ) detail : org.eclipse.birt.report.item.crosstab.core.CrosstabException: The associated dimension for crosstab is invalid.
+at org.eclipse.birt.report.item.crosstab.core.re.CrosstabQueryHelper.buildQuery(CrosstabQueryHelper.java:109) at org.eclipse.birt.report.item.crosstab.core.re.CrosstabReportItemQuery.createReportQueries(CrosstabReportItemQuery.java:88) at org.eclipse.birt.report.engine.data.dte.ReportQueryBuilder$QueryBuilderVisitor.visitExtendedItem(ReportQueryBuilder.java:497) at org.eclipse.birt.report.engine.ir.ExtendedItemDesign.accept(ExtendedItemDesign.java:37) at org.eclipse.birt.report.engine.data.dte.ReportQueryBuilder.build(ReportQueryBuilder.java:245) at org.eclipse.birt.report.engine.data.dte.ReportQueryBuilder.build(ReportQueryBuilder.java:227) at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.prepare(AbstractDataEngine.java:135) at org.eclipse.birt.report.engine.executor.ReportExecutor.execute(ReportExecutor.java:94) at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportExecutor.execute(WrappedReportExecutor.java:59) at org.eclipse.birt.report.engine.internal.
+executor.dup.SuppressDuplciateReportExecutor.execute(SuppressDuplciateReportExecutor.java:50) at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportExecutor.execute(WrappedReportExecutor.java:59) at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:146) at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:71) at org.eclipse.birt.report.service.ReportEngineService.runAndRenderReport(Unknown Source) at org.eclipse.birt.report.service.ReportEngineService.runAndRenderReport(Unknown Source) at org.eclipse.birt.report.service.BirtViewerReportService.runAndRenderReport(Unknown Source) at org.eclipse.birt.report.service.actionhandler.BirtGetPageAllActionHandler.__execute(Unknown Source) at org.eclipse.birt.report.service.actionhandler.AbstractBaseActionHandler.execute(Unknown Source) at org.eclipse.birt.report.soapengine.processor.AbstractBaseDocumentProcessor.__executeAction(Unknown Source) at org.eclipse.birt
+.report.soapengine.processor.AbstractBaseComponentProcessor.executeAction(Unknown Source) at org.eclipse.birt.report.soapengine.p

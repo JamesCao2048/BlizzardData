@@ -1,0 +1,2 @@
+Bug 213907 Provide a copy constructor for SubqueryDefinition.
+Engine need a copy constructor to generate a SubqueryDefinition from an ISubqueryDefinition and change the name of the query.

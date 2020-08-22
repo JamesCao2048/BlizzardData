@@ -1,0 +1,87 @@
+[DND] Image effect not showing in RTL
+Simple snippet that shows the problem.
+
+/*
+* A modified snippet that shows how taking a screenshot of an control
+* that owner-draws its background using drawRoundRectangle in combination
+* with antialiasing creates problems for DragSourceEffect.
+*
+* See defect:  https://bugs.eclipse.org/bugs/show_bug.cgi?id=173549
+*
+*/
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CLabel;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSource;
+import org.eclipse.swt.dnd.DragSourceEffect;
+import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+public class PR173549 {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.RIGHT_TO_LEFT);
+shell.setLayout(new GridLayout());
+shell.setText("Widget");
+
+final Composite container = new Composite(shell, SWT.NULL);
+container.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event e) {
+e.gc.setAntialias(SWT.ON);
+Point size = container.getSize();
+e.gc.setBackground(e.display.getSystemColor(SWT.COLOR_MAGENTA));
+e.gc.fillRoundRectangle(1, 1, size.x-2, size.y-2, 5, 5);
+e.gc.setAntialias(SWT.DEFAULT);
+}
+});
+
+container.setLayout(new GridLayout());
+
+final CLabel label = new CLabel(container, SWT.NULL);
+label.setText("Drag this label.
+You should see a picture of the label while dragging.
+Try commenting the RIGHT_TO_LEFT style.");
+DragSource source = new DragSource(label, DND.DROP_MOVE|DND.DROP_COPY);
+source.setTransfer(new Transfer[] { TextTransfer.getInstance() });
+source.setDragSourceEffect(new DragSourceEffect(label) {
+public void dragStart(DragSourceEvent event) {
+Point containerSize = container.getSize();
+GC gc = new GC(container);
+final Image image =
+new Image(display, containerSize.x, containerSize.y);
+gc.copyArea(image, 0, 0);
+gc.dispose();
+event.image = image;
+}
+});
+source.addDragListener(new DragSourceListener() {
+public void dragFinished(DragSourceEvent event) {
+}
+public void dragSetData(DragSourceEvent event) {
+event.data = label.getText();
+}
+public void dragStart(DragSourceEvent event) {
+}
+
+});
+
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Capture");
+button.pack();
+button.setLocation(10, 140);
+button.addListener(SWT.Selection, new Listener() {
+public vo

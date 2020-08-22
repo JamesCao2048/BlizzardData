@@ -1,0 +1,51 @@
+Pixel corruption involving SWT.DOUBLE_BUFFERED, GC.setAdvanced() and TextLayout
+SWT-win32, v3232 with GDI+ DLL
+- Run the test case below
+- Drag the shell off the screen, then back
+-> pixel corruption occurs
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class PaintingTest {
+public static void main(String[] args) {
+final Display display = new Display();
+
+Font font = new Font(display, "Arial", 12, SWT.BOLD);
+
+final TextLayout layout = new TextLayout(display);
+layout.setFont(font);
+layout.setText("Sample Text");
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+final Canvas cnv = new Canvas(shell, SWT.DOUBLE_BUFFERED);
+cnv.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event e) {
+Point size = cnv.getSize();
+
+e.gc.setAdvanced(true);
+
+e.gc.setBackground(display.getSystemColor(SWT.COLOR_RED));
+e.gc.fillRectangle(10, 10, size.x
+- 20, size.y
+- 20);
+
+layout.draw(e.gc, 10, 10);
+}
+});
+
+shell.setSize(300, 300);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+layout .dispose();
+font   .dispose();
+display.dispose();
+}
+}

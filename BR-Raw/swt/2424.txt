@@ -1,0 +1,84 @@
+Not consistenly getting control resize event from table column
+In this testcase, there are three buttons:
+Hide Column 1
+Show Column 1
+Resize Column 1
+Hide Column 1 action sets the width of column 1 to zero.
+Show Column 1 action sets the width of column 1 to 100. It also adds a control listener to catch the columns's resize event.
+To see the problem:
+1. Press Hide Column 1 action.
+2. Press Show Column 1 action.
+Expected Result:
+When the Show Column 1 button is pressed, it's expected that my control listener will get a resize event and will print out "Column Resized" in the console.
+
+Actual Result:
+My listener never gets a resize event when "Show Column 1" action is run.
+However, if I press the "Resize Column 1" action which further resizes the column, my listener will be notified.
+If I run this testcase on Windows, my control listener is notified consistenly when "Show Column 1" is pressed.
+public class TestResize {
+private static TableColumn column1;
+private static TableColumn column2;
+private static TableColumn column3;
+
+/**
+* @param args
+*/
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+
+final Table table = new Table(shell, SWT.BORDER | SWT.MULTI | SWT.VIRTUAL);
+final TableCursor cursor = new TableCursor(table, SWT.NONE);
+
+table.setLayoutData(new GridData(GridData.FILL_BOTH));
+column1 = new TableColumn(table, SWT.NONE);
+column1.setText("A");
+column2 = new TableColumn(table, SWT.NONE);
+column1.setText("B");
+column3 = new TableColumn(table, SWT.NONE);
+column1.setText("C");
+
+for (int i = 0; i
+< 500; i++) {
+TableItem item = new TableItem(table, SWT.NONE);
+item.setText(new String[] { "cell "+i+" 0", "cell "+i+" 1", "cell "+i+" 2"});
+}
+
+column1.setWidth(100);
+column2.setWidth(100);
+column3.setWidth(100);
+
+Button action2 = new Button(shell, SWT.PUSH);
+action2.setText("Hide Column 1");
+action2.addSelectionListener(new SelectionListener() {
+public void widgetSelected(SelectionEvent e) {
+column1.setWidth(0);
+}
+public void widgetDefaultSelected(SelectionEvent e) {
+}});
+
+Button action = new Button(shell, SWT.PUSH);
+action.setText("Show Column 1");
+action.addSelectionListener(new SelectionListener() {
+public void widgetSelected(SelectionEvent e) {
+column1.addControlListener(new ControlListener() {
+public void controlMoved(ControlEvent e) {
+
+}
+public void controlResized(ControlEvent e) {
+column1.removeControlListener(this);
+System.out.println("Control Resized");
+}});
+
+// expect to see "Control Resized" printed when this is called
+column1.setWidth(100);
+}
+public void widgetDefaultSelected(SelectionEvent e) {
+}});
+
+Button action3 = new Button(shell, SWT.PUSH);
+action3.setText("Resize Column 1");
+action3.addSelectionListener(new SelectionListener() {
+public void widgetSelected(SelectionEvent e) {
+// expect to see Control Resized printed whe

@@ -1,0 +1,60 @@
+Border width on Table incorrect - creates unwanted scrollbars
+It appears that on Windows the Table class always allocates a small border,
+with a width equal to the value of OS.GetSystemMetrics (OS.SM_CXEDGE),
+whether you explicitly set a border or not.
+If you don't set a border then
+the actual physical border is equal to this value.
+If you set a border
+then this value has to be added to the reported value.
+The current implementation of getBorderWidth(), inherited from the Control
+class, doesn't take this into account.
+This results id that the preferred
+size of the Table is being slightly underestimated, which causes unwanted
+scrollbars.
+Here's a test case that shows the problem:
+public static void main(String[] args)
+{
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("Broken Table Border?");
+Table table = null;
+String mode = args[0];
+if("current".equals(mode))
+{
+// this will have an unwanted vertical scrollbar
+table = new Table(shell, SWT.NONE);
+}
+else if("proposed_noborder".equals(mode))
+{
+table = new ProposedFixTable(shell, SWT.NONE);
+}
+else if("proposed_border".equals(mode))
+{
+table = new ProposedFixTable(shell, SWT.BORDER);
+}
+new TableItem(table,SWT.NONE).setText("ReallyReallyLongTableItem1");
+new TableItem(table,SWT.NONE).setText("ReallyReallyLongTableItem2");
+new TableItem(table,SWT.NONE).setText("ReallyReallyLongTableItem3");
+table.setSize(table.computeSize(100, SWT.DEFAULT));
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+static public class ProposedFixTable extends Table
+{
+public ProposedFixTable(Composite parent, int style)
+{
+super(parent, style);
+}
+protected void checkSubclass () {}
+public int getBorderWidth ()
+{
+int borderWidth = super.getBorderWidth();
+borderWidth += OS.GetSystemMetrics (OS.SM_CXEDGE)/2;
+return borderWidth;
+}
+}

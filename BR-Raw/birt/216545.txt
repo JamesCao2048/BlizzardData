@@ -1,0 +1,4 @@
+Bug 216545 Disable invalid chart types for chart in xtab
+For the orientation issues, all chart without axes will be unsupported for chart in xtab.
+Pie and Dial chart will be invisible.
+Since only one measure can be converted to chart, Stock/Bubble/Difference/Gantt will be invisible too.

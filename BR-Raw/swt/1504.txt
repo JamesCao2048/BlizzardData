@@ -1,0 +1,48 @@
+Cannot remove caret in FocusOut handler
+SWT-win32, v3224
+- Run the test case below
+- The canvas on the left will initially have focus
+- Click on the button to make the canvas lose focus
+- Even though the caret is removed in the focus lost handler, it won't go away
+Note: I am aware that a caret will automatically be hidden on focus lost;
+The snippet below intentionally tries to completely remove it.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class CaretTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+final Canvas canvas = new Canvas(shell, SWT.NONE);
+final Caret caret = new Caret(canvas, SWT.NONE);
+caret.setBounds(32, 32, 1, 16);
+
+canvas.addListener(SWT.KeyDown, new Listener() {
+public void handleEvent(Event e) {
+}
+});
+canvas.addListener(SWT.FocusOut, new Listener() {
+public void handleEvent(Event e) {
+System.out.println("Canvas has lost focus");
+
+canvas.setCaret(null);
+caret.dispose();
+}
+});
+
+new Button(shell, SWT.PUSH).setText("Button");
+
+shell.setSize(200, 150);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

@@ -1,0 +1,2 @@
+Bug 279751 Disable next button if no data source is selected
+Description: Exception happened when go to next page without a data source Build number: 2.5.0.v20090610-0630 Steps to reproduce: 1, New a data source 2, New a data set 3, In Data Source selection page, specify a character in data source selection to make sure no data source is available 4, Click Next button Expected result: If there has no data source, the next button should be disable Actual result: When clicking next button, exception happened Error log:

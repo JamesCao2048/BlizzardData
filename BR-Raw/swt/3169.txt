@@ -1,0 +1,4 @@
+DirectoryDialog widget has a growing label
+3.1M2
+In the DirectoryDialog widget, the label added by SWT expands to take up space.
+It should instead remain only large enough to contain its text.

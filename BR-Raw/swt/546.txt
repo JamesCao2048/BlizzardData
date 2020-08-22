@@ -1,0 +1,17 @@
+False presentation of a control contributed through the org.eclipse.ui.menu extension point
+Build Identifier: 20100617-1415
+Hello Eclipse-Team,
+I have found the following bug.
+By using the implemented extension point named org.eclipse.ui.menus I have added a custom control.
+The visual presentation of this control in my toolbar under windows vista as well as ubuntu 10.04 is fine (see screenshots).
+Under MAC OS X 10.6 the visual presentation seems not to be correct.
+Obviously there is a mismatch with the position of the control.
+For better understanding I have added 3 screenshots and an example project.
+Any suggestions or workarounds would be very helpful.
+Kind regards,
+Adam
+Reproducible: Always
+Steps to Reproduce:
+1.import toolbar_control.zip
+2.Start project
+3.See bug :)

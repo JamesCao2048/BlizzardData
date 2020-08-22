@@ -1,0 +1,21 @@
+Anomalous handling of inter-type declarations to abstract base classes in aspectj 1.1
+Version 1.1 of aspectj does not handle correctly inter-type declarations to
+abstract base classes.
+This appears when the following pattern is present in the code:
+Suppose there is an interface InterfaceA, another interface InterfaceB and a
+third interface InterfaceC extending InterfaceA and InterfaceB and containing
+some method declarations of its own.
+Suppose also there is an aspect AConcretisingAspect that contains inter-type
+declarations providing default implementations for all InterfaceC's methods
+(both own and inherited).
+Now suppose we have a class hierarchy emanating from an abstract class
+BaseClass, and an aspect BaseClassAspect declaring that BaseClass implements
+InterfaceC:
+aspect BaseClassAspect {
+declare parents: BaseClass implements InterfaceC;
+}
+Unfortunately, during compilation iajc complains for each offspring of BaseClass
+that it does not implement any of the abstract methods of InterfaceA and
+InterfaceB (but not of InterfaceC's own!).
+This does not happen when BaseClass is not abstract; and it does not occur in
+version 1.0.6 of aspectj.

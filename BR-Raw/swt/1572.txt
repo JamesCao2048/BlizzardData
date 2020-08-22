@@ -1,0 +1,21 @@
+[DND]Combo:Multiple problems during drag text in combo on Mac OS X
+Build ID: I20080207-1530
+Steps To Reproduce:
+My Env:
+Mac OS Version 10.5
+Eclipse build I20080207-1530
+SWT 3.4.0 v3428a
+[Step to reproduce]
+1.Run snipplet on Mac OS X
+2.Use mouse to select some text in the combo.
+3.Drag the text to the Text area on the right.
+[Results]:
+1.Mouse cursor does not change its shape to indicate dragging as on Windows.
+2.A "DragStart" was not  triggered until user release the mouse(mouse up).
+
+3.A "DragEnter" was also not  triggered  until mouse up.
+[Expected:]
+1.Mouse cursor will change its shape during dragging.
+2.A "DragStart" should be triggered when the dragging actually happens.
+3.A "DragEnter" should be triggered when the the mouse cursor enter the text area during dragging.
+More information:

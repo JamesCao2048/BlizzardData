@@ -1,0 +1,4 @@
+Bug 266459 Patch: Compile fix for Rhino 1.7
+The attached patch fixes compilation with Rhino 1.7 prereleases.
+The patch is simply putting more restriction to the parameter, so this should not cause any other problems, unless an Object that do not implement Scriptable is passed.
+Such cases will simply fail with newer rhino so it is better to be found at compile time.

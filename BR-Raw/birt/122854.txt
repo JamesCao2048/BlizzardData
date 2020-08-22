@@ -1,0 +1,5 @@
+Bug 122854 There is redundant columns in "available columns" list in "export data" dialog.
+Description: There is redundant columns in "available columns" list in "export data" dialog.
+Steps to reproduce: 1.Preview attached design in web viewer.
+2.Select the table and click on "export" button.
+3.There is a "detail" column name in "available columns" list which is not data set column.

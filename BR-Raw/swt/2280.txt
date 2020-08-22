@@ -1,0 +1,14 @@
+GraphicsAntialiasingTab fails under both Motif and GTK
+When selecting the GraphicsAntialiasingTab, the GraphicsExample application dies.
+Steps for reproducing:
+- Check out org.eclipse.swt.examples from CVS
+- Put the attached file in your workspace under
+org.eclipse.swt.examples.graphics
+- Run the graphics example
+- In the tree, expand "Antialiasing" and select "Graphics"
+On Motif, the following output is displayed:
+X connection to :0.0 broken (explicit kill or server shutdown).
+On GTK, the following output is displayed:
+The application 'SWT' lost its connection to the display :0.0;
+most likely the X server was shut down or you killed/destroyed
+the application.

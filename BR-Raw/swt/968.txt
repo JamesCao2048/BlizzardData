@@ -1,0 +1,12 @@
+Eclipse won't launch using JDK 7 because SWT native libraries don't load
+Eclipse fails to launch with the following exception when launching with JDK 7 (OpenJDK) from  https://jdk7.dev.java.net ):
+java.lang.UnsatisfiedLinkError: no swt-pi-cocoa-3547 or swt-pi-cocoa in swt.library.path, java.library.path or the jar file
+at org.eclipse.swt.internal.Library.loadLibrary(Library.java:248)
+at org.eclipse.swt.internal.Library.loadLibrary(Library.java:159)
+As documented "here": http://greensopinion.blogspot.com/2009/05/eclipse-35-galileo-on-jdk-7.html  this problem can be circumvented by extracting the relevant jnilib files and putting them on the java.library.path
+After stepping through the code it appears as if the problem is related to differences in the value returned from @System.mapLibraryName()@ on JDK7. JDK7 returns libswt-cocoa-3548.dylib, whereas other Java VMs return libswt-cocoa-3548.jnilib.
+Notice the difference in filename extension.
+Technically though I believe that dylib is correct for Darwin, jnilib is returned by other VMs probably for historical reasons.
+SWT is unable to load since libswt-cocoa-3548.dylib cannot be extracted onto the filesystem in @org.eclipse.swt.internal.Library.extract(String, String)@, since it does not exist in the SWT jar.
+SWT should either detect this case and attempt to load with the jnilib suffix, _or_ SWT should provide both jnilib and dylib files in the SWT jar.
+Solving this issue would make it possible for Mac users to use an alternative Java VM to the one provided by Apple, thus enabling the use of 32-bit SWT on the mac platform.

@@ -1,0 +1,11 @@
+SWT 3.6 StyledText.addWordMovementListener() contain mistake
+Build Identifier: M20090211-1700
+public void addWordMovementListener(MovementListener movementListener) {
+........checkWidget();
+........if (listener == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+............^^^^^^^^
+--------- this is mistake, correct version: movementListener
+........addListener(WordNext, new StyledTextListener(movementListener));
+........addListener(WordPrevious, new StyledTextListener(movementListener));
+}
+Reproducible: Always

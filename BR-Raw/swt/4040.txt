@@ -1,0 +1,9 @@
+Packages view selection always one too high
+If you have selected a class and then switch back to the packages view to see
+it the selection is always one element above the top of the view.
+STEPS
+1) Open a Type Hierarchy on a class
+2) Select its superclass and open an editor
+3) Switch back to the packages view
+- the selection will be one element too
+high and not visible

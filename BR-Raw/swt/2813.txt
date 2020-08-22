@@ -1,0 +1,7 @@
+PNG images look corrupt as main window icon
+I am using 3.1 M7.When I load a 16*16 PNG file as an image and display it on
+a canvas all is well.
+When I set the same image to top level shell I see a
+corrupt image in the top left corner of the window.
+The issue seems to be
+related to the handling of transparent and semi-transparent pixels.

@@ -1,0 +1,2 @@
+Accelerators are not drawn on menu items in Eclipse
+This happens because Eclipse doesn't use MenuItem.setAccelerator() and cocoa doesn't support custom draw in menu items.

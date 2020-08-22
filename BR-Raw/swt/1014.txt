@@ -1,0 +1,29 @@
+[DateTime] ignores User's keyboard input
+Created  attachment 110967   [details]
+Screenshot showing the inital state of Snippet251
+The DateTime object, created with SWT.TIME, misses every 2nd change starting with the first one when modifying the values by clicking into the corresponding parts and inputting the values via keyboard.
+To reproduce the error:
+1) Start Snippet 251 and open the dialog.
+2) Click into the time text and onto the hour part & change the value.
+3) Then click onto the minute part & change the value.
+4) Press ok.
+Example: (See the attached screenshots)
+Input: Starting time=6:10 PM
+-> changed to 0:00 PM
+Output: Time selected (HH:MM) = 18:0
+Tried in versions:
+
+- org.eclipse.swt.gtk.linux.x86_3.3.0.v3346.jar
+
+- org.eclipse.swt.gtk.linux.x86_3.4.0.v3448f.jar
+After inspecting the code I think the problem lies in the order the onFocusOut() and onMouseClick() methods are called.
+
+- onMouseClick: sets the currentField member to the new field and calls selectField(currentField)
+
+- onFocusOut: calls commitCurrentField to update internal model.
+There seems to be no guarantee that the onFocusOut() method is called before the onMouseClick() one, hence if onMouseClick is triggered first, the currentField is changed before the internal model is updated and when onFocusOut gets called it stores the newly selected field into the model.
+To fix this I changed the onMouseClick method to NOT set the currentField member to the new one, but pass the newField index to the selectField method which then triggers a commitCurrentField.
+The patch against head as well as the screenshots for the example are attached.
+Greetings
+M.
+Heinzmann

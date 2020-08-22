@@ -1,0 +1,3 @@
+Table#setSelection(int) should specify that it shows the selection
+Table#setSelection(int) calls showSelection().
+This should be specified so that clients can remove redundant calls to showSelection().

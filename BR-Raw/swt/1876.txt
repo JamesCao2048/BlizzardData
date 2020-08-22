@@ -1,0 +1,22 @@
+Target editor's content tab buttons disappear completely
+Created  attachment 81032   [details]
+screenshot of missing buttons
+Build ID: I20071023-0800
+Steps To Reproduce:
+1.Start with a new clean workspace
+2.Create a new plug-in project called "Foo", selecting all defaults except the "create a plug-in using one of the templates" tick box, which should be unticked.
+Click "Yes" to switch to the plugin perspective.
+3.Close the automatically opened plugin/manifest editor.
+[N.B.
+you need to be precise from here]
+4.Right click the "Foo" project and select New->Target Definition.
+Type "bar" in the name and click Finish.
+5.Click the content tab on the automatically opened target editor.
+6.Click the radio button "Include only plug-ins designated below"
+7.Press the Tab key.
+More information:
+This was found on Windows Vista Ultimate (running the Aero scheme).
+It's important that the last few steps are done exactly as specified otherwise you may not reproduce it.
+Workaround: close the editor and reopen; it doesn't appear to happen again during this eclipse session.
+(Note though, that if you exit eclipse and restart, it will again exhibit this behaviour
+- by opening the target editor and following steps 5 onwards.)

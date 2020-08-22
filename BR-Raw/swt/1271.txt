@@ -1,0 +1,17 @@
+On Linux, SWT dialog with Text control does not resize according to the text
+Created  attachment 76088   [details]
+DialogShell SWT sample program
+We have a message box dialog in our application that is based on the SWT shell.
+It uses a Text widget to display the message, such that the message can be copied to the clipboard or wrapped if its too long.
+However, there is a problem when the message to be displayed contains "n" characters to separate the lines in the message.
+The last couple of lines in the message are not displayed when the dialog is brought up on Linux (using Suse Linux with GTK).
+On Windows, the dialog resizes appropriately to show the last line of the message.
+I have attached two screenshots
+- one on Windows, and one on Suse Linux, that show the problem.
+The last line of the message is not displayed on Linux, and the dialog has to be resized to see it.
+I have also attached a sample SWT program that reproduces the problem.
+Executing it on Windows and then Linux will show the problem.
+I suspect that the problem will also happen on other Unix platforms, although I have not confirmed it right now.
+Note:
+One workaround for this is to have the scrollbar come up using the SWT.V_SCROLL style on the Text widget, but this always shows the scrollbar even if the text inside is small and does not require a scroll.
+Although the scrollbar is disabled when the message is small, it is still displayed, and our requirement is to not have the scrollbar appear on the message box unless the text is so large that it needs to be scrolled.

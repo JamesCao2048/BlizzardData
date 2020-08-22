@@ -1,0 +1,21 @@
+Eclipse crashes at org.eclipse.swt.internal.win32.OS.ScriptGetLogicalWidths
+Created  attachment 141611   [details]
+JVM error log
+Build ID: I20090611-1540
+Steps To Reproduce:
+To reproduce:
+1.create the following class:
+import javax.servlet.ServletContext;
+public class Some
+{
+public static void main( String[] args )
+{
+ServletContext ctx;
+ctx.
+}
+}
+2.Invoke content assist after "ctx.", scroll down to log(String,Throwable) method and click on it.
+Immediately after selecting this entry eclipse crashes.
+More information:
+Env: Win32 XP SP3, Sun 1.6.0_14
+Looks like somebody has been having similar problem here:  http://dev.eclipse.org/newslists/news.eclipse.dsdp.mtj/msg00504.html

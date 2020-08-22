@@ -1,0 +1,10 @@
+"Override methods" dialog too greedy with focus, also has no vertical scrollbar
+In the linux gtk (2.0) port, the override methods dialog doesn't have a vertical
+scrollbar, so I couldn't select a method that was below the first 15 or so
+methods listed.
+Even worse, it is overly greedy with its focus, so I couldn't even access my
+window manager's features to resize the window (which was quite surprising).
+This should be reproducable by creating a class that extends something with a
+lot of methods, such as javax.swing.JTable and then selected Override methods
+from the popup menu that appears when right-clicking on the source editor.
+mike

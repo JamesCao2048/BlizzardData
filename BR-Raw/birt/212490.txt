@@ -1,0 +1,5 @@
+Bug 212490 Localized label from library display unlocalized content in viewer[10][01]
+Description: Localized label from library display unlocalized content in web viewer Build number:2.2.2.v20071211 and 2.3.0.v20071211 Steps to reproduce: 1.Copy attached properties, library and rptdesign to your project.
+2.Preview in Web Viewer Expected result: Label in first cell of the second row should display "get content from properties".
+Actual result: It display "label" but when preview in html directly will display correct content.
+Error log:n/a

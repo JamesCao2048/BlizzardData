@@ -1,0 +1,15 @@
+SWTException when loading large win32 ICO files
+Created  attachment 82902   [details]
+ICO file that cannot be loaded in 3.3
+Build ID: M20071023-1652
+Steps To Reproduce:
+The Win32 ImageLoader.load() method throws an SWT Exception when reading "large" win32 ICO image files.
+This started occurring in Eclipse 3.3.
+I will attach an example snippet and accompanying ICO resource that succeeds when it is run against version 3.2, but fails against 3.3 and above.
+More information:
+The problem is in the org.eclipse.swt.internal.image.LEDataInputStream#readInt() method.
+The expression it uses to convert 4 bytes to an integer is incorrect.
+In particular, it returns the wrong result for integers greater than 2^16
+- 1. That is why the problem only shows up with "large" ICO files.
+For smaller files, all the internal offsets and sizes are below that value.
+LEDataInputStream is a common class, but I have verified the ICO problem in 3.3 and 3.4M3 versions of the win32-x86 and win32-x86_64 SWT implementations.

@@ -1,0 +1,10 @@
+[4.2] CTabFolders in some views show overly-large buttons or cheese
+Created  attachment 203301   [details]
+screenshot of Problems view with large decoration buttons
+- observed on gtk64 with the 4.2M2 test build
+- works fine on gtk64 with the 3.8M2 test build
+- works fine on win32 with the 4.2M2 test build
+- bring up a new workspace, and note that the Problems view has very large decoration buttons (screenshot of this in this comment's attachment)
+- switch to another view, note that the buttons look
+- switch back to the problems view, it's now looking uglier (screenshot of this will be in the next comment)
+- the Markers view shows this as well (and possibly other views)

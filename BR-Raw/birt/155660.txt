@@ -1,0 +1,2 @@
+Bug 155660 [regression]DateTime parameter display incorrect value when set format
+Description: DateTime parameter display incorrectly Steps to reproduce: 1.Add a DateTime parameter into the report 2.Set the default value as 03/12/2005 10:15:30 AM 3.Change the format to anyone without date (such as Short time or medium time) 4.preview Expected result: Display correctly(like 03/12/2005 10:15:30 AM ) Actual result: wrong display (like Jan 1, 1970 10:10 AM )

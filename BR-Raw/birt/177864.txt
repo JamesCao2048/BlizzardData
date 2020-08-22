@@ -1,0 +1,5 @@
+Bug 177864 Error message is not helpful when a BIRT function call has incorrect params
+The attached report design contains a single data iten with expression BirtComp.like("a").
+This expression has syntax error because BirtComp.like() function expects two parameters.
+Run this report in BIRT viewer and the only error you will get is: org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report This error message is not helpful.
+It should have pointed to the source of the report design error, and has an exception call stack.

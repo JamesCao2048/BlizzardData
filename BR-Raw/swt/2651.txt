@@ -1,0 +1,27 @@
+JUnit test fails for Image.setBackground
+In 3.0 RC4:
+test_setBackgroundLorg_eclipse_swt_graphics_Color(org.eclipse.swt.tests.junit.Test_org_eclipse_swt_gr
+aphics_Image)
+junit.framework.AssertionFailedError: background color should have been set to green expected:<Color
+{0, 255, 0}> but was:<null>
+at junit.framework.Assert.fail(Assert.java:47)
+at junit.framework.Assert.failNotEquals(Assert.java:282)
+at junit.framework.Assert.assertEquals(Assert.java:64)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_graphics_Image.test_setBackgroundLorg_eclipse_swt_gr
+aphics_Color(Test_org_eclipse_swt_graphics_Image.java:403)
+at
+org.eclipse.swt.tests.junit.Test_org_eclipse_swt_graphics_Image.runTest(Test_org_eclipse_swt_graphics
+_Image.java:470)
+at junit.framework.TestCase.runBare(TestCase.java:127)
+at junit.framework.TestResult$1.protect(TestResult.java:106)
+at junit.framework.TestResult.runProtected(TestResult.java:124)
+at junit.framework.TestResult.run(TestResult.java:109)
+at junit.framework.TestCase.run(TestCase.java:118)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at junit.framework.TestSuite.runTest(TestSuite.java:208)
+at junit.framework.TestSuite.run(TestSuite.java:203)
+at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:421)
+at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:305)
+at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:186)

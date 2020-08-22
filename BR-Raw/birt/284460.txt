@@ -1,0 +1,21 @@
+Bug 284460 TVT35:TCT253: TVT_SVE: Truncated description in Gantt chart
+<response_by> Lena Hederberg at 2009.07.23.03.19.49
+</response_by> NLS Build Label: 20090721 Language: Swedish Must-Fix: Yes Steps To Recreate Problem: ) Select Window->Show View->Other...
+from the main menu.
+2) Expand the Report and Chart Design node and select Chart Examples.
+3) In the Chart Examples view, expand the Primitive Charts node.
+4) Select Gantt.
+Problem Description: Seems that text cannot be longer than three lines.
+There should be a scrollbar here.
+(It works in Reports) See attached screenshot Thanx Lena
+<response_by> Katia Milekhina at 2009.07.23.07.56.54
+</response_by> Same problem for Russia.
+Regards, Katia
+<response_by> Albatros at 2009.07.23.08.04.07
+</response_by> Same problem for Turkish.
+Thanks, Nilgun.
+<response_by> Anna Routsi at 2009.07.23.10.57.39
+</response_by> Also for Greek.
+Thanks, Anna
+<response_by> Matthew McClintock at 2009.07.23.11.43.19
+</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

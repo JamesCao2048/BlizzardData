@@ -1,0 +1,7 @@
+Bug 209916 Improve design of IReportItemGeneration and IReportItemPresentation
+This enhancement proposes to enhance the design of IReportItemGeneration and IReportItemPresentation to make them easier to use and less likely to change in the future.
+The idea is to replace all the setter method that need to be implemented, by a single init method passing a new interface with all the content available through getter methods.
+Detailed proposal below: 1- Deprecate all set methods, but still call them.
+Add some javadoc as follow: @deprecated implement @link #init(IReportItemPresentationInfo) instead 2- Add a new init(IReportItemPresentationInfo) method (with a @since 2.3 keyword) 3- Create a new interface IReportItemPresentationInfo with getter methods corresponding to the setter methods, and implement it internally.
+Locale getLocale(); int getResolution(); ...
+A similar fix can be done for IReportItemGeneration

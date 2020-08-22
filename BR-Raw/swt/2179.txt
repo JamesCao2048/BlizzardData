@@ -1,0 +1,66 @@
+Display.post(Event) with SWT.MouseMove moves to wrong location
+Build ID: M20060921-0945
+Steps To Reproduce:
+Create a simple SWT application (one is attached) that uses Display.post(Event) with Event type SWT.MouseMove to move the mouse to each x and/or y display coordinate.
+After each move, use Display.getCursorLocation() to find out where the cursor actually ended up.
+You will find that in some cases, especially for the lowest values of x or y, the cursor location ends up being different than it should have been.
+More information:
+When I run the attached SWT application on my system (Windows XP SP2 with a 1600x1200 screen) I get the following:
+Checking x dimension.
+Error: expected 1,600, got 0,600
+Error: expected 2,600, got 1,600
+Error: expected 3,600, got 2,600
+Error: expected 4,600, got 3,600
+Error: expected 5,600, got 4,600
+Error: expected 6,600, got 5,600
+Error: expected 7,600, got 6,600
+Error: expected 8,600, got 7,600
+Error: expected 9,600, got 8,600
+Error: expected 10,600, got 9,600
+Error: expected 11,600, got 10,600
+Error: expected 12,600, got 11,600
+Error: expected 13,600, got 12,600
+Error: expected 14,600, got 13,600
+Error: expected 15,600, got 14,600
+Error: expected 16,600, got 15,600
+Error: expected 17,600, got 16,600
+Error: expected 18,600, got 17,600
+Error: expected 19,600, got 18,600
+Error: expected 20,600, got 19,600
+Error: expected 21,600, got 20,600
+Error: expected 22,600, got 21,600
+Error: expected 23,600, got 22,600
+Error: expected 24,600, got 23,600
+Found 24 errors
+Checking y dimension.
+Error: expected 800,1, got 800,0
+Error: expected 800,2, got 800,1
+Error: expected 800,3, got 800,2
+Error: expected 800,4, got 800,3
+Error: expected 800,5, got 800,4
+Error: expected 800,6, got 800,5
+Error: expected 800,7, got 800,6
+Error: expected 800,9, got 800,8
+Error: expected 800,10, got 800,9
+Error: expected 800,12, got 800,11
+Error: expected 800,15, got 800,14
+Error: expected 800,18, got 800,17
+Found 12 errors
+The problem seems to be that the conversion from screen to "normalized" coordinates (for x or y) that is done by Display.post(Event) is such that it sometimes ends up below the bottom of the range of normalized values that map to that screen coordinate.
+So, the cursor location sometimes ends up 1 off in one dimension or the other.
+Specifically, it is these two calculations (on Windows, at least) that aren't quite adequate:
+inputs.dx = event.x * 65535 / (OS.GetSystemMetrics (OS.SM_CXSCREEN)
+- 1);
+inputs.dy = event.y * 65535 / (OS.GetSystemMetrics (OS.SM_CYSCREEN)
+- 1);
+I have found that something like the following calculation will result in normalized values in the middle of each range and works correctly (again, on Windows, at least):
+int width = OS.GetSystemMetrics(OS.SM_CXSCREEN);
+int height = OS.GetSystemMetrics(OS.SM_CYSCREEN);
+int rx = 65536 / width;
+int ry = 65536 / height;
+int inputs.dx = ((event.x * (65536
+- rx)) / (width
+- 1)) + (rx / 2);
+int inputs.dy = ((event.y * (65536
+- ry)) / (height
+- 1)) + (ry / 2);

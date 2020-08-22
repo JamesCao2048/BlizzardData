@@ -1,0 +1,26 @@
+Race condition in JavaLangTypeToResolvedTypeConverter (potentially exposed through Spring AOP)
+Build Identifier: 1.6.11
+Spinoff of  https://jira.springsource.org/browse/SPR-8070  and  Bug 337855
+There is a race condition in JavaLangTypeToResolvedTypeConverter's use of the
+'typeVariablesInProgress' Map.  This can lead to fromType() returning NULL (which eventually leads to the NPE in World).
+} else if (aType instanceof java.lang.reflect.TypeVariable) {
+if (typeVariablesInProgress.get().get(aType) != null) {
+>>>             // aType can get removed from the Map after this null check!
+return typeVariablesInProgress.get().get(aType);
+}
+The error results in the following stack trace:
+java.lang.NullPointerException: null
+at org.aspectj.weaver.World.resolve(World.java:278) ~[aspectjweaver.jar:1.6.11]
+at org.aspectj.weaver.World.resolve(World.java:218) ~[aspectjweaver.jar:1.6.11]
+at org.aspectj.weaver.World.resolve(World.java:253) ~[aspectjweaver.jar:1.6.11]
+at org.aspectj.weaver.TypeFactory.createParameterizedType(TypeFactory.java:42) ~[aspectjweaver.jar:1.6.11]
+at org.aspectj.weaver.reflect.JavaLangTypeToResolvedTypeConverter.fromType(JavaLangTypeToResolvedTypeConverter.java:88) ~[aspectjweaver.jar:1.6.11]
+I have also attached a BTrace script that shows further analysis of the problem:
+onFromType_Line91: RETURNING TYPE FROM MAP (typeVariablesInProgress: {T=T})
+onFromType_FieldGet: typeVariablesInProgress: {T=T}
+onFromType_Return: fromType(T) --> null
+We have tested a patch that wraps the 'typeVariablesInProgress' Map in a ThreadLocal.  In limited testing, this appears to have fixed the problem.  I have attached the patch.
+Reproducible: Sometimes
+Steps to Reproduce:
+Perform type resolution on classes with parameterized/generic signatures concurrently with multiple threads.
+Note: I have been unable to reproduce this issue outside of our server.  We see the issue with Spring and during Server initialization under heavy load.

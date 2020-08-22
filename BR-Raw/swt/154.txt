@@ -1,0 +1,3 @@
+Remove GdkVisual_sizeof
+Remove GdkVisual_sizeof
+- not used at all and breaks compilation on GTK 3.x

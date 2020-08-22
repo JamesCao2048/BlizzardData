@@ -1,0 +1,47 @@
+Invalid thread access error on creating a font in Motif (BBAWT)
+Using RedHat 8.0, SWT v3001 on Linux-Motif
+When a new Font is created in a new thread (not the UI thread) in SWT on Motif,
+an SWTException is thrown with the message Invalid thread access.
+Here is an example:
+Testcase
+--------
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
+
+public class TestSwtFont {
+private Display	display;
+static public void main(String[] args) {
+new TestSwtFont().runMain(args);
+}
+private void runMain(String[] args) {
+display = new Display();
+Runnable r = new Runnable() {
+public void run() {
+Font font2 = new Font(display, "Courier", 11, 0);
+}
+};
+Thread t = new Thread(r);
+t.start();
+}
+}
+And here's the stack trace:
+Stack Trace
+-----------
+org.eclipse.swt.SWTException: Invalid thread access
+Stack trace:
+java/lang/Throwable.<init>()V
+java/lang/Throwable.<init>(Ljava/lang/String;)V
+org/eclipse/swt/SWTException.<init>(ILjava/lang/String;)V
+org/eclipse/swt/SWTException.<init>(I)V
+org/eclipse/swt/SWT.error(ILjava/lang/Throwable;)V
+org/eclipse/swt/SWT.error(I)V
+org/eclipse/swt/widgets/Display.error(I)V
+org/eclipse/swt/widgets/Display.checkDevice()V
+org/eclipse/swt/graphics/Device.getWarnings()Z
+
+org/eclipse/swt/graphics/Font.init(Lorg/eclipse/swt/graphics/Device;[Lorg/eclipse/swt/graphics/FontData;)V
+
+org/eclipse/swt/graphics/Font.<init>(Lorg/eclipse/swt/graphics/Device;Ljava/lang/String;II)V
+TestSwtFont$1.run()V
+java/lang/Thread.run()V
+Note that this problem does not exist on Windows or GTK.

@@ -1,0 +1,62 @@
+Text and Spinner initially report incorrect preferred size
+SWT-gtk, v3305, gtk2-2.8.10-36, pango-1.10.2-21
+Text and spinner widgets do not seem to return their preferred size correctly
+when initially queried.
+- Run the provided test case
+- Expected output:
+text =Point {76, 23}
+spin1=Point {59, 23}
+spin2=Point {183, 61}
+- Actual output:
+text =Point {74, 21}
+spin1=Point {55, 21}
+spin2=Point {55, 21}
+Also note that as a result the on-screen layout is not as expected
+until the "Layout" button is pressed.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TextSpinnerLayoutTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+
+Font font = new Font(display, "Bitstream Vera Sans", 32, SWT.NORMAL);
+
+Text text = new Text(shell, SWT.SINGLE | SWT.BORDER);
+text.setText("Sample Text");
+
+Spinner spin1 = new Spinner(shell, SWT.BORDER);
+spin1.setValues(12345, 0, 99999, 0, 1, 10);
+
+Spinner spin2 = new Spinner(shell, SWT.BORDER);
+spin2.setValues(12345, 0, 99999, 0, 1, 10);
+spin2.setFont(font);
+
+System.out.println("text =" + text .computeSize(SWT.DEFAULT, SWT.DEFAULT));
+System.out.println("spin1=" + spin1.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+System.out.println("spin2=" + spin2.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+
+Button btn = new Button(shell, SWT.PUSH);
+btn.setText("Layout");
+btn.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+shell.layout();
+}
+});
+
+shell.setSize(300, 300);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+font   .dispose();
+display.dispose();
+}
+}

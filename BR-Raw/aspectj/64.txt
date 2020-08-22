@@ -1,0 +1,22 @@
+NPE with @args matching Argument by Type
+Build Identifier:
+This bug is related to  Bug 257833 . I'm wondering why nobody has faced and reported that bug before?!?!
+This is the top of the stacktrace i get:
+java.lang.NullPointerException
+at org.aspectj.weaver.reflect.ShadowMatchImpl$RuntimeTestEvaluator.visit(ShadowMatchImpl.java:140)
+at org.aspectj.weaver.ast.Instanceof.accept(Instanceof.java:29)
+at org.aspectj.weaver.reflect.ShadowMatchImpl$RuntimeTestEvaluator.matches(ShadowMatchImpl.java:121)
+at org.aspectj.weaver.reflect.ShadowMatchImpl.matchesJoinPoint(ShadowMatchImpl.java:78)
+This bug occurs in aspectJ 1.6.1 and 1.6.8 so i think all versions in between are affected as well. I'm using aspectJ together with Spring 2.5.6 but i think that does not matter.
+Expected behavior:
+When using @Before("args(myId,..)") to match all methods that have an argument of type MyInterface as first argument (see steps to reproduce), the methods declared argument types should be used to determine if the method matches when null is passed as first argument.
+Actual Behavior:
+NullPointerException is thrown from org.aspectj.weaver.reflect.ShadowMatchImpl$RuntimeTestEvaluator.visit(ShadowMatchImpl.java:140).
+Note: Everything works fine if null is not used as first argument. That means if your first argument is never null you'll get no exception and everything works as expected. But if there is one method you don't want to match/intercept that gets null as it's first argument the runtime exception occurs.
+Reproducible: Always
+Steps to Reproduce:
+1. define an interface MyInterface
+2. define a pointcut / empty advice using "@args(myId)", e.g.
+@Before("args(myId,..)")
+public void startsMyIdArgument(final JoinPoint jp, final MyInterface myId) { };
+3. call a method of an intercepted class with the first argument being null and you'll get a NullPointerException

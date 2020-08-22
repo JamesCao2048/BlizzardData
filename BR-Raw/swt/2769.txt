@@ -1,0 +1,9 @@
+Foreground color gets lost when painting a Path
+We have a test case which fails only on windows.
+The test turns off advanced graphics, sets the foreground color to black, and
+then draws a path.
+The path is rendered using dark blue, the previous
+foreground color used.
+The class is AdvancedGraphicsTests in the draw2d.tests project.
+the specific
+test is "testPathDraw" which is commented out to avoid failing during our builds.

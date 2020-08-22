@@ -1,0 +1,51 @@
+Focus not visible on radio buttons
+Build 20021001
+Radio buttons do not show the hashed line around them that indicates focus on
+XP.
+This works fine in 2.0.
+STEPS
+1)Run the example below
+2) Use the arrow keys to go up and down
+- you will see you do have focus on
+the radio buttons but there is no visual indication of this.
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Point;
+public class FocusButtonTest {
+public static void main(String args[]) {
+Shell shell = new Shell();
+Display display = shell.getDisplay();
+Composite buttonComposite = new Composite(shell, SWT.NULL);
+buttonComposite.setLayout(new GridLayout());
+Button radio1 = new Button(buttonComposite, SWT.RADIO);
+radio1.setText("Button 1");
+Button radio2 = new Button(buttonComposite, SWT.RADIO);
+radio2.setText("Button 2");
+//radio2.setFocus();
+Point size = buttonComposite.computeSize(SWT.DEFAULT,
+SWT.DEFAULT);
+buttonComposite.setBounds(10, 10, size.x, size.y);
+//radio2.setFocus();
+for (int i = 0; i
+< 3; i++) {
+Button b = new Button(shell, SWT.NULL);
+b.setBounds(20 + (i * 50), 120, 50, 25);
+b.setText("B::" + i);
+if (i == 1) {
+shell.setDefaultButton(b);
+System.out.println("Default should be: " +
+b.getText());
+}
+}
+buttonComposite.pack();
+shell.setBounds(100, 100, 200, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}
+}

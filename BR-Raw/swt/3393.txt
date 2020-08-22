@@ -1,0 +1,7 @@
+Empty space before handle in a coolbar
+CVS HEAD from yesterday
+If a toolbar has a shadow, there is a blank space visible after the toolbar and
+before the next gripper in a coolbar.
+Attached is a screenshot showing the
+problem, and a patch I made that fixes the problem, but only after I grab the
+adjacent gripper and move it.

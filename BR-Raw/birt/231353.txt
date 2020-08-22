@@ -1,0 +1,7 @@
+Bug 231353 Nested Exceptions eaten by ODA
+Build ID: 2.2.1.v20070709-110-s332Aw31181_2_ Steps To Reproduce: The file org.eclipse.birt.report.data.adapter.impl.DataRequestSessionImpl eats nested exceptions.
+So when errors occur in the ODA, the nested exceptions are not accessible when referencing them via IRunTask.getErrors().
+the code: try { ...
+} catch ( BirtException e ) { throw new AdapterException( e.getLocalizedMessage( ) ); } should just throw the BirtException or at least include it as the cause like this catch ( BirtException e ) { throw new AdapterException( e.getLocalizedMessage( ), e ); } I have a custom ODA and there's no way to access the nested exceptions programatically because this code is eating them.
+This may be a problem in other code too but this is where I find the problem.
+More information:

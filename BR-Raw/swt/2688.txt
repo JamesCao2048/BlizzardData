@@ -1,0 +1,7 @@
+atk_object_factory_create_accessible errors
+Running Eclipse with SWT from HEAD I get these errors all over the place.
+I am
+using atk 1.9.1 and GTK+ 2.6.7. I also saw the same errors at home with atk
+1.10.1 and GTK+ 2.6.10.
+** (Gecko:18693): CRITICAL **: atk_object_factory_create_accessible: assertion
+`ATK_IS_OBJECT_FACTORY (factory)' failed

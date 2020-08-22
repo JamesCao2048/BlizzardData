@@ -1,0 +1,29 @@
+Inconsistent behavior when dragging and releasing mouse outside Canvas on MacOSX Cocoa
+Using the following snippet,
+public class Snippet {
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell();
+shell.setLayout(new FillLayout());
+final Canvas canvas = new Canvas(shell, SWT.NONE);
+canvas.addListener(SWT.MouseExit, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("Mouse exited: " + event);
+}
+});
+canvas.addListener(SWT.MouseUp, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("Mouse up: " + event);
+}
+});
+shell.setSize(300, 300);
+shell.open();
+while (!shell.isDisposed()) {
+while (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+when clicking into the canvas area and releasing the mouse outside the viewer, on Windows XP, the mouse up event is received before the mouse exit event, while on MacOSX Cocoa, the mouse exit event is received before the mouse up event.
+As a GEF mechanism depends on the order of both events (see  bug #329986 ), and as the mechanism is working on Windows XP as well as on MacOSX Carbon, the different behavior on MacOSX Cocoa seems to be a regression.

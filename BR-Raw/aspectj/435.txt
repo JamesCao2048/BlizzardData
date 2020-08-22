@@ -1,0 +1,66 @@
+Injecting exception into while loop with break statement causes catch block to be ignored
+In order to test exception scenarios in an existing framework, I have
+created an aspect to inject an exception.  The exception is injected into
+some code running within a try/catch/finally block.  After the exception is
+thrown, I am expecting control to pass to the catch block.  However, what
+is happening is that the catch block code is not executed, control passes
+through the finally block and the (undeclared) exception is thrown to the
+calling method.
+Here is a distilled test case:
+public class MainClass {
+protected Integer counter;
+private int j;
+public static void main(String[] args) {
+MainClass mh = new MainClass();
+try {
+mh.doSomething();
+} catch (Exception e) {
+System.out.println("Exception thrown by
+doSomething!!!!!");
+e.printStackTrace();
+}
+}
+public void doSomething() {
+int i = 0;
+while (i++ < 1) {
+counter=null;
+try {
+counter = getCounter();
+if (counter == null) {
+break;
+}
+commit();
+} catch (Throwable e) {
+System.out.println("Caught exception " +
+e);
+} finally {
+System.out.println("In finally block");
+}
+}
+}
+protected Integer getCounter() {
+return new Integer(j++);
+}
+protected void commit() throws SQLException {
+System.out.println("Main.commit");
+}
+}
+The following aspect injects the exception:
+public aspect SimpleExceptionThrowingAspect {
+pointcut commitOperation() : call (* MainClass+.commit(..));
+before() throws SQLException : commitOperation() {
+throw new SQLException("Dummy SQL Exception", "55102");
+}
+}
+Expected output is:
+Caught exception java.sql.SQLException: Dummy SQL Exception
+In finally block
+Actual output is:
+In finally block
+Exception thrown by doSomething!!!!!
+java.sql.SQLException: Dummy SQL Exception        at
+nz.govt.moh.test.SimpleExceptionThrowingAspect.ajc$before$nz_govt_moh_test_SimpleExceptionThrowingAspect$1$292c82f1(SimpleExceptionThrowingAspect.aj:10)
+at nz.govt.moh.test.MainClass.doSomething(MainClass.java:32)
+at nz.govt.moh.test.MainClass.main(MainClass.java:14)
+Removing the "break;" statement from MainClass.java causes the expected
+output to be produced.

@@ -1,0 +1,37 @@
+TabFolder.setSelection() does not update focus hilight on OS X
+Created  attachment 79354   [details]
+Screenshot of the TabFolder focus highlight
+Build ID: I20070621-1340
+Steps To Reproduce:
+Run this SWT snippet:
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+final TabFolder tabFolder = new TabFolder(shell, SWT.BORDER);
+for (int i = 0; i
+< 6; i++) {
+TabItem item = new TabItem(tabFolder, SWT.NONE);
+item.setText("TabItem " + i);
+Button button = new Button(tabFolder, SWT.PUSH);
+button.setText("Page " + i);
+final int j = i;
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+tabFolder.setSelection((j == 5) ?
+0 : j + 1);
+}
+});
+item.setControl(button);
+}
+tabFolder.pack();
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+And play with the buttons...
+When the user programmatically sets the TabFolder selection, the focus highlight is not changed to the new selection on Mac OS X
+More information:

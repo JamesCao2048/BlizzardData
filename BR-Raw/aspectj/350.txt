@@ -1,0 +1,22 @@
+Unnecessary warning for ITDs
+Consider the following aspect:
+public aspect RunnableDefaultImpl {
+public void Runnable.run() {
+}
+}
+(Note that it makes little sense to have a default implementation for
+Runnable. However, I am using it to allow easy reproduction of the bug.)
+Compiling this aspect leads to the following warning:
+...testRunnableDefaultImpl.aj:9 [warning]
+this affected type is not exposed to the weaver: java.lang.Runnable [Xlint:type
+NotExposedToWeaver]
+public void Runnable.run() {
+^^^
+This warning isn't really necessary as weaver doesn't (and shouldn't) need
+to have Runnable exposed. In fact, everything works as expected already.
+Now it will be a good warning (or even error), if I was trying to introduce a
+new method, such as in the following aspect:
+public aspect RunnableDefaultImpl {
+public void Runnable.walk() {
+}
+}

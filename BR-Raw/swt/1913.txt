@@ -1,0 +1,4 @@
+StyledText.getOffsetAtLocation can't return offset at end of a line
+It doesn't seem like StyledText.getOffsetAtLocation is able to return an offset corresponding to the end of a line.
+This is unfortunate, because for any offset corresponding to the end of a line styledText.getOffsetAtLocation (styledText.getLocationAtOffset()) is not an identity transformation.
+This also appears to prevent the StyledTextDragAndDropEffect class from positioning the cursor at the end of a line for a drop.

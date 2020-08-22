@@ -1,0 +1,6 @@
+WinCE - Wait cursor does not show up
+BusyIndicator does not work on WinCE.
+The following code
+Cursor cursor = new Cursor(display, SWT.CURSOR_WAIT);
+Shell.setCursor (cursor);
+only works after the user taps on the screen, which is not useful.

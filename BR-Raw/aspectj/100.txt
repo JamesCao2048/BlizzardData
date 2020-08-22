@@ -1,0 +1,7 @@
+DocumentParser incorrectly caches DTD InputStream
+Build ID: 1.6.3
+Steps To Reproduce:
+Attempt to parse two aop.xml files using two DocumentParsers that are loaded by the same class loader. If the DTD is loaded from a JAR file you'll get an NPE at  java.util.zip.Inflater.inflateBytes(Native Method).
+More information:
+DocumentParser caches the DTD InputStream in a static final field. Many InputStreams are unusable after being closed so the same instance should not be used here.
+For InflaterInputStreams there seems to be a bug in the JRE that prevents the stream from reporting itself as closed when you use it again.

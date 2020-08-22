@@ -1,0 +1,4 @@
+[Image loading] ImageLoader and Image from stream fail with certain animated gifs
+Attached you'll find a project which demonstrates an SWT for an image which opens perfectly in other image programs but fails on SWT.
+There's only one image loading implementation which allows to load the image which is the purely native one new Image(Display,String) but because I need to show an animated give this doesn't help me a lot.
+You'll have to adjust the path to the image for to make new Image(Display,String) work for you

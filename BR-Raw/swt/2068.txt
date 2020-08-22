@@ -1,0 +1,4 @@
+Offsets when rendering text in a tree/table item
+20070319
+When I use owner draw on a TreeItem or TableItem and want to draw text at the same location as where the native painter would draw the text, I need to know a x and y offset relative to the items bound.
+I believe the offsets depend on the OS and on the font used.

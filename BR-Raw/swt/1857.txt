@@ -1,0 +1,47 @@
+MenuItem#isEnabled() works differently across platforms
+Build ID: I20070625-1500
+Here's a test case that passes on linux/gtk/x86_64 and fails on win32.
+----------------------------------------------------------------------
+package net.sf.swtbot;
+import junit.framework.TestCase;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.Shell;
+/**
+* @author Ketan Padegaonkar &lt;KetanPadegaonkar [at] gmail [dot] com&gt;
+* @version $Id$
+*/
+public class MenuQuirkTest extends TestCase {
+public class MenuExample {
+private final MenuItem	menuItem;
+public MenuExample() {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+// Create the bar menu
+Menu menuBar = new Menu(shell, SWT.BAR);
+// Create the File item's dropdown menu
+Menu fileMenu = new Menu(menuBar);
+// Create all the items in the bar menu
+MenuItem fileItem = new MenuItem(menuBar, SWT.CASCADE);
+fileItem.setText("File");
+fileItem.setMenu(fileMenu);
+// Create all the items in the File dropdown menu
+MenuItem newItem = new MenuItem(fileMenu, SWT.NONE);
+newItem.setText("New");
+// Create the first separator
+menuItem = new MenuItem(fileMenu, SWT.SEPARATOR);
+MenuItem saveItem = new MenuItem(fileMenu, SWT.NONE);
+saveItem.setText("Save");
+shell.setMenuBar(menuBar);
+shell.open();
+}
+}
+public void testSeparatorIsEnbledFailsAcrossPlatforms() throws Exception {
+MenuExample menuExample = new MenuExample();
+assertTrue(menuExample.menuItem.isEnabled());
+}
+}

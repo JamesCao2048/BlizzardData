@@ -1,0 +1,42 @@
+Using 'SWT.YES | SWT.NO' on a MessageBox shows Yes/No instead of No/Yes
+On a gtk+ system, I would expect the buttons to show up as No/Yes instead of Yes/No but the sample below shows otherwise.
+Actually, I lie, I haven't tested this snippet on a Linux system (but it _should_ work).
+You can also see the Yes/No dialog in action as follows 'Window > Preferences > Security > Secure Storage > Contents > Delete'.
+-------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+public class Test {
+
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+
+shell.open();
+
+MessageBox box = new MessageBox(shell, SWT.YES | SWT.NO);
+box.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}
+-------------
+private void createButtons() {
+if ((style & SWT.OK) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, "gtk-ok", true), SWT.OK);
+if ((style & SWT.CANCEL) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, "gtk-cancel", true), SWT.CANCEL);
+if ((style & SWT.YES) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, "gtk-yes", true), SWT.YES);
+if ((style & SWT.NO) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, "gtk-no", true), SWT.NO);
+if ((style & SWT.ABORT) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, SWT.getMessage("SWT_Abort"), true), SWT.ABORT);
+if ((style & SWT.RETRY) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, SWT.getMessage("SWT_Retry"), true), SWT.RETRY);
+if ((style & SWT.IGNORE) != 0) OS.gtk_dialog_add_button(handle, Converter.wcsToMbcs (null, SWT.getMessage("SWT_Ignore"), true), SWT.IGNORE);
+}
+-------------
+I used hot code replace to create the SWT.NO button before the SWT.YES button and then it shows up as No/Yes as expected.
+I am not sure if this is the proper fix or not though.

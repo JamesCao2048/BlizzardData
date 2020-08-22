@@ -1,0 +1,5 @@
+LTW not working when JMX is enabled
+When I enable JMX remote management on a JVM along with AspectJ load-time weaving (LTW), our Aspect doesn't appear to get woven in.
+This are the JVM arguments:
+-Dvisualvm.display.name=JdbcTimingAspectTest -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1024 -javaagent:/jars/aspectjweaver.jar -Dorg.aspectj.weaver.loadtime.configuration=com/trgr/cobalt/infrastructure/instrumentation/aspects/timing/jdbc/jdbcmonitor.xml
+Note that if I don't enable JMX remote management (by remove the -Dcom.sun.management.jmxremote.* JVM arguments), the Aspect works fine.

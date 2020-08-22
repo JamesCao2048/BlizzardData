@@ -1,0 +1,4 @@
+Bug 116416 [Smoke][Regression]The config variables defined after an invalid config variables cannot work.
+description: The config variables defined after an invalid config variables cannot work.
+Steps to reproduce: 1.run attached file config-vars-data.xml Expected result: See golden file.
+Actual result: Only the first config variable's value showed up.

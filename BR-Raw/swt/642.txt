@@ -1,0 +1,37 @@
+[Widgets] Modal state of Shells ignored after a dialog has popped up
+Build id: I20090811-0800
+1.Run the snippet below.
+2.Check that the blocked shell's button can't be clicked and that the other one is fine.
+3.Click on the modal shell's button.
+4.A dialog appears, dismiss it.
+5.Now the blocked shell's button can be clicked on! o.O
+I have checked this with all SWT dialogs (Color, Directory, File, Font, MessageBox, and Printer) and they all fail.
+I haven't tested on other operating systems, I'm using GTK+ 2.14.7 here.
+This was uncovered by  bug 275721 .
+--------------------
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Button blockedBtn = new Button(shell, SWT.PUSH);
+blockedBtn.setText("Can't click"); //$NON-NLS-1$
+shell.setSize(300, 100);
+shell.open();
+final Shell shell2 = new Shell(shell, SWT.APPLICATION_MODAL
+| SWT.DIALOG_TRIM);
+shell2.setLayout(new FillLayout());
+Button clickableBtn = new Button(shell2, SWT.PUSH);
+clickableBtn.setText("Click here"); //$NON-NLS-1$
+clickableBtn.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+PrintDialog dialog = new PrintDialog(shell2);
+dialog.open();
+}
+});
+shell2.open();
+shell2.setSize(300, 100);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();

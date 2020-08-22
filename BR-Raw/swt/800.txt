@@ -1,0 +1,45 @@
+Carbon:Calling shell fullscreen in fullscreen mode, normal window size is lost
+Build ID: I20090428-0100
+Steps To Reproduce:
+Problem seen only in Carbon.
+1.Run the snippet below.
+2.Set window to fullscreen by selecting the "fullscreen" button.
+3.Click on the button again.
+4.Try to bring the window to its original size by clicking on "normal screen" button.
+Shell returns from fullscreen mode, but not to its original size.
+public class Fullscreen {
+public static void main(String args[]) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+Button b = new Button(shell, SWT.PUSH);
+b.setText("fullscreen");
+b.setBounds(10, 10, 100, 30);
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent s) {
+shell.setFullScreen(true);
+System.out.println("fullscreen");
+}
+});
+
+Button b1 = new Button(shell, SWT.PUSH);
+b1.setText("normal screen");
+b1.setBounds(10, 10, 100, 30);
+b1.addSelectionListener(new SelectionAdapter(){
+public void widgetSelected(SelectionEvent e) {
+shell.setFullScreen(false);
+System.out.println("normal");
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+More information:
+Calling setFullScreen(true) when in fullscreen mode, overwrites the saved shell size.
+I'm not sure if it is a valid use case, but this case works fine in windows & gtk.

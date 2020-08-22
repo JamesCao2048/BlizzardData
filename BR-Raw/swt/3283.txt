@@ -1,0 +1,11 @@
+SWT exception docking a detached view
+3.0 RC3
+I was running a simple workbench and detaching/docking (I was taking screen
+shots of the navigator for some documentation) the navigator view.
+I think this
+was repeated 20 or so times.
+Then, while docked I tried to open the context menu, and the following exceptino
+occured.
+I was asked to quit the workbench because of the SWT exception.
+Not the
+funny context menu that appears, no separators.

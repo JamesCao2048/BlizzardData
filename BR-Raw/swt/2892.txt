@@ -1,0 +1,10 @@
+[Import/Export] Usability problem with the Import > Existing Project into Workspace
+1) Select File > Import > Existing Project into Workspace.
+2) Select root directory, click browse and select a directory that contains some
+projects...
+this will populate the 'Projects' tree.
+3) Notice that the radio button for 'Select archive file' is now selected (and
+not the 'select root directory' button).
+4) Click the 'Refresh' button
+- All of the projects in the 'Projects' view will
+now disappear as a result of the 'select archive file' radio button being selected.

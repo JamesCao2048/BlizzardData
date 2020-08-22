@@ -1,0 +1,9 @@
+WinCE: setClipping(x,y,w,h) throws NullPointerException
+The version swt-3.2RC1-win32-wce_ppc-arm-j2se throws a NullPointerException when calling setClipping(x,y,w,h).
+Im using j9 on a T-Mobile MDA2.
+java.lang.NullPointerException
+at org.eclipse.swt.graphics.GC.setClipping(Unknown Source)
+at org.eclipse.swt.graphics.GC.setClipping(Unknown Source)
+at xyz.swt.simpletable.SimpleTable$4.paintControl(Unknown Source)
+The previous versions from 3.1 tree are throwing a Uns.LinkException (getWindowOrgEx).
+(I know, a bug for this is always existing and marked as fixed, which is not...)

@@ -1,0 +1,6 @@
+wrong values from ScrollBar#getThumbBounds (was: [navigation] Mark Occurrences scrollbar position doesn't match)
+In Kepler the position of the mark occurrences marker right of the scrollbar doesn't match the scrollbar position.
+It is half a cm off (on full HD).
+The same applies to mark errors and that like.
+This worked much better in pre-Kepler releases.
+Use a large source file to test it, click on an identifier and see the marker being misplaced.

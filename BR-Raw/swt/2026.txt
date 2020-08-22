@@ -1,0 +1,4 @@
+BIDI: StyledText does not paint selection well when mirrored
+When we have a styledText widget, in RTL mode (Right to Left), and we select some text, the selection drawing is not perfect.
+On the first line, it seems that the higlighting begins one pixel after it should, and the first char is bolder.
+On the next lien,one character in the line is "Bolder" then the others, this happens at the last line of the selection, as shown in the pic.

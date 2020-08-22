@@ -1,0 +1,5 @@
+Bug 119792 Preview the current selected report automtically in BIRT debugger workbench
+With M3 build, after the debugger is launched, the user has to manually select the report design, and preview the report.
+In most cases, people expect the debugger will open the current selected report design file, and preview the report automatically.
+This is similar to debug a java application, the java debugger will use the main() as the entry point in the current project, start execute it.
+If the current selected file is not a report design, it should behave as it does now.

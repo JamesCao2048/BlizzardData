@@ -1,0 +1,8 @@
+scroll problem in tree, table, and list
+RC2
+- open a Java Editor  on some non-empty Java file
+- use Ctrl+O (Show Outline)
+-> even if the tree is  so small that it fits into the widget it has vertical and horizontal scroll
+bars
+-> you can scroll the tree completely out of the visible area
+Closing the outline with ESC makes it reproducible.

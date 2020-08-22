@@ -1,0 +1,5 @@
+Bug 152828 Add the projectFolder property on module
+When user doesn't set the resource folder path in designer, there should be a default working path for Birt to manage the report design and find the related resources.
+A new property should be added on Module: name: projectFolder type:URL This property only can be given from the open design method from session but should not be set after the module initialized.
+Concern about the backward compatiblity issue, a new method will be added.
+Open design with a config argument.

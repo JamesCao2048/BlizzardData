@@ -1,0 +1,7 @@
+[ajdoc] add ajdoc support for inter-type declarations and other declare forms
+Currently ajdoc only exposes the "Advises" and "Advised by" relationships from
+the structure model.
+It needs to support inter-type field and member declarations using a UI
+similar to how Javadoc presents inherited members.
+It also needs to support the other declare forms: error, warning, soft,
+parents, and precedence.

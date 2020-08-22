@@ -1,0 +1,27 @@
+Coolbar - deleting items corrupting layout
+Build 200207161002
+1.Run the attached test case.
+2.Drag the Open Type coolitem to the second row (last coolItem).
+3.Drag the Launch coolitem (last coolItem on first row) to the second row, put
+it after the Open Type item.
+4.Drag the Search coolitem to the second row, put it after the Launch coolitem.
+5.Drag the Script coolitem to the second row (last coolItem on first row), put
+it after the Search coolitem.
+6.Press the Delete button.
+This will delete the first item on the second
+row.
+Notice that the second row is removed when the delete occurs.
+The second
+row should remain.
+1.Run the attached test case.
+2.Drag the Script coolitem to the second row.
+3.Drag the Launch coolitem to the second row, put it after the Script item.
+4.Drag the Search coolitem to the second row, put it after the Launch coolitem.
+5.Drag the Open Type coolitem to the second row, put it after the Search
+coolitem.
+6.Press the Delete button.
+This will delete the first item on the second
+row.
+Notice that the Launch item is moved to the first row when the delete
+occurs.
+The Launch item should stay on the second row.

@@ -1,0 +1,3 @@
+Bug 122105 the schema should be added as 'schemaname.Procedurename' when use the stored procedure.
+Description: the schema should be added as 'schemaname.Procedurename' when use the stored procedure.
+Steps to reproduce: 1.create a new report 2.create a data source and a data set on the store procedure 3.In the window "Edit data set", drag a store procedure to the QueryText Expected Results: The stored procedure naming should be composed of the database schema name and the store procedure name

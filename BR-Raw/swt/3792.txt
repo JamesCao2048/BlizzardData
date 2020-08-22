@@ -1,0 +1,14 @@
+NT4: Need context menu on window scroll bar to keep its consistency on Win2k
+NT4  SP6a
+STEPS TO REPRODUCE:
+1.Start Eclipse
+2.From Main menu, click Window > Preferences menu
+3.Expand nodes until a scrollbar shows up (i.e.
+expand Java and Plug-In
+Development)
+4.Right click on the scroll bar
+Result: No context menu shows up for the scroll bar.
+Expected result: The context menu should show up, so user can browse the window
+by its
+context submenu, e.g.
+Scroll Up or Scroll Down.

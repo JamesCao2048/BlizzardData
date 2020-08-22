@@ -1,0 +1,7 @@
+Bug 279197 Exception keeps popping up and user need to restart eclipse after delete a master page with a grid in header [05]
+Description: Exception keeps popping up and user need to restart eclipse after delete a master page with a grid in header.
+Build number: 2.5.0.v20090603-0630 Steps to reproduce: 1.New a report with two master page: m1 and m2.2.Insert a grid in m2 header.
+3.Open Master Page tab, and Outline view, select m2 in Outline, and right click to delete.
+4.Save the report.
+Expected result: The layout should be refreshed.
+Actual result: The grid is still shown and when hover over the grid, exception is thrown out and user need to restart eclipse.

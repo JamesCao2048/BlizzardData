@@ -1,0 +1,6 @@
+Bug 147542 XML data set designer shows no available columns with attached files
+Create an XML data source using BOTH the attached XML file and XSD schema file.
+Then create a data set using /ITEMS/ITEMSROW as row mapping.
+In the next dialog to define column mapping, no available column is shown under ITEMSROW.
+If only the XML file (but not the XSD schema file) is specified the data source, all available columns are shown.
+INTERNAL REF: SCR84784

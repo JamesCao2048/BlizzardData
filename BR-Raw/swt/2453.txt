@@ -1,0 +1,50 @@
+ControlExample crash when setting background image on SEPARATOR Label
+Feb.
+14th 8:00am build
+- run the Control Example, go to the Label tab
+- check the Background Image checkbox
+- check the SWT.SEPARATOR checkbox
+
+-> this crashes the control example with the following:
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0x4A3AA7
+Function=XtWidgetToApplicationContext+0x16
+Library=/usr/X11R6/lib/libXt.so.6
+Current Java thread:
+at org.eclipse.swt.internal.motif.OS._XtTranslateCoords(Native Method)
+at org.eclipse.swt.internal.motif.OS.XtTranslateCoords(OS.java:4205)
+at org.eclipse.swt.widgets.Label.redrawWidget(Label.java:412)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:1967)
+at org.eclipse.swt.widgets.Label.setBounds(Label.java:525)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:2033)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:682)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:186)
+at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1186)
+at org.eclipse.swt.widgets.Composite.setBounds(Composite.java:964)
+at org.eclipse.swt.widgets.Control.setBounds(Control.java:2033)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:682)
+at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:186)
+at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1186)
+at org.eclipse.swt.widgets.Composite.layout(Composite.java:686)
+at org.eclipse.swt.examples.controlexample.Tab.setExampleWidgetSize(Tab.java:1122)
+at org.eclipse.swt.examples.controlexample.Tab.setExampleWidgetState(Tab.java:1137)
+at org.eclipse.swt.examples.controlexample.AlignableTab.setExampleWidgetState(AlignableTab.java:81)
+at org.eclipse.swt.examples.controlexample.LabelTab.setExampleWidgetState(LabelTab.java:177)
+at org.eclipse.swt.examples.controlexample.Tab.recreateExampleWidgets(Tab.java:1017)
+at org.eclipse.swt.examples.controlexample.Tab$1.widgetSelected(Tab.java:147)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:90)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:775)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3059)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2748)
+at org.eclipse.swt.examples.controlexample.ControlExample.main(ControlExample.java:202)
+Dynamic libraries:
+003dc000-003ee000 r-xp 00000000 03:02 670249     /lib/libnsl-2.3.4.so
+003ee000-003f0000 rwxp 00011000 03:02 670249     /lib/libnsl-2.3.4.so
+00451000-00455000 r-xp 00000000 03:02 1299185    /usr/X11R6/lib/libXtst.so.6.1
+00455000-00456000 rwxp 00003000 03:02 1299185    /usr/X11R6/lib/libXtst.so.6.1
+0048b000-004d8000 r-xp 00000000 03:02 1295143    /usr/X11R6/lib/libXt.so.6.0
+004d8000-004dc000 rwxp 0004c000 03:02 1295143    /usr/X11R6/lib/libXt.so.6.0
+005b2000-005c7000 r-xp 00000000 03:02 670237     /lib/ld-2.3.4.so
+005c7000-005c8000 r-xp 00014000 03:02 670237     /lib/ld-2.3.4.so
+0

@@ -1,0 +1,4 @@
+Bug 254933 [Improve support for stylesheets] nowrap not working
+Build ID: 3.4.1 Steps To Reproduce: 1.create a table 2.insert data elements 3.set whitespace to no wrapping in the columns, cells, and/or data elements.
+4.output to any format and the nowrap is ignored.
+More information: When I open the output excel file, the xml setting is always = ss:WrapText="1" when it should be 0.The result is the same in v2.2 and v2.3.

@@ -1,0 +1,44 @@
+Display.ayncExec(null) does not cause readAndDispatch() to return true.
+Run this snippet and stop moving the mouse or typing.
+On all platforms but cocoa, you get a sequence
+like this printed to the console.
+loop=true
+loop=false
+loop=true
+loop=false
+import org.eclipse.swt.widgets.*;
+public class SyncThread {
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+new Thread() {
+public void run() {
+while (!display.isDisposed()) {
+//1
+//				display.asyncExec(new Runnable() {
+//					public void run() {
+//					}
+//				});
+
+//2
+display.asyncExec(null);
+
+//3
+//				display.wake();
+try {
+Thread.sleep(500);
+} catch (Throwable e) {}
+}
+}
+}.start();
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+boolean events = display.readAndDispatch();
+System.out.println("loop=" + events);
+if (!events)
+display.sleep();
+}
+display.dispose();
+}
+}

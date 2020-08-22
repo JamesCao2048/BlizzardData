@@ -1,0 +1,3 @@
+Bug 177504 Engine doesn't provide SubQuery for extended item
+Engine doesn't provide SubQuery for extended item, so chart can't use container's binding to execute the query.
+If possible, engine could provide an option for extended item to choose whether engine could create the query, so extended item won't create SubQuery by itself.

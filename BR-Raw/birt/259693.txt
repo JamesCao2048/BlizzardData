@@ -1,0 +1,4 @@
+Bug 259693 Data Engine needs to provides the metadata based on the column bindings
+Build ID: BIRT 2.5 Steps To Reproduce: DTE now provides metadata of the dataset level.
+When executing a query and getting its metadata, it's supposed to get the metadata of the column binding of this query.
+More information:

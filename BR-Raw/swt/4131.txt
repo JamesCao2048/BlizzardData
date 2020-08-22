@@ -1,0 +1,10 @@
+Alt+{char} gets inserted as text
+Build 20020404
+- new text file
+- type Alt+A
+- 'A' gets inserted into the text
+Alt combinations should not get inserted.
+They are used for menu mnemonics and accelerators, and should have no effect
+if there is no corresponding mnemonic or accelerator.
+(Actually, it's not recommended to use Alt combinations as accelerators, but
+it's possible).

@@ -1,0 +1,2 @@
+Bug 145303 Parameter dialog didn't show the property change in XML Source
+Steps to reproduce: 1.New a string parameter with default value "aaa" 2.Switch to XML Source, change its default value to "bbb" 3.Switch to layout, open the parameter dialog in data explorer Expected result: Default value is changed to "bbb" Actual result: Default value is still "aaa"

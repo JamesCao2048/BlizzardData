@@ -1,0 +1,7 @@
+org.eclipse.swt.internal.Library needs a way to override java.library.path
+Bundling SWT with your application is a good way to deploy an SWT-based app without requiring the user to do a bunch of install work.
+Unfortunately, there's a hole in the deployment story at the moment-- in order to get the SWT native libs to load, the user of your Java code has to supply a correct java.library.path.
+This can be worked around with wrapper scripts, but there isn't a clean general solution.
+I propose allowing an SWT client program to specifically override the location where the SWT native libraries should be looked for.
+The mechanism I am proposing is that if the system property "swt.library.path" is set, Library should look there instead of using "java.library.path" (which cannot be changed at runtime).
+I will attach an implementation that demonstrates this.

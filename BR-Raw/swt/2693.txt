@@ -1,0 +1,20 @@
+[browser] crash whenever a Browser is disposed
+3.2M2 test build (does not happen on linux-gtk)
+- run eclipse
+- open the javadoc view
+- close it by pressing the 'X' on its tab, and eclipse will shut down with the
+error message below
+- this problem has appeared as a side effect of M2 work that changed the order
+of things that are done at dispose time (in an effort to keep widgets 'valid'
+during dispose callbacks)
+sh-3.00$ The program '<unknown>' received an X Window System error.
+This probably reflects a bug in the program.
+The error was 'BadWindow (invalid Window parameter)'.
+(Details: serial 19210 error_code 3 request_code 10 minor_code 0)
+(Note to programmers: normally, X errors are reported asynchronously;
+that is, you will receive the error a while after causing it.
+To debug your program, run it with the
+--sync command line
+option to change this behavior.
+You can then get a meaningful
+backtrace from your debugger if you break on the gdk_x_error() function.)

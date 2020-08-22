@@ -1,0 +1,47 @@
+GP on Motif Table with PNG image
+The following code GPs for me every time with:
+X Error of failed request:  BadMatch (invalid parameter attributes)
+Major opcode of failed request:  73 (X_GetImage)
+Serial number of failed request:  7824
+Current serial number in output stream:  7824
+The image is a PNG file which I will attach.
+public static void main(String[] args) {
+Display display = new Display();
+Image image = new Image(display, Test.class.getResourceAsStream("a.png"));
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+TabFolder tf = new TabFolder(shell, SWT.NONE);
+TabItem ti = new TabItem(tf, SWT.NONE);
+;
+
+Table table = new Table (shell, SWT.MULTI | SWT.BORDER | SWT.FULL_SELECTION);
+String[] titles = {" ", "C", "!", "Description", "Resource", "In Folder",
+"Location"};
+for (int i=0; i<titles.length; i++) {
+TableColumn column = new TableColumn (table, SWT.NULL);
+column.setText (titles [i]);
+}
+int count = 128;
+for (int i=0; i<count; i++) {
+TableItem titem = new TableItem (table, SWT.NULL);
+titem.setText (0, "x");
+titem.setText (1, "y");
+titem.setText (2, "!");
+titem.setText (3, "this stuff behaves the way I expect");
+titem.setText (4, "almost everywhere");
+titem.setText (5, "some.folder");
+titem.setText (6, "line " + i + " in nowhere");
+titem.setImage(image);
+}
+for (int i=0; i<titles.length; i++) {
+table.getColumn (i).pack ();
+}
+table.setSize (table.computeSize (SWT.DEFAULT, 200));
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

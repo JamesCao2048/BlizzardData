@@ -1,0 +1,11 @@
+[SWT OS X Cocoa] Eclipse causes WindowServer to consume memory
+I've only started noticing this recently (possible 3.6 but definitely 3.7).
+I'm running the latest version of SL.
+I only use the 64bit Cocoa version, so I'm not sure if the 32 bit version has a similar issue.
+During general Java development (refactoring, editing, building, etc.) the Mac OS X WindowServer memory usage increases until it consumes large amounts of real memory.
+Prior to launching Eclipse, it uses about 90MB.
+After an hour or so, it has consumed over 1GB of real memory at which point my system is pretty much unusable (I only have 3GB).
+The Quartz Debug Window List shows in excess of 150 windows have been created by Eclipse.
+Most of these appear to be tooltip popups and context menus (some are just blank rectangles) that were displayed at some point.
+Since WindowServer is responsible for handling the interaction with the graphics hardware, it appears that the UI is creating Cocoa objects that are not getting released, or something similar.
+Please let me know if there is any other debugging information I can provide.

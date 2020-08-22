@@ -1,0 +1,4 @@
+Bug 104627 Long Axis title will cause chart preview fail
+description: Long Axis title will cause chart preview fail steps to reproduce: 1.copy three line text to X Axis title 2.preview won't return chart actual result: "------------------------------------------------------------------------------
+-- There are errors on the report page:
+- There are error(s) in Chart:null Error0 : Error.ExtendedItemRenderingError(1 time)detail: There are problems(s) rendering Chart extended item .$NO-RB$ Zero length string passed to TextLayout constructor.$NO-RB$ Zero length string passed to TextLayout constructor.Zero length string passed to TextLayout constructor." display in HTML page when preview expected result: Long title will cause chart preview fail

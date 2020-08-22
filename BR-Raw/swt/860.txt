@@ -1,0 +1,14 @@
+[Widgets] [GTK2.18] Control.setZOrder broken on Gtk+ >= 2.17.3
+In Gtk+ 2.17.3 and onwards (will be the stable 2.18 release eventually) we made GdkWindow able to be non-native (see e.g.
+http://live.gnome.org/GTK%2B/ClientSideWindows ).
+I got this bug filed about eclipse:
+http://bugzilla.gnome.org/show_bug.cgi?id=591373
+And (I believe) I tracked it down to Control.setZOrder().
+This function calls XReconfigureWMWindow() directly on the XWindows from GdkWindow.
+Now, we do support native GdkWindows mixes with non-native, and if you call gdk_x11_drawable_get_xid() we will on-demand convert the window to native.
+However, if you change the stacking order (or in general the window hierarchy) behind gdks back things will start going bad, because we use knowledge of this to determine the clipping regions for windows.
+I assume you are using XReconfigureWMWindow because Gtk+ doesn't have a call for stacking a window above/below a particular sibling.
+But we can easily add such a call to Gtk+ 2.18 that could be used to fix this.
+I'm not sure how to fix this for old deployed versions of SWT though.
+For instance, this bug is likely also the same issue:
+http://bugzilla.gnome.org/show_bug.cgi?id=590404

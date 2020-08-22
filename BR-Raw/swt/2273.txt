@@ -1,0 +1,12 @@
+CCombo computeSize needs to max item width with text width
+The following few lines of code create a CCombo that has too small a preferred
+size to display all of the text:
+cCombo = new CCombo(shell, SWT.BORDER);
+for (int i = 0; i
+< 5; i++) {
+cCombo.add("item" + i);
+}
+cCombo.setText("CCombo");
+This is because the string "CCombo" is wider than "item0", "item1", etc.
+I believe the preferred width calculation needs to take the max width of the
+text (if set) and the items (if set).

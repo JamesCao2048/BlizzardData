@@ -1,0 +1,23 @@
+ImageLoader closes OutputStream on save
+I'm trying to write a bunch of images (each in their own ImageLoader) to a
+ZipOutputStream.
+This fails when I attempt to write more than one image (or
+anything at all to the OutputStream after an image), as
+ImageLoader.save(OutputStream, int) is closing the stream.
+I did a little more investigation, and the issue is actually in
+FileFormat.unloadIntoStream(), which looks like this:
+public void unloadIntoStream(ImageData image, LEDataOutputStream stream) {
+try {
+outputStream = stream;
+unloadIntoByteStream(image);
+outputStream.close();
+} catch (Exception e) {
+try {outputStream.close();} catch (Exception f) {}
+SWT.error(SWT.ERROR_IO, e);
+}
+}
+I can't come up with a compelling reason why the stream would need to be closed
+there (in the successful case, anyway).
+My solution, in the short term, is to extend ZipOutputStream and add a close()
+method that does nothing.
+That's obviously not a very clean solution, though.

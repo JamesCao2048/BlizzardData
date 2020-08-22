@@ -1,0 +1,13 @@
+OLE ref count problem when opening file for read
+This chunk of code from OleClientSite constructors:
+OleFile oleFile = new OleFile(file, contentStream, OleFile.READ);
+IStorage storage = oleFile.getRootStorage();
+storage.AddRef();
+// Open a temporary storage object
+tempStorage = createTempStorage();
+// Copy over contents of file
+int result = storage.CopyTo(0, null, null, tempStorage.getAddress());
+storage.Release();
+if (result != COM.S_OK)
+OLE.error(OLE.ERROR_CANNOT_OPEN_FILE, result);
+oleFile.dispose();

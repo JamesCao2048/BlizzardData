@@ -1,0 +1,3 @@
+StyledText and CCombo should also use preceding CLabel as accessible name
+Currently, StyledText and CCombo will look to see if a Label precedes them in the z-order (i.e.
+the Label must be a sibling, and it must be created immediately before the StyledText or CCombo), and if so, then the Label text can be used for the StyledText or CCombo's default accessible name.

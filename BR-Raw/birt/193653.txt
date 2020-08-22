@@ -1,0 +1,8 @@
+Bug 193653 Can't add Aggregation Element to Grid in Crosstab Summary Cell
+Build ID: I20070608-1718 Steps To Reproduce: 1.Create a crosstab and add levels and dimensions.
+2.Turn on a total/summary cell.
+3.Add a grid element from the palette.
+4.Try to drag & drop an aggregation element into that grid.
+More information: The UI will prevents me from doing this, although, I can successfully edit the XML source code to do this.
+This was working in 2.2RC3.This is no longer possible in my nightly build from 6/20.This is needed to add multiple aggregations like (min, max, average) to a summary cell.
+Thanks

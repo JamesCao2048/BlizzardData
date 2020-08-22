@@ -1,0 +1,20 @@
+Setting font for Table headers does not work
+Assigning a new font to a Table sets the new font for the rows within the table,
+but leaves the Table headers as they are.
+It DOES work under Win32, though.
+I looked in the SWT source code (for Win32) for table麓s setFont() method, and
+found the following ...
+Maybe something similiar needs to be done for GTK, too ?
+public void setFont (Font font) {
+checkWidget ();
+super.setFont (font);
+setScrollWidth ();
+/*
+* Bug in Windows.
+Setting the font will cause the
+* table area to be redrawn but not the column headers.
+* Fix is to force a redraw on the column headers.
+*/
+...
+doing the native stuff ...
+}

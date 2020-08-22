@@ -1,0 +1,7 @@
+Setting a GridLayout on a TabFolder gives strange behavior when resizing
+Although it doesn't make sense to set a layout on a TabFolder, I've seen this
+done many times.
+The problem is that it doesn't affect the look in windows, but
+in motif, the widgets appear in bits and pieces after resizing the window.
+Would it make sense to override setLayout() in TabFolder as a no-op, as an
+added safety mechanism, or to throw an exception?

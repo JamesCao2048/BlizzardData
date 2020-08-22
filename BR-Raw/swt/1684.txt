@@ -1,0 +1,12 @@
+Huge Cursor in huge Text control
+Build ID: M20070921-1145
+Steps To Reproduce:
+1.Run CustomControlExample on linux gtk
+2.CTabFolderTab
+3.Horizontal/Vertical Fill yes
+4.click on the CTabItems text "CTabItem Content: 0", see the huge Cursor (three letters width)
+More information:
+I think the Cursors size should be depending on the used Font.
+But here it seems to depend on the lines height?
+Interesting is also, if you play with the controls size, 10x10 make a real mini cursor.
+I use Ubuntu 7.10, GTK 2.12

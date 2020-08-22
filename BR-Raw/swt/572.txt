@@ -1,0 +1,12 @@
+[Widgets] Main menu lost when using "open in new window
+Build Identifier: I20080617-2000
+Main menu will lost after minimize and maximize the windows when there are more than one window.
+Reproducible: Always
+Steps to Reproduce:
+1.Open Eclipse, select a project.
+2.Right click the project, and choose "open in new window".
+3.When the new window opened, minimize the window, then minimize the main(parent) window.
+4.Move focus to other things(Let the Eclipse main menu changed);
+5.Maximize the new window, then maximize the main window.
+The Eclipse main menu disappeared after maximize the main window.
+If in the 5th step, firstly maximize the main window, then maximize the new window, then the main menu will disappear when new window mazimized.

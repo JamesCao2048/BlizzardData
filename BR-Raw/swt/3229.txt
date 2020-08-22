@@ -1,0 +1,51 @@
+GPF in XtSetValues on M5
+i got this 2 times in 5 minutes on M5 which means the build is unusable for me
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : 11 occurred at PC=0x40036DF0
+Function=__pthread_mutex_lock+0x18
+Library=/lib/libpthread.so.0
+Current Java thread:
+at org.eclipse.swt.internal.motif.OS.XtSetValues(Native Method)
+at org.eclipse.swt.widgets.MenuItem.setText(MenuItem.java:846)
+at
+org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:706)
+at org.eclipse.jface.action.MenuManager.update(MenuManager.java:464)
+at
+org.eclipse.jface.action.SubContributionItem.update(SubContributionItem.java:140)
+at org.eclipse.jface.action.MenuManager.update(MenuManager.java:464)
+at org.eclipse.jface.action.MenuManager.update(MenuManager.java:464)
+at
+org.eclipse.ui.internal.WorkbenchActivitiesCommandsAndRoles.updateActiveWorkbenchWindowMenuManager(WorkbenchActivitiesCommandsAndRoles.java:722)
+at
+org.eclipse.ui.internal.WorkbenchActivitiesCommandsAndRoles$9.partActivated(WorkbenchActivitiesCommandsAndRoles.java:301)
+at org.eclipse.ui.internal.PartListenerList$1.run(PartListenerList.java:49)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1127)
+at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+at
+org.eclipse.ui.internal.PartListenerList.firePartActivated(PartListenerList.java:47)
+at org.eclipse.ui.internal.WWinPartService$1.partActivated(WWinPartService.java:27)
+at org.eclipse.ui.internal.PartListenerList2$1.run(PartListenerList2.java:45)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1127)
+at org.eclipse.core.runtime.Platform.run(Platform.java:464)
+at
+org.eclipse.ui.internal.PartListenerList2.firePartActivated(PartListenerList2.java:43)
+at org.eclipse.ui.internal.WorkbenchPage.firePartActivated(WorkbenchPage.java:1212)
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:2401)
+at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:2128)
+at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:354)
+at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:334)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:745)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:766)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:749)
+at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1147)
+at org.eclipse.swt.widgets.Control.XButtonPress(Control.java:2824)
+at org.eclipse.swt.widgets.Composite.XButtonPress(Composite.java:806)
+at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:930)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2864)
+at org.eclipse.swt.internal.motif.OS.XtDispatchEvent(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2111)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1405)
+at org

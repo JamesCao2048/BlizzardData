@@ -1,0 +1,7 @@
+TextLayout#getBounds() should return minimal bounds also if width was set
+I20080129-1400
+TextLayout#getBounds() should return minimal bounds also if setWidth(int) has been called with a non-default argument.
+If the width is set to SWT.DEFAULT, clients can use getBounds() to find out how wide and how high the text would be rendered.
+This fails in the other case, since getBounds() then always answers the user-supplied width, rather than the real necessary width.
+This makes a big difference for texts that don't need to be wrapped.
+An inefficient workaround for clients is to use getBounds(0, Integer.MAX_VALUE).

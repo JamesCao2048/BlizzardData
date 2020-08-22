@@ -1,0 +1,65 @@
+[interop] swt SWT_AWT & ui ViewPart
+Hi all,
+I try to use SWT_AWT in a ViewPart but I can't get my plugin working, the
+workbench tells me there was an error creating view.
+Here it is, taken from
+platform .log :
+!ENTRY org.eclipse.ui 4 4 janv.
+23, 2004 12:04:50.246
+!MESSAGE Unhandled event loop exception
+!ENTRY org.eclipse.ui 4 0 janv.
+23, 2004 12:04:50.246
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.swt.internal.BidiUtil.windowProc(BidiUtil.java:647)
+at org.eclipse.swt.internal.win32.OS.PeekMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.PeekMessage(OS.java:1757)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1986)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1506)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1482)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:246)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:139)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:47)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:226)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:85)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:279)
+at org.eclipse.core.launcher.Main.run(Main.java:742)
+at org.eclipse.core.launcher.Main.main(Main.java:581)
+This error happens on the following line in the given snippet :
+SWT_AWT.newFrame(...) in the following snippet.
+When I execute the same outside
+a eclipse (in a shell), this works fine.
+Does somebody know how to solve this problem?
+Is it a bug?
+Thanks for help.
+Mathieu Fougeray.
+import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.ITableLabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.part.ViewPart;
+import eurobios.orsis.Messages;
+public class MyView extends ViewPart {
+public static final String ID_VIEW = "eurobios.orsis.views.BarChartView";
+//$NON-NLS-1$
+public MyView () {
+}
+public void createPartControl(Composite parent) {
+Composite comp = new Composite(parent, SWT.EMBEDDED);
+java.awt.Frame frame = SWT_AWT.new_Frame(comp);
+}
+public void setFocus() {
+}
+}

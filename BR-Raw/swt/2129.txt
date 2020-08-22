@@ -1,0 +1,5 @@
+Type-o in Snippet260
+Snippet 260 has a type-o:
+System.out.println("Count not instantiate Browser: " + e.getMessage());
+should read:
+System.out.println("Could not instantiate Browser: " + e.getMessage());

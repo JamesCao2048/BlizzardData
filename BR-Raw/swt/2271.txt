@@ -1,0 +1,5 @@
+Cursors don't show coloured if created from Image
+Eclipse 3.2
+If you create a Cursor from an Image, the result is a black/white Cursor, even if the Image is coloured.
+This was seen on Mac Intel.
+Ben

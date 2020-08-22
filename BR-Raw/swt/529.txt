@@ -1,0 +1,4 @@
+[widgets] nicer truncation of Table/Tree items
+Table/TreeItems that are too long for their columns currently get truncated at the column bound.
+Other OSX apps tend to use "..." in this case, either at the "end" of the string (eg.- iTunes), or in the middle (eg.- Finder).
+Perhaps swt's custom Table/Tree data cell should do something similar.

@@ -1,0 +1,38 @@
+IllegalStateException in ProjectionMapping toImageLine
+Build ID: M20090211-1700
+Steps To Reproduce:
+In our editor we implement documentChanged where we new up a WorkspaceModifyOperation to update markers and run it passing in the IProgressMonitor returned from AbstractTextEditor.getProgressMonitor().
+This code works fine on all platforms, but mac users who upgrade their OS to 10.5.7 experience the following errors and the editor becomes useless.
+Mac users on 10.5.6 do not see the errors.
+Strangely, if we pass in null for the progress monitor when we call WorkspaceModifyOperation.run(), the errors do not happen, even on 10.5.7.
+More information:
+java.lang.IllegalStateException
+at org.eclipse.jface.text.projection.ProjectionMapping.toImageLine(ProjectionMapping.java:480)
+at org.eclipse.jface.text.TextViewer.modelLine2WidgetLine(TextViewer.java:4905)
+at org.eclipse.jface.text.JFaceTextUtil.modelLineToWidgetLine(JFaceTextUtil.java:220)
+at org.eclipse.jface.internal.text.source.DiffPainter.paintLine(DiffPainter.java:220)
+at org.eclipse.jface.internal.text.source.DiffPainter.paint(DiffPainter.java:158)
+at org.eclipse.jface.text.source.LineNumberChangeRulerColumn.doPaint(LineNumberChangeRulerColumn.java:190)
+at org.eclipse.jface.text.source.LineNumberRulerColumn.doubleBufferPaint(LineNumberRulerColumn.java:692)
+at org.eclipse.jface.text.source.LineNumberRulerColumn.access$10(LineNumberRulerColumn.java:662)
+at org.eclipse.jface.text.source.LineNumberRulerColumn$5.paintControl(LineNumberRulerColumn.java:606)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:217)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1561)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1585)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1570)
+at org.eclipse.swt.widgets.Control.drawWidget(Control.java:850)
+at org.eclipse.swt.widgets.Canvas.drawWidget(Canvas.java:114)
+at org.eclipse.swt.widgets.Widget.kEventControlDraw(Widget.java:1069)
+at org.eclipse.swt.widgets.Canvas.kEventControlDraw(Canvas.java:191)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:370)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:862)
+at org.eclipse.swt.internal.carbon.OS.ReceiveNextEvent(Native Method)
+at org.eclipse.swt.widgets.Display.runEventLoopTimers(Display.java:3500)
+at org.eclipse.swt.widgets.ProgressBar.setSelection(ProgressBar.java:243)
+at org.eclipse.jface.dialogs.ProgressIndicator.done(ProgressIndicator.java:110)
+at org.eclipse.jface.dialogs.ProgressIndicator.beginTask(ProgressIndicator.java:92)
+at org.eclipse.jface.action.StatusLine.beginTask(StatusLine.java:349)
+at org.eclipse.jface.action.StatusLineManager$1.beginTask(StatusLineManager.java:157)
+at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1791)
+at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOpe

@@ -1,0 +1,7 @@
+Link doesn't get paint events
+Run the ControlExample and use the Select Listeners button to listen for
+SWT.Paint.
+You don't get them.
+I noticed this when browsing the code for Link.drawWidget().
+It doesn't call
+super.

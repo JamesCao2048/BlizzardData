@@ -1,0 +1,6 @@
+[Snippets] CTabFolder doesn't minimize from maximized state
+Steps to reproduce:
+- run Snippet165
+- maximize
+- attempt to minimize; observe the icons change to restore and maximize, but the tab remains maximized
+There seems to be a line missing in the minimization code that resets the layout data.

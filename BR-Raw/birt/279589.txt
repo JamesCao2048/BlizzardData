@@ -1,0 +1,2 @@
+Bug 279589 Exception blocks to remove series marker
+Description: Exception blocks to remove series marker Build number: 2.5.0.v20090609-0630 Steps to reproduce: 1, New a line chart 2, Go to Value Y Series and modify markers 3, Add a marker 4, Click Remove Expected result: The marker can be removed Actual result: Exception blocks to remove Error log:

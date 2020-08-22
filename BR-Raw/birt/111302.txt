@@ -1,0 +1,9 @@
+Bug 111302 Output file handle remains open after engine is destroyed
+I am running BIRT under the spring framework in Tomcat.
+This behavior is the same when running in Eclipse.
+I am creating a PDF file on disk.
+The file gets created, however, even though the engine has been destroyed, the file remains open.
+Since after the report is generated we are trying to email it and delete it, the email thread can't get access to the file to read or delete it.
+Adobe can't open it either.
+Once the process in Tomcat or Apache has terminated, the file is flushed and it's handle closed.
+Shouldn't the file handle be closed and the file resources released once the engine is destroyed?

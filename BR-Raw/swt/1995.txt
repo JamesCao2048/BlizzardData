@@ -1,0 +1,60 @@
+Browser can crash on RHEL3 if xulrunner is present (motif only)
+3.3RC2
+Eclipse crashes on startup with the following setup (dump is at bottom):
+- RHEL3
+- eclipse linux-motif build
+- XULRunner installed and registered
+XULRunner wants to use a newer version of libexpat.so (0.4) than RHEL3 provides (0.5).
+I've verified this by temporarily copying the libexpat.so (0.5) from RHEL4 to RHEL3 and this makes it work on RHEL3.
+The fix for this is to delete the RHEL3-specific swt xulrunner libraries (*xulrunner* and *xpcominit*).
+Making this change will result in mozilla/firefox always being used in the Browser on RHEL3, which was the case prior to eclipse 3.3. This strategy has been in place in swt's gtk port for a few months now.
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0x5a17f578, pid=32545, tid=1078408768
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_01-b08 mixed mode)
+# Problematic frame:
+# C  [libexpat.so.0+0x11578]
+#
+---------------  T H R E A D
+---------------
+Current thread (0x08081fe0):  JavaThread "main" [_thread_in_native, id=32545]
+siginfo:si_signo=11, si_errno=0, si_code=1, si_addr=0x0006a22e
+Registers:
+EAX=0x00000006, EBX=0x5a18dc1c, ECX=0x5a18d1e0, EDX=0x00000000
+ESP=0xbfff997c, EBP=0xbfff9994, ESI=0x5cb6e6f6, EDI=0x0006a1dc
+EIP=0x5a17f578, CR2=0x0006a22e, EFLAGS=0x00210246
+Top of Stack: (sp=0xbfff997c)
+0xbfff997c:   ffffffa2 ffffffef 5cb6e6f4 5d9cc340
+0xbfff998c:   08a32158 08a2f038 bfff9a34 5d15b6d9
+0xbfff999c:   0006a1dc 5cb6e6f4 088ff9d0 40015518
+0xbfff99ac:   0006a2ef 088ff9d0 bfff99fc 4000c40f
+0xbfff99bc:   08a3227c 08a32278 08a32450 5d40ed0a
+0xbfff99cc:   08a2b988 08a3a788 00000000 5d40e60a
+0xbfff99dc:   5cbcf754 5d9cc340 bfff9a14 08a37312
+0xbfff99ec:   08a2ec98 5d8d2160 00000001 5d13a756
+Instructions: (pc=0x5a17f578)
+0x5a17f568:   7d 08 89 75 f0 0f b6 56 01 84 d2 75 40 0f b6 06
+0x5a17f578:   0f b6 44 07 4c 83 e8 05 83 f8 18 77 1b 8b 84 83
+Stack: [0xbfe00000,0xc0000000),  sp=0xbfff997c,  free space=2022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libexpat.so.0+0x11578]
+C  [libxul.so+0x6816d9]
+C  [libxul.so+0x681016]
+C  [libxul.so+0x683e4d]
+C  [libxul.so+0x683859]
+C  [libxul.so+0x683547]
+C  [libxul.so+0x680ab4]  MOZ_XML_Parse+0xff
+C  [libxul.so+0x6618fe]  _ZN13nsExpatDriver11ParseBufferEPKcji+0x3e
+C  [libxul.so+0x661b8b]
+C  [libxul.so+0x678516]  _ZN8nsParser8TokenizeEi+0xfa
+C  [libxul.so+0x67712c]  _ZN8nsParser11ResumeParseEiii+0x102
+C  [libxul.so+0x67825d]
+C  [libxul.so+0x895f76]  _ZN17nsSyncLoadService24PushSyncStreamToListenerEP14nsIInputStreamP17nsIStreamListenerP10nsIChannel+0x102
+C  [libxul.so+0x895db2]
+C  [libxul.so+0x94f161]  _ZN12nsXBLService20FetchBindingDocumentEP10nsIContentP11nsIDocumentP6nsIURIP6nsIURLiPS3_+0x65b
+C  [libxul.so+0x94e99d]
+C  [libxul.so+0x94d9e2]  _ZN12nsXBLService10GetBindingEP10nsIContentP6nsIURIiPiPP12nsXBLBinding+0x134
+C  [libxul.so+0x94d004]
+C  [libxul.so+0x6d02cd]  _ZN21nsCSSFrameConstructor22ConstructFrameInternalER23nsFrameConstructorStateP10nsIContent

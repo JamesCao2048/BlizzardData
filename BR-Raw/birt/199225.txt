@@ -1,0 +1,6 @@
+Bug 199225 [Automation][Regression] NPE caught when preview attached report in web viewer
+steps to reproduce:
+- use the attached report design
+- preview in web viewer expected behavior:
+- report should be rendered properly actual behavior:
+- NPE caught

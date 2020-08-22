@@ -1,0 +1,11 @@
+[Presentations] DBCS3.3: tab label "..." isn't added in 3.0 presentation
+It look like a local ecommon issue.
+The new look simply truncation tab label string if it's too small.
+But 3.0 presentation has the same behavior.
+Driver: M6
+Platform: WindowsXP Japanese, IBM JVM 5.0 SR4 ifix
+steps to recreate.
+1- select "3.0 Presentation" for Current Presentaion at Preferences > General > Appearance
+2- re-launch the eclipse and see tab string
+Expexted result
+for a small tab, "..." should be added

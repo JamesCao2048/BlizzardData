@@ -1,0 +1,5 @@
+Cannot assume that FontStruct.per_char is != 0
+There are 8 places in GC (4 in getAdvanceWidth(), 4 in getCharWidth()) where we
+access FontStruct.per_char in order to memmove an XCharStruct.
+These cases
+must handle the possibility of this value being 0. For more info see  bug 35434 .

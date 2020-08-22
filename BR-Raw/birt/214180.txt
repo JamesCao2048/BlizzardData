@@ -1,0 +1,7 @@
+Bug 214180 Render chart reportlet in table group will contain table caption[0601]
+Description: Render chart reportlet in table group will contain table caption Build number:2.3.0.v20080103 Steps to reproduce: 1.Preview attached report in Web Viewer.
+2.Append "&__bookmark=USA&__isreportlet=true"behind the browser url, press enter.
+Expected result: Display Chart item as reportlet only, the chart reportlet has three data.
+Actual result: Display correct chart report containing three data but at the same time, table caption displays, too.
+Table caption belongs to outer table item and it should not be generated as a part of chart reportlet.
+Error log:n/a

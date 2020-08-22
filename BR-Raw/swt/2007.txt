@@ -1,0 +1,12 @@
+[DND] On Linux, the event.time is negative in dragOver event
+Build ID: M20070212-1330
+Steps To Reproduce:
+1.Create an application shell with only two buttons
+- one is a drag source and
+another one is a drop target.
+2.When drag from the drag source button to hover on the drop target button,
+the drop target button displays a dropdown shell under it.
+Expected result: the event.time inside the dragover should be positive and continue increase.
+Actual result: It works as expected on Windows, but the value is negative in Linux gtk
+More information:
+SWT version: 3344

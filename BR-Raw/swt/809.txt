@@ -1,0 +1,2 @@
+Reduce NSString garbage in NSAutoreleasePool
+There are some place where we are putting a lot of NSString objects into the pool when we could be releasing them right away.

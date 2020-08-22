@@ -1,0 +1,11 @@
+DND copy and link are allowed with default mouse gesture
+RC2
+- observed on all motif platforms
+- run the DND example
+- select the DragSource and DropTarget checkboxes
+- select the Text Transfer checkboxes for each
+- select the SWT.DROP_COPY checkboxes for each
+- deselect the SWT.DROP_MOVE checkboxes for each
+- drag from the left example widget to the right example widget and note that
+it is allowed, which should not be the case since CTRL was not pressed
+- a similar behaviour occurs with SWT.DROP_LINK

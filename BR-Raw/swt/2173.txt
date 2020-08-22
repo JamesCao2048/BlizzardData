@@ -1,0 +1,64 @@
+Holding mouse down on Table blocks Display.asyncExec and syncExec
+Hold the mouse down on a table so that a MouseDown event isn't triggered (don't move the mouse or release the button).
+All runnables submitted with Display.asyncExec and/or Display.syncExec pile up in the queue until the MouseDown is triggered.
+This only appears to be an issue with Table.
+Here's a sample:
+----------------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableItem;
+public class TableMouseDownAsyncExecBlocker {
+public static void main (String [] args) {
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setLayout(new GridLayout());
+
+final Table table = new Table (shell, SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
+table.setSize (200, 200);
+
+for (int i=0; i<12; i++) {
+TableItem item = new TableItem (table, SWT.NONE);
+item.setText(0, "Item " + i);
+}
+
+final Label label = new Label(shell, SWT.NONE);
+label.setText("#");
+label.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+Thread t = new Thread("Runner") {
+Runnable runner = new Runnable() {
+int i;
+public void run() {
+if(!label.isDisposed() && label.getDisplay() != null) {
+String s = "#" + i++;
+label.setText(s);
+System.err.println(s);
+}
+}
+};
+public void run() {
+while(!table.isDisposed() && table.getDisplay() != null) {
+try {
+Thread.sleep(1000);
+Display.getDefault().asyncExec(runner);
+}
+catch(Exception x) {}
+}
+}
+};
+t.setDaemon(true);
+t.start();
+
+shell.pack ();
+shell.open ();
+
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}

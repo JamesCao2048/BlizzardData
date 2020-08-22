@@ -1,0 +1,8 @@
+Bug 197454 Export report as PDF and Postscript does not work correctly [1200]
+Description: Export report as PDF and Postscript does not work correctly.
+Build number: 2.2.1.v20070719-0630 Steps to reproduce: 1.New a report with a label, set its visibility to "hide in html".
+2.Preview in Web Viewer, click "Export Report" button, select format as "PDF" or "Postscript".
+3.Click "Print as PDF" button.
+Expected result: The label is shown.
+Actual result: The label disappears.
+Error log: N/A

@@ -1,0 +1,40 @@
+[table] [SWT.CHECK] SWT.CHECK on a table does not behave consistently
+A table with SWT.CHECK does not render the column label correctly.
+On a macosx/carbon, the first column header("foo") appears on the second column which is not the checkbox.
+On gtk and even win32, the column "foo" is the same as column as the checkbox.
+Testcase:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(1, false));
+Table table = new Table(shell, SWT.SINGLE | SWT.BORDER | SWT.FULL_SELECTION | SWT.HIDE_SELECTION | SWT.H_SCROLL | SWT.CHECK);
+table.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+table.setLinesVisible(true);
+table.setHeaderVisible(true);
+
+TableColumn tableColumn = new TableColumn(table, SWT.LEAD);
+tableColumn.setText("foo");
+
+TableColumn tableColumn2 = new TableColumn(table, SWT.LEAD);
+tableColumn2.setText("bar");
+
+TableColumn tableColumn3 = new TableColumn(table, SWT.LEAD);
+tableColumn3.setText("baz");
+
+new TableItem(table, SWT.NONE).setText(new String[]{ "cell-1-1", "cell-1-2", "cell-1-3"});
+new TableItem(table, SWT.NONE).setText(new String[]{ "cell-2-1", "cell-2-2", "cell-2-3"});
+
+for (int i = 0; i
+< table.getColumnCount(); i++) {
+table.getColumn(i).pack();
+}
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

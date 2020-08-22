@@ -1,0 +1,11 @@
+NPE during compilation of class file with pointcuts
+I commented out a static nested aspect inside a class to let me do a rename refactoring in Eclipse. This results in the following exception, which even a full rebuild won't fix. The class does have pointcut definitions inside of it. Commenting those out avoids the problem (though it caused other syntax errors...)
+java.lang.ArrayIndexOutOfBoundsException
+at org.aspectj.weaver.patterns.IfPointcut.findResidueInternal(IfPointcut.java:186)
+at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:269)
+at org.aspectj.weaver.patterns.AndPointcut.findResidueInternal(AndPointcut.java:93)
+at org.aspectj.weaver.patterns.Pointcut.findResidue(Pointcut.java:269)
+at org.aspectj.weaver.patterns.AndPointcut.findResidueInternal(AndPointcut.java:93)
+at or ... ses
+when weaving
+when batch building BuildConfig[C:develglassbox.metadata.pluginsorg.eclipse.ajdt.coreglassboxAgent.generated.lst] #Files=210

@@ -1,0 +1,7 @@
+Bug 191201 Legend Block Outline is set in Layout [0001]
+Description: Legend Block Outline is set in Layout.
+Build number: 2.2.0.v20070606-0630 Steps to reproduce: 1.New a chart, tick Legend->Layout->Outline Visible.
+2.Select the chart, input script: function afterDrawBlock(block, icsc) { importPackage(Packages.java.lang); if (block.isLegend()) { if (block.getOutline( ).isVisible()==true) System.out.println("Visible"); else System.out.println("Invisible"); } } 3.Preview.
+Expected result: When tick Legend->Layout->Outline Visible and input the script, system print "Visible".
+Actual result: System print "Visible".
+Error log: N/A

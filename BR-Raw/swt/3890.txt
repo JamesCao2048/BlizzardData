@@ -1,0 +1,9 @@
+PrinterData startPage/endPage invalid when page >32767
+build 20021114
+-Run the code below
+-Leave the default page number 65535
+-Press OK
+->The startPage and endPage is
+-1
+Any page value > 32767 entered in the dialog results in
+-1 in the PrinterOptions

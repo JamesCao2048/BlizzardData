@@ -1,0 +1,32 @@
+Combo value changes without event
+Try the following:
+1) Click on the combo
+2) Type the letter "f"
+3) Click on the down triangle
+4) Click again to close (or lose focus)
+The text displayed is now "foo", but no events (selection or modify) were fired
+to indicate this.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+final Combo combo = new Combo(shell, SWT.NONE);
+
+combo.setItems(new String[] {"foo","bar"});
+combo.setBounds(10, 10, 90, 30);
+combo.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+System.out.println("Widget Selected" + combo.getText());
+}
+});
+
+combo.addModifyListener(new ModifyListener() {
+public void modifyText(ModifyEvent e) {
+System.out.println("modify " + combo.getText());
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+}

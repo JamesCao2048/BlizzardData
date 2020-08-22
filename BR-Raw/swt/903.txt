@@ -1,0 +1,33 @@
+SWT: crash when calling setParent() on Linux
+Created  attachment 138197   [details]
+examples for both GLCanvas and TableViewer that crash on Linux 3.5M1 and later
+Build ID: I20090528-2000
+Steps To Reproduce:
+1.Create a Shell
+2.Add a GLCanvas
+3.open the Shell
+4.Create a second Shell
+5.call glCanvas.setParent(secondShell)
+6.open the second Shell
+More information:
+There appears to be a general problem with calling setParent() to add widgets to a Shell that is not yet open.
+It is useful to add the widgets to the new shell before opening so that the new shell can be opened with the correct size.
+We have encountered this bug in our RCP in two seemly unrelated scenarios: (a) moving a GLCanvas to a new Shell; and (b) moving a TableViewer to a new Shell.
+In both cases, SWT crashes.
+Examples test cases are attached for both scenarios.
+In the GLCanvas case, the test application immediately crashes.
+In the TableViewer case, the TextCellEditor Text widgets appears in a tiny new window rather than inside the table.
+If you try to close the new window, the application crashes.
+The problem seems to be related to a missing native pointer to the GTK window.
+In both cases, calls to OS.GTK_WIDGET_WINDOW(widget) return 0 at some point.
+In the GLCanvas example, the application crashes when then 0 window pointer is passed to OS.gdk_x11_drawable_get_xdisplay (window) at GLCanvas.java line 257.
+In the TableViewer case, Eclipse prints out:
+(SWT:28745): Gdk-CRITICAL **: gdk_window_new: assertion `window != NULL' failed
+The bug appears all the way back to Eclipse 3.5M1 and up through 3.5RC3.Ecplise 3.4.2 does not exhibit the bug.
+The bug does not appear on Windows.
+Breaks on:
+Ubuntu 9.04 and Centos 4
+Eclipse 3.5M1 through 3.5RC3
+Works on:
+Windows
+Eclipse 3.4.2 and earlier

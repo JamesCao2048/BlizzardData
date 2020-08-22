@@ -1,0 +1,4 @@
+Bug 217599 Support create a new cube in the chart builder[1301]
+Description: In the chart builder, user can create a new dataset, while could not create a new cube.
+Since now chart can use cube data, so i think this function shall be supported.
+Build version:2.3.0.v20080203-0800 Expected result: When click "Create New..." button in the "Select Data" of Chart builder, there shall be a selection for user if he wants to create a dataset or a cube.

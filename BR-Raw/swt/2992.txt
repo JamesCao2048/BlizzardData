@@ -1,0 +1,62 @@
+Table.getClientArea() width is inconsistent with win32
+I'm testing this on Windows and Mac OS X and comparing the two, using SWT from
+the 3.0.1 RCP binary releases.
+The Mac code for SWT Table seems to be inconsistent with the getClientArea()
+JavaDoc, which reads:
+public Rectangle getClientArea()
+Returns a rectangle which describes the area of the receiver
+which is capable of displaying data (that is, not covered
+by the "trimmings").
+I have a Table in a TableViewer in a View and the Table has a single
+TableColumn.
+I'm keeping that TableColumn's width the same width as the Table
+with a ControlListener.
+When the Table is resized the TableColumn's width is
+adjusted to match it.
+On Windows the code works perfectly because SWT on Windows follows the above
+JavaDoc.
+Here's the code for the listener's controlResized() method:
+public void controlResized(ControlEvent event) {
+super.controlResized(event);
+
+Object source = event.getSource();
+if (!(source instanceof Table)) return;
+
+Table table = (Table)source;
+if (table.getColumnCount() != 1) return;
+
+TableColumn column = table.getColumn(0);
+column.setWidth(table.getClientArea().width);
+}
+On Windows no horizontal scrollbars appear in the Table because the size is
+exactly the available space for the Table.
+When a vertical ScrollBar is
+necessary (and visible) the column size adjusts properly to take this into
+account.
+The Table.getClientArea() width doesn't include the width of the
+ScrollBar when the ScrollBar is visible.
+On Mac OS X the getClientArea() method is too wide by 20 pixels.
+I know this
+because if I subtract 20 pixels
+[column.setWidth(table.getClientArea().width-20)] then the width is perfect on
+the Mac
+-- and then (of course) 20 pixels too small on Windows.
+The Mac version doesn't seem to be following the JavaDoc.
+Maybe the vertical
+ScrollBar and/or trimmings aren't being subtracted from the available size for
+the Table?
+It should also be noted that on Mac OS X when I subtracted the width of the
+Table's vertical ScrollBar (table.getVerticalBar().getSize().x) from
+Table.getClientArea() that *still* wasn't enough space and the horizontal
+ScrollBar appeared (short by 4 pixels or so).
+On Mac OS X a Table's scrollbar
+placeholders are there all of the time and the scrollbars appear and disappear
+as they are needed.
+So I'm guessing that there is also some trimming not being
+accounted for in the Mac OS X Table.getClientArea() calculation.
+On the other hand the JavaDoc isn't clear about whether it considers a Table's
+ScrollBar to be part of the Table's available space or not.
+If it does, then
+the Mac OS X implementation may be correct except for the space for the trimmings.
+Either way the inconsistency between Windows and Mac OS X versions of SWT makes
+it difficult to write code that behaves the same on both platforms.

@@ -1,0 +1,33 @@
+AIX 5.3 motif - Characters above u007f show as "iso8859" in some swt widgets
+Build ID: I20070503-1400
+Steps To Reproduce:
+Download eclipse-SDK-3.3M7-aix-motif.zip
+JVM = IBM 1.5 SR4 (pap32dev-20070201)
+AIX env LANG=en_US
+1.Cut and paste the following into a Java Class
+public class TestString {
+public static void main(String[] args) {
+char ok = 'u007e';
+char not_ok = 'u00c1';
+System.out.println(ok);
+System.out.println(not_ok);
+}
+}
+2.Add a breakpoint on the first System.out and run in debug
+3.Look at the 2 variables in the Variables View
+>> ok should show a ~
+>> not_ok  should show A accented
+4.RMB on the first variable
+-> Change Value
+>> Change Primitive Value dialog appears and is primed with the value of variable ok
+5.do the same for the 2nd variable (not_ok) and you will see "iso8859-1" for the value.
+>> this should be an A accent
+It appears that any character above 'u007f' will show as "iso8859-1"
+Any string that has one of these characters will cause the whole string to be replaced with "iso8859-1"
+More information:
+This appears to be related to the font but I can't say for sure.
+In 3.2.2 this was worse because even the TreeItem in the Variables view will show "iso8859-1" if one or more characters > 0x7f was in the text of the TreeItem
+NOTE: it is hard to say how many widgets are affected by this.
+Since 3.2.2 some appear to be fixed.
+(JDT Variables view TreeItem seems to work in 3.3)
+Without knowing the extent of the problem and the fact that complete strings fail and only show "iso8859" this has the potential to be a severe problem on the AIX platform.

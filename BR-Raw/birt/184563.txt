@@ -1,0 +1,2 @@
+Bug 184563 Need clearAggregateOns() api on ComputedColumnHandle
+Since current aggregateOn in ComputedColumn could be a list, we need a convenient method to clear all the values in one call.

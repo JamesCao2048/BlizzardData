@@ -1,0 +1,10 @@
+StyledText with block selection: Typing at virtual caret on empty line inserts char after caret
+I20090511-2000
+CustomControlExample > Styled Text:
+- add an empty line
+- activate block selection
+- click in the middle of the empty line
+=> "virtual" caret appears
+- type 12345
+=> line becomes "2345|1" (caret at |)
+=> first character should also be inserted in front of the caret

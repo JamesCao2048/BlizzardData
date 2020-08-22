@@ -1,0 +1,7 @@
+StyledText - StyleRange hashCode throws NullPointerException
+The implementation of StyleRange's hashCode method assumes the object has a
+foreground and background color.
+This is a bad assumption.
+When trying to
+put StyleRanges without a foreground or background color into a java.util.Set,
+a NullPointerException is thrown.

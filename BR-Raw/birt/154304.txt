@@ -1,0 +1,2 @@
+Bug 154304 Script generated in SVG chart when scripting disabled
+If I use the Birt Chart API to render a chart to an SVG document and I call RunTimeContext.setScriptingEnabled(false) to disable scripting, the resulting document still contains scripts.

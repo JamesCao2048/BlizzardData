@@ -1,0 +1,2 @@
+Bug 288786 Show unused cube levels in Crosstab filter's expression builder[1102]
+Description: Show unused cube levels in Crosstab filter's expression builder[1102] Build number: 2.5.1.v20090908-0630 Steps to reproduce: 1, New a cube which has some dimensions for example dimension1:country->state->city dimension2:year->quater 2, New a crosstab using dimension2 3, New a filter and open expression builder to select Current Data Cube Expected result: Show all cube levels Actual result: Unused levels are not shown Error log:

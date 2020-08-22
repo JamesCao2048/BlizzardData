@@ -1,0 +1,18 @@
+Rename refactoring wizard butchers clipboard
+M9 (GTK)
+KDE 3.2.2
+Gentoo
+---
+If one does a rename (noticed this with a class, but probably affects all
+"renamable" artifacts), then the contents of the "New Name" field gets put into
+the clipboard, erasing what was there previously.
+This, IMHO, is Not Good (ie/
+Very Bad (TM)).
+To reproduce:
+- copy something.
+- paste (to prove to yourself that that's what the clipboard contains)
+- start a rename (right-click on a class, Refactor->Rename).
+- No need to complete the rename, just hit cancel.
+- try pasting again
+-- notice that what you are pasting is the contents of the
+"New Name" field.

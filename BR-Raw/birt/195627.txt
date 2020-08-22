@@ -1,0 +1,8 @@
+Bug 195627 Mouse Double Click drill link to Internal bookmark dos not work for PNG [13]
+Description: Mouse Double Click drill link to Internal bookmark dos not work for PNG.
+Build number: 2.2.0.v20070706-0959 Steps to reproduce: 1.New a Chart with bookmark "bookmark", page break after Always.
+2.New another chart, output format is PNG, in "Format Chart" tab add interactivity for Value Series, select Mouse Double click as Event, select Action Hyperlink to internal bookmark "bookmark".
+3.Preview, click the series of the second chart.
+Expected result: Can link to the first chart.
+Actual result: Can not link to the first chart.
+Error log: N/A

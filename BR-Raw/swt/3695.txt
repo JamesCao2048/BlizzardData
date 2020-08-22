@@ -1,0 +1,14 @@
+"Jumping" layout
+I20030516
+MacOS 10.2.6
+Lots of relayout operations appear to be "jumpy" because an intermediate layout
+becomes visible.
+One good example is:
+- open preference dialog
+- select first node "Workbench"
+- use the arrow down key to move selection to next node
+Observe: on some layout changes the whole window contents (including the tree) first
+moves downward and immediately jumps back to the correct position.
+Sometimes even
+screen cheese remains in the top left corner (probably an interaction between tree
+selection rectangle and a tree repositioning)

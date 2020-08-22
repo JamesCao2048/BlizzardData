@@ -1,0 +1,9 @@
+Bug 207250 Check blank value for datetime type parameter from url.[0002][0705]
+Description: Check blank value for datetime type parameter from url.
+Build number:2.3.0.v20071023 Steps to reproduce: 1.New a datetime parameter mydt,listbox, tick off isRequired.
+2.Preview in external browser and add "&dt=" in url, press enter.
+Expected result: Error message to indicate blank value isn't allowed for this parameter.
+Actual result: No error message and blank value is accepted.
+I tried to new a jsp and use
+<birt:paramDef> to pass the blank value and the blank value is accepted,too.
+Error log:n/a

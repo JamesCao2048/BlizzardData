@@ -1,0 +1,6 @@
+Bug 276663 Query result is affected when computed column order changes
+Check the attached report design, there're four computed columns defined in the data set.
+If column["datetime"] is defined as the first column, then the data result is ok (check the preview result page in data set editor).
+If move column["datetime"] to the last, then column["date"], column["time"] returns the empty values, while column["time_agg"] still returns the correct result.
+It seems the order of the computed column definitions will affect the query processing.
+If this is unexpected, we need fix it, otherwise it's better to throw a runtime exception to notify this situation, currently it fails silently.

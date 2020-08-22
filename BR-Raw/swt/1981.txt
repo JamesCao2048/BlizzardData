@@ -1,0 +1,53 @@
+If shell is set disabled before it's open, top menu can pop up after it's shown.
+If shell is disabled before it's open, then top menu can pop up after the shell is open.
+Test code like this:
+============================================================
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class Test {
+/**
+* @param args
+*/
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setEnabled(false);
+Menu menuBar = new Menu (shell, SWT.BAR);
+shell.setMenuBar (menuBar);
+MenuItem fileItem = new MenuItem (menuBar, SWT.CASCADE);
+fileItem.setText("&File");
+Menu fileMenu = new Menu (shell, SWT.DROP_DOWN);
+fileItem.setMenu(fileMenu);
+MenuItem exitItem = new MenuItem (fileMenu, SWT.PUSH);
+exitItem.setText("&ExittCtrl+E");
+exitItem.setAccelerator(SWT.CTRL+'E');
+exitItem.addListener(SWT.Selection, new Listener () {
+public void handleEvent (Event e) {
+System.exit (0);
+}
+});
+
+Text text = new Text(shell, SWT.SINGLE);
+text.setText("I'm disabled");
+text.setLocation(10, 10);
+text.pack();
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+===================================================
+My swt version is 3.3.0.v3344b
+You will find that top menu can pop up when the shell is open.
+But the menu cannot be executed and the text is not editable.
+There's a related bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=180863

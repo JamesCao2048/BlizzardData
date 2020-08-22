@@ -1,0 +1,35 @@
+Can't asyncExec setting of text in virtual Tree
+Run the following example.
+Items in tree don't appear unless you move the mouse over them.
+CellDataProc is not firing for the async setText().
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout (new FillLayout());
+final Tree tree = new Tree(shell, SWT.VIRTUAL | SWT.BORDER);
+tree.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event event) {
+final TreeItem item = (TreeItem)event.item;
+display.asyncExec(new Runnable() {
+public void run() {
+TreeItem parentItem = item.getParentItem();
+String text = null;
+if (parentItem == null) {
+text = "node "+tree.indexOf(item);
+} else {
+text = parentItem.getText()+"
+- "+parentItem.indexOf(item);
+}
+item.setText(text);
+}
+});
+}
+});
+tree.setItemCount(29);
+shell.setSize(400, 300);
+shell.open();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

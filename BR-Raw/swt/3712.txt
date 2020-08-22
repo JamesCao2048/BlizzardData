@@ -1,0 +1,51 @@
+Crash when opening a MessageBox on a Text focusLost event
+Opening a MessageBox when a Text receives a focusLost event (e.g.
+when user
+press Tab) crashes on linux-gtk (works fine in linux-motif and windows).
+System: Red Hat 9, gtk2-2.2.1
+Eclipse: 2.1 release, libswt-gtk-213
+--- GTK error message
+----
+(<unknown>:3061): Gtk-WARNING **: GtkEntry
+- did not receive focus-out-event.
+If you
+connect a handler to this signal, it must return
+FALSE so the entry gets the event as well
+
+Gtk-ERROR **: file gtkentry.c: line 4302 (blink_cb): assertion failed:
+(GTK_WIDGET_HAS_FOCUS (entry))
+aborting...
+--- code snippet
+---
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+
+
+public class OpenMessageBox {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+final Text text = new Text(shell, SWT.BORDER);
+text.addFocusListener(new FocusAdapter() {
+public void focusLost(FocusEvent event) {
+MessageBox warning = new MessageBox(text.getShell(),
+SWT.ICON_WARNING);
+warning.setMessage("You entered: " + text.getText());
+warning.open();
+}
+});
+Button button = new Button(shell, SWT.PUSH);
+button.setText("OK");
+shell.pack();
+shell.open();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}

@@ -1,0 +1,34 @@
+NPE in Widget.filters
+build I20030610
+Noticed the following in my log after shutdown.
+Sorry, no idea how it was triggered.
+!ENTRY org.eclipse.ui 4 4 Jun 11, 2003 16:25:50.284
+!MESSAGE Unhandled exception caught in event loop.
+!ENTRY org.eclipse.ui 4 0 Jun 11, 2003 16:25:50.284
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+at java.lang.Throwable.<init>(Throwable.java)
+at java.lang.Throwable.<init>(Throwable.java)
+at java.lang.NullPointerException.<init>(NullPointerException.java:63)
+at org.eclipse.swt.widgets.Widget.filters(Widget.java)
+at org.eclipse.swt.widgets.Text.sendKeyEvent(Text.java:986)
+at org.eclipse.swt.widgets.Control.sendKeyEvent(Control.java:1633)
+at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:2936)
+at org.eclipse.swt.widgets.Text.WM_CHAR(Text.java:1533)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1399)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1382)
+at org.eclipse.core.internal.boot.InternalBootLoader.run
+(InternalBootLoader.java:858)
+at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
+at java.lang.reflect.AccessibleObject.invokeImpl(Native Method)
+at java.lang.reflect.AccessibleObject.invokeL(AccessibleObject.java:207)
+at java.lang.reflect.Method.invoke(Method.java:271)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
+at org.eclipse.core.launcher.Main.run(Main.java:747)
+at org.eclipse.core.launcher.Main.main(Main.java:583)

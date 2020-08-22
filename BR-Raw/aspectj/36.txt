@@ -1,0 +1,4 @@
+Performance - improve pointcut expensiveness calculation
+Build Identifier: 1.6.12
+I'm able to reduce the AspectJ LTW startup overhead on the app I'm working on, from 95 seconds down to 47 seconds, just by switching the "expensiveness" of THIS_OR_TARGET and CALL in PointcutEvaluationExpenseComparator.  It seems to make sense to me that THIS_OR_TARGET is more expensive since it requires type matching (under profiler ExactTypePattern.matchesInstanceof() is what shows up as very expensive), whereas CALL can evaluate very quickly in most cases since it just fails to match on method name.  I'm not sure if this is specific to my particular usage, but cutting 50% of the LTW startup is a very nice improvement.  If you think this change doesn't make sense for everyone, I can work on a patch that makes this configurable somehow.  Thanks.
+Reproducible: Always

@@ -1,0 +1,42 @@
+taskitem resets image to null
+public static void main335(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setImage(new Image(display, "/Users/Felipe/Desktop/workspaceCocoa/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Eclipse.icns"));
+TaskItem item = display.getSystemTaskBar().getItem(null);
+item.setOverlayText("hi");
+item.setOverlayText("");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+result
+app shows the default icon (console)
+expect
+app shows Eclipse.icns icon
+fix
+### Eclipse Workspace Patch 1.0
+#P org.eclipse.swt
+Index: Eclipse SWT/cocoa/org/eclipse/swt/widgets/TaskItem.java
+===================================================================
+RCS file: /cvsroot/eclipse/org.eclipse.swt/Eclipse SWT/cocoa/org/eclipse/swt/widgets/TaskItem.java,v
+retrieving revision 1.2
+diff
+-u
+-r1.2 TaskItem.java
+--- Eclipse SWT/cocoa/org/eclipse/swt/widgets/TaskItem.java	2 Mar 2010 21:30:16
+-0000	1.2
++++ Eclipse SWT/cocoa/org/eclipse/swt/widgets/TaskItem.java	10 Mar 2010 15:09:27
+-0000
+@@
+-210,7 +210,7 @@
+NSDockTile dock = app.dockTile ();
+boolean drawImage = overlayImage != null && dock.badgeLabel () == null;
+if (!drawImage && !drawProgress && !drawIntermidiate) {
+-		app.setApplicationIconImage (null);
++		app.setApplicationIconImage (defaultImage);
+return;
+}

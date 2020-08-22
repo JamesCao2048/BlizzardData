@@ -1,0 +1,79 @@
+NPE in CCombo.setVisible(false) if some of affected listeners has disposed it
+<p>
+I get NPE when setting visibility of CCombo to false if this CCombo gets disposed by one of its listeners, that were called during visibility loss.
+</p>
+<p>
+Here is the exception itself:
+<br>
+<code>
+java.lang.NullPointerException
+at org.eclipse.swt.custom.CCombo.setVisible(CCombo.java:1362)
+at org.eclipse.swt.bugs.CComboSetVisibleNPE1$2.mouseUp(CComboSetVisibleNPE1.java:48)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:137)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:928)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3377)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2997)
+at org.eclipse.swt.bugs.CComboSetVisibleNPE1.main(CComboSetVisibleNPE1.java:68)
+</code>
+</p>
+<p>
+And here is the reason, the setVisible method of CCombo:<br>
+<code>
+public void setVisible (boolean visible) {
+super.setVisible(visible);
+if (!visible) popup.setVisible(false); //
+<< NPE here if disposed
+}
+</code>
+</p>
+<p>
+A simple snippet:<br>
+<code>
+package org.eclipse.swt.bugs;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
+import org.eclipse.swt.events.FocusAdapter;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+/*
+* Bug Snippet: NPE in CCombo.setVisible(false) if some of affected listeners has disposed it
+*/
+public class CComboSetVisibleNPE1 {
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+shell.setText("Demo for NPE in CCombo.setVisible(false)");
+
+final CCombo combo = new CCombo(shell, SWT.NONE);
+combo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+combo.setItems(new String[] {"First", "Second", "Third"});
+
+combo.addFocusListener(new FocusAdapter() {
+public void focusLost(FocusEvent e) {
+combo.dispose();
+}
+});
+
+final Label label = new Label(shell, SWT.BORDER);
+label.setText("Click Here to Hide CCombo and get NPE!");
+combo.setLayoutData(new GridData(GridData.FILL_BOTH));
+
+label.addMouseListener(new MouseAdapter() {
+public void mouseUp(MouseEvent e) {
+if (!combo.isDisposed()) {
+combo.setFocus();
+try {
+combo.setVisible(false);
+} catch (NullPointerException npe) {
+StringWriter stringWriter = new StringWriter();
+PrintWrite

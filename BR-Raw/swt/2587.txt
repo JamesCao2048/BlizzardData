@@ -1,0 +1,6 @@
+Cheese in StyledText on Linux
+I20051213-0010, GTK+ 2.2.4, pango 1.2.5.
+See attached screenshot.
+When clicking around in the Java editor, the lines "shimmer" and often jump up and down.
+The root cause seems to be the use of TextLayout.getLineHeight(int) to handle dynamic line heights.
+Special casing fixedLineHeight mode in StyledTextRenderer.drawLine() seems to work around the problem.

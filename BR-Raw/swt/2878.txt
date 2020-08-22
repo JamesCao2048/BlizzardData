@@ -1,0 +1,10 @@
+API spec on Transform.rotate
+the javadoc for rotate says that "zero degrees is at 3:00".
+This doesn't really
+make sence because the argument represents a change or delta, and not the new
+angle.
+If I call
+rotate(90);
+then calling
+rotate(0);
+will not return the rotation back to its initial place.

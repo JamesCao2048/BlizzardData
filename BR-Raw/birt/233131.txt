@@ -1,0 +1,5 @@
+Bug 233131 Shared resources has no content after start birt.
+description: Shared resources has no content after start birt.
+build id: 2.3.0 v20080521-0630 steps to reproduce: 1.Switch to Resouce Explorer, make sure there are files under shared resources folder.
+2.Restart birt.(File->Restart) Expected result; Files are shown under shared resources folder.
+Actaul result: No file is shown under shared resources folder until you press F5 to refresh.

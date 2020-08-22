@@ -1,0 +1,5 @@
+Cleanup pre GTK 2.4 leftovers in Table.
+Removing all of the old and unused code to prevent it from keeping calls
+to old and deprecated functions.
+Commit:
+http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=577117336293c07be4f5aaa89587023a992402e2

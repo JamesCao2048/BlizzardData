@@ -1,0 +1,13 @@
+[Browser] Snippet173 doesn't block popup window
+Snippet173 opens cnn.com, but they don't open any popup windows.
+I tried creating my own HTML that does call window.open onload, but Snippet173 didn't block that window from opening either.
+My HTML:
+<html>
+<head>
+</head>
+<body onload="window.open(' http://www.eclipse.org/swt/','SWT ')">
+<FORM>
+Hello World
+</FORM>
+</body>
+</html>

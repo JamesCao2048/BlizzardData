@@ -1,0 +1,4 @@
+CBanner needs to use both the left and right sides to compute its height
+The CBanner currently calculates its height based on the height of the left hand side.
+The new trim work needs it to be capable of checking both sides and basing its height on the max of the two areas.
+(Soory for the delay in opening this; I guess I coulda/shoulda opened it right after my meeting with Veronika)

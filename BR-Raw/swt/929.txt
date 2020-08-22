@@ -1,0 +1,56 @@
+SWT Editor Example does not work RC3
+Build ID: I20090528-2000
+Steps To Reproduce:
+Examples come from:  http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops/S-3.5RC3-200905282000/eclipse-examples-3.5RC3-win32.zip
+What steps will reproduce the problem?
+1.Install RC3 and move examples into dropins
+2.Open the SWT Example Launcher
+3.Open the Standalone/Text Editor
+-- Error Details
+--
+Date: Thu Jun 11 11:29:56 CEST 2009
+Message: Plug-in "org.eclipse.swt.examples" was unable to instantiate class "org.eclipse.swt.examples.texteditor.TextEditor".
+Severity: Error
+Product: Eclipse 1.2.0.20090604-2252 (org.eclipse.epp.package.rcp.product)
+Plugin: org.eclipse.equinox.registry
+Session Data:
+eclipse.buildId=I20090528-2000
+java.version=1.6.0_10-rc
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=nl_NL
+Framework arguments:
+-product org.eclipse.epp.package.rcp.product
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86
+-product org.eclipse.epp.package.rcp.product
+-clean
+-console
+-consolelog
+Exception Stack Trace:
+java.lang.InstantiationException: org.eclipse.swt.examples.texteditor.TextEditor
+at java.lang.Class.newInstance0(Unknown Source)
+at java.lang.Class.newInstance(Unknown Source)
+at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:170)
+at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:874)
+at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+at org.eclipse.swt.examples.launcher.ItemDescriptor.createItemInstance(ItemDescriptor.java:62)
+at org.eclipse.swt.examples.launcher.LauncherView.launchItem(LauncherView.java:194)
+at org.eclipse.swt.examples.launcher.LauncherView.access$2(LauncherView.java:177)
+at org.eclipse.swt.examples.launcher.LauncherView$3.widgetSelected(LauncherView.java:97)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3880)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3473)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+at org.ecl

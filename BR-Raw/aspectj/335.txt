@@ -1,0 +1,21 @@
+weaveinfo messages not reported if applying declare @method on an ITD'd method
+Given the following class:
+@interface Annotation{}
+aspect B {
+
+declare @method : public * C.anotherMethod(..) : @Annotation;
+}
+class C {
+}
+aspect D {
+public void C.anotherMethod(String s) {
+}
+public void C.anotherMethod() {
+}
+}
+I would expect a two weaveinfo messages of the form:
+weaveinfo 'public void C.anotherMethod()' (pr99191_4.java) is annotated with
+@Annotation method annotation from 'B' (pr99191_4.java:3)
+weaveinfo 'public void C.anotherMethod(String)' (pr99191_4.java) is annotated
+with @Annotation method annotation from 'B' (pr99191_4.java:3)
+However, only the two "intertyped" messages are coming out.

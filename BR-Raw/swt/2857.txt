@@ -1,0 +1,26 @@
+DBCS3.1:Eclipse hangs when activate IIMF input in search scope of Help
+OS:
+<RHEL 4.0>
+Language:
+<Traditional Chinese>
+Build level:
+<Eclipse SDK 3.1 M6
+- I20050506-1600>
+JDK version:
+<IBM JDK 1.4.2 SP1a>
+Test case #:
+<5.3 Search scope with NLS name(Help)>
+Summary: DBCS3.1:Eclipse hangs when activate IIMF input in search scope of Help
+Steps to recreate problem:
+1- Install Eclipse SDK and NL pack
+2- Click "Help" from menu
+-> select "Help Content"
+-> Click "Search Scope", a
+Search Scope dialog pop up.
+3- Select "Search all topics", Click "New", the New Search List dialog pop up.
+4- Then try to active IIMF input method by "CTRL+SPACE" key in order to input
+DBCS characters, but Eclipse hangs.
+No response from Eclipse.
+Error:  Eclipse hangs and can't switch or change any input method.
+Expected Result:  IIMF input should be working properly for inputing/key in
+DBCS characters.

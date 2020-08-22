@@ -1,0 +1,4 @@
+GC.setLineAttributes() uses caps const instead of join
+See  bug#210412 .
+We should fix this after 3.5 ships.
+The constant values are the same, so it will not affect the behavior.

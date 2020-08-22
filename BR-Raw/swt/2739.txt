@@ -1,0 +1,32 @@
+Support discovery of AWT Frames by walking the Widget hierarchy
+There is no way to get a reference to an embedded AWT frame by walking the
+SWT hierarchy.
+( well there is some reference to the created frame that is kept internally
+implicitely in the Listeners created internally by SWT_AWT, but that is the only
+place.)
+This makes automating GUI tests impossible with tests frameworks when AWT is
+embedded in SWT, since you cannot discover fully what your UI is made of.
+Getting a reference to the embedded AWT object when walking the SWT hierarchy
+would help quite a bit.
+Mixed applications (a frequent use case for folks migrating from Swing to RCP)
+are not testable for now.
+I don't know what could be the right solution that could be both portable and
+clean, but here are some ideas:
+Conceptually the AWT frame is a child of the composite is has been embedded in.
+Potentially a control type could be created for an embedded AWT object, and made
+a children of the receiving composite.
+There is a precedent for that with
+OleFrame.
+That control could either be found from the Composite#_getChildren or
+Composite#_getTabList and feed the getChildren normally.
+Or reference to the
+frame coudl be kept as a member of the control and injected into the Children.
+In addition, this could be an opportunity standardize the semantics of the AWT
+frame creation with something like new AwtFrame(Composite parent) and
+deprecating the old way using SWT_AWT.new_frame.
+I do not know is if there is native way to get a Frame once created using
+natives, but the frame should have a OS handle I guess, and could make its way
+as a control.
+Just some wild thoughts.
+BTW, I have not looked into the SWT in AWT but I guess the pb may be similar but
+not as an important use case IMHO.

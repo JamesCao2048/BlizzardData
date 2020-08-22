@@ -1,0 +1,36 @@
+TextLayout implementation on VISTA platform cannot correctly render some gb18030 characters(Mongolian Baiti, Microsoft Yi Baiti etc)
+Build ID: M20060629-1905
+Steps To Reproduce:
+1.Create a shell.
+2.Create a TextLayout instance and set some gb18030 characters as its text.
+3.Run the application and find that these characters
+cannot display correctly.
+More information:
+The code snippet used to reproduce this problem:
+/**
+* @param args
+*/
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setSize(358, 217);
+shell.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event event) {
+TextLayout layout = new TextLayout(display);
+event.gc.setForeground(display.getSystemColor(SWT.COLOR_BLUE));
+String text = "sss u1820, u1821, ua000, ua001";
+//                        event.gc.drawText(text, 0, 0);
+layout.setText(text);
+layout.setWidth(shell.getBounds().width);
+layout.draw(event.gc, 0, 0);
+layout.dispose();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}

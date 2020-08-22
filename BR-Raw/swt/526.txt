@@ -1,0 +1,30 @@
+Disabled button in status bar becames enabled by itself; then handling fails with NotEnabledException
+Build Identifier: 3.6, 20100617-1415
+A command was added to status bar:
+<extension point="org.eclipse.ui.menus">
+
+<menuContribution locationURI="toolbar:org.eclipse.ui.trim.status?after=HEAD_GROUP">
+
+<toolbar id="...">
+
+<command ...>
+...
+Handler is enabled and disabled depending on application state; the command and button are enabled/disabled correctly when state is changed.
+When certain actions are performed in eclipse, e.g.
+when a file is opened in editor, the button suddenly becomes enabled.
+When user clicks the buton, an exception is logged:
+Failed to execute item com.klocwork.inforceeclipse.errorhandling.statusBarSyncNotification
+org.eclipse.core.commands.NotEnabledException: Trying to execute the disabled command
+<id>
+at org.eclipse.core.commands.Command.executeWithChecks(Command.java:469)
+at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+...
+Yes, the command and handler are still disabled.
+I tried to debug it, and it appears that the WorkbenchWindow.run() method first tries to disable toolbar (not separate buttons), and then enables toolbar back after operation is complete.
+The cocoa implementation of ToolBar.setEnabled(false) simply disables all buttons, and then ToolBar.setEnabled(true) enables all buttons, even if they were disabled before (see ToolBar.enableWidget).
+Other implementations (e.g.
+GTK) of ToolBar.setEnabled keep enabled state of buttons separately.
+I believe this must be fixed in SWT; but also can be fixed in WorkbenchWindow
+- wondow can restore buttons' state based on commands state.
+Reproducible: Always

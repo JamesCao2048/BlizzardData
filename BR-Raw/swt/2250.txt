@@ -1,0 +1,8 @@
+Bad drawing in Tree and Table
+This happens in 3.2 and HEAD.
+1) Run ControlExample
+2) Select Tree or Table tab
+3) select SWT.MULTI radio button
+First problem, the tree/table is gray instead of white
+4) Ctrl+select items 0, 1, 2, 1 (again) in that order, note that item draws badly (no string).
+The Tree also draws badly if you expand after selecting.

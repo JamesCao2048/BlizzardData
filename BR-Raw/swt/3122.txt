@@ -1,0 +1,6 @@
+[consistency] TabFolder fires two MenuDetect events
+- run the ControlExample, TabFolder tab
+- turn on the MenuDetect listener
+- right-click on a tab in the example TabFolder
+
+-> on gtk there will be two MenuDetect events fired

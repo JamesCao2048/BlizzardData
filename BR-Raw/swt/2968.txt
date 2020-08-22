@@ -1,0 +1,8 @@
+Fixed size columns used even if fixed_height_mode not supported
+To support VIRTUAL, we need to use the fixed_height_mode property which is new
+in GTK+ versions 2.3.2 and up.
+However, this means we need to size the column
+ourselves.
+For versions that don't support fixed_height_mode, we might as well
+let GTK+ do the column sizing itself (using AUTOSIZE) since it will be faster.
+I am not sure if maybe we need to do something similar in Tree...

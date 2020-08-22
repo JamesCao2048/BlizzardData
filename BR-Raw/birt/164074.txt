@@ -1,0 +1,3 @@
+Bug 164074 Height property of label has no effect in PDF [0300]
+Description: Height property of label has no effect in PDF Build number: 2.2.0.v20061110-0630 Step to reproduce: 1.inset a label in the report 2.set its Height properties 1in in property view 3.set a background color to the label 3.preview it in PDF and web viewer Actual result: Height property of label has no effect in PDF.
+Expected result: It can work.

@@ -1,0 +1,72 @@
+Keyboard focus not given to selected element in tree
+3.1M2
+1.Enable link in Navigator (or Package Explorer) view
+2.Click on the first element in the list
+3.Open two editors
+4.Click on each tab, watch the highlighted element change and the view scroll
+5.Click on the tab for the Navigator view
+6.Use the arrow keys, notice that keyboard navigation is still at some old
+location and not at the currently selected row
+This may be related to  bug 26388 .
+The following snippet reproduces the problem.
+When you click the button, the
+selected item changes, but if you tab into the list you will notice that
+keyboard focus has not changed.
+public class SelectedFocus {
+static int sel = 8;
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+final Composite parent = new Composite(shell, SWT.NONE);
+parent.setLayout(new FillLayout());
+parent.setLayoutData(new GridData(GridData.FILL_BOTH));
+final Composite c1 = new Composite(parent, SWT.NONE);
+c1.setLayout(new FillLayout());
+final Button button = new Button(shell, SWT.NONE);
+button.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+button.setText("Select");
+final Table t1 = makeTable(c1);
+
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+t1.setSelection(sel);
+sel += 8;
+}
+});
+
+shell.pack();
+shell.setSize(400, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+public static Table makeTable(Composite parent) {
+Table table = new Table(parent, SWT.MULTI | SWT.BORDER
+| SWT.FULL_SELECTION);
+table.setLinesVisible(true);
+table.setHeaderVisible(true);
+String[] titles = { "Position", "Foobar" };
+for (int i = 0; i
+< titles.length; i++) {
+TableColumn column = new TableColumn(table, SWT.NULL);
+column.setText(titles[i]);
+}
+int count = 256;
+table.removeAll();
+for (int i = 0; i
+< count; i++) {
+TableItem item = new TableItem(table, SWT.NULL);
+item.setText(0, String.valueOf(i));
+item.setText(1, "line " + i + " in nowhere");
+}
+for (int i = 0; i
+< table.getColumnCount(); i++)
+table.getColumn(i).pack();
+table.pack();
+return table;
+}
+}

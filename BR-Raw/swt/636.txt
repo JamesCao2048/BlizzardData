@@ -1,0 +1,38 @@
+NPE in Tree#sendMeasureItem()
+I20100412
+I have code that is running fine on 3.5 (cocoa x86_64), when I move to 3.6 I get the following NPE.
+If I run this code on 3.6 on other platforms, it runs fine.
+This indicates to me that there is a problem in the Cocoa implementation that is probably a regression.
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2446)
+at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:274)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4813)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_stret(Native Method)
+at org.eclipse.swt.internal.cocoa.NSCell.cellSize(NSCell.java:34)
+at org.eclipse.swt.widgets.TreeItem.getBounds(TreeItem.java:467)
+at com.sonatype.s2.project.ui.internal.views.ProjectCatalogTreeRenderer.measureItem(ProjectCatalogTreeRenderer.java:291)
+at com.sonatype.s2.project.ui.internal.views.ProjectCatalogTreeRenderer.handleEvent(ProjectCatalogTreeRenderer.java:262)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Display.sendEvent(Display.java:3725)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1333)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1356)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1341)
+at org.eclipse.swt.widgets.TreeItem.calculateWidth(TreeItem.java:278)
+at org.eclipse.swt.widgets.Tree.calculateWidth(Tree.java:247)
+at org.eclipse.swt.widgets.Tree.setScrollWidth(Tree.java:2765)
+at org.eclipse.swt.widgets.Tree.setScrollWidth(Tree.java:2757)
+at org.eclipse.swt.widgets.Tree.setRedraw(Tree.java:2752)
+at org.eclipse.jface.viewers.AbstractTreeViewer$5.run(AbstractTreeViewer.java:1475)
+at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1392)
+at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:403)
+at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1353)
+at org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:1466)
+at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:274)
+at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1634)
+at com.sonatype.s2.project.ui.catalog.view.ProjectCatalogView.createViewer(ProjectCatalogView.java:261)
+at com.sonatype.s2.project.ui.catalog.view.ProjectCatalogView.createPartControl(ProjectCatalogView.java:131)
+at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:375)
+at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:229)
+at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:595)
+at org.eclipse.ui.internal.WorkbenchPage$ActivationList.setActive(WorkbenchPage.java:4218)
+at org.eclipse.ui

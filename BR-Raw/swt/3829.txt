@@ -1,0 +1,61 @@
+StyledText - StringIndexOutOfBoundsException in ControlExample
+build 20021001
+To reproduce:
+-Go to the text tab of the ControlExample
+-Enable SWT.WRAP style
+-In the StyledText widget select the word One (I double click)
+-Select bold for the word
+-Set the size to 100x100
+->StringIndexOutOfBoundsException in DefaultContent.getTextRange
+Stack trace:
+Stack trace:
+java/lang/Throwable.<init>()V
+java/lang/String.<init>([CII)V
+org/eclipse/swt/custom/DefaultContent.getTextRange(II)Ljava/lang/String;
+org/eclipse/swt/custom/WrappedContent.getLine(I)Ljava/lang/String;
+org/eclipse/swt/custom/StyledText.wordWrapResize(I)V
+org/eclipse/swt/custom/StyledText.handleResize
+(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/custom/StyledText$15.handleEvent
+(Lorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/widgets/EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)
+V
+org/eclipse/swt/widgets/Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;)V
+org/eclipse/swt/widgets/Widget.sendEvent(I)V
+org/eclipse/swt/widgets/Control.WM_SIZE(II)
+Lorg/eclipse/swt/internal/win32/LRESULT;
+org/eclipse/swt/widgets/Scrollable.WM_SIZE(II)
+Lorg/eclipse/swt/internal/win32/LRESULT;
+org/eclipse/swt/widgets/Composite.WM_SIZE(II)
+Lorg/eclipse/swt/internal/win32/LRESULT;
+org/eclipse/swt/widgets/Control.windowProc(III)I
+org/eclipse/swt/widgets/Display.windowProc(IIII)I
+org/eclipse/swt/internal/win32/OS.DefWindowProcW(IIII)I
+org/eclipse/swt/internal/win32/OS.DefWindowProc(IIII)I
+org/eclipse/swt/widgets/Scrollable.callWindowProc(III)I
+org/eclipse/swt/widgets/Control.windowProc(III)I
+org/eclipse/swt/widgets/Display.windowProc(IIII)I
+org/eclipse/swt/internal/win32/OS.SetWindowPos(IIIIIII)Z
+org/eclipse/swt/widgets/Control.setBounds(IIIII)V
+org/eclipse/swt/widgets/Control.setBounds(IIII)V
+org/eclipse/swt/layout/GridLayout.layout
+(Lorg/eclipse/swt/widgets/Composite;Z)V
+org/eclipse/swt/widgets/Composite.WM_SIZE(II)
+Lorg/eclipse/swt/internal/win32/LRESULT;
+org/eclipse/swt/widgets/Group.WM_SIZE(II)
+Lorg/eclipse/swt/internal/win32/LRESULT;
+org/eclipse/swt/widgets/Control.windowProc(III)I
+org/eclipse/swt/widgets/Display.windowProc(IIII)I
+org/eclipse/swt/internal/win32/OS.CallWindowProcW(IIIII)I
+org/eclipse/swt/internal/win32/OS.CallWindowProc(IIIII)I
+org/eclipse/swt/widgets/Group.callWindowProc(III)I
+org/eclipse/swt/widgets/Control.windowProc(III)I
+org/eclipse/swt/widgets/Display.windowProc(IIII)I
+org/eclipse/swt/internal/win32/OS.EndDeferWindowPos(I)Z
+org/eclipse/swt/widgets/Composite.resizeChildren(Z
+[Lorg/eclipse/swt/internal/win32/WINDOWPOS;)Z
+org/eclipse/swt/widgets/Composite.resizeChildren()V
+org/eclipse/swt/widgets/Composite.setResizeChildren(Z)V
+org/eclipse/swt/widgets/Composite.layout(Z)V
+org/eclipse/swt/widgets/Composite.layout()V
+org/eclipse/swt/examples/controlexample/Tab.setExampleWidgetSize()V

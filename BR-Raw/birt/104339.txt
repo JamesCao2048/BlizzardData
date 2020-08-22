@@ -1,0 +1,2 @@
+Bug 104339 [SPM]JDBC driver jar hasn't been copied to viewer package when add a new driver jar file through Manage Driver
+Redhat Linux WS3.0 Description: JDBC driver jar hasn't been copied to viewer package when add a new driver jar file through Manage Driver Steps to reproduce: 1.Click Manage Driver 2.Add a new driver Expected result: The new jar file is copied to jdbc package and viewer package Actual result: It was copied to jdbc package but not to viewer package

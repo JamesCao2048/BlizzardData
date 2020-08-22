@@ -1,0 +1,5 @@
+Bug 208190 [Regression]A blank column occurs when export report to excel file[1203]
+Description: Export report to excel file, a blank column is created on the front of the columns exported.
+Build version:2.3.0.v20071031-0800 Steps to reproduce: 1.Create a sample datasource and dataset.
+2.Pull the dataset to the report layout,and add a group on the table.
+3.Preview in web viewer, export the report to excel file, a blank column is created as the first column.

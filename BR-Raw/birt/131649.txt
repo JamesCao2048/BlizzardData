@@ -1,0 +1,14 @@
+Bug 131649 Designer generates wrong column reference expression for inner table
+Open the attached report design (test1.rptdesign).
+This design uses a 2-level table to list offices and their employees.
+It runs fine.
+Now imagine that the designer wants to append a country name suffix to each employee name (e.g., "Diane Merphy / USA").
+To do this double click on the inner list's Data Item to edit its expression.
+Click on "Available Data Sets", choose data set "offices", then double click on column "COUNTRY".
+An expression row["COUNTRY"] is added to the expression text.
+So you can construct an expression like this: row["FIRSTNAME"] + " " + row["LASTNAME"] + " / " + row["OFFICECODE"] However this report will not run.
+The problem is that row["OFFICECODE"] is not valid in the inner table.
+In order for the inner table to access the outer table's columns, the expression needs to use the "rows" object.
+So the correct behavior when the user double clicks on "COUNTRY" is to insert rows[0]["COUNTRY"] into the expression.
+The first index (an integer) to the "rows" array is the 0-based index of the nested table which contains the data set (0 = outermost table, 1 = first level inner table etc.).
+The report designer should figure out the correct index number by looking at the nesting levels of all tables.

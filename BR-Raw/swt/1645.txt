@@ -1,0 +1,4 @@
+TOGGLE Buttons inherit background with SWT.INHERIT_DEFAULT
+Set a custom background color and background mode SWT.INHERIT_DEFAULT on a composite that contains PUSH and TOGGLE buttons.
+Although both button types look the same, the TOGGLE buttons inherit the background color of the composite but PUSH buttons do not.
+This will probably not happen with Windows, as Windows buttons can not take a background color.

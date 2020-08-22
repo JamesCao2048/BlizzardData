@@ -1,0 +1,3 @@
+Snippet207 doesn't rotate 45掳
+The snippet says it is rotating 45掳 but this is not the case because Math.cos() and Math.sin() use radians and not degrees.
+The snippet has to look like this to really rotate 45掳 one needs to pass "45 * Math.PI / 180" to the 2 functions.

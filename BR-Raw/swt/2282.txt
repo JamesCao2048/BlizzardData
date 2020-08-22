@@ -1,0 +1,10 @@
+Path Clipping does not work properly on Mac, GTK and Motif
+When applying a path clipping in the GraphicsExample application, the clipping does not appear as expected.
+Steps for reproducing:
+- Check out org.eclipse.swt.examples from CVS
+- Put the attached file in your workspace under
+org.eclipse.swt.examples.graphics
+- Run the graphics example
+- In the tree, expand "Clipping" and select "Path Clipping"
+- Select different items in the drop-down menu.
+- Note: that these clipping examples appear correctly on Windows.

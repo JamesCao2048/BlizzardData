@@ -1,0 +1,8 @@
+Combo.setItem(int, String) does not preserve the selection index
+Assume you have a combo with two items, "A" and "B", where "B" is currently
+selected (i.e.
+getSelectionIndex() returns 1).
+If you then call
+combo.setItem(1,"C"), the combo will be empty and getSelectionIndex will return
+-1.
+Why does it not preserve the "selection index"?

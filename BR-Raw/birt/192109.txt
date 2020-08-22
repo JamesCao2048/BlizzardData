@@ -1,0 +1,6 @@
+Bug 192109 [Regression]Can't set time type for data item[0001]
+Description: Bind a data item to "Date" type column in dataset, can't set its type to "Time" type.
+Regression bug:180899 Build version:2.2.0.v20070612-0630 Steps to reproduce: 1.New a sample data source, new a data set: select * from CLASSICMODELS.ORDERS.
+2.Drag a data item from Palette to Layout, binding to row["ORDERDATE"], select type to Time.
+3.Double click the data item in the layout, the type is changed to "Date Time" type.
+Expected Result: Time type could be set on date type data.

@@ -1,0 +1,7 @@
+Bug 304626 [Regression] Interactivity does not work for Swing Highlight/Toggle Visibility/Hyperlink
+Description: Interactivity does not work for Swing Highlight/Toggle Visibility/Hyperlink.
+Build number: 2.6.0.v20100304-0630 Steps to reproduce: 1.Run (1)org.eclipse.birt.report.tests.chartsrcorgeclipsebirtreporttestschartinteractivitySwingHighlightViewer.java.
+(2)org.eclipse.birt.report.tests.chartsrcorgeclipsebirtreporttestschartinteractivitySwingToggleVisibilityViewer.java (3)org.eclipse.birt.report.tests.chartsrcorgeclipsebirtreporttestschartinteractivitySwingURLRedirectViewer.java 2.Check the interactivity.
+Expected result: Highlight/Toggle Visibility/Hyperlink works.
+Actual result: Highlight/Toggle Visibility/Hyperlink does not work.
+Error log: N/A.

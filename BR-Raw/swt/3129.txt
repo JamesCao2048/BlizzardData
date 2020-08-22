@@ -1,0 +1,6 @@
+[consistency] Combo does not fire some KeyDowns
+- run the ControlExample, go to the Combo tab
+- listen for KeyDown and KeyUp
+- give focus to the example Combo on the page
+- press Arrow-Down and Arrow-Up to go through the Combo's items and note that
+no KeyDowns ever arrive, though the KeyUps do

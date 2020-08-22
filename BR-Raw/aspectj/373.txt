@@ -1,0 +1,10 @@
+Reduce footprint of JoinPoint.StaticPart objects
+Tests show that each object consumes 180+ bytes. For a large project (1000+
+classes) where an aspect is used to implement a pervasive cross-cutting
+concern e.g. exception logging this can lead to >1MB of additional heap space.
+Two possible approaches could be:
+1. Break literal String used by Factory.makeXXXSig() methods into component
+parts e.g. package, class, method. ... names. These could then be shared
+automatically by the JVM as interned Strings.
+2. Lazy instantiation of handler static JPs in the catch block.
+Any enhancements could be enabled by a compiler option similar to -XlazyTjp.

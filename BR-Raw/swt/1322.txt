@@ -1,0 +1,20 @@
+GC stops drawing after setting transform with dy=-1
+Build ID: Build id: I20080617-2000
+Steps To Reproduce:
+1.Set a transform with dy=-1 on a GC
+2.Try to draw a line.
+Nothing will appear, and further drawing operations will silently fail too
+Example code:
+Transform transform = new Transform(gc.getDevice(), 1, 0, 0, 1, 0,
+-1);
+gc.setTransform(transform);
+gc.drawLine(0, 0, 100, 100);  //==> line will not appear!
+If I change dy=-1 to
+-1.5f, everything works correctly.
+With values near
+-1.0 (like
+-1.0001), the drawing is grossly inaccurate.
+The bug seems to be in GC.checkGC(): it contains a line
+data.gdipYOffset = 0.5f / scaling;
+That line gets executed with scaling==-0.0.Then data.gdipYOffset becomes
+-Inf ==> GC is toast!

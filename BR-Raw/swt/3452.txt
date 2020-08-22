@@ -1,0 +1,37 @@
+Cheese with Toolbar on parent with SWT.NO_BACKGROUND
+Run the following snippet on Windows XP with a manifest.
+The toolbar does not
+draw properly and appears as a black rectangle.
+
+If the ToolBar style is SWT.NONE (i.e.
+not SWT.FLAT) the problem goes away.
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Composite c = new Composite(shell, SWT.NO_BACKGROUND);
+c.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+Point size = ((Control)e.widget).getSize();
+e.gc.setBackground(display.getSystemColor
+(SWT.COLOR_RED));
+e.gc.fillRectangle(-10,
+-10, size.x+20, size.y + 20);
+}
+});
+
+ToolBar tb = new ToolBar (c, SWT.FLAT);
+for (int i = 0; i
+< 20; i++) {
+ToolItem item = new ToolItem (tb, SWT.PUSH);
+item.setText("Item "+i);
+}
+tb.setBounds(10, 10, 300, 50);
+shell.setSize(500, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

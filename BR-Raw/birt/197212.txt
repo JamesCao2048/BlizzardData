@@ -1,0 +1,7 @@
+Bug 197212 Cannot insert aggregation in detail row
+Drag an aggregation item from the palette.
+You cannot drop it in a detail row.
+There are some aggregations, such as runningsum, movingave, percentrank, and rank, that make sense only when inserted in a detail row.
+The workaround I discovered is to insert the aggregation item in a header or footer, then move the aggregation item to the detail row.
+This workaround will confuse users, though.
+The software should be fixed to allow inserting an aggregation item in the detail row.

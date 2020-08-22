@@ -1,0 +1,6 @@
+Bug 209910 Drag the dataset from library, the resultset column number is doubled
+Reproduce step: 1.Create one data set in library.
+2.Drag it into a report design.
+3.Open the data set editor, switch to the output column page, the result set number is doubled.
+I found there is something wrong in the org.eclipse.birt.report.model.api.util.CompatibilityUtil class.
+The method addStructures()will add structures list twice when the propHandle is not local.

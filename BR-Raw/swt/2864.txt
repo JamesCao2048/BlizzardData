@@ -1,0 +1,19 @@
+StyledText draws cheesy if the caret is invisible
+I am trying to disable drawing of the caret in a StyledText widget.
+Run the
+following example and click around, the cursor will be cheesily drawn as you
+click around or rapidly select text with the mouse:
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+StyledText text = new StyledText(shell, SWT.READ_ONLY);
+text.setText("This is some textnThis is some textn" +
+"This is some more text blah blah blah");
+text.getCaret().setVisible(false);
+shell.open();
+while(!shell.isDisposed()) {
+if(!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

@@ -1,0 +1,14 @@
+Generator tool needs to recognize when bridgesupport.extras files are out of sync
+Changes made to bridgesupport.extras files outside of the Mac Generator UI are lost if the Mac Generator view is open while updating.
+To reproduce someone else has to make a change to the .extras files in CVS, and then you need to merge those changes into your workspace.
+1.Open the Mac Generator view and pick any class.
+Select a few methods to be generated, and click the 'Generate' button.
+2.Switch to Team Synchronizing.
+Choose the bridgesupport.extra file you just generated.
+Now, update to the latest version, which should merge in the changes from CVS.
+3.Go back to the Mac Generator and find a method that was added in the update.
+--> The checkbox for that method isn't selected.
+The reverse is true for methods that were removed in the update.
+4.Now, click Generate again.
+--> OS.java no longer has the methods and selectors you just added, which usually means a bunch of build errors.
+The Mac Generator view should either watch for a 'resource out of sync with system' like a text or Java editor, or provide a UI to re-read the .extras file and update its UI.

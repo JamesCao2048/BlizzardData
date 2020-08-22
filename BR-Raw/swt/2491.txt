@@ -1,0 +1,39 @@
+Table: Sort indicator appears on newly-created column
+SWT-win32, v3227
+In the snippet below, a sort indicator appears in the column header
+even though the column in question has not been set as the sort column.
+Apparently, the arrow icon is somehow "inherited" from a previous
+sort column which was disposed of earlier.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TableSortIndicatorTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Table tbl = new Table(shell, SWT.NONE);
+tbl.setHeaderVisible(true);
+tbl.setSortDirection(SWT.UP);
+
+TableColumn col = new TableColumn(tbl, SWT.NONE);
+tbl.setSortColumn(col);
+col.dispose();
+
+col = new TableColumn(tbl, SWT.NONE);
+col.setText("Column");
+col.setWidth(100);
+
+shell.setSize(200, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

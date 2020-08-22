@@ -1,0 +1,61 @@
+SWT error occurred on Eclipse 200405060200
+Eclipse 200405060200
+CDT     200405052036 (=~ 200405060200 + integration patches)
+I can't reproduce this problem, but I was doing thing something like
+creating, editing, building, then deleting a file in CDT.
+Suddenly, I had an error dialog:
+"An SWT error has occurred.
+You are recommended to exit the workbench."
+Upon exit, my .log file contained:
+!MESSAGE Unhandled event loop exception
+!ENTRY org.eclipse.ui 4 0 May 06, 2004 14:00:03.359
+!MESSAGE Item not removed
+!STACK 0
+org.eclipse.swt.SWTError: Item not removed
+at org.eclipse.swt.SWT.error(SWT.java:2715)
+at org.eclipse.swt.SWT.error(SWT.java:2614)
+at org.eclipse.swt.SWT.error(SWT.java:2585)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:381)
+at org.eclipse.swt.widgets.Menu.destroyItem(Menu.java:558)
+at org.eclipse.swt.widgets.MenuItem.releaseChild(MenuItem.java:435)
+at org.eclipse.swt.widgets.Widget.dispose(Widget.java:367)
+at org.eclipse.jface.action.MenuManager.update(MenuManager.java:570)
+at org.eclipse.jface.action.MenuManager.handleAboutToShow
+(MenuManager.java:371)
+at org.eclipse.jface.action.MenuManager.access$0(MenuManager.java:367)
+at org.eclipse.jface.action.MenuManager$2.menuShown
+(MenuManager.java:383)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:116)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:796)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:820)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:801)
+at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:3301)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2973)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1449)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:3160)
+at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:222)
+at org.eclipse.swt.widgets.Display.runPopups(Display.java:2620)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2265)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1353)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1324)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench
+(Workbench.java:243)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:140)
+at org.eclipse.ui.internal.ide.IDEApplication.run
+(IDEApplication.java:90)
+at org.eclipse.core.internal.runtime.PlatformActivator$1.run
+(PlatformActivator.java:283)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:242)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run
+(EclipseStarter.java:119)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke
+(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke
+(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:324)
+at or

@@ -1,0 +1,12 @@
+[Printer] Printer.dispose() after cancelJob() yields lifetime supply of GLib-CRITICAL
+Created  attachment 84975   [details]
+Snippet demonstrating bug
+Build ID: I20071101-2000
+Steps To Reproduce:
+1.Run the attached snippet on Linux x86_64 (may also occur on x86)
+2.Select a printer and confirm print dialog
+3.Bask in the warm glow of GLib-CRITICAL **: g_io_channel_write_chars: assertion `channel->is_writeable' failed
+Specifically, GTK pukes when this line of Printer.destroy() executes:
+if (printJob != 0) OS.g_object_unref (printJob);
+This is probably due to cancelJob() not being properly implemented at present, however in the meantime SWT should degrade gracefully if possible.
+The alternative is to call endJob(), which spits out a blank page even if I haven't called startPage().

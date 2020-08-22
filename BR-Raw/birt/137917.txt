@@ -1,0 +1,2 @@
+Bug 137917 ImageHandle add setFile method.
+According to new Resource Deployment Specification, image builder add a new image type 'File', so ImageHandle should add 'setFile' method as other type methods such as 'setURI'.

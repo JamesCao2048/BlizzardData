@@ -1,0 +1,4 @@
+Kill GtkFileSelection.
+GtkFileChooser is part of gtk 2.4 which is the minumum version for recent swt.
+I saw that it was guarded with gtk 2.4.x which seemed a bit weird to me and I removed it altogether.
+Commit/patch  http://fedorapeople.org/gitweb?p=akurtakov/public_git/eclipse.platform.swt.git;a=commit;h=3ca225d24458bf60493b1f292256d8913d0ec34d

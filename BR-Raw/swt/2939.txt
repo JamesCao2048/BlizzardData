@@ -1,0 +1,9 @@
+[Browser] Embedded browser fails to handle link to text file
+Build 20050413
+Linux-GTK
+1.Point the embedded browser to  http://www.pdos.lcs.mit.edu/scigen/#examples
+2.Click on the hyperlink "follow-up email", which links to a text file.
+3.Nothing happens.
+My desktop web browser (Firefox) just opens the text file in the browser.
+Our
+embedded browser should do the same thing.

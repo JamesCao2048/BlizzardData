@@ -1,0 +1,6 @@
+Bug 140767 Enhance the PreparedJointDataSourceQuery, etc.
+In current implementation of PreparedJointDataSourceQuery, the method initialize(), which is called when create odi query, includes heavyweight operations such as ResultIterator population.
+These operations should be postponed until they are actually needed.
+The change need be made to PreparedJointDataSourceQuery, however, is not that straightforward.
+The most common way to get a ResultIterator is: 1)PreparedQuery->QueryResults ( This step will change DataSetDesign if multipass processing is needed) 2)QueryResults->ResultIterator ( This step will recover DataSetDesign to the very status before it enter step 1) The DataSetDesign (which has been defined in DataEngine) used in this procedure has been modified for purpose of multipass processing(Although the DataSetDesign apprears unchanged if we look this procedure as a whole, it does change during the multipass processing).Here comes the problem: If step 1, for certain reason, is repeated several times without step 2 is executed, then only the first iteration of step 1 can success if multipass processing is introduced, for DataSetDesign has been changed(this can happen through ui operation, say, when you preview result of a joint data set in dataSetEditor dialog).
+This problem should be fixed before any changes made to PreparedJointDataSourceQuery.

@@ -1,0 +1,9 @@
+Bug 122177 Add input for IntervalBase to Group Editor
+BIRT model's group definition has one important property: IntervalBase (see GroupHandle.setIntervalBase).
+This property controls how interval-based grouping picks the range of its initial group, and is an important part of range-based grouping.
+BIRT designer's Group Details editor should allow user to edit IntervalBase for a group.
+This is how the editor should work: * IntervalBase options should be presented only if "Interval" is not "None".
+(Since IntervalBase only makes sense for interval-based grouping) * IntervalBase should be presented in conjunction with checkbox.
+When it is unchecked (maps to a NULL IntervalBase value), Data Engine dynamically picks a base value using the first group key value in the result set.
+When it is checked, the user should input a base value.
+The following is a suggested look of the UI control: [ ] Use fixed base value for interval: _______________ ( [] is a checkbox, underline ___ is a textbox ).

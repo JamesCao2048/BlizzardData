@@ -1,0 +1,12 @@
+Bug 275591 [Regression] Replacing an existing item does not work when exporting from library to report.
+description: Replacing an existing item does not work when exporting from library to report.
+build id: 2.5.0 v20090511-0630 steps to reproduce: 1.New a report and insert a label with name as "label" and with text "label 1".
+2.New a library.
+3.Right click the label in report and export to library.
+4.Change the text of the label in the report to "label 2".
+5.Right click and export to library again.
+When ask whether to replace the existing one, click Yes.
+6.Open the library to check the label.
+Actual result: The text of the label is still "label 1", which means the replacing does not work.
+You can try other report items, replacing does not work either.
+Expected result: The text of the label should change to "label 2".

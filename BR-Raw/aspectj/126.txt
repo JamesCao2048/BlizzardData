@@ -1,0 +1,41 @@
+I cannot aspect code written in SJPP-based encoding
+Created  attachment 110112   [details]
+sjpp.jar to parse encoding
+I cannot aspect code written in SJPP-based encoding
+However, I *can* compile the code fine:
+-  if I remove Aspect nature from my project, or
+-  using command line ajc (of slightly newer version of AspectJ). i.e.,
+ajc.bat -J-Dpp.charset=%USERPROFILE%pp.charset.properties -encoding MY_ENCODING -d out ...
+Adding "-encoding MY_ENCODING" to AspectJ non-standard compiler options did *not* help.
+source code:
+------------
+public class Foo {
+public static void main(String [] args) {
+#ifdef A_MACRO
+System.out.println("ok!");
+#endif
+}
+}
+errors reported by "Problems" view:
+-----------------------------------
+Severity and Description	Path	Resource	Location	Creation Time	Id
+A_MACRO cannot be resolved to a type	encoded/src	Foo.java	line 3	1218821924326	474099
+out cannot be resolved	encoded/src	Foo.java	line 4	1218821924326	474101
+Syntax error on token ".", ; expected	encoded/src	Foo.java	line 4	1218821924326	474100
+Syntax error on token "Invalid Character", @ expected	encoded/src	Foo.java	line 3	1218821924326	474098
+Syntax error, insert ";" to complete Statement	encoded/src	Foo.java	line 4	1218821924326	474102
+project encoding:
+-----------------
+Set to: MY_ENCODING
+%USERPROFILE%/pp.charset.properties:
+------------------------------------
+charset = MY_ENCODING
+MY_ENCODING.defines = A_MACRO
+My Eclipse environment is:
+--------------------------
+*	Eclipse AspectJ Development Tools
+Version: 1.5.2.200804241330
+AspectJ version [for Eclipse]: 1.6.0.20080423100000
+*	AspectJ version [for ajc]: AspectJ Compiler 1.6.1 (1.6.1 - Built: Thursday Jul 3, 2008 at 18:35:41 GMT) - Eclipse Compiler 0.785_R33x, 3.3
+*	Eclipse v3.3.2 M20080221-1800
+*	C:jdk1.5jrelibextsjpp.jar (see attached)

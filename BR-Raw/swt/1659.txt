@@ -1,0 +1,10 @@
+[Browser-Mozilla] Save-as window shown when disposing the browser during a location changing event
+Created  attachment 93865   [details]
+Simple example showing the bug
+Build ID: 3.4M5
+Steps To Reproduce:
+1.Create a Browser
+2.Attach a location listener that disposes the browser in the changing(e) method.
+3.See the VM die.
+More information:
+We do have such a scenario in our application, and this bug is quite annoying.

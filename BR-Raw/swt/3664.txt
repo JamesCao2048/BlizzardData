@@ -1,0 +1,66 @@
+Problem with TreeEditor when expanding tree item
+This is the code snippet 111 as is with one exception: the tree contains chlidren
+(see [A])
+It throws the following stacktrace:
+org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:2316)
+at org.eclipse.swt.SWT.error(SWT.java:2246)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:381)
+at org.eclipse.swt.widgets.Control.getDisplay(Control.java:731)
+at org.eclipse.swt.widgets.Widget.isValidThread(Widget.java:589)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:311)
+at org.eclipse.swt.widgets.Control.setVisible(Control.java:2231)
+at org.eclipse.swt.custom.TreeEditor$1.treeExpanded
+(TreeEditor.java:84)
+at org.eclipse.swt.widgets.TypedListener.handleEvent
+(TypedListener.java:173)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:77)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:836)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:861)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:845)
+at org.eclipse.swt.widgets.Tree.wmNotifyChild(Tree.java:1890)
+at org.eclipse.swt.widgets.Control.WM_NOTIFY(Control.java:3811)
+at org.eclipse.swt.widgets.Composite.WM_NOTIFY(Composite.java:638)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2811)
+at org.eclipse.swt.widgets.Decorations.windowProc
+(Decorations.java:1225)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2283)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1232)
+at org.eclipse.swt.widgets.Tree.callWindowProc(Tree.java:152)
+at org.eclipse.swt.widgets.Tree.WM_LBUTTONDOWN(Tree.java:1498)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2794)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2283)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:1299)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1483)
+at A.main(A.java:97)
+Exception in thread "main"
+/*
+* Copyright (c) 2000, 2003 IBM Corp.
+All rights reserved.
+* This file is made available under the terms of the Common Public License v1.0
+* which accompanies this distribution, and is available at
+*  http://www.eclipse.org/legal/cpl-v10.html
+*/
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.custom.*;
+public class A {
+public static void main (String [] args) {
+final Display display = new Display ();
+final Color black = display.getSystemColor (SWT.COLOR_BLACK);
+Shell shell = new Shell (display);
+shell.setLayout (new FillLayout ());
+final Tree tree = new Tree (shell, SWT.BORDER);
+/*	for (int i=0; i<16; i++) {
+TreeItem item = new TreeItem (tree, SWT.NONE);
+item.setText ("Item " + i);
+}
+*/
+/* [A] set children so we can expand */
+for (int i = 0; i
+< 12; i++) {
+TreeItem treeItem = new TreeItem(t

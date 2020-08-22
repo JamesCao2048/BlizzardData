@@ -1,0 +1,7 @@
+Bug 124600 delete Grid Column causes NPE thrown out in error log
+steps to reproduce:
+- insert a 3*3 grid
+- delete grid columns one by one expected behavior:
+- these operations should completed without any error.
+actual behavior:
+- after i deleted the 3rd column, NPE was thrown out in error log.

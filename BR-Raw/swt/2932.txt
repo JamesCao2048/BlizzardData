@@ -1,0 +1,7 @@
+GTK caret location gets hammered after being set in verify event
+Run Snippet179:
+http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclip
+se/swt/snippets/Snippet179.java?rev=HEAD&content-type=text/vnd.viewcvs-markup
+On GTK, the caret is set to the beginning of the typed character.
+This
+snippet works on all other platforms.

@@ -1,0 +1,5 @@
+Bug 209309 Show javascript errorposition
+If a javascript expression has errors, the error message is shown in the last lines in the preview tab.
+But there is no info where the error occurs.
+In most cases you had to guess the error location.
+It would be very helpfull to display the error location.

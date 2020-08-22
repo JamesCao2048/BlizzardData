@@ -1,0 +1,7 @@
+Bug 115940 Unclear "LIKE" operator pattern syntax
+The "LIKE" operator used to build BIRT filters (for data sets and tables) does not accept SQL patterns, and there is no documentation on what syntax it uses.
+To fix this and to provide a way to do simply filtering, (1) We need a simple SQL-like pattern matching capability since its earlier to use and satisfies perhaps 90% of search requirements.
+We should therefore modify the operator LIKE to accept the least common denominator of various RDBMS implementation of this operator: the pattern uses % to match 0 or more of any characters, _ to match exactly one character, and  as escape character.
+All other characters are matched case-sensitively.
+(2) Use Javascript syntax (which is Perl-like) for complex regular expression matching.
+We should introduce a new operator, MATCH, whose right operand is a regular expression as defined in the EMCAScript Specification.

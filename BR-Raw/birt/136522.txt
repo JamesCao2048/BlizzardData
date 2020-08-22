@@ -1,0 +1,3 @@
+Bug 136522 [Regression]DateTime parameter can't be drag to the layout
+Steps to reproduce: 1.New a date time parameter 2.Drag it to the layout Actual result: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Model Plug-in ID:org.eclipse.birt.report.model Version:2.1.0.N20060412-2230 Error Code:Error.PropertyValueException.CHOICE_NOT_FOUND Error Message:The choice value "dateTime" is not found.

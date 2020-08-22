@@ -1,0 +1,62 @@
+BIDI:Java editor and Text editor: User Interface issues.
+Problem was found in Eclipse R2, build 20020214.
+User Interface Issues
+The UI issues can be divided in 3 categories:
+* no setting of the keyboard language when needed
+* bad positioning of the caret
+* no visual feedback for boundary condition
+They apply to both the Java and the Text editors.
+1.No setting of keyboard language after some operations
+There are a number of cases where the keyboard language should be set, and this
+does not happen.
+1a) After removing a character with Del, the keyboard language must be set
+corresponding to the removed character (like it happens after skipping a
+character with Left or Right arrows).
+1b) After removing a character with Backspace, the keyboard language must be set
+corresponding to the removed character (like it happens after skipping a
+character with Left or Right arrows).
+1c) After skipping to the next or previous word (using Ctrl+Right/Left arrow),
+the keyboard language must be set corresponding to the first character of the
+word.
+2.Bad caret positioning after some operations
+There are a number of cases where the caret is not positioned where it should.
+2a) When typing data
+Rule: after typing a character, the caret must be adjacent to the last typed
+character.
+On an empty line, type   DEF123
+This is displayed (correctly)  123FED
+Note that while typing the number, the caret is displayed (correctly) on the
+right side of the last digit entered.
+Now start with a line containing   abcxyz
+Put the cursor between c and x, type  DEF123  displaying  abc123FEDxyz
+The caret behaves like before (this is good).
+Now start with a line containing   DEFGHI
+It is displayed (correctly)   IHGFED
+Put the caret between G and F, type  123
+The caret behaves differently: it always appear on the left side of the leftmost
+digit.
+It should appear as before, on the right side of the last digit entered.
+2b) After Right arrow
+Rule: after pressing left or right arrow, the caret must be adjacent to the
+character skipped, after it for Right arrow, before it for Left arrow.
+Note
+that after is on the right side for a character in a LTR segment and on the left
+side for a character in a RTL segment; before is on the left side for a
+character in a LTR segment and on the right side for a character in a RTL
+segment.
+Start with a line containing  abcDEFGhiJKL123MNO456xyz  displayed as
+abcGFEDhi456ONM123LKJxyz
+Start from the home position, and press Right arrow repeatedly.
+The rule is
+respected, except
+- after skipping over L: the caret should stand on the left side of L, but it
+stands on the left side of 1
+- after skipping over 3: the caret should stand on the right side of 3, but it
+stands on the right side of M
+Note that Left arrow conforms to the rule in all cases.
+2c) After Backspace
+Rule: after pressing Backspace, the caret must stand at the location of the
+removed character.
+Start with a line containing  abcDEFGhiJKL123MNO456xyz  displayed as
+abcGFEDhi456ONM123LKJxyz
+Case 1: Put the caret between x and

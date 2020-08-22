@@ -1,0 +1,12 @@
+Path.addArc method does not work as expected on Apple OS X
+Created  attachment 79613   [details]
+Mac OS X screen capture from code
+Build ID: I20070621-1340
+Steps To Reproduce:
+Sample code provided.
+See attached screenshots to see results of code on both WinXP and MacOSX.
+More information:
+addArc on OS X *seems* to always start the arc at the same place, rather than as instructed.
+I.e.
+it always draws the arc clockwise, even when instructed to draw it anticlockwise.
+By contrast, on WinXP, the behaviour is consistent and predictable.

@@ -1,0 +1,16 @@
+plug window lost focus when create a NO_FOCUS shell from socket
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.0.14) Gecko/2009082707 Firefox/3.0.14
+Build Identifier: 3.4.0
+Code Comments in detail
+1.Java
+-- Create a socket and add listeners to detect keyboard events, will pop up a  NO_FOCUS shell when event detected.
+2.C++
+-- Create a gtk plug window, and reparent it to java socke via gtk_plug_new(), there is a button in the plug.
+Reproducible: Always
+Steps to Reproduce:
+1.Launch the Java process, you could get the socket id from console
+2.Launch c++ process, input the socket id you get from java console
+3.Mouse click button to give plug's button the focus
+4.Press "Enter" on the button.
+5.Expected
+-- Focus should not lost from Plug's button, because we new a NO_FOCUS shell from Java, but actually focus moved to the 2ed control of Java.

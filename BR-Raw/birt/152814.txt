@@ -1,0 +1,2 @@
+Bug 152814 Content of preview as in integer parameter should be an integer
+Details: Content of preview as in integer parameter should be an integer Step: 1.New a parameter 2.Set the data type as integer 3.See the preview as field Actual result: The content is 123456789.012 Exception result: The content is 123456789

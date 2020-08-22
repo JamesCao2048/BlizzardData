@@ -1,0 +1,21 @@
+[Workbench] TVT33:TCT[Workbench] 159: ar: 13.001120 Tool tips text does not have RTL reading order
+OS: Windows
+Build date: 05112007
+Component Name: CDT
+Blocking: No
+Tester Name: Noha
+Steps to recreate the problem: Create a new workspace.
+Switch to the C/C++ Perspective: from the main menu go to Window
+-> Open Perspective
+-> Other and select C/C++
+Problem description:
+The tool tips text such as 'New C/C++ Project' does not have RTL reading order, however when I click anywhere else such as clicking on any of the main menus and then go back to the tool tips they become RTL enabled.
+As discussed, this is probably a Platform/Base problem.
+Thanks!
+Vivian
+Hi,
+Updating with screen shots.
+This is a general problem for all tooltips (including workbench toolbar buttons and view's local toolbar buttons).
+The switching reading order behavior happens to all strings with Engish mixed in Bidi words.
+Platform UI please take a look.
+This article was reassigned from Category:''TVT Testcases''.

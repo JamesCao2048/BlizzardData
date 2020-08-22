@@ -1,0 +1,5 @@
+RC1: "Application Modal" shell style behaves incorrectly
+Observed while testing the SWT Controls view within Examples.
+After creating a
+shell with Application Modal style, it is still possible to change focus to a
+parent shell without closing the new child.

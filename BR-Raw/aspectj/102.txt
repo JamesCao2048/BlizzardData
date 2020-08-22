@@ -1,0 +1,2 @@
+[WARNING] couldn't find aspectjrt.jar on classpath
+I am using the aspectj runtime jar that is in the spring source bundle repository.  The have renamed their jar to match their naming conventions and it is causing the warning to occur.  Their bundle is named com.springsource.org.aspectj.runtime-1.6.3.RELEASE.jar.  It would be nice if this warning was not printed out in this case.

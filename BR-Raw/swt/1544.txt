@@ -1,0 +1,10 @@
+Extreme performance degradation in TextLayout.shape()
+I20080522-1800.
+I accidentally opened a small binary file (81KB) in the text editor which resulted in a very long freeze (40-50s).
+Afterwards typing, selecting etc.
+is unusably slow.
+Performance tracing reveals that all time is spent in TextLayout.shape().
+Note that this is a huge regression compared to R3.3.x: there the file opens immediately and the editor is responsive.
+1.download attached test file
+2.add it to a workspace
+3.open it with the default text editor

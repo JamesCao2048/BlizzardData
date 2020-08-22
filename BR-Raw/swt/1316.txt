@@ -1,0 +1,9 @@
+Hand cursor stays when releasing Ctrl after hovering a link
+HEAD
+- open a text editor with linkable content
+- press and hold Ctrl
+- move mouse cursor over a link
+=> mouse cursor turns into a hand
+- release Ctrl
+=> expected (like in 3.4.1): mouse cursor reverts to I-beam
+=> was: stays hand until I move the mouse

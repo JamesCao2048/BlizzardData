@@ -1,0 +1,30 @@
+Image buffer is allocated twice unnecessarily
+- happens on all platforms except win32
+- Image buffer gets allocated twice unnecessarily:
+Image.getImageData() {
+if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+int width = OS.CGImageGetWidth(handle);
+int height = OS.CGImageGetHeight(handle);
+int bpr = OS.CGImageGetBytesPerRow(handle);
+int bpp = OS.CGImageGetBitsPerPixel(handle);
+int dataSize = height * bpr;
+byte[] srcData = new byte[dataSize];
+OS.memmove(srcData, data, dataSize);
+
+PaletteData palette = new PaletteData(0xFF0000, 0xFF00, 0xFF);
+ImageData data = new ImageData(width, height, bpp, palette);
+data.data = srcData;
+....
+}
+new ImageData(width, height, bpp, palette) {
+...
+ImageData(...)
+....
+setAllFields(
+.....
+data != null ?
+data : new byte[bytesPerLine * height],
+.....
+);
+}
+}

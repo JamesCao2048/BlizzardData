@@ -1,0 +1,24 @@
+Text without delimeters is not wrapped on linux. Works fine on windows.
+Run the example on windows.
+See that text is wrapped in few lines.
+Run on Linux.
+Text is displayed in one line.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.*;
+public class MultiText
+{
+public static void main(String [] args) {
+
+final Display display = new Display ();
+final Shell shell = new Shell (display);
+Text text = new Text(shell, SWT.MULTI |SWT.WRAP);
+text.setBounds(5, 5, 50, 200);
+text.setText("123456789012345678901234567890");
+shell.pack ();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+}

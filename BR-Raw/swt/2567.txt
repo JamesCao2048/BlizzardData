@@ -1,0 +1,4 @@
+Text.setForeground(Color) is ignored with SWT.INHERIT_FORCE
+When creating a shell, setting a background color or a background image, and calling shell.setBackgroundMode(SWT.INHERIT_FORCE), child Text widgets ignore calls to setForeground(Color).
+Tested on WinXP with swt-N20060112, with and without manifest.
+See attached Snippet.

@@ -1,0 +1,11 @@
+StyledText - Arrow_Down in text editor doesn't retain column when it scrolls
+3.0M4 (bug is probably much older)
+- enter this text (without quotes) into an editor (java or text):
+"This is a very long line for testing purposes
+This is a very long line for testing purposes"
+- make the editor so narrow that only "This is a very" can be seen
+- set the cursor to the end of the first long line
+- press Arrow_down twice
+-> expected: The cursor is at the end of the second long line
+-> was: Cursor is after "very", which is the rightmost visible column when the
+editor is fully scrolled to the left.

@@ -1,0 +1,2 @@
+Bug 153537 Event Handler didn't work properly in masterpage
+Steps to reproduce: 1.Run the attached report in Web Viewer, it works well 2.Click "print" to convert the output in PDF Expected result: Masterpage has the same view in Web Viewer and PDF Actual result: Masterpage didn't get right view

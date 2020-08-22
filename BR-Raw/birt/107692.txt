@@ -1,0 +1,5 @@
+Bug 107692 Smoke Test: Error message always pops up when previewing a report with parameter.
+Description: Error message always pops up when previewing a report with parameter.
+Tested in Eclipse Version 3.1 Steps to reproduce: 1.Create a parameter in report file.
+2.Preview in html.
+Actual result: error message pops up and report can't be previewed.

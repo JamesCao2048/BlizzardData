@@ -1,0 +1,12 @@
+org.eclipse.swt.widgets.Control has funky color issues
+I reported a bug (#65642) about some color issues.
+Some further experimentation
+leads me to this refinement of the bug: Control objects don't seem to handle
+color correctly in some instances.
+I've seen this problem manifested in Labels,
+and a coworker has seen the same issue in a List, leading me to believe that
+it's a problem in the common ancestor, Control.
+Of course, this makes sense
+since setForeground() and setBackground() are in Control.
+I'll attach some
+sample code to illustrate a case where it breaks for me under SWT 3.0RC1.

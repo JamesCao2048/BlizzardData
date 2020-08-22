@@ -1,0 +1,5 @@
+Bug 147676 [regression]Visibility set in the first col will affect the second col
+Description: Visibility set in the first col will affect the second col Steps to reproduce: 1.Insert a grid(3*3), insert contents to each cell.
+2.Set the first col to hide all in visibility and preview Expected result: Only the first col is hidden.
+Actual result: The second col is hidden, too.
+If you set the second col in step2, the third col will disappear.

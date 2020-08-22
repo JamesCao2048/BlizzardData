@@ -1,0 +1,8 @@
+Bug 198056 Overline, Underline, line-through does not take effect on master page when preview as DOC, PPT, PDF, POSTSCRIPT, XLS [12]
+Description: Overline, Underline, line-through does not take effect on master page when preview as DOC, PPT, PDF, POSTSCRIPT, XLS.
+Build number: 2.2.1.v20070727-0630 Steps to reproduce: 1.New a report, insert label in master header/footer.
+2.Select the masterpage, go to Property Editor->Advanced, set font Overline, Underline and Line-through.
+3.Preview as DOC, PPT, PDF, POSTSCRIPT, XLS.
+Expected result: Overline, Underline, line-through takes effect.
+Actual result: Overline, Underline, line-through does not take effect.
+Error log: N/A

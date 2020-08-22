@@ -1,0 +1,44 @@
+[Presentations] Many colors allocated over and over again when opening same editor
+Build 3.3M6
+This is not a leak.
+Using SWT sleak tool, I noticed some colour allocations which  I was wondering whether they were intentional.
+- Basically, I have an editor open already (any unit will do) which has focus.
+- Use 'ctrl-shift-T' to open OpenType dialog
+- Type in the same unit name to re-open on the same file.
+The sleak tool shows that even though no new editor, still 23 color objects are being allocated (not a leak).
+Looking at the trace below, they seem to be created to refresh the CTab (due to editor focus change between editor and openType dialog).
+Is this intentional ?
+Feels like much ado for nothing.
+----------------------
+java.lang.Error
+at org.eclipse.swt.graphics.Device.new_Object(Device.java:786)
+at org.eclipse.swt.graphics.Color.<init>(Color.java:80)
+at org.eclipse.swt.custom.CTabFolder.allocSelectionHighlightGradientColors(CTabFolder.java:3447)
+at org.eclipse.swt.custom.CTabFolder.setSelectionBackground(CTabFolder.java:3353)
+at org.eclipse.ui.internal.presentations.r33.PaneFolder.setSelectionBackground(PaneFolder.java:740)
+at org.eclipse.ui.internal.presentations.r33.DefaultTabFolder.updateColors(DefaultTabFolder.java:490)
+at org.eclipse.ui.internal.presentations.r33.DefaultTabFolder.setActive(DefaultTabFolder.java:437)
+at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.setActive(TabbedStackPresentation.java:299)
+at org.eclipse.ui.internal.DefaultStackPresentationSite.setActive(DefaultStackPresentationSite.java:55)
+at org.eclipse.ui.internal.PartStack.setActive(PartStack.java:1137)
+at org.eclipse.ui.internal.ViewPane.setActive(ViewPane.java:380)
+at org.eclipse.ui.internal.ViewPane.showFocus(ViewPane.java:389)
+at org.eclipse.ui.internal.WorkbenchPage$3.run(WorkbenchPage.java:598)
+at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+at org.eclipse.core.runtime.Platform.run(Platform.java:850)
+at org.eclipse.ui.internal.WorkbenchPage.activatePart(WorkbenchPage.java:591)
+at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3263)
+at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:2810)
+at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:265)
+at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:229)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:938)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:962)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:943)
+at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1272)
+at org.eclipse.swt.widgets.Shell.WM_MOUSEACTIVATE(Shell.java:2014)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3711)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1554)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1752)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4355)
+at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native

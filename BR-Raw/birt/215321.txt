@@ -1,0 +1,9 @@
+Bug 215321 The data set is added and the report is saved automatically if new a data set through Chart Builder [07]
+Description: The data set is added and the report is saved automatically if new a data set through Chart Builder.
+Build number: 2.3.0.v20080115-0800 Steps to reproduce: 1.New a report with a data source.
+2.Drag a chart from the Palette to the Layout.
+3.In "Select Data" tab, choose "Use Data from" radio button, click "Create New..." button, and add a data set.
+4.Click "Cancel" button of the Chart Builder.
+Expected result: The data set is added but report needed should be saved by the user.
+Actual result: The data set is added and the report is saved automatically.
+Error log: N/A

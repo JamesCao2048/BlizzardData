@@ -1,0 +1,2 @@
+Bug 195607 NPE is thrown when calling DimensionHandle:: getAbsoluteValue()
+If a DimensionHandle did not set DimensionValue, NPE will thrown when calling DimensionHandle:: getAbsoluteValue().

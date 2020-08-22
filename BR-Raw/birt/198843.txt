@@ -1,0 +1,2 @@
+Bug 198843 XLS Emitter: DataCache.java contains System.out.println()
+Build ID: I20070625-1500 org.eclipse.birt.report.engine.emitter.excel.DataCache.java contains System.out.println() two times instead of logger.log().

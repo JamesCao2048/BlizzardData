@@ -1,0 +1,11 @@
+[SWT] Text.setText(..) can change font inappropriately on Mac OSX
+see the attached test case to duplicate the problem.
+if you run the test case with just the first .setText call, you will see the correct unicode
+representation for the key sequence 'Command+X'.
+(Lucida Grande being the standard OS X font
+for menus and such)
+if you run the test case with all three .setText calls, you will notice that the 'cloverleaf' symbol is no
+longer displayed correctly.
+it seems that the .setText call with the empty string argument does something bad to the font.
+this problem is severe for our key sequence entry widget.
+marking as critical for M4.

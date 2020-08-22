@@ -1,0 +1,8 @@
+SourceTypeBinding.sourceStart() NPE
+java.lang.NullPointerException
+at org.aspectj.org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.sourceStart(SourceTypeBinding.java:1514)
+at org.aspectj.org.eclipse.jdt.internal.compiler.lookup.MethodBinding.sourceStart(MethodBinding.java:988)
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseSourceType.fillDeclaredMembers(EclipseSourceType.java:243)
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseSourceType.getDeclaredFiel ...                     IRETURN
+end public boolean isTracingModifications()
+end public class com.centricsoftware.pi.core.data.reflection.Attribute

@@ -1,0 +1,3 @@
+Bug 149615 Drill through to document will display html with page break effect
+Description: Drill through to document will display html with page break effect Steps to reproduce: 1.new a report with two items, set page break between them 2.new a report, define drill through link to report document of first report 3.preview in Layout and click the drill through link Expected result: Target report should display html format without page break effect because page break in hidden in html format.
+Actual result: Target report displayed page break effect in html.

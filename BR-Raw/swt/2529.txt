@@ -1,0 +1,14 @@
+No longer possible to capture screen with new GC(display)
+I think this is a regression.
+I do as follows:
+GC gc = new GC(display);
+Image image = new Image(display, shell.getSize().x, shell.getSize().y);
+gc.copyArea(image, shell.getLocation().x, shell.getLocation().y);
+to copy the contents of the Screen into an Image.
+This is working on Windows but not on Mac.
+I remember a recent change for Mac that improved performance of creating
+a new GC on the Display.
+Maybe this is a regression?
+I can confirm that
+it worked before.
+Ben

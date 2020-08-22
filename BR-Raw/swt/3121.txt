@@ -1,0 +1,13 @@
+Display.getShells() optimization
+Display.getShells() and Disply.getActiveShell() methods are called in eclipse
+very frequently.
+For example during opening of 40 Java editors Display.getShells
+() was called about 12 000 times and this method took 2.2% of total scenario
+execution time.
+This is due to widgetTable, which contains hundreds of widgets, is scanned each
+time.
+However amount of non-disposed shells is about 2-4 depending on amount of
+opened dialogs.
+So it is better to keep separate array of non-disposed shells
+rather than scan throw widgetTable.
+In next post I am going to attach this patch.

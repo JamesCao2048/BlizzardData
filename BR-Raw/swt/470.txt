@@ -1,0 +1,10 @@
+XULRunner path may not work for SWT browser
+Build Identifier: 3.4.2
+If add
+-Dorg.eclipse.swt.browser.XULRunnerPath=${rcp.home}/rcp/eclipse/plugins/xulrunner in rcpinstall.properties.
+Because of the mix use of "/" and "\" in the XULRunnerpath,SWT browser is not able to find the XULRunner runtime.
+A simple test would be to create SWT browser instance with SWT.MOZILLA.
+This will lead to an exception in XPCOM.
+Suggested patch provided.
+Propose as an enhancement request.
+Reproducible: Always

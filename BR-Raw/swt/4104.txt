@@ -1,0 +1,15 @@
+Emulated Coolbar do not resize when the last item on the row is removed
+build 20020521 F1
+1
+- Run the Car's coolbar example on:
+/Car/coolbartest/CoolBarIconTest.java
+2
+- Resize the window to be bigger
+3
+- Drag the last Item to the next row
+4
+- Remove the Item on index 5 (ie.
+the item that you just dragged)
+5
+- The coolbar do not resize, so there is a extra row empty where you just
+removed the item.

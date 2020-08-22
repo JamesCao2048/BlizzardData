@@ -1,0 +1,4 @@
+Bug 177498 A width of columns in table/grid should not be the same by default if shrink property is ON
+Now the width of all columns in table/grid is the same if "width" property is empty and "shrink" property is ON.
+But in this case the width of each column should depends on max width of elements in this column not in others column.
+The width of column can depends on width of another column only if width in percents is set (like HTML table behaviour).

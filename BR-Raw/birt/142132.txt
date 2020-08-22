@@ -1,0 +1,7 @@
+Bug 142132 [regression] cascading parameter does not work properly
+steps to reproduce:
+- use attached report, which contains a group of cascading parameters
+- preview report expected behavior:
+- cascading parameter works properly actual behavior:
+- it simply didn't
+- i tried several combination, the 3rd value were always empty

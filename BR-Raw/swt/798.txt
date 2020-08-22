@@ -1,0 +1,36 @@
+[OS X] Setting a slider thumb to the maximum range does not disable scrolling
+This problem is unique to Mac OS X Cocoa.
+When setting the thumb value to the maximum range (or more), the slider should be grayed out as it is simply irrelevant
+- no scrolling can happen.
+This is the behavior on Windows, Linux GTK, and Mac OS X Carbon.
+In the new SWT Cocoa, the slider scroller still appears and fills the entire slider.
+This looks bad and breaks backward compatibility.
+The following snippet demonstrates the problem
+-
+On Cocoa
+- it will show a thumb which fills the entire slider.
+On other platform
+- the slider is automatically disabled.
+---------------------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Slider;
+public class Snippet17b {
+public static void main(final String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+final Slider slider = new Slider(shell, SWT.HORIZONTAL);
+slider.setBounds(10, 10, 200, 32);
+slider.setMaximum(100);
+slider.setThumb(100);
+slider.setEnabled(false);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}

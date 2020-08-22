@@ -1,0 +1,25 @@
+Variable sorting changes unexpectedly
+1.Debug the following program to a breakpoint on the first line of foo().
+Variables view looks like:
+this = VariableTest
+2.Perform a step over.
+Variables view looks like:
+x = 1
+this = VariableTest
+3.Perform a step over.
+Variables view looks like:
+this = VariableTest
+y = 2
+x = 1
+The ordering of existing variables shouldn't change when new variables are
+added.
+public class VariableTest {
+public static void main(String[] args) {
+new VariableTest().foo();
+}
+private void foo() {
+int x= 1;  // BREAKPOINT HERE
+int y= 2;
+System.out.println("Grah");
+}
+}

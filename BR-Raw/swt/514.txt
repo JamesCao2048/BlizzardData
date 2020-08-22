@@ -1,0 +1,3 @@
+Need some way to intercept 'fixfocus'
+See  bug 325834  for details.
+At the moment there is now way for a Composite to participate in the 'fixFocus' even though it can override 'setFocus' on non windows systems...

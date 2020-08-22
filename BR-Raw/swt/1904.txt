@@ -1,0 +1,4 @@
+[DnD] StyledText auto-scroll does not work if first line is empty
+If the first line of the StyledText content is empty, auto-scrolling does not work.
+Debugging showed that StyledTextDragAndDropEffect computes the potential scroll amount (the extent of a char) using StyledText.getTextBounds(0, 0) which yields a zero extent in case of an empty first line.
+Can be easily replicated with a slightly modified version of SWT snippet 210 (using DND.FEEDBACK_SCROLL).

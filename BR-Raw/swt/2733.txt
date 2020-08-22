@@ -1,0 +1,4 @@
+VM crash in TableItem dispose
+The iter in a TableItem is being g_free()'d twice.
+This causes a VM crash in
+the JFace test "testBulkExpand".

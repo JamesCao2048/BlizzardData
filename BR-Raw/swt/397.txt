@@ -1,0 +1,48 @@
+SWT Cocoa crash in 3.7M6
+I just captured the following crash with 3.7M6. The crash happened shortly after I saved an editor and not in direct response to an action.
+Process:         eclipse [65988]
+Path:            /Users/bhunt/Applications/Eclipse/3.7 M6/Eclipse.app/Contents/MacOS/eclipse
+Identifier:      org.eclipse.eclipse
+Version:         3.6 (3.6)
+Code Type:       X86-64 (Native)
+Parent Process:  ???
+[1]
+Date/Time:       2011-03-30 12:35:12.370
+-0500
+OS Version:      Mac OS X 10.6.7 (10J869)
+Report Version:  6
+Interval Since Last Report:          444333 sec
+Crashes Since Last Report:           4
+Per-App Interval Since Last Report:  393587 sec
+Per-App Crashes Since Last Report:   2
+Anonymous UUID:                      7397DCB5-F728-41C7-9027-04BA5F045F3C
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: KERN_INVALID_ADDRESS at 0x0000000000000028
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+Application Specific Information:
+objc_msgSend() selector name: respondsToSelector:
+Java information:
+Exception type: Bus Error (0xa) at pc=7fff8765b1d8
+
+Java VM: Java HotSpot(TM) 64-Bit Server VM (19.1-b02-334 mixed mode macosx-amd64)
+
+Current thread (11f801000):  JavaThread "main" [_thread_in_native, id=1893792928, stack(7fff5f400000,7fff5fc00000)]
+Stack: [7fff5f400000,7fff5fc00000]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Lorg/eclipse/swt/internal/cocoa/objc_super;JJJJZ)J+0
+j  org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(JJJJJJ)J+77
+j  org.eclipse.swt.widgets.Display.applicationProc(JJJJJJ)J+93
+v  ~StubRoutines::call_stub
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSend(JJJJJZ)J+0
+j  org.eclipse.swt.internal.cocoa.NSApplication.nextEventMatchingMask(JLorg/eclipse/swt/internal/cocoa/NSDate;Lorg/eclipse/swt/internal/cocoa/NSString;Z)Lorg/eclipse/swt/internal/cocoa/NSEvent;+36
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+98
+j  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V+9
+j  org.eclipse.ui.internal.Workbench.runUI()I+555
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$7.run()V+55
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+2
+j  org.eclipse.ui.internal.ide.application.IDEApplication.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+108
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runAp

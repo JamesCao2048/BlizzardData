@@ -1,0 +1,6 @@
+Bug 188533 [Automation][Regression] List display inline did not work properly when preview in viewer
+steps to reproduce:
+- use the attached report design
+- preview in viewer expected behavior:
+- in 1st page, list display inline takes effect actual behavior:
+- it simply did not do so

@@ -1,0 +1,8 @@
+ViewForm should override computeTrim
+In the current ViewForm implementation, it is not possible to calculate the
+required bounds rectangle for a desired client area since computeTrim is not
+overridden.
+It seems to me that, in general, any control that provides a
+getClientArea implementation should also override computeTrim.
+This also affects the fix for 10025, where minimum dimension calculations
+depend on computeTrim to correctly account for trimmings.

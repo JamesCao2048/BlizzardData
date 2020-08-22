@@ -1,0 +1,25 @@
+[Workbench] DBCS: Window resizing does not work properly
+OS:		<AIX 5.2>
+Language:	<Japanese locale:Ja_JP.IBM-943>
+Build level: 	<3.0M8-aix-motif(200403311308)>
+JDK version:  IBM JDK 1.4.2 Beta
+Test case #:
+Summary: DBCS: Window resizing does not work properly
+Steps to recreate problem:
+1- select File->New->Project.., then create New Java Project.
+2- add package and class to the project, then select Java Editor which shows
+newly created class.
+3- resizing eclipse window.
+Error:
+Eclipse fails to resize window.
+When window is extended, blank area is
+appeared.
+When window is shrinked, some view is concealed.
+This problem is
+caused by selecting Editors, such as Java Editor, Text Editor and so on.
+But
+when selecting specific pages, such as Welcome pages and plugin.xml pages,
+window resizing works correctly.
+Expected Result:
+According to window size, each Views should be shrinked or extended to show all
+Views properly.

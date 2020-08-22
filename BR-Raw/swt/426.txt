@@ -1,0 +1,11 @@
+Add API to access the application menu (Mac) and system menu (win32/gtk)
+On the Mac developers want control over the application menu.
+They want to set the about menu text, enable/disable/hide the preferences item, and add items to the application menu.
+They also want to listen for selections on those items.
+In other words, treat it like any other Menu in the application.
+Likewise, on Win32 or Linux, you can access the system menu of a window and listen to each of its items, as well as add items to the menu.
+On the Mac the only way to do this right now is via the eAWT package from Apple.
+This works correctly now, in 3.7, but using it loads the AWT, which shouldn't be necessary just to listen to some menu items that the SWT creates anyway.
+On Windows or GTK the system menu is not accessible without going to the PI.
+I know it can be done on Win32 as we already modify it for TOOL and child windows.
+We don't do it in GTK but I'm pretty sure I saw API somewhere to get at the system menu.

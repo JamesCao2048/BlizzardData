@@ -1,0 +1,7 @@
+Table column tooltip disappears after clicking the header
+If you set the tooltip on a table column, tooltips correctly appear when you hover over the column header.
+But after you click the header (e.g.
+to sort) then the tooltip is not shown for this column until you move the mouse to another column (moving the mouse outside the table doesn't help).
+I tried this e.g.
+with Snippet38 from  http://www.eclipse.org/swt/snippets/  where I set the tooltip on all column.
+Found in Eclipse 3.2RC5.

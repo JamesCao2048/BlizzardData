@@ -1,0 +1,11 @@
+Snippet132 using drawString incorrectly
+Snippet132 has the following code at the "business end:"
+String testString = "Hello World!";
+Point extent = gc.stringExtent(testString);
+gc.drawString(testString, leftMargin, topMargin + font.getFontData()[0].getHeight());
+I'm not sure why we're adding font.getFontData()[0].getHeight() and I believe it should be removed.
+drawString()'s x and y parameters are measured in pixels, but FontData.getHeight() is a measure of the font face's height in points.
+On my printer there is no appreciable difference on the printout, since the printer DPI is 600 and the FontData.getHeight() returns 2 (not sure why) which amounts to only 1/300" == 0.085mm difference.
+However in working with the SWTSwing folks, where printing is always 72DPI (ugh) the error in this snippet is more obvious.
+An 8-point font will be drawn at an 8-point offset (about 1/8" == 2.82mm).
+This makes SWTSwing's behavior appear to be wrong when in fact it is the snippet.

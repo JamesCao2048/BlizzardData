@@ -1,0 +1,2 @@
+Bug 147643 [Regression]Text transform is not supported in PDF
+Steps to reproduce: 1.New a label with content "aaa" 2.Add a style for the label, set text transform to "Upper Case" 3.Preview in PDF Expected result: "aaa" is transformed to "AAA" Actual result: Still "aaa", text transform is not supported in PDF

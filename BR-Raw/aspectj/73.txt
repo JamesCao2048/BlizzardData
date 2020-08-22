@@ -1,0 +1,6 @@
+import handling and type lookup issues
+Raised by Peter Melnikov on the mailing list.
+Two problems:
+1) the binding scope being used for annotation style aspects accumulates lots of duplicate import prefixes in the SimpleScope object.
+2) SimpleScope.lookupType tries the prefixes even if the type is already fully qualified.
+The combination of these issues causes a terrible mess.  Lots of class lookup failures.  Since the type cannot be 'partially qualified' it is silly to use the prefixes if the type is fully qualified.

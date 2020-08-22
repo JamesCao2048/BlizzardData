@@ -1,0 +1,9 @@
+Disabling Controls does not prevent popup menu from functioning
+Build id: I20070208-2030
+Steps:
+1.On a mac, open a control such as Group
+2.Check "Popup Menu" and uncheck "Enabled"
+3.Right click in the Group area.
+Notice that a popup menu appears.
+On other platforms (Windows, Linux) disabling a control also prevents the popup menu from appearing.
+On the mac, this is apparent with all controls that have a popup menu option with exception to: Canvas, CoolBar, ExpandBar, and ToolBar, which work properly.

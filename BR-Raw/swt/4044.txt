@@ -1,0 +1,29 @@
+SWT exception on LayoutExample (Photon)
+build 20020624 (F4)
+1
+- Run the LayoutExample (org.eclipse.swt.examples)
+2
+- Go to the RowLayout tab
+3
+- Insert a control
+4
+- define a width for this control
+The following log will be write in the console:
+org.eclipse.swt.SWTException: Widget is disposed
+Stack trace:
+java/lang/Throwable.<init>()V
+java/lang/Throwable.<init>(Ljava/lang/String;)V
+org/eclipse/swt/SWTException.<init>(ILjava/lang/String;)V
+org/eclipse/swt/SWTException.<init>(I)V
+org/eclipse/swt/SWT.error(ILjava/lang/Throwable;)V
+org/eclipse/swt/SWT.error(I)V
+org/eclipse/swt/widgets/Widget.error(I)V
+org/eclipse/swt/widgets/Control.getDisplay()Lorg/eclipse/swt/widgets/Display;
+org/eclipse/swt/widgets/Control.processKey(I)I
+org/eclipse/swt/widgets/Widget.processEvent(III)I
+org/eclipse/swt/widgets/Text.processEvent(III)I
+org/eclipse/swt/widgets/Display.windowProc(III)I
+org/eclipse/swt/internal/photon/OS.PtAppProcessEvent(I)V
+org/eclipse/swt/widgets/Display.sleep()Z
+org/eclipse/swt/examples/layoutexample/LayoutExample.main
+([Ljava/lang/String;)V

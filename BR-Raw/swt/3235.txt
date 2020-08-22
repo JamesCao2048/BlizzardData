@@ -1,0 +1,24 @@
+Gtk - Checkbox/Radiobox setLocation Bug
+When calling setSize in front of setLocation the text in the
+checkbox is not displayed.
+This works:
+----------------------8<----------------------
+Button check = new Button( this, SWT.NONE | SWT.CHECK );
+check.setLocation( 10, 200 );
+check.setSize( 200, 300 );
+check.setText( "TEST" );
+----------------------8<----------------------
+This don't (text is not diplayed):
+----------------------8<----------------------
+Button check = new Button( this, SWT.NONE | SWT.CHECK );
+check.setSize( 200, 300 );
+check.setLocation( 10, 200 );
+check.setText( "TEST" );
+----------------------8<----------------------
+On win32 both versions are working.
+Versions used: libswt-gtk-3062
+GTK, I don't know what's apropiate:
+[tom@vinea tom]$ pkg-config
+--modversion gtk+-2.0
+2.4.4
+[tom@vinea tom]$

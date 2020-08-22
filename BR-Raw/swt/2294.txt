@@ -1,0 +1,14 @@
+Misprints in SWT Win32 code ?
+While porting SWT to Win64 [ Bug #57151 ],
+the following 2 strange places were found:
+1.Strange usage of hImage handler (may be
+super.setBackgroundImage should be called ?)
+org.eclipse.swt.widgets/Scale.java:285
+void setBackgroundImage (int hImage) {
+super.setBackgroundPixel (hImage);
+2."sizeof" is used for (maybe) wrong object
+(NMLVCUSTOMDRAW instead of NMTVCUSTOMDRAW)
+org.eclipse.swt.widgets/Tree.java:1075
+OS.MoveMemory (lParam, nmcd, NMLVCUSTOMDRAW.sizeof);
+Are these places real bugs or...
+?

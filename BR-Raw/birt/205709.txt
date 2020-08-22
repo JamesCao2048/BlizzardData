@@ -1,0 +1,4 @@
+Bug 205709 Translation table is missed when report design is flattened
+It happens when a report design with a localization property file and some library (otherwise it's not flattened!) is executed.
+Such report document has no transaltion table and then can not be localized.
+The problem is in org.eclipse.birt.report.model.util.ReportDesignSerializer#visitReportDesign which does not copy the translation table from ReportDesignSerializer#sourceDesign to ReportDesignSerializer#targetDesign.

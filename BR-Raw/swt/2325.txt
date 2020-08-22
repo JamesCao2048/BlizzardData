@@ -1,0 +1,5 @@
+Linux GTK and TableEditor Failure Assertion
+TableEditor seems not to work in the SWT 3232 build (Eclipse 3.2 RC3).
+The attached snippet shows the problem.
+Double clicking on a value item and then pressing any key (for editing the field) leads to the following error:
+(Gecko:5704): Gtk-CRITICAL **: gtk_widget_event: assertion `WIDGET_REALIZED_FOR_EVENT (widget, event)' failed

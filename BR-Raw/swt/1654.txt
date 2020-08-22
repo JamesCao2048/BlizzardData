@@ -1,0 +1,57 @@
+[Accessibility] Leopard: VoiceOver doesn't follow focus if Browser is in Shell
+3.4 M5 on Mac OS X Leopard Carbon
+Adding a Browser (HIWebViewCreate) to a Shell on Leopard seems to mess up accessibility.
+Typing Tab moves focus from one Carbon control to the next, and the focus highlight follows the focus, but the VoiceOver cursor does not follow the focus
+- in fact, VoiceOver can't even tell that the focused control exists.
+Consequently, VoiceOver does not speak any of the other controls.
+For example, this breaks accessibility in the SWT ControlExample because of the Browser tab...
+even when the Browser tab is not visible.
+Looking at this with the Accessibility Inspector, it seems that the Browser has essentially "hijacked" the Shell as far as accessibility is concerned, because other controls in the Shell don't show up in the accessible hierarchy.
+Looking at it with UI Browser, I can see the other controls in the hierarchy, however there is a [MISMATCH] that seems to indicate a disconnect in the hierarchy below the level of the Shell.
+The following PI code (platform calls from within Java) shows the problem, however I do not know how to fix this.
+I need help from Scott at Apple.
+1) Run the code below from inside eclipse with SWT in your workspace.
+2) Turn on VoiceOver (command F5) and type the Tab key a bunch of times.
+Notice that the VoiceOver cursor (black rectangle) follows focus, and VoiceOver speaks the names of the 2 Carbon buttons.
+3) Now, in the PI code, set createBrowser = true; and run again.
+Type tab.
+This time, VoiceOver doesn't speak the names of the Carbon buttons.
+4) Run the Accessibility Inspector (in /Developer/Applications/Utilities/Accessibility Tools) and note that the inspector cannot see either of the 2 buttons.
+5) If you have UI Browser, then you need to create a Mac application and run that
+- ask me, and I will send steps to create an application.
+You can see the broken hierarchy in UI Browser.
+import org.eclipse.swt.internal.*;
+import org.eclipse.swt.internal.carbon.*;
+import org.eclipse.swt.internal.cocoa.*;
+public class CarbonPI {
+boolean createCocoaButtons = false;
+boolean createBrowser = false;
+
+int shellHandle, rootHandle;
+boolean running = true;
+int queue;
+int carbonButton1, carbonButton2;
+int cocoaButton1, cocoaButton2;
+int webViewHandle;
+
+public static void main(String[] args) {
+new CarbonPI().doit();
+}
+void doit() {
+int [] psn = new int [2];
+if (OS.GetCurrentProcess (psn) == OS.noErr) {
+String APP_NAME = "Test Application";
+byte[] buffer = new byte[APP_NAME.length () + 1];
+for (int i = 0; i
+< buffer.length
+- 1; i++) {
+buffer[i] = (byte) APP_NAME.charAt (i);
+}
+OS.CPSSetProcessName (psn, buffer);
+OS.CPSEnableForegroundOperation (psn, 0x03, 0x3C, 0x2C, 0x1103);
+OS.SetFrontProcess (psn);
+}
+queue = OS.GetCurrentEventQueue();
+
+{	/* Shell */
+int windowAttrs = OS.kWindowCompositingAttribute | OS.kWindowCloseBoxAttribute | OS.kWindowFullZoomAttribute | OS.kWindowCollapseBoxAttribute | OS.kWindowResizableAttribute | OS.kWindowStandardHandlerAttrib

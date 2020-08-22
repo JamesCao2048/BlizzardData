@@ -1,0 +1,11 @@
+Bug 101655 Provide the ability to write custom event handlers on chart components.
+There is added benefits to provide the ability to add custom event handlers on chart components such as legend items, title bar, axes, data points.
+This provides for a rich user experience.
+Consider the following use-case scenario: A line chart is generated with 10 datasets each of these datasets have 100 points.
+Visually the chart may be cluttered with data.
+The ability to filter out datasets during runtime can simply the visualization.
+One solution is to provide an event handler of a legend item.
+The event handler can be associated with the legend item of a data set to control the visibility of the data set within the plot area.
+The event is triggered by a "mouse down" event on the legend item.
+This is just one scenario.
+Potentially an exploiter of the chart framework can write custom event handlers to provide rich user experience.

@@ -1,0 +1,8 @@
+Styled Text draws on top of itself
+20040324
+Solaris 9 (in SWT lab)
+When you open a java editor in Solaris the StyledText draws on top of itself.
+STEPS
+1) Open a java editor
+2) All of the text is rendered at the beginning of the line so they are all on
+top of themselves

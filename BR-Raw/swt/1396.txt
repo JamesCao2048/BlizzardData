@@ -1,0 +1,8 @@
+block selection: handle multi-line paste
+in a paste operation with a multi-line text each line should to be inserted to the correspondent line in the block selection.
+Special cases.
+m = number of lines in the clipboard text
+n = number of lines in the block selection
+n > m: n-m last lines in the block selection will have no text inserted in it.
+m > n: m-n lines past of last line of the block selection will have the text insert at the closest offset where the left edge of block selection insertects the line.
+text inserted in the StyledText through StyledText#insert(String) should follow the same rules.

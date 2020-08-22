@@ -1,0 +1,12 @@
+Setting the toolbar's background on RC2 doesn't work.
+In the attached zip I've added a changed version of the PDE's "Plugin with a
+view" project.
+I've changed the ToolBarTest.views.SampleView.createPartControl
+(Composite) method in order to "wrap" the table view in a ViewForm with a
+toolbar.
+I've also set the toolbar background to white (actually as you will
+see I've set it to white twice).
+If you run the plugin in RC2 the background color of the toolbar button is
+gray.
+Running it on 2.02 and 2.03 the background of the toolbar button is
+white.

@@ -1,0 +1,30 @@
+unexpected error unboundFormalInPC
+In 1.5.0M4, I get error "the parameter tis is not bound in [all branches of]
+pointcut".  Not true of 1.2.1.  Untested in other development versions of 1.5.0.
+No branches (all &&) but duplicate specification of this(..).
+------------------------------------------
+package demo;
+/**
+* PerThis
+*/
+public class PerThis {
+public static void main(String[] args) {
+new This().test();
+}
+}
+aspect PerThisTest perthis(pc()) {
+// TutIndex example-basic-perthis
+pointcut pc() : this(This) && !within(PerThisTest) && call(void run());
+before(This tis) : pc() && this(tis){
+System.out.println("bef " + this + " <-- " + tis);
+}
+}
+class This {
+int i;
+void test() {
+run();
+}
+void run() {
+System.out.println("run " + this);
+}
+}

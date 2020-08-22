@@ -1,0 +1,4 @@
+TextLayout.draw(...) does not use GC foreground
+- run the snippet below
+- on cocoa it draws its text in black, on other platforms it draws it in red
+- this fix is needed asap because jface uses TextLayout to draw its custom Table/Tree items, and Cocoa's custom Table/Tree drawing implementation will be released soon

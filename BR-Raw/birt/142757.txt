@@ -1,0 +1,8 @@
+Bug 142757 TVT3.2:TCT522: HUN: BIRT - Scrollbar needed
+Subject : hu : Scrollbar needed Testcase/Filename : : 20.0060 Category : : TVT/Testing Priority 2 OS : RHEL 3.1 Must fix or not a must fix: YES Build date:16/05 Blocking: NO Language: hu Bitmap Location: V:defectshu20.001060.jpg Tester Name: Gabor Kiss Problem Description: Creating a new report from Business Intelligence and Reporting Tools, the 2nd window containes Report Templates frame, which is not resizable.
+Please see the attached screenshot.
+Steps: Open New Project dialog from Eclipse File menu Select Business Intelligence and Reporting Tools Click Next Type any Project name on Report Project dialog and Click Finish Open Associated Perspective dialog is displayed.
+Click Yes From the menu, select File->New->Report Click Next This article was reassigned from Category:''TVT/Testing''.
+Spanish version has the same problem.
+Please check.
+Thanks, Enric Arau Spanish Tester

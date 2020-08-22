@@ -1,0 +1,50 @@
+NPE in Control.invalidateVisibleRegion when expanding/collapsing tree node
+3.6 M7
+- Cocoa
+- 32-bit
+In RTC,
+- select a change set in the Pending Changes view (uses an owner-draw Tree)
+- hit F2 to open the edit field (a child text field)
+- click the expand/collapse triangle for the change set
+- it fails with:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Control.invalidateVisibleRegion(Control.java:1891)
+at org.eclipse.swt.widgets.Control.setVisible(Control.java:3743)
+at org.eclipse.swt.custom.TreeEditor$3.treeCollapsed(TreeEditor.java:117)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:104)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Display.sendEvent(Display.java:3734)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1335)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1358)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1343)
+at org.eclipse.swt.widgets.TreeItem.sendExpand(TreeItem.java:1018)
+at org.eclipse.swt.widgets.Tree.collapseItem_collapseChildren(Tree.java:425)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5133)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+at org.eclipse.swt.widgets.Widget.mouseDownSuper(Widget.java:993)
+at org.eclipse.swt.widgets.Tree.mouseDownSuper(Tree.java:1957)
+at org.eclipse.swt.widgets.Widget.mouseDown(Widget.java:989)
+at org.eclipse.swt.widgets.Control.mouseDown(Control.java:2222)
+at org.eclipse.swt.widgets.Tree.mouseDown(Tree.java:1934)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4928)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:1911)
+at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:1998)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4992)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:4536)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:4613)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:115)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3247)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2601)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2565)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2399)
+at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:669)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:662)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.ru

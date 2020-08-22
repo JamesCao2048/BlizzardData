@@ -1,0 +1,89 @@
+GTK:Selecting a Checkbox from within the selection callback causes infinite loop(BBAWT)
+The following example works on Windows but does not work on GTK.
+This emulates
+the way our AWT works with the Button.
+This test has two classes, but the second
+class should be run(TestSWTRadiobutton).
+----------- CheckboxGroup class starts here
+------------------
+import java.io.Serializable;
+import org.eclipse.swt.widgets.Button;
+public class CheckboxGroup {
+Button selectedCheckbox;
+public CheckboxGroup() {
+}
+public Button getCurrent() {
+return getSelectedCheckbox();
+}
+public Button getSelectedCheckbox() {
+return selectedCheckbox;
+}
+public void setCurrent(Button checkbox) {
+setSelectedCheckbox(checkbox);
+}
+public void setSelectedCheckbox(Button checkbox) {
+if (selectedCheckbox == checkbox) {
+return;
+}
+if ((checkbox != null) ) {
+return;
+}
+if (selectedCheckbox != null) selectedCheckbox.setSelection(false);
+selectedCheckbox = checkbox;
+
+if (selectedCheckbox != null) selectedCheckbox.setSelection(true);
+}
+void updateSelectedCheckbox(Button checkbox, boolean state) {
+if (state) {
+setSelectedCheckbox(checkbox);
+} else {
+if (checkbox == selectedCheckbox) {
+selectedCheckbox = null;
+}
+}
+}
+}
+-------------------CheckboxGroup class ends here
+----------------------
+--------------TestRadioButton class starts here
+---------------
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class TestSwtRadiobutton {
+public static void main(String[] args) {
+final Display disp = Display.getDefault();
+final Shell shell = new Shell(disp);
+shell.setLayout(new FillLayout());
+final CheckboxGroup group = new CheckboxGroup();
+final String names[] =
+{ "button1", "button2", "button3", "button4", "button5" };
+for (int i = 0; i
+< names.length; i++) {
+final Button box = new Button(shell, SWT.RADIO);
+box.setText(names[i]);
+box.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+boolean state = box.getSelection();
+if (!state) {
+box.setSelection(true);
+group.updateSelectedCheckbox(box, true);
+return;
+}
+group.updateSelectedCheckbox(box, state);
+}
+});
+}
+shell.setSize(800, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}
+}
+---------------TestSWTRadiobutton class ends here
+---------------

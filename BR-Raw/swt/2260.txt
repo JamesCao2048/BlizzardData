@@ -1,0 +1,12 @@
+moving column can lose sort indicator
+3.3M2, gtk+ 2.4.13
+- run the ControlExample and go to either the Table or Tree tab
+- turn on:
+Multiple Columns
+Header Visible
+Sort Indicator
+Moveable Columns
+Resizable Columns
+- this puts the sort indicator in the first column
+- move the first column to follow the second column, this works fine
+- now move this column back to become the first ordered column and note that the sort indicator has disappeared

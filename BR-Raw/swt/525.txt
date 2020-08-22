@@ -1,0 +1,4 @@
+Display.getAppMenuBar() removes all existing menus
+Created  attachment 179803   [details]
+Project to reproduce the bug
+I just made a call to display.getAppMenuBar() and all the menus were gone.

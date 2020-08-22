@@ -1,0 +1,23 @@
+[3.7.x] GLCanvas maintenance fix causes NullPointerException when changing parent on Mac
+Build Identifier: M20120118-0800
+I use GLCanvas in my RCP app and a common workflow is to change the parent window of the widget (often moving a CTabFolder containing the GLCanvas from one partition to another).
+The app uses Eclipse SDK 3.7.0 and the correct behavior is observed.
+The workflow causes a NullPointerException when using a recent 3.7.x stream build (e.g.
+M20120118-0800).
+I confirmed that you can successfully change the parent of a GLCanvas in SWT 3.7.0 and 3.7.1.The (soon to be) attached code snippet can be used to reproduce the error by changing the sample project's SWT dependency.
+I only tested the 32-bit version of SWT; I assume the same holds true for the 64-bit version.
+I suspect this defect was introduced with the fix to  Bug 343331 , which was last changed 9/7/2011 (change previous to that in 2009).
+I marked this bug CRITICAL as it introduces a crash condition in a maintenance release.
+I expect the same fix will be required in the 4.2/3.8 branch.
+Reproducible: Always
+Steps to Reproduce:
+1.Create two shells (shell1, shell2)
+2.Create a GLCanvas and set shell1 as parent
+3.Change GLCanvas parent to shell2
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Canvas.viewWillMoveToWindow(Canvas.java:614)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5683)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSView.addSubview(NSView.java:36)
+at org.eclipse.swt.widgets.Control.setParent(Control.java:3942)
+at steve.opengl.GLCanvasParentSwap.main(GLCanvasParentSwap.java:139)

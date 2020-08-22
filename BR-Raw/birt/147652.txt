@@ -1,0 +1,2 @@
+Bug 147652 Inconsistent behaviors when preview in web viewer and html/pdf using attached design file
+Description: Use a nonexisted binding column as sort key will cause web viewer preview fail Steps to reproduce: 1.Insert a table, generate binding 2.use one binding as sort key to add a sorting on table 3.Delete the sort key in bindig pane 4.Preview in web viewer Expected result: Table header and master page can display and return error msg Actual result: Nothing displays in web viewer

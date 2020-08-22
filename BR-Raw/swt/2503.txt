@@ -1,0 +1,10 @@
+Spinner generates bogus ModifyText events
+Spinner class generates lots of ModifyText events.
+This is happening on Windows XP.
+These event are generated when either Spinner widget loses focus, or Eclipse window loses focus (another app becomes active).
+Below is a snippet from stack trace.
+MyClass.modifyText( ModifyEvent event )
+....
+Spinner.setSelection(int, boolean, boolean, boolean) line: 948
+Spinner.wmKillFocus(int, int, int) line: 1246
+....

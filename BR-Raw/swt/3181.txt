@@ -1,0 +1,39 @@
+[browser] setText/setUrl crashes when called from location.changing
+need to investigate policydelegate
+From Apple newsgroup:
+On Oct 5, 2004, at 9:33 AM, Christophe Cornu wrote:
+> Can anyone from Apple help us with these?
+>
+> [NSURL defersCallbacks]: selector notrecognized
+> An uncaught exception was raised
+That error means that an NSURLConnection object was released, but code
+was still trying to work with it.
+> We get them in the following scenario:user clicks on a hyperlink and
+> the application handles that link to dosomething special
+- block this
+> load and load a different URL.
+>
+- WillSendRequest
+> 聽 聽 聽 聽
+-loadRequest
+> Exception raised by webkit when returningfrom WillSendRequest callback.
+>
+> Same for:
+>
+- WillSendRequest
+> 聽 聽 聽 聽
+-loadHTMLStringbaseURL
+>
+> Are there limitations as to what webkitAPI can be invoked from within
+> WebResourceLoadDelegate callbacks?
+> Is it required to always let the WillSendRequestcallback return before
+> calling loadRequest or loadHTMLStringbaseURL?
+Yes, I think the resource load delegate callbacks are probably too
+low-level to allow a loadRequest right inside one that replaces the
+page that you're being called back about.
+Generally the resource load delegate is not what you should be using to
+change what clicking on a link does, though.
+That should be done with
+the policy delegate.
+聽 聽
+-- Darin

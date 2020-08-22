@@ -1,0 +1,14 @@
+Moveable table column and DND feedback clash on MacOS X
+If you create a table and set the columns to be moveable all works fine and you
+get the little "grab hand" icon on OSX when you move the column (use snippet 181
+for testing, located at:
+http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet181.java?rev=HEAD&content-type=text/vnd.viewcvs-markup )
+If you now add a drag / drop listener to the table as...
+DropTarget dropTarget = new DropTarget(table, DND.DROP_MOVE | DND.DROP_COPY);
+DragSource dragSource = new DragSource(table, DND.DROP_MOVE | DND.DROP_COPY);
+..
+and try to reorder columns, you now get an arrow icon with a little stop icon
+next to it.
+It still works actually reordering the columns, but the "feedback"
+while you're doing it is wrong.
+(This all works fine on Windows XP).

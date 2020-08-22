@@ -1,0 +1,19 @@
+Installed BrowserFunctions are available to remote content loaded in iFrames.
+Build Identifier:
+When a BrowserFunction is installed on a page, it is also made available to remote content loaded in Frames and iFrames.
+From looking at the code this behavior was intended.
+
+This behavior is differs between platforms.
+For IE and Safari browsers, iFrames do not have access to the installed BrowserFunction but they do have access to the "window.external.callJava" function.
+For Mozilla browsers, iFrames have access to the installed BrowserFunctions and the "window.external.callJava" function.
+We have use cases where we need to restrict access to the installed BrowserFunction and "window.external.callJava".
+We think there are two things that need to be done.
+1) Enhancement to the BrowserFunction/Browser API to allow scoping the installed BrowserFunctions to specific window/frame/iframes.
+2) Secure access to the "window.external.callJava" function.
+Reproducible: Always
+Steps to Reproduce:
+Steps to reproduce
+1.Start with the Browser widget snippet
+2.Change the HTML to include an iFrame with remote content
+3.Add script to the remote content that attempts to access the installed BrowserFunction
+Bug: If the browser is SWT.MOZILLA the remote script will successfully access the installed BrowserFunction

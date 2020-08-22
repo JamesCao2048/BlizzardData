@@ -1,0 +1,4 @@
+Bug 211547 [Automation][Acceptance]Exceptions are thrown out in console when click a hyperlink linked to a reportdocument
+Description: Exceptions are thrown out on console when click a hyperlink linked to a reportdocument.
+Test Date: 20071129 Test Build: BIRT2.3.0 Daily Build: v20071129-0800 Step to reproduce: 1.Creat a new report 2.Add a label 3.Set label's hyperlink drill through to the reportdocument attached 4.Preview it in web viewer 5.Click the label.
+Expect result: Reportdocument should display correctly Actual result: Reportdocument can not be previewed and there is endless exception thrown out in console.

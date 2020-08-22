@@ -1,0 +1,20 @@
+WinCE: VM crash on Display.dispose() call
+I have problem disposing a Display.
+When calling Display.dispose the VM crashes
+(unexpected exit or freeze).
+Im using swt-3.1-win32-wce_ppc-arm-j2se on a MDA2
+PocketPC with IBM j9.A test with Gotive WinCE device and HHP device shows the
+same results.
+Here is my simple testcode:
+System.out.println("started");
+Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setText("demo!");
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+System.out.println("before dispose");
+display.dispose ();
+System.out.println("end");
+The crash happens here: display.dispose();

@@ -1,0 +1,9 @@
+AspectJ LTW with Cobertura
+We are using AspectJ LTW along with Cobertura for code coverage. Class files are
+weaved just fine if they are not instrumented with Cobertura, but when
+AspectJ attempts to weave the same aspects into Cobertura-instrumented
+copies of the same class files, weaving fails with the following error:
+>> error at commycompanyMyAspect.java::0 Cannot read debug info for
+@Aspect to handle formal binding in pointcuts (please compile with 'javac
+-g' or '<javac debug='true'.../>' in Ant)
+The attached project demonstrates the problem. It contains one simple aspect, a target class, and a unit test for the aspect. To see the problem, run the "unittest" target in the included Ant build file. This will run the single unit test twice. In the first pass, the test is run with javac-generated (i.e. uninstrumented) class files. The aspect is correctly woven and the test passes. In the second pass, the test is run with Cobertura-instrumented class files. There is an error during LTW, and the test fails.

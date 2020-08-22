@@ -1,0 +1,11 @@
+Bug 104239 Value-Of Problem
+I've added a text item and i'm running into the following problem with the value-of tag:
+<I>
+<VALUE-OF format="html"> var value; value="test"; value;
+</VALUE-OF>
+</I> gives the error: There are errors on the report page: Error1:Invalid Javascript expression: null The expression cannot be null or empty The expression cannot be null or empty So then I went to the rom spec for an example and tried the following and got the error below
+<value-of format="html"> String value; if ( 10.24
+< 0 ) value = "<span style=""red"""; value += format( 10.24, "(##,###.##)" ); if ( 10.24
+< 0 ) value += "</span>"; value;
+</value-of> There are errors on the report page: Error1:Invalid Javascript expression: String value; if ( 10.24
+< 0 ) value = " missing ; before statement missing ; before statement

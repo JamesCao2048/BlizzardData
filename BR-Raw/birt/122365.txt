@@ -1,0 +1,7 @@
+Bug 122365 In data set dialog, add parameter first then edit query, parameter value will be cleared out.
+Description: In data set dialog, add parameter first then edit query, parameter value will be cleared out.
+Steps to reproduce: 1.Add a data set.
+2.In data set dialog, add a parameter.
+3.Edit query and use this parameter.
+4.Preview in data set dialog, it works.
+5.Change to "parameter" page, its value is cleared out.

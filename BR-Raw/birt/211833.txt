@@ -1,0 +1,2 @@
+Bug 211833 [Regression]Can not select Measures in Crosstab's Group Level filter
+Description: [Regression]Can not select Measures in Crosstab's Group Level filter Build number: 2.3.0.v20071204-0800 Steps to reproduce: 1, New a crosstab 2, New a Group level filter on crosstab 3, Select Measure in Filter Condition Expected result: The measures of crosstab should be in the list Actual result: The Measures are empty

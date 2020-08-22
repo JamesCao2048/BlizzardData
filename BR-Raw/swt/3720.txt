@@ -1,0 +1,65 @@
+Eclipse crashes on exit
+2.1 + SWT HEAD
+Date/Time:  2003-04-11 01:09:02 +0200
+OS Version: 10.2.5 (Build 6L29)
+Host:       lipari.local.
+Command:    Eclipse
+PID:        637
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000037
+Thread 0:
+#0   0x90073c48 in mach_msg_trap
+#1   0x90005f90 in mach_msg
+#2   0x0366a000 in 0x366a000
+#3   0x90180f58 in CFRunLoopRunSpecific
+#4   0x92b10ca4 in startupJava(int, int, char const**, __CFDictionary const*,
+BuilderVersion, char const*, char const**)
+#5   0x00001c54 in 0x1c54
+#6   0x00001ad4 in 0x1ad4
+Thread 1 Crashed:
+#0   0x930276e0 in SetupParamBlockForCIcon
+#1   0x9300ece4 in PlotCIconHandle
+#2   0x96a3e354 in HIIconView::DrawSelf(short, OpaqueRgnHandle*, CGContext*)
+#3   0x969a9b2c in HIView::EventHandler(OpaqueEventHandlerCallRef*,
+OpaqueEventRef*, void*)
+#4   0x969a2c54 in DispatchEventToHandlers
+#5   0x969a2fbc in SendEventToEventTargetInternal
+#6   0x969a63d0 in SendEventToEventTargetWithOptions
+#7   0x969b362c in SendControlDefDraw(HIView*, short, OpaqueGrafPtr*,
+OpaqueRgnHandle*, CGContext*)
+#8   0x969af108 in HIView::DrawInternal(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned char, unsigned char, unsigned char, HIView*, CGContext*)
+#9   0x969af224 in HIView::DrawInternal(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned char, unsigned char, unsigned char, HIView*, CGContext*)
+#10  0x969af224 in HIView::DrawInternal(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned char, unsigned char, unsigned char, HIView*, CGContext*)
+#11  0x969af224 in HIView::DrawInternal(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned char, unsigned char, unsigned char, HIView*, CGContext*)
+#12  0x969af224 in HIView::DrawInternal(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned char, unsigned char, unsigned char, HIView*, CGContext*)
+#13  0x969af224 in HIView::DrawInternal(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned char, unsigned char, unsigned char, HIView*, CGContext*)
+#14  0x969b09bc in HIView::Draw(short, OpaqueGrafPtr*, OpaqueRgnHandle*,
+unsigned long, HIView*, CGContext*)
+#15  0x96a22950 in DeactivateControl
+#16  0x969dd100 in HandleWindowEvent
+#17  0x969ee2f8 in StandardWindowEventHandler
+#18  0x969a2c54 in DispatchEventToHandlers
+#19  0x969a2fbc in SendEventToEventTargetInternal
+#20  0x969a63d0 in SendEventToEventTargetWithOptions
+#21  0x969f25d8 in PostActivateEvent
+#22  0x969eb704 in HiliteAndActivateWindow
+#23  0x96a0a304 in AdjustToNewWindowActivation(WindowData*, WindowContext*,
+OpaqueWindowPtr*, WindowData*)
+#24  0x96a58518 in PotentiallyAdjustActivationOnOrderIn(WindowData*, WindowData*)
+#25  0x96a49ffc in ShowWindow
+#26  0x0496669c in Java_org_eclipse_swt_internal_carbon_OS_ShowWindow
+#27  0x013b0580 in 0x13b0580
+#28  0x013a9fb0 in 0x13a9fb0
+#29  0x013a9fb0 in 0x13a9fb0
+#30  0x013a9fb0 in 0x13a9fb0
+#31  0x013a9fb0 in 0x13a9fb0
+#32  0x013a9ef0 in 0x13a9ef0
+#33  0x013a9fb0 in 0x13a9fb0
+#34  0x013a9fb0 in 0x13a9fb0
+#35  0x013a9e30 i

@@ -1,0 +1,7 @@
+Bug 288076 [Regression]Disable set aggregation functionfor chart as xtab measure view[1302]
+Description: Disable set aggregation functionfor chart as xtab measure view build number:2.5.1.v20090831 Steps to reproduce: 1.Insert a xtab.
+2.Change measure to chart view.
+3.Edit the chart, in select data->y series, set aggregation function to some function.
+Expected result: Should disable set aggregation function button.
+Actual result: It's enabled and can set aggregation function.
+Error log:n/a

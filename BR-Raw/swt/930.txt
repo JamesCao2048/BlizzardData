@@ -1,0 +1,13 @@
+Path.close() method on results in different behavior on Cocoa
+Created  attachment 136873   [details]
+Source Code for problem reproduction
+Build ID: I20090515-1143
+Steps To Reproduce:
+1.Run the attached source in Eclipse 3.5 RC1.
+2.Notice that the Generated Paths result in different appearances between SWT-Cocoa-3.5 and SWT-Carbon-3.4.2.
+3.Try removing the Path.close() and observe effect.
+One should conclude that there is something wrong with the generated path when close() is used.
+Other explanations are possible but should be obvious to the SWT Cocoa team.
+More information:
+Check the attached Screen Shots and code.
+This bug probably has the same root cause (in SWT) as BIRT  Bug #277464  ( https://bugs.eclipse.org/bugs/show_bug.cgi?id=277464 ).

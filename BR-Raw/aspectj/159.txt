@@ -1,0 +1,54 @@
+UnsupportedOperationException thrown: unable to parameterize unresolved type: Pjava/util/List<+Ljava/lang/Object; >;
+Generic parameters (like List<? extends T>) in pointcuts throw UnsupportedOperationException.
+java.lang.UnsupportedOperationException
+at org.aspectj.weaver.UnresolvedType.parameterize(UnresolvedType.java: 220)
+at org.aspectj.weaver.patterns.ExactTypePattern.parameterizeWith (ExactTypePattern.java:244)
+at org.aspectj.weaver.patterns.SignaturePattern.parameterizeWith (SignaturePattern.java:265)
+at org.aspectj.weaver.patterns.KindedPointcut.parameterizeWith (KindedPointcut.java:381)
+at org.aspectj.weaver.bcel.BcelAdvice.parameterizeWith (BcelAdvice.java:93)
+at org.aspectj.weaver.ResolvedType.getDeclaredAdvice (ResolvedType.java:710)
+at org.aspectj.weaver.ResolvedType.getDeclaredShadowMungers (ResolvedType.java:739)
+at org.aspectj.weaver.ResolvedType.collectShadowMungers (ResolvedType.java:575)
+at org.aspectj.weaver.ResolvedType.collectCrosscuttingMembers (ResolvedType.java:504)
+at org.aspectj.weaver.CrosscuttingMembersSet.addOrReplaceAspect (CrosscuttingMembersSet.java:68)
+at org.aspectj.weaver.CrosscuttingMembersSet.addOrReplaceAspect (CrosscuttingMembersSet.java:57)
+at org.aspectj.weaver.bcel.BcelWeaver.prepareForWeave(BcelWeaver.java: 450)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave (AjCompilerAdapter.java:299)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling (AjCompilerAdapter.java:192)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc $afterReturning$org_aspectj_ajdt_internal_compiler_CompilerAdapter$2 $f9cc9ca0(CompilerAdapter.aj:70)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile (Compiler.java:367)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation (AjBuildManager.java:887)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild (AjBuildManager.java:244)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild (AjBuildManager.java:163)
+at org.aspectj.ajde.internal.CompilerAdapter.compile (CompilerAdapter.java:122)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run (AspectJBuildManager.java:191)
+UnsupportedOperationException thrown: unable to parameterize unresolved type: Pjava/util/List<+Ljava/lang/Object;>;
+To reproduce this exception compile the following code snippet.
+import java.util.ArrayList;
+import java.util.List;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+public class Main {
+public List<? extends Element> getElements() {
+return new ArrayList<Element>();
+}
+class Element {};
+@Aspect
+static abstract class Base<T> {
+@Around("call(List<? extends T> *.*(..))")
+public List<? extends T> elementList(ProceedingJoinPoint thisJoinPoint) {
+try {
+return (List<? extends T>)thisJoinPoint.proceed();
+} catch (Throwable e) {
+throw new RuntimeException(e);
+}
+}
+}
+@Aspect
+static class Concrete extends Base<Element> {}
+public static void main(String[] args) {
+new Main().getElements();
+}
+
+}

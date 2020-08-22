@@ -1,0 +1,2 @@
+Bug 201676 Some modifications do not work on the Display Name of the Output Columns[07]
+Description: The dataset's output column has the display name by default[07] Build number: 2.2.1.v20070830-0630 Steps to reproduce: 1, New a dataset from SampleDB's customers 2, Check the display name of the output column Expected result: The display name should be empty and should be specified by user Actual result: The display name is specified automatically as same as the Column name

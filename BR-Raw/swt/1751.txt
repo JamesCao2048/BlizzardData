@@ -1,0 +1,13 @@
+Virtual Tree w/ columns: Items appear in wrong order when sortDirection is SWT.DOWN
+Build ID: I20070503-1400
+Steps To Reproduce:
+The attached snippet illustrates the problem:
+- The model contains the items [element3, element2, element1], in this order.
+- The sort direction is SWT.DOWN
+- In response to SWT.SetData events, I set element3  to index 0, element2 to index 1 ...
+Result: In the UI, the order is [element 1, element 2, element 3], not [3, 2, 1]
+When I now click in one of the column headers, the sort order is suddenly correct, without any SetData events being fired.
+More information:
+I encountered this in M7 (and also in RC3) and in conjunction with a virtual tree viewer, but it might not be limited to virtual trees, and is reproducible e.g.
+with M6, too.
+This is only on MacOS

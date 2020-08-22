@@ -1,0 +1,17 @@
+Cannot type in Text widget in an ON_TOP Shell
+SWT Standalone version 3.2M3:
+I've created a splash screen with a Label for the background image and a
+composite containing a Label and Text widget each for Login and Password, and a
+"Login" button.
+(The shell has FormLayout, the composite has GridLayout).
+It is not possible to type into the Text widget or delete characters.
+It is possible to select text in the widget.
+This seems to be an activation problem because if I click the shell (to activate
+it) activation doesn't seem to work, and if I then type characters they go to
+the previously activated window (e.g.
+Eclipse Workbench).
+If I remove the ON_TOP style bit I can again edit the text in the widgets.
+According to release notes a similar looking bug was fixed in SWT Build 2.1 001
+- Tuesday July 23, 2002, I cannot find the detailed bug report though:
+Bug 21456 : GTK: Cannot type in Text widget contained in Shell which has style
+bit as NO_TRIM

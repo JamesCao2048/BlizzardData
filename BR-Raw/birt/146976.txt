@@ -1,0 +1,8 @@
+Bug 146976 Save state of the report not correct.
+Reproduce: 1) New a library "lib1", add a label "label1" 2) Publish "lib1" 3) New a report "report1", use "lib1" 4) Drag "lib1.label1" into "report1" 5) Go back to "lib1", drop "label1", save and publish again.
+6) Go to "report1", refresh the libaray explorer and design.
+7) Save "report1" 8) Now, we go back to "lib1" 9) Undo the previous "delete command", "label1" is added back.
+10) Save "lib1", and re-publish.
+11) Go to "report1", refresh the libaray explorer and design.
+12) Save "report1" At this stage, "report1" is saved, but the dirty indicator(*) still displayed in the left side of the report name.
+I am testing on build N20060613

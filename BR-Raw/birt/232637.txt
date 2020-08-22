@@ -1,0 +1,2 @@
+Bug 232637 SQB Dataset name should be updated when modification happen in creating process
+Description: SQB Dataset name should be updated when modification happen in creating process Build number: 2.3.0.v20080517-0630 Steps to reproduce: 1, New a SQB Datasource 2, New a SQB Dataset and firstly specify the name to A 3, Go to Query page 4, Go back to the first page and modify the name to B 5, Finish Expected result: The dataset name should be B Actual result: The dataset name is still A Error log:

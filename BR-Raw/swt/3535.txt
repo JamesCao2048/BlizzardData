@@ -1,0 +1,7 @@
+Shift Tab does not work in java editor
+RC2
+Select a few lines of code in a java editor
+Tab shifts right as expected
+BUG: Shift tab does not shift left.
+Is it conflicting with the tab focus?
+Works on Windows.

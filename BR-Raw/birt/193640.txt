@@ -1,0 +1,6 @@
+Bug 193640 [RCP] When create a template file, RCP works different with all-in-one [02]
+Description: When create a template file, RCP works different with all-in-one.
+Build number: 2.2.0.v20070620-0630 Steps to reproduce: 1.New a template file, click next.
+Expected result: There is "Please set the template properties" in the top left of the dialogue as it does in all-in-one.
+Actual result: There is no "Please set the template properties" (see the screenshot).
+Error log: N/A

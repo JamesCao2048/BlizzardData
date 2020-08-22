@@ -1,0 +1,10 @@
+Measure event always comes before an Erase/Paint event on Mac and Windows, but not on GTK
+Run the attached snippet on GTK and observe how the items don't look right after moving over them with the mouse, or after scrolling.
+They are supposed to look like:
+000
+111
+222
+333
+etc.
+The snippet works on Windows and the Mac.
+It caches a TextLayout object in MeasureItem and uses it in PaintItem.

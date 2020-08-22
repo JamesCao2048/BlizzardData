@@ -1,0 +1,2 @@
+[Browser] setting mozilla's proxy host/port values should not be persisted
+The setting of these values via a java property should only be in effect for the current session, they should not be persisted in the mozilla preferences, as they may not apply to future sessions.

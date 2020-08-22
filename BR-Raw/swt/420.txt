@@ -1,0 +1,11 @@
+Text VerifyEvent; Changing inserted text field inserts nothing or damages content
+Build Identifier: swt-3.7M5-cocoa-macosx-x86_64
+The text field of a VerifyEvent received by a Text's VerifyListener contains the text about to be inserted.
+Changing this field is supposed to alter the inserted text.
+Instead nothing is inserted, or the changed text is inserted while following parts of the Text's contents are deleted.
+Reproducible: Always
+Steps to Reproduce:
+1.Run attached code.
+Single typed characters should be converted to "X".
+2.Observe that typing in the top paragraph substitutes X but deletes following paragraphs.
+3.Observe that typing in later paragraphs inserts nothing.

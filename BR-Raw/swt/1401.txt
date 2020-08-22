@@ -1,0 +1,63 @@
+StyledText SetStyleRange not working
+Build ID:  I20080917-0800
+Steps To Reproduce:
+1.Set 2 different style ranges using setStyleRange()
+2.Set 2 different style ranges using setStyleRanges()
+3.Use getStyleRanges to retrieve the style ranges
+4.Notice that style ranges (set by setStyleRange() method) are not returned correctly.
+More information:
+package bugs;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyleRange;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class  Bug1  {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(1, false));
+StyledText text = new StyledText(shell, SWT.V_SCROLL | SWT.H_SCROLL);
+text.setText("The Eclipse Foundation is currently going through the exercise");
+StyleRange r1 = new StyleRange();
+r1.underline = true;
+StyleRange r2 = new StyleRange();
+r2.strikeout = true;
+
+if (false) {
+//THIS WORKS
+int[] ranges = {12, 10, 36, 5};
+StyleRange[] styles = {r1, r2};
+text.setStyleRanges(ranges, styles);
+} else {
+r1.start = 12;
+r1.length = 10;
+r2.start = 36;
+r2.length = 5;
+text.setStyleRange(r1);
+text.setStyleRange(r2);
+}
+
+text.replaceTextRange(12, 10, "");
+
+int[] ranges2 = text.getRanges(26, 5);
+if (ranges2 != null && ranges2.length > 1) System.out.println(ranges2[0] + " " + ranges2[1]);
+else System.out.println("BUG getRanges");
+
+StyleRange[] style = text.getStyleRanges(26, 5);
+if (style!= null && style.length > 0) System.out.println(style[0]);
+else System.out.println("BUG getStyleRanges(true)");
+StyleRange[] style2 = text.getStyleRanges(26, 5, false);
+if (style2!= null && style2.length > 0) System.out.println(style2[0]);
+else System.out.println("BUG getStyleRanges(false)");
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

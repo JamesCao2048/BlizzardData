@@ -1,0 +1,12 @@
+Shift+F10 has wrong keyCode
+F3
+A snippet is included below that simply listens for key presses and prints the
+respective keyCode and state for each.
+When it's run on any platform other
+than hpux its values for Shift+F10 are:
+Key Pressed: 16777235. State: 131072
+However on hpux pressing Shift+F10 gives:
+Key Pressed: 0. State: 131072
+This causes an accessibility problem in Eclipse because Shift+F10 is used to
+display the context menu for the currently selected item.
+It might be another problem case in Widget.setKeyState().

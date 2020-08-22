@@ -1,0 +1,24 @@
+hang when calling BrowserFunction while disposing
+public class BrowserBug {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(1, false));
+Browser browser = new Browser(shell, SWT.NONE);
+browser.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+browser.setText("<html><head></head><body><input type='text' onchange='bf(0)' /></body></html>");
+new BrowserFunction(browser, "bf"){
+public Object function(Object[] arguments) {
+System.out.println("hello");
+return 0;
+}
+};
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

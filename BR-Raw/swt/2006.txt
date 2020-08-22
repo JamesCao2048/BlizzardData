@@ -1,0 +1,83 @@
+Custom Draw Tree brings cheese when using Image and Bold
+Eclipse 3.3 RC1
+Just run this snippet on windows to see cheese in the treeitems:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.graphics.Region;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Scrollable;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeColumn;
+import org.eclipse.swt.widgets.TreeItem;
+/*
+* Created on 14.03.2007
+*
+* To change the template for this generated file go to
+* Window
+- Preferences
+- Java
+- Code Generation
+- Code and Comments
+*/
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Color fGradientFgColor = new Color(display, new RGB(250, 250, 250));
+final Color fGradientBgColor = new Color(display, new RGB(220, 220, 220));
+final Color fGradientEndColor = new Color(display, new RGB(200, 200, 200));
+Image img = new Image(display, 16, 16);
+GC gc = new GC(img);
+gc.setBackground(display.getSystemColor(SWT.COLOR_RED));
+gc.fillRectangle(0, 0, 16, 16);
+gc.dispose();
+Tree t = new Tree(shell, SWT.FULL_SELECTION);
+t.setHeaderVisible(true);
+TreeColumn col1 = new TreeColumn(t, SWT.NONE);
+col1.setText("Title");
+col1.setWidth(500);
+TreeColumn col2 = new TreeColumn(t, SWT.NONE);
+col2.setText("Date");
+col2.setWidth(100);
+TreeColumn col3 = new TreeColumn(t, SWT.NONE);
+col3.setText("Author");
+col3.setWidth(100);
+TreeColumn col4 = new TreeColumn(t, SWT.NONE);
+col4.setText("Category");
+col4.setWidth(100);
+TreeColumn col5 = new TreeColumn(t, SWT.NONE);
+col5.setText("");
+col5.setWidth(20);
+for (int i = 0; i
+< 100; i++) {
+TreeItem treeItem = new TreeItem(t, SWT.NONE);
+treeItem.setText(0, "Hello World");
+treeItem.setData(new Integer(i));
+treeItem.setFont(new Font(display, "Tahoma", 8, SWT.BOLD));
+treeItem.setImage(0, img);
+treeItem.setText(1, "Hello World");
+treeItem.setText(2, "Hello World");
+treeItem.setText(3, "Hello World");
+treeItem.setImage(4, img);
+}
+t.setSelection(t.getItem(3));
+t.setTopItem(t.getItem(0));
+t.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+Scrollable scrollable = (Scrollable) event.widget;
+GC gc = event.gc;
+Integer data = (Integer) event.item.getData();
+if (data.intValue() == 0) {
+Rectangle area = scrollable.getClientArea();
+Rectangle re

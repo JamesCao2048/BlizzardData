@@ -1,0 +1,81 @@
+[OLE] MS Word OLE Crash
+Eclipse build id or SWT version: M2
+Platform(s) tested on: Windows XP SP2 Dutch
+Snippet title: MS Word OLE Crash
+Snippet code:
+When opening MS Word with the OLE support of SWT, it opens but after some random clicks (or run the spell checker) the window resizes and all menu's disapear.
+Then Word crashes.
+All office updates are installed, and I tried with Office XP (2002) and 2003 as well.
+Code:
+import java.io.File;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.ole.win32.OLE;
+import org.eclipse.swt.ole.win32.OleClientSite;
+import org.eclipse.swt.ole.win32.OleFrame;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.Shell;
+public class WordSample {
+private Shell shell;
+private OleFrame frame;
+private OleClientSite site;
+private File openFile = null;
+public WordSample() {
+Display display = new Display();
+shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setSize(800, 600);
+
+Menu menuBar = new Menu(shell, SWT.BAR);
+Menu fileMenu = new Menu(menuBar);
+MenuItem fileItem = new MenuItem(menuBar, SWT.CASCADE);
+fileItem.setText("File");
+fileItem.setMenu(fileMenu);
+MenuItem itema = new MenuItem(fileMenu, SWT.CASCADE);
+itema.setText("Open document");
+MenuItem itemb = new MenuItem(fileMenu, SWT.CASCADE);
+itemb.setText("Radio B");
+MenuItem itemc = new MenuItem(fileMenu, SWT.CASCADE);
+itemc.setText("Radio C");
+shell.setMenuBar(menuBar);
+
+itema.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+
+FileDialog fileDialog = new FileDialog(shell, SWT.OPEN);
+fileDialog.setFilterExtensions(new String[] {"*.doc"});
+String doc = fileDialog.open();
+if (doc != null && !doc.equals("")) {
+openDocument(doc);
+}
+}
+});
+
+itemb.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+
+FileDialog fileDialog = new FileDialog(shell, SWT.OPEN);
+fileDialog.setFilterExtensions(new String[] {"*.docx"});
+String doc = fileDialog.open();
+if (doc != null && !doc.equals("")) {
+openDocument(doc);
+}
+}
+});
+
+itemb.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+saveDocument();
+
+}
+});
+
+frame = new OleFrame(shell, SWT.NONE);
+
+shell.open();
+while

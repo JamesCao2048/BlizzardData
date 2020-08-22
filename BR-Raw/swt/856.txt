@@ -1,0 +1,7 @@
+unused code in GC#setClipping
+see 274931  comment 15
+at the end of setClipping
+if (hRgn != 0 && hRgn != clipRgn) {
+OS.DeleteObject(hRgn);
+}
+DeleteObject will never run cause hRgn always equals to clipRgn

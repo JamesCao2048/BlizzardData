@@ -1,0 +1,6 @@
+Remove GtkCombo and friends.
+Created  attachment 205145   [details]
+The patch.
+The attached patch is removing GtkCombo and related functions which are using only for pre gtk 2.4.0 which is unsupported by latest SWT.
+The patch looks way bigger than it is actually, thanks to jnigen changes which I decided to include in order to have proper git-formatted patch (appliable with git am).
+Build and tested locally without any problems seen (gtk 2.24)

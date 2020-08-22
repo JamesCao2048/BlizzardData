@@ -1,0 +1,27 @@
+DBCS - GB18030: Input GB18030 characters as run arguments cause eclipse for motif crash.
+Bug: Input GB18030 character as run arguments cause eclipse for motif crash.
+Language: Simplified Chinese
+Testcase: RD2
+
+Build driver: 200212181304 Stable Build (M4) for Motif
+OS: RedHat 8.0
+JRE Version: J2RE 1.3.1 IBM build cxia32131-20021102 (JIT enabled: jitc)
+J2RE 1.4.0 IBM build cxia32140-20020917a (JIT enabled:jitc))
+
+
+Summary: When I begin to run a java class, and input GB18030 characters as
+project arguments, eclipse crashed.
+Steps to recreate problem:
+1.creat a new project and build it correctly.
+2.Click menu Run->Run..., then the "Run window" show up.
+3.select "Arguments" tab, input some GB18030 characters  as the
+Program arguments.
+4.Click run button to run class.
+<<Error>>
+In step 3, I can wake up IME, but after I input a GB18030 character,
+the eclipse crashed.(As is shown in RunCrash.jpg)
+<<Expected Result>>
+Could run project correctly.
+Comments
+I can use GB2312 as program arguments correctly.
+In Eclipse with GTK build, this function is ok.

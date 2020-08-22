@@ -1,0 +1,13 @@
+Scale with preferred size is unusable (no range of motion)
+Build F1 (20020521)
+Redhat 7.2, GTK2, KDE 2.2-10
+(GTK Only)
+See the SWT example ControlExample, under the "Slider and Scale" tab.
+You can't
+use the scales on the right side (minimum, maximum, selection) because their
+size is set to the size of the thumb, so there's no room to move left or right,
+making this widget unusable.
+This only happens to the scale on the left side (the one we're customizing) when
+the Size->Preferred option is set.
+If it's a fixed size or horizontal fill it
+works fine.

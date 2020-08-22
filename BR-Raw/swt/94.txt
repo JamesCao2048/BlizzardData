@@ -1,0 +1,28 @@
+[JDK7]test_getTopIndex fails in org.eclipse.swt.tests
+Build Identifier: Version: 3.7.2 Build id: M20120208-0800
+test_getTopIndex fails in org.eclipse.swt.tests with 7u6 on Macosx:
+expected:<1> but was:<0>
+junit.framework.AssertionFailedError: expected:<1> but was:<0>
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Text.test_getTopIndex(Test_org_eclipse_swt_widgets_Text.java:792)
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Text.runTest(Test_org_eclipse_swt_widgets_Text.java:1421)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:501)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:259)
+at org.eclipse.test.CoreTestApplication.runTests(CoreTestApplication.java:36)
+at org.eclipse.test.CoreTestApplication.run(CoreTestApplication.java:32)
+at org.eclipse.equinox.internal.app.EclipseAppContainer.callMethodWithException(EclipseAppContainer.java:587)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:198)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+at org.eclipse.core.launcher.Main.main(Main.java:34)
+Reproducible: Always
+Steps to Reproduce:
+Use eclipse-Automated-Tests-3.7.2 to run automated tests with jdk 7u6.
+1.Install 7u6 from  http://jdk7.java.net/download.html
+2.Run swt tests
+All tests are passed with jdk6.

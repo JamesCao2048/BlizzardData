@@ -1,0 +1,48 @@
+Crash in Tree.setItemCount
+Process:         eclipse [16632]
+Path:            /Users/krbarnes/Desktop/eclipse/Eclipse.app/Contents/MacOS/eclipse
+Identifier:      org.eclipse.eclipse
+Version:         3.4 (3.4)
+Code Type:       X86 (Native)
+Parent Process:  launchd [103]
+Date/Time:       2008-09-30 16:16:42.179
+-0400
+OS Version:      Mac OS X 10.5.5 (9F33)
+Report Version:  6
+I get this occasionally while debugging.
+Usually happens when I terminate a launch, but I don't have a reproducible test case yet.
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: KERN_INVALID_ADDRESS at 0x00000000c0000023
+Crashed Thread:  0
+Application Specific Information:
+Java information:
+Version: Java HotSpot(TM) Client VM (1.5.0_13-119 mixed mode)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_13-119) for macosx-x86, built on Sep 28 2007 23:59:21 by root with gcc 4.0.1 (Apple Inc.
+build 5465)
+Exception type: Bus Error (0xa) at pc=0x90889688
+Current thread (0x09a01500):  JavaThread "main" [_thread_in_native, id=-1602011232]
+Stack: [0xbf800000,0xc0000000)
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSend(IIIZ)I+0
+j  org.eclipse.swt.internal.cocoa.NSOutlineView.reloadItem(Lorg/eclipse/swt/internal/cocoa/id;Z)V+20
+j  org.eclipse.swt.widgets.Tree.setItemCount(Lorg/eclipse/swt/widgets/TreeItem;I)V+214
+j  org.eclipse.swt.widgets.TreeItem.setItemCount(I)V+16
+j  org.eclipse.jface.viewers.TreeViewer$6.run()V+99
+j  org.eclipse.jface.viewers.StructuredViewer.preservingSelection(Ljava/lang/Runnable;Z)V+18
+j  org.eclipse.jface.viewers.TreeViewer.preservingSelection(Ljava/lang/Runnable;Z)V+22
+j  org.eclipse.jface.viewers.StructuredViewer.preservingSelection(Ljava/lang/Runnable;)V+3
+j  org.eclipse.jface.viewers.TreeViewer.setHasChildren(Ljava/lang/Object;Z)V+19
+j  org.eclipse.debug.internal.ui.viewers.model.HasChildrenUpdate.performUpdate()V+77
+j  org.eclipse.debug.internal.ui.viewers.model.ViewerUpdateMonitor$1.runInUIThread(Lorg/eclipse/core/runtime/IProgressMonitor;)Lorg/eclipse/core/runtime/IStatus;+48
+j  org.eclipse.ui.progress.UIJob$1.run()V+51
+J  org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Z)Z
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  org.eclipse.swt.widgets.Display.runAsyncMessages(Z)Z+5
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+89
+j  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V+9
+j  org.eclipse.ui.internal.Workbench.runUI()I+393
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$5.run()V+23
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(

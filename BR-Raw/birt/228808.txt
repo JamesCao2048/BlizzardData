@@ -1,0 +1,3 @@
+Bug 228808 Enhance the exception when expression like Total.count(expression, filter, group)
+Description: Enhance the exception when expression like Total.count(expression, filter, group) Build number: 2.3.0.v20080424-0630 Steps to reproduce: 1, New a table binding with dataset CUSTOMERS 2, New a group on table, group name is city, group key is CITY 3, New a dataitem in group footer and expression is Total.count(row["CUSTOMERNUMBER"], row["CUSTOMERNUMBER"]<130,"city") 4, Preview Expected result: If we don't support the expression like Total.count(expression, filter, group), we should give a error message Actual result: The preview is ok but the result is not user expected.
+Error log:

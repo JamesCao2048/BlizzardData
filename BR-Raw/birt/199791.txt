@@ -1,0 +1,8 @@
+Bug 199791 Sybase Stored Procedures and Temp Tables
+Using BIRT 2.2.0 I am try to create a data set that accesses a procedure in ASE Sybase.
+I am able to select the procedure I want from the list available.
+The problem is, if the procedure contains a temporary table and that table is is used to return the result set, no output columns will be displayed.
+No preview results will be returned in the data set.
+If a standard SQL select statement is entered in place of the temporary table, output columns and preview results will be returned in the data set.
+Is there a configuration or parameter that I am missing?
+Thanks Mark

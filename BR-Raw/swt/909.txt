@@ -1,0 +1,14 @@
+SWT.ON_TOP style bit is not working for a shell with parent in cocoa
+Created  attachment 133223   [details]
+snippet to reproduce the bug
+Build ID: I20090313-0100
+Steps To Reproduce:
+1.Run the attached snippet.
+The shell has a child window created with ON_TOP bit set.
+2.Click on button "press".
+Another child window of the same parent is created but it doesn't have the ON_TOP bit set.
+But this new child window is above the ON_TOP child window.
+More information:
+The same snippet works fine on carbon and windows and also in cocoa for a shell with no parent.
+Behavior can also be reproduced using the Shell tab in the control example.
+Create shell with parent radio button selected.

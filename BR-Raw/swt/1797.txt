@@ -1,0 +1,15 @@
+[Browser] Linux(SLED10), Eclipse crash when XPCOM error in Mozilla OnStateChange callback
+Build ID: Eclipse 3.3.1
+Steps To Reproduce:
+-Using Eclipse 3.3.1 build on Suse Linux Enterprise Desktop 10SP1, which xulrunner is 1.8.0.1.
+-Launch Eclipse, and show "internal web browser" view.
+-Open URL:  http://map.baidu.com
+-Search the map(eg.type &#21271;&#20140; &#29579;&#24220;&#20117;) (you can copy it)
+-After search result listed in the right, click one of the links.(eg.
+click A &#29579;&#24220;&#20117;)
+- Eclipse crashes.
+More information:
+1.We debugged into Eclipse code, and saw there is an XPCOM error within the OnStateChange callback, and in hookDOMListeners method.
+2.After we use try/catch blocks to catch Throwable, we can see an exception, and this time, it won't crash the Eclipse.
+3.As I suggested months ago, SWT should try to catch Java exception/throwables in the Callbacks, and notify the errors either in UI thread, or on console.
+An uncaught Java exception will cause a crash of whole eclipse client.

@@ -1,0 +1,6 @@
+Shell's with SWT.NO_TRIM not minimized on Windows+M keystroke
+Shell's with SWT.NO_TRIM are not minimized with the Windows+M keystroke ('Minimize all').
+The attached snippet can be used to reproduce.
+Side notes:
+- might be similar to  Bug 277568 .
+- the similar Windows+D keystroke works as expected

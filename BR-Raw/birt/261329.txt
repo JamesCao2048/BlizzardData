@@ -1,0 +1,7 @@
+Bug 261329 [Accessibility] Problems when using keyboard to navigate in Layout view [17]
+Description: Problems when using keyboard to navigate in Layout view.
+Build number: 2.5.0.v20090113-0630 Steps to reproduce: 1.In the Layout view, use the keyboard to add report items.
+Expected result: when user want to create new report item, the focus should be on the Layout view.
+So user should be able to use keyboard to move between the report items and Layout view.
+Actual result: Only can the Tab button to move between the report items.
+Error Log: N/A

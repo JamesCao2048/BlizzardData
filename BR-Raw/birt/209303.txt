@@ -1,0 +1,5 @@
+Bug 209303 [Automation][Smoke]NPE is thrown out when previewing reportdesign
+Description: NPE is thrown out when previewing reportdesign TestDate: 20071109 TestBuild: BIRT2.3.0 Daily Build: v20071109-0800 steps to reproduce:
+- use the attached report design
+- preview it Expected Result: Report can be previewed without any exception Actual Result: NPE is thrown out.
+Error log: Please refer to the attachment

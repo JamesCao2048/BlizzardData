@@ -1,0 +1,6 @@
+Bug 189598 [linux][smoke]GUIException when new style in Layout or through main menu[0300]
+Description: GUIException when new style in Layout or through main menu Build number:2.2.0.v200705291039 Steps to reproduce: 1.New a report.
+2.New a style by right click in Layout.
+3.New a style through main menu Expected result: A new style is inserted.
+Actual result: Fail to new style and throw exception.
+Error log:N/A

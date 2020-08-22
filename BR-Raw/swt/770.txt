@@ -1,0 +1,6 @@
+Table/Tree should show vertical grid lines when showing setLinesVisible(true)
+Created  attachment 154256   [details]
+patch
+- some Cocoa apps do this (eg.- iTunes)
+- we do it everywhere else that it's supported (win32, gtk >= 2.12, carbon,
+motif)

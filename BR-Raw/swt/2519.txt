@@ -1,0 +1,74 @@
+Horizontal ScrollBar not ReSized When Table Contents Changed
+The following snippet demonstrates the problem.
+Run the snippet, then re-size the window until there is a horizontal and vertical scrollbar.
+Select "Now" from "ReFill" menu.
+The vertical scrollbar is refreshed correctly, the horizontal retains it's previous size.
+I have verified this behaviour on Windows XP and a Pocket PC.
+Cheers,
+Eddie
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.*;
+public class HelloWorld {
+
+private Table tDirs;
+
+public void doMain() {
+
+Display display = new Display ();
+Shell shell = new Shell (display);
+
+GridLayout gridLayout = new GridLayout();
+shell.setLayout(gridLayout);
+
+GridData gridData = new GridData(GridData.FILL_BOTH);
+shell.setLayoutData(gridData);
+
+tDirs = new Table(shell, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
+gridData = new GridData(GridData.FILL_BOTH);
+tDirs.setLayoutData(gridData);
+
+for (int ii = 0; ii
+< 40; ii++) {
+TableItem item = new TableItem (tDirs, 0);
+item.setText("This is a very long item to fill the width of the table, and make it very wide indeed");
+}
+Menu mb = new Menu(shell, SWT.BAR);
+shell.setMenuBar(mb);
+MenuItem fileItem = new MenuItem(mb,SWT.CASCADE);
+fileItem.setText("ReFill");
+Menu fileMenu = new Menu(shell, SWT.DROP_DOWN);
+fileItem.setMenu(fileMenu);
+MenuItem exitItem = new MenuItem(fileMenu, SWT.PUSH);
+exitItem.setText("Now");
+exitItem.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+refillTable();
+}
+});
+
+shell.open ();
+
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}
+public void refillTable() {
+
+tDirs.removeAll();
+for (int ii = 0; ii
+< 4; ii++) {
+TableItem item = new TableItem (tDirs, 0);
+item.setText("Tiny item.");
+}
+}
+
+public static void main (String [] args) {
+HelloWorld snippet = new HelloWorld();
+snippet.doMain();
+}
+}

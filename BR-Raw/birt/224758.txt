@@ -1,0 +1,2 @@
+Bug 224758 Revise the the IncludeCSSsheet behavior
+currently, when user include a CSS style sheet to design, model parse in the two types of selectors defined in the CSS file; 1) type selectors 2) class selectors Now, because we need to support the new feature to output the CSS sheet to HTML, Model need to change the above behavior to: only parse in the Class type selector which defined as: *.xxx or ..XXX

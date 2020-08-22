@@ -1,0 +1,56 @@
+Outline view crashes on WinXP & Win2K
+I can reproduce this crash consistently.
+1.Open specific Java source file with 75 methods
+2.Press Ctrl-O
+3.Type first character 'c' of one of the methods
+4.CRASH
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION occurred at PC=0x773607AB
+Function=ImageList_SetOverlayImage+0x68C0
+Library=C:WINDOWSsystem32COMCTL32.dll
+Current Java thread:
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1236)
+at org.eclipse.swt.widgets.Tree.callWindowProc(Tree.java:156)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2839)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2361)
+at org.eclipse.swt.internal.win32.OS.SendMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.SendMessage(OS.java:1785)
+at org.eclipse.swt.widgets.Control.setCursor(Control.java:1865)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:63)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:289)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalExpandToLevel(AbstractTreeViewer.java:840)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalExpandToLevel(AbstractTreeViewer.java:848)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalExpandToLevel(AbstractTreeViewer.java:848)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalExpandToLevel(AbstractTreeViewer.java:848)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.internalExpandToLevel(AbstractTreeViewer.java:848)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.expandToLevel(AbstractTreeViewer.java:442)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.expandToLevel(AbstractTreeViewer.java:428)
+at
+org.eclipse.jface.viewers.AbstractTreeViewer.expandAll(AbstractTreeViewer.java:419)
+at
+org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControl$5.modifyText(JavaOutlineInformationControl.java:413)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:183)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:840)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:865)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:845)
+at org.eclipse.swt.widgets.Text.wmCommandChild(Text.java:1755)
+at org.eclipse.swt.widgets.Control.WM_COMMAND(Control.java:2914)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2766)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2361)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1236)
+at org.eclipse.swt.widgets.Text.callWindowProc(Text.java:96)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:2839)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:2361)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org

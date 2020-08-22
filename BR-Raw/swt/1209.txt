@@ -1,0 +1,25 @@
+Popup menus: unexpected appearance of application context menus
+Builds: Eclipse SDK Mac OSX Cocoa N20081126-2000 (compared to Carbon N20081126-2000)
+In the context of the SWT Controls Example, re the popup menu:
+
+Unlike for Carbon, in a number of controls, a right-click on the control opens an application context menu instead of the expected sample popup menu, or when no popup menu is expected (popup menus are disabled).
+
+In response to a right-click on the control...
+
+For Cocoa:
+-- Combo control: application context menu appears, both when popups are disabled and when enabled.
+(Oddly, when the control itself is disabled, the sample popup menu appears.)
+-- CoolBar control: as expected, except for application context menu that appears in the text area, irrespective of whether popups are enabled or disabled.
+(This does not happen for Carbon.)
+-- Link control: application context menu appears when popups are disabled.
+-- Sash control: application context menu appears in the text area, both when popups are disabled and when enabled.
+(Aside from this context menu in the text area, popup menus do not seem to be working.
+For Carbon, popups do not seem to be working at all.)
+-- Spinner control: application context menu appears, both when popups are disabled and when enabled.
+-- Text control: application context menu appears when popups are disabled.
+-- Browser control: browser context menu appears when popups are disabled.
+(This also happens for Carbon, and may be correct).
+
+For Carbon:
+-- When popup menus are disabled, popups never seem to appear, except in the Browser control (see above).
+-- When popup menus are enabled, the popups that appear are always the sample popup menu.

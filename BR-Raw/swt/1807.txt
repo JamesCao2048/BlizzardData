@@ -1,0 +1,43 @@
+SWT Combo doesn't gain focus during choice selection in Eclipse 3.3/GTK
+Build ID: M20070921-1145
+Steps To Reproduce:
+1.Load the snippet of code included and run it Eclipse 3.3.1 Linux GTK.
+2.Make a choice selection on the combo on the left without selecting the body of the Combo control.
+3.Notice that Focus Gained message is not printed to console and the UI feedback from the Combo control does not indicate focus.
+Try same snippet on Eclipse 3.3.1 for Windows or Eclipse 3.2.2 for Linux/GTK.
+Focus Gained message is printed and UI feedback shows that the control has gained focus.
+More information:
+SWTTest Class
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class SWTTest {
+public static void main(String[] args) {
+Display display = new Display ();
+Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+String[] items = new String[]{"One","Two","Three"};
+final Combo combo1 = new Combo(shell, SWT.BORDER);
+final Combo combo2 = new Combo(shell, SWT.BORDER);
+combo1.setItems(items);
+combo2.setItems(items);
+combo1.addFocusListener(new FocusAdapter(){
+public void focusGained(FocusEvent e) {
+System.out.println("Focus Gained
+-" + ((Combo)e.getSource()).getText());
+}
+public void focusLost(FocusEvent e) {
+System.out.println("Focus Lost"+ ((Combo)e.getSource()).getText());
+}
+});
+shell.pack();
+shell.open();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+display.dispose();
+}
+}

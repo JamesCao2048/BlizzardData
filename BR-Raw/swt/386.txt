@@ -1,0 +1,25 @@
+Shell.moveAbove() should not show widget if not visible
+Shell.moveAbove() doesn't show child area, just the frame.
+See snippet below:
+=====
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class Test {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(1, false));
+Button b = new Button(shell, SWT.PUSH);
+b.setText("PUSH ME");
+shell.setVisible(false);
+shell.moveAbove(null);
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

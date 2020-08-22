@@ -1,0 +1,11 @@
+Mac: Calling Tree.setItemCount() causes SWTError: Item not removed
+[I20051123-1200]
+When you decrease the item count of a Tree with SWT.VIRTUAL, the following error occurs:
+Exception in thread "main" org.eclipse.swt.SWTError: Item not removed
+at org.eclipse.swt.SWT.error(SWT.java:3288)
+at org.eclipse.swt.SWT.error(SWT.java:3185)
+at org.eclipse.swt.SWT.error(SWT.java:3156)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:735)
+at org.eclipse.swt.widgets.Tree.setItemCount(Tree.java:2559)
+at org.eclipse.swt.widgets.Tree.setItemCount(Tree.java:2532)
+at org.eclipse.swt.snippets.Snippet202.main(Snippet202.java:53)

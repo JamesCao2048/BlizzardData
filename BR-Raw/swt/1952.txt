@@ -1,0 +1,4 @@
+[consistency] Make TreeColumn.pack consistent across platforms
+TreeColumn.pack needs to have a consistent behaviour across platforms.
+I think it should give the width need to display the widest expanded child item (i.e.
+ignore children that are not visible because the parent is collapsed)

@@ -1,0 +1,12 @@
+Allow the ltw configuration to be directly specified rather than discovered on the classpath
+Currently the property:
+org.aspectj.weaver.loadtime.configuration
+can be set to name the ltw configuration file that the loadtime weaver searches for.  The default value is:
+META-INF/aop.xml;META-INF/aop-ajc.xml;org/aspectj/aop.xml
+and the weaver searches the classpath for .xml files matching any of those three possibilities.
+A typical override might therefore be:
+-Dorg.aspectj.weaver.loadtime.configuration=META-INF/overhere.xml
+however the weaver will still only look for it on the classpath.
+In some environments the ltw user may just want to name the aop config file to use, and not be forced to include it on the classpath.
+We have had the suggestion to make it protocol based, which i like, but for now I would just allow support for 'file:'.  If file: is the prefix, it will be treated as direct reference to the file to use, otherwise it will be searched for.
+This change would mean all existing uses of the override will be fine, but new users will be all to exploit the flexibility of naming their configuration directly.

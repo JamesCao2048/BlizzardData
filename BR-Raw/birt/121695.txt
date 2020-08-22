@@ -1,0 +1,5 @@
+Bug 121695 "Save as" is always disabled in a library file.
+Description: "Save as" is always disabled in a library file.
+Steps to reproduce: 1.Create a library.
+2.Select File>Save as.
+"Save as" is always grayed out.

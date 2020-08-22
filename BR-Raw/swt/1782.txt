@@ -1,0 +1,30 @@
+Control's tooltip displays abnormally on linux platform.
+Build ID: M20070212-1330
+Steps To Reproduce:
+1.Create a canvas on a shell and set the canvas' tooltip.
+2.Create a button on the canvas.
+3.Launch the application on linux platform and hover on the button.
+4.The canvas' tooltip displays above the button, while on windows platform, the canvas' tooltip will never display above the button.
+Code snippet:
+public static void main(String[] args) {
+final Display display = Display.getDefault();
+final Shell shell = new Shell();
+shell.setSize(500, 375);
+shell.setText("Tooltip Application");
+//-----------------------
+shell.setLayout(new FillLayout());
+final Canvas control = new Canvas(shell,SWT.NONE);
+control.setToolTipText("this is control canvas");
+Button button = new Button(control,SWT.PUSH);
+button.setText("OK");
+button.setSize(200,200);
+//-----------------------
+shell.layout();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+shell.dispose();
+}
+More information:

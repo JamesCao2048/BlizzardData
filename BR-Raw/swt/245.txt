@@ -1,0 +1,3 @@
+[Browser] mozilla is given invalid profile directory in some circumstances
+There appears to be a bug in the Sun JRE that causes it to sometimes have value "?" for its user.home property, even though the user's home directory is available in the OS' properties.
+I have a reproducible case of this on Linux, and this has also been reported on Windows in  bug 290535 comment 8 .

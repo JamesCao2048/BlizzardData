@@ -1,0 +1,2 @@
+Bug 162840 Add max row to URL
+Steps to reproduce: 1.Set max row to 10 2.New a data source and a data set from a table which containing more than 10 records 3.Drag the data set to layout 4.Preview in Web Viewer Expected result: Max row as a parameter is added to URL Actual result: No max row limitation

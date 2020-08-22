@@ -1,0 +1,6 @@
+Bug 137116 row[0] % 2 Equal to 0 no longer works
+In 2.0, I applied this highlight condition
+-- row[0] % 2 Equal to 0
+-- to generate a report with alternating row colors.
+When I run the report in 2.1 RC 0, I get the following error
+-- "There are errors evaluating script "row[0] % 2".

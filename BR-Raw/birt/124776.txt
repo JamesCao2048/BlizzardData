@@ -1,0 +1,4 @@
+Bug 124776 Set drill-through with bookmark to chart value series, preview in web viewer, can not link to book mark.
+Set drill-through with bookmark to chart value series, preview in web viewer, can not link to book mark.
+Steps: 1.Create a target report, create some items, set one item's bookmark to "abc" 2.Create a new report, create a chart, set url redirect to value series 3.Set drill-through to target report and select the bookmark "abc" 4.Preview in web viewer Actual Results: 1.Click the chart series, can not link to book mark.
+Expected Results: 1.Click the chart series, can link to book mark.

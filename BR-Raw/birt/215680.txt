@@ -1,0 +1,4 @@
+Bug 215680 Joint Data Set Column Names
+The default names derived for the JointDataSet are in the form: originDataSet::originColumnName When using those fields, it is far easier to work with the ColumnName only.
+I think the default behavior should be for JointDataSet columns to be just the originalColumnName, unless there is a conflict between the two datasets.
+In the event of a conflict then you add the originalDataSetName::

@@ -1,0 +1,3 @@
+ToolItem uses pixmap instead of pixbuf
+The methods ToolItem.gtk_enter_notify_event() and ToolItem.gtk_leave_notify_event() use the pixmap
+instead of the pixbuf for the hot image and image.

@@ -1,0 +1,7 @@
+"Next Word" definition
+The new "camelCaseAware" definition of a word is great, but I think it is
+missing two obvious behaviors.
+
+1) IF_I_HAVE_A_CONSTANT, it should be recognize _ as a word separator.
+2) If I have a parameterList(alpha,beta,gamma), it should recognize the comma
+between words as separator.

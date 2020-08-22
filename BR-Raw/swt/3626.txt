@@ -1,0 +1,55 @@
+Eclipse crashes with Sun jdk 1.4.2
+When we switch from jdk 1.4.1 to 1.4.2, Eclipse crashes at startup.
+To make it at least start, I tried with a blank workspace but Eclipses keeps
+crashing as soon as I try to open a perspective, a project or the configuration
+details, anything heavier than opening a menu.
+Eclipse 2.1.1 (Build id: 200306271545), Win2000 SP3, Sun JDK 1.4.2-b28.
+It happens on all the PCs (3) where we tried it.
+The regular .log contains
+nothing relevant.
+Here is the crash log:
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at
+PC=0x78463C88
+Function=RtlInitUnicodeString+0x1B
+Library=C:WINNTSystem32ntdll.dll
+Current Java thread:
+at org.eclipse.swt.internal.win32.OS.ExpandEnvironmentStringsW(Native Method)
+at org.eclipse.swt.internal.win32.OS.ExpandEnvironmentStrings(OS.java:1353)
+at org.eclipse.swt.program.Program.getKeyValue(Program.java:113)
+at org.eclipse.swt.program.Program.getProgram(Program.java:135)
+at org.eclipse.swt.program.Program.getPrograms(Program.java:165)
+at
+org.eclipse.ui.internal.registry.EditorDescriptor.findProgram(EditorDescriptor.java:76)
+at
+org.eclipse.ui.internal.registry.EditorDescriptor.loadValues(EditorDescriptor.java:212)
+at
+org.eclipse.ui.internal.registry.EditorRegistry.loadAssociations(EditorRegistry.java:521)
+at
+org.eclipse.ui.internal.registry.EditorRegistry.initializeFromStorage(EditorRegistry.java:453)
+at org.eclipse.ui.internal.registry.EditorRegistry.<init>(EditorRegistry.java:64)
+at
+org.eclipse.ui.internal.WorkbenchPlugin.getEditorRegistry(WorkbenchPlugin.java:234)
+at org.eclipse.ui.internal.EditorManager$7.run(EditorManager.java:908)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1006)
+at org.eclipse.core.runtime.Platform.run(Platform.java:413)
+at org.eclipse.ui.internal.EditorManager.busyRestoreEditor(EditorManager.java:864)
+at org.eclipse.ui.internal.EditorManager$6.run(EditorManager.java:857)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.ui.internal.EditorManager.restoreEditor(EditorManager.java:853)
+at org.eclipse.ui.internal.EditorManager.restoreState(EditorManager.java:756)
+at org.eclipse.ui.internal.WorkbenchPage.restoreState(WorkbenchPage.java:2263)
+at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1327)
+at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1263)
+at org.eclipse.ui.internal.Workbench.access$10(Workbench.java:1223)
+at org.eclipse.ui.internal.Workbench$12.run(Workbench.java:1141)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1006)
+at org.eclipse.core.runtime.Platform.run(Platform.java:413)
+at
+org.eclipse.ui.internal.Workbench.openPreviousWorkbenchState(Workbench.java:1093)
+at org.eclipse.ui.internal.Workbench.init(Workbench.java:870)
+at org.eclipse.ui.internal.Workbench.run(Workbench.java:1373)
+at
+org.eclipse.core.internal.boot.InternalBoo

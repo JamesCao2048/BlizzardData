@@ -1,0 +1,16 @@
+Patch for saving animated GIFs
+Despite the documentation, the save() method of the ImageLoader class can't
+create an animated GIF file from an ImageData array.
+
+This is because the FileFormat class only uses the first ImageData object when
+its save() method is invoked.
+There's even a comment to this effect: "We do
+not currently support writing multi-image files, so we use the first
+image in the loader's array."
+I have written my own (functional) application for converting ImageData arrays
+to animated GIFs.
+I would like to contribute to Eclipse by modifying the
+FileFormat class to support animation.
+To whom should I send the code?
+Sincerely,
+Matt Scarpino

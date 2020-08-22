@@ -1,0 +1,15 @@
+3 mouse clicks cause 4 mouseDown events
+I've got a Canvas that has a MouseAdapter listening for mouseDown events, and a
+fast triple-click under swt-gtk-2.1.2 generates 4 mouseDown events.
+I'm using
+this code:
+canvas.addMouseListener(new MouseAdapter() {
+public void mouseDown(MouseEvent e) {
+System.out.println("Click");
+}
+});
+This generates an output with four "Click" messages.
+I have not seen this
+behavior for anything except triple-clicking.
+I notice that there appears to be
+a similiar bug registered under  bug #43916 , but that one is for version 3.0.

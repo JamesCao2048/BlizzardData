@@ -1,0 +1,2 @@
+Bug 284694 Enhance org.eclipse.birt.core.data.DataTypeUtil.toSqlDate(..) performance
+If the parameter is an instance of java.sql.Date, the method org.eclipse.birt.core.data.DataTypeUtil.toSqlDate(..) can return the parameter object directly.

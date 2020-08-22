@@ -1,0 +1,10 @@
+ProgressBar created with SWT.INDETERMINATE does not pause on Windows XP
+Build Identifier: Version 3.7 SR 1 Build ID: 20110916-0149
+I have created a ProgressBar of type SWT.INDETERMINATE.
+If I execute progBar.setState(SWT.PAUSED) on Windows XP it does not stop.
+On Windows 7 it works correctly and the ProgressBar stops.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a ProgressBar Control: final ProgressBar progressBar = new ProgressBar(shell, SWT.INDETERMINATE);
+2.Try to stop it with progressBar.setState(SWT.NORMAL);
+3.Does not work on XP, but on Windows 7

@@ -1,0 +1,18 @@
+[Widgets] Focus lost after F3
+I20091006-0800, Cocoa, Mac OS X 10.6.1
+- Have a simple class like this:
+package p;
+public class C {
+static int fField;
+public static void main(String[] args) {
+fField= 1;
+}
+}
+- Set caret into reference to fField
+- Press F3
+=> Focus is lost.
+Caret does not blink any more.
+Pressing the Tab key about 11 times puts the focus back into the editor area.
+Same problem occurs after refactorings (e.g.
+extract local variable).
+Tried in I20090923-1538, and there it's working fine.

@@ -1,0 +1,8 @@
+[OLE] Do not get scrollbars in Excel
+You do not get the scrollbars in an embedded Excel editor.
+You do for Word.
+STEPS
+1) Copy headingtext.xls from the attachment to this PR
+2) Open it in an OLEEditor
+3) Resize to get it to show up properly and select Sheet2
+4) There will be no scrollbars even though there is data you need to scroll to

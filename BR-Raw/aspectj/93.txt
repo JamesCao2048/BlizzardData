@@ -1,0 +1,7 @@
+Potentially unclosed stream in org.aspectj.weaver.bcel.BcelWorld
+Created  attachment 147526   [details]
+Eclipse workspace patch that closes the stream correctly
+In method lookupJavaClass(), one has to close a stream used by ClassParser.
+This should be done in a finally block, since parse() may fail and throw an
+IOException. Right now, the stream is left open in that case.
+A path to correctly close the stream is attached.

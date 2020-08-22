@@ -1,0 +1,9 @@
+NPE in image
+I'm getting some NPEs in the Image constructor from last night's nightly on windows XP:
+java.lang.NullPointerException
+at org.eclipse.swt.graphics.Image.init(Image.java:1805)
+at org.eclipse.swt.graphics.Image.init(Image.java:1936)
+at org.eclipse.swt.graphics.Image.<init>(Image.java:484)
+at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:289)
+at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:227)
+There seem to have been a lot of changes to the constructors yesterday.

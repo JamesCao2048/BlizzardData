@@ -1,0 +1,6 @@
+Bug 116648 [Smoke][Regression]Embedded expression including <value-of> tag in text item doesn't work properly.
+Description: Embedded expression including
+<value-of> tag in text item doesn't work properly.
+Steps to reproduce: 1.run attached text-embed-expression-value.xml Expected result: See attached golden file.
+Actual result: EmployeeID didn't show.
+Nov 16, 2005 12:00:20 PM org.eclipse.birt.report.engine.data.dte.DteDataEngine evaluate SEVERE: Invalid Javascript expression: var str="";var i; for(i=0;i&lt;row.EmployeeID;i++){ str=str+i+","; } str; missing ) after for-loop control

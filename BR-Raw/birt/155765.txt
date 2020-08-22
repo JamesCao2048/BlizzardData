@@ -1,0 +1,2 @@
+Bug 155765 Set font Andalus to element, preview in pdf, system throws exception
+Set font Andalus to element, preview in pdf, system throws exception Steps: 1.Create a label into layout 2.Set font Andalus 3.Preview in pdf Actual Results: 1.System throws exception org.eclipse.birt.report.service.api.ReportServiceException: Error happened while running the report

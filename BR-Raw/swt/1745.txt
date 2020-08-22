@@ -1,0 +1,7 @@
+[64] FileDialog consistently crashes
+Created  attachment 88934   [details]
+dump
+- happens with 64-bit only, not 32-bit gtk
+- open a FileDialog in the ControlExample
+- navigate around a few directories, select a file, OK
+- the dialog crashes with the attached dump

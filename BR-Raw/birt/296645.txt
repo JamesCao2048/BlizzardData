@@ -1,0 +1,14 @@
+Bug 296645 PDF emitter using bold Times New Roman instead of bold Lucida Sans.
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.5) Gecko/20091109 Ubuntu/9.10 (karmic) Firefox/3.5.5 Build Identifier: M20090917-0800 I have a simple report with 2 data controls.
+Both controls have the font Lucida Sans.
+One is regular and the other is bold.
+The report renders fine in the viewer, but in PDF (using the Run / As Pdf menu item), the bold font renders as Times New Roman.
+I notice in my windowsfonts directory that Lucida Sans is a font family with 4 fonts in it, none with a font style of "bold".
+The closest is "demibold roman".
+My guess is that the viewer is smart enough to use demibold roman for bold but the PDF emitter isn't.
+I've played around with the fontsConfig_pdf.xml file but the best I can do there is to to create an alias where I make some other existing font, such as Impact, become Lucida Sans Demibold Roman, which doesn't really accomplish what I want.
+Reproducible: Always Steps to Reproduce: 1.Create a report.
+2.Assign Lucida Sans to a control and make it bold.
+3.View the report as PDF.
+Expected: Control appears as bold Lucida Sans.
+Actual: Control appears as bold Times New Roman.

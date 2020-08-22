@@ -1,0 +1,52 @@
+console hijacks SWT event thread when selecting binary content
+I20050426-1700
+When selecting the console contents with the mouse, eclipse got into a eternal
+(or extremely long running) loop.
+The dump below reveals that the console's
+StyledText is busy handling selection events that were posted
+- presumably from
+the console.
+filing against debug because I suspect the selection handling is done there
+-
+please move to SWT if you think the problem is there.
+------ main threads in vm dump (1)
+----------
+"main" prio=1 tid=0x0805bed0 nid=0x3105 runnable [0xbfffc000..0xbfffd438]
+at org.eclipse.swt.internal.gtk.OS.strlen(Native Method)
+at org.eclipse.swt.graphics.TextLayout.getBounds(TextLayout.java:431)
+at org.eclipse.swt.custom.StyledText.redrawLines(StyledText.java:6041)
+at org.eclipse.swt.custom.StyledText.internalRedrawRange(StyledText.java:4912)
+at org.eclipse.swt.custom.StyledText.doSelection(StyledText.java:3058)
+at org.eclipse.swt.custom.StyledText.doMouseSelection(StyledText.java:2846)
+at org.eclipse.swt.custom.StyledText.doMouseLocationChange(StyledText.java:2829)
+at org.eclipse.swt.custom.StyledText.handleMouseMove(StyledText.java:5165)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:4817)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1012)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2778)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2472)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1569)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1533)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:306)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:103)
+at
+org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:228)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:345)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:158)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:585)
+at org.eclipse.core.launcher.Main.invokeFramework(Main.java:319)
+at org.eclipse.core.launcher.Main.basicRun(Main.java:272)
+at org.eclipse.core.launcher.Main.run(Main.java:951)
+at org.eclipse.core.launcher.Main.main(Main.java:935)
+------ main threads in vm dump (2)
+----------
+"main" prio=1 tid=0x0805bed0 nid=0x3105 runnable [0xbfffc000..0xbfffd438]
+at org.eclipse.swt.internal.gtk.OS.pango_layout_iter_next_line(OS.java:8011)
+at org.eclipse.swt.graphics.TextLayout.getBounds(TextLayout.java:428)
+at org.eclipse.swt.custom.StyledText.redrawLines(StyledText.java:6041)
+at org.eclipse.swt.custom.StyledText.internalRedrawRange

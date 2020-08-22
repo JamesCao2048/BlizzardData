@@ -1,0 +1,4 @@
+Bug 276238 Image without content leads invalid library
+Description: [Regression] Image without hyperlink leads invalid library Build number: 2.5.0.v20090514-0630 Steps to reproduce: 1, New a library 2, Insert a image and do not specify uri or sources 3, Go to XML Source and go back or reopen the library Expected result: After step3, Report can go back layout without exception Actual result: Exception happened after step3 and it said please correct XML first.
+If reopen the library, multiple exceptions thrown out block the workbench.
+Error log:

@@ -1,0 +1,6 @@
+Bug 180630 Required parameters haven't been marked with *.
+Description: Required parameters haven't been marked with *.
+Build number:2.2.0.v200704031345 Steps to reproduce: 1.Open attached report and preview.
+Expected result: date,date1 and date2 are required and all are marked with *.
+Actual result: Only date2 is marked with *.
+Error log:N/A

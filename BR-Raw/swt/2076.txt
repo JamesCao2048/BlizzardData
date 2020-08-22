@@ -1,0 +1,12 @@
+TableCursor.paint() uses string != "", should be string.length() > 0
+Build ID: N20070405-0010
+Steps To Reproduce:
+In browsing the code, I happened to notice that in class org.eclipse.swt.custom.TableCursor, function paint(Event) includes this code:
+String text = row.getText(columnIndex);
+if (text != "") { //$NON-NLS-1$
+Of course it is not correct to use "!=" when comparing Java strings.
+Probably just a simple mistake
+-- the author probably intended:
+if (text.length() > 0) {
+or,
+if (!text.equals("")) { //$NON-NLS-1$

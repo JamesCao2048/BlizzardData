@@ -1,0 +1,6 @@
+Bug 313459 Problem with % when generating images in tables.
+See the attached BirtProject, it has two reports.
+Each identical except for this difference: The image width/height is set to a %age value (50%) in one (TestImage.rptdesign) and not-set in the other (TestImageWorking.rptdesign).
+TestImage.rptdesign does not display the image in pdf, but works fine in html.
+TestImageWorking.rptdesign shows the image in both pdf and html.
+The %age setting seems to cause the problem in pdf format.

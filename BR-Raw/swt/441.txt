@@ -1,0 +1,29 @@
+Setting fileName in PrinterData for PrintDialog does nothing
+3.5 M6
+Run the following snippet:
+import org.eclipse.swt.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.printing.*;
+public class TestPrintDialogFileName {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+PrintDialog dialog = new PrintDialog(shell, SWT.NONE);
+PrinterData data = new PrinterData();
+data.printToFile = true; // default is false
+data.fileName = "C:\temp\output"; // default is null
+dialog.setPrinterData(data);
+data = dialog.open();
+System.out.println(data.toString()); // printer driver and name
+System.out.println("Print to file: " + data.printToFile);
+System.out.println("File name: " + data.fileName);
+shell.dispose();
+display.dispose();
+}
+}
+Notice that the data.fileName field is clobbered on output.
+Also, it is not set into the dialog on open.
+On Windows, this is done in the PRINTDLG.hDevNames struct, which is also used to set the printer driver and name.
+The best time to fix this bug is when the printer driver and name are also set into the dialog.
+The doc for the DEVNAMES struct does not specify whether the "output" (i.e.
+filename) can be set without setting the driver and device name.

@@ -1,0 +1,15 @@
+gtk_progress_bar_set_fraction - crash when creating a class under latest Debian GTK 2.2 / Crux Theme
+When I try to create a class in a new, empty project,
+Eclipse M5 under Linux/GTK crashes.
+I get the following
+assertion violation message from the theme engine I'm using
+(crux, Debian unstable, gtk2-engines-crux 2.2-3):
+** (<unknown>:8306): CRITICAL **: file crux-draw.c: line 1017 (draw_box):
+assertion `width
+< 32768' failed
+
+** (<unknown>:8306): CRITICAL **: file crux-pixmaps.c: line 419
+(eazel_engine_image_render): assertion `width > 0' failed
+The Eclipse crash log, which appears after this message, is attached
+to this report.
+Thanks for looking into this, and thanks for an awesome product!

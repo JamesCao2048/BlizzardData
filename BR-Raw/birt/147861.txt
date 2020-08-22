@@ -1,0 +1,3 @@
+Bug 147861 [2.1RC4] Invalid line height: normal
+Version: Report Engine, 2.1RC4 I'm using the "Report Engine" for creating my reports.
+When I look a the log file I see the following line many (1000+) times: 20.06.2006 13:36:23 org.eclipse.birt.report.engine.layout.util.PropertyUtil getLineHeight WARNUNG: invalid line height: normal For recreating the bug: 1.Start new report 2.Add a "Grid widget" 3.Run report In my opinion a default setting should not produce a log message at level warning.

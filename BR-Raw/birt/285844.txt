@@ -1,0 +1,8 @@
+Bug 285844 ICallBackNotifier is fed the same legend label instance
+Build ID: I20090611-1540 Steps To Reproduce: 1.Create pie chart with legend by categories.
+2.Add a Call Back action with a Mouse Over condition to the legend.
+3.Add an ICallBackNotifier object using IDeviceRenderer.setProperty(IDeviceRenderer.UPDATE_NOTIFIER, Object) method.
+4.Implement ICallBackNotifier.callback() method to something like: public void callback(Object event, Object source, CallBackValue value) { WrappedStructureSource wsSource = (WrappedStructureSource) source; DataPointHints hints = (DataPointHints) wsSource.getSource(); String labelStr = ((Label) hints.getBaseValue()).getCaption().getValue(); } Expected result: The labelStr variable should contain the category that the mouse is currently over.
+Actual result: The labelStr variable contains the last category in the legend.
+More information: I did some debugging inside BIRT and here's what I found: BaseRenderer.renderAllLegendItems() method, instead of passing a cloned label for each item down the rendering chain, passes a reference to the same label instance (the la variable), changing label contents for each legend item.
+The result is that ICallBackNotifier is passed this one label instance with the contents for the last legend item.

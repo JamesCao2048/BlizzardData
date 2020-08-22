@@ -1,0 +1,3 @@
+Bug 180189 Support in memory data set cache.
+Currently, Design-Time Data Cache is stored on disks.
+By performance tests using ramdisk, we found that caching in physical memory can improve the performance of RunAndRender by 30%.

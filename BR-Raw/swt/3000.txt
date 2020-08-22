@@ -1,0 +1,15 @@
+Selected and disabled tool item looks enabled
+Version: 3.1.0
+Build id: I20050209-0800
+manifest on
+comctrl version: 5.82.2800.1106
+When you disable a tool image what is selected it appears as enabled with a
+stippled background.
+I expected it to appear greyed out like
+unselected/disabled items.
+From the sync view:
+1.select outgoing mode
+2.enable change sets
+3.select conflicts mode
+4.Observe the change sets button looks enabled (see screenshot)
+I will create a snippet when i get a chance.

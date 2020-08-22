@@ -1,0 +1,7 @@
+Alpha channels being lost on Windows XP classic theme
+I20070508-0800
+See the screenshots in  Bug 168295 .
+Some users in Windows XP classic mode are losing  alpha channels when we combine images in the Package Explorer.
+This does not occur in Windows XP default theme.
+This is currently not consistently happening to all machines but there are certain ones in happens on frequently.
+marking as major as this is pretty common for people with the old themes.

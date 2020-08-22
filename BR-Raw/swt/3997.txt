@@ -1,0 +1,88 @@
+GTK: Text of Button(with style bit SWT.CHECK) does not show up correctly
+In the AWT test we have a Panel contained in a Frame.
+This Panel has a number of
+Checckboxes .
+When the Frame appears, the text of all the Checkboxes do not show
+up initially .
+In this test only the text of the last Checkbox shows up (we have
+seen in a different test that a random selection of checkboxes displayed their
+labels).
+Once the Checkbox is selected  the text of that Checkbox appears
+correctly.
+We could not recreate the problem in SWT, so provided below are both AWT and
+SWT test cases.
+
+If you would like to look into this matter , instructions on how to get our AWT
+are provided in this bug report :
+http://bugs.eclipse.org/bugs/show_bug.cgi?id=21384
+Here is the AWT test case:
+------------------AWT test starts here
+-----------------------------------
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.ItemSelectable;
+import java.awt.Panel;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+public class TestAwtCheckbox  {
+Checkbox[] cb;
+String[] cbnames =  {
+"Action", "Adjustment", "Component", "Container", "Focus", "------",
+"Item", "Key", "MouseMotion", "Mouse", "Text", "Window" };
+public void create(){
+Frame f = new Frame("Checkbox test");
+Panel  panel = new Panel(null);
+cb = new Checkbox[12];
+int w = 77;
+for (int i = 0; i
+< 2; i++) {
+for (int j = 0; j
+< 6; j++) {
+cb[i*6+j] = new Checkbox(cbnames[i*6+j], false);
+cb[i*6+j].setBounds((w*j)+1, 20*i+1, w, 20);
+panel.add(cb[i*6+j]);
+}
+}
+panel.setBackground(Color.gray);
+panel.setForeground(Color.yellow);
+panel.setBounds(0, 0, 464, 60);
+f.add(panel);
+f.setSize(500,100);
+f.setVisible(true);
+}
+public static void main(String[] args) {
+TestAwtCheckbox tac = new TestAwtCheckbox();
+tac.create();
+}
+}
+---------------------AWT test ends here
+----------------------------
+---------------------SWT test starts here
+---------------------------
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.SWT;
+public class TestCheckbox {
+final  Display disp = Display.getDefault();
+
+public void methodRun(){
+final Shell shell = new Shell(disp);
+shell.setLayout(new FillLayout());
+final Canvas canvas =
+new Canvas(shell, SWT.CLIP_CHILDREN | SWT.CLIP_SIBLINGS);
+Button[] butarr = new Button[12];
+String[] evname = {
+"Action", "Adjustment", "Component", "Container", "Focus", "------",
+"Item", "Key", "MouseMotion", "Mouse", "Text", "Window" };
+int w = 77;
+for (int i = 0; i
+< 2; i++) {
+for (int j = 0; j
+< 6; j++) {
+butarr[i*6+j] = new Button(canvas,
+SWT.CHECK|SWT.CLIP_CHILDREN|SWT.CLIP_SIBLINGS);
+butarr[i*6+j].setText(evname[i*6+j]);
+
+butarr[i*6+j].setBackground(disp.getSystemColor(SWT.COLOR_GRAY));

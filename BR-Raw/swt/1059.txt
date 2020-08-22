@@ -1,0 +1,13 @@
+GB18030: 4-byte GB18030 displayed as ? in SWT Clipboard RTFTransfer.
+Created  attachment 132161   [details]
+GB18030 chars display in SWTClipbrd
+Build ID: I20090401_1325
+Steps To Reproduce:
+1.Adding SWT to your workspace.
+2.Install the Eclipse Example Plug-ins.
+3.Open the SWT Example Launcher, and select Clipboard to run.
+4.In RTFTransfer, input some 4-byte GB18030 characters like [unicode:3400,a000,0f00], copy those GB18030 characters and paste to RTFTransfer.
+5.The 4-byte GB18030 characters displayed as ?.<--Problem
+More information:
+1.Only RTFTransfer type has this issue in SWT Clipboard.
+2.Screencap attached.

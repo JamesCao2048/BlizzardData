@@ -1,0 +1,41 @@
+[portability] Inconsistent handling of Image on different platforms
+Setting a MenuItem with an Image with transparency on GTK always works.
+On
+win32, it only works if you jump through hoops and completely guess at how SWT
+maps the various Image constructors into win32 resources.
+The inconsistency is
+bad, but so is the subtlety of the necessary workaround.
+Here is a snippet, where "transparent.gif" is a GIF with some transparency in
+it:
+public class IconVsImage {
+public static void main(String[] args) {
+Display display = Display.getDefault();
+Shell shell = new Shell(display);
+
+Menu menu = new Menu(shell, SWT.BAR);
+shell.setMenuBar(menu);
+MenuItem file = new MenuItem(menu, SWT.CASCADE);
+file.setText("File");
+Menu fileMenu = new Menu(file);
+file.setMenu(fileMenu);
+MenuItem item1 = new MenuItem(fileMenu, 0);
+item1.setText("item 1");
+MenuItem item2 = new MenuItem(fileMenu, 0);
+item2.setText("item 2");
+
+Image image1 = new Image(null, IconVsImage.class.getResourceAsStream
+("transparent.gif"));
+//How does the client know that this is necessary on win32??
+Image image2 = new Image(null, image1.getImageData(),
+image1.getImageData().getTransparencyMask());
+
+item1.setImage(image1);
+item2.setImage(image2);
+
+shell.setSize(600, 500);
+shell.open();
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+}
+}

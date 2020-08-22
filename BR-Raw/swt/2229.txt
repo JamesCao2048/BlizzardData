@@ -1,0 +1,18 @@
+SWT Spinner selection value error
+I am getting really strange values of Spinner.getSelection().
+I set up the spinner in the following way (tested on Snippet190):
+spinner.setDigits(1);
+spinner.setMinimum(0);
+spinner.setMaximum(10000);
+spinner.setIncrement(1);
+spinner.setSelection(0);
+I get the result of selection 7 two times i.e.
+for 7th and 8th position (8 is never returned it jumps directly to 9).
+It gets even more interesting because again I get 9's twice (instead of 9 and 10).
+Then some numbers are returned correctly.
+The problem again starts at 47
+- the values returned are basically "one step behind" of what they should be.
+I can't really see any pattern here...
+Obviously the actual number (selection / Math.pow(10, digits)) is incorrect as well.
+The same behaviour for SWT 3.2 and 3.3M2.
+I am using 3.2 Callisto GTK2 under Ubuntu.

@@ -1,0 +1,39 @@
+custom draw resulting from checkbox click does not appear (motif)
+- run the snippet below
+- click the item's checkbox, which changes how the item custom draws itself
+- the MeasureItem and PaintItem callbacks in the snippet do get invoked as expected, but the 'X' image that is painted in PaintItem does not appear until the item is damaged
+public static void main(String[] args) {
+Display display = new Display();
+final Image image = new Image(display, 16, 16);
+GC gc = new GC (image);
+gc.drawLine(0, 0, 16, 16);
+gc.drawLine(16, 0, 0, 16);
+gc.dispose();
+Shell shell = new Shell(display);
+shell.setBounds(10, 10, 350, 200);
+final Tree tree = new Tree(shell, SWT.CHECK);
+tree.setBounds(10, 10, 300, 150);
+new TreeItem(tree, SWT.NONE).setText("root item");
+tree.addListener(SWT.MeasureItem, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+if (item.getChecked()) {
+event.width += 18;
+}
+}
+});
+tree.addListener(SWT.PaintItem, new Listener() {
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+if (item.getChecked()) {
+event.gc.drawImage(image, event.x, event.y);
+}
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+image.dispose();
+display.dispose();
+}

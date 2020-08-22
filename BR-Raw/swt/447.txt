@@ -1,0 +1,7 @@
+No mouse move events on Cocoa64 unless you press left mouse button
+It looks like some change in SWT broke mouse move listeners and hence a lot of things in the Eclipse UI (e.g.
+JavaDoc-Hovers).
+I currently don't have Eclipse 3.7 builds but this is reproduceable the latest Eclipse 4.1 build (I20110126-2200).
+The only possibility to get JavaDoc-Hovers is to press the left mouse button and move the mouse over an element without nothing happens.
+To find out what happened I've attached a hacked the move mouse listener in org.eclipse.e4.ui.workbench.renderers.swt.SashLayout and it only print debug statements when I press the left button and move the mouse in the area not occupied by the editors and views.
+I'd say this is a blocker because it make Eclipse 4.1 fairly unusable for development.

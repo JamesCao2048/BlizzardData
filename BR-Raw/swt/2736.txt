@@ -1,0 +1,41 @@
+Problems setting and updating an Image on a Label
+Using latest 3.2 IBuild of SWT, I am seeing different results setting and
+updating an Image on a Label to 3.1.
+See this snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Image image = new Image(display, 160, 160);
+GC gc = new GC(image);
+gc.setBackground(display.getSystemColor(SWT.COLOR_BLUE));
+gc.fillRectangle(0, 0, 160, 160);
+gc.dispose();
+final Image image2 = new Image(display, 160, 160);
+GC gc2 = new GC(image2);
+gc2.setBackground(display.getSystemColor(SWT.COLOR_RED));
+gc2.fillRectangle(0, 0, 160, 160);
+gc2.dispose();
+final Label label = new Label(shell, SWT.NONE);
+label.setImage(image);
+label.addMouseListener(new MouseAdapter() {
+public void mouseDown(MouseEvent e) {
+label.setImage(image2);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+With 3.1 I am seeing the Blue Rectangle in the center of the Shell.
+A click on
+it updates to the Red Label.
+With 3.2 I am seeing the Blue Rectangle top-left of the Shell.
+A click on it
+does not update to the Red Label until I call redraw.
+Ben

@@ -1,0 +1,35 @@
+Background-Color of TreeItem should override Sort-Column-Color
+Eclipse 3.2
+This Snippet demonstrates the problem:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Tree t = new Tree(shell, SWT.FULL_SELECTION);
+t.setHeaderVisible(true);
+TreeColumn col1 = new TreeColumn(t, SWT.NONE);
+col1.setWidth(200);
+TreeColumn col2 = new TreeColumn(t, SWT.NONE);
+col2.setWidth(200);
+
+TreeColumn col3 = new TreeColumn(t, SWT.NONE);
+col3.setWidth(200);
+t.setSortColumn(col2);
+t.setSortDirection(SWT.UP);
+for (int i = 0; i
+< 10; i++) {
+TreeItem tr = new TreeItem(t, SWT.NONE);
+tr.setText("Hello World");
+tr.setBackground(display.getSystemColor(SWT.COLOR_RED));
+}
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+I would expect the background color to always override the color of the sort-column.
+Ben

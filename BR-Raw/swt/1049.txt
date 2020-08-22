@@ -1,0 +1,8 @@
+traverser always happen to all controls
+Version: 3.5.0
+Build id: N20081102-2000
+In system preferences->Keyboard & Mouses->Keyboard Shortcuts
+Under Full keyboard access select text boxes and list only
+go to eclipse and bring up whatever dialog, take delete resource for example, hit the tab key!
+BUG: the focus gets passed around to all controls.
+in carbon that works.

@@ -1,0 +1,6 @@
+Bug 213900 [2.2.2]Page break in xtab subtotal label will repeat subtotal data[1102][0301]
+Description: When set page break in xtab subtotal label, subtotal data will repeat Build number:2.2.2.v200712181951, 2.3.0.v20071227 Steps to reproduce: 1.Open attached xtab report and preview in web viewer.
+The report has page-break-before:always in subtotal label item.
+Expected result: Subtotal data will not repeat.
+Actual result: Page break happens and subtotal data are repeated in two pages.
+Display like: 2021 3030 (end of previous page) SubTotal: 2021 3030 (begin of next page) Error log:N/a

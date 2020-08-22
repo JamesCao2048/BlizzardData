@@ -1,0 +1,9 @@
+Inconsistent use of NSColorSpaces in Cocoa SWT
+Throughout the Cocoa SWT, NSColors are created using NSColor.colorWithDeviceRed(...), but occasionally we use NSCalibratedSpaceName.
+This leads to bugs like  bug 325012 .
+According to the docs:
+file://localhost/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/index.html#documentation/Cocoa/Conceptual/DrawColor/Tasks/UsingColorSpaces.html
+"Generally, it is recommended that you use calibrated (or generic) color spaces instead of device color spaces.
+The colors in device color spaces can vary widely from device to device, whereas calibrated color spaces usually result in a reasonably accurate color.
+Device color spaces, on the other hand, might yield better performance under certain circumstances, so if you know for certain the device that will render or capture the color, use a device color space instead."
+This bug tracks refactoring our color code to use the calibrated/generic RGB color space.

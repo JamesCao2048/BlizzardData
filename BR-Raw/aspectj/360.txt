@@ -1,0 +1,108 @@
+VerifyError with inner classes
+This bug apparently occurs only when compiling with the -1.5 option (Adrian
+Colyer managed to reproduce it).
+Considering the code below, when I set a 'set' pointcut on the fields of inner
+class Node, I get an error from the class verifier:
+Exception in thread "main" java.lang.VerifyError: (class: test/List$Node,
+method: <init> signature: (Ltest/List;I)V) Expecting to find object/array on stack
+When the Node class is moved out of the List class, it works fine. The
+decompiled code for the inner class is included below for reference.
+//////////////////////////////////////////////////////////////////////
+// List.java
+package test;
+public class List {
+class Node {
+int value;
+Node next;
+Node(int v)
+{
+value = v;
+}
+}
+private Node head;
+public List()
+{
+head = null;
+}
+public void add(int v)
+{
+Node n = new Node(v);
+n.next = head;
+head = n;
+}
+public void print()
+{
+Node n = head;
+while (n != null) {
+System.out.print(" " + n.value);
+n = n.next;
+}
+System.out.println();
+}
+public static void main(String[] args) {
+List l = new List();
+for (int i = 0; i < 10; i++)
+l.add(i);
+l.print();
+}
+}
+//////////////////////////////////////////////////////////////////////
+// ListAspect.aj
+package test;
+public aspect ListAspect {
+pointcut setField(Object t) : target(t) && set(* List.Node+.*);
+before(Object t) : setField(t) {
+System.out.println("WRITE");
+// Do something with t...
+}
+}
+//////////////////////////////////////////////////////////////////////
+//  List@Node.jad
+package test;
+// Referenced classes of package test:
+//            List, ListAspect
+class List$Node
+{
+int value;
+List$Node next;
+final List this$0;
+List$Node(int v)
+{
+//*   0    0:aload_0
+List list1 = List.this;
+//    1    1:aload_1
+//    2    2:astore_3
+List$Node list$node = this;
+//    3    3:astore          4
+ListAspect.aspectOf().ajc$before$test_ListAspect$1$3f3247a5(list$node);
+//    4    5:invokestatic    #37  <Method test.ListAspect
+test.ListAspect.aspectOf()>
+//    5    8:aload           4
+//    6   10:invokevirtual   #41  <Method void
+test.ListAspect.ajc$before$test_ListAspect$1$3f3247a5(java.lang.Object)>
+list$node.this$0 = list1;
+//    7   13:aload           4
+//    8   15:aload_3
+//    9   16:putfield        #16  <Field test.List test.List$Node.this$0>
+super();
+//   10   19:aload_0
+//   11   20:invokespecial   #19  <Method void Object()>
+//*  12   23:aload_0
+int i = v;
+//   13   24:iload_2
+//   14   25:istore          5
+List$Node list$node1 = this;
+//   15   27:astore          6
+ListAspect.aspectOf().ajc$before$test_ListAspect$1$3f3247a5(list$node1);
+//   16   29:invokestatic    #37  <Method test.ListAspect
+test.ListAspect.aspectOf()>
+//   17   32:aload           6
+//   18   34:invokevirtual   #41  <Method void
+test.ListAspect.ajc$before$test_ListAspect$1$3f3247a5(java.lang.Object)>
+list$node1.value = i;
+//   19   37:aload           6
+//   20   39:iload           5
+//   21   41:putfield        #21  <Field int test.List$Node.value>
+//   22   44:return
+}
+}

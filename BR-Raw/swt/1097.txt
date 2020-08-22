@@ -1,0 +1,14 @@
+MessageDialog spews warning on gtk 2.4.13
+- a version check is probably needed before using gtk-alternative-button-order
+- the warning spew is:
+(SWT:4331): GLib-GObject-WARNING **: g_object_get_valist: object class `GtkSettings' has no property named `gtk-alternative-button-order'
+- the snippet:
+public static void main (String [] args) {
+final Display display = new Display ();
+final Shell shell = new Shell (display);
+MessageBox messageBox = new MessageBox (shell, SWT.OK | SWT.ICON_WARNING);
+messageBox.setText ("text");
+messageBox.setMessage ("message");
+messageBox.open ();
+display.dispose ();
+}

@@ -1,0 +1,25 @@
+SWT - DateTime component is broken on MAC cocoa 64 bits.
+Build ID: M20090211-1700
+Steps To Reproduce:
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet250 {
+public static void main(String[] args) {
+
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+DateTime calendar = new DateTime(shell, SWT.DATE | SWT.DROP_DOWN);
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+More information:

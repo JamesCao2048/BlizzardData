@@ -1,0 +1,27 @@
+ScrolledComposite vertical scroll problem with StackLayout
+I have an org.eclipse.swt.custom.ScrolledComposite composite which has an
+org.eclipse.swt.custom.StackLayout layout.
+I have multiple controls on the
+scrolled composite.
+If the first control I add to the scrolled composite does
+not need a vertical scroll bar, later calls to set the content to a control
+that does need the vertical scroll bar do not produce a working scroll bar.
+I looked at the source for scrolled composite and immediately saw the problem:
+the vScroll() method bases its calculations for the location off the first
+child of the composite, not the current content control.
+hScroll() correctly
+uses the content variable to get the location, etc.
+To get this to work, I rewrote vScroll() in the same style as hScroll():
+private void vScroll() {
+if (content == null) return;
+Point location = content.getLocation ();
+ScrollBar vBar = getVerticalBar ();
+int vSelection = vBar.getSelection ();
+content.setLocation (location.x,
+-vSelection);
+}
+This fixes the problem.
+* I can't think of a reason why this method was written differently than hScroll
+().
+* I can't imagine that a lot of people are ever going to discover this problem.
+* No idea if this still exists in 2.0

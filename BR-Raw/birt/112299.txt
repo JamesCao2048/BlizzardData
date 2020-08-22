@@ -1,0 +1,2 @@
+Bug 112299 Y Axis-Label is set to unvisible, its title also be changed to unvisible.
+Steps: 1.Create a bar chart 2.select Attributes-Y Axis-Labels 3.Untick Lable "Is visible" Actual Result: 1.Y Axis title can not be displayed Expected Result: 1.Y Axis label can not be displayed and title can be displayed.

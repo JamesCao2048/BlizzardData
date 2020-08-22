@@ -1,0 +1,11 @@
+Menu item text cropped
+Build Identifier: M20100909-0800
+Menu item text is cropped by keyboard shortcut when switched to windows classic theme.
+Its described as bug in windows and workaround is in source of org.eclipse.swt.widgets.Menu on line 1508, but does not work.
+Reproducible: Always
+Steps to Reproduce:
+1.switch Windows 7 to widows classic theme
+2.create menu with two items
+3.first item has icon and AS_CHECKBOX style
+4.second item has key shortcut and a longer text
+5.second item text renders cropped

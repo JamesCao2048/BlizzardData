@@ -1,0 +1,16 @@
+Bug 203680 Birt Designer "date" and "time" filter doesn't work properly
+Comment from Gauri 1.the filter for date and time in designer doesnt work correctly.
+I tried to filter on any date column having time NOT equal to 12:00:00.On the UI, the date is shown as say Sept.
+4, 1995, but internally actual date value has time 2:45 am.
+Now if I try to apply a filter say
+<expression name="expr">row["Column Binding"]</expression>
+<simple-property-list name="value1">
+<value>"1995-09-04"</value>
+</simple-property-list> filter returns blank resultset.
+So the time value is not getting ignored.
+Similarly filter on another time column like given below also doesnt work.
+<expression name="expr">row["Column Binding1"]</expression>
+<simple-property-list name="value1">
+<value>"14:00:00"</value>
+</simple-property-list> 2.Open DateAndTimeReport.rptdesign and apply filter on "date-time" column having time Not equal to 12:00:00 also doesnt work.
+Needs engine side investigation on this.

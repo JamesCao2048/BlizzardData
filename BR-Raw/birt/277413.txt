@@ -1,0 +1,7 @@
+Bug 277413 Chart view of xtab should behave the same as chart sharing xtab
+Chart view of xtab should behave the same as chart sharing xtab, not only in preview result, but also in UI.
+Expected behavior: In select data page of chart view, data preview should have the same description and bindings list.
+If only one item in measures, select it automatically.
+Actual result: They are different.
+No description and no bindings list.
+The cube tree is not usable in this case.

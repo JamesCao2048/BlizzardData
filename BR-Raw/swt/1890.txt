@@ -1,0 +1,10 @@
+Custom caret problems
+M200409080800 (3.0.1)
+-open Java editor with source
+-turn off "Smart Insert Mode" via Edit menu
+Observe: the caret should have a gap in the center (that's OK, no problem here)
+- move caret horizontally with cursor keys
+Observe: sometimes caret "sticks" to old position and you get a new caret at the new position,
+so effectively two carets are visible (but only one blinks).
+- pull down a menu from the menubar so that the menu covers the area where the caret is
+Observe: the caret draws on top of the menu

@@ -1,0 +1,10 @@
+Copying content in more than format to Clipboard only registers one
+build 20020502
+-Run org.eclipse.swt.examples.texteditor.TextEditor
+-type some text
+-select the text and copy it to the clipboard
+-paste the text into notepad
+->this works so there must be non RTF text in the clipboard
+-in Wordpad check the available clipboard formats using Edit-Paste Special
+->Only RTF shows up, we put RTF and unformatted text into the clipboard.
+This works in SWT build 2012b and is broken in build 2013.

@@ -1,0 +1,35 @@
+static method call from subclass signature is wrong
+a very bad bug... or ?
+in the snip below, getMethod() says null and the factory is actually thinking
+that test() is a static method of AspectJBugMain instead of Assert...
+wondering why we don't catch that in the test suite or what could happen
+recently around that. Or is it something I am confused about ? (i doubt a
+jp.getSignature().getMethod is supposed to return null in some cases though..)
+@Aspect
+public class Sam {
+@Pointcut("call(* *.*(..))")
+public void methodCalls() {
+}
+@Around("methodCalls() && !within(alex.sam.Sam) && within(alex..*)")
+public Object aroundMethodCalls(ProceedingJoinPoint jp) throws
+Throwable {
+String typeName = jp.getSignature().getDeclaringTypeName();
+System.out.println("declType " + typeName);
+System.out.println("method " +
+((MethodSignature)jp.getSignature()).getMethod());
+return jp.proceed();
+}
+}
+class Assert {
+public static void test() {
+System.out.println("RUN Assert.test");
+}
+}
+class AspectJBugMain extends Assert {
+public static void main(String[] args) {
+test();
+}
+//    public static void test() {
+//        System.out.println("RUN AspectJBugMain.test");
+//    }
+}

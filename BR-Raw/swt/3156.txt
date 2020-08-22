@@ -1,0 +1,17 @@
+MessageBox does not display default title when icon is specified
+On Linux, providing an icon for a MessageBox also seems to supply a default
+tilte to the MessageBox.
+On Windows, this is not the case
+-- the MessageBox
+title is blank unless setText() is called.
+The following code displays a message box with a warning icon.
+On Linux, when
+this displays, it will automatically have a title of "Warning", whereas on
+Windows, no title will be shown unless setText(...) is called.
+This behavior
+happens for any icon styles.
+MessageBox messageBox = new MessageBox(window.getShell(), SWT.YES | SWT.NO |
+SWT.ICON_WARNING);
+messageBox.setMessage("This is a warning");
+messageBox.open();
+Not sure which of these is correct behavior, but should be consistent.

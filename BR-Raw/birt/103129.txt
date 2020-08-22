@@ -1,0 +1,3 @@
+Bug 103129 [Regression]Code editor will not show the selected dataset code when select it and transfer to code editor.
+Description: Code editor will not show the selected dataset code when select it and transfer to code editor.
+Steps to reproduce: 1.Select a existed dataset 2.Click Code in layout to go to code editor Expected result: The code for dataset shows Actual result: The code for dataset doesn't show

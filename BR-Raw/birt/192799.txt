@@ -1,0 +1,7 @@
+Bug 192799 Keep value column combo consistent with expression builder button for dynamic parameter definition
+When defining a dynamic parameter, if none of the value column contains values of the selected data type, the value combo chooser is disabled.
+At this time, the expression builder button next to it should be disabled, too.
+Steps to reproduce: 1.Create a sample datasource and dataset with "select * from CLASSICMODELS.ORDERS".
+2.Create a boolean report parameter, combo box, dynamic.
+Expected result: value column combo and expression builder button are both disabled.
+Actual result: only value column combo chooser is disabled.

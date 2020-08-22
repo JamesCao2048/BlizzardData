@@ -1,0 +1,7 @@
+SWT does not render Unicode glyphs > 255
+I20030813
+- In MacOS X > System Preferences > Input Menu
+add the "Character Palette" to your input method menu
+- open the character palette and enter characters > 255
+into the Eclipse text editor
+Observe: you only get empty boxes

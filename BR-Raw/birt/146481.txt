@@ -1,0 +1,3 @@
+Bug 146481 Name is not necessary for extended element
+Steps to reproduce: 1.New a label named "label" in library 2.New a report, extend lib.label Expected result: No name for the extended label Actual result: "label" is added as the name of label in report.
+It's not reasonable because "Restore Properties" is enabled even without properties change.

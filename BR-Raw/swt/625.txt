@@ -1,0 +1,28 @@
+NPE in Table.sendDoubleSelection when double-clicking on the right of an item
+HEAD, Cocoa
+- run Snippet113, which creates a Table with SWT.CHECK style
+- double-click on the right of an item (not in the item text)
+=> NPE
+Exception in thread "main" java.lang.NullPointerException
+at org.eclipse.swt.widgets.Table.sendDoubleSelection(Table.java:2975)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4957)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:237)
+at org.eclipse.swt.widgets.Widget.mouseDownSuper(Widget.java:1060)
+at org.eclipse.swt.widgets.Table.mouseDownSuper(Table.java:1930)
+at org.eclipse.swt.widgets.Widget.mouseDown(Widget.java:1056)
+at org.eclipse.swt.widgets.Control.mouseDown(Control.java:2305)
+at org.eclipse.swt.widgets.Table.mouseDown(Table.java:1912)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5099)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:237)
+at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:1978)
+at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:2007)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:5163)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:4705)
+at org.eclipse.swt.widgets.Display.applicationProc(Display.java:4782)
+at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:115)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3399)
+at org.eclipse.swt.snippets.Snippet113.main(Snippet113.java:42)

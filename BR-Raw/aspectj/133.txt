@@ -1,0 +1,13 @@
+AJC error, somehow connected with generics
+Build ID: 1.5.0.20070607
+Steps To Reproduce:
+I cannot find a way to reproduce it, it's somehow "randomic", for example it happened to me now while creating a new class in an aspectj project, but when i then saved the .java it compiled properly. That's why I'm filing it in AJDT and not in AspectJ directly.
+Based on the exception, IIUC, there is a narrowing in a generic (UnresolvedType should be something like Converter<?>, while BoundedReferenceType should be somethinf like Converter<? extends Number>), and the weaver is not handling it properly, but simply casting from one to the other .. but this are just silly assumptions.
+More information:
+java.lang.ClassCastException
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeTypeBinding1(EclipseFactory.java:656)
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeTypeBinding(EclipseFactory.java:579)
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeTypeBinding1(EclipseFactory.java:640)
+at org.aspectj.ajdt.internal.compiler.lookup.EclipseFactory.makeTypeBinding(EclipseFactory.java:579)
+at org.asp ... Worker.java:55)
+Compile error: ClassCastException thrown: org.aspectj.weaver.UnresolvedType cannot be cast to org.aspectj.weaver.BoundedReferenceType

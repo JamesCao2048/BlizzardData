@@ -1,0 +1,2 @@
+Bug 147604 Value in parameter list displays incorrectly with paramter group
+Steps to reproduce: 1.Add a parameter group "pg" in report1, add a parameter"p" in the group 2.Add a label in report2, set a drill-through hyperlink, set target report is "report1", click parameter Expected result: Only one "p" lists in the value list Actual result: Two "p" appear

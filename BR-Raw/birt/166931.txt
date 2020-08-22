@@ -1,0 +1,9 @@
+Bug 166931 Include double quotation in title of viewer tag will cause blank page.[0603]
+Description: Include double quotation in title of viewer tag will cause blank page.
+Build number: 2.2.0.v20061206 Steps to reproduce: 1.New a BIRT Web project.
+2.New a jsp file based on birt template, input below content in body:
+<birt:viewer id="0" name="first sample" title="first &quot; report &quot; title" reportDesign="birt_tag_sample.rptdesign" >
+</birt:viewer> 3.Run the project to see the jsp file.
+Expected result: Report displays with title first"report" title.
+Actual result: Blank page with nothing showed.
+Error log:N/A

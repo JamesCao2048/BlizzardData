@@ -1,0 +1,8 @@
+Hiding redraw window before destroying it
+In GTK+ 2.6.0 and higher, when a GdkWindow is unmapped, GDK will unset the
+background pixmap of its parent temporarily to reduce flicker.
+However, this is
+only done when you call gdk_window_hide(), not if you simply call
+gdk_window_destroy().
+By adding a call to gdk_window_hide() in setRedraw(true) before destroying the
+window, all flicker on GTK+ for setRedraw() magically disappears for GTK+ 2.6 users.

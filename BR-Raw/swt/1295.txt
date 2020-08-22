@@ -1,0 +1,15 @@
+[64] eclipse does not start due to missing pango callback
+Created  attachment 119931   [details]
+patch
+The error is below, a patch is attached, which I've committed to HEAD.
+java.lang.NoSuchMethodError: pangoLayoutNewProc
+at org.eclipse.swt.internal.Callback.bind(Native Method)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:117)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:72)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:54)
+at org.eclipse.swt.widgets.Display.initializeSubclasses(Display.java:2504)
+at org.eclipse.swt.widgets.Display.init(Display.java:2307)
+at org.eclipse.swt.graphics.Device.<init>(Device.java:155)
+at org.eclipse.swt.widgets.Display.<init>(Display.java:475)
+at org.eclipse.swt.widgets.Display.<init>(Display.java:466)
+<snip>

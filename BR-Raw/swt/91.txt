@@ -1,0 +1,47 @@
+Vertical scroll bar still shows after calling setVisible(false) in Windows 7
+Created  attachment 223329   [details]
+Snapshot of incorrect vertical scroll shown
+I created a sample view which contain a canvas and its child canvas.
+The child canvas has only vertical scroll bar(no horizontal scroll bar).
+Double click on canvas to show/hide vertical scroll bar.
+In windows 7, we can reproduce the problem with following steps:
+- Show that sample view and make sure vertical scroll bar shown;
+- Drag sash separator to resize that view(this step is necessary to reproduce the problem );
+- Double click on the view to hide vertical scroll bar.
+You can see the scroll bar was hidden and then shown again.
+The scroll bar image continue to show when you resize the view(see the snapshot in attachment).
+I attached the sample view in the attachment.
+Just need to import it to Eclipse and set target platform to Eclipse and run.
+Here is the code to create canvas controls in the sample view:
+parentCanvas = new Canvas(parent,  SWT.NO_FOCUS | (SWT.None & ~((SWT.H_SCROLL | SWT.V_SCROLL))));
+parentCanvas.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_BLUE));
+parentCanvas.setLayout(new GridLayout());
+childCanvas = new Canvas(parentCanvas,SWT.V_SCROLL | SWT.NO_BACKGROUND | SWT.NO_REDRAW_RESIZE | SWT.NO_TRIM);
+childCanvas.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_LIST_BACKGROUND));
+childCanvas.addListener(SWT.Paint, new Listener() {
+public void handleEvent(Event e) {
+switch (e.type) {
+case SWT.Paint:
+e.gc.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_RED));
+e.gc.fillRectangle(new Rectangle(e.x, e.y, e.width, e.height));
+break;
+}
+}
+});
+GridData gridData = new GridData(GridData.FILL_BOTH);
+childCanvas.setLayoutData(gridData);
+childCanvas.addMouseListener(new MouseListener(){
+public void mouseDoubleClick(MouseEvent e) {
+childCanvas.getVerticalBar().setVisible(!childCanvas.getVerticalBar().isVisible());
+
+}
+public void mouseDown(MouseEvent e) {
+// TODO Auto-generated method stub
+
+}
+public void mouseUp(MouseEvent e) {
+// TODO Auto-generated method stub
+
+}
+
+});

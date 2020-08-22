@@ -1,0 +1,31 @@
+[CTabFolder] CTabItem messed up ToolTip
+When a CTabItem has a tooltip, it often does not dispose of it properly.
+Using the snippet below, hover over the tab until the tooltip appears.
+Then, quickly move the mouse to the middle of the label.
+The tooltip will not go away, it will move to where the mouse it (and follow the mouse around as you move it around the label area).
+Furthermore, if you quickly moved the mouse to the button instead of the label,  you will get the button's tooltip, but moving to the label changes the tooltip back to the CTabItem's tooltip.
+Moving the mouse slowly down from the tab area makes the tooltip go away correctly (which is why I say, "move the mouse quickly")
+This is on Mac only, and I've been seeing it on 3.2M6 and 3.2RC1.
+Snippet:
+final Display display = Display.getDefault();
+final Shell shell = new Shell(display);
+FillLayout layout = new FillLayout(SWT.VERTICAL);
+layout.spacing = 5;
+shell.setLayout(layout);
+shell.setText("Test 2");
+final CTabFolder tf = new CTabFolder(shell, SWT.FLAT);
+CTabItem ti = new CTabItem(tf, SWT.NONE);
+ti.setText("This is a CTabItem");
+ti.setToolTipText("This is the ToolTip from CTabItem");
+Composite composite = new Composite(tf, SWT.NONE);
+composite.setLayout(new FillLayout(SWT.HORIZONTAL));
+ti.setControl(composite);
+Button btn = new Button(composite, SWT.PUSH);
+btn.setText("Button");
+btn.setToolTipText("Button's Tooltip");
+final Label l = new Label(composite, SWT.BORDER);
+l.setText("Label");
+shell.setSize(200, 200);
+shell.open();
+while (!shell.isDisposed())
+if (!display.readAndDispatch()) display.sleep();

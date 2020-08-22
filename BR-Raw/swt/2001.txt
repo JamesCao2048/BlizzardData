@@ -1,0 +1,11 @@
+Dialog package explorer on move reorg user input page scrolled
+I20070516-0010
+1.Select 'JavaPlugin'
+2.Refactor>Move...
+Is:
+Dialog package explorer is scrolled to the right
+Should:
+Not be scrolled
+See screen shot.
+Not sure if it is us or SWT.
+This used to work pre 3.3M7

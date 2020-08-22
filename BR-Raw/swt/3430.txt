@@ -1,0 +1,7 @@
+ViewForm's title area controls are off by one pixel
+In the ViewForm, the controls topXXX are given a y pos that is off by one pixel.
+I believe the problem is in getClientArea().
+There is magic number 1 when
+calculating y.
+patch to follow.
+-m@

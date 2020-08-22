@@ -1,0 +1,17 @@
+computeTrim() is not returning the correct value
+Snippet showing the problem (in 3.1M7):
+
+public static void main(String[] args) {
+Display d = new Display();
+final Shell shell = new Shell(SWT.TOOL | SWT.ON_TOP);
+shell.setSize(100, 100);
+System.out.println(shell.computeTrim(0,0,0,0));
+shell.open();
+for (int i = 0; i
+< 5; i++)
+if (!d.readAndDispatch())
+d.sleep();
+shell.dispose();
+}
+
+Clearly, the shell has a trim, but computeTrim() doesn't reflect that.

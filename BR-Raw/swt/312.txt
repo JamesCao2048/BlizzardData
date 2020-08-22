@@ -1,0 +1,5 @@
+cannot see mouse selection in highlighted text in StyledText
+- happens in HEAD, worked fine in 3.7.x
+- is apparently caused by the recent Cairo graphics work
+- get eclipse to highlight a range of text in a java editor (eg.- do a search, highlight references to something, etc.)
+- use the mouse to select some text from within the highlighted range and note that you cannot see the selected range at all (though doing a copy+paste shows that the selection is logically there)

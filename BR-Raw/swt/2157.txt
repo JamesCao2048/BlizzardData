@@ -1,0 +1,76 @@
+Disposing image during printing crashes SWT on MacOS
+Build ID: 3.2.1 build v 3235
+Steps To Reproduce:
+Run this program
+- you can just hit Preview to make it die, don't actually have to use a real printer.
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.printing.*;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+public class Test {
+public static void main(String[] args) {
+
+Display display = new Display();
+
+ImageData data = new ImageData(1600,1200, 24, new PaletteData(0xFF, 0xFF00, 0xFF0000));
+Image img = new Image(display, data);
+
+PrintDialog printDialog = new PrintDialog(new Shell(display), SWT.NULL);
+PrinterData printerData = printDialog.open();
+if (printerData == null)
+{
+System.out.println("Could not create printer");
+return;
+}
+if (printerData.printToFile) printerData.fileName = "print.out";
+final Printer p = new Printer(printerData);
+p.startJob("foo");
+GC gc = new GC(p);
+gc.drawImage(img, 50, 50);
+gc.dispose();
+img.dispose();
+p.endPage();
+p.endJob();
+p.dispose();
+}
+}
+More information:
+The size of the image appears to matter
+- if I make it a 20x20, it doesn't crash.
+Also, if I wait until I dispose the printer, it also doesn't crash.
+Here's the crash reporter output:
+Date/Time:      2007-02-08 19:32:01.132
+-0500
+OS Version:     10.4.8 (Build 8N1051)
+Report Version: 4
+Command: java
+Path:    /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java
+Parent:  java [380]
+Version: ???
+(???)
+PID:    2897
+Thread: 0
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_INVALID_ADDRESS (0x0001) at 0x1acf5000
+Thread 0 Crashed:
+0
+<<00000000>> 	0xffff08a0 __memcpy + 256 (cpu_capabilities.h:228)
+1   com.apple.CoreGraphics         	0x903d4e53 CGAccessSessionGetBytes + 100
+2   libPDFRIP.A.dylib              	0x942bfa26 PDFImageEmitData + 3241
+3   libPDFRIP.A.dylib              	0x942c0856 emitImage + 1398
+4   libPDFRIP.A.dylib              	0x942c136d imageRefEmitDefinition + 2817
+5   libPDFRIP.A.dylib              	0x942beb28 PDFImageEmitDefinition + 28
+6   libPDFRIP.A.dylib              	0x942c16d1 emitImageDefinition + 17
+7   com.apple.CoreFoundation       	0x9082972b CFSetApplyFunction + 180
+8   libPDFRIP.A.dylib              	0x942ac094 PDFImageSetEmitDefinitions + 59
+9   libPDFRIP.A.dylib              	0x942aad53 PDFDocumentEndPage + 215
+10  libPDFRIP.A.dylib              	0x942aac75 pdf_EndPage + 25
+11  com.apple.CoreGraphics         	0x904b8827 CGContextEndPage + 120
+12  libConverter.dylib             	0xeab03d74 Notify(CVBackEnd const*, CVSessionInfo const*, void*, CVEvent) + 484
+13  ...e.print.framework.PrintCore 	0x91684fa0 PJCEndPage(OpaquePMPrintSession*) + 56
+14  ...e.print.framework.PrintCore 	0x91684f2e PMSessionEndPageNoDialog + 64
+15  ...eAo39yNiHShJQT+WMQ==.jnilib 	0x0733de28 Java_org_eclipse_swt_internal_carbon_OS_PMSessionEndPageNoDialog + 24
+16
+<<00000000>> 	0x0457a1d1 0 + 72851921
+17

@@ -1,0 +1,5 @@
+Bug 116994 There is "create template item" in a library editor, after selecting it error message pops up.
+Description: There is "create template item" in a library editor, after selecting it error message pops up.
+Steps to reproduce: 1.Add a label in a library file.
+2.Right click on it and select "Create template report item".
+3.Error message pops up "Error.TemplateException.TEMPLATE_ITEM_NOT_SUPPORTED".

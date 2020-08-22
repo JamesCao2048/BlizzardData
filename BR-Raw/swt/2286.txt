@@ -1,0 +1,9 @@
+cubicTo and quadTo methods of Path not working
+The cubicTo and quadTo methods don't seem to be drawing any lines.
+The attached file contains code that can be used to reproduce this situation.
+Steps for reproducing:
+- Check out org.eclipse.swt.examples from CVS
+- Put the attached file in your workspace under org.eclipse.swt.examples.graphics
+- Run the graphics example
+- In the tree, expand "Misc" and select "Curves"
+- The expected  result is to see the word "SWT" spelled out using cubic and quadratic curves

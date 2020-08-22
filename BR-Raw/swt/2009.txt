@@ -1,0 +1,25 @@
+Text: SWT.RIGHT without SWT.BORDER does not show text
+On Mac OS X, if SWT.RIGHT is used as the style for a Text object, the user cannot see the text.
+Using SWT.LEFT as the style works fine.
+Using SWT.RIGHT | SWT.BORDER or SWT.RIGHT | SWT.WRAP also fixes the problem.
+Here's code to reproduce:
+package org.projectalisa.javalisa.basic.widgets;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.SWT;
+public class TestText extends Composite {
+private Text text = null;
+public TestText(Composite parent, int style) {
+super(parent, style);
+initialize();
+}
+private void initialize() {
+text = new Text(this, SWT.RIGHT);
+text.setText("123");
+
+setSize(new Point(300, 200));
+setLayout(new GridLayout());
+}
+}

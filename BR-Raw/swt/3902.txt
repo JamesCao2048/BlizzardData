@@ -1,0 +1,15 @@
+Launch configuration dialog loses workspace data dir
+Build 20020730 Linux/Motif
+1) Open the Launch Configuration dialog
+2) Create a new Run-Time Worbench
+- the dialog reports that the data directory is not specified
+3) Click click on 'Run-Time Workbench' (the parent of your configuration) in the
+list of launch configurations
+4) Select your new launch configuration again
+- the data directory has been restored
+5) Rename your launch configuration using the Name field
+6) Press Apply to commit the changes
+- the dialog reports that the data directory is not specified
+7) Repeat steps 3) and 4)
+- once again, the data directory is restored
+This behaviour does not occur on Linux/GTK or Windows.

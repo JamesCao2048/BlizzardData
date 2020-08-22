@@ -1,0 +1,48 @@
+PocketPC and eSWT example problems
+v3039
+Run the attached examples.
+ExampleLauncher is the main class.
+These are the
+examples that are shipped with eSWT.
+The examples were derived from the SWT
+ControlExample.
+
+1. Run ButtonExample.
+Push Buttons are always flat.
+Does the PPC support
+beveled buttons?
+2. Run CanvasExample.
+Check the NO_BACKGROUND style.
+Notice that a scrollbar
+appears in the wrong place.
+Uncheck the NO_BACKGROUND style.
+Check the
+NO_FOCUS style.
+You can see a stray vertical scrollbar flashing on the screen.
+3. Run the ComboExample.
+Check the READ_ONLY style.
+You can see the combo
+flash up in the left hand corner of the screen.
+Select the SIMPLE style.
+The
+combo "acts" like it is a SIMPLE combo as seen on Windows 2K (it is placed
+based on a larger vertical height), but it's still just the DROP_DOWN style.
+
+Does PPC support the SIMPLE style?
+4. Run the LabelExample.
+Check SEPARATOR.
+The separator is barely visible.
+
+Click HORIZONTAL and it goes away all together.
+Try to set the size (via the
+size menu), you still can't get the separator to appear.
+Also, I take it that
+the shadow styles are not supported on PPC?
+5. Run the SliderExample.
+Try to drag the thumb to the right.
+The thumb
+jumps all the way to the left.
+6. Run the TextExample.
+Check WRAP or READ_ONLY.
+You see a stray scrollbar
+flashing toward the top of the screen.

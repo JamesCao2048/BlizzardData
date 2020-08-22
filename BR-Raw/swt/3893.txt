@@ -1,0 +1,13 @@
+NPE when debugging as java application
+M3 build
+- in the java perspective create the following class:
+public class PrintNumbers {
+public static void main(String[] args) {
+System.out.println(1);
+System.out.println(2);
+}
+}
+- drop down the Debug tool item, Debug As
+-> Java Application
+- the program is run fine, but the perspective does not change to Java, and the
+attached NPE is dumped

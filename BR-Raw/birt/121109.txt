@@ -1,0 +1,12 @@
+Bug 121109 Bad Data Source and Data Set Javascript event handlers are ignored
+Open a report design, open any Data Set's Script editor.
+Type in an invalid Javascript for the "beforeOpen" method, for example, " { ".
+Preview a report that uses that Data Set.
+The report executes normally.
+No error is shown.
+Apparently Report Engine ignored the bad Javascript code.
+It's only when you run the report in Debug mode do you see some exception message in the Eclipse console, with error message " ...
+Script engine error: missing } after function body ...
+" This is a regression against BIRT 1.0.1.In earlier builds the bad Javascript error message will be shown.
+Event handlers are an integral part of a report design, and if a script handler has an compilation error, or if the handler throws a runtime exception, Report Engine should either stop the report execution, or show the error message in the generated report.
+(Tested with the 2005-12-15 nightly build)

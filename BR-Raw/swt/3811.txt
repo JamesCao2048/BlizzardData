@@ -1,0 +1,11 @@
+Difficult to change character case of cached input values
+I used the incorrect case for a character in a cvs repository path that I was
+defining.
+It is subsiquently impossible to enter the correct path because
+Eclipse insists on inserting the incorrect value into the field and does not
+allow me to type over the incorrect character (when I replace the character it
+is immediatly reverted back to the incorrect character and the cursor is thrown
+to the end of the field).
+In the end I managed to get it to work by manually editing the file
+org.eclipse.team.cvs.core/.cvsProviderState, but this was inconvenient to say
+the least.

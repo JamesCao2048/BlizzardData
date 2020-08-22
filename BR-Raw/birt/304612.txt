@@ -1,0 +1,5 @@
+Bug 304612 [Regression] Exception is thrown out when run ChartWizardLauncher
+Description: Exception is thrown out when run ChartWizardLauncher.
+Build number: 2.6.0.v20100304-0630 Steps to reproduce: 1.Run org.eclipse.birt.chart.examplesChartWizardLauncher.java.
+Expected result: No exception.
+Actual result: Exception is thrown out.

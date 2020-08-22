@@ -1,0 +1,36 @@
+SWT.ON_TOP shells do not stay above all applications
+The SWT.ON_TOP shell in the snippet below goes behind other windows when the application looses focus
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class OnTopIssue {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("main");
+shell.setLayout(new GridLayout(1, false));
+shell.setBounds(100, 100, 200, 200);
+Shell onTop = new Shell(display, SWT.SHELL_TRIM | SWT.ON_TOP);
+onTop.setText("ontop");
+onTop.setBounds(130, 130, 200, 200);
+Button button = new Button(onTop, SWT.PUSH);
+button.setText("Push");
+button.pack();
+onTop.open();
+Shell s = new Shell(onTop, SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL); //works
+//	Shell s = new Shell(onTop, SWT.DIALOG_TRIM); //works
+//	Shell s = new Shell(SWT.DIALOG_TRIM); //fails on Windows, Cocoa, Carbon
+s.setBounds(150, 150, 200, 200);
+s.setText("dialog");
+Button button1 = new Button(s, SWT.PUSH);
+button1.setText("Push");
+button1.pack();
+s.open();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

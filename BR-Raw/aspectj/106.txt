@@ -1,0 +1,2 @@
+wasted time building message context when it is only used for command line builds
+The context for a message is created even when AspectJ is used inside AJDT - but the context only ever gets used when printing messages to System.out.  Under AJDT we ought to be able to 'switch it off'

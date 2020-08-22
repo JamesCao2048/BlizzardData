@@ -1,0 +1,4 @@
+Bug 188049 datasets are not fetched in single transaction
+I have seen one report with strange content.
+It could happen if two datasets were not executed in single transaction.
+All data sets shall run within single transaction, because otherwise it may happen that data is modified between fetching first and second data set.

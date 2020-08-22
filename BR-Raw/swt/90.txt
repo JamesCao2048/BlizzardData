@@ -1,0 +1,7 @@
+BrowserFunction not converting correctly boolean arrays with XULRunner 10
+Created  attachment 225562   [details]
+A snippet that shows the issue with boolean arrays
+It looks like there is an issue with converting boolean array parameters that are passed to BrowserFunction.
+I attached a snippet that shows the issue.
+When passing an array like [false, false, false, false, false], instead of an array with false values the function receives an array with random boolean values.
+I'm doing my tests with XULRunner 10 but I believe that the bug can be reproduced with previous versions too.

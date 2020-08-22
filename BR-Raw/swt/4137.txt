@@ -1,0 +1,5 @@
+Performance issue in Table.RemoveAll()
+Method org,eclipse.swt.widgets.Table.removeAll() removes items from the
+beginning of a Vector, but it should remove the items from the end instead since
+Vector is shuffling the items all around the place when removed from the top.
+This goes for the rest of places where all items are removed from a vector.

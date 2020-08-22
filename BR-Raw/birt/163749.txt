@@ -1,0 +1,9 @@
+Bug 163749 Import BIRT runtime package to wtp will leave old birt files.
+Description: Import BIRT runtime package to wtp will leave old birt files.
+Steps to reproduce: Prepare two birt builds.
+1.Create a new BIRT Web Project with one build.
+2.Use another build to open the same workspace, select the project and click Business Inteligent and Reporting Tools->Import BIRT runtime component.
+Expected result: Old birt runtime package will be replaced with new runtime package.
+Actual result: Old birt plugins were kept and new birt jar files are imported.
+e.g.
+org.eclipse.birt.report.engine_2.2.0.v20061101-0630.jar org.eclipse.birt.report.engine_2.2.0.v20061107-0635.jar

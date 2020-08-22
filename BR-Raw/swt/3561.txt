@@ -1,0 +1,40 @@
+Opening a PRIMARY_MODAL dialog on top on another PRIMARY_MODAL dialog shoud not enable the parent of the first.
+When you open a PRIMARY_MODAL dialog the parent becomes inactive until the
+dialog is closed.
+However if you open another PRIMARY_MODAL dialog on top of
+the first PRIMARY_MODAL dialog the parent of the first PRIMARY_MODAL dialog
+becomes enabled.
+PRIMARY_MODAL dialogs should disable the entire ancestry of
+modal shells not just the immediate parent shell.
+This can be accomplished by
+changing the isActive method of Control.java to this:
+boolean isActive () {
+Shell modal = display.getModalShell ();
+if (modal != null && modal != this) {
+if ((modal.style & SWT.PRIMARY_MODAL) != 0) {
+Shell shell = getShell ();
+Shell parent = (Shell)modal.parent;
+Shell child = modal;
+while (parent != null) {
+if (parent == shell) {
+if ((child.style & SWT.PRIMARY_MODAL) != 0)
+return false;
+else
+break;
+}
+child = parent;
+parent = (Shell)parent.parent;
+}
+}
+int bits = SWT.APPLICATION_MODAL | SWT.SYSTEM_MODAL;
+if ((modal.style & bits) != 0) {
+Control control = this;
+while (control != null) {
+if (control == modal) break;
+control = control.parent;
+}
+if (control != modal) return false;
+}
+}
+return getShell ().getEnabled ();
+}

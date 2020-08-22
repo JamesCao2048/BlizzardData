@@ -1,0 +1,7 @@
+Some convenience methods for StyledText
+Hello,
+I would appreciate some convenience methods in the StyledText-API.
+For instance, In an application I like to get the contents of a certain line.
+At the moment I can't see a method with which this would conveniently possible.
+At least a method get the offset of a end of line would be helpful here (currently, I have to get the index of the following line and then subtract one but I have to take care about boundary issues myself).
+Sebastian

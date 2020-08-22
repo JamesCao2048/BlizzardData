@@ -1,0 +1,8 @@
+Bug 148611 The edit parameter dialog hang up in my case.
+Reproduce: The attachment include a library and a report.
+1.Put the library file under the resource folder, "D:/Actuate/BIRTs/200606260630/eclipse/plugins/org.eclipse.birt.report.designer.ui_2.1.0.N20060624-0630/resources/" in my application.
+2.Open the report, preview in the embedded viewer.
+3.The Edit parameter dialog hang up.
+(Notice: it is the extened "dynamic" parameter that cause the problem.
+My CPU reaches 100% ocuppation when rendering the dialog, while when I end up closing the dummy dialog, CPU doesn't seem to be released, still 100%.
+)

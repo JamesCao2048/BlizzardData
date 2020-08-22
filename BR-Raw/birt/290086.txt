@@ -1,0 +1,5 @@
+Bug 290086 The column width is not correct in excel emitter.
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.14) Gecko/2009082707 Firefox/3.0.14 (.NET CLR 3.5.30729) Build Identifier: M20090807-0800 The column width should not use auto fit to adjust width.It should output the exact column width.
+Reproducible: Always Steps to Reproduce: 1.Run the attachment and export to excel file.
+2.Open the excel file, and you will find Column D and Column R is wider than other columns.It is not correct.
+3.Expect results: All columns have the same column width.

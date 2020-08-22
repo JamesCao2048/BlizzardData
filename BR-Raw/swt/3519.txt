@@ -1,0 +1,91 @@
+Crash on open of any java source
+System crashes when trying to open a java source file.
+Here's the dump:
+Date/Time:  2003-11-14 23:36:20
+-0500
+OS Version: 10.3.1 (Build 7C107)
+Command:    java_swt (/Applications/eclipse/I20031114/eclipse/Eclipse.app/Contents/MacOS/
+java_swt)
+PID:        4875
+Thread:     0
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000000
+Thread 0 Crashed:
+#0   0x90192e58 in CFArrayGetCount (CFArrayGetCount + 52)
+#1   0x0245b43c in Java_org_eclipse_swt_internal_carbon_OS_CFArrayGetCount
+(Java_org_eclipse_swt_internal_carbon_OS_CFArrayGetCount + 40)
+#2   0x03d9e580 in 0x3d9e580
+#3   0x03d97ef0 in 0x3d97ef0
+#4   0x03d97ec0 in 0x3d97ec0
+#5   0x03d97e30 in 0x3d97e30
+#6   0x03d97e30 in 0x3d97e30
+#7   0x03d97e30 in 0x3d97e30
+#8   0x03d97e30 in 0x3d97e30
+#9   0x03d98190 in 0x3d98190
+#10  0x03d97fb0 in 0x3d97fb0
+#11  0x03d97fb0 in 0x3d97fb0
+#12  0x03d97fb0 in 0x3d97fb0
+#13  0x03d97fb0 in 0x3d97fb0
+#14  0x03d97fb0 in 0x3d97fb0
+#15  0x03d97fb0 in 0x3d97fb0
+#16  0x03d97fb0 in 0x3d97fb0
+#17  0x03d97fb0 in 0x3d97fb0
+#18  0x03d97fb0 in 0x3d97fb0
+#19  0x03d97fb0 in 0x3d97fb0
+#20  0x03d98310 in 0x3d98310
+#21  0x0400e814 in 0x400e814
+#22  0x0407c1c8 in 0x407c1c8
+#23  0x03d97fb0 in 0x3d97fb0
+#24  0x03d97fb0 in 0x3d97fb0
+#25  0x03d97fb0 in 0x3d97fb0
+#26  0x03d97fb0 in 0x3d97fb0
+#27  0x03d97fb0 in 0x3d97fb0
+#28  0x03d97fb0 in 0x3d97fb0
+#29  0x03d97fb0 in 0x3d97fb0
+#30  0x03d98310 in 0x3d98310
+#31  0x03d97fb0 in 0x3d97fb0
+#32  0x03d97fb0 in 0x3d97fb0
+#33  0x03d97fb0 in 0x3d97fb0
+#34  0x03d97ec0 in 0x3d97ec0
+#35  0x03d97ec0 in 0x3d97ec0
+#36  0x03d97ec0 in 0x3d97ec0
+#37  0x03d97ec0 in 0x3d97ec0
+#38  0x03d98310 in 0x3d98310
+#39  0x03d97fb0 in 0x3d97fb0
+#40  0x03d98220 in 0x3d98220
+#41  0x03d97ec0 in 0x3d97ec0
+#42  0x03d97ec0 in 0x3d97ec0
+#43  0x03d97ec0 in 0x3d97ec0
+#44  0x03d97fb0 in 0x3d97fb0
+#45  0x03d97fb0 in 0x3d97fb0
+#46  0x03d97fb0 in 0x3d97fb0
+#47  0x03d97fb0 in 0x3d97fb0
+#48  0x03d98310 in 0x3d98310
+#49  0x03d98310 in 0x3d98310
+#50  0x0400e814 in 0x400e814
+#51  0x0407c1c8 in 0x407c1c8
+#52  0x03d97fb0 in 0x3d97fb0
+#53  0x03d97fb0 in 0x3d97fb0
+#54  0x03d97fb0 in 0x3d97fb0
+#55  0x03d98310 in 0x3d98310
+#56  0x03d97fb0 in 0x3d97fb0
+#57  0x03d97fb0 in 0x3d97fb0
+#58  0x03f77bf0 in 0x3f77bf0
+#59  0x03d97fb0 in 0x3d97fb0
+#60  0x03d97fb0 in 0x3d97fb0
+#61  0x03d97e30 in 0x3d97e30
+#62  0x03d97e30 in 0x3d97e30
+#63  0x03d97fb0 in 0x3d97fb0
+#64  0x03d97ef0 in 0x3d97ef0
+#65  0x03d97ef0 in 0x3d97ef0
+#66  0x03d97ef0 in 0x3d97ef0
+#67  0x03d98220 in 0x3d98220
+#68  0x03d97ec0 in 0x3d97ec0
+#69  0x03d9516c in 0x3d9516c
+#70  0x947ba0f8 in JVM_GetCPMethodClassNameUTF (JVM_GetCPMethodClassNameUTF + 2856)
+#71  0x947dbce8 in JVM_GetCPClassNameUTF (JVM_GetCPClassNameUTF + 2456)
+#72  0x948538e4 in JVM_IsNaN (JVM_IsNaN + 23316)
+#73  0x9487b234 in __floatdisf (__floatdisf + 3828)
+#74  0x948a9150 in JVM_InvokeMethod (JVM_InvokeMethod + 496)
+#75  0x03d9e580 in 0x3d9e580
+#76  0x03d97ec0

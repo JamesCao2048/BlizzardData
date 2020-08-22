@@ -1,0 +1,2 @@
+[model] package search fails in binary aspect in same package as a source type
+If type a.b.c.C is advised by an aspect a.b.c.X from the aspectpath the model search logic breaks for finding 'X' because it hits the package node for a.b.c and stops looking

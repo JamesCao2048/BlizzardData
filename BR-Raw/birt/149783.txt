@@ -1,0 +1,2 @@
+Bug 149783 Display text for extend elelment in master page is not found
+Steps to reproduce: 1.New a library, add a properties file for the library, add pair"k1=actuate" to the properties file 2.Add a label "aaa" in master page header, set "k1" as the text key 3.Publish the library 4.New a report, extend lib.masterpage 5.Open extended master page in report Expected result: label shows display text "actuate" Actual result: label shows text "aaa"

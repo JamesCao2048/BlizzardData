@@ -1,0 +1,21 @@
+adding EraseItem listener to Tree causes major drawing problem
+- run the snippet below
+- an image with the Tree that this shows is attached
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setBounds(10,10,200,200);
+final Tree tree = new Tree(shell, SWT.NONE);
+tree.setBounds(10,10,150,150);
+new TreeItem(tree, SWT.NONE).setText("item 0");
+new TreeItem(tree, SWT.NONE).setText("item 1");
+tree.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

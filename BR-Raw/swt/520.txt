@@ -1,0 +1,6 @@
+[Mac] E3.x's CocoaUIEnhancer and e4's CocoaUIHandler needlessly disable the Services menu
+E3.x's CocoaUIEnhancer and e4's CocoaUIHandler (which is a lightly modified CocoaUIEnhancer) disable the MacOS X "Services" menu.
+It's a bit annoying when you're used to being able to invoke a service through a keyboard shortcut.
+I've tried running with the disabling code removed and haven't noticed any immediate issues.
+I'd like to make this permanent.
+Does anybody remember the rationale for disabling the "Services" menu?

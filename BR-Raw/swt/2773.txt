@@ -1,0 +1,9 @@
+Redundant check for the pointer coordinates
+In Control#gtk_motion_notify, gdk_window_get_pointer() is used to get the
+coordinates relative to the root window.
+However, Control#sendMouseEvent maps
+these back into widget-relative coordinates.
+It would be more efficient and straightforward to simply request the mouse
+position relative to the target window in the first place.
+The attached patch
+solves this.

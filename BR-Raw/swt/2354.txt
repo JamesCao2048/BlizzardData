@@ -1,0 +1,4 @@
+Shell.getClientArea has side effect
+I20060411
+Calling Shell::getClientArea on a Shell without trims has the side effect of moving the client area by one pixel up- and leftwards.
+I will attach a snippet showing the problem.

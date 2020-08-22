@@ -1,0 +1,8 @@
+Bug 160537 Need better gridline/scaling options for charts
+We have an issue with a chart, where there is only a single major gridline drawn across Y-axis, spanning a value range of .5 to 1.5.This does not provide enough resolution for our business partners.
+Displaying minor gridlines is not a viable option for us because the data scale can vary significantly based on the input data, leading to a cluttered chart when there are several major gridlines).
+For now, we are going to try to set the min/max and stepping from a Chart eventhandler in beforeGeneration().
+We don't want to be in this business of determining min/max and stepping long-term, since "appropriate" scaling depends so much on the particulars of the data, and there's some complexity there (an understatement
+- I've looked at the BIRT AutoScale class).
+I have two suggestions: 1) logic in place to guarantee a gridline for every X percentage of the total axis length, to avoid lack of major grid resolution or 2) "Major Grid count hint" option where we could suggest to the charting engine how many gridlines we'd like, and then let the charting engine still determine the min/max and stepping to fill in gridlines reasonably.
+We don't need the gridline count to be exact; if we gave a gridline hint value of 10, and 9 or 11 gridlines were drawn, that would not be a problem.

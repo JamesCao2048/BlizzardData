@@ -1,0 +1,16 @@
+unsetting background image inheritance does not update
+3.3RC1
+- run the ControlExample, stay on the Button tab
+- check the Background Image checkbox
+- use the combo above this checkbox to change the Background Mode on Parent to SWT.INHERIT_FORCE
+
+-> the buttons and their parent composite now inheirit the parent's background image
+- change the combo back to its original SWT.INHERIT_NONE value
+
+-> the buttons and their parent composite still appear to show the parent's background image
+- uncheck the Background Image checkbox
+
+-> the background image disappears from the top-level composite, but still appears on the buttons and their parent
+- damage and re-expose the area with the example buttons
+
+-> now the background image goes away from the damaged region

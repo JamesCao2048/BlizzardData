@@ -1,0 +1,21 @@
+[DBCS4.3]: The first character in empty StyledText is duplicated when using custom StyledTextContent
+Created  attachment 230151   [details]
+screenshot of the CVS Commit dialog
+When entering Japanese characters with IM into Commit Comment, The first character of the comment is duplicated.
+This issue occurred both on Windows and RHEL.
+e.g.
+input 鈥漈est"銆->  entered text "TestT"
+Steps:
+1.Setup CVS environment
+2.Commit a project into CVS
+Right click project > Team > Commit...
+3.Enter comments with IM is on
+e.g.
+type "a" key and Enter key from keyboard
+expected result:
+entered text is "銇"
+actual result:
+"銇傘亗"  is displayed, The first character is doubly inputted.
+Environment:
+Version: 4.3.0
+Build id: I20130314-1330

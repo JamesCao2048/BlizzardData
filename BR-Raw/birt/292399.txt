@@ -1,0 +1,4 @@
+Bug 292399 Curve fitting line treat NULL as Zero
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.9.0.6) Gecko/2009011913 Firefox/3.0.6 Build Identifier: 20090920-1017 Curve fitting line is for series with some null values incorrectly displayed.
+Null values are treated as zero and line is deformed and moved to X axis.
+Discovered in 2.5.1 (version 2.2xxx is correct) Reproducible: Always Steps to Reproduce: 1.create report with data serie containing null values 2.create chart (scatter), add curve fitting line

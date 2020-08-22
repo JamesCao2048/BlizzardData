@@ -1,0 +1,46 @@
+IAE in TextLayout._getOffset()
+Got this reported with 3.3.1 and 3.3.2 (stacktrace is from 3.3.1).
+Couldn't reproduce myself, steps to reproduce we received:
+1.Type line 1 to almost fill an entire line
+2.CR to new line, type something
+3.Cursor up (and to the end) of line 1, and type until word wrap occurs.
+-> You should now only have a few characters on the newly visible line 2 with your cursor at the end of it (that's really wrap of line 1)
+4.Backspace until it should revert back to one line.
+java.lang.IllegalArgumentException: Index out of bounds
+at org.eclipse.swt.SWT.error(SWT.java:3547)
+at org.eclipse.swt.SWT.error(SWT.java:3481)
+at org.eclipse.swt.SWT.error(SWT.java:3452)
+at org.eclipse.swt.graphics.TextLayout._getOffset(TextLayout.java:1437)
+at org.eclipse.swt.graphics.TextLayout.getPreviousOffset(TextLayout.java:1643)
+at org.eclipse.swt.custom.StyledText.doBackspace(StyledText.java:2106)
+at org.eclipse.swt.custom.StyledText.invokeAction(StyledText.java:5645)
+at org.eclipse.swt.custom.StyledText.handleKey(StyledText.java:5033)
+at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:5054)
+at org.eclipse.swt.custom.StyledText$7.handleEvent(StyledText.java:4800)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:938)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:962)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:947)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:975)
+at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:971)
+at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1285)
+at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:3772)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3672)
+at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:291)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4351)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:2178)
+at org.eclipse.swt.internal.BidiUtil.windowProc(BidiUtil.java:649)
+at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2264)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3291)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:153)
+at org.eclipse.core.runtime.i

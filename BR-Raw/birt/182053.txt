@@ -1,0 +1,8 @@
+Bug 182053 [Automation][Regression] Visibility does not work properly in html and viewer
+steps to reproduce:
+- create a report
+- add any report item
+- hide this report item in pdf
+- preview in html and viewer expected behavior:
+- this report item should be shown actual behavior:
+- this report item was not shown

@@ -1,0 +1,4 @@
+Improvements to define new server wizard page
+On the panel where the server location and button to install the server is shown, a couple of usability improvements could be made...
+(1) If I choose browse and choose a location.  Then hit install server, the fs browser should not be brought back up since I have already hitten browse and selected a location.
+(2) If (1) and the location chosen contains no server, and the server is downlodable, classpath validation errors should not show, but a message stating that no server is found but can be installed by selecting the install server button.

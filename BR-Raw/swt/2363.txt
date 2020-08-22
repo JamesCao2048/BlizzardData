@@ -1,0 +1,3 @@
+add cut/copy/paste api on CCombo
+Text and Combo have them, so it seems inconsistent not to.
+The implementation would probably just be a delegation to the contained Text widget, possibly after checking the CCombo's style for READ_ONLY.

@@ -1,0 +1,37 @@
+TableTree.setSelection/showItem fails for deeply nested items
+I built a TableTree with three nested TableTreeItems.
+
+If I close the tree entirely and call showItem() on the
+innermost child, I get a null argument exception even though
+the child is not null.
+
+I don't get an exception if I expand the tree entirely, or if
+I call showItem() on the first or second level child items.
+
+I get the same results if I use setSelection().
+Also calling showItem() successively from the higher level to lower level
+items (to "gradually" open the tree) produces the same exception.
+i.e.
+...
+TableTree     tree  = new TableTree(composite,SWT.FULL_SELECTION);
+TableTreeItem root  = new TableTreeItem(tree,SWT.NONE);
+root.setText("root");
+TableTreeItem child = new TableTreeItem(root,SWT.NONE);
+child.setText("child");
+TableTreeItem child2 = new TableTreeItem(child,SWT.NONE);
+child2.setText("child2");
+...
+if ( child2!=null )
+tree.showItem(child2);  // raises exception if child2 is unexpanded
+...
+gives
+java.lang.IllegalArgumentException: Argument cannot be null
+at org.eclipse.swt.SWT.error(SWT.java:1873)
+at org.eclipse.swt.SWT.error(SWT.java:1819)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:368)
+at org.eclipse.swt.widgets.Table.indexOf(Table.java:962)
+at org.eclipse.swt.widgets.Table.setSelection(Table.java:1834)
+at org.eclipse.swt.custom.TableTree.setSelection(TableTree.java:664)
+...
+I'm using SWT that came with Eclipse build 20020416, on a Windows 98
+machine.

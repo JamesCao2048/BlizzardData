@@ -1,0 +1,8 @@
+Improve javadoc of Control#addKeyListener(..) to tell about changed traversal behavior
+I20060919-0010
+- remove source attachment from rt.jar
+- open java.lang.Integer
+=> Focus is nowhere
+=> Tab, Ctrl+Tab, F12 all don't give the focus back
+In 3.2 the initial focus was on the editor tab.
+I would expect the focus to be on the Attach Source button (if it exists), or in the text area with the decompiled text.

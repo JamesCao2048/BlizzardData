@@ -1,0 +1,8 @@
+[Spinner] SWT.READ_ONLY doesn't work
+Build ID: I20080207-1530
+Steps To Reproduce:
+1.Open ControlExample with Cocoa
+2.Goto "Spinner" tab
+3.Enable SWT.READ_ONLY
+4.Type digits in the spinner box
+Notice that you may type into the spinner input box still, unlike platforms like Carbon where it is disabled.

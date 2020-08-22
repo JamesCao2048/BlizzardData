@@ -1,0 +1,3 @@
+Bug 182664 Cross Tab: resize column doesn't behave correctly
+When user drag to resize a column, it supposes to effect on the left column only.
+Currently when user drag to resize column, many other columns are resized too, unexpectedly.

@@ -1,0 +1,69 @@
+SWT.MeasureItem not used for selection hittest
+(3.3M4)
+I'm having trouble selecting items in an owner-draw table using the mouse.
+I can use the arrow keys to move the selection up and down through the table, however I have to click at the far left side of the table to select the item with a mouse.
+Clicking anywhere outside this small area has no effect.
+The example below demonstrates this behavior.
+I believe this is happening because the "hot zone" rectangle (the region where clicking selects the item) is derived from the item's image and text, even if the table is in owner-draw mode.
+The example code does not set any text or images on the table items, so the clickable region ends up being very small.
+Perhaps when in owner-draw mode, the clickable region should be the size returned by MeasureItem.
+In the meanwhile, using SWT.FULL_SELECTION style in the table gets around this behavior.
+----
+package swt.rocks.the.casbah;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+/**
+* Demonstrate problem with owner draw table item selection using mouse clicks
+* @author Matthew Hall
+*/
+public class OwnerDrawTableTest {
+/**
+*
+* @param args
+*/
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setBounds(100, 100, 400, 300);
+shell.setLayout(new FillLayout());
+Table table = new Table(shell, SWT.NONE);
+table.addListener(SWT.MeasureItem, new Listener() {
+public void handleEvent(Event event) {
+String text = (String) event.item.getData();
+Point textExtent = event.gc.textExtent(text);
+event.width = textExtent.x;
+event.height = textExtent.y;
+}
+});
+table.addListener(SWT.EraseItem, new Listener() {
+public void handleEvent(Event event) {
+event.detail &= ~SWT.FOREGROUND;
+}
+});
+table.addListener(SWT.PaintItem, new Listener() {
+public void handleEvent(Event event) {
+String text = (String) event.item.getData();
+event.gc.drawText(text, event.x, event.y);
+event.detail &= ~SWT.FOREGROUND;
+}
+});
+String[] items = new String[] {
+"aslkdjflaksjdfsal",
+"aslkjdfslkjflksfl",
+"slkdjflskjdflksjf",
+"lskdjflksjdflkdsj",
+"lskdfjlskdfjlksjf"
+};
+for (String item : items)
+new TableItem(table, SWT.LEFT).setData(item);
+shell.open();
+table.setFocus();
+table.setSelection(0);
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+display.dispose();
+}
+}

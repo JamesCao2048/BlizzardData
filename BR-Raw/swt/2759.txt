@@ -1,0 +1,10 @@
+ImageData getPixel operation
+The method "int getPixel(int x, int y)" of ImageData has several "if"s in a row,
+depending on the depth.
+Even if smart (the ones doing image processing) users
+should not be using "getPixel" repeateadly, it's a shame that is does not use a
+switch statement, which is bound to be mush faster.
+Since it is not even an
+"if/elsif", and the method starts with one, images of depth 8 or more, which are
+very common for digital photography end up iterating over all the depth before
+arriving at the desired depth.

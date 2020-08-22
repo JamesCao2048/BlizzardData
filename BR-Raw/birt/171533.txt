@@ -1,0 +1,3 @@
+Bug 171533 Pie chart legends are truncated
+This only happens with a title for the legend.
+There is a small bug in the layout algorithm that causes the clipping in such case.

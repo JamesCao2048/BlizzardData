@@ -1,0 +1,16 @@
+Bug 145942 [regression] use library function does not work properly
+steps to reproduce:
+- create a library
+- publish to resource folder
+- create a report
+- use the library
+- insert
+-> use library, or
+- outline
+-> libraries
+-> use library
+- navigate to designer resource folder
+- select a library
+- click on open expected behavior:
+- library is included actual behavior:
+- error occurred, please refer to attached screen capture

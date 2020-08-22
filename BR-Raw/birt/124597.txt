@@ -1,0 +1,3 @@
+Bug 124597 Error message pop up which from length of JS-Expression is error
+Details: Error message pop up which from length of JS-Expression is error Setp: 1.New a datasource and dataset contain "row["First"]" 2.Insert a table in layout and a data in details 3.Input "row["FIRST"].length" in data expression 4.Preview Actual result: "FIRST" is a error input words, but it can preview some words in table: org.eclipse.birt.data.engine.script.DataExceptionMocker@1502283 But it has not pop up some error message.
+Expection result: Pop up an error message

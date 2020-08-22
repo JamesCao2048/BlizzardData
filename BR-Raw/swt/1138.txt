@@ -1,0 +1,33 @@
+SWTException evaluating JS with Sarfari
+on OSX10.5.6 with Carbon and i0224...
+I have a small class that is using Browser integration to call some JS libraries.
+The code works fine on Windows with IE.
+On the Mac configuration the following is logged
+org.eclipse.swt.SWTException: Return value not valid
+at org.eclipse.swt.browser.WebBrowser$EvaluateFunction.function(WebBrowser.java:182)
+at org.eclipse.swt.browser.Safari.callJava(Safari.java:1758)
+at org.eclipse.swt.browser.Safari.handleCallback(Safari.java:635)
+at org.eclipse.swt.browser.Safari.eventProc7(Safari.java:345)
+at org.eclipse.swt.internal.cocoa.Cocoa.objc_msgSend(Native Method)
+at org.eclipse.swt.browser.Safari.execute(Safari.java:361)
+Here is the script that is being evaluate()'d
+"DS_flyToLatLng(new google.maps.LatLng(45.5,
+-71.2,90)"
+Note that it is not just that script, pretty AFAIK all of the ones I am running have this problem.
+Note that the functions are actually running but it seems the return is failing.
+The JS function being called does not actually return a value.
+The function is
+function DS_flyToLatLng(lat, long, heading, range) {
+var la = DS_ge.createLookAt('');
+la.set(lat, long,
+10, // altitude
+DS_ge.ALTITUDE_RELATIVE_TO_GROUND,
+heading, // heading
+0, // tilt
+range // range (inverse of zoom)
+);
+DS_ge.getView().setAbstractView(la);
+}
+which of course calls more stuff etc.
+The bulk of the function is a variation of the application at
+http://earth-api-samples.googlecode.com/svn/trunk/demos/drive-simulator/index.html

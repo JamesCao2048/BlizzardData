@@ -1,0 +1,6 @@
+Bug 142144 [Smoke][regression]Style cannot be modified and applied.
+Description: Style cannot be modified and applied.
+Steps to reproduce: 1.New a style.
+2.Edit it in StyleBuilder and click OK 3.Insert a label, right click and apply the style.
+Result: After step2, Style name already exist, please chosse a different name.
+In step3, The created style is gray.

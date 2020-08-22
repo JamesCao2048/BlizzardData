@@ -1,0 +1,12 @@
+TreeColumn causes vertical scroll to appear
+Adding a TreeColumn to a Tree control causes the vertical scrollbar to appear
+even when not needed.
+The following code is an extract of a ViewPart extension:
+public void createPartControl(Composite parent)
+{
+tree = new Tree(parent, SWT.SINGLE);
+tree.setLinesVisible(false);
+tree.setHeaderVisible(true);
+// The following line causes the vertical scrollbar to appear
+TreeColumn treeColumn = new TreeColumn(tree, SWT.LEFT);
+}

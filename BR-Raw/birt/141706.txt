@@ -1,0 +1,2 @@
+Bug 141706 Interactivity on SVG chart didn't work in Viewer
+Steps to reproduce: 1.New a SVG chart, add an interactivity on chart title 2.Preview report in Web Viewer and click chart title Expected result: Link to the target page Actual result: Interactivity didn't work

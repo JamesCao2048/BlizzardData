@@ -1,0 +1,26 @@
+org.aspectj.weaver.BCException compiling @DeclareParents with value using "||
+Build Identifier: 20110916-0149
+Using:
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.DeclareParents;
+@Aspect
+public class AspectTest {
+
+private interface X {}
+private static class XImpl {}
+@DeclareParents(value="java.lang.Runnable || java.util.concurrent.Callable",  defaultImpl=XImpl.class)
+private X xImpl;
+
+}
+Throws:
+org.aspectj.weaver.BCException
+at org.aspectj.weaver.patterns.ExactTypePattern.resolveBindings(ExactTypePattern.java:312)
+at org.aspectj.weaver.patterns.OrTypePattern.resolveBindings(OrTypePattern.java:121)
+at org.aspectj.weaver.bcel.AtAjAttributes.handleDeclareParentsAnnotation(AtAjAttributes.java:746)
+at org.aspectj.weaver.bcel.AtAjAttributes.readAj5ClassAttributes(AtAjAttributes.java:384)
+at org.aspectj.weaver.bcel.BcelObjectType.ens ... Program FilesJavajre6libextsunjce_provider.jar;C:Usersxxxsoftwareeclipse-j2ee\plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar;
+Current workaround is to use multiple DeclareParents annotations on different variables.
+Reproducible: Always
+Steps to Reproduce:
+1. Create new class given the code in the details.
+2. Save and compile in Eclipse.

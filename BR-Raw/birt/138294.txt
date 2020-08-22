@@ -1,0 +1,3 @@
+Bug 138294 If a TemplateReportItem is set to invisible, it should be invisible in HTML output
+If a TemplateReportItem is set to invisible, it should be invisible in HTML output.
+Right now, even if it is set to invisible, it still shows up in preview in HTML format.

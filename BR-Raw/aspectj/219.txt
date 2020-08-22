@@ -1,0 +1,2 @@
+[ltw] Fail at runtime if abstract methods are not implemented in a hierarchy that finishes with an XML aspect
+see pr125480 - copying the test for that will be a good basis for a test for this bug.  We don't check that when defining a concrete aspect there are no unimplemented abstract methods in the aspect we are concretizing.

@@ -1,0 +1,9 @@
+Bug 139365 The result of grouping is wrong
+Description: The result of grouping is wrong.
+Step to reproduce: Steps to reproduce: 1.New a report.
+2.Create a data source and a data set based on the report.
+3.Drag the dataset to the layout, and set two groups on the table.
+The first level group information: Group key: CITY Interval type: prefix Range: 1 The second level group information: Group key: CUSTOMERNUMBER Interval type: Interval Range: 4 4.Save and preview.
+(Please refer to the attached design file) Actual result: The result of grouping is wrong.
+Expected result: In the second level group, the CUSTOMERNUMBER 157, 303, 357, 323 shouldnt in a group.
+They must be regard as single group according to the conditional of the second level group.

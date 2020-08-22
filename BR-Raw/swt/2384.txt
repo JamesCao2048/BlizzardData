@@ -1,0 +1,6 @@
+Undocumented error thrown in Image code
+Various image code throws an ERROR_UNSUPPORTED_FORMAT when an attempt is made to
+load a corrupted image (like
+http://www.libpng.org/pub/png/PngSuite/xcrn0g04.png ).
+The doc never mentions
+this error code.

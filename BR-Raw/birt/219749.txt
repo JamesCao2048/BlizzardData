@@ -1,0 +1,2 @@
+Bug 219749 Use new canPaste() API from model
+Model now provide canPaste() api on DesignElementHandle, need also use this for paste action enablement check.

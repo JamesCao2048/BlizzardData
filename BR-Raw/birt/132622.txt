@@ -1,0 +1,3 @@
+Bug 132622 Published template won't display in the template wizard
+Steps to reproduce: 1.New a template 2.Open Preferences->BIRT->Template, change the default path to the root where eclipse exists.
+For example: the default path is /D:/eclipse/plugins/org.eclipse.birt.report.designer.ui_2.1.0.N20060319-2230/templates/ , change it to /D: without slash "/" following the comma ":" 3.Publish the template as name "aa" 4.New a report with the template wizard Expected result: Template "aa" will display in the template wizard Actual result: Template "aa" is not in the template wizard, but it did exists in d:/

@@ -1,0 +1,20 @@
+virtual tree returns null item in multi-selection from different branches
+Using build I20060125-0800.
+Debug simple following test case with "one two three" as program arguments:
+public class Test {
+public static void main(String[] args) {
+int[] values = new int[] { 1, 2, 3 };
+for (int i=0; i<values.length; i++) {
+System.out.println("value="+values[i]);
+}
+}
+}
+after having put a breakpoint on for...
+line.
+In Variables view expand both local variables args and values.
+Select first item in args array and one item in values array.
+Look at displayed values in details pane:
+one
+<unknown>
+In fact as soon as you select one of the arrays item, you have an
+<unknown> which appears in detail pane if you select an item in the other array...

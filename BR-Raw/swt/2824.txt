@@ -1,0 +1,15 @@
+[KeyBindings] interactions: "Esc, Shift+R" key binding doesn't work
+200411022000
+Create a binding to Esc, Shift + R
+Hit Esc
+Hold Shift
+At this point the system will beep and the R will not be honoured
+Hold Shift
+Hit Esc
+Hit R
+Command executes as expected
+Hit Esc
+Wait for hint dialog to appear
+Hold Shift
+Hit R
+Command executes as expected

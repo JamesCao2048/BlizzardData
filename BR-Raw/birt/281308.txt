@@ -1,0 +1,8 @@
+Bug 281308 Report Variable does not work correctly in Fixed Layout [0001] [0007]
+Description: Report Variable does not work correctly in Fixed Layout.
+Build number: 2.5.1.v20090624-0630 Steps to reproduce: 1.New a table binding to data set CUSTOMERS in Layout.
+2.In Data Explorer View, right click the "Variables" node to create Report Variable: Name--rv, Default Value--"report variable" 3.Switch to Master Page tab, drag "Variable" in AutoText list from Palette view to master page header, select "rv".
+4.Preview in Web Viewer.
+Expected result: In the beginning of each page, "report variable" is shown.
+Actual result: It works in Layout preview, master page header is blank when preview in Web Viewer.
+Error log: N/A

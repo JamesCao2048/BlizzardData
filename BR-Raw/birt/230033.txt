@@ -1,0 +1,2 @@
+Bug 230033 CoreJavaScriptInitializer contains an extra new()
+project: org.eclipse.birt.core package: org.eclipse.birt.core.script; class: CoreJavaScriptInitializer bug: ScriptableObject.putProperty( scope, birtStr.getClassName( ), new BirtStr() ); should be: ScriptableObject.putProperty( scope, birtStr.getClassName( ), birtStr ); birtStr is declared further up as: ScriptableObject birtStr = new BirtStr();

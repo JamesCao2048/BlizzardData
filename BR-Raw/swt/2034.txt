@@ -1,0 +1,12 @@
+Table sends MenuDetect twice
+SWT-3.3M6 sends MenuDetect event twice on WinXP: One for MouseDown and one for MouseUp.
+This is not the case with SWT-3.2.Attached snippet produces this output for a single right click on a TableItem:
+Event {type=35 Table {} time=1044707109 data=null x=156 y=318 width=0 height=0 detail=0}
+Event {type=3 Table {} time=1044707109 data=null x=20 y=135 width=0 height=0 detail=0}
+Event {type=35 Table {} time=1044707234 data=null x=155 y=318 width=0 height=0 detail=0}
+Event {type=4 Table {} time=1044707234 data=null x=19 y=135 width=0 height=0 detail=0}
+Same snippet with SWT-3.2 yields this:
+Event {type=3 Table {} time=1044616843 data=null x=53 y=114 width=0 height=0 detail=0}
+Event {type=35 Table {} time=1044616937 data=null x=189 y=297 width=0 height=0 detail=0}
+Event {type=4 Table {} time=1044616937 data=null x=53 y=114 width=0 height=0 detail=0}
+Beware, this does not always happen, only in 90% of my clicks.

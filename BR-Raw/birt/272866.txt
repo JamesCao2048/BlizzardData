@@ -1,0 +1,2 @@
+Bug 272866 Normal attribute dragged from cube builder hasn't data type
+Description: Normal attribute dragged from cube builder hasn't data type Build number: 2.5.0.v20090420-1104 Steps to reproduce: 1, New a normal level and add a string type attribute 2, Drag the attribute into layout crosstab 3, Check the data type of attribute in crosstab Expected result: The data type is string Actual result: Data type is empty Error log:

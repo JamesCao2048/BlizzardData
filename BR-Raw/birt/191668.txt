@@ -1,0 +1,2 @@
+Bug 191668 [Regression]The parameter list is empty when preview the report[0705]
+Description: [Regression]The parameter list is empty when preview the report[0705] Build number: 2.2.0.v20070608-0630 Steps to reproduce: 1, Open the attached report design 2, Preview Expected result: The parameter list is empty Actual result: The parameter list is not empty and has the imported values Error log:

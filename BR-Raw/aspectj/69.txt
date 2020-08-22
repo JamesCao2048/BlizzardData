@@ -1,0 +1,10 @@
+Fully qualified ITD has incorrect handle identifier
+In the following aspect:
+public aspect Aspect {
+public void q2.ThisClass.something2() {}
+}
+In aspectJ, the ITD has the following handle identifier (notice that the ITD name is not fully qualified):
+=AspectJ Project/src2<p*Aspect.aj'Aspect)ThisClass.something2
+However, it should be (with fully qualified name):
+=AspectJ Project/src2<p*Aspect.aj'Aspect)q2.ThisClass.something2
+This means that fully qualified ITDs cannot be navigated to or searched.  I'm a little surprised that this doesn't work because I thought I had tests for it...

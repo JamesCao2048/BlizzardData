@@ -1,0 +1,50 @@
+Eclipse will crash with message "Widget is disposed".
+Environment:  MacOSX 10.4.8(PowerPC), java 1.5.0_06, Eclipse SDK 3.3M3
+Steps to reproduce bug:
+1.Eclipse > Preferences...
+> Team > CVS > SSH2 Connection Method > Key Management
+2.Press "Generate DSA Key..."
+3.Select the textfield for "Confirm passphrase:".
+4.Press "Ok" button
+The error log has following line,
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+at org.eclipse.swt.SWT.error(SWT.java:3450)
+at org.eclipse.swt.SWT.error(SWT.java:3373)
+at org.eclipse.swt.SWT.error(SWT.java:3344)
+at org.eclipse.swt.widgets.Widget.error(Widget.java:663)
+at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:332)
+at org.eclipse.swt.widgets.Control.setVisible(Control.java:3164)
+at org.eclipse.jface.dialogs.DialogMessageArea.restoreTitle(DialogMessageArea.java:129)
+at org.eclipse.jface.dialogs.DialogMessageArea.updateText(DialogMessageArea.java:151)
+at org.eclipse.jface.preference.PreferenceDialog.updateMessage(PreferenceDialog.java:1323)
+at org.eclipse.jface.preference.PreferencePage.setErrorMessage(PreferencePage.java:640)
+at org.eclipse.team.internal.ccvs.ssh2.CVSSSH2PreferencePage$6.focusLost(CVSSSH2PreferencePage.java:428)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:109)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1527)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1551)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1532)
+at org.eclipse.swt.widgets.Control.sendFocusEvent(Control.java:2367)
+at org.eclipse.swt.widgets.Control.forceFocus(Control.java:827)
+at org.eclipse.swt.widgets.Control.setFocus(Control.java:2817)
+at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:892)
+at org.eclipse.swt.widgets.Control.fixFocus(Control.java:775)
+at org.eclipse.swt.widgets.Control.setVisible(Control.java:3208)
+at org.eclipse.swt.widgets.TabItem.releaseWidget(TabItem.java:195)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1417)
+at org.eclipse.swt.widgets.TabFolder.releaseChildren(TabFolder.java:507)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1408)
+at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:820)
+at org.eclipse.swt.widgets.Widget.release(Widget.java:1408

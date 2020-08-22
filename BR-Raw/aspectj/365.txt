@@ -1,0 +1,282 @@
+AspectJ 1.5.0 Development Compiler Chokes on Advice with Cflow
+The following is a valid AspectJ program, that should compile and run without
+infinite recursion. It does so with AspectJ 1.2.1. AspectJ 1.5.0 Development
+(but not M3a) chokes on it.
+Sample Code:
+aspect BadAdvice {
+after(Object controller) returning (Object foo):
+cflow(adviceexecution() && args(controller, ..) && this(BadAdvice)) &&
+call(Bar+.new(..)) {
+}
+Object around(Object controller) : call(* whoKnows()) && target(controller)
+{
+return new Bar();
+}
+public static void main(String args[]) {
+(new Bar()).whoKnows();
+}
+}
+class Bar {
+void whoKnows() {}
+}
+Now look at the horrid output:
+C:develscratchrecurse>ajc BadAdvice.aj
+trouble in:
+public class BadAdvice extends java.lang.Object:
+private static Throwable ajc$initFailureCause
+public static final BadAdvice ajc$perSingletonInstance
+public static final org.aspectj.runtime.internal.CFlowStack ajc$cflowStack$0
+static void <clinit>():
+INVOKESTATIC BadAdvice.ajc$preClinit ()V
+staticinitialization(void BadAdvice.<clinit>())
+| catch java.lang.Throwable -> E0
+| |             INVOKESTATIC BadAdvice.ajc$postClinit ()V   (line 1)
+| catch java.lang.Throwable -> E0
+|               GOTO L0
+|           E0: ASTORE_0
+|               ALOAD_0
+|               PUTSTATIC BadAdvice.ajc$initFailureCause Ljava/lang/Throwabl
+e;
+|           L0: RETURN
+staticinitialization(void BadAdvice.<clinit>())
+end static void <clinit>()
+void <init>():
+ALOAD_0     // BadAdvice this   (line 1)
+INVOKESPECIAL java.lang.Object.<init> ()V
+constructor-execution(void BadAdvice.<init>())
+|               RETURN
+constructor-execution(void BadAdvice.<init>())
+end void <init>()
+public void ajc$afterReturning$BadAdvice$1$97dc015a(Object, Object)    AdviceA
+ttribute(afterReturning, (cflow((execution(* *) && (args(BindingTypePattern(java
+.lang.Object, 0), ..) && this(BadAdvice)))) && call(Bar+.new(..))), 1, 24)
+:
+ALOAD_1
+ASTORE_3
+ALOAD_2
+ASTORE 4
+advice-execution(void BadAdvice.ajc$afterReturning$BadAdvice$1$97dc015a(java
+.lang.Object, java.lang.Object))
+|               BIPUSH 1
+|               ANEWARRAY java.lang.Object
+|               ASTORE 6
+|               ALOAD 6
+|               BIPUSH 0
+|               ALOAD_3
+|               AASTORE
+|               GETSTATIC BadAdvice.ajc$cflowStack$0 Lorg/aspectj/runtime/in
+ternal/CFlowStack;
+|               ALOAD 6
+|               INVOKEVIRTUAL org.aspectj.runtime.internal.CFlowStack.push (
+[Ljava/lang/Object;)V
+| catch java.lang.Throwable -> E0
+| |             GOTO L0   (line 4)
+| catch java.lang.Throwable -> E0
+|           E0: ASTORE 7
+|               GETSTATIC BadAdvice.ajc$cflowStack$0 Lorg/aspectj/runtime/in
+ternal/CFlowStack;
+|               INVOKEVIRTUAL org.aspectj.runtime.internal.CFlowStack.pop ()
+V
+|               ALOAD 7
+|               ATHROW
+|           L0: GETSTATIC BadAdvice.ajc$cflowStack$0 Lorg/aspectj/runtime/in
+ternal/CFlowStack;
+|               INVOKEVIRTUAL org.aspectj.runtime.internal.CFlowStack.pop ()
+V
+|               RETURN
+advice-execution(void BadAdvice.ajc$afterReturning$BadAdvice$1$97dc015a(java
+.lang.Object, java.lang.Object))
+end public void ajc$afterReturning$BadAdvice$1$97dc015a(Object, Object)
+public Object ajc$around$BadAdvice$2$ef382b2d(Object, org.aspectj.runtime.inte
+rnal.AroundClosure)    AdviceAttribute(around, (call(* whoKnows()) && target(Bin
+dingTypePattern(java.lang.Object, 0))), 1, 196)
+:
+advice-execution(java.lang.Object BadAdvice.ajc$around$BadAdvice$2$ef382b2d(
+java.lang.Object, org.aspectj.runtime.internal.AroundClosure))
+| constructor-call(void Bar.<init>())
+| |             NEW Bar
+| |             DUP
+| |             INVOKESPECIAL Bar.<init> ()V   (line 6)
+| |             DUP
+| |             ASTORE_3
+| |             GETSTATIC BadAdvice.ajc$cflowStack$0 Lorg/aspectj/runtime/in
+ternal/CFlowStack;
+| |             INVOKEVIRTUAL org.aspectj.runtime.internal.CFlowStack.isVali
+d ()Z
+| |             IFEQ L0
+| |             INVOKESTATIC BadAdvice.aspectOf ()LBadAdvice;
+| |             GETSTATIC BadAdvice.ajc$cflowStack$0 Lorg/aspectj/runtime/in
+ternal/CFlowStack;
+| |             BIPUSH 0
+| |             INVOKEVIRTUAL org.aspectj.runtime.internal.CFlowStack.get (I
+)Ljava/lang/Object;
+| |             ALOAD_3
+| |             INVOKEVIRTUAL BadAdvice.ajc$afterReturning$BadAdvice$1$97dc0
+15a (Ljava/lang/Object;Ljava/lang/Object;)V
+| |         L0: NOP
+| constructor-call(void Bar.<init>())
+|               ARETURN
+advice-execution(java.lang.Object BadAdvice.ajc$around$BadAdvice$2$ef382b2d(
+java.lang.Object, org.aspectj.runtime.internal.AroundClosure))
+end public Object ajc$around$BadAdvice$2$ef382b2d(Object, org.aspectj.runtime.
+internal.AroundClosure)
+static Object ajc$around$BadAdvice$2$ef382b2dproceed(Object, org.aspectj.runti
+me.internal.AroundClosure) throws java.lang.Throwable    org.aspectj.weaver.AjAt
+tribute$AjSynthetic@3feb61
+:
+ALOAD_1
+ICONST_1
+ANEWARRAY java.lang.Object
+DUP
+ICONST_0
+ALOAD_0     // BadAdvice this
+AASTORE
+INVOKEVIRTUAL org.aspectj.runtime.internal.AroundClosure.run
+([Ljava/lang/Object;)Ljava/lang/Object;
+CHECKCAST java.lang.Object
+ARETURN
+end static Object ajc$around$BadAdvice$2$ef382b2dproceed(Object, org.aspectj.r
+untime.internal.AroundClosure) throws java.lang.Throwable
+public static BadAdvice aspectOf()    org.aspectj.weaver.AjAttribute$AjSynthet
+ic@3ff616
+:
+GETSTATIC BadAdvice.ajc$perSingletonInstance LBadAdvice;
+IFNONNULL L0
+NEW org.aspectj.lang.NoAspectBoundException
+DUP
+LDC "BadAdvice"
+GETSTATIC BadAdvice.ajc$initFailureCause Ljava/lang/Throwabl
+e;
+INVOKESPECIAL org.aspectj.lang.NoAspectBoundException.<init>
+(Ljava/lang/String;Ljava/lang/Throwable;)V
+ATHROW
+L0: GETSTATIC BadAdvice.ajc$perSingletonInstance LBadAdvice;
+ARETURN
+end public static BadAdvice aspectOf()
+public static boolean hasAspect()    org.aspectj.weaver.AjAttribute$AjSyntheti
+c@400021
+:
+GETSTATIC BadAdvice.ajc$perSingletonInstance LBadAdvice;
+IFNULL L0
+ICONST_1
+IRETURN
+L0: ICONST_0
+IRETURN
+end public static boolean hasAspect()
+private static void ajc$postClinit()    org.aspectj.weaver.AjAttribute$AjSynth
+etic@400662
+:
+NEW BadAdvice
+DUP
+INVOKESPECIAL BadAdvice.<init> ()V
+PUTSTATIC BadAdvice.ajc$perSingletonInstance LBadAdvice;
+RETURN
+end private static void ajc$postClinit()
+static void ajc$preClinit():
+NEW org.aspectj.runtime.internal.CFlowStack
+DUP
+INVOKESPECIAL org.aspectj.runtime.internal.CFlowStack.<init>
+()V
+PUTSTATIC BadAdvice.ajc$cflowStack$0 Lorg/aspectj/runtime/in
+ternal/CFlowStack;
+RETURN
+end static void ajc$preClinit()
+end public class BadAdvice
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelVar.appendConvertableArrayStore(BcelVar.j
+ava:96)
+at org.aspectj.weaver.bcel.BcelShadow.weaveCflowEntry(BcelShadow.java:18
+36)
+at org.aspectj.weaver.bcel.BcelAdvice.implementOn(BcelAdvice.java:200)
+at org.aspectj.weaver.Shadow.implementMungers(Shadow.java:511)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:388)
+at org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.jav
+a:1757)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:39
+3)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:96
+)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1415)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1
+380)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:115
+7)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:989)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompiler
+Adapter.java:286)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(A
+jCompilerAdapter.java:165)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning
+$org_aspectj_ajdt_internal_compiler_CompilerAdapter$2$f9cc9ca0(CompilerAdapter.a
+j:70)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compil
+er.java:367)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilat
+ion(AjBuildManager.java:728)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuild
+Manager.java:206)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBu
+ildManager.java:140)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:324)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:238)
+at org.aspectj.tools.ajc.Main.main(Main.java:82)
+ABORT
+Exception thrown from AspectJ DEVELOPMENT
+This might be logged as a bug already -- find current bugs at
+http://bugs.eclipse.org/bugs/buglist.cgi?product=AspectJ&component=Compiler
+Bugs for exceptions thrown have titles File:line from the top stack,
+e.g., "SomeFile.java:243"
+If you don't find the exception below in a bug, please add a new bug
+at  http://bugs.eclipse.org/bugs/enter_bug.cgi?product=AspectJ
+To make the bug a priority, please include a test program
+that can reproduce this exception.
+null
+java.lang.NullPointerException
+at org.aspectj.weaver.bcel.BcelVar.appendConvertableArrayStore(BcelVar.j
+ava:96)
+at org.aspectj.weaver.bcel.BcelShadow.weaveCflowEntry(BcelShadow.java:18
+36)
+at org.aspectj.weaver.bcel.BcelAdvice.implementOn(BcelAdvice.java:200)
+at org.aspectj.weaver.Shadow.implementMungers(Shadow.java:511)
+at org.aspectj.weaver.Shadow.implement(Shadow.java:388)
+at org.aspectj.weaver.bcel.BcelClassWeaver.implement(BcelClassWeaver.jav
+a:1757)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:39
+3)
+at org.aspectj.weaver.bcel.BcelClassWeaver.weave(BcelClassWeaver.java:96
+)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1415)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1
+380)
+at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:115
+7)
+at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:989)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.weave(AjCompiler
+Adapter.java:286)
+at org.aspectj.ajdt.internal.compiler.AjCompilerAdapter.afterCompiling(A
+jCompilerAdapter.java:165)
+at org.aspectj.ajdt.internal.compiler.CompilerAdapter.ajc$afterReturning
+$org_aspectj_ajdt_internal_compiler_CompilerAdapter$2$f9cc9ca0(CompilerAdapter.a
+j:70)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile(Compil
+er.java:367)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilat
+ion(AjBuildManager.java:728)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuild
+Manager.java:206)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBu
+ildManager.java:140)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:112)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:324)
+at org.aspectj.tools.ajc.Main.runMain(Main.java:238)
+at org.aspectj.tools.ajc.Main.main(Main.java:82)
+1 fail|abort
+Note: there isn't ever a call to construct a Bar in the first advice, so it
+shouldn't actually be self-advising at runtime, and even though the advice does
+itself match the cflow expression, it should just push an entry on the cflow
+stack.
+By the way, this would be a great place to have a name for advice, so I could
+exclude this one advice from advising itself.

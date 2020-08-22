@@ -1,0 +1,48 @@
+Pertarget aspect instantiation is not thread-safe
+The way in which pertarget aspects compiled with ajc check if a given target already has an aspect is not thread safe. When two different threads trigger an advice on a target object for the first time at the same time, sometimes the aspect for that target gets created twice.
+The following code demonstrates the problem:
+The following pertarget aspect will add itself to a (synchronized) set in another class in it's constructor.
+aspect Pertarget pertarget(execution(void foo())) {
+public Pertarget() {
+Main.aspects.add(this); // Add this instance to the set in Main
+}
+before(): execution(void foo()) {} // Empty advice to trigger creation
+}
+This class creates 10000 target objects and has two separate threads call a method (that causes the aspect to be instantiated) on each object. The aspects add themselves to the "aspects" set and this set's size is printed when all threads have finished.
+import java.util.Collections;
+import java.util.IdentityHashMap;
+import java.util.Set;
+public class Main {
+public static Set aspects = Collections.synchronizedSet(
+Collections.newSetFromMap(new IdentityHashMap()));
+public static void main(String[] args) throws InterruptedException {
+for (int i = 0; i < 10000; ++i) {
+final Main m = new Main(); // Create a new target for the aspect
+Runnable r = new Runnable() {
+public void run() { m.foo(); } // This will trigger the advice
+};
+Thread t1 = new Thread(r);
+Thread t2 = new Thread(r);
+t1.start();
+t2.start();
+t1.join();
+t2.join();
+}
+System.out.println(aspects.size()); // Should be 10000
+}
+private void foo() {}
+}
+When compiled with ajc and run, the main method prints values over 10000 (something like 10030-10060 typically), which means that some target objects get multiple aspect instances.
+In my own application I sometimes also saw some threads accessing partially built aspect instances. This was quite rare however and I wasn't able to make a test case for it.
+The ajc version (the current stable) used was:
+AspectJ Compiler 1.6.8 (1.6.8 - Built: Friday Jan 8, 2010 at 21:53:37 GMT) - Eclipse Compiler 0.785_R33x, 3.3
+The sun vm version was:
+Java(TM) SE Runtime Environment (build 1.6.0_20-b02)
+Java HotSpot(TM) 64-Bit Server VM (build 16.3-b01, mixed mode)
+I investigated the source of this problem: the ajc compiler generates the following (decompiled) method into the aspect class:
+public static void ajc$perObjectBind(Object obj)
+{
+if((obj instanceof ajcMightHaveAspect) && ((ajcMightHaveAspect)obj).perObjectGet() == null)
+((ajcMightHaveAspect)obj).perObjectSet(new Pertarget());
+}
+, which obviously is not thread safe.

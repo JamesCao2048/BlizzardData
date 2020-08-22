@@ -1,0 +1,34 @@
+pixel corruptions in table with Check flag and Images
+swt 3.2 / head 20060719
+windows vista beta 2 build 5384
+the smaller the image the worse it looks, with image 32x32 you can not see the problem.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+Table table = new Table (shell, SWT.CHECK);
+int size = 32;
+Image image = new Image (display, 16, 16);
+GC gc = new GC (image);
+gc.setBackground(display.getSystemColor(SWT.COLOR_BLUE));
+gc.fillRectangle(0, 0, size, size);
+gc.setForeground(display.getSystemColor(SWT.COLOR_RED));
+gc.drawRectangle(0, 0, size-1, size-1);
+gc.dispose();
+for (int i = 0; i
+< 60; i++) {
+TableItem item = new TableItem (table, SWT.NONE);
+item.setText("Text" +i);
+item.setImage(image);
+
+}
+
+shell.setLayout(new FillLayout());
+shell.setSize(400, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+image.dispose();
+display.dispose();
+}
+}

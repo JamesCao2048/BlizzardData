@@ -1,0 +1,27 @@
+[StyledText] styled text widget content can be shifted left with out scroll bar when line wraps
+Build ID: 3.4.2.v3452b-rcp20090814.1600
+Steps To Reproduce:
+1.with code example below text in the text box so that it need to scroll , some time it will get shifted to the left , if you back space to the beging of the test is will shift back,
+2.
+3.
+More information:
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snippet {
+
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+StyledText text = new StyledText (shell, SWT.V_SCROLL | SWT.MULTI | SWT.WRAP);
+shell.setSize(200, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

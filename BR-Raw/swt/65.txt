@@ -1,0 +1,10 @@
+Tracker window shows up in taskbar even though it is not supposed to
+Created  attachment 230620   [details]
+A screenshot of the bug, after draggin a view's tab around
+Hi,
+Inspired by the quick fix to  bug 389491  targeted for 4.3 RC1, I am submitting another related bug and the fix.
+After dragging a view tab around, a second taskbar icon appears next to the Eclipse one.
+This is obviously a taskbar icon for the Tracker window instance.
+Even though according to the Windows documentation a window with the WS_EX_NOACTIVATE style (such as the Tracker window) should not appear on the taskbar, on my Windows 8 Pro, it does.
+Adding the WS_EX_TOOLWINDOW flag fixes this problem.
+Please see the attached screenshot and patch.

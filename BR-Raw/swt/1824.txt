@@ -1,0 +1,4 @@
+Trees and Tables with owner draw don't show rollover effect (tooltip)
+I20070313-1051
+Trees and Tables with a PaintItem listener installed do not show tooltips when hovering over clipped items.
+To reproduce, run the ControlExample, install the PaintItem listener and expand the Tree / resize a Table header.

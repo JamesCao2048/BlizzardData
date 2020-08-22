@@ -1,0 +1,7 @@
+[PropertiesView] Property view hover text has odd behavior in Cocoa compared with Carbon or Windows
+Build Identifier: M20090917-0800
+When a property is multiple lines, it hovers correctly in Carbon or Windows, showing the entire property value.
+In Cocoa, only a single line is visible.
+Reproducible: Always
+Steps to Reproduce:
+Not sure how to show so have figures to upload to illustrate.

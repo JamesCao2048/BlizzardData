@@ -1,0 +1,25 @@
+SWT error thrown when refreshing the properties page
+An SWT error is thrown when the property sheet is populated when it is NOT
+currently visible.
+
+The problem appears to be that OS.gtk_tree_view_get_cell_area(int
+tree_view, int path, int column, GdkRectangle rect) does not update the
+supplied rectangle's height.
+A.
+org.eclipse.swt.custom.TableTreeItem constructor()
+A.1 parent.getItemHeight()  # calculate the height of a table cell
+B.
+org.eclipse.swt.widgets.Table#getItemHeight()
+B.1 new GtkRectangle()  # creates an empty [0,0,0,0] rectangle)
+B.2 OS.gtk_tree_view_get_cell_area(...) # does not update the rectangle;
+i.e., it is still [0,0,0,0]
+B.3 return GtkRectangle.height
+A.2 new Image( null, height, height ) #i.e., new Image( null, 0, 0 ) >> will
+cause an
+SWT error
+C.
+Image#init( Device device, int width, int height ) { if ( width
+<= 0 ||
+height
+<=0 ) {
+SWT.error(...) }...}

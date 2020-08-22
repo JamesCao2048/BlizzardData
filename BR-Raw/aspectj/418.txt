@@ -1,0 +1,40 @@
+NullPointerException when declare @type is spelt with capital letter
+I have the following code in an AspectJ project:
+declare @Type: MainClass : @MyAnnotation;
+I believe the correct syntax should be:
+declare @type: MainClass : @MyAnnotation;
+However when I saved my aspect with the first version I got the following
+NullPointerException:
+java.lang.NullPointerException
+at
+org.aspectj.ajdt.internal.compiler.ast.DeclareAnnotationDeclaration.postParse
+(DeclareAnnotationDeclaration.java:83)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.lookup.ClassScope.postParse
+(ClassScope.java:175)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.lookup.ClassScope.buildFieldsAndM
+ethods(ClassScope.java:154)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.build
+FieldsAndMethods(CompilationUnitScope.java:63)
+at
+org.aspectj.ajdt.internal.compiler.lookup.AjLookupEnvironment.completeTypeBindi
+ngs(AjLookupEnvironment.java:104)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.beginToCompile
+(Compiler.java:331)
+at org.aspectj.org.eclipse.jdt.internal.compiler.Compiler.compile
+(Compiler.java:348)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation
+(AjBuildManager.java:683)
+at org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild
+(AjBuildManager.java:191)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.incrementalBuild
+(AjBuildManager.java:109)
+at org.aspectj.ajde.internal.CompilerAdapter.compile
+(CompilerAdapter.java:117)
+at org.aspectj.ajde.internal.AspectJBuildManager$CompilerThread.run
+(AspectJBuildManager.java:165)

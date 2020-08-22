@@ -1,0 +1,2 @@
+Improve API doc for Text.getTextChars() and setTextChars()
+As per  https://bugs.eclipse.org/bugs/show_bug.cgi?id=408298#c5 , add documentation warning in Text.getTextChars() that there is no way to protect the password if verify/segments listeners are installed.

@@ -1,0 +1,40 @@
+TableColumn sort indicator not updating to new Font properly
+Run this Snippet:
+public class Main {
+static boolean twist = true;
+public static void main(String[] args) {
+final Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Font bigFont = new Font(display,
+display.getSystemFont().getFontData()[0].getName(), 20, SWT.NORMAL);
+final Table table = new Table(shell, SWT.BORDER);
+table.setHeaderVisible(true);
+final TableColumn col = new TableColumn(table, SWT.NONE);
+col.setText("Column");
+table.setSortColumn(col);
+table.setSortDirection(SWT.DOWN);
+Button b = new Button(shell, SWT.PUSH);
+b.setText("Click Me");
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+if (twist)
+table.setFont(bigFont);
+else
+table.setFont(display.getSystemFont());
+col.pack();
+twist = !twist;
+}
+});
+col.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+The Sort-Indicator is becoming very big, while the Font is changed to the
+Default Font on the Table.
+Ben

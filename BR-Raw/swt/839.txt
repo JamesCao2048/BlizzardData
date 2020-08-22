@@ -1,0 +1,5 @@
+Accessible not compiling in HEAD (win32.86_64)
+Created  attachment 147995   [details]
+compile errors
+getVARIANT, setVARIANT, setPtrVARIANT all need to be made 64-bit compatible.
+This is current breaking nightly builds.

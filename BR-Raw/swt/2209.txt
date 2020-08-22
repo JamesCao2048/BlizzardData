@@ -1,0 +1,15 @@
+HandleLeak in Font.getFontData()
+Build ID: M20060921-0945
+Steps To Reproduce:
+1.Create a small SWT project
+2.Open the windows task manager, make the GDI object column visible
+3.Add FontData fontData = getFont().getFontData()[0]; to the code
+4.Debug to the inserted line, when you step over the GDI object count is incremented but there is no possibility to free the temporary created GDI handle
+More information:
+The problem is the implementation of getFontData:
+if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+LOGFONT logFont = OS.IsUnicode ?
+(LOGFONT)new LOGFONTW() : new LOGFONTA();
+OS.GetObject(handle, LOGFONT.sizeof, logFont);
+return new FontData[] {FontData.win32_new(logFont, device.computePoints(logFont, handle))};
+The handle created by OS.GetObject is not disposed.

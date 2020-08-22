@@ -1,0 +1,4 @@
+GC.drawPoint() calls aren't affected by a Transform
+If you use a GC and set a Transform, then call drawPoint(), it won't be affected by the Transform.
+You can easily test this; you can use SWT Snippet 10 if you need a test case.
+The bug only happens on Windows.

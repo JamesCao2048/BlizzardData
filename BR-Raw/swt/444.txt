@@ -1,0 +1,8 @@
+DateTime dropdown doesn't hide with arrow button
+Reproducible on Cocoa I20110124-1800 build
+Steps:
+1) Run the control example
+2) In the DateTime control, select SWT.DATE and SWT.DROP_DOWN
+3) Click on the arrow (dropdown) button in the control to open the dropdown calendar.
+4) Click on the arrow button again, the dropdown calendar flashes but doesn't hide.
+The arrow button should toggle the show/hide of the dropdown.

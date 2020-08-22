@@ -1,0 +1,51 @@
+NPE on window close
+I200406110010
+Quite often I find this NPE in the log:
+!ENTRY org.eclipse.ui 4 0 Jun 11, 2004 13:14:37.292
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Control.kEventControlSetFocusPart(Control.java:1369)
+at org.eclipse.swt.widgets.Composite.kEventControlSetFocusPart(Composite.java:352)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:317)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:743)
+at org.eclipse.swt.internal.carbon.OS.DisposeWindow(Native Method)
+at org.eclipse.swt.widgets.Shell.destroyWidget(Shell.java:488)
+at org.eclipse.swt.widgets.Widget.dispose(Widget.java:482)
+at org.eclipse.jface.window.Window.close(Window.java:253)
+at org.eclipse.jface.dialogs.Dialog.close(Dialog.java:826)
+at org.eclipse.jface.preference.PreferenceDialog.close(PreferenceDialog.java:253)
+at org.eclipse.jface.preference.PreferenceDialog.cancelPressed(PreferenceDialog.java:233)
+at org.eclipse.jface.preference.PreferenceDialog.buttonPressed(PreferenceDialog.java:203)
+at
+org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.buttonPressed(WorkbenchPreferenceDialog.j
+ava:75)
+at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:506)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:89)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1196)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1220)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1205)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1053)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2868)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2538)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:668)
+at org.eclipse.jface.window.Window.open(Window.java:648)
+at org.eclipse.ui.internal.OpenPreferencesAction.run(OpenPreferencesAction.java:72)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:881)
+at
+org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:
+915)
+at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:866)
+at org.eclipse.jface.action.ActionContributionItem$7.handleEvent(ActionContributionItem.java:
+785)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1196)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1220)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1205)
+at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1053)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2868)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2538)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1362)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1333)
+at org.eclipse.ui.int

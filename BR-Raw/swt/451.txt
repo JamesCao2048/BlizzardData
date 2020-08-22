@@ -1,0 +1,17 @@
+Macs and Display.post(...) problems on non-US keyboards
+Display.post(...) with event.type == KeyDown/KeyUp does not work properly unless the keyboard input source is US.
+To test, try out SWT Snippet 146
+-  http://dev.eclipse.org/viewcvs/viewvc.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet146.java?view=co
+For a Danish keyboard, the window shows the text "Lve the methd." and not "Love the method."
+The problem seems to be that OS.UCKeyTranslate does not return "o" for key code 31 as it should, but rather "枚".
+Using "Full Key Codes" ( http://softwares.bajram.com/utilities/#Full_Key_Codes ), I can see that the key code for "枚" also seem to be 31.
+-- Configuration Details
+--
+Product: Eclipse 1.3.1.20100913-1228 (org.eclipse.epp.package.rcp.product)
+Installed Features:
+org.eclipse.platform 3.6.1.r361_v20100909-9gF78GrkFqw7GrsZnvz0JWNTeb6fue6896L
+-- Configuration Details
+--
+Product: Eclipse 1.3.1.20100913-1228 (org.eclipse.epp.package.rcp.product)
+Installed Features:
+org.eclipse.platform 3.6.1.r361_v20100909-9gF78GrkFqw7GrsZnvz0JWNTeb6fue6896L

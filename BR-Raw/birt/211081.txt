@@ -1,0 +1,4 @@
+Bug 211081 log4j not working with preview
+I am using log4j in the scripting Database source.
+I place my log4j-1.2.15.jar file in the folder C:eclipsepluginsorg.eclipse.birt.
+report.viewer_2.2.1.r22x_v20070920 birtWEB-INFlib However when I try to preview I get an error Http Status 500.When I check the log files I see the following exceptions java.lang.NoClassDefFoundError: org/apache/log4j/Category

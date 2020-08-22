@@ -1,0 +1,5 @@
+[browser] breaking change - rename LocationEvent.cancel to LocationEvent.doit and reverse boolean meaning
+To be consistent with SelectionListener and since SWT does not use cancel
+anywhere:
+LocationEvent.cancel should probably be renamed LocationEvent.doit
+where cancel was false by default, doit is true by default

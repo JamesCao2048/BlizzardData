@@ -1,0 +1,42 @@
+Nested GridLayouts cut content if inner grabs vertical space
+Created  attachment 133757   [details]
+Screenshot
+I20090428-0100, WinXP classic look
+Nested GridLayouts cut the content of the inner composite if the inner grabs vertical space.
+In the screenshot, you can see that the "Button 3" is missing a dark gray horizontal line at the bottom.
+It doesn't matter whether the outer composite grabs vertical space.
+This was originally discovered in  bug 274269  (I fixed it there).
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class Snip {
+private static final boolean BUG= true;
+public static void main(String[] args) {
+Display display= new Display();
+Shell shell= new Shell(display);
+shell.setLayout(new GridLayout());
+Group group= new Group(shell, SWT.NONE);
+group.setText("Group");
+GridLayout groupLayout= new GridLayout();
+group.setLayout(groupLayout);
+group.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+Composite composite2= new Composite(group, SWT.NONE);
+GridLayout layout= new GridLayout(1, false);
+layout.marginWidth= 0;
+layout.marginHeight= 0;
+composite2.setLayout(layout);
+// bug if nested composite grabs vertical space:
+composite2.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, BUG));
+new Button(composite2, SWT.NONE).setText("Button 1");
+new Button(composite2, SWT.NONE).setText("Button 2");
+new Button(composite2, SWT.NONE).setText("Button 3");
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

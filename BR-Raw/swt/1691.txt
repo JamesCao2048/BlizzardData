@@ -1,0 +1,16 @@
+Wrong drawing behaviour using SWT and Cairo drawing a text and then an oval
+Created  attachment 86853   [details]
+Drawing issue screenshot
+Build ID: M20071023-1652
+Steps To Reproduce:
+1.Create a program that draws FIRST a text (gc.drawText)
+2.then draws an oval (gc.drawOval)
+3.In addition to the text and oval, the result includes a line connecting the upper left point of the text with the right mid side of the oval.
+More information:
+The issue moste likely caused by the fact that drawText contains a
+Cairo.cairo_move_to(cairo, x, baseline);
+but state information is not cleared.
+After this, calling the drawOval contains a
+Cairo.cairo_arc_negative call followed by a Cairo.cairo_stroke.
+The last call draws the connecting line too (remaining in the stae from the drawText)
+Hint: drawText should correctly clear the internal state of the cairo lib.

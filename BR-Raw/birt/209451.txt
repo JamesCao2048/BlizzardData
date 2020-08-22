@@ -1,0 +1,8 @@
+Bug 209451 Default value for Cascading parameter lost.[0705]
+Description: Default value for Cascading parameter lost.
+Build number:2.3.0.v20071112 Steps to reproduce: 1.New sample data source and dataset from CUSTOMERS.
+2.New a cascading parameter from COUNTRY, STATE, set default value as USA and CA.
+3.Preview.
+4.Select other country and then back to USA, check values in state.
+Expected result: CA in state value list.
+Actual result: No item for 'CA' Error log:n/a

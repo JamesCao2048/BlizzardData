@@ -1,0 +1,4 @@
+Bug 200751 NPE in Excel emitter
+writer.text( ( (Data) d ).txt.toString( ) ); SEVERE: An error happened while running the report.
+Cause: java.lang.NullPointerException at org.eclipse.birt.report.engine.emitter.excel.ExcelWriter.writeText(Ex celWriter.java:102) at org.eclipse.birt.report.engine.emitter.excel.ExcelWriter.writeTxtData (ExcelWriter.java:152) at org.eclipse.birt.report.engine.emitter.excel.ExcelEmitter.outputData( ExcelEmitter.java:311) at org.eclipse.birt.report.engine.emitter.excel.ExcelEmitter.end(ExcelEm itter.java:286) at org.eclipse.birt.report.engine.api.impl.RenderTask$PageRangeRender.re nder(RenderTask.java:593) at org.eclipse.birt.report.engine.api.impl.RenderTask.render(RenderTask.
+java:260)

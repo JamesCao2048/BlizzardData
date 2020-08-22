@@ -1,0 +1,42 @@
+SWT.TOOL window doesn't show minimize button when specified
+Steps:
+1.Run this code.
+2.Note that the minimize button isn't enabled, even though SWT.SHELL_TRIM is set.
+--------------------------------------------------
+package snippets;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class ToolWindowExample {
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout(1, false));
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Click me");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+Shell shell2 = new Shell(SWT.TOOL | SWT.RESIZE | SWT.SHELL_TRIM);
+shell2.setLayout(new GridLayout(1, false));
+shell2.setText("Palette");
+Label l = new Label(shell2, SWT.LEFT);
+l.setText("This is a SWT.TOOL Shell");
+Point origin = shell.getLocation();
+origin.x += 100;
+origin.y += 100;
+shell2.pack();
+shell2.open();
+}
+});
+
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

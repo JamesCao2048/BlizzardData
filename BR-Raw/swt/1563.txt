@@ -1,0 +1,8 @@
+[Accessibility] Characters typed into Text are not accessible on Leopard
+20080513
+Run ControlExample, go to Text tab.
+Turn on VoiceOver (Command+F5).
+Type Tab key to give focus to Text.
+Type characters.
+VoiceOver should speak the characters, but it isn't.
+Same problem for both SINGLE and MULTI.

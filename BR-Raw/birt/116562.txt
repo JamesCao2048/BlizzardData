@@ -1,0 +1,7 @@
+Bug 116562 [Smoke][Regression]Background image doesn't work
+Description: Background image doesn't work when using relative path.
+Steps to reproduce.
+1.run attached file grid-text-style-background.xml note: please create a directory with name "mulu" at the same place with the design file and put some images with name a.jpg,a.gif,a.png..
+into the mulu directory.
+Expected result Background images show.
+Actual result: They didn't show.

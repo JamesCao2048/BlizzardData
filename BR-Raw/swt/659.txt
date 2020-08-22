@@ -1,0 +1,8 @@
+NPE getting address of a Relation
+Set Accessible.DEBUG = true, then run LiveRegionExample and then run JAWS.
+NPE in Accessible.get_relation on the statement relation.objIAccessibleRelation.getAddress() because relation.objIAccessibleRelation is null.
+This is because relation.objIAccessibleRelation is created when AddRef is called, and it doesn't get called until the next line of code.
+It should not matter whether Relation's AddRef or getAddress is called first.
+The object should be created in getAddress if it was not created yet.
+Because of this bug, I noticed that some QueryInterface/getAddress() cleanup did not get done in the Relation class.
+The patch fixes both of these problems, and makes the code in Relation class consistent with the code in Accessible class.

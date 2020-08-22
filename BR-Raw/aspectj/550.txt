@@ -1,0 +1,36 @@
+Declare warning/error output - more detail required.
+At present the declare warning and declare error functionality of the compiler
+provides no detailed information about what it is in the user code that has led
+to the generation of the compile-time warning or error.
+Consider the following test case...
+public class A
+{
+public static void main(String[] args)
+{
+A a = new A();
+a.doSomething();
+System.out.println("All done");
+}
+void doSomething()
+{
+System.out.println("Doing something");
+}
+} // end of class A
+public aspect MyAspect
+{
+pointcut noDoing() :
+call(* *.doSomething(..));
+declare warning : noDoing() :
+"Don't do it!";
+}
+When I compile these two files I get the following warning ...
+c:srcA.java:16 Don't do it!
+..which is great if all I want to know is where the offending code is. But not
+nearly enough if I want to know what it is on the line that is contravening the
+policy (or policies) that I have specified in my aspect. In the above example it
+would be even more useful if the warning message was something like ...
+c:srcA.java:16 Don't do it! : calling method : void A.doSomething()
+For large projects where there is an architectural imperative to reduce or
+completely remove coupling between certain components declare warning/error
+would be of far greater use if it could return more detailed info to say *why*
+not just *where* the desired enforcement rules have been broken.

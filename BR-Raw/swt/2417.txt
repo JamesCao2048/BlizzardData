@@ -1,0 +1,45 @@
+Table/Tree Columns don't align SWT.RIGHT and SWT.CENTER text properly (regression) (GTK)
+The text in an SWT.RIGHT column used to all be right justified.
+Now it isn't.
+Scroll to see all rows.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Table table = new Table(shell, SWT.VIRTUAL | SWT.BORDER
+| SWT.MULTI | SWT.FULL_SELECTION);
+final int columns = 11;
+for (int i = 0; i
+< columns; i++) {
+TableColumn tc = new TableColumn(table, SWT.RIGHT);
+tc.setWidth(157);
+}
+
+table.setItemCount(8);
+table.addListener(SWT.SetData, new Listener() {
+public void handleEvent(Event e) {
+TableItem item = (TableItem) e.item;
+int c = e.index;
+if (c > 5)
+for (int i = 0; i
+< columns; i++)
+item.setText(i, "234,443,444,110,231,812");
+else
+for (int i = 0; i
+< columns; i++)
+item.setText(i, "1");
+}
+});
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+table.setSortDirection(SWT.DOWN);
+table.setSortColumn(table.getColumn(0));
+shell.setSize(350, 200);
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

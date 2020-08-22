@@ -1,0 +1,23 @@
+ImageLoader.save for GIF saves in compress GIF format
+We are using the ImageLoader class successfully to export Image to the
+filesystem.
+private void saveImageToGif(Image image, String destination) {
+ImageData imageData = image.getImageData();
+ImageLoader imageLoader = new ImageLoader();
+imageLoader.data = new ImageData[] { imageData };
+imageLoader.logicalScreenHeight = image.getBounds().width;
+imageLoader.logicalScreenHeight = image.getBounds().height;
+imageLoader.save(destination, SWT.IMAGE_GIF);
+}
+There is an issue however that the GIF image produced is in compressed format.
+The problem is that the default for Windows is to use Microsoft Windows
+Picture and Fax Viewer when opening GIF files from the filesystem.
+This viewer does not support compressed GIF files.
+As a workaround for our users, you can right click on the GIF file and do Open
+With.
+If you open with Microsoft Photo Editor or Microsoft Internet Explorer,
+the GIF file is fine.
+However, we would rather have the option added to image loader to produce an
+image in non compressed format.
+This issue is discussed in
+http://support.microsoft.com/default.aspx?scid=kb;en-us;326675

@@ -1,0 +1,88 @@
+Error opening doc file causes much grief
+Build: 20020611
+JDK: IBM JDK 1.3.1
+- 20020403
+I get an error every time I try to open a .doc
+file.
+Follow these steps:
+1.New workspace
+2.New simple project "Docs".
+3.Drag &
+drop CALLBACK.DOC from the desktop into Docs.
+(see attachment)
+4.Double click CALLBACK.DOC
+<-
+Error occurs
+5.Try to exit Eclipse, no can do!  Terminate Eclipse with a Ctrl-C.
+6.Relaunch
+Eclipse...
+CALLBACK.DOC (& the error) returns (run screaming to the hills, AIIEEE!)
+The
+following things happen at step 5:
+1.CALLBACK.DOC is opened in WordPad.
+2.CALLBACK.DOC is
+also opened in a blank editor in Eclipse.
+3.The Eclipse editor for CALLBACK.DOC is marked
+dirty.
+Revert is greyed out in the File menu, and every attempt to close CALLBACK.DOC fails, i.e.
+when you click the Editor X you get prompted to save, no matter what answer you give, the file
+remains open.
+This is especially nasty because it means you can't close Eclipse.
+I had to
+terminate the process with a Ctrl-C in the Java console.
+4.The following appears in the
+log:
+!SESSION Jun 11, 2002 13:19:05.181
+---------------------------------------------
+java.fullversion=J2RE 1.3.1 IBM Windows 32
+build cn131-20020403 (JIT enabled: jitc)
+BootLoader constants: OS=win32, ARCH=x86,
+WS=win32, NL=en_US
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86
+-data
+c:homeworkspacesdoctest0611
+-install
+file:C:/home/eclipse/eclipse0611/eclipse/
+!ENTRY org.eclipse.ui 4 2 Jun 11, 2002
+13:19:05.181
+!MESSAGE Problems occurred when invoking code from plug-in:
+"org.eclipse.ui".
+!STACK 0
+java.lang.NullPointerException
+at
+org.eclipse.ui.internal.editorsupport.win32.OleEditor.oleActivate(OleEditor.java:551)
+at
+org.eclipse.ui.internal.editorsupport.win32.OleEditor.activateClient(OleEditor.java:168)
+at
+org.eclipse.ui.internal.editorsupport.win32.OleEditor.access$3(OleEditor.java:166)
+at
+org.eclipse.ui.internal.editorsupport.win32.OleEditor$4.partActivated(OleEditor.java:126)
+at
+org.eclipse.ui.internal.PartListenerList$1.run(PartListenerList.java:39)
+at
+org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:802)
+at
+org.eclipse.core.runtime.Platform.run(Platform.java:416)
+at
+org.eclipse.ui.internal.PartListenerList.firePartActivated(PartListenerList.java:37)
+at
+org.eclipse.ui.internal.WorkbenchPage.firePartActivated(WorkbenchPage.java:1031)
+at
+org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:2039)
+at
+org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:330)
+at
+org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:1685)
+at
+org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:1581)
+at
+org.eclipse.ui.actions.OpenFileAction.openFile(OpenFileAction.java:91)
+at
+org.eclipse.ui.actions.OpenSystemEditorAction.run(OpenSystemEditorAction.java:91)
+at
+org.eclipse.ui.views.navigator.OpenActionGroup.runDefaultAction(OpenActionGroup.java:112)
+at
+org.eclipse.ui.views.navigator.MainActionGroup.runDefaultAction(MainActionGroup

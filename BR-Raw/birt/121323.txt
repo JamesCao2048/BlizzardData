@@ -1,0 +1,8 @@
+Bug 121323 XML Edit Data Set dialog does not persist filter information
+If one enters an XPath expression for the column mapping with a selection part like section[@id='left'] then within class RelationInformation the selection is stripped of and stored in filterInfo HashMap.
+When leaving the dialog, RelationInformation gets persited to .rptdesign
+- but data stored in filterInfo is lost.
+However
+- IMHO treating XPath expressions in that way will lead to a lot of trouble.
+Why can't we use the plain XPath expression (of course prepended with the path from the data set selector itself) and let filtering be something for those which need it?
+Kind regards, Herbert

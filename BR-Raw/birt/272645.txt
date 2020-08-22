@@ -1,0 +1,2 @@
+Bug 272645 Data Type is missing after dragging datetime level attribute into crosstab
+Description: Data Type is missing after dragging datetime level attribute into crosstab Build number: 2.5.0.v20090417-0630 Steps to reproduce: 1, New a cube which has datetime type levels: year->quater 2, New a crosstab 3, Drag datetime attribute into crosstab 4, Open the attribute in crosstab and check the data type Expected result: The data type should be Date Time Actual result: The data type is empty Error log:

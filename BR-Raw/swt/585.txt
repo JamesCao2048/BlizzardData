@@ -1,0 +1,14 @@
+[cocoa, gef] Guide markers not fully visible on Cocoa
+Build Identifier: I20100312-1448
+Guide markers are only half visible on Cocoa
+- they extend below the bottom/right edge of the ruler.
+Issue is due to the following method not taking Cocoa into account when detecting Mac OS X:
+> private static Rectangle calculateRulerTrim(Canvas canvas) {
+> 	if ("carbon".equals(SWT.getPlatform())) { //$NON-NLS-1$
+Will supply a patch changing the offending line to:
+> if (Platform.OS_MACOSX.equals(Platform.getOS())) {
+Reproducible: Always
+Steps to Reproduce:
+1.Open a GEF editor with a ruler on Cocoa
+2.Click in the ruler area to create a guide
+3.Observe that the guide is only partly visible

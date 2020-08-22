@@ -1,0 +1,2 @@
+Use of 1.4 APIs in SWT_AWT
+SWT_AWT makes use of the constants WindowEvent.WINDOW_LOST_FOCUS and WindowEvent.WINDOW_GAINED_FOCUS which are only available in JDK 1.4 and later.

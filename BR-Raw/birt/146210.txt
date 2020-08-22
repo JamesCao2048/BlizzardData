@@ -1,0 +1,8 @@
+Bug 146210 [Regression]"null" value will appear in parameter "display as" box several times
+Description:"null" value will appear in parameter "display as" box several times and all of them will be set as a change-disabled default value.
+steps to reproduce: 1.new a parameter display type"List Box".
+checkbox "allow null value" 2.In "Display As" box of parameter, place cursor on first row.Input nothing.
+3.Switch to second row.
+then place the cursor on the third row.
+4.repeat step 3~~~ Actual result: Refer to the screenshot, several default null value is set.And the default value can't be removed.
+Expeted result: Only one "null" is allowed.

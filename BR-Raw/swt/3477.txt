@@ -1,0 +1,12 @@
+Deadlock creating image outside UI thread
+I20040121
+I got a deadlock today while performing a manual workspace build (Ctrl+B).
+The
+stack trace shows that it is trying to create an Image instance outside of the
+UI thread.
+This is causing it to block on a GTK OS primitive (presumably because
+the main thread currently holds some mutex on the UI).
+I will attach the log
+file.
+Image javadoc doesn't seem to specify that Images must be created in the
+UI thread.

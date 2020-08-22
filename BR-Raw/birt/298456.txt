@@ -1,0 +1,21 @@
+Bug 298456 Drill through problem when using reverse categories
+Build Identifier: 20090619-0625 I have a report with a bar chart which shows a count of items.
+I've flipped the axes so bars are drawn horizontally and the associated data set returns the top X counts in order.
+I added a drill-through option to the chart so that clicking a bar will redirect to a report giving more information on that item.
+All worked well....
+then....
+I wanted to show the counts in order with the highest count at the top but by default the highest count appeared at the bottom
+- so I selected "Reverse Categories" for the X-axis.
+This seems to have broken the drill through.
+It looks like the reverse categories affects how the chart is drawn (i.e.
+counts appear in order with highest at top) but is ignored in the drill through.
+The chart shows the following bars: Bar1 Bar2 Bar3 .
+.
+Bar10 where Bar1 has the highest count and Bar10 the lowest.
+Clicking Bar1 drills through for Bar10 and vice versa.
+Clicking Bar2 drills through for Bar9 and vice versa, and so on.
+Reproducible: Always Steps to Reproduce: 1.Create Bar Chart from ordered data where X is categories and Y is an associated value.
+2.Set up drill through on the chart series that uses the x value.
+Confirm the drill through works.
+4.On the Format Chart tab choose the X-axis and select Reverse Categories and confirm the chart is being re-drawn with X axis categories reversed.
+5.Re-test the drill through.

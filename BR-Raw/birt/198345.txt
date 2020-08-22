@@ -1,0 +1,8 @@
+Bug 198345 Memory Leak problem in BIRT.
+Memory Leak problem is detected in BIRT 2.2, most of which is supposed caused by unreleased rhino script objects.
+There are two indentified sources of problem at current stage, both of which are located in class birt.core.script.JavascriptEvalUtil 1.The class keeps a static scriptable object "sharedScope".
+Because it is a static variable it will not be destroyed until the jvm terminate.
+We should not use this static scriptable object any more, rather, we should ask client of this class to pass in a scope.
+2.The class also keeps a static list "cachedCompiledScript".
+It is for speeding up the script evaluation process.
+We should keep this cache to per Data Engine rather than JVM-wise.

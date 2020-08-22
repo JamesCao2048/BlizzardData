@@ -1,0 +1,18 @@
+Bug 120215 BPS 40 - DE changes
+1.all report elements' properties will be overidable with an expression.
+The binding expression will have access to report parameter, and static BIRT report objects only.
+2) DE will provide api to get property binding expression for a given property on a report element handle.
+It's up to the engine to evaluate the property binding expression when the report gets executed.
+DE API changes
+-------------------------- a) DesignElementHandle will support the following two methods.
+- String (expression) GetPropertyBinding ( propertyName )
+- void SetPropertyBinding( propertyName , String (expression) ) // Note get and set property methods are wrapper classes which actually use reportDesignHandle methods to retrive and set the property binding.
+b) rom.def changes Property bindings contains a list of binding expressions.
+ReportDesign element will be enhanced to support a new property called.
+<Property canInherit="false" detailType="propertyBinding" displayNameID="Element.Module.propertyBindings" isList="true" name="propertyBindings" type="structure"/> A new datatype
+-
+<Structure name="propertybinding">
+<Member name="name" since="2.0" type="name"/>
+<Member name="id" returnType="any" since="2.0" type="string"/> // Use the unique id used to identify an element.
+<Member name="value" returnType="string" since="2.0" type="expression"/>
+</Structure>

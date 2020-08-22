@@ -1,0 +1,4 @@
+Bug 223305 getColumnValueSet in DataRequestSessionImpl return maxrow+1 results
+Description: getColumnValueSet in DataRequestSessionImpl return maxrow+1 result.
+Build number: 2.3.0.v20080320-0800 Steps to reproduce: 1, Set maxrow of IRequestInfo to 5 2, Pass IRequestInfo to Collection getColumnValueSet( DataSetHandle dataSet, Iterator inputParamBindings, Iterator columnBindings, String boundColumnName, IRequestInfo requestInfo ) throws BirtException; 3, Check the size of the valueset.
+After adding the first value, the maxRowCount should subtract 1, or the final result is 6 rows.

@@ -1,0 +1,19 @@
+No More Handles Exception when trying to load an image
+Created  attachment 115032   [details]
+Snippet to reproduce the problem
+Build ID: 3.4.0.v3448f-RCP200809091120
+Steps To Reproduce:
+See Snippet:
+When trying to load a paticular image in SWT a No More Handles Exception is thrown
+An internal error occurred during: "Widget Image Fetch Job".
+org.eclipse.swt.SWTError: No more handles
+at org.eclipse.swt.SWT.error(Unknown Source)
+at org.eclipse.swt.SWT.error(Unknown Source)
+at org.eclipse.swt.SWT.error(Unknown Source)
+at org.eclipse.swt.graphics.Image.<init>(Unknown Source)
+at org.eclipse.jface.resource.URLImageDescriptor.createImage(Unknown Source)
+at org.eclipse.jface.resource.ImageDescriptor.createImage(Unknown Source)
+at org.eclipse.jface.resource.ImageDescriptor.createImage(Unknown Source)
+at com.ibm.rcp.toolbox.WebFragmentPallete$ViewLabelProvider$1.run(Unknown Source)
+at org.eclipse.core.internal.jobs.Worker.run(Unknown Source)
+More information:

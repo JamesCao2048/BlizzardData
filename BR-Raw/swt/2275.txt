@@ -1,0 +1,52 @@
+StackOverflowError (recursive callWindowProc)
+I20060803-0835
+I got the SOE below after pressing Ctrl+Space in a Java Editor.
+The proposals list quickly showed up, but then I got the workbench "Internal error" dialog.
+This happens reproducably in my workspace with the code below; but I could NOT reproduce in an empty workspace.
+package xy;
+public class Try {
+public static void main(String[] args) {
+System.out.println(IFace.CONST); // content assist after I of IFace
+}
+}
+interface IFace {
+int CONST= 1
+<< 3;
+}
+!ENTRY org.eclipse.ui 4 0 2006-08-03 19:38:08.860
+!MESSAGE java.lang.StackOverflowError
+!STACK 0
+java.lang.StackOverflowError
+at org.eclipse.swt.internal.win32.OS.SendMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.SendMessage(OS.java:2519)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:4524)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4054)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1847)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:258)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:183)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3340)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:4581)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4054)
+at org.eclipse.swt.internal.win32.OS.SendMessageW(Native Method)
+at org.eclipse.swt.internal.win32.OS.SendMessage(OS.java:2519)
+at org.eclipse.swt.widgets.Table.setScrollWidth(Table.java:3934)
+at org.eclipse.swt.widgets.Table.wmNotifyChild(Table.java:5370)
+at org.eclipse.swt.widgets.Control.WM_NOTIFY(Control.java:3812)
+at org.eclipse.swt.widgets.Composite.WM_NOTIFY(Composite.java:1166)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3304)
+at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1539)
+at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:1646)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4054)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1847)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:258)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:183)
+at org.eclipse.swt.widgets.Control.windowProc(Control.java:3340)
+at org.eclipse.swt.widgets.Table.windowProc(Table.java:4581)
+at org.eclipse.swt.widgets.Display.windowProc(Display.java:4054)
+at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:1847)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:258)
+at org.eclipse.swt.widgets.Table.callWindowProc(Table.java:183)
+at org.eclipse.swt.widgets.Control.windowPro

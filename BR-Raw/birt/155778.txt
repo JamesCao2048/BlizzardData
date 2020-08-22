@@ -1,0 +1,2 @@
+Bug 155778 Unit picas should be larger than points in pdf
+Description: Unit picas is twelve times larger than points Steps to reproduce: 1.Set label item's padding top to 100 picas and preview in pdf 2.Set label item's padding top to 100 points and preview in pdf Expected result: according to css standdard,picas is larger than points Actaul result: Points unit is larger than picas

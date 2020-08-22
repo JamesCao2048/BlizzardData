@@ -1,0 +1,6 @@
+Bug 272238 Show background image size as its height and width in fix layout
+Description: In some cases for example User wants to create a exactly background image size for pre-formatted Paper Printing.
+And in fix layout he defined the background image with size(height and width), but he found the image in layout the image is still in origin size, for WYSIWYG and for more convenience to design this kind of report, I suggest we show background image as its specified height and width.
+Build number: 2.5.0.v20090415-0630 Steps to reproduce: 1, New a fix layout report 2, In master page, specify background image 3, Set it to "no repeat" and specify its height and width.
+3, Check the background image size in layout Expected result: In layout, the background image size take effect and show as specified size Actual result: In layout, the image is still show as origin size.
+Error log:

@@ -1,0 +1,63 @@
+Table tooltip does not show after selection of a table item
+The tooltip for table item (per row based) stop showing as soon as you make a selection to a row.
+You will have to move the mouse outside of the table area (or to the column header) and then move back in, the tooltip will then be displayed.
+This problem only happens to the Linux OS.
+Same code on Windows works fine.
+Here is the example code for reproducing the problem:
+import org.eclipse.swt.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TableTooltipTest {
+Table table;
+public static void main (String[] args) {
+final Display display = new Display ();
+final Shell shell = new Shell (display);
+shell.setLayout (new FillLayout ());
+
+final Table table = new Table(shell, SWT.BORDER | SWT.FULL_SELECTION | SWT.V_SCROLL | SWT.H_SCROLL | SWT.MULTI);
+table.setHeaderVisible(true);
+table.setLinesVisible (true);
+String[] titles = {"Description", "Command", "Time", "User"};
+for (int i=0; i<titles.length; i++) {
+TableColumn column = new TableColumn (table, SWT.NONE);
+column.setText (titles [i]);
+}
+int count = 5;
+for (int i=0; i<count; i++) {
+TableItem item = new TableItem (table, SWT.NONE);
+item.setText (0, "Method List:"+i);
+item.setText (1, "AdminApp.List(xxxx-"+i+")");
+item.setText (2, "12:01:0"+i);
+item.setText (3, "user-"+i);
+}
+for (int i=0; i<titles.length; i++) {
+table.getColumn (i).pack ();
+}
+table.setSize (table.computeSize (SWT.DEFAULT, 200));
+
+Listener tableListener = new Listener () {
+public void handleEvent (Event event) {
+switch (event.type) {
+case SWT.MouseHover: {
+TableItem item = table.getItem (new Point (event.x, event.y));
+if (item != null) {
+table.setToolTipText(item.getText (1));
+}
+}
+}
+}
+};
+table.addListener (SWT.Dispose, tableListener);
+table.addListener (SWT.KeyDown, tableListener);
+table.addListener (SWT.MouseMove, tableListener);
+table.addListener (SWT.MouseHover, tableListener);
+shell.pack ();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

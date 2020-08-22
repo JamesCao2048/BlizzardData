@@ -1,0 +1,32 @@
+Disabled ToolItem with Text and Image gets cut-off
+Eclipse 3.2
+Check this Snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Image img = new Image(display, 16, 16);
+ToolBar bar = new ToolBar(shell, SWT.NONE);
+final ToolItem item = new ToolItem(bar, SWT.NONE);
+item.setText("Register Account");
+item.setImage(img);
+Button b = new Button(shell, SWT.NONE);
+b.setText("Click Me!");
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+item.setEnabled(!item.isEnabled());
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+}
+}
+Steps to reproduce: Click the Button
+Actual Results: The ToolItem changes from "Register Account" to "Register"
+Expected Results: The ToolItem keeps showing "Register Account"
+Ben

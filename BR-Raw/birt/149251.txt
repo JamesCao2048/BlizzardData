@@ -1,0 +1,9 @@
+Bug 149251 Inconsistent Handling of a Non-inheritable ROM Property
+For a ROM property defined to be non-inheritable, an empty string property value should be consistently handled as an empty string, not as null.
+For example, an oda.dataSource extension defines a data source property with canInherit=false.
+When a oda-data-source handle get saved in a report design, it correctly includes the tag for such property, even when an empty string value is specified.
+<oda-data-source extensionID="my.oda.plugin" name="my Data Source" id="24"> ...
+<property name="ApplicationServer"></property>
+</oda-data-source> However, later when using the DE API to read its property value, a null is returned.
+Then when the report design is subsequently saved, the property tag is lost.
+Expects that an empty string value of a non-inhertiable property should be preserved.

@@ -1,0 +1,6 @@
+addSelectionListener(SelectionListener) of Button, MenuItem, and ToolItem should tell about RADIO
+HEAD
+The Javadoc of the addSelectionListener(SelectionListener) method in
+Button, MenuItem, and ToolItem should tell about the special behavior when the widget has the SWT.RADIO style.
+In that case, widgetSelected(..) is not only called when the control is selected by the user, but also when the radio control loses selection.
+There are already a number of WONTFIX and WORKSFORME bugs about this problem, but the right fix is to document the current behavior.

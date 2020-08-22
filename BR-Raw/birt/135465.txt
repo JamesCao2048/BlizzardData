@@ -1,0 +1,2 @@
+Bug 135465 [smoke]An error occurred when new a casading Parameter
+Description: An error occurred when new a casading Parameter Step to reproduce: 1.new a sample db data source and data set 2.New a cascading parameter group, named "gp1", 3.select the data set, then create two cascading parameters, one is row["customernumber"], named p1; the other is row["customername"] Actual result; error message occurred repeatly

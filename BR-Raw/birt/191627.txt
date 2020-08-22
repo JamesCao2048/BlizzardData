@@ -1,0 +1,3 @@
+Bug 191627 [Regression]Exception occurs when first preview the joint dataset[0706]
+Description: [Regression]Exception occurs when preview the flatfile and sampledb joint dataset[0706] Build number: 2.2.0.v20070608-0630 Steps to reproduce: 1, New a flatfile dataset 2, New a CUSTOMER dataset 3, Join two datasets with STATE column 4, Preview in dataset Expected result: Preview successfully Actual result: Exception occurs Error log: A BIRT exception occurred.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Data Engine Plug-in ID:org.eclipse.birt.data Version:2.2.0.v20070607-1421 Error Code:data.engine.ColumnBindingReferToInexistColumn Error Message:Column binding "Employee::CUSTOMERNUMBER" has referred to a data set column "Employee::CUSTOMERNUMBER" which is not exist.

@@ -1,0 +1,5 @@
+(regression) Transparency is not transparent in remove button on progress view item
+build I20050413-0910
+- did a sync
+- in the Progress view, the item for the sync has an X for the remove button
+- the background of this icon should be transparent, but is not

@@ -1,0 +1,2 @@
+[Browser] add API to evaluate JS expression
+- it's similar to execute(), but returns the expression's return value (if any) instead of a success boolean, and propogates JS errors to the Java side in the form of SWTException

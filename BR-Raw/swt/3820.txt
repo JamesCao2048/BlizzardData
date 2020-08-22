@@ -1,0 +1,48 @@
+TableLayoutComposite and Table.showItem don't mix
+20030206
+in this test case, the item is not revealed
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jdt.internal.ui.util.TableLayoutComposite;
+public class A {
+private static final int ROW_COUNT= 8;
+public static void main(String[] args) {
+Display display= new Display();
+Shell shell= new Shell(display);
+shell.setLayout(new GridLayout());
+TableLayoutComposite layouter= new TableLayoutComposite(shell,
+SWT.NONE);
+layouter.addColumnData(new ColumnWeightData(60, true));
+layouter.addColumnData(new ColumnWeightData(40, true));
+Table table= new Table(layouter, SWT.MULTI | SWT.BORDER |
+SWT.FULL_SELECTION | SWT.CHECK);
+GridData gd= new GridData(GridData.FILL_HORIZONTAL |
+GridData.VERTICAL_ALIGN_BEGINNING);
+gd.heightHint= table.getHeaderHeight() + (table.getGridLineWidth
+() + table.getItemHeight()) * ROW_COUNT;
+layouter.setLayoutData(gd);
+TableColumn column0= new TableColumn(table, SWT.NONE);
+column0.setText("first column");
+TableColumn column1= new TableColumn(table, SWT.NONE);
+column1.setText("second column");
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+TableItem[] items= new TableItem[19];
+for (int i= 0; i
+< items.length; i++) {
+TableItem item= new TableItem(table, SWT.NONE);
+item.setText(new String[]{"Item " + i, "" + i});
+items[i]= item;
+}
+table.showItem(items[18]);
+shell.setSize(300, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

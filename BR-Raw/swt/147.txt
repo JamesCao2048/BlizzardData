@@ -1,0 +1,3 @@
+Use gtk_render_focus instead of gtk_paint_focus for GTK+3
+This patch replaces gtk_paint_focus with gtk_render_focus for GTK+3 :
+http://fedorapeople.org/cgit/aspektor/public_git/eclipse.platform.swt.git/commit/?h=gtk3_render_focus_64

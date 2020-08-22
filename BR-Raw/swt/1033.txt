@@ -1,0 +1,28 @@
+toolitems can't be traversed when the toolbar has tabitem siblings
+Run this code:
+public static void main3 (String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+new Button(shell, SWT.PUSH).setText("Push1");
+ToolBar toolBar = new ToolBar(shell, SWT.FLAT);
+ToolItem toolItem;
+toolItem = new ToolItem(toolBar, SWT.None);
+toolItem.setText("Item A");
+toolItem = new ToolItem(toolBar, SWT.None);
+toolItem.setText("Item B");
+toolItem = new ToolItem(toolBar, SWT.None);
+toolItem.setText("Item C");
+new Button(shell, SWT.PUSH).setText("Push2");
+shell.setSize(400, 300);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+-*-*-*-*-*-*-*-*-*-*-*-
+Using the keyboard only, try to reach Item B or Item C
+It can't be done.
+You can traverse to the toolbar using tab, but within the toolbar the arrows won't work (the button takes it first).

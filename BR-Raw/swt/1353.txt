@@ -1,0 +1,12 @@
+StyledText strikeout over tab space
+Build ID:  I20080917-0800
+Steps To Reproduce:
+1.Get SWT Text Editor from examples
+2.enter few TAB spaces
+3.select the TAB spaces
+4.apply strikeout
+notice that strikeout is not shown
+if we apply underline, underline is shown over the tab spaces.
+Shouldn't it be consistent?
+More information:
+if you first apply strikeout, then underline, the strikeout appears.

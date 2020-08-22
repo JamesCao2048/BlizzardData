@@ -1,0 +1,5 @@
+Bug 234442 Preview Classpath issue
+When creating the classpath for the preview button in 2.3 RC1 the code is not adding the full path to classes defined in the current workspace.
+For example.
+If your workspace is located at c:myprojects and inside the workspace you have a report project (named myreports) and a java project for event handlers( named myjavaproj ).
+If your java project includes a lib called mylib.jar which is in the java project under the lib folder, what gets put in the url for the classpath when the preview button is selected is: file:/c:/myjavaproj/lib/mylib.jar and it should be file:/c:/myprojects/myjavaproj/lib/mylib.jar

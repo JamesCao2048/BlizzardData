@@ -1,0 +1,24 @@
+GTK: Unable to select dialog buttons with mouse
+build 2002-06-01 on Linux GTK.
+- start eclipse
+- create new Java project
+- create new Java class with basic "hello world" program
+- drop-down running man
+-> Run as
+-> Java Application
+notice the output in the console
+- create new PDE project
+- select all defaults, use the Hello, World template
+- drop-down running man
+-> Run as
+-> Runtime workbench
+notice error in console NoClassDefFoundError ( bug 18616 )
+- drop-down running man
+-> Run...
+- notice Runtime Workbench configuration is selected
+- try to select your Hello application
+- Dialog appears asking you to save your changes to your current configuration
+before switching the selection
+notice you are unable to select any buttons with the mouse.
+ESC will cancel the dialog
+Enter will press the Cancel button (which has focus)

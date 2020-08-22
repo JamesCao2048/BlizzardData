@@ -1,0 +1,15 @@
+ImageData constructor should thrown IllegalArgumentException for scanlinePad == 0
+If the user tries to create ImageData with scanlinePad == 0, they get:
+java.lang.ArithmeticException: / by zero
+The constructor should check for 0, and throw IllegalArgumentException (see
+Combo.setTextLimit (int) for example).
+The javadoc would also need to be
+updated.
+Here is a testcase:
+import org.eclipse.swt.graphics.*;
+public class TestImageData_NPE {
+public static void main(String[] args) {
+new ImageData(1, 1,8, new PaletteData(new RGB[] {new RGB(0, 0,
+0)}), 0, new byte[] {});
+}
+}

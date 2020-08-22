@@ -1,0 +1,16 @@
+JUnit test failure - FontData
+test_ConstructorLorg_eclipse_swt_graphics_Device$Lorg_eclipse_swt_graphics_FontData
+Simple test case (should print true)
+FontData data = new FontData();
+Font font = new Font(display,data);
+FontData[] returnedData = font.getFontData();
+System.out.println(data);
+System.out.println("returned:");
+for (int i = 0; i
+< returnedData.length; i++) System.out.println("t" + returnedData[i]);
+System.out.println(data.equals(returnedData[0]));
+prints:
+1||12.0|0|CARBON|1|
+returned:
+: 1|Lucida Grande|12.0|0|CARBON|1|Lucida Grande
+false

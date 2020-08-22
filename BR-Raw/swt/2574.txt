@@ -1,0 +1,35 @@
+StyledText - ArrayIndexOutOfBoundsException
+Hello
+I have error when I'm trying to add text using append() method.
+Bad:
+for (int i = 0; i
+<= 5; i++)
+{
+int start = styledText.getLineCount()
+- 1;
+styledText.append("TITLE  : "+ i +"rn");
+//If you try to use methods like setLineBackground or setLineIndent you will get exceptions, if not
+- everything works fine
+styledText.setLineBackground(start,1,new Color(null,192,192,192));
+styledText.append("INFO  : "+ i +"rnrn");
+}
+Good:
+for (int i = 0; i
+<= 5; i++)
+{
+int start = styledText.getLineCount()
+- 1;
+styledText.append("TITLE  : "+ i +"rn");
+styledText.append("INFO  : "+ i +"rnrn");
+}
+java.lang.ArrayIndexOutOfBoundsException
+at java.lang.System.arraycopy(Native Method)
+at org.eclipse.swt.custom.StyledTextRenderer.textChanging(StyledTextRenderer.java:1132)
+at org.eclipse.swt.custom.StyledText.handleTextChanging(StyledText.java:5354)
+at org.eclipse.swt.custom.StyledText$6.textChanging(StyledText.java:4793)
+at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:69)
+at org.eclipse.swt.custom.DefaultContent.sendTextEvent(DefaultContent.java:794)
+at org.eclipse.swt.custom.DefaultContent.replaceTextRange(DefaultContent.java:778)
+at org.eclipse.swt.custom.StyledText.modifyContent(StyledText.java:5768)
+at org.eclipse.swt.custom.StyledText.replaceTextRange(StyledText.java:6262)
+at org.eclipse.swt.custom.StyledText.append(StyledText.java:1438)

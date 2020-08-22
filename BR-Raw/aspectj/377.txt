@@ -1,0 +1,26 @@
+illegal argument to proceed crashes the parser
+in a context where proceed requires zero arguments, calling it with an extra
+argument crashes the compiler, but only if that argument is a field access:
+class Foo {
+Foo field;
+void test() {}
+}
+public aspect Bug {
+void around() : call(void Foo.test()) {
+Foo foo = new Foo().field;
+proceed(foo); // caught at compile time
+proceed(new Foo().field); // crashes
+}
+}
+/home/user/sgelin3/dev/java/ajc/new_bug/Bug.java [error] Internal compiler error
+java.lang.NullPointerException
+at
+org.aspectj.ajdt.internal.compiler.ast.AccessForInlineVisitor.getAccessibleField(AccessForInlineVisitor.java:145)
+at
+org.aspectj.ajdt.internal.compiler.ast.AccessForInlineVisitor.endVisit(AccessForInlineVisitor.java:108)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.FieldReference.traverse(FieldReference.java:609)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.MessageSend.traverse(MessageSend.java:467)
+at
+org.aspectj.org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.traverse(MethodDeclaration.java:212)

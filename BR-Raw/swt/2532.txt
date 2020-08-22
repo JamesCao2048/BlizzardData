@@ -1,0 +1,42 @@
+Cannot open Launch Config dialog
+I clicked on the Run> arrow to open the launch config dialog, and got a Unhandled event loop exception instead.
+eclipse.buildId=I20060214-0800
+java.version=1.4.2_09
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=solaris, ARCH=sparc, WS=motif, NL=en_CA
+Command-line arguments:
+-os solaris
+-ws motif
+-arch sparc
+-data /opt/users/pwebster/workspaces/test320
+java.lang.ArrayIndexOutOfBoundsException:
+-1
+at org.eclipse.swt.widgets.Tree.redrawItems(Tree.java:3004)
+at org.eclipse.swt.widgets.Tree.redrawItem(Tree.java:2979)
+at org.eclipse.swt.widgets.Tree.deselectAll(Tree.java:507)
+at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.refreshFilteringLabel(LaunchConfigurationsDialog.java:757)
+at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.createLaunchConfigurationSelectionArea(LaunchConfigurationsDialog.java:696)
+at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.addContent(LaunchConfigurationsDialog.java:371)
+at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.createDialogArea(LaunchConfigurationsDialog.java:576)
+at org.eclipse.jface.dialogs.TitleAreaDialog.createContents(TitleAreaDialog.java:156)
+at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.createContents(LaunchConfigurationsDialog.java:565)
+at org.eclipse.jface.window.Window.create(Window.java:420)
+at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1101)
+at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.create(LaunchConfigurationsDialog.java:474)
+at org.eclipse.jface.window.Window.open(Window.java:778)
+at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.open(LaunchConfigurationsDialog.java:1321)
+at org.eclipse.debug.ui.DebugUITools$1.run(DebugUITools.java:375)
+at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
+at org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:379)
+at org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:321)
+at org.eclipse.debug.ui.actions.OpenLaunchDialogAction.run(OpenLaunchDialogAction.java:80)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:492)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:530)
+at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:480)
+at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:392)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:775)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3059)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2748)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1899)
+at org.eclipse.ui.internal.Workbench.r

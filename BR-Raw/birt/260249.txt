@@ -1,0 +1,10 @@
+Bug 260249 Missing JavaScript error description in specific wrong expression
+Birt 2.3.2 build 20090107 Steps to reproduce: 1.Create a new report design.
+2.Add a data item.
+3.Set the item's expression to BirtStr.left("abcdef",
+-1) 4.View the report Expected result: org.eclipse.birt.report.engine.api.EngineException: There are errors evaluating script "BirtStr.left("abcd",
+-1)": {1}.
+Where {1} is replaced by the proper JavaScript issue.
+Actual result: The {1} is not replaced and appears as is.
+More information: For other expression errors, like for the expression abcdef, the JavaScript error will appear clearly.
+The same problem exists when using the expression builder for a computed column, then previewing the data set.

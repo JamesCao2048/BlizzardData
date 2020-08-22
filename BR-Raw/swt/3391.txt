@@ -1,0 +1,12 @@
+When shell is created with SWT.NO_TRIM, windows does not show it on task bar
+When shell is created with SWT.NO_TRIM, windows does not show it on the task bar.
+Thus we can t switch tasks to get to this shell.
+It works fine under Linux.
+It looks like a windows limitation ?
+The issue is
+that having no trim for windows is something nice, but still we don t want to
+'lose' the application.
+Additionnaly, if the window has a non rectangular shape, when the shell is
+minimized, it is minimized as a window limited to a top bar, with the top bar
+being 'cut' to the region of the shell.
+It does not look clean.

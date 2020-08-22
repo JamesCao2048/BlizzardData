@@ -1,0 +1,13 @@
+Bug 204422 Max row limit is not effect.
+Build ID: I20070625-1500 Steps To Reproduce: 1.Run Birt Design.
+2.Select menu Window->Preferences-> Report Design
+-> Chart, set 'Max row number of data preview' to 6.3.Create a new bar chart, open chart builder dialog.
+4.Switch to 'Select Data' tab, set dataset.
+5.The count of preview data should be 6.6.Close chart builder dialog and reset 'Max row number of data preview' to 10.7.Open chart builder dialog again.
+Expect result: The count of preview data should be 10.Actual result: The count of preview data in chart are still 6.More information:1.Run Birt Design.
+2.Select menu Window->Preferences-> Report Design
+-> Chart, set 'Max row number of data preview' to 6.3.Create a new bar chart, open chart builder dialog.
+4.Switch to 'Select Data' tab, set dataset.
+5.The count of preview data should be 6.6.Close chart builder dialog and reset 'Max row number of data preview' to 10.7.Open chart builder dialog again.
+Expect result: The count of preview data should be 10.Actual result: The count of preview data in chart are still 6.In chart, the row limit has been set into app context, the snippet code of chart shows below: queryDefn.setDataSetName( getDataSetFromHandle( ).getQualifiedName( ) ); DataSessionContext dsc = new DataSessionContext( DataSessionContext.MODE_DIRECT_PRESENTATION, getReportDesignHandle( ) ); Map appContext = new HashMap( ); appContext.put( DataEngine.DATA_SET_CACHE_ROW_LIMIT, new Integer( maxRow ) ); dsc.setAppContext( appContext ); DataRequestSession session = DataRequestSession.newSession( dsc ); for ( int i = 0; i
+< columnExpression.length; i++ ) { queryDefn.addResultSetExpression( columnExpression[i], new ScriptExpression( columnExpression[i] ) ); }

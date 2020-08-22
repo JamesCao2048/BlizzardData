@@ -1,0 +1,4 @@
+Bug 151535 Parameters are invisable in Joint Dataset
+Trying to use "Joint Dataset" combined with parameters within underlaying Data-Sets (neccessary to achive a filtering where clause for a DateTime Field) Parameter editing ( e.g.
+in Chart designer) do not show the entire parameter.
+As specified it should show and let to edit a combination of both underlaying datasets' parameters.

@@ -1,0 +1,6 @@
+Eclipse hangs while using FileDialog
+Eclipse always hangs when I attempt to import any project/archive.
+Infact, UI freezes when any filedialog is opened.
+Suprisingly, when I tried to recreate the problem using standalone SWT (referencing to SWT jar files of the eclipse installation), FileDialog does not cause eclipse to hang.
+Build id: N20100303-2000
+Reproducible : Always

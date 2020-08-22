@@ -1,0 +1,8 @@
+Browser widgets turn to ghosts if their construction fails.
+If I instanciate SWT's browser widget on my linux machine where the requirements of this widgets seems not to be fulfiled (i.e.
+I get an SWTError) there still seems to be something connected with the parent object.
+To being more specific, I get a "ghost" widget which is taking space like a normal widget.
+The style used for instantiation is SWT.BORDER.
+As I don't want to exit the application in this case, but like to provide a fall-back widget, I added a workaround which comprises a auxiliary composite embedding the browser widget only.
+This auxiliary composite is then disposed on the expection's scope.
+However, I think the browser should leave the parent object untouched if its instantiation failes.

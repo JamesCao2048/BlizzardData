@@ -1,0 +1,10 @@
+Spinner widget can't enter the number from IME of the japanese-language input setting.
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; ja; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5 (.NET CLR 3.5.30729)
+Build Identifier: I20091030-1201
+The Spinner widget can't enter the number from IME of the japanese-language input setting.
+Spinner widget refuses the normal-width figure input from IME.
+Reproducible: Always
+Steps to Reproduce:
+1.Open the preferences.
+2.It selects [General] > [Startup and Shutdown] > [Workspaces] from a left menu.
+3.[Number of recent workspaces to remember] is selected, IME is started, and the normal-width figure is input.

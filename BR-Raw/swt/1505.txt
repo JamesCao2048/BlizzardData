@@ -1,0 +1,4 @@
+XULRunner 1.9 sometimes crashes at shutdown
+- only observed with XULRunner 1.9 on Windows
+- run snippet128, click around in the Browser, and close the Shell
+- this sometimes crashes, but does not produce an hs_err_* file

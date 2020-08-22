@@ -1,0 +1,4 @@
+Bug 233871 External SVG images with emitters Birt (PDF, WORD,..)
+Build ID: M20080221-1800 Steps To Reproduce: 1.insert a svg file in a birt report and add bookmark to access by id with javascript 2.if you want, using javascript changes svg 3.Using emitters, export to pdf or word More information: this bug is in reference to 149452.1) i access to svg image with javascript, but the chages make in the svg aren t exported by the emittes.
+2) if i insert the svg file like a image and i export the report to pdf with the Eclipse option "view report in the Web Viewer" works, if i use the word emitter options cause a exception.
+3) if i insert the svg file like a image and i export the report to pdf with the Tomcat Web Serverall emitter fails, throwing a exception.

@@ -1,0 +1,3 @@
+Contribution: More Efficient Lint Warnings: ~15% Performance Increase
+In profiling a load-time weaving configuration from HEAD, I found that 9% of total time (over 10% of weaving time) is spent in org.aspectj.weaver.Lint.clearSuppressions(), mostly from use inside BcelClassWeaver.match
+I made a small change in the parts of BcelAdvice that clear suppressions to save the list that was cleared and to only clear these. This alone saves about 15% of total CPU time in start up on my sample configuration.

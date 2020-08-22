@@ -1,0 +1,8 @@
+create constructor ipe in same was as method ipes
+At the moment the way the constructor ipes are constructed is different to that of methods. For example, for a method which has signature
+public void myMethod(String s, int i)
+the corresponding ipe is firstly constructed with name "myMethod" and then the arguments are added. Adding the arguments results in an ipe with name "myMethod(java.lang.String,int)".
+With a constructor that has signature
+public MyClass(String s, int i)
+the corresponding ipe is constructed with name "MyClass(String,int)" and no arguments are associated with it.
+Up until now there hasn't been a use case to change this. However, due to enhancement  bug 141730  (updating handles not to rely on source locations) it is necessary for the constructor ipes to have arguments associated with them. Also, if the ipes of methods and constructors had similar properties then the processing for creating the new handles can be the same.

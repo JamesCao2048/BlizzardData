@@ -1,0 +1,56 @@
+Tree : Selection Lost when collapsing unrelated item on Windows 7
+Build Identifier: 3.5.0
+When multiple tree items present under different parent nodes are selected, collapsing a parent causes loss of selection of tree items under another unrelated parent.
+Reproducible: Always
+Steps to Reproduce:
+- Run the snippet below
+- Multi-select item G, item F and then item D in given order.
+- Collapse item C by clicking on its [-] box
+- Expected result:
+Since item G and item F are not a descendant of item C, they should stay selected
+- Actual result:
+Item F is deselected
+--- Code Snippet
+---
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeItem;
+public class TreeSelectionTest {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setText("" + SWT.getVersion());
+shell.setLayout(new FillLayout());
+Tree tree = new Tree(shell, SWT.MULTI);
+TreeItem itemA = new TreeItem(tree, SWT.NONE);
+itemA.setText("Item A");
+TreeItem itemB = new TreeItem(itemA, SWT.NONE);
+itemB.setText("Item B");
+TreeItem itemC = new TreeItem(itemB, SWT.NONE);
+itemC.setText("Item C");
+TreeItem itemD = new TreeItem(itemC, SWT.NONE);
+itemD.setText("Item D");
+TreeItem itemE = new TreeItem(itemB, SWT.NONE);
+itemE.setText("Item E");
+TreeItem itemF = new TreeItem(itemE, SWT.NONE);
+itemF.setText("Item F");
+TreeItem itemG = new TreeItem(itemE, SWT.NONE);
+itemG.setText("Item G");
+itemA.setExpanded(true);
+itemB.setExpanded(true);
+itemC.setExpanded(true);
+itemE.setExpanded(true);
+shell.setSize(200, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+{
+display.sleep();
+}
+}
+display.dispose();
+}
+}

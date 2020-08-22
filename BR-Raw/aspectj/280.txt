@@ -1,0 +1,32 @@
+ajdoc crashes
+When trying to run ajdoc on a moderate size code base (266 classes / interfaces / aspects), ajdoc crashes. Here's what happens:
+D:worknapajnapacore>ajdoc -source 1.5 -classpath D:worknapajnapacorelibaspectjrt.jar;D:worknapajnapacorel
+ibdom4j-1.5.2.jar;D:worknapajnapacorelibgroovy-all-1.0-jsr-03.jar -d D:worknapajnapacorebuilddocinternal -
+author -package -argfile D:worknapajnapacorejnapafilelist34352.lst
+> Calling ajc...
+D:worknapajnapacommonsutilssrcfinapautilaspectsCachingAspect.aj:72 [warning] advice defined in fi.napa.util.a
+spects.CachingAspect has not been applied [Xlint:adviceDidNotMatch]
+1 warning
+> Building signature files...
+An internal error occured in ajdoc
+Please copy the following text into an email message and send it,
+along with any additional information you can add to:
+aspectj-dev@eclipse.org
+java.lang.IndexOutOfBoundsException: Index: 3, Size: 3
+java.lang.IndexOutOfBoundsException: Index: 3, Size: 3
+at java.util.ArrayList.RangeCheck(ArrayList.java:546)
+at java.util.ArrayList.get(ArrayList.java:321)
+at org.aspectj.tools.ajdoc.StubFileGenerator.processMembers(StubFileGenerator.java:124)
+at org.aspectj.tools.ajdoc.StubFileGenerator.processTypeDeclaration(StubFileGenerator.java:99)
+at org.aspectj.tools.ajdoc.StubFileGenerator.processMembers(StubFileGenerator.java:113)
+at org.aspectj.tools.ajdoc.StubFileGenerator.processTypeDeclaration(StubFileGenerator.java:99)
+at org.aspectj.tools.ajdoc.StubFileGenerator.processFile(StubFileGenerator.java:61)
+at org.aspectj.tools.ajdoc.StubFileGenerator.doFiles(StubFileGenerator.java:38)
+at org.aspectj.tools.ajdoc.Main.main(Main.java:157)
+The file jnapafilelist34352.lst contains only file entries w/ absolute paths, e.g.
+D:worknapajnapacoresrcfinapacoretableprocessingtransfermappingTransformation.java
+I am using ajc and ajdoc 1.5.0 release version. I'll be happy to provide any other information that may help in solving this issue.
+D:worknapajnapacore>ajdoc -v
+ajdoc version 1.5.0
+D:worknapajnapacore>ajc -v
+AspectJ Compiler 1.5.0 built on Tuesday Dec 20, 2005 at 12:05:54 GMT

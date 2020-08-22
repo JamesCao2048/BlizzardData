@@ -1,0 +1,2 @@
+Bug 200916 Drag the sash in dataset editor dialog will lead the buttons hidden[07]
+Description: Drag the sash in dataset editor dialog will lead the buttons hidden[07] Build number: 2.2.1.v20070823-0630 Steps to reproduce: 1, New a dataset 2, Turn to dataset parameter page 3, Drag the SASH in dataset 4, Check the New button on the right of the page Expected result: The New button isn't hidden Actual result: The New button is hidden by dragging the sash

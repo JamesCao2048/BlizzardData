@@ -1,0 +1,4 @@
+Incompatibilities with MacOSX CMI (Context Menu Interface)
+I have several applications which adds some items in the contextual menu by using the MacOSX Contextual Menu Interface (add a Quit entry and a Switch to entry, see  http://www.ego-systems.com/products.html ).
+When I open the context menu in eclipse (ctrl+click), AND I reach the added items without selecting them, then most of the time, when I go over the other items, these disapear (go blank) and cannot be selected any more.
+If I close the menu and open again, it is not blank but some items may have disappeared, some may have been duplicated, if I select an item that has not gone blank, the function which is executed is not the one that is currently written, but the one which should been there if the menu was correctly displayed.

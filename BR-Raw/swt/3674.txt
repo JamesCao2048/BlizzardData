@@ -1,0 +1,22 @@
+OleClientSite hang
+I20030317
+Calling SHOW on Word after shell is open causes a hang.
+public static void main(String[] args) {
+Display disp = new Display();
+Shell mainWnd = new Shell(disp);
+mainWnd.setText("OleTest");
+mainWnd.setLayout(new FillLayout());
+OleFrame frame = new OleFrame(mainWnd, SWT.BORDER);
+String progID = "Word.Document";
+OleClientSite fSite = new OleClientSite(frame, SWT.NONE, progID);
+// fSite.doVerb(OLE.OLEIVERB_SHOW); // call doVerb before shell is open
+and OK
+mainWnd.open();
+fSite.doVerb(OLE.OLEIVERB_SHOW); //call doVerb after shell is open and
+GP
+while (!mainWnd.isDisposed()) {
+if (!disp.readAndDispatch()) {
+disp.sleep();
+}
+}
+}

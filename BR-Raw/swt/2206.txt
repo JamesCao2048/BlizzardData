@@ -1,0 +1,46 @@
+NPE when using mouse to select next editor
+Build ID: I20061214-1445
+Steps To Reproduce:
+1.Trigger next editor popoup (mapped to ctrl-tab for me)
+2.Release Tab
+3.Click one of the open editors in the popup (I only had two open)
+4. NPE reported
+More information:
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Widget.kEventControlTrack(Widget.java:1068)
+at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1773)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:366)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:847)
+at org.eclipse.swt.internal.carbon.OS.CallNextEventHandler(Native Method)
+at org.eclipse.swt.widgets.Table.kEventMouseDown(Table.java:2151)
+at org.eclipse.swt.widgets.Widget.mouseProc(Widget.java:1277)
+at org.eclipse.swt.widgets.Display.mouseProc(Display.java:2825)
+at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2963)
+at org.eclipse.ui.internal.CyclePartAction.openDialog(CyclePartAction.java:459)
+at org.eclipse.ui.internal.CyclePartAction.runWithEvent(CyclePartAction.java:514)
+at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+at org.eclipse.core.commands.Command.executeWithChecks(Command.java:461)
+at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:424)
+at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:160)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:465)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:791)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:838)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:563)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:505)
+at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:122)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1118)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1526)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1551)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1536)
+at org.eclipse.swt.widgets.Control.traverse(Control.java:3515)
+at org.eclipse.swt.widgets.Control.translateTraversal(Control.java:3470)
+at org.eclipse.swt.widgets.Control.kEventTextInputUnicodeForKeyEvent(Control.java:1862)
+at org.eclipse.swt.widgets.Widget.textInputProc(Widget.java:2031)
+at org.eclipse.swt.widgets.Display.textInputProc(Display.java:3807)
+at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2963)
+at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1945)
+at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1909)
+at org.eclipse.ui.internal.Workbench.cr

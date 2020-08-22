@@ -1,0 +1,9 @@
+Bug 222540 The aggregation expression can not be selected in aggregation builder.
+description: The aggregation expression can not be selected in aggregation builder.
+build version: 2.3.0 v20080313-0800 steps to reproduce: 1.New a cube.
+2.New a chart using the cube.
+3.In select data tab, click the Data Binding button.
+In pop-up dialog, click the Add aggregation button, select a measure in Data Field and click OK.
+Expected result: The aggregation expression should be the data field expression.
+Actual result: The The aggregation expression is empty.
+If you reopen the aggregation builder, you will find the data field is also empty.

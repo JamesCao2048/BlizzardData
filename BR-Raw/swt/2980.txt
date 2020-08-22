@@ -1,0 +1,41 @@
+gtk_entry_set_text crashes when passed a zero-length buffer
+The Combo box (Combo.java:1369) passes 'gtk_entry_set_text' a zero-length byte
+buffer.
+This seems to cause the VM to crash after _gtk_entry_set_text exits.
+I am triggering this bug using the following procedure:
+- Using eclipse 3.1M6
+- Using CDT 3.0.1 build
+- Open Window->Preferences
+- Open C/C++ in the tree
+- Select 'Editor', which results in Eclipse exiting due to a VM crash
+'gtk_entry_set_text' is called elsewhere with a minimum 1-byte buffer, so I
+consider passing a 0-length buffer to be suspect.
+I did experiment with the native side of things, and found that checking the
+buffer length and passing a const "" to the GTK method in the case of a
+zero-length buffer removed the crash:
+#ifndef NO__1gtk_1entry_1set_1text
+JNIEXPORT void JNICALL OS_NATIVE(_1gtk_1entry_1set_1text)
+(JNIEnv *env, jclass that, jint arg0, jbyteArray arg1)
+{
+jbyte *lparg1=NULL;
+const gchar *text = "";
+jsize  array_len = 0;
+OS_NATIVE_ENTER(env, that, _1gtk_1entry_1set_1text_FUNC);
+if (arg1) {
+array_len = (*env)->GetArrayLength(env, arg1);
+if ((lparg1 = (*env)->GetByteArrayElements(
+env, arg1, NULL)) == NULL) {
+goto fail;
+}
+if (array_len > 0) {
+text = (const gchar *)lparg1;
+}
+}
+gtk_entry_set_text((GtkEntry *)arg0, text);
+fail:
+if (arg1 && lparg1) {
+(*env)->ReleaseByteArrayElements(env, arg1, lparg1, 0);
+}
+OS_NATIVE_EXIT(env, that, _1gtk_1entry_1set_1text_FUNC);
+}
+#endif

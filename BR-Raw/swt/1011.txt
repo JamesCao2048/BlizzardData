@@ -1,0 +1,20 @@
+No menu bar items with Mozilla Browser (XULRunner 1.9.0.7)
+When creating a Mozilla Browser on Mac OS X 10.5.6 with XulRunner 1.9.0.7, the menu items do not get displayed (no about, no preferences, no 'command Q' to quit the application).
+I used the following snippet:
+public class MozillaBrowser {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+new Browser(shell, SWT.MOZILLA);
+
+shell.setSize(800, 600);
+shell.setText("Syncleon");
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

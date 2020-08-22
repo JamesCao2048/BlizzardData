@@ -1,0 +1,17 @@
+[JFace] Slower image painting due to fix for 
+I20080515-2000.
+The fix for  bug 219432  and  bug 224422  results in faster image loading.
+Good.
+Unfortunately lots of our images (e.g.
+editor tabs) are now drawn slower because the following optimization in ImageDescriptor is no longer in place:
+if (data.transparentPixel >= 0) {
+ImageData maskData = data.getTransparencyMask();
+return new Image(device, data, maskData);
+}
+and hence GC.drawBitmapTransparent(...) gets now called.
+This is responsible for about 1/4 of the regression seen in JDT Text editor
+activation tests.
+On my machine this is 30-50 ms.
+I had a chat with Silenio and according to him not all image types and all OSs are actually that much faster in loading.
+Especially for GIFs which we use in the SDK it might not pay off that much.
+Sileno promised me to give us advice here, so that eventually we can also revert to the old code for some image types/OSs.

@@ -1,0 +1,20 @@
+Crash running paint example
+Run paint example
+Select line draw tool
+Click, drag, release
+Boom!
+2007-11-29 00:30:45.201 java[23366:10b] *** _NSAutoreleaseNoPool(): Object 0x198170 of class NSException autoreleased with no pool in place
+- just leaking
+Stack: (0x954e9178 0x954170f8 0x9541d8e0 0x912ed39c 0x46ac)
+2007-11-29 00:30:45.208 java[23366:10b] An uncaught exception was raised
+2007-11-29 00:30:45.210 java[23366:10b] Unlocking Focus on wrong view (<SWTView: 0x144a10>), expected
+<NSImageCacheView: 0x19cf70>
+2007-11-29 00:30:45.211 java[23366:10b] *** _NSAutoreleaseNoPool(): Object 0x139b80 of class NSCFString autoreleased with no pool in place
+- just leaking
+Stack: (0x954e9178 0x954170f8 0x95420d04 0x9135b014 0x9641a6ac 0x912ede28 0x46ac)
+2007-11-29 00:30:45.213 java[23366:10b] *** _NSAutoreleaseNoPool(): Object 0x1428e0 of class NSConcreteMutableData autoreleased with no pool in place
+- just leaking
+Stack: (0x954e9178 0x954170f8 0x954289c4 0x95428704 0x9135b068 0x9641a6ac 0x912ede28 0x46ac)
+2007-11-29 00:30:45.214 java[23366:10b] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'Unlocking Focus on wrong view (<SWTView: 0x144a10>), expected
+<NSImageCacheView: 0x19cf70>'
+2007-11-29 00:30:45.216 java[23366:10b] Stack: (

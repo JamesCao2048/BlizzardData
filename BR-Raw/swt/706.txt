@@ -1,0 +1,57 @@
+[Browser] Child shell with browser doesn't close on Esc
+I20100309-0100 Cocoa, already a problem before  bug 231311
+A child shell with a Browser doesn't close on Esc when the shell has been opened without focus and the Browser should have gotten focus on MouseDown.
+This is a problem in the SDK when you show a Javadoc hover, click into the hover, and then try to close it with Esc.
+On second click, it works.
+Snippet to reproduce (when you create the Text as first child of the popup, then everything is fine):
+package org.eclipse.swt.snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.browser.Browser;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class Snippet {
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.setText("Snippet");
+shell.setLayout(new GridLayout());
+Button button = new Button(shell, SWT.PUSH);
+button.setText("press space");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+Shell popup = new Shell(shell, SWT.TOOL | SWT.ON_TOP
+| SWT.RESIZE);
+popup.setLayout(new GridLayout());
+Browser browser = new Browser(popup, SWT.NONE);
+browser.setText("Click me
+<b>once</b>, then press Esc.
+"
++ "Popup should hide but doesn't.");
+browser.setLayoutData(new GridData(500, 50));
+new Text(popup, SWT.SINGLE);
+popup.pack();
+popup.setVisible(true);
+}
+});
+final Runnable timerRunnable = new Runnable() {
+public void run() {
+System.out.println("Shell: " + display.getActiveShell() + ", Focus: " + display.getFocusControl());
+display.timerExec(1000, this);
+}
+};
+timerRunnable.run();
+shell.setSize(280, 100);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

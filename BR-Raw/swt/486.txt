@@ -1,0 +1,24 @@
+Test failures on Cocoa in N20101201-2000
+See
+http://download.eclipse.org/eclipse/downloads/drops/N20101201-2000/testresults/html/org.eclipse.swt.tests_macosx.cocoa.x86_5.0.html
+A few tests are failing due this exception:
+N/A
+java.lang.NullPointerException
+at org.eclipse.swt.widgets.Shell.setEnabled(Shell.java:1597)
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Shell.test_getEnabled(Test_org_eclipse_swt_widgets_Shell.java:174)
+at org.eclipse.swt.tests.junit.Test_org_eclipse_swt_widgets_Shell.runTest(Test_org_eclipse_swt_widgets_Shell.java:346)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:416)
+at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:249)
+at org.eclipse.test.CoreTestApplication.runTests(CoreTestApplication.java:36)
+at org.eclipse.test.CoreTestApplication.run(CoreTestApplication.java:32)
+at org.eclipse.equinox.internal.app.EclipseAppContainer.callMethodWithException(EclipseAppContainer.java:587)
+at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:198)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+at org.eclipse.core.launcher.Main.main(Main.java:34)

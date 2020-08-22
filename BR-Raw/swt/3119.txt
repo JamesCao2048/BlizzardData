@@ -1,0 +1,54 @@
+Incorrect SWT.Deactivate received
+This bug makes it very difficult to select an editor or a view from the chevron
+in eclipse.
+Run the following example.
+Click on the "show list" button
+Move the mouse over the second shell.
+When the mouse exits the second shell, the second and third shell disappear.
+Note that if the third shell has the style DIALOG_TRIM, it  does not get the
+Deactivate event when shell2 closes.
+public static void main(String[] args) {
+Display display = new Display();
+final Shell shell1 = new Shell(display);
+shell1.setLayout(new RowLayout());
+Button b = new Button(shell1, SWT.PUSH);
+b.setText("show list");
+b.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+//final Shell shell2 = new Shell(shell1, SWT.ON_TOP);
+final Shell shell2 = new Shell(shell1, SWT.DIALOG_TRIM);
+shell2.addListener(SWT.MouseExit, new Listener() {
+public void handleEvent(Event e) {
+shell2.dispose();
+//shell2.setVisible(false); // has same effect
+}
+});
+final Shell shell3 = new Shell(shell1, SWT.ON_TOP);
+//final Shell shell3 = new Shell(shell1, SWT.DIALOG_TRIM); // shell3 does not
+get deactivated if DIALOG_TRIM
+shell3.setLayout(new RowLayout());
+Text t = new Text(shell3, SWT.BORDER);
+shell3.addListener(SWT.Deactivate, new Listener() {
+public void handleEvent(Event e) {
+shell3.dispose();
+}
+});
+shell2.pack();
+Rectangle r = shell1.getBounds();
+shell2.setLocation(r.x, r.y + r.height + 10);
+shell2.open();
+r = shell2.getBounds();
+shell3.pack();
+shell3.setLocation(r.x, r.y + r.height + 10);
+shell3.open();
+}
+});
+
+shell1.pack();
+shell1.open();
+while (!shell1.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}

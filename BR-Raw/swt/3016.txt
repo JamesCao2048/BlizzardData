@@ -1,0 +1,51 @@
+Device.getFontList should have better performance
+SWT-win32, v3124
+I'm trying to create a font selection combo box similar to the one you can
+find in WordPad.
+In order to find the fonts to populate the list with,
+Device.getFontList(null, true) is used.
+I was surprised to find that
+a single call to that method takes ~310ms on my machine (2.4 GHz).
+That's long enough to cause a noticeable delay in terms of UI responsiveness.
+Considering the fact that an entire FontDialog with its own font list
+can be opened instantaneously, the long execution time seems even stranger.
+Some system specifics:
+- Windows XP Professional, SP2
+- Number of .fon/.ttf files in the Windows fonts folder: 143
+- Number of entries in FontDialog: 126
+- Length of FontData array returned by getFontList: 570
+The high number of FontData objects (and perhaps the time it takes to create
+them?) certainly looks suspicious here.
+While there may be cases where the
+developer needs to have detailed knowledge of every variation of every font,
+all I'm after is a set of unique font face names.
+Indeed, when eliminating
+duplicate face names, the number of reported fonts dwindles down to 125.
+Even that number still contains multiple variations of the same basic font
+("Times New Roman Baltic", "Times New Roman CE", "Times New Roman CYR"),
+but I understand that that issue is already logged as  bug 82272 .
+The request in this bug report is that there be a reasonably fast way
+of getting a list of available fonts, including duplicates or not.
+---
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.widgets.*;
+public class FontListTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+for (int i = 0; i
+< 10; i++) {
+long start = System.currentTimeMillis();
+
+FontData[] fontData = display.getFontList(null, true);
+
+long time = System.currentTimeMillis()
+- start;
+
+System.out.println("fontData.length=" + fontData.length
++ ", time=" + time + "ms");
+}
+
+display.dispose();
+}
+}

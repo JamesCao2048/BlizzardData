@@ -1,0 +1,56 @@
+Tree default selection event doesn't have item field set
+Build Identifier: 3.7m3
+Run example snippet below, select a tree item and press Enter
+- the 'item' field of the Event object is null.
+
+Reproducible: Always
+Steps to Reproduce:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeItem;
+public class TestTreeDefaultSelection {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+final Tree tree = new Tree(shell, SWT.BORDER);
+for (int i = 0; i
+< 4; i++) {
+TreeItem iItem = new TreeItem(tree, 0);
+iItem.setText("TreeItem (0)
+-" + i);
+for (int j = 0; j
+< 4; j++) {
+TreeItem jItem = new TreeItem(iItem, 0);
+jItem.setText("TreeItem (1)
+-" + j);
+for (int k = 0; k
+< 4; k++) {
+TreeItem kItem = new TreeItem(jItem, 0);
+kItem.setText("TreeItem (2)
+-" + k);
+}
+}
+}
+tree.addSelectionListener(new SelectionListener() {
+public void widgetDefaultSelected(SelectionEvent e) {
+System.out.println("Item Default: " + e.item);
+}
+public void widgetSelected(SelectionEvent e) {
+System.out.println("Item Selected: " + e.item);
+}
+});
+shell.setSize(200, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

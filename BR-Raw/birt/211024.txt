@@ -1,0 +1,2 @@
+Bug 211024 Only the first measure in expression builder's Current Data Cube
+Description: [Regression]Only the first measure in expression builder's Current Data Cube Build number: 2.3.0.v20071127-1036 Steps to reproduce: 1, New a cube with more than two measures 2, New a crosstab and add a binding 3, Check the measures in expression builder's Current Data Cube Expected result: All the measures in cube should be in the expression builder Actual result: Only the first one listed

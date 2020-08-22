@@ -1,0 +1,2 @@
+Bug 120316 Java based scripting -> ITextItemInstance does not have getStyle()
+ITextItemInstance, which extends IForeignTextInstance does not have getStyle() method for user to change text item properties.

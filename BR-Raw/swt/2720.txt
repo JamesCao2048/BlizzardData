@@ -1,0 +1,7 @@
+[Browser] Clicking in web browser (editor) does not dismiss fast view
+If I have a fast view open, and I click in a regular editor or other view, the
+fast view correctly gets dismissed.
+However, if I have an internal browser widget editor open and I click in it, the
+fast view does not get dismissed, and I have to click in some otehr view to get
+it dismissed.
+eclipse 3.1M6 on linux FC2

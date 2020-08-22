@@ -1,0 +1,3 @@
+Bug 136074 Filter editor needs to support column binding
+In the Fitler tab of property editor for table/chart, Expression only shows dataset column, rather than column binding.
+Since column binding is supported for filter of table/chart, this is supposed to show the column binding.

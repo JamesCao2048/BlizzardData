@@ -1,0 +1,440 @@
+ajc compile crash, not giving information which class file cause it
+I run ajc compile on a directory that contains many class file.  In the dump
+file, it doesn't give me information on which class causes the compile to crash.
+If this information is given, it will be a real big help to find the problem.
+Is there any configuration that I overlook that might provides better error
+message?
+And the dump message is following:
+---- AspectJ Properties ---
+AspectJ Compiler 1.2.1 built on Friday Nov 5, 2004 at 12:30:41 GMT
+---- Dump Properties ---
+Dump file: ajcore.20051012.173235.117.txt
+Dump reason: org.aspectj.apache.bcel.classfile.ClassFormatException
+Dump on exception: true
+Dump at exit condition: abort
+---- Exception Information ---
+org.aspectj.apache.bcel.classfile.ClassFormatException: Invalid byte tag in
+constant pool: 0
+at org.aspectj.apache.bcel.classfile.Constant.readConstant(Constant.java:145)
+at org.aspectj.apache.bcel.classfile.ConstantPool.<init>(ConstantPool.java:103)
+at
+org.aspectj.apache.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:254)
+at org.aspectj.apache.bcel.classfile.ClassParser.parse(ClassParser.java:162)
+at org.aspectj.weaver.bcel.Utility.makeJavaClass(Utility.java:365)
+at org.aspectj.weaver.bcel.UnwovenClassFile.getJavaClass(UnwovenClassFile.java:63)
+at org.aspectj.weaver.bcel.BcelWeaver.addClassFile(BcelWeaver.java:280)
+at org.aspectj.weaver.bcel.BcelWeaver.addClassFile(BcelWeaver.java:295)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.initBcelWorld(AjBuildManager.java:533)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:151)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:102)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:109)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:291)
+at com.fortify.appdefense.cmd.Instrumenter.runWeaver(Instrumenter.java:432)
+at com.fortify.appdefense.cmd.Instrumenter.instrumentClasses(Instrumenter.java:400)
+at
+com.fortify.appdefense.cmd.Instrumenter.instrumentApplication(Instrumenter.java:144)
+at com.fortify.appdefense.cmd.Instrumenter.instrument(Instrumenter.java:118)
+at com.fortify.appdefense.cmd.Main.run(Main.java:207)
+at com.fortify.appdefense.cmd.Main.main(Main.java:177)
+---- System Properties ---
+java.runtime.name=Java(TM) 2 Runtime Environment, Standard Edition
+sun.boot.library.path=C:Program FilesJavajre1.5.0_04bin
+java.vm.version=1.5.0_04-b05
+java.vm.vendor=Sun Microsystems Inc.
+java.vendor.url= http://java.sun.com/
+path.separator=;
+java.vm.name=Java HotSpot(TM) Client VM
+file.encoding.pkg=sun.io
+user.country=US
+sun.os.patch.level=Service Pack 2
+java.vm.specification.name=Java Virtual Machine Specification
+user.dir=c:p4sandboxmain_stagewin32ADS_EE
+com.fortify.appdefense.instrumenter.ignoreJars=
+java.runtime.version=1.5.0_04-b05
+java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+java.endorsed.dirs=C:Program FilesJavajre1.5.0_04libendorsed
+os.arch=x86
+java.io.tmpdir=C:DOCUME~1mxueLOCALS~1Temp
+line.separator=
+java.vm.specification.vendor=Sun Microsystems Inc.
+user.variant=
+os.name=Windows XP
+sun.jnu.encoding=Cp1252
+FORTIFY_HOME=c:p4sandboxmain_stagewin32ADS_EECore
+java.library.path=c:WINDOWSsystem32;.;C:WINDOWSsystem32;C:WINDOWS;C:cygwinusrlocalbin;C:cygwinbin;C:cygwinbin;C:cygwinusrX11R6bin;c:WINDOWSsystem32;c:WINDOWS;c:WINDOWSSystem32Wbem;c:Program
+FilesPerforce;C:cygwinbin;c:mysqlbin;c:Program FilesMicrosoft SQL
+Server90Toolsbinn;c:Program FilesMicrosoft Visual Studio
+8Common7IDE;c:Program FilesMicrosoft Visual Studio
+8VCbin;c:appapache-ant-1.6.5bin
+java.specification.name=Java Platform API Specification
+java.class.version=49.0
+sun.management.compiler=HotSpot Client Compiler
+os.version=5.1
+user.home=C:Documents and Settingsmxue
+user.timezone=America/Los_Angeles
+java.awt.printerjob=sun.awt.windows.WPrinterJob
+file.encoding=Cp1252
+java.specification.version=1.5
+java.class.path=;c:p4sandboxmain_stagewin32ADS_EECorelibactivation.jar;c:p4sandboxmain_stagewin32ADS_EECorelibad_engine.jar;c:p4sandboxmain_stagewin32ADS_EECorelibantlr-2.7.5H3.jar;c:p4sandboxmain_stagewin32ADS_EECorelibappdefense.jar;c:p4sandboxmain_stagewin32ADS_EECorelibappdefensert.jar;c:p4sandboxmain_stagewin32ADS_EECorelibasm-attrs.jar;c:p4sandboxmain_stagewin32ADS_EECorelibasm.jar;c:p4sandboxmain_stagewin32ADS_EECorelibaspectjrt.jar;c:p4sandboxmain_stagewin32ADS_EECorelibaspectjtools.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcastor-0.9.5.4.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcglib-2.1.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcglib-nodep-2.1_2.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcommon.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcommons-codec-1.3.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcommons-collections-3.1.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcommons-dbcp-1.2.1.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcommons-logging-1.0.4.jar;c:p4sandboxmain_stagewin32ADS_EECorelibcommons-pool-1.2.jar;c:p4sandboxmain_stagewin32ADS_EECorelibdom4j-1.6.jar;c:p4sandboxmain_stagewin32ADS_EECorelibehcache-1.1.jar;c:p4sandboxmain_stagewin32ADS_EECorelibfortify-tools.jar;c:p4sandboxmain_stagewin32ADS_EECorelibhibernate3.jar;c:p4sandboxmain_stagewin32ADS_EECorelibhsqldb.jar;c:p4sandboxmain_stagewin32ADS_EECorelibintellijui.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjakarta-oro-2.0.8.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjargs-0.5.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjdbc2_0-stdext.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjsp-api.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjsr173_1.0_api.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjsr173_1.0_ri.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjta.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjug.jar;c:p4sandboxmain_stagewin32ADS_EECorelibjunit.jar;c:p4sandboxmain_stagewin32ADS_EECorelibJWizardComponent.jar;c:p4sandboxmain_stagewin32ADS_EECoreliblog4j-1.2.9.jar;c:p4sandboxmain_stagewin32ADS_EECoreliblog4j.jar;c:p4sandboxmain_stagewin32ADS_EECorelibmail.jar;c:p4sandboxmain_stagewin32ADS_EECorelibservlet-api.jar;c:p4sandboxmain_stagewin32ADS_EECorelibspring.jar;c:p4sandboxmain_stagewin32ADS_EECorelibstruts.jar;c:p4sandboxmain_stagewin32ADS_EECorelibxercesImpl-2.6.2.jar;c:p4sandboxmain_stagewin32ADS_EECorelibxmlParserAPIs-2.6.2.jar;c:p4sandboxmain_stagewin32ADS_EECoreconfig;c:p4sandboxmain_stagewin32ADS_EECore
+user.name=mxue
+com.fortify.Home=C:p4sandboxmain_stagewin32ADS_EECore
+java.vm.specification.version=1.0
+java.home=C:Program FilesJavajre1.5.0_04
+sun.arch.data.model=32
+user.language=en
+java.specification.vendor=Sun Microsystems Inc.
+awt.toolkit=sun.awt.windows.WToolkit
+java.vm.info=mixed mode, sharing
+java.version=1.5.0_04
+java.ext.dirs=C:Program FilesJavajre1.5.0_04libext
+sun.boot.class.path=C:Program FilesJavajre1.5.0_04librt.jar;C:Program
+FilesJavajre1.5.0_04libi18n.jar;C:Program
+FilesJavajre1.5.0_04libsunrsasign.jar;C:Program
+FilesJavajre1.5.0_04libjsse.jar;C:Program
+FilesJavajre1.5.0_04libjce.jar;C:Program
+FilesJavajre1.5.0_04libcharsets.jar;C:Program FilesJavajre1.5.0_04classes
+java.vendor=Sun Microsystems Inc.
+file.separator=
+java.vendor.url.bug= http://java.sun.com/cgi-bin/bugreport.cgi
+sun.io.unicode.encoding=UnicodeLittle
+sun.cpu.endian=little
+sun.desktop=windows
+sun.cpu.isalist=
+---- Command Line ---
+-cp
+C:p4sandboxmain_stagewin32ADS_EECore/lib/aspectjrt.jar;C:p4sandboxmain_stagewin32ADS_EECore/lib/struts.jar;C:p4sandboxmain_stagewin32ADS_EECore/lib/servlet-api.jar;C:p4sandboxmain_stagewin32ADS_EECore/lib/jsp-api.jar;;C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmp_librariesactivation.jar;C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmp_librariesjTDS2.jar;C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmp_librariesjconn2.jar;C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmp_librariesldapfilt.jar;C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmp_librariesldapjdk.jar;C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmp_librariesmail.jar
+-inpath
+C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmporiginal_archiveWEB-INFclasses
+-d
+C:DOCUME~1mxueLOCALS~1Tempfortify47533.tmporiginal_archiveWEB-INFclasses
+-aspectpath
+C:p4sandboxmain_stagewin32ADS_EECore/lib/appdefensert.jar
+-showWeaveInfo
+---- Full Classpath ---
+Empty
+---- Compiler Messages ---
+info zipfile classpath entry does not exist: C:Program
+FilesJavajre1.5.0_04libi18n.jar
+info zipfile classpath entry does not exist: C:Program
+FilesJavajre1.5.0_04libsunrsasign.jar
+info directory classpath entry does not exist: C:Program
+FilesJavajre1.5.0_04classes
+abort ABORT -- (ClassFormatException) Invalid byte tag in constant pool: 0
+Invalid byte tag in constant pool: 0
+org.aspectj.apache.bcel.classfile.ClassFormatException: Invalid byte tag in
+constant pool: 0
+at org.aspectj.apache.bcel.classfile.Constant.readConstant(Constant.java:145)
+at org.aspectj.apache.bcel.classfile.ConstantPool.<init>(ConstantPool.java:103)
+at
+org.aspectj.apache.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:254)
+at org.aspectj.apache.bcel.classfile.ClassParser.parse(ClassParser.java:162)
+at org.aspectj.weaver.bcel.Utility.makeJavaClass(Utility.java:365)
+at org.aspectj.weaver.bcel.UnwovenClassFile.getJavaClass(UnwovenClassFile.java:63)
+at org.aspectj.weaver.bcel.BcelWeaver.addClassFile(BcelWeaver.java:280)
+at org.aspectj.weaver.bcel.BcelWeaver.addClassFile(BcelWeaver.java:295)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.initBcelWorld(AjBuildManager.java:533)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.doBuild(AjBuildManager.java:151)
+at
+org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:102)
+at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:109)
+at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:60)
+at org.aspectj.tools.ajc.Main.run(Main.java:291)
+at com.fortify.appdefense.cmd.Instrumenter.runWeaver(Instrumenter.java:432)
+at com.fortify.appdefense.cmd.Instrumenter.instrumentClasses(Instrumenter.java:400)
+at
+com.fortify.appdefense.cmd.Instrumenter.instrumentApplication(Instrumenter.java:144)
+at com.fortify.appdefense.cmd.Instrumenter.instrument(Instrumenter.java:118)
+at com.fortify.appdefense.cmd.Main.run(Main.java:207)
+at com.fortify.appdefense.cmd.Main.main(Main.java:177)
+---- org.aspectj.weaver.bcel.BcelWorld ----
+Shadow mungers:
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.UnhandledException) &&
+(execution(void
+javax.servlet.http.HttpServlet.*(javax.servlet.http.HttpServletRequest,
+javax.servlet.http.HttpServletResponse)) &&
+args(BindingTypePattern(javax.servlet.http.HttpServletRequest, 0),
+BindingTypePattern(javax.servlet.http.HttpServletResponse, 1))))->void
+com.fortify.appdefense.runtime.aspects.UnhandledException.ajc$around$com_fortify_appdefense_runtime_aspects_UnhandledException$1$29b5f492(javax.servlet.http.HttpServletRequest,
+javax.servlet.http.HttpServletResponse, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.UnhandledException) &&
+(execution(org.apache.struts.action.ActionForward
+org.apache.struts.action.Action.*(org.apache.struts.action.ActionMapping,
+org.apache.struts.action.ActionForm, javax.servlet.http.HttpServletRequest,
+javax.servlet.http.HttpServletResponse)) &&
+args(BindingTypePattern(org.apache.struts.action.ActionMapping, 0),
+BindingTypePattern(org.apache.struts.action.ActionForm, 1),
+BindingTypePattern(javax.servlet.http.HttpServletRequest, 2),
+BindingTypePattern(javax.servlet.http.HttpServletResponse,
+3))))->org.apache.struts.action.ActionForward
+com.fortify.appdefense.runtime.aspects.UnhandledException.ajc$around$com_fortify_appdefense_runtime_aspects_UnhandledException$2$5d7db7b0(org.apache.struts.action.ActionMapping,
+org.apache.struts.action.ActionForm, javax.servlet.http.HttpServletRequest,
+javax.servlet.http.HttpServletResponse, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.SQLInjection) &&
+(call(java.sql.ResultSet java.sql.Statement.executeQuery(java.lang.String)) &&
+args(BindingTypePattern(java.lang.String, 0))))->java.sql.ResultSet
+com.fortify.appdefense.runtime.aspects.SQLInjection.ajc$around$com_fortify_appdefense_runtime_aspects_SQLInjection$1$6ee9ac24(java.lang.String,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void javax.servlet.ServletContext.log(java.lang.String)) &&
+args(BindingTypePattern(java.lang.String, 0))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$1$7a5aaa2a(java.lang.String,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void javax.servlet.ServletContext.log(java.lang.String,
+java.lang.Throwable)) && args(BindingTypePattern(java.lang.String, 0),
+BindingTypePattern(java.lang.Throwable, 1))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$2$3b51861a(java.lang.String,
+java.lang.Throwable, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.lang.System.setOut(java.io.PrintStream)) &&
+args(BindingTypePattern(java.io.PrintStream, 0))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$3$ea55ab8a(java.io.PrintStream,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.lang.System.setErr(java.io.PrintStream)) &&
+args(BindingTypePattern(java.io.PrintStream, 0))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$4$14017ea1(java.io.PrintStream,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.info(java.lang.String)) &&
+args(BindingTypePattern(java.lang.String, 0))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$5$426f2ff4(java.lang.String,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.log(java.util.logging.Level,
+java.lang.String)) && args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$6$765ad887(java.util.logging.Level,
+java.lang.String, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.log(java.util.logging.Level,
+java.lang.String, java.lang.Object)) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.Object,
+2))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$7$44505c35(java.util.logging.Level,
+java.lang.String, java.lang.Object, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.log(java.util.logging.Level,
+java.lang.String, java.lang.Object[])) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.Object[],
+2))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$8$c880a936(java.util.logging.Level,
+java.lang.String, java.lang.Object[], org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.log(java.util.logging.Level,
+java.lang.String, java.lang.Throwable)) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.Throwable,
+2))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$9$4cb0f637(java.util.logging.Level,
+java.lang.String, java.lang.Throwable, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logp(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String)) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$10$bf9e1536(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logp(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.Object)) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3),
+BindingTypePattern(java.lang.Object, 4))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$11$a907c742(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.Object,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logp(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.Object[])) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3),
+BindingTypePattern(java.lang.Object[], 4))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$12$d6e061a1(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.Object[],
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logp(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.Throwable)) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3),
+BindingTypePattern(java.lang.Throwable, 4))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$13$4b8fc00(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.Throwable,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logrb(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String)) &&
+args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3),
+BindingTypePattern(java.lang.String, 4))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$14$ab6fcbcf(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logrb(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+java.lang.Object)) && args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3),
+BindingTypePattern(java.lang.String, 4), BindingTypePattern(java.lang.Object,
+5))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$15$c8323e5b(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+java.lang.Object, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logrb(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+java.lang.Object[])) && args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3),
+BindingTypePattern(java.lang.String, 4), BindingTypePattern(java.lang.Object[],
+5))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$16$4693423a(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+java.lang.Object[], org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+(call(void java.util.logging.Logger.logrb(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+java.lang.Throwable)) && args(BindingTypePattern(java.util.logging.Level, 0),
+BindingTypePattern(java.lang.String, 1), BindingTypePattern(java.lang.String,
+2), BindingTypePattern(java.lang.String, 3),
+BindingTypePattern(java.lang.String, 4), BindingTypePattern(java.lang.Throwable,
+5))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$17$c4f44619(java.util.logging.Level,
+java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+java.lang.Throwable, org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.InformationLeakage) &&
+((call(void org.apache.log4j.Logger.warn(java.lang.Object)) || (call(void
+org.apache.log4j.Logger.debug(java.lang.Object)) || (call(void
+org.apache.log4j.Logger.info(java.lang.Object)) || (call(void
+org.apache.log4j.Logger.error(java.lang.Object)) || call(void
+org.apache.log4j.Logger.fatal(java.lang.Object)))))) &&
+args(BindingTypePattern(java.lang.Object, 0))))->void
+com.fortify.appdefense.runtime.aspects.InformationLeakage.ajc$around$com_fortify_appdefense_runtime_aspects_InformationLeakage$18$e4a81d46(java.lang.Object,
+org.aspectj.runtime.internal.AroundClosure))
+(around(extraFlags: 1):
+(persingleton(com.fortify.appdefense.runtime.aspects.CrossSiteScripting) &&
+call(java.lang.String java.sql.ResultSet+.getString(..)))->java.lang.String
+com.fortify.appdefense.runtime.aspects.CrossSiteScripting.ajc$around$com_fortify_appdefense_runtime_aspects_CrossSiteScripting$1$e6d7e248(org.aspectj.runtime.internal.AroundClosure))
+Type mungers:
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+javax.servlet.http.HttpServletRequest.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+javax.servlet.http.HttpServletResponse.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+org.apache.struts.action.ActionMapping.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+org.apache.struts.action.ActionForm.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+javax.servlet.http.HttpServletRequest.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+javax.servlet.http.HttpServletResponse.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Throwable.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.io.PrintStream.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.io.PrintStream.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Object.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Object[].()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Throwable.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Object.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Object[].()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Throwable.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Object.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Object[].()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void
+java.util.logging.Level.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.String.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Throwable.()))
+(BcelTypeMunger ResolvedTypeMunger(PrivilegedAccess, void java.lang.Object.()))

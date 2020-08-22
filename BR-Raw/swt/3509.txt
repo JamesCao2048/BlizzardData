@@ -1,0 +1,42 @@
+Combo.deselect(int) and deselectAll() doesn't work
+These methods do nothing in SWT 3.0M5 for GTK (3030).
+Try this code (select something from list and then hit the button, selection
+remains the same):
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.custom.*;
+public class Main {
+
+public static void main(String [] args) {
+
+Display display = Display.getDefault();
+final Shell shell = new Shell(display);
+shell.setLayout(new RowLayout());
+final Combo c = new Combo(shell, SWT.READ_ONLY|SWT.DROP_DOWN);
+// this doesn't work too
+// final CCombo c = new CCombo(shell, SWT.READ_ONLY|SWT.DROP_DOWN);
+c.setItems(new String[] {"1st item", "2nd item", "3rd item"});
+Button b = new Button(shell, SWT.PUSH);
+b.setText("clear");
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+c.deselectAll();
+// this doesn't work too
+// c.deselect(c.getSelectionIndex());
+}
+});
+shell.setDefaultButton(b);
+shell.pack();
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+}
+In SWT 2135 it works (even not so clear too
+- the 1st item in a list is selected
+(even if nothing selected before) instead of deselecting items, this appeared on
+Linux-GTK, on MS Windows it's OK).

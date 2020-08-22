@@ -1,0 +1,15 @@
+"declare parents" does not work with bytecode weaving
+1. download and unpack  http://www.fuurou.org/downloads/aspectjtest.zip  (I
+couldn't find a way of attaching it)
+2. copy the aspectj jars into the lib directory
+3. run ant
+
+The ant file executes both source code and byte code weaving and then it
+veryfies that the class hierarchy was changed. As you can see from the output
+in case of source weaving the test is:
+
+[java] Is [class lib.C] subcass of [class weaved.SuperC]? true
+
+while when weaving bytecode:
+
+[java] Is [class lib.C] subcass of [class weaved.SuperC]? false

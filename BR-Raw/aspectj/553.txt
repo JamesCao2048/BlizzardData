@@ -1,0 +1,5 @@
+".lst" file parsing errors should include sourceline information
+To check for this bug add an erroneous line to an ".lst" file and compile it
+with AJDE.  The error message returned is project-specific.  It should be
+specific to the ".lst" file in which the error originated (i.e. the message
+needs a SourceLocation).

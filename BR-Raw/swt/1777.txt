@@ -1,0 +1,35 @@
+Jpeg encoding (image height =1)
+I get an exception when I save an ImageData (width=x HEIGHT=1) to JPEG file :
+Exception:
+-------------------------------------------------------
+java.lang.ArrayIndexOutOfBoundsException
+at java.lang.System.arraycopy(Native Method)
+at org.eclipse.swt.internal.image.JPEGFileFormat.compress(JPEGFileFormat.java:207)
+at
+org.eclipse.swt.internal.image.JPEGFileFormat.convertMultiRGBToYCbCr(JPEGFileFormat.java:373)
+at
+org.eclipse.swt.internal.image.JPEGFileFormat.convertImageToYCbCr(JPEGFileFormat.java:316)
+at
+org.eclipse.swt.internal.image.JPEGFileFormat.unloadIntoByteStream(JPEGFileFormat.java:1887)
+at org.eclipse.swt.internal.image.FileFormat.unloadIntoStream(FileFormat.java:107)
+at org.eclipse.swt.internal.image.FileFormat.save(FileFormat.java:99)
+at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:194)
+at XXXXXXXXXXXXXXX
+Source code:
+-------------------------------------------------------------------
+if (compressedHeight
+< componentHeight) {
+int srcOfs = (compressedHeight
+- 1) * componentWidth;
+for (int yPos = compressedHeight; yPos
+<= componentHeight; yPos++) {
+int dstOfs = (yPos
+- 1) * componentWidth;
+System.arraycopy(imageComponent, srcOfs, imageComponent, dstOfs,
+componentWidth);
+}
+}
+So, if compressedHeight=1 ,
+I understand that it calls an System.arrayCopy from a position O
+to the SAME position 0 !
+Thanks for your fantastic project: ECLIPSE !

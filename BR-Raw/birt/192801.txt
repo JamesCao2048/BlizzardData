@@ -1,0 +1,7 @@
+Bug 192801 [Acceptance]A problem when drill-through to other report in doc [1202]
+Description: Drill-through to other report design file, and the target report design has two pages.
+Drill-through to the page2, and set the target report in doc.
+The target report doesn't paginated properly.
+Build version:2.2.0.v20070614-1316 Steps to reproduce: 1.Get the attached report design files.
+Preview a.rptdesign, click on the label, and check the result.
+Expected result: Click on the label will go to the page 2 of the target report.

@@ -1,0 +1,8 @@
+StyledText - Scrollwheel event interferes with last caret placement
+Styled text remembers the last horizontal offset of the caret in a line.
+If
+you are at the end of a really long line, and you press DOWN to a short line,
+then UP, the caret's placement is recalled and it is at the end of the line
+again.
+But, if you press DOWN to a short line, then use the scrollwheel, which does
+NOT move the caret, then press UP, the caret's location is not recalled.

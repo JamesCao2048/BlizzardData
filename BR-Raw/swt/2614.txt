@@ -1,0 +1,14 @@
+editor cheese after code completion
+Build id: I20051115-0800
+I am occasionally getting cheese in the editor after inserting code using
+content assist and organize imports in this build.
+For example, if I type a
+class name, and then hit Ctrl+Shift+M to import it, I get some parts of the text
+pushed down by a line while other parts stay put.
+
+I will attach a screen shot as an example.
+In the screen shot, there is an
+invisible line about an inch from the left hand side
+- everything to the left of
+the line is fine, and everything to the right of the line has been pushed down
+so the two pieces don't line up.

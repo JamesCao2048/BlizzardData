@@ -1,0 +1,8 @@
+backspace in texteditors -> double backspace
+n2004-04-04:
+steps to reproduce:
+- open a properties file
+- enter something
+- goto end of that line
+- press backspace
+-> 2 chars are deleted instead of one

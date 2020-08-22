@@ -1,0 +1,8 @@
+Painting problems using latest builds
+Our canvas does not paint using the latest builds of Eclipse.
+Reverting to M5,
+everything works normally.
+I am trying to find a test case, but any comments on what has changed might help
+me narrow it down.
+To reproduce, checkout draw2d.examples and draw2d from CVS, Tools repository,
+and run HelloWorld.

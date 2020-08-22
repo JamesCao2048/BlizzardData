@@ -1,0 +1,15 @@
+Context menus outdated on right-click because MenuDetect fires before Selection event
+HEAD (Cocoa)
+Context menus in Eclipse (e.g.
+in the Package Explorer) are outdated when I right-click on an item that has not been selected before.
+The bug is that the MenuDetect event is fired before the Selection event, see e.g.
+the ControlExample.
+Fails for Table, Tree, List (though the List widget on WinXP does not change the selection on right-click).
+Expected:             Cocoa:
+----------
+----------
+MenuDetect
+MouseDown             MouseDown
+Selection             Selection
+MenuDetect
+MouseUp               MouseUp

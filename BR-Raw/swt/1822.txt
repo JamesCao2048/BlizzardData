@@ -1,0 +1,10 @@
+Doubleclick does not work on owner-drawn TreeItem with rollover tooltip
+HEAD, after fix for  bug 178044
+Doubleclick does not work on owner-drawn TreeItem with rollover tooltip.
+To reproduce:
+- run the snippet from  bug 197839
+- and double-click the item
+- make the rollover tooltip appear again
+- double-click
+=> nothing happens
+=> expected: widgetDefaultSelected() is sent

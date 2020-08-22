@@ -1,0 +1,7 @@
+Bug 146967 Total fuction with result of the aggregate on group-Level should be enhanced
+Description: Now if we want to do total fuction with the Aggregate result on the group level, it cant be fulfilled.
+For example, we set a total.sum() aggregate on a group level first, and then we sum the result of total.sum() again.
+The expected result should simply equal to sum over all rows.
+But the actual result is not as our requirement.
+I attached the design file as the example.
+Expected result: The aggregation on the group total should be enhanced, or we cant get expected result such as the requirement that total.rank() with the average result on the group level and so on.

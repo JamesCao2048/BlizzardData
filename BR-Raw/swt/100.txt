@@ -1,0 +1,50 @@
+List gets into bad state when an item is removed from context menu trigger
+The following NPE may occur in org.eclipse.swt.widgets.Control (in .eclipse.swt.cocoa.macosx.x86_64_3.8.0.v3833.jar)
+the variable string equals null at this point, please see the stack trace
+The problem does not seem to occur on Windows
+-- STACK TRACE copied from Debug View
+Daemon Thread [Thread-1] (Suspended (breakpoint at line 986 in Control))
+List(Control).createString(String, Font, double[], int, boolean, boolean, boolean) line: 986
+List.tableView_objectValueForTableColumn_row(long, long, long, long, long) line: 1447
+Display.windowProc(long, long, long, long, long) line: 5797
+OS.objc_msgSendSuper(objc_super, long, NSRect) line: not available [native method]
+List(Widget).drawRect(long, long, NSRect) line: 734
+Display.windowProc(long, long, long) line: 5471
+OS.objc_msgSendSuper(objc_super, long, long, long, long, boolean) line: not available [native method]
+Display.applicationNextEventMatchingMask(long, long, long, long, long, long) line: 4873
+Display.applicationProc(long, long, long, long, long, long) line: 5239
+OS.objc_msgSendSuper(objc_super, long, long) line: not available [native method]
+Table(Widget).callSuper(long, long, long) line: 221
+Table(Widget).mouseDownSuper(long, long, long) line: 1093
+Table.mouseDownSuper(long, long, long) line: 2004
+Table(Widget).mouseDown(long, long, long) line: 1085
+Table(Control).mouseDown(long, long, long) line: 2538
+Table.mouseDown(long, long, long) line: 1966
+Display.windowProc(long, long, long) line: 5493
+OS.objc_msgSendSuper(objc_super, long, long) line: not available [native method]
+Shell(Widget).callSuper(long, long, long) line: 221
+Shell(Widget).windowSendEvent(long, long, long) line: 2102
+Shell.windowSendEvent(long, long, long) line: 2284
+Display.windowProc(long, long, long) line: 5557
+OS.objc_msgSendSuper(objc_super, long, long) line: not available [native method]
+Display.applicationSendEvent(long, long, long) line: 5002
+Display.applicationProc(long, long, long) line: 5151
+OS.objc_msgSend(long, long, long) line: not available [native method]
+NSApplication.sendEvent(NSEvent) line: 128
+Display.readAndDispatch() line: 3616
+Workbench.runEventLoop(Window$IExceptionHandler, Display) line: 2701
+Workbench.runUI() line: 2665
+Workbench.access$4(Workbench) line: 2499
+Workbench$7.run() line: 679
+Realm.runWithDefault(Realm, Runnable) line: 332
+Workbench.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 668
+PlatformUI.createAndRunWorkbench(Display, WorkbenchAdvisor) line: 149
+Desk.start(IApplicationContext) line: 174
+EclipseAppHandle.run(Object) line: 196
+EclipseAppLauncher.runApplication(Object) line: 110
+EclipseAppLauncher.start(Object) line: 79
+EclipseStarter.run(Object) line: 353
+EclipseStarter.run(String[], Runnable) line: 180
+NativeMethodAccessorImpl.invoke0(Method, Object, Object[]) line: not available [native method]
+NativeMethodAccessorImpl.invoke(Object, Object[]) line: 39
+DelegatingMethodAccessorImpl.invoke

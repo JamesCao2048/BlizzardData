@@ -1,0 +1,36 @@
+Table.setTopIndex does not work correctly with MeasureItem
+Created  attachment 113975   [details]
+Snapshot of the snippet output (with and without MeasureItem listener added)
+Build ID: 3.4
+Steps To Reproduce:
+Check the snippet.
+It sets the topIndex to 120, but another row is on top (18, on my computer).
+If you remove the MeasureItem listener from the snippet, it works.
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Table table = new Table(shell, SWT.NONE);
+table.setLinesVisible(true);
+
+table.addListener(SWT.MeasureItem, new Listener() {
+public void handleEvent(Event event) {
+event.height = 30;
+}
+});
+
+table.setItemCount(150);
+for (TableItem ti : table.getItems()) {
+ti.setText(String.valueOf(table.indexOf(ti) + 1));
+}
+
+table.setTopIndex(120);
+
+shell.setSize(200, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+}
+There have to be enough rows in the table, small row numbers work.

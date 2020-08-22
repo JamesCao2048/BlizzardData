@@ -1,0 +1,65 @@
+TableItem.setImage does not redraw the item
+In a Table with multiple columns I'm trying to display some images.
+When setting an image to null in a table column other than the first, the item
+is not redrawn, ie the image that has been visible before will not be cleared.
+The changes to the item is visible only after covering the application with
+another window and revealing it again (or minimizing and restoring the window).
+Here is a snippet that reproduces the issue on my Windows XP box with 3.1 SWT
+(Start the application, you will see a 2x2 table with 4 blue squares.
+Pressing
+the button calls setImage(0,null) and setImage(1,null) on the first row of the
+table.
+The expected result is that the two blue boxes vanish in the first row.
+In fact, only the first box vanishes; the second box is still visible.
+It can be
+made to vanish if you temporarily hide the table with some other window):
+package snippets;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
+public class SnippetTableProblem {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new GridLayout());
+final Table table = new Table(shell, SWT.NONE);
+final TableItem item1 = new TableItem(table, SWT.NONE);
+final TableItem item2 = new TableItem(table, SWT.NONE);
+new TableColumn(table, SWT.NONE).setWidth(50);
+new TableColumn(table, SWT.NONE).setWidth(50);
+Image image = new Image(display, 16, 16);
+GC gc = new GC(image);
+gc.setForeground(display.getSystemColor(SWT.COLOR_BLUE));
+gc.fillRectangle(0, 0, 16, 16);
+item1.setImage(0, image);
+item2.setImage(0, image);
+item1.setImage(1, image);
+item2.setImage(1, image);
+Button button = new Button(shell, SWT.PUSH);
+button.setText("Remove images");
+button.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+item1.setImage(0, null);
+item1.setImage(1, null);
+}
+});
+table.setSize(100, 100);
+shell.setSize(200, 200);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+image.dispose();
+display.dispose();
+}
+}

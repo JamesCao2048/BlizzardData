@@ -1,0 +1,10 @@
+[Browser] Registering a function has no effect on newly opened window
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2
+Build Identifier: 3.6M1
+Functions registered on a new browser instance (set in an OpenWindowListener) cannot be called.
+Navigating seems to re-register the function but without any navigation, calling the function on the loaded page does not work.
+Reproducible: Always
+Steps to Reproduce:
+1.Open a link using the native context menu of IE.
+2.In the open window listener, set the browser instance to use on which we add a custom function.
+3.Triggering that function has no effect.

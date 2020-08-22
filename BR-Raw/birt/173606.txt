@@ -1,0 +1,2 @@
+Bug 173606 True type fonts display the same effects in PDF[00]
+True type fonts display the same effects in PDF[00] Build number: 2.2.0.v20070209-1530 Steps to reproduce: 1.insert a label and input "test fonts",font:Arial 2.insert a label and input "test fonts",font:Bodoni MT 3.insert a label and input "test fonts",font:Tahoma 4.insert a label and input "test fonts",font:&#23435;&#20307; 5.insert a label and input "test fonts",font:MingLiU Expected result: Fonts displays different effects Actual result: they display the same Error log: N/A

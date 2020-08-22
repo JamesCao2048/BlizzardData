@@ -1,0 +1,14 @@
+tree focus cheese
+- select a file in the Package Explorer that has a local history
+- right-click
+-> Compare With...
+-> Local History
+- dismiss the resulting compare dialog
+- note the focus cheese that's left on the item
+It's happening because showing the popup menu does not send a FocusOut to the
+Tree, so it does not remove its focus rectangle.
+However it has lost focus, so
+later when it goes to repaint, it doesn't complete the bitten parts of the
+focus rectangle because isFocus() answers false.
+SSQ says that the lack of
+FocusOut event is by design, but may not be needed anymore; to discuss with SN.

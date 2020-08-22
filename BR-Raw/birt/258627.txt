@@ -1,0 +1,13 @@
+Bug 258627 Chart need a code change for the HTML in BIRT 2.5
+1.HTML emitter has output the script function "redirect".
+Now this script function has been prefixed with the htmlIDNamespace.
+Chart need add the prefixe before use the script function.
+The htmlIDNamespace can be gotten from the HTML option with the method "getHTMLIDNamespace".
+2.The image's area must be well-formed: A.
+"AREA" must be written into lowercase "area".
+B.
+"target" can't be a empty String.
+You shouldn't output target when it's empty.
+C.
+"area" must has a "alt" value.
+You should give an empty string value to the alt attribute when "alt" doesn't have a value.

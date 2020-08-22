@@ -1,0 +1,6 @@
+[browser] F1 does not bring eclipse help content when browser has focus
+I20050330
+CTRL-SHIFT-T correctly open the type dialog
+F1 does nothing.
+IE has a special Help/F1 callback.
+Check we don't mess it up.

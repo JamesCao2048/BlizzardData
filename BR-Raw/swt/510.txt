@@ -1,0 +1,12 @@
+Command+. does not work any more in Trees
+Broken in I20100119-0800 and 3.5 Cocoa, works in 3.4.2 Carbon.
+Command+.
+does not work any more in Trees.
+I just get an OS beep, and the KeyDown event for Command+.
+is missing.
+In Eclipse, this is e.g.
+visible in the Search view, where Command+.
+should step to the next match.
+The reverse (Command+Shift+.) still works.
+In the Java Editor, Command+.
+still works (jumps to next annotation).

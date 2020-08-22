@@ -1,0 +1,9 @@
+SWT workspace is full of SWT tools errors
+1.Pull the latest SWT source code.
+2.Enable SWT Tools > report 32/64 bit problems.
+3.Rebuild the project.
+Project is filled with errors:
+[32/64] Syntax error, annotations are only available if source level is 1.5 or greater
+The problem is in the SWT tools.
+There are more than 900 errors now in the workspace and its easy to miss any valid 32/64 bit errors because of this.
+We need to fix the tools before making any Java 1.5 language changes to the SWT source code.

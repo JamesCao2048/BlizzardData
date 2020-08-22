@@ -1,0 +1,32 @@
+Gtk critical warning when running swt app
+Eclipse 20031009
+The stack trace I got when running the CustomControlExample with debug flag on.
+(<unknown>:3951): GLib-GObject-CRITICAL **: file gtype.c: line 1942
+(g_type_add_interface_static): assertion `g_type_parent (interface_type) ==
+G_TYPE_INTERFACE' failed
+java.lang.Error
+at org.eclipse.swt.graphics.Device.logProc(Device.java:543)
+at
+org.eclipse.swt.internal.accessibility.gtk.ATK.g_type_add_interface_static(Native
+Method)
+at
+org.eclipse.swt.accessibility.AccessibleFactory.defineType(AccessibleFactory.java:191)
+at
+org.eclipse.swt.accessibility.AccessibleFactory.<init>(AccessibleFactory.java:153)
+at
+org.eclipse.swt.accessibility.AccessibleFactory.registerAccessible(AccessibleFactory.java:285)
+at org.eclipse.swt.accessibility.Accessible.<init>(Accessible.java:38)
+at
+org.eclipse.swt.accessibility.Accessible.internal_new_Accessible(Accessible.java:162)
+at org.eclipse.swt.widgets.Control.getAccessible(Control.java:353)
+at org.eclipse.swt.custom.CCombo.initAccessible(CCombo.java:578)
+at org.eclipse.swt.custom.CCombo.<init>(CCombo.java:135)
+at
+org.eclipse.swt.examples.controlexample.CComboTab.createExampleWidgets(CComboTab.java:70)
+at org.eclipse.swt.examples.controlexample.Tab.createTabFolderPage(Tab.java:369)
+at
+org.eclipse.swt.examples.controlexample.ControlExample.<init>(ControlExample.java:69)
+at
+org.eclipse.swt.examples.controlexample.CustomControlExample.<init>(CustomControlExample.java:27)
+at
+org.eclipse.swt.examples.controlexample.CustomControlExample.main(CustomControlExample.java:54)

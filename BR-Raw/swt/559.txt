@@ -1,0 +1,10 @@
+[Widgets] segfault in pango_layout_new when closing a dialog
++++ This bug was initially created as a clone of  Bug #285749  +++
+This bug might be related to  bug 285749 , although the backtrace is slightly different and I reproduced it on RHEL 4 and RHEL 5, with Eclipse 3.5.2 as well as Eclipse 3.6 (Helios).
+Attached hs_err_pid490.log is from
+Build ID: I20100608-0911 (Eclipse 3.6 Helios)
+While an operation was ongoing in a dialog, I closed the dialog (X button in window caption).
+The Java VM is Sun 1.5.0_11.
+Machine is Red Hat Enterprise Linux Client release 5.5 (Tikanga).
+The GTK version is gtk2-2.10.4-20.el5
+Libpango is        pango-1.14.9-8.el5

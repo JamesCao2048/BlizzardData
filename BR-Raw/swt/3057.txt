@@ -1,0 +1,77 @@
+TableColumn.pack() doesn't decrease column's width on GTK
+When the text of the TableItem is changed, I call TableColumn.pack() to resize
+the column to contain whole text of all items.
+On GTK, when text is larger then
+the previous one, column is extended (with both pack() and without pack()).
+This
+is OK.
+When I set the text to the smaller one again and call to pack(), the columns
+width remains unchanged (should be decreased I thing, because on MS Windows it
+works).
+I can solve it by computing the string sizes and then call to column's
+setWidth() method, but I thing it's not clear.
+Try this:
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.events.*;
+public class Main {
+
+static int i = 0;
+
+public static void main(String [] args) {
+
+Display display = Display.getDefault();
+final Shell shell = new Shell(display);
+shell.setLayout(new FormLayout());
+
+Table table = new Table(shell,
+SWT.BORDER|SWT.FULL_SELECTION|SWT.SINGLE);
+table.setHeaderVisible(true);
+table.setLinesVisible(true);
+final TableColumn col = new TableColumn(table, SWT.LEFT);
+TableColumn col2 = new TableColumn(table, SWT.LEFT);
+final TableItem item = new TableItem(table, SWT.NONE);
+item.setText("click the button");
+final String[] texts = new String[] {
+"<short text>",
+"<some larger text some larger text "
++ "some larger text some larger text>",
+"<largest text largest text largest text largest text largest text "
++ "largest text largest text largest text largest text largest text "
++ "largest text largest text largest text>"
+};
+Button b = new Button(shell, SWT.PUSH);
+b.setText("test");
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+if (i == texts.length) {
+i = 0;
+}
+item.setText(texts[i++]);
+col.pack();
+}
+});
+shell.setDefaultButton(b);
+FormData fd1 = new FormData();
+fd1.top = new FormAttachment(0, 5);
+fd1.left = new FormAttachment(0, 5);
+fd1.right = new FormAttachment(100,
+-5);
+fd1.bottom = new FormAttachment(b,
+-5);
+table.setLayoutData(fd1);
+FormData fd2 = new FormData();
+fd2.bottom = new FormAttachment(100,
+-5);
+fd2.right = new FormAttachment(100,
+-5);
+b.setLayoutData(fd2);
+shell.setSize(400, 400);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}
+}

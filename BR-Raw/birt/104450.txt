@@ -1,0 +1,4 @@
+Bug 104450 If plot background is set, data set binding is lost.
+Steps: 1.Drag a chart into the layout 2.Set data: dataset, X Series, Y Series...
+3.Set the image to the plot background 4.Click "OK" Actual Result 1.Data set binding is lost.
+Expected Result 1.Data set can word correctly.

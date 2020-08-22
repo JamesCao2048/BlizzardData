@@ -1,0 +1,50 @@
+ScrolledComposite.computeSize returns wrong value when alwaysShowScrollBars==true
+SWT v3220
+When calling computeSize on a ScrolledComposite that has the
+alwaysShowScrollBars flag set to true, the space needed for
+the scroll bar(s) is added twice:
+a) once in ScrolledCompositeLayout.computeSize and
+b) again in Scrollable.computeTrim, called by Composite.computeSize
+In the testcase below this results in the size being reported
+as (332, 332) instead of the expected (316, 316).
+Older versions that did not yet have the separate layout class (2.1, 3.0)
+return the correct result.
+---
+import org.eclipse.swt.*;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class ScrolledCompositeSizeTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+ScrolledComposite sc = new ScrolledComposite(
+shell,
+SWT.H_SCROLL | SWT.V_SCROLL);
+sc.setAlwaysShowScrollBars(true);
+
+Canvas c = new Canvas(sc, SWT.NONE) {
+public Point computeSize(int wHint, int hHint, boolean changed) {
+return new Point(300, 300);
+}
+};
+c.setBackground(display.getSystemColor(SWT.COLOR_RED));
+c.setSize(c.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+
+sc.setContent(c);
+System.out.println(sc.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+
+shell.pack();
+shell.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+
+display.dispose();
+}
+}

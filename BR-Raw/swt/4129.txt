@@ -1,0 +1,12 @@
+Column resize problems/cheese
+build 20020426
+Run the test case below.
+Start a column resize and move the column resize indicator (the black vertical
+line)one pixel to the right of the old column column grid line.
+Release the mouse and observe:
+a) the column isn't resized even though the resize indicator leads me to
+believe it will be one pixel wider
+b) the resize indicator is not erased
+On a related note: When I release the mouse/column resize indicator directly on
+the column grid line the column is resized smaller.
+It looks like somewhere something is off by one.

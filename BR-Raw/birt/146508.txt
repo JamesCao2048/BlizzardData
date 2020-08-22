@@ -1,0 +1,24 @@
+Bug 146508 table of contents and bookmarks in target report should be saved as expr. correctly
+steps to reproduce:
+- create a report
+- add a label, and edit a drill through hyperlink to an existing report document on this label
+- switch to XML Source
+- notice this drill through hyperlink action definition expected behavior:
+- table of contents and bookmarks should be saved as expr.
+correctly actual behavior:
+-
+<expression name="targetBookmark">toc</expression>, "" was missing
+<body>
+<label id="4">
+<text-property name="text">aaaaa</text-property>
+<structure name="action">
+<property name="formatType">html</property>
+<property name="linkType">drill-through</property>
+<property name="reportName">../../../20060612/eclipse/plugins/org.eclipse.birt.report.viewer_2.1.0.N20060612-0630/birt/documents/6C07146F1A15E47DE28AEDBD13283C1D/temp/new_report_3.rptdocument</property>
+<expression name="targetBookmark">toc</expression>
+<property name="targetBookmarkType">toc</property>
+<property name="targetWindow">_blank</property>
+<property name="targetFileType">report-document</property>
+</structure>
+</label>
+</body>

@@ -1,0 +1,15 @@
+AjType.getSupertype breaks for null
+I ran into this while using reflection proxies with LTW... See attached patches for these test cases and my fix:
+public void testObjectSupertype() {
+AjType<?> objectSuper = AjTypeSystem.getAjType(Object.class).getSupertype();
+assertNull(objectSuper);
+}
+public void testInterfaceSupertype() {
+AjType<?> serializableSuper = AjTypeSystem.getAjType(Serializable.class).getSupertype();
+assertNull(serializableSuper);
+}
+
+public AjType<? super T> getSupertype() {
+Class<? super T> superclass = clazz.getSuperclass();
+return superclass==null ? null : (AjType<? super T>) new AjTypeImpl(superclass);
+}

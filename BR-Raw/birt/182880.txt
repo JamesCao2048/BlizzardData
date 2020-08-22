@@ -1,0 +1,7 @@
+Bug 182880 SVG charts have some fuzzy elements
+Text with small font (size
+<14) appears fuzzy on SVG output due to anti-aliasing.
+The same chart in PNG looks sharper for small fonts.
+The SVG renderer should disable anti-aliasing for small fonts, which are not rotated, not bold, not italics.
+Another issue is that horizontal and vertical lines appear fuzzy due to anti-aliasing.
+If possible the renderer should disable anti-aliasing for those as well.

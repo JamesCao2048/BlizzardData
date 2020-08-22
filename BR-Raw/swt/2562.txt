@@ -1,0 +1,14 @@
+StyledText's RTF copy/paste broken
+I20060110-1026
+1.open a text file with the Text editor and add the following text:
+not.broken
+not.broken
+2.select the two lines
+3.copy
+4.go into an application that allows RTF pasting
+5.paset
+==>
+.broken
+.broken
+Other anomalities of missing characters can be seen when playing with larger documents.
+Note: pasting as simple text works as expected.

@@ -1,0 +1,8 @@
+Bug 268266 "Restore" should be disabled for cube extended from the library without any local setting [1101]
+Description: "Restore" should be disabled for cube extended from the library without any local setting.
+Build number: 2.5.0.v20090312-0630 Steps to reproduce: 1.New a library with a data cube.
+2.New a report extend the data cube from the library.
+3.Select the cube and check the "Restore" button in Property Editor view.
+Expected result: The "Restore" should be disabled for there isn't any local setting.
+Actual result: The "Restore" is enabled.
+Error log: N/A

@@ -1,0 +1,7 @@
+VoiceOver won't read contents of StyledText
+VoiceOver won't read the contents of a StyledText box.
+-- Run org.eclipse.swt.examples.accessibility.ControlsWithLabelsExample
+-- Turn on VoiceOver
+-- Mouse over the StyledText
+Voiceover says 'blank text' instead of reading the contents of the text box.
+(This was noted in my initial checkin but I never wrote a tracking bug.)

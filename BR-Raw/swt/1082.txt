@@ -1,0 +1,3 @@
+caret line highlight leaves screen artifacts
+when multiple fonts are used in a StyledText, the caret line highlight doesn't always get cleared as the caret is moved to a new line.
+See the attached screenshot.

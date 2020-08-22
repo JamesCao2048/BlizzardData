@@ -1,0 +1,4 @@
+Bug 103135 [Regression]Change the name of one computed column which are used in dataset filter will cause the dataset filter invalid.
+Description: Change the name of one computed column which are used in dataset filter will cause the dataset filter invalid.
+Steps to reproduce: 1.new a computed column in data set editor with the name "aa" 2.set a filter for the data set with "aa" 3.rename "aa" to be "bb" 4.click the filter 5.click preview result Expected result: Error message Actual result: No error message and preview display nothing.
+It is a regression of #78370 Test Build:20050708

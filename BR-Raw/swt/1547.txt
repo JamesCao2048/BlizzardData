@@ -1,0 +1,16 @@
+Segfault when disposing shell in keylistener of browser
+Created  attachment 102125   [details]
+Problem Report
+I20080526-2000
+I don't have steps to reproduce yet, but this segmentation fault happened for the second time today when I was using content assist in a Java editor, clicked into the additional info, and then clicked into the proposals table.
+Current thread (0x010013c0):  JavaThread "main" [_thread_in_native, id=-1603530848]
+Stack: [0xbf800000,0xc0000000)
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.carbon.OS.CFRelease(I)V+0
+j  org.eclipse.swt.browser.Safari.handleCallback(II)I+886
+j  org.eclipse.swt.browser.Safari.eventProc3(III)I+27
+v  ~StubRoutines::call_stub
+J  org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(II)I
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/
+...

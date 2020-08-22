@@ -1,0 +1,7 @@
+ScrollBar does not receive SWT.Selection messages
+This problem was noticed when using the Tree widget.
+I noticed that if the Tree contains a horizontal
+or vertical ScrollBar, scrolling the composite does not redraw the tree.
+I tried adding a selection listener
+to the horizontal and vertical scrollbars of the tree and the program never receives notification of this
+event when you scroll the tree.

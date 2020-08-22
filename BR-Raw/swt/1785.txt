@@ -1,0 +1,6 @@
+Tooltip always prompt up in the wrong place
+Created  attachment 84405   [details]
+patch for tooltip position issue
+When I tried tooltip tab in control examples, the tooltip always prompt in the wrong place.
+I checked the code and found that the mouse position has not renewed when the tooltip shell prompting up.
+I make a patch for this problem.

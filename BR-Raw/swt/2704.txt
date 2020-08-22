@@ -1,0 +1,46 @@
+Resetting of clipping region does not work if gc.setTransform was called
+On Windows, I was trying to set a clipping region on the GC, do some painting,
+reset the clipping region and do some more painting:
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(display);
+shell.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent event) {
+GC gc = event.gc;
+Display display = event.display;
+Transform transform = new Transform(display);
+gc.setTransform(transform); //
+<-- clipping is fine if I comment
+out this line
+/* Set the clipping region.
+*/
+Region region = new Region(display);
+gc.getClipping(region);
+gc.setClipping(50, 50, 100, 100);
+/* Do some painting.
+*/
+gc.setBackground(display.getSystemColor(SWT.COLOR_RED));
+gc.fillRectangle(50, 50, 100, 100);
+/* Reset the clipping region.
+*/
+gc.setClipping(/* (Region)null */region);
+/* Do some more painting.
+*/
+gc.fillRectangle(200, 50, 100, 100);
+transform.dispose();
+region.dispose();
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+Whatever is painted after restoring the clipping region does not show up on the
+shell
+- it seems that the clipping region is not reset properly.
+However,
+clipping works fine if I restore the clipping region by calling
+gc.setClipping((Region)null) or if I don't set the transform on the GC.

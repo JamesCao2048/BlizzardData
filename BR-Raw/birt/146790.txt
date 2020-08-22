@@ -1,0 +1,2 @@
+Bug 146790 Help text/help text key for cascading parameter group is not supported
+Steps to reproduce: 1.New a cascading parameter group 2.Switch to Properties, select the cascading parameter group 3.Set help text to "helpme" 4.Preview Expected result: Help text appears when hovering over the cascading parameter group name in Parameter input dialog Actual result: Help text/help text key is not supported

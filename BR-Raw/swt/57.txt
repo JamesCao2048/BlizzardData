@@ -1,0 +1,4 @@
+Miss NPE check in org.eclipse.swt.accessibility.Accessible
+miss NPE check in all of the remove*Listener method of org.eclipse.swt.accessibility.Accessible.
+for instance, take a look on the "removeAccessibleControlListener" method,note that there is no NPE check before accessibleControlListeners.isEmpty(), the accessibleControlListeners properly will be null and therefore, NullPointerException will be thrown out.
+this issue occurs in 4.3 M7.the 4.3 M6 works fine.

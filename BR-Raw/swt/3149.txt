@@ -1,0 +1,34 @@
+TextLayout doesn't produce proper runs when newlines present
+I'm trying to reproduce Bidi text rendering.
+The following two controls paint
+the same text in a different way.
+Felipe said the problem is related to the presence of the newline character.
+
+StyledText only renders lines.
+public static void main(String[] args) {
+final Display display = new Display();
+final Shell shell = new Shell(SWT.SHELL_TRIM | SWT.RIGHT_TO_LEFT);
+shell.setLayout(new GridLayout());
+final String message = "ABC 890n123 ABC def";
+StyledText text = new StyledText(shell, SWT.MULTI | SWT.BORDER |
+SWT.RIGHT_TO_LEFT);
+text.setLayoutData(new GridData(GridData.FILL_BOTH));
+text.setText(message);
+final Canvas canvas = new Canvas(shell, SWT.BORDER | SWT.RIGHT_TO_LEFT);
+canvas.setLayoutData(new GridData(GridData.FILL_BOTH));
+canvas.addPaintListener(new PaintListener() {
+public void paintControl(PaintEvent e) {
+TextLayout layout = new TextLayout(shell.getDisplay());
+layout.setWidth(shell.getClientArea().width);
+layout.setOrientation(SWT.RIGHT_TO_LEFT);
+layout.setText(message);
+layout.draw(e.gc, 0, 0);
+layout.dispose();
+}
+});
+shell.setSize(400, 300);
+shell.open();
+while (!shell.isDisposed())
+if (!display.readAndDispatch())
+display.sleep();
+}

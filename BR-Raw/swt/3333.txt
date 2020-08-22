@@ -1,0 +1,6 @@
+[browser] NPE in test case
+Running a test case that uses the ProgressListener.completed event causes a
+NPE when trying to get the widget field.
+Widget field is not set and should contain the browser the event originates
+from.
+The other browser events appear fine.

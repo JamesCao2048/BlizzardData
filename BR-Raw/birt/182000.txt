@@ -1,0 +1,8 @@
+Bug 182000 Cross tab layout behavior
+In the current approach of cross tab layout view, the arrow is associated with the first data item in the cell.
+- User cannot delete measure and level data items which have arrow with them.
+-Wenbin has concerns with the approach, as this will make the UI very restrictive.
+- Also user may want to delete data item and just show image in a cross tab cell.
+We had a discussion with Bang, and he has revised the mockups for the layout
+- The idea is that the arrow is associated with the cross tab cell and not data item.
+Let us know if there are any issues with supporting this.

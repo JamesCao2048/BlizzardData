@@ -1,0 +1,11 @@
+Bug 101751 Enhance IImagehandler interface to allow full customization of birt image handling mechanism
+BIRT currently stores temp chart/image into a directory that the viewer provides.
+It assumes that the image can be accessed then as a static resource, bypassing the application server.
+This is achieved by generating chart/image URL that points to the image directly.
+In a WAR deployment environment, the image directory can no longer be specified under the web-application, because the web app installation directory can not always be found.
+The modified mechanism is to have the image directory as a hard-coded directory, instead of retrieved by getRealPath() call now.
+Because the images are no longer stored in the web app, they may not be accessible directly through URL without engine's help.
+The proposed solution is to enhance ImageHandler, so that it not only stored image, but returns image too.
+This way, the web application (viewer) could set the image handler, the engine writes the images, then the viewer, given a reference to the imahe handler, could call the get functions to retrieve images and send back to client based on the URL.
+IImageHandler therefore needs to be enhanced.
+So do the default image handler implementations.

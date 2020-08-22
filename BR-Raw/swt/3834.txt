@@ -1,0 +1,15 @@
+TVT2: truncated text in dropdown for Dependencies tab in manifest editor
+Description:
+Open a plugin.xml file in the editor, and click on the Dependencies tab.
+The
+string Loops in dependency graph appears by default in the Find field.
+In
+french, the first letter B (of Boucle) does not show.
+I have to select another
+option in the list and go back to the loop string to see it.
+Steps to recreate problem:
+1-In the Navigator view, expand a project, select plugin.xml and open it in the
+editor.
+2-Select the Dependencies tab
+I will attach a screencap of this problem.
+This bug was opened in response to TPRS ID=162

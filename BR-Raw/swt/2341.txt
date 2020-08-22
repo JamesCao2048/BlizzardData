@@ -1,0 +1,9 @@
+Button widget with SWT.CHECK style is not showing foreground color when it is in selected/checked state
+As per our requirement, we created a Button widget with style SWT.CHECK, i.e., displayed as a CheckBox.
+The CheckBox(button widget) is assigned a foreground color, for ex.
+red color, using setForeground() method.
+Also, the CheckBox widget is checked initially using setSelection(true).
+When I execute my application in Linux OS, the foreground color of CheckBox is not displayed whenever the widget is in selected/checked state.
+If I uncheck the CheckBox widget, the forground color is displayed.
+This inconsistent behavior is observed in Linux OS.
+Its working fine in Windows OS.

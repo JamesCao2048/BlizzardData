@@ -1,0 +1,10 @@
+Bug 126632 Template label does not have id attribute in html output.
+Overview Description: Template label with a value defined is not given an "id" attribute in html output.
+The attached report (label.rptdesign) has a template label with the text "Template Label Text".
+When the report is shown in the preview pane, the div tag containing the label text does not have an id attribute.
+In contrast, the table tag has an id attribute with a unique id.
+Steps to reproduce: Open attached report label.rptdesign.
+Select "preview" tab.
+View source for the resulting html page.
+Actual results: div tag containing label text does not have an id attribute.
+Expected results: div tag contaiing label text has a unique id attribute.

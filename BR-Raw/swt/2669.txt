@@ -1,0 +1,10 @@
+Clicking on the button frame does not activate toolitem's drop down
+For toolitems created with SWT.DROP_DOWN, the menu appears if the click occurs
+within the bounds of the arrow itself.
+However, these bounds do not include the
+right hand side of the button frame.
+I hit this a lot in eclipse, where I'd
+like to open the menu for the Run toolitem, but I end up launching the last
+application instead.
+The attached patch modifies the bounds checking to count the frame as being part
+of the arrow's area.

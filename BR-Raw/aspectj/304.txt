@@ -1,0 +1,4 @@
+Using -verbose in aop.xml does not yield info messages
+The interpretation of the -verbose option for LTW is not consistent with other
+uses in AspectJ e.g. ajc, iajc. It should allow info as well as warining and
+error messages to be output. The option parser and testcase need to be updated.

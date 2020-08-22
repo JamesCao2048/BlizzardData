@@ -1,0 +1,8 @@
+[Browser] Post requests always uses application/x-www-form-urlencoded content-type
+I am trying to use the SWT browser to talk to a webserver that is expecting application/json content.
+However, when I 'post' data (using the browser API setURL(String, String, String[])) method, it *always* sets my content-type to application/x-www-form-urlencoded.
+Even if I specify a different content-type in the headers field, it gets replaced with application/x-www-form-urlencoded.
+This is happening in both Mozilla and Webkit (on Linux/GTK), I don't know about other platforms.
+It appears that both browser implementations will always set this field regardless of what other headers are set.
+Maybe we can check if these fields are already set, and use the existing values if so.
+(This appears to be the same for content-length too, although that's likely not as serious).

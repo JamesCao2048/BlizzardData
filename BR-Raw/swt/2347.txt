@@ -1,0 +1,16 @@
+VerifyEvent.doit=false does not work for Text
+I have the following code within a view, where st is a StyledText widget:
+st.addVerifyKeyListener(new VerifyKeyListener() {
+public void verifyKey(VerifyEvent e) {
+if ((0x20
+<= e.character) && (e.character
+<= 0x7E) && ((e.stateMask == SWT.NONE) || (e.stateMask == SWT.SHIFT))) {
+commandEntry.append(Character.toString(e.character));
+commandEntry.setFocus();
+e.doit = false;
+}
+}
+});
+When run on Mac OS 10.4, Eclipse 3.1.2 or 3.2, this produces two copies of the character in commandEntry (which is a Text widget).
+Commenting out the commandEntry.append() line causes it to produce only one character.
+This snippet works properly on Windows XP.

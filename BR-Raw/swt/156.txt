@@ -1,0 +1,2 @@
+Use gtk_visual_get_depth instead of GdkVisual.depth
+Accessing struct members fails on GTK 3.x or on 2.x with G_SEAL enabled.

@@ -1,0 +1,3 @@
+Splash screen is huge on aix.ppc and linux.ppc
+The Eclipse splash screen on the ppc platforms (aix and linux) show initially with a proper size, but they become huge after SWT starts up.
+On AIX, the build crashes.

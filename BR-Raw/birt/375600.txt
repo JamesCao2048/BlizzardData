@@ -1,0 +1,4 @@
+Bug 375600 Misspelled constant name: IScriptFunctionContext.FUNCITON_BEAN_NAME
+Build Identifier: In BIRT 3.7.2 IScriptFunctionContext has a constant called FUNCITON_BEAN_NAME.
+It should be renamed to FUNCTION_BEAN_NAME and the current name deprecated.
+Reproducible: Always Steps to Reproduce: View JavaDoc for IScriptFunctionContext.

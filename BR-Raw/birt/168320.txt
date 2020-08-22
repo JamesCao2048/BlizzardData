@@ -1,0 +1,9 @@
+Bug 168320 MaxRowsOfRecords of birt:report doesn't work.[0603]
+Description: MaxRowsOfRecords of birt:report doesn't work.
+Build number:2.2.0.v20061216 Steps to reproduce: 1.New a jsp file based on birt template, input content in body as :
+<birt:report id="1" contextRoot= "wtp_jsp_tags" reportDesign="max_rows.rptdesign" maxRowsOfRecords="3" height="600">
+</birt:report> note: report design is attached.
+2.Preview the jsp file Expected result: Only display 3 data rows for table, list and chart.
+Actual result: All data display out.
+This property works well in birt:viewer tag.
+Error log:N/A

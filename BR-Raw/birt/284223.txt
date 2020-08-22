@@ -1,0 +1,28 @@
+Bug 284223 TVT35:TCT213: ESP - Extra "Bidi Settings" appears in english
+<response_by> Emilio Cifuentes at 2009.07.21.06.21.48
+</response_by> NLS Build Label: 20090719 Language: Spanish Steps to recreate the problem 1) Expand BIRTproject in the Navigator, right click on Empty_Report.rptdesign and select Open.
+2) In the Data Explorer, right click on Data Sources and click New Data Source.
+3) Select the option JDBC Data Source and click Next.
+4) Verify the red circled areas on the panel below are correctly displayed.
+Problem description An additional button "Bidi Settings" appears in english.
+See attached screen capture.
+Thanks and regards Emilio
+<response_by> Ma Xiao Long at 2009.07.21.07.18.43
+</response_by> CHS has the same problem.
+<response_by> Katia Milekhina at 2009.07.21.07.27.11
+</response_by> Same for Russia in 20090720 build with PII5a integrated.
+Regards, Katia
+<response_by> maria cristina caroletti at 2009.07.21.08.08.07
+</response_by> Same for ITA.
+Alessandro
+<response_by> Manuel Ferro at 2009.07.21.09.56.25
+</response_by> Same for Portuguese.
+<response_by> Holger Schicht at 2009.07.21.16.47.55
+</response_by> Hi, Same problem for German.
+Thanks, Holger
+<response_by> MiJung Cho at 2009.07.22.00.22.45
+</response_by> Hello, Same for korean.
+Thanks.
+MJ
+<response_by> Kit Lo at 2009.07.22.00.23.27
+</response_by> This article was reassigned from Category:''TVT/Testing,Inbox''.

@@ -1,0 +1,2 @@
+Bug 145022 Provide a utility method to help GUI enhance aggregate on.
+DtE will provide a method hasAggregation(String expression) in org.eclipse.birt.core.data.ExpressionUtil, and the return value will be true when the expression is a valid JS expression and it has aggregation defined.

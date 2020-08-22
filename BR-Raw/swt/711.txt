@@ -1,0 +1,46 @@
+(Mac) FontDialog does not return color
+The FontDialog has a panel to choose a color.
+The chosen color is not returned via getRGB().
+Looking at the source code, the rgb-field is never touched besides the setter.
+Nevertheless the color is somehow set by platform-means.
+That's why the snippet below works using text-widget.
+It does not work using StyledText.
+(snippet from  http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/FontDialogExample.htm )
+public class FontDialogExample {
+Display d;
+Shell s;
+FontDialogExample() {
+d = new Display();
+s = new Shell(d);
+s.setSize(400, 400);
+
+s.setText("A FontDialog Example");
+s.setLayout(new FillLayout(SWT.VERTICAL));
+final Text t = new Text(s, SWT.BORDER | SWT.MULTI);
+final Button b = new Button(s, SWT.PUSH | SWT.BORDER);
+b.setText("Change Font");
+b.addSelectionListener(new SelectionAdapter() {
+public void widgetSelected(SelectionEvent e) {
+FontDialog fd = new FontDialog(s, SWT.NONE);
+fd.setText("Select Font");
+fd.setRGB(new RGB(0, 0, 255));
+FontData defaultFont = new FontData("Courier", 10, SWT.BOLD);
+fd.setFontData(defaultFont);
+FontData newFont = fd.open();
+if (newFont == null)
+return;
+t.setFont(new Font(d, newFont));
+t.setForeground(new Color(d, fd.getRGB()));
+}
+});
+s.open();
+while (!s.isDisposed()) {
+if (!d.readAndDispatch())
+d.sleep();
+}
+d.dispose();
+}
+public static void main(String[] argv) {
+new FontDialogExample();
+}
+}

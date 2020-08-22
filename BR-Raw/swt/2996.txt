@@ -1,0 +1,4 @@
+Scale widget and SWT.PAGE_UP key event
+A horizontal Scale widget increments it's selection value on SWT.PAGE_DOWN and
+decrements on SWT.PAGE_UP.
+This is the reverse of what's supposed to happen on Windows XP.

@@ -1,0 +1,2 @@
+Bug 278709 Report item can not be selected in Auto layout if drag it into a cell of grid
+Description: Report item can not be selected in Auto layout if drag it into a cell of grid Build number: 2.5.0.v20090602-0630 Steps to reproduce: 1, New a Auto layout report 2, Insert a crosstab into report layout 3, Insert a 3*3 grid into report layout 4, Drag the crosstab into one cell of the grid 5, Try to select the crosstab Expected result: The crosstab can be selected as doing this in Fix layout report Actual result: The crosstab can not be selected Error log:

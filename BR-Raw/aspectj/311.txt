@@ -1,0 +1,22 @@
+Declare Soft not Affecting Explicit Adviceexecution
+The following aspect should compile successfully:
+import java.io.IOException;
+public aspect SoftenAdvice {
+declare soft: IOException: within(SoftenAdvice) && adviceexecution();
+before() : execution(* main(..)) {
+throw new IOException("test");
+}
+public static void main(String args[]) {
+}
+}
+But both 1.5.0M2 and HEAD (from 2 days ago) give this output:
+C:develscratcherr>ajc SoftenAdvice.aj
+C:develscratcherrSoftenAdvice.aj:7 [error] Unhandled exception type
+IOExcept
+ion
+throw new IOException("test");
+^^^^^^^^^^^^^^^^^^^^
+1 error
+However if you change the declare soft to be the following, it correctly
+softens at the advice execution join point.
+declare soft: IOException: within(SoftenAdvice) && !withincode(* *(..));

@@ -1,0 +1,54 @@
+lots of crashes since M8
+I20040428 (but seen since 20040413):
+Eclipse crashes on me frequently.
+No exact steps.
+Disk access ( bug 38305 ) seems
+to play a role, but not sure.
+I tried different vm combinations.
+It seems that specifying the
+-Xdebug vm flag
+made crashes less frequent.
+The dumps look like the one below (other threads not
+included).
+It happens more often under KDE than Gnome, but it happens under both
+platforms.
+I use Mist as the Gnome theme, which has proven to be the least
+problematic (see  bug 38305  and  bug 36308 ).
+Unhandled exception
+Type=GPF vmState=0xffffffff
+Target=20040121 (Linux 2.4.20-30.9 x86)
+eax: 0x63726b74   ebx: 0x41523ba4   ecx: 0x4248b7e8  edx: 0x085ee4d8
+esi: 0x63726b74   edi: 0x085ee4d8   ebp: 0xbfffea30  esp: 0xbfffe9f8
+es: 0x0000002b   ds: 0x0000002b   eip: 0x41512f12  eflags: 0x00010206
+cs: 0x00000023   ss: 0x0000002b
+
+Thread: main (priority 6) (LOCATION OF ERROR)
+0092 org/eclipse/swt/internal/gtk/OS.gdk_window_get_parent(I)I  (@476890fa)
+020d org/eclipse/swt/widgets/Display.eventProc(II)I  (@46f7c011)
+0084 org/eclipse/swt/widgets/Display.readAndDispatch()Z  (@476a2488)
+0009
+org/eclipse/ui/internal/Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V
+006d org/eclipse/ui/internal/Workbench.runUI()I
+000b
+org/eclipse/ui/internal/Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I
+0002
+org/eclipse/ui/PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I
+0069
+org/eclipse/ui/internal/ide/IDEApplication.run(Ljava/lang/Object;)Ljava/lang/Object;
+0094
+org/eclipse/core/internal/runtime/PlatformActivator$1.run(Ljava/lang/Object;)Ljava/lang/Object;
+0053
+org/eclipse/core/runtime/adaptor/EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;
+001a
+org/eclipse/core/runtime/adaptor/EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;
+NATV
+sun/reflect/NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+0072
+sun/reflect/NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+0006
+sun/reflect/DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+007e
+java/lang/reflect/Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+00af org/eclipse/core/launcher/Main.basicRun([Ljava/lang/String;)Ljava/lang/Object;
+0004 org/eclipse/core/launcher/Main.run([Ljava/lang/String;)I
+0008 org/eclipse/core/launcher/Main.main([Ljava/lang/String;)V

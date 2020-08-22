@@ -1,0 +1,12 @@
+Tree crash calling OS.object_getInstanceVariable()
+Created  attachment 216436   [details]
+patch against master (4.2 branch)
+This is a alternative fix for  bug#378846 .
+This patch fixes the crashes by making sure the tree item handle is valid until all items in the tree have received the SWT.Dispose callback.
+The tree item handle will be valid until the program returns to the event loop (i.
+e.
+when the current NSAutoReleasePool is released).
+This is more consistent with the other platforms.
+For example: when running the snippet from  bug#378846  with the current fix, the top item in SWT.Dispose event handler is null on Mac, but it is a disposed item on Windows/GTK.
+This is not the case with this patch.
+I believe it is too risk to try this fix for 3.8/4.2, but we should consider it after will ship.

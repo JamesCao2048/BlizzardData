@@ -1,0 +1,9 @@
+Coolbar - odd dispose behavior
+Run the attached test case.
+Press the Remove button.
+
+The remove action will remove the first coolitem.
+First the coolitem's
+associated toolbar is disposed, then it executes setControl(null) for the
+coolitem, then it disposes the coolitem.
+Note that the setControl(null) method cause an SWTException, which is odd.

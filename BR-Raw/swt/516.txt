@@ -1,0 +1,13 @@
+setUrl() call navigates to about:blank prior to real url breaks IEWebHistory
+Build Identifier: Eclipse 3.6.1
+setUrl() API navigates to about:blank first before goes to real url.
+This breaks WebHistory if application calls setUrl("about:blank") first follow by another call setUrl("another url").
+This only failed on IE based WebBrowser.
+Propose fix:
+IE.java
+setUrl()
+Change
+if (_getUrl().length() == 0 ) {
+to
+if (_getUrl().length() == 0 && ABOUT_BLANK.equalsIgnoreCase(url)) {
+Reproducible: Always

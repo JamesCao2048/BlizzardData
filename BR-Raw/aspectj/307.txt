@@ -1,0 +1,4 @@
+AjTypeSystem interface cannot be used in LTW environment
+This API uses unqualified calls to Class.forName(). See  bug 116229  for more
+details. The attached patches better simulate a run-time environment and a fix
+that uses the class loader associated with the type provided by the user.

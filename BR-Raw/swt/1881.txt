@@ -1,0 +1,75 @@
+getItemCount() incorrect in Vista for VIRTUAL trees
+When you ask an item's parent for it's count on Vista it will give you the count of the number of items that have had the SetData callback called, not the item count set by setItemCount().
+In the snipped below when we change from a flat list to a tree we will get incorrect parent item counts when it is queried.
+This is a serious issue for the tree viewer which relies on the parent's item count to determine reuse of widgets.
+Note that this does not happen the first time to bring this up
+- you have to switch from tree with a node expanded to flat and back again.
+package virtualtest;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeItem;
+public class TestVirtualTree {
+String TREE_LABEL = "Tree";
+String FLAT_LABEL = "Flat";
+boolean showingTree = true;
+public TestVirtualTree(Shell shell) {
+shell.setLayout(new GridLayout());
+final Button button = new Button(shell, SWT.PUSH);
+button.setText(TREE_LABEL);
+final Tree tree = new Tree(shell, SWT.VIRTUAL);
+tree.setLayoutData(new GridData(400, 600));
+tree.setItemCount(100);
+tree.addListener(SWT.SetData, new Listener() {
+@Override
+public void handleEvent(Event event) {
+TreeItem item = (TreeItem) event.item;
+int index = event.index;
+if (item.getParentItem() == null) {
+item.setItemCount(showingTree ?
+10 : 0);
+item.setText(" ITEM " + String.valueOf(index)
++ " count =  "
++ String.valueOf(item.getItemCount()));
+} else {
+item.setText(" ITEM "
++ String.valueOf(index)
++ " parent count =  "
++ String.valueOf(item.getParentItem()
+.getItemCount()));
+}
+}
+});
+button.addSelectionListener(new SelectionAdapter() {
+@Override
+public void widgetSelected(SelectionEvent e) {
+button.setText(showingTree ?
+FLAT_LABEL : TREE_LABEL);
+showingTree = !showingTree;
+tree.clearAll(true);
+}
+});
+}
+/**
+* @param args
+*/
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+new TestVirtualTree(shell);
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

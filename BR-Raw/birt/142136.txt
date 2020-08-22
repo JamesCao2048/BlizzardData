@@ -1,0 +1,3 @@
+Bug 142136 [Performance improvements] Optimize storing data into report document
+Presently DtE will store all binding column data into report document for each row, but it will also store some unnecessary data such as the aggregation value of one group.
+Because the aggregation value will be changed when moving the group, not moving on row, such kind of data need not be stored on each row.

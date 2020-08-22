@@ -1,0 +1,6 @@
+Bug 166946 [regression]Format is added behind integer value in parameter dialog.[0705]
+Description: Format is added behind integer value in parameter dialog.
+Build number:2.2.0.v20061206 Steps to reproduce: 1.New a report parameter, integer type, text-box, default value is 3, click Change button to change format as Fixed.
+2.Preview Expected result: Display 3.00 as display text in parameter dialog.
+Actual result: Display 3Fixed.
+Error log:N/A

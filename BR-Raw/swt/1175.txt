@@ -1,0 +1,6 @@
+next annotation short cut (command+.) broke
+build 20090212-2000
+I like to change the behaviour of next/previous annotation from the default (error, taks) to occurrences (you can use the arrow down chevron to do that).
+Then I use command + "." to move to the next occurrences of a variable in a method or class.
+This used to work and now is broken.
+For previous annotation the shortcut is command + shift + ".", which also used to work but now it runs next annotation instead.

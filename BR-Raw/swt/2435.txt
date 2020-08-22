@@ -1,0 +1,5 @@
+[64] SWT Snippet24 (default selection) does not work on amd64
+I am using an AMD 64bit machine and Eclipse 3.2M6 on linux_gtk.
+I run the SWT snippet 24 and pressing CR in either the text field or combo does nothing.
+My actual code used the same technique in order to listen for default selection events on text fields and it worked on 3.2M5 on a 32bit linux_gtk system.
+The same code did fail on 3.2M4 and 3.2M6 on a 64bit linux_gtk system (the default selection part).

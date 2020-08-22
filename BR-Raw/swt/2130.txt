@@ -1,0 +1,9 @@
+DBCS3.3: corruptions in editor on WindowsVista
+If "Show whitespace characters" is turned on, editor display corruption by scrolling or double clicking.
+Driver: eclipse-SDK-3.3-I20070313-1051, Sun JVM 1.5.0_11.
+WindowsVista Business Japanese (Windows Aero is turned on)
+steps to recreate
+1- turn on "Show whitespace characters" at Preferences > General > Editors > Text Editors
+2- open a file and scroll or double click on the editor
+Expected result
+No corruption.

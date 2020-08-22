@@ -1,0 +1,9 @@
+CLabel onDispose not called
+Build Identifier: M20090917-0800
+It appears from the source code that in CLabel, onDispose() is never called.
+It appears that the intention is to do so during the disposal of the control, because disposeListener is initialized to do so, but it does not seem that the listener is actually used.
+Reproducible: Always
+Steps to Reproduce:
+1.Examine source code for CLabel
+2.note that disposeListener is initialized, but not used
+3.

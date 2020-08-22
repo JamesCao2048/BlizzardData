@@ -1,0 +1,7 @@
+Bug 183809 PDF emitter does not render URLs with specified target correctly
+When the hyperlink has specified "_blank" target it's rendered with PdfAction(hyperlink) but when the target is "_parent" or "_top" or "_self" it's rendered with PdfAction.gotoRemotePage(hyperlink, bookmark, false, false) which causes something like "file does not exist" error in PDF viewer.
+The following change in PDFEmitter from: private PdfAction createPdfAction(String hyperlink, String bookmark, String target, int type) { if ("_blank".equalsIgnoreCase(target)) //$NON-NLS-1$ // Opens the target in a new window.
+{ return new PdfAction(hyperlink); } else ...
+to: private PdfAction createPdfAction(String hyperlink, String bookmark, String target, int type) { if ("_top".equalsIgnoreCase(target) || //$NON-NLS-1$ "_parent".equalsIgnoreCase(target) || //$NON-NLS-1$ "_blank".equalsIgnoreCase(target) || //$NON-NLS-1$ "_self".equalsIgnoreCase(target)) //$NON-NLS-1$ // Opens the target in a new window.
+{ return new PdfAction(hyperlink); } else ...
+works for me.

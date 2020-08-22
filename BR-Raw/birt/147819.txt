@@ -1,0 +1,2 @@
+Bug 147819 Dynamic parameter, if value column datas include null datas, preview, system throws exception
+Dynamic parameter, if value column datas include null datas, preview, system throws exception Step: data source: sample DB data set: select * from CLASSICMODELS.CUSTOMERS 1.Create a dynamic parameter 2.Display type select List Box, value columm select "State"; display text select "CUSTOMERNAME"; 3.Preview in html Actual Results: 1.System throws Http status 500 exception

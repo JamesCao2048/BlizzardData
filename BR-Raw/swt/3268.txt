@@ -1,0 +1,40 @@
+In ScrolledComposite, vertical scrollbar does not appear
+"Jay Wootton" wrote in eclipse.platform.swt newsgroup:
+> I'm using ScrolledComposite but my vertical scroll bar never appears.
+In
+debugging the ScrolledComposite class I think I see the problem.
+In the
+needVScroll() method, the data member 'expandHorizontal' is checked.
+I
+believe needVScroll() should be checking the 'expandVertical' data member.
+To
+get around this problem I must call setExpandHorizontal( false ), then my
+vertical scroll bar appears.
+But I need to call setExpandHorizontal( true )
+because I need the content to occupy the entire width.
+>
+> Has anyone else seen this problem?
+>
+> Thanks,
+>
+- Jay
+>
+> private boolean needVScroll(Rectangle contentRect, boolean hVisible) {
+> Scroll bar vBar = getVerticalBar();
+> if (vBar == null) return false;
+>
+> Rectangle hostRect = getBounds();
+> int border = getBorderWidth();
+> hostRect.height
+-= 2*border;
+> ScrollBar hBar = getHorizontalBar();
+> if (hVisible && hBar != null) hostRect.height
+-= hBar.getSize().y;
+>
+> //!!!!!!! The following 2 lines should be referencing expandVertical instead
+of expandHorizontal.
+> if (!expandHorizontal && contentRect.height > hostRect.height) return true;
+> if (expandHorizontal && minHeight > hostRect.height) return true;
+> return false;
+> }
+>

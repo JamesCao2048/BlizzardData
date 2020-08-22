@@ -1,0 +1,20 @@
+whole OS freezes when tree using owner draw renders BORDER_DOT rectangle around long line
+Build Identifier: 20100218-1602
+When using regular expression and a long line (> 10k) is matched the computer freezes when eclipse tries to display it in the search view.
+A hard restart is required.
+The problem is not with the long line itself but the long matched region.
+The OS freezes at the moment of expanding the found match
+- just after the search completes.
+I have stumbled upon the issue by searching in a project containing minified JS files.
+One of the files by chance matched the regular expression.
+This is a major issue since the user can't recover and it is not limited to eclipse only as the whole OS locks up.
+Tried it in Windows 2000, XP, Vista on different computers, happens even in Virtual PC.
+VMWare 6.5 locks as well but recovers after a couple of minutes.
+Reproducible: Always
+Steps to Reproduce:
+1.Create a file containing a single long line (15K)
+2.Open File Search
+3.Type ".*" in "Containing text"
+4.Check regular expression checkbox
+5.Type the file name for filter in "File name patterns"(the long file should be first match)
+5.Click search

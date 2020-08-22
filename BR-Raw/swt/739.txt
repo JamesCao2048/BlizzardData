@@ -1,0 +1,22 @@
+[Image Loading] What about wrong colours while saving IMAGE_BMP images via ImageLoader?
+User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10
+Build Identifier:
+There are some really old bug reports according the ImageLoader for different platforms (Linux/GTK, OS X)
+- and their status is still NEW:
+<a name="b6172" href="show_bug.cgi?id=6172">6172</a>
+<a name="b37494" href="show_bug.cgi?id=37494">37494</a>
+<a name="b228831" href="show_bug.cgi?id=228831">228831</a>
+BTW: this one is also still open for Win2K:
+<a name="b134663" href="show_bug.cgi?id=134663">134663</a>
+Reproducible: Always
+Steps to Reproduce:
+Display display = Display.getDefault();
+GC gc = new GC(display);
+Image snapshot = new Image(display, display.getBounds());
+gc.copyArea(snapshot, 0, 0);
+ImageLoader loader = new ImageLoader();
+loader.data = new ImageData[]{snapshot.getImageData()};
+loader.save("snapshot.bmp", SWT.IMAGE_BMP);
+gc.dispose();
+image.dispose();
+//display.dispose();

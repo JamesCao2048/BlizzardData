@@ -1,0 +1,34 @@
+NPE in reflect implementation
+Proposed fix (I'd like input on how to best add test cases for this so I can
+submit a tested patch); I believe this will work because if you uncomment the
+work-around line, it works):
+Change line 63 from:
+method = declaringType.getDeclaredMethod
+(getName(),getParameterTypes());
+to
+method = getDeclaringType().getDeclaredMethod
+(getName(),getParameterTypes());
+Test source:
+package reflect;
+import org.aspectj.lang.*;
+import org.aspectj.lang.reflect.*;
+import java.lang.reflect.*;
+aspect Test {
+before() : call(* *(..)) && !within(Test) {
+MethodSignature sig = (MethodSignature)thisJoinPoint.getSignature();
+//sig.getDeclaringType(); // uncomment to work-around
+Method method = sig.getMethod();
+}
+}
+public class MinimalErr {
+public static void main(String args[]) {
+try {
+Inner.foo();
+} catch (Throwable t) {
+t.printStackTrace();
+}
+}
+public static class Inner {
+public static void foo() {}
+}
+}

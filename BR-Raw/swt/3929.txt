@@ -1,0 +1,8 @@
+Coolbar - very bad results when setting two rows with Common-Controls 6.0
+build 20020924, Running with manifest (common-control 6.0.0.0)
+- Open Eclipse
+- on perspective 'A', Drag a CoolItem 'X' to the next row
+- Change to another perspective (note the blank row in the CoolBar)
+- Run 'Reset Toolbar Layout', the blank row will go way
+- Return to the perspective 'A', the CoolItem 'X' has disappear
+First thing that comes to my mind: computeSize is broken.

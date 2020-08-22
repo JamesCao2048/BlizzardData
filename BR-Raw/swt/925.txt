@@ -1,0 +1,21 @@
+SWT.MULTI does not work for SWT Text control using Mac OS X Cocoa.
+Created  attachment 141963   [details]
+Zip file of several Java source classes.
+Nothing else.
+SWT.MULTI does not work for SWT Text control using Mac OS X Cocoa SWT library in one moderately complex situation which is provided.
+The Java code uses SWT directly.
+I am attempting to create a large editable text control (300, 300 pixels or so) with SWT.MULTI
+-
+Works fine with non-Cocoa 3.4 library.
+Works fine without SWT.MULTI using Cocoa 3.5 library.
+Breaks badly with SWT.MULTI and org.eclipse.swt.cocoa.macosx_3.5.0.v3550b.jar.
+I've attached a zip file with several classes.
+I apologize that I couldn't make it smaller.
+To test, put the source files into a Java project in the package named "ext".
+Run main() in "ext.Test" without any parameters, specifying the above Cocoa SWT jar in the build path.
+When you attempt to type characters they show up at the wrong place, outside of the control.
+In source file DesktopChannel.java at line 178, uncomment the Text instantiation line to instead use only SWT.BORDER as the style, and comment out the next line using SWT.MULTI.
+All works fine.
+Interestingly, if you don't give focus to the Text control, it gets even stranger with SWT.MULTI.
+Comment out the "c.setFocus(timeNotes);" statement at line 38 of TimeExpenseEntryFunction.java and it doesn't work at all with SWT.MULTI, but works fine without SWT.MULTI.
+Again it all works fine using a non-Cocoa SWT jar.

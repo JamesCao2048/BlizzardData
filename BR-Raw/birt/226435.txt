@@ -1,0 +1,5 @@
+Bug 226435 Model lose the precision.
+1:New a report design file.
+2:Insert a table(3*3); 3:Select first column and drag the column to the min width(20 pix).
+4:UI code set the value is 0.20833333333333334 in.
+5:Save the file, and open the file, the column width value is 0.208333333 in The expect value is 0.20833333333333334 in.

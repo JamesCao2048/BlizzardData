@@ -1,0 +1,9 @@
+ExpandItem (of the ExpandBar) returns wrong header height in Gnome (Debian Linux)
+Build ID: M20060921-0945
+Steps To Reproduce:
+Compare the value returned by ExpandItem#getHeaderHeight() to what it really is in the GUI.
+More information:
+For me ExpandItem#getHeaderHeight() returns 17px, while it's actually 21px (I made a screenshot and counted the pixels myself).
+I need the header height to calculate the available space in order to "maximize" an ExpandItem.
+When I compensate the difference, my calculations work as expected (like they do in Windows without the compensation).
+And no, I did not forget ExpandBar#getSpacing().

@@ -1,0 +1,49 @@
+[64] Add External JARs in Java Build Path fails consistently
+Build ID: I20080609-1311
+Steps To Reproduce:
+1.Create a new Workspace
+2.Create a Java Project
+3.Go to Properties | Build Path and try to add an external jar.
+4.Nothing happens, but an exception is logged in the Error Log.
+More information:
+Note: 64-bit build and 64-bit W2K3 OS.
+And I have removed that p2 package.
+eclipse.buildId=I20080207-1530
+java.version=1.6.0_03
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sv_SE
+Command-line arguments:
+-os win32
+-ws win32
+-arch x86_64
+Error
+Tue Jun 17 09:30:33 CEST 2008
+Unhandled event loop exception
+java.lang.NoSuchMethodError: OFNHookProc
+at org.eclipse.swt.internal.Callback.bind(Native Method)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:117)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:72)
+at org.eclipse.swt.internal.Callback.<init>(Callback.java:54)
+at org.eclipse.swt.widgets.FileDialog.open(FileDialog.java:334)
+at org.eclipse.jdt.ui.wizards.BuildPathDialogAccess.chooseExternalJAREntries(BuildPathDialogAccess.java:437)
+at org.eclipse.jdt.internal.ui.wizards.buildpaths.LibrariesWorkbookPage.openExtJarFileDialog(LibrariesWorkbookPage.java:783)
+at org.eclipse.jdt.internal.ui.wizards.buildpaths.LibrariesWorkbookPage.libaryPageCustomButtonPressed(LibrariesWorkbookPage.java:255)
+at org.eclipse.jdt.internal.ui.wizards.buildpaths.LibrariesWorkbookPage.access$0(LibrariesWorkbookPage.java:248)
+at org.eclipse.jdt.internal.ui.wizards.buildpaths.LibrariesWorkbookPage$LibrariesAdapter.customButtonPressed(LibrariesWorkbookPage.java:197)
+at org.eclipse.jdt.internal.ui.wizards.dialogfields.TreeListDialogField.buttonPressed(TreeListDialogField.java:168)
+at org.eclipse.jdt.internal.ui.wizards.dialogfields.TreeListDialogField.doButtonSelected(TreeListDialogField.java:386)
+at org.eclipse.jdt.internal.ui.wizards.dialogfields.TreeListDialogField.access$2(TreeListDialogField.java:382)
+at org.eclipse.jdt.internal.ui.wizards.dialogfields.TreeListDialogField$2.widgetSelected(TreeListDialogField.java:347)
+at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3823)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3422)
+at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+at org.eclipse.jface.window.Window.open(Window.java:801)
+at org.eclipse.ui.dialogs.PropertyDialogAction.run(PropertyDialogAction.java:157)
+at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:583)
+at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:500)
+at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+at org.eclipse.swt.widgets.EventTable.sendEvent(Ev

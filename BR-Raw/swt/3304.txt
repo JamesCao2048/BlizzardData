@@ -1,0 +1,32 @@
+ON_TOP shell - can't setFocus to content
+I20040527
+Run the following example and press the button.
+Shell pops up.
+On all platforms except Mac OS X, the list has focus and you
+can arrow around in the list.
+On Mac OS X, you need to tab into the list.
+public static void main (String [] args) {
+final Display display = new Display ();
+Shell shell = new Shell (display);
+shell.setLayout(new RowLayout());
+Button b = new Button(shell, SWT.PUSH);
+b.setText("new ON_TOP shell");
+b.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event e) {
+Shell shell2 = new Shell(display, SWT.ON_TOP);
+shell2.setLayout(new FillLayout());
+List l = new List(shell2, SWT.BORDER);
+l.add("hello");
+l.add("world");
+shell2.setSize(200, 200);
+shell2.setVisible(true);
+l.setFocus();
+}
+});
+shell.pack();
+shell.open ();
+while (!shell.isDisposed ()) {
+if (!display.readAndDispatch ()) display.sleep ();
+}
+display.dispose ();
+}

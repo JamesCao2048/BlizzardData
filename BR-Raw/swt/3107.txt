@@ -1,0 +1,85 @@
+Pixel Corruption caused by Tracker on a Composite with children
+(Platform:  WinXP-SP2, SWT 3.0.1 (swt-win32-3063.dll))
+The following Snippet uses a Tracker(SWT.RESIZE) for rubber-band selections of
+the Composite's  children.
+The selection occurs in terms of changing the background color of the children.
+If yo select some of the chilren with the tracker, and then downsize the
+tracker so that they are again deselected, the pixel coruption occurs.
+(The tracker leaves trace-marks on the children).
+On the Snippet below, children[i].redraw in void changeSelections(Rectangle)
+has no effect and does not redraw the whole area of the child.
+Possible work-around:
+Changing the above mentioned line to :
+children[i].redraw(0, 0,
+children[i].getBounds().width,
+children[i].getBounds().height, true);
+fixes the problem.
+Yet, I think that the Tracker does not show the expected behaviour in the first
+place...
+/* ******** TrackerSnippet.java ********* */
+import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+public class TrackerSnippet
+{
+private boolean isDragging = false;
+private Shell shell;
+public static void main(String[] args)
+{
+TrackerSnippet trackerSnippet = new TrackerSnippet();
+}
+public TrackerSnippet()
+{
+Display display = new Display();
+shell = new Shell(display, SWT.SHELL_TRIM);
+shell.setText("TrackerSnippet");
+shell.setBounds(50, 50, 500, 300);
+RowLayout rl = new RowLayout(SWT.HORIZONTAL);
+rl.pack = true;
+rl.wrap = true;
+shell.setLayout(rl);
+for (int i=0; i<10; i++)
+createChild(shell);
+shell.addMouseListener(new MouseAdapter()
+{
+public void mouseDown(MouseEvent e)
+{
+isDragging = true;
+}
+public void mouseUp(MouseEvent e)
+{
+isDragging = false;
+}
+
+});
+shell.addMouseMoveListener(new MouseMoveListener()
+{
+public void mouseMove(MouseEvent e)
+{
+if (isDragging)
+trackIt(e.x, e.y);
+}
+});
+
+shell.layout(true);
+shell.open();
+
+while(!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+private void createChild(Composite parent)
+{
+final Composite child = new Composite(parent, SWT.NONE);
+child.setLayout(new FillLayout());
+final Canvas iconCanvas = new Canvas(child, SWT.NO_FOCUS |
+SWT.NO_REDRAW_RESIZE | SWT.NO_BACKGROUND | SWT.NO_MERGE_PAINTS);
+final Image icon = parent.getDisplay().getSystemImage(SWT.ICON_WARNING);
+iconCanvas.addPaintListener(new PaintListener()
+{
+public void paintControl(PaintEvent e)

@@ -1,0 +1,5 @@
+BIDI: owner draw: tool tips don't work with BIDI
+N2008040417-2000.
+In the upcoming build JDT now has support to render BIDI string labels (with the special chars).
+This also works when colored labels are enabled, however, the tool tip is not honoring those special chars and hence the tool tip is still broken.
+Works if colored labels are disabled.

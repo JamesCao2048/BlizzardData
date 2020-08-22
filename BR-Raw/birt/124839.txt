@@ -1,0 +1,2 @@
+Bug 124839 Used deprecated function
+The XML file ODA uses a deprecated function: public void close( ) { if( this.spThread != null ) this.spThread.stop(); } The function stop() of thread is deprecated.

@@ -1,0 +1,45 @@
+Crash on Cocoa
+Process:         eclipse [1012]
+Path:            /Users/chrisaniszczyk/eclipses/eclipse-SDK-3.5M5/eclipse/Eclipse.app/Contents/MacOS/eclipse
+Identifier:      org.eclipse.eclipse
+Version:         3.4 (3.4)
+Code Type:       X86 (Native)
+Parent Process:  launchd [1]
+Date/Time:       2009-01-27 14:09:34.311
+-0600
+OS Version:      Mac OS X 10.5.6 (9G55)
+Report Version:  6
+Exception Type:  EXC_BAD_ACCESS (SIGBUS)
+Exception Codes: KERN_PROTECTION_FAILURE at 0x0000000000000004
+Crashed Thread:  0
+Application Specific Information:
+Java information:
+Version: Java HotSpot(TM) Client VM (1.5.0_16-133 mixed mode)
+Virtual Machine version: Java HotSpot(TM) Client VM (1.5.0_16-133) for macosx-x86, built on Aug 27 2008 11:00:20 by root with gcc 4.0.1 (Apple Inc.
+build 5465)
+Exception type: Bus Error (0xa) at pc=0x3cd30c4f
+Current thread (0x00601500):  JavaThread "main" [_thread_in_native, id=-1607416032]
+Stack: [0xbf800000,0xc0000000)
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.cocoa.OS.objc_msgSend(IILorg/eclipse/swt/internal/cocoa/NSRange;)I+0
+j  org.eclipse.swt.internal.cocoa.NSText.setSelectedRange(Lorg/eclipse/swt/internal/cocoa/NSRange;)V+8
+j  org.eclipse.swt.widgets.Spinner.setSelection(IZZZ)V+293
+j  org.eclipse.swt.widgets.Spinner.setSelection(I)V+29
+j  org.eclipse.pde.internal.ui.launcher.AbstractPluginBlock$5.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+145
+J  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;Z)V
+J  org.eclipse.swt.widgets.Display.runDeferredEvents()Z
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+J  org.eclipse.jface.window.Window.runEventLoop(Lorg/eclipse/swt/widgets/Shell;)V
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  org.eclipse.jface.window.Window.open()I+49
+j  org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.open()I+36
+j  org.eclipse.debug.ui.DebugUITools$1.run()V+106
+J  org.eclipse.swt.custom.BusyIndicator.showWhile(Lorg/eclipse/swt/widgets/Display;Ljava/lang/Runnable;)V
+j  org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(Lorg/eclipse/swt/widgets/Shell;Lorg/eclipse/jface/viewers/IStructuredSelection;Ljava/lang/String;Lorg/eclipse/core/runtime/IStatus;)I+25
+j  org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(Lorg/eclipse/swt/widgets/Shell;Lorg/eclipse/jface/viewers/IStructuredSelection;Ljava/lang/String;)I+4
+j  org.eclipse.debug.ui.actions.OpenLaunchDialogAction.run()V+53
+j  org.eclipse.jface.action.Action.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+1
+j  org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Lorg/eclipse/swt/widgets/Event;Z)V+354
+j  org.eclipse.jface.action.ActionContributionItem.access$2(Lorg/eclipse/jface/action/ActionContributionItem;Lorg/eclipse/s

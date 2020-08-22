@@ -1,0 +1,5 @@
+setting Device.DEBUG before creating Display fails silently
+- take any snippet, such as Snippet1
+- insert as its first line: "Device.DEBUG = true;"
+- run the app, it will fail silently instead of opening
+- this appears to be a result of the changes that were made to Color last week

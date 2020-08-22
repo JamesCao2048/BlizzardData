@@ -1,0 +1,8 @@
+clipping of PaintItem events for Trees is inconsistent across platforms
+If I run the attached snippet the clipping that is printed for the PaintItem event on Linux only includes the content area but not the entire cell whereas the EraseItem event has the full cell:
+Erase: x=   0,y=   0,w=1200,h=  23   Clipping: x=   0,y=   0,w=1200,h=  23
+Paint: x=  21,y=   1,w=  45,h=  21   Clipping: x=  19,y=   1,w=1180,h=  21
+If I run the same example on Mac OS X (carbon) I get the following output.
+The clipping for EraseItem and PaintItem are consistent in this case covering the entire cell:
+Erase: x=  0,y=  0,w=800,h= 18   Clipping: x=  0,y=  0,w=800,h= 18
+Paint: x= 16,y=  0,w= 44,h= 18   Clipping: x=  0,y=  0,w=800,h= 18

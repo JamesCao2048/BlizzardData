@@ -1,0 +1,11 @@
+Display.post(Event) not working for char key events SWT.TAB, SWT.ESC, SWT.DEL and SWT.BS
+I20050209-0800
+Not sure whether this really is a bug since Display.post(Event) as spec'ed it
+may return false: I filed a bug to clarify whether this return value means "not
+supported" or "try again later" but got no answer yet ( bug 84665 ).
+When using Display.post(Event) we found out that the following character key
+events aren't injected under Linux-GTK: SWT.TAB, SWT.ESC, SWT.DEL and SWT.BS.
+While we found workarounds for ESC (Alt+F4) and TAB (navigate via mnemonics) we
+could not find anything similar for BS or DEL.
+Injecting these events is important to use in order to performance test our
+editors as close to the real world as possible.

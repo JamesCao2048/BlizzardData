@@ -1,0 +1,11 @@
+StyledText - exception when selecting lines in WRAP mode
+build 20030528
+-run the attached test case
+-place the cursor at or near the end of the line
+-resize the shell so that the height is less
+-without changing the cursor location drag select in the widget
+->you get an IllegalArgumentException in WrappedContent.getOffsetAtLine.
+Also,
+there is strange rendering behavior.
+After the resize the content is wrapped.
+This is caused by the fix to  bug 20377 .

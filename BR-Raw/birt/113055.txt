@@ -1,0 +1,4 @@
+Bug 113055 Dynamic image review button is expected to be disabeld if no image appears when click on it
+description: Dynamic image review button is expected to be disabeld if no image appears when click on it steps to reproduce: 1.drag and image to layout view 2.select dynamic image radio box 3.click on binding to bind the image to a image data set column 4.click on Preview button actual result: no image appears when click on Preview button.
+expected result: if binary image from database can't be previewed in image builder, then disable the preview button.
+Or when click on preview button, image in data base should show up

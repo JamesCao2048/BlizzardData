@@ -1,0 +1,13 @@
+Bug 285840 InteractionEvents added in reverse order
+Build ID: I20090611-1540 Steps To Reproduce: 1.Create pie chart.
+2.Add Show Tooltip action on Mouse Over to category series.
+3.Add Show Tooltip action on Mouse Over to chart area.
+Expected result: When mouse is over a pie slice, category tooltip should be shown, otherwise the chart area tooltip should be shown.
+Actual result: Chart area tooltip is shown everywhere within the chart area.
+More information: We're embedding the BIRT data engine within our RCP application.
+For rendering in SWT there's a hackish way to avoid this problem: 1.Subclass SwtRendererImpl.
+2.Override enableInteraction()
+-- it shouldn't enable interaction events, but store them in a collection.
+3.After the rendering is done, iterate through the stored InteractionEvents in reverse order and call super.enableInteraction() on them.
+The problem is caused by the fact that SwtRendererImpl.enableInteraction() is called in render...() methods in the same order as the chart is rendered (outer regions are handled before inner regions that they contain).
+Could the interaction events be added in the proper order at least for SWT?

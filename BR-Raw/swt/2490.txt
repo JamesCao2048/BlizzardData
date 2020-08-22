@@ -1,0 +1,18 @@
+TreeItem not showing text
+I20060317-1315
+I don't have a simple SWT test case for this yet, but the behavior can be seen using the folloing test case in the debugger (works on GTK, does not work on XP).
+Debug the following program (breakpoint on first line)
+public class NowYouSeeIt {
+public static void main(String[] args) {
+for (int i = 0; i
+< 10; i ++) {
+Integer integer = new Integer(i);
+System.out.println(integer);
+}
+}
+}
+* Step over the declaration of "integer" (it appears in variables view)
+* Step over, step over (println, then "integer" disappears
+- out of scope)
+* Step over, step over (integer is back in scope, but its label does not appear)
+The "data" of the item appears to be set, cause selecting does show the proper 'toString()' in the details area.

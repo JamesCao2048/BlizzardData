@@ -1,0 +1,4 @@
+Bug 167688 Setting number format on multiple elements gives NPE
+If I select multiple data elements (for example one in each table cell) using the shift key, then try to 'format number' on those in the properties tab, I get a null pointer exception.
+An unexpected internal exception occurred.Please see log for detail.
+Plug-in Provider:Eclipse.org Plug-in Name:BIRT Designer UI Plug-in ID:org.eclipse.birt.report.designer.ui Version:2.2.0.v20061211-0630 Error Code:Error.GUIException.invokedByUnexpectedException Error Message:Caused by java.lang.NullPointerException.

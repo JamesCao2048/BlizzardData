@@ -1,0 +1,43 @@
+Controls in shell blocked by a modal shell still scroll via the scroll wheel
+I20080415-1646
+The following snippet shows the problem.
+When the shells are up, click on the shell underneith.
+Note that it doesn't get focus.
+Now (while the mouse is still over this bottom shell) use the scroll the scrollwheel.
+It should scroll.
+SYSTEM_MODAL causes the same behaviour.
+I cant reproduce this behaviour on Windows or in other OS X applications with Modal dialogs (Safari File->Export for instance)
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+public class ScrollTest {
+/**
+* @param args
+*/
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.setSize(100, 100);
+Text t = new Text(shell, SWT.V_SCROLL);
+t.setText("LinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinenLinen");
+shell.open();
+
+Shell another = new Shell(shell, SWT.APPLICATION_MODAL);
+another.setLayout(new FillLayout());
+another.pack();
+Label l = new Label(another, SWT.NONE);
+l.setText("Yup.");
+another.open();
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}

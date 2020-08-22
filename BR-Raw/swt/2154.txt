@@ -1,0 +1,22 @@
+IllegalArgumentException when resizing a sashform with a table within
+3.3M2
+This has been reported by a user of SWT on OSX after resizing a SashForm with a Table within it.
+java.lang.IllegalArgumentException: Argument not valid
+at org.eclipse.swt.SWT.error(SWT.java:3391)
+at org.eclipse.swt.SWT.error(SWT.java:3330)
+at org.eclipse.swt.SWT.error(SWT.java:3301)
+at org.eclipse.swt.graphics.Region.add(Region.java:132)
+at org.eclipse.swt.widgets.Table.drawItemProc(Table.java:968)
+at org.eclipse.swt.widgets.Display.drawItemProc(Display.java:1086)
+at org.eclipse.swt.internal.carbon.OS.CallNextEventHandler(Native Method)
+at org.eclipse.swt.widgets.Widget.callPaintEventHandler(Widget.java:170)
+at org.eclipse.swt.widgets.Table.callPaintEventHandler(Table.java:184)
+at org.eclipse.swt.widgets.Widget.kEventControlDraw(Widget.java:1000)
+at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:352)
+at org.eclipse.swt.widgets.Display.controlProc(Display.java:839)
+at org.eclipse.swt.internal.carbon.OS.TrackMouseLocationWithOptions(Native Method)
+at org.eclipse.swt.widgets.Sash.kEventMouseDown(Sash.java:227)
+at org.eclipse.swt.widgets.Widget.mouseProc(Widget.java:1246)
+at org.eclipse.swt.widgets.Display.mouseProc(Display.java:2811)
+at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2950)

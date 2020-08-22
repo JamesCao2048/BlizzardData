@@ -1,0 +1,2 @@
+Bug 162836 Parameter will cause page break in HTML
+Steps to reproduce: 1.Add two labels in report, set page-break-after to always for the first label 2.Add masterpage header and footer 3.Add a parameter 4.Preview in HTML Expected result: No page break in HTML preview Actual result: Mater page repeat two times

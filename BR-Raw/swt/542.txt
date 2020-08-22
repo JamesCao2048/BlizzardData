@@ -1,0 +1,20 @@
+Text.setText fails during FocusOut event listener (SWT.SINGLE, and when followed by access to the Text)
+Build Identifier: swt-I20100608-0911-cocoa-macosx-x86_64
+When setText is done in a FocusOut event listener, it sometimes fails to change the Text.
+This happens when setText is followed by getCharCount, computeSize, getText, and possibly any method that accesses the Text content.
+If the FocusOut event is caused by switching to a different application (rather than to a different widget), setText works.
+If setText is NOT followed by another Text method, it works.
+I have traced setText and getText down to NSCell.setTitle(NSString) and NSCell.title().
+The NSCell is the same in both calls.
+However, when setText fails, the NSString returned by title() is the unchanged value, not the value just set with setTitle(string).
+Sample snippet contains two Texts.
+On FocusIn the first Text is set to "Hello"; on FocusOut to "Goodbye".
+Clicking to the second Text demonstrates that setText fails to change the area's content.
+Commenting out subsequent access to the Text, or losing focus by app switch shows the that setText succeeds in changing the content.
+I am rating as a major bug because it prevents implementing an auto-complete text field that is essential to our project.
+Reproducible: Always
+Steps to Reproduce:
+1.Run the example.
+2.See that clicking to the second Text does not change the first one, but switching apps does.
+3.Remove call to getCharCount() in the FocusOut listener.
+4.See that setText now succeeds in both situations.

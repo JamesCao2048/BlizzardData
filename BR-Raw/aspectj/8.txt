@@ -1,0 +1,20 @@
+java.util.ConcurrentModificationException when multiple threads enter the weaver
+I am using AspectJ 1.7.1.  Occasionally I see the following exception, which I believe is related to multiple threads initializing some internal state.
+java.util.ConcurrentModificationException: null
+at java.util.ArrayList$Itr.checkForComodification(Unknown Source) ~[na:1.7.0_11]
+at java.util.ArrayList$Itr.next(Unknown Source) ~[na:1.7.0_11]
+at org.aspectj.weaver.ReferenceType.findDerivativeType(ReferenceType.java:1122) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.TypeFactory.createParameterizedType(TypeFactory.java:44) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.ResolvedType.parameterize(ResolvedType.java:2479) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.ReferenceType.getDeclaredInterfaces(ReferenceType.java:673) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.ResolvedType.getDirectSupertypes(ResolvedType.java:82) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.patterns.TypePattern.matchesSubtypes(TypePattern.java:178) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.patterns.ExactTypePattern.matchesSubtypes(ExactTypePattern.java:74) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.patterns.TypePattern.matchesStatically(TypePattern.java:130) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.patterns.KindedPointcut.fastMatch(KindedPointcut.java:130) ~[aspectjweaver.jar:1.7.1]
+at org.aspectj.weaver.internal.tools.PointcutExpressionImpl.couldMatchJoinPointsInType(PointcutExpressionImpl.java:84) ~[aspectjweaver.jar:1.7.1]
+at org.springframework.aop.aspectj.AspectJExpressionPointcut.matches(AspectJExpressionPointcut.java:250) ~[spring-aop.jar:3.2.1.RELEASE]
+at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:208) ~[spring-aop.jar:3.2.1.RELEASE]
+at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:262) ~[spring-aop.jar:3.2.1.RELEASE]
+at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:294) ~[spring-aop.jar:3.2.1.RELEASE]
+at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:118) ~[spring-aop.jar:3.2.1.RELEASE]

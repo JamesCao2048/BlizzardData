@@ -1,0 +1,6 @@
+Non error messages are logged.
+After running help and browsring documents, the platform log contains entries
+with messages from web browser like "No running window found.", or "xmlencoding
+detect- ISO-8859-1".
+These are normal , and it would be better if they were
+not logged to the platform log.

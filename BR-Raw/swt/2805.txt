@@ -1,0 +1,24 @@
+Hover Event fired continiously although Mouse not moving
+Using latest Nightly + this Snippet:
+public class Main {
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+shell.addListener(SWT.MouseHover, new Listener() {
+public void handleEvent(Event event) {
+System.out.println("Hover Event");
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+Move Mouse into Shell, notice that Events are received continiusly, although the
+mouse is not moving.
+Regards,
+Ben

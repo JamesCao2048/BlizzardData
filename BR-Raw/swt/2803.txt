@@ -1,0 +1,2 @@
+Cursors not disposed in SWT FileViewer example
+The cursors are not disposed and cause a leak in the example.

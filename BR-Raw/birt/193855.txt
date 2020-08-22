@@ -1,0 +1,6 @@
+Bug 193855 Invoke Script does not work correctly [13]
+Description: Invoke Script does not work correctly Build number: 2.2.0.v20070621-1540 Steps to reproduce: 1.New a chart, set output format PNG, set Value series interactivity as Event: Mouse Click, Action: Invoke Script, Script: alert("aaa") or alert('aaa').
+2.Preview, click the series.
+Expected result: For both scirpt when click, dialogue pops up with "aaa".
+Actual result: Only alert('aaa') works.
+Error log: N/A

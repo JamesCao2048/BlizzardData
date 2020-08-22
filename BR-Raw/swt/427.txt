@@ -1,0 +1,47 @@
+Eclipse crash at quit when modal dialog opened
+Build Identifier: eclipse-SDK-3.5.2-macosx-carbon 32 bit (Build id:M20100211-1343)
+Process:         eclipse [47963]
+Path:            /Users/notes/Downloads/eclipse-SDK-3.5.2-macosx-carbon/Eclipse.app/Contents/MacOS/eclipse
+Identifier:      org.eclipse.eclipse
+Version:         3.5 (3.5)
+Code Type:       X86 (Native)
+Parent Process:  launchd [114]
+Date/Time:       2010-09-01 09:47:29.016 +0800
+OS Version:      Mac OS X 10.6.4 (10F569)
+Report Version:  6
+Interval Since Last Report:          331914 sec
+Crashes Since Last Report:           24
+Per-App Interval Since Last Report:  578 sec
+Per-App Crashes Since Last Report:   5
+Anonymous UUID:                      B09C1AE0-E88B-45A9-8C19-F524ECEECD23
+Exception Type:  EXC_BAD_ACCESS (SIGBUS)
+Exception Codes: KERN_PROTECTION_FAILURE at 0x0000000000000000
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+Application Specific Information:
+Java information:
+Exception type: Bus Error (0xa) at pc=000000001190c33f
+Java VM: Java HotSpot(TM) Client VM (16.3-b01-279 mixed mode macosx-x86)
+Current thread (0000000012001000):  JavaThread "main" [_thread_in_vm, id=-1609112320, stack(00000000bf800000,00000000c0000000)]
+Stack: [00000000bf800000,00000000c0000000]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.carbon.OS.NavDialogRun(I)I+0
+j  org.eclipse.swt.widgets.FileDialog.open()Ljava/lang/String;+674
+j  org.eclipse.ui.internal.ide.actions.OpenLocalFileAction.run()V+36
+j  org.eclipse.ui.internal.ide.actions.OpenLocalFileAction.run(Lorg/eclipse/jface/action/IAction;)V+1
+j  org.eclipse.ui.internal.PluginAction.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+110
+j  org.eclipse.ui.internal.WWinPluginAction.runWithEvent(Lorg/eclipse/swt/widgets/Event;)V+9
+j  org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(Lorg/eclipse/swt/widgets/Event;Z)V+354
+j  org.eclipse.jface.action.ActionContributionItem.access$2(Lorg/eclipse/jface/action/ActionContributionItem;Lorg/eclipse/swt/widgets/Event;Z)V+3
+j  org.eclipse.jface.action.ActionContributionItem$5.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+60
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+j  org.eclipse.swt.widgets.Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+25
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;Z)V+73
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;)V+4
+j  org.eclipse.swt.widgets.Widget.notifyListeners(ILorg/eclipse/swt/widgets/Event;)V+19
+j  org.eclipse.swt.widgets.Display.runDeferredEvents()Z+96
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+103
+j  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V+9
+j  org.eclipse.ui.internal.Workbench.runUI()I+393
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$5.run()V+55
+j  org.eclipse.c

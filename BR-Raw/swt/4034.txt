@@ -1,0 +1,15 @@
+Busy cursor lost over progress indicator edges
+Whenever BusyIndicator.showWhile() is used around a ProgressMonitorDialog,
+there are 1 pixel borders around the progress indicator that retain the default
+cursor.
+The busy cursor should be active for the entire ProgressMonitorDialog.
+To reproduce:
+1) Check something out of CVS that will take around 10 seconds.
+2) While the operation is in progress, mouse over the busy indicator.
+3) Depending on how fast you moved the cursor, you will see the cursor flash
+over the borders of the busy indicator.
+If you stop the cursor on the correct
+pixel, the busy cursor changes back to the normal cursor.
+This behaviour was observed in F1 on Windows.
+Linux-Motif does not exhibit this
+behaviour.

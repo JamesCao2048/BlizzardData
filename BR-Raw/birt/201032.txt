@@ -1,0 +1,6 @@
+Bug 201032 Rename group should display orignal name in input box.[0004]
+Description: Rename group should use orignal name as default value in input box.
+Build number:2.2.1.v200708240630 Steps to reproduce: 1.New a table, add a group.
+2.Select the group in Outline, press F2.Expected result: In rename dialog, orignal group name is in input box.
+Actual result: Input box is empty.
+Error log:n/a

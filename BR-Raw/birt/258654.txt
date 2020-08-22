@@ -1,0 +1,12 @@
+Bug 258654 BIRT 2.3.1 - "The value of the structure property is a string", embedded images
+Build ID: BIRT 2.3.1 Steps To Reproduce: 1.Embed image in report.
+2.Deploy report and start AppServer.
+3.Execute report More information: After migrating my reports from BIRT 2.2.2 to 2.3.1 I get the following message on console: 18:49:06,328 ERROR [STDERR] 09.12.2008 18:49:06 org.eclipse.birt.report.model.metadata.StructRefPropertyType validateValue INFO: The value of the structure property is a string In ReportEngine.log the following is logged (without ERROR): 09.12.2008 18:49:06 org.eclipse.birt.report.model.metadata.StructRefPropertyType validateValue INFO: The value of the structure property is a string After some tests I found that the reason is the following part of code in a rptdesign document.
+<image id="1402">
+<property name="source">embed</property>
+<property name="imageName">MyImage.gif</property>
+</image> The message is given out every time a report is executed.
+Is there some possibility to suppress this message without changing the log level away from INFO?
+In BIRT 2.2.2 this message doesn't occur.
+My environment (dev): JBoss 4.2.2, BIRT 2.3.1, WinXP SP2 (german) By the way
+- the log message is not very useful because it says nothing about where and why it is logged.

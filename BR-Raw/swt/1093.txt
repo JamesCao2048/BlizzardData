@@ -1,0 +1,11 @@
+TrayItem icon stays activated after invoking a pop-up menu item
+When you have a TrayItem in Mac OS X that has a selection listener (icon in mac's menubar (tray) that reacts to left-click), the icon remains activated (blue) after some popup menu item that was invoked by left-clicking the TrayItem.
+Also, the icon remains activated when you invoke the popup menu and navigate away to desktop
+- popup menu hides, but TrayItem icon remains blue.
+Clicking the icon itself toggles the activation.
+Also, according to mac conventions, the activation effect (blue selection around the transparent icon) should disappear when you hover the mouse over next menubar item (i.e.
+the wireless network status...).
+This does not happen either.
+Meanwhile the right-click (menu detect listener) works fine,
+Some code and an example transparent icon is attached to test it.
+I've tried a million different ways before listing this bug, so please make sure you have a working solution before telling me that this code snippet is wrong.

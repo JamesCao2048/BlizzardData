@@ -1,0 +1,6 @@
+Bug 210617 NPE occurrs when using report item which is involved with subquery
+Build ID: I20071101-2000 Steps To Reproduce: 1.New a datasource and dataset 2.New a table named table1 and binding the dataset.
+3.Add a chart in table and set the x and y series.
+4.Add some item in layout and binding the result set as table1.Actual reuslt: Preview this report will cause an NPE Since report item sharing is not used in a report item involved with subquery, dte will throw out DataException will a message in CacheResultIterator.getSecondaryIterator(String, Scriptable) to indicate the user this kind of behavior is not valid.
+In the invoker method like AbstractDataEngine.doExecuteSubQuery(QueryResultSet, ISubqueryDefinition), however, DataException will be caught and then return null to the upper layer, which will raise an NullPointerException.
+So engine should change the way handling the DataException to display the indicating message properly.

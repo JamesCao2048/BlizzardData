@@ -1,0 +1,8 @@
+Bug 162841 [regression]Drill-through link to document containing parameters failed in html and pdf
+Description: Drill-through link to document containing parameters failed in html and pdf Steps to reproduce: 1.New a report with a report parameter, don't set default value for it.
+2.Preview in Web Viewer, input parameter value and save the report document to c: 3.New another report, insert a label, set a drill through link on the label, link to the report document.
+4.Preview in web viewer, html and pdf, click the link.
+Expected result: Link to target report.
+Actual result: In html, a dialog popped up and said "a runtime error has occurred" In pdf, a dialog popped up and said that report parameter has null value.
+In frameset servlet, both formats are ok.
+I found that if I set default value for the report parameter in target report, the issue will disappear.

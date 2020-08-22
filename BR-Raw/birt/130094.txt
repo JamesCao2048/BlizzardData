@@ -1,0 +1,8 @@
+Bug 130094 [regression] cannot edit group in Cheat Sheets
+steps to reproduce:
+- create a report using Grouped Listing template
+- switch to Cheat Sheets, start/restart the tutorial
+- follow the steps to 1) create data source; 2) create data set; 3) bind the data to the table; and 4) edit the group expected behavior:
+- group dialog should be displayed actual behavior:
+- error message displayed.
+please refer to the attached image for detail

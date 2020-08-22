@@ -1,0 +1,7 @@
+Mac - can't drag from SWT application to another application
+3.0 RC3:
+This is currently disabled until interaction with Finder can be made safe.
+See DragSource.drag:
+// until the interaction with Finder is understood, only allow data to be
+// transferred internally
+OS.SetDragAllowableActions(theDrag[0], OS.kDragActionNothing, false);

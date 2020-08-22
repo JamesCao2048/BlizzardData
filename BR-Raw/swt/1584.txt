@@ -1,0 +1,18 @@
+BIDI3.4:HCG "Cancel" button of Source Folder Selection dialog does not work in Hebrew version
+Build ID:  I20080405
+Linux RedHat 5
+Steps To Reproduce:
+1.Install:
+- Eclipse SDK with NL Bidi package
+2. Run mirrored Eclipse with Hebrew translation (use command line argument
+-nl iw)
+3.Go to File->New->Package
+4.Select "Browse..."
+5.Source Folder Selection dialog is opened and the list does not contain a source folder.
+6.Try to click on the "Cancel" button to close the dialog.
+Expected result: the dialog is closed
+Actual result: the button does not work
+Comments:
+1.The dialog can be closed with x
+2.The cancel button works in the English version
+More information:

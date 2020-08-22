@@ -1,0 +1,10 @@
+Load Time Weaving problem with Aspect Definition at 2 Levels of Hierarchy
+I am trying to weave into Tomcat with a system-level aspect (META-INF/aop.xml
+is found in a jar on the system classpath), and also have a Web application
+with an aop.xml properly deployed. When I try to run them both together, only
+the system-level aspects work. If I remove the system-level aspect jar from the
+classpath, the application-level aspects work. What would be a reasonable way
+to isolate this into a test case? If I could package up a simple system.jar and
+app.war file for Tomcat 5.5.9, would that be useful for you to use in debugging
+it? I tried making a simple standalone version with 2 aop.xml files in the same
+app classloader but that works just fine.

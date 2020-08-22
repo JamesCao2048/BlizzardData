@@ -1,0 +1,2 @@
+checkWidget() missing in Shell#getToolbar()
+The new method Shell#getToolbar is missing the checkWidget() call although the Javadoc states that the usual restrictions apply (ERROR_WIDGET_DISPOSED, ERROR_THREAD_INVALID_ACCESS).

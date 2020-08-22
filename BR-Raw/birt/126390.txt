@@ -1,0 +1,2 @@
+Bug 126390 IDataSetInstance needs method to return column information
+There is no way to get the Java equivalent of the JavaScript columnDefns array, which describes the columns in a data set.

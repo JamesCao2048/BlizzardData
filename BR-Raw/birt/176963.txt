@@ -1,0 +1,3 @@
+Bug 176963 Subquery's resultSetExpressions is not consistent between generate and present time.
+In generate time, subquery will add the parent query's column binding to its own resultSetExpressions.
+While in present time, it only has the ones of itself.

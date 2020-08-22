@@ -1,0 +1,55 @@
+Setting table selection does not update anchor index
+SWT v3.1.0.9, Win32
+In the testcase below, there is a multi-selection table with ten items.
+The item at index 4 is selected programmatically.
+Shift+Click on, let's say, item 6 or press Shift+ArrowDown twice.
+Expected result:
+Items 4-6 should be selected.
+Actual result:
+Items 0-6 are selected.
+What seems to be happening here is that (programmatically) setting
+the table selection does not update the anchor index that is used
+as the starting point when a range selection is performed.
+Instead, the table uses whatever item the user has selected
+previously or the item at index 0 if the user has not yet selected
+anything.
+This is problematic; in the testcase, item 4 is the only selected
+item initially and it has the focus rectangle too, so the user can
+reasonably expect that extending the selection range will begin
+at that item.
+And it does, but only if the user has selected the item
+manually, not when it's done via a Table.setSelection(...) call.
+Programmatic and manual selection should, where possible, result in
+the same adjustment of the anchor index/item.
+===
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+public class TableAnchorTest {
+public static void main(String[] args) {
+Display display = new Display();
+
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+
+Table tbl = new Table(shell, SWT.MULTI);
+
+for (int idx = 0; idx
+< 10; idx++) {
+new TableItem(tbl, SWT.NONE).setText("Item " + idx);
+}
+
+shell.pack();
+shell.open();
+
+tbl.setSelection(4);
+
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) {
+display.sleep();
+}
+}
+
+display.dispose();
+}
+}

@@ -1,0 +1,21 @@
+Missing Javadoc comments that aren't missing
+Reported in the AJDT newsgroup:
+Go to Preferences > Java > Compiler > Javadoc and set "Missing javadoc comments"
+to "Warning".
+You then get warnings against things you wouldn't expect, such as after advice.
+/**
+* A comment
+*/
+public aspect World {
+pointcut greeting() : execution(* Hello.sayHello(..));
+
+/**
+* A comment
+*/
+after() returning : greeting() {
+System.out.println("world");
+}
+}
+This gives two warnings, one for the aspect itself, and one for the after
+returning advice. The warnings occur both with and without the existence of
+Javadoc comments!

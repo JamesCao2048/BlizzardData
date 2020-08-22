@@ -1,0 +1,4 @@
+Bug 232898 call procedureName(arg) gets the return value
+Description: There is a procedure [dbo].[counterInT1]: @counter int output AS select @counter=count(*) from T1 call dbo.counterInT1(?) got the return value but not the value of @counter Build number: 2.3.0.v20080520-0630 Steps to reproduce: 1, New a stored procedure dataset 2, Specify the Query like: {call counterInT1(?)} 3, Go to parameters page Expected result: The parameter should be @counter and type should be output.
+Actual result: The parameter is @Return Value.
+Error log:

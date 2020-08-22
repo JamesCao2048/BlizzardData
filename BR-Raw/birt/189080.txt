@@ -1,0 +1,7 @@
+Bug 189080 Cancel button does not work when create dimensions in cube[1101]
+Description: Create a group(dimension) in cube builder, click "cancel" button, but actually a dimension is created.
+Build:2.2.0.v20070525-1114 Steps to reproduce: 1.Create a sample datasource and dataset.
+2.Create a cube, bind with the dataset.
+3.In the "Cross Tab Cube Builder", click "add" button on the right margin.
+"Add Group" dialog pops up, then click "cancel" button, but the group is created in fact.
+Expect result: Click "Cancel" button works.

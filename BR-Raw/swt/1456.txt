@@ -1,0 +1,28 @@
+Message in the MessaeBox is not BiDi correctly
+Build ID: I20080617-2000
+Steps To Reproduce:
+1.From Control Panel
+-> Regional and language, select Hebrew
+2.Bring up an app.
+with the following sample code:
+MessageBox mb = new MessageBox(PlatformUI.getWorkbench().getDisplay().getActiveShell());
+mb.setMessage(Activator.getResourceString("str.fedcal.action.google.warning"));
+3.The English value for str.fedcal.action.google.warning is this:
+str.fedcal.action.google.warning=Oops, there are no calendar URLs on this page.
+To add a public calendar, you must first open that calendar's Calendar Settings page, then click this button again.nnNote: You can only add public calendars that you own or have already subscribed to.
+To make a calendar public, enable sharing from the Calendar Settings page.
+4.From the App, you'll see that the MessageBox is correctly displayed with a right to left style.
+But, the message is incorrectly displayed from left to right, and aligned on the left.
+More information:
+.
+I tried to remove n from the string, but, it didn't help
+Windows version;
+.
+I tried to revmoe n from the string, but it didn't help
+.
+As you can see from the steps above, this is not a real Hebrew machine.
+.
+No, I didn't try it on a real Hebrew machine.
+.
+I'm on Windows XP
+thank you.

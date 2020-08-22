@@ -1,0 +1,41 @@
+Tree.showColumn doesn't scroll column from left of viewport into view
+- run the snippet below
+- note that the second column begins within the viewport but is too wide to be
+fully shown
+- press the button, which invokes Tree.showColumn(col2)
+
+-> this brings the second column fully into the viewport; good
+- now scroll to the right end of the tree and note that the second column now
+begins to the left of the viewport, but its right edge is visible
+- press the button, which invokes Tree.showColumn(col2), but this fails to
+bring the whole column into view
+public static void main(String[] args) {
+Display display = new Display();
+Shell shell = new Shell (display);
+shell.setBounds(10,10,200,200);
+final Tree tree = new Tree(shell, SWT.NONE);
+tree.setBounds(10,10,100,100);
+tree.setHeaderVisible(true);
+TreeColumn column1 = new TreeColumn(tree, SWT.NONE);
+column1.setWidth(75);
+column1.setText("col 1");
+final TreeColumn column2 = new TreeColumn(tree, SWT.NONE);
+column2.setWidth(75);
+column2.setText("col 2");
+TreeColumn column3 = new TreeColumn(tree, SWT.NONE);
+column3.setWidth(75);
+column3.setText("col 3");
+Button button = new Button(shell, SWT.PUSH);
+button.setBounds(120,10,70,30);
+button.setText("Push");
+button.addListener(SWT.Selection, new Listener() {
+public void handleEvent(Event event) {
+tree.showColumn(column2);
+}
+});
+shell.open();
+while (!shell.isDisposed()) {
+if (!display.readAndDispatch()) display.sleep();
+}
+display.dispose();
+}

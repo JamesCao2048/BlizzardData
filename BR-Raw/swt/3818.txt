@@ -1,0 +1,9 @@
+Clicking on partially obscured tab should scroll it into view
+build I20030211
+You commonly get the last visible editor tab partially obscured by the scroll
+arrows, making the close box inaccessible.
+You have to use the context menu
+to close the editor.
+Either the tabs should never get obscured (the preferred solution, but there
+was already a PR for this which was marked WONTFIX), or a single click on the
+tab should scroll to reveal it fully.

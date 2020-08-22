@@ -1,0 +1,16 @@
+after returning should not bind "null" as return value
+Today I found out the following. When writing an advice as...
+after() returning(Object o): staticinitialization(*) {
+System.out.println(o);
+}
+This advice is indeed executed every time a type returns from
+staticinitialization. However, since there is no returned object, o is bound to
+"null".
+I think this is inconsistent with the fact where we have something like:
+after() returning(T o): call(Object Foo.bar()) {
+System.out.println(o);
+}
+Here, AFAIK the advice would not execute in cases where the returned object is
+not an instance of T.
+Thus, I would propose that the first advice should only execute at joinpoints
+where a return value is available.

@@ -1,0 +1,4 @@
+Bug 186785 create equivalent of profiler test bucket for JVMTI support
+Build ID: I20070503-1400 Steps To Reproduce: The current test cases from the profiler bucket test the agent controller using JVMPI.
+We need to extend or adapt this to be able to run the applicable cases with the new profiler as well.
+More information: Currently I am running these manually using the test descriptions in /org.eclipse.tptp.ac.testautomation/automation-files/TPTP-tests/Platform.Agents.JVMPI.Windows_IA32.testsuite but using the ti agent instead of pi or the jdk1.5+ options where available.

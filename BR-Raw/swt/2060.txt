@@ -1,0 +1,13 @@
+Table selection with CTRL+SHIFT does not send events
+To reproduce the problem, have a table with the following items:
+item_1
+item_2
+item_3
+item_4
+item_4
+- Click on item_1.Now item_1 is selected and the TableViewer notifies the SelectionListener
+- Hold CTRL and click on item_3.Now item_1 and item_3 is selected and the TableViewer notifies the SelectionListener
+- Hold CTRL and SHIFT and click on item_5.Now item_1, item_3, item_4 and item_5 is selected, but the TableViewer does NOT notify the selectionListener, neither does the table widget.
+I would expected, that the selectionListener of both the Table and the TableViewer are notified, because the visual selection has actually changed.
+I see, that this bug is similar to #19870, but meanwhile the behaviour has changed, because the SHIFT key is no more ignored.
+It would be nice, if you could fix this bug now.

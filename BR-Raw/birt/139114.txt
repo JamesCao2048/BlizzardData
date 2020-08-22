@@ -1,0 +1,7 @@
+Bug 139114 [Smoke] Cascading parameter could not work
+Description: Create a 5 level cascading parameter, pull them all to the layout.
+Only the first parameter allow user to select the value, others are disabled.
+Steps to reproduce: 1.Create a flatfile datasource and dataset.
+Get the attached file.
+2.Create a 5 level cascading parameters, pull them to the report layout.
+Preview, in the "Input Parameter" dialog, only the toppest level of parameter allow the user to select the value, others are all disabled.

@@ -1,0 +1,14 @@
+Softening exception in try-with-resources
+From this post on the Eclipse AJDT forum:  http://www.eclipse.org/forums/index.php/t/369503/
+When softening exceptions, AspectJ doesn't seem to soften the exception thrown by the automatic close() invocation when using the try-with-resources syntax introduced in Java 7 (often an IOException).  eg:
+---
+In Java code:
+try (BufferedReader reader = new BufferedReader(new FileReader("test.txt"))) {
+System.out.println(reader.readLine());
+}
+In AspectJ code:
+declare soft: IOException: within(*)
+---
+The above will result in a compilation error, "Unhandled exception type IOException thrown by automatic close() invocation".
+A workaround is to add a catch for the IOException, or to add a throws clause to the method, which kind of makes the exception softening somewhat redundant.
+If you're using AJDT, doing these workarounds then adds AJDT add markers to the try-with-resources block, one of which looks like it's for the automatic close() - maybe the 'unhandled exception' error is preventing AspectJ from properly softening the exception?

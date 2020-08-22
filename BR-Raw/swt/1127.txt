@@ -1,0 +1,11 @@
+Device#loadFont() not implemented
+As of 3.5.0.v3529a (and in HEAD), Device#loadFont()'s code is:
+public boolean loadFont (String path) {
+checkDevice();
+if (path == null) SWT.error(SWT.ERROR_NULL_ARGUMENT);
+boolean result = false;
+char [] chars = new char [path.length ()];
+path.getChars (0, chars.length, chars, 0);
+//TODO not done
+return result;
+}

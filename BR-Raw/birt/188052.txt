@@ -1,0 +1,5 @@
+Bug 188052 Enhance the behavior of DimensionConditionHandle
+Current in model implementation, there could be multiple DimensionConditionHandle corresponding to one dimension.
+This will cause problem for both UI and DtE.
+What we expect is that for each dimension, there are only one DimensionConditionHandle accompany with.
+Model should merge all the duplicate DimensionConditionHandle so that when UI/DtE is using model API the we can get unique DimensionConditionHandle for each dimension.

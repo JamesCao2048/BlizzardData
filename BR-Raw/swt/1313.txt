@@ -1,0 +1,3 @@
+IndexOutOfBoundsException in TreeItem
+calling setText(-1, "foo"), or setImage(-1, img) causes an exception.
+It should just do nothing.

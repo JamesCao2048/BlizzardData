@@ -1,0 +1,12 @@
+Bug 412357 Exported underline text gives an unexpected result
+1.Drag the Label item onto the Layout Page.
+2.Type in any Thai word and separate them with a space.
+(Font= San serif 36) 3.Under Property Editor- Label, choose Properties and then, General.
+4.Click U to underline the whole word or sentence.
+5.Choose View Report from the Top Panel.
+6.Select View Report as PPT.
+The result is shown in attachment where the underline becomes discontinuous and the underline for spaces has become a lower underscore mark.
+7.Repeat step 5 and Select View Report as PPTX.
+This result is shown in attachment with a little different from prior step as there are no extra spaces, but the underline of the space is still an underscore mark.
+8.Repeat step 5 and select View Report as PDF.
+The underline cross all below combined character.

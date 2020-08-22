@@ -1,0 +1,8 @@
+Missing shell activation events
+When swapping between eclipse and other apps (xterm, firefox) using ALT+TAB I get into this state where eclipse won't accept key strokes any more.
+typing in a java editor won't do anything.
+But clicking through eclipse (like the outline view) works.
+The Shell is active (highlighted) but the tab of the active view/editor within eclipse is coloured like it is still inactive.
+I've also see the tab remain coloured active when I TAB out of eclipse.
+But if I click out of eclipse, it is properly grey.
+PW

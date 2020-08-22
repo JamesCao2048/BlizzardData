@@ -1,0 +1,7 @@
+Table and SWT.CHECK: Check not visible on selection
+Having a Table with SWT.CHECK Style, the Checkbox becomes invisible, when the
+TableItem is selected.
+This is happening on WinXP w/o using Manifest.
+It is not
+happening using the Manifest.
+Ben

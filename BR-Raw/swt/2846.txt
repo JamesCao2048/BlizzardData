@@ -1,0 +1,49 @@
+TreeEditor doesn't scroll with the Tree
+hen you place a TreeEditor on a TreeItem of a Tree, and when you scroll the Tree
+using the mouse wheel, the TreeEditor doesn't scroll with the Tree.
+Example code:
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.TreeEditor;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.*;
+public class TreeScroll
+{
+public static void main(String[] args)
+{
+Display display = new Display();
+Shell shell = new Shell(display);
+shell.setLayout(new FillLayout());
+Tree tree = new Tree(shell, SWT.BORDER);
+tree.setLinesVisible(true);
+TreeColumn column = new TreeColumn(tree, SWT.NONE);
+column.setWidth(200);
+for (int i = 0; i
+< 20; i++)
+{
+TreeItem item = new TreeItem(tree, SWT.NONE);
+item.setText("item " + i);
+}
+TreeItem[] items = tree.getItems();
+TreeEditor editor = new TreeEditor(tree);
+Text text = new Text(tree, SWT.NONE);
+text.setText("text editor");
+editor.grabHorizontal = true;
+editor.setEditor(text, items[6]);
+text.setFocus();
+shell.pack();
+shell.setSize(250, 300);
+shell.open();
+while (!shell.isDisposed())
+{
+if (!display.readAndDispatch())
+display.sleep();
+}
+display.dispose();
+}
+}
+To reproduce the bug, execute the example and scroll the tree using the mouse
+wheel.
+All items are scrolling, but the editor (on item 6) rest in place.
+When
+using directly the scroll bar, it works.
+I'm using Eclipse 3.1M5a.

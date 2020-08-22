@@ -1,0 +1,12 @@
+Drop-down arrows (on tree) are not centered
+The new SWT tree view on Mac OS X uses the drop-down arrows to drill down
+into trees.
+This is seen in (amongst other things) the project views and
+also the preferences window.
+The arrow icon though does not look centered with the text; in fact, it looks
+as if it is positioned in the top of the line and the icon looks as if it
+is taking a 32x32 pixel size when its only a 16x16 cursor.
+Comparing Finder's tree-view of files and the Eclipse Preferences seems to
+suggest that the tree icons aren't quite the same position as the Mac renders
+them, or that the text line (and inter-line spaces) are too large.
+Eclipse 2.1RC2 on Mac OS X.2.4

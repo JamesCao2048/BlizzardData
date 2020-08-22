@@ -1,0 +1,13 @@
+Tracker cannot draw rectangle on main menu bar or dock
+Build Identifier: 3.7.2.v3740f-RCP20120529-1500
+I use Tracker in a screen shot application to draw the hinting rectangle.
+The lines are only visible on regular screen area, but not main menu bar nor dock.
+It looks like lines are covered by these special windows.
+I checked the source code of cocoa version Tracker.
+I found it creates a NSWindow and draws rectangle on it.
+This should be window level related.
+A normal level Tracker window is not sufficient in this case.
+In comparison, carbon version Tracker has no such issue.
+Reproducible: Always
+Steps to Reproduce:
+The steps are described in details.

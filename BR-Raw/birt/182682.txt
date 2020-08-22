@@ -1,0 +1,6 @@
+Bug 182682 [Automation][Regression] render results were different in web viewer
+steps to reproduce:
+- use the attached report design
+- preview in web viewer expected behavior:
+- on 2nd page, "InnerTable, InnerTable, OutterTable" should be displayed actual behavior:
+- on 2nd page, "InnerTable, InnerTable" was displayed instead

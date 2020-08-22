@@ -1,0 +1,18 @@
+StyledText doesn't specify contents of its SelectionEvents
+StyledText offers to send out SelectionEvents, but I found no specification
+about the contents of the SelectionEvent.
+SelectionEvent says that x and y
+fields are Widget-specific, but doesn't link to StyledText.
+StyledText#addSelectionListener(..) also doesn't specify the contents of the
+SelectionEvent.
+Looking at the implementation, I found that StyledText#sendSelectionEvent()
+fills the Event.x and Event.y fields from the field StyledText#selection.
+At the
+definition of this field, I found a wrong line comment, which reads...
+Point selection = new Point(0, 0);  // x is character offset, y is length
+But when I look at the rest of the class, it seems as if
+- x is the start character offset
+- y is the offset of the next character after the selection (and NOT the length)
+Therefore, I suggest:
+- completing the Javadoc of StyledText#addSelectionListener()
+- correcting the erroneous comment of field StyledText#selection
